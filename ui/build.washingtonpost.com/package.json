@@ -1,0 +1,33 @@
+{
+  "name": "wpds-ui",
+  "private": true,
+  "devDependencies": {
+    "@babel/core": "^7.15.8",
+    "@storybook/addon-actions": "^6.3.10",
+    "@storybook/addon-essentials": "^6.3.10",
+    "@storybook/addon-links": "^6.3.10",
+    "@storybook/react": "^6.3.10",
+    "babel-loader": "^8.2.2",
+    "lerna": "^4.0.0"
+  },
+  "workspaces": [
+    "./ui/*",
+    "website"
+  ],
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "scripts": {
+    "storybook": "start-storybook -p 6006 --modern --quiet --ci",
+    "build-storybook": "build-storybook",
+    "bootstrap": "lerna bootstrap --hoist",
+    "all:dev": "npx concurrently -n 'workspaces,storybook' 'npm run dev --workspaces' 'make localdev-storybook-in-nextjs'",
+    "build": "make build"
+  },
+  "engines": {
+    "yarn": "yarn NO LONGER USED - use npm instead.",
+    "npm": "^8",
+    "node": "^14"
+  }
+}
