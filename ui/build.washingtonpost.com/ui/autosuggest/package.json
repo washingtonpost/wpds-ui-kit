@@ -1,0 +1,26 @@
+{
+  "name": "@washingtonpost/ui-autosuggest",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "artmsilva <artmsilva@gmail.com>",
+  "homepage": "https://github.com/WPMedia/wpds-ui-kit#readme",
+  "license": "MIT",
+  "main": "lib/autosuggest.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WPMedia/wpds-ui-kit.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/WPMedia/wpds-ui-kit/issues"
+  }
+}
