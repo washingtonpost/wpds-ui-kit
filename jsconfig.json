@@ -1,9 +1,11 @@
 {
-  "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "~/*": ["./*"]
-    }
-  },
-  "exclude": ["node_modules", ".next", "coverage", "public"]
+	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": {
+			"~/*": ["./*"]
+		},
+		"sourceMap": true
+	},
+	"exclude": ["node_modules", ".next", "coverage", "public"],
+	"include": ["ui"]
 }

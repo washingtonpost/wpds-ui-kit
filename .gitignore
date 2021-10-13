@@ -107,3 +107,10 @@ dist
 storybook-static
 public
 out
+
+# ignore caches
+.jest-cache
+.parcel-cache
+
+# coverage
+jest-coverage

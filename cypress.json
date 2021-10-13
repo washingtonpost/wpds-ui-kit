@@ -1,0 +1,12 @@
+{
+  "baseUrl": "http://localhost:6006",
+  "integrationFolder": "./ui",
+  "testFiles": "**/*.spec.js",
+  "viewportWidth": 1024,
+  "viewportHeight": 768,
+  "fixturesFolder": false,
+  "pluginsFile": false,
+  "videoUploadOnPasses": false,
+  "ignoreTestFiles": "**/node_modules/**/*",
+  "waitForAnimations": true
+}
