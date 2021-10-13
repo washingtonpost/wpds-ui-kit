@@ -1,21 +1,21 @@
 {
-  "packages": ["ui/*", "website"],
-  "useWorkspaces": true,
-  "version": "0.0.0",
-  "npmClient": "npm",
-  "command": {
-    "version": {
-      "exact": true,
-      "conventionalCommits": true,
-      "message": "chore(release): publish"
-    },
-    "publish": {
-      "conventionalCommits": true,
-      "message": "chore(release): publish",
-      "npmClient": "npm",
-      "ignoreChanges": ["**/stories/**", "**/tests/**"],
-      "registry": "https://registry.npmjs.org/",
-      "allowBranch": "main"
-    }
-  }
+	"packages": ["./ui/*", "website"],
+	"useWorkspaces": true,
+	"version": "0.0.0",
+	"npmClient": "npm",
+	"command": {
+		"version": {
+			"exact": true,
+			"conventionalCommits": true,
+			"message": "chore(release): publish"
+		},
+		"publish": {
+			"conventionalCommits": true,
+			"message": "chore(release): publish",
+			"npmClient": "npm",
+			"ignoreChanges": ["**/stories/**", "**/tests/**"],
+			"registry": "https://registry.npmjs.org/",
+			"allowBranch": "main"
+		}
+	}
 }

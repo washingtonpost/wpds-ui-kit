@@ -1,33 +1,154 @@
 {
-  "name": "wpds-ui",
-  "private": true,
-  "devDependencies": {
-    "@babel/core": "^7.15.8",
-    "@storybook/addon-actions": "^6.3.10",
-    "@storybook/addon-essentials": "^6.3.10",
-    "@storybook/addon-links": "^6.3.10",
-    "@storybook/react": "^6.3.10",
-    "babel-loader": "^8.2.2",
-    "lerna": "^4.0.0"
-  },
-  "workspaces": [
-    "./ui/*",
-    "website"
-  ],
-  "dependencies": {
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
-  },
-  "scripts": {
-    "storybook": "start-storybook -p 6006 --modern --quiet --ci",
-    "build-storybook": "build-storybook",
-    "bootstrap": "lerna bootstrap --hoist",
-    "all:dev": "npx concurrently -n 'workspaces,storybook' 'npm run dev --workspaces' 'make localdev-storybook-in-nextjs'",
-    "build": "make build"
-  },
-  "engines": {
-    "yarn": "yarn NO LONGER USED - use npm instead.",
-    "npm": "^8",
-    "node": "^14"
-  }
+	"name": "wpds-ui",
+	"private": true,
+	"devDependencies": {
+		"@babel/core": "^7.15.8",
+		"@babel/preset-react": "^7.14.5",
+		"@babel/template": "^7.15.4",
+		"@size-limit/preset-small-lib": "^6.0.3",
+		"@storybook/addon-a11y": "^6.3.12",
+		"@storybook/addon-actions": "^6.3.10",
+		"@storybook/addon-essentials": "^6.3.10",
+		"@storybook/addon-links": "^6.3.10",
+		"@storybook/react": "^6.3.10",
+		"@testing-library/cypress": "^8.0.1",
+		"@testing-library/dom": "^8.9.1",
+		"@testing-library/jest-dom": "^5.14.1",
+		"@testing-library/react": "^12.1.2",
+		"@washingtonpost/cypress-commands": "^1.0.1",
+		"babel-loader": "^8.2.2",
+		"concurrently": "^6.3.0",
+		"cypress": "^8.6.0",
+		"cypress-real-events": "^1.5.1",
+		"enzyme": "^3.11.0",
+		"enzyme-adapter-react-16": "^1.15.6",
+		"eslint-plugin-jest-dom": "^3.9.2",
+		"eslint-plugin-testing-library": "^4.12.4",
+		"jest": "^27.3.0",
+		"lerna": "^4.0.0",
+		"parcel": "^2.0.0",
+		"playroom": "^0.27.6",
+		"prettier": "2.4.1",
+		"size-limit": "^6.0.3",
+		"start-server-and-test": "^1.14.0",
+		"storybook-addon-playroom": "^2.1.4"
+	},
+	"workspaces": [
+		"./ui/*",
+		"website"
+	],
+	"dependencies": {
+		"react": "^16.14.0",
+		"react-dom": "^16.14.0"
+	},
+	"scripts": {
+		"storybook": "make start-storybook",
+		"build-storybook": "build-storybook",
+		"bootstrap": "lerna bootstrap --hoist",
+		"all:dev": "make all-dev",
+		"build": "make build",
+		"playroom:start": "playroom start",
+		"playroom:build": "playroom build",
+		"test": "jest",
+		"size": "lerna run size",
+		"main-publish": "make main-publish",
+		"main-version": "make main-version",
+		"experimental-version": "make experimental-version",
+		"experimental-publish": "make experimental-publish",
+		"parcel:build": "parcel build 'ui/*' --no-cache",
+		"build:pkgs": "lerna run build",
+		"cypress:dev": "start-server-and-test storybook http://localhost:6006 cypress:open",
+		"cypress:open": "cypress open",
+		"cypress:ci": "start-server-and-test storybook http://localhost:6006 cypress:run",
+		"cypress:run": "cypress run",
+		"website:dev": "cd website;npm run dev",
+		"watch": "lerna run --stream watch",
+		"dev": "lerna run --stream dev"
+	},
+	"engines": {
+		"yarn": "yarn NO LONGER USED - use npm instead.",
+		"npm": "^8",
+		"node": "^14"
+	},
+	"prettier": {},
+	"jest": {
+		"roots": [
+			"./ui"
+		],
+		"testEnvironment": "node",
+		"cacheDirectory": ".jest-cache",
+		"collectCoverage": true,
+		"coverageDirectory": "jest-coverage",
+		"coveragePathIgnorePatterns": [
+			"/node_modules/",
+			".stories.js",
+			"index.js"
+		],
+		"coverageReporters": [
+			"html",
+			"text"
+		],
+		"coverageThreshold": {
+			"global": {
+				"branches": 80,
+				"functions": 80,
+				"lines": 80
+			}
+		},
+		"setupFilesAfterEnv": [
+			"./scripts/setupTests.js"
+		],
+		"testPathIgnorePatterns": [
+			"/node_modules/"
+		],
+		"testMatch": [
+			"**/tests/**/*.[jt]s?(x)"
+		],
+		"moduleNameMapper": {
+			"^~/(.*)$": "<rootDir>/$1"
+		}
+	},
+	"eslintConfig": {
+		"env": {
+			"browser": true,
+			"es6": true,
+			"jest/globals": true,
+			"node": true
+		},
+		"extends": [
+			"eslint:recommended",
+			"eslint-config-prettier",
+			"plugin:react/recommended",
+			"plugin:testing-library/react",
+			"plugin:testing-library/dom",
+			"plugin:jest-dom/recommended"
+		],
+		"settings": {
+			"react": {
+				"version": "detect"
+			}
+		},
+		"parser": "@babel/eslint-parser",
+		"parserOptions": {
+			"ecmaVersion": 2021,
+			"sourceType": "module"
+		},
+		"plugins": [
+			"jest",
+			"react",
+			"testing-library",
+			"jest-dom"
+		],
+		"overrides": [
+			{
+				"files": [
+					"**/__tests__/**/*.[jt]s?(x)",
+					"**/?(*.)+(spec|test).[jt]s?(x)"
+				],
+				"extends": [
+					"plugin:testing-library/react"
+				]
+			}
+		]
+	}
 }

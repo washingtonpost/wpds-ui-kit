@@ -1,0 +1,8 @@
+build
+coverage
+public
+storybook-static
+dist
+.next
+node_modules
+out

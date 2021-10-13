@@ -1,0 +1,21 @@
+version: 2
+registries:
+  npm-npmjs:
+    type: npm-registry
+    url: https://registry.npmjs.org
+    token: ${{secrets.NPM_BOT_PERSONAL_TOKEN}}
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    registries:
+      - npm-npmjs
+    schedule:
+      interval: "daily"
+    labels:
+      - "npm"
+      - "Needs review :thinking:"
+      - "dependencies"
+    reviewers:
+      - "@WPMedia/wpds-core"
+    pull-request-branch-name:
+      separator: "-"

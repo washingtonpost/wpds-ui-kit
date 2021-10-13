@@ -6,4 +6,14 @@ export const parameters = {
       date: /Date$/,
     },
   },
-}
+  playroom: {
+    url:
+      process.env.NODE_ENV === "production"
+        ? "/playroom/"
+        : "http://localhost:9000",
+  },
+  a11y: {
+    element: "#root",
+    manual: false,
+  },
+};
