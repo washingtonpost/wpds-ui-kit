@@ -2,8 +2,9 @@ localdev-storybook-in-nextjs:
 	start-storybook -p 6006 --preview-url=/storybook/iframe.html --modern --quiet --ci --force-build-preview
 
 build:
+	lerna run build --ignore website
 	build-storybook --quiet --preview-url=/storybook/iframe.html -o website/public/storybook --force-build-preview
-	lerna run build
+	lerna run build --scope website
 	npm run playroom:build
 
 all-dev:

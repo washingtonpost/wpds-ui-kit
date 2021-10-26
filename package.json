@@ -27,7 +27,7 @@
 		"jest": "^27.3.0",
 		"lerna": "^4.0.0",
 		"parcel": "^2.0.0",
-		"playroom": "^0.27.6",
+		"playroom": "0.27.6",
 		"prettier": "2.4.1",
 		"size-limit": "^6.0.3",
 		"start-server-and-test": "^1.14.0",
