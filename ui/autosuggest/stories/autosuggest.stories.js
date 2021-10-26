@@ -1,17 +1,20 @@
 import * as React from "react";
-import { AutoSuggest } from "../src/";
+import { Autosuggest } from "./../src/autosuggest";
 
 export default {
-	title: "UI/AutoSuggest",
-	component: AutoSuggest,
+	title: "UI/Autosuggest",
+	component: Autosuggest.Input,
+	subcomponents: {
+		"Autosuggest.Result": Autosuggest.Result,
+	},
 	parameters: {
 		playroom: {
-			code: "<AutoSuggest />",
+			code: "<Autosuggest.Input />",
 		},
 	},
 };
 
-const Template = (args) => <AutoSuggest {...args} />;
+const Template = (args) => <Autosuggest.Input {...args} />;
 
 export const Primary = Template.bind({});
 
