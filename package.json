@@ -27,17 +27,21 @@
 		"jest": "^27.3.0",
 		"lerna": "^4.0.0",
 		"parcel": "^2.0.0",
-		"playroom": "^0.27.6",
+		"playroom": "0.27.6",
 		"prettier": "2.4.1",
 		"size-limit": "^6.0.3",
 		"start-server-and-test": "^1.14.0",
-		"storybook-addon-playroom": "^2.1.4"
+		"storybook-addon-playroom": "^2.1.4",
+		"storybook-addon-themes": "^6.1.0",
+		"storybook-dark-mode": "^1.0.8"
 	},
 	"workspaces": [
 		"./ui/*",
 		"website"
 	],
 	"dependencies": {
+		"@stitches/react": "^1.2.5",
+		"@washingtonpost/ui-theme": "file:ui/theme",
 		"react": "^16.14.0",
 		"react-dom": "^16.14.0"
 	},
@@ -62,8 +66,7 @@
 		"cypress:ci": "start-server-and-test storybook http://localhost:6006 cypress:run",
 		"cypress:run": "cypress run",
 		"website:dev": "cd website;npm run dev",
-		"watch": "lerna run --stream watch",
-		"dev": "lerna run --stream dev"
+		"dev": "lerna run --parallel dev"
 	},
 	"engines": {
 		"yarn": "yarn NO LONGER USED - use npm instead.",
@@ -102,7 +105,7 @@
 			"/node_modules/"
 		],
 		"testMatch": [
-			"**/tests/**/*.[jt]s?(x)"
+			"**/tests/**/*.test.[jt]s?(x)"
 		],
 		"moduleNameMapper": {
 			"^~/(.*)$": "<rootDir>/$1"
