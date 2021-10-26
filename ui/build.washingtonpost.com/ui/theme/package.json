@@ -1,10 +1,10 @@
 {
-	"name": "@washingtonpost/ui-autosuggest",
+	"name": "@washingtonpost/ui-theme",
 	"version": "0.0.0",
 	"description": "> TODO: description",
 	"author": "artmsilva <artmsilva@gmail.com>",
 	"homepage": "https://github.com/WPMedia/wpds-ui-kit#readme",
-	"license": "MIT",
+	"license": "ISC",
 	"source": "src/index.js",
 	"main": "dist/cjs/index.js",
 	"module": "dist/esm/index.js",
@@ -17,7 +17,6 @@
 	"files": [
 		"dist"
 	],
-	"sideEffects": false,
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/WPMedia/wpds-ui-kit.git"
@@ -28,27 +27,13 @@
 		"build:cjs": "BABEL_ENV=cjs babel src --root-mode upward --extensions .js -d dist/cjs --source-maps",
 		"dev:cjs": "BABEL_ENV=cjs babel --watch src --root-mode upward --extensions .js -d dist/cjs --source-maps",
 		"dev:esm": "BABEL_ENV=esm babel --watch src --root-mode upward --extensions .js -d dist/esm --source-maps",
-		"size": "size-limit",
-		"size:why": "size-limit --why",
 		"build": "concurrently npm:build:*",
 		"dev": "concurrently npm:dev:*"
 	},
 	"bugs": {
 		"url": "https://github.com/WPMedia/wpds-ui-kit/issues"
 	},
-	"devDependencies": {
-		"react": "^16.14.0"
-	},
-	"peerDependencies": {
-		"react": ">=16.8.6"
-	},
 	"dependencies": {
-		"@washingtonpost/ui-theme": "file:../theme"
-	},
-	"size-limit": [
-		{
-			"limit": "1 kb",
-			"path": "dist/esm/autosuggest.js"
-		}
-	]
+		"@stitches/react": "^1.2.5"
+	}
 }

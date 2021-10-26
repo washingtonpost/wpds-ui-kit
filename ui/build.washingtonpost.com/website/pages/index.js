@@ -1,10 +1,5 @@
 function HomePage() {
-  return (
-    <div>
-      Welcome to Next.js! <a href="/storybook">Storybook</a>{" "}
-      <a href="/playroom">Playroom</a>
-    </div>
-  );
+	return <h1>Homepage</h1>;
 }
 
 export default HomePage;
