@@ -1,6 +1,18 @@
 import { createStitches } from "@stitches/react";
 import { dark, light, staticColors } from "./colors";
 
+function hexToRGB(hex, alpha) {
+	var r = parseInt(hex.slice(1, 3), 16),
+		g = parseInt(hex.slice(3, 5), 16),
+		b = parseInt(hex.slice(5, 7), 16);
+
+	if (alpha) {
+		return "rgba(" + r + ", " + g + ", " + b + ", " + alpha + ")";
+	} else {
+		return "rgb(" + r + ", " + g + ", " + b + ")";
+	}
+}
+
 // create a root font size 16px
 // rems
 
@@ -30,6 +42,9 @@ export const {
 		colors: {
 			...light,
 			...staticColors,
+			bgPrimary: "$gray600",
+			primary: "$gray80",
+			secondary: "$gray300",
 		},
 		fonts: {
 			headline: "Postoni, garamond, serif",
@@ -58,32 +73,34 @@ export const {
 		},
 		space: {
 			1: "1px", // 1px
-			75: "0.4rem", // 4px
-			100: "0.8rem", // 8px
-			125: "1.2rem", // 12px
-			150: "1.6rem", // 16px
-			175: "2.0rem", // 20px
-			200: "2.4rem", // 24px
-			225: "3.2rem", // 32px
-			250: "4.0rem", // 40px
-			275: "4.8rem", // 48px
-			300: "5.6rem", // 56px
-			325: "6.4rem", // 64px
-			350: "7.2rem", // 72px
-			375: "8.0rem", // 80px
-			400: "12rem", // 120px
+			25: "calc(1rem * 0.125)", // 2px
+			50: "calc(1rem * 0.25)", // 4px
+			75: "calc(1rem * 0.5)", // 8px
+			100: "calc(1rem * 1)", // 16px
+			125: "calc(1rem * 1.25)", // 20px
+			150: "calc(1rem * 1.5)", // 24px
+			175: "calc(1rem * 1.75)", // 28px
+			200: "calc(1rem * 2)", // 32px
+			225: "calc(1rem * 2.25)", // 36px
+			250: "calc(1rem * 2.5)", // 40px
+			275: "calc(1rem * 2.75)", // 44px
+			300: "calc(1rem * 3)", // 48px
+			325: "calc(1rem * 3.25)", // 52px
 		},
 		sizes: {
-			100: "calc(1rem * 1)",
-			125: "calc(1rem * 1.25)",
-			150: "calc(1rem * 1.5)",
-			175: "calc(1rem * 1.75)",
-			200: "calc(1rem * 2)",
-			225: "calc(1rem * 2.25)",
-			250: "calc(1rem * 2.5)",
-			275: "calc(1rem * 2.75)",
-			300: "calc(1rem * 3)",
-			325: "calc(1rem * 3.25)",
+			25: "calc(1rem * 0.125)", // 2px
+			50: "calc(1rem * 0.25)", // 4px
+			75: "calc(1rem * 0.5)", // 8px
+			100: "calc(1rem * 1)", // 16px
+			125: "calc(1rem * 1.25)", // 20px
+			150: "calc(1rem * 1.5)", // 24px
+			175: "calc(1rem * 1.75)", // 28px
+			200: "calc(1rem * 2)", // 32px
+			225: "calc(1rem * 2.25)", // 36px
+			250: "calc(1rem * 2.5)", // 40px
+			275: "calc(1rem * 2.75)", // 44px
+			300: "calc(1rem * 3)", // 48px
+			325: "calc(1rem * 3.25)", // 52px
 		},
 		radii: {
 			125: "0.125rem",
@@ -93,9 +110,13 @@ export const {
 			// border radius full (9999px)
 		},
 		transitions: {
+			allFast: "all $fast $inOut",
 			fast: "0.2s",
 			normal: "0.3s",
 			inOut: "cubic-bezier(.4, 0, .2, 1)",
+		},
+		shadows: {
+			100: "0px 2px 4px 0px rgba(64, 64, 64, 0.25)",
 		},
 	},
 	media: {
@@ -114,6 +135,10 @@ export const {
 		px: (value) => ({
 			paddingLeft: value,
 			paddingRight: value,
+		}),
+		pY: (value) => ({
+			paddingTop: value,
+			paddingBottom: value,
 		}),
 	},
 });
