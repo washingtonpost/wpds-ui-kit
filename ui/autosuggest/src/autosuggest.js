@@ -2,7 +2,7 @@ import React from "react";
 import { styled, css } from "@washingtonpost/ui-theme";
 
 const Input = styled("input", {
-	$$inputBackground: "$colors$bgPrimary",
+	$$inputBackground: "$colors$background",
 	$$inputColor: "$colors$primary",
 	$$inputBorderColor: "$colors$secondary",
 	background: "$$inputBackground",

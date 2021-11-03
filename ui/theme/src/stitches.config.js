@@ -42,7 +42,7 @@ export const {
 		colors: {
 			...light,
 			...staticColors,
-			bgPrimary: "$gray600",
+			background: "$gray600",
 			primary: "$gray80",
 			secondary: "$gray300",
 		},

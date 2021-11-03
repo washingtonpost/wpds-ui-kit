@@ -63,7 +63,7 @@ function App({ Component, pageProps }) {
 		<ThemeProvider
 			attribute="class"
 			value={{ light: "light-theme", dark: darkTheme.className }}
-			defaultTheme="system"
+			defaultTheme="light"
 		>
 			<ThemeChanger />
 			<SiteNavigation />
