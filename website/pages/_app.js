@@ -61,6 +61,7 @@ function App({ Component, pageProps }) {
 
 	return (
 		<ThemeProvider
+			disableTransitionOnChange
 			attribute="class"
 			value={{ light: "light-theme", dark: darkTheme.className }}
 			defaultTheme="light"
