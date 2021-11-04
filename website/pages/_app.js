@@ -1,25 +1,5 @@
-import { useState, useEffect } from "react";
-import { ThemeProvider } from "next-themes";
-import { useTheme } from "next-themes";
-import { darkTheme, globalStyles, styled } from "@washingtonpost/ui-theme";
-
-const ThemeChanger = () => {
-	const [mounted, setMounted] = useState(false);
-	const { theme, setTheme } = useTheme();
-
-	// When mounted on client, now we can show the UI
-	useEffect(() => setMounted(true), []);
-
-	if (!mounted) return null;
-
-	return (
-		<div>
-			The current theme is: {theme}
-			<button onClick={() => setTheme("light")}>Light Mode</button>
-			<button onClick={() => setTheme("dark")}>Dark Mode</button>
-		</div>
-	);
-};
+import App from "next/app";
+import { globalStyles, darkTheme, styled } from "@washingtonpost/ui-theme";
 
 const List = styled("ul", {
 	listStyle: "none",
@@ -56,22 +36,55 @@ const Layout = styled("div", {
 	flexDirection: "column",
 });
 
-function App({ Component, pageProps }) {
+function MyApp({ Component, pageProps }) {
 	globalStyles();
 
+	const [theme, setTheme] = React.useState(
+		pageProps.isDarkTheme ? darkTheme : "light"
+	);
+
+	const toggleTheme = () => {
+		setTheme(theme === "light" ? darkTheme : "light");
+	};
+
+	React.useEffect(() => {
+		if (theme === "light") {
+			document.cookie = "theme=light;";
+			document.querySelector("body").classList.remove(darkTheme);
+		} else {
+			document.cookie = "theme=dark;";
+			document.querySelector("body").classList.add(darkTheme);
+		}
+	}, [theme]);
+
 	return (
-		<ThemeProvider
-			disableTransitionOnChange
-			attribute="class"
-			value={{ light: "light-theme", dark: darkTheme.className }}
-		>
-			<ThemeChanger />
+		<>
+			<button
+				onClick={(event) => {
+					event.preventDefault();
+					toggleTheme();
+				}}
+			>
+				Toggle Theme
+			</button>
 			<SiteNavigation />
 			<Layout>
 				<Component {...pageProps} />
 			</Layout>
-		</ThemeProvider>
+		</>
 	);
 }
 
-export default App;
+MyApp.getInitialProps = (context) => {
+	return {
+		pageProps: {
+			...(App.getInitialProps ? App.getInitialProps(context) : {}),
+			isDarkTheme:
+				context?.ctx?.req?.cookies &&
+				Object.keys(context.ctx.req.cookies).includes("theme") &&
+				context.ctx.req.cookies.theme === "dark",
+		},
+	};
+};
+
+export default MyApp;
