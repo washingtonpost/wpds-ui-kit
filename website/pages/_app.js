@@ -64,7 +64,6 @@ function App({ Component, pageProps }) {
 			disableTransitionOnChange
 			attribute="class"
 			value={{ light: "light-theme", dark: darkTheme.className }}
-			defaultTheme="light"
 		>
 			<ThemeChanger />
 			<SiteNavigation />
