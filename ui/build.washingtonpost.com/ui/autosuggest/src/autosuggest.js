@@ -2,12 +2,9 @@ import React from "react";
 import { styled, css } from "@washingtonpost/ui-theme";
 
 const Input = styled("input", {
-	$$inputBackground: "$colors$background",
-	$$inputColor: "$colors$primary",
-	$$inputBorderColor: "$colors$secondary",
-	background: "$$inputBackground",
-	color: "$$inputColor",
-	border: "$space$1 solid $$inputBorderColor",
+	background: "$gray600",
+	color: "$gray80",
+	border: "$space$1 solid $gray300",
 	fontSize: "$100",
 	lineHeight: "$meta",
 	fontFamily: "$meta",
@@ -46,7 +43,7 @@ const Input = styled("input", {
 	variants: {
 		state: {
 			hasValue: {
-				color: "$primary",
+				color: "$gray80",
 				paddingTop: "$100",
 			},
 		},
@@ -68,7 +65,7 @@ const Label = styled("span", {
 	transition: "all $fast $inOut",
 	fontSize: "$100",
 	lineHeight: "$meta",
-	color: "$primary",
+	color: "$gray80",
 	fontFamily: "$meta",
 	fontWeight: "$light",
 	top: "50%",
@@ -211,7 +208,7 @@ const Results = styled("ul", {
 	position: "absolute",
 	fontSize: "$100",
 	zIndex: "1",
-	background: "$bgPrimary",
+	background: "$gray80",
 	width: "100%",
 });
 
