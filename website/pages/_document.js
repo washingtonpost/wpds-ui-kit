@@ -1,6 +1,10 @@
 import React from "react";
 import NextDocument, { Html, Head, Main, NextScript } from "next/document";
-import { getCssText } from "@washingtonpost/ui-theme";
+import { getCssText, darkTheme, css } from "@washingtonpost/ui-theme";
+
+const appShell = css({
+	backgroundColor: "$gray600",
+});
 
 export default class Document extends NextDocument {
 	static async getInitialProps(ctx) {
@@ -9,6 +13,8 @@ export default class Document extends NextDocument {
 	}
 
 	render() {
+		const pageProps = this.props?.__NEXT_DATA__?.props?.pageProps;
+
 		return (
 			<Html lang="en">
 				<Head>
@@ -21,14 +27,14 @@ export default class Document extends NextDocument {
 						href="https://www.washingtonpost.com/wp-stat/assets/fonts/PostoniWide-Bold.woff2"
 						as="font"
 						type="font/woff2"
-						crossorigin="anonymous"
+						crossOrigin="anonymous"
 					/>
 					<link
 						rel="preload"
 						href="https://www.washingtonpost.com/wp-stat/assets/fonts/PostoniWide-Regular.woff2"
 						as="font"
 						type="font/woff2"
-						crossorigin="anonymous"
+						crossOrigin="anonymous"
 					/>
 
 					<link
@@ -36,7 +42,7 @@ export default class Document extends NextDocument {
 						href="https://www.washingtonpost.com/wp-stat/assets/fonts/ITC_Franklin-Bold.woff2"
 						as="font"
 						type="font/woff2"
-						crossorigin="anonymous"
+						crossOrigin="anonymous"
 					/>
 
 					<link
@@ -44,7 +50,7 @@ export default class Document extends NextDocument {
 						href="https://www.washingtonpost.com/wp-stat/assets/fonts/ITC_Franklin-Light.woff2"
 						as="font"
 						type="font/woff2"
-						crossorigin="anonymous"
+						crossOrigin="anonymous"
 					/>
 					<style
 						dangerouslySetInnerHTML={{
@@ -84,10 +90,16 @@ export default class Document extends NextDocument {
 						}}
 					/>
 				</Head>
-				<body>
+				<body
+					className={`${appShell()} ${
+						pageProps.isDarkTheme ? darkTheme : ""
+					}`}
+				>
 					<Main />
 					<NextScript />
 				</body>
+
+				{/* <Body isDarkTheme={pageProps.isDarkTheme}></Body> */}
 			</Html>
 		);
 	}
