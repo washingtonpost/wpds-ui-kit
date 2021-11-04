@@ -42,9 +42,6 @@ export const {
 		colors: {
 			...light,
 			...staticColors,
-			background: "$gray600",
-			primary: "$gray80",
-			secondary: "$gray300",
 		},
 		fonts: {
 			headline: "Postoni, garamond, serif",
@@ -156,7 +153,12 @@ export const globalStyles = globalCss({
 		fontSize: "calc((var(--base) / 16) * 100%)",
 		lineHeight: "$meta",
 	},
-	"*": { margin: 0, padding: 0, boxSizing: "border-box" },
+	"*": {
+		margin: 0,
+		padding: 0,
+		boxSizing: "border-box",
+		transition: "$allFast",
+	},
 	svg: { display: "block" },
 	html: {
 		overflowX: "hidden",
