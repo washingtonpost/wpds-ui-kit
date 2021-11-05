@@ -1,4 +1,4 @@
-# @washingtonpost/react-ui
+# WPDS's UI Kit
 
 This project structure is heavily inspired by Chakra UI, Radix UI, and others.
 
@@ -17,6 +17,7 @@ This is how storybook, playroom, and next.js will be under one domain
 -   `@washingtonpost/wpds-${thing}`
 
 ## CSS Framework To Do
+
 `@washingtonpost/wpds-tokens`
 
 ```jsx
@@ -24,7 +25,7 @@ import "@washingtonpost/wpds-tokens/index.css"; (implied that dark and light tok
 ```
 
 ```css
-@import "@washingtonpost/wpds-tokens/index.css"
+@import "@washingtonpost/wpds-tokens/index.css";
 ```
 
 -   export CSS custom properties from stitches (colors, fonts, fontSizes)
