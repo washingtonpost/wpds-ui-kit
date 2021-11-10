@@ -22,9 +22,6 @@
 			"gray0": {
 				"value": "rgba(0,0,0,1)"
 			},
-			"green50": {
-				"value": "rgba(73, 138, 12, 1)"
-			},
 			"gray20": {
 				"value": "rgba(17,17,17,1)"
 			},
@@ -54,6 +51,9 @@
 			},
 			"gray600": {
 				"value": "rgba(255,255,255,1)"
+			},
+			"green50": {
+				"value": "rgba(73, 138, 12, 1)"
 			},
 			"green100": {
 				"value": "rgba(97, 161, 37, 1)"
@@ -305,9 +305,6 @@
 			"alpha50": {
 				"value": "rgba(42,42,42,.5)"
 			},
-			"gray0": {
-				"value": "rgba(0,0,0,1)"
-			},
 			"blue50": {
 				"value": "rgba(23,42,82,1)"
 			},
@@ -320,17 +317,8 @@
 			"blue300": {
 				"value": "rgba(221, 230, 242, 1)"
 			},
-			"green50": {
-				"value": "rgba(73, 138, 12, 1)"
-			},
-			"green100": {
-				"value": "rgba(97, 161, 37, 1)"
-			},
-			"green200": {
-				"value": "rgba(174, 222, 125, 1)"
-			},
-			"green300": {
-				"value": "rgba(223, 236, 211, 1)"
+			"gray0": {
+				"value": "rgba(0,0,0,1)"
 			},
 			"gray20": {
 				"value": "rgba(17,17,17,1)"
@@ -361,6 +349,18 @@
 			},
 			"gray600": {
 				"value": "rgba(255,255,255,1)"
+			},
+			"green50": {
+				"value": "rgba(73, 138, 12, 1)"
+			},
+			"green100": {
+				"value": "rgba(97, 161, 37, 1)"
+			},
+			"green200": {
+				"value": "rgba(174, 222, 125, 1)"
+			},
+			"green300": {
+				"value": "rgba(223, 236, 211, 1)"
 			},
 			"gold50": {
 				"value": "rgba(123, 78, 11, 1)"
@@ -445,6 +445,56 @@
 			},
 			"vividBlue300": {
 				"value": "rgba(239, 245, 255, 1)"
+			}
+		},
+		"theme":{
+			"primary":{
+				"value":"{gray20}"
+			},
+			"primaryVariant":{
+				"value":"{gray40}"
+			},
+			"secondary":{
+				"value":"{gray600}"
+			},
+			"secondaryVariant":{
+				"value":"{gray500}"
+			},
+			"marketing":{
+				"value":"{vividBlue100}"
+			},
+			"marketingVariant":{
+				"value":"{vividBlue200}"
+			},
+			"background":{
+				"value":"{gray600}"
+			},
+			"surface":{
+				"value":"{gray600}"
+			},
+			"error":{
+				"value":"{red100}"
+			},
+			"signal":{
+				"value":"{blue200}"
+			},
+			"onPrimary":{
+				"value":"{gray20}"
+			},
+			"onSecondary":{
+				"value":"{gray600}"
+			},
+			"onMarketing":{
+				"value":"{gray600}"
+			},
+			"onBackground":{
+				"value":"{gray20}"
+			},
+			"onSurface":{
+				"value":"{gray20}"
+			},
+			"onError":{
+				"value":"{gray600}"
 			}
 		}
 	},
