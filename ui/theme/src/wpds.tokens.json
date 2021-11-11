@@ -447,54 +447,54 @@
 				"value": "rgba(239, 245, 255, 1)"
 			}
 		},
-		"theme":{
-			"primary":{
-				"value":"{gray20}"
+		"theme": {
+			"primary": {
+				"value": "{gray20}"
 			},
-			"primaryVariant":{
-				"value":"{gray40}"
+			"primaryVariant": {
+				"value": "{gray40}"
 			},
-			"secondary":{
-				"value":"{gray600}"
+			"secondary": {
+				"value": "{gray600}"
 			},
-			"secondaryVariant":{
-				"value":"{gray500}"
+			"secondaryVariant": {
+				"value": "{gray500}"
 			},
-			"marketing":{
-				"value":"{vividBlue100}"
+			"marketing": {
+				"value": "{vividBlue100}"
 			},
-			"marketingVariant":{
-				"value":"{vividBlue200}"
+			"marketingVariant": {
+				"value": "{vividBlue200}"
 			},
-			"background":{
-				"value":"{gray600}"
+			"background": {
+				"value": "{gray600}"
 			},
-			"surface":{
-				"value":"{gray600}"
+			"surface": {
+				"value": "{gray600}"
 			},
-			"error":{
-				"value":"{red100}"
+			"error": {
+				"value": "{red100}"
 			},
-			"signal":{
-				"value":"{blue200}"
+			"signal": {
+				"value": "{blue200}"
 			},
-			"onPrimary":{
-				"value":"{gray20}"
+			"onPrimary": {
+				"value": "{gray20}"
 			},
-			"onSecondary":{
-				"value":"{gray600}"
+			"onSecondary": {
+				"value": "{gray600}"
 			},
-			"onMarketing":{
-				"value":"{gray600}"
+			"onMarketing": {
+				"value": "{gray600}"
 			},
-			"onBackground":{
-				"value":"{gray20}"
+			"onBackground": {
+				"value": "{gray20}"
 			},
-			"onSurface":{
-				"value":"{gray20}"
+			"onSurface": {
+				"value": "{gray20}"
 			},
-			"onError":{
-				"value":"{gray600}"
+			"onError": {
+				"value": "{gray600}"
 			}
 		}
 	},
