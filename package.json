@@ -37,7 +37,7 @@
 	},
 	"workspaces": [
 		"./ui/*",
-		"website"
+		"./website"
 	],
 	"dependencies": {
 		"@stitches/react": "^1.2.5",
