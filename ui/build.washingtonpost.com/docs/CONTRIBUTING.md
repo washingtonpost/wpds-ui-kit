@@ -15,7 +15,7 @@ Good resources on testing:
 
 Avoid writing "render" or "display" unit or cypress tests. Leverage our "Tests" stories in Storybook for this. Those UI tests will be tested in Chromatic.
 
--   [ ] Add a new ssr-test to `website/pages/<component-name>.js`
+-   [ ] Add a new ssr-test to `pages/<component-name>.js`
 -   [ ] Add a new component variation to the existing UI "Tests" `ui/<component-name>/stories/<component-name>.js`
 -   [ ] Add a new integration test to `ui/<component-name>/tests/<component-name>.spec.js`
 -   [ ] Add a new unit test to `ui/<component-name>/tests/<component-name>.test.js`

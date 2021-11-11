@@ -4,7 +4,7 @@ const buildAssign = template.smart(
 	"Object.assign(COMPONENT, { displayName: DISPLAY_NAME });"
 );
 
-const pureDisplayNames = () => ({
+export const pureDisplayNames = () => ({
 	visitor: {
 		AssignmentExpression(path) {
 			if (
@@ -21,11 +21,3 @@ const pureDisplayNames = () => ({
 		},
 	},
 });
-
-module.exports = {
-	presets: [
-		["@babel/preset-env", { targets: { node: "current" } }],
-		["@babel/preset-react", { targets: { node: "current" } }],
-	],
-	plugins: [pureDisplayNames],
-};

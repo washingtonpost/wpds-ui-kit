@@ -1,10 +1,10 @@
 {
-	"name": "@washingtonpost/ui-autosuggest",
-	"version": "0.1.0-experimental.1",
+	"name": "@washingtonpost/ui-icon",
+	"version": "0.0.0",
 	"description": "> TODO: description",
 	"author": "artmsilva <artmsilva@gmail.com>",
 	"homepage": "https://github.com/WPMedia/wpds-ui-kit#readme",
-	"license": "MIT",
+	"license": "ISC",
 	"source": "src/index.ts",
 	"main": "dist/index.js",
 	"module": "dist/index.module.js",
@@ -19,9 +19,7 @@
 		"url": "git+https://github.com/WPMedia/wpds-ui-kit.git"
 	},
 	"scripts": {
-		"test": "echo \"Error: run tests from root\" && exit 1",
-		"size": "size-limit",
-		"size:why": "size-limit --why"
+		"test": "echo \"Error: run tests from root\" && exit 1"
 	},
 	"bugs": {
 		"url": "https://github.com/WPMedia/wpds-ui-kit/issues"
@@ -35,11 +33,5 @@
 	"dependencies": {
 		"@babel/runtime": "^7.13.10",
 		"@washingtonpost/ui-theme": "file:../theme"
-	},
-	"size-limit": [
-		{
-			"limit": "1 kb",
-			"path": "dist/esm/autosuggest.js"
-		}
-	]
+	}
 }
