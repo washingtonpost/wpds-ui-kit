@@ -1,20 +1,5 @@
-import { createStitches } from "@stitches/react";
-import {
-	base,
-	light,
-	dark,
-	staticColors,
-	defaultTheme,
-	spaces,
-	sizes,
-	radii,
-	shadows,
-	fontSizes,
-	fontWeights,
-	fonts,
-	lineHeights,
-	zIndices
-} from "./dist/tokens";
+import * as stitches from "@stitches/react";
+import * as tokens from "./tokens.js";
 
 export const {
 	styled,
@@ -25,33 +10,33 @@ export const {
 	theme,
 	createTheme,
 	config,
-} = createStitches({
+} = stitches.createStitches({
 	theme: {
 		colors: {
-			...light,
-			...staticColors,
-			...defaultTheme,
+			...tokens.light,
+			...tokens.staticColors,
+			...tokens.defaultTheme,
 		},
 		sizes: {
-			...sizes,
+			...tokens.sizes,
 		},
 		space: {
-			...spaces,
+			...tokens.spaces,
 		},
 		radii: {
-			...radii,
+			...tokens.radii,
 		},
 		fonts: {
-			...fonts,
+			...tokens.fonts,
 		},
 		fontSizes: {
-			...fontSizes,
+			...tokens.fontSizes,
 		},
 		fontWeights: {
-			...fontWeights,
+			...tokens.fontWeights,
 		},
 		lineHeights: {
-			...lineHeights,
+			...tokens.lineHeights,
 			headline: "$110",
 			body: "$160",
 			meta: "$125",
@@ -64,13 +49,13 @@ export const {
 			inOut: "cubic-bezier(.4, 0, .2, 1)",
 		},
 		shadows: {
-			...shadows,
+			...tokens.shadows,
 		},
 		borderStyles: {},
 		borderWidths: {},
 		letterSpacings: {},
 		zIndices: {
-			...zIndices
+			...tokens.zIndices
 		},
 	},
 	media: {
@@ -86,11 +71,11 @@ export const {
 		light: "(prefers-color-scheme: light)",
 	},
 	utils: {
-		px: (value) => ({
+		px: (value: any) => ({
 			paddingLeft: value,
 			paddingRight: value,
 		}),
-		pY: (value) => ({
+		pY: (value: any) => ({
 			paddingTop: value,
 			paddingBottom: value,
 		}),
@@ -99,15 +84,15 @@ export const {
 
 export const darkTheme = createTheme("dark", {
 	colors: {
-		...dark,
-		...staticColors,
-		...defaultTheme,
+		...tokens.dark,
+		...tokens.staticColors,
+		...tokens.defaultTheme,
 	},
 });
 
 export const globalStyles = globalCss({
 	":root": {
-		"--base": `${base}`,
+		"--base": `${tokens.base}`,
 		fontSize: "calc((var(--base) / 16) * 100%)",
 		lineHeight: "$meta",
 	},
@@ -152,7 +137,7 @@ export const globalStyles = globalCss({
 	],
 	// "@dark": {
 	// 	":root:not(.light)": {
-	// 		...Object.keys(darkTheme.colors).reduce(
+	// 		...tokens.Object.keys(darkTheme.colors).reduce(
 	// 			(varSet, currentColorKey) => {
 	// 				const currentColor = darkTheme.colors[currentColorKey];
 	// 				const currentColorValue =
@@ -162,7 +147,7 @@ export const globalStyles = globalCss({
 
 	// 				return {
 	// 					[currentColor.variable]: currentColorValue,
-	// 					...varSet,
+	// 					...tokens.varSet,
 	// 				};
 	// 			},
 	// 			{}

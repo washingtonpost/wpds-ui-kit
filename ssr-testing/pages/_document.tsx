@@ -1,6 +1,6 @@
 import React from "react";
 import NextDocument, { Html, Head, Main, NextScript } from "next/document";
-import { getCssText, darkTheme, css } from "@washingtonpost/ui-theme";
+import { getCssText, css } from "@washingtonpost/ui-theme";
 
 const appShell = css({
 	backgroundColor: "$gray600",

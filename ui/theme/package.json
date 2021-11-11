@@ -5,37 +5,29 @@
 	"author": "artmsilva <artmsilva@gmail.com>",
 	"homepage": "https://github.com/WPMedia/wpds-ui-kit#readme",
 	"license": "ISC",
-	"source": "src/index.js",
-	"main": "dist/cjs/index.js",
-	"module": "dist/esm/index.js",
-	"exports": {
-		".": {
-			"require": "./dist/cjs/index.js",
-			"default": "./dist/esm/index.js"
-		}
-	},
+	"source": "src/index.ts",
+	"main": "dist/index.js",
+	"module": "dist/index.module.js",
+	"types": "dist/index.d.ts",
 	"files": [
-		"dist"
+		"dist",
+		"README.md"
 	],
+	"sideEffects": false,
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/WPMedia/wpds-ui-kit.git"
 	},
 	"scripts": {
-		"test": "echo \"Error: run tests from root\" && exit 1",
-		"build:esm": "BABEL_ENV=esm babel src --root-mode upward --extensions .js -d dist/esm --source-maps",
-		"build:cjs": "BABEL_ENV=cjs babel src --root-mode upward --extensions .js -d dist/cjs --source-maps",
-		"dev:cjs": "BABEL_ENV=cjs babel --watch src --root-mode upward --extensions .js -d dist/cjs --source-maps",
-		"dev:esm": "BABEL_ENV=esm babel --watch src --root-mode upward --extensions .js -d dist/esm --source-maps",
-		"dev:transform": "node build/transform.js",
 		"build:transform": "node build/transform.js",
-		"build": "concurrently npm:build:*",
-		"dev": "concurrently npm:dev:*"
+		"build": "npm run build:transform",
+		"test": "echo \"Error: run tests from root\" && exit 1"
 	},
 	"bugs": {
 		"url": "https://github.com/WPMedia/wpds-ui-kit/issues"
 	},
 	"dependencies": {
+		"@babel/runtime": "^7.13.10",
 		"@stitches/react": "^1.2.5"
 	}
 }
