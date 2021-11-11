@@ -114,3 +114,5 @@ out
 
 # coverage
 jest-coverage
+
+.DS_Store
