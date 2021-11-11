@@ -13,10 +13,8 @@ export default class Document extends NextDocument {
 	}
 
 	render() {
-		const pageProps = this.props?.__NEXT_DATA__?.props?.pageProps;
-
 		return (
-			<Html lang="en">
+			<Html lang="en" className={appShell()}>
 				<Head>
 					<style
 						id="stitches"
@@ -90,16 +88,10 @@ export default class Document extends NextDocument {
 						}}
 					/>
 				</Head>
-				<body
-					className={`${appShell()} ${
-						pageProps.isDarkTheme ? darkTheme : ""
-					}`}
-				>
+				<body>
 					<Main />
 					<NextScript />
 				</body>
-
-				{/* <Body isDarkTheme={pageProps.isDarkTheme}></Body> */}
 			</Html>
 		);
 	}

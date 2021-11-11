@@ -27,6 +27,8 @@
 		"build:cjs": "BABEL_ENV=cjs babel src --root-mode upward --extensions .js -d dist/cjs --source-maps",
 		"dev:cjs": "BABEL_ENV=cjs babel --watch src --root-mode upward --extensions .js -d dist/cjs --source-maps",
 		"dev:esm": "BABEL_ENV=esm babel --watch src --root-mode upward --extensions .js -d dist/esm --source-maps",
+		"dev:transform": "node build/transform.js",
+		"build:transform": "node build/transform.js",
 		"build": "concurrently npm:build:*",
 		"dev": "concurrently npm:dev:*"
 	},
