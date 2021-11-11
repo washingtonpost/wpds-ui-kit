@@ -3,9 +3,10 @@ localdev-storybook-in-nextjs:
 
 build:
 	lerna run build --ignore website
-	build-storybook --quiet --preview-url=/storybook/iframe.html -o website/public/storybook --force-build-preview
-	lerna run build --scope website
-	npm run playroom:build
+	npm run build:packages
+	# build-storybook --quiet --preview-url=/storybook/iframe.html -o public/storybook --force-build-preview
+	lerna run build --scope ssr-testing
+	# npm run playroom:build
 
 all-dev:
 	npx concurrently -n 'workspaces,playroom,storybook,website' 'npm run dev --workspaces' 'npm run playroom:start' 'make localdev-storybook-in-nextjs' 'npm run website:dev'

@@ -136,7 +136,7 @@ createTransformTokens();
 function createTransformTokens(){
 	try {
 		buildTokens();
-		fs.mkdir(path(__dirname,'../src/dist'),(err,data)=>{
+		fs.mkdir(path(__dirname,'../src'),(err,data)=>{
 			// const TokenArray=[light,dark,staticColors,theme,sizes,space,radii,fonts,fontSizes,fontWeights,shadow]
 			// let JSONArray = JSON.stringify(TokenArray, null, 2);
 			let Data=`
@@ -155,8 +155,8 @@ function createTransformTokens(){
 			export const shadows=${JSON.stringify(shadows)}
 			export const zIndices=${JSON.stringify(zIndex)}
 			`
-			fs.writeFile(path(__dirname,'../src/dist/tokens.js'), Data, "utf8", (err, data) => {
-			  console.log("Created token file in ../src/dist/tokens.js");
+			fs.writeFile(path(__dirname,'../src/tokens.js'), Data, "utf8", (err, data) => {
+			  console.log("Created token file in ../src/tokens.js");
 			});
 		  })
 	} catch (error) {
