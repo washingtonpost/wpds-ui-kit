@@ -1,0 +1,23 @@
+{
+	"name": "ssr-testing",
+	"version": "0.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"build": "next build",
+		"dev": "next dev"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"react": "^16.14.0",
+		"react-dom": "^16.14.0",
+		"next": "^10.1.3"
+	},
+	"devDependencies": {
+		"@types/react": "^17.0.35",
+		"typescript": "^4.5.2",
+		"@washingtonpost/ui-theme": "latest"
+	}
+}

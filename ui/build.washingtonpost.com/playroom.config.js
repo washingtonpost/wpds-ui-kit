@@ -1,6 +1,6 @@
 module.exports = {
 	components: "./ui/autosuggest",
-	outputPath: "./website/public/playroom",
+	outputPath: "./public/playroom",
 	openBrowser: false,
 	baseUrl:
 		process.env.NODE_ENV === "production"

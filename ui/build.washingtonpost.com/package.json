@@ -3,8 +3,13 @@
 	"private": true,
 	"devDependencies": {
 		"@babel/core": "^7.15.8",
+		"@babel/plugin-transform-typescript": "^7.16.1",
 		"@babel/preset-react": "^7.14.5",
 		"@babel/template": "^7.15.4",
+		"@parcel/babel-plugin-transform-runtime": "^2.0.1",
+		"@parcel/babel-preset-env": "^2.0.1",
+		"@parcel/packager-ts": "^2.0.1",
+		"@parcel/transformer-typescript-types": "^2.0.1",
 		"@size-limit/preset-small-lib": "^6.0.3",
 		"@storybook/addon-a11y": "^6.3.12",
 		"@storybook/addon-actions": "^6.3.10",
@@ -15,6 +20,8 @@
 		"@testing-library/dom": "^8.9.1",
 		"@testing-library/jest-dom": "^5.14.1",
 		"@testing-library/react": "^12.1.2",
+		"@types/react": "^17.0.34",
+		"@types/react-dom": "^17.0.11",
 		"@washingtonpost/cypress-commands": "^1.0.1",
 		"babel-loader": "^8.2.2",
 		"concurrently": "^6.3.0",
@@ -26,26 +33,31 @@
 		"eslint-plugin-testing-library": "^4.12.4",
 		"jest": "^27.3.0",
 		"lerna": "^4.0.0",
-		"parcel": "^2.0.0",
+		"next": "^12.0.4",
+		"parcel": "^2.0.1",
 		"playroom": "0.27.6",
 		"prettier": "2.4.1",
 		"size-limit": "^6.0.3",
 		"start-server-and-test": "^1.14.0",
 		"storybook-addon-playroom": "^2.1.4",
 		"storybook-addon-themes": "^6.1.0",
-		"storybook-dark-mode": "^1.0.8"
+		"storybook-dark-mode": "^1.0.8",
+		"typescript": "^4.4.4"
 	},
 	"workspaces": [
 		"./ui/*",
-		"./website"
+		"./ssr-testing"
 	],
 	"dependencies": {
 		"@stitches/react": "^1.2.5",
 		"@washingtonpost/ui-theme": "file:ui/theme",
+		"@washingtonpost/ui-autosuggest": "latest",
 		"react": "^16.14.0",
 		"react-dom": "^16.14.0"
 	},
 	"scripts": {
+		"build:packages": "parcel build 'ui/*/' --log-level verbose --no-cache",
+		"dev:packages": "parcel 'ui/*/' --log-level verbose --no-cache",
 		"storybook": "make start-storybook",
 		"build-storybook": "build-storybook",
 		"bootstrap": "lerna bootstrap --hoist",
@@ -65,7 +77,8 @@
 		"cypress:open": "cypress open",
 		"cypress:ci": "start-server-and-test storybook http://localhost:6006 cypress:run",
 		"cypress:run": "cypress run",
-		"website:dev": "cd website;npm run dev",
+		"website:dev": "lerna run dev --scope ssr-testing --stream",
+		"website:build": "lerna run build --scope ssr-testing --stream",
 		"dev": "lerna run --parallel dev"
 	},
 	"engines": {
