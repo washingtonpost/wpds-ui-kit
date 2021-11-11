@@ -1,26 +1,19 @@
 import { createStitches } from "@stitches/react";
-import { dark, light, staticColors } from "./colors";
-
-function hexToRGB(hex, alpha) {
-	var r = parseInt(hex.slice(1, 3), 16),
-		g = parseInt(hex.slice(3, 5), 16),
-		b = parseInt(hex.slice(5, 7), 16);
-
-	if (alpha) {
-		return "rgba(" + r + ", " + g + ", " + b + ", " + alpha + ")";
-	} else {
-		return "rgb(" + r + ", " + g + ", " + b + ")";
-	}
-}
-
-// create a root font size 16px
-// rems
-
-// border radius 8 named tokens for rems
-// radii$125
-// border radius full (9999px)
-
-// shadows 1, 2, 3
+import {
+	base,
+	light,
+	dark,
+	staticColors,
+	defaultTheme,
+	spaces,
+	sizes,
+	radii,
+	shadows,
+	fontSizes,
+	fontWeights,
+	fonts,
+	lineHeights,
+} from "./dist/tokens";
 
 // border width 1 (1px)
 
@@ -42,69 +35,32 @@ export const {
 		colors: {
 			...light,
 			...staticColors,
+			...defaultTheme,
+		},
+		sizes: {
+			...sizes,
+		},
+		space: {
+			...spaces,
+		},
+		radii: {
+			...radii,
 		},
 		fonts: {
-			headline: "Postoni, garamond, serif",
-			body: "georgia, Times New Roman, serif",
-			meta: "Franklin, arial, sans-serif",
-			subhead: "$meta",
+			...fonts,
 		},
 		fontSizes: {
-			50: "calc((12 / var(--base) * 1rem))",
-			75: "calc((14 / var(--base) * 1rem))",
-			100: "calc((16 / var(--base) * 1rem))",
-			125: "calc((18 / var(--base) * 1rem))",
-			150: "calc((20 / var(--base) * 1rem))",
+			...fontSizes,
 		},
 		fontWeights: {
-			light: 300,
+			...fontWeights,
 		},
 		lineHeights: {
-			110: "1.10",
-			125: "1.25",
-			160: "1.60",
+			...lineHeights,
 			headline: "$110",
 			body: "$160",
 			meta: "$125",
 			subhead: "$meta",
-		},
-		space: {
-			1: "1px", // 1px
-			25: "calc(1rem * 0.125)", // 2px
-			50: "calc(1rem * 0.25)", // 4px
-			75: "calc(1rem * 0.5)", // 8px
-			100: "calc(1rem * 1)", // 16px
-			125: "calc(1rem * 1.25)", // 20px
-			150: "calc(1rem * 1.5)", // 24px
-			175: "calc(1rem * 1.75)", // 28px
-			200: "calc(1rem * 2)", // 32px
-			225: "calc(1rem * 2.25)", // 36px
-			250: "calc(1rem * 2.5)", // 40px
-			275: "calc(1rem * 2.75)", // 44px
-			300: "calc(1rem * 3)", // 48px
-			325: "calc(1rem * 3.25)", // 52px
-		},
-		sizes: {
-			25: "calc(1rem * 0.125)", // 2px
-			50: "calc(1rem * 0.25)", // 4px
-			75: "calc(1rem * 0.5)", // 8px
-			100: "calc(1rem * 1)", // 16px
-			125: "calc(1rem * 1.25)", // 20px
-			150: "calc(1rem * 1.5)", // 24px
-			175: "calc(1rem * 1.75)", // 28px
-			200: "calc(1rem * 2)", // 32px
-			225: "calc(1rem * 2.25)", // 36px
-			250: "calc(1rem * 2.5)", // 40px
-			275: "calc(1rem * 2.75)", // 44px
-			300: "calc(1rem * 3)", // 48px
-			325: "calc(1rem * 3.25)", // 52px
-		},
-		radii: {
-			125: "0.125rem",
-			full: "9999px",
-			// border radius 8 named tokens for rems
-			// radii$125
-			// border radius full (9999px)
 		},
 		transitions: {
 			allFast: "all $fast $inOut",
@@ -113,7 +69,7 @@ export const {
 			inOut: "cubic-bezier(.4, 0, .2, 1)",
 		},
 		shadows: {
-			100: "0px 2px 4px 0px rgba(64, 64, 64, 0.25)",
+			...shadows,
 		},
 	},
 	media: {
@@ -140,16 +96,17 @@ export const {
 	},
 });
 
-export const darkTheme = createTheme("dark-theme", {
+export const darkTheme = createTheme("dark", {
 	colors: {
 		...dark,
 		...staticColors,
+		...defaultTheme,
 	},
 });
 
 export const globalStyles = globalCss({
 	":root": {
-		"--base": 16,
+		"--base": `${base}`,
 		fontSize: "calc((var(--base) / 16) * 100%)",
 		lineHeight: "$meta",
 	},
@@ -193,4 +150,24 @@ export const globalStyles = globalCss({
 			src: "url(https://www.washingtonpost.com/wp-stat/assets/fonts/ITC_Franklin-Light.woff2)",
 		},
 	],
+	"@dark": {
+		// notice the `media` definition on the stitches.config.ts file
+		":root:not(.light)": {
+			...Object.keys(darkTheme.colors).reduce(
+				(varSet, currentColorKey) => {
+					const currentColor = darkTheme.colors[currentColorKey];
+					const currentColorValue =
+						currentColor.value.substring(0, 1) === "$"
+							? `$colors${currentColor.value}`
+							: currentColor.value;
+
+					return {
+						[currentColor.variable]: currentColorValue,
+						...varSet,
+					};
+				},
+				{}
+			),
+		},
+	},
 });

@@ -449,131 +449,214 @@
 		},
 		"theme": {
 			"primary": {
-				"value": "{gray20}"
+				"value": "{gray20}",
+				"description": "Reference color token name for either light or dark mode",
+				"stitches": "$gray20"
 			},
 			"primaryVariant": {
-				"value": "{gray40}"
+				"value": "{gray40}",
+				"description": "Reference color token name for either light or dark mode",
+				"stitches": "$gray40"
 			},
 			"secondary": {
-				"value": "{gray600}"
+				"value": "{gray600}",
+				"description": "Reference color token name for either light or dark mode",
+				"stitches": "$gray600"
 			},
 			"secondaryVariant": {
-				"value": "{gray500}"
+				"value": "{gray500}",
+				"description": "Reference color token name for either light or dark mode",
+				"stitches": "$gray500"
 			},
 			"marketing": {
-				"value": "{vividBlue100}"
+				"value": "{vividBlue100}",
+				"description": "Reference color token name for either light or dark mode",
+				"stitches": "$vividBlue100"
 			},
 			"marketingVariant": {
-				"value": "{vividBlue200}"
+				"value": "{vividBlue200}",
+				"description": "Reference color token name for either light or dark mode",
+				"stitches": "$vividBlue200"
 			},
 			"background": {
-				"value": "{gray600}"
+				"value": "{gray600}",
+				"description": "Reference color token name for either light or dark mode",
+				"stitches": "$vividBlue200"
 			},
 			"surface": {
-				"value": "{gray600}"
+				"value": "{gray600}",
+				"description": "Reference color token name for either light or dark mode",
+				"stitches": "$gray600"
 			},
 			"error": {
-				"value": "{red100}"
+				"value": "{red100}",
+				"description": "Reference color token name for either light or dark mode",
+				"stitches": "$red100"
 			},
 			"signal": {
-				"value": "{blue200}"
+				"value": "{blue200}",
+				"description": "Reference color token name for either light or dark mode",
+				"stitches": "$blue200"
 			},
 			"onPrimary": {
-				"value": "{gray20}"
+				"value": "{gray20}",
+				"description": "Reference color token name for either light or dark mode",
+				"stitches": "$gray20"
 			},
 			"onSecondary": {
-				"value": "{gray600}"
+				"value": "{gray600}",
+				"description": "Reference color token name for either light or dark mode",
+				"stitches": "$gray20"
 			},
 			"onMarketing": {
-				"value": "{gray600}"
+				"value": "{gray600}",
+				"description": "Reference color token name for either light or dark mode",
+				"stitches": "$gray20"
 			},
 			"onBackground": {
-				"value": "{gray20}"
+				"value": "{gray20}",
+				"description": "Reference color token name for either light or dark mode",
+				"stitches": "$gray20"
 			},
 			"onSurface": {
-				"value": "{gray20}"
+				"value": "{gray20}",
+				"description": "Reference color token name for either light or dark mode",
+				"stitches": "$gray20"
 			},
 			"onError": {
-				"value": "{gray600}"
+				"value": "{gray600}",
+				"description": "Reference color token name for either light or dark mode",
+				"stitches": "$gray20"
 			}
 		}
 	},
+	"baseSize": {
+		"value": "16px"
+	},
 	"size": {
-		"base": {
-			"value": 16,
-			"description": "Defines the entire size scale"
-		},
+		"description": "Defines the entire size scale",
 		"025": {
-			"value": 0.25,
+			"value": "0.25rem",
 			"description": "Our smallest size"
 		},
 		"050": {
-			"value": 0.5,
+			"value": "0.5rem",
 			"description": "50% of the base value"
 		},
 		"075": {
-			"value": 0.75,
+			"value": "0.75rem",
 			"description": "75% of the base value"
 		},
 		"087": {
-			"value": 0.875,
+			"value": "0.875rem",
 			"description": "87.5% of the base value"
 		},
 		"100": {
-			"value": 1,
+			"value": "1rem",
 			"description": "100% of the base value"
 		},
 		"110": {
-			"value": 1.1,
+			"value": "1.1rem",
 			"description": "110% of the base value"
 		},
 		"125": {
-			"value": 1.25,
+			"value": "1.25rem",
 			"description": "125% of the base value"
 		},
 		"150": {
-			"value": 1.5,
+			"value": "1.5rem",
 			"description": "150% of the base value"
 		},
 		"175": {
-			"value": 1.75,
+			"value": "1.75rem",
 			"description": "175% of the base value"
 		},
 		"200": {
-			"value": 2,
+			"value": "2rem",
 			"description": "200% of the base value"
 		},
 		"225": {
-			"value": 2.25,
+			"value": "2.25rem",
 			"description": "225% of the base value"
 		},
 		"250": {
-			"value": 2.5,
+			"value": "2.5rem",
 			"description": "250% of the base value"
 		},
 		"275": {
-			"value": 2.75,
+			"value": "2.75rem",
 			"description": "275% of the base value"
 		},
 		"300": {
-			"value": 3,
+			"value": "3rem",
 			"description": "300% of the base value"
 		},
 		"350": {
-			"value": 3.5,
+			"value": "3.5rem",
 			"description": "350% of the base value"
 		},
 		"400": {
-			"value": 4,
+			"value": "4rem",
 			"description": "400% of the base value"
 		},
 		"450": {
-			"value": 4.5,
+			"value": "4.5rem",
 			"description": "450% of the base value"
 		},
 		"500": {
-			"value": 500,
+			"value": "5rem",
 			"description": "500% of the base value"
+		}
+	},
+	"space": {
+		"description": "Inherits the base size value",
+		"025": {
+			"value": "{size.025}"
+		},
+		"050": {
+			"value": "{size.050}"
+		},
+		"075": {
+			"value": "{size.075}"
+		},
+		"100": {
+			"value": "{size.100}"
+		},
+		"125": {
+			"value": "{size.125}"
+		},
+		"150": {
+			"value": "{size.150}"
+		},
+		"175": {
+			"value": "{size.175}"
+		},
+		"200": {
+			"value": "{size.200}"
+		},
+		"225": {
+			"value": "{size.225}"
+		},
+		"250": {
+			"value": "{size.250}"
+		},
+		"275": {
+			"value": "{size.275}"
+		},
+		"300": {
+			"value": "{size.300}"
+		},
+		"350": {
+			"value": "{size.350}"
+		},
+		"400": {
+			"value": "{size.400}"
+		},
+		"450": {
+			"value": "{size.450}"
+		},
+		"500": {
+			"value": "{size.500}"
 		}
 	},
 	"fonts": {
@@ -588,21 +671,18 @@
 		}
 	},
 	"fontSize": {
-		"base": {
-			"value": "{size.base}",
-			"description": "Inherits the base size value"
-		},
+		"description": "Inherits the base size value",
 		"075": {
 			"value": "{size.075}"
 		},
 		"087": {
-			"value": 0.875
+			"value": "0.875rem"
 		},
 		"100": {
 			"value": "{size.100}"
 		},
 		"112": {
-			"value": 1.125
+			"value": "1.125rem"
 		},
 		"125": {
 			"value": "{size.125}"
@@ -676,6 +756,33 @@
 		},
 		"240": {
 			"value": 2.4
+		}
+	},
+	"radii": {
+		"description": "Inherits the base size value",
+		"012": {
+			"value": "0.125rem"
+		},
+		"025": {
+			"value": "{size.025}"
+		},
+		"050": {
+			"value": "{size.050}"
+		},
+		"075": {
+			"value": "{size.075}"
+		},
+		"100": {
+			"value": "{size.100}"
+		},
+		"125": {
+			"value": "{size.125}"
+		},
+		"150": {
+			"value": "{size.150}"
+		},
+		"round": {
+			"value": "9999px"
 		}
 	},
 	"shadow": {

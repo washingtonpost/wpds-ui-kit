@@ -1,5 +1,46 @@
 import * as React from "react";
 import { Autosuggest } from "../src/autosuggest";
+import { tokens } from "@washingtonpost/ui-theme";
+
+function createStitchesTokens(input) {
+	const light = {};
+	const dark = {};
+	const staticColors = {};
+	const sizes = {};
+	const space = {};
+	const radii = {};
+
+	Object.keys(input.color).forEach((color) => {
+		Object.keys(input.color[color]).forEach((key) => {
+			if (color === "light") {
+				light[key] = input.color[color][key].value;
+			}
+
+			if (color === "dark") {
+				dark[key] = input.color[color][key].value;
+			}
+
+			if (color === "static") {
+				staticColors[`${key}static`] = input.color[color][key].value;
+			}
+		});
+
+		return color;
+	});
+
+	Object.keys(input.size).forEach((size) => {
+		// console.log(size, input.size[size].value);
+		sizes[size] = `calc(1rem * ${input.size[size].value}`; // calc(1rem * 0.125)
+		space[size] = input.size[size].value;
+		radii[size] = input.size[size].value;
+	});
+
+	console.log(sizes, space, radii);
+
+	return { light, dark, staticColors, sizes, space, radii };
+}
+
+createStitchesTokens(tokens);
 
 export default {
 	title: "UI/Autosuggest",

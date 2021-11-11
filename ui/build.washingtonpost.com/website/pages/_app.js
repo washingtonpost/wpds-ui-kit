@@ -1,5 +1,23 @@
-import App from "next/app";
+import { ThemeProvider, useTheme } from "next-themes";
 import { globalStyles, darkTheme, styled } from "@washingtonpost/ui-theme";
+import { useEffect, useState } from "react";
+
+export const ThemeToggle = () => {
+	const [mounted, setMounted] = useState(false);
+	const { setTheme, resolvedTheme } = useTheme();
+
+	useEffect(() => setMounted(true), []);
+
+	if (!mounted) return null;
+
+	const toggleTheme = () => {
+		const targetTheme = resolvedTheme === "light" ? "dark" : "light";
+
+		setTheme(targetTheme);
+	};
+
+	return <button onClick={toggleTheme}>Switch theme</button>;
+};
 
 const List = styled("ul", {
 	listStyle: "none",
@@ -39,52 +57,22 @@ const Layout = styled("div", {
 function MyApp({ Component, pageProps }) {
 	globalStyles();
 
-	const [theme, setTheme] = React.useState(
-		pageProps.isDarkTheme ? darkTheme : "light"
-	);
-
-	const toggleTheme = () => {
-		setTheme(theme === "light" ? darkTheme : "light");
-	};
-
-	React.useEffect(() => {
-		if (theme === "light") {
-			document.cookie = "theme=light;";
-			document.querySelector("body").classList.remove(darkTheme);
-		} else {
-			document.cookie = "theme=dark;";
-			document.querySelector("body").classList.add(darkTheme);
-		}
-	}, [theme]);
-
 	return (
-		<>
-			<button
-				onClick={(event) => {
-					event.preventDefault();
-					toggleTheme();
-				}}
-			>
-				Toggle Theme
-			</button>
+		<ThemeProvider
+			attribute="class"
+			defaultTheme="system"
+			value={{
+				dark: darkTheme.className,
+				light: "light",
+			}}
+		>
+			<ThemeToggle />
 			<SiteNavigation />
 			<Layout>
 				<Component {...pageProps} />
 			</Layout>
-		</>
+		</ThemeProvider>
 	);
 }
-
-MyApp.getInitialProps = (context) => {
-	return {
-		pageProps: {
-			...(App.getInitialProps ? App.getInitialProps(context) : {}),
-			isDarkTheme:
-				context?.ctx?.req?.cookies &&
-				Object.keys(context.ctx.req.cookies).includes("theme") &&
-				context.ctx.req.cookies.theme === "dark",
-		},
-	};
-};
 
 export default MyApp;
