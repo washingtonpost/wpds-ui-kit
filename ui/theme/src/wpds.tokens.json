@@ -468,7 +468,7 @@
 				"description": "The color when element is disabled",
 				"stitches": "$alpha25"
 			},
-			"accessbile": {
+			"accessible": {
 				"value": "{gray80}",
 				"description": "The color when element is accessbile against the dark or light background",
 				"stitches": "$gray80"
