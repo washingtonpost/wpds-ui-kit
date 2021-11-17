@@ -2,10 +2,10 @@
 	"color": {
 		"light": {
 			"alpha25": {
-				"value": "rgba(42,42,42,.25)"
+				"value": "rgba(215,215,215,.25)"
 			},
 			"alpha50": {
-				"value": "rgba(42,42,42,.5)"
+				"value": "rgba(102,102,102,.5)"
 			},
 			"blue50": {
 				"value": "rgba(23,42,82,1)"
@@ -450,83 +450,78 @@
 		"theme": {
 			"primary": {
 				"value": "{gray20}",
-				"description": "Reference color token name for either light or dark mode",
+				"description": "The primary ui color",
 				"stitches": "$gray20"
-			},
-			"primaryVariant": {
-				"value": "{gray40}",
-				"description": "Reference color token name for either light or dark mode",
-				"stitches": "$gray40"
 			},
 			"secondary": {
 				"value": "{gray600}",
-				"description": "Reference color token name for either light or dark mode",
+				"description": "The color when its not needed to be primary",
 				"stitches": "$gray600"
 			},
-			"secondaryVariant": {
-				"value": "{gray500}",
-				"description": "Reference color token name for either light or dark mode",
-				"stitches": "$gray500"
-			},
-			"marketing": {
+			"cta": {
 				"value": "{vividBlue100}",
-				"description": "Reference color token name for either light or dark mode",
+				"description": "The color for call to action",
 				"stitches": "$vividBlue100"
 			},
-			"marketingVariant": {
-				"value": "{vividBlue200}",
-				"description": "Reference color token name for either light or dark mode",
-				"stitches": "$vividBlue200"
+			"disabled": {
+				"value": "{alpha25}",
+				"description": "The color when element is disabled",
+				"stitches": "$alpha25"
 			},
-			"background": {
-				"value": "{gray600}",
-				"description": "Reference color token name for either light or dark mode",
-				"stitches": "$vividBlue200"
+			"accessbile": {
+				"value": "{gray80}",
+				"description": "The color when element is accessbile against the dark or light background",
+				"stitches": "$gray80"
 			},
-			"surface": {
-				"value": "{gray600}",
-				"description": "Reference color token name for either light or dark mode",
-				"stitches": "$gray600"
+			"subtle": {
+				"value": "{gray300}",
+				"description": "The color that is used to have a subtle sepration between elements",
+				"stitches": "$gray300"
 			},
 			"error": {
 				"value": "{red100}",
-				"description": "Reference color token name for either light or dark mode",
+				"description": "The color for error status",
 				"stitches": "$red100"
+			},
+			"success": {
+				"value": "{green100}",
+				"description": "The color for success status",
+				"stitches": "$green100"
+			},
+			"warning": {
+				"value": "{orange100}",
+				"description": "The color for warning status",
+				"stitches": "$orang100"
 			},
 			"signal": {
 				"value": "{blue200}",
-				"description": "Reference color token name for either light or dark mode",
+				"description": "The color to signal or focus the user attention",
 				"stitches": "$blue200"
 			},
 			"onPrimary": {
-				"value": "{gray20}",
-				"description": "Reference color token name for either light or dark mode",
-				"stitches": "$gray20"
+				"value": "{gray600}",
+				"description": "When elements are applied to Primary",
+				"stitches": "$gray600"
 			},
 			"onSecondary": {
-				"value": "{gray600}",
-				"description": "Reference color token name for either light or dark mode",
-				"stitches": "$gray20"
-			},
-			"onMarketing": {
-				"value": "{gray600}",
-				"description": "Reference color token name for either light or dark mode",
-				"stitches": "$gray20"
-			},
-			"onBackground": {
 				"value": "{gray20}",
-				"description": "Reference color token name for either light or dark mode",
+				"description": "When elements are applied to Secondary",
 				"stitches": "$gray20"
 			},
-			"onSurface": {
-				"value": "{gray20}",
-				"description": "Reference color token name for either light or dark mode",
-				"stitches": "$gray20"
-			},
-			"onError": {
+			"onCta": {
 				"value": "{gray600}",
-				"description": "Reference color token name for either light or dark mode",
+				"description": "When elements applied on CTA",
 				"stitches": "$gray20"
+			},
+			"onDisabled": {
+				"value": "{alpha50}",
+				"description": "The color when element is on disabled",
+				"stitches": "$alpha50"
+			},
+			"onMessage": {
+				"value": "{gray600}",
+				"description": "Used on signal, warning, error and success",
+				"stitches": "$gray600"
 			}
 		}
 	},
