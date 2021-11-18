@@ -17,6 +17,7 @@ const fontSizes = {};
 const fontWeights = {};
 const lineHeights = {};
 const shadows = {};
+const zIndex={};
 let base;
 
 // const motion = {}; need to figure out best format
@@ -53,6 +54,9 @@ function buildTokens(){
 			case "shadow":
 				loopAndAdd(Tokens[key],shadows);
 				break;
+			case "z-index":
+					loopAndAdd(Tokens[key],zIndex);
+					break;
 			case "baseSize":
 				base=Tokens[key].value;
 				break;
@@ -149,6 +153,7 @@ function createTransformTokens(){
 			export const fontWeights=${JSON.stringify(fontWeights)}
 			export const lineHeights=${JSON.stringify(lineHeights)}
 			export const shadows=${JSON.stringify(shadows)}
+			export const zIndices=${JSON.stringify(zIndex)}
 			`
 			fs.writeFile(path(__dirname,'../src/dist/tokens.js'), Data, "utf8", (err, data) => {
 			  console.log("Created token file in ../src/dist/tokens.js");
