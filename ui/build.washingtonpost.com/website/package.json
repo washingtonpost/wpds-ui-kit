@@ -1,6 +1,6 @@
 {
 	"name": "website",
-	"version": "0.0.0",
+	"version": "0.1.0-experimental.0",
 	"private": true,
 	"description": "",
 	"main": "index.js",
@@ -14,12 +14,12 @@
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
+		"@washingtonpost/ui-autosuggest": "file:../ui/autosuggest",
+		"@washingtonpost/ui-theme": "file:../ui/theme",
 		"next": "^10.1.3",
 		"next-themes": "^0.0.15",
 		"react": "16.14.0",
-		"react-dom": "16.14.0",
-		"@washingtonpost/ui-autosuggest": "file:../ui/autosuggest",
-		"@washingtonpost/ui-theme": "file:../ui/theme"
+		"react-dom": "16.14.0"
 	},
 	"devDependencies": {
 		"next-transpile-modules": "^8.0.0"
