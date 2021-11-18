@@ -491,7 +491,7 @@
 			"warning": {
 				"value": "{orange100}",
 				"description": "The color for warning status",
-				"stitches": "$orang100"
+				"stitches": "$orange100"
 			},
 			"signal": {
 				"value": "{blue200}",
