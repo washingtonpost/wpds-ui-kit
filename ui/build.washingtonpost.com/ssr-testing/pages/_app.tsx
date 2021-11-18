@@ -5,6 +5,9 @@ const List = styled("ul", {
 	listStyle: "none",
 	display: "flex",
 	flexDirection: "row",
+	background: "$onSecondary",
+	height: "$400",
+	alignItems: "center"
 });
 
 const ListItem = styled("li", {
@@ -12,7 +15,7 @@ const ListItem = styled("li", {
 });
 
 const Anchor = styled("a", {
-	$$anchorColor: theme.colors.primary,
+	$$anchorColor: theme.colors.secondary,
 	color: "$$anchorColor",
 	textDecoration: "none",
 	borderBottom: "1px solid $$anchorColor",
