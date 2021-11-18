@@ -2,13 +2,11 @@
 
 This project structure is heavily inspired by Chakra UI, Radix UI, and others.
 
-## Website on vercel
+## Websites
 
-This is how storybook, playroom, and next.js will be under one domain
-
--   Playroom -> `/playroom/**/*`
--   Storybook -> `/storybook/**/*`
--   Website ->`/**/*`
+- the ssr-testing/kitchen sink is on vercel
+- storybook will be on chromatic
+- playroom will probably be added to ssr-testing/vercel
 
 ## [Contributing](docs/CONTRIBUTING.md)
 
