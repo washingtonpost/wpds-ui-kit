@@ -148,23 +148,23 @@ export const globalStyles = globalCss({
 			src: "url(https://www.washingtonpost.com/wp-stat/assets/fonts/ITC_Franklin-Light.woff2)",
 		},
 	],
-	"@dark": {
-		":root:not(.light)": {
-			...Object.keys(darkTheme.colors).reduce(
-				(varSet, currentColorKey) => {
-					const currentColor = darkTheme.colors[currentColorKey];
-					const currentColorValue =
-						currentColor.value.substring(0, 1) === "$"
-							? `$colors${currentColor.value}`
-							: currentColor.value;
+	// "@dark": {
+	// 	":root:not(.light)": {
+	// 		...Object.keys(darkTheme.colors).reduce(
+	// 			(varSet, currentColorKey) => {
+	// 				const currentColor = darkTheme.colors[currentColorKey];
+	// 				const currentColorValue =
+	// 					currentColor.value.substring(0, 1) === "$"
+	// 						? `$colors${currentColor.value}`
+	// 						: currentColor.value;
 
-					return {
-						[currentColor.variable]: currentColorValue,
-						...varSet,
-					};
-				},
-				{}
-			),
-		},
-	},
+	// 				return {
+	// 					[currentColor.variable]: currentColorValue,
+	// 					...varSet,
+	// 				};
+	// 			},
+	// 			{}
+	// 		),
+	// 	},
+	// },
 });
