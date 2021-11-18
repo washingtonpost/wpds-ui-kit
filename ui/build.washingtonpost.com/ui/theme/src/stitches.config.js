@@ -117,7 +117,6 @@ export const globalStyles = globalCss({
 		boxSizing: "border-box",
 		transition: "$allFast",
 	},
-	svg: { display: "block" },
 	html: {
 		overflowX: "hidden",
 	},
