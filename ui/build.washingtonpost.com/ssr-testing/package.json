@@ -1,6 +1,6 @@
 {
 	"name": "ssr-testing",
-	"version": "0.0.0",
+	"version": "0.1.0-experimental.2",
 	"description": "",
 	"main": "index.js",
 	"scripts": {
@@ -11,13 +11,13 @@
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
+		"next": "^10.1.3",
 		"react": "^16.14.0",
-		"react-dom": "^16.14.0",
-		"next": "^10.1.3"
+		"react-dom": "^16.14.0"
 	},
 	"devDependencies": {
 		"@types/react": "^17.0.35",
-		"typescript": "^4.5.2",
-		"@washingtonpost/ui-theme": "latest"
+		"@washingtonpost/ui-theme": "latest",
+		"typescript": "^4.5.2"
 	}
 }
