@@ -71,6 +71,10 @@ export const {
 		shadows: {
 			...shadows,
 		},
+		borderStyles: {},
+		borderWidths: {},
+		letterSpacings: {},
+		zIndices: {},
 	},
 	media: {
 		sm: "(max-width: 767px)",
