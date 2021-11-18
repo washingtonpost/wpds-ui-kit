@@ -1,6 +1,6 @@
 {
 	"name": "website",
-	"version": "0.1.0-experimental.0",
+	"version": "0.1.0-experimental.1",
 	"private": true,
 	"description": "",
 	"main": "index.js",
