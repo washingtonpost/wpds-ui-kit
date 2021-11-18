@@ -27,7 +27,7 @@ const Container = styled("section", {
 	position: "relative",
 	minHeight: "calc(100vh - $400)",
 	marginLeft: "$400",
-	marginRight: "400",
+	marginRight: "$400",
 
 	"@sm": {
 		margin: "$200"
