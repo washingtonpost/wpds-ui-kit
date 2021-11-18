@@ -806,6 +806,24 @@
 			"comment": "Shadows 6 - Extra large"
 		}
 	},
+	"z-index":{
+		"z-offer":{
+			"value":400,
+			"description":"This layer is reserved only for offers like paywalls, overlays etc"
+		},
+		"z-shell":{
+			"value":300,
+			"description":"This layer is reserved for shell items like the fixed primary nav"
+		},
+		"z-ads":{
+			"value":200,
+			"description":"This layer is reserved for ads not on page"
+		},
+		"z-page":{
+			"value":100,
+			"description":"Any content that is on that main page"
+		}
+	},
 	"motion": {
 		"duration": {
 			"500": { "value": "0.5s" },
