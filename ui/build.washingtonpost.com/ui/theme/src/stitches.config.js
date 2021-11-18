@@ -15,12 +15,6 @@ import {
 	lineHeights,
 } from "./dist/tokens";
 
-// border width 1 (1px)
-
-// letterSpacings
-
-// zIndices : layering - 1 (10)
-
 export const {
 	styled,
 	css,
@@ -155,7 +149,6 @@ export const globalStyles = globalCss({
 		},
 	],
 	"@dark": {
-		// notice the `media` definition on the stitches.config.ts file
 		":root:not(.light)": {
 			...Object.keys(darkTheme.colors).reduce(
 				(varSet, currentColorKey) => {
