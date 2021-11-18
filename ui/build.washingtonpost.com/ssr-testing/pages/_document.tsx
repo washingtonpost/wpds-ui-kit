@@ -3,8 +3,12 @@ import NextDocument, { Html, Head, Main, NextScript } from "next/document";
 import { getCssText, css } from "@washingtonpost/ui-theme";
 
 const appShell = css({
-	backgroundColor: "$gray600",
+	backgroundColor: "$onSecondary",
 });
+
+const body = css({
+	backgroundColor: "$onPrimary",
+})
 
 export default class Document extends NextDocument {
 	static async getInitialProps(ctx) {
@@ -13,6 +17,8 @@ export default class Document extends NextDocument {
 	}
 
 	render() {
+
+
 		return (
 			<Html lang="en" className={appShell()}>
 				<Head>
@@ -88,7 +94,7 @@ export default class Document extends NextDocument {
 						}}
 					/>
 				</Head>
-				<body>
+				<body className={body()}>
 					<Main />
 					<NextScript />
 				</body>
