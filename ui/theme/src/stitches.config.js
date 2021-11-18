@@ -13,6 +13,7 @@ import {
 	fontWeights,
 	fonts,
 	lineHeights,
+	zIndices
 } from "./dist/tokens";
 
 export const {
@@ -68,7 +69,9 @@ export const {
 		borderStyles: {},
 		borderWidths: {},
 		letterSpacings: {},
-		zIndices: {},
+		zIndices: {
+			...zIndices
+		},
 	},
 	media: {
 		sm: "(max-width: 767px)",
