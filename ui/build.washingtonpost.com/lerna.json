@@ -1,7 +1,10 @@
 {
-	"packages": ["./ui/**", "./website"],
+	"packages": [
+		"./ui/**",
+		"./website"
+	],
 	"useWorkspaces": true,
-	"version": "0.0.0",
+	"version": "0.1.0-experimental.0",
 	"npmClient": "npm",
 	"command": {
 		"version": {
@@ -13,7 +16,10 @@
 			"conventionalCommits": true,
 			"message": "chore(release): publish",
 			"npmClient": "npm",
-			"ignoreChanges": ["**/stories/**", "**/tests/**"],
+			"ignoreChanges": [
+				"**/stories/**",
+				"**/tests/**"
+			],
 			"registry": "https://registry.npmjs.org/",
 			"allowBranch": "main"
 		}
