@@ -1,0 +1,43 @@
+name: Validate
+
+on:
+    pull_request:
+        paths:
+            - "ui/**/*"
+            - "package.json"
+
+jobs:
+    validate:
+        name: Validate
+        runs-on: ubuntu-latest
+        timeout-minutes: 10
+        steps:
+            - uses: actions/checkout@v2
+              with:
+                  fetch-depth: 0
+
+            - uses: actions/setup-node@v2
+              with:
+                  node-version: lts/fermium
+                  cache: "npm"
+                  always-auth: true
+                  registry-url: "https://registry.npmjs.org"
+
+            - run: npm ci
+              env:
+                  NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
+
+            - uses: actions/upload-artifact@v2.2.4
+              with:
+                  name: ui-components
+                  path: |
+                      ui/**/dist
+                      !ui/**/node_modules
+
+            - uses: chromaui/action@v1
+              env:
+                  NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+              with:
+                  projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+                  token: ${{ secrets.GITHUB_TOKEN }}
+                  exitOnceUploaded: true

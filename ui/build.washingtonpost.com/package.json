@@ -24,6 +24,7 @@
 		"@types/react-dom": "^17.0.11",
 		"@washingtonpost/cypress-commands": "^1.0.1",
 		"babel-loader": "^8.2.2",
+		"chromatic": "^6.0.6",
 		"concurrently": "^6.3.0",
 		"cypress": "^8.6.0",
 		"cypress-real-events": "^1.5.1",
@@ -50,8 +51,8 @@
 	],
 	"dependencies": {
 		"@stitches/react": "^1.2.5",
-		"@washingtonpost/ui-theme": "file:ui/theme",
 		"@washingtonpost/ui-autosuggest": "latest",
+		"@washingtonpost/ui-theme": "file:ui/theme",
 		"react": "^16.14.0",
 		"react-dom": "^16.14.0"
 	},
@@ -59,7 +60,7 @@
 		"build:packages": "parcel build 'ui/*/' --log-level verbose --no-cache",
 		"dev:packages": "parcel 'ui/*/' --log-level verbose --no-cache",
 		"storybook": "make start-storybook",
-		"build-storybook": "build-storybook",
+		"build-storybook": "npm run build:packages;build-storybook",
 		"bootstrap": "lerna bootstrap --hoist",
 		"all:dev": "make all-dev",
 		"build": "make build",
@@ -79,7 +80,8 @@
 		"cypress:run": "cypress run",
 		"website:dev": "lerna run dev --scope ssr-testing --stream",
 		"website:build": "lerna run build --scope ssr-testing --stream",
-		"dev": "lerna run --parallel dev"
+		"dev": "lerna run --parallel dev",
+		"chromatic": "npx chromatic --project-token=b457f2a94e96"
 	},
 	"engines": {
 		"yarn": "yarn NO LONGER USED - use npm instead.",
