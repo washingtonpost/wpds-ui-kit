@@ -555,10 +555,6 @@
 			"value": "1rem",
 			"description": "100% of the base value"
 		},
-		"110": {
-			"value": "1.1rem",
-			"description": "110% of the base value"
-		},
 		"125": {
 			"value": "1.25rem",
 			"description": "125% of the base value"
