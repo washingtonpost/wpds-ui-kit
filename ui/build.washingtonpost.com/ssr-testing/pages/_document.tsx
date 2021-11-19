@@ -1,14 +1,6 @@
 import React from "react";
 import NextDocument, { Html, Head, Main, NextScript } from "next/document";
-import { getCssText, css } from "@washingtonpost/ui-theme";
-
-const appShell = css({
-	backgroundColor: "$onSecondary",
-});
-
-const body = css({
-	backgroundColor: "$onPrimary",
-})
+import { getCssText } from "@washingtonpost/ui-theme";
 
 export default class Document extends NextDocument {
 	static async getInitialProps(ctx) {
@@ -20,7 +12,7 @@ export default class Document extends NextDocument {
 
 
 		return (
-			<Html lang="en" className={appShell()}>
+			<Html lang="en">
 				<Head>
 					<style
 						id="stitches"
@@ -94,7 +86,7 @@ export default class Document extends NextDocument {
 						}}
 					/>
 				</Head>
-				<body className={body()}>
+				<body>
 					<Main />
 					<NextScript />
 				</body>
