@@ -11,7 +11,8 @@
 	"types": "dist/index.d.ts",
 	"files": [
 		"dist",
-		"README.md"
+		"README.md",
+		"src/wpds.tokens.json"
 	],
 	"sideEffects": false,
 	"repository": {
