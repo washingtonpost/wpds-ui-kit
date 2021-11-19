@@ -1,1 +1,1 @@
-export const boop = 'boop';
+export * from "./icon";

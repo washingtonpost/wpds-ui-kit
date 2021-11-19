@@ -12,18 +12,11 @@ const Headline = styled("h1", {
 	fontSize: "$500",
 });
 
-const SubHeadline = styled("h2", {
-	marginLeft: "$100",
-	color: "$primary",
-	fontWeight: "$light",
-	fontSize: "$100",
-});
-
 function HomePage() {
 	return (
 		<>
-			<Headline>WPDS's UI Kit.</Headline>
-			<SubHeadline>Coded in React.</SubHeadline>
+			<Headline>Kitchen Sink</Headline>
+			An icon would go here.
 		</>
 	);
 }
