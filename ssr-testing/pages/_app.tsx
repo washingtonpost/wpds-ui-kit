@@ -1,7 +1,30 @@
 import React from "react";
 import Head from "next/head";
 import { globalStyles, styled, theme } from "@washingtonpost/ui-theme";
-import { Favicon } from "@washingtonpost/site-components/core/favicon"
+import { Favicon } from "@washingtonpost/site-components/core/favicon";
+
+const Page = styled("article", {
+	paddingBottom: "$500",
+});
+
+const Container = styled("section", {
+	position: "relative",
+	minHeight: "calc(100vh - $400)",
+	marginLeft: "$400",
+	marginRight: "$400",
+
+	"@sm": {
+		margin: "$200",
+	},
+});
+
+const Footer = styled("footer", {
+	position: "absolute",
+	bottom: "0",
+	fontSize: "$075",
+	color: "$primary",
+	height: "$400",
+});
 
 const List = styled("ul", {
 	listStyle: "none",
@@ -9,7 +32,7 @@ const List = styled("ul", {
 	flexDirection: "row",
 	background: theme.colors.onSecondary,
 	height: "$400",
-	alignItems: "center"
+	alignItems: "center",
 });
 
 const ListItem = styled("li", {
@@ -38,10 +61,7 @@ function SiteNavigation() {
 	return (
 		<List>
 			<ListItem>
-				<Anchor href="/">Kitchen Sink</Anchor>
-			</ListItem>
-			<ListItem>
-				<Anchor href="/playroom">Playroom</Anchor>
+				<Anchor href="/kitchen-sink">Kitchen Sink</Anchor>
 			</ListItem>
 		</List>
 	);
@@ -56,8 +76,13 @@ function App({ Component, pageProps }) {
 				<title>WPDS's UI Kit - The Washington Post</title>
 				<Favicon />
 			</Head>
+
 			<SiteNavigation />
-			<Component {...pageProps} />
+			<Container>
+				<Page>
+					<Component {...pageProps} />
+				</Page>
+			</Container>
 		</Layout>
 	);
 }
