@@ -1,6 +1,7 @@
 import React from "react";
 import Head from "next/head";
 import { globalStyles, styled, theme } from "@washingtonpost/ui-theme";
+import { Favicon } from "@washingtonpost/site-components/core/favicon"
 
 const List = styled("ul", {
 	listStyle: "none",
@@ -52,7 +53,8 @@ function App({ Component, pageProps }) {
 	return (
 		<Layout>
 			<Head>
-				<title>WPDS's UI Kit</title>
+				<title>WPDS's UI Kit - The Washington Post</title>
+				<Favicon />
 			</Head>
 			<SiteNavigation />
 			<Component {...pageProps} />
