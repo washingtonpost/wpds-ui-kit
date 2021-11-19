@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import * as stitches from "@washingtonpost/ui-theme";
 
 const StyledInput = stitches.styled("input", {
@@ -62,15 +62,10 @@ const StyledInput = stitches.styled("input", {
 
 type InputProps = React.ComponentProps<typeof StyledInput>;
 
-export const Autosuggest = React.forwardRef<React.ElementRef<typeof StyledInput>, InputProps>(
-	(props, forwardedRef) => (
-		<StyledInput {...props} ref={forwardedRef}  />
-	)
-);
-
-		  
-
-    
+export const Autosuggest = React.forwardRef<
+	React.ElementRef<typeof StyledInput>,
+	InputProps
+>((props, forwardedRef) => <StyledInput {...props} ref={forwardedRef} />);
 
 // const Label = styled("span", {
 // 	position: "absolute",
