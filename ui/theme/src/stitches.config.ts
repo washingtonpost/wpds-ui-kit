@@ -1,5 +1,5 @@
 import * as stitches from "@stitches/react";
-import * as tokens from "./tokens.js";
+import * as tokens from "./tokens";
 
 export const {
 	styled,
@@ -17,24 +17,14 @@ export const {
 			...tokens.staticColors,
 			...tokens.defaultTheme,
 		},
-		sizes: {
-			...tokens.sizes,
-		},
-		space: {
-			...tokens.spaces,
-		},
-		radii: {
-			...tokens.radii,
-		},
-		fonts: {
-			...tokens.fonts,
-		},
-		fontSizes: {
-			...tokens.fontSizes,
-		},
-		fontWeights: {
-			...tokens.fontWeights,
-		},
+		sizes: tokens.sizes,
+		space: tokens.spaces,
+		radii: tokens.radii,
+		fonts: tokens.fonts,
+		fontSizes: tokens.fontSizes,
+		fontWeights: tokens.fontWeights,
+		shadows: tokens.shadows,
+		zIndices: tokens.zIndices,
 		lineHeights: {
 			...tokens.lineHeights,
 			headline: "$110",
@@ -48,15 +38,9 @@ export const {
 			normal: "0.3s",
 			inOut: "cubic-bezier(.4, 0, .2, 1)",
 		},
-		shadows: {
-			...tokens.shadows,
-		},
 		borderStyles: {},
 		borderWidths: {},
 		letterSpacings: {},
-		zIndices: {
-			...tokens.zIndices
-		},
 	},
 	media: {
 		sm: "(max-width: 767px)",

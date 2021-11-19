@@ -1,7 +1,7 @@
 {
 	"color": {
 		"light": {
-			"description":"The default color scheme",
+			"description": "The default color scheme",
 			"alpha25": {
 				"value": "rgba(215,215,215,.25)"
 			},
@@ -151,7 +151,7 @@
 			}
 		},
 		"dark": {
-			"description":"The default color scheme in a dark version",
+			"description": "The default color scheme in a dark version",
 			"alpha25": {
 				"value": "rgba(42,42,42,.25)"
 			},
@@ -301,7 +301,7 @@
 			}
 		},
 		"static": {
-			"description":"The default color scheme independent if in light or dark mode",
+			"description": "The default color scheme independent if in light or dark mode",
 			"alpha25": {
 				"value": "rgba(42,42,42,.25)"
 			},
@@ -451,7 +451,7 @@
 			}
 		},
 		"theme": {
-			"description":"The following are aliases to define intention of color in the app",
+			"description": "The following are aliases to define intention of color in the app",
 			"primary": {
 				"value": "{gray20}",
 				"description": "The primary ui color",
@@ -530,7 +530,7 @@
 		}
 	},
 	"baseSize": {
-		"description":"The base size the defines size, space, border radius, and font-size",
+		"description": "The base size the defines size, space, border radius, and font-size",
 		"value": "16px"
 	},
 	"size": {
@@ -659,8 +659,8 @@
 		"headline": {
 			"value": "Postoni, garamond, serif"
 		},
-		"subhead":{
-			"value":"Franklin, arial, sans-serif"
+		"subhead": {
+			"value": "Franklin, arial, sans-serif"
 		},
 		"body": {
 			"value": "georgia, Times New Roman, serif"
@@ -721,7 +721,7 @@
 		}
 	},
 	"fontWeights": {
-		"description":"The weight of the font face.",
+		"description": "The weight of the font face.",
 		"light": {
 			"value": 300
 		},
@@ -733,7 +733,7 @@
 		}
 	},
 	"lineHeight": {
-		"description":"The available line heights represented in unitless values",
+		"description": "The available line heights represented in unitless values",
 		"100": {
 			"value": 1
 		},
@@ -787,7 +787,7 @@
 		}
 	},
 	"shadow": {
-		"description":"The available shadow styles",
+		"description": "The available shadow styles",
 		"50": {
 			"value": "0px 2px 0px 0px #D5D5D5",
 			"comment": "Shadow 1 - Card shadow"
@@ -813,23 +813,23 @@
 			"comment": "Shadows 6 - Extra large"
 		}
 	},
-	"z-index":{
-		"description":"Defines the layering order of elements in the app",
-		"z-offer":{
-			"value":400,
-			"description":"This layer is reserved only for offers like paywalls, overlays etc"
+	"z-index": {
+		"description": "Defines the layering order of elements in the app",
+		"z-offer": {
+			"value": 400,
+			"description": "This layer is reserved only for offers like paywalls, overlays etc"
 		},
-		"z-shell":{
-			"value":300,
-			"description":"This layer is reserved for shell items like the fixed primary nav"
+		"z-shell": {
+			"value": 300,
+			"description": "This layer is reserved for shell items like the fixed primary nav"
 		},
-		"z-ads":{
-			"value":200,
-			"description":"This layer is reserved for ads not on page"
+		"z-ads": {
+			"value": 200,
+			"description": "This layer is reserved for ads not on page"
 		},
-		"z-page":{
-			"value":100,
-			"description":"Any content that is on that main page"
+		"z-page": {
+			"value": 100,
+			"description": "Any content that is on that main page"
 		}
 	},
 	"motion": {

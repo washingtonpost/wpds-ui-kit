@@ -1,14 +1,13 @@
 // transform
-const fs = require('fs');
-const path  =require ("path").resolve;
-const Tokens = require ('../src/wpds.tokens');
-
+const fs = require("fs");
+const path = require("path").resolve;
+const Tokens = require("../src/wpds.tokens");
 
 // put your code here to be transformed
-const dark={};
-const light={};
+const dark = {};
+const light = {};
 const staticColors = {};
-const theme={};
+const theme = {};
 const sizes = {};
 const spaces = {};
 const radii = {};
@@ -17,48 +16,48 @@ const fontSizes = {};
 const fontWeights = {};
 const lineHeights = {};
 const shadows = {};
-const zIndex={};
+const zIndex = {};
 let base;
 
 // const motion = {}; need to figure out best format
 
 // Builds out light tokens
-function buildTokens(){
+function buildTokens() {
 	//Light color tokens
-	for(var key in Tokens){
-		switch(key){
+	for (var key in Tokens) {
+		switch (key) {
 			case "color":
 				handleColor();
 				break;
 			case "size":
-				loopAndAdd(Tokens[key],sizes);
+				loopAndAdd(Tokens[key], sizes);
 				break;
 			case "space":
-				loopAndAdd(Tokens[key],spaces);
+				loopAndAdd(Tokens[key], spaces);
 				break;
 			case "fonts":
-				loopAndAdd(Tokens[key],fonts);
+				loopAndAdd(Tokens[key], fonts);
 				break;
 			case "fontSize":
-				loopAndAdd(Tokens[key],fontSizes);
+				loopAndAdd(Tokens[key], fontSizes);
 				break;
 			case "fontWeights":
-				loopAndAdd(Tokens[key],fontWeights);
+				loopAndAdd(Tokens[key], fontWeights);
 				break;
 			case "lineHeight":
-				loopAndAdd(Tokens[key],lineHeights);
+				loopAndAdd(Tokens[key], lineHeights);
 				break;
 			case "radii":
-				loopAndAdd(Tokens[key],radii);
+				loopAndAdd(Tokens[key], radii);
 				break;
 			case "shadow":
-				loopAndAdd(Tokens[key],shadows);
+				loopAndAdd(Tokens[key], shadows);
 				break;
 			case "z-index":
-					loopAndAdd(Tokens[key],zIndex);
-					break;
+				loopAndAdd(Tokens[key], zIndex);
+				break;
 			case "baseSize":
-				base=Tokens[key].value;
+				base = Tokens[key].value;
 				break;
 			// case "Motion":
 			// 	loopAndAdd(Tokens[key],motion);
@@ -68,20 +67,20 @@ function buildTokens(){
 		}
 	}
 }
-function handleColor(){
-	for(var colorGroup in Tokens.color){
-		switch(colorGroup){
-			case 'light':
-				loopAndAdd(Tokens.color[colorGroup],light)
+function handleColor() {
+	for (var colorGroup in Tokens.color) {
+		switch (colorGroup) {
+			case "light":
+				loopAndAdd(Tokens.color[colorGroup], light);
 				break;
-			case 'dark':
-				loopAndAdd(Tokens.color[colorGroup],dark)
+			case "dark":
+				loopAndAdd(Tokens.color[colorGroup], dark);
 				break;
-			case 'static':
-				loopAndAdd(Tokens.color[colorGroup],staticColors,"-static")
+			case "static":
+				loopAndAdd(Tokens.color[colorGroup], staticColors, "-static");
 				break;
-			case 'theme':
-				loopAndAdd(Tokens.color[colorGroup],theme)
+			case "theme":
+				loopAndAdd(Tokens.color[colorGroup], theme);
 				break;
 			default:
 				break;
@@ -89,41 +88,40 @@ function handleColor(){
 	}
 }
 /** Loops through tokens and maps to js object*/
-function loopAndAdd(tokens,ToObject,hyphen){
-	for(var token in tokens){
-		if(tokens[token].hasOwnProperty("value")){
-			let value=tokens[token].value
+function loopAndAdd(tokens, ToObject, hyphen) {
+	for (var token in tokens) {
+		if (tokens[token].hasOwnProperty("value")) {
+			let value = tokens[token].value;
 			//Checks to see if it is a reference to another token
-			if(value[0]=="{"){
+			if (value[0] == "{") {
 				//If contains stitches specific syntax
-				if(tokens[token].hasOwnProperty("stitches")){
-					ToObject[token]=tokens[token].stitches;
-				}else{
-					value=value.substring(1,value.length-1);
-					const lookedUpValue=lookupValue(value);
-					ToObject[`${token}${hyphen?hyphen:""}`]=lookedUpValue;
+				if (tokens[token].hasOwnProperty("stitches")) {
+					ToObject[token] = tokens[token].stitches;
+				} else {
+					value = value.substring(1, value.length - 1);
+					const lookedUpValue = lookupValue(value);
+					ToObject[`${token}${hyphen ? hyphen : ""}`] = lookedUpValue;
 				}
-			}
-			else{
-				ToObject[`${token}${hyphen?hyphen:""}`]=value;
+			} else {
+				ToObject[`${token}${hyphen ? hyphen : ""}`] = value;
 			}
 		}
 	}
 }
 
 /** Looks up the value of a token alias path depth supported up to 3 token[1][2][3]*/
-function lookupValue(lookUpToken){
-	const path=lookUpToken.split('.');
+function lookupValue(lookUpToken) {
+	const path = lookUpToken.split(".");
 	let value;
-	switch(path.length){
+	switch (path.length) {
 		case 1:
-			value=Tokens[path[0]].value;
+			value = Tokens[path[0]].value;
 			break;
 		case 2:
-			value=Tokens[path[0]][path[1]].value;
+			value = Tokens[path[0]][path[1]].value;
 			break;
 		case 3:
-			value=Tokens[path[0]][path[1]][path[2]].value;
+			value = Tokens[path[0]][path[1]][path[2]].value;
 			break;
 		default:
 			break;
@@ -131,15 +129,14 @@ function lookupValue(lookUpToken){
 	return value;
 }
 
-
 createTransformTokens();
-function createTransformTokens(){
+function createTransformTokens() {
 	try {
 		buildTokens();
-		fs.mkdir(path(__dirname,'../src'),(err,data)=>{
+		fs.mkdir(path(__dirname, "../src"), (err, data) => {
 			// const TokenArray=[light,dark,staticColors,theme,sizes,space,radii,fonts,fontSizes,fontWeights,shadow]
 			// let JSONArray = JSON.stringify(TokenArray, null, 2);
-			let Data=`
+			let Data = `
 			export const base=${JSON.stringify(base)}
 			export const light=${JSON.stringify(light)}
 			export const dark=${JSON.stringify(dark)}
@@ -154,11 +151,16 @@ function createTransformTokens(){
 			export const lineHeights=${JSON.stringify(lineHeights)}
 			export const shadows=${JSON.stringify(shadows)}
 			export const zIndices=${JSON.stringify(zIndex)}
-			`
-			fs.writeFile(path(__dirname,'../src/tokens.js'), Data, "utf8", (err, data) => {
-			  console.log("Created token file in ../src/tokens.js");
-			});
-		  })
+			`;
+			fs.writeFile(
+				path(__dirname, "../src/tokens.ts"),
+				Data,
+				"utf8",
+				(err, data) => {
+					console.log("Created token file in ../src/tokens.ts");
+				}
+			);
+		});
 	} catch (error) {
 		console.log(error);
 	}

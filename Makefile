@@ -3,6 +3,7 @@ localdev-storybook-in-nextjs:
 
 build:
 	lerna run build --ignore website
+	npx prettier --write .
 	npm run build:packages
 	# build-storybook --quiet --preview-url=/storybook/iframe.html -o public/storybook --force-build-preview
 	lerna run build --scope ssr-testing
