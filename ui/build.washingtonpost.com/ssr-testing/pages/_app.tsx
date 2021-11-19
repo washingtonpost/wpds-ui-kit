@@ -7,7 +7,7 @@ const List = styled("ul", {
 	listStyle: "none",
 	display: "flex",
 	flexDirection: "row",
-	background: "$onSecondary",
+	background: theme.colors.onSecondary,
 	height: "$400",
 	alignItems: "center"
 });
@@ -20,11 +20,11 @@ const Anchor = styled("a", {
 	$$anchorColor: theme.colors.secondary,
 	color: "$$anchorColor",
 	textDecoration: "none",
-	borderBottom: "1px solid $$anchorColor",
+	borderBottom: "1px solid currentColor",
 
 	"@hover": {
 		"&:hover": {
-			$$anchorColor: theme.colors.blue100,
+			$$anchorColor: theme.colors.cta,
 		},
 	},
 });
