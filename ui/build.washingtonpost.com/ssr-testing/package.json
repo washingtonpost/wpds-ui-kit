@@ -11,6 +11,7 @@
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
+		"@washingtonpost/site-components": "^4.63.0",
 		"next": "latest",
 		"react": "latest",
 		"react-dom": "latest"
