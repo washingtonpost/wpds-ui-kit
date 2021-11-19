@@ -659,6 +659,9 @@
 		"headline": {
 			"value": "Postoni, garamond, serif"
 		},
+		"subhead":{
+			"value":"Franklin, arial, sans-serif"
+		},
 		"body": {
 			"value": "georgia, Times New Roman, serif"
 		},
