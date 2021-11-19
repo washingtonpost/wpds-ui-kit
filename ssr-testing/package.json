@@ -1,6 +1,6 @@
 {
 	"name": "ssr-testing",
-	"version": "0.1.0-experimental.2",
+	"version": "0.1.0-experimental.3",
 	"description": "",
 	"main": "index.js",
 	"scripts": {
