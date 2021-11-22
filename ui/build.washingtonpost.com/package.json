@@ -51,7 +51,6 @@
 	],
 	"dependencies": {
 		"@stitches/react": "^1.2.5",
-		"@washingtonpost/ui-autosuggest": "latest",
 		"@washingtonpost/ui-theme": "file:ui/theme",
 		"react": "^16.14.0",
 		"react-dom": "^16.14.0"
@@ -81,7 +80,8 @@
 		"website:dev": "lerna run dev --scope ssr-testing --stream",
 		"website:build": "lerna run build --scope ssr-testing --stream",
 		"dev": "lerna run --parallel dev",
-		"chromatic": "npx chromatic --project-token=b457f2a94e96"
+		"chromatic": "npx chromatic --project-token=b457f2a94e96",
+		"postinstall": "npm run bootstrap"
 	},
 	"engines": {
 		"yarn": "yarn NO LONGER USED - use npm instead.",

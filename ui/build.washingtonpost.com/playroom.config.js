@@ -1,5 +1,5 @@
 module.exports = {
-	components: "./ui/autosuggest",
+	components: "./ui/index.ts",
 	outputPath: "./public/playroom",
 	openBrowser: false,
 	baseUrl:
