@@ -12,4 +12,4 @@ This project structure is heavily inspired by Chakra UI, Radix UI, and others.
 
 ## Naming packages, components, utilities
 
--   `@washingtonpost/wpds-${thing}`
+-   `@washingtonpost/ui-${thing}`

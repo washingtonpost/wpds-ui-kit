@@ -45,6 +45,7 @@ const VisuallyHidden = UI.styled("span", {
  */
 const Icon: React.FC<IconProps> = ({ children, size = "16", label }) => {
 	const child = React.Children.only(children);
+
 	return (
 		<>
 			{React.cloneElement(child as React.ReactElement, {
@@ -52,6 +53,7 @@ const Icon: React.FC<IconProps> = ({ children, size = "16", label }) => {
 				focusable: false,
 				width: size,
 				height: size,
+				role: "img",
 			})}
 			<VisuallyHidden>{label}</VisuallyHidden>
 		</>
