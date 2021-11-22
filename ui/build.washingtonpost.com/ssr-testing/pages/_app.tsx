@@ -63,6 +63,11 @@ function SiteNavigation() {
 			<ListItem>
 				<Anchor href="/kitchen-sink">Kitchen Sink</Anchor>
 			</ListItem>
+			<ListItem>
+				<Anchor href="https://main--6197ecb0496d77003a9e85fd.chromatic.com">
+					Storybook on Chromatic
+				</Anchor>
+			</ListItem>
 		</List>
 	);
 }
