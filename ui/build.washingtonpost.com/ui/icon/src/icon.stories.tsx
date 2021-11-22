@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Story } from "@storybook/react";
 import { Icon, IconProps } from "./icon";
 
 export default {
@@ -6,9 +7,7 @@ export default {
 	component: Icon,
 };
 
-const Template = (
-	args: JSX.IntrinsicAttributes & IconProps & { children?: React.ReactNode }
-) => (
+const Template: Story<IconProps> = (args) => (
 	<button type="button">
 		<Icon {...args}>
 			<Garlic />
@@ -23,7 +22,9 @@ Play.args = {
 	label: "Click to interact",
 };
 
-const Garlic = (props) => (
+const Garlic = (
+	props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
+) => (
 	<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" {...props}>
 		<title>garlic</title>
 		<path
