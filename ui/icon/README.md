@@ -1,19 +1,24 @@
-# ignore plz
+# Icon
 
-<Icon size="16" label="garlic">
-    <Garlic />
-</Icon>
+```jsx
+import { Icon } from "@washingtonpost/ui-icon";
+import { Garlic } from "@washingtonpost/wpds-assets";
 
-## component api
+function Component() {
+	return (
+		<Icon size="16" label="garlic">
+			<Garlic />
+		</Icon>
+	);
+}
+```
 
--   viewBox will be `0 0 16 16` this will be controlled by the svg token (can not be overriden by consumer) - fill rule will also be controlled by svg token
--   size (16, 24, 32) - in pixels (for our size tokens)
--   fill color will use our color tokens (this will be managed by the actual SVG icon component)
--   label prop
--   react clone to deep merge the child icon component
--   will have strong opinions for a11y like ara label (https://www.radix-ui.com/docs/primitives/utilities/accessible-icon)
--   'aria-hidden': 'true',
-    focusable: 'false',
-    role: 'img' // See: https://allyjs.io/tutorials/focusing-in-svg.html#making-svg-elements-focusable
+## Component API
 
-the svg icon component will be hidden from the a11y tree. it's presentational. The SVG's title node should be removed.
+-   size (["16", "24", "32"]), width and height of our icons from the system
+-   label, The accessibility label for the icon. This label will be visually hidden but read aloud by VoiceOver and other screenreaders to describe the icon.
+
+## Do's and Don'ts
+
+-   fill color will be set on the SVG icon component. not this component
+-   the svg icon component will be hidden from the a11y tree. it's presentational. The SVG's title node should be removed as well.
