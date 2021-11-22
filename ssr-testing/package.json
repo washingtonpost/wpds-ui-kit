@@ -12,7 +12,7 @@
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
-		"@washingtonpost/site-components": "^4.63.0",
+		"@washingtonpost/site-components": "^4.64.2",
 		"next": "latest",
 		"react": "latest",
 		"react-dom": "latest"
