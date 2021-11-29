@@ -33,6 +33,6 @@
 	"dependencies": {
 		"@babel/runtime": "^7.13.10",
 		"@radix-ui/react-accessible-icon": "^0.1.1",
-		"@washingtonpost/wpds-ui-kit": "file:../kit"
+		"@washingtonpost/ui-visually-hidden": "file:../visually-hidden"
 	}
 }
