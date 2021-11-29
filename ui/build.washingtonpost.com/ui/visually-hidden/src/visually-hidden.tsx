@@ -1,4 +1,4 @@
-import * as Kit from "@washingtonpost/ui-theme";
+import * as Kit from "@washingtonpost/wpds-ui-kit";
 
 /**
  * Visually Hidden component

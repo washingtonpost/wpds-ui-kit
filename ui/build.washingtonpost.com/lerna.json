@@ -1,5 +1,5 @@
 {
-	"packages": ["./ui/**", "./ssr-testing"],
+	"packages": ["./ui/*", "./ssr-testing"],
 	"useWorkspaces": true,
 	"version": "independent",
 	"npmClient": "npm",
