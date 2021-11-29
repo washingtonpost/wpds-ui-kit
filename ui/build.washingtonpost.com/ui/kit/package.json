@@ -1,0 +1,35 @@
+{
+	"name": "@washingtonpost/wpds-ui-kit",
+	"version": "0.1.0-experimental.4",
+	"description": "> TODO: description",
+	"author": "artmsilva <artmsilva@gmail.com>",
+	"homepage": "https://github.com/WPMedia/wpds-ui-kit#readme",
+	"license": "ISC",
+	"source": "src/index.ts",
+	"main": "dist/index.js",
+	"module": "dist/index.module.js",
+	"types": "dist/index.d.ts",
+	"files": [
+		"dist",
+		"README.md"
+	],
+	"sideEffects": false,
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/WPMedia/wpds-ui-kit.git"
+	},
+	"scripts": {
+		"test": "echo \"Error: run tests from root\" && exit 1"
+	},
+	"bugs": {
+		"url": "https://github.com/WPMedia/wpds-ui-kit/issues"
+	},
+	"dependencies": {
+		"@babel/runtime": "^7.13.10",
+		"@stitches/react": "^1.2.5",
+		"@washingtonpost/ui-theme": "file:../theme",
+		"@washingtonpost/ui-icon": "file:../icon",
+		"@washingtonpost/ui-visually-hidden": "file:../visually-hidden",
+		"@washingtonpost/ui-box": "file:../box"
+	}
+}
