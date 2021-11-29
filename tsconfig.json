@@ -3,10 +3,10 @@
 	"compilerOptions": {
 		"paths": {
 			"*": ["node_modules/*"],
-			"@washingtonpost/ui-visually-hidden": ["ui/visually-hidden"],
-			"@washingtonpost/ui-theme": ["ui/theme"],
-			"@washingtonpost/ui-icon": ["ui/icon"],
-			"@washingtonpost/ui-box": ["ui/box"]
+			"@washingtonpost/ui-visually-hidden": ["./ui/visually-hidden/src"],
+			"@washingtonpost/ui-theme": ["./ui/theme/src"],
+			"@washingtonpost/ui-icon": ["./ui/icon/src"],
+			"@washingtonpost/ui-box": ["./ui/box/src"]
 		}
 	}
 }
