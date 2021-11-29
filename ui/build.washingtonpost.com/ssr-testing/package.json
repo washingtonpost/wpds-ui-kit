@@ -1,6 +1,6 @@
 {
 	"name": "ssr-testing",
-	"version": "0.1.0-experimental.5",
+	"version": "0.1.0-experimental.6",
 	"private": true,
 	"description": "",
 	"main": "index.js",
@@ -13,10 +13,10 @@
 	"license": "ISC",
 	"dependencies": {
 		"@washingtonpost/site-components": "latest",
+		"@washingtonpost/wpds-ui-kit": "file:../ui/kit",
 		"next": "^12.0.4",
 		"react": "^17.0.2",
-		"react-dom": "^17.0.2",
-		"@washingtonpost/wpds-ui-kit": "file:../ui/kit"
+		"react-dom": "^17.0.2"
 	},
 	"devDependencies": {
 		"@types/react": "^17.0.35",
