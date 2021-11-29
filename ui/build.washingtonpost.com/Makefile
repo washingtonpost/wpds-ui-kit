@@ -16,10 +16,10 @@ start-storybook:
 	start-storybook -p 6006 --modern --quiet --ci
 
 experimental-version:
-	lerna version --conventional-commits --conventional-prerelease --preid=experimental --sign-git-tag=experimental --no-changelog --yes
+	npx lerna version --conventional-commits --conventional-prerelease --preid=experimental --sign-git-tag=experimental --no-changelog --yes
 
 experimental-publish:
-	lerna publish from-git --canary --preid experimental --pre-dist-tag experimental --npm-tag experimental --yes
+	npx lerna publish from-git --canary --preid experimental --pre-dist-tag experimental --npm-tag experimental --yes
 
 main-publish: 
 	npx lerna publish from-git --yes --no-git-reset
