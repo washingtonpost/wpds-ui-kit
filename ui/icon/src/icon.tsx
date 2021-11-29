@@ -1,5 +1,5 @@
 import * as React from "react";
-import * as UI from "@washingtonpost/ui-theme";
+import * as VH from "@washingtonpost/ui-visually-hidden";
 
 const NAME = "Icon";
 
@@ -23,19 +23,6 @@ interface IconProps {
 	 */
 	label: string;
 }
-
-const VisuallyHidden = UI.styled("span", {
-	position: "absolute",
-	width: 1,
-	height: 1,
-	border: 0,
-	padding: 0,
-	margin: -1,
-	overflow: "hidden",
-	clip: "rect(0, 0, 0, 0)",
-	whiteSpace: "nowrap",
-	wordWrap: "normal",
-});
 
 /**
  * @washingtonpost/ui-icon
@@ -68,7 +55,7 @@ function Component() {
 
  * 
  */
-const Icon: React.FC<IconProps> = ({ children, size = "16", label }) => {
+export const Icon: React.FC<IconProps> = ({ children, size = "16", label }) => {
 	const child = React.Children.only(children);
 
 	return (
@@ -80,12 +67,11 @@ const Icon: React.FC<IconProps> = ({ children, size = "16", label }) => {
 				height: size,
 				role: "img",
 			})}
-			<VisuallyHidden>{label}</VisuallyHidden>
+			<VH.VisuallyHidden>{label}</VH.VisuallyHidden>
 		</>
 	);
 };
 
 Icon.displayName = NAME;
 
-export { Icon };
 export type { IconProps };
