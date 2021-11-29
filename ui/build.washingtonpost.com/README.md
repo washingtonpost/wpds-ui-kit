@@ -2,14 +2,18 @@
 
 This project structure is heavily inspired by Chakra UI, Radix UI, and others.
 
+```bash
+npm i @washingtonpost/wpds-ui-kit
+```
+
 ## Websites
 
 -   the ssr-testing/kitchen sink is on vercel
 -   storybook will be on chromatic
--   playroom will probably be added to ssr-testing/vercel
+-   playroom will probably be added to vercel
 
 ## [Contributing](docs/CONTRIBUTING.md)
 
 ## Naming packages, components, utilities
 
--   `@washingtonpost/ui-${thing}`
+-   `@washingtonpost/wpds-${thing}`
