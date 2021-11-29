@@ -1,6 +1,6 @@
 {
-	"name": "@washingtonpost/ui-icon",
-	"version": "0.1.0-experimental.4",
+	"name": "@washingtonpost/ui-box",
+	"version": "0.0.0",
 	"description": "> TODO: description",
 	"author": "artmsilva <artmsilva@gmail.com>",
 	"homepage": "https://github.com/WPMedia/wpds-ui-kit#readme",
@@ -32,8 +32,6 @@
 	},
 	"dependencies": {
 		"@babel/runtime": "^7.13.10",
-		"@radix-ui/react-accessible-icon": "^0.1.1",
-		"@washingtonpost/ui-theme": "file:../theme",
-		"@washingtonpost/ui-visually-hidden": "file:../visually-hidden"
+		"@washingtonpost/ui-theme": "file:../theme"
 	}
 }
