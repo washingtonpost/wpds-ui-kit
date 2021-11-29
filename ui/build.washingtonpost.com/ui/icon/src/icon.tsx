@@ -1,5 +1,5 @@
 import * as React from "react";
-import * as Kit from "@washingtonpost/wpds-ui-kit";
+import * as VH from "@washingtonpost/ui-visually-hidden";
 
 const NAME = "Icon";
 
@@ -67,7 +67,7 @@ export const Icon: React.FC<IconProps> = ({ children, size = "16", label }) => {
 				height: size,
 				role: "img",
 			})}
-			<Kit.VisuallyHidden>{label}</Kit.VisuallyHidden>
+			<VH.VisuallyHidden>{label}</VH.VisuallyHidden>
 		</>
 	);
 };
