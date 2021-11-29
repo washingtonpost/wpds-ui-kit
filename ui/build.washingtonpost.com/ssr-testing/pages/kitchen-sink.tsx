@@ -1,5 +1,5 @@
 import * as React from "react";
-import { styled } from "@washingtonpost/wpds-ui-kit";
+import { styled } from "@washingtonpost/ui-theme";
 
 const Headline = styled("h1", {
 	paddingTop: "$200",

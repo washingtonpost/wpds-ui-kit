@@ -12,11 +12,11 @@
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
-		"@washingtonpost/site-components": "^6.2.7",
-		"next": "latest",
-		"react": "latest",
-		"react-dom": "latest",
-		"@washingtonpost/wpds-ui-kit": "latest"
+		"@washingtonpost/site-components": "latest",
+		"next": "^12.0.4",
+		"react": "^17.0.2",
+		"react-dom": "^17.0.2",
+		"@washingtonpost/wpds-ui-kit": "file:../ui/kit"
 	},
 	"devDependencies": {
 		"@types/react": "^17.0.35",

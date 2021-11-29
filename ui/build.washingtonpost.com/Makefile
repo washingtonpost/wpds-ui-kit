@@ -2,12 +2,9 @@ localdev-storybook-in-nextjs:
 	start-storybook -p 6006 --preview-url=/storybook/iframe.html --modern --quiet --ci --force-build-preview
 
 build:
-	lerna run build --ignore website
 	npx prettier --write .
-	npm run build:packages
-	# build-storybook --quiet --preview-url=/storybook/iframe.html -o public/storybook --force-build-preview
-	lerna run build --scope ssr-testing
-	# npm run playroom:build
+	lerna run build --stream --scope @washingtonpost/ui-theme
+	lerna run build --stream
 
 all-dev:
 	npx concurrently -n 'workspaces,playroom,storybook,website' 'npm run dev --workspaces' 'npm run playroom:start' 'make localdev-storybook-in-nextjs' 'npm run website:dev'
