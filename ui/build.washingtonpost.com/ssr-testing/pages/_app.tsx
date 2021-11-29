@@ -1,6 +1,6 @@
 import React from "react";
 import Head from "next/head";
-import { globalStyles, styled, theme } from "@washingtonpost/ui-theme";
+import { globalStyles, styled, theme } from "@washingtonpost/wpds-ui-kit";
 import { Favicon } from "@washingtonpost/site-components/core/favicon";
 
 const Page = styled("article", {
