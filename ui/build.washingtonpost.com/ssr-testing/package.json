@@ -15,11 +15,11 @@
 		"@washingtonpost/site-components": "^6.2.7",
 		"next": "latest",
 		"react": "latest",
-		"react-dom": "latest"
+		"react-dom": "latest",
+		"@washingtonpost/wpds-ui-kit": "latest"
 	},
 	"devDependencies": {
 		"@types/react": "^17.0.35",
-		"@washingtonpost/ui-theme": "latest",
 		"typescript": "^4.5.2"
 	}
 }
