@@ -62,7 +62,7 @@
 		"dev:packages": "parcel 'ui/*/' --log-level verbose --no-cache",
 		"storybook": "make start-storybook",
 		"build-storybook": "npm run build:packages;build-storybook",
-		"bootstrap": "lerna bootstrap --hoist",
+		"bootstrap": "lerna bootstrap --hoist;lerna link --force-local",
 		"all:dev": "make all-dev",
 		"build": "make build",
 		"playroom:start": "playroom start",
