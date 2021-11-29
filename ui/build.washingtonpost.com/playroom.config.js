@@ -1,5 +1,5 @@
 module.exports = {
-	components: "./ui/index.ts",
+	components: "./ui/kit/index.ts",
 	outputPath: "./public/playroom",
 	openBrowser: false,
 	baseUrl:
