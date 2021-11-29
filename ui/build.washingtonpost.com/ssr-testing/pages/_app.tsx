@@ -1,7 +1,7 @@
 import React from "react";
 import Head from "next/head";
-import { globalStyles, styled, theme } from "@washingtonpost/wpds-ui-kit";
 import { Favicon } from "@washingtonpost/site-components/core/favicon";
+import { theme, styled, globalStyles } from "@washingtonpost/wpds-ui-kit";
 
 const Page = styled("article", {
 	paddingBottom: "$500",
@@ -30,7 +30,7 @@ const List = styled("ul", {
 	listStyle: "none",
 	display: "flex",
 	flexDirection: "row",
-	background: theme.colors.onSecondary,
+	background: "$onSecondary",
 	height: "$400",
 	alignItems: "center",
 });

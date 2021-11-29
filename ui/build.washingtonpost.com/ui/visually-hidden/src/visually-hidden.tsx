@@ -1,9 +1,6 @@
-import * as Kit from "@washingtonpost/wpds-ui-kit";
+import * as Theme from "@washingtonpost/ui-theme";
 
-/**
- * Visually Hidden component
- */
-export const VisuallyHidden = Kit.styled("span", {
+export const VisuallyHidden = Theme.styled("span", {
 	position: "absolute",
 	border: 0,
 	padding: 0,
