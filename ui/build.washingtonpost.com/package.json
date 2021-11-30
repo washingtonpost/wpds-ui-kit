@@ -48,12 +48,16 @@
 	},
 	"workspaces": [
 		"./ui/*",
-		"./ssr-testing"
+		"./ssr-testing",
+		"./kit"
 	],
 	"dependencies": {
 		"@stitches/react": "^1.2.5",
-		"@washingtonpost/ui-box": "file:ui/box",
-		"@washingtonpost/ui-theme": "file:ui/theme",
+		"@washingtonpost/ui-box": "latest",
+		"@washingtonpost/ui-theme": "latest",
+		"@washingtonpost/ui-icon": "latest",
+		"@washingtonpost/ui-visually-hidden": "latest",
+		"@washingtonpost/wpds-ui-kit": "latest",
 		"react": "^17.0.2",
 		"react-dom": "^17.0.2"
 	},

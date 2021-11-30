@@ -30,5 +30,8 @@
 	"dependencies": {
 		"@babel/runtime": "^7.13.10",
 		"@stitches/react": "^1.2.5"
+	},
+	"peerDependencies": {
+		"@stitches/react": "^1.2.5"
 	}
 }
