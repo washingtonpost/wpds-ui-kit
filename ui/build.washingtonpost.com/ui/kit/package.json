@@ -7,8 +7,8 @@
 	"license": "ISC",
 	"source": "src/index.ts",
 	"main": "dist/index.js",
-	"module": "dist/index.module.js",
 	"types": "dist/index.d.ts",
+	"module": "dist/module.js",
 	"files": [
 		"dist",
 		"README.md"
@@ -26,10 +26,9 @@
 	},
 	"dependencies": {
 		"@babel/runtime": "^7.13.10",
-		"@stitches/react": "^1.2.5",
-		"@washingtonpost/ui-box": "file:../box",
-		"@washingtonpost/ui-icon": "file:../icon",
-		"@washingtonpost/ui-theme": "file:../theme",
-		"@washingtonpost/ui-visually-hidden": "file:../visually-hidden"
+		"@washingtonpost/ui-box": "latest",
+		"@washingtonpost/ui-icon": "latest",
+		"@washingtonpost/ui-theme": "latest",
+		"@washingtonpost/ui-visually-hidden": "latest"
 	}
 }
