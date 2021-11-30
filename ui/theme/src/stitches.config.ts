@@ -1,6 +1,8 @@
 import * as stitches from "@stitches/react";
 import * as tokens from "./tokens";
 
+const prefix = "wpds";
+
 export const {
 	styled,
 	css,
@@ -11,6 +13,7 @@ export const {
 	createTheme,
 	config,
 } = stitches.createStitches({
+	prefix,
 	theme: {
 		colors: {
 			...tokens.light,
@@ -66,7 +69,7 @@ export const {
 	},
 });
 
-export const darkTheme = createTheme("dark", {
+export const darkTheme = createTheme(`${prefix}-dark`, {
 	colors: {
 		...tokens.dark,
 		...tokens.staticColors,

@@ -32,6 +32,6 @@
 	},
 	"dependencies": {
 		"@babel/runtime": "^7.13.10",
-		"@washingtonpost/ui-theme": "file:../theme"
+		"@washingtonpost/ui-theme": "latest"
 	}
 }

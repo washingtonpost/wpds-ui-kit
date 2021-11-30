@@ -2,12 +2,7 @@
 	"extends": "./tsconfig.base.json",
 	"compilerOptions": {
 		"paths": {
-			"*": ["node_modules/*"],
-			"@washingtonpost/ui-visually-hidden": ["./ui/visually-hidden/src"],
-			"@washingtonpost/ui-theme": ["./ui/theme/src"],
-			"@washingtonpost/ui-icon": ["./ui/icon/src"],
-			"@washingtonpost/ui-box": ["./ui/box/src"],
-			"@washingtonpost/wpds-ui-kit": ["./ui/kit/src"]
+			"*": ["node_modules/*"]
 		}
 	}
 }

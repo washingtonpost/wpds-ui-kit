@@ -13,7 +13,7 @@
 	"license": "ISC",
 	"dependencies": {
 		"@washingtonpost/site-components": "latest",
-		"@washingtonpost/wpds-ui-kit": "file:../ui/kit",
+		"@washingtonpost/wpds-ui-kit": "latest",
 		"next": "^12.0.4",
 		"react": "^17.0.2",
 		"react-dom": "^17.0.2"
