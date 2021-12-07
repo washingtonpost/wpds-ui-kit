@@ -54,9 +54,10 @@
 	"dependencies": {
 		"@stitches/react": "^1.2.5",
 		"@washingtonpost/ui-box": "latest",
-		"@washingtonpost/ui-theme": "latest",
 		"@washingtonpost/ui-icon": "latest",
+		"@washingtonpost/ui-theme": "latest",
 		"@washingtonpost/ui-visually-hidden": "latest",
+		"@washingtonpost/wpds-assets": "^1.0.5-alpha.1",
 		"@washingtonpost/wpds-ui-kit": "latest",
 		"react": "^17.0.2",
 		"react-dom": "^17.0.2"
