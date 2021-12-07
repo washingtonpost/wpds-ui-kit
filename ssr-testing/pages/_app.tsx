@@ -78,7 +78,7 @@ function App({ Component, pageProps }) {
 	return (
 		<Layout>
 			<Head>
-				<title>WPDS's UI Kit - The Washington Post</title>
+				<title>WPDS UI Kit - The Washington Post</title>
 				<Favicon />
 			</Head>
 
