@@ -16,7 +16,7 @@ const Container = styled("div", {
 	gridTemplateColumns: "150px 1fr",
 });
 
-const Header = styled("head", {
+const Header = styled("header", {
 	gridArea: "head",
 	backgroundColor: "#8ca0ff",
 });
