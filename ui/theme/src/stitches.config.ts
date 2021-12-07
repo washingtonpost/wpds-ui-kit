@@ -62,7 +62,7 @@ export const {
 			paddingLeft: value,
 			paddingRight: value,
 		}),
-		pY: (value: any) => ({
+		py: (value: any) => ({
 			paddingTop: value,
 			paddingBottom: value,
 		}),

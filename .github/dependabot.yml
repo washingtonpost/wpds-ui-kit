@@ -10,7 +10,7 @@ updates:
       directory: "/"
       registries:
           - npm-npmjs
-      target-branch: "dev"
+      target-branch: "main"
       ignore:
           - dependency-name: "@washingtonpost*"
       versioning-strategy: "auto"
