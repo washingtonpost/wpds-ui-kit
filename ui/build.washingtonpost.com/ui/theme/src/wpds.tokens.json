@@ -8,7 +8,7 @@
 			"alpha50": {
 				"value": "rgba(102,102,102,.5)"
 			},
-			"blue50": {
+			"blue80": {
 				"value": "rgba(23,42,82,1)"
 			},
 			"blue100": {
@@ -53,7 +53,7 @@
 			"gray600": {
 				"value": "rgba(255,255,255,1)"
 			},
-			"green50": {
+			"green80": {
 				"value": "rgba(73, 138, 12, 1)"
 			},
 			"green100": {
@@ -65,7 +65,7 @@
 			"green300": {
 				"value": "rgba(223, 236, 211, 1)"
 			},
-			"gold50": {
+			"gold80": {
 				"value": "rgba(123, 78, 11, 1)"
 			},
 			"gold100": {
@@ -77,7 +77,7 @@
 			"gold300": {
 				"value": "rgba(224, 199, 161, 1)"
 			},
-			"navy50": {
+			"navy80": {
 				"value": "rgba(14, 21, 85, 1)"
 			},
 			"navy100": {
@@ -89,7 +89,7 @@
 			"navy300": {
 				"value": "rgba(216, 218, 236, 1)"
 			},
-			"orange50": {
+			"orange80": {
 				"value": "rgba(177, 110, 0, 1)"
 			},
 			"orange100": {
@@ -101,7 +101,7 @@
 			"orange300": {
 				"value": "rgba(251, 237, 213, 1)"
 			},
-			"pink50": {
+			"pink80": {
 				"value": "rgba(133, 59, 103, 1)"
 			},
 			"pink100": {
@@ -113,7 +113,7 @@
 			"pink300": {
 				"value": "rgba(254, 244, 250, 1)"
 			},
-			"red50": {
+			"red80": {
 				"value": "rgba(209, 0, 0, 1)"
 			},
 			"red100": {
@@ -125,7 +125,7 @@
 			"red300": {
 				"value": "rgba(242, 222, 222, 1)"
 			},
-			"salem50": {
+			"salem80": {
 				"value": "rgba(11, 87, 51, 1)"
 			},
 			"salem100": {
@@ -137,7 +137,7 @@
 			"salem300": {
 				"value": "rgba(239, 245, 242, 1)"
 			},
-			"vividBlue50": {
+			"vividBlue80": {
 				"value": "rgba(0, 51, 153, 1)"
 			},
 			"vividBlue100": {
@@ -155,10 +155,10 @@
 			"alpha25": {
 				"value": "rgba(42,42,42,.25)"
 			},
-			"alpha50": {
+			"alpha80": {
 				"value": "rgba(42,42,42,.5)"
 			},
-			"blue50": {
+			"blue80": {
 				"value": "rgba(205, 212, 223, 1)"
 			},
 			"blue100": {
@@ -203,7 +203,7 @@
 			"gray600": {
 				"value": "rgba(2, 2, 2, 1)"
 			},
-			"green50": {
+			"green80": {
 				"value": "rgba(81, 124, 42, 1)"
 			},
 			"green100": {
@@ -215,7 +215,7 @@
 			"green300": {
 				"value": "rgba(23, 30, 17, 1)"
 			},
-			"gold50": {
+			"gold80": {
 				"value": "rgba(176, 132, 86, 1)"
 			},
 			"gold100": {
@@ -227,7 +227,7 @@
 			"gold300": {
 				"value": "rgba(58, 41, 23, 1)"
 			},
-			"navy50": {
+			"navy80": {
 				"value": "rgba(223, 225, 230, 1)"
 			},
 			"navy100": {
@@ -239,7 +239,7 @@
 			"navy300": {
 				"value": "rgba(12, 26, 98, 1)"
 			},
-			"orange50": {
+			"orange80": {
 				"value": "rgba(144, 102, 41, 1)"
 			},
 			"orange100": {
@@ -251,7 +251,7 @@
 			"orange300": {
 				"value": "rgba(71, 54, 30, 1)"
 			},
-			"pink50": {
+			"pink80": {
 				"value": "rgba(187, 126, 157, 1)"
 			},
 			"pink100": {
@@ -263,7 +263,7 @@
 			"pink300": {
 				"value": "rgba(20, 15, 17, 1)"
 			},
-			"red50": {
+			"red80": {
 				"value": "rgba(240, 71, 58, 1)"
 			},
 			"red100": {
@@ -275,7 +275,7 @@
 			"red300": {
 				"value": "rgba(54, 23, 19, 1)"
 			},
-			"salem50": {
+			"salem80": {
 				"value": "rgba(127, 165, 140,1)"
 			},
 			"salem100": {
@@ -287,7 +287,7 @@
 			"salem300": {
 				"value": "rgba(14, 18, 15, 1)"
 			},
-			"vividBlue50": {
+			"vividBlue80": {
 				"value": "rgba(155, 178, 217, 1)"
 			},
 			"vividBlue100": {
@@ -305,10 +305,10 @@
 			"alpha25": {
 				"value": "rgba(42,42,42,.25)"
 			},
-			"alpha50": {
+			"alpha80": {
 				"value": "rgba(42,42,42,.5)"
 			},
-			"blue50": {
+			"blue80": {
 				"value": "rgba(23,42,82,1)"
 			},
 			"blue100": {
@@ -353,7 +353,7 @@
 			"gray600": {
 				"value": "rgba(255,255,255,1)"
 			},
-			"green50": {
+			"green80": {
 				"value": "rgba(73, 138, 12, 1)"
 			},
 			"green100": {
@@ -365,7 +365,7 @@
 			"green300": {
 				"value": "rgba(223, 236, 211, 1)"
 			},
-			"gold50": {
+			"gold80": {
 				"value": "rgba(123, 78, 11, 1)"
 			},
 			"gold100": {
@@ -377,7 +377,7 @@
 			"gold300": {
 				"value": "rgba(224, 199, 161, 1)"
 			},
-			"navy50": {
+			"navy80": {
 				"value": "rgba(14, 21, 85, 1)"
 			},
 			"navy100": {
@@ -389,7 +389,7 @@
 			"navy300": {
 				"value": "rgba(216, 218, 236, 1)"
 			},
-			"orange50": {
+			"orange80": {
 				"value": "rgba(177, 110, 0, 1)"
 			},
 			"orange100": {
@@ -401,7 +401,7 @@
 			"orange300": {
 				"value": "rgba(251, 237, 213, 1)"
 			},
-			"pink50": {
+			"pink80": {
 				"value": "rgba(133, 59, 103, 1)"
 			},
 			"pink100": {
@@ -413,7 +413,7 @@
 			"pink300": {
 				"value": "rgba(254, 244, 250, 1)"
 			},
-			"red50": {
+			"red80": {
 				"value": "rgba(209, 0, 0, 1)"
 			},
 			"red100": {
@@ -425,7 +425,7 @@
 			"red300": {
 				"value": "rgba(242, 222, 222, 1)"
 			},
-			"salem50": {
+			"salem80": {
 				"value": "rgba(11, 87, 51, 1)"
 			},
 			"salem100": {
@@ -437,7 +437,7 @@
 			"salem300": {
 				"value": "rgba(239, 245, 242, 1)"
 			},
-			"vividBlue50": {
+			"vividBlue80": {
 				"value": "rgba(0, 51, 153, 1)"
 			},
 			"vividBlue100": {
@@ -487,20 +487,40 @@
 				"description": "The color for error status",
 				"stitches": "$red100"
 			},
+			"errorSubtle": {
+				"value": "{red300}",
+				"description": "A more subtle error for a less harsh contrast",
+				"stitches": "$red300"
+			},
 			"success": {
 				"value": "{green100}",
 				"description": "The color for success status",
 				"stitches": "$green100"
+			},
+			"successSubtle": {
+				"value": "{green300}",
+				"description": "A more subtle success for a less harsh contrast",
+				"stitches": "$green300"
 			},
 			"warning": {
 				"value": "{orange100}",
 				"description": "The color for warning status",
 				"stitches": "$orange100"
 			},
+			"warningSubtle": {
+				"value": "{orange300}",
+				"description": "A more subtle warning for a less harsh contrast",
+				"stitches": "$orange300"
+			},
 			"signal": {
 				"value": "{blue200}",
 				"description": "The color to signal or focus the user attention",
 				"stitches": "$blue200"
+			},
+			"signalSubtle": {
+				"value": "{blue300}",
+				"description": "A more subtle signal for a less harsh contrast",
+				"stitches": "$blue300"
 			},
 			"onPrimary": {
 				"value": "{gray600}",
@@ -523,9 +543,9 @@
 				"stitches": "$alpha50"
 			},
 			"onMessage": {
-				"value": "{gray600}",
-				"description": "Used on signal, warning, error and success",
-				"stitches": "$gray600"
+				"value": "{gray600-static}",
+				"description": "Used on signal, warning, error and success colors but not subtle for subtle semantic colors use primary",
+				"stitches": "$gray600-static"
 			}
 		}
 	},
