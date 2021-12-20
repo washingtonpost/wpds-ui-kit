@@ -416,7 +416,7 @@
 			},
 			"onMessage": {
 				"value": "{gray600-static}",
-				"description": "Used on signal, warning, error and success colors but not subtle for subtle semantic colors use primary",
+				"description": "Used on signal, warning, error and success colors",
 				"stitches": "$gray600-static"
 			}
 		}
