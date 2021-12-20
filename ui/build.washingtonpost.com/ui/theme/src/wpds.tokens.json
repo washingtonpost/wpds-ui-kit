@@ -379,40 +379,20 @@
 				"description": "The color for error status",
 				"stitches": "$red100"
 			},
-			"errorSubtle": {
-				"value": "{red300}",
-				"description": "A more subtle error for a less harsh contrast",
-				"stitches": "$red300"
-			},
 			"success": {
 				"value": "{green100}",
 				"description": "The color for success status",
 				"stitches": "$green100"
-			},
-			"successSubtle": {
-				"value": "{green300}",
-				"description": "A more subtle success for a less harsh contrast",
-				"stitches": "$green300"
 			},
 			"warning": {
 				"value": "{orange100}",
 				"description": "The color for warning status",
 				"stitches": "$orange100"
 			},
-			"warningSubtle": {
-				"value": "{orange300}",
-				"description": "A more subtle warning for a less harsh contrast",
-				"stitches": "$orange300"
-			},
 			"signal": {
 				"value": "{blue200}",
 				"description": "The color to signal or focus the user attention",
 				"stitches": "$blue200"
-			},
-			"signalSubtle": {
-				"value": "{blue300}",
-				"description": "A more subtle signal for a less harsh contrast",
-				"stitches": "$blue300"
 			},
 			"onPrimary": {
 				"value": "{gray600}",
