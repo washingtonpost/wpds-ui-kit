@@ -2,7 +2,8 @@
 	"extends": "./tsconfig.base.json",
 	"compilerOptions": {
 		"paths": {
-			"*": ["node_modules/*"]
+			"*": ["node_modules/*"],
+			"@washingtonpost/wpds-ui-kit": ["ui/kit"]
 		}
 	}
 }
