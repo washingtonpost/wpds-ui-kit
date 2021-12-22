@@ -19,13 +19,15 @@
 		"url": "git+https://github.com/WPMedia/wpds-ui-kit.git"
 	},
 	"scripts": {
-		"test": "echo \"Error: run tests from root\" && exit 1"
+		"test": "echo \"Error: run tests from root\" && exit 1",
+		"build": "npx parcel build --log-level verbose --no-cache"
 	},
 	"bugs": {
 		"url": "https://github.com/WPMedia/wpds-ui-kit/issues"
 	},
 	"devDependencies": {
-		"react": "^16.14.0"
+		"react": "^16.14.0",
+		"parcel": "^2.0.1"
 	},
 	"peerDependencies": {
 		"react": ">=16.8.6"

@@ -18,7 +18,7 @@ jobs:
 
             - uses: actions/setup-node@v2
               with:
-                  node-version: lts/fermium
+                  node-version: lts/erbium
                   cache: "npm"
                   always-auth: true
                   registry-url: "https://registry.npmjs.org"
