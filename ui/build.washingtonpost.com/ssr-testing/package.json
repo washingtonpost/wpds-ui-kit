@@ -14,7 +14,11 @@
 	"dependencies": {
 		"@washingtonpost/site-components": "latest",
 		"@washingtonpost/wpds-assets": "^1.0.5-alpha.5",
-		"@washingtonpost/wpds-ui-kit": "file:../ui/kit",
+		"@washingtonpost/wpds-ui-kit": "0.1.0-experimental.9",
+		"@washingtonpost/ui-box": "0.1.0-experimental.3",
+		"@washingtonpost/ui-icon": "0.1.0-experimental.9",
+		"@washingtonpost/ui-theme": "0.1.0-experimental.8",
+		"@washingtonpost/ui-visually-hidden": "0.1.0-experimental.4",
 		"next": "^12.0.4",
 		"react": "^17.0.2",
 		"react-dom": "^17.0.2"

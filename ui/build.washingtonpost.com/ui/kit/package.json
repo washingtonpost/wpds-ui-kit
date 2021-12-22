@@ -25,10 +25,10 @@
 	},
 	"dependencies": {
 		"@babel/runtime": "^7.13.10",
-		"@washingtonpost/ui-box": "latest",
-		"@washingtonpost/ui-icon": "latest",
-		"@washingtonpost/ui-theme": "latest",
-		"@washingtonpost/ui-visually-hidden": "latest"
+		"@washingtonpost/ui-box": "0.1.0-experimental.3",
+		"@washingtonpost/ui-icon": "0.1.0-experimental.9",
+		"@washingtonpost/ui-theme": "0.1.0-experimental.8",
+		"@washingtonpost/ui-visually-hidden": "0.1.0-experimental.4"
 	},
 	"devDependencies": {
 		"@swc/cli": "^0.1.55",
