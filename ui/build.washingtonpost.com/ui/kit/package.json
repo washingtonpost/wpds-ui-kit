@@ -7,6 +7,7 @@
 	"license": "ISC",
 	"source": "src/index.ts",
 	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
 	"files": [
 		"dist",
 		"README.md"
@@ -18,7 +19,7 @@
 	},
 	"scripts": {
 		"test": "echo \"Error: run tests from root\" && exit 1",
-		"build": "npx swc src/index.ts --out-file dist/index.js"
+		"build": "npx parcel build --log-level verbose --no-cache && npx swc src/index.ts --out-file dist/index.js"
 	},
 	"bugs": {
 		"url": "https://github.com/WPMedia/wpds-ui-kit/issues"
