@@ -1,6 +1,6 @@
 {
 	"name": "@washingtonpost/ui-box",
-	"version": "0.1.0-experimental.2",
+	"version": "0.1.0-experimental.3",
 	"description": "> TODO: description",
 	"author": "artmsilva <artmsilva@gmail.com>",
 	"homepage": "https://github.com/WPMedia/wpds-ui-kit#readme",
@@ -26,8 +26,8 @@
 		"url": "https://github.com/WPMedia/wpds-ui-kit/issues"
 	},
 	"devDependencies": {
-		"react": "^16.14.0",
-		"parcel": "^2.0.1"
+		"parcel": "^2.0.1",
+		"react": "^16.14.0"
 	},
 	"peerDependencies": {
 		"react": ">=16.8.6"
