@@ -1,6 +1,6 @@
 import * as React from "react";
-import { Icon } from "@washingtonpost/ui-icon";
-import { styled } from "@washingtonpost/ui-theme";
+import { Icon } from "@washingtonpost/wpds-ui-kit";
+import { styled } from "@washingtonpost/wpds-ui-kit";
 import Garlic from "@washingtonpost/wpds-assets/asset/voraciously";
 
 const Container = styled("div", {
