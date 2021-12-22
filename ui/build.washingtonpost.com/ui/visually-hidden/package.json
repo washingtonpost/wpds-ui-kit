@@ -1,6 +1,6 @@
 {
 	"name": "@washingtonpost/ui-visually-hidden",
-	"version": "0.1.0-experimental.4",
+	"version": "0.1.0-experimental.5",
 	"description": "> TODO: description",
 	"author": "artmsilva <artmsilva@gmail.com>",
 	"homepage": "https://github.com/WPMedia/wpds-ui-kit#readme",
@@ -33,7 +33,7 @@
 	},
 	"dependencies": {
 		"@babel/runtime": "^7.13.10",
-		"@washingtonpost/ui-theme": "0.1.0-experimental.8",
+		"@washingtonpost/ui-theme": "0.1.0-experimental.9",
 		"parcel": "^2.0.1"
 	}
 }
