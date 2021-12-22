@@ -1,7 +1,7 @@
 import React from "react";
 import Head from "next/head";
 import { Favicon } from "@washingtonpost/site-components/core/favicon";
-import { theme, styled, globalStyles } from "@washingtonpost/ui-theme";
+import { theme, styled, globalStyles } from "@washingtonpost/wpds-ui-kit";
 
 const Page = styled("article", {
 	paddingBottom: "$500",

@@ -33,7 +33,7 @@
 	},
 	"dependencies": {
 		"@babel/runtime": "^7.13.10",
-		"@washingtonpost/ui-theme": "latest",
+		"@washingtonpost/ui-theme": "0.1.0-experimental.8",
 		"parcel": "^2.0.1"
 	}
 }
