@@ -12,6 +12,7 @@ export const {
 	theme,
 	createTheme,
 	config,
+	reset,
 } = stitches.createStitches({
 	prefix,
 	theme: {
