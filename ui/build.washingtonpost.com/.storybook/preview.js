@@ -1,5 +1,5 @@
 import React from "react";
-import { globalStyles } from "@washingtonpost/ui-theme";
+import { globalStyles } from "@washingtonpost/wpds-ui-kit";
 
 export const parameters = {
 	actions: { argTypesRegex: "^on[A-Z].*" },
