@@ -1,7 +1,7 @@
 # Icon
 
 ```jsx
-import { Icon } from "@washingtonpost/ui-icon";
+import { Icon } from "@washingtonpost/wpds-ui-kit";
 import { Garlic } from "@washingtonpost/wpds-assets";
 
 function Component() {

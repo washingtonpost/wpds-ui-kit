@@ -1,7 +1,7 @@
 # VisuallyHidden
 
 ```jsx
-import { VisuallyHidden } from "@washingtonpost/ui-visually-hidden";
+import { VisuallyHidden } from "@washingtonpost/wpds-ui-kit";
 
 function Component() {
 	return (

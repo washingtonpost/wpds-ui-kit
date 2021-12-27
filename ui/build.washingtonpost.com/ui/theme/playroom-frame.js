@@ -1,4 +1,4 @@
-import { globalStyles } from "@washingtonpost/ui-theme";
+import { globalStyles } from "@washingtonpost/wpds-ui-kit";
 
 export default function FrameComponent({ theme, children }) {
 	globalStyles();

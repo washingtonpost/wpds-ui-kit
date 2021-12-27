@@ -34,6 +34,6 @@
 	},
 	"dependencies": {
 		"@babel/runtime": "^7.13.10",
-		"@washingtonpost/ui-visually-hidden": "0.1.0-experimental.5"
+		"@washingtonpost/ui-visually-hidden": "experimental"
 	}
 }
