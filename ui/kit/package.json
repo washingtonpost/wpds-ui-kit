@@ -1,6 +1,6 @@
 {
 	"name": "@washingtonpost/wpds-ui-kit",
-	"version": "0.1.0-experimental.13",
+	"version": "0.1.0-experimental.14",
 	"description": "> TODO: description",
 	"author": "artmsilva <artmsilva@gmail.com>",
 	"homepage": "https://github.com/WPMedia/wpds-ui-kit#readme",
@@ -27,10 +27,10 @@
 	},
 	"dependencies": {
 		"@babel/runtime": "^7.13.10",
-		"@washingtonpost/ui-box": "0.1.0-experimental.5",
-		"@washingtonpost/ui-icon": "0.1.0-experimental.11",
-		"@washingtonpost/ui-theme": "0.1.0-experimental.11",
-		"@washingtonpost/ui-visually-hidden": "0.1.0-experimental.6"
+		"@washingtonpost/ui-box": "0.1.0-experimental.6",
+		"@washingtonpost/ui-icon": "0.1.0-experimental.12",
+		"@washingtonpost/ui-theme": "0.1.0-experimental.12",
+		"@washingtonpost/ui-visually-hidden": "0.1.0-experimental.7"
 	},
 	"devDependencies": {
 		"@swc/cli": "^0.1.55",
