@@ -31,10 +31,11 @@
 		"react": "^16.14.0"
 	},
 	"peerDependencies": {
-		"react": ">=16.8.6"
+		"react": ">=16.8.6",
+		"@washingtonpost/ui-theme": "0.1.0-experimental.12"
 	},
 	"dependencies": {
 		"@babel/runtime": "^7.13.10",
-		"@washingtonpost/ui-theme": "experimental"
+		"@washingtonpost/ui-theme": "0.1.0-experimental.12"
 	}
 }
