@@ -1,6 +1,6 @@
 {
 	"name": "@washingtonpost/ui-icon",
-	"version": "0.1.0-experimental.12",
+	"version": "0.1.0-experimental.16",
 	"description": "> TODO: description",
 	"author": "artmsilva <artmsilva@gmail.com>",
 	"homepage": "https://github.com/WPMedia/wpds-ui-kit#readme",
@@ -31,11 +31,11 @@
 		"react": "^16.14.0"
 	},
 	"peerDependencies": {
-		"react": ">=16.8.6",
-		"@washingtonpost/ui-visually-hidden": "0.1.0-experimental.7"
+		"@washingtonpost/ui-visually-hidden": "0.1.0-experimental.7",
+		"react": ">=16.8.6"
 	},
 	"dependencies": {
 		"@babel/runtime": "^7.13.10",
-		"@washingtonpost/ui-visually-hidden": "0.1.0-experimental.7"
+		"@washingtonpost/ui-visually-hidden": "0.1.0-experimental.16"
 	}
 }

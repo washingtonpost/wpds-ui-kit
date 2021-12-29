@@ -1,6 +1,6 @@
 {
 	"name": "@washingtonpost/ui-box",
-	"version": "0.1.0-experimental.6",
+	"version": "0.1.0-experimental.16",
 	"description": "> TODO: description",
 	"author": "artmsilva <artmsilva@gmail.com>",
 	"homepage": "https://github.com/WPMedia/wpds-ui-kit#readme",
@@ -31,8 +31,8 @@
 		"react": "^16.14.0"
 	},
 	"peerDependencies": {
-		"react": ">=16.8.6",
-		"@washingtonpost/ui-theme": "0.1.0-experimental.12"
+		"@washingtonpost/ui-theme": "0.1.0-experimental.12",
+		"react": ">=16.8.6"
 	},
 	"dependencies": {
 		"@babel/runtime": "^7.13.10",
