@@ -12,7 +12,8 @@
 	"files": [
 		"dist",
 		"README.md",
-		"src/wpds.tokens.json"
+		"src/wpds.tokens.json",
+		"src"
 	],
 	"sideEffects": false,
 	"repository": {
