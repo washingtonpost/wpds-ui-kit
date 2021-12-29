@@ -1,7 +1,6 @@
 {
 	"packages": ["./ui/*", "./ssr-testing", "./kit"],
 	"useWorkspaces": true,
-	"version": "independent",
 	"npmClient": "npm",
 	"command": {
 		"version": {
@@ -17,5 +16,6 @@
 			"registry": "https://registry.npmjs.org/",
 			"allowBranch": "main"
 		}
-	}
+	},
+	"version": "0.0.0"
 }

@@ -1,7 +1,12 @@
 import * as React from "react";
 import { Story, Meta } from "@storybook/react";
 import { within, userEvent } from "@storybook/testing-library";
+import { styled } from "@washingtonpost/wpds-ui-kit";
 import { VisuallyHidden } from "./visually-hidden";
+
+const Disclaimer = styled("div", {
+	color: "$primary",
+});
 
 export default {
 	title: "VisuallyHidden",
@@ -10,7 +15,9 @@ export default {
 
 const Template: Story<typeof VisuallyHidden> = (args) => (
 	<React.Fragment>
-		<div>This story is used to test the visually hidden component.</div>
+		<Disclaimer>
+			This story is used to test the visually hidden component.
+		</Disclaimer>
 		<VisuallyHidden
 			as="a"
 			href="#hello-world"
