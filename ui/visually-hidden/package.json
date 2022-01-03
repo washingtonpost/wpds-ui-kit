@@ -27,7 +27,8 @@
 		"url": "https://github.com/WPMedia/wpds-ui-kit/issues"
 	},
 	"devDependencies": {
-		"react": "^16.14.0"
+		"react": "^16.14.0",
+		"parcel": "^2.0.1"
 	},
 	"peerDependencies": {
 		"@washingtonpost/ui-theme": "0.1.0-experimental.12",
@@ -35,7 +36,6 @@
 	},
 	"dependencies": {
 		"@babel/runtime": "^7.13.10",
-		"@washingtonpost/ui-theme": "0.1.0-experimental.12",
-		"parcel": "^2.0.1"
+		"@washingtonpost/ui-theme": "0.1.0-experimental.12"
 	}
 }
