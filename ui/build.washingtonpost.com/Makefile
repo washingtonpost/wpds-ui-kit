@@ -23,3 +23,9 @@ main-publish:
 
 main-version:
 	npx lerna version --conventional-commits --yes --conventional-graduate --create-release github
+
+# create experimental release
+experimental-release:
+	make experimental-version
+	npm run build
+	make experimental-publish

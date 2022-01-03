@@ -12,5 +12,5 @@
 			export const fontWeights={"light":300,"regular":400,"bold":700}
 			export const lineHeights={"100":1,"110":1.1,"125":1.25,"150":1.5,"160":1.6,"175":1.75,"200":2,"240":2.4}
 			export const shadows={"50":"0px 2px 0px 0px #D5D5D5","100":"0px 1px 2px 0px rgba(102, 102, 102, 0.25)","200":"0px 2px 4px 0px rgba(102, 102, 102, 0.25)","300":"0px 4px 8px 0px rgba(102, 102, 102, 0.25)","400":"0px 8px 16px 0px rgba(102, 102, 102, 0.25)","500":"0px 16px 32px 0px rgba(102, 102, 102, 0.25)"}
-			export const zIndices={"z-offer":400,"z-shell":300,"z-ads":200,"z-page":100}
+			export const zIndices={"offer":400,"shell":300,"ads":200,"page":100}
 			
