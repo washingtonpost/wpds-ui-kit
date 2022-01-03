@@ -1,4 +1,4 @@
-import * as Theme from "@washingtonpost/ui-theme";
+import * as Theme from "@washingtonpost/wpds-theme";
 
 export const VisuallyHidden = Theme.styled("span", {
 	position: "absolute",

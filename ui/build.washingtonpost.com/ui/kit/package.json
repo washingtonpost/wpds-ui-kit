@@ -27,10 +27,10 @@
 	},
 	"dependencies": {
 		"@babel/runtime": "^7.13.10",
-		"@washingtonpost/ui-box": "0.1.0-experimental.16",
-		"@washingtonpost/ui-icon": "0.1.0-experimental.16",
-		"@washingtonpost/ui-theme": "0.1.0-experimental.12",
-		"@washingtonpost/ui-visually-hidden": "0.1.0-experimental.16"
+		"@washingtonpost/wpds-box": "0.1.0-experimental.16",
+		"@washingtonpost/wpds-icon": "0.1.0-experimental.16",
+		"@washingtonpost/wpds-theme": "0.1.0-experimental.12",
+		"@washingtonpost/wpds-visually-hidden": "0.1.0-experimental.16"
 	},
 	"devDependencies": {
 		"@swc/cli": "^0.1.55",
@@ -38,9 +38,9 @@
 		"parcel": "^2.0.1"
 	},
 	"peerDependencies": {
-		"@washingtonpost/ui-box": "0.1.0-experimental.6",
-		"@washingtonpost/ui-icon": "0.1.0-experimental.12",
-		"@washingtonpost/ui-theme": "0.1.0-experimental.12",
-		"@washingtonpost/ui-visually-hidden": "0.1.0-experimental.7"
+		"@washingtonpost/wpds-box": "0.1.0-experimental.6",
+		"@washingtonpost/wpds-icon": "0.1.0-experimental.12",
+		"@washingtonpost/wpds-theme": "0.1.0-experimental.12",
+		"@washingtonpost/wpds-visually-hidden": "0.1.0-experimental.7"
 	}
 }
