@@ -1,5 +1,5 @@
 {
-	"name": "@washingtonpost/ui-visually-hidden",
+	"name": "@washingtonpost/wpds-visually-hidden",
 	"version": "0.1.0-experimental.16",
 	"description": "> TODO: description",
 	"author": "artmsilva <artmsilva@gmail.com>",
@@ -31,11 +31,11 @@
 		"parcel": "^2.0.1"
 	},
 	"peerDependencies": {
-		"@washingtonpost/ui-theme": "0.1.0-experimental.12",
+		"@washingtonpost/wpds-theme": "0.1.0-experimental.12",
 		"react": ">=16.8.6"
 	},
 	"dependencies": {
 		"@babel/runtime": "^7.13.10",
-		"@washingtonpost/ui-theme": "0.1.0-experimental.12"
+		"@washingtonpost/wpds-theme": "0.1.0-experimental.12"
 	}
 }

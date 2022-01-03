@@ -1,5 +1,5 @@
 import * as React from "react";
-import * as VH from "@washingtonpost/ui-visually-hidden";
+import * as VH from "@washingtonpost/wpds-visually-hidden";
 
 const NAME = "Icon";
 

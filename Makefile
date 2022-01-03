@@ -3,7 +3,7 @@ localdev-storybook-in-nextjs:
 
 build:
 	npx prettier --write .
-	lerna run build --stream --scope @washingtonpost/ui-theme
+	lerna run build --stream --scope @washingtonpost/wpds-theme
 	lerna run build --stream
 
 all-dev:
