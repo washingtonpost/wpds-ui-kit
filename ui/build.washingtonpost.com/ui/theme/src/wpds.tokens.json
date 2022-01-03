@@ -707,19 +707,19 @@
 	},
 	"z-index": {
 		"description": "Defines the layering order of elements in the app",
-		"z-offer": {
+		"offer": {
 			"value": 400,
 			"description": "This layer is reserved only for offers like paywalls, overlays etc"
 		},
-		"z-shell": {
+		"shell": {
 			"value": 300,
 			"description": "This layer is reserved for shell items like the fixed primary nav"
 		},
-		"z-ads": {
+		"ads": {
 			"value": 200,
 			"description": "This layer is reserved for ads not on page"
 		},
-		"z-page": {
+		"page": {
 			"value": 100,
 			"description": "Any content that is on that main page"
 		}
