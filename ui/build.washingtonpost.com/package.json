@@ -54,14 +54,10 @@
 		"./kit"
 	],
 	"dependencies": {
-		"@stitches/react": "https://gitpkg.now.sh/withneutron/stitches/packages/react?release/749_Temp-release",
+		"@stitches/react": "^1.2.6",
 		"@washingtonpost/site-components": "latest",
-		"@washingtonpost/wpds-box": "0.1.0-experimental.3",
-		"@washingtonpost/wpds-icon": "0.1.0-experimental.9",
-		"@washingtonpost/wpds-theme": "0.1.0-experimental.8",
-		"@washingtonpost/wpds-visually-hidden": "0.1.0-experimental.4",
+		"@washingtonpost/wpds-ui-kit": "^0.1.0-experimental.17",
 		"@washingtonpost/wpds-assets": "^1.1.3",
-		"@washingtonpost/wpds-ui-kit": "0.1.0-experimental.11",
 		"react": "^17.0.2",
 		"react-dom": "^17.0.2"
 	},
