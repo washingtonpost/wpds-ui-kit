@@ -31,7 +31,7 @@
 		"react": "^16.14.0"
 	},
 	"peerDependencies": {
-		"@washingtonpost/wpds-visually-hidden": "0.1.0-experimental.7",
+		"@washingtonpost/wpds-visually-hidden": "*",
 		"react": ">=16.8.6"
 	},
 	"dependencies": {

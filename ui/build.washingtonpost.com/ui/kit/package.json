@@ -38,9 +38,9 @@
 		"parcel": "^2.0.1"
 	},
 	"peerDependencies": {
-		"@washingtonpost/wpds-box": "0.1.0-experimental.6",
-		"@washingtonpost/wpds-icon": "0.1.0-experimental.12",
-		"@washingtonpost/wpds-theme": "0.1.0-experimental.12",
-		"@washingtonpost/wpds-visually-hidden": "0.1.0-experimental.7"
+		"@washingtonpost/wpds-box": "*",
+		"@washingtonpost/wpds-icon": "*",
+		"@washingtonpost/wpds-theme": "*",
+		"@washingtonpost/wpds-visually-hidden": "*"
 	}
 }

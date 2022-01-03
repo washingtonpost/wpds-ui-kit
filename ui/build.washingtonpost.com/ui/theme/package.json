@@ -30,10 +30,10 @@
 	},
 	"dependencies": {
 		"@babel/runtime": "^7.13.10",
-		"@stitches/react": "https://gitpkg.now.sh/withneutron/stitches/packages/react?release/749_Temp-release"
+		"@stitches/react": "^1.2.6"
 	},
 	"peerDependencies": {
-		"@stitches/react": "https://gitpkg.now.sh/withneutron/stitches/packages/react?release/749_Temp-release"
+		"@stitches/react": "*"
 	},
 	"devDependencies": {
 		"parcel": "^2.0.1"
