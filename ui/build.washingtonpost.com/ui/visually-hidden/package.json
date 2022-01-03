@@ -1,6 +1,6 @@
 {
 	"name": "@washingtonpost/wpds-visually-hidden",
-	"version": "0.1.0-experimental.16",
+	"version": "0.1.0-experimental.17",
 	"description": "> TODO: description",
 	"author": "artmsilva <artmsilva@gmail.com>",
 	"homepage": "https://github.com/WPMedia/wpds-ui-kit#readme",
@@ -27,8 +27,8 @@
 		"url": "https://github.com/WPMedia/wpds-ui-kit/issues"
 	},
 	"devDependencies": {
-		"react": "^16.14.0",
-		"parcel": "^2.0.1"
+		"parcel": "^2.0.1",
+		"react": "^16.14.0"
 	},
 	"peerDependencies": {
 		"@washingtonpost/wpds-theme": "0.1.0-experimental.12",
@@ -36,6 +36,6 @@
 	},
 	"dependencies": {
 		"@babel/runtime": "^7.13.10",
-		"@washingtonpost/wpds-theme": "0.1.0-experimental.12"
+		"@washingtonpost/wpds-theme": "0.1.0-experimental.17"
 	}
 }
