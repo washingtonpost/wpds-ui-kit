@@ -10,7 +10,6 @@ npm i @washingtonpost/wpds-ui-kit
 
 -   the ssr-testing/kitchen sink is on vercel
 -   storybook will be on chromatic
--   playroom will probably be added to vercel
 
 ## [Contributing](docs/CONTRIBUTING.md)
 
