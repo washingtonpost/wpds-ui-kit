@@ -1,6 +1,6 @@
 {
 	"name": "@washingtonpost/wpds-icon",
-	"version": "0.1.0-experimental.18",
+	"version": "0.1.0-experimental.19",
 	"description": "> TODO: description",
 	"author": "artmsilva <artmsilva@gmail.com>",
 	"homepage": "https://github.com/WPMedia/wpds-ui-kit#readme",
@@ -39,6 +39,6 @@
 	},
 	"dependencies": {
 		"@babel/runtime": "^7.13.10",
-		"@washingtonpost/wpds-visually-hidden": "0.1.0-experimental.18"
+		"@washingtonpost/wpds-visually-hidden": "0.1.0-experimental.19"
 	}
 }
