@@ -15,6 +15,9 @@
 		"src"
 	],
 	"sideEffects": false,
+	"publishConfig": {
+		"access": "public"
+	},
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/WPMedia/wpds-ui-kit.git"

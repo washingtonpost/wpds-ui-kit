@@ -20,6 +20,9 @@
 		"type": "git",
 		"url": "git+https://github.com/WPMedia/wpds-ui-kit.git"
 	},
+	"publishConfig": {
+		"access": "public"
+	},
 	"scripts": {
 		"build:transform": "node build/transform.js",
 		"build": "npm run build:transform && npx parcel build --log-level verbose --no-cache",
