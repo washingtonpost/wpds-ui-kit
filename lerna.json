@@ -1,9 +1,5 @@
 {
-	"packages": [
-		"./ui/*",
-		"./ssr-testing",
-		"./kit"
-	],
+	"packages": ["./ui/*", "./ssr-testing", "./kit"],
 	"useWorkspaces": true,
 	"npmClient": "npm",
 	"command": {
@@ -16,10 +12,7 @@
 			"conventionalCommits": true,
 			"message": "chore(release): publish",
 			"npmClient": "npm",
-			"ignoreChanges": [
-				"**/stories/**",
-				"**/tests/**"
-			],
+			"ignoreChanges": ["**/stories/**", "**/tests/**"],
 			"registry": "https://registry.npmjs.org/",
 			"allowBranch": "main"
 		}
