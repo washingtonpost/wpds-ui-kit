@@ -56,7 +56,11 @@
 	"dependencies": {
 		"@stitches/react": "^1.2.6",
 		"@washingtonpost/site-components": "latest",
-		"@washingtonpost/wpds-ui-kit": "^0.1.0-experimental.17",
+		"@washingtonpost/wpds-ui-kit": "file:ui/kit",
+		"@washingtonpost/wpds-theme": "file:ui/theme",
+		"@washingtonpost/wpds-icon": "file:ui/icon",
+		"@washingtonpost/wpds-visually-hidden": "file:ui/visually-hidden",
+		"@washingtonpost/wpds-box": "file:ui/box",
 		"@washingtonpost/wpds-assets": "^1.1.3",
 		"react": "^17.0.2",
 		"react-dom": "^17.0.2"
