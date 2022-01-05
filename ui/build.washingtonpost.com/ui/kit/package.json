@@ -18,6 +18,9 @@
 		"type": "git",
 		"url": "git+https://github.com/WPMedia/wpds-ui-kit.git"
 	},
+	"publishConfig": {
+		"access": "public"
+	},
 	"scripts": {
 		"test": "echo \"Error: run tests from root\" && exit 1",
 		"build": "npx parcel build --log-level verbose --no-cache && npx swc src/index.ts --out-file dist/index.js"
