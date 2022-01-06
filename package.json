@@ -42,7 +42,7 @@
 		"playroom": "0.27.6",
 		"plop": "^3.0.5",
 		"prettier": "2.4.1",
-		"size-limit": "^6.0.3",
+		"size-limit": "^7.0.5",
 		"start-server-and-test": "^1.14.0",
 		"storybook-addon-playroom": "^2.1.4",
 		"storybook-addon-themes": "^6.1.0",
