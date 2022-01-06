@@ -1,0 +1,30 @@
+import * as React from "react";
+import { Story, Meta } from "@storybook/react";
+import { within, userEvent } from "@storybook/testing-library";
+import { {{ componentName }} } from "./";
+
+
+export default {
+	title: "{{ componentName }}",
+	component: {{ componentName }},
+} as Meta<typeof {{ componentName }}>;
+
+const Template: Story<typeof {{ componentName }}> = (args) => (
+	<{{ componentName }}
+	    {...args}
+    />
+);
+
+export const Play = Template.bind({});
+
+Play.storyName = "👀";
+
+Play.args = {};
+
+Play.play = async ({ canvasElement }) => {
+	const canvas = within(canvasElement);
+
+	userEvent.tab();
+
+	userEvent.click(canvas.getByTestId("skip-link"));
+};

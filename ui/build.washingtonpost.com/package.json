@@ -40,6 +40,7 @@
 		"next": "^12.0.4",
 		"parcel": "^2.0.1",
 		"playroom": "0.27.6",
+		"plop": "^3.0.5",
 		"prettier": "2.4.1",
 		"size-limit": "^6.0.3",
 		"start-server-and-test": "^1.14.0",
@@ -87,7 +88,8 @@
 		"website:build": "lerna run build --scope ssr-testing --stream",
 		"dev": "lerna run --parallel dev",
 		"chromatic": "npx chromatic --project-token=b457f2a94e96",
-		"postinstall": "npm run bootstrap"
+		"postinstall": "npm run bootstrap",
+		"new-component": "make new-component"
 	},
 	"engines": {
 		"yarn": "yarn NO LONGER USED - use npm instead.",
