@@ -29,3 +29,7 @@ experimental-release:
 	make experimental-version
 	npm run build
 	make experimental-publish
+
+# create command for plop templates
+new-component:
+	npx plop --plopfile ./scripts/plopfile.js
