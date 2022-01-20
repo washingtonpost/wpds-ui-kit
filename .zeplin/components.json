@@ -21,7 +21,7 @@
 	],
 	"links": [
 		{
-			"name": "build.washingtonpost.com",
+			"name": "📄 WPDS Doc site",
 			"type": "documentation",
 			"url": "https://v1.wpds.docs.preview.now.washingtonpost.com"
 		}
