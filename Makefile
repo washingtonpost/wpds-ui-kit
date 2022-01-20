@@ -19,7 +19,7 @@ experimental-publish:
 	npx lerna publish from-package --dist-tag experimental --yes
 
 main-publish: 
-	npx lerna publish from-git --yes --no-git-reset
+	npx lerna publish from-git --yes --no-git-reset --no-verify-access
 
 main-version:
 	npx lerna version --conventional-commits --yes --conventional-graduate --create-release github
@@ -33,3 +33,5 @@ experimental-release:
 # create command for plop templates
 new-component:
 	npx plop --plopfile ./scripts/plopfile.js
+	npx lerna link --force-local
+	npm run bootstrap
