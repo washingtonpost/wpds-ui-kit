@@ -26,6 +26,7 @@ jobs:
             - run: npm install
               env:
                   NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
+                  PARCEL_WORKER_BACKEND: process
 
             - uses: actions/upload-artifact@v2.2.4
               with:
@@ -37,6 +38,7 @@ jobs:
             - uses: chromaui/action@v1
               env:
                   NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
+                  PARCEL_WORKER_BACKEND: process
               with:
                   projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
                   token: ${{ secrets.GITHUB_TOKEN }}
