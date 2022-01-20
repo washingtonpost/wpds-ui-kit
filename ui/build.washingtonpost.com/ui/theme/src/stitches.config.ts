@@ -67,6 +67,18 @@ export const {
 			paddingTop: value,
 			paddingBottom: value,
 		}),
+		my: (value: any) => ({
+			marginTop: value,
+			marginBottom: value,
+		}),
+		mx: (value: any) => ({
+			marginLeft: value,
+			marginRight: value,
+		}),
+		size: (value: any) => ({
+			width: value,
+			height: value,
+		}),
 	},
 });
 
@@ -92,6 +104,9 @@ export const globalStyles = globalCss({
 	},
 	html: {
 		overflowX: "hidden",
+		"-webkit-font-smoothing": "antialiased",
+		textRendering: "optimizeLegibility",
+		textSizeAdjust: "100%",
 	},
 	body: {
 		margin: 0,
