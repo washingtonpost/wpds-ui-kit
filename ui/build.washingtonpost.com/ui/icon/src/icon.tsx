@@ -32,12 +32,12 @@ interface IconProps {
 
 ```jsx
 import { Icon } from "@washingtonpost/wpds-ui-kit";
-import { Garlic } from "@washingtonpost/wpds-assets";
+import Info from "@washingtonpost/wpds-assets/asset/info";
 
 function Component() {
 	return (
-		<Icon size="16" label="garlic">
-			<Garlic />
+		<Icon size="16" label="Info">
+			<Info />
 		</Icon>
 	);
 }
