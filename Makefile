@@ -1,9 +1,10 @@
 localdev-storybook-in-nextjs:
-	start-storybook -p 6006 --preview-url=/storybook/iframe.html --modern --quiet --ci --force-build-preview
+	npx start-storybook -p 6006 --preview-url=/storybook/iframe.html --modern --quiet --ci --force-build-preview
 
-build:
+build: 
 	npx prettier --write .
 	lerna run build --stream --scope @washingtonpost/wpds-theme
+	npx build-storybook --output-dir ./ssr-testing/public/storybook 
 	lerna run build --stream
 
 all-dev:
