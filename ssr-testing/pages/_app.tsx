@@ -18,6 +18,7 @@ const Container = styled("section", {
     margin: "$200",
   },
 });
+
 const List = styled("ul", {
   listStyle: "none",
   display: "flex",
@@ -27,11 +28,13 @@ const List = styled("ul", {
   alignItems: "center",
 });
 
+Link.toString = () => ".next-link";
+
 const ListItem = styled("li", {
   padding: "$100",
 });
 
-const Anchor = styled(Link, {
+const Anchor = styled("a", {
   $$anchorColor: theme.colors.secondary,
   color: "$$anchorColor",
   textDecoration: "none",
@@ -53,10 +56,14 @@ function SiteNavigation() {
   return (
     <List>
       <ListItem>
-        <Anchor href="/kitchen-sink">Kitchen Sink</Anchor>
+        <Link href="/kitchen-sink" passHref>
+          <Anchor>Kitchen Sink</Anchor>
+        </Link>
       </ListItem>
       <ListItem>
-        <Anchor href="/storybook">Storybook</Anchor>
+        <Link href="/storybook" passHref>
+          <Anchor>Storybook</Anchor>
+        </Link>
       </ListItem>
     </List>
   );
