@@ -24,37 +24,6 @@ interface IconProps {
 	label: string;
 }
 
-/**
- * @washingtonpost/wpds-ui-kit
- * Create an assistive accessible icon
- * 
- * # Icon
-
-```jsx
-import { Icon } from "@washingtonpost/wpds-ui-kit";
-import Info from "@washingtonpost/wpds-assets/asset/info";
-
-function Component() {
-	return (
-		<Icon size="16" label="Info">
-			<Info />
-		</Icon>
-	);
-}
-```
-
-## Component API
-
--   size (["16", "24", "32"]), width and height of our icons from the system
--   label, The accessibility label for the icon. This label will be visually hidden but read aloud by VoiceOver and other screenreaders to describe the icon.
-
-## Do's and Don'ts
-
--   fill color will be set on the SVG icon component. not this component
--   the svg icon component will be hidden from the a11y tree. it's presentational. The SVG's title node should be removed as well.
-
- * 
- */
 export const Icon: React.FC<IconProps> = ({ children, size = "16", label }) => {
 	const child = React.Children.only(children);
 
