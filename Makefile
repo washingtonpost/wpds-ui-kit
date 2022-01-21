@@ -3,9 +3,8 @@ localdev-storybook-in-nextjs:
 
 build: 
 	npx prettier --write .
-	lerna run build --stream --scope @washingtonpost/wpds-theme
-	npx build-storybook --output-dir ./ssr-testing/public/storybook 
 	lerna run build --stream
+	npx build-storybook --output-dir ./ssr-testing/public/storybook 
 
 all-dev:
 	npx concurrently -n 'workspaces,playroom,storybook,website' 'npm run dev --workspaces' 'npm run playroom:start' 'make localdev-storybook-in-nextjs' 'npm run website:dev'
