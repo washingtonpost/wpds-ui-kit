@@ -1,9 +1,10 @@
 {
-	"rewrites": [
-		{ "source": "/storybook", "destination": "/storybook/index.html" },
-		{
-			"source": "/storybook/:slug",
-			"destination": "/storybook/:slug"
-		}
-	]
+  "rewrites": [
+    { "source": "/storybook", "destination": "/storybook/index.html" },
+    { "source": "/stories.json", "destination": "/storybook/stories.json" },
+    {
+      "source": "/storybook/:slug",
+      "destination": "/storybook/:slug"
+    }
+  ]
 }
