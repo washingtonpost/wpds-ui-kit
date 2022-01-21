@@ -185,5 +185,9 @@
 				]
 			}
 		]
+	},
+	"overrides": {
+		"react-docgen-typescript": "^2.2.2",
+		"typescript": "^4.4.4"
 	}
 }
