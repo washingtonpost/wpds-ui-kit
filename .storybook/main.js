@@ -11,10 +11,11 @@ module.exports = {
   previewBody: (body) => `${body}`,
   managerHead: (head) =>
     `${head}${
-      process.env.VERCEL &&
-      `<script>
+      process.env.VERCEL
+        ? `<script>
     window['PREVIEW_URL'] = '/storybook/iframe.html';
 </script>`
+        : ""
     }`,
   webpackFinal: async (config, { configType }) => {
     if (process.env.VERCEL) {
