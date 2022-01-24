@@ -40,5 +40,6 @@
 	},
 	"devDependencies": {
 		"parcel": "^2.0.1"
-	}
+	},
+	"gitHead": "14d42419b2fda458174d05746c3d2bf26f4e9201"
 }
