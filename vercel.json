@@ -6,16 +6,5 @@
       "source": "/storybook/:slug",
       "destination": "/storybook/:slug"
     }
-  ],
-  "headers": [
-    {
-      "source": "/**",
-      "headers": [
-        {
-          "key": "X-Frame-Options",
-          "value": "null"
-        }
-      ]
-    }
   ]
 }
