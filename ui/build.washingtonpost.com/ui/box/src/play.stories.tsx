@@ -1,26 +1,24 @@
 import * as React from "react";
 import { Story } from "@storybook/react";
-import { Box } from "./box";
+import { Box as Component } from "./box";
 
 export default {
-	title: "Box",
-	component: Box,
+  title: "Box",
+  component: Component,
 };
 
 const Template: Story = (args) => (
-	<Box
-		as="h1"
-		css={{
-			color: "$primary",
-		}}
-		{...args}
-	>
-		Hello, World!
-	</Box>
+  <Component
+    as="h1"
+    css={{
+      color: "$primary",
+    }}
+    {...args}
+  >
+    Hello, World!
+  </Component>
 );
 
-export const Play = Template.bind({});
+export const Box = Template.bind({});
 
-Play.storyName = "👀";
-
-Play.args = {};
+Box.args = {};

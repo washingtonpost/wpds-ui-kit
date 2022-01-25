@@ -26,7 +26,6 @@ export const parameters = {
     stylePreview: true,
     darkClass: darkTheme.className,
   },
-  zeplinLink: "https://app.zeplin.io/project/61df25430269ac2723921a9d",
 };
 
 function GlobalStyles(props) {
