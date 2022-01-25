@@ -6,9 +6,6 @@ import { Icon as Component, IconProps } from "./icon";
 export default {
   title: "Icon",
   component: Component,
-  parameters: {
-    zeplinLink: "https://zpl.io/a3GWl0x",
-  },
 };
 
 const Template: Story<IconProps> = (args) => (

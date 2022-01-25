@@ -1,27 +1,25 @@
 import * as React from "react";
 import { Story, Meta } from "@storybook/react";
 import { within, userEvent } from "@storybook/testing-library";
-import { {{ componentName }} } from "./";
+import { {{ componentName } as Component } } from "./";
 
 
 export default {
 	title: "{{ componentName }}",
-	component: {{ componentName }},
-} as Meta<typeof {{ componentName }}>;
+	component: Component,
+} as Meta<typeof Component>;
 
-const Template: Story<typeof {{ componentName }}> = (args) => (
-	<{{ componentName }}
+const Template: Story<typeof Component> = (args) => (
+	<Component
 	    {...args}
     />
 );
 
-export const Play = Template.bind({});
+export const {{ componentName }} = Template.bind({});
 
-Play.storyName = "👀";
+{{ componentName }}.args = {};
 
-Play.args = {};
-
-Play.play = async ({ canvasElement }) => {
+{{ componentName }}.play = async ({ canvasElement }) => {
 	const canvas = within(canvasElement);
 
 	userEvent.tab();

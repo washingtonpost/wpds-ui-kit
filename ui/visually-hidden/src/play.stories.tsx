@@ -2,51 +2,47 @@ import * as React from "react";
 import { Story, Meta } from "@storybook/react";
 import { within, userEvent } from "@storybook/testing-library";
 import { styled } from "@washingtonpost/wpds-ui-kit";
-import { VisuallyHidden } from "./visually-hidden";
+import { VisuallyHidden as Component } from "./visually-hidden";
 
 const Disclaimer = styled("div", {
-	color: "$primary",
+  color: "$primary",
 });
 
 export default {
-	title: "VisuallyHidden",
-	component: VisuallyHidden,
-} as Meta<typeof VisuallyHidden>;
+  title: "Visually Hidden",
+  component: Component,
+} as Meta<typeof Component>;
 
-const Template: Story<typeof VisuallyHidden> = (args) => (
-	<React.Fragment>
-		<Disclaimer>
-			This story is used to test the visually hidden component.
-		</Disclaimer>
-		<VisuallyHidden
-			as="a"
-			href="#hello-world"
-			css={{
-				color: "$cta",
-			}}
-			data-testid="skip-link"
-			onClick={function onClickHandler(event: {
-				preventDefault: () => void;
-			}) {
-				event.preventDefault();
-			}}
-			{...args}
-		>
-			Hello, World!
-		</VisuallyHidden>
-	</React.Fragment>
+const Template: Story<typeof Component> = (args) => (
+  <React.Fragment>
+    <Disclaimer>
+      This story is used to test the visually hidden component.
+    </Disclaimer>
+    <Component
+      as="a"
+      href="#hello-world"
+      css={{
+        color: "$cta",
+      }}
+      data-testid="skip-link"
+      onClick={function onClickHandler(event: { preventDefault: () => void }) {
+        event.preventDefault();
+      }}
+      {...args}
+    >
+      Hello, World!
+    </Component>
+  </React.Fragment>
 );
 
-export const Play = Template.bind({});
+export const VisuallyHidden = Template.bind({});
 
-Play.storyName = "👀";
+VisuallyHidden.args = {};
 
-Play.args = {};
+VisuallyHidden.play = async ({ canvasElement }) => {
+  const canvas = within(canvasElement);
 
-Play.play = async ({ canvasElement }) => {
-	const canvas = within(canvasElement);
+  userEvent.tab();
 
-	userEvent.tab();
-
-	userEvent.click(canvas.getByTestId("skip-link"));
+  userEvent.click(canvas.getByTestId("skip-link"));
 };
