@@ -19,7 +19,7 @@ const Template: Story<IconProps> = (args) => (
 
 export const Play = Template.bind({});
 
-Play.storyName = "👀";
+Play.storyName = "Icon";
 
 Play.args = {
   size: "32",
