@@ -31,7 +31,7 @@ module.exports = {
     return config;
   },
   features: {
-    storyStoreV7: true,
+    storyStoreV7: false,
   },
   framework: "@storybook/react",
   core: {
