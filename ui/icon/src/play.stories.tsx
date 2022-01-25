@@ -1,27 +1,25 @@
 import * as React from "react";
 import { Story } from "@storybook/react";
 import Info from "@washingtonpost/wpds-assets/asset/info";
-import { Icon, IconProps } from "./icon";
+import { Icon as Component, IconProps } from "./icon";
 
 export default {
   title: "Icon",
-  component: Icon,
+  component: Component,
   parameters: {
     zeplinLink: "https://zpl.io/a3GWl0x",
   },
 };
 
 const Template: Story<IconProps> = (args) => (
-  <Icon {...args}>
+  <Component {...args}>
     <Info />
-  </Icon>
+  </Component>
 );
 
-export const Play = Template.bind({});
+export const Icon = Template.bind({});
 
-Play.storyName = "Icon";
-
-Play.args = {
+Icon.args = {
   size: "32",
   label: "Find out more information.",
 };
