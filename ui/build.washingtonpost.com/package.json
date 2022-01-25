@@ -30,6 +30,7 @@
 		"@testing-library/react": "^12.1.2",
 		"@types/react": "^17.0.34",
 		"@types/react-dom": "^17.0.11",
+		"@zeplin/cli": "^1.1.13",
 		"@zeplin/cli-connect-react-plugin": "^1.1.1",
 		"@zeplin/cli-connect-storybook-plugin": "^0.5.4",
 		"babel-loader": "^8.2.2",
