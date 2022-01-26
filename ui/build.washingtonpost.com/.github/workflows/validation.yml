@@ -1,45 +1,45 @@
 name: Validate
 
 on:
-    pull_request:
-        paths:
-            - "ui/**/*"
-            - "package.json"
+  pull_request:
+    paths:
+      - "ui/**/*"
+      - "package.json"
 
 jobs:
-    validate:
-        name: Validate
-        runs-on: ubuntu-latest
-        timeout-minutes: 10
-        steps:
-            - uses: actions/checkout@v2
-              with:
-                  fetch-depth: 0
+  validate:
+    name: Validate
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
 
-            - uses: actions/setup-node@v2
-              with:
-                  node-version: lts/erbium
-                  cache: "npm"
-                  always-auth: true
-                  registry-url: "https://registry.npmjs.org"
+      - uses: actions/setup-node@v2
+        with:
+          node-version: lts/erbium
+          cache: "npm"
+          always-auth: true
+          registry-url: "https://registry.npmjs.org"
 
-            - run: npm install
-              env:
-                  NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
-                  PARCEL_WORKER_BACKEND: process
+      - run: npm install
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
+          PARCEL_WORKER_BACKEND: process
 
-            - uses: actions/upload-artifact@v2.2.4
-              with:
-                  name: ui-components
-                  path: |
-                      ui/**/dist
-                      !ui/**/node_modules
+      - uses: actions/upload-artifact@v2.2.4
+        with:
+          name: ui-components
+          path: |
+            ui/**/dist
+            !ui/**/node_modules
 
-            - uses: chromaui/action@v1
-              env:
-                  NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
-                  PARCEL_WORKER_BACKEND: process
-              with:
-                  projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-                  token: ${{ secrets.GITHUB_TOKEN }}
-                  exitOnceUploaded: true
+      - uses: chromaui/action@v1
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
+          PARCEL_WORKER_BACKEND: process
+        with:
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          exitOnceUploaded: true

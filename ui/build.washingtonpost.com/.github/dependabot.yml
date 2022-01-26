@@ -1,42 +1,42 @@
 version: 2
 registries:
-    npm-npmjs:
-        type: npm-registry
-        url: https://registry.npmjs.org
-        token: ${{secrets.NPM_BOT_PERSONAL_TOKEN}}
+  npm-npmjs:
+    type: npm-registry
+    url: https://registry.npmjs.org
+    token: ${{secrets.NPM_BOT_PERSONAL_TOKEN}}
 updates:
-    # General updates - weekly as needed
-    - package-ecosystem: "npm"
-      directory: "/"
-      registries:
-          - npm-npmjs
-      target-branch: "main"
-      ignore:
-          - dependency-name: "@washingtonpost*"
-      versioning-strategy: "auto"
-      open-pull-requests-limit: 5
-      schedule:
-          interval: "weekly"
-      pull-request-branch-name:
-          separator: "-"
-    # Inner sourcing - daily, takes priority, bumps package.json
-    - package-ecosystem: "npm"
-      directory: "/"
-      registries:
-          - npm-npmjs
-      # target-branch - leave blank so dependabot recognizes this as a "unique",
-      # non-duplicate strategy (it should run against the main branch, dev, anyways)
-      allow:
-          - dependency-name: "@washingtonpost*"
-      versioning-strategy: "increase"
-      open-pull-requests-limit: 10
-      schedule:
-          interval: "daily"
-          time: "08:00"
-          timezone: "US/Eastern"
-      pull-request-branch-name:
-          separator: "-"
-      reviewers:
-          - "@WPMedia/core"
-      labels:
-          - "dependencies"
+  # General updates - weekly as needed
+  - package-ecosystem: "npm"
+    directory: "/"
+    registries:
+      - npm-npmjs
+    target-branch: "main"
+    ignore:
+      - dependency-name: "@washingtonpost*"
+    versioning-strategy: "auto"
+    open-pull-requests-limit: 5
+    schedule:
+      interval: "weekly"
+    pull-request-branch-name:
+      separator: "-"
+  # Inner sourcing - daily, takes priority, bumps package.json
+  - package-ecosystem: "npm"
+    directory: "/"
+    registries:
+      - npm-npmjs
+    # target-branch - leave blank so dependabot recognizes this as a "unique",
+    # non-duplicate strategy (it should run against the main branch, dev, anyways)
+    allow:
+      - dependency-name: "@washingtonpost*"
+    versioning-strategy: "increase"
+    open-pull-requests-limit: 10
+    schedule:
+      interval: "daily"
+      time: "08:00"
+      timezone: "US/Eastern"
+    pull-request-branch-name:
+      separator: "-"
+    reviewers:
+      - "@WPMedia/core"
+    labels:
+      - "dependencies"
