@@ -1,70 +1,69 @@
 const prettier = require("prettier");
 
 module.exports = function (plop) {
-	plop.setGenerator("component", {
-		description: "Create a new WPDS UI kit component",
-		prompts: [
-			{
-				type: "input",
-				name: "componentName",
-				message:
-					"What is the name of the component? i.e. VisuallyHidden",
-				validate: function (value) {
-					if (/.+/.test(value)) {
-						return true;
-					}
+  plop.setGenerator("component", {
+    description: "Create a new WPDS UI kit component",
+    prompts: [
+      {
+        type: "input",
+        name: "componentName",
+        message: "What is the name of the component? i.e. VisuallyHidden",
+        validate: function (value) {
+          if (/.+/.test(value)) {
+            return true;
+          }
 
-					return "component name is required";
-				},
-			},
-		],
-		actions: function (data) {
-			const actions = [
-				{
-					type: "addMany",
-					destination: `../ui/{{ dashCase componentName }}`,
-					base: "../plop-templates/component",
-					templateFiles: "../plop-templates/component/**/*",
-					data: {
-						packageName: "{{ dashCase componentName }}",
-						componentName: "{{ componentName }}",
-					},
-				},
-				{
-					type: "append",
-					path: "../ui/kit/src/index.ts",
-					pattern: "// insert new component exports here",
-					template: `export * from "@washingtonpost/wpds-{{ dashCase componentName }}";`,
-				},
-			];
+          return "component name is required";
+        },
+      },
+    ],
+    actions: function (data) {
+      const actions = [
+        {
+          type: "addMany",
+          destination: `../ui/{{ dashCase componentName }}`,
+          base: "../plop-templates/component",
+          templateFiles: "../plop-templates/component/**/*",
+          data: {
+            packageName: "{{ dashCase componentName }}",
+            componentName: "{{ componentName }}",
+          },
+        },
+        {
+          type: "append",
+          path: "../ui/kit/src/index.ts",
+          pattern: "// insert new component exports here",
+          template: `export * from "@washingtonpost/wpds-{{ dashCase componentName }}";`,
+        },
+      ];
 
-			actions.push({
-				type: "append",
-				path: "../ui/kit/package.json",
-				pattern: `"dependencies": {`,
-				template: `"@washingtonpost/wpds-{{ dashCase componentName }}": "0.1.0-experimental.20",`,
-			});
-			actions.push({
-				type: "append",
-				path: "../ui/kit/package.json",
-				pattern: `"peerDependencies": {`,
-				template: `"@washingtonpost/wpds-{{ dashCase componentName }}": "*",`,
-			});
+      actions.push({
+        type: "append",
+        path: "../ui/kit/package.json",
+        pattern: `"dependencies": {`,
+        template: `"@washingtonpost/wpds-{{ dashCase componentName }}": "0.1.0-experimental.20",`,
+      });
+      actions.push({
+        type: "append",
+        path: "../ui/kit/package.json",
+        pattern: `"peerDependencies": {`,
+        template: `"@washingtonpost/wpds-{{ dashCase componentName }}": "*",`,
+      });
 
-			// format the package.json file using prettier.format
-			actions.push({
-				type: "modify",
-				path: "../ui/kit/package.json",
-				pattern: /\n/,
-				template: "",
-				transform: function (file) {
-					return prettier.format(file, {
-						parser: "json",
-					});
-				},
-			});
+      // format the package.json file using prettier.format
+      actions.push({
+        type: "modify",
+        path: "../ui/kit/package.json",
+        pattern: /\n/,
+        template: "",
+        transform: function (file) {
+          return prettier.format(file, {
+            parser: "json",
+          });
+        },
+      });
 
-			return actions;
-		},
-	});
+      return actions;
+    },
+  });
 };

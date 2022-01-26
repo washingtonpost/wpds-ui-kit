@@ -1,50 +1,50 @@
 {
-	"name": "@washingtonpost/wpds-ui-kit",
-	"version": "0.1.0",
-	"description": "> TODO: description",
-	"author": "artmsilva <artmsilva@gmail.com>",
-	"homepage": "https://github.com/WPMedia/wpds-ui-kit#readme",
-	"license": "ISC",
-	"source": "src/index.ts",
-	"main": "dist/index.js",
-	"types": "dist/index.d.ts",
-	"files": [
-		"dist",
-		"README.md",
-		"src"
-	],
-	"sideEffects": false,
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/WPMedia/wpds-ui-kit.git"
-	},
-	"publishConfig": {
-		"access": "public"
-	},
-	"scripts": {
-		"test": "echo \"Error: run tests from root\" && exit 1",
-		"build": "npx parcel build --log-level verbose --no-cache && npx swc src/index.ts --out-file dist/index.js"
-	},
-	"bugs": {
-		"url": "https://github.com/WPMedia/wpds-ui-kit/issues"
-	},
-	"dependencies": {
-		"@babel/runtime": "^7.13.10",
-		"@washingtonpost/wpds-box": "0.1.0",
-		"@washingtonpost/wpds-icon": "0.1.0",
-		"@washingtonpost/wpds-theme": "0.1.0",
-		"@washingtonpost/wpds-visually-hidden": "0.1.0"
-	},
-	"devDependencies": {
-		"@swc/cli": "^0.1.55",
-		"@swc/core": "^1.2.122",
-		"parcel": "^2.0.1"
-	},
-	"peerDependencies": {
-		"@washingtonpost/wpds-box": "*",
-		"@washingtonpost/wpds-icon": "*",
-		"@washingtonpost/wpds-theme": "*",
-		"@washingtonpost/wpds-visually-hidden": "*"
-	},
-	"gitHead": "14d42419b2fda458174d05746c3d2bf26f4e9201"
+  "name": "@washingtonpost/wpds-ui-kit",
+  "version": "0.1.0",
+  "description": "> TODO: description",
+  "author": "artmsilva <artmsilva@gmail.com>",
+  "homepage": "https://github.com/WPMedia/wpds-ui-kit#readme",
+  "license": "ISC",
+  "source": "src/index.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "src"
+  ],
+  "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WPMedia/wpds-ui-kit.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "build": "npx parcel build --log-level verbose --no-cache && npx swc src/index.ts --out-file dist/index.js"
+  },
+  "bugs": {
+    "url": "https://github.com/WPMedia/wpds-ui-kit/issues"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.13.10",
+    "@washingtonpost/wpds-box": "0.1.0",
+    "@washingtonpost/wpds-icon": "0.1.0",
+    "@washingtonpost/wpds-theme": "0.1.0",
+    "@washingtonpost/wpds-visually-hidden": "0.1.0"
+  },
+  "devDependencies": {
+    "@swc/cli": "^0.1.55",
+    "@swc/core": "^1.2.122",
+    "parcel": "^2.0.1"
+  },
+  "peerDependencies": {
+    "@washingtonpost/wpds-box": "*",
+    "@washingtonpost/wpds-icon": "*",
+    "@washingtonpost/wpds-theme": "*",
+    "@washingtonpost/wpds-visually-hidden": "*"
+  },
+  "gitHead": "14d42419b2fda458174d05746c3d2bf26f4e9201"
 }

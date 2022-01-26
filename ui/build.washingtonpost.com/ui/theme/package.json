@@ -1,45 +1,45 @@
 {
-	"name": "@washingtonpost/wpds-theme",
-	"version": "0.1.0",
-	"description": "> TODO: description",
-	"author": "artmsilva <artmsilva@gmail.com>",
-	"homepage": "https://github.com/WPMedia/wpds-ui-kit#readme",
-	"license": "ISC",
-	"source": "src/index.ts",
-	"main": "dist/index.js",
-	"module": "dist/index.module.js",
-	"types": "dist/index.d.ts",
-	"files": [
-		"dist",
-		"README.md",
-		"src/wpds.tokens.json",
-		"src"
-	],
-	"sideEffects": false,
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/WPMedia/wpds-ui-kit.git"
-	},
-	"publishConfig": {
-		"access": "public"
-	},
-	"scripts": {
-		"build:transform": "node build/transform.js",
-		"build": "npm run build:transform && npx parcel build --log-level verbose --no-cache",
-		"test": "echo \"Error: run tests from root\" && exit 1"
-	},
-	"bugs": {
-		"url": "https://github.com/WPMedia/wpds-ui-kit/issues"
-	},
-	"dependencies": {
-		"@babel/runtime": "^7.13.10",
-		"@stitches/react": "^1.2.6"
-	},
-	"peerDependencies": {
-		"@stitches/react": "*"
-	},
-	"devDependencies": {
-		"parcel": "^2.0.1"
-	},
-	"gitHead": "14d42419b2fda458174d05746c3d2bf26f4e9201"
+  "name": "@washingtonpost/wpds-theme",
+  "version": "0.1.0",
+  "description": "> TODO: description",
+  "author": "artmsilva <artmsilva@gmail.com>",
+  "homepage": "https://github.com/WPMedia/wpds-ui-kit#readme",
+  "license": "ISC",
+  "source": "src/index.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.module.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "src/wpds.tokens.json",
+    "src"
+  ],
+  "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WPMedia/wpds-ui-kit.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build:transform": "node build/transform.js",
+    "build": "npm run build:transform && npx parcel build --log-level verbose --no-cache",
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/WPMedia/wpds-ui-kit/issues"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.13.10",
+    "@stitches/react": "^1.2.6"
+  },
+  "peerDependencies": {
+    "@stitches/react": "*"
+  },
+  "devDependencies": {
+    "parcel": "^2.0.1"
+  },
+  "gitHead": "14d42419b2fda458174d05746c3d2bf26f4e9201"
 }

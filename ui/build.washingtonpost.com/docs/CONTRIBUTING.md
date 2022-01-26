@@ -13,8 +13,8 @@ We use Playwright for Interaction/Integration ( and Server Side Render) Testing.
 
 Good resources on testing:
 
--   https://kentcdodds.com/blog/testing-implementation-details
--   https://kentcdodds.com/blog/making-your-ui-tests-resilient-to-change
+- https://kentcdodds.com/blog/testing-implementation-details
+- https://kentcdodds.com/blog/making-your-ui-tests-resilient-to-change
 
 Avoid writing "render" or "display" unit or playwright tests. Leverage our "Tests" stories in Storybook for this. Those UI tests will be tested in Chromatic.
 
@@ -30,10 +30,10 @@ npm run new-component
 
 These are our core tenets for component design. We use these to guide our component development. We also use these to guide our component design decisions.
 
--   Our components should do one thing really well! This is why we call them atoms.
--   They should refrain from using external dependencies (Cookies, Window Objects, Business Logic, etc).
--   They should be controlled by their API or left uncontrolled.
--   If a component has multiple DOM nodes such as an Accordion's trigger and it's display, it should be split into multiple components. Such as AccordionTrigger and AccordionDisplay and use a provider component to manage the state across the two (AccordionRoot).
--   We should avoid using any DOM APIs that are not supported by evergreen browsers.
--   We should should allow modification of styles via the `css` prop using our tokens (component (locally scoped and global) and theme).
--   We should use our theme tokens to style our components.
+- Our components should do one thing really well! This is why we call them atoms.
+- They should refrain from using external dependencies (Cookies, Window Objects, Business Logic, etc).
+- They should be controlled by their API or left uncontrolled.
+- If a component has multiple DOM nodes such as an Accordion's trigger and it's display, it should be split into multiple components. Such as AccordionTrigger and AccordionDisplay and use a provider component to manage the state across the two (AccordionRoot).
+- We should avoid using any DOM APIs that are not supported by evergreen browsers.
+- We should should allow modification of styles via the `css` prop using our tokens (component (locally scoped and global) and theme).
+- We should use our theme tokens to style our components.
