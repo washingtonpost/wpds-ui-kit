@@ -1,197 +1,197 @@
 {
-	"name": "root",
-	"private": true,
-	"devDependencies": {
-		"@babel/core": "^7.15.8",
-		"@babel/eslint-parser": "^7.16.5",
-		"@babel/plugin-transform-typescript": "^7.16.1",
-		"@babel/preset-react": "^7.14.5",
-		"@babel/template": "^7.15.4",
-		"@next/bundle-analyzer": "^12.0.7",
-		"@parcel/babel-plugin-transform-runtime": "^2.2.1",
-		"@parcel/babel-preset-env": "^2.2.1",
-		"@parcel/packager-ts": "^2.2.1",
-		"@parcel/transformer-typescript-types": "^2.2.1",
-		"@playwright/test": "^1.17.1",
-		"@size-limit/preset-small-lib": "^6.0.3",
-		"@storybook/addon-a11y": "^6.4.9",
-		"@storybook/addon-actions": "^6.4.9",
-		"@storybook/addon-essentials": "^6.4.9",
-		"@storybook/addon-interactions": "^6.4.9",
-		"@storybook/addon-links": "^6.4.9",
-		"@storybook/builder-webpack5": "^6.4.9",
-		"@storybook/manager-webpack5": "^6.4.9",
-		"@storybook/react": "^6.4.9",
-		"@storybook/testing-library": "^0.0.7",
-		"@swc/cli": "^0.1.55",
-		"@swc/core": "^1.2.122",
-		"@testing-library/dom": "^8.9.1",
-		"@testing-library/jest-dom": "^5.14.1",
-		"@testing-library/react": "^12.1.2",
-		"@types/react": "^17.0.34",
-		"@types/react-dom": "^17.0.11",
-		"@zeplin/cli": "^1.1.13",
-		"@zeplin/cli-connect-react-plugin": "^1.1.1",
-		"@zeplin/cli-connect-storybook-plugin": "^0.5.4",
-		"babel-loader": "^8.2.2",
-		"chromatic": "^6.0.6",
-		"concurrently": "^6.3.0",
-		"dotenv": "^14.2.0",
-		"enzyme": "^3.11.0",
-		"eslint": "^8.6.0",
-		"eslint-config-prettier": "^8.3.0",
-		"eslint-plugin-jest": "^25.3.4",
-		"eslint-plugin-jest-dom": "^3.9.2",
-		"eslint-plugin-react": "^7.28.0",
-		"eslint-plugin-testing-library": "^5.0.3",
-		"eslint-plugin-use-encapsulation": "^1.0.0",
-		"jest": "^27.3.0",
-		"lerna": "^4.0.0",
-		"next": "^12.0.4",
-		"parcel": "^2.2.1",
-		"playroom": "0.27.6",
-		"plop": "^3.0.5",
-		"prettier": "2.4.1",
-		"react-docgen-typescript": "^2.2.2",
-		"size-limit": "^6.0.3",
-		"start-server-and-test": "^1.14.0",
-		"storybook-addon-playroom": "^2.1.4",
-		"storybook-addon-themes": "^6.1.0",
-		"storybook-dark-mode": "^1.0.8",
-		"storybook-zeplin": "^1.7.0",
-		"typescript": "^4.4.4"
-	},
-	"workspaces": [
-		"./ui/*",
-		"./ssr-testing",
-		"./kit"
-	],
-	"dependencies": {
-		"@stitches/react": "^1.2.6",
-		"@washingtonpost/site-components": "latest",
-		"@washingtonpost/wpds-assets": "^1.1.13",
-		"@washingtonpost/wpds-box": "file:ui/box",
-		"@washingtonpost/wpds-icon": "file:ui/icon",
-		"@washingtonpost/wpds-theme": "file:ui/theme",
-		"@washingtonpost/wpds-ui-kit": "file:ui/kit",
-		"@washingtonpost/wpds-visually-hidden": "file:ui/visually-hidden",
-		"react": "^17.0.2",
-		"react-dom": "^17.0.2"
-	},
-	"scripts": {
-		"build:packages": "make build",
-		"dev:packages": "parcel 'ui/*/' --log-level verbose --no-cache",
-		"storybook": "make start-storybook",
-		"build-storybook": "npm run build:packages;build-storybook",
-		"bootstrap": "lerna bootstrap --hoist",
-		"all:dev": "make all-dev",
-		"build": "make build",
-		"playroom:start": "playroom start",
-		"playroom:build": "playroom build",
-		"test": "jest",
-		"size": "lerna run size",
-		"main-publish": "make main-publish",
-		"main-version": "make main-version",
-		"experimental-version": "make experimental-version",
-		"experimental-publish": "make experimental-publish",
-		"parcel:build": "parcel build 'ui/*' --no-cache",
-		"build:pkgs": "lerna run build",
-		"website:dev": "lerna run dev --scope ssr-testing --stream",
-		"website:build": "lerna run build --scope ssr-testing --stream",
-		"dev": "lerna run --parallel dev",
-		"chromatic": "npx chromatic --project-token=b457f2a94e96",
-		"postinstall": "npm run bootstrap",
-		"new-component": "make new-component",
-		"lint": "eslint --ext .ts,.tsx ui/"
-	},
-	"engines": {
-		"yarn": "yarn NO LONGER USED - use npm instead.",
-		"npm": "^8",
-		"node": "^14"
-	},
-	"prettier": {},
-	"jest": {
-		"roots": [
-			"./ui"
-		],
-		"testEnvironment": "node",
-		"cacheDirectory": ".jest-cache",
-		"collectCoverage": true,
-		"coverageDirectory": "jest-coverage",
-		"coveragePathIgnorePatterns": [
-			"/node_modules/",
-			".stories.js",
-			"index.js"
-		],
-		"coverageReporters": [
-			"html",
-			"text"
-		],
-		"coverageThreshold": {
-			"global": {
-				"branches": 80,
-				"functions": 80,
-				"lines": 80
-			}
-		},
-		"setupFilesAfterEnv": [
-			"./scripts/setupTests.js"
-		],
-		"testPathIgnorePatterns": [
-			"/node_modules/"
-		],
-		"testMatch": [
-			"**/tests/**/*.test.[jt]s?(x)"
-		],
-		"moduleNameMapper": {
-			"^~/(.*)$": "<rootDir>/$1"
-		}
-	},
-	"eslintConfig": {
-		"env": {
-			"browser": true,
-			"es6": true,
-			"node": true
-		},
-		"extends": [
-			"eslint:recommended",
-			"eslint-config-prettier",
-			"plugin:react/recommended",
-			"plugin:testing-library/react",
-			"plugin:testing-library/dom",
-			"plugin:jest-dom/recommended"
-		],
-		"settings": {
-			"react": {
-				"version": "detect"
-			}
-		},
-		"parser": "@babel/eslint-parser",
-		"parserOptions": {
-			"ecmaVersion": 2021,
-			"sourceType": "module"
-		},
-		"plugins": [
-			"jest",
-			"react",
-			"testing-library",
-			"jest-dom",
-			"use-encapsulation"
-		],
-		"overrides": [
-			{
-				"files": [
-					"**/__tests__/**/*.[jt]s?(x)",
-					"**/?(*.)+(spec|test).[jt]s?(x)"
-				],
-				"extends": [
-					"plugin:testing-library/react"
-				]
-			}
-		]
-	},
-	"overrides": {
-		"react-docgen-typescript": "^2.2.2",
-		"typescript": "^4.4.4"
-	}
+  "name": "root",
+  "private": true,
+  "devDependencies": {
+    "@babel/core": "^7.15.8",
+    "@babel/eslint-parser": "^7.16.5",
+    "@babel/plugin-transform-typescript": "^7.16.1",
+    "@babel/preset-react": "^7.14.5",
+    "@babel/template": "^7.15.4",
+    "@next/bundle-analyzer": "^12.0.7",
+    "@parcel/babel-plugin-transform-runtime": "^2.2.1",
+    "@parcel/babel-preset-env": "^2.2.1",
+    "@parcel/packager-ts": "^2.2.1",
+    "@parcel/transformer-typescript-types": "^2.2.1",
+    "@playwright/test": "^1.17.1",
+    "@size-limit/preset-small-lib": "^6.0.3",
+    "@storybook/addon-a11y": "^6.4.9",
+    "@storybook/addon-actions": "^6.4.9",
+    "@storybook/addon-essentials": "^6.4.9",
+    "@storybook/addon-interactions": "^6.4.9",
+    "@storybook/addon-links": "^6.4.9",
+    "@storybook/builder-webpack5": "^6.4.9",
+    "@storybook/manager-webpack5": "^6.4.9",
+    "@storybook/react": "^6.4.9",
+    "@storybook/testing-library": "^0.0.7",
+    "@swc/cli": "^0.1.55",
+    "@swc/core": "^1.2.122",
+    "@testing-library/dom": "^8.9.1",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.1.2",
+    "@types/react": "^17.0.34",
+    "@types/react-dom": "^17.0.11",
+    "@zeplin/cli": "^1.1.13",
+    "@zeplin/cli-connect-react-plugin": "^1.1.1",
+    "@zeplin/cli-connect-storybook-plugin": "^0.5.4",
+    "babel-loader": "^8.2.2",
+    "chromatic": "^6.0.6",
+    "concurrently": "^6.3.0",
+    "dotenv": "^14.2.0",
+    "enzyme": "^3.11.0",
+    "eslint": "^8.6.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-jest": "^25.3.4",
+    "eslint-plugin-jest-dom": "^3.9.2",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-testing-library": "^5.0.3",
+    "eslint-plugin-use-encapsulation": "^1.0.0",
+    "jest": "^27.3.0",
+    "lerna": "^4.0.0",
+    "next": "^12.0.4",
+    "parcel": "^2.2.1",
+    "playroom": "0.27.6",
+    "plop": "^3.0.5",
+    "prettier": "2.4.1",
+    "react-docgen-typescript": "^2.2.2",
+    "size-limit": "^6.0.3",
+    "start-server-and-test": "^1.14.0",
+    "storybook-addon-playroom": "^2.1.4",
+    "storybook-addon-themes": "^6.1.0",
+    "storybook-dark-mode": "^1.0.8",
+    "storybook-zeplin": "^1.7.0",
+    "typescript": "^4.4.4"
+  },
+  "workspaces": [
+    "./ui/*",
+    "./ssr-testing",
+    "./kit"
+  ],
+  "dependencies": {
+    "@stitches/react": "^1.2.6",
+    "@washingtonpost/site-components": "latest",
+    "@washingtonpost/wpds-assets": "^1.1.13",
+    "@washingtonpost/wpds-box": "file:ui/box",
+    "@washingtonpost/wpds-icon": "file:ui/icon",
+    "@washingtonpost/wpds-theme": "file:ui/theme",
+    "@washingtonpost/wpds-ui-kit": "file:ui/kit",
+    "@washingtonpost/wpds-visually-hidden": "file:ui/visually-hidden",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "scripts": {
+    "build:packages": "make build",
+    "dev:packages": "parcel 'ui/*/' --log-level verbose --no-cache",
+    "storybook": "make start-storybook",
+    "build-storybook": "npm run build:packages;build-storybook",
+    "bootstrap": "lerna bootstrap --hoist",
+    "all:dev": "make all-dev",
+    "build": "make build",
+    "playroom:start": "playroom start",
+    "playroom:build": "playroom build",
+    "test": "jest",
+    "size": "lerna run size",
+    "main-publish": "make main-publish",
+    "main-version": "make main-version",
+    "experimental-version": "make experimental-version",
+    "experimental-publish": "make experimental-publish",
+    "parcel:build": "parcel build 'ui/*' --no-cache",
+    "build:pkgs": "lerna run build",
+    "website:dev": "lerna run dev --scope ssr-testing --stream",
+    "website:build": "lerna run build --scope ssr-testing --stream",
+    "dev": "lerna run --parallel dev",
+    "chromatic": "npx chromatic --project-token=b457f2a94e96",
+    "postinstall": "npm run bootstrap",
+    "new-component": "make new-component",
+    "lint": "eslint --ext .ts,.tsx ui/"
+  },
+  "engines": {
+    "yarn": "yarn NO LONGER USED - use npm instead.",
+    "npm": "^8",
+    "node": "^14"
+  },
+  "prettier": {},
+  "jest": {
+    "roots": [
+      "./ui"
+    ],
+    "testEnvironment": "node",
+    "cacheDirectory": ".jest-cache",
+    "collectCoverage": true,
+    "coverageDirectory": "jest-coverage",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      ".stories.js",
+      "index.js"
+    ],
+    "coverageReporters": [
+      "html",
+      "text"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 80,
+        "lines": 80
+      }
+    },
+    "setupFilesAfterEnv": [
+      "./scripts/setupTests.js"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "testMatch": [
+      "**/tests/**/*.test.[jt]s?(x)"
+    ],
+    "moduleNameMapper": {
+      "^~/(.*)$": "<rootDir>/$1"
+    }
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "es6": true,
+      "node": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "eslint-config-prettier",
+      "plugin:react/recommended",
+      "plugin:testing-library/react",
+      "plugin:testing-library/dom",
+      "plugin:jest-dom/recommended"
+    ],
+    "settings": {
+      "react": {
+        "version": "detect"
+      }
+    },
+    "parser": "@babel/eslint-parser",
+    "parserOptions": {
+      "ecmaVersion": 2021,
+      "sourceType": "module"
+    },
+    "plugins": [
+      "jest",
+      "react",
+      "testing-library",
+      "jest-dom",
+      "use-encapsulation"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/__tests__/**/*.[jt]s?(x)",
+          "**/?(*.)+(spec|test).[jt]s?(x)"
+        ],
+        "extends": [
+          "plugin:testing-library/react"
+        ]
+      }
+    ]
+  },
+  "overrides": {
+    "react-docgen-typescript": "^2.2.2",
+    "typescript": "^4.4.4"
+  }
 }

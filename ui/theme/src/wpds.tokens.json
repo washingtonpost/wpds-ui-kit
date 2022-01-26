@@ -1,736 +1,736 @@
 {
-	"color": {
-		"light": {
-			"description": "The default color scheme",
-			"alpha25": {
-				"value": "rgba(215,215,215,.25)"
-			},
-			"alpha50": {
-				"value": "rgba(102,102,102,.5)"
-			},
-			"blue80": {
-				"value": "rgba(23,42,82,1)"
-			},
-			"blue100": {
-				"value": "rgba(25, 85, 165, 1)"
-			},
-			"blue200": {
-				"value": "rgba(61, 115, 213, 1)"
-			},
-			"blue300": {
-				"value": "rgba(221, 230, 242, 1)"
-			},
-			"gray0": {
-				"value": "rgba(0,0,0,1)"
-			},
-			"gray20": {
-				"value": "rgba(17,17,17,1)"
-			},
-			"gray40": {
-				"value": "rgba(42,42,42,1)"
-			},
-			"gray60": {
-				"value": "rgba(51,51,51,1)"
-			},
-			"gray80": {
-				"value": "rgba(102,102,102,1)"
-			},
-			"gray100": {
-				"value": "rgba(170,170,170,1)"
-			},
-			"gray200": {
-				"value": "rgba(213,213,213,1)"
-			},
-			"gray300": {
-				"value": "rgba(233,233,233,1)"
-			},
-			"gray400": {
-				"value": "rgba(240,240,240,1)"
-			},
-			"gray500": {
-				"value": "rgba(247,247,247,1)"
-			},
-			"gray600": {
-				"value": "rgba(255,255,255,1)"
-			},
-			"green80": {
-				"value": "rgba(73, 138, 12, 1)"
-			},
-			"green100": {
-				"value": "rgba(97, 161, 37, 1)"
-			},
-			"green200": {
-				"value": "rgba(174, 222, 125, 1)"
-			},
-			"green300": {
-				"value": "rgba(223, 236, 211, 1)"
-			},
-			"gold80": {
-				"value": "rgba(123, 78, 11, 1)"
-			},
-			"gold100": {
-				"value": "rgba(158, 97, 5, 1)"
-			},
-			"gold200": {
-				"value": "rgba(211, 158, 76, 1)"
-			},
-			"gold300": {
-				"value": "rgba(224, 199, 161, 1)"
-			},
-			"orange80": {
-				"value": "rgba(177, 110, 0, 1)"
-			},
-			"orange100": {
-				"value": "rgba(242, 159, 24, 1)"
-			},
-			"orange200": {
-				"value": "rgba(255, 183, 67, 1)"
-			},
-			"orange300": {
-				"value": "rgba(251, 237, 213, 1)"
-			},
-			"red80": {
-				"value": "rgba(209, 0, 0, 1)"
-			},
-			"red100": {
-				"value": "rgba(234, 0, 23, 1)"
-			},
-			"red200": {
-				"value": "rgba(242, 123, 129, 1)"
-			},
-			"red300": {
-				"value": "rgba(242, 222, 222, 1)"
-			},
-			"vividBlue80": {
-				"value": "rgba(0, 51, 153, 1)"
-			},
-			"vividBlue100": {
-				"value": "rgba(22, 109, 252, 1)"
-			},
-			"vividBlue200": {
-				"value": "rgba(81, 147, 255, 1)"
-			},
-			"vividBlue300": {
-				"value": "rgba(239, 245, 255, 1)"
-			}
-		},
-		"dark": {
-			"description": "The default color scheme in a dark version",
-			"alpha25": {
-				"value": "rgba(42,42,42,.25)"
-			},
-			"alpha50": {
-				"value": "rgba(42,42,42,.5)"
-			},
-			"blue80": {
-				"value": "rgba(205, 212, 223, 1)"
-			},
-			"blue100": {
-				"value": "rgba(131, 153, 186, 1)"
-			},
-			"blue200": {
-				"value": "rgba(83, 118, 171, 1)"
-			},
-			"blue300": {
-				"value": "rgba(21, 31, 47, 1)"
-			},
-			"gray0": {
-				"value": "rgba(255, 255, 255, 1)"
-			},
-			"gray20": {
-				"value": "rgba(243, 243, 243, 1)"
-			},
-			"gray40": {
-				"value": "rgba(214, 213, 213, 1)"
-			},
-			"gray60": {
-				"value": "rgba(201, 200, 200, 1)"
-			},
-			"gray80": {
-				"value": "rgba(134, 133, 133, 1)"
-			},
-			"gray100": {
-				"value": "rgba(73, 73, 73, 1)"
-			},
-			"gray200": {
-				"value": "rgba(43, 43, 43, 1)"
-			},
-			"gray300": {
-				"value": "rgba(27, 26, 26, 1)"
-			},
-			"gray400": {
-				"value": "rgba(21, 20, 20, 1)"
-			},
-			"gray500": {
-				"value": "rgba(13, 12, 12, 1)"
-			},
-			"gray600": {
-				"value": "rgba(2, 2, 2, 1)"
-			},
-			"green80": {
-				"value": "rgba(81, 124, 42, 1)"
-			},
-			"green100": {
-				"value": "rgba(69, 101, 41, 1)"
-			},
-			"green200": {
-				"value": "rgba(37, 50, 27, 1)"
-			},
-			"green300": {
-				"value": "rgba(23, 30, 17, 1)"
-			},
-			"gold80": {
-				"value": "rgba(176, 132, 86, 1)"
-			},
-			"gold100": {
-				"value": "rgba(157, 102, 45, 1)"
-			},
-			"gold200": {
-				"value": "rgba(91, 60, 26, 1)"
-			},
-			"gold300": {
-				"value": "rgba(58, 41, 23, 1)"
-			},
-			"orange80": {
-				"value": "rgba(144, 102, 41, 1)"
-			},
-			"orange100": {
-				"value": "rgba(115, 83, 39, 1)"
-			},
-			"orange200": {
-				"value": "rgba(99, 73, 37, 1)"
-			},
-			"orange300": {
-				"value": "rgba(71, 54, 30, 1)"
-			},
-			"red80": {
-				"value": "rgba(240, 71, 58, 1)"
-			},
-			"red100": {
-				"value": "rgba(234, 11, 25, 1)"
-			},
-			"red200": {
-				"value": "rgba(152, 40, 32, 1)"
-			},
-			"red300": {
-				"value": "rgba(54, 23, 19, 1)"
-			},
-			"vividBlue80": {
-				"value": "rgba(155, 178, 217, 1)"
-			},
-			"vividBlue100": {
-				"value": "rgba(23, 97, 241, 1)"
-			},
-			"vividBlue200": {
-				"value": "rgba(36, 76, 155, 1)"
-			},
-			"vividBlue300": {
-				"value": "rgba(15, 18, 24, 1)"
-			}
-		},
-		"static": {
-			"description": "The default color scheme independent if in light or dark mode",
-			"alpha25": {
-				"value": "rgba(42,42,42,.25)"
-			},
-			"alpha50": {
-				"value": "rgba(42,42,42,.5)"
-			},
-			"blue80": {
-				"value": "rgba(23,42,82,1)"
-			},
-			"blue100": {
-				"value": "rgba(25, 85, 165, 1)"
-			},
-			"blue200": {
-				"value": "rgba(61, 115, 213, 1)"
-			},
-			"blue300": {
-				"value": "rgba(221, 230, 242, 1)"
-			},
-			"gray0": {
-				"value": "rgba(0,0,0,1)"
-			},
-			"gray20": {
-				"value": "rgba(17,17,17,1)"
-			},
-			"gray40": {
-				"value": "rgba(42,42,42,1)"
-			},
-			"gray60": {
-				"value": "rgba(51,51,51,1)"
-			},
-			"gray80": {
-				"value": "rgba(102,102,102,1)"
-			},
-			"gray100": {
-				"value": "rgba(170,170,170,1)"
-			},
-			"gray200": {
-				"value": "rgba(213,213,213,1)"
-			},
-			"gray300": {
-				"value": "rgba(233,233,233,1)"
-			},
-			"gray400": {
-				"value": "rgba(240,240,240,1)"
-			},
-			"gray500": {
-				"value": "rgba(247,247,247,1)"
-			},
-			"gray600": {
-				"value": "rgba(255,255,255,1)"
-			},
-			"green80": {
-				"value": "rgba(73, 138, 12, 1)"
-			},
-			"green100": {
-				"value": "rgba(97, 161, 37, 1)"
-			},
-			"green200": {
-				"value": "rgba(174, 222, 125, 1)"
-			},
-			"green300": {
-				"value": "rgba(223, 236, 211, 1)"
-			},
-			"gold80": {
-				"value": "rgba(123, 78, 11, 1)"
-			},
-			"gold100": {
-				"value": "rgba(158, 97, 5, 1)"
-			},
-			"gold200": {
-				"value": "rgba(211, 158, 76, 1)"
-			},
-			"gold300": {
-				"value": "rgba(224, 199, 161, 1)"
-			},
-			"orange80": {
-				"value": "rgba(177, 110, 0, 1)"
-			},
-			"orange100": {
-				"value": "rgba(242, 159, 24, 1)"
-			},
-			"orange200": {
-				"value": "rgba(255, 183, 67, 1)"
-			},
-			"orange300": {
-				"value": "rgba(251, 237, 213, 1)"
-			},
-			"red80": {
-				"value": "rgba(209, 0, 0, 1)"
-			},
-			"red100": {
-				"value": "rgba(234, 0, 23, 1)"
-			},
-			"red200": {
-				"value": "rgba(242, 123, 129, 1)"
-			},
-			"red300": {
-				"value": "rgba(242, 222, 222, 1)"
-			},
-			"vividBlue80": {
-				"value": "rgba(0, 51, 153, 1)"
-			},
-			"vividBlue100": {
-				"value": "rgba(22, 109, 252, 1)"
-			},
-			"vividBlue200": {
-				"value": "rgba(81, 147, 255, 1)"
-			},
-			"vividBlue300": {
-				"value": "rgba(239, 245, 255, 1)"
-			}
-		},
-		"theme": {
-			"description": "The following are aliases to define intention of color in the app",
-			"primary": {
-				"value": "{gray20}",
-				"description": "The primary ui color",
-				"stitches": "$gray20"
-			},
-			"secondary": {
-				"value": "{gray600}",
-				"description": "The color when its not needed to be primary",
-				"stitches": "$gray600"
-			},
-			"cta": {
-				"value": "{vividBlue100}",
-				"description": "The color for call to action",
-				"stitches": "$vividBlue100"
-			},
-			"disabled": {
-				"value": "{alpha25}",
-				"description": "The color when element is disabled",
-				"stitches": "$alpha25"
-			},
-			"accessible": {
-				"value": "{gray80}",
-				"description": "The color when element is accessbile against the dark or light background",
-				"stitches": "$gray80"
-			},
-			"subtle": {
-				"value": "{gray300}",
-				"description": "The color that is used to have a subtle sepration between elements",
-				"stitches": "$gray300"
-			},
-			"error": {
-				"value": "{red100}",
-				"description": "The color for error status",
-				"stitches": "$red100"
-			},
-			"success": {
-				"value": "{green100}",
-				"description": "The color for success status",
-				"stitches": "$green100"
-			},
-			"warning": {
-				"value": "{orange100}",
-				"description": "The color for warning status",
-				"stitches": "$orange100"
-			},
-			"signal": {
-				"value": "{blue200}",
-				"description": "The color to signal or focus the user attention",
-				"stitches": "$blue200"
-			},
-			"onPrimary": {
-				"value": "{gray600}",
-				"description": "When elements are applied to Primary",
-				"stitches": "$gray600"
-			},
-			"onSecondary": {
-				"value": "{gray20}",
-				"description": "When elements are applied to Secondary",
-				"stitches": "$gray20"
-			},
-			"onCta": {
-				"value": "{gray600-static}",
-				"description": "When elements applied on CTA",
-				"stitches": "$gray600-static"
-			},
-			"onDisabled": {
-				"value": "{alpha50}",
-				"description": "The color when element is on disabled",
-				"stitches": "$alpha50"
-			},
-			"onMessage": {
-				"value": "{gray600-static}",
-				"description": "Used on signal, warning, error and success colors",
-				"stitches": "$gray600-static"
-			}
-		}
-	},
-	"baseSize": {
-		"description": "The base size the defines size, space, border radius, and font-size",
-		"value": "16px"
-	},
-	"size": {
-		"description": "Uses the base height to calculate the size scale for each token. Size tokens are used for height and width of an element.",
-		"025": {
-			"value": "0.25rem",
-			"description": "Our smallest size"
-		},
-		"050": {
-			"value": "0.5rem",
-			"description": "50% of the base value"
-		},
-		"075": {
-			"value": "0.75rem",
-			"description": "75% of the base value"
-		},
-		"087": {
-			"value": "0.875rem",
-			"description": "87.5% of the base value"
-		},
-		"100": {
-			"value": "1rem",
-			"description": "100% of the base value"
-		},
-		"125": {
-			"value": "1.25rem",
-			"description": "125% of the base value"
-		},
-		"150": {
-			"value": "1.5rem",
-			"description": "150% of the base value"
-		},
-		"175": {
-			"value": "1.75rem",
-			"description": "175% of the base value"
-		},
-		"200": {
-			"value": "2rem",
-			"description": "200% of the base value"
-		},
-		"225": {
-			"value": "2.25rem",
-			"description": "225% of the base value"
-		},
-		"250": {
-			"value": "2.5rem",
-			"description": "250% of the base value"
-		},
-		"275": {
-			"value": "2.75rem",
-			"description": "275% of the base value"
-		},
-		"300": {
-			"value": "3rem",
-			"description": "300% of the base value"
-		},
-		"350": {
-			"value": "3.5rem",
-			"description": "350% of the base value"
-		},
-		"400": {
-			"value": "4rem",
-			"description": "400% of the base value"
-		},
-		"450": {
-			"value": "4.5rem",
-			"description": "450% of the base value"
-		},
-		"500": {
-			"value": "5rem",
-			"description": "500% of the base value"
-		}
-	},
-	"space": {
-		"description": "References the size tokens and defines margin, padding, grid gap, row gap, column gap, and space from: top,bottom,left,right of the elements.",
-		"025": {
-			"value": "{size.025}"
-		},
-		"050": {
-			"value": "{size.050}"
-		},
-		"075": {
-			"value": "{size.075}"
-		},
-		"100": {
-			"value": "{size.100}"
-		},
-		"125": {
-			"value": "{size.125}"
-		},
-		"150": {
-			"value": "{size.150}"
-		},
-		"175": {
-			"value": "{size.175}"
-		},
-		"200": {
-			"value": "{size.200}"
-		},
-		"225": {
-			"value": "{size.225}"
-		},
-		"250": {
-			"value": "{size.250}"
-		},
-		"275": {
-			"value": "{size.275}"
-		},
-		"300": {
-			"value": "{size.300}"
-		},
-		"350": {
-			"value": "{size.350}"
-		},
-		"400": {
-			"value": "{size.400}"
-		},
-		"450": {
-			"value": "{size.450}"
-		},
-		"500": {
-			"value": "{size.500}"
-		}
-	},
-	"fonts": {
-		"headline": {
-			"value": "Postoni, garamond, serif"
-		},
-		"subhead": {
-			"value": "Franklin, arial, sans-serif"
-		},
-		"body": {
-			"value": "georgia, Times New Roman, serif"
-		},
-		"meta": {
-			"value": "Franklin, arial, sans-serif"
-		}
-	},
-	"fontSize": {
-		"description": "Uses the base size to caluclate the font-size in rem",
-		"075": {
-			"value": "{size.075}"
-		},
-		"087": {
-			"value": "0.875rem"
-		},
-		"100": {
-			"value": "{size.100}"
-		},
-		"112": {
-			"value": "1.125rem"
-		},
-		"125": {
-			"value": "{size.125}"
-		},
-		"150": {
-			"value": "{size.150}"
-		},
-		"175": {
-			"value": "{size.175}"
-		},
-		"200": {
-			"value": "{size.200}"
-		},
-		"225": {
-			"value": "{size.225}"
-		},
-		"250": {
-			"value": "{size.250}"
-		},
-		"275": {
-			"value": "{size.275}"
-		},
-		"300": {
-			"value": "{size.300}"
-		},
-		"350": {
-			"value": "{size.350}"
-		},
-		"400": {
-			"value": "{size.400}"
-		},
-		"450": {
-			"value": "{size.450}"
-		},
-		"500": {
-			"value": "{size.500}"
-		}
-	},
-	"fontWeights": {
-		"description": "The weight of the font face.",
-		"light": {
-			"value": 300
-		},
-		"regular": {
-			"value": 400
-		},
-		"bold": {
-			"value": 700
-		}
-	},
-	"lineHeight": {
-		"description": "The available line heights represented in unitless values",
-		"100": {
-			"value": 1
-		},
-		"110": {
-			"value": 1.1
-		},
-		"125": {
-			"value": 1.25
-		},
-		"150": {
-			"value": 1.5
-		},
-		"160": {
-			"value": 1.6
-		},
-		"175": {
-			"value": 1.75
-		},
-		"200": {
-			"value": 2
-		},
-		"240": {
-			"value": 2.4
-		}
-	},
-	"radii": {
-		"description": "Uses the base size to caluclate the radius in rem",
-		"012": {
-			"value": "0.125rem"
-		},
-		"025": {
-			"value": "{size.025}"
-		},
-		"050": {
-			"value": "{size.050}"
-		},
-		"075": {
-			"value": "{size.075}"
-		},
-		"100": {
-			"value": "{size.100}"
-		},
-		"125": {
-			"value": "{size.125}"
-		},
-		"150": {
-			"value": "{size.150}"
-		},
-		"round": {
-			"value": "9999px"
-		}
-	},
-	"shadow": {
-		"description": "The available shadow styles",
-		"50": {
-			"value": "0px 2px 0px 0px #D5D5D5",
-			"comment": "Shadow 1 - Card shadow"
-		},
-		"100": {
-			"value": "0px 1px 2px 0px rgba(102, 102, 102, 0.25)",
-			"comment": "Shadow 2 - Extra small base shadow"
-		},
-		"200": {
-			"value": "0px 2px 4px 0px rgba(102, 102, 102, 0.25)",
-			"comment": "Shadows 3 - Small"
-		},
-		"300": {
-			"value": "0px 4px 8px 0px rgba(102, 102, 102, 0.25)",
-			"comment": "Shadows 4 - Medium"
-		},
-		"400": {
-			"value": "0px 8px 16px 0px rgba(102, 102, 102, 0.25)",
-			"comment": "Shadows 5 - Large"
-		},
-		"500": {
-			"value": "0px 16px 32px 0px rgba(102, 102, 102, 0.25)",
-			"comment": "Shadows 6 - Extra large"
-		}
-	},
-	"z-index": {
-		"description": "Defines the layering order of elements in the app",
-		"offer": {
-			"value": 400,
-			"description": "This layer is reserved only for offers like paywalls, overlays etc"
-		},
-		"shell": {
-			"value": 300,
-			"description": "This layer is reserved for shell items like the fixed primary nav"
-		},
-		"ads": {
-			"value": 200,
-			"description": "This layer is reserved for ads not on page"
-		},
-		"page": {
-			"value": 100,
-			"description": "Any content that is on that main page"
-		}
-	},
-	"motion": {
-		"duration": {
-			"500": { "value": "0.5s" },
-			"400": { "value": "0.4s" },
-			"300": { "value": "0.3s" },
-			"200": { "value": "0.2s" },
-			"100": { "value": "0.1s" }
-		}
-	}
+  "color": {
+    "light": {
+      "description": "The default color scheme",
+      "alpha25": {
+        "value": "rgba(215,215,215,.25)"
+      },
+      "alpha50": {
+        "value": "rgba(102,102,102,.5)"
+      },
+      "blue80": {
+        "value": "rgba(23,42,82,1)"
+      },
+      "blue100": {
+        "value": "rgba(25, 85, 165, 1)"
+      },
+      "blue200": {
+        "value": "rgba(61, 115, 213, 1)"
+      },
+      "blue300": {
+        "value": "rgba(221, 230, 242, 1)"
+      },
+      "gray0": {
+        "value": "rgba(0,0,0,1)"
+      },
+      "gray20": {
+        "value": "rgba(17,17,17,1)"
+      },
+      "gray40": {
+        "value": "rgba(42,42,42,1)"
+      },
+      "gray60": {
+        "value": "rgba(51,51,51,1)"
+      },
+      "gray80": {
+        "value": "rgba(102,102,102,1)"
+      },
+      "gray100": {
+        "value": "rgba(170,170,170,1)"
+      },
+      "gray200": {
+        "value": "rgba(213,213,213,1)"
+      },
+      "gray300": {
+        "value": "rgba(233,233,233,1)"
+      },
+      "gray400": {
+        "value": "rgba(240,240,240,1)"
+      },
+      "gray500": {
+        "value": "rgba(247,247,247,1)"
+      },
+      "gray600": {
+        "value": "rgba(255,255,255,1)"
+      },
+      "green80": {
+        "value": "rgba(73, 138, 12, 1)"
+      },
+      "green100": {
+        "value": "rgba(97, 161, 37, 1)"
+      },
+      "green200": {
+        "value": "rgba(174, 222, 125, 1)"
+      },
+      "green300": {
+        "value": "rgba(223, 236, 211, 1)"
+      },
+      "gold80": {
+        "value": "rgba(123, 78, 11, 1)"
+      },
+      "gold100": {
+        "value": "rgba(158, 97, 5, 1)"
+      },
+      "gold200": {
+        "value": "rgba(211, 158, 76, 1)"
+      },
+      "gold300": {
+        "value": "rgba(224, 199, 161, 1)"
+      },
+      "orange80": {
+        "value": "rgba(177, 110, 0, 1)"
+      },
+      "orange100": {
+        "value": "rgba(242, 159, 24, 1)"
+      },
+      "orange200": {
+        "value": "rgba(255, 183, 67, 1)"
+      },
+      "orange300": {
+        "value": "rgba(251, 237, 213, 1)"
+      },
+      "red80": {
+        "value": "rgba(209, 0, 0, 1)"
+      },
+      "red100": {
+        "value": "rgba(234, 0, 23, 1)"
+      },
+      "red200": {
+        "value": "rgba(242, 123, 129, 1)"
+      },
+      "red300": {
+        "value": "rgba(242, 222, 222, 1)"
+      },
+      "vividBlue80": {
+        "value": "rgba(0, 51, 153, 1)"
+      },
+      "vividBlue100": {
+        "value": "rgba(22, 109, 252, 1)"
+      },
+      "vividBlue200": {
+        "value": "rgba(81, 147, 255, 1)"
+      },
+      "vividBlue300": {
+        "value": "rgba(239, 245, 255, 1)"
+      }
+    },
+    "dark": {
+      "description": "The default color scheme in a dark version",
+      "alpha25": {
+        "value": "rgba(42,42,42,.25)"
+      },
+      "alpha50": {
+        "value": "rgba(42,42,42,.5)"
+      },
+      "blue80": {
+        "value": "rgba(205, 212, 223, 1)"
+      },
+      "blue100": {
+        "value": "rgba(131, 153, 186, 1)"
+      },
+      "blue200": {
+        "value": "rgba(83, 118, 171, 1)"
+      },
+      "blue300": {
+        "value": "rgba(21, 31, 47, 1)"
+      },
+      "gray0": {
+        "value": "rgba(255, 255, 255, 1)"
+      },
+      "gray20": {
+        "value": "rgba(243, 243, 243, 1)"
+      },
+      "gray40": {
+        "value": "rgba(214, 213, 213, 1)"
+      },
+      "gray60": {
+        "value": "rgba(201, 200, 200, 1)"
+      },
+      "gray80": {
+        "value": "rgba(134, 133, 133, 1)"
+      },
+      "gray100": {
+        "value": "rgba(73, 73, 73, 1)"
+      },
+      "gray200": {
+        "value": "rgba(43, 43, 43, 1)"
+      },
+      "gray300": {
+        "value": "rgba(27, 26, 26, 1)"
+      },
+      "gray400": {
+        "value": "rgba(21, 20, 20, 1)"
+      },
+      "gray500": {
+        "value": "rgba(13, 12, 12, 1)"
+      },
+      "gray600": {
+        "value": "rgba(2, 2, 2, 1)"
+      },
+      "green80": {
+        "value": "rgba(81, 124, 42, 1)"
+      },
+      "green100": {
+        "value": "rgba(69, 101, 41, 1)"
+      },
+      "green200": {
+        "value": "rgba(37, 50, 27, 1)"
+      },
+      "green300": {
+        "value": "rgba(23, 30, 17, 1)"
+      },
+      "gold80": {
+        "value": "rgba(176, 132, 86, 1)"
+      },
+      "gold100": {
+        "value": "rgba(157, 102, 45, 1)"
+      },
+      "gold200": {
+        "value": "rgba(91, 60, 26, 1)"
+      },
+      "gold300": {
+        "value": "rgba(58, 41, 23, 1)"
+      },
+      "orange80": {
+        "value": "rgba(144, 102, 41, 1)"
+      },
+      "orange100": {
+        "value": "rgba(115, 83, 39, 1)"
+      },
+      "orange200": {
+        "value": "rgba(99, 73, 37, 1)"
+      },
+      "orange300": {
+        "value": "rgba(71, 54, 30, 1)"
+      },
+      "red80": {
+        "value": "rgba(240, 71, 58, 1)"
+      },
+      "red100": {
+        "value": "rgba(234, 11, 25, 1)"
+      },
+      "red200": {
+        "value": "rgba(152, 40, 32, 1)"
+      },
+      "red300": {
+        "value": "rgba(54, 23, 19, 1)"
+      },
+      "vividBlue80": {
+        "value": "rgba(155, 178, 217, 1)"
+      },
+      "vividBlue100": {
+        "value": "rgba(23, 97, 241, 1)"
+      },
+      "vividBlue200": {
+        "value": "rgba(36, 76, 155, 1)"
+      },
+      "vividBlue300": {
+        "value": "rgba(15, 18, 24, 1)"
+      }
+    },
+    "static": {
+      "description": "The default color scheme independent if in light or dark mode",
+      "alpha25": {
+        "value": "rgba(42,42,42,.25)"
+      },
+      "alpha50": {
+        "value": "rgba(42,42,42,.5)"
+      },
+      "blue80": {
+        "value": "rgba(23,42,82,1)"
+      },
+      "blue100": {
+        "value": "rgba(25, 85, 165, 1)"
+      },
+      "blue200": {
+        "value": "rgba(61, 115, 213, 1)"
+      },
+      "blue300": {
+        "value": "rgba(221, 230, 242, 1)"
+      },
+      "gray0": {
+        "value": "rgba(0,0,0,1)"
+      },
+      "gray20": {
+        "value": "rgba(17,17,17,1)"
+      },
+      "gray40": {
+        "value": "rgba(42,42,42,1)"
+      },
+      "gray60": {
+        "value": "rgba(51,51,51,1)"
+      },
+      "gray80": {
+        "value": "rgba(102,102,102,1)"
+      },
+      "gray100": {
+        "value": "rgba(170,170,170,1)"
+      },
+      "gray200": {
+        "value": "rgba(213,213,213,1)"
+      },
+      "gray300": {
+        "value": "rgba(233,233,233,1)"
+      },
+      "gray400": {
+        "value": "rgba(240,240,240,1)"
+      },
+      "gray500": {
+        "value": "rgba(247,247,247,1)"
+      },
+      "gray600": {
+        "value": "rgba(255,255,255,1)"
+      },
+      "green80": {
+        "value": "rgba(73, 138, 12, 1)"
+      },
+      "green100": {
+        "value": "rgba(97, 161, 37, 1)"
+      },
+      "green200": {
+        "value": "rgba(174, 222, 125, 1)"
+      },
+      "green300": {
+        "value": "rgba(223, 236, 211, 1)"
+      },
+      "gold80": {
+        "value": "rgba(123, 78, 11, 1)"
+      },
+      "gold100": {
+        "value": "rgba(158, 97, 5, 1)"
+      },
+      "gold200": {
+        "value": "rgba(211, 158, 76, 1)"
+      },
+      "gold300": {
+        "value": "rgba(224, 199, 161, 1)"
+      },
+      "orange80": {
+        "value": "rgba(177, 110, 0, 1)"
+      },
+      "orange100": {
+        "value": "rgba(242, 159, 24, 1)"
+      },
+      "orange200": {
+        "value": "rgba(255, 183, 67, 1)"
+      },
+      "orange300": {
+        "value": "rgba(251, 237, 213, 1)"
+      },
+      "red80": {
+        "value": "rgba(209, 0, 0, 1)"
+      },
+      "red100": {
+        "value": "rgba(234, 0, 23, 1)"
+      },
+      "red200": {
+        "value": "rgba(242, 123, 129, 1)"
+      },
+      "red300": {
+        "value": "rgba(242, 222, 222, 1)"
+      },
+      "vividBlue80": {
+        "value": "rgba(0, 51, 153, 1)"
+      },
+      "vividBlue100": {
+        "value": "rgba(22, 109, 252, 1)"
+      },
+      "vividBlue200": {
+        "value": "rgba(81, 147, 255, 1)"
+      },
+      "vividBlue300": {
+        "value": "rgba(239, 245, 255, 1)"
+      }
+    },
+    "theme": {
+      "description": "The following are aliases to define intention of color in the app",
+      "primary": {
+        "value": "{gray20}",
+        "description": "The primary ui color",
+        "stitches": "$gray20"
+      },
+      "secondary": {
+        "value": "{gray600}",
+        "description": "The color when its not needed to be primary",
+        "stitches": "$gray600"
+      },
+      "cta": {
+        "value": "{vividBlue100}",
+        "description": "The color for call to action",
+        "stitches": "$vividBlue100"
+      },
+      "disabled": {
+        "value": "{alpha25}",
+        "description": "The color when element is disabled",
+        "stitches": "$alpha25"
+      },
+      "accessible": {
+        "value": "{gray80}",
+        "description": "The color when element is accessbile against the dark or light background",
+        "stitches": "$gray80"
+      },
+      "subtle": {
+        "value": "{gray300}",
+        "description": "The color that is used to have a subtle sepration between elements",
+        "stitches": "$gray300"
+      },
+      "error": {
+        "value": "{red100}",
+        "description": "The color for error status",
+        "stitches": "$red100"
+      },
+      "success": {
+        "value": "{green100}",
+        "description": "The color for success status",
+        "stitches": "$green100"
+      },
+      "warning": {
+        "value": "{orange100}",
+        "description": "The color for warning status",
+        "stitches": "$orange100"
+      },
+      "signal": {
+        "value": "{blue200}",
+        "description": "The color to signal or focus the user attention",
+        "stitches": "$blue200"
+      },
+      "onPrimary": {
+        "value": "{gray600}",
+        "description": "When elements are applied to Primary",
+        "stitches": "$gray600"
+      },
+      "onSecondary": {
+        "value": "{gray20}",
+        "description": "When elements are applied to Secondary",
+        "stitches": "$gray20"
+      },
+      "onCta": {
+        "value": "{gray600-static}",
+        "description": "When elements applied on CTA",
+        "stitches": "$gray600-static"
+      },
+      "onDisabled": {
+        "value": "{alpha50}",
+        "description": "The color when element is on disabled",
+        "stitches": "$alpha50"
+      },
+      "onMessage": {
+        "value": "{gray600-static}",
+        "description": "Used on signal, warning, error and success colors",
+        "stitches": "$gray600-static"
+      }
+    }
+  },
+  "baseSize": {
+    "description": "The base size the defines size, space, border radius, and font-size",
+    "value": "16px"
+  },
+  "size": {
+    "description": "Uses the base height to calculate the size scale for each token. Size tokens are used for height and width of an element.",
+    "025": {
+      "value": "0.25rem",
+      "description": "Our smallest size"
+    },
+    "050": {
+      "value": "0.5rem",
+      "description": "50% of the base value"
+    },
+    "075": {
+      "value": "0.75rem",
+      "description": "75% of the base value"
+    },
+    "087": {
+      "value": "0.875rem",
+      "description": "87.5% of the base value"
+    },
+    "100": {
+      "value": "1rem",
+      "description": "100% of the base value"
+    },
+    "125": {
+      "value": "1.25rem",
+      "description": "125% of the base value"
+    },
+    "150": {
+      "value": "1.5rem",
+      "description": "150% of the base value"
+    },
+    "175": {
+      "value": "1.75rem",
+      "description": "175% of the base value"
+    },
+    "200": {
+      "value": "2rem",
+      "description": "200% of the base value"
+    },
+    "225": {
+      "value": "2.25rem",
+      "description": "225% of the base value"
+    },
+    "250": {
+      "value": "2.5rem",
+      "description": "250% of the base value"
+    },
+    "275": {
+      "value": "2.75rem",
+      "description": "275% of the base value"
+    },
+    "300": {
+      "value": "3rem",
+      "description": "300% of the base value"
+    },
+    "350": {
+      "value": "3.5rem",
+      "description": "350% of the base value"
+    },
+    "400": {
+      "value": "4rem",
+      "description": "400% of the base value"
+    },
+    "450": {
+      "value": "4.5rem",
+      "description": "450% of the base value"
+    },
+    "500": {
+      "value": "5rem",
+      "description": "500% of the base value"
+    }
+  },
+  "space": {
+    "description": "References the size tokens and defines margin, padding, grid gap, row gap, column gap, and space from: top,bottom,left,right of the elements.",
+    "025": {
+      "value": "{size.025}"
+    },
+    "050": {
+      "value": "{size.050}"
+    },
+    "075": {
+      "value": "{size.075}"
+    },
+    "100": {
+      "value": "{size.100}"
+    },
+    "125": {
+      "value": "{size.125}"
+    },
+    "150": {
+      "value": "{size.150}"
+    },
+    "175": {
+      "value": "{size.175}"
+    },
+    "200": {
+      "value": "{size.200}"
+    },
+    "225": {
+      "value": "{size.225}"
+    },
+    "250": {
+      "value": "{size.250}"
+    },
+    "275": {
+      "value": "{size.275}"
+    },
+    "300": {
+      "value": "{size.300}"
+    },
+    "350": {
+      "value": "{size.350}"
+    },
+    "400": {
+      "value": "{size.400}"
+    },
+    "450": {
+      "value": "{size.450}"
+    },
+    "500": {
+      "value": "{size.500}"
+    }
+  },
+  "fonts": {
+    "headline": {
+      "value": "Postoni, garamond, serif"
+    },
+    "subhead": {
+      "value": "Franklin, arial, sans-serif"
+    },
+    "body": {
+      "value": "georgia, Times New Roman, serif"
+    },
+    "meta": {
+      "value": "Franklin, arial, sans-serif"
+    }
+  },
+  "fontSize": {
+    "description": "Uses the base size to caluclate the font-size in rem",
+    "075": {
+      "value": "{size.075}"
+    },
+    "087": {
+      "value": "0.875rem"
+    },
+    "100": {
+      "value": "{size.100}"
+    },
+    "112": {
+      "value": "1.125rem"
+    },
+    "125": {
+      "value": "{size.125}"
+    },
+    "150": {
+      "value": "{size.150}"
+    },
+    "175": {
+      "value": "{size.175}"
+    },
+    "200": {
+      "value": "{size.200}"
+    },
+    "225": {
+      "value": "{size.225}"
+    },
+    "250": {
+      "value": "{size.250}"
+    },
+    "275": {
+      "value": "{size.275}"
+    },
+    "300": {
+      "value": "{size.300}"
+    },
+    "350": {
+      "value": "{size.350}"
+    },
+    "400": {
+      "value": "{size.400}"
+    },
+    "450": {
+      "value": "{size.450}"
+    },
+    "500": {
+      "value": "{size.500}"
+    }
+  },
+  "fontWeights": {
+    "description": "The weight of the font face.",
+    "light": {
+      "value": 300
+    },
+    "regular": {
+      "value": 400
+    },
+    "bold": {
+      "value": 700
+    }
+  },
+  "lineHeight": {
+    "description": "The available line heights represented in unitless values",
+    "100": {
+      "value": 1
+    },
+    "110": {
+      "value": 1.1
+    },
+    "125": {
+      "value": 1.25
+    },
+    "150": {
+      "value": 1.5
+    },
+    "160": {
+      "value": 1.6
+    },
+    "175": {
+      "value": 1.75
+    },
+    "200": {
+      "value": 2
+    },
+    "240": {
+      "value": 2.4
+    }
+  },
+  "radii": {
+    "description": "Uses the base size to caluclate the radius in rem",
+    "012": {
+      "value": "0.125rem"
+    },
+    "025": {
+      "value": "{size.025}"
+    },
+    "050": {
+      "value": "{size.050}"
+    },
+    "075": {
+      "value": "{size.075}"
+    },
+    "100": {
+      "value": "{size.100}"
+    },
+    "125": {
+      "value": "{size.125}"
+    },
+    "150": {
+      "value": "{size.150}"
+    },
+    "round": {
+      "value": "9999px"
+    }
+  },
+  "shadow": {
+    "description": "The available shadow styles",
+    "50": {
+      "value": "0px 2px 0px 0px #D5D5D5",
+      "comment": "Shadow 1 - Card shadow"
+    },
+    "100": {
+      "value": "0px 1px 2px 0px rgba(102, 102, 102, 0.25)",
+      "comment": "Shadow 2 - Extra small base shadow"
+    },
+    "200": {
+      "value": "0px 2px 4px 0px rgba(102, 102, 102, 0.25)",
+      "comment": "Shadows 3 - Small"
+    },
+    "300": {
+      "value": "0px 4px 8px 0px rgba(102, 102, 102, 0.25)",
+      "comment": "Shadows 4 - Medium"
+    },
+    "400": {
+      "value": "0px 8px 16px 0px rgba(102, 102, 102, 0.25)",
+      "comment": "Shadows 5 - Large"
+    },
+    "500": {
+      "value": "0px 16px 32px 0px rgba(102, 102, 102, 0.25)",
+      "comment": "Shadows 6 - Extra large"
+    }
+  },
+  "z-index": {
+    "description": "Defines the layering order of elements in the app",
+    "offer": {
+      "value": 400,
+      "description": "This layer is reserved only for offers like paywalls, overlays etc"
+    },
+    "shell": {
+      "value": 300,
+      "description": "This layer is reserved for shell items like the fixed primary nav"
+    },
+    "ads": {
+      "value": 200,
+      "description": "This layer is reserved for ads not on page"
+    },
+    "page": {
+      "value": 100,
+      "description": "Any content that is on that main page"
+    }
+  },
+  "motion": {
+    "duration": {
+      "500": { "value": "0.5s" },
+      "400": { "value": "0.4s" },
+      "300": { "value": "0.3s" },
+      "200": { "value": "0.2s" },
+      "100": { "value": "0.1s" }
+    }
+  }
 }

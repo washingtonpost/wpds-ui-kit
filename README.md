@@ -8,11 +8,11 @@ npm i @washingtonpost/wpds-ui-kit
 
 ## Websites
 
--   the ssr-testing/kitchen sink is on vercel
--   storybook will be on chromatic
+- the ssr-testing/kitchen sink is on vercel
+- storybook will be on chromatic
 
 ## [Contributing](docs/CONTRIBUTING.md)
 
 ## Naming packages, components, utilities
 
--   `@washingtonpost/wpds-${thing}`
+- `@washingtonpost/wpds-${thing}`

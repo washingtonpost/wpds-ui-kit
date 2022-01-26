@@ -1,31 +1,31 @@
 {
-	"name": "ssr-testing",
-	"version": "0.1.0",
-	"private": true,
-	"description": "",
-	"main": "index.js",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"build": "next build",
-		"dev": "next dev"
-	},
-	"author": "",
-	"license": "ISC",
-	"dependencies": {
-		"@next/bundle-analyzer": "^12.0.7",
-		"@washingtonpost/site-components": "latest",
-		"@washingtonpost/wpds-assets": "^1.1.13",
-		"@washingtonpost/wpds-box": "0.1.0",
-		"@washingtonpost/wpds-icon": "0.1.0",
-		"@washingtonpost/wpds-theme": "0.1.0",
-		"@washingtonpost/wpds-ui-kit": "0.1.0",
-		"@washingtonpost/wpds-visually-hidden": "0.1.0",
-		"next": "^12.0.4",
-		"react": "^17.0.2",
-		"react-dom": "^17.0.2"
-	},
-	"devDependencies": {
-		"@types/react": "^17.0.35",
-		"typescript": "^4.5.2"
-	}
+  "name": "ssr-testing",
+  "version": "0.1.0",
+  "private": true,
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "next build",
+    "dev": "next dev"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@next/bundle-analyzer": "^12.0.7",
+    "@washingtonpost/site-components": "latest",
+    "@washingtonpost/wpds-assets": "^1.1.13",
+    "@washingtonpost/wpds-box": "0.1.0",
+    "@washingtonpost/wpds-icon": "0.1.0",
+    "@washingtonpost/wpds-theme": "0.1.0",
+    "@washingtonpost/wpds-ui-kit": "0.1.0",
+    "@washingtonpost/wpds-visually-hidden": "0.1.0",
+    "next": "^12.0.4",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.35",
+    "typescript": "^4.5.2"
+  }
 }
