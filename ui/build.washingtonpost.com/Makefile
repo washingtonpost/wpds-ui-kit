@@ -31,11 +31,11 @@ experimental-release:
 	npm run build
 	make experimental-publish
 
-# create experimental release
-production-release:
-	make experimental-version
+# create main release
+main-release:
+	make main-version
 	npm run build
-	make experimental-publish
+	make main-publish
 
 # create command for plop templates
 new-component:
