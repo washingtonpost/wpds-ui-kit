@@ -10,6 +10,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 * add main release ([5185e0a](https://github.com/WPMedia/wpds-ui-kit/commit/5185e0a505a4ca03d344efbe6dc9c1407650fe95))
 * bump lockfile packages and add prod release cmd ([ea23579](https://github.com/WPMedia/wpds-ui-kit/commit/ea235794765b41856595f1aa34e75c6f706bd3c8))
+* update shadows tokens to use "comments" field
 
 
 
