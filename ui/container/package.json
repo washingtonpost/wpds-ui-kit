@@ -1,0 +1,44 @@
+{
+  "name": "@washingtonpost/wpds-container",
+  "version": "0.1.0-experimental.20",
+  "description": "The container centers your content horizontally. It's the most basic layout element.",
+  "author": "artmsilva <artmsilva@gmail.com>",
+  "homepage": "https://github.com/WPMedia/wpds-ui-kit#readme",
+  "license": "ISC",
+  "source": "src/index.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.module.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "src"
+  ],
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WPMedia/wpds-ui-kit.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "build": "npx parcel build --log-level verbose --no-cache"
+  },
+  "bugs": {
+    "url": "https://github.com/WPMedia/wpds-ui-kit/issues"
+  },
+  "devDependencies": {
+    "parcel": "^2.0.1",
+    "react": "^16.14.0"
+  },
+  "peerDependencies": {
+    "@washingtonpost/wpds-theme": "*",
+    "react": ">=16.8.6"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.13.10",
+    "@washingtonpost/wpds-theme": "0.1.0-experimental.20"
+  }
+}

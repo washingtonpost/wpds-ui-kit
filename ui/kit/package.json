@@ -8,11 +8,7 @@
   "source": "src/index.ts",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "files": [
-    "dist",
-    "README.md",
-    "src"
-  ],
+  "files": ["dist", "README.md", "src"],
   "sideEffects": false,
   "repository": {
     "type": "git",
@@ -29,6 +25,7 @@
     "url": "https://github.com/WPMedia/wpds-ui-kit/issues"
   },
   "dependencies": {
+    "@washingtonpost/wpds-container": "0.1.0-experimental.20",
     "@babel/runtime": "^7.13.10",
     "@washingtonpost/wpds-box": "0.2.1",
     "@washingtonpost/wpds-icon": "0.2.1",
@@ -41,6 +38,7 @@
     "parcel": "^2.0.1"
   },
   "peerDependencies": {
+    "@washingtonpost/wpds-container": "*",
     "@washingtonpost/wpds-box": "*",
     "@washingtonpost/wpds-icon": "*",
     "@washingtonpost/wpds-theme": "*",
