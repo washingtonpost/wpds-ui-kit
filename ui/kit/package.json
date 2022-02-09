@@ -8,7 +8,11 @@
   "source": "src/index.ts",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "files": ["dist", "README.md", "src"],
+  "files": [
+    "dist",
+    "README.md",
+    "src"
+  ],
   "sideEffects": false,
   "repository": {
     "type": "git",
