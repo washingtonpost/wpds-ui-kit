@@ -5,7 +5,7 @@ build:
 	npx prettier --write .
 	lerna run build
 	npx build-storybook --output-dir ./ssr-testing/public/storybook --preview-url /storybook/iframe.html --force-build-preview  --modern
-	npx zeplin connect -p @zeplin/cli-connect-react-plugin
+	# npx zeplin connect -p @zeplin/cli-connect-react-plugin
 
 all-dev:
 	npx concurrently -n 'workspaces,playroom,storybook,website' 'npm run dev --workspaces' 'npm run playroom:start' 'make localdev-storybook-in-nextjs' 'npm run website:dev'

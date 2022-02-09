@@ -15,11 +15,7 @@
     "@next/bundle-analyzer": "^12.0.7",
     "@washingtonpost/site-components": "latest",
     "@washingtonpost/wpds-assets": "^1.1.13",
-    "@washingtonpost/wpds-box": "0.2.1",
-    "@washingtonpost/wpds-icon": "0.2.1",
-    "@washingtonpost/wpds-theme": "0.2.1",
     "@washingtonpost/wpds-ui-kit": "0.2.1",
-    "@washingtonpost/wpds-visually-hidden": "0.2.1",
     "next": "^12.0.4",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
