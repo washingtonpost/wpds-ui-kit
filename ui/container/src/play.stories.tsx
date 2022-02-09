@@ -52,3 +52,7 @@ Container.decorators = [
     </Box>
   ),
 ];
+
+Container.parameters = {
+  chromatic: { viewports: [767, 768, 900, 1024, 1440] },
+};
