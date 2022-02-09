@@ -2,7 +2,13 @@
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
     "paths": {
-      "*": ["node_modules/*"]
+      "*": ["node_modules/*"],
+      "@washingtonpost/wpds-ui-kit": ["./ui/kit/src/*"],
+      "@washingtonpost/wpds-container": ["./ui/container/src/*"],
+      "@washingtonpost/wpds-box": ["./ui/box/src/*"],
+      "@washingtonpost/wpds-theme": ["./ui/theme/src/*"],
+      "@washingtonpost/wpds-icon": ["./ui/icon/src/*"],
+      "@washingtonpost/wpds-visually-hidden": ["./ui/visually-hidden/src/*"]
     }
   }
 }
