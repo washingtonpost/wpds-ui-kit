@@ -8,7 +8,7 @@ build:
 	# npx zeplin connect -p @zeplin/cli-connect-react-plugin
 
 all-dev:
-	npx concurrently -n 'workspaces,playroom,storybook,website' 'npm run dev --workspaces' 'npm run playroom:start' 'make localdev-storybook-in-nextjs' 'npm run website:dev'
+	npx concurrently -n 'workspaces,playroom,storybook,website' 'npm run watch --workspaces' 'npm run playroom:start' 'make localdev-storybook-in-nextjs' 'npm run website:dev'
 
 start-storybook:
 	start-storybook -p 6006 --quiet --ci
