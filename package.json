@@ -99,7 +99,7 @@
     "build:pkgs": "lerna run build",
     "website:dev": "lerna run dev --scope ssr-testing --stream",
     "website:build": "lerna run build --scope ssr-testing --stream",
-    "dev": "lerna run --parallel dev",
+    "watch": "lerna run --parallel watch",
     "chromatic": "npx chromatic --project-token=b457f2a94e96",
     "postinstall": "npm run bootstrap",
     "new-component": "make new-component",
