@@ -1,6 +1,6 @@
 {
   "name": "@washingtonpost/wpds-ui-kit",
-  "version": "0.2.1",
+  "version": "0.3.0-experimental.0",
   "description": "> TODO: description",
   "author": "artmsilva <artmsilva@gmail.com>",
   "homepage": "https://github.com/WPMedia/wpds-ui-kit#readme",
@@ -29,12 +29,12 @@
     "url": "https://github.com/WPMedia/wpds-ui-kit/issues"
   },
   "dependencies": {
-    "@washingtonpost/wpds-container": "0.1.0-experimental.20",
     "@babel/runtime": "^7.13.10",
-    "@washingtonpost/wpds-box": "0.2.1",
-    "@washingtonpost/wpds-icon": "0.2.1",
-    "@washingtonpost/wpds-theme": "0.2.1",
-    "@washingtonpost/wpds-visually-hidden": "0.2.1"
+    "@washingtonpost/wpds-box": "0.3.0-experimental.0",
+    "@washingtonpost/wpds-container": "0.3.0-experimental.0",
+    "@washingtonpost/wpds-icon": "0.3.0-experimental.0",
+    "@washingtonpost/wpds-theme": "0.3.0-experimental.0",
+    "@washingtonpost/wpds-visually-hidden": "0.3.0-experimental.0"
   },
   "devDependencies": {
     "@swc/cli": "^0.1.55",
@@ -42,8 +42,8 @@
     "parcel": "^2.0.1"
   },
   "peerDependencies": {
-    "@washingtonpost/wpds-container": "*",
     "@washingtonpost/wpds-box": "*",
+    "@washingtonpost/wpds-container": "*",
     "@washingtonpost/wpds-icon": "*",
     "@washingtonpost/wpds-theme": "*",
     "@washingtonpost/wpds-visually-hidden": "*"
