@@ -2,9 +2,6 @@
   "include": ["ui", "types", "scripts", "next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"],
   "compilerOptions": {
-    "paths": {
-      "@washingtonpost/wpds-container": ["./ui/container/src/*"]
-    },
     "noImplicitAny": false,
     "allowJs": false,
     "allowSyntheticDefaultImports": true,
