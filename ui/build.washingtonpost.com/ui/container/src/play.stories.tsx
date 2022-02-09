@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Story, Meta } from "@storybook/react";
-import { Container as Component } from "./";
+import { Container as Component } from "@washingtonpost/wpds-ui-kit";
 import { Box } from "@washingtonpost/wpds-box";
 
 export default {

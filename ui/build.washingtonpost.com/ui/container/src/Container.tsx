@@ -24,40 +24,40 @@ export const Container = Theme.styled("div", {
         width: "100%",
       },
       sm: {
-        "@media (min-width: 768px)": {
+        "@notSm": {
           maxWidth: "$$sm",
         },
-        "@media (min-width: 900px)": {
+        "@notMd": {
           maxWidth: "$$md",
         },
-        "@media (min-width: 1024px)": {
+        "@notLg": {
           maxWidth: "$$lg",
         },
-        "@media (min-width: 1440px)": {
+        "@notXl": {
           maxWidth: "$$xl",
         },
       },
       md: {
-        "@media (min-width: 900px)": {
+        "@notMd": {
           maxWidth: "$$md",
         },
-        "@media (min-width: 1024px)": {
+        "@notLg": {
           maxWidth: "$$lg",
         },
-        "@media (min-width: 1440px)": {
+        "@notXl": {
           maxWidth: "$$xl",
         },
       },
       lg: {
-        "@media (min-width: 1024px)": {
+        "@notLg": {
           maxWidth: "$$lg",
         },
-        "@media (min-width: 1440px)": {
+        "@notXl": {
           maxWidth: "$$xl",
         },
       },
       xl: {
-        "@media (min-width: 1440px)": {
+        "@notXl": {
           maxWidth: "$$xl",
         },
       },
