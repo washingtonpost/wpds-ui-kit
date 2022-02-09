@@ -10,7 +10,7 @@ export default {
     size: {
       control: {
         type: "select",
-        options: ["fluid", "small", "medium", "large", "extraLarge"],
+        options: ["fluid", "sm", "md", "lg", "xl"],
       },
     },
   },
@@ -18,10 +18,10 @@ export default {
 
 const Template: Story<typeof Component> = (args) => (
   <>
-    <Component size="extraLarge">Extra Large</Component>
-    <Component size="large">Large</Component>
-    <Component size="medium">Medium</Component>
-    <Component size="small">Small</Component>
+    <Component size="xl">Extra lg</Component>
+    <Component size="lg">lg</Component>
+    <Component size="md">md</Component>
+    <Component size="sm">sm</Component>
     <Component size="fluid">Fluid</Component>
     <Component {...args}>Play</Component>
   </>

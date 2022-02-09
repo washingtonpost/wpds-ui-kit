@@ -7,7 +7,6 @@ module.exports = {
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
     "storybook-dark-mode",
-    "storybook-zeplin/register",
   ],
   previewBody: (body) => `${body}`,
   managerHead: (head) =>
