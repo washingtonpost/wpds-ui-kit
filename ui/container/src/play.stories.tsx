@@ -6,7 +6,7 @@ export default {
   title: "Container",
   component: Component,
   argTypes: {
-    size: {
+    maxWidth: {
       control: {
         type: "select",
         options: ["fluid", "sm", "md", "lg", "xl"],
@@ -17,11 +17,11 @@ export default {
 
 const Template: Story<typeof Component> = (args) => (
   <>
-    <Component size="xl">Extra lg</Component>
-    <Component size="lg">lg</Component>
-    <Component size="md">md</Component>
-    <Component size="sm">sm</Component>
-    <Component size="fluid">Fluid</Component>
+    <Component maxWidth="xl">Extra lg</Component>
+    <Component maxWidth="lg">lg</Component>
+    <Component maxWidth="md">md</Component>
+    <Component maxWidth="sm">sm</Component>
+    <Component maxWidth="fluid">Fluid</Component>
     <Component {...args}>Play</Component>
   </>
 );
