@@ -13,59 +13,58 @@ export const Container = Theme.styled("div", {
   justifyContent: "center",
   margin: "0 auto",
 
-  $$extraLarge: "1440px",
-  $$large: "1024px",
-  $$medium: "900px",
-  $$small: "768px",
-  $$extraSmall: "767px",
+  $$xl: "1440px",
+  $$lg: "1024px",
+  $$md: "900px",
+  $$sm: "768px",
 
   variants: {
     size: {
       fluid: {
         width: "100%",
       },
-      small: {
+      sm: {
         "@media (min-width: 768px)": {
-          maxWidth: "$$small",
+          maxWidth: "$$sm",
         },
         "@media (min-width: 900px)": {
-          maxWidth: "$$medium",
+          maxWidth: "$$md",
         },
         "@media (min-width: 1024px)": {
-          maxWidth: "$$large",
+          maxWidth: "$$lg",
         },
         "@media (min-width: 1440px)": {
-          maxWidth: "$$extraLarge",
+          maxWidth: "$$xl",
         },
       },
-      medium: {
+      md: {
         "@media (min-width: 900px)": {
-          maxWidth: "$$medium",
+          maxWidth: "$$md",
         },
         "@media (min-width: 1024px)": {
-          maxWidth: "$$large",
+          maxWidth: "$$lg",
         },
         "@media (min-width: 1440px)": {
-          maxWidth: "$$extraLarge",
+          maxWidth: "$$xl",
         },
       },
-      large: {
+      lg: {
         "@media (min-width: 1024px)": {
-          maxWidth: "$$large",
+          maxWidth: "$$lg",
         },
         "@media (min-width: 1440px)": {
-          maxWidth: "$$extraLarge",
+          maxWidth: "$$xl",
         },
       },
-      extraLarge: {
+      xl: {
         "@media (min-width: 1440px)": {
-          maxWidth: "$$extraLarge",
+          maxWidth: "$$xl",
         },
       },
     },
   },
   defaultVariants: {
-    size: "medium",
+    size: "md",
   },
 });
 
