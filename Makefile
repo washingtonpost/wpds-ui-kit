@@ -1,17 +1,17 @@
 localdev-storybook-in-nextjs:
-	npx start-storybook -p 6006 --preview-url=/storybook/iframe.html --modern --quiet --ci --force-build-preview
+	npx start-storybook -p 6006 --preview-url=/storybook/iframe.html --quiet --ci --force-build-preview
 
 build: 
 	npx prettier --write .
 	lerna run build
-	npx build-storybook --output-dir ./ssr-testing/public/storybook --preview-url /storybook/iframe.html --force-build-preview  --modern
+	npx build-storybook --output-dir ./ssr-testing/public/storybook --preview-url /storybook/iframe.html --force-build-preview 
 	# npx zeplin connect -p @zeplin/cli-connect-react-plugin
 
 all-dev:
 	npx concurrently -n 'workspaces,playroom,storybook,website' 'npm run dev --workspaces' 'npm run playroom:start' 'make localdev-storybook-in-nextjs' 'npm run website:dev'
 
 start-storybook:
-	start-storybook -p 6006 --modern --quiet --ci
+	start-storybook -p 6006 --quiet --ci
 
 experimental-version:
 	npx lerna version --conventional-commits --conventional-prerelease --preid=experimental --sign-git-tag=experimental --no-changelog --yes
