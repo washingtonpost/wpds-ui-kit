@@ -19,7 +19,7 @@ export const Container = Theme.styled("div", {
   $$sm: "768px",
 
   variants: {
-    size: {
+    maxWidth: {
       fluid: {
         width: "100%",
       },
@@ -64,7 +64,7 @@ export const Container = Theme.styled("div", {
     },
   },
   defaultVariants: {
-    size: "md",
+    maxWidth: "md",
   },
 });
 
