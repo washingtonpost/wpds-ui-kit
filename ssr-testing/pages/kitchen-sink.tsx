@@ -1,5 +1,5 @@
 import * as React from "react";
-import { styled } from "@washingtonpost/wpds-ui-kit";
+import { styled, Container } from "@washingtonpost/wpds-ui-kit";
 import { VisuallyHidden } from "@washingtonpost/wpds-ui-kit";
 
 const Headline = styled("h1", {
