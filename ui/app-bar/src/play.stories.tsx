@@ -1,7 +1,7 @@
 import * as React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { styled } from "@washingtonpost/wpds-theme";
-import { AppBar as Component, Story } from "./";
+import { AppBar as Component } from "./";
 
 export default {
   title: "App Bar",
