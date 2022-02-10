@@ -1,6 +1,5 @@
 import * as Theme from "@washingtonpost/wpds-theme";
 import * as React from "react";
-import * as Utils from "./../../../utils";
 
 export const Container = Theme.styled("div", {
   display: "flex",
@@ -65,7 +64,5 @@ export const Container = Theme.styled("div", {
 });
 
 type ContainerProps = React.ComponentProps<typeof Container>;
-
-export const StoryArgs = Utils.storybookCompat<ContainerProps>(Container);
 
 export type { ContainerProps };
