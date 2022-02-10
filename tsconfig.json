@@ -1,6 +1,7 @@
 {
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
+    "baseUrl": ".",
     "paths": {
       "*": ["node_modules/*"],
       "@washingtonpost/wpds-ui-kit": ["./ui/kit/src/*"],
@@ -8,7 +9,9 @@
       "@washingtonpost/wpds-box": ["./ui/box/src/*"],
       "@washingtonpost/wpds-theme": ["./ui/theme/src/*"],
       "@washingtonpost/wpds-icon": ["./ui/icon/src/*"],
-      "@washingtonpost/wpds-visually-hidden": ["./ui/visually-hidden/src/*"]
+      "@washingtonpost/wpds-visually-hidden": ["./ui/visually-hidden/src/*"],
+      "@washingtonpost/wpds-app-bar": ["./ui/app-bar/src/*"],
+      "@emotion/core": ["./types/emotion.d.ts"]
     }
   }
 }

@@ -1,19 +1,10 @@
 import * as stitches from "@stitches/react";
 import * as tokens from "./tokens";
+export type { VariantProps } from "@stitches/react";
 
 const prefix = "wpds";
 
-export const {
-  styled,
-  css,
-  globalCss,
-  keyframes,
-  getCssText,
-  theme,
-  createTheme,
-  config,
-  reset,
-} = stitches.createStitches({
+const WPDS = stitches.createStitches({
   prefix,
   theme: {
     colors: {
@@ -85,6 +76,20 @@ export const {
   },
 });
 
+export type CSS = stitches.CSS<typeof WPDS>;
+export const {
+  styled,
+  css,
+  globalCss,
+  keyframes,
+  getCssText,
+  theme,
+  createTheme,
+  config,
+  reset,
+} = WPDS;
+export const utils = config.utils;
+
 export const darkTheme = createTheme(`${prefix}-dark`, {
   colors: {
     ...tokens.dark,
@@ -141,25 +146,6 @@ export const globalStyles = globalCss({
       src: "url(https://www.washingtonpost.com/wp-stat/assets/fonts/ITC_Franklin-Light.woff2)",
     },
   ],
-  // "@dark": {
-  // 	":root:not(.light)": {
-  // 		...tokens.Object.keys(darkTheme.colors).reduce(
-  // 			(varSet, currentColorKey) => {
-  // 				const currentColor = darkTheme.colors[currentColorKey];
-  // 				const currentColorValue =
-  // 					currentColor.value.substring(0, 1) === "$"
-  // 						? `$colors${currentColor.value}`
-  // 						: currentColor.value;
-
-  // 				return {
-  // 					[currentColor.variable]: currentColorValue,
-  // 					...tokens.varSet,
-  // 				};
-  // 			},
-  // 			{}
-  // 		),
-  // 	},
-  // },
 });
 
 export const darkModeGlobalStyles = globalCss({
