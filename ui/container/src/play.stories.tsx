@@ -1,18 +1,11 @@
 import * as React from "react";
 import { Story, Meta } from "@storybook/react";
-import { Container as Component, Box } from "@washingtonpost/wpds-ui-kit";
+import { Box } from "@washingtonpost/wpds-box";
+import { Container as Component } from "./";
 
 export default {
   title: "Container",
   component: Component,
-  argTypes: {
-    maxWidth: {
-      control: {
-        type: "select",
-        options: ["fluid", "sm", "md", "lg", "xl"],
-      },
-    },
-  },
 } as Meta<typeof Component>;
 
 const Template: Story<typeof Component> = (args) => (
