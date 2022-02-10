@@ -30,6 +30,7 @@
     "url": "https://github.com/WPMedia/wpds-ui-kit/issues"
   },
   "dependencies": {
+    "@washingtonpost/wpds-app-bar": "0.1.0-experimental.20",
     "@babel/runtime": "^7.13.10",
     "@washingtonpost/wpds-box": "0.3.0-experimental.0",
     "@washingtonpost/wpds-container": "0.3.0-experimental.0",
@@ -43,6 +44,7 @@
     "parcel": "^2.0.1"
   },
   "peerDependencies": {
+    "@washingtonpost/wpds-app-bar": "*",
     "@washingtonpost/wpds-box": "*",
     "@washingtonpost/wpds-container": "*",
     "@washingtonpost/wpds-icon": "*",

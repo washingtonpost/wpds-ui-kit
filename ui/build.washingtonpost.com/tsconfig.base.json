@@ -2,11 +2,14 @@
   "include": ["ui", "types", "scripts", "next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"],
   "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@wpds/*": ["./*"]
+    },
     "noImplicitAny": false,
     "allowJs": false,
     "allowSyntheticDefaultImports": true,
     "alwaysStrict": true,
-    "baseUrl": ".",
     "declaration": true,
     "emitDecoratorMetadata": false,
     "esModuleInterop": true,
