@@ -1,11 +1,7 @@
 import * as Theme from "@washingtonpost/wpds-theme";
-import type * as Stitches from "@stitches/react";
+import * as React from "react";
+import * as Utils from "./../../../utils";
 
-const NAME = "Container";
-
-/**
- * Container Yo
- */
 export const Container = Theme.styled("div", {
   display: "flex",
   flexDirection: "column",
@@ -68,6 +64,8 @@ export const Container = Theme.styled("div", {
   },
 });
 
-Container.displayName = NAME;
+type ContainerProps = React.ComponentProps<typeof Container>;
 
-export type ContainerProps = Stitches.VariantProps<typeof Container>;
+export const StoryArgs = Utils.storybookCompat<ContainerProps>(Container);
+
+export type { ContainerProps };
