@@ -1,6 +1,5 @@
 import * as Theme from "@washingtonpost/wpds-theme";
 import * as React from "react";
-import * as Utils from "./../../../utils";
 
 export const AppBar = Theme.styled("div", {
   display: "flex",
@@ -35,7 +34,5 @@ export const AppBar = Theme.styled("div", {
 });
 
 type AppBarProps = React.ComponentProps<typeof AppBar>;
-export const StoryArgs = Utils.storybookCompat<AppBarProps>(AppBar);
 
 export type { AppBarProps };
-
