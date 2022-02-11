@@ -36,7 +36,8 @@ AppBar.args = {
   shadow: true,
   position: "sticky",
   css: {
-    top: "0",
+    top: 0,
+    left: 0,
   },
   children: (
     <Container
@@ -45,9 +46,8 @@ AppBar.args = {
         height: 60,
         background: "$secondary",
         color: "$onSecondary",
-        textAlign: "center",
         flexDirection: "row",
-        alignItems: "center",
+        textAlign: "center",
         justifyContent: "space-between",
         px: "$100",
       }}
