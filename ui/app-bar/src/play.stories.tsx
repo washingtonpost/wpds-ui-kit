@@ -7,6 +7,8 @@ import { Container } from "@washingtonpost/wpds-container";
 import { Box } from "@washingtonpost/wpds-box";
 import { Icon } from "@washingtonpost/wpds-icon";
 import Profile from "@washingtonpost/wpds-assets/asset/profile";
+import { useDarkMode } from "storybook-dark-mode";
+import WashingtonPost from "@washingtonpost/wpds-assets/asset/washington-post";
 
 import { AppBar as Component } from "./";
 
@@ -26,20 +28,10 @@ export default {
   },
 } as ComponentMeta<typeof Component>;
 
-const Template: ComponentStory<typeof Component> = (args) => (
-  <Component {...args} />
-);
+const PrimaryNavigationExample = () => {
+  const darkModeActive = useDarkMode();
 
-export const AppBar = Template.bind({});
-
-AppBar.args = {
-  shadow: true,
-  position: "sticky",
-  css: {
-    top: 0,
-    left: 0,
-  },
-  children: (
+  return (
     <Container
       maxWidth="fluid"
       css={{
@@ -58,7 +50,11 @@ AppBar.args = {
         </Icon>
       </Box>
       <Box>
-        <WashingtonPostWhite width={188} />
+        {darkModeActive ? (
+          <WashingtonPostWhite width={188} />
+        ) : (
+          <WashingtonPost width={188} />
+        )}
         <Box
           css={{
             fontFamily: "$body",
@@ -75,7 +71,23 @@ AppBar.args = {
         </Icon>
       </Box>
     </Container>
-  ),
+  );
+};
+
+const Template: ComponentStory<typeof Component> = (args) => (
+  <Component {...args} />
+);
+
+export const AppBar = Template.bind({});
+
+AppBar.args = {
+  shadow: true,
+  position: "sticky",
+  css: {
+    top: 0,
+    left: 0,
+  },
+  children: <PrimaryNavigationExample />,
 };
 
 const Decorator = styled("div", {
