@@ -6,6 +6,17 @@ import { AppBar as Component } from "./";
 export default {
   title: "App Bar",
   component: Component,
+  argTypes: {
+    position: {
+      options: ["fixed", "sticky", "absolute", "relative"],
+      defaultValue: "relative",
+    },
+    shadow: {
+      options: [true, false],
+      control: "boolean",
+      defaultValue: false,
+    },
+  },
 } as ComponentMeta<typeof Component>;
 
 const Template: ComponentStory<typeof Component> = (args) => (
@@ -18,11 +29,11 @@ AppBar.args = {
   css: {
     top: "0",
     background: "$secondary",
-    border: "1px solid $accessible",
     color: "$onSecondary",
     padding: "$100",
     textAlign: "center",
   },
+  children: "App Bar",
 };
 
 const Decorator = styled("div", {
