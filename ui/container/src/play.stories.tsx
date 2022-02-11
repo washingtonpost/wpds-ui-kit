@@ -6,6 +6,12 @@ import { Container as Component } from "./";
 export default {
   title: "Container",
   component: Component,
+  argTypes: {
+    maxWidth: {
+      options: ["fluid", "sm", "md", "lg", "xl"],
+      defaultValue: "fluid",
+    },
+  },
 } as Meta<typeof Component>;
 
 const Template: Story<typeof Component> = (args) => (
