@@ -1,6 +1,13 @@
 import * as React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { styled } from "@washingtonpost/wpds-theme";
+import { styled, theme } from "@washingtonpost/wpds-theme";
+import WashingtonPostWhite from "@washingtonpost/wpds-assets/asset/washington-post-white";
+import Menu from "@washingtonpost/wpds-assets/asset/menu";
+import { Container } from "@washingtonpost/wpds-container";
+import { Box } from "@washingtonpost/wpds-box";
+import { Icon } from "@washingtonpost/wpds-icon";
+import Profile from "@washingtonpost/wpds-assets/asset/profile";
+
 import { AppBar as Component } from "./";
 
 export default {
@@ -26,14 +33,49 @@ const Template: ComponentStory<typeof Component> = (args) => (
 export const AppBar = Template.bind({});
 
 AppBar.args = {
+  shadow: true,
+  position: "sticky",
   css: {
     top: "0",
-    background: "$secondary",
-    color: "$onSecondary",
-    padding: "$100",
-    textAlign: "center",
   },
-  children: "App Bar",
+  children: (
+    <Container
+      maxWidth="fluid"
+      css={{
+        height: 60,
+        background: "$secondary",
+        color: "$onSecondary",
+        textAlign: "center",
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-between",
+        px: "$100",
+      }}
+    >
+      <Box>
+        <Icon size="32" label="Open Section Navigation Menu">
+          <Menu fill={theme.colors.onSecondary} />
+        </Icon>
+      </Box>
+      <Box>
+        <WashingtonPostWhite width={188} />
+        <Box
+          css={{
+            fontFamily: "$body",
+            fontSize: "$075",
+            fontStyle: "italic",
+          }}
+        >
+          Democracy Dies in Darkness (This is an example using the new system)
+        </Box>
+      </Box>
+      <Box>
+        <Icon size="32" label="Open Account Menu">
+          <Profile fill={theme.colors.onSecondary} />
+        </Icon>
+      </Box>
+    </Container>
+  ),
 };
 
 const Decorator = styled("div", {
@@ -41,13 +83,6 @@ const Decorator = styled("div", {
   flexDirection: "column",
   width: "100%",
   height: "calc(100vh * 3);",
-  [`& ${Component}`]: {
-    background: "$secondary",
-    border: "1px solid $accessible",
-    color: "$onSecondary",
-    padding: "$100",
-    textAlign: "center",
-  },
 });
 
 AppBar.decorators = [
@@ -57,11 +92,5 @@ AppBar.decorators = [
     </Decorator>
   ),
 ];
-
-AppBar.play = async ({ canvasElement }) => {
-  // const canvas = within(canvasElement);
-  // userEvent.tab();
-  // userEvent.click(canvas.getByTestId("skip-link"));
-};
 
 AppBar.storyName = "App Bar";
