@@ -1,6 +1,6 @@
 import * as React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { styled, theme } from "@washingtonpost/wpds-theme";
+import { styled } from "@washingtonpost/wpds-theme";
 import WashingtonPostWhite from "@washingtonpost/wpds-assets/asset/washington-post-white";
 import Menu from "@washingtonpost/wpds-assets/asset/menu";
 import { Container } from "@washingtonpost/wpds-container";
@@ -26,6 +26,9 @@ export default {
       defaultValue: false,
     },
   },
+  parameters: {
+    layout: "fullscreen",
+  },
 } as ComponentMeta<typeof Component>;
 
 const PrimaryNavigationExample = () => {
@@ -44,11 +47,9 @@ const PrimaryNavigationExample = () => {
         px: "$100",
       }}
     >
-      <Box>
-        <Icon size="32" label="Open Section Navigation Menu">
-          <Menu fill={theme.colors.onSecondary} />
-        </Icon>
-      </Box>
+      <Icon size="32" label="Open Section Navigation Menu">
+        <Menu fill="currentColor" />
+      </Icon>
       <Box>
         {darkModeActive ? (
           <WashingtonPostWhite width={188} />
@@ -65,11 +66,9 @@ const PrimaryNavigationExample = () => {
           Democracy Dies in Darkness (This is an example using the new system)
         </Box>
       </Box>
-      <Box>
-        <Icon size="32" label="Open Account Menu">
-          <Profile fill={theme.colors.onSecondary} />
-        </Icon>
-      </Box>
+      <Icon size="32" label="Open Account Menu">
+        <Profile fill="currentColor" />
+      </Icon>
     </Container>
   );
 };
