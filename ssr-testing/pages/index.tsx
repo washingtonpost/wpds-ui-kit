@@ -58,12 +58,20 @@ const SubHeadline = styled("h2", {
 function HomePage() {
   return (
     <>
-      <Headline>WPDS's UI Kit.</Headline>
-      <SubHeadline>Coded in React.</SubHeadline>
+      <Headline>Server Side Testing</Headline>
+      <SubHeadline>Testing ground / playground</SubHeadline>
+      <p>
+        All code in this app is meant for testing components that use objects
+        that are only available in JavaScript in the brower.
+      </p>
       <Icon label="Garlic">
         <Garlic />
       </Icon>
 
+      <h2>
+        This is an example of how to implement a grid layout using CSS Grid and
+        Stitches.
+      </h2>
       <Container>
         <Header>Header</Header>
         <Nav>Navigation</Nav>
