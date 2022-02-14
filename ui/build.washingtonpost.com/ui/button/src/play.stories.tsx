@@ -4,7 +4,6 @@ import { Button as Component } from "./";
 
 import Asset from "@washingtonpost/wpds-assets/asset/add";
 import { Icon } from "@washingtonpost/wpds-icon";
-import { Box } from "@washingtonpost/wpds-box";
 import { styled, theme } from "@washingtonpost/wpds-theme";
 
 import { expect } from "@storybook/jest";
