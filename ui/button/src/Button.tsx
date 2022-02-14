@@ -106,6 +106,7 @@ export const Button = styled("button", {
       variant: "primary",
       css: {
         background: "none",
+        color: theme.colors.primary,
       },
     },
     {
@@ -113,6 +114,7 @@ export const Button = styled("button", {
       variant: "secondary",
       css: {
         background: "none",
+        color: theme.colors.secondary,
       },
     },
     {
@@ -120,6 +122,7 @@ export const Button = styled("button", {
       variant: "cta",
       css: {
         background: "none",
+        color: theme.colors.cta,
       },
     },
   ],
