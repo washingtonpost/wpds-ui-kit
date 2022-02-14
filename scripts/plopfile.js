@@ -1,4 +1,5 @@
 const prettier = require("prettier");
+const lerna = require("./../lerna.json");
 
 module.exports = function (plop) {
   plop.setGenerator("component", {
@@ -27,6 +28,7 @@ module.exports = function (plop) {
           data: {
             packageName: "{{ dashCase componentName }}",
             componentName: "{{ componentName }}",
+            version: lerna.version,
           },
         },
         {
@@ -41,7 +43,7 @@ module.exports = function (plop) {
         type: "append",
         path: "../ui/kit/package.json",
         pattern: `"dependencies": {`,
-        template: `"@washingtonpost/wpds-{{ dashCase componentName }}": "0.1.0-experimental.20",`,
+        template: `"@washingtonpost/wpds-{{ dashCase componentName }}": "${lerna.version}",`,
       });
       actions.push({
         type: "append",
