@@ -31,6 +31,7 @@ export const Button = styled("button", {
       secondary: {
         background: theme.colors.secondary,
         color: theme.colors.onSecondary,
+        border: "1px solid $subtle",
         "@hover": {
           "&:hover": {
             background: theme.colors.gray400,
