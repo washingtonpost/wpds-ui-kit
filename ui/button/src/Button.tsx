@@ -1,36 +1,128 @@
-import * as Theme from "@washingtonpost/wpds-theme";
+import { theme, styled } from "@washingtonpost/wpds-theme";
 import * as React from "react";
 
-export const Button = Theme.styled("button", {
+export const Button = styled("button", {
   display: "flex",
-  flexDirection: "column",
-  width: "100%",
+  flexDirection: "row",
+  alignItems: "center",
+  justifyContent: "center",
+  borderRadius: "$round",
+  cursor: "pointer",
+  border: "none",
+  appearance: "none",
+  px: "$100",
+  fontFamily: "$meta",
+  fontWeight: "$bold",
+  fontSize: "$100",
+  lineHeight: "$100",
+  gap: "$050",
 
   variants: {
-    position: {
-      fixed: {
-        position: "fixed",
+    variant: {
+      primary: {
+        background: theme.colors.primary,
+        color: theme.colors.onPrimary,
+        "@hover": {
+          "&:hover": {
+            background: theme.colors.gray60,
+          },
+        },
       },
-      sticky: {
-        position: "sticky",
+      secondary: {
+        background: theme.colors.secondary,
+        color: theme.colors.onSecondary,
+        "@hover": {
+          "&:hover": {
+            background: theme.colors.gray400,
+          },
+        },
       },
-      absolute: {
-        position: "absolute",
-      },
-      relative: {
-        position: "relative",
+      cta: {
+        background: theme.colors.cta,
+        color: theme.colors.onCta,
+        "@hover": {
+          "&:hover": {
+            background: theme.colors.vividBlue80,
+          },
+        },
       },
     },
-    shadow: {
-      true: {
-        boxShadow: Theme.theme.shadows[300],
+    size: {
+      "050": {
+        py: "$050",
       },
+      "075": {
+        py: "$075",
+      },
+    },
+    style: {
+      outline: {
+        background: "none",
+        border: "1px solid",
+        "@hover": {
+          "&:hover": {
+            background: theme.colors.alpha25,
+          },
+        },
+      },
+      fill: {},
+    },
+    icon: {
+      center: {
+        py: "$050",
+        px: "$050",
+        fontSize: "0",
+        lineHeight: "0",
+        gap: "0",
+        maxWidth: "fit-content",
+      },
+      left: {
+        flexDirection: "row",
+      },
+      right: {
+        flexDirection: "row-reverse",
+      },
+      none: {},
     },
   },
   defaultVariants: {
-    position: "relative",
-    shadow: false,
+    variant: "secondary",
+    size: "050",
+    style: "fill",
+    icon: "left",
   },
+  compoundVariants: [
+    {
+      icon: "center",
+      size: "075",
+      css: {
+        padding: "$075",
+        fontSize: "0",
+        lineHeight: "0",
+      },
+    },
+    {
+      style: "outline",
+      variant: "primary",
+      css: {
+        background: "none",
+      },
+    },
+    {
+      style: "outline",
+      variant: "secondary",
+      css: {
+        background: "none",
+      },
+    },
+    {
+      style: "outline",
+      variant: "cta",
+      css: {
+        background: "none",
+      },
+    },
+  ],
 });
 
 type ButtonProps = React.ComponentProps<typeof Button>;
