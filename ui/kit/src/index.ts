@@ -1,4 +1,5 @@
 // insert new component exports here
+export * from "@washingtonpost/wpds-button";
 export * from "@washingtonpost/wpds-app-bar";
 export * from "@washingtonpost/wpds-container";
 export * from "@washingtonpost/wpds-theme";
