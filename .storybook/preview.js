@@ -1,13 +1,4 @@
-import React, { useEffect } from "react";
-import { globalStyles, darkTheme } from "@washingtonpost/wpds-ui-kit";
-// import { useDarkMode } from "storybook-dark-mode";
-
-// Detect if users preferred color scheme is dark
-const isDark =
-  typeof window !== `undefined`
-    ? window.matchMedia &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches
-    : null;
+import { globalStyles, darkTheme, theme } from "@washingtonpost/wpds-ui-kit";
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -22,27 +13,24 @@ export const parameters = {
     manual: false,
   },
   darkMode: {
-    current: isDark ? "dark" : "light",
     stylePreview: true,
     darkClass: darkTheme.className,
   },
+  backgrounds: {
+    default: "story",
+    values: [
+      {
+        name: "story",
+        value: theme.colors.gray500,
+      },
+    ],
+  },
+  layout: "centered",
 };
 
 function GlobalStyles(props) {
-  // const darkModeActive = useDarkMode();
-
-  // add darkTheme.className to body if darkMode is active and darkTheme.className exists using a useEffect hook
-
-  // useEffect(() => {
-  // 	if (darkModeActive && darkTheme.className) {
-  // 		document.body.classList.add(darkTheme.className);
-  // 	} else {
-  // 		document.body.classList.remove(darkTheme.className);
-  // 	}
-  // }, [darkModeActive]);
-
   globalStyles();
-  return <div>{props.children}</div>;
+  return props.children;
 }
 
 export const decorators = [

@@ -1,28 +1,16 @@
 import * as React from "react";
-import { Story, Meta } from "@storybook/react";
-import { within, userEvent } from "@storybook/testing-library";
+import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { {{ componentName }} as Component } from "./";
-
 
 export default {
 	title: "{{ componentName }}",
 	component: Component,
-} as Meta<typeof Component>;
+} as ComponentMeta<typeof Component>;
 
-const Template: Story<typeof Component> = (args) => (
-	<Component
-	    {...args}
-    />
+const Template: ComponentStory<typeof Component> = (args) => (
+  <Component {...args} />
 );
 
 export const {{ componentName }} = Template.bind({});
 
 {{ componentName }}.args = {};
-
-{{ componentName }}.play = async ({ canvasElement }) => {
-	const canvas = within(canvasElement);
-
-	userEvent.tab();
-
-	userEvent.click(canvas.getByTestId("skip-link"));
-};
