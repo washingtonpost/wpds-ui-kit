@@ -12,6 +12,9 @@ export default {
       defaultValue: "fluid",
     },
   },
+  parameters: {
+    layout: "fullscreen",
+  },
 } as Meta<typeof Component>;
 
 const Template: Story<typeof Component> = (args) => (
