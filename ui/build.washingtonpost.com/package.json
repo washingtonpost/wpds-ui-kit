@@ -71,13 +71,16 @@
   "dependencies": {
     "@stitches/react": "^1.2.6",
     "@washingtonpost/site-components": "latest",
-    "@washingtonpost/wpds-assets": "^1.1.13",
+    "@washingtonpost/wpds-assets": "latest",
     "@washingtonpost/wpds-box": "file:ui/box",
     "@washingtonpost/wpds-container": "file:ui/container",
     "@washingtonpost/wpds-icon": "file:ui/icon",
     "@washingtonpost/wpds-theme": "file:ui/theme",
     "@washingtonpost/wpds-ui-kit": "file:ui/kit",
     "@washingtonpost/wpds-visually-hidden": "file:ui/visually-hidden",
+    "@washingtonpost/wpds-app-bar": "file:ui/app-bar",
+    "@washingtonpost/wpds-button": "file:ui/button",
+    "@washingtonpost/wpds-alert-banner": "file:ui/alert-banner",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
