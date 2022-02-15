@@ -69,7 +69,7 @@
   "dependencies": {
     "@stitches/react": "^1.2.6",
     "@washingtonpost/site-components": "latest",
-    "@washingtonpost/wpds-assets": "^1.1.13",
+    "@washingtonpost/wpds-assets": "^1.1.14",
     "@washingtonpost/wpds-box": "file:ui/box",
     "@washingtonpost/wpds-icon": "file:ui/icon",
     "@washingtonpost/wpds-theme": "file:ui/theme",
