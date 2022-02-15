@@ -44,7 +44,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.13.10",
-    "@washingtonpost/wpds-app-bar": "0.3.0-experimental.0",
+    "@washingtonpost/wpds-app-bar": "0.3.0-experimental.1",
     "@washingtonpost/wpds-assets": "latest",
     "@washingtonpost/wpds-button": "0.3.0-experimental.1",
     "@washingtonpost/wpds-container": "0.3.0-experimental.1",
