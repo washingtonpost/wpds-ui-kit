@@ -14,6 +14,7 @@ export const Container = Theme.styled("div", {
   $$sm: "768px",
 
   variants: {
+    /** the max width of them all */
     maxWidth: {
       fluid: {
         width: "100%",

@@ -77,9 +77,9 @@ const Template: ComponentStory<typeof Component> = (args) => (
   <Component {...args} />
 );
 
-export const AppBar = Template.bind({});
+export const Play = Template.bind({});
 
-AppBar.args = {
+Play.args = {
   shadow: true,
   position: "sticky",
   css: {
@@ -96,7 +96,7 @@ const Decorator = styled("div", {
   height: "calc(100vh * 3);",
 });
 
-AppBar.decorators = [
+Play.decorators = [
   (Story) => (
     <Decorator>
       <Story />
@@ -104,4 +104,4 @@ AppBar.decorators = [
   ),
 ];
 
-AppBar.storyName = "App Bar";
+Play.storyName = "App Bar";
