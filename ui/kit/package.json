@@ -1,6 +1,6 @@
 {
   "name": "@washingtonpost/wpds-ui-kit",
-  "version": "0.3.0-experimental.0",
+  "version": "0.3.0-experimental.1",
   "description": "> TODO: description",
   "author": "artmsilva <artmsilva@gmail.com>",
   "homepage": "https://github.com/WPMedia/wpds-ui-kit#readme",
@@ -30,15 +30,15 @@
     "url": "https://github.com/WPMedia/wpds-ui-kit/issues"
   },
   "dependencies": {
-    "@washingtonpost/wpds-alert-banner": "0.3.0-experimental.0",
-    "@washingtonpost/wpds-button": "0.3.0-experimental.0",
-    "@washingtonpost/wpds-app-bar": "0.1.0-experimental.20",
     "@babel/runtime": "^7.13.10",
-    "@washingtonpost/wpds-box": "0.3.0-experimental.0",
-    "@washingtonpost/wpds-container": "0.3.0-experimental.0",
-    "@washingtonpost/wpds-icon": "0.3.0-experimental.0",
-    "@washingtonpost/wpds-theme": "0.3.0-experimental.0",
-    "@washingtonpost/wpds-visually-hidden": "0.3.0-experimental.0"
+    "@washingtonpost/wpds-alert-banner": "0.3.0-experimental.1",
+    "@washingtonpost/wpds-app-bar": "0.3.0-experimental.1",
+    "@washingtonpost/wpds-box": "0.3.0-experimental.1",
+    "@washingtonpost/wpds-button": "0.3.0-experimental.1",
+    "@washingtonpost/wpds-container": "0.3.0-experimental.1",
+    "@washingtonpost/wpds-icon": "0.3.0-experimental.1",
+    "@washingtonpost/wpds-theme": "0.3.0-experimental.1",
+    "@washingtonpost/wpds-visually-hidden": "0.3.0-experimental.1"
   },
   "devDependencies": {
     "@swc/cli": "^0.1.55",
@@ -47,9 +47,9 @@
   },
   "peerDependencies": {
     "@washingtonpost/wpds-alert-banner": "*",
-    "@washingtonpost/wpds-button": "*",
     "@washingtonpost/wpds-app-bar": "*",
     "@washingtonpost/wpds-box": "*",
+    "@washingtonpost/wpds-button": "*",
     "@washingtonpost/wpds-container": "*",
     "@washingtonpost/wpds-icon": "*",
     "@washingtonpost/wpds-theme": "*",
