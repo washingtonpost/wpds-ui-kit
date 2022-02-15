@@ -11,6 +11,7 @@
       "@washingtonpost/wpds-icon": ["./ui/icon/src/*"],
       "@washingtonpost/wpds-visually-hidden": ["./ui/visually-hidden/src/*"],
       "@washingtonpost/wpds-app-bar": ["./ui/app-bar/src/*"],
+      "@washingtonpost/wpds-button": ["./ui/button/src/*"],
       "@emotion/core": ["./types/emotion.d.ts"]
     }
   }
