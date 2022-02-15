@@ -1,6 +1,6 @@
 {
   "name": "@washingtonpost/wpds-button",
-  "version": "0.3.0-experimental.0",
+  "version": "0.3.0-experimental.1",
   "description": "> TODO: description",
   "author": "artmsilva <artmsilva@gmail.com>",
   "homepage": "https://github.com/WPMedia/wpds-ui-kit#readme",
@@ -39,6 +39,6 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.13.10",
-    "@washingtonpost/wpds-theme": "0.3.0-experimental.0"
+    "@washingtonpost/wpds-theme": "0.3.0-experimental.1"
   }
 }
