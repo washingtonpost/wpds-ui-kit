@@ -67,6 +67,7 @@ const closeIcon = css({
 const StyledAlertBanner = styled(AppBar, {
   flexDirection: "row",
   justifyContent: "flex-start",
+  color: theme.colors.primary,
   alignItems: "center",
   fontFamily: "$meta",
   fontSize: "$100",
@@ -160,7 +161,6 @@ const AlertBanner = React.forwardRef<HTMLDivElement, AlertBannerVariants>(
           variant="primary"
           style="outline"
           css={{
-            alignSelf: "flex-start",
             alignSelf: "flex-start",
             marginTop: "$025",
             border: "none",
