@@ -7,6 +7,7 @@ export const AppBar = Theme.styled("div", {
   width: "100%",
 
   variants: {
+    /** App bar's position in time and space */
     position: {
       fixed: {
         position: "fixed",
@@ -21,6 +22,7 @@ export const AppBar = Theme.styled("div", {
         position: "relative",
       },
     },
+    /** App bar's shadow in time and space */
     shadow: {
       true: {
         boxShadow: Theme.theme.shadows[300],
