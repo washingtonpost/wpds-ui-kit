@@ -1,6 +1,6 @@
 {
   "name": "@washingtonpost/wpds-alert-banner",
-  "version": "0.3.0-experimental.1",
+  "version": "0.3.0-experimental.2",
   "description": "> TODO: description",
   "author": "artmsilva <artmsilva@gmail.com>",
   "homepage": "https://github.com/WPMedia/wpds-ui-kit#readme",
@@ -44,11 +44,11 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.13.10",
-    "@washingtonpost/wpds-app-bar": "0.3.0-experimental.1",
+    "@washingtonpost/wpds-app-bar": "0.3.0-experimental.2",
     "@washingtonpost/wpds-assets": "latest",
-    "@washingtonpost/wpds-button": "0.3.0-experimental.1",
-    "@washingtonpost/wpds-container": "0.3.0-experimental.1",
-    "@washingtonpost/wpds-icon": "0.3.0-experimental.1",
-    "@washingtonpost/wpds-theme": "0.3.0-experimental.1"
+    "@washingtonpost/wpds-button": "0.3.0-experimental.2",
+    "@washingtonpost/wpds-container": "0.3.0-experimental.2",
+    "@washingtonpost/wpds-icon": "0.3.0-experimental.2",
+    "@washingtonpost/wpds-theme": "0.3.0-experimental.2"
   }
 }

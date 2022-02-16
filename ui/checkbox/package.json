@@ -1,6 +1,6 @@
 {
   "name": "@washingtonpost/wpds-checkbox",
-  "version": "0.3.0-experimental.1",
+  "version": "0.3.0-experimental.2",
   "description": "> TODO: description",
   "author": "artmsilva <artmsilva@gmail.com>",
   "homepage": "https://github.com/WPMedia/wpds-ui-kit#readme",
@@ -34,20 +34,20 @@
     "react": "^16.14.0"
   },
   "peerDependencies": {
+    "@radix-ui/react-checkbox": "latest",
+    "@react-aria/utils": "latest",
+    "@washingtonpost/wpds-assets": "latest",
+    "@washingtonpost/wpds-icon": "*",
     "@washingtonpost/wpds-theme": "*",
     "@washingtonpost/wpds-visually-hidden": "*",
-    "@washingtonpost/wpds-icon": "*",
-    "@washingtonpost/wpds-assets": "latest",
-    "react": ">=16.8.6",
-    "@radix-ui/react-checkbox": "latest",
-    "@react-aria/utils": "latest"
+    "react": ">=16.8.6"
   },
   "dependencies": {
     "@babel/runtime": "^7.13.10",
-    "@washingtonpost/wpds-theme": "0.3.0-experimental.1",
-    "@washingtonpost/wpds-visually-hidden": "0.3.0-experimental.1",
-    "@washingtonpost/wpds-icon": "0.3.0-experimental.1",
     "@radix-ui/react-checkbox": "latest",
-    "@react-aria/utils": "latest"
+    "@react-aria/utils": "latest",
+    "@washingtonpost/wpds-icon": "0.3.0-experimental.2",
+    "@washingtonpost/wpds-theme": "0.3.0-experimental.2",
+    "@washingtonpost/wpds-visually-hidden": "0.3.0-experimental.2"
   }
 }
