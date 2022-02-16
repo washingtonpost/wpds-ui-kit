@@ -45,10 +45,13 @@ const AlertBannerTrigger = React.forwardRef<
 });
 type AlertBannerTriggerProps = React.ComponentProps<typeof AlertBannerTrigger>;
 
-const StyledAlertBannerContent = styled(Container, {
+const StyledAlertBannerContent = styled("p", {
+  width: "100%",
   display: "inline-block",
-  margin: 0,
-  flex: "1 1 auto",
+  justifyContent: "center",
+  alignItems: "flex-start",
+  margin: "0 auto",
+  flexDirection: "column",
   py: "$050",
   marginTop: "calc(2 / $025)",
 });
@@ -65,6 +68,7 @@ const closeIcon = css({
 });
 
 const StyledAlertBanner = styled(AppBar, {
+  width: "100%",
   flexDirection: "row",
   justifyContent: "flex-start",
   color: theme.colors.primary,
@@ -103,7 +107,7 @@ const StyledAlertBanner = styled(AppBar, {
     /** The alert banner can be permanent or dismissable. */
     dismissable: {
       false: {
-        paddingRight: "$075",
+        paddingRight: "$050",
       },
     },
   },
@@ -121,13 +125,6 @@ const AlertIcons = {
 };
 
 type AlertIconType = keyof typeof AlertIcons;
-
-const AlertBannerMessageContainer = styled(Container, {
-  flexDirection: "row",
-  alignItems: "center",
-  margin: "0",
-  height: "100%",
-});
 
 type AlertBannerVariants = React.ComponentProps<typeof StyledAlertBanner>;
 

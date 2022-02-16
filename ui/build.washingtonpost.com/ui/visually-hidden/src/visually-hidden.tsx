@@ -31,3 +31,10 @@ export const VisuallyHidden = Theme.styled("span", {
     position: "static",
   },
 });
+
+type VisuallyHiddenVariants = React.ComponentProps<typeof VisuallyHidden>;
+interface VisuallyHiddenProps extends VisuallyHiddenVariants {
+  htmlFor?: string;
+}
+
+export type { VisuallyHiddenProps };
