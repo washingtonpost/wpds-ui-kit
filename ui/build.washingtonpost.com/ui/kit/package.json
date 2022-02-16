@@ -23,7 +23,7 @@
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
-    "build": "npx parcel build --log-level verbose --no-cache && npx swc src/index.ts --out-file dist/index.js",
+    "build": "npx parcel build --log-level error && npx swc src/index.ts --out-file dist/index.js",
     "watch": "npx parcel watch --log-level verbose --no-cache"
   },
   "bugs": {
