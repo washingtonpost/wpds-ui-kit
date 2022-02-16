@@ -25,7 +25,7 @@
   },
   "scripts": {
     "build:transform": "node build/transform.js",
-    "build": "npm run build:transform && npx parcel build --log-level verbose --no-cache",
+    "build": "npm run build:transform && npx parcel build --log-level error",
     "watch": "npx parcel watch --log-level verbose --no-cache",
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
