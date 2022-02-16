@@ -38,9 +38,11 @@ const Column = styled("div", {
   flexDirection: "row",
   gap: "$100",
   alignItems: "center",
+  width: "100%",
 });
 
 const Stack = styled("div", {
+  width: "100%",
   display: "flex",
   flexDirection: "column",
   gap: "$100",
@@ -54,32 +56,20 @@ const Template: ComponentStory<typeof AlertBanner.Root> = ({
 }) => (
   <Column>
     <Stack>
-      <AlertBanner.Root {...args} variant="error">
-        <AlertBanner.Content as="p">
-          <strong>Error: </strong> {children}
-        </AlertBanner.Content>
+      <AlertBanner.Root {...args} position="relative" variant="error">
+        <AlertBanner.Content as="p">{children}</AlertBanner.Content>
         <AlertBanner.Trigger />
       </AlertBanner.Root>
-      <AlertBanner.Root {...args} variant="success">
-        <AlertBanner.Content as="p">
-          <strong>Success: </strong> {children}
-        </AlertBanner.Content>
+      <AlertBanner.Root {...args} position="relative" variant="success">
+        <AlertBanner.Content as="p">{children}</AlertBanner.Content>
         <AlertBanner.Trigger />
       </AlertBanner.Root>
-      <AlertBanner.Root {...args} variant="warning">
-        <AlertBanner.Content as="p">
-          <strong>Warning: </strong> {children}
-        </AlertBanner.Content>
+      <AlertBanner.Root {...args} position="relative" variant="warning">
+        <AlertBanner.Content as="p">{children}</AlertBanner.Content>
         <AlertBanner.Trigger />
       </AlertBanner.Root>
-      <AlertBanner.Root {...args} position="sticky">
-        <AlertBanner.Content as="p">
-          <strong>Information: </strong> ipsum dolor sit amet, consectetur
-          adipiscing elit. Lorem eget vehicula velit, et adipiscing id et sit
-          nunc. Fermentum mi lacus, fusce dui. Amet nunc sit urna quis aliquam,
-          enim consequat, consectetur tempus. Auctor viverra tellus et enim
-          tincidunt.
-        </AlertBanner.Content>
+      <AlertBanner.Root {...args}>
+        <AlertBanner.Content as="p">{children}</AlertBanner.Content>
         <AlertBanner.Trigger />
       </AlertBanner.Root>
     </Stack>
@@ -89,7 +79,16 @@ const Template: ComponentStory<typeof AlertBanner.Root> = ({
 export const Play = Template.bind({});
 
 Play.args = {
-  children: "Message",
+  children: (
+    <>
+      <strong>Information: </strong>
+      This alert banner can be controlled from Storybook. ipsum dolor sit amet,
+      consectetur adipiscing elit. Lorem eget vehicula velit, et adipiscing id
+      et sit nunc. Fermentum mi lacus, fusce dui. Amet nunc sit urna quis
+      aliquam, enim consequat, consectetur tempus. Auctor viverra tellus et enim
+      tincidunt.
+    </>
+  ),
   css: {
     zIndex: "$shell",
     top: 0,
@@ -109,26 +108,6 @@ Play.decorators = [
   (Story) => (
     <Decorator>
       <Story />
-      {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15].map((i) => (
-        <Box
-          as="p"
-          css={{
-            display: "grid",
-            gap: "$100",
-          }}
-        >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vel, ut in
-          cras venenatis aliquam tellus cum posuere non. Dapibus diam lorem
-          accumsan est scelerisque est viverra. Aliquam tristique est porttitor
-          in amet, nisl pharetra ut enim. Luctus pulvinar maecenas consequat id
-          sociis. Enim cursus felis elementum congue nascetur elit. Sit urna at
-          posuere velit et nunc. Mauris, volutpat aliquet morbi ut. Egestas
-          ultricies odio rhoncus blandit donec pharetra. Et arcu turpis diam
-          ultrices semper leo. Iaculis eleifend posuere etiam erat. Pellentesque
-          ac pretium fringilla gravida placerat mauris placerat a. Dictum vel id
-          malesuada odio eu amet.
-        </Box>
-      ))}
     </Decorator>
   ),
 ];
