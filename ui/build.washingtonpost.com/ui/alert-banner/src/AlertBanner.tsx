@@ -150,18 +150,28 @@ const AlertBanner = React.forwardRef<HTMLDivElement, AlertBannerVariants>(
         ref={ref}
         role="alert"
         variant={variant}
-        dismissable
+        dismissable={dismissable}
         {...props}
       >
         <Button
+          as="div"
           icon="center"
           variant="primary"
           style="outline"
           css={{
             alignSelf: "flex-start",
-            marginTop: "$025",
             border: "none",
+            marginTop: "$050",
+            paddingTop: 0,
+            paddingBottom: 0,
+            borderRadius: 0,
             lineHeight: "$100",
+            cursor: "auto",
+            "@hover": {
+              "&:hover": {
+                background: "none",
+              },
+            },
           }}
         >
           <Icon size="16" label="">

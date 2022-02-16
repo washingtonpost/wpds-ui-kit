@@ -24,7 +24,7 @@
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
-    "build": "npx parcel build --log-level verbose --no-cache"
+    "build": "npx parcel build --log-level error"
   },
   "bugs": {
     "url": "https://github.com/WPMedia/wpds-ui-kit/issues"
