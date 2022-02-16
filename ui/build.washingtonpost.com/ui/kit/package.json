@@ -1,6 +1,6 @@
 {
   "name": "@washingtonpost/wpds-ui-kit",
-  "version": "0.3.0-experimental.1",
+  "version": "0.3.0-experimental.2",
   "description": "> TODO: description",
   "author": "artmsilva <artmsilva@gmail.com>",
   "homepage": "https://github.com/WPMedia/wpds-ui-kit#readme",
@@ -8,7 +8,11 @@
   "source": "src/index.ts",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "files": ["dist", "README.md", "src"],
+  "files": [
+    "dist",
+    "README.md",
+    "src"
+  ],
   "sideEffects": false,
   "repository": {
     "type": "git",
@@ -26,16 +30,16 @@
     "url": "https://github.com/WPMedia/wpds-ui-kit/issues"
   },
   "dependencies": {
-    "@washingtonpost/wpds-checkbox": "0.3.0-experimental.1",
     "@babel/runtime": "^7.13.10",
-    "@washingtonpost/wpds-alert-banner": "0.3.0-experimental.1",
-    "@washingtonpost/wpds-app-bar": "0.3.0-experimental.1",
-    "@washingtonpost/wpds-box": "0.3.0-experimental.1",
-    "@washingtonpost/wpds-button": "0.3.0-experimental.1",
-    "@washingtonpost/wpds-container": "0.3.0-experimental.1",
-    "@washingtonpost/wpds-icon": "0.3.0-experimental.1",
-    "@washingtonpost/wpds-theme": "0.3.0-experimental.1",
-    "@washingtonpost/wpds-visually-hidden": "0.3.0-experimental.1"
+    "@washingtonpost/wpds-alert-banner": "0.3.0-experimental.2",
+    "@washingtonpost/wpds-app-bar": "0.3.0-experimental.2",
+    "@washingtonpost/wpds-box": "0.3.0-experimental.2",
+    "@washingtonpost/wpds-button": "0.3.0-experimental.2",
+    "@washingtonpost/wpds-checkbox": "0.3.0-experimental.2",
+    "@washingtonpost/wpds-container": "0.3.0-experimental.2",
+    "@washingtonpost/wpds-icon": "0.3.0-experimental.2",
+    "@washingtonpost/wpds-theme": "0.3.0-experimental.2",
+    "@washingtonpost/wpds-visually-hidden": "0.3.0-experimental.2"
   },
   "devDependencies": {
     "@swc/cli": "^0.1.55",
@@ -43,11 +47,11 @@
     "parcel": "^2.0.1"
   },
   "peerDependencies": {
-    "@washingtonpost/wpds-checkbox": "*",
     "@washingtonpost/wpds-alert-banner": "*",
     "@washingtonpost/wpds-app-bar": "*",
     "@washingtonpost/wpds-box": "*",
     "@washingtonpost/wpds-button": "*",
+    "@washingtonpost/wpds-checkbox": "*",
     "@washingtonpost/wpds-container": "*",
     "@washingtonpost/wpds-icon": "*",
     "@washingtonpost/wpds-theme": "*",
