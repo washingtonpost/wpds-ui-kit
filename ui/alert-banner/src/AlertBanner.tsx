@@ -52,7 +52,7 @@ const StyledAlertBannerContent = styled("p", {
   margin: "0 auto",
   flexDirection: "column",
   py: "$050",
-  marginTop: "calc(2 / $025)",
+  marginTop: "0",
 });
 const AlertBannerContent = StyledAlertBannerContent;
 type AlertBannerContentProps = React.ComponentProps<typeof AlertBannerContent>;
@@ -127,7 +127,7 @@ type AlertIconType = keyof typeof AlertIcons;
 
 type AlertBannerVariants = React.ComponentProps<typeof StyledAlertBanner>;
 
-const AlertBanner = React.forwardRef<HTMLDivElement, AlertBannerVariants>(
+const AlertBannerRoot = React.forwardRef<HTMLDivElement, AlertBannerVariants>(
   (
     { variant = "information", dismissable = true, children, ...props },
     ref
@@ -160,11 +160,8 @@ const AlertBanner = React.forwardRef<HTMLDivElement, AlertBannerVariants>(
           css={{
             alignSelf: "flex-start",
             border: "none",
-            marginTop: "$050",
-            paddingTop: 0,
-            paddingBottom: 0,
+            marginTop: "$025",
             borderRadius: 0,
-            lineHeight: "$100",
             cursor: "auto",
             "@hover": {
               "&:hover": {
@@ -185,11 +182,17 @@ const AlertBanner = React.forwardRef<HTMLDivElement, AlertBannerVariants>(
   }
 );
 
-type AlertBannerProps = React.ComponentProps<typeof AlertBanner>;
+type AlertBannerProps = React.ComponentProps<typeof AlertBannerRoot>;
 
-const Root = AlertBanner;
+const Root = AlertBannerRoot;
 const Trigger = AlertBannerTrigger;
 const Content = AlertBannerContent;
+
+export const AlertBanner = {
+  Root,
+  Trigger,
+  Content,
+};
 
 export { Root, Trigger, Content };
 
