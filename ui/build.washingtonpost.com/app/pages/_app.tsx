@@ -1,6 +1,5 @@
 import React from "react";
 import Head from "next/head";
-import { Favicon } from "@washingtonpost/site-components/core/favicon";
 import { theme, styled, globalStyles } from "@washingtonpost/wpds-ui-kit";
 import Link from "next/link";
 
@@ -76,7 +75,35 @@ function App({ Component, pageProps }) {
     <Layout>
       <Head>
         <title>WPDS UI Kit - The Washington Post</title>
-        <Favicon />
+        <link
+          rel="icon"
+          href="https://www.washingtonpost.com/wp-stat/assets/favicons/favicon.svg"
+          type="image/svg+xml"
+        />
+        <link
+          rel="icon"
+          href="https://www.washingtonpost.com/wp-stat/assets/favicons/touch-icon-iphone.png"
+          type="image/png"
+        />
+        <link
+          rel="apple-touch-icon"
+          href="https://www.washingtonpost.com/wp-stat/assets/favicons/touch-icon-iphone.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="152x152"
+          href="https://www.washingtonpost.com/wp-stat/assets/favicons/touch-icon-ipad.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="167x167"
+          href="https://www.washingtonpost.com/wp-stat/assets/favicons/touch-icon-ipad-retina.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="https://www.washingtonpost.com/wp-stat/assets/favicons/touch-icon-iphone-retina.png"
+        />
       </Head>
 
       <SiteNavigation />

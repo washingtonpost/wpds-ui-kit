@@ -65,17 +65,15 @@
   },
   "workspaces": [
     "./ui/*",
-    "./ssr-testing",
-    "./kit"
+    "./app"
   ],
   "dependencies": {
     "@radix-ui/react-checkbox": "^0.1.4",
     "@react-aria/utils": "^3.11.0",
     "@stitches/react": "^1.2.6",
-    "@washingtonpost/site-components": "latest",
     "@washingtonpost/wpds-alert-banner": "file:ui/alert-banner",
     "@washingtonpost/wpds-app-bar": "file:ui/app-bar",
-    "@washingtonpost/wpds-assets": "latest",
+    "@washingtonpost/wpds-assets": "^1.2.0",
     "@washingtonpost/wpds-box": "file:ui/box",
     "@washingtonpost/wpds-button": "file:ui/button",
     "@washingtonpost/wpds-checkbox": "file:ui/checkbox",
@@ -105,8 +103,8 @@
     "experimental-publish": "make experimental-publish",
     "parcel:build": "parcel build 'ui/*' --no-cache",
     "build:pkgs": "lerna run build",
-    "website:dev": "lerna run dev --scope ssr-testing --stream",
-    "website:build": "lerna run build --scope ssr-testing --stream",
+    "website:dev": "lerna run dev --scope app --stream",
+    "website:build": "lerna run build --scope app --stream",
     "watch": "lerna run --parallel watch",
     "chromatic": "npx chromatic --project-token=b457f2a94e96",
     "postinstall": "npm run bootstrap",
