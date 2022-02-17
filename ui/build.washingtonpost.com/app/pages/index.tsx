@@ -1,6 +1,5 @@
 import * as React from "react";
-import { Icon } from "@washingtonpost/wpds-ui-kit";
-import { styled } from "@washingtonpost/wpds-ui-kit";
+import { Icon, styled, AlertBanner } from "@washingtonpost/wpds-ui-kit";
 import Garlic from "@washingtonpost/wpds-assets/asset/voraciously";
 
 const Container = styled("div", {
@@ -67,6 +66,13 @@ function HomePage() {
       <Icon label="Garlic">
         <Garlic />
       </Icon>
+
+      <AlertBanner.Root position="relative" variant="error">
+        <AlertBanner.Content as="p">
+          <strong>Example:</strong> boop
+        </AlertBanner.Content>
+        <AlertBanner.Trigger />
+      </AlertBanner.Root>
 
       <h2>
         This is an example of how to implement a grid layout using CSS Grid and

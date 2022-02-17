@@ -1,7 +1,7 @@
 import * as React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import * as AlertBanner from "./";
-import { Box, styled } from "@washingtonpost/wpds-ui-kit";
+import { styled } from "@washingtonpost/wpds-ui-kit";
 
 export default {
   title: "Alert banner",
@@ -82,11 +82,7 @@ Play.args = {
   children: (
     <>
       <strong>Information: </strong>
-      This alert banner can be controlled from Storybook. ipsum dolor sit amet,
-      consectetur adipiscing elit. Lorem eget vehicula velit, et adipiscing id
-      et sit nunc. Fermentum mi lacus, fusce dui. Amet nunc sit urna quis
-      aliquam, enim consequat, consectetur tempus. Auctor viverra tellus et enim
-      tincidunt.
+      This alert banner
     </>
   ),
   css: {

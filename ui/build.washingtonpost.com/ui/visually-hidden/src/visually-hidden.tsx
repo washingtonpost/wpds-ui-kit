@@ -1,3 +1,4 @@
+import * as React from "react";
 import * as Theme from "@washingtonpost/wpds-theme";
 
 export const VisuallyHidden = Theme.styled("span", {
@@ -32,9 +33,6 @@ export const VisuallyHidden = Theme.styled("span", {
   },
 });
 
-type VisuallyHiddenVariants = React.ComponentProps<typeof VisuallyHidden>;
-interface VisuallyHiddenProps extends VisuallyHiddenVariants {
-  htmlFor?: string;
-}
+type VisuallyHiddenProps = React.ComponentProps<typeof VisuallyHidden>;
 
 export type { VisuallyHiddenProps };

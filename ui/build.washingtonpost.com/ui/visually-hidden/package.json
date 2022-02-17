@@ -24,19 +24,19 @@
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
-    "build": "npx parcel build --log-level error",
+    "build": "parcel build --no-cache",
     "watch": "npx parcel watch --log-level verbose --no-cache"
   },
   "bugs": {
     "url": "https://github.com/WPMedia/wpds-ui-kit/issues"
   },
   "devDependencies": {
-    "parcel": "^2.0.1",
+    "parcel": "latest",
     "react": "^16.14.0"
   },
   "peerDependencies": {
     "@washingtonpost/wpds-theme": "*",
-    "react": ">=16.8.6"
+    "react": "^16.8.6 || ^17.0.2"
   },
   "dependencies": {
     "@babel/runtime": "^7.13.10",

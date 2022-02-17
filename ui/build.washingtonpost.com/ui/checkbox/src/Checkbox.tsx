@@ -81,7 +81,7 @@ export const Checkbox = React.forwardRef<HTMLButtonElement, CheckboxInterface>(
             </Icon>
           </StyledCheck>
         </StyledIndicator>
-        <VisuallyHidden htmlFor={props.id || elementId}>
+        <VisuallyHidden as="label" htmlFor={props.id || elementId}>
           {props.checked ? "checked" : "not checked"}
         </VisuallyHidden>
       </StyledCheckbox>
