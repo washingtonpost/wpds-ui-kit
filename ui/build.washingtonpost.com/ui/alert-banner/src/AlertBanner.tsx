@@ -2,7 +2,6 @@ import * as React from "react";
 
 import { theme, styled, css } from "@washingtonpost/wpds-theme";
 import { Icon } from "@washingtonpost/wpds-icon";
-import { Container } from "@washingtonpost/wpds-container";
 import { Button } from "@washingtonpost/wpds-button";
 import { AppBar } from "@washingtonpost/wpds-app-bar";
 
