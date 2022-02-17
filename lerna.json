@@ -26,8 +26,7 @@
         "scripts/**/*",
         ".github/**/*"
       ],
-      "registry": "https://registry.npmjs.org/",
-      "allowBranch": "main"
+      "registry": "https://registry.npmjs.org/"
     }
   },
   "version": "0.3.0-experimental.2"
