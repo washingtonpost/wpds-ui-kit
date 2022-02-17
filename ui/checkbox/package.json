@@ -1,6 +1,6 @@
 {
   "name": "@washingtonpost/wpds-checkbox",
-  "version": "0.3.0-experimental.2",
+  "version": "0.3.0-experimental.3",
   "description": "> TODO: description",
   "author": "artmsilva <artmsilva@gmail.com>",
   "homepage": "https://github.com/WPMedia/wpds-ui-kit#readme",
@@ -46,8 +46,8 @@
     "@babel/runtime": "^7.13.10",
     "@radix-ui/react-checkbox": "latest",
     "@react-aria/utils": "latest",
-    "@washingtonpost/wpds-icon": "0.3.0-experimental.2",
-    "@washingtonpost/wpds-theme": "0.3.0-experimental.2",
-    "@washingtonpost/wpds-visually-hidden": "0.3.0-experimental.2"
+    "@washingtonpost/wpds-icon": "0.3.0-experimental.3",
+    "@washingtonpost/wpds-theme": "0.3.0-experimental.3",
+    "@washingtonpost/wpds-visually-hidden": "0.3.0-experimental.3"
   }
 }
