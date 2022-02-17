@@ -4,7 +4,7 @@ localdev-storybook-in-nextjs:
 build: 
 	npx prettier --write .
 	lerna run build
-	npx build-storybook --output-dir ./ssr-testing/public/storybook --preview-url /storybook/iframe.html --force-build-preview 
+	npx build-storybook --output-dir ./app/public/storybook --preview-url /storybook/iframe.html --force-build-preview 
 	# npx zeplin connect -p @zeplin/cli-connect-react-plugin
 
 all-dev:
