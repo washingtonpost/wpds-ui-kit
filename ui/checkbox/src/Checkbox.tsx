@@ -37,24 +37,6 @@ const StyledIndicator = styled(PrimitiveCheckbox.Indicator, {
   height: "$100",
 });
 
-const StyledCheck = styled("span", {
-  flex: "0 0 16px",
-  variants: {
-    checked: {
-      true: {
-        visibility: "visible",
-      },
-      false: {
-        visibility: "hidden",
-      },
-    },
-  },
-
-  defaultVariant: {
-    checked: false,
-  },
-});
-
 type CheckboxVariants = React.ComponentPropsWithRef<typeof StyledCheckbox>;
 
 interface CheckboxInterface extends CheckboxVariants {
@@ -67,6 +49,27 @@ interface CheckboxInterface extends CheckboxVariants {
   value?: string;
   id?: string;
 }
+
+const StyledCheck = styled("span", {
+  flex: "0 0 16px",
+  variants: {
+    checked: {
+      true: {
+        visibility: "visible",
+      },
+      false: {
+        visibility: "hidden",
+      },
+      mixed: {
+        visibility: "hidden",
+      },
+    },
+  },
+
+  defaultVariant: {
+    checked: false,
+  },
+});
 
 export const Checkbox = React.forwardRef<HTMLButtonElement, CheckboxInterface>(
   (props, ref) => {
