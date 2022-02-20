@@ -1,28 +1,29 @@
 import * as React from "react";
-import { Story } from "@storybook/react";
-import Info from "@washingtonpost/wpds-assets/asset/info";
-import { Icon as Component, IconProps } from "./icon";
+import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { Box, theme } from "@washingtonpost/wpds-ui-kit";
+import Info from "@washingtonpost/wpds-assets/asset/info";
+import { Icon as Component } from "./icon";
 
 export default {
   title: "Icon",
   component: Component,
-};
+} as ComponentMeta<typeof Component>;
 
-const Template: Story<IconProps> = (args) => (
-  <Component {...args}>
-    <Info fill="currentColor" />
-  </Component>
+const Template: ComponentStory<typeof Component> = (args) => (
+  <Component {...args} />
 );
 
-export const Icon = Template.bind({});
+export const Default = Template.bind({});
 
-Icon.args = {
+Default.storyName = "Icon";
+
+Default.args = {
   size: "32",
   label: "Find out more information.",
+  children: <Info fill="currentColor" />,
 };
 
-Icon.decorators = [
+Default.decorators = [
   (Story) => (
     <Box
       css={{

@@ -131,4 +131,8 @@ export const Button = styled("button", {
 
 type ButtonProps = React.ComponentProps<typeof Button>;
 
-export type { ButtonProps };
+interface ButtonInterface extends ButtonProps {
+  children: React.ReactNode;
+}
+
+export type { ButtonProps, ButtonInterface };
