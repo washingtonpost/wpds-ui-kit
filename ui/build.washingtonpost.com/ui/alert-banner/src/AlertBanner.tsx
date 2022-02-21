@@ -5,6 +5,8 @@ import { Icon } from "@washingtonpost/wpds-icon";
 import { Button } from "@washingtonpost/wpds-button";
 import { AppBar } from "@washingtonpost/wpds-app-bar";
 
+import type * as WPDS from "@washingtonpost/wpds-theme";
+
 import Error from "@washingtonpost/wpds-assets/asset/error";
 import Success from "@washingtonpost/wpds-assets/asset/success";
 import Warning from "@washingtonpost/wpds-assets/asset/warning";
@@ -20,9 +22,13 @@ type AlertBannerTriggerVariants = React.ComponentProps<
   typeof StyledAlertBannerTrigger
 >;
 
+interface AlertBannerTriggerInterface extends AlertBannerTriggerVariants {
+  css?: WPDS.CSS;
+}
+
 const AlertBannerTrigger = React.forwardRef<
   HTMLButtonElement,
-  AlertBannerTriggerVariants
+  AlertBannerTriggerInterface
 >((props, ref) => {
   return (
     <StyledAlertBannerTrigger
@@ -43,6 +49,7 @@ const AlertBannerTrigger = React.forwardRef<
   );
 });
 type AlertBannerTriggerProps = React.ComponentProps<typeof AlertBannerTrigger>;
+AlertBannerTrigger.displayName = "AlertBannerTrigger";
 
 const StyledAlertBannerContent = styled("p", {
   width: "100%",
@@ -129,7 +136,12 @@ type AlertBannerVariants = React.ComponentProps<typeof StyledAlertBanner>;
 
 const AlertBannerRoot = React.forwardRef<HTMLDivElement, AlertBannerVariants>(
   (
-    { variant = "information", dismissable = true, children, ...props },
+    {
+      variant = "information" as AlertBannerVariants["variant"],
+      dismissable = true as AlertBannerVariants["dismissable"],
+      children,
+      ...props
+    },
     ref
   ) => {
     const kids = React.Children.toArray(children);
@@ -181,7 +193,7 @@ const AlertBannerRoot = React.forwardRef<HTMLDivElement, AlertBannerVariants>(
     );
   }
 );
-
+AlertBannerRoot.displayName = "AlertBannerRoot";
 type AlertBannerProps = React.ComponentProps<typeof AlertBannerRoot>;
 
 const Root = AlertBannerRoot;
@@ -200,4 +212,5 @@ export type {
   AlertBannerProps,
   AlertBannerTriggerProps,
   AlertBannerContentProps,
+  AlertBannerTriggerInterface,
 };
