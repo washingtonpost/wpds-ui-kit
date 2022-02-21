@@ -1,6 +1,5 @@
 import * as React from "react";
-import { styled, Container } from "@washingtonpost/wpds-ui-kit";
-import { VisuallyHidden } from "@washingtonpost/wpds-ui-kit";
+import { styled, VisuallyHidden } from "@washingtonpost/wpds-ui-kit";
 
 const Headline = styled("h1", {
   paddingTop: "$200",

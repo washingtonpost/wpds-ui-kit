@@ -2,9 +2,7 @@ localdev-storybook-in-nextjs:
 	npx start-storybook -p 6006 --preview-url=/storybook/iframe.html --quiet --ci --force-build-preview
 
 build: 
-	npx prettier --write .
-	parcel build 'ui/*' --no-cache
-	lerna run build --scope=app
+	turbo run build
 	npx build-storybook --output-dir ./app/public/storybook --preview-url /storybook/iframe.html --force-build-preview --quiet
 	# npx zeplin connect -p @zeplin/cli-connect-react-plugin
 
@@ -29,15 +27,13 @@ main-version:
 # create experimental release
 experimental-release:
 	make experimental-version
-	parcel build 'ui/*' --no-cache
-	lerna run build --scope=app
+	turbo run build
 	make experimental-publish
 
 # create main release
 main-release:
 	make main-version
-	parcel build 'ui/*' --no-cache
-	lerna run build --scope=app
+	turbo run build
 	make main-publish
 
 # create command for plop templates
