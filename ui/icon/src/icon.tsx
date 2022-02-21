@@ -6,6 +6,7 @@ const NAME = "Icon";
 interface IconInterface extends React.HTMLAttributes<HTMLOrSVGImageElement> {
   size?: "16" | "24" | "32";
   label: string;
+  children?: React.ReactNode;
 }
 
 export const Icon = React.forwardRef<HTMLOrSVGImageElement, IconInterface>(

@@ -7,7 +7,7 @@
   "license": "ISC",
   "source": "src/index.ts",
   "main": "dist/index.js",
-  "module": "dist/index.module.js",
+  "module": "dist/esm/index.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist",
@@ -25,22 +25,18 @@
   },
   "scripts": {
     "build:transform": "node build/transform.js",
-    "build": "npm run build:transform && parcel build",
-    "watch": "npx parcel watch --log-level verbose --no-cache",
+    "build": "npm run build:transform && npx tsup src/index.ts --loader .ts=tsx --minify --format esm,cjs --dts --sourcemap --legacy-output --external react @stitches/react",
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "bugs": {
     "url": "https://github.com/WPMedia/wpds-ui-kit/issues"
   },
-  "dependencies": {
-    "@babel/runtime": "^7.13.10",
-    "@stitches/react": "^1.2.6"
-  },
   "peerDependencies": {
     "@stitches/react": "*"
   },
   "devDependencies": {
-    "parcel": "^2.0.1"
+    "tsup": "^5.11.13",
+    "typescript": "^4.5.5"
   },
   "gitHead": "14d42419b2fda458174d05746c3d2bf26f4e9201"
 }

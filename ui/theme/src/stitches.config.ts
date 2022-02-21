@@ -1,4 +1,5 @@
 import * as stitches from "@stitches/react";
+import type * as Stitches from "@stitches/react";
 import * as tokens from "./tokens";
 export type { VariantProps } from "@stitches/react";
 
@@ -53,23 +54,23 @@ const WPDS = stitches.createStitches({
     light: "(prefers-color-scheme: light)",
   },
   utils: {
-    px: (value: any) => ({
+    px: (value: Stitches.PropertyValue<"padding">) => ({
       paddingLeft: value,
       paddingRight: value,
     }),
-    py: (value: any) => ({
+    py: (value: Stitches.PropertyValue<"padding">) => ({
       paddingTop: value,
       paddingBottom: value,
     }),
-    my: (value: any) => ({
+    my: (value: Stitches.PropertyValue<"padding">) => ({
       marginTop: value,
       marginBottom: value,
     }),
-    mx: (value: any) => ({
+    mx: (value: Stitches.PropertyValue<"padding">) => ({
       marginLeft: value,
       marginRight: value,
     }),
-    size: (value: any) => ({
+    size: (value: Stitches.PropertyValue<"width" | "height">) => ({
       width: value,
       height: value,
     }),

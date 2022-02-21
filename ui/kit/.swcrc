@@ -1,8 +1,0 @@
-{
-	"env": {
-		"targets": ["defaults"]
-	},
-	"module": {
-		"type": "commonjs"
-	}
-}
