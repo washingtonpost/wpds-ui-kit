@@ -7,7 +7,7 @@
   "license": "ISC",
   "source": "src/index.ts",
   "main": "dist/index.js",
-  "module": "dist/index.module.js",
+  "module": "dist/esm/index.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist",
@@ -24,21 +24,17 @@
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
-    "build": "parcel build --no-cache"
+    "build": "npx tsup src/index.ts --loader .ts=tsx --minify --format esm,cjs --dts --sourcemap --legacy-output --external react"
   },
   "bugs": {
     "url": "https://github.com/WPMedia/wpds-ui-kit/issues"
   },
   "devDependencies": {
-    "parcel": "latest",
-    "react": "^16.14.0"
+    "tsup": "^5.11.13",
+    "typescript": "^4.5.5"
   },
   "peerDependencies": {
     "@washingtonpost/wpds-theme": "*",
     "react": "^16.8.6 || ^17.0.2"
-  },
-  "dependencies": {
-    "@babel/runtime": "^7.13.10",
-    "@washingtonpost/wpds-theme": "0.3.0-experimental.3"
   }
 }

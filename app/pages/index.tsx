@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Icon, styled, AlertBanner } from "@washingtonpost/wpds-ui-kit";
-import Garlic from "@washingtonpost/wpds-assets/asset/voraciously";
+import Chart from "@washingtonpost/wpds-assets/asset/chart";
 
 const Container = styled("div", {
   display: "grid",
@@ -63,8 +63,8 @@ function HomePage() {
         All code in this app is meant for testing components that use objects
         that are only available in JavaScript in the brower.
       </p>
-      <Icon label="Garlic">
-        <Garlic />
+      <Icon label="Chart">
+        <Chart />
       </Icon>
 
       <AlertBanner.Root position="relative" variant="error">

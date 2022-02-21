@@ -116,3 +116,6 @@ out
 jest-coverage
 
 .DS_Store
+
+.yalc
+yalc.lock
