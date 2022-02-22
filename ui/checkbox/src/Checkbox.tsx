@@ -1,40 +1,184 @@
 import * as React from "react";
 
 import { theme, styled } from "@washingtonpost/wpds-theme";
-import { Icon } from "@washingtonpost/wpds-icon";
-import { VisuallyHidden } from "@washingtonpost/wpds-visually-hidden";
 
 import Check from "@washingtonpost/wpds-assets/asset/check";
+import Indeterminate from "@washingtonpost/wpds-assets/asset/indeterminate";
 
 import * as PrimitiveCheckbox from "@radix-ui/react-checkbox";
-import { useId } from "@react-aria/utils";
 
 const StyledCheckbox = styled(PrimitiveCheckbox.Root, {
   all: "unset",
-  backgroundColor: "$secondary",
-  width: "$100",
-  height: "$100",
-  flex: "0 0 var(--base)",
+  flex: "0 0 $125",
   borderRadius: "$012",
-  border: "1px solid $subtle",
-  verticalAlign: "middle",
+  border: "1px solid",
+  borderColor: "$subtle",
   display: "block",
   cursor: "pointer",
+  overflow: "hidden",
+
+  $$variantColor: "$colors$primary",
+
+  "&:focus": {
+    outline: "1px solid $signal",
+    outlineOffset: "2px",
+  },
+
+  "&:disabled": {
+    $$variantColor: "$colors$disabled",
+    borderColor: "$colors$subtle",
+  },
 
   "&[aria-checked='true']": {
-    backgroundColor: "$primary",
-    borderColor: "transparent",
+    backgroundColor: "$$variantColor",
+    borderColor: "$$borderColor",
   },
+
+  "&[aria-checked='mixed']": {
+    backgroundColor: "$$variantColor",
+    borderColor: "$$borderColor",
+  },
+
+  variants: {
+    size: {
+      "087": {
+        width: "$087",
+        height: "$087",
+      },
+      "125": {
+        width: "$125",
+        height: "$125",
+      },
+    },
+    variant: {
+      primary: {
+        $$variantColor: "$colors$primary",
+        $$borderColor: "transparent",
+      },
+      secondary: {
+        $$variantColor: "$colors$secondary",
+        $$borderColor: "$colors$subtle",
+      },
+      cta: {
+        $$variantColor: "$colors$cta",
+        $$borderColor: "transparent",
+      },
+    },
+    style: {
+      outline: {
+        border: "1px solid",
+        $$borderColor: "$$variantColor",
+      },
+      fill: {},
+    },
+  },
+
+  defaultVariants: {
+    size: "125",
+    variant: "primary",
+  },
+
+  compoundVariants: [
+    {
+      style: "outline",
+      variant: "primary",
+      css: {
+        $$variantColor: "none",
+        color: theme.colors.primary,
+        $$borderColor: "$$variantColor",
+      },
+    },
+    {
+      style: "outline",
+      variant: "secondary",
+      css: {
+        $$variantColor: "none",
+        color: theme.colors.secondary,
+        $$borderColor: "$$variantColor",
+      },
+    },
+    {
+      style: "outline",
+      variant: "cta",
+      css: {
+        $$variantColor: "none",
+        color: theme.colors.cta,
+        $$borderColor: "$$variantColor",
+      },
+    },
+  ],
 });
 
 type StyleCheckboxProps = React.ComponentPropsWithRef<typeof StyledCheckbox>;
 
 const StyledIndicator = styled(PrimitiveCheckbox.Indicator, {
-  color: theme.colors.onPrimary,
-  flex: "0 0 16px",
+  color: "$$variantColor",
+  flex: "0 0 $125",
   lineHeight: "0",
-  width: "$100",
-  height: "$100",
+
+  variants: {
+    disabled: {
+      true: {
+        $$variantColor: "$colors$disabled",
+        borderColor: "$colors$subtle",
+      },
+    },
+    size: {
+      "087": {
+        width: "$087",
+        height: "$087",
+      },
+      "125": {
+        width: "$125",
+        height: "$125",
+      },
+    },
+    variant: {
+      primary: {
+        $$variantColor: "$colors$onPrimary",
+      },
+      secondary: {
+        $$variantColor: "$colors$onSecondary",
+      },
+      cta: {
+        $$variantColor: "$colors$onCta",
+      },
+    },
+    style: {
+      outline: {},
+      fill: {},
+    },
+  },
+
+  compoundVariants: [
+    {
+      style: "outline",
+      variant: "primary",
+      css: {
+        $$variantColor: "$colors$primary",
+      },
+    },
+    {
+      style: "outline",
+      variant: "secondary",
+      css: {
+        $$variantColor: "$colors$secondary",
+      },
+    },
+    {
+      style: "outline",
+      variant: "cta",
+      css: {
+        $$variantColor: "$colors$cta",
+      },
+    },
+  ],
+
+  defaultVariants: {
+    variant: "primary",
+    size: "125",
+    style: "fill",
+  },
 });
 
 type CheckboxVariants = React.ComponentPropsWithRef<typeof StyledCheckbox>;
@@ -51,8 +195,16 @@ interface CheckboxInterface extends CheckboxVariants {
 }
 
 const StyledCheck = styled("span", {
-  flex: "0 0 16px",
+  flex: "0 0 $$checkSize",
   variants: {
+    size: {
+      "087": {
+        $$checkSize: "$size$087",
+      },
+      "125": {
+        $$checkSize: "$size$125",
+      },
+    },
     checked: {
       true: {
         visibility: "visible",
@@ -60,33 +212,50 @@ const StyledCheck = styled("span", {
       false: {
         visibility: "hidden",
       },
-      mixed: {
-        visibility: "hidden",
+      indeterminate: {
+        visibility: "visible",
       },
     },
   },
 
   defaultVariant: {
+    size: "125",
     checked: false,
   },
 });
 
 export const Checkbox = React.forwardRef<HTMLButtonElement, CheckboxInterface>(
   (props, ref) => {
-    const elementId = useId();
-
     return (
-      <StyledCheckbox ref={ref} id={props.id || elementId} {...props}>
-        <StyledIndicator>
-          <StyledCheck checked>
-            <Icon size="16" label="">
-              <Check fill="currentColor" />
-            </Icon>
+      <StyledCheckbox ref={ref} id={props.id} {...props}>
+        <StyledIndicator
+          size={props.size}
+          variant={props.variant}
+          style={props.style}
+          disabled={props.disabled}
+        >
+          <StyledCheck size={props.size} checked={props.checked}>
+            {props.checked === "indeterminate" ? (
+              <Indeterminate
+                fill="currentColor"
+                {...{
+                  "aria-hidden": true,
+                  focusable: false,
+                  role: "img",
+                }}
+              />
+            ) : (
+              <Check
+                fill="currentColor"
+                {...{
+                  "aria-hidden": true,
+                  focusable: false,
+                  role: "img",
+                }}
+              />
+            )}
           </StyledCheck>
         </StyledIndicator>
-        <VisuallyHidden as="label" htmlFor={props.id || elementId}>
-          {props.checked ? "checked" : "not checked"}
-        </VisuallyHidden>
       </StyledCheckbox>
     );
   }
