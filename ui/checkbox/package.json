@@ -24,7 +24,7 @@
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
-    "build": "npx tsup src/index.ts --loader .ts=tsx --minify --format esm,cjs --dts --sourcemap --legacy-output --external react"
+    "build": "npx tsup src/index.ts --loader .ts=tsx --minify --format esm,cjs --dts --sourcemap --legacy-output --external react --clean"
   },
   "bugs": {
     "url": "https://github.com/WPMedia/wpds-ui-kit/issues"
