@@ -25,7 +25,7 @@
   },
   "scripts": {
     "build:transform": "node build/transform.js",
-    "build": "npm run build:transform && npx tsup src/index.ts --loader .ts=tsx --minify --format esm,cjs --dts --sourcemap --legacy-output --external react @stitches/react",
+    "build": "npm run build:transform && npx tsup src/index.ts --loader .ts=tsx --minify --format esm,cjs --dts --sourcemap --legacy-output --external react --clean @stitches/react",
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "bugs": {

@@ -3,30 +3,12 @@
   "baseBranch": "origin/main",
   "pipeline": {
     "build": {
-      "dependsOn": ["@washingtonpost/wpds-theme#build", "^build"],
+      "dependsOn": ["^build"],
       "outputs": ["dist/**", ".next/**", "!.next/cache/**"]
     },
     "validate": {
       "dependsOn": ["build"],
       "outputs": [""]
-    },
-    "app#build": {
-      "dependsOn": ["@washingtonpost/wpds-ui-kit#build"],
-      "outputs": ["dist/**", ".next/**", "!.next/cache/**"]
-    },
-    "@washingtonpost/wpds-ui-kit#build": {
-      "dependsOn": [
-        "@washingtonpost/wpds-alert-banner#build",
-        "@washingtonpost/wpds-app-bar#build",
-        "@washingtonpost/wpds-box#build",
-        "@washingtonpost/wpds-button#build",
-        "@washingtonpost/wpds-checkbox#build",
-        "@washingtonpost/wpds-container#build",
-        "@washingtonpost/wpds-icon#build",
-        "@washingtonpost/wpds-theme#build",
-        "@washingtonpost/wpds-visually-hidden#build"
-      ],
-      "outputs": ["dist/**"]
     }
   }
 }
