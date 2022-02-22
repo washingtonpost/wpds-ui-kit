@@ -4,7 +4,7 @@ import { theme, styled } from "@washingtonpost/wpds-theme";
 import { Icon } from "@washingtonpost/wpds-icon";
 import { VisuallyHidden } from "@washingtonpost/wpds-visually-hidden";
 
-import { Check } from "@washingtonpost/wpds-assets";
+import Check from "@washingtonpost/wpds-assets/asset/check";
 
 import * as PrimitiveCheckbox from "@radix-ui/react-checkbox";
 import { useId } from "@react-aria/utils";
