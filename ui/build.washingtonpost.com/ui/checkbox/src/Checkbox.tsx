@@ -8,6 +8,8 @@ import Indeterminate from "@washingtonpost/wpds-assets/asset/indeterminate";
 import * as PrimitiveCheckbox from "@radix-ui/react-checkbox";
 
 const StyledCheckbox = styled(PrimitiveCheckbox.Root, {
+  transition: "$allFast",
+  appearance: "none",
   flex: "0 0 $125",
   borderRadius: "$012",
   border: "1px solid",
@@ -227,7 +229,12 @@ const StyledCheck = styled("span", {
 export const Checkbox = React.forwardRef<HTMLButtonElement, CheckboxInterface>(
   (props, ref) => {
     return (
-      <StyledCheckbox ref={ref} id={props.id} {...props}>
+      <StyledCheckbox
+        ref={ref}
+        id={props.id}
+        checked={props.checked}
+        {...props}
+      >
         <StyledIndicator
           size={props.size}
           variant={props.variant}
