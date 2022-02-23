@@ -109,7 +109,11 @@ const HStack = styled("section", {
 const ChromaticTemplate: ComponentStory<typeof Component> = () => (
   <>
     <HStack>
-      <Component checked={true} variant="primary" />
+      <Component
+        checked={true}
+        variant="primary"
+        data-testid="test-checkbox-primary"
+      />
       <Component checked={true} variant="secondary" />
       <Component checked={true} variant="cta" />
     </HStack>
