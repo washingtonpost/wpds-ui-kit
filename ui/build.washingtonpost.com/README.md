@@ -8,7 +8,7 @@ npm i @washingtonpost/wpds-ui-kit
 
 ## Websites
 
-- the app/ssr-testing/kitchen sink is on vercel
+- the kitchen sink is on vercel
 - storybook will be on chromatic
 
 ## [Contributing](docs/CONTRIBUTING.md)
