@@ -1,58 +1,45 @@
 import * as React from "react";
-import { Icon, styled, AlertBanner } from "@washingtonpost/wpds-ui-kit";
+import {
+  Icon,
+  styled,
+  AlertBanner,
+  Checkbox,
+} from "@washingtonpost/wpds-ui-kit";
 import Chart from "@washingtonpost/wpds-assets/asset/chart";
-
-const Container = styled("div", {
-  display: "grid",
-  width: "100%",
-  height: "250px",
-  gridTemplateAreas: `
-	'head head'
-    'nav  main'
-    'nav  foot'
-	`,
-  gridTemplateRows: "50px 1fr 30px",
-  gridTemplateColumns: "150px 1fr",
-});
-
-const Header = styled("header", {
-  gridArea: "head",
-  backgroundColor: "#8ca0ff",
-});
-
-const Nav = styled("nav", {
-  gridArea: "nav",
-  backgroundColor: "#ffa08c",
-});
-
-const Main = styled("main", {
-  gridArea: "main",
-  backgroundColor: "#ffff64",
-});
-
-const Footer = styled("footer", {
-  gridArea: "foot",
-  backgroundColor: "#8cffa0",
-});
 
 const Headline = styled("h1", {
   paddingTop: "$200",
-  margin: "$200",
-  marginLeft: 0,
-  paddingBottom: "0",
-  marginBottom: "0",
   color: "$primary",
   fontFamily: "$headline",
-  fontSize: "$500",
+  fontSize: "$300",
   lineHeight: "$headline",
 });
 
 const SubHeadline = styled("h2", {
-  marginLeft: "$100",
   color: "$primary",
   fontWeight: "$light",
   fontSize: "$100",
 });
+
+const Stack = styled("section", {
+  display: "flex",
+  flexDirection: "column",
+  gap: "$100",
+  marginBlockStart: "$200",
+  borderRadius: "$075",
+});
+
+const HStack = styled("section", {
+  display: "flex",
+  flexDirection: "row",
+  gap: "$100",
+  borderRadius: "$075",
+});
+
+const variants = ["primary", "secondary", "cta"];
+const size = ["087", "125"];
+const style = ["outline", "fill"];
+const checked = [true, false, "indeterminate"];
 
 function HomePage() {
   return (
@@ -63,27 +50,57 @@ function HomePage() {
         All code in this app is meant for testing components that use objects
         that are only available in JavaScript in the brower.
       </p>
-      <Icon label="Chart">
-        <Chart />
-      </Icon>
 
-      <AlertBanner.Root position="relative" variant="error">
-        <AlertBanner.Content as="p">
-          <strong>Example:</strong> boop
-        </AlertBanner.Content>
-        <AlertBanner.Trigger />
-      </AlertBanner.Root>
+      <Stack>
+        <h2>Icon with Asset</h2>
+        <Icon label="Chart">
+          <Chart />
+        </Icon>
 
-      <h2>
-        This is an example of how to implement a grid layout using CSS Grid and
-        Stitches.
-      </h2>
-      <Container>
-        <Header>Header</Header>
-        <Nav>Navigation</Nav>
-        <Main>Main area</Main>
-        <Footer>Footer</Footer>
-      </Container>
+        <h2>AlertBanner</h2>
+        <AlertBanner.Root position="relative" variant="error">
+          <AlertBanner.Content as="p">
+            <strong>Example:</strong> boop
+          </AlertBanner.Content>
+          <AlertBanner.Trigger />
+        </AlertBanner.Root>
+
+        <h2>Checkbox</h2>
+        <HStack>
+          <>
+            <HStack>
+              {variants.map((variant) => (
+                <Checkbox
+                  checked={true}
+                  key={variant}
+                  variant={variant}
+                  data-testid={`test-checkbox-${variant}`}
+                />
+              ))}
+            </HStack>
+            <HStack>
+              {size.map((size) => (
+                <Checkbox checked={true} key={size} size={size} />
+              ))}
+            </HStack>
+            <HStack>
+              {style.map((style) => (
+                <Checkbox key={style} checked={true} style={style} />
+              ))}
+            </HStack>
+            <HStack>
+              {checked.map((checkedValue, index) => (
+                <Checkbox key={index} checked={true} checked={checkedValue} />
+              ))}
+            </HStack>
+            <HStack>
+              {[1, 2, 3].map((value, index) => (
+                <Checkbox key={index} disabled value={value} />
+              ))}
+            </HStack>
+          </>
+        </HStack>
+      </Stack>
     </>
   );
 }
