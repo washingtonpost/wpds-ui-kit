@@ -36,11 +36,6 @@ const HStack = styled("section", {
   borderRadius: "$075",
 });
 
-const variants = ["primary", "secondary", "cta"];
-const size = ["087", "125"];
-const style = ["outline", "fill"];
-const checked = [true, false, "indeterminate"];
-
 function HomePage() {
   return (
     <>
@@ -69,34 +64,25 @@ function HomePage() {
         <HStack>
           <>
             <HStack>
-              {variants.map((variant) => (
-                <Checkbox
-                  checked={true}
-                  key={variant}
-                  variant={variant}
-                  data-testid={`test-checkbox-${variant}`}
-                />
-              ))}
+              <Checkbox checked={true} variant="primary" />
+              <Checkbox checked={true} variant="secondary" />
+              <Checkbox checked={true} variant="cta" />
             </HStack>
             <HStack>
-              {size.map((size) => (
-                <Checkbox checked={true} key={size} size={size} />
-              ))}
+              <Checkbox checked={true} size="087" />
+              <Checkbox checked={true} size="125" />
             </HStack>
             <HStack>
-              {style.map((style) => (
-                <Checkbox key={style} checked={true} style={style} />
-              ))}
+              <Checkbox checked={true} style="fill" />
+              <Checkbox checked={true} style="outline" />
             </HStack>
             <HStack>
-              {checked.map((checkedValue, index) => (
-                <Checkbox key={index} checked={true} checked={checkedValue} />
-              ))}
+              <Checkbox checked={true} />
+              <Checkbox checked={false} />
+              <Checkbox checked="indeterminate" />
             </HStack>
             <HStack>
-              {[1, 2, 3].map((value, index) => (
-                <Checkbox key={index} disabled value={value} />
-              ))}
+              <Checkbox disabled />
             </HStack>
           </>
         </HStack>
