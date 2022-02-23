@@ -8,7 +8,6 @@ import Indeterminate from "@washingtonpost/wpds-assets/asset/indeterminate";
 import * as PrimitiveCheckbox from "@radix-ui/react-checkbox";
 
 const StyledCheckbox = styled(PrimitiveCheckbox.Root, {
-  all: "unset",
   flex: "0 0 $125",
   borderRadius: "$012",
   border: "1px solid",
@@ -121,6 +120,7 @@ const StyledIndicator = styled(PrimitiveCheckbox.Indicator, {
       true: {
         $$variantColor: "$colors$disabled",
         borderColor: "$colors$subtle",
+        color: "$colors$onDisabled",
       },
     },
     size: {
