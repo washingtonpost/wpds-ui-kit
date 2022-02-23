@@ -27,13 +27,13 @@ main-version:
 # create experimental release
 experimental-release:
 	make experimental-version
-	npx turbo run build
+	npx turbo run build --force
 	make experimental-publish
 
 # create main release
 main-release:
 	make main-version
-	npx turbo run build
+	npx turbo run build --force
 	make main-publish
 
 # create command for plop templates

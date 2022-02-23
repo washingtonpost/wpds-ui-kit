@@ -37,9 +37,9 @@
     "@radix-ui/react-checkbox": "latest",
     "@react-aria/utils": "latest",
     "@washingtonpost/wpds-assets": "latest",
-    "@washingtonpost/wpds-icon": "*",
-    "@washingtonpost/wpds-theme": "*",
-    "@washingtonpost/wpds-visually-hidden": "*",
+    "@washingtonpost/wpds-icon": "^0.3.0-experimental.9",
+    "@washingtonpost/wpds-theme": "^0.3.0-experimental.9",
+    "@washingtonpost/wpds-visually-hidden": "^0.3.0-experimental.9",
     "react": "^16.8.6 || ^17.0.2"
   }
 }
