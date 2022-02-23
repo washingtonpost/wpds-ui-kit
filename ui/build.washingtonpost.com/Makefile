@@ -13,7 +13,7 @@ start-storybook:
 	start-storybook -p 6006 --quiet --ci
 
 experimental-version:
-	npx lerna version --conventional-commits --conventional-prerelease --preid=experimental --sign-git-tag=experimental --no-changelog --yes
+	npx lerna version --preid=experimental --sign-git-tag=experimental --no-changelog --yes --force-publish
 
 experimental-publish:
 	npx lerna publish from-package --dist-tag experimental --yes
