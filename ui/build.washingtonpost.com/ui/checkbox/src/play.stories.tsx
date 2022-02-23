@@ -8,7 +8,6 @@ import { Checkbox as Component } from "./";
 const variants = ["primary", "secondary", "cta"];
 const size = ["087", "125"];
 const style = ["outline", "fill"];
-const checked = [true, false, "indeterminate"];
 
 const Column = styled("div", {
   display: "flex",
@@ -16,16 +15,6 @@ const Column = styled("div", {
   gap: "$100",
   alignItems: "center",
   marginBlockStart: "$200",
-});
-
-const Stack = styled("div", {
-  display: "flex",
-  flexDirection: "row",
-  gap: "$100",
-  alignItems: "center",
-  marginBlockStart: "$200",
-  padding: "$100",
-  borderRadius: "$075",
 });
 
 export default {
@@ -110,38 +99,36 @@ Disabled.args = {
   disabled: true,
 };
 
-const ChromaticTemplate: ComponentStory<typeof Component> = (args) => (
+const HStack = styled("section", {
+  display: "flex",
+  flexDirection: "row",
+  gap: "$100",
+  borderRadius: "$075",
+});
+
+const ChromaticTemplate: ComponentStory<typeof Component> = () => (
   <>
-    <Stack>
-      {variants.map((variant) => (
-        <Component
-          key={variant}
-          {...args}
-          variant={variant}
-          data-testid={`test-checkbox-${variant}`}
-        />
-      ))}
-    </Stack>
-    <Stack>
-      {size.map((size) => (
-        <Component key={size} {...args} size={size} />
-      ))}
-    </Stack>
-    <Stack>
-      {style.map((style) => (
-        <Component key={style} {...args} style={style} />
-      ))}
-    </Stack>
-    <Stack>
-      {checked.map((checkedValue, index) => (
-        <Component key={index} {...args} checked={checkedValue} />
-      ))}
-    </Stack>
-    <Stack>
-      {[1, 2, 3].map((value, index) => (
-        <Component key={index} {...args} disabled value={value} />
-      ))}
-    </Stack>
+    <HStack>
+      <Component checked={true} variant="primary" />
+      <Component checked={true} variant="secondary" />
+      <Component checked={true} variant="cta" />
+    </HStack>
+    <HStack>
+      <Component checked={true} size="087" />
+      <Component checked={true} size="125" />
+    </HStack>
+    <HStack>
+      <Component checked={true} style="fill" />
+      <Component checked={true} style="outline" />
+    </HStack>
+    <HStack>
+      <Component checked={true} />
+      <Component checked={false} />
+      <Component checked="indeterminate" />
+    </HStack>
+    <HStack>
+      <Component disabled />
+    </HStack>
   </>
 );
 
