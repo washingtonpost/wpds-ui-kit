@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/WPMedia/wpds-ui-kit/compare/v0.2.1...v0.3.0) (2022-02-25)
+
+
+### Features
+
+* yolo app bar ([d645331](https://github.com/WPMedia/wpds-ui-kit/commit/d645331c2d900d453ebb82198752de7bad997e27))
+
+
+
+
+
 ## [0.2.1](https://github.com/WPMedia/wpds-ui-kit/compare/v0.2.0...v0.2.1) (2022-02-03)
 
 **Note:** Version bump only for package @washingtonpost/wpds-theme
