@@ -3,7 +3,7 @@
     "light": {
       "description": "The default color scheme",
       "alpha25": {
-        "value": "rgba(215,215,215,.25)"
+        "value": "rgba(0,0,0,.05)"
       },
       "alpha50": {
         "value": "rgba(102,102,102,.5)"
@@ -117,7 +117,7 @@
     "dark": {
       "description": "The default color scheme in a dark version",
       "alpha25": {
-        "value": "rgba(42,42,42,.25)"
+        "value": "rgba(255,255,255,.25)"
       },
       "alpha50": {
         "value": "rgba(42,42,42,.5)"
