@@ -69,7 +69,6 @@
   ],
   "dependencies": {
     "@radix-ui/react-checkbox": "^0.1.4",
-    "@react-aria/utils": "^3.11.0",
     "@stitches/react": "^1.2.6",
     "@washingtonpost/wpds-alert-banner": "file:ui/alert-banner",
     "@washingtonpost/wpds-app-bar": "file:ui/app-bar",
