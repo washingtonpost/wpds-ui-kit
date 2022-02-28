@@ -17,6 +17,12 @@ export const Button = styled("button", {
   lineHeight: "$100",
   gap: "$050",
 
+  "&:disabled": {
+    color: "$onDisabled",
+    backgroundColor: "$colors$disabled",
+    borderColor: "$colors$onDisabled",
+  },
+
   variants: {
     variant: {
       primary: {
