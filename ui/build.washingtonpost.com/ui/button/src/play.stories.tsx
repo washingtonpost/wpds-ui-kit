@@ -275,6 +275,33 @@ const Template: ComponentStory<typeof Component> = ({ children, ...args }) => (
         </Component>
       </Stack>
     </Column>
+    <Column>
+      <Stack>
+        <Component
+          {...args}
+          disabled
+          size="075"
+          style="outline"
+          variant="cta"
+          icon="right"
+        >
+          {children}
+        </Component>
+
+        <Component
+          {...args}
+          disabled
+          icon="center"
+          size="075"
+          style="outline"
+          variant="secondary"
+        >
+          <Icon size="16" label="Icon label">
+            <Asset fill="currentColor" />
+          </Icon>
+        </Component>
+      </Stack>
+    </Column>
   </>
 );
 

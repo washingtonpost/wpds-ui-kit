@@ -4,6 +4,7 @@ import {
   styled,
   AlertBanner,
   Checkbox,
+  Container,
 } from "@washingtonpost/wpds-ui-kit";
 import Chart from "@washingtonpost/wpds-assets/asset/chart";
 
@@ -47,6 +48,20 @@ function HomePage() {
       </p>
 
       <Stack>
+        <h2>Container</h2>
+        <Container
+          maxWidth="lg"
+          css={{
+            width: "100%",
+            border: "1px dashed #94538c",
+            background: "rgb(148, 83, 140, 0.2)",
+            height: "$500",
+            color: "$primary",
+          }}
+        >
+          Extra lg
+        </Container>
+
         <h2>Icon with Asset</h2>
         <Icon label="Chart">
           <Chart />

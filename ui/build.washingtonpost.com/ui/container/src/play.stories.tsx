@@ -42,7 +42,6 @@ Container.decorators = [
         rowGap: "$100",
         "& > *": {
           border: "1px dashed #94538c",
-          width: "100%",
           background: "rgb(148, 83, 140, 0.2)",
           height: "$500",
           color: "$primary",
