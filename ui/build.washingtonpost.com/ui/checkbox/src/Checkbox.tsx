@@ -25,14 +25,18 @@ const StyledCheckbox = styled(PrimitiveCheckbox.Root, {
     outlineOffset: "2px",
   },
 
-  "&:disabled": {
-    $$variantColor: "$colors$disabled",
-    borderColor: "$colors$subtle",
-  },
-
   "&[aria-checked='true']": {
     backgroundColor: "$$variantColor",
     borderColor: "$$borderColor",
+  },
+
+  "&[aria-checked='false']": {
+    backgroundColor: "transparent",
+  },
+
+  "&:disabled": {
+    backgroundColor: "$colors$disabled",
+    borderColor: "$colors$onDisabled",
   },
 
   "&[aria-checked='mixed']": {

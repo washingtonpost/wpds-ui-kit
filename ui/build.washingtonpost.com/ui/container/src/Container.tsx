@@ -7,6 +7,7 @@ export const Container = Theme.styled("div", {
   alignItems: "center",
   justifyContent: "center",
   margin: "0 auto",
+  width: "100%",
 
   $$xl: "1440px",
   $$lg: "1024px",
