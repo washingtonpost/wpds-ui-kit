@@ -2,7 +2,7 @@ localdev-storybook-in-nextjs:
 	npx start-storybook -p 6006 --preview-url=/storybook/iframe.html --quiet --ci --force-build-preview
 
 build: 
-	turbo run build
+	npx turbo run build
 	npx build-storybook --output-dir ./app/public/storybook --preview-url /storybook/iframe.html --force-build-preview --quiet
 
 all-dev:
