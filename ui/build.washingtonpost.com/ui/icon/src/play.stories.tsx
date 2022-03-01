@@ -18,7 +18,7 @@ export const Default = Template.bind({});
 Default.storyName = "Icon";
 
 Default.args = {
-  size: "32",
+  size: "$200",
   label: "Find out more information.",
   children: <Info fill="currentColor" />,
 };

@@ -4,13 +4,19 @@ import { VisuallyHidden } from "@washingtonpost/wpds-visually-hidden";
 const NAME = "Icon";
 
 interface IconInterface extends React.HTMLAttributes<HTMLOrSVGImageElement> {
-  size?: "16" | "24" | "32";
+  size?: "$100" | "$150" | "$200";
   label: string;
   children?: React.ReactNode;
 }
 
+const Sizes = {
+  $100: "1rem",
+  $150: "1.5rem",
+  $200: "2rem",
+};
+
 export const Icon = React.forwardRef<HTMLOrSVGImageElement, IconInterface>(
-  ({ children, size = "16", label, ...props }, ref) => {
+  ({ children, size = "$100", label, ...props }, ref) => {
     const child = React.Children.only(children);
 
     return (
@@ -18,8 +24,8 @@ export const Icon = React.forwardRef<HTMLOrSVGImageElement, IconInterface>(
         {React.cloneElement(child as React.ReactElement, {
           "aria-hidden": true,
           focusable: false,
-          width: size,
-          height: size,
+          width: Sizes[size] || size,
+          height: Sizes[size] || size,
           role: "img",
           ref,
           ...props,
