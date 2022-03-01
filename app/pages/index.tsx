@@ -63,9 +63,17 @@ function HomePage() {
         </Container>
 
         <h2>Icon with Asset</h2>
-        <Icon label="Chart">
-          <Chart />
-        </Icon>
+        <HStack>
+          <Icon label="Chart">
+            <Chart />
+          </Icon>
+          <Icon label="Chart" size="$150">
+            <Chart />
+          </Icon>
+          <Icon label="Chart" size="$200">
+            <Chart />
+          </Icon>
+        </HStack>
 
         <h2>AlertBanner</h2>
         <AlertBanner.Root position="relative" variant="error">
