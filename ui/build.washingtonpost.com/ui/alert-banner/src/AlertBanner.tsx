@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { theme, styled, css } from "@washingtonpost/wpds-theme";
+import { theme, styled } from "@washingtonpost/wpds-theme";
 import { Icon } from "@washingtonpost/wpds-icon";
 import { Button } from "@washingtonpost/wpds-button";
 import { AppBar } from "@washingtonpost/wpds-app-bar";
@@ -43,7 +43,7 @@ const AlertBannerTrigger = React.forwardRef<
       {...props}
     >
       <Icon size="$100" label="Close alert banner">
-        <Close fill="currentColor" className={closeIcon()} />
+        <Close />
       </Icon>
     </StyledAlertBannerTrigger>
   );
@@ -64,15 +64,6 @@ const StyledAlertBannerContent = styled("p", {
 const AlertBannerContent = StyledAlertBannerContent;
 type AlertBannerContentProps = React.ComponentProps<typeof AlertBannerContent>;
 
-const alertIcon = css({
-  fill: "currentColor",
-  flex: "0 0 auto",
-});
-
-const closeIcon = css({
-  fill: "currentColor",
-});
-
 const StyledAlertBanner = styled(AppBar, {
   width: "100%",
   flexDirection: "row",
@@ -84,30 +75,21 @@ const StyledAlertBanner = styled(AppBar, {
   fontWeight: "$light",
   lineHeight: "$125",
   minHeight: "40px",
-  $$alertBannerIconColor: theme.colors.error,
-
-  [`& .${alertIcon}`]: {
-    color: "$$alertBannerIconColor",
-  },
 
   variants: {
     /** 4 predefined alert banners each tied to our symantic messaging on our site. They are Warning, Information, Success, and Error. */
     variant: {
       error: {
         background: theme.colors.red300,
-        $$alertBannerIconColor: theme.colors.error,
       },
       success: {
         background: theme.colors.green300,
-        $$alertBannerIconColor: theme.colors.success,
       },
       warning: {
         background: theme.colors.orange300,
-        $$alertBannerIconColor: theme.colors.warning,
       },
       information: {
         background: theme.colors.blue300,
-        $$alertBannerIconColor: theme.colors.signal,
       },
     },
     /** The alert banner can be permanent or dismissable. */
@@ -156,6 +138,33 @@ const AlertBannerRoot = React.forwardRef<HTMLDivElement, AlertBannerVariants>(
 
     const AlertIcon = AlertIcons[variant as AlertIconType];
 
+    const StyledAlertIcon = styled(AlertIcon, {
+      $$alertBannerIconColor: theme.colors.signal,
+      fill: "$$alertBannerIconColor",
+      flex: "0 0 auto",
+
+      variants: {
+        variant: {
+          error: {
+            $$alertBannerIconColor: theme.colors.error,
+          },
+          success: {
+            $$alertBannerIconColor: theme.colors.success,
+          },
+          warning: {
+            $$alertBannerIconColor: theme.colors.warning,
+          },
+          information: {
+            $$alertBannerIconColor: theme.colors.signal,
+          },
+        },
+      },
+
+      defaultVariants: {
+        variant: "information",
+      },
+    });
+
     return (
       <StyledAlertBanner
         ref={ref}
@@ -183,7 +192,7 @@ const AlertBannerRoot = React.forwardRef<HTMLDivElement, AlertBannerVariants>(
           }}
         >
           <Icon size="$100" label="">
-            <AlertIcon className={alertIcon()} />
+            <StyledAlertIcon variant={variant} />
           </Icon>
         </Button>
         {contentNode}

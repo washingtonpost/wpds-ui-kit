@@ -61,13 +61,13 @@ const Template: ComponentStory<typeof Component> = ({ children, ...args }) => (
         </Component>
         <Component {...args}>
           <Icon size="$100" label="">
-            <Asset fill="currentColor" />
+            <Asset />
           </Icon>
           {children}
         </Component>
         <Component {...args} icon="center">
           <Icon size="$100" label="Icon label">
-            <Asset fill="currentColor" />
+            <Asset />
           </Icon>
         </Component>
       </Stack>
@@ -78,13 +78,13 @@ const Template: ComponentStory<typeof Component> = ({ children, ...args }) => (
         </Component>
         <Component {...args} style="fill" variant="primary">
           <Icon size="$100" label="">
-            <Asset fill="currentColor" />
+            <Asset />
           </Icon>
           {children}
         </Component>
         <Component {...args} icon="center" style="fill" variant="primary">
           <Icon size="$100" label="Icon label">
-            <Asset fill="currentColor" />
+            <Asset />
           </Icon>
         </Component>
       </Stack>
@@ -95,13 +95,13 @@ const Template: ComponentStory<typeof Component> = ({ children, ...args }) => (
         </Component>
         <Component {...args} style="fill" variant="cta">
           <Icon size="$100" label="">
-            <Asset fill="currentColor" />
+            <Asset />
           </Icon>
           {children}
         </Component>
         <Component {...args} icon="center" style="fill" variant="cta">
           <Icon size="$100" label="Icon label">
-            <Asset fill="currentColor" />
+            <Asset />
           </Icon>
         </Component>
       </Stack>
@@ -114,13 +114,13 @@ const Template: ComponentStory<typeof Component> = ({ children, ...args }) => (
         </Component>
         <Component {...args} style="outline" variant="primary">
           <Icon size="$100" label="">
-            <Asset fill="currentColor" />
+            <Asset />
           </Icon>
           {children}
         </Component>
         <Component {...args} icon="center" style="outline" variant="primary">
           <Icon size="$100" label="Icon label">
-            <Asset fill="currentColor" />
+            <Asset />
           </Icon>
         </Component>
       </Stack>
@@ -136,13 +136,13 @@ const Template: ComponentStory<typeof Component> = ({ children, ...args }) => (
 
         <Component {...args} style="outline" variant="secondary">
           <Icon size="$100" label="">
-            <Asset fill="currentColor" />
+            <Asset />
           </Icon>
           {children}
         </Component>
         <Component {...args} icon="center" style="outline" variant="secondary">
           <Icon size="$100" label="Icon label">
-            <Asset fill="currentColor" />
+            <Asset />
           </Icon>
         </Component>
       </Stack>
@@ -153,13 +153,13 @@ const Template: ComponentStory<typeof Component> = ({ children, ...args }) => (
         </Component>
         <Component {...args} style="outline" variant="cta">
           <Icon size="$100" label="">
-            <Asset fill="currentColor" />
+            <Asset />
           </Icon>
           {children}
         </Component>
         <Component {...args} icon="center" style="outline" variant="cta">
           <Icon size="$100" label="Icon label">
-            <Asset fill="currentColor" />
+            <Asset />
           </Icon>
         </Component>
       </Stack>
@@ -184,7 +184,7 @@ const Template: ComponentStory<typeof Component> = ({ children, ...args }) => (
           icon="right"
         >
           <Icon size="$100" label="">
-            <Asset fill="currentColor" />
+            <Asset />
           </Icon>
           {children}
         </Component>
@@ -196,7 +196,7 @@ const Template: ComponentStory<typeof Component> = ({ children, ...args }) => (
           variant="primary"
         >
           <Icon size="$100" label="Icon label">
-            <Asset fill="currentColor" />
+            <Asset />
           </Icon>
         </Component>
       </Stack>
@@ -223,7 +223,7 @@ const Template: ComponentStory<typeof Component> = ({ children, ...args }) => (
           icon="right"
         >
           <Icon size="$100" label="">
-            <Asset fill="currentColor" />
+            <Asset />
           </Icon>
           {children}
         </Component>
@@ -235,7 +235,7 @@ const Template: ComponentStory<typeof Component> = ({ children, ...args }) => (
           variant="secondary"
         >
           <Icon size="$100" label="Icon label">
-            <Asset fill="currentColor" />
+            <Asset />
           </Icon>
         </Component>
       </Stack>
@@ -258,7 +258,7 @@ const Template: ComponentStory<typeof Component> = ({ children, ...args }) => (
           icon="right"
         >
           <Icon size="$100" label="">
-            <Asset fill="currentColor" />
+            <Asset />
           </Icon>
           {children}
         </Component>
@@ -270,7 +270,7 @@ const Template: ComponentStory<typeof Component> = ({ children, ...args }) => (
           variant="cta"
         >
           <Icon size="$100" label="Icon label">
-            <Asset fill="currentColor" />
+            <Asset />
           </Icon>
         </Component>
       </Stack>
@@ -297,7 +297,7 @@ const Template: ComponentStory<typeof Component> = ({ children, ...args }) => (
           variant="secondary"
         >
           <Icon size="$100" label="Icon label">
-            <Asset fill="currentColor" />
+            <Asset />
           </Icon>
         </Component>
       </Stack>

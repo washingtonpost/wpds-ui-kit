@@ -18,6 +18,7 @@ export const Icon = React.forwardRef<HTMLOrSVGImageElement, IconInterface>(
     const IconSizeStyle = css({
       width: size,
       height: size,
+      fill: "currentColor",
     });
 
     return (

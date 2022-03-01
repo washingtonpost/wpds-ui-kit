@@ -20,7 +20,7 @@ Default.storyName = "Icon";
 Default.args = {
   size: "$200",
   label: "Find out more information.",
-  children: <Info fill="currentColor" />,
+  children: <Info />,
 };
 
 Default.decorators = [
