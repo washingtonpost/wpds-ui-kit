@@ -1,6 +1,6 @@
 {
   "name": "@washingtonpost/wpds-ui-kit",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "WPDS UI Kit",
   "author": "WPDS Support <wpds@washpost.com>",
   "homepage": "https://github.com/WPMedia/wpds-ui-kit#readme",
@@ -30,30 +30,30 @@
     "url": "https://github.com/WPMedia/wpds-ui-kit/issues"
   },
   "dependencies": {
-    "@washingtonpost/wpds-alert-banner": "^0.3.2",
-    "@washingtonpost/wpds-app-bar": "^0.3.2",
-    "@washingtonpost/wpds-box": "^0.3.2",
-    "@washingtonpost/wpds-button": "^0.3.2",
-    "@washingtonpost/wpds-checkbox": "^0.3.2",
-    "@washingtonpost/wpds-container": "^0.3.2",
-    "@washingtonpost/wpds-icon": "^0.3.2",
-    "@washingtonpost/wpds-theme": "^0.3.2",
-    "@washingtonpost/wpds-visually-hidden": "^0.3.2"
+    "@washingtonpost/wpds-alert-banner": "0.3.3",
+    "@washingtonpost/wpds-app-bar": "0.3.3",
+    "@washingtonpost/wpds-box": "0.3.3",
+    "@washingtonpost/wpds-button": "0.3.3",
+    "@washingtonpost/wpds-checkbox": "0.3.3",
+    "@washingtonpost/wpds-container": "0.3.3",
+    "@washingtonpost/wpds-icon": "0.3.3",
+    "@washingtonpost/wpds-theme": "^0.3.3",
+    "@washingtonpost/wpds-visually-hidden": "0.3.3"
   },
   "devDependencies": {
     "tsup": "^5.11.13",
     "typescript": "^4.5.5"
   },
   "peerDependencies": {
-    "@washingtonpost/wpds-alert-banner": "^0.3.2",
-    "@washingtonpost/wpds-app-bar": "^0.3.2",
-    "@washingtonpost/wpds-box": "^0.3.2",
-    "@washingtonpost/wpds-button": "^0.3.2",
-    "@washingtonpost/wpds-checkbox": "^0.3.2",
-    "@washingtonpost/wpds-container": "^0.3.2",
-    "@washingtonpost/wpds-icon": "^0.3.2",
-    "@washingtonpost/wpds-theme": "^0.3.2",
-    "@washingtonpost/wpds-visually-hidden": "^0.3.2"
+    "@washingtonpost/wpds-alert-banner": "^0.3.3",
+    "@washingtonpost/wpds-app-bar": "^0.3.3",
+    "@washingtonpost/wpds-box": "^0.3.3",
+    "@washingtonpost/wpds-button": "^0.3.3",
+    "@washingtonpost/wpds-checkbox": "^0.3.3",
+    "@washingtonpost/wpds-container": "^0.3.3",
+    "@washingtonpost/wpds-icon": "^0.3.3",
+    "@washingtonpost/wpds-theme": "^0.3.3",
+    "@washingtonpost/wpds-visually-hidden": "^0.3.3"
   },
   "gitHead": "bb6286819b0ecc271acbc19911432d85efa40c33"
 }
