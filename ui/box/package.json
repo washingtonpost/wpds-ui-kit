@@ -1,8 +1,8 @@
 {
   "name": "@washingtonpost/wpds-box",
   "version": "0.3.1",
-  "description": "> TODO: description",
-  "author": "artmsilva <artmsilva@gmail.com>",
+  "description": "WPDS Box component",
+  "author": "WPDS Support <wpds@washpost.com>",
   "homepage": "https://github.com/WPMedia/wpds-ui-kit#readme",
   "license": "ISC",
   "source": "src/index.ts",
