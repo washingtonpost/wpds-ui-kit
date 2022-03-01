@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.6](https://github.com/WPMedia/wpds-ui-kit/compare/v0.3.2...v0.3.6) (2022-03-01)
+
+
+### Bug Fixes
+
+* bump pkgs ([e2833e7](https://github.com/WPMedia/wpds-ui-kit/commit/e2833e7b1a7738d7f87062be28d9f53dee542c14))
+
+
+
+
+
+## [0.3.5](https://github.com/WPMedia/wpds-ui-kit/compare/v0.3.2...v0.3.5) (2022-03-01)
+
+
+### Bug Fixes
+
+* bump pkgs ([e2833e7](https://github.com/WPMedia/wpds-ui-kit/commit/e2833e7b1a7738d7f87062be28d9f53dee542c14))
+
+
+
+
+
 ## [0.3.3](https://github.com/WPMedia/wpds-ui-kit/compare/v0.3.2...v0.3.3) (2022-03-01)
 
 
