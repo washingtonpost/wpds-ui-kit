@@ -47,7 +47,7 @@ const PrimaryNavigationExample = () => {
         px: "$100",
       }}
     >
-      <Icon size="32" label="Open Section Navigation Menu">
+      <Icon size="$200" label="Open Section Navigation Menu">
         <Menu fill="currentColor" />
       </Icon>
       <Box>
@@ -66,7 +66,7 @@ const PrimaryNavigationExample = () => {
           Democracy Dies in Darkness (This is an example using the new system)
         </Box>
       </Box>
-      <Icon size="32" label="Open Account Menu">
+      <Icon size="$200" label="Open Account Menu">
         <Profile fill="currentColor" />
       </Icon>
     </Container>
