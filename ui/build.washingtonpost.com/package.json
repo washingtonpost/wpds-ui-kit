@@ -58,7 +58,7 @@
     "storybook-dark-mode": "^1.0.9",
     "tsup": "^5.11.13",
     "turbo": "^1.1.4",
-    "typescript": "^4.5.5"
+    "typescript": "4.5.5"
   },
   "workspaces": [
     "./ui/*",
@@ -146,7 +146,7 @@
   },
   "overrides": {
     "react-docgen-typescript": "^2.2.2",
-    "typescript": "^4.5.5"
+    "typescript": "4.5.5"
   },
   "packageManager": "npm@8.3.0"
 }

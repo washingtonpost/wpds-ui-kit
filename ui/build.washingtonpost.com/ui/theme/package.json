@@ -36,7 +36,7 @@
   },
   "devDependencies": {
     "tsup": "^5.11.13",
-    "typescript": "^4.5.5"
+    "typescript": "4.5.5"
   },
   "gitHead": "d0d2fe93d3ebb0abe4a7f8e0555cf032596bb31d"
 }

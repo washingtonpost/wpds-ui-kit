@@ -31,7 +31,7 @@
   },
   "devDependencies": {
     "tsup": "^5.11.13",
-    "typescript": "^4.5.5"
+    "typescript": "4.5.5"
   },
   "peerDependencies": {
     "@radix-ui/react-checkbox": "latest",
