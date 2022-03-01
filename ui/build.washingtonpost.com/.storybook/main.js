@@ -2,7 +2,7 @@
 require("dotenv").config();
 
 module.exports = {
-  stories: ["../ui/**/*.stories.@(ts|tsx)"],
+  stories: ["../ui/**/*.stories.@(ts|tsx|js|jsx)"],
   addons: [
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
@@ -36,8 +36,5 @@ module.exports = {
   framework: "@storybook/react",
   core: {
     builder: "webpack5",
-  },
-  typescript: {
-    reactDocgen: "react-docgen-typescript",
   },
 };

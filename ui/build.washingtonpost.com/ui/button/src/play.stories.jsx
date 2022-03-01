@@ -1,7 +1,6 @@
 /* eslint react/prop-types: 0 */
 import * as React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { Button as Component } from "./";
+import { Button as Component } from ".";
 
 import Asset from "@washingtonpost/wpds-assets/asset/add";
 import { Icon } from "@washingtonpost/wpds-icon";
@@ -32,7 +31,7 @@ export default {
       defaultValue: "none",
     },
   },
-} as ComponentMeta<typeof Component>;
+};
 
 const Column = styled("div", {
   display: "flex",
@@ -52,7 +51,7 @@ const Stack = styled("div", {
   borderRadius: "$075",
 });
 
-const Template: ComponentStory<typeof Component> = ({ children, ...args }) => (
+const Template = ({ children, ...args }) => (
   <>
     <Column>
       <Stack>
