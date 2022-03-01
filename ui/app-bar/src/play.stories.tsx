@@ -48,7 +48,7 @@ const PrimaryNavigationExample = () => {
       }}
     >
       <Icon size="$200" label="Open Section Navigation Menu">
-        <Menu fill="currentColor" />
+        <Menu />
       </Icon>
       <Box>
         {darkModeActive ? (
@@ -67,7 +67,7 @@ const PrimaryNavigationExample = () => {
         </Box>
       </Box>
       <Icon size="$200" label="Open Account Menu">
-        <Profile fill="currentColor" />
+        <Profile />
       </Icon>
     </Container>
   );
