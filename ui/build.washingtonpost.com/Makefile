@@ -4,7 +4,6 @@ localdev-storybook-in-nextjs:
 build: 
 	turbo run build
 	npx build-storybook --output-dir ./app/public/storybook --preview-url /storybook/iframe.html --force-build-preview --quiet
-	# npx zeplin connect -p @zeplin/cli-connect-react-plugin
 
 all-dev:
 	npx concurrently -n 'workspaces,playroom,storybook,website' 'npm run watch --workspaces' 'npm run playroom:start' 'make localdev-storybook-in-nextjs' 'npm run website:dev'
