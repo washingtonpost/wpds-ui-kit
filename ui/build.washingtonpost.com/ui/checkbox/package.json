@@ -36,9 +36,9 @@
   "peerDependencies": {
     "@radix-ui/react-checkbox": "latest",
     "@washingtonpost/wpds-assets": "latest",
-    "@washingtonpost/wpds-icon": "^0.3.3",
-    "@washingtonpost/wpds-theme": "^0.3.3",
-    "@washingtonpost/wpds-visually-hidden": "^0.3.3",
+    "@washingtonpost/wpds-icon": "^0.3.7",
+    "@washingtonpost/wpds-theme": "^0.3.7",
+    "@washingtonpost/wpds-visually-hidden": "^0.3.7",
     "react": "^16.8.6 || ^17.0.2"
   },
   "gitHead": "6964f84a0993a833abc948e4c65f71bdf69edd77"
