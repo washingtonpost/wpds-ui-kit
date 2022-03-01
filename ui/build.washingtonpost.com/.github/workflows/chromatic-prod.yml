@@ -26,6 +26,8 @@ jobs:
         run: |
           npm i -g npm@8.3.0
           npm ci
+          lerna bootstrap --hoist
+          npx lerna link --force-local
           npm run build
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
