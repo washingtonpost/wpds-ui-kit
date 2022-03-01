@@ -1,5 +1,6 @@
 import * as React from "react";
 import { VisuallyHidden } from "@washingtonpost/wpds-visually-hidden";
+import { css } from "@washingtonpost/wpds-theme";
 
 const NAME = "Icon";
 
@@ -7,27 +8,26 @@ interface IconInterface extends React.HTMLAttributes<HTMLOrSVGImageElement> {
   size?: "$100" | "$150" | "$200" | number;
   label: string;
   children?: React.ReactNode;
+  className?: string;
 }
 
-const Sizes = {
-  $100: "1rem",
-  $150: "1.5rem",
-  $200: "2rem",
-};
-
 export const Icon = React.forwardRef<HTMLOrSVGImageElement, IconInterface>(
-  ({ children, size = "$100", label, ...props }, ref) => {
+  ({ children, size = "$100", label, className = "", ...props }, ref) => {
     const child = React.Children.only(children);
+
+    const IconSizeStyle = css({
+      width: size,
+      height: size,
+    });
 
     return (
       <>
         {React.cloneElement(child as React.ReactElement, {
           "aria-hidden": true,
           focusable: false,
-          width: Sizes[size] || size,
-          height: Sizes[size] || size,
           role: "img",
           ref,
+          className: `${IconSizeStyle()} ${className}`,
           ...props,
         })}
         {label ? <VisuallyHidden>{label}</VisuallyHidden> : null}
