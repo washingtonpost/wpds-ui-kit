@@ -6,8 +6,8 @@ on:
       - main
 
 jobs:
-  validate:
-    name: Validate
+  upload:
+    name: Upload to Chromatic and Automatically Approve
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -26,6 +26,7 @@ jobs:
         run: |
           npm i -g npm@latest
           npm ci
+          npm run build
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
 
