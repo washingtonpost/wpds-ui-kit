@@ -60,13 +60,13 @@ const Template: ComponentStory<typeof Component> = ({ children, ...args }) => (
           {children}
         </Component>
         <Component {...args}>
-          <Icon size="16" label="">
+          <Icon size="$100" label="">
             <Asset fill="currentColor" />
           </Icon>
           {children}
         </Component>
         <Component {...args} icon="center">
-          <Icon size="16" label="Icon label">
+          <Icon size="$100" label="Icon label">
             <Asset fill="currentColor" />
           </Icon>
         </Component>
@@ -77,13 +77,13 @@ const Template: ComponentStory<typeof Component> = ({ children, ...args }) => (
           {children}
         </Component>
         <Component {...args} style="fill" variant="primary">
-          <Icon size="16" label="">
+          <Icon size="$100" label="">
             <Asset fill="currentColor" />
           </Icon>
           {children}
         </Component>
         <Component {...args} icon="center" style="fill" variant="primary">
-          <Icon size="16" label="Icon label">
+          <Icon size="$100" label="Icon label">
             <Asset fill="currentColor" />
           </Icon>
         </Component>
@@ -94,13 +94,13 @@ const Template: ComponentStory<typeof Component> = ({ children, ...args }) => (
           {children}
         </Component>
         <Component {...args} style="fill" variant="cta">
-          <Icon size="16" label="">
+          <Icon size="$100" label="">
             <Asset fill="currentColor" />
           </Icon>
           {children}
         </Component>
         <Component {...args} icon="center" style="fill" variant="cta">
-          <Icon size="16" label="Icon label">
+          <Icon size="$100" label="Icon label">
             <Asset fill="currentColor" />
           </Icon>
         </Component>
@@ -113,13 +113,13 @@ const Template: ComponentStory<typeof Component> = ({ children, ...args }) => (
           {children}
         </Component>
         <Component {...args} style="outline" variant="primary">
-          <Icon size="16" label="">
+          <Icon size="$100" label="">
             <Asset fill="currentColor" />
           </Icon>
           {children}
         </Component>
         <Component {...args} icon="center" style="outline" variant="primary">
-          <Icon size="16" label="Icon label">
+          <Icon size="$100" label="Icon label">
             <Asset fill="currentColor" />
           </Icon>
         </Component>
@@ -135,13 +135,13 @@ const Template: ComponentStory<typeof Component> = ({ children, ...args }) => (
         </Component>
 
         <Component {...args} style="outline" variant="secondary">
-          <Icon size="16" label="">
+          <Icon size="$100" label="">
             <Asset fill="currentColor" />
           </Icon>
           {children}
         </Component>
         <Component {...args} icon="center" style="outline" variant="secondary">
-          <Icon size="16" label="Icon label">
+          <Icon size="$100" label="Icon label">
             <Asset fill="currentColor" />
           </Icon>
         </Component>
@@ -152,13 +152,13 @@ const Template: ComponentStory<typeof Component> = ({ children, ...args }) => (
           {children}
         </Component>
         <Component {...args} style="outline" variant="cta">
-          <Icon size="16" label="">
+          <Icon size="$100" label="">
             <Asset fill="currentColor" />
           </Icon>
           {children}
         </Component>
         <Component {...args} icon="center" style="outline" variant="cta">
-          <Icon size="16" label="Icon label">
+          <Icon size="$100" label="Icon label">
             <Asset fill="currentColor" />
           </Icon>
         </Component>
@@ -183,7 +183,7 @@ const Template: ComponentStory<typeof Component> = ({ children, ...args }) => (
           variant="primary"
           icon="right"
         >
-          <Icon size="16" label="">
+          <Icon size="$100" label="">
             <Asset fill="currentColor" />
           </Icon>
           {children}
@@ -195,7 +195,7 @@ const Template: ComponentStory<typeof Component> = ({ children, ...args }) => (
           style="outline"
           variant="primary"
         >
-          <Icon size="16" label="Icon label">
+          <Icon size="$100" label="Icon label">
             <Asset fill="currentColor" />
           </Icon>
         </Component>
@@ -222,7 +222,7 @@ const Template: ComponentStory<typeof Component> = ({ children, ...args }) => (
           variant="secondary"
           icon="right"
         >
-          <Icon size="16" label="">
+          <Icon size="$100" label="">
             <Asset fill="currentColor" />
           </Icon>
           {children}
@@ -234,7 +234,7 @@ const Template: ComponentStory<typeof Component> = ({ children, ...args }) => (
           style="outline"
           variant="secondary"
         >
-          <Icon size="16" label="Icon label">
+          <Icon size="$100" label="Icon label">
             <Asset fill="currentColor" />
           </Icon>
         </Component>
@@ -257,7 +257,7 @@ const Template: ComponentStory<typeof Component> = ({ children, ...args }) => (
           variant="cta"
           icon="right"
         >
-          <Icon size="16" label="">
+          <Icon size="$100" label="">
             <Asset fill="currentColor" />
           </Icon>
           {children}
@@ -269,7 +269,7 @@ const Template: ComponentStory<typeof Component> = ({ children, ...args }) => (
           style="outline"
           variant="cta"
         >
-          <Icon size="16" label="Icon label">
+          <Icon size="$100" label="Icon label">
             <Asset fill="currentColor" />
           </Icon>
         </Component>
@@ -296,7 +296,7 @@ const Template: ComponentStory<typeof Component> = ({ children, ...args }) => (
           style="outline"
           variant="secondary"
         >
-          <Icon size="16" label="Icon label">
+          <Icon size="$100" label="Icon label">
             <Asset fill="currentColor" />
           </Icon>
         </Component>
