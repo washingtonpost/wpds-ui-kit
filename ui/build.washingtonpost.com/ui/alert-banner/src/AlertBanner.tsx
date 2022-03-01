@@ -42,7 +42,7 @@ const AlertBannerTrigger = React.forwardRef<
       }}
       {...props}
     >
-      <Icon size="16" label="Close alert banner">
+      <Icon size="$100" label="Close alert banner">
         <Close fill="currentColor" className={closeIcon()} />
       </Icon>
     </StyledAlertBannerTrigger>
@@ -182,7 +182,7 @@ const AlertBannerRoot = React.forwardRef<HTMLDivElement, AlertBannerVariants>(
             },
           }}
         >
-          <Icon size="16" label="">
+          <Icon size="$100" label="">
             <AlertIcon className={alertIcon()} />
           </Icon>
         </Button>

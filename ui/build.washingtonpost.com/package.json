@@ -96,7 +96,6 @@
     "experimental-publish": "make experimental-publish",
     "website:dev": "lerna run dev --scope app --stream",
     "website:build": "lerna run build --scope app --stream",
-    "chromatic": "npx chromatic --project-token=b457f2a94e96",
     "postinstall": "npm run bootstrap",
     "new-component": "make new-component",
     "lint": "eslint --ext .ts,.tsx ui/"

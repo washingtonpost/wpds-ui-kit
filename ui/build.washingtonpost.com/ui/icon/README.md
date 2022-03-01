@@ -6,7 +6,7 @@ import { Garlic } from "@washingtonpost/wpds-assets";
 
 function Component() {
   return (
-    <Icon size="16" label="garlic">
+    <Icon size="$100" label="garlic">
       <Garlic />
     </Icon>
   );
