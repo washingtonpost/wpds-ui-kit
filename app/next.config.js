@@ -9,4 +9,5 @@ module.exports = withBundleAnalyzer({
       destination: "/storybook/index.html",
     },
   ],
+  swcMinify: false,
 });
