@@ -1,7 +1,6 @@
 import * as React from "react";
-import { Story, Meta } from "@storybook/react";
 import { Box } from "@washingtonpost/wpds-box";
-import { Container as Component } from "./";
+import { Container as Component } from ".";
 
 export default {
   title: "Container",
@@ -15,9 +14,9 @@ export default {
   parameters: {
     layout: "fullscreen",
   },
-} as Meta<typeof Component>;
+};
 
-const Template: Story<typeof Component> = (args) => (
+const Template = (args) => (
   <>
     <Component maxWidth="xl">Extra lg</Component>
     <Component maxWidth="lg">lg</Component>

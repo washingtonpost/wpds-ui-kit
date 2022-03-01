@@ -1,7 +1,6 @@
 /* eslint react/prop-types: 0 */
 import * as React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-import * as AlertBanner from "./";
+import * as AlertBanner from ".";
 import { styled } from "@washingtonpost/wpds-ui-kit";
 
 export default {
@@ -32,7 +31,7 @@ export default {
       control: "boolean",
     },
   },
-} as ComponentMeta<typeof AlertBanner.Root>;
+};
 
 const Column = styled("div", {
   display: "flex",
@@ -51,10 +50,7 @@ const Stack = styled("div", {
   borderRadius: "$075",
 });
 
-const Template: ComponentStory<typeof AlertBanner.Root> = ({
-  children,
-  ...args
-}) => (
+const Template = ({ children, ...args }) => (
   <Column>
     <Stack>
       <AlertBanner.Root {...args} position="relative" variant="error">

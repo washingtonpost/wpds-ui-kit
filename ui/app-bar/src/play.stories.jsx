@@ -1,5 +1,4 @@
 import * as React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { styled } from "@washingtonpost/wpds-theme";
 import WashingtonPostWhite from "@washingtonpost/wpds-assets/asset/washington-post-white";
 import Menu from "@washingtonpost/wpds-assets/asset/menu";
@@ -10,7 +9,7 @@ import Profile from "@washingtonpost/wpds-assets/asset/profile";
 import { useDarkMode } from "storybook-dark-mode";
 import WashingtonPost from "@washingtonpost/wpds-assets/asset/washington-post";
 
-import { AppBar as Component } from "./";
+import { AppBar as Component } from ".";
 
 export default {
   title: "App Bar",
@@ -29,7 +28,7 @@ export default {
   parameters: {
     layout: "fullscreen",
   },
-} as ComponentMeta<typeof Component>;
+};
 
 const PrimaryNavigationExample = () => {
   const darkModeActive = useDarkMode();
@@ -73,9 +72,7 @@ const PrimaryNavigationExample = () => {
   );
 };
 
-const Template: ComponentStory<typeof Component> = (args) => (
-  <Component {...args} />
-);
+const Template = (args) => <Component {...args} />;
 
 export const Play = Template.bind({});
 

@@ -38,6 +38,10 @@
     "stripInternal": true,
     "target": "es2018",
     "types": ["node"],
-    "typeRoots": ["./node_modules/@types", "./types"]
+    "typeRoots": [
+      "./node_modules/@types",
+      "./types",
+      "./node_modules/**/*.d.ts"
+    ]
   }
 }

@@ -34,7 +34,7 @@
     "typescript": "^4.5.5"
   },
   "peerDependencies": {
-    "@washingtonpost/wpds-theme": "^0.3.0",
+    "@washingtonpost/wpds-theme": "^0.3.2",
     "react": "^16.8.6 || ^17.0.2"
   },
   "gitHead": "bb6286819b0ecc271acbc19911432d85efa40c33"
