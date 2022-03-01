@@ -4,7 +4,7 @@ import { VisuallyHidden } from "@washingtonpost/wpds-visually-hidden";
 const NAME = "Icon";
 
 interface IconInterface extends React.HTMLAttributes<HTMLOrSVGImageElement> {
-  size?: "$100" | "$150" | "$200";
+  size?: "$100" | "$150" | "$200" | number;
   label: string;
   children?: React.ReactNode;
 }
