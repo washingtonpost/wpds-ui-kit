@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.2](https://github.com/WPMedia/wpds-ui-kit/compare/v0.3.1...v0.3.2) (2022-03-01)
+
+
+### Bug Fixes
+
+* update icon size prop to match system ([e9ae288](https://github.com/WPMedia/wpds-ui-kit/commit/e9ae288c8eaa0358f7d03bf3725858795764af3c))
+
+
+
+
+
 ## [0.3.1](https://github.com/WPMedia/wpds-ui-kit/compare/v0.3.0...v0.3.1) (2022-02-28)
 
 
