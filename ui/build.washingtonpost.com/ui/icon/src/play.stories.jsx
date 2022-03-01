@@ -1,5 +1,4 @@
 import * as React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { Box, theme } from "@washingtonpost/wpds-ui-kit";
 import Info from "@washingtonpost/wpds-assets/asset/info";
 import { Icon as Component } from "./icon";
@@ -7,11 +6,9 @@ import { Icon as Component } from "./icon";
 export default {
   title: "Icon",
   component: Component,
-} as ComponentMeta<typeof Component>;
+};
 
-const Template: ComponentStory<typeof Component> = (args) => (
-  <Component {...args} />
-);
+const Template = (args) => <Component {...args} />;
 
 export const Default = Template.bind({});
 

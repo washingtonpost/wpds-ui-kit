@@ -1,5 +1,4 @@
 import * as React from "react";
-import { Story, Meta } from "@storybook/react";
 import { within, userEvent } from "@storybook/testing-library";
 import { styled } from "@washingtonpost/wpds-ui-kit";
 import { VisuallyHidden as Component } from "./visually-hidden";
@@ -11,9 +10,9 @@ const Disclaimer = styled("div", {
 export default {
   title: "Visually Hidden",
   component: Component,
-} as Meta<typeof Component>;
+};
 
-const Template: Story<typeof Component> = (args) => (
+const Template = (args) => (
   <React.Fragment>
     <Disclaimer>
       This story is used to test the visually hidden component.
@@ -42,7 +41,7 @@ VisuallyHidden.args = {};
 VisuallyHidden.play = async ({ canvasElement }) => {
   const canvas = within(canvasElement);
 
-  userEvent.tab();
+  await userEvent.tab();
 
-  userEvent.click(canvas.getByTestId("skip-link"));
+  await userEvent.click(canvas.getByTestId("skip-link"));
 };
