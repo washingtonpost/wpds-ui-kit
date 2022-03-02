@@ -1,5 +1,3 @@
-## generate types for tokens
+# @washingtonpost/wpds-theme
 
-```
-npx -p typescript tsc src/tokens.js --declaration --allowJs --emitDeclarationOnly
-```
+Sharing our Stitches Config and Design Tokens Spec
