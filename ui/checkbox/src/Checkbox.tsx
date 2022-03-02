@@ -10,7 +10,6 @@ import * as PrimitiveCheckbox from "@radix-ui/react-checkbox";
 const StyledCheckbox = styled(PrimitiveCheckbox.Root, {
   transition: "$allFast",
   appearance: "none",
-  flex: "0 0 $sizes$125",
   borderRadius: "$012",
   border: "1px solid",
   borderColor: "$subtle",
@@ -69,23 +68,24 @@ const StyledCheckbox = styled(PrimitiveCheckbox.Root, {
         $$borderColor: "transparent",
       },
     },
-    style: {
-      outline: {
+    isOutline: {
+      true: {
         border: "1px solid",
         $$borderColor: "$$variantColor",
       },
-      fill: {},
+      false: {},
     },
   },
 
   defaultVariants: {
     size: "125",
     variant: "primary",
+    isOutline: false,
   },
 
   compoundVariants: [
     {
-      style: "outline",
+      isOutline: true,
       variant: "primary",
       css: {
         $$variantColor: "none",
@@ -94,7 +94,7 @@ const StyledCheckbox = styled(PrimitiveCheckbox.Root, {
       },
     },
     {
-      style: "outline",
+      isOutline: true,
       variant: "secondary",
       css: {
         $$variantColor: "none",
@@ -103,7 +103,7 @@ const StyledCheckbox = styled(PrimitiveCheckbox.Root, {
       },
     },
     {
-      style: "outline",
+      isOutline: true,
       variant: "cta",
       css: {
         $$variantColor: "none",
@@ -150,29 +150,29 @@ const StyledIndicator = styled(PrimitiveCheckbox.Indicator, {
         $$variantColor: "$colors$onCta",
       },
     },
-    style: {
-      outline: {},
-      fill: {},
+    isOutline: {
+      true: {},
+      false: {},
     },
   },
 
   compoundVariants: [
     {
-      style: "outline",
+      isOutline: true,
       variant: "primary",
       css: {
         $$variantColor: "$colors$primary",
       },
     },
     {
-      style: "outline",
+      isOutline: true,
       variant: "secondary",
       css: {
         $$variantColor: "$colors$secondary",
       },
     },
     {
-      style: "outline",
+      isOutline: true,
       variant: "cta",
       css: {
         $$variantColor: "$colors$cta",
@@ -183,7 +183,7 @@ const StyledIndicator = styled(PrimitiveCheckbox.Indicator, {
   defaultVariants: {
     variant: "primary",
     size: "125",
-    style: "fill",
+    isOutline: false,
   },
 });
 
@@ -242,7 +242,7 @@ export const Checkbox = React.forwardRef<HTMLButtonElement, CheckboxInterface>(
         <StyledIndicator
           size={props.size}
           variant={props.variant}
-          style={props.style}
+          isOutline={props.isOutline}
           disabled={props.disabled}
         >
           <StyledCheck size={props.size} checked={props.checked}>

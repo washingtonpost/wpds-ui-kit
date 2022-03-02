@@ -7,7 +7,7 @@ import { Checkbox as Component } from "./";
 
 const variants = ["primary", "secondary", "cta"];
 const size = ["087", "125"];
-const style = ["outline", "fill"];
+const isOutline = [true, false];
 
 const Column = styled("div", {
   display: "flex",
@@ -27,8 +27,8 @@ export default {
     variant: {
       options: variants,
     },
-    style: {
-      options: style,
+    isOutline: {
+      options: isOutline,
     },
     defaultChecked: {
       options: [true, false, "indeterminate"],
@@ -128,8 +128,8 @@ const ChromaticTemplate: ComponentStory<typeof Component> = () => (
       <Component checked={true} size="125" />
     </HStack>
     <HStack>
-      <Component checked={true} style="fill" />
-      <Component checked={true} style="outline" />
+      <Component checked={true} />
+      <Component checked={true} isOutline />
     </HStack>
     <HStack>
       <Component checked={true} />

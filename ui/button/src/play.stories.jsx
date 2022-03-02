@@ -22,9 +22,9 @@ export default {
       options: ["200", "250"],
       defaultValue: "200",
     },
-    style: {
-      options: ["outline", "fill"],
-      defaultValue: "fill",
+    isOutline: {
+      options: [true, false],
+      defaultValue: false,
     },
     icon: {
       options: ["center", "left", "right", "none"],
@@ -72,16 +72,16 @@ const Template = ({ children, ...args }) => (
       </Stack>
 
       <Stack>
-        <Component {...args} style="fill" variant="primary">
+        <Component {...args} variant="primary">
           {children}
         </Component>
-        <Component {...args} style="fill" variant="primary">
+        <Component {...args} variant="primary">
           <Icon size="100" label="">
             <Asset />
           </Icon>
           {children}
         </Component>
-        <Component {...args} icon="center" style="fill" variant="primary">
+        <Component {...args} icon="center" variant="primary">
           <Icon size="100" label="Icon label">
             <Asset />
           </Icon>
@@ -89,16 +89,16 @@ const Template = ({ children, ...args }) => (
       </Stack>
 
       <Stack>
-        <Component {...args} style="fill" variant="cta">
+        <Component {...args} variant="cta">
           {children}
         </Component>
-        <Component {...args} style="fill" variant="cta">
+        <Component {...args} variant="cta">
           <Icon size="100" label="">
             <Asset />
           </Icon>
           {children}
         </Component>
-        <Component {...args} icon="center" style="fill" variant="cta">
+        <Component {...args} icon="center" variant="cta">
           <Icon size="100" label="Icon label">
             <Asset />
           </Icon>
@@ -108,16 +108,16 @@ const Template = ({ children, ...args }) => (
 
     <Column>
       <Stack>
-        <Component {...args} style="outline" variant="primary">
+        <Component {...args} isOutline variant="primary">
           {children}
         </Component>
-        <Component {...args} style="outline" variant="primary">
+        <Component {...args} isOutline variant="primary">
           <Icon size="100" label="">
             <Asset />
           </Icon>
           {children}
         </Component>
-        <Component {...args} icon="center" style="outline" variant="primary">
+        <Component {...args} icon="center" isOutline variant="primary">
           <Icon size="100" label="Icon label">
             <Asset />
           </Icon>
@@ -129,17 +129,17 @@ const Template = ({ children, ...args }) => (
           background: theme.colors.accessible,
         }}
       >
-        <Component {...args} style="outline" variant="secondary">
+        <Component {...args} isOutline variant="secondary">
           {children}
         </Component>
 
-        <Component {...args} style="outline" variant="secondary">
+        <Component {...args} isOutline variant="secondary">
           <Icon size="100" label="">
             <Asset />
           </Icon>
           {children}
         </Component>
-        <Component {...args} icon="center" style="outline" variant="secondary">
+        <Component {...args} icon="center" isOutline variant="secondary">
           <Icon size="100" label="Icon label">
             <Asset />
           </Icon>
@@ -147,16 +147,16 @@ const Template = ({ children, ...args }) => (
       </Stack>
 
       <Stack>
-        <Component {...args} style="outline" variant="cta">
+        <Component {...args} isOutline variant="cta">
           {children}
         </Component>
-        <Component {...args} style="outline" variant="cta">
+        <Component {...args} isOutline variant="cta">
           <Icon size="100" label="">
             <Asset />
           </Icon>
           {children}
         </Component>
-        <Component {...args} icon="center" style="outline" variant="cta">
+        <Component {...args} icon="center" isOutline variant="cta">
           <Icon size="100" label="Icon label">
             <Asset />
           </Icon>
@@ -169,7 +169,7 @@ const Template = ({ children, ...args }) => (
         <Component
           {...args}
           size="250"
-          style="outline"
+          isOutline
           variant="primary"
           icon="right"
         >
@@ -178,7 +178,7 @@ const Template = ({ children, ...args }) => (
         <Component
           {...args}
           size="250"
-          style="outline"
+          isOutline
           variant="primary"
           icon="right"
         >
@@ -191,7 +191,7 @@ const Template = ({ children, ...args }) => (
           {...args}
           size="250"
           icon="center"
-          style="outline"
+          isOutline
           variant="primary"
         >
           <Icon size="100" label="Icon label">
@@ -208,7 +208,7 @@ const Template = ({ children, ...args }) => (
         <Component
           {...args}
           size="250"
-          style="outline"
+          isOutline
           variant="secondary"
           icon="right"
         >
@@ -217,7 +217,7 @@ const Template = ({ children, ...args }) => (
         <Component
           {...args}
           size="250"
-          style="outline"
+          isOutline
           variant="secondary"
           icon="right"
         >
@@ -230,7 +230,7 @@ const Template = ({ children, ...args }) => (
           {...args}
           icon="center"
           size="250"
-          style="outline"
+          isOutline
           variant="secondary"
         >
           <Icon size="100" label="Icon label">
@@ -240,34 +240,16 @@ const Template = ({ children, ...args }) => (
       </Stack>
 
       <Stack>
-        <Component
-          {...args}
-          size="250"
-          style="outline"
-          variant="cta"
-          icon="right"
-        >
+        <Component {...args} size="250" isOutline variant="cta" icon="right">
           {children}
         </Component>
-        <Component
-          {...args}
-          size="250"
-          style="outline"
-          variant="cta"
-          icon="right"
-        >
+        <Component {...args} size="250" isOutline variant="cta" icon="right">
           <Icon size="100" label="">
             <Asset />
           </Icon>
           {children}
         </Component>
-        <Component
-          {...args}
-          size="250"
-          icon="center"
-          style="outline"
-          variant="cta"
-        >
+        <Component {...args} size="250" icon="center" isOutline variant="cta">
           <Icon size="100" label="Icon label">
             <Asset />
           </Icon>
@@ -280,7 +262,7 @@ const Template = ({ children, ...args }) => (
           {...args}
           disabled
           size="250"
-          style="outline"
+          isOutline
           variant="cta"
           icon="right"
         >
@@ -292,7 +274,7 @@ const Template = ({ children, ...args }) => (
           disabled
           icon="center"
           size="250"
-          style="outline"
+          isOutline
           variant="secondary"
         >
           <Icon size="100" label="Icon label">

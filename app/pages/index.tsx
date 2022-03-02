@@ -102,8 +102,8 @@ function HomePage() {
               <Checkbox checked={true} size="125" />
             </HStack>
             <HStack>
-              <Checkbox checked={true} style="fill" />
-              <Checkbox checked={true} style="outline" />
+              <Checkbox checked={true} />
+              <Checkbox checked={true} isOutline />
             </HStack>
             <HStack>
               <Checkbox checked={true} />

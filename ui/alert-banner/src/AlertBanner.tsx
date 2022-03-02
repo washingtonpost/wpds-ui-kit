@@ -33,7 +33,7 @@ const AlertBannerTrigger = React.forwardRef<
   return (
     <StyledAlertBannerTrigger
       ref={ref}
-      style="outline"
+      isOutline
       icon="center"
       variant="primary"
       css={{
@@ -177,7 +177,7 @@ const AlertBannerRoot = React.forwardRef<HTMLDivElement, AlertBannerVariants>(
           as="div"
           icon="center"
           variant="primary"
-          style="outline"
+          isOutline
           css={{
             alignSelf: "flex-start",
             border: "none",
