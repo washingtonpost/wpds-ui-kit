@@ -92,8 +92,8 @@ function HomePage() {
               <Checkbox checked={true} variant="cta" />
             </HStack>
             <HStack>
-              <Checkbox checked={true} size="087" />
-              <Checkbox checked={true} size="125" />
+              <Checkbox checked={true} size="$087" />
+              <Checkbox checked={true} size="$125" />
             </HStack>
             <HStack>
               <Checkbox checked={true} style="fill" />
