@@ -20,7 +20,7 @@ export default {
     },
     size: {
       options: ["200", "250"],
-      defaultValue: "050",
+      defaultValue: "200",
     },
     style: {
       options: ["outline", "fill"],
