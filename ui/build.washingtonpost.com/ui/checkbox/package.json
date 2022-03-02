@@ -35,7 +35,7 @@
   },
   "peerDependencies": {
     "@radix-ui/react-checkbox": "latest",
-    "@washingtonpost/wpds-assets": "latest",
+    "@washingtonpost/wpds-assets": "^1.2.1",
     "@washingtonpost/wpds-icon": "^0.3.7",
     "@washingtonpost/wpds-theme": "^0.3.7",
     "@washingtonpost/wpds-visually-hidden": "^0.3.7",

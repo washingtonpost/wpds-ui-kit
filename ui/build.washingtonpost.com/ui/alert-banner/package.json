@@ -35,7 +35,7 @@
   },
   "peerDependencies": {
     "@washingtonpost/wpds-app-bar": "^0.3.7",
-    "@washingtonpost/wpds-assets": "latest",
+    "@washingtonpost/wpds-assets": "^1.2.1",
     "@washingtonpost/wpds-button": "^0.3.7",
     "@washingtonpost/wpds-container": "^0.3.7",
     "@washingtonpost/wpds-icon": "^0.3.7",
