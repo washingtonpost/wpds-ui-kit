@@ -124,8 +124,8 @@ const ChromaticTemplate: ComponentStory<typeof Component> = () => (
       <Component checked={true} variant="cta" />
     </HStack>
     <HStack>
-      <Component checked={true} size="087" />
-      <Component checked={true} size="125" />
+      <Component checked={true} size="$087" />
+      <Component checked={true} size="$125" />
     </HStack>
     <HStack>
       <Component checked={true} style="fill" />
@@ -155,7 +155,7 @@ Chromatic.decorators = [
 Chromatic.play = async ({ canvasElement }) => {
   const canvas = within(canvasElement);
 
-  userEvent.tab();
+  await userEvent.tab();
 
-  userEvent.click(canvas.getByTestId("test-checkbox-primary"));
+  await userEvent.click(canvas.getByTestId("test-checkbox-primary"));
 };
