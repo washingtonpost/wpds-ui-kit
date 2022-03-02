@@ -104,7 +104,7 @@ export const Button = styled("button", {
       icon: "center",
       size: "250",
       css: {
-        padding: "$250",
+        padding: "$075",
         fontSize: "0",
         lineHeight: "0",
       },
