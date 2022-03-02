@@ -99,6 +99,12 @@ Disabled.args = {
   disabled: true,
 };
 
+export const Indeterminate = Template.bind({});
+Indeterminate.args = {
+  disabled: true,
+  checked: "indeterminate",
+};
+
 const HStack = styled("section", {
   display: "flex",
   flexDirection: "row",
