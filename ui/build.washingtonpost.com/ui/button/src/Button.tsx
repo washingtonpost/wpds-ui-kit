@@ -6,6 +6,7 @@ export const Button = styled("button", {
   flexDirection: "row",
   alignItems: "center",
   justifyContent: "center",
+  height: "fit-content",
   borderRadius: "$round",
   cursor: "pointer",
   border: "none",
@@ -55,10 +56,10 @@ export const Button = styled("button", {
       },
     },
     size: {
-      "050": {
+      $200: {
         py: "$050",
       },
-      "075": {
+      $250: {
         py: "$075",
       },
     },

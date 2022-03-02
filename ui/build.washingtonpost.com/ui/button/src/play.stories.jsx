@@ -19,7 +19,7 @@ export default {
       defaultValue: "secondary",
     },
     size: {
-      options: ["050", "075"],
+      options: ["$200", "$250"],
       defaultValue: "050",
     },
     style: {
@@ -168,7 +168,7 @@ const Template = ({ children, ...args }) => (
       <Stack>
         <Component
           {...args}
-          size="075"
+          size="$250"
           style="outline"
           variant="primary"
           icon="right"
@@ -177,7 +177,7 @@ const Template = ({ children, ...args }) => (
         </Component>
         <Component
           {...args}
-          size="075"
+          size="$250"
           style="outline"
           variant="primary"
           icon="right"
@@ -189,7 +189,7 @@ const Template = ({ children, ...args }) => (
         </Component>
         <Component
           {...args}
-          size="075"
+          size="$250"
           icon="center"
           style="outline"
           variant="primary"
@@ -207,7 +207,7 @@ const Template = ({ children, ...args }) => (
       >
         <Component
           {...args}
-          size="075"
+          size="$250"
           style="outline"
           variant="secondary"
           icon="right"
@@ -216,7 +216,7 @@ const Template = ({ children, ...args }) => (
         </Component>
         <Component
           {...args}
-          size="075"
+          size="$250"
           style="outline"
           variant="secondary"
           icon="right"
@@ -229,7 +229,7 @@ const Template = ({ children, ...args }) => (
         <Component
           {...args}
           icon="center"
-          size="075"
+          size="$250"
           style="outline"
           variant="secondary"
         >
@@ -242,7 +242,7 @@ const Template = ({ children, ...args }) => (
       <Stack>
         <Component
           {...args}
-          size="075"
+          size="$250"
           style="outline"
           variant="cta"
           icon="right"
@@ -251,7 +251,7 @@ const Template = ({ children, ...args }) => (
         </Component>
         <Component
           {...args}
-          size="075"
+          size="$250"
           style="outline"
           variant="cta"
           icon="right"
@@ -263,7 +263,7 @@ const Template = ({ children, ...args }) => (
         </Component>
         <Component
           {...args}
-          size="075"
+          size="$250"
           icon="center"
           style="outline"
           variant="cta"
@@ -279,7 +279,7 @@ const Template = ({ children, ...args }) => (
         <Component
           {...args}
           disabled
-          size="075"
+          size="$250"
           style="outline"
           variant="cta"
           icon="right"
@@ -291,7 +291,7 @@ const Template = ({ children, ...args }) => (
           {...args}
           disabled
           icon="center"
-          size="075"
+          size="$250"
           style="outline"
           variant="secondary"
         >
