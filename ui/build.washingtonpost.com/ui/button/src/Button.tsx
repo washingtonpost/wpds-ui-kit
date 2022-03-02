@@ -63,8 +63,8 @@ export const Button = styled("button", {
         py: "$075",
       },
     },
-    style: {
-      outline: {
+    isOutline: {
+      true: {
         background: "none",
         border: "1px solid",
         "@hover": {
@@ -73,7 +73,7 @@ export const Button = styled("button", {
           },
         },
       },
-      fill: {},
+      false: {},
     },
     icon: {
       center: {
@@ -96,7 +96,7 @@ export const Button = styled("button", {
   defaultVariants: {
     variant: "secondary",
     size: "200",
-    style: "fill",
+    isOutline: false,
     icon: "left",
   },
   compoundVariants: [
@@ -110,7 +110,7 @@ export const Button = styled("button", {
       },
     },
     {
-      style: "outline",
+      isOutline: true,
       variant: "primary",
       css: {
         background: "none",
@@ -118,7 +118,7 @@ export const Button = styled("button", {
       },
     },
     {
-      style: "outline",
+      isOutline: true,
       variant: "secondary",
       css: {
         background: "none",
@@ -126,7 +126,7 @@ export const Button = styled("button", {
       },
     },
     {
-      style: "outline",
+      isOutline: true,
       variant: "cta",
       css: {
         background: "none",
