@@ -15,7 +15,7 @@ export const Default = Template.bind({});
 Default.storyName = "Icon";
 
 Default.args = {
-  size: "$200",
+  size: "200",
   label: "Find out more information.",
   children: <Info />,
 };
