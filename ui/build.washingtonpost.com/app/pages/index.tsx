@@ -5,6 +5,7 @@ import {
   AlertBanner,
   Checkbox,
   Container,
+  Button,
 } from "@washingtonpost/wpds-ui-kit";
 import Chart from "@washingtonpost/wpds-assets/asset/chart";
 
@@ -67,10 +68,10 @@ function HomePage() {
           <Icon label="Chart">
             <Chart />
           </Icon>
-          <Icon label="Chart" size="$150">
+          <Icon label="Chart" size="150">
             <Chart />
           </Icon>
-          <Icon label="Chart" size="$200">
+          <Icon label="Chart" size="200">
             <Chart />
           </Icon>
         </HStack>
@@ -83,17 +84,22 @@ function HomePage() {
           <AlertBanner.Trigger />
         </AlertBanner.Root>
 
+        <h2>Button</h2>
+        <HStack>
+          <Button>Hello World</Button>
+        </HStack>
+
         <h2>Checkbox</h2>
         <HStack>
           <>
             <HStack>
-              <Checkbox checked={true} variant="primary" />
+              <Checkbox checked={true} variant="primary" size="125" />
               <Checkbox checked={true} variant="secondary" />
               <Checkbox checked={true} variant="cta" />
             </HStack>
             <HStack>
-              <Checkbox checked={true} size="$087" />
-              <Checkbox checked={true} size="$125" />
+              <Checkbox checked={true} size="087" />
+              <Checkbox checked={true} size="125" />
             </HStack>
             <HStack>
               <Checkbox checked={true} style="fill" />

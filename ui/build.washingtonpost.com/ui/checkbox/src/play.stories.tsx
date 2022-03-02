@@ -124,8 +124,8 @@ const ChromaticTemplate: ComponentStory<typeof Component> = () => (
       <Component checked={true} variant="cta" />
     </HStack>
     <HStack>
-      <Component checked={true} size="$087" />
-      <Component checked={true} size="$125" />
+      <Component checked={true} size="087" />
+      <Component checked={true} size="125" />
     </HStack>
     <HStack>
       <Component checked={true} style="fill" />

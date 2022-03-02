@@ -10,7 +10,7 @@ import * as PrimitiveCheckbox from "@radix-ui/react-checkbox";
 const StyledCheckbox = styled(PrimitiveCheckbox.Root, {
   transition: "$allFast",
   appearance: "none",
-  flex: "0 0 $125",
+  flex: "0 0 $sizes$125",
   borderRadius: "$012",
   border: "1px solid",
   borderColor: "$subtle",
@@ -46,11 +46,11 @@ const StyledCheckbox = styled(PrimitiveCheckbox.Root, {
 
   variants: {
     size: {
-      "$087": {
+      "087": {
         width: "$087",
         height: "$087",
       },
-      "$125": {
+      "125": {
         width: "$125",
         height: "$125",
       },
@@ -79,7 +79,7 @@ const StyledCheckbox = styled(PrimitiveCheckbox.Root, {
   },
 
   defaultVariants: {
-    size: "$125",
+    size: "125",
     variant: "primary",
   },
 
@@ -130,11 +130,11 @@ const StyledIndicator = styled(PrimitiveCheckbox.Indicator, {
       },
     },
     size: {
-      "$087": {
+      "087": {
         width: "$087",
         height: "$087",
       },
-      "$125": {
+      "125": {
         width: "$125",
         height: "$125",
       },
@@ -182,7 +182,7 @@ const StyledIndicator = styled(PrimitiveCheckbox.Indicator, {
 
   defaultVariants: {
     variant: "primary",
-    size: "$125",
+    size: "125",
     style: "fill",
   },
 });
@@ -204,10 +204,10 @@ const StyledCheck = styled("span", {
   flex: "0 0 $$checkSize",
   variants: {
     size: {
-      $087: {
+      "087": {
         $$checkSize: "$size$087",
       },
-      $125: {
+      "125": {
         $$checkSize: "$size$125",
       },
     },
@@ -225,7 +225,7 @@ const StyledCheck = styled("span", {
   },
 
   defaultVariant: {
-    size: "$125",
+    size: "125",
     checked: false,
   },
 });
