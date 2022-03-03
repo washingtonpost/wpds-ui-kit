@@ -1,6 +1,6 @@
 {
   "name": "@washingtonpost/wpds-ui-kit",
-  "version": "0.3.7",
+  "version": "0.4.0",
   "description": "WPDS UI Kit",
   "author": "WPDS Support <wpds@washpost.com>",
   "homepage": "https://github.com/WPMedia/wpds-ui-kit#readme",
@@ -37,7 +37,7 @@
     "@washingtonpost/wpds-checkbox": "0.3.3",
     "@washingtonpost/wpds-container": "0.3.3",
     "@washingtonpost/wpds-icon": "0.3.3",
-    "@washingtonpost/wpds-theme": "^0.3.7",
+    "@washingtonpost/wpds-theme": "0.4.0",
     "@washingtonpost/wpds-visually-hidden": "0.3.3"
   },
   "devDependencies": {
