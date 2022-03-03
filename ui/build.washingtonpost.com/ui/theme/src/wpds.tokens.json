@@ -117,10 +117,10 @@
     "dark": {
       "description": "The default color scheme in a dark version",
       "alpha25": {
-        "value": "rgba(255,255,255,.25)"
+        "value": "rgba(42,42,42,.5)"
       },
       "alpha50": {
-        "value": "rgba(42,42,42,.5)"
+        "value": "rgba(255,255,255,.25)"
       },
       "blue80": {
         "value": "rgba(205, 212, 223, 1)"

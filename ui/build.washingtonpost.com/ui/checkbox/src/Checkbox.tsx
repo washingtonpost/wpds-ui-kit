@@ -12,35 +12,15 @@ const StyledCheckbox = styled(PrimitiveCheckbox.Root, {
   appearance: "none",
   borderRadius: "$012",
   border: "1px solid",
-  borderColor: "$subtle",
   display: "block",
   cursor: "pointer",
   overflow: "hidden",
-
-  $$variantColor: "$colors$primary",
+  backgroundColor: "$$backgroundColor",
+  color: "$$color",
 
   "&:focus": {
     outline: "1px solid $signal",
     outlineOffset: "2px",
-  },
-
-  "&:disabled": {
-    $$variantColor: "$colors$disabled",
-    $$borderColor: "$colors$onDisabled",
-  },
-
-  "&[aria-checked='true']": {
-    backgroundColor: "$$variantColor",
-    borderColor: "$$borderColor",
-  },
-
-  "&[aria-checked='false']": {
-    backgroundColor: "transparent",
-  },
-
-  "&[aria-checked='mixed']": {
-    backgroundColor: "$$variantColor",
-    borderColor: "$$borderColor",
   },
 
   variants: {
@@ -55,25 +35,27 @@ const StyledCheckbox = styled(PrimitiveCheckbox.Root, {
       },
     },
     variant: {
-      primary: {
-        $$variantColor: "$colors$primary",
-        $$borderColor: "transparent",
-      },
-      secondary: {
-        $$variantColor: "$colors$secondary",
-        $$borderColor: "$colors$subtle",
-      },
-      cta: {
-        $$variantColor: "$colors$cta",
-        $$borderColor: "transparent",
-      },
+      primary: {},
+      secondary: {},
+      cta: {},
     },
     isOutline: {
+      true: {},
+      false: {},
+    },
+    disabled: {
       true: {
-        border: "1px solid",
-        $$borderColor: "$$variantColor",
+        $$backgroundColor: "$colors$disabled",
+        $$color: "$colors$onDisabled",
       },
       false: {},
+    },
+    checked: {
+      true: {},
+      false: {
+        borderColor: "$colors$subtle",
+      },
+      indeterminate: {},
     },
   },
 
@@ -81,34 +63,155 @@ const StyledCheckbox = styled(PrimitiveCheckbox.Root, {
     size: "125",
     variant: "primary",
     isOutline: false,
+    checked: false,
+    disabled: false,
   },
 
   compoundVariants: [
     {
+      checked: true,
+      variant: "primary",
+      disabled: false,
+      css: {
+        $$backgroundColor: "$colors$primary",
+        $$color: "transparent",
+      },
+    },
+    {
+      checked: true,
+      variant: "secondary",
+      disabled: false,
+      css: {
+        $$backgroundColor: "$colors$secondary",
+        $$color: "$colors$subtle",
+      },
+    },
+    {
+      checked: true,
+      variant: "cta",
+      disabled: false,
+      css: {
+        $$backgroundColor: "$colors$cta",
+        $$color: "transparent",
+      },
+    },
+    {
+      checked: "indeterminate",
+      variant: "primary",
+      disabled: false,
+      css: {
+        $$backgroundColor: "$colors$primary",
+        $$color: "transparent",
+      },
+    },
+    {
+      checked: "indeterminate",
+      variant: "secondary",
+      disabled: false,
+      css: {
+        $$backgroundColor: "$colors$secondary",
+        $$color: "$colors$subtle",
+      },
+    },
+    {
+      checked: "indeterminate",
+      variant: "cta",
+      disabled: false,
+      css: {
+        $$backgroundColor: "$colors$cta",
+        $$color: "transparent",
+      },
+    },
+    {
+      checked: false,
+      variant: "primary",
+      disabled: false,
+      css: {
+        $$backgroundColor: "transparent",
+        $$color: "$colors$subtle",
+      },
+    },
+    {
+      checked: false,
+      variant: "secondary",
+      disabled: false,
+      css: {
+        $$backgroundColor: "transparent",
+        $$color: "$colors$subtle",
+      },
+    },
+    {
+      checked: false,
+      variant: "cta",
+      disabled: false,
+      css: {
+        $$backgroundColor: "transparent",
+        $$color: "$colors$subtle",
+      },
+    },
+    {
       isOutline: true,
       variant: "primary",
+      disabled: false,
       css: {
-        $$variantColor: "none",
-        color: theme.colors.primary,
-        $$borderColor: "$$variantColor",
+        $$backgroundColor: "transparent",
+        $$color: theme.colors.primary,
       },
     },
     {
       isOutline: true,
       variant: "secondary",
+      disabled: false,
       css: {
-        $$variantColor: "none",
-        color: theme.colors.secondary,
-        $$borderColor: "$$variantColor",
+        $$backgroundColor: "transparent",
+        $$color: theme.colors.secondary,
       },
     },
     {
       isOutline: true,
       variant: "cta",
+      disabled: false,
       css: {
-        $$variantColor: "none",
-        color: theme.colors.cta,
-        $$borderColor: "$$variantColor",
+        $$backgroundColor: "transparent",
+        $$color: theme.colors.cta,
+      },
+    },
+    {
+      isOutline: true,
+      variant: "primary",
+      disabled: true,
+      checked: true,
+      css: {
+        $$backgroundColor: "$colors$disabled",
+        $$color: "$colors$onDisabled",
+      },
+    },
+    {
+      isOutline: true,
+      variant: "secondary",
+      disabled: true,
+      checked: true,
+      css: {
+        $$backgroundColor: "$colors$disabled",
+        $$color: "$colors$onDisabled",
+      },
+    },
+    {
+      isOutline: true,
+      variant: "cta",
+      disabled: true,
+      checked: true,
+      css: {
+        $$backgroundColor: "$colors$disabled",
+        $$color: "$colors$onDisabled",
+      },
+    },
+    {
+      checked: false,
+      disabled: true,
+      css: {
+        borderColor: "$colors$onDisabled",
+        color: theme.colors.subtle,
       },
     },
   ],
@@ -178,6 +281,27 @@ const StyledIndicator = styled(PrimitiveCheckbox.Indicator, {
         $$variantColor: "$colors$cta",
       },
     },
+    {
+      isOutline: false,
+      variant: "primary",
+      css: {
+        $$variantColor: "$colors$onPrimary",
+      },
+    },
+    {
+      isOutline: false,
+      variant: "secondary",
+      css: {
+        $$variantColor: "$colors$onSecondary",
+      },
+    },
+    {
+      isOutline: false,
+      variant: "cta",
+      css: {
+        $$variantColor: "$colors$onCta",
+      },
+    },
   ],
 
   defaultVariants: {
@@ -190,7 +314,7 @@ const StyledIndicator = styled(PrimitiveCheckbox.Indicator, {
 type CheckboxVariants = React.ComponentPropsWithRef<typeof StyledCheckbox>;
 
 interface CheckboxInterface extends CheckboxVariants {
-  defaultChecked?: boolean;
+  defaultChecked?: boolean | "indeterminate";
   checked?: boolean | "indeterminate";
   onCheckedChange?: (checked: boolean | "indeterminate") => void;
   disabled?: boolean;
@@ -233,12 +357,7 @@ const StyledCheck = styled("span", {
 export const Checkbox = React.forwardRef<HTMLButtonElement, CheckboxInterface>(
   (props, ref) => {
     return (
-      <StyledCheckbox
-        ref={ref}
-        id={props.id}
-        checked={props.checked}
-        {...props}
-      >
+      <StyledCheckbox ref={ref} {...props}>
         <StyledIndicator
           size={props.size}
           variant={props.variant}
