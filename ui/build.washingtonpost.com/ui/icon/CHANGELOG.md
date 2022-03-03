@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/WPMedia/wpds-ui-kit/compare/v0.3.7...v0.4.0) (2022-03-03)
+
+
+### Bug Fixes
+
+* remove dollar symbol from size props ([c4d66a5](https://github.com/WPMedia/wpds-ui-kit/commit/c4d66a5cf1d1af65ff94483eaeea01a496287fdc))
+
+
+
+
+
 ## [0.3.7](https://github.com/WPMedia/wpds-ui-kit/compare/v0.3.6...v0.3.7) (2022-03-01)
 
 **Note:** Version bump only for package @washingtonpost/wpds-icon
