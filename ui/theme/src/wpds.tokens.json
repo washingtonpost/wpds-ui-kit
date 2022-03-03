@@ -126,7 +126,7 @@
         "value": "rgba(205, 212, 223, 1)"
       },
       "blue100": {
-        "value": "rgba(216, 51, 69, 1)"
+        "value": "rgba(131,153,186,1)"
       },
       "blue200": {
         "value": "rgba(83, 118, 171, 1)"
@@ -231,10 +231,10 @@
     "static": {
       "description": "The default color scheme independent if in light or dark mode",
       "alpha25": {
-        "value": "rgba(42,42,42,.25)"
+        "value": "rgba(0,0,0,.05)"
       },
       "alpha50": {
-        "value": "rgba(42,42,42,.5)"
+        "value": "rgba(102,102,102,.5)"
       },
       "blue80": {
         "value": "rgba(23,42,82,1)"
