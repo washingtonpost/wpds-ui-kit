@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/WPMedia/wpds-ui-kit/compare/v0.3.7...v0.4.0) (2022-03-03)
+
+
+### Bug Fixes
+
+* found ts issues ([03ff95f](https://github.com/WPMedia/wpds-ui-kit/commit/03ff95f436c72544124e874a450f6d3332e39867))
+* logic errors with checkbox's compound variants and fix alpha theme tokens ([#69](https://github.com/WPMedia/wpds-ui-kit/issues/69)) ([78d294b](https://github.com/WPMedia/wpds-ui-kit/commit/78d294b0caa8afa68ec973e1767b854963f521de))
+* remove dollar symbol from size props ([c4d66a5](https://github.com/WPMedia/wpds-ui-kit/commit/c4d66a5cf1d1af65ff94483eaeea01a496287fdc))
+
+
+### Features
+
+* change to isOutline prop ([5b57d13](https://github.com/WPMedia/wpds-ui-kit/commit/5b57d13ad7e20595a18eab50a00c769bbc959217))
+
+
+
+
+
 ## [0.3.7](https://github.com/WPMedia/wpds-ui-kit/compare/v0.3.6...v0.3.7) (2022-03-01)
 
 **Note:** Version bump only for package app

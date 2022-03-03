@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/WPMedia/wpds-ui-kit/compare/v0.3.7...v0.4.0) (2022-03-03)
+
+
+### Bug Fixes
+
+* logic errors with checkbox's compound variants and fix alpha theme tokens ([#69](https://github.com/WPMedia/wpds-ui-kit/issues/69)) ([78d294b](https://github.com/WPMedia/wpds-ui-kit/commit/78d294b0caa8afa68ec973e1767b854963f521de))
+
+
+
+
+
 ## [0.3.7](https://github.com/WPMedia/wpds-ui-kit/compare/v0.3.6...v0.3.7) (2022-03-01)
 
 **Note:** Version bump only for package @washingtonpost/wpds-theme
