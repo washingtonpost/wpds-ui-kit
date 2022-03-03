@@ -231,10 +231,10 @@
     "static": {
       "description": "The default color scheme independent if in light or dark mode",
       "alpha25": {
-        "value": "rgba(42,42,42,.25)"
+        "value": "rgba(0,0,0,.05)"
       },
       "alpha50": {
-        "value": "rgba(42,42,42,.5)"
+        "value": "rgba(102,102,102,.5)"
       },
       "blue80": {
         "value": "rgba(23,42,82,1)"
