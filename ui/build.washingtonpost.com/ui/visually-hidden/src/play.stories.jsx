@@ -24,7 +24,7 @@ const Template = (args) => (
         color: "$cta",
       }}
       data-testid="skip-link"
-      onClick={function onClickHandler(event: { preventDefault: () => void }) {
+      onClick={function onClickHandler(event) {
         event.preventDefault();
       }}
       {...args}
