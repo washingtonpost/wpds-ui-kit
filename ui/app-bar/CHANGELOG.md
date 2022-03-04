@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.5](https://github.com/WPMedia/wpds-ui-kit/compare/v0.4.4...v0.4.5) (2022-03-04)
+
+**Note:** Version bump only for package @washingtonpost/wpds-app-bar
+
+
+
+
+
 # [0.4.0](https://github.com/WPMedia/wpds-ui-kit/compare/v0.3.7...v0.4.0) (2022-03-03)
 
 **Note:** Version bump only for package @washingtonpost/wpds-app-bar
