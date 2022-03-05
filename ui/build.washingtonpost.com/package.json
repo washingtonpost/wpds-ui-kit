@@ -101,7 +101,9 @@
     "postinstall": "npm run bootstrap",
     "new-component": "make new-component",
     "lint": "eslint --ext .ts,.tsx ui/",
-    "test-storybook": "test-storybook"
+    "test-storybook": "test-storybook",
+    "dev": "turbo run dev --no-cache --parallel --continue",
+    "clean": "turbo run clean && rm -rf node_modules"
   },
   "engines": {
     "yarn": "yarn NO LONGER USED - use npm instead.",

@@ -93,20 +93,20 @@ function HomePage() {
         <HStack>
           <>
             <HStack>
-              <Checkbox defaultChecked checked variant="primary" size="125" />
-              <Checkbox defaultChecked checked variant="secondary" />
-              <Checkbox defaultChecked checked variant="cta" />
+              <Checkbox checked variant="primary" size="125" />
+              <Checkbox checked variant="secondary" />
+              <Checkbox checked variant="cta" />
             </HStack>
             <HStack>
-              <Checkbox defaultChecked checked size="087" />
-              <Checkbox defaultChecked checked size="125" />
+              <Checkbox checked size="087" />
+              <Checkbox checked size="125" />
             </HStack>
             <HStack>
-              <Checkbox defaultChecked checked />
-              <Checkbox defaultChecked checked isOutline />
+              <Checkbox checked />
+              <Checkbox checked isOutline />
             </HStack>
             <HStack>
-              <Checkbox defaultChecked checked />
+              <Checkbox checked />
               <Checkbox checked={false} />
               <Checkbox checked="indeterminate" />
             </HStack>
