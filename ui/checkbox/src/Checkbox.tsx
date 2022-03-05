@@ -31,7 +31,7 @@ const StyledCheckbox = styled(PrimitiveCheckbox.Root, {
     color: theme.colors.subtle,
   },
 
-  "&[aria-checked='false']": {
+  "&[aria-checked='false']:not(:disabled)": {
     borderColor: "$colors$subtle",
   },
 

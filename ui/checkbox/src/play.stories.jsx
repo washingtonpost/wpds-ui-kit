@@ -136,12 +136,12 @@ const ChromaticTemplate = () => (
     <h4>Disabled states</h4>
     <HStack>
       <Component disabled />
-      <Component disabled />
+      <Component disabled checked />
       <Component disabled checked="indeterminate" />
     </HStack>
     <HStack>
       <Component disabled isOutline />
-      <Component disabled isOutline />
+      <Component disabled checked isOutline />
       <Component disabled checked="indeterminate" isOutline />
     </HStack>
   </>
