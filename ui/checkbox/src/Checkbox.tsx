@@ -23,6 +23,18 @@ const StyledCheckbox = styled(PrimitiveCheckbox.Root, {
     outlineOffset: "2px",
   },
 
+  "&:disabled": {
+    $$backgroundColor: "$colors$disabled",
+    $$color: "$colors$onDisabled",
+
+    borderColor: "$colors$onDisabled",
+    color: theme.colors.subtle,
+  },
+
+  "&[aria-checked='false']": {
+    borderColor: "$colors$subtle",
+  },
+
   variants: {
     size: {
       "087": {
@@ -43,175 +55,70 @@ const StyledCheckbox = styled(PrimitiveCheckbox.Root, {
       true: {},
       false: {},
     },
-    disabled: {
-      true: {
-        $$backgroundColor: "$colors$disabled",
-        $$color: "$colors$onDisabled",
-      },
-      false: {},
-    },
-    checked: {
-      true: {},
-      false: {
-        borderColor: "$colors$subtle",
-      },
-      indeterminate: {},
-    },
   },
 
   defaultVariants: {
     size: "125",
     variant: "primary",
     isOutline: false,
-    checked: false,
-    disabled: false,
   },
 
   compoundVariants: [
     {
-      checked: true,
       variant: "primary",
-      disabled: false,
       css: {
-        $$backgroundColor: "$colors$primary",
-        $$color: "transparent",
+        "&:not([aria-checked='false']):not(:disabled)": {
+          $$backgroundColor: "$colors$primary",
+          $$color: "transparent",
+        },
       },
     },
     {
-      checked: true,
       variant: "secondary",
-      disabled: false,
       css: {
-        $$backgroundColor: "$colors$secondary",
-        $$color: "$colors$subtle",
+        "&:not([aria-checked='false']):not(:disabled)": {
+          $$backgroundColor: "$colors$secondary",
+          $$color: "$colors$subtle",
+        },
       },
     },
     {
-      checked: true,
       variant: "cta",
-      disabled: false,
       css: {
-        $$backgroundColor: "$colors$cta",
-        $$color: "transparent",
-      },
-    },
-    {
-      checked: "indeterminate",
-      variant: "primary",
-      disabled: false,
-      css: {
-        $$backgroundColor: "$colors$primary",
-        $$color: "transparent",
-      },
-    },
-    {
-      checked: "indeterminate",
-      variant: "secondary",
-      disabled: false,
-      css: {
-        $$backgroundColor: "$colors$secondary",
-        $$color: "$colors$subtle",
-      },
-    },
-    {
-      checked: "indeterminate",
-      variant: "cta",
-      disabled: false,
-      css: {
-        $$backgroundColor: "$colors$cta",
-        $$color: "transparent",
-      },
-    },
-    {
-      checked: false,
-      variant: "primary",
-      disabled: false,
-      css: {
-        $$backgroundColor: "transparent",
-        $$color: "$colors$subtle",
-      },
-    },
-    {
-      checked: false,
-      variant: "secondary",
-      disabled: false,
-      css: {
-        $$backgroundColor: "transparent",
-        $$color: "$colors$subtle",
-      },
-    },
-    {
-      checked: false,
-      variant: "cta",
-      disabled: false,
-      css: {
-        $$backgroundColor: "transparent",
-        $$color: "$colors$subtle",
+        "&:not([aria-checked='false']):not(:disabled)": {
+          $$backgroundColor: "$colors$cta",
+          $$color: "transparent",
+        },
       },
     },
     {
       isOutline: true,
       variant: "primary",
-      disabled: false,
       css: {
-        $$backgroundColor: "transparent",
-        $$color: theme.colors.primary,
+        "&:not([aria-checked='false']):not(:disabled)": {
+          $$backgroundColor: "transparent",
+          $$color: theme.colors.primary,
+        },
       },
     },
     {
       isOutline: true,
       variant: "secondary",
-      disabled: false,
       css: {
-        $$backgroundColor: "transparent",
-        $$color: theme.colors.secondary,
+        "&:not([aria-checked='false']):not(:disabled)": {
+          $$backgroundColor: "transparent",
+          $$color: theme.colors.secondary,
+        },
       },
     },
     {
       isOutline: true,
       variant: "cta",
-      disabled: false,
       css: {
-        $$backgroundColor: "transparent",
-        $$color: theme.colors.cta,
-      },
-    },
-    {
-      isOutline: true,
-      variant: "primary",
-      disabled: true,
-      checked: true,
-      css: {
-        $$backgroundColor: "$colors$disabled",
-        $$color: "$colors$onDisabled",
-      },
-    },
-    {
-      isOutline: true,
-      variant: "secondary",
-      disabled: true,
-      checked: true,
-      css: {
-        $$backgroundColor: "$colors$disabled",
-        $$color: "$colors$onDisabled",
-      },
-    },
-    {
-      isOutline: true,
-      variant: "cta",
-      disabled: true,
-      checked: true,
-      css: {
-        $$backgroundColor: "$colors$disabled",
-        $$color: "$colors$onDisabled",
-      },
-    },
-    {
-      checked: false,
-      disabled: true,
-      css: {
-        borderColor: "$colors$onDisabled",
-        color: theme.colors.subtle,
+        "&:not([aria-checked='false']):not(:disabled)": {
+          $$backgroundColor: "transparent",
+          $$color: theme.colors.cta,
+        },
       },
     },
   ],
@@ -335,22 +242,10 @@ const StyledCheck = styled("span", {
         $$checkSize: "$size$125",
       },
     },
-    checked: {
-      true: {
-        visibility: "visible",
-      },
-      false: {
-        visibility: "hidden",
-      },
-      indeterminate: {
-        visibility: "visible",
-      },
-    },
   },
 
   defaultVariant: {
     size: "125",
-    checked: false,
   },
 });
 
@@ -364,8 +259,9 @@ export const Checkbox = React.forwardRef<HTMLButtonElement, CheckboxInterface>(
           isOutline={props.isOutline}
           disabled={props.disabled}
         >
-          <StyledCheck size={props.size} checked={props.checked}>
-            {props.checked === "indeterminate" ? (
+          <StyledCheck size={props.size}>
+            {props.checked === "indeterminate" ||
+            props.defaultChecked === "indeterminate" ? (
               <Indeterminate
                 {...{
                   fill: "currentColor",
