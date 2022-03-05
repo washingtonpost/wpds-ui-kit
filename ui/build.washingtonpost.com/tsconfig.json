@@ -4,6 +4,7 @@
     "baseUrl": ".",
     "paths": {
       "*": ["node_modules/*"],
+      "app": ["./app/*"],
       "@washingtonpost/wpds-ui-kit": ["./ui/kit/src/*"],
       "@washingtonpost/wpds-container": ["./ui/container/src/*"],
       "@washingtonpost/wpds-box": ["./ui/box/src/*"],

@@ -34,16 +34,20 @@ npm run storybook
 npm run playroom:start
 ```
 
+You can run `npm run dev` to develop and test with the test app.
+
 ## Testing
 
 We use Testing Library and/or Storybook's new Interaction feature for Unit & Interaction Testing
 
 This command runs the Jest.
+
 ```shell
 npm run test
 ```
 
 This command runs the Storybook Test runner
+
 ```shell
 npm run test-storybook
 ```
