@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/WPMedia/wpds-ui-kit/compare/v0.4.5...v0.5.0) (2022-03-07)
+
+
+### Bug Fixes
+
+* checkbox bug with stitches props ([d1e510d](https://github.com/WPMedia/wpds-ui-kit/commit/d1e510d565e35b341de432911fc304c23728a33b))
+* disabled checkbox states ([e908a91](https://github.com/WPMedia/wpds-ui-kit/commit/e908a91f0c6f01d69022b209b1dd0ccc32da422d))
+
+
+
+
+
 ## [0.4.5](https://github.com/WPMedia/wpds-ui-kit/compare/v0.4.4...v0.4.5) (2022-03-04)
 
 **Note:** Version bump only for package @washingtonpost/wpds-checkbox
