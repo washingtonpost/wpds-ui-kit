@@ -19,8 +19,8 @@ export default {
       defaultValue: "secondary",
     },
     density: {
-      options: ["compact", "loose"],
-      defaultValue: "compact",
+      options: ["compact", "default"],
+      defaultValue: "default",
     },
     isOutline: {
       options: [true, false],
@@ -168,7 +168,7 @@ const Template = ({ children, ...args }) => (
       <Stack>
         <Component
           {...args}
-          density={"loose"}
+          density={"default"}
           isOutline
           variant="primary"
           icon="right"
@@ -177,7 +177,7 @@ const Template = ({ children, ...args }) => (
         </Component>
         <Component
           {...args}
-          density={"loose"}
+          density={"default"}
           isOutline
           variant="primary"
           icon="right"
@@ -189,7 +189,7 @@ const Template = ({ children, ...args }) => (
         </Component>
         <Component
           {...args}
-          density={"loose"}
+          density={"default"}
           icon="center"
           isOutline
           variant="primary"
@@ -207,7 +207,7 @@ const Template = ({ children, ...args }) => (
       >
         <Component
           {...args}
-          density={"loose"}
+          density={"default"}
           isOutline
           variant="secondary"
           icon="right"
@@ -216,7 +216,7 @@ const Template = ({ children, ...args }) => (
         </Component>
         <Component
           {...args}
-          density={"loose"}
+          density={"default"}
           isOutline
           variant="secondary"
           icon="right"
@@ -229,7 +229,7 @@ const Template = ({ children, ...args }) => (
         <Component
           {...args}
           icon="center"
-          density={"loose"}
+          density={"default"}
           isOutline
           variant="secondary"
         >
@@ -242,7 +242,7 @@ const Template = ({ children, ...args }) => (
       <Stack>
         <Component
           {...args}
-          density={"loose"}
+          density={"default"}
           isOutline
           variant="cta"
           icon="right"
@@ -251,7 +251,7 @@ const Template = ({ children, ...args }) => (
         </Component>
         <Component
           {...args}
-          density={"loose"}
+          density={"default"}
           isOutline
           variant="cta"
           icon="right"
@@ -263,7 +263,7 @@ const Template = ({ children, ...args }) => (
         </Component>
         <Component
           {...args}
-          density={"loose"}
+          density={"default"}
           icon="center"
           isOutline
           variant="cta"
@@ -279,7 +279,7 @@ const Template = ({ children, ...args }) => (
         <Component
           {...args}
           disabled
-          density={"loose"}
+          density={"default"}
           isOutline
           variant="cta"
           icon="right"
@@ -291,7 +291,7 @@ const Template = ({ children, ...args }) => (
           {...args}
           disabled
           icon="center"
-          density={"loose"}
+          density={"default"}
           isOutline
           variant="secondary"
         >

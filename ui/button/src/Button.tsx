@@ -59,7 +59,7 @@ export const Button = styled("button", {
       compact: {
         py: "$050",
       },
-      loose: {
+      default: {
         py: "$075",
       },
     },
@@ -95,14 +95,14 @@ export const Button = styled("button", {
   },
   defaultVariants: {
     variant: "secondary",
-    density: "compact",
+    density: "default",
     isOutline: false,
     icon: "left",
   },
   compoundVariants: [
     {
       icon: "center",
-      density: "loose",
+      density: "default",
       css: {
         padding: "$075",
         fontSize: "0",
