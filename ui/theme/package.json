@@ -1,6 +1,6 @@
 {
   "name": "@washingtonpost/wpds-theme",
-  "version": "0.4.4",
+  "version": "0.5.0",
   "description": "WPDS Theme and System",
   "author": "WPDS Support <wpds@washpost.com>",
   "homepage": "https://github.com/WPMedia/wpds-ui-kit#readme",
@@ -26,7 +26,9 @@
   "scripts": {
     "build:transform": "node build/transform.js",
     "build": "npm run build:transform && npx tsup src/index.ts --loader .ts=tsx --minify --format esm,cjs --dts --sourcemap --legacy-output --external react --clean @stitches/react",
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "dev": "tsup src/index.ts --format esm,cjs --watch --dts --legacy-output --external react",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
   "bugs": {
     "url": "https://github.com/WPMedia/wpds-ui-kit/issues"

@@ -1,6 +1,6 @@
 {
   "name": "@washingtonpost/wpds-button",
-  "version": "0.4.4",
+  "version": "0.5.0",
   "description": "WPDS Button",
   "author": "WPDS Support <wpds@washpost.com>",
   "homepage": "https://github.com/WPMedia/wpds-ui-kit#readme",
@@ -24,7 +24,9 @@
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
-    "build": "npx tsup src/index.ts --loader .ts=tsx --minify --format esm,cjs --dts --sourcemap --legacy-output --external react --clean"
+    "build": "tsup src/index.ts --loader .ts=tsx --minify --format esm,cjs --dts --sourcemap --legacy-output --external react --clean",
+    "dev": "tsup src/index.ts --format esm,cjs --watch --dts --legacy-output --external react",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
   "bugs": {
     "url": "https://github.com/WPMedia/wpds-ui-kit/issues"

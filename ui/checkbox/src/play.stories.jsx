@@ -1,6 +1,5 @@
 import * as React from "react";
 import { styled } from "@washingtonpost/wpds-theme";
-import { Box } from "@washingtonpost/wpds-box";
 import { Checkbox as Component } from ".";
 
 const variants = ["primary", "secondary", "cta"];
@@ -80,36 +79,23 @@ Play.storyName = "Checkbox";
 
 const ChromaticTemplate = () => (
   <>
-    <h4>Regular ol' checked states</h4>
+    <h4>Regular old checked states</h4>
     <HStack>
       <Component
-        defaultChecked
         checked
         variant="primary"
         data-testid="test-checkbox-primary"
       />
-      <Component defaultChecked checked variant="secondary" />
-      <Component defaultChecked checked variant="cta" />
+      <Component checked variant="secondary" />
+      <Component checked variant="cta" />
     </HStack>
-    <h4>Regular ol' indeterminate states</h4>
+    <h4>Regular old indeterminate states</h4>
     <HStack>
-      <Component
-        checked="indeterminate"
-        defaultChecked="indeterminate"
-        variant="primary"
-      />
-      <Component
-        checked="indeterminate"
-        defaultChecked="indeterminate"
-        variant="secondary"
-      />
-      <Component
-        checked="indeterminate"
-        defaultChecked="indeterminate"
-        variant="cta"
-      />
+      <Component checked="indeterminate" variant="primary" />
+      <Component checked="indeterminate" variant="secondary" />
+      <Component checked="indeterminate" variant="cta" />
     </HStack>
-    <h4>Regular ol' false states</h4>
+    <h4>Regular old false states</h4>
     <HStack>
       <Component variant="primary" />
       <Component variant="secondary" />
@@ -117,29 +103,14 @@ const ChromaticTemplate = () => (
     </HStack>
     <h4>isOutline states</h4>
     <HStack>
-      <Component defaultChecked checked variant="primary" isOutline />
-      <Component defaultChecked checked variant="secondary" isOutline />
-      <Component defaultChecked checked variant="cta" isOutline />
+      <Component checked variant="primary" isOutline />
+      <Component checked variant="secondary" isOutline />
+      <Component checked variant="cta" isOutline />
     </HStack>
     <HStack>
-      <Component
-        checked="indeterminate"
-        defaultChecked="indeterminate"
-        variant="primary"
-        isOutline
-      />
-      <Component
-        checked="indeterminate"
-        defaultChecked="indeterminate"
-        variant="secondary"
-        isOutline
-      />
-      <Component
-        checked="indeterminate"
-        defaultChecked="indeterminate"
-        variant="cta"
-        isOutline
-      />
+      <Component checked="indeterminate" variant="primary" isOutline />
+      <Component checked="indeterminate" variant="secondary" isOutline />
+      <Component checked="indeterminate" variant="cta" isOutline />
     </HStack>
     <HStack>
       <Component variant="primary" isOutline />
@@ -148,26 +119,14 @@ const ChromaticTemplate = () => (
     </HStack>
     <h4>087 states</h4>
     <HStack>
-      <Component defaultChecked checked size="087" variant="primary" />
-      <Component defaultChecked checked size="087" variant="secondary" />
-      <Component defaultChecked checked size="087" variant="cta" />
+      <Component checked size="087" variant="primary" />
+      <Component checked size="087" variant="secondary" />
+      <Component checked size="087" variant="cta" />
     </HStack>
     <HStack>
-      <Component
-        defaultChecked
-        checked
-        size="087"
-        variant="primary"
-        isOutline
-      />
-      <Component
-        defaultChecked
-        checked
-        size="087"
-        variant="secondary"
-        isOutline
-      />
-      <Component defaultChecked checked size="087" variant="cta" isOutline />
+      <Component checked size="087" variant="primary" isOutline />
+      <Component checked size="087" variant="secondary" isOutline />
+      <Component checked size="087" variant="cta" isOutline />
     </HStack>
     <HStack>
       <Component size="087" variant="primary" isOutline />
@@ -177,22 +136,13 @@ const ChromaticTemplate = () => (
     <h4>Disabled states</h4>
     <HStack>
       <Component disabled />
-      <Component disabled defaultChecked />
-      <Component
-        disabled
-        checked="indeterminate"
-        defaultChecked="indeterminate"
-      />
+      <Component disabled checked />
+      <Component disabled checked="indeterminate" />
     </HStack>
     <HStack>
       <Component disabled isOutline />
-      <Component disabled defaultChecked isOutline />
-      <Component
-        disabled
-        checked="indeterminate"
-        defaultChecked="indeterminate"
-        isOutline
-      />
+      <Component disabled checked isOutline />
+      <Component disabled checked="indeterminate" isOutline />
     </HStack>
   </>
 );
