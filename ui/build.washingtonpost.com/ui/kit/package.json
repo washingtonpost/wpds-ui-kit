@@ -1,6 +1,6 @@
 {
   "name": "@washingtonpost/wpds-ui-kit",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "WPDS UI Kit",
   "author": "WPDS Support <wpds@washpost.com>",
   "homepage": "https://github.com/WPMedia/wpds-ui-kit#readme",
@@ -32,15 +32,15 @@
     "url": "https://github.com/WPMedia/wpds-ui-kit/issues"
   },
   "dependencies": {
-    "@washingtonpost/wpds-alert-banner": "0.5.0",
-    "@washingtonpost/wpds-app-bar": "0.5.0",
-    "@washingtonpost/wpds-box": "0.5.0",
-    "@washingtonpost/wpds-button": "0.5.0",
-    "@washingtonpost/wpds-checkbox": "0.5.0",
-    "@washingtonpost/wpds-container": "0.5.0",
-    "@washingtonpost/wpds-icon": "0.5.0",
-    "@washingtonpost/wpds-theme": "0.5.0",
-    "@washingtonpost/wpds-visually-hidden": "0.5.0"
+    "@washingtonpost/wpds-alert-banner": "0.6.0",
+    "@washingtonpost/wpds-app-bar": "0.6.0",
+    "@washingtonpost/wpds-box": "0.6.0",
+    "@washingtonpost/wpds-button": "0.6.0",
+    "@washingtonpost/wpds-checkbox": "0.6.0",
+    "@washingtonpost/wpds-container": "0.6.0",
+    "@washingtonpost/wpds-icon": "0.6.0",
+    "@washingtonpost/wpds-theme": "0.6.0",
+    "@washingtonpost/wpds-visually-hidden": "0.6.0"
   },
   "devDependencies": {
     "tsup": "^5.11.13",
