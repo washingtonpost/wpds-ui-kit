@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.6.1](https://github.com/WPMedia/wpds-ui-kit/compare/v0.6.0...v0.6.1) (2022-03-09)
+
+
+### Bug Fixes
+
+* button hover style ([#74](https://github.com/WPMedia/wpds-ui-kit/issues/74)) ([e741bef](https://github.com/WPMedia/wpds-ui-kit/commit/e741bef9ca1e9f7b32133f115c1e0f1082907611))
+
+
+
+
+
 # [0.6.0](https://github.com/WPMedia/wpds-ui-kit/compare/v0.5.0...v0.6.0) (2022-03-09)
 
 
