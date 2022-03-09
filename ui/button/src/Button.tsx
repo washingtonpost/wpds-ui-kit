@@ -67,11 +67,6 @@ export const Button = styled("button", {
       true: {
         background: "none",
         border: "1px solid",
-        "@hover": {
-          "&:hover": {
-            background: theme.colors.alpha25,
-          },
-        },
       },
       false: {},
     },
@@ -115,6 +110,11 @@ export const Button = styled("button", {
       css: {
         background: "none",
         color: theme.colors.primary,
+        "@hover": {
+          "&:hover": {
+            background: theme.colors.alpha25,
+          },
+        },
       },
     },
     {
@@ -123,6 +123,11 @@ export const Button = styled("button", {
       css: {
         background: "none",
         color: theme.colors.secondary,
+        "@hover": {
+          "&:hover": {
+            background: theme.colors.alpha25,
+          },
+        },
       },
     },
     {
@@ -131,6 +136,11 @@ export const Button = styled("button", {
       css: {
         background: "none",
         color: theme.colors.cta,
+        "@hover": {
+          "&:hover": {
+            background: theme.colors.alpha25,
+          },
+        },
       },
     },
   ],
