@@ -18,9 +18,9 @@ export default {
       options: ["primary", "secondary", "cta"],
       defaultValue: "secondary",
     },
-    size: {
-      options: ["200", "250"],
-      defaultValue: "200",
+    density: {
+      options: ["compact", "default"],
+      defaultValue: "compact",
     },
     isOutline: {
       options: [true, false],
@@ -168,7 +168,7 @@ const Template = ({ children, ...args }) => (
       <Stack>
         <Component
           {...args}
-          size="250"
+          density={"default"}
           isOutline
           variant="primary"
           icon="right"
@@ -177,7 +177,7 @@ const Template = ({ children, ...args }) => (
         </Component>
         <Component
           {...args}
-          size="250"
+          density={"default"}
           isOutline
           variant="primary"
           icon="right"
@@ -189,7 +189,7 @@ const Template = ({ children, ...args }) => (
         </Component>
         <Component
           {...args}
-          size="250"
+          density={"default"}
           icon="center"
           isOutline
           variant="primary"
@@ -207,7 +207,7 @@ const Template = ({ children, ...args }) => (
       >
         <Component
           {...args}
-          size="250"
+          density={"default"}
           isOutline
           variant="secondary"
           icon="right"
@@ -216,7 +216,7 @@ const Template = ({ children, ...args }) => (
         </Component>
         <Component
           {...args}
-          size="250"
+          density={"default"}
           isOutline
           variant="secondary"
           icon="right"
@@ -229,7 +229,7 @@ const Template = ({ children, ...args }) => (
         <Component
           {...args}
           icon="center"
-          size="250"
+          density={"default"}
           isOutline
           variant="secondary"
         >
@@ -240,16 +240,34 @@ const Template = ({ children, ...args }) => (
       </Stack>
 
       <Stack>
-        <Component {...args} size="250" isOutline variant="cta" icon="right">
+        <Component
+          {...args}
+          density={"default"}
+          isOutline
+          variant="cta"
+          icon="right"
+        >
           {children}
         </Component>
-        <Component {...args} size="250" isOutline variant="cta" icon="right">
+        <Component
+          {...args}
+          density={"default"}
+          isOutline
+          variant="cta"
+          icon="right"
+        >
           <Icon size="100" label="">
             <Asset />
           </Icon>
           {children}
         </Component>
-        <Component {...args} size="250" icon="center" isOutline variant="cta">
+        <Component
+          {...args}
+          density={"default"}
+          icon="center"
+          isOutline
+          variant="cta"
+        >
           <Icon size="100" label="Icon label">
             <Asset />
           </Icon>
@@ -261,7 +279,7 @@ const Template = ({ children, ...args }) => (
         <Component
           {...args}
           disabled
-          size="250"
+          density={"default"}
           isOutline
           variant="cta"
           icon="right"
@@ -273,7 +291,7 @@ const Template = ({ children, ...args }) => (
           {...args}
           disabled
           icon="center"
-          size="250"
+          density={"default"}
           isOutline
           variant="secondary"
         >
