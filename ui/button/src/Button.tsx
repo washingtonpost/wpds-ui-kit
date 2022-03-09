@@ -95,7 +95,7 @@ export const Button = styled("button", {
   },
   defaultVariants: {
     variant: "secondary",
-    density: "default",
+    density: "compact",
     isOutline: false,
     icon: "left",
   },

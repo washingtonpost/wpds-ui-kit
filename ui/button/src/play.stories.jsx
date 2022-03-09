@@ -20,7 +20,7 @@ export default {
     },
     density: {
       options: ["compact", "default"],
-      defaultValue: "default",
+      defaultValue: "compact",
     },
     isOutline: {
       options: [true, false],
