@@ -102,7 +102,7 @@ export const darkTheme = createTheme(`${prefix}-dark`, {
 export const globalStyles = globalCss({
   ":root": {
     "--base": `${tokens.base}`,
-    fontSize: "calc((var(--base) / 16) * 100%)",
+    fontSize: `${tokens.base}`,
     lineHeight: "$meta",
   },
   "*": {
