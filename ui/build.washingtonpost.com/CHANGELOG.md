@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.6.2](https://github.com/WPMedia/wpds-ui-kit/compare/v0.6.1...v0.6.2) (2022-03-14)
+
+
+### Bug Fixes
+
+* font size in safari ([#75](https://github.com/WPMedia/wpds-ui-kit/issues/75)) ([af2d8da](https://github.com/WPMedia/wpds-ui-kit/commit/af2d8dac9956fd3e3613414ba2e43e69053a06a9))
+
+
+
+
+
 ## [0.6.1](https://github.com/WPMedia/wpds-ui-kit/compare/v0.6.0...v0.6.1) (2022-03-09)
 
 
