@@ -54,7 +54,7 @@
     "react-docgen-typescript": "^2.2.2",
     "size-limit": "^6.0.3",
     "start-server-and-test": "^1.14.0",
-    "storybook-addon-playroom": "^2.1.4",
+    "storybook-addon-playroom": "^3.0.0",
     "storybook-addon-themes": "^6.1.0",
     "storybook-dark-mode": "^1.0.9",
     "tsup": "^5.11.13",
