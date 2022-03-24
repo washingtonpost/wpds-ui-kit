@@ -3,6 +3,39 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.6.2](https://github.com/WPMedia/wpds-ui-kit/compare/v0.6.1...v0.6.2) (2022-03-14)
+
+
+### Bug Fixes
+
+* font size in safari ([#75](https://github.com/WPMedia/wpds-ui-kit/issues/75)) ([af2d8da](https://github.com/WPMedia/wpds-ui-kit/commit/af2d8dac9956fd3e3613414ba2e43e69053a06a9))
+
+
+
+
+
+## [0.6.1](https://github.com/WPMedia/wpds-ui-kit/compare/v0.6.0...v0.6.1) (2022-03-09)
+
+
+### Bug Fixes
+
+* button hover style ([#74](https://github.com/WPMedia/wpds-ui-kit/issues/74)) ([e741bef](https://github.com/WPMedia/wpds-ui-kit/commit/e741bef9ca1e9f7b32133f115c1e0f1082907611))
+
+
+
+
+
+# [0.6.0](https://github.com/WPMedia/wpds-ui-kit/compare/v0.5.0...v0.6.0) (2022-03-09)
+
+
+### Features
+
+* update to density prop for button from size ([#72](https://github.com/WPMedia/wpds-ui-kit/issues/72)) ([695bc58](https://github.com/WPMedia/wpds-ui-kit/commit/695bc58db3a5c1bcea2f4c92051038996f289257))
+
+
+
+
+
 # [0.5.0](https://github.com/WPMedia/wpds-ui-kit/compare/v0.4.5...v0.5.0) (2022-03-07)
 
 
