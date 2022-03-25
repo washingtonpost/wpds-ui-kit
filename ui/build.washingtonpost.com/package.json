@@ -58,7 +58,7 @@
     "storybook-addon-themes": "^6.1.0",
     "storybook-dark-mode": "^1.0.9",
     "tsup": "^5.11.13",
-    "turbo": "^1.1.4",
+    "turbo": "^1.1.10",
     "typescript": "4.5.5"
   },
   "workspaces": [
@@ -88,6 +88,8 @@
     "build-storybook": "npm run build:packages;build-storybook",
     "bootstrap": "lerna bootstrap --hoist;npx lerna link --force-local",
     "build": "npx lerna link --force-local;make build;",
+    "turbo:build": "turbo run build",
+    "turbo:build:force": "turbo run build --force",
     "playroom:start": "playroom start",
     "playroom:build": "playroom build",
     "test": "jest",

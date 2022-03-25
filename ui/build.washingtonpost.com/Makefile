@@ -2,7 +2,7 @@ localdev-storybook-in-nextjs:
 	npx start-storybook -p 6006 --preview-url=/storybook/iframe.html --quiet --ci --force-build-preview
 
 build: 
-	npx turbo run build
+	npm run turbo:build
 	npx build-storybook --output-dir ./app/public/storybook --preview-url /storybook/iframe.html --force-build-preview --quiet
 
 all-dev:
@@ -26,13 +26,13 @@ main-version:
 # create experimental release
 experimental-release:
 	make experimental-version
-	npx turbo run build --force
+	npm run turbo:build:force
 	make experimental-publish
 
 # create main release
 main-release:
 	make main-version
-	npx turbo run build --force
+	npm run turbo:build:force
 	make main-publish
 
 # create command for plop templates
