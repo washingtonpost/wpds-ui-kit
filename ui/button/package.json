@@ -4,7 +4,7 @@
   "description": "WPDS Button",
   "author": "WPDS Support <wpds@washpost.com>",
   "homepage": "https://github.com/WPMedia/wpds-ui-kit#readme",
-  "license": "ISC",
+  "license": "MIT",
   "source": "src/index.ts",
   "main": "dist/index.js",
   "module": "dist/esm/index.js",
