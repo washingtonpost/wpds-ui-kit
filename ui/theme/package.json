@@ -36,6 +36,9 @@
   "peerDependencies": {
     "@stitches/react": "*"
   },
+  "dependencies": {
+    "@stitches/react": "*"
+  },
   "devDependencies": {
     "tsup": "^5.11.13",
     "typescript": "4.5.5"
