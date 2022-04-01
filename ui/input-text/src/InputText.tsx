@@ -2,7 +2,7 @@ import * as React from "react";
 import * as LabelPrimitive from "@radix-ui/react-label";
 import { nanoid } from "nanoid";
 import { theme, styled } from "@washingtonpost/wpds-theme";
-import { Box } from "@washingtonpost/wpds-ui-kit";
+import { Box } from "@washingtonpost/wpds-box";
 import { Button } from "@washingtonpost/wpds-button";
 import { Icon } from "@washingtonpost/wpds-icon";
 import Search from "@washingtonpost/wpds-assets/asset/search";
