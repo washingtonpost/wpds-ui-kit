@@ -176,12 +176,12 @@ export interface InputTextProps
   /**
    * Text displayed below the input to describe the cause of the error
    */
-  errorMessage?: string;
+  errorMessage?: React.ReactNode;
 
   /**
    * Text displayed below the input to provide additional context
    */
-  helperText?: string;
+  helperText?: React.ReactNode;
 
   /**
    * The position of the icon in the input
