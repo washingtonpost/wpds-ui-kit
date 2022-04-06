@@ -5,10 +5,13 @@ import { theme, styled } from "@washingtonpost/wpds-theme";
 import { Box } from "@washingtonpost/wpds-box";
 import { Button } from "@washingtonpost/wpds-button";
 import { Icon } from "@washingtonpost/wpds-icon";
+import { VisuallyHidden } from "@washingtonpost/wpds-visually-hidden";
 import Search from "@washingtonpost/wpds-assets/asset/search";
 import Globe from "@washingtonpost/wpds-assets/asset/globe";
 import Phone from "@washingtonpost/wpds-assets/asset/phone";
 import Email from "@washingtonpost/wpds-assets/asset/email";
+
+const NAME = "InputText";
 
 const StyledContainer = styled(Box, {
   alignItems: "center",
@@ -22,7 +25,6 @@ const StyledContainer = styled(Box, {
   fontSize: theme.fontSizes["100"],
   fontWeight: theme.fontWeights.light,
   lineHeight: theme.lineHeights["125"],
-  marginBlockEnd: theme.sizes["100"],
 
   "&:focus-within": {
     borderColor: theme.colors.signal,
@@ -118,14 +120,39 @@ const IconContainer = styled("div", {
   },
 });
 
-const IconButton = styled(Button, {
+const ButtonIcon = styled(Button, {
   borderRadius: theme.radii["012"],
   marginInlineEnd: theme.space["050"],
 });
 
-type UnstyledInputProps = React.ComponentPropsWithRef<typeof UnstyledInput>;
+const HelperText = styled("div", {
+  color: theme.colors.accessible,
+  fontFamily: theme.fonts.meta,
+  fontSize: theme.fontSizes["075"],
+  fontWeight: theme.fontWeights.light,
+  lineHeight: theme.lineHeights["125"],
+  marginBlockStart: theme.space["025"],
+});
 
-interface InputTextInterface extends UnstyledInputProps {
+const ErrorMessage = styled("div", {
+  color: theme.colors.error,
+  fontFamily: theme.fonts.meta,
+  fontSize: theme.fontSizes["075"],
+  fontWeight: theme.fontWeights.light,
+  lineHeight: theme.lineHeights["125"],
+  marginBlockStart: theme.space["025"],
+});
+
+const RequiredIndicator = styled("span", {
+  color: theme.colors.error,
+});
+
+export interface InputTextProps
+  extends React.ComponentPropsWithRef<typeof UnstyledInput> {
+  /**
+   * Accessible text for button icon, required for right icons
+   */
+  buttonIconText?: string;
   /**
    * Used to insert Icons in the input, only a single child is accepted
    */
@@ -145,6 +172,16 @@ interface InputTextInterface extends UnstyledInputProps {
    * Indicates there is an error
    */
   error?: boolean;
+
+  /**
+   * Text displayed below the input to describe the cause of the error
+   */
+  errorMessage?: string;
+
+  /**
+   * Text displayed below the input to provide additional context
+   */
+  helperText?: string;
 
   /**
    * The position of the icon in the input
@@ -209,13 +246,16 @@ interface InputTextInterface extends UnstyledInputProps {
   value?: string;
 }
 
-export const InputText = React.forwardRef<HTMLInputElement, InputTextInterface>(
+export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
   (
     {
+      buttonIconText,
       children,
       defaultValue,
       disabled,
       error,
+      errorMessage,
+      helperText,
       icon = "none",
       id,
       label,
@@ -232,6 +272,10 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextInterface>(
     ref
   ) => {
     const { current: fieldId } = React.useRef(id || `wpds-input-${nanoid(6)}`);
+    const { current: helperId } = React.useRef(
+      `wpds-input-helper-${nanoid(6)}`
+    );
+    const { current: errorId } = React.useRef(`wpds-input-error-${nanoid(6)}`);
     const [isLabelFloating, setIsLabelFloating] = React.useState(false);
     const [isTouched, setIsTouched] = React.useState(false);
 
@@ -276,6 +320,9 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextInterface>(
           </Icon>
         );
         icon = "right";
+        if (!buttonIconText) {
+          buttonIconText = "Search";
+        }
         break;
       case "url":
         child = (
@@ -308,63 +355,70 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextInterface>(
     }
 
     return (
-      <StyledContainer
-        tabIndex={0}
-        isDisabled={disabled}
-        isInvalid={error}
-        isSuccessful={success}
-      >
-        {child && icon === "left" && (
-          <IconContainer isDisabled={disabled}>{child}</IconContainer>
-        )}
-        <LabelInputWrapper>
-          <UnstyledInput
-            defaultValue={defaultValue}
-            disabled={disabled}
-            id={fieldId}
-            onBlur={handleOnBlur}
-            onChange={handleOnChange}
-            onFocus={handleFocus}
-            ref={ref}
-            required={required}
-            type={type}
-            value={value}
-            {...rest}
-          />
-          <StyledLabel
-            isFloating={isLabelFloating}
-            isDisabled={disabled}
-            htmlFor={fieldId}
-          >
-            {label}
-            {required && (
-              <Box as="span" css={{ color: theme.colors.error }}>
-                *
-              </Box>
-            )}
-          </StyledLabel>
-        </LabelInputWrapper>
-        {child && icon === "right" && (
-          <IconButton
-            variant="primary"
-            isOutline
-            icon="center"
-            css={{
-              border: "none",
-              color: disabled
-                ? theme.colors.onDisabled
-                : theme.colors.accessible,
-            }}
-            onClick={handleButtonIconClick}
-          >
-            {child}
-          </IconButton>
-        )}
-      </StyledContainer>
+      <div>
+        <StyledContainer
+          isDisabled={disabled}
+          isInvalid={error}
+          isSuccessful={success}
+        >
+          {child && icon === "left" && (
+            <IconContainer isDisabled={disabled}>{child}</IconContainer>
+          )}
+          <LabelInputWrapper>
+            <StyledLabel
+              isFloating={isLabelFloating}
+              isDisabled={disabled}
+              htmlFor={fieldId}
+            >
+              {label}
+              {required && <RequiredIndicator>*</RequiredIndicator>}
+            </StyledLabel>
+            <UnstyledInput
+              defaultValue={defaultValue}
+              disabled={disabled}
+              id={fieldId}
+              onBlur={handleOnBlur}
+              onChange={handleOnChange}
+              onFocus={handleFocus}
+              ref={ref}
+              required={required}
+              type={type}
+              value={value}
+              aria-invalid={error}
+              aria-errormessage={error ? errorId : undefined}
+              aria-describedby={helperText ? helperId : undefined}
+              {...rest}
+            />
+          </LabelInputWrapper>
+          {child && icon === "right" && (
+            <ButtonIcon
+              variant="primary"
+              isOutline
+              icon="center"
+              css={{
+                border: "none",
+                color: disabled
+                  ? theme.colors.onDisabled
+                  : theme.colors.accessible,
+              }}
+              onClick={handleButtonIconClick}
+            >
+              <VisuallyHidden>{buttonIconText}</VisuallyHidden>
+              {child}
+            </ButtonIcon>
+          )}
+        </StyledContainer>
+        <div aria-live="polite">
+          {helperText && !errorMessage && (
+            <HelperText id={helperId}>{helperText}</HelperText>
+          )}
+          {errorMessage && (
+            <ErrorMessage id={errorId}>{errorMessage}</ErrorMessage>
+          )}
+        </div>
+      </div>
     );
   }
 );
 
-InputText.displayName = "InputText";
-type InputTextProps = React.ComponentProps<typeof InputText>;
-export type { InputTextProps, InputTextInterface };
+InputText.displayName = NAME;

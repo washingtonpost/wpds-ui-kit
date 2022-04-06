@@ -41,6 +41,7 @@
     "@washingtonpost/wpds-button": "*",
     "@washingtonpost/wpds-icon": "*",
     "@washingtonpost/wpds-assets": "*",
+    "@washingtonpost/wpds-visually-hidden": "*",
     "react": "^16.8.6 || ^17.0.2"
   },
   "dependencies": {
@@ -50,6 +51,7 @@
     "@washingtonpost/wpds-button": "*",
     "@washingtonpost/wpds-icon": "*",
     "@washingtonpost/wpds-assets": "*",
+    "@washingtonpost/wpds-visually-hidden": "*",
     "nanoid": "^3.3.2"
   }
 }
