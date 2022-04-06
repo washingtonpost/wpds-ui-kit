@@ -37,6 +37,9 @@ export default {
 const Template = (args) => <Component {...args} />;
 
 export const InputText = Template.bind({});
+InputText.parameters = {
+  chromatic: { disableSnapshot: true },
+};
 
 const Column = styled("div", {
   display: "flex",
@@ -116,7 +119,11 @@ const InteractionsTemplate = (args) => (
     </Component>
   </Column>
 );
+
 export const Interactions = InteractionsTemplate.bind({});
+Interactions.parameters = {
+  chromatic: { disableSnapshot: true },
+};
 
 // Function to emulate pausing between interactions
 function sleep(ms) {
