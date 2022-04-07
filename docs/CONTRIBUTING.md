@@ -70,3 +70,19 @@ npm run new-component NewComponentName
 ```
 
 [## Contribute a component](https://build.washingtonpost.com/resources/guides/contribute-a-component)
+
+## Typescript
+
+### FAQ
+
+### Why is Typescript throwing warnings about the `css` object in Stitches?
+
+VS Code is using a newer version (`4.6.X`) of Typescript that is currently incompatible with Stitches ([They are using 4.4.3](https://github.com/modulz/stitches/blob/0ebaf9f988871ac0d8d5f2b72f2a8042e0d1b56f/package.json#L53)). We are using `4.5.5`.
+
+We recommend adding this setting to your `.vscode/settings.json` file:
+
+```json
+"typescript.tsdk": "./node_modules/typescript/lib"
+```
+
+Also pick the TS version in the language server settings. It will appear when a TS file is opened.
