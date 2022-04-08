@@ -13,7 +13,9 @@ const Template = (args) => <Component {...args} />;
 
 export const InputPassword = Template.bind({});
 
-InputPassword.args = {};
+InputPassword.parameters = {
+  chromatic: { disableSnapshot: true },
+};
 
 const Column = styled("div", {
   display: "flex",
