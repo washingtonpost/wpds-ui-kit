@@ -19,6 +19,7 @@ const StyledContainer = styled(Box, {
   borderColor: theme.colors.subtle,
   borderStyle: "solid",
   borderWidth: "1px",
+  color: theme.colors.primary,
   backgroundColor: theme.colors.secondary,
   display: "flex",
   fontFamily: theme.fonts.meta,
@@ -62,6 +63,7 @@ const LabelInputWrapper = styled("div", {
 const UnstyledInput = styled("input", {
   backgroundColor: "transparent",
   border: "none",
+  color: "inherit",
   display: "block",
   fontSize: "inherit",
   lineHeight: "inherit",
@@ -238,7 +240,7 @@ export interface InputTextProps
    * Supported input element types
    * @default text
    */
-  type?: "text" | "search" | "url" | "tel" | "email";
+  type?: "text" | "search" | "url" | "tel" | "email" | "password";
 
   /**
    * The input element value for controlled components
