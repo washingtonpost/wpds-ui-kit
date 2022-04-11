@@ -1,5 +1,4 @@
 import * as React from "react";
-//import * as Theme from "@washingtonpost/wpds-theme";
 import { InputText } from "@washingtonpost/wpds-input-text";
 import { Icon } from "@washingtonpost/wpds-icon";
 import Hide from "@washingtonpost/wpds-assets/asset/hide";
@@ -28,7 +27,7 @@ interface InputPasswordProps
    * The input's label text, required for accessibility
    * @default Password
    */
-  label: string;
+  label?: string;
   /**
    * Accessible text for the show icon button
    * @default Show password text

@@ -192,9 +192,9 @@ export interface InputTextProps
   icon?: "left" | "right" | "none";
 
   /**
-   * The id for the underlying input element. Automatically generated if not provided
+   * The id for the underlying input element. Required for accessibility
    */
-  id?: string;
+  id: string;
 
   /**
    * The input's label text, required for accessibility
@@ -273,11 +273,14 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
     },
     ref
   ) => {
-    const { current: fieldId } = React.useRef(id || `wpds-input-${nanoid(6)}`);
-    const { current: helperId } = React.useRef(
-      `wpds-input-helper-${nanoid(6)}`
-    );
-    const { current: errorId } = React.useRef(`wpds-input-error-${nanoid(6)}`);
+    const [helperId, setHelperId] = React.useState<string | undefined>();
+    const [errorId, setErrorId] = React.useState<string | undefined>();
+
+    React.useEffect(() => {
+      setHelperId(`wpds-input-helper-${nanoid(6)}`);
+      setErrorId(`wpds-input-error-${nanoid(6)}`);
+    }, []);
+
     const [isLabelFloating, setIsLabelFloating] = React.useState(false);
     const [isTouched, setIsTouched] = React.useState(false);
 
@@ -370,7 +373,7 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
             <StyledLabel
               isFloating={isLabelFloating}
               isDisabled={disabled}
-              htmlFor={fieldId}
+              htmlFor={id}
             >
               {label}
               {required && <RequiredIndicator>*</RequiredIndicator>}
@@ -378,7 +381,7 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
             <UnstyledInput
               defaultValue={defaultValue}
               disabled={disabled}
-              id={fieldId}
+              id={id}
               onBlur={handleOnBlur}
               onChange={handleOnChange}
               onFocus={handleFocus}
