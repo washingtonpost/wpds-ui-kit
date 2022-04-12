@@ -37,6 +37,6 @@ updates:
     pull-request-branch-name:
       separator: "-"
     reviewers:
-      - "@WPMedia/core"
+      - "@washingtonpost/wpds"
     labels:
       - "dependencies"
