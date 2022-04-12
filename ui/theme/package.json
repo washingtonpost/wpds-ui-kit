@@ -3,7 +3,7 @@
   "version": "0.6.2",
   "description": "WPDS Theme and System",
   "author": "WPDS Support <wpds@washpost.com>",
-  "homepage": "https://github.com/WPMedia/wpds-ui-kit#readme",
+  "homepage": "https://github.com/washingtonpost/wpds-ui-kit#readme",
   "license": "MIT",
   "source": "src/index.ts",
   "main": "dist/index.js",
@@ -18,7 +18,7 @@
   "sideEffects": false,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/WPMedia/wpds-ui-kit.git"
+    "url": "git+https://github.com/washingtonpost/wpds-ui-kit.git"
   },
   "publishConfig": {
     "access": "public"
@@ -31,7 +31,7 @@
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
   "bugs": {
-    "url": "https://github.com/WPMedia/wpds-ui-kit/issues"
+    "url": "https://github.com/washingtonpost/wpds-ui-kit/issues"
   },
   "peerDependencies": {
     "@stitches/react": "*"
