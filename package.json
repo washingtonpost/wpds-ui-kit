@@ -106,7 +106,8 @@
     "lint": "eslint --ext .ts,.tsx ui/",
     "test-storybook": "test-storybook",
     "dev": "turbo run dev --no-cache --parallel --continue",
-    "clean": "turbo run clean && rm -rf node_modules"
+    "clean": "turbo run clean && rm -rf node_modules",
+    "preinstall": "npm i -g npm@8.3.0"
   },
   "engines": {
     "yarn": "yarn NO LONGER USED - use npm instead.",
