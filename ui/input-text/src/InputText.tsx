@@ -19,6 +19,7 @@ const StyledContainer = styled(Box, {
   borderColor: theme.colors.subtle,
   borderStyle: "solid",
   borderWidth: "1px",
+  color: theme.colors.primary,
   backgroundColor: theme.colors.secondary,
   display: "flex",
   fontFamily: theme.fonts.meta,
@@ -62,6 +63,7 @@ const LabelInputWrapper = styled("div", {
 const UnstyledInput = styled("input", {
   backgroundColor: "transparent",
   border: "none",
+  color: "inherit",
   display: "block",
   fontSize: "inherit",
   lineHeight: "inherit",
@@ -190,9 +192,9 @@ export interface InputTextProps
   icon?: "left" | "right" | "none";
 
   /**
-   * The id for the underlying input element. Automatically generated if not provided
+   * The id for the underlying input element. Required for accessibility
    */
-  id?: string;
+  id: string;
 
   /**
    * The input's label text, required for accessibility
@@ -238,7 +240,7 @@ export interface InputTextProps
    * Supported input element types
    * @default text
    */
-  type?: "text" | "search" | "url" | "tel" | "email";
+  type?: "text" | "search" | "url" | "tel" | "email" | "password";
 
   /**
    * The input element value for controlled components
@@ -271,11 +273,14 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
     },
     ref
   ) => {
-    const { current: fieldId } = React.useRef(id || `wpds-input-${nanoid(6)}`);
-    const { current: helperId } = React.useRef(
-      `wpds-input-helper-${nanoid(6)}`
-    );
-    const { current: errorId } = React.useRef(`wpds-input-error-${nanoid(6)}`);
+    const [helperId, setHelperId] = React.useState<string | undefined>();
+    const [errorId, setErrorId] = React.useState<string | undefined>();
+
+    React.useEffect(() => {
+      setHelperId(`wpds-input-helper-${nanoid(6)}`);
+      setErrorId(`wpds-input-error-${nanoid(6)}`);
+    }, []);
+
     const [isLabelFloating, setIsLabelFloating] = React.useState(false);
     const [isTouched, setIsTouched] = React.useState(false);
 
@@ -368,7 +373,7 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
             <StyledLabel
               isFloating={isLabelFloating}
               isDisabled={disabled}
-              htmlFor={fieldId}
+              htmlFor={id}
             >
               {label}
               {required && <RequiredIndicator>*</RequiredIndicator>}
@@ -376,7 +381,7 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
             <UnstyledInput
               defaultValue={defaultValue}
               disabled={disabled}
-              id={fieldId}
+              id={id}
               onBlur={handleOnBlur}
               onChange={handleOnChange}
               onFocus={handleFocus}
