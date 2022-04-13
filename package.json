@@ -68,17 +68,6 @@
   "dependencies": {
     "@radix-ui/react-checkbox": "latest",
     "@stitches/react": "^1.2.6",
-    "@washingtonpost/wpds-alert-banner": "file:ui/alert-banner",
-    "@washingtonpost/wpds-app-bar": "file:ui/app-bar",
-    "@washingtonpost/wpds-assets": "^1.5.0",
-    "@washingtonpost/wpds-box": "file:ui/box",
-    "@washingtonpost/wpds-button": "file:ui/button",
-    "@washingtonpost/wpds-checkbox": "file:ui/checkbox",
-    "@washingtonpost/wpds-container": "file:ui/container",
-    "@washingtonpost/wpds-icon": "file:ui/icon",
-    "@washingtonpost/wpds-theme": "file:ui/theme",
-    "@washingtonpost/wpds-ui-kit": "file:ui/kit",
-    "@washingtonpost/wpds-visually-hidden": "file:ui/visually-hidden",
     "esbuild": "^0.14.36",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
