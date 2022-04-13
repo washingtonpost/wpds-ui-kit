@@ -5,6 +5,6 @@ if [[ $VERCEL =~ "1" ]] ; then
     make building-storybook
   exit 0;
 else
-  echo ">> Skipping storybook build for Vercel..."
-  exit 1; 
+  echo ">> Skipping storybook"
+  exit 0; 
 fi
