@@ -87,7 +87,7 @@
     "build:packages": "make build",
     "storybook": "make start-storybook",
     "build-storybook": "npm run build:packages;build-storybook",
-    "bootstrap": "lerna bootstrap --hoist;npx lerna link --force-local",
+    "bootstrap": "lerna bootstrap --hoist",
     "build": "npx lerna link --force-local;make build;",
     "turbo:build": "turbo run build",
     "turbo:build:force": "turbo run build --force",
