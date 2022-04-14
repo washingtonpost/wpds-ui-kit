@@ -56,6 +56,5 @@
     "@washingtonpost/wpds-icon": "*",
     "@washingtonpost/wpds-theme": "*",
     "@washingtonpost/wpds-visually-hidden": "*"
-  },
-  "gitHead": "d0d2fe93d3ebb0abe4a7f8e0555cf032596bb31d"
+  }
 }

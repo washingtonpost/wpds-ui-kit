@@ -1,7 +1,9 @@
 {
   "name": "app",
   "version": "0.6.3",
-  "private": true,
+  "publishConfig": {
+    "access": "restricted"
+  },
   "description": "",
   "main": "index.js",
   "scripts": {
