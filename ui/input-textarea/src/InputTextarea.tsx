@@ -64,7 +64,7 @@ export interface InputTextareaProps
   defaultValue?: string;
   /** The underlying textarea element disabled attribute */
   disabled?: boolean;
-  /** if thee element has an error */
+  /** if the element has an error */
   error?: boolean;
   /** Text displayed below the input to describe the cause of the error */
   errorMessage?: React.ReactNode;
