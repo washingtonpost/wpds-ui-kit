@@ -86,7 +86,7 @@ const TextInputLabel = styled(InputLabel, {
   insetBlockStart: "0",
   insetInlineStart: "$050",
   position: "absolute",
-  transform: `translateY(110%)`,
+  transform: `translateY(${theme.space["100"]})`,
   variants: {
     isFloating: {
       true: {
