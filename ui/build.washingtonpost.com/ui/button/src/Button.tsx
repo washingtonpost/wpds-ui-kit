@@ -22,6 +22,11 @@ export const Button = styled("button", {
     color: "$onDisabled",
     backgroundColor: "$colors$disabled",
     borderColor: "$colors$onDisabled",
+    "@hover": {
+      "&:hover": {
+        backgroundColor: "$colors$disabled",
+      },
+    },
   },
 
   variants: {
