@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.6.4](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.6.3...v0.6.4) (2022-04-21)
+
+**Note:** Version bump only for package @washingtonpost/wpds-icon
+
+
+
+
+
 ## [0.6.3](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.6.2...v0.6.3) (2022-04-13)
 
 
