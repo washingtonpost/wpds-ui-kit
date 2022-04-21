@@ -67,7 +67,7 @@
   ],
   "dependencies": {
     "@radix-ui/react-checkbox": "latest",
-    "@washingtonpost/wpds-assets": "^1.5.0",
+    "@washingtonpost/wpds-assets": "^1.6.0",
     "@stitches/react": "^1.2.6",
     "esbuild": "^0.14.36",
     "react": "^17.0.2",
