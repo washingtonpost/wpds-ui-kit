@@ -15,6 +15,7 @@
       "@washingtonpost/wpds-alert-banner": ["./ui/alert-banner/src/*"],
       "@washingtonpost/wpds-button": ["./ui/button/src/*"],
       "@washingtonpost/wpds-checkbox": ["./ui/checkbox/src/*"],
+      "@washingtonpost/wpds-input-textarea": ["./ui/input-textarea/src/*"],
       "@emotion/core": ["./types/emotion.d.ts"]
     }
   }
