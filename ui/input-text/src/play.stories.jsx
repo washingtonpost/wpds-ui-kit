@@ -103,10 +103,12 @@ export const Chromatic = ChromaticTemplate.bind({});
 
 const InteractionsTemplate = (args) => (
   <Column>
-    <Component label="Field 1" />
-    <Component label="Field 2" />
+    <Component label="Field 1" name="field-1" id="field-1" />
+    <Component label="Field 2" name="field-2" id="field-2" />
     <Component
       label="Field 3"
+      name="field-3"
+      id="field-3"
       icon="right"
       onButtonIconClick={args.onButtonIconClick}
     >

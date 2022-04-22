@@ -6,8 +6,12 @@ import {
   Checkbox,
   Container,
   Button,
+  InputLabel,
   InputText,
   InputPassword,
+  InputTextarea,
+  HelperText,
+  ErrorMessage,
 } from "@washingtonpost/wpds-ui-kit";
 import Chart from "@washingtonpost/wpds-assets/asset/chart";
 import Settings from "@washingtonpost/wpds-assets/asset/settings";
@@ -47,8 +51,8 @@ function HomePage() {
       <Headline>Server Side Testing</Headline>
       <SubHeadline>Testing ground / playground</SubHeadline>
       <p>
-        All code in this app is meant for testing InputTexts that use objects
-        that are only available in JavaScript in the brower.
+        All code in this app is meant for testing components that use objects
+        that are only available in JavaScript in the browser.
       </p>
 
       <Stack>
@@ -119,16 +123,34 @@ function HomePage() {
           </>
         </HStack>
 
+        <h2>Input Shared</h2>
+        <HStack>
+          <InputLabel>Input label</InputLabel>
+          <HelperText>
+            Helper text <a href="#">with link</a>
+          </HelperText>
+          <ErrorMessage>
+            Error Message <strong>with formatting</strong>
+          </ErrorMessage>
+        </HStack>
+
         <h2>InputText</h2>
         <HStack>
-          <InputText label="Label" id="it-1" />
+          <InputText label="Label" name="it-1" id="it-1" />
           <InputText
             label="Label"
             helperText="Helper text"
             defaultValue="Input text"
+            name="it-2"
             id="it-2"
           />
-          <InputText label="Icon" defaultValue="Left" icon="left" id="it-3">
+          <InputText
+            label="Icon"
+            defaultValue="Left"
+            icon="left"
+            name="it-3"
+            id="it-3"
+          >
             <Icon label="">
               <Settings />
             </Icon>
@@ -138,6 +160,7 @@ function HomePage() {
             defaultValue="Right"
             icon="right"
             buttonIconText="Settings"
+            name="it-4"
             id="it-4"
           >
             <Icon label="">
@@ -150,17 +173,37 @@ function HomePage() {
             label="Type"
             defaultValue="Search"
             type="search"
+            name="it-5"
             id="it-5"
           />
-          <InputText label="Type" defaultValue="Url" type="url" id="it-6" />
-          <InputText label="Type" defaultValue="Tel" type="tel" id="it-7" />
-          <InputText label="Type" defaultValue="Email" type="email" id="it-8" />
+          <InputText
+            label="Type"
+            defaultValue="Url"
+            type="url"
+            name="it-6"
+            id="it-6"
+          />
+          <InputText
+            label="Type"
+            defaultValue="Tel"
+            type="tel"
+            name="it-7"
+            id="it-7"
+          />
+          <InputText
+            label="Type"
+            defaultValue="Email"
+            type="email"
+            name="it-8"
+            id="it-8"
+          />
         </HStack>
         <HStack>
           <InputText
             label="Behavior"
             defaultValue="Disabled"
             disabled
+            name="it-9"
             id="it-9"
           />
           <InputText
@@ -168,25 +211,39 @@ function HomePage() {
             defaultValue="Error"
             error
             errorMessage="Error Message"
+            name="it-10"
             id="it-10"
           />
           <InputText
             label="Behavior"
             defaultValue="Success"
             success
+            name="it-11"
             id="it-11"
           />
           <InputText
             label="Behavior"
             defaultValue="Required"
             required
+            name="it-12"
             id="it-12"
           />
         </HStack>
         <h2>InputPassword</h2>
         <HStack>
-          <InputPassword id="ip-1" />
-          <InputPassword id="ip-2" defaultValue="12345" />
+          <InputPassword name="ip-1" id="ip-1" />
+          <InputPassword name="ip-2" id="ip-2" defaultValue="12345" />
+        </HStack>
+
+        <h2>InputTextarea</h2>
+        <HStack>
+          <InputTextarea label="InputTextarea" name="ita-1" id="ita-1" />
+          <InputTextarea
+            label="InputTextarea"
+            name="ita-1"
+            id="ita-1"
+            defaultValue="With text content"
+          />
         </HStack>
       </Stack>
     </>
