@@ -1,9 +1,9 @@
-# TextArea
+# InputTextarea
 
 ```jsx
-import { TextArea } from "@washingtonpost/wpds-ui-kit";
+import { InputTextarea } from "@washingtonpost/wpds-ui-kit";
 
 function Component() {
-  return <TextArea />;
+  return <InputTextarea />;
 }
 ```
