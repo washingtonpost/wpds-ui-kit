@@ -1,7 +1,7 @@
 {
   "name": "@washingtonpost/wpds-error-message",
   "version": "0.8.0-experimental.1",
-  "description": "> TODO: description",
+  "description": "WPDS ErrorMessage",
   "author": "WPDS Support <wpds@washpost.com>",
   "homepage": "https://github.com/WPMedia/wpds-ui-kit#readme",
   "license": "MIT",
