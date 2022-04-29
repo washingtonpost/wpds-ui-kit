@@ -99,7 +99,6 @@
     "clean": "turbo run clean && rm -rf node_modules"
   },
   "engines": {
-    "yarn": "yarn NO LONGER USED - use npm instead.",
     "npm": "^8",
     "node": "^14"
   },
