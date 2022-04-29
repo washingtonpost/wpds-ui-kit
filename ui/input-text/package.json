@@ -61,5 +61,6 @@
     "@washingtonpost/wpds-theme": "0.8.0",
     "@washingtonpost/wpds-visually-hidden": "0.8.0",
     "nanoid": "^3.3.2"
-  }
+  },
+  "gitHead": "2d3767feec143e5224a179f51884b7e90534c699"
 }
