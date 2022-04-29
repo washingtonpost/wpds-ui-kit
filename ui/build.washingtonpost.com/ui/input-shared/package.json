@@ -1,9 +1,9 @@
 {
-  "name": "@washingtonpost/wpds-button",
+  "name": "@washingtonpost/wpds-input-shared",
   "version": "0.8.0-experimental.1",
-  "description": "WPDS Button",
+  "description": "WPDS InputShared",
   "author": "WPDS Support <wpds@washpost.com>",
-  "homepage": "https://github.com/washingtonpost/wpds-ui-kit#readme",
+  "homepage": "https://github.com/WPMedia/wpds-ui-kit#readme",
   "license": "MIT",
   "source": "src/index.ts",
   "main": "dist/index.js",
@@ -20,16 +20,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/washingtonpost/wpds-ui-kit.git"
+    "url": "git+https://github.com/WPMedia/wpds-ui-kit.git"
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
-    "build": "tsup src/index.ts --loader .ts=tsx --minify --format esm,cjs --dts --sourcemap --legacy-output --external react --clean",
+    "build": "tsup src/index.ts --loader .ts=tsx --minify --format esm,cjs --dts --sourcemap --legacy-output --external react",
     "dev": "tsup src/index.ts --format esm,cjs --watch --dts --legacy-output --external react",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
   "bugs": {
-    "url": "https://github.com/washingtonpost/wpds-ui-kit/issues"
+    "url": "https://github.com/WPMedia/wpds-ui-kit/issues"
   },
   "devDependencies": {
     "tsup": "^5.11.13",
@@ -40,8 +40,6 @@
     "react": "^16.8.6 || ^17.0.2"
   },
   "dependencies": {
-    "@washingtonpost/wpds-theme": "0.8.0-experimental.1",
-    "react": "^16.8.6 || ^17.0.2"
-  },
-  "gitHead": "d0d2fe93d3ebb0abe4a7f8e0555cf032596bb31d"
+    "@washingtonpost/wpds-theme": "0.8.0-experimental.1"
+  }
 }
