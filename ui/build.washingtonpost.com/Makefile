@@ -24,7 +24,7 @@ main-publish:
 	npx lerna publish from-git --yes --no-git-reset --no-verify-access
 
 main-version:
-	npx lerna version --conventional-commits --yes --force-publish
+	npx lerna version --conventional-commits --conventional-graduate --yes --force-publish
 
 # create experimental release
 experimental-release:
