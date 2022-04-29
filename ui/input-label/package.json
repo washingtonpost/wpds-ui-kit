@@ -1,6 +1,6 @@
 {
   "name": "@washingtonpost/wpds-input-label",
-  "version": "0.8.0-experimental.1",
+  "version": "0.8.0-experimental.2",
   "description": "WPDS InputLabel",
   "author": "WPDS Support <wpds@washpost.com>",
   "homepage": "https://github.com/WPMedia/wpds-ui-kit#readme",
@@ -41,6 +41,6 @@
   },
   "dependencies": {
     "@radix-ui/react-label": "^0.1.5",
-    "@washingtonpost/wpds-theme": "0.8.0-experimental.1"
+    "@washingtonpost/wpds-theme": "0.8.0-experimental.2"
   }
 }
