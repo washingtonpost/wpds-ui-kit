@@ -1,6 +1,6 @@
 {
   "name": "@washingtonpost/wpds-input-text",
-  "version": "0.8.0-experimental.2",
+  "version": "0.8.0",
   "description": "WPDS InputText",
   "author": "WPDS Support <wpds@washpost.com>",
   "homepage": "https://github.com/WPMedia/wpds-ui-kit#readme",
@@ -51,15 +51,15 @@
   "dependencies": {
     "@radix-ui/react-label": "^0.1.5",
     "@washingtonpost/wpds-assets": "*",
-    "@washingtonpost/wpds-box": "0.8.0-experimental.2",
-    "@washingtonpost/wpds-button": "0.8.0-experimental.2",
-    "@washingtonpost/wpds-error-message": "0.8.0-experimental.2",
-    "@washingtonpost/wpds-helper-text": "0.8.0-experimental.2",
-    "@washingtonpost/wpds-icon": "0.8.0-experimental.2",
-    "@washingtonpost/wpds-input-label": "0.8.0-experimental.2",
-    "@washingtonpost/wpds-input-shared": "0.8.0-experimental.2",
-    "@washingtonpost/wpds-theme": "0.8.0-experimental.2",
-    "@washingtonpost/wpds-visually-hidden": "0.8.0-experimental.2",
+    "@washingtonpost/wpds-box": "0.8.0",
+    "@washingtonpost/wpds-button": "0.8.0",
+    "@washingtonpost/wpds-error-message": "0.8.0",
+    "@washingtonpost/wpds-helper-text": "0.8.0",
+    "@washingtonpost/wpds-icon": "0.8.0",
+    "@washingtonpost/wpds-input-label": "0.8.0",
+    "@washingtonpost/wpds-input-shared": "0.8.0",
+    "@washingtonpost/wpds-theme": "0.8.0",
+    "@washingtonpost/wpds-visually-hidden": "0.8.0",
     "nanoid": "^3.3.2"
   }
 }
