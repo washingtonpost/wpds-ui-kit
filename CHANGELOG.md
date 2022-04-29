@@ -5,49 +5,22 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 # [0.8.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.8.0-experimental.2...v0.8.0) (2022-04-29)
 
-**Note:** Version bump only for package root
+## What's Changed
 
+### New 💯 
+* feat: add new InputText component by @wp-aberg in https://github.com/washingtonpost/wpds-ui-kit/pull/83
+* feat: add InputPassword component by @wp-aberg in https://github.com/washingtonpost/wpds-ui-kit/pull/86
+* Input textarea by @wp-aberg in https://github.com/washingtonpost/wpds-ui-kit/pull/93
 
+### Bug fixes 🐛 
 
+* Fix pubs by @artmsilva in https://github.com/washingtonpost/wpds-ui-kit/pull/85
+* Export issues by @wp-aberg in https://github.com/washingtonpost/wpds-ui-kit/pull/98
 
+## New Contributors
+* @wp-aberg made their first contribution in https://github.com/washingtonpost/wpds-ui-kit/pull/83
 
-# [0.8.0-experimental.2](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.6.5...v0.8.0-experimental.2) (2022-04-29)
-
-
-### Features
-
-* add compoent names to package descripton ([57f9c6c](https://github.com/washingtonpost/wpds-ui-kit/commit/57f9c6cc57f15b290593aad22cd436054eb25256))
-
-
-
-# [0.8.0-experimental.1](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.8.0-experimental.0...v0.8.0-experimental.1) (2022-04-28)
-
-
-### Bug Fixes
-
-* ensure all component class dependencies  in ui-kit ([bd9a862](https://github.com/washingtonpost/wpds-ui-kit/commit/bd9a862b75451d5ff9e5dcdbd2600dfd8e0557c4))
-
-
-
-# [0.8.0-experimental.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.6.4...v0.8.0-experimental.0) (2022-04-22)
-
-
-### Features
-
-* add InputPassword component ([e03ab07](https://github.com/washingtonpost/wpds-ui-kit/commit/e03ab07e904a1b0bc6762b9a1ddd2cf8f920f0aa))
-* add new InputText component ([e3fbc61](https://github.com/washingtonpost/wpds-ui-kit/commit/e3fbc6187ffa798306b123e56004932d6fcb0380))
-
-
-
-# [0.7.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.6.2...v0.7.0) (2022-04-07)
-
-
-### Features
-
-* add new InputText component  ([74042b2](https://github.com/washingtonpost/wpds-ui-kit/commit/74042b2463b2cc09336c20bcbbd28d789bd75194))
-
-
-
+**Full Changelog**: https://github.com/washingtonpost/wpds-ui-kit/compare/v0.6.5...v0.8.0
 
 
 ## [0.6.5](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.6.4...v0.6.5) (2022-04-29)
