@@ -15,10 +15,10 @@ start-storybook:
 	start-storybook -p 6006 --quiet --ci
 
 experimental-version:
-	npx lerna version --preid=experimental --sign-git-tag=experimental --no-changelog --yes --force-publish
+	npx lerna version --conventional-commits --conventional-prerelease  --preid=experimental --sign-git-tag=experimental --no-changelog --yes --force-publish
 
 experimental-publish:
-	npx lerna publish from-package --dist-tag experimental --yes
+	npx lerna publish from-package --dist-tag experimental --yes --no-verify-access
 
 main-publish: 
 	npx lerna publish from-git --yes --no-git-reset --no-verify-access
