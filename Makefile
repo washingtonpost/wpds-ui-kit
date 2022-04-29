@@ -3,6 +3,9 @@ localdev-storybook-in-nextjs:
 
 build: 
 	npm run turbo:build
+	bash scripts/vercel-build.sh
+
+building-storybook:
 	npx build-storybook --output-dir ./app/public/storybook --preview-url /storybook/iframe.html --force-build-preview --quiet
 
 all-dev:

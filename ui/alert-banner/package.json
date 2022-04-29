@@ -3,7 +3,7 @@
   "version": "0.8.0-experimental.1",
   "description": "WPDS Alert Banner",
   "author": "WPDS Support <wpds@washpost.com>",
-  "homepage": "https://github.com/WPMedia/wpds-ui-kit#readme",
+  "homepage": "https://github.com/washingtonpost/wpds-ui-kit#readme",
   "license": "MIT",
   "source": "src/index.ts",
   "main": "dist/index.js",
@@ -20,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/WPMedia/wpds-ui-kit.git"
+    "url": "git+https://github.com/washingtonpost/wpds-ui-kit.git"
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
@@ -29,7 +29,7 @@
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
   "bugs": {
-    "url": "https://github.com/WPMedia/wpds-ui-kit/issues"
+    "url": "https://github.com/washingtonpost/wpds-ui-kit/issues"
   },
   "devDependencies": {
     "tsup": "^5.11.13",
@@ -37,7 +37,7 @@
   },
   "peerDependencies": {
     "@washingtonpost/wpds-app-bar": "*",
-    "@washingtonpost/wpds-assets": "^1.2.1",
+    "@washingtonpost/wpds-assets": "^1.6.0",
     "@washingtonpost/wpds-button": "*",
     "@washingtonpost/wpds-container": "*",
     "@washingtonpost/wpds-icon": "*",
@@ -46,7 +46,7 @@
   },
   "dependencies": {
     "@washingtonpost/wpds-app-bar": "0.8.0-experimental.1",
-    "@washingtonpost/wpds-assets": "^1.2.1",
+    "@washingtonpost/wpds-assets": "^1.6.0",
     "@washingtonpost/wpds-button": "0.8.0-experimental.1",
     "@washingtonpost/wpds-container": "0.8.0-experimental.1",
     "@washingtonpost/wpds-icon": "0.8.0-experimental.1",

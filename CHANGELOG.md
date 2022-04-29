@@ -3,6 +3,40 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.6.5](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.6.4...v0.6.5) (2022-04-29)
+
+
+### Bug Fixes
+
+* remove yarn from engines in package.json ([#99](https://github.com/washingtonpost/wpds-ui-kit/issues/99)) ([14ae782](https://github.com/washingtonpost/wpds-ui-kit/commit/14ae7824d2965f5179b5becbe3023c415c40246c))
+
+
+
+
+
+## [0.6.4](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.6.3...v0.6.4) (2022-04-21)
+
+
+### Bug Fixes
+
+* disabled button doesn't change background on hover ([b6f3680](https://github.com/washingtonpost/wpds-ui-kit/commit/b6f3680a54ce77e792ead87e9f78d39a263ffe41))
+
+
+
+
+
+## [0.6.3](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.6.2...v0.6.3) (2022-04-13)
+
+
+### Bug Fixes
+
+* change Stitches.PropertyValue type to "margin" ([3bb9779](https://github.com/washingtonpost/wpds-ui-kit/commit/3bb9779b4bdf3d0419b578f2c04a68bfd5b1c13f))
+* update license to MIT ([d20aa68](https://github.com/washingtonpost/wpds-ui-kit/commit/d20aa68c3bf0ef65fdaf05981ae993a63e3380ea))
+
+
+
+
+
 ## [0.6.2](https://github.com/WPMedia/wpds-ui-kit/compare/v0.6.1...v0.6.2) (2022-03-14)
 
 

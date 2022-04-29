@@ -62,11 +62,11 @@ const WPDS = stitches.createStitches({
       paddingTop: value,
       paddingBottom: value,
     }),
-    my: (value: Stitches.PropertyValue<"padding">) => ({
+    my: (value: Stitches.PropertyValue<"margin">) => ({
       marginTop: value,
       marginBottom: value,
     }),
-    mx: (value: Stitches.PropertyValue<"padding">) => ({
+    mx: (value: Stitches.PropertyValue<"margin">) => ({
       marginLeft: value,
       marginRight: value,
     }),
