@@ -5,3 +5,4 @@
 // 	const title = page.locator("[data-testid=skip-link]");
 // 	await expect(title).toHaveText("Hello, World!");
 // });
+export {};
