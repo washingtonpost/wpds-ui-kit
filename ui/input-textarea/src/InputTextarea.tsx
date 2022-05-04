@@ -36,6 +36,7 @@ const InputTextareaCSS = Theme.css({
 const TextAreaLabel = Theme.styled(InputLabel, {
   insetBlockStart: "$050",
   insetInlineStart: "$050",
+  pointerEvents: "none",
   position: "absolute",
   variants: {
     isFloating: {
