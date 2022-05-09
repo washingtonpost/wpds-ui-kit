@@ -13,11 +13,13 @@ const ContainerCSS = Theme.css({
 });
 
 const StyledRadioButton = Theme.styled(RadioGroupPrimitive.Item, {
+  borderColor: Theme.theme.colors.subtle,
   borderStyle: "solid",
+  borderRadius: "50%",
   borderWidth: "1px",
+  cursor: "pointer",
   width: 20,
   height: 20,
-  borderRadius: "50%",
   "&:focus": { borderColor: Theme.theme.colors.cta },
   "&:disabled": {
     backgroundColor: Theme.theme.colors.disabled,
@@ -27,15 +29,21 @@ const StyledRadioButton = Theme.styled(RadioGroupPrimitive.Item, {
     variant: {
       primary: {
         backgroundColor: Theme.theme.colors.onPrimary,
-        borderColor: Theme.theme.colors.primary,
+        "&[aria-checked='true']:enabled:not(:focus)": {
+          borderColor: Theme.theme.colors.primary,
+        },
       },
       secondary: {
         backgroundColor: Theme.theme.colors.onSecondary,
-        borderColor: Theme.theme.colors.secondary,
+        "&[aria-checked='true']:enabled:not(:focus)": {
+          borderColor: Theme.theme.colors.secondary,
+        },
       },
       cta: {
         backgroundColor: Theme.theme.colors.onPrimary,
-        borderColor: Theme.theme.colors.cta,
+        "&[aria-checked='true']:enabled:not(:focus)": {
+          borderColor: Theme.theme.colors.cta,
+        },
       },
     },
     isOutline: {
@@ -46,6 +54,9 @@ const StyledRadioButton = Theme.styled(RadioGroupPrimitive.Item, {
     isInvalid: {
       true: {
         borderColor: Theme.theme.colors.error,
+        "&[aria-checked='true']:enabled:not(:focus)": {
+          borderColor: Theme.theme.colors.error,
+        },
       },
     },
   },
@@ -94,6 +105,11 @@ const StyledRadioIndicator = Theme.styled(RadioGroupPrimitive.Indicator, {
   },
 });
 
+const labelCSS = {
+  paddingInlineStart: Theme.theme.space["050"],
+  cursor: "pointer",
+};
+
 interface RadioButtonProps
   extends React.ComponentProps<typeof StyledRadioButton> {
   /** displays error state with colored border */
@@ -130,10 +146,7 @@ export const RadioButton = React.forwardRef<
         >
           <StyledRadioIndicator variant={variant} isDisabled={disabled} />
         </StyledRadioButton>
-        <InputLabel
-          htmlFor={id}
-          css={{ paddingInlineStart: Theme.theme.space["050"] }}
-        >
+        <InputLabel htmlFor={id} css={labelCSS}>
           {label}
         </InputLabel>
       </div>
