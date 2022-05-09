@@ -1,5 +1,7 @@
 # ESLint Plugin
 
+[Docs](https://build.washingtonpost.com/resources)
+
 WPDS Linting rules
 
 1. **theme-colors** - looks for colors properties in style objects that use hex values and suggests a design token replacement.
