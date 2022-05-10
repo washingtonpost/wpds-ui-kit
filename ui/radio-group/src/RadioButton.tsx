@@ -13,6 +13,7 @@ const ContainerCSS = Theme.css({
 });
 
 const StyledRadioButton = Theme.styled(RadioGroupPrimitive.Item, {
+  backgroundColor: Theme.theme.colors.onPrimary,
   borderColor: Theme.theme.colors.subtle,
   borderStyle: "solid",
   borderRadius: "50%",
@@ -28,19 +29,17 @@ const StyledRadioButton = Theme.styled(RadioGroupPrimitive.Item, {
   variants: {
     variant: {
       primary: {
-        backgroundColor: Theme.theme.colors.onPrimary,
         "&[aria-checked='true']:enabled:not(:focus)": {
           borderColor: Theme.theme.colors.primary,
         },
       },
       secondary: {
-        backgroundColor: Theme.theme.colors.onSecondary,
         "&[aria-checked='true']:enabled:not(:focus)": {
           borderColor: Theme.theme.colors.secondary,
+          backgroundColor: Theme.theme.colors.onSecondary,
         },
       },
       cta: {
-        backgroundColor: Theme.theme.colors.onPrimary,
         "&[aria-checked='true']:enabled:not(:focus)": {
           borderColor: Theme.theme.colors.cta,
         },
