@@ -196,7 +196,7 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
     }, []);
 
     const [isFloating, handleOnFocus, handleOnBlur, handleOnChange] =
-      useFloating(value || defaultValue, onFocus, onChange, onBlur);
+      useFloating(value || defaultValue, onFocus, onBlur, onChange);
 
     function handleButtonIconClick(event) {
       onButtonIconClick && onButtonIconClick(event);
