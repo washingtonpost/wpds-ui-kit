@@ -36,6 +36,8 @@ const StyledRadioButton = Theme.styled(RadioGroupPrimitive.Item, {
       secondary: {
         "&[aria-checked='true']:enabled:not(:focus)": {
           borderColor: Theme.theme.colors.secondary,
+        },
+        "&[aria-checked='true']:enabled": {
           backgroundColor: Theme.theme.colors.onSecondary,
         },
       },
