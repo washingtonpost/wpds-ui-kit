@@ -12,6 +12,9 @@ import {
   InputTextarea,
   HelperText,
   ErrorMessage,
+  RadioGroup,
+  RadioButton,
+  css,
 } from "@washingtonpost/wpds-ui-kit";
 import Chart from "@washingtonpost/wpds-assets/asset/chart";
 import Settings from "@washingtonpost/wpds-assets/asset/settings";
@@ -244,6 +247,72 @@ function HomePage() {
             id="ita-1"
             defaultValue="With text content"
           />
+        </HStack>
+
+        <h2>RadioGroup</h2>
+        <HStack>
+          <RadioGroup legend="Primary" variant="primary" name="pri">
+            <RadioButton label="Option 1" value="opt1" id="p-opt1" checked />
+            <RadioButton label="Option 2" value="opt2" id="p-opt2" />
+          </RadioGroup>
+          <RadioGroup legend="Secondary" variant="secondary" name="sec">
+            <RadioButton label="Option 1" value="opt1" id="s-opt1" checked />
+            <RadioButton label="Option 2" value="opt2" id="s-opt2" />
+          </RadioGroup>
+          <RadioGroup legend="CTA" variant="cta" name="cta">
+            <RadioButton label="Option 1" value="opt1" id="c-opt1" checked />
+            <RadioButton label="Option 2" value="opt2" id="c-opt2" />
+          </RadioGroup>
+        </HStack>
+        <HStack>
+          <RadioGroup
+            legend="Primary - outline"
+            variant="primary"
+            name="pri"
+            isOutline
+          >
+            <RadioButton label="Option 1" value="opt1" id="p-opt1" checked />
+            <RadioButton label="Option 2" value="opt2" id="p-opt2" />
+          </RadioGroup>
+          <div
+            className={css({
+              backgroundColor: "$onSecondary",
+              padding: "$025",
+            })()}
+          >
+            <RadioGroup
+              legend={
+                <span className={css({ color: "$secondary" })()}>
+                  Secondary - outline
+                </span>
+              }
+              variant="secondary"
+              name="sec"
+              isOutline
+            >
+              <RadioButton label="Option 1" value="opt1" id="s-opt1" checked />
+              <RadioButton label="Option 2" value="opt2" id="s-opt2" />
+            </RadioGroup>
+          </div>
+          <RadioGroup legend="CTA - outline" variant="cta" name="cta" isOutline>
+            <RadioButton label="Option 1" value="opt1" id="c-opt1" checked />
+            <RadioButton label="Option 2" value="opt2" id="c-opt2" />
+          </RadioGroup>
+        </HStack>
+        <HStack>
+          <RadioGroup legend="Disabled" name="dis" disabled>
+            <RadioButton label="Option 1" value="opt1" id="d-opt1" checked />
+            <RadioButton label="Option 2" value="opt2" id="d-opt2" />
+          </RadioGroup>
+          <RadioGroup
+            legend="Error"
+            name="err"
+            error
+            errorMessage="Error message"
+          >
+            <RadioButton label="Option 1" value="opt1" id="e-opt1" checked />
+            <RadioButton label="Option 2" value="opt2" id="e-opt2" />
+          </RadioGroup>
         </HStack>
       </Stack>
     </>

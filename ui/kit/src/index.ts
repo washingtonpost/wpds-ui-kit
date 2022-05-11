@@ -1,5 +1,7 @@
 // insert new component exports here
 export * from "@washingtonpost/eslint-plugin-wpds";
+export * from "@washingtonpost/wpds-fieldset";
+export * from "@washingtonpost/wpds-radio-group";
 export * from "@washingtonpost/wpds-helper-text";
 export * from "@washingtonpost/wpds-error-message";
 export * from "@washingtonpost/wpds-input-label";
