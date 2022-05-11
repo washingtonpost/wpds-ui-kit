@@ -1,5 +1,5 @@
 {
-  "name": "app",
+  "name": "@washingtonpost/wpds-test-app",
   "version": "0.9.0-experimental.0",
   "publishConfig": {
     "access": "restricted"
