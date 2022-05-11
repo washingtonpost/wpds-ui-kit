@@ -32,6 +32,10 @@ RadioGroup.argTypes = {
   },
 };
 
+RadioGroup.parameters = {
+  chromatic: { disableSnapshot: true },
+};
+
 const Column = styled("div", {
   display: "flex",
   flexDirection: "column",
@@ -67,6 +71,9 @@ const ControlledTemplate = () => {
 };
 
 export const Controlled = ControlledTemplate.bind({});
+Controlled.parameters = {
+  chromatic: { disableSnapshot: true },
+};
 
 const ChromaticTemplate = () => (
   <Column>
