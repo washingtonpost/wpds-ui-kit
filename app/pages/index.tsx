@@ -15,6 +15,7 @@ import {
   RadioGroup,
   RadioButton,
   css,
+  Divider,
 } from "@washingtonpost/wpds-ui-kit";
 import Chart from "@washingtonpost/wpds-assets/asset/chart";
 import Settings from "@washingtonpost/wpds-assets/asset/settings";
@@ -314,6 +315,8 @@ function HomePage() {
             <RadioButton label="Option 2" value="opt2" id="e-opt2" />
           </RadioGroup>
         </HStack>
+        <h2>Divider</h2>
+        <Divider />
       </Stack>
     </>
   );
