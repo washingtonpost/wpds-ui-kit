@@ -80,16 +80,16 @@ const StyledAlertBanner = styled(AppBar, {
     /** 4 predefined alert banners each tied to our symantic messaging on our site. They are Warning, Information, Success, and Error. */
     variant: {
       error: {
-        background: theme.colors.red300,
+        background: theme.colors.red600,
       },
       success: {
-        background: theme.colors.green300,
+        background: theme.colors.green600,
       },
       warning: {
-        background: theme.colors.orange300,
+        background: theme.colors.orange600,
       },
       information: {
-        background: theme.colors.blue300,
+        background: theme.colors.blue600,
       },
     },
     /** The alert banner can be permanent or dismissable. */
