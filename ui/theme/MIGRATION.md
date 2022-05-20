@@ -2,7 +2,7 @@
 
 ---
 
-## Integration of our new color palette
+## Integration of our new color palette Q2 2022
 
 ### Why the change to color
 
