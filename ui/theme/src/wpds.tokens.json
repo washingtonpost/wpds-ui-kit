@@ -898,7 +898,7 @@
       "secondary": {
         "value": "{gray700}",
         "description": "The color when its not needed to be primary",
-        "stitches": "$gray600"
+        "stitches": "$gray700"
       },
       "cta": {
         "value": "{blue100}",
@@ -946,9 +946,9 @@
         "stitches": "$blue200"
       },
       "onPrimary": {
-        "value": "{gray600}",
+        "value": "{gray700}",
         "description": "When elements are applied to Primary",
-        "stitches": "$gray600"
+        "stitches": "$gray700"
       },
       "onSecondary": {
         "value": "{gray20}",
@@ -956,9 +956,9 @@
         "stitches": "$gray20"
       },
       "onCta": {
-        "value": "{gray600-static}",
+        "value": "{gray700-static}",
         "description": "When elements applied on CTA",
-        "stitches": "$gray600-static"
+        "stitches": "$gray700-static"
       },
       "onDisabled": {
         "value": "{alpha50}",
@@ -966,9 +966,9 @@
         "stitches": "$alpha50"
       },
       "onMessage": {
-        "value": "{gray600-static}",
+        "value": "{gray700-static}",
         "description": "Used on signal, warning, error and success colors",
-        "stitches": "$gray600-static"
+        "stitches": "$gray700-static"
       }
     }
   },
