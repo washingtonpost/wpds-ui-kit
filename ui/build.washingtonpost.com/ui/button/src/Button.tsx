@@ -55,7 +55,7 @@ export const Button = styled("button", {
         color: theme.colors.onCta,
         "@hover": {
           "&:hover": {
-            background: theme.colors.vividBlue80,
+            background: theme.colors.blue80,
           },
         },
       },
