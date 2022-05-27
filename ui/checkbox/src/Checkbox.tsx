@@ -2,8 +2,7 @@ import * as React from "react";
 
 import { theme, styled } from "@washingtonpost/wpds-theme";
 
-import Check from "@washingtonpost/wpds-assets/asset/check";
-import Indeterminate from "@washingtonpost/wpds-assets/asset/indeterminate";
+import { Check, Indeterminate } from "@washingtonpost/wpds-assets";
 
 import * as PrimitiveCheckbox from "@radix-ui/react-checkbox";
 

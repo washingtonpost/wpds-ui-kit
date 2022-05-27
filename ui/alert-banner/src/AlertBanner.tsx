@@ -7,11 +7,13 @@ import { AppBar } from "@washingtonpost/wpds-app-bar";
 
 import type * as WPDS from "@washingtonpost/wpds-theme";
 
-import Error from "@washingtonpost/wpds-assets/asset/error";
-import Success from "@washingtonpost/wpds-assets/asset/success";
-import Warning from "@washingtonpost/wpds-assets/asset/warning";
-import Information from "@washingtonpost/wpds-assets/asset/info";
-import Close from "@washingtonpost/wpds-assets/asset/close";
+import {
+  Error,
+  Success,
+  Warning,
+  Info as Information,
+  Close,
+} from "@washingtonpost/wpds-assets";
 
 const StyledAlertBannerTrigger = styled(Button, {
   alignSelf: "flex-start",

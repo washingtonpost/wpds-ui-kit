@@ -13,10 +13,7 @@ import { InputLabel } from "@washingtonpost/wpds-input-label";
 import { ErrorMessage } from "@washingtonpost/wpds-error-message";
 import { HelperText } from "@washingtonpost/wpds-helper-text";
 import { VisuallyHidden } from "@washingtonpost/wpds-visually-hidden";
-import Search from "@washingtonpost/wpds-assets/asset/search";
-import Globe from "@washingtonpost/wpds-assets/asset/globe";
-import Phone from "@washingtonpost/wpds-assets/asset/phone";
-import Email from "@washingtonpost/wpds-assets/asset/email";
+import { Search, Globe, Phone, Email } from "@washingtonpost/wpds-assets";
 
 const NAME = "InputText";
 
