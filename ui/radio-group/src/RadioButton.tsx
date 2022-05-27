@@ -1,6 +1,5 @@
 import * as React from "react";
 import * as RadioGroupPrimitive from "@radix-ui/react-radio-group";
-//import type { RadioGroupItemProps } from "@radix-ui/react-radio-group";
 import * as Theme from "@washingtonpost/wpds-theme";
 import type * as WPDS from "@washingtonpost/wpds-theme";
 import { InputLabel } from "@washingtonpost/wpds-input-label";
@@ -8,7 +7,7 @@ import { InputLabel } from "@washingtonpost/wpds-input-label";
 const NAME = "RadioButton";
 
 const ContainerCSS = Theme.css({
-  alignItems: "center",
+  alignItems: "flex-start",
   display: "flex",
 });
 
@@ -19,8 +18,9 @@ const StyledRadioButton = Theme.styled(RadioGroupPrimitive.Item, {
   borderRadius: "50%",
   borderWidth: "1px",
   cursor: "pointer",
-  width: 20,
-  height: 20,
+  width: Theme.theme.sizes["125"],
+  minWidth: Theme.theme.sizes["125"],
+  height: Theme.theme.sizes["125"],
   "&:focus": { borderColor: Theme.theme.colors.cta },
   "&:disabled": {
     backgroundColor: Theme.theme.colors.disabled,
@@ -61,6 +61,17 @@ const StyledRadioButton = Theme.styled(RadioGroupPrimitive.Item, {
       },
     },
   },
+  compoundVariants: [
+    {
+      variant: "secondary",
+      isOutline: true,
+      css: {
+        "&[aria-checked='true']:enabled": {
+          backgroundColor: "transparent",
+        },
+      },
+    },
+  ],
 });
 
 const StyledRadioIndicator = Theme.styled(RadioGroupPrimitive.Indicator, {
@@ -73,8 +84,8 @@ const StyledRadioIndicator = Theme.styled(RadioGroupPrimitive.Indicator, {
   "&::after": {
     content: '""',
     display: "block",
-    width: 10,
-    height: 10,
+    width: "0.625rem",
+    height: "0.625rem",
     borderRadius: "50%",
     backgroundColor: Theme.theme.colors.primary,
   },
@@ -107,8 +118,9 @@ const StyledRadioIndicator = Theme.styled(RadioGroupPrimitive.Indicator, {
 });
 
 const labelCSS = {
-  paddingInlineStart: Theme.theme.space["050"],
   cursor: "pointer",
+  paddingBlockStart: "0.125rem",
+  paddingInlineStart: Theme.theme.space["050"],
 };
 
 interface RadioButtonProps
