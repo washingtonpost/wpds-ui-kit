@@ -126,8 +126,8 @@ export const InputTextarea = React.forwardRef<
     const [isFloating, handleFocus, handleBlur, handleChange] = useFloating(
       value || defaultValue,
       onFocus,
-      onChange,
-      onBlur
+      onBlur,
+      onChange
     );
 
     return (
