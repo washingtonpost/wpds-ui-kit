@@ -36,20 +36,21 @@ RadioGroup.parameters = {
   chromatic: { disableSnapshot: true },
 };
 
-const Column = styled("div", {
-  display: "flex",
-  flexDirection: "column",
-  gap: "$100",
-  alignItems: "center",
-  marginBlockStart: "$200",
-});
+const OverflowTemplate = () => (
+  <Component legend="RadioGroup" name="test" css={{ maxWidth: "170px" }}>
+    <RadioButton
+      label="Option 1 demonstrates how this text wraps to multiple lines"
+      value="opt1"
+      id="opt1"
+    />
+    <RadioButton label="Option 2" value="opt2" id="opt2" />
+  </Component>
+);
 
-const HStack = styled("section", {
-  display: "flex",
-  flexDirection: "row",
-  gap: "$100",
-  borderRadius: "$075",
-});
+export const Overflow = OverflowTemplate.bind({});
+Overflow.parameters = {
+  chromatic: { disableSnapshot: true },
+};
 
 const ControlledTemplate = () => {
   const [value, setValue] = React.useState("opt1");
@@ -74,6 +75,21 @@ export const Controlled = ControlledTemplate.bind({});
 Controlled.parameters = {
   chromatic: { disableSnapshot: true },
 };
+
+const Column = styled("div", {
+  display: "flex",
+  flexDirection: "column",
+  gap: "$100",
+  alignItems: "center",
+  marginBlockStart: "$200",
+});
+
+const HStack = styled("section", {
+  display: "flex",
+  flexDirection: "row",
+  gap: "$100",
+  borderRadius: "$075",
+});
 
 const ChromaticTemplate = () => (
   <Column>
@@ -132,6 +148,19 @@ const ChromaticTemplate = () => (
     >
       <RadioButton label="Option 1" value="opt1" id="e-opt1" checked />
       <RadioButton label="Option 2" value="opt2" id="e-opt2" />
+    </Component>
+    <h3>Overflow</h3>
+    <Component
+      legend="Select an option"
+      name="overflow"
+      css={{ maxWidth: "170px" }}
+    >
+      <RadioButton
+        label="Option 1 demonstrates how this text wraps to multiple lines"
+        value="opt1"
+        id="o-opt1"
+      />
+      <RadioButton label="Option 2" value="opt2" id="o-opt2" />
     </Component>
   </Column>
 );
