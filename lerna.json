@@ -1,8 +1,5 @@
 {
-  "packages": [
-    "./ui/*",
-    "./app"
-  ],
+  "packages": ["./ui/*", "./app"],
   "useWorkspaces": true,
   "npmClient": "npm",
   "command": {
@@ -32,5 +29,5 @@
       "registry": "https://registry.npmjs.org/"
     }
   },
-  "version": "0.9.0-experimental.3"
+  "version": "0.9.0-experimental.2"
 }
