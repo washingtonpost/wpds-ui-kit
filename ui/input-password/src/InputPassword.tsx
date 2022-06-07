@@ -1,8 +1,7 @@
 import * as React from "react";
 import { InputText } from "@washingtonpost/wpds-input-text";
 import { Icon } from "@washingtonpost/wpds-icon";
-import Hide from "@washingtonpost/wpds-assets/asset/hide";
-import Show from "@washingtonpost/wpds-assets/asset/show";
+import { Hide, Show } from "@washingtonpost/wpds-assets";
 
 import type { InputTextProps } from "@washingtonpost/wpds-input-text";
 

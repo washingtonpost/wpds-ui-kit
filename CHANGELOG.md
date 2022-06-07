@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.9.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.9.0-experimental.3...v0.9.0) (2022-06-07)
+
+### Fixes
+* fix: changed icon imports to support ESM compilation by @wp-aberg in https://github.com/washingtonpost/wpds-ui-kit/pull/111
+* fix: allow for multiline labels in RadioButtons by @wp-aberg in https://github.com/washingtonpost/wpds-ui-kit/pull/114
+* fix(input): reorder onBlur and onChange args in order to send callbacks to proper places by @artmsilva in https://github.com/washingtonpost/wpds-ui-kit/pull/108
+* fix: add scoped name to test app, update Radio secondary focus by @wp-aberg in https://github.com/washingtonpost/wpds-ui-kit/pull/109
+* fix: removed pointer events from Label in InputText and InputTextarea by @wp-aberg in https://github.com/washingtonpost/wpds-ui-kit/pull/104
+* Prefer token values to hex colors lint rule by @wp-aberg in https://github.com/washingtonpost/wpds-ui-kit/pull/105
+* fix: updates sharedInputStyles text color by @wp-aberg in https://github.com/washingtonpost/wpds-ui-kit/pull/106
+
+### Features
+* feat: add RadioGroup component by @wp-aberg in https://github.com/washingtonpost/wpds-ui-kit/pull/103
+* feat: add Divider component by @wp-aberg in https://github.com/washingtonpost/wpds-ui-kit/pull/110
+* feat(theme): Integrating New Color Palette by @BrianAA in https://github.com/washingtonpost/wpds-ui-kit/pull/107
+
+
 ## [0.8.1](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.8.0...v0.8.1) (2022-05-11)
 
 

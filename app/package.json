@@ -1,7 +1,6 @@
 {
-  "name": "app",
-  "version": "0.8.1",
-  "private": true,
+  "name": "@washingtonpost/wpds-test-app",
+  "version": "0.9.0",
   "publishConfig": {
     "access": "restricted"
   },
@@ -17,13 +16,14 @@
   "license": "MIT",
   "dependencies": {
     "@next/bundle-analyzer": "^12.0.7",
-    "@washingtonpost/wpds-assets": "^1.6.0",
-    "@washingtonpost/wpds-ui-kit": "0.8.1",
+    "@washingtonpost/wpds-assets": "^1.8.0",
+    "@washingtonpost/wpds-ui-kit": "0.9.0",
     "next": "^12.0.4",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
+    "@types/node": "^14.0.10",
     "@types/react": "^17.0.35",
     "typescript": "4.5.5"
   }
