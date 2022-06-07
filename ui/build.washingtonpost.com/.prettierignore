@@ -8,3 +8,4 @@ node_modules
 out
 jest-coverage
 plop-templates
+/ui/theme/src/tokens.ts

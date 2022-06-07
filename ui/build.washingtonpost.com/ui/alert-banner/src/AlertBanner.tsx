@@ -7,11 +7,13 @@ import { AppBar } from "@washingtonpost/wpds-app-bar";
 
 import type * as WPDS from "@washingtonpost/wpds-theme";
 
-import Error from "@washingtonpost/wpds-assets/asset/error";
-import Success from "@washingtonpost/wpds-assets/asset/success";
-import Warning from "@washingtonpost/wpds-assets/asset/warning";
-import Information from "@washingtonpost/wpds-assets/asset/info";
-import Close from "@washingtonpost/wpds-assets/asset/close";
+import {
+  Error,
+  Success,
+  Warning,
+  Info as Information,
+  Close,
+} from "@washingtonpost/wpds-assets";
 
 const StyledAlertBannerTrigger = styled(Button, {
   alignSelf: "flex-start",
@@ -80,16 +82,16 @@ const StyledAlertBanner = styled(AppBar, {
     /** 4 predefined alert banners each tied to our symantic messaging on our site. They are Warning, Information, Success, and Error. */
     variant: {
       error: {
-        background: theme.colors.red300,
+        background: theme.colors.red600,
       },
       success: {
-        background: theme.colors.green300,
+        background: theme.colors.green600,
       },
       warning: {
-        background: theme.colors.orange300,
+        background: theme.colors.orange600,
       },
       information: {
-        background: theme.colors.blue300,
+        background: theme.colors.blue600,
       },
     },
     /** The alert banner can be permanent or dismissable. */

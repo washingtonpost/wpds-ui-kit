@@ -7,6 +7,7 @@ export const sharedInputStyles = {
   borderStyle: "solid",
   borderWidth: "1px",
   backgroundColor: theme.colors.secondary,
+  color: theme.colors.primary,
   fontFamily: theme.fonts.meta,
   fontSize: theme.fontSizes["100"],
   fontWeight: theme.fontWeights.light,
