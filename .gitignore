@@ -115,6 +115,10 @@ out
 # coverage
 jest-coverage
 
+# editor specific
+.history
+.vscode
+
 .DS_Store
 
 .yalc
