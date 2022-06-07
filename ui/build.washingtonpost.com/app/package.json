@@ -16,7 +16,7 @@
   "license": "MIT",
   "dependencies": {
     "@next/bundle-analyzer": "^12.0.7",
-    "@washingtonpost/wpds-assets": "^1.6.0",
+    "@washingtonpost/wpds-assets": "^1.8.0",
     "@washingtonpost/wpds-ui-kit": "0.9.0",
     "next": "^12.0.4",
     "react": "^17.0.2",
