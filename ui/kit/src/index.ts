@@ -3,6 +3,7 @@ export * from "@washingtonpost/wpds-divider";
 export * from "@washingtonpost/eslint-plugin-wpds";
 export * from "@washingtonpost/wpds-fieldset";
 export * from "@washingtonpost/wpds-radio-group";
+export * from "@washingtonpost/wpds-avatar";
 export * from "@washingtonpost/wpds-helper-text";
 export * from "@washingtonpost/wpds-error-message";
 export * from "@washingtonpost/wpds-input-label";

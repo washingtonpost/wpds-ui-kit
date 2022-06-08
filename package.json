@@ -90,6 +90,7 @@
   ],
   "dependencies": {
     "@radix-ui/react-checkbox": "latest",
+    "@radix-ui/react-avatar": "latest",
     "@washingtonpost/wpds-assets": "^1.8.0",
     "@stitches/react": "^1.2.6",
     "@washingtonpost/wpds-alert-banner": "file:ui/alert-banner",
