@@ -1,23 +1,23 @@
 import * as React from "react";
 import { styled } from '@stitches/react';
 import * as AvatarPrimitive from '@radix-ui/react-avatar';
-import { css, theme } from "@washingtonpost/wpds-theme";
-
+import {theme } from "@washingtonpost/wpds-theme";
 
 const NAME = "Avatar";
-
+const DEFAULT_ALT_TEXT = 'An avatar is an atomic component that represents an individual’s identity through a circular photo.';
+const DEFAULT_AVATAR_SIZE = '200';
 
 interface AvatarProps {
 	/** Image URL (non-IMRS) */
 	imgUrl: string,
-	/** @default "Image without a caption"*/
+	/** @default DEFAULT_ALT_TEXT*/
   alt?: string,
 	/**
    * Sizes - supports any sizes
    * @default 200
    *
 * */
-	size?: "200" | number,
+	size?: string,
 }
 
 const StyledAvatar = styled(AvatarPrimitive.Root, {
@@ -40,15 +40,28 @@ const StyledImage = styled(AvatarPrimitive.Image, {
   borderRadius: 'inherit',
 });
 
-export const Avatar : any = ({imgUrl, alt, size = '200'}) => (
-	<StyledAvatar css={{ width: theme.sizes[size], height: theme.sizes[size]}}>
+export const Avatar : React.FC<AvatarProps> = React.forwardRef<
+  HTMLElement,
+	AvatarProps
+>(
+  (
+    { imgUrl = '', alt = DEFAULT_ALT_TEXT, size = DEFAULT_AVATAR_SIZE, ...props },
+    ref
+  ) => (
+		<StyledAvatar
+			ref={ref}
+			css={{
+				width: theme.sizes[size],
+				height: theme.sizes[size]
+			}}
+			{...props}
+		>
 			<StyledImage
 				src={imgUrl}
 				alt={alt}
-				/>
-	</StyledAvatar>
+			/>
+		</StyledAvatar>
+	)
 );
 
 Avatar.displayName = NAME;
-
-export type { AvatarProps };
