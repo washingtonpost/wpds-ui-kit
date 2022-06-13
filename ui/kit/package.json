@@ -9,11 +9,7 @@
   "main": "dist/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/index.d.ts",
-  "files": [
-    "dist",
-    "README.md",
-    "src"
-  ],
+  "files": ["dist", "README.md", "src"],
   "sideEffects": false,
   "repository": {
     "type": "git",
@@ -33,6 +29,7 @@
   },
   "dependencies": {
     "@washingtonpost/eslint-plugin-wpds": "0.9.1",
+    "@washingtonpost/wpds-avatar": "0.9.1",
     "@washingtonpost/wpds-alert-banner": "0.9.1",
     "@washingtonpost/wpds-app-bar": "0.9.1",
     "@washingtonpost/wpds-box": "0.9.1",
@@ -59,6 +56,7 @@
   },
   "peerDependencies": {
     "@washingtonpost/eslint-plugin-wpds": "*",
+    "@washingtonpost/wpds-avatar": "*",
     "@washingtonpost/wpds-alert-banner": "*",
     "@washingtonpost/wpds-app-bar": "*",
     "@washingtonpost/wpds-box": "*",
