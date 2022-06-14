@@ -23,7 +23,7 @@ const StyledAvatar = styled(AvatarPrimitive.Root, {
   overflow: "hidden",
   userSelect: "none",
   borderRadius: "100%",
-  backgroundColor: theme.colors.primary,
+  backgroundColor: theme.colors.subtle,
   marginRight: theme.sizes["050"],
   marginBottom: theme.sizes["025"],
   length: 0,
