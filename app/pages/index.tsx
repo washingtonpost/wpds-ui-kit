@@ -16,6 +16,7 @@ import {
   RadioButton,
   css,
   Divider,
+  Avatar,
 } from "@washingtonpost/wpds-ui-kit";
 import Chart from "@washingtonpost/wpds-assets/asset/chart";
 import Settings from "@washingtonpost/wpds-assets/asset/settings";
@@ -317,6 +318,13 @@ function HomePage() {
         </HStack>
         <h2>Divider</h2>
         <Divider />
+        <h2>Avatar</h2>
+        <Avatar size="200">
+          <img
+            src="https://i.pravatar.cc/300"
+            alt="An avatar is an atomic component that represents an individual’s identity through a circular photo."
+          />
+        </Avatar>
       </Stack>
     </>
   );
