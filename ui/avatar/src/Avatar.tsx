@@ -1,7 +1,6 @@
 import * as React from "react";
-import { styled } from "@stitches/react";
 import * as AvatarPrimitive from "@radix-ui/react-avatar";
-import { css, theme } from "@washingtonpost/wpds-theme";
+import { css, theme, styled } from "@washingtonpost/wpds-theme";
 
 const NAME = "Avatar";
 const DEFAULT_AVATAR_SIZE = "200";
@@ -12,7 +11,7 @@ interface AvatarProps {
    * @default 200
    *
    * */
-  size?: string;
+  size?: "200" | number;
   children: React.ReactElement;
 }
 

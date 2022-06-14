@@ -12,6 +12,6 @@ module.exports = withBundleAnalyzer({
   ],
   swcMinify: false,
   images: {
-    domains: ["https://i.pravatar.cc/300"],
+    domains: ["i.pravatar.cc/300"],
   },
 });
