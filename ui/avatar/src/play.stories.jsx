@@ -16,7 +16,7 @@ const DefaultArgs = {
   size: "200",
 };
 
-const Container = styled("h3", {
+const Container = styled("div", {
   textAlign: "center",
 });
 const Label = styled("h3", {
