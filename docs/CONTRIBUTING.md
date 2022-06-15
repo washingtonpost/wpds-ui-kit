@@ -4,7 +4,7 @@ This project uses the [fork feature](https://docs.github.com/en/get-started/quic
 
 ## Develop Locally
 
-We use NVM to manage node versions. Our node version is in the `./nvmrc` file. We use NPM 8.3.0. We also assume you have access to our private org on NPM.
+We use NVM to manage node versions. Our node version is in the `./nvmrc` file.  We also assume you have access to our private org on NPM.
 
 Run the following commands to get your local development environment set up.
 
@@ -13,25 +13,17 @@ nvm use
 ```
 
 ```shell
-npm i -g npm@8.3.0
-```
-
-```shell
-npm install
+npm ci
 ```
 
 ```shell
 npm run build
 ```
 
-We use Storybook to develop locally along with Playroom and Next.js.
+We use Storybook to develop locally along with Next.js.
 
 ```bash
 npm run storybook
-```
-
-```shell
-npm run playroom:start
 ```
 
 You can run `npm run dev` to develop and test with the test app.
