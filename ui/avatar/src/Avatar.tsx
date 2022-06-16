@@ -32,7 +32,7 @@ const StyledAvatar = styled(AvatarPrimitive.Root, {
 export const Avatar: React.FC<AvatarProps> = React.forwardRef<
   HTMLElement,
   AvatarProps
->(({ children, size = DEFAULT_AVATAR_SIZE, ...props }, ref) => {
+>(({ children, size = DEFAULT_AVATAR_SIZE }, ref) => {
   const child = React.Children.only(children);
 
   const ImageStyles = css({
@@ -53,7 +53,6 @@ export const Avatar: React.FC<AvatarProps> = React.forwardRef<
     >
       {React.cloneElement(child, {
         className: `${ImageStyles}`,
-        ...props,
       })}
     </StyledAvatar>
   );
