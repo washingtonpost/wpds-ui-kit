@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Avatar as Component } from "./";
 import Image from "next/image";
-import { styled } from "@washingtonpost/wpds-theme";
+import { styled, theme } from "@washingtonpost/wpds-theme";
 
 export default {
   title: "Avatar",
@@ -14,6 +14,9 @@ const myLoader = ({ src }) => {
 
 const DefaultArgs = {
   size: "200",
+  css: {
+    backgroundColor: theme.colors.subtle,
+  },
 };
 
 const Container = styled("div", {

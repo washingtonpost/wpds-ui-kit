@@ -122,4 +122,4 @@ yalc.lock
 
 # vs code plugin
 .history
-.vscode
+.vscode/*

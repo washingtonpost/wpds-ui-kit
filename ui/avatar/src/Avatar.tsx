@@ -1,6 +1,8 @@
 import * as React from "react";
 import * as AvatarPrimitive from "@radix-ui/react-avatar";
-import { css, theme, styled } from "@washingtonpost/wpds-theme";
+import type * as WPDS from "@washingtonpost/wpds-theme";
+import * as Theme from "@washingtonpost/wpds-theme";
+import { theme, styled } from "@washingtonpost/wpds-theme";
 
 const NAME = "Avatar";
 const DEFAULT_AVATAR_SIZE = "200";
@@ -12,6 +14,8 @@ interface AvatarProps {
    *
    * */
   size?: "200" | number;
+  /** Override CSS */
+  css?: WPDS.CSS;
   children: React.ReactElement;
 }
 
@@ -23,19 +27,16 @@ const StyledAvatar = styled(AvatarPrimitive.Root, {
   overflow: "hidden",
   userSelect: "none",
   borderRadius: "100%",
-  backgroundColor: theme.colors.subtle,
-  marginRight: theme.sizes["050"],
-  marginBottom: theme.sizes["025"],
   length: 0,
 });
 
 export const Avatar: React.FC<AvatarProps> = React.forwardRef<
   HTMLElement,
   AvatarProps
->(({ children, size = DEFAULT_AVATAR_SIZE }, ref) => {
+>(({ css, children, size = DEFAULT_AVATAR_SIZE }, ref) => {
   const child = React.Children.only(children);
 
-  const ImageStyles = css({
+  const ImageStyles = Theme.css({
     width: "100%",
     height: "100%",
     objectFit: "cover",
@@ -49,6 +50,7 @@ export const Avatar: React.FC<AvatarProps> = React.forwardRef<
       css={{
         width: theme.sizes[size],
         height: theme.sizes[size],
+        ...css,
       }}
     >
       {React.cloneElement(child, {
