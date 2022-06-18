@@ -48,7 +48,7 @@
     "eslint-plugin-use-encapsulation": "^1.0.0",
     "jest": "^27.5.1",
     "lerna": "^5.1.2",
-    "next": "^12.1.5",
+    "next": "^12.1.6",
     "nx": "^14.3.2",
     "plop": "^3.0.5",
     "prettier": "2.4.1",
