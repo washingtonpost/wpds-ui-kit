@@ -22,7 +22,7 @@
     "@storybook/test-runner": "^0.0.4",
     "@storybook/testing-library": "^0.0.9",
     "@swc/cli": "^0.1.57",
-    "@swc/core": "^1.2.165",
+    "@swc/core": "^1.2.203",
     "@testing-library/dom": "^8.9.1",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.1.2",
