@@ -69,7 +69,11 @@ Create a new component use the following command. It will stub out all the requi
 npm run new-component NewComponentName
 ```
 
+You can create an experimental release for testing by following the [release doc](https://github.com/washingtonpost/wpds-ui-kit/blob/main/docs/RELEASING.md)
+
 [## Contribute a component](https://build.washingtonpost.com/resources/guides/contribute-a-component)
+
+[## Release a component](https://github.com/washingtonpost/wpds-ui-kit/blob/main/docs/RELEASING.md)
 
 ## Typescript
 
