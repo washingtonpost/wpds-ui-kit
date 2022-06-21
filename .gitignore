@@ -121,4 +121,5 @@ jest-coverage
 yalc.lock
 
 # vscode plugin
-.history
+.history/*
+.vscode/*
