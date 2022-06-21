@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.10.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.9.1...v0.10.0) (2022-06-21)
+
+
+### Features
+
+* update to node 16 ([#123](https://github.com/washingtonpost/wpds-ui-kit/issues/123)) ([51083ec](https://github.com/washingtonpost/wpds-ui-kit/commit/51083eccd116f3d9beb710bd3253d5079768a179))
+
+
+
+
+
 ## [0.9.1](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.9.0...v0.9.1) (2022-06-10)
 
 
