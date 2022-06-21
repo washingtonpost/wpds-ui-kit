@@ -1,4 +1,4 @@
 {
   "sandboxes": ["new", "/app", "next.js"],
-  "node": "14"
+  "node": "16"
 }
