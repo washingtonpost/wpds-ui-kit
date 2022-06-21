@@ -22,7 +22,7 @@
     "@storybook/test-runner": "^0.0.4",
     "@storybook/testing-library": "^0.0.9",
     "@swc/cli": "^0.1.57",
-    "@swc/core": "^1.2.165",
+    "@swc/core": "^1.2.203",
     "@testing-library/dom": "^8.9.1",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.1.2",
@@ -47,19 +47,18 @@
     "eslint-plugin-testing-library": "^5.0.3",
     "eslint-plugin-use-encapsulation": "^1.0.0",
     "jest": "^27.5.1",
-    "lerna": "^4.0.0",
-    "next": "^12.1.5",
-    "playroom": "0.27.6",
+    "lerna": "^5.1.2",
+    "next": "^12.1.6",
+    "nx": "^14.3.2",
     "plop": "^3.0.5",
     "prettier": "2.4.1",
     "react-docgen-typescript": "^2.2.2",
     "size-limit": "^6.0.3",
     "start-server-and-test": "^1.14.0",
-    "storybook-addon-playroom": "^3.0.0",
     "storybook-addon-themes": "^6.1.0",
     "storybook-dark-mode": "^1.0.9",
     "tsup": "^5.12.5",
-    "turbo": "^1.1.10",
+    "turbo": "^1.2.16",
     "typescript": "4.5.5"
   },
   "optionalDependencies": {
@@ -99,10 +98,10 @@
     "@washingtonpost/wpds-checkbox": "file:ui/checkbox",
     "@washingtonpost/wpds-container": "file:ui/container",
     "@washingtonpost/wpds-icon": "file:ui/icon",
+    "@washingtonpost/wpds-input-textarea": "file:ui/input-textarea",
     "@washingtonpost/wpds-theme": "file:ui/theme",
     "@washingtonpost/wpds-ui-kit": "file:ui/kit",
     "@washingtonpost/wpds-visually-hidden": "file:ui/visually-hidden",
-    "@washingtonpost/wpds-input-textarea": "file:ui/input-textarea",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
@@ -114,8 +113,6 @@
     "build": "npx lerna link --force-local;make build;",
     "turbo:build": "turbo run build",
     "turbo:build:force": "turbo run build --force",
-    "playroom:start": "playroom start",
-    "playroom:build": "playroom build",
     "test": "jest",
     "size": "lerna run size",
     "main-publish": "make main-publish",
@@ -130,10 +127,6 @@
     "test-storybook": "test-storybook",
     "dev": "turbo run dev --no-cache --parallel --continue",
     "clean": "turbo run clean && rm -rf node_modules"
-  },
-  "engines": {
-    "npm": "^8",
-    "node": "^14"
   },
   "prettier": {},
   "jest": {
@@ -177,5 +170,5 @@
     "react-docgen-typescript": "^2.2.2",
     "typescript": "4.5.5"
   },
-  "packageManager": "npm@8.3.0"
+  "packageManager": "npm@8.11.0"
 }
