@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.10.0](https://github.com/WPMedia/wpds-ui-kit/compare/v0.9.1...v0.10.0) (2022-06-21)
+
+**Note:** Version bump only for package @washingtonpost/wpds-input-textarea
+
+
+
+
+
 ## [0.9.1](https://github.com/WPMedia/wpds-ui-kit/compare/v0.9.0...v0.9.1) (2022-06-10)
 
 **Note:** Version bump only for package @washingtonpost/wpds-input-textarea

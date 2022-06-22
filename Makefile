@@ -9,7 +9,7 @@ building-storybook:
 	npx build-storybook --output-dir ./app/public/storybook --preview-url /storybook/iframe.html --force-build-preview --quiet
 
 all-dev:
-	npx concurrently -n 'workspaces,playroom,storybook,website' 'npm run watch --workspaces' 'npm run playroom:start' 'make localdev-storybook-in-nextjs' 'npm run website:dev'
+	npx concurrently -n 'workspaces,storybook,website' 'npm run watch --workspaces' 'make localdev-storybook-in-nextjs' 'npm run website:dev'
 
 start-storybook:
 	start-storybook -p 6006 --quiet --ci

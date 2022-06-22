@@ -4,6 +4,7 @@
     "./app"
   ],
   "useWorkspaces": true,
+  "useNx": false,
   "npmClient": "npm",
   "command": {
     "version": {
@@ -32,5 +33,5 @@
       "registry": "https://registry.npmjs.org/"
     }
   },
-  "version": "0.10.0-experimental.0"
+  "version": "0.10.0"
 }
