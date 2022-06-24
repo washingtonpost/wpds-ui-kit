@@ -55,7 +55,6 @@ export const Avatar: React.FC<AvatarProps> = React.forwardRef<
     >
       {React.cloneElement(child, {
         className: `${ImageStyles}`,
-        tabIndex: 0,
       })}
     </StyledAvatar>
   );
