@@ -1,6 +1,6 @@
 {
   "name": "@washingtonpost/wpds-avatar",
-  "version": "0.11.0",
+  "version": "0.11.1",
   "description": "Avatar is a round container that holds a profile image to be used.",
   "author": "WPDS Support <wpds@washpost.com>",
   "homepage": "https://github.com/washingtonpost/wpds-ui-kit#readme",
@@ -42,7 +42,7 @@
   },
   "dependencies": {
     "@radix-ui/react-avatar": "latest",
-    "@washingtonpost/wpds-theme": "0.11.0"
+    "@washingtonpost/wpds-theme": "0.11.1"
   },
   "gitHead": "dcdf670812681188707d23ae5e5aed42101360ac"
 }

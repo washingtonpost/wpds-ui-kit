@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.11.1](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.11.0...v0.11.1) (2022-06-24)
+
+
+### Bug Fixes
+
+* **avatar:** add missing dependency ([342c34e](https://github.com/washingtonpost/wpds-ui-kit/commit/342c34ea649161db2b47e87f4335e6fdff46bd2f))
+
+
+
+
+
 # [0.11.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.10.0...v0.11.0) (2022-06-24)
 
 
