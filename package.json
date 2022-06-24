@@ -88,7 +88,7 @@
     "./app"
   ],
   "dependencies": {
-    "@radix-ui/react-avatar": "^0.1.4",
+    "@radix-ui/react-avatar": "latest",
     "@radix-ui/react-checkbox": "latest",
     "@stitches/react": "^1.2.6",
     "@washingtonpost/wpds-alert-banner": "file:ui/alert-banner",
