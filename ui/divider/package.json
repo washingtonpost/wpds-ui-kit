@@ -42,5 +42,6 @@
   "dependencies": {
     "@radix-ui/react-separator": "^0.1.4",
     "@washingtonpost/wpds-theme": "0.11.0"
-  }
+  },
+  "gitHead": "dcdf670812681188707d23ae5e5aed42101360ac"
 }
