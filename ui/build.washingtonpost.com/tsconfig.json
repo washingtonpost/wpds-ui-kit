@@ -12,6 +12,7 @@
       "@washingtonpost/wpds-icon": ["./ui/icon/src/*"],
       "@washingtonpost/wpds-visually-hidden": ["./ui/visually-hidden/src/*"],
       "@washingtonpost/wpds-app-bar": ["./ui/app-bar/src/*"],
+      "@washingtonpost/wpds-avatar": ["./ui/avatar/src/*"],
       "@washingtonpost/wpds-alert-banner": ["./ui/alert-banner/src/*"],
       "@washingtonpost/wpds-button": ["./ui/button/src/*"],
       "@washingtonpost/wpds-checkbox": ["./ui/checkbox/src/*"],
