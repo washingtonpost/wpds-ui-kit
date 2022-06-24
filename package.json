@@ -88,11 +88,12 @@
     "./app"
   ],
   "dependencies": {
+    "@radix-ui/react-avatar": "^0.1.4",
     "@radix-ui/react-checkbox": "latest",
-    "@washingtonpost/wpds-assets": "^1.8.1",
     "@stitches/react": "^1.2.6",
     "@washingtonpost/wpds-alert-banner": "file:ui/alert-banner",
     "@washingtonpost/wpds-app-bar": "file:ui/app-bar",
+    "@washingtonpost/wpds-assets": "^1.8.1",
     "@washingtonpost/wpds-box": "file:ui/box",
     "@washingtonpost/wpds-button": "file:ui/button",
     "@washingtonpost/wpds-checkbox": "file:ui/checkbox",
