@@ -33,6 +33,14 @@ export const parameters = {
 
 const Panel = styled("div", {
   padding: theme.space[200],
+  marginTop: "-$100",
+  marginBottom: "-$100",
+  width: "50%",
+  minHeight: "100vh",
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center",
+  alignItems: "center",
   variants: {
     dark: {
       true: {
@@ -63,7 +71,7 @@ export const decorators = [
       css={{
         display: "flex",
         width: "100%",
-        height: "100%",
+        height: "50%",
         justifyContent: "center",
         alignItems: "center",
       }}
