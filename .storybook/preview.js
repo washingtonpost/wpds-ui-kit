@@ -1,4 +1,12 @@
-import { globalStyles, darkTheme, theme } from "@washingtonpost/wpds-ui-kit";
+import {
+  globalStyles,
+  darkModeGlobalStyles,
+  darkTheme,
+  theme,
+  Box,
+  styled,
+} from "@washingtonpost/wpds-ui-kit";
+import React from "react";
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -12,10 +20,6 @@ export const parameters = {
     element: "#root",
     manual: false,
   },
-  darkMode: {
-    stylePreview: true,
-    darkClass: darkTheme.className,
-  },
   backgrounds: {
     default: "story",
     values: [
@@ -25,14 +29,47 @@ export const parameters = {
       },
     ],
   },
-  layout: "centered",
 };
+
+const Panel = styled("div", {
+  padding: theme.space[200],
+  variants: {
+    dark: {
+      true: {
+        backgroundColor: theme.colors.gray500,
+      },
+    },
+  },
+});
 
 function GlobalStyles(props) {
   globalStyles();
-  return props.children;
+  return <Panel>{props.children}</Panel>;
+}
+
+function DarkPanel(props) {
+  globalStyles();
+  darkModeGlobalStyles();
+  return (
+    <Panel className={darkTheme} dark>
+      {props.children}
+    </Panel>
+  );
 }
 
 export const decorators = [
-  (renderStory) => <GlobalStyles>{renderStory()}</GlobalStyles>,
+  (renderStory) => (
+    <Box
+      css={{
+        display: "flex",
+        width: "100%",
+        height: "100%",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <GlobalStyles>{renderStory()}</GlobalStyles>
+      <DarkPanel>{renderStory()}</DarkPanel>
+    </Box>
+  ),
 ];
