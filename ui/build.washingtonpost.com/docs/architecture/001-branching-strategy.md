@@ -37,13 +37,13 @@ After WPDS passes v2.x there will need to be a long-lived branch of the previous
 
 A security vulnerability is identified and a fix needs to go out immediately. Concurrently, the development of a new component is feature complete but its documentation is still incomplete. How is the hotfix released without releasing the component code?
 
-**Approach**: Hotfix changes are made in a branch off of `production`, merged to `production`, and released. After release, the `production` branch is merged back into the `main` branch. All component code would remain in the `main` branch unaffected.
+**Approach**: Hotfix changes are made in a branch off of `production`, merged to `production`, and released. After release, the `production` branch is merged back into the `main` branch. All component code remains in the `main` branch unaffected.
 
 ### Related Components Epic
 
 Three related components are developed in parallel. They all contain complementary functionality and have been grouped under an epic by product. How are these components released simultaneously in a single version?
 
-**Approach**: Feature-complete components would be merged to the `main` branch and an experimental release cut. Documentation begins using the experimental release. Once documentation is finished and the components are considered complete `dev` is merged to `main` and a release is cut. After the new package is available in npm the docs site is released.
+**Approach**: Feature-complete components are merged to the `main` branch and an experimental release cut. Documentation begins using the experimental release. Once documentation is finished and the components are considered complete `main` is merged to `production` and a release is cut. After the new package is available in npm the docs site is released.
 
 ## Resources
 
