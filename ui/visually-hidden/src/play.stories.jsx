@@ -12,7 +12,7 @@ export default {
   component: Component,
 };
 
-const Template = (args) => (
+const Template = (args, context) => (
   <React.Fragment>
     <Disclaimer>
       This story is used to test the visually hidden component.
@@ -23,7 +23,7 @@ const Template = (args) => (
       css={{
         color: "$cta",
       }}
-      data-testid="skip-link"
+      data-testid={`${context.theme}-skip-link`}
       onClick={function onClickHandler(event) {
         event.preventDefault();
       }}
@@ -43,5 +43,5 @@ VisuallyHidden.play = async ({ canvasElement }) => {
 
   await userEvent.tab();
 
-  await userEvent.click(canvas.getByTestId("skip-link"));
+  await userEvent.click(canvas.getByTestId("light-skip-link"));
 };

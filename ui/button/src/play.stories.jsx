@@ -51,258 +51,260 @@ const Stack = styled("div", {
   borderRadius: "$075",
 });
 
-const Template = ({ children, ...args }) => (
-  <>
-    <Column>
-      <Stack>
-        <Component {...args} data-testid="skip-link">
-          {children}
-        </Component>
-        <Component {...args}>
-          <Icon size="100" label="">
-            <Asset />
-          </Icon>
-          {children}
-        </Component>
-        <Component {...args} icon="center">
-          <Icon size="100" label="Icon label">
-            <Asset />
-          </Icon>
-        </Component>
-      </Stack>
+const Template = ({ children, ...args }, context) => {
+  return (
+    <>
+      <Column>
+        <Stack>
+          <Component {...args} data-testid={`${context.theme}-skip-link`}>
+            {children}
+          </Component>
+          <Component {...args}>
+            <Icon size="100" label="">
+              <Asset />
+            </Icon>
+            {children}
+          </Component>
+          <Component {...args} icon="center">
+            <Icon size="100" label="Icon label">
+              <Asset />
+            </Icon>
+          </Component>
+        </Stack>
 
-      <Stack>
-        <Component {...args} variant="primary">
-          {children}
-        </Component>
-        <Component {...args} variant="primary">
-          <Icon size="100" label="">
-            <Asset />
-          </Icon>
-          {children}
-        </Component>
-        <Component {...args} icon="center" variant="primary">
-          <Icon size="100" label="Icon label">
-            <Asset />
-          </Icon>
-        </Component>
-      </Stack>
+        <Stack>
+          <Component {...args} variant="primary">
+            {children}
+          </Component>
+          <Component {...args} variant="primary">
+            <Icon size="100" label="">
+              <Asset />
+            </Icon>
+            {children}
+          </Component>
+          <Component {...args} icon="center" variant="primary">
+            <Icon size="100" label="Icon label">
+              <Asset />
+            </Icon>
+          </Component>
+        </Stack>
 
-      <Stack>
-        <Component {...args} variant="cta">
-          {children}
-        </Component>
-        <Component {...args} variant="cta">
-          <Icon size="100" label="">
-            <Asset />
-          </Icon>
-          {children}
-        </Component>
-        <Component {...args} icon="center" variant="cta">
-          <Icon size="100" label="Icon label">
-            <Asset />
-          </Icon>
-        </Component>
-      </Stack>
-    </Column>
+        <Stack>
+          <Component {...args} variant="cta">
+            {children}
+          </Component>
+          <Component {...args} variant="cta">
+            <Icon size="100" label="">
+              <Asset />
+            </Icon>
+            {children}
+          </Component>
+          <Component {...args} icon="center" variant="cta">
+            <Icon size="100" label="Icon label">
+              <Asset />
+            </Icon>
+          </Component>
+        </Stack>
+      </Column>
 
-    <Column>
-      <Stack>
-        <Component {...args} isOutline variant="primary">
-          {children}
-        </Component>
-        <Component {...args} isOutline variant="primary">
-          <Icon size="100" label="">
-            <Asset />
-          </Icon>
-          {children}
-        </Component>
-        <Component {...args} icon="center" isOutline variant="primary">
-          <Icon size="100" label="Icon label">
-            <Asset />
-          </Icon>
-        </Component>
-      </Stack>
+      <Column>
+        <Stack>
+          <Component {...args} isOutline variant="primary">
+            {children}
+          </Component>
+          <Component {...args} isOutline variant="primary">
+            <Icon size="100" label="">
+              <Asset />
+            </Icon>
+            {children}
+          </Component>
+          <Component {...args} icon="center" isOutline variant="primary">
+            <Icon size="100" label="Icon label">
+              <Asset />
+            </Icon>
+          </Component>
+        </Stack>
 
-      <Stack
-        css={{
-          background: theme.colors.accessible,
-        }}
-      >
-        <Component {...args} isOutline variant="secondary">
-          {children}
-        </Component>
+        <Stack
+          css={{
+            background: theme.colors.accessible,
+          }}
+        >
+          <Component {...args} isOutline variant="secondary">
+            {children}
+          </Component>
 
-        <Component {...args} isOutline variant="secondary">
-          <Icon size="100" label="">
-            <Asset />
-          </Icon>
-          {children}
-        </Component>
-        <Component {...args} icon="center" isOutline variant="secondary">
-          <Icon size="100" label="Icon label">
-            <Asset />
-          </Icon>
-        </Component>
-      </Stack>
+          <Component {...args} isOutline variant="secondary">
+            <Icon size="100" label="">
+              <Asset />
+            </Icon>
+            {children}
+          </Component>
+          <Component {...args} icon="center" isOutline variant="secondary">
+            <Icon size="100" label="Icon label">
+              <Asset />
+            </Icon>
+          </Component>
+        </Stack>
 
-      <Stack>
-        <Component {...args} isOutline variant="cta">
-          {children}
-        </Component>
-        <Component {...args} isOutline variant="cta">
-          <Icon size="100" label="">
-            <Asset />
-          </Icon>
-          {children}
-        </Component>
-        <Component {...args} icon="center" isOutline variant="cta">
-          <Icon size="100" label="Icon label">
-            <Asset />
-          </Icon>
-        </Component>
-      </Stack>
-    </Column>
+        <Stack>
+          <Component {...args} isOutline variant="cta">
+            {children}
+          </Component>
+          <Component {...args} isOutline variant="cta">
+            <Icon size="100" label="">
+              <Asset />
+            </Icon>
+            {children}
+          </Component>
+          <Component {...args} icon="center" isOutline variant="cta">
+            <Icon size="100" label="Icon label">
+              <Asset />
+            </Icon>
+          </Component>
+        </Stack>
+      </Column>
 
-    <Column>
-      <Stack>
-        <Component
-          {...args}
-          density={"default"}
-          isOutline
-          variant="primary"
-          icon="right"
-        >
-          {children}
-        </Component>
-        <Component
-          {...args}
-          density={"default"}
-          isOutline
-          variant="primary"
-          icon="right"
-        >
-          <Icon size="100" label="">
-            <Asset />
-          </Icon>
-          {children}
-        </Component>
-        <Component
-          {...args}
-          density={"default"}
-          icon="center"
-          isOutline
-          variant="primary"
-        >
-          <Icon size="100" label="Icon label">
-            <Asset />
-          </Icon>
-        </Component>
-      </Stack>
+      <Column>
+        <Stack>
+          <Component
+            {...args}
+            density={"default"}
+            isOutline
+            variant="primary"
+            icon="right"
+          >
+            {children}
+          </Component>
+          <Component
+            {...args}
+            density={"default"}
+            isOutline
+            variant="primary"
+            icon="right"
+          >
+            <Icon size="100" label="">
+              <Asset />
+            </Icon>
+            {children}
+          </Component>
+          <Component
+            {...args}
+            density={"default"}
+            icon="center"
+            isOutline
+            variant="primary"
+          >
+            <Icon size="100" label="Icon label">
+              <Asset />
+            </Icon>
+          </Component>
+        </Stack>
 
-      <Stack
-        css={{
-          background: theme.colors.accessible,
-        }}
-      >
-        <Component
-          {...args}
-          density={"default"}
-          isOutline
-          variant="secondary"
-          icon="right"
+        <Stack
+          css={{
+            background: theme.colors.accessible,
+          }}
         >
-          {children}
-        </Component>
-        <Component
-          {...args}
-          density={"default"}
-          isOutline
-          variant="secondary"
-          icon="right"
-        >
-          <Icon size="100" label="">
-            <Asset />
-          </Icon>
-          {children}
-        </Component>
-        <Component
-          {...args}
-          icon="center"
-          density={"default"}
-          isOutline
-          variant="secondary"
-        >
-          <Icon size="100" label="Icon label">
-            <Asset />
-          </Icon>
-        </Component>
-      </Stack>
+          <Component
+            {...args}
+            density={"default"}
+            isOutline
+            variant="secondary"
+            icon="right"
+          >
+            {children}
+          </Component>
+          <Component
+            {...args}
+            density={"default"}
+            isOutline
+            variant="secondary"
+            icon="right"
+          >
+            <Icon size="100" label="">
+              <Asset />
+            </Icon>
+            {children}
+          </Component>
+          <Component
+            {...args}
+            icon="center"
+            density={"default"}
+            isOutline
+            variant="secondary"
+          >
+            <Icon size="100" label="Icon label">
+              <Asset />
+            </Icon>
+          </Component>
+        </Stack>
 
-      <Stack>
-        <Component
-          {...args}
-          density={"default"}
-          isOutline
-          variant="cta"
-          icon="right"
-        >
-          {children}
-        </Component>
-        <Component
-          {...args}
-          density={"default"}
-          isOutline
-          variant="cta"
-          icon="right"
-        >
-          <Icon size="100" label="">
-            <Asset />
-          </Icon>
-          {children}
-        </Component>
-        <Component
-          {...args}
-          density={"default"}
-          icon="center"
-          isOutline
-          variant="cta"
-        >
-          <Icon size="100" label="Icon label">
-            <Asset />
-          </Icon>
-        </Component>
-      </Stack>
-    </Column>
-    <Column>
-      <Stack>
-        <Component
-          {...args}
-          disabled
-          density={"default"}
-          isOutline
-          variant="cta"
-          icon="right"
-        >
-          {children}
-        </Component>
+        <Stack>
+          <Component
+            {...args}
+            density={"default"}
+            isOutline
+            variant="cta"
+            icon="right"
+          >
+            {children}
+          </Component>
+          <Component
+            {...args}
+            density={"default"}
+            isOutline
+            variant="cta"
+            icon="right"
+          >
+            <Icon size="100" label="">
+              <Asset />
+            </Icon>
+            {children}
+          </Component>
+          <Component
+            {...args}
+            density={"default"}
+            icon="center"
+            isOutline
+            variant="cta"
+          >
+            <Icon size="100" label="Icon label">
+              <Asset />
+            </Icon>
+          </Component>
+        </Stack>
+      </Column>
+      <Column>
+        <Stack>
+          <Component
+            {...args}
+            disabled
+            density={"default"}
+            isOutline
+            variant="cta"
+            icon="right"
+          >
+            {children}
+          </Component>
 
-        <Component
-          {...args}
-          disabled
-          icon="center"
-          density={"default"}
-          isOutline
-          variant="secondary"
-        >
-          <Icon size="100" label="Icon label">
-            <Asset />
-          </Icon>
-        </Component>
-      </Stack>
-    </Column>
-  </>
-);
+          <Component
+            {...args}
+            disabled
+            icon="center"
+            density={"default"}
+            isOutline
+            variant="secondary"
+          >
+            <Icon size="100" label="Icon label">
+              <Asset />
+            </Icon>
+          </Component>
+        </Stack>
+      </Column>
+    </>
+  );
+};
 
 export const Button = Template.bind({});
 
@@ -312,6 +314,6 @@ Button.args = {
 
 Button.play = async ({ args, canvasElement }) => {
   const canvas = within(canvasElement);
-  await userEvent.click(canvas.getByTestId("skip-link"));
+  await userEvent.click(canvas.getByTestId("light-skip-link"));
   await expect(args.onClick).toHaveBeenCalled();
 };
