@@ -66,7 +66,7 @@ function DarkPanel(props) {
 }
 
 export const decorators = [
-  (renderStory) => (
+  (Story) => (
     <Box
       css={{
         display: "flex",
@@ -76,8 +76,12 @@ export const decorators = [
         alignItems: "center",
       }}
     >
-      <GlobalStyles>{renderStory()}</GlobalStyles>
-      <DarkPanel>{renderStory()}</DarkPanel>
+      <GlobalStyles>
+        <Story theme="light" />
+      </GlobalStyles>
+      <DarkPanel>
+        <Story theme="dark" />
+      </DarkPanel>
     </Box>
   ),
 ];
