@@ -37,11 +37,3 @@ const Template = (args) => (
 export const VisuallyHidden = Template.bind({});
 
 VisuallyHidden.args = {};
-
-VisuallyHidden.play = async ({ canvasElement }) => {
-  const canvas = within(canvasElement);
-
-  await userEvent.tab();
-
-  await userEvent.click(canvas.getByTestId("skip-link"));
-};

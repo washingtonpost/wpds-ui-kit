@@ -55,9 +55,7 @@ const Template = ({ children, ...args }) => (
   <>
     <Column>
       <Stack>
-        <Component {...args} data-testid="skip-link">
-          {children}
-        </Component>
+        <Component {...args}>{children}</Component>
         <Component {...args}>
           <Icon size="100" label="">
             <Asset />
@@ -308,10 +306,4 @@ export const Button = Template.bind({});
 
 Button.args = {
   children: "Text button",
-};
-
-Button.play = async ({ args, canvasElement }) => {
-  const canvas = within(canvasElement);
-  await userEvent.click(canvas.getByTestId("skip-link"));
-  await expect(args.onClick).toHaveBeenCalled();
 };
