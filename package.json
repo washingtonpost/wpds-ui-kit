@@ -129,7 +129,6 @@
     "dev": "turbo run dev --no-cache --parallel --continue",
     "clean": "turbo run clean && rm -rf node_modules"
   },
-  "prettier": {},
   "jest": {
     "roots": [
       "./ui"
@@ -167,6 +166,7 @@
       "^~/(.*)$": "<rootDir>/$1"
     }
   },
+  "prettier": {},
   "overrides": {
     "react-docgen-typescript": "^2.2.2",
     "typescript": "4.5.5"
