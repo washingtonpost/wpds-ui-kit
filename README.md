@@ -37,4 +37,3 @@ click C "https://github.com/WPMedia/wpds-ui-kit/tree/main/ui/button"
 - [![Chromatic Production](https://github.com/WPMedia/wpds-ui-kit/actions/workflows/chromatic-prod.yml/badge.svg)](https://github.com/WPMedia/wpds-ui-kit/actions/workflows/chromatic-prod.yml)
 - [![Validate](https://github.com/WPMedia/wpds-ui-kit/actions/workflows/validation.yml/badge.svg)](https://github.com/WPMedia/wpds-ui-kit/actions/workflows/validation.yml)
 - [![Release to Latest NPM Channel](https://github.com/WPMedia/wpds-ui-kit/actions/workflows/latest-release.yml/badge.svg)](https://github.com/WPMedia/wpds-ui-kit/actions/workflows/latest-release.yml)
-
