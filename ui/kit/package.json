@@ -32,6 +32,7 @@
     "url": "https://github.com/washingtonpost/wpds-ui-kit/issues"
   },
   "dependencies": {
+    "@washingtonpost/wpds-pagination-dots": "0.11.1",
     "@washingtonpost/eslint-plugin-wpds": "0.11.1",
     "@washingtonpost/wpds-alert-banner": "0.11.1",
     "@washingtonpost/wpds-app-bar": "0.11.1",
@@ -59,6 +60,7 @@
     "typescript": "4.5.5"
   },
   "peerDependencies": {
+    "@washingtonpost/wpds-pagination-dots": "*",
     "@washingtonpost/eslint-plugin-wpds": "*",
     "@washingtonpost/wpds-alert-banner": "*",
     "@washingtonpost/wpds-app-bar": "*",

@@ -17,6 +17,7 @@ import {
   css,
   Divider,
   Avatar,
+  PaginationDots
 } from "@washingtonpost/wpds-ui-kit";
 import Chart from "@washingtonpost/wpds-assets/asset/chart";
 import Settings from "@washingtonpost/wpds-assets/asset/settings";
@@ -340,6 +341,15 @@ function HomePage() {
             alt="An avatar is an atomic component that represents an individual’s identity through a circular photo."
           />
         </Avatar>
+        <h2>Pagination Dots</h2>
+        <h3>Amount: 6, Current index: 1</h3>
+        <PaginationDots amount={6} index={1} />
+        <h3>Amount: 7, Current index: 4</h3>
+        <PaginationDots amount={7} index={4} />
+        <h3>Amount: 5, Current index: 3</h3>
+        <PaginationDots amount={5} index={3} />
+        <h3>Amount: 5, Current index: 5</h3>
+        <PaginationDots amount={5} index={5} />
       </Stack>
     </>
   );
