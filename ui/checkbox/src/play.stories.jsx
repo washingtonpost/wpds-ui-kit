@@ -149,16 +149,39 @@ const ChromaticTemplate = () => (
     </HStack>
     <h4>Boxes with labels!</h4>
     <HStack>
-      <Component checked="indeterminate" variant="primary" label="Checkbox 1" id="l1"/>
-      <Component variant="primary" label="Checkbox 2" id="l2"/>
+      <Component
+        checked="indeterminate"
+        variant="primary"
+        label="Checkbox 1"
+        id="l1"
+      />
+      <Component variant="primary" label="Checkbox 2" id="l2" />
     </HStack>
     <HStack>
-      <Component checked variant="primary" isOutline label="Checkbox 3" id="l3"/>
-      <Component checked size="087" variant="primary" label="Checkbox 4" id="l4"/>
+      <Component
+        checked
+        variant="primary"
+        isOutline
+        label="Checkbox 3"
+        id="l3"
+      />
+      <Component
+        checked
+        size="087"
+        variant="primary"
+        label="Checkbox 4"
+        id="l4"
+      />
     </HStack>
     <HStack>
-      <Component disabled label="Checkbox 5" id="l5"/>
-      <Component disabled checked="indeterminate" isOutline label="Checkbox 6" id="l6"/>
+      <Component disabled label="Checkbox 5" id="l5" />
+      <Component
+        disabled
+        checked="indeterminate"
+        isOutline
+        label="Checkbox 6"
+        id="l6"
+      />
     </HStack>
   </>
 );

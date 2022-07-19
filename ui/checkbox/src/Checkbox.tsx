@@ -256,44 +256,45 @@ const StyledInputLabel = styled(InputLabel, {
   display: "flex",
   cursor: "default",
   gap: "$025",
-})
+});
 
 export const Checkbox = React.forwardRef<HTMLButtonElement, CheckboxInterface>(
   (props, ref) => {
     return (
       <StyledInputLabel htmlFor={props.id}>
-      <StyledCheckbox ref={ref} {...props}>
-        <StyledIndicator
-          size={props.size}
-          variant={props.variant}
-          isOutline={props.isOutline}
-          disabled={props.disabled}
-        >
-          <StyledCheck size={props.size}>
-            {props.checked === "indeterminate" ||
-            props.defaultChecked === "indeterminate" ? (
-              <Indeterminate
-                {...{
-                  fill: "currentColor",
-                  "aria-hidden": true,
-                  focusable: false,
-                  role: "img",
-                }}
-              />
-            ) : (
-              <Check
-                {...{
-                  fill: "currentColor",
-                  "aria-hidden": true,
-                  focusable: false,
-                  role: "img",
-                }}
-              />
-            )}
-          </StyledCheck>
-        </StyledIndicator>
-      </StyledCheckbox>
-      {props.label}</StyledInputLabel>
+        <StyledCheckbox ref={ref} {...props}>
+          <StyledIndicator
+            size={props.size}
+            variant={props.variant}
+            isOutline={props.isOutline}
+            disabled={props.disabled}
+          >
+            <StyledCheck size={props.size}>
+              {props.checked === "indeterminate" ||
+              props.defaultChecked === "indeterminate" ? (
+                <Indeterminate
+                  {...{
+                    fill: "currentColor",
+                    "aria-hidden": true,
+                    focusable: false,
+                    role: "img",
+                  }}
+                />
+              ) : (
+                <Check
+                  {...{
+                    fill: "currentColor",
+                    "aria-hidden": true,
+                    focusable: false,
+                    role: "img",
+                  }}
+                />
+              )}
+            </StyledCheck>
+          </StyledIndicator>
+        </StyledCheckbox>
+        {props.label}
+      </StyledInputLabel>
     );
   }
 );
