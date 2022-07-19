@@ -18,6 +18,7 @@ const StyledCheckbox = styled(PrimitiveCheckbox.Root, {
   overflow: "hidden",
   backgroundColor: "$$backgroundColor",
   color: "$$color",
+  flexShrink: "0",
 
   "&:focus": {
     outline: "1px solid $signal",
