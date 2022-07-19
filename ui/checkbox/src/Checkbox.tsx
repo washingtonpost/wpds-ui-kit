@@ -6,6 +6,8 @@ import { Check, Indeterminate } from "@washingtonpost/wpds-assets";
 
 import * as PrimitiveCheckbox from "@radix-ui/react-checkbox";
 
+import { InputLabel } from "@washingtonpost/wpds-input-label";
+
 const StyledCheckbox = styled(PrimitiveCheckbox.Root, {
   transition: "$allFast",
   appearance: "none",
@@ -228,6 +230,7 @@ interface CheckboxInterface extends CheckboxVariants {
   name?: string;
   value?: string;
   id?: string;
+  label?: string;
 }
 
 const StyledCheck = styled("span", {
@@ -248,9 +251,14 @@ const StyledCheck = styled("span", {
   },
 });
 
+const Container = styled("div", {
+  display: "flex",
+})
+
 export const Checkbox = React.forwardRef<HTMLButtonElement, CheckboxInterface>(
   (props, ref) => {
     return (
+      <Container>
       <StyledCheckbox ref={ref} {...props}>
         <StyledIndicator
           size={props.size}
@@ -282,6 +290,8 @@ export const Checkbox = React.forwardRef<HTMLButtonElement, CheckboxInterface>(
           </StyledCheck>
         </StyledIndicator>
       </StyledCheckbox>
+      <InputLabel htmlFor={props.id} css={{ cursor: "default", paddingLeft: "$025"}}>{props.label}</InputLabel>
+      </Container>
     );
   }
 );
