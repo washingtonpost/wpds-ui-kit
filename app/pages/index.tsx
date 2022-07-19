@@ -17,7 +17,7 @@ import {
   css,
   Divider,
   Avatar,
-  PaginationDots
+  PaginationDots,
 } from "@washingtonpost/wpds-ui-kit";
 import Chart from "@washingtonpost/wpds-assets/asset/chart";
 import Settings from "@washingtonpost/wpds-assets/asset/settings";
@@ -342,14 +342,20 @@ function HomePage() {
           />
         </Avatar>
         <h2>Pagination Dots</h2>
-        <h3>Amount: 6, Current index: 1</h3>
-        <PaginationDots amount={6} index={1} />
-        <h3>Amount: 7, Current index: 4</h3>
-        <PaginationDots amount={7} index={4} />
-        <h3>Amount: 5, Current index: 3</h3>
-        <PaginationDots amount={5} index={3} />
-        <h3>Amount: 5, Current index: 5</h3>
-        <PaginationDots amount={5} index={5} />
+        <Stack css={{ width: "200px", marginBlockStart: "0" }}>
+          <HStack>
+            <PaginationDots amount={6} index={1} label="Pagination label" />
+          </HStack>
+          <HStack>
+            <PaginationDots amount={7} index={4} label="Pagination label" />
+          </HStack>
+          <HStack>
+            <PaginationDots amount={5} index={3} label="Pagination label" />
+          </HStack>
+          <HStack>
+            <PaginationDots amount={5} index={5} label="Pagination label" />
+          </HStack>
+        </Stack>
       </Stack>
     </>
   );

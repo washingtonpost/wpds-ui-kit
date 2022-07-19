@@ -4,7 +4,7 @@ import { theme, styled } from "@washingtonpost/wpds-theme";
 
 const NAME = "PaginationDots";
 const ACTIVECOLOR = "primary";
-const NOTACTIVECOLOR = "subtle"; // TODO: talk about color contrast w/ Victor and Art
+const INACTIVECOLOR = "onDisabled";
 
 const bound = (value: number, min: number, max: number) =>
   Math.max(min, Math.min(max, value));
@@ -13,6 +13,7 @@ interface PaginationDotsProps {
   css?: WPDS.CSS;
   index: number;
   amount: number;
+  label: string;
   unitName?: string;
 }
 
@@ -36,7 +37,11 @@ const PaginationContainer = styled("div", {
 export const PaginationDots = React.forwardRef<
   HTMLDivElement,
   PaginationDotsProps
->(({ css, index, amount, unitName }, ref) => {
+>(({ css, index, amount, unitName, label }, ref) => {
+  // catch this error gracefully
+  if (!amount && !index) {
+    return null;
+  }
   // Always show at least one dot
   const nPages = bound(Math.round(amount), 1, Infinity);
 
@@ -57,7 +62,7 @@ export const PaginationDots = React.forwardRef<
       ref={ref}
       css={{ transform: `translate(${translate})`, ...css }}
       role="progressbar"
-      aria-label="pagination navigation"
+      aria-label={label}
       aria-valuemin={1}
       aria-valuemax={nPages}
       aria-valuenow={activeIndex + 1}
@@ -87,7 +92,7 @@ function configureDots(nPages: number, activeIndex: number, amount: number) {
   return [...Array(nPages)].map((_, dotIndex) => {
     const stepsFromActive = Math.abs(dotIndex - activeIndex);
     const isActive = stepsFromActive === 0;
-    const background = isActive ? ACTIVECOLOR : NOTACTIVECOLOR;
+    const background = isActive ? ACTIVECOLOR : INACTIVECOLOR;
 
     // default: active dot has scale = 1, each dot previous/next's scale reduces by 25%
     let scale = 1 - stepsFromActive / 4;
