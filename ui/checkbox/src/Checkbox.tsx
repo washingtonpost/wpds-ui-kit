@@ -251,14 +251,16 @@ const StyledCheck = styled("span", {
   },
 });
 
-const Container = styled("div", {
+const StyledInputLabel = styled(InputLabel, {
   display: "flex",
+  cursor: "default",
+  gap: "$025",
 })
 
 export const Checkbox = React.forwardRef<HTMLButtonElement, CheckboxInterface>(
   (props, ref) => {
     return (
-      <Container>
+      <StyledInputLabel htmlFor={props.id}>
       <StyledCheckbox ref={ref} {...props}>
         <StyledIndicator
           size={props.size}
@@ -290,8 +292,7 @@ export const Checkbox = React.forwardRef<HTMLButtonElement, CheckboxInterface>(
           </StyledCheck>
         </StyledIndicator>
       </StyledCheckbox>
-      <InputLabel htmlFor={props.id} css={{ cursor: "default", paddingLeft: "$025"}}>{props.label}</InputLabel>
-      </Container>
+      {props.label}</StyledInputLabel>
     );
   }
 );
