@@ -1,4 +1,4 @@
-const { styled, theme } = require("@washingtonpost/wpds-ui-kit");
+import { styled, theme } from "@washingtonpost/wpds-ui-kit";
 
 export const List = styled("ul", {
   marginTop: "0",

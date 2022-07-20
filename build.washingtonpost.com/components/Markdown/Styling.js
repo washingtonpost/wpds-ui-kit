@@ -3,7 +3,7 @@
  * NEEDED IMPORT THEM VIA THE COMPONENTS PASSED ON THE SPECIFIC [SLUG].JS FILE
  */
 import React from "react";
-import Header from "./Components/headers";
+import { Header } from "./Components/headers";
 import CustomLink from "./Components/link";
 import { styled, theme, Box, Button } from "@washingtonpost/wpds-ui-kit";
 import { List, ListItem } from "~/components/Markdown/Components/list";
@@ -85,7 +85,6 @@ export const BR = styled("div", {
 
 export const Change = styled("div", {
   border: "1px solid currentColor",
-  borderRadius: "$025",
   borderRadius: "$025",
   color: "$accessible",
   cursor: "pointer",
@@ -213,7 +212,7 @@ const components = {
   Box: Box,
   code: dynamic(() => import("./Components/Code")),
   pre: dynamic(() => import("./Components/Pre")),
-  input: ({ children, type, ...props }) => {
+  input: ({ type, ...props }) => {
     if (type === "checkbox") {
       return <InputCheckbox {...props} />;
     }

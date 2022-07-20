@@ -16,8 +16,6 @@ import {
 } from "@washingtonpost/wpds-ui-kit";
 import External from "@washingtonpost/wpds-assets/asset/external";
 import LZString from "lz-string";
-import packageJson from "../../../package.json";
-import packageJsonLock from "../../../package-lock.json";
 import InlineSVG from "./inlineSVG";
 
 const sandboxGlobalcss = globalCss({
@@ -280,7 +278,7 @@ const useDebounce = (value, delay) => {
 };
 
 const Preview = ({ isGuide }) => {
-  const { code, updateCode } = useActiveCode();
+  const { code } = useActiveCode();
   const [firstRenderCode, setFirstRenderCode] = useState(null);
   const iframeRef = React.useRef(null);
   const debouncedCode = useDebounce(code, 500);
@@ -323,7 +321,7 @@ const Preview = ({ isGuide }) => {
 };
 
 const OpenInPlayroom = ({ isGuide }) => {
-  const { code, updateCode } = useActiveCode();
+  const { code } = useActiveCode();
 
   return (
     <Button
@@ -362,107 +360,100 @@ const CustomSandpack = ({
 
   const [showCode, setShowCode] = useState(!withPreview);
   const { resolvedTheme } = useTheme();
-  const [sandboxTheme, setSandboxTheme] = useState("");
-  const [bodyBackground, setBodyBackground] = useState("$gray500");
   const [sandboxEmbedTheme, setSandboxEmbedTheme] = useState(lightTheme);
 
   useEffect(() => {
     if (resolvedTheme === "dark") {
       setSandboxEmbedTheme(darkTheme);
-      setSandboxTheme("darkTheme.className");
     } else {
-      setSandboxTheme("'light'");
       setSandboxEmbedTheme(lightTheme);
     }
-    setBodyBackground("$gray500");
   }, [resolvedTheme]);
 
   return (
-    <>
-      <SandpackProvider
-        autorun
-        initMode="user-visible"
-        initModeObserverOptions={{ rootMargin: "1400px 0px" }}
-        template="react"
-        customSetup={{
-          files: {
-            "/Example.js": {
-              code: children,
-              active: true,
-            },
+    <SandpackProvider
+      autorun
+      initMode="user-visible"
+      initModeObserverOptions={{ rootMargin: "1400px 0px" }}
+      template="react"
+      customSetup={{
+        files: {
+          "/Example.js": {
+            code: children,
+            active: true,
+          },
+        },
+      }}
+    >
+      <SandpackLayout theme={sandboxEmbedTheme}>
+        {withPreview && <Preview isGuide={isGuide} />}
+        {showCode && (
+          <SandpackCodeEditor
+            customStyle={{
+              border: "1px solid var(--wpds-colors-subtle)",
+            }}
+            showTabs={false}
+            showNavigator={false}
+            showRunButton={false}
+            initMode="user-visible"
+          />
+        )}
+      </SandpackLayout>
+      <Box
+        as="nav"
+        css={{
+          border: "1px solid $subtle",
+          flexGrow: 0,
+          width: "100%",
+          flexDirection: "row",
+          gap: "$075",
+          padding: "$050 $075 $050 $100",
+          background: "$gray500",
+          display: hideNavBar ? "none" : "flex",
+          "@sm": {
+            display: withPreview ? "flex" : "none",
           },
         }}
       >
-        <SandpackLayout theme={sandboxEmbedTheme}>
-          {withPreview && <Preview isGuide={isGuide} />}
-          {showCode && (
-            <SandpackCodeEditor
-              customStyle={{
-                border: "1px solid var(--wpds-colors-subtle)",
+        <Box>
+          {withPreview && (
+            <Button
+              icon="left"
+              isOutline
+              variant="primary"
+              onClick={() => {
+                setShowCode(!showCode);
               }}
-              showTabs={false}
-              showNavigator={false}
-              showRunButton={false}
-              initMode="user-visible"
-            />
+              css={{
+                border: 0,
+                fontWeight: "$light",
+              }}
+              density="compact"
+            >
+              <Icon>
+                <CodeIcon />
+              </Icon>
+              {showCode ? "Hide" : "Show"} code
+            </Button>
           )}
-        </SandpackLayout>
+        </Box>
         <Box
-          as="nav"
           css={{
-            border: "1px solid $subtle",
-            flexGrow: 0,
-            width: "100%",
-            flexDirection: "row",
-            gap: "$075",
-            padding: "$050 $075 $050 $100",
-            background: "$gray500",
-            display: Boolean(hideNavBar) ? "none" : "flex",
+            alignSelf: "flex-end",
+            flex: "1 1 auto",
+            display: "flex",
+            justifyContent: "flex-end",
+            gap: "$100",
             "@sm": {
-              display: withPreview ? "flex" : "none",
+              display: "none",
             },
           }}
         >
-          <Box>
-            {withPreview && (
-              <Button
-                icon="left"
-                isOutline
-                variant="primary"
-                onClick={() => {
-                  setShowCode(!showCode);
-                }}
-                css={{
-                  border: 0,
-                  fontWeight: "$light",
-                }}
-                density="compact"
-              >
-                <Icon>
-                  <CodeIcon />
-                </Icon>
-                {showCode ? "Hide" : "Show"} code
-              </Button>
-            )}
-          </Box>
-          <Box
-            css={{
-              alignSelf: "flex-end",
-              flex: "1 1 auto",
-              display: "flex",
-              justifyContent: "flex-end",
-              gap: "$100",
-              "@sm": {
-                display: "none",
-              },
-            }}
-          >
-            {withPreview && <OpenInPlayroom isGuide={isGuide} />}
-            <CopyCodeButton />
-          </Box>
+          {withPreview && <OpenInPlayroom isGuide={isGuide} />}
+          <CopyCodeButton />
         </Box>
-      </SandpackProvider>
-    </>
+      </Box>
+    </SandpackProvider>
   );
 };
 

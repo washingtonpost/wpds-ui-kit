@@ -1,5 +1,5 @@
 import React from "@stitches/react";
-import { Icon, styled, theme, Box } from "@washingtonpost/wpds-ui-kit";
+import { Icon, styled, theme } from "@washingtonpost/wpds-ui-kit";
 import Success from "@washingtonpost/wpds-assets/asset/success";
 import Warning from "@washingtonpost/wpds-assets/asset/warning";
 import Info from "@washingtonpost/wpds-assets/asset/info";
@@ -61,7 +61,7 @@ const Assets = {
   error: Error,
 };
 
-export default function GuideContainer({ css, variant, children }) {
+export default function GuideContainer({ variant, children }) {
   const Asset = Assets[variant];
 
   return (

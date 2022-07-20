@@ -1,8 +1,7 @@
 import React from "react";
 import { NextSeo } from "next-seo";
 import { getDocsListBySection, getNavigation } from "~/services";
-import { Box, Icon, theme, styled } from "@washingtonpost/wpds-ui-kit";
-import ChevronRight from "@washingtonpost/wpds-assets/asset/chevron-right";
+import { Box, styled } from "@washingtonpost/wpds-ui-kit";
 import { Header } from "~/components/Markdown/Components/headers";
 import Link from "~/components/Markdown/Components/link";
 import { P } from "~/components/Markdown/Styling";
@@ -108,7 +107,7 @@ export default function Page({ docs }) {
   );
 }
 
-export const getStaticProps = async ({ params }) => {
+export const getStaticProps = async () => {
   const docs = await getDocsListBySection("support");
   const navigation = await getNavigation();
 

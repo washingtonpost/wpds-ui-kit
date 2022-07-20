@@ -15,6 +15,7 @@ module.exports = {
     "@washingtonpost/wpds",
   ],
   extends: [
+    "next/core-web-vitals",
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "prettier",
@@ -48,5 +49,8 @@ module.exports = {
     react: {
       version: "detect",
     },
+  },
+  rules: {
+    "react/prop-types": 0,
   },
 };

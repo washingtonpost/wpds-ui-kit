@@ -7,15 +7,6 @@ export default function CollapsibleContainer({ children, maxHeight }) {
     position: "relative",
     marginBottom: 50,
   });
-  const Fade = styled("div", {
-    position: "absolute",
-    bottom: 0,
-    left: 0,
-    right: 0,
-    height: 100,
-    background:
-      "linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%)",
-  });
   const Content = styled("div", {
     position: "relative",
     transition: "max-height .25s",
@@ -47,10 +38,7 @@ export default function CollapsibleContainer({ children, maxHeight }) {
   });
   return (
     <CollapsibleRoot>
-      <Content expand={Show ? "true" : "false"}>
-        {children}
-        {/* {!Show && <Fade />} */}
-      </Content>
+      <Content expand={Show ? "true" : "false"}>{children}</Content>
       <ShowMoreButton
         onClick={() => setShow(!Show)}
         density={"compact"}

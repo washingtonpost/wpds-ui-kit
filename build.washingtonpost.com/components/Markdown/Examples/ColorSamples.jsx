@@ -15,6 +15,17 @@ const ColorSamples = ({ group }) => {
   }, [group]);
 
   useEffect(() => {
+    const SuccessToast = () => (
+      <AlertBanner.Root variant="success">
+        <AlertBanner.Content css={{ minWidth: 250, paddingRight: "$050" }}>
+          <b>Copied: </b>
+          <Box as="span" css={{ fontSize: theme.fontSizes[100] }}>
+            <Box as="i">{copyText}</Box>
+          </Box>
+        </AlertBanner.Content>
+      </AlertBanner.Root>
+    );
+
     if (copyText) {
       window.navigator.clipboard.writeText(copyText);
       toast(<SuccessToast />, {
@@ -30,24 +41,14 @@ const ColorSamples = ({ group }) => {
     }
   }, [copyText]);
 
-  const SuccessToast = () => {
-    return (
-      <AlertBanner.Root variant="success">
-        <AlertBanner.Content css={{ minWidth: 250, paddingRight: "$050" }}>
-          <b>Copied: </b>
-          <Box as="span" css={{ fontSize: theme.fontSizes[100] }}>
-            <Box as="i">{copyText}</Box>
-          </Box>
-        </AlertBanner.Content>
-      </AlertBanner.Root>
-    );
-  };
-
   const handleColor = (group) => {
     const colorNamesArray = Object.keys(Tokens.color[group]);
 
     return colorNamesArray.filter((colorName) =>
-      Tokens.color[group][colorName].hasOwnProperty("value")
+      Object.prototype.hasOwnProperty.call(
+        Tokens.color[group][colorName],
+        "value"
+      )
     );
   };
 

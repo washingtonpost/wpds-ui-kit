@@ -1,10 +1,7 @@
-import React, { useState } from "react";
-import { styled, theme, keyframes } from "@washingtonpost/wpds-ui-kit";
-import Link from "next/link";
+import React from "react";
+import { styled, theme } from "@washingtonpost/wpds-ui-kit";
 
-export default function VersionButton({ setState, css }) {
-  const [isOpen, setisOpen] = useState(false);
-
+export default function VersionButton({ css }) {
   const Wrapper = styled("div", {
     position: "relative",
   });
@@ -23,52 +20,6 @@ export default function VersionButton({ setState, css }) {
       outlineStyle: "solid",
       outlineOffset: "2px",
       outlineWidth: "2px",
-    },
-  });
-  const Reveal = keyframes({
-    from: { transform: "scale(0)" },
-    to: { transform: "scale(1)" },
-  });
-  const PopOver = styled("div", {
-    zIndex: "$page",
-    backgroundColor: "$gray600",
-    borderRadius: "$025",
-    position: "absolute",
-    minWidth: "$400",
-    border: "1px solid $subtle",
-    left: "50%",
-    transform: "translateX(-50%)",
-    padding: "$050 $100",
-    marginTop: "$025",
-    boxShadow: "$200",
-  });
-  const List = styled("ul", {
-    listStyle: "none",
-    margin: "0",
-    padding: "0",
-  });
-  const ListItem = styled("li", {
-    paddingBottm: "$075",
-  });
-  const A = styled("a", {
-    cursor: "pointer",
-    textDecoration: "none",
-    color: "$primary",
-    "&:hover": {
-      opacity: ".75",
-    },
-    "&:focus": {
-      outlineColor: "$signal",
-      outlineStyle: "solid",
-      outlineOffset: "2px",
-      outlineWidth: "2px",
-    },
-    variants: {
-      signal: {
-        showColor: {
-          color: "$signal",
-        },
-      },
     },
   });
   return (

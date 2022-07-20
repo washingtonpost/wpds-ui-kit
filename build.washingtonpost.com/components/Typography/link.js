@@ -1,5 +1,5 @@
+import React from "react";
 import Link from "next/link";
-import * as React from "react";
 import { styled } from "@washingtonpost/wpds-ui-kit";
 
 export default function CustomLink({ useSignal, as, href, ...otherProps }) {
@@ -26,10 +26,8 @@ export default function CustomLink({ useSignal, as, href, ...otherProps }) {
   });
 
   return (
-    <>
-      <Link as={as} href={href} passHref>
-        <A signal={useSignal ? "showColor" : ""} {...otherProps} />
-      </Link>
-    </>
+    <Link as={as} href={href} passHref>
+      <A signal={useSignal ? "showColor" : ""} {...otherProps} />
+    </Link>
   );
 }

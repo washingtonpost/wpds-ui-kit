@@ -1,3 +1,4 @@
+import React from "react";
 import { styled, theme } from "@washingtonpost/wpds-ui-kit";
 
 export const Grid = ({ maxSize, css, children }) => {

@@ -1,11 +1,14 @@
-import { Box, Icon, styled, Button } from "@washingtonpost/wpds-ui-kit";
+import React from "react";
+
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import Logo from "./logo";
+
+import { Box, Icon, styled, Button } from "@washingtonpost/wpds-ui-kit";
 import Menu from "@washingtonpost/wpds-assets/asset/menu";
 import Close from "@washingtonpost/wpds-assets/asset/close";
-import dynamic from "next/dynamic";
-import React from "react";
+
+import Logo from "./logo";
 import { ThemeToggle } from "./ThemeToggle";
 
 const SearchForm = dynamic(() => import("./SearchForm"), { ssr: false });
@@ -71,12 +74,6 @@ const Anchor = styled("a", {
   },
 });
 
-const MenuToggle = styled("button", {
-  alignItems: "center",
-  backgroundColor: "transparent",
-  borderStyle: "none",
-  display: "flex",
-});
 const HamburgerMenu = styled(Menu, {
   fill: "$primary",
   transition: "all .2s",
@@ -110,12 +107,7 @@ const CloseMenu = styled(Close, {
   },
 });
 
-export const NavigationBar = ({
-  setMobileMenu,
-  mobileMenuState,
-  isClosed,
-  children,
-}) => {
+export const NavigationBar = ({ setMobileMenu, mobileMenuState, isClosed }) => {
   const router = useRouter();
 
   const [hideFromSmallScreen, setHideFromSmallScreen] = React.useState(false);
