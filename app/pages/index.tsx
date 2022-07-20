@@ -130,6 +130,14 @@ function HomePage() {
             <HStack>
               <Checkbox disabled />
             </HStack>
+            <HStack>
+              <Checkbox
+                checked
+                variant="primary"
+                id="cb1"
+                label="With a label"
+              />
+            </HStack>
           </>
         </HStack>
 

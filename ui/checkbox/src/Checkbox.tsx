@@ -6,6 +6,8 @@ import { Check, Indeterminate } from "@washingtonpost/wpds-assets";
 
 import * as PrimitiveCheckbox from "@radix-ui/react-checkbox";
 
+import { InputLabel } from "@washingtonpost/wpds-input-label";
+
 const StyledCheckbox = styled(PrimitiveCheckbox.Root, {
   transition: "$allFast",
   appearance: "none",
@@ -16,6 +18,7 @@ const StyledCheckbox = styled(PrimitiveCheckbox.Root, {
   overflow: "hidden",
   backgroundColor: "$$backgroundColor",
   color: "$$color",
+  flexShrink: "0",
 
   "&:focus": {
     outline: "1px solid $signal",
@@ -228,6 +231,7 @@ interface CheckboxInterface extends CheckboxVariants {
   name?: string;
   value?: string;
   id?: string;
+  label?: string;
 }
 
 const StyledCheck = styled("span", {
@@ -248,40 +252,53 @@ const StyledCheck = styled("span", {
   },
 });
 
+const StyledInputLabel = styled(InputLabel, {
+  display: "flex",
+  cursor: "default",
+  gap: "$025",
+  flexDirection: "row",
+  alignItems: "flex-end",
+  justifyContent: "center",
+  lineHeight: theme.lineHeights["050"],
+});
+
 export const Checkbox = React.forwardRef<HTMLButtonElement, CheckboxInterface>(
   (props, ref) => {
     return (
-      <StyledCheckbox ref={ref} {...props}>
-        <StyledIndicator
-          size={props.size}
-          variant={props.variant}
-          isOutline={props.isOutline}
-          disabled={props.disabled}
-        >
-          <StyledCheck size={props.size}>
-            {props.checked === "indeterminate" ||
-            props.defaultChecked === "indeterminate" ? (
-              <Indeterminate
-                {...{
-                  fill: "currentColor",
-                  "aria-hidden": true,
-                  focusable: false,
-                  role: "img",
-                }}
-              />
-            ) : (
-              <Check
-                {...{
-                  fill: "currentColor",
-                  "aria-hidden": true,
-                  focusable: false,
-                  role: "img",
-                }}
-              />
-            )}
-          </StyledCheck>
-        </StyledIndicator>
-      </StyledCheckbox>
+      <StyledInputLabel htmlFor={props.id}>
+        <StyledCheckbox ref={ref} {...props}>
+          <StyledIndicator
+            size={props.size}
+            variant={props.variant}
+            isOutline={props.isOutline}
+            disabled={props.disabled}
+          >
+            <StyledCheck size={props.size}>
+              {props.checked === "indeterminate" ||
+              props.defaultChecked === "indeterminate" ? (
+                <Indeterminate
+                  {...{
+                    fill: "currentColor",
+                    "aria-hidden": true,
+                    focusable: false,
+                    role: "img",
+                  }}
+                />
+              ) : (
+                <Check
+                  {...{
+                    fill: "currentColor",
+                    "aria-hidden": true,
+                    focusable: false,
+                    role: "img",
+                  }}
+                />
+              )}
+            </StyledCheck>
+          </StyledIndicator>
+        </StyledCheckbox>
+        {props.label}
+      </StyledInputLabel>
     );
   }
 );
