@@ -1,5 +1,5 @@
 {
-  "name": "WPDS-docs",
+  "name": "@washingtonpost/wpds-docs",
   "version": "0.11.1",
   "private": true,
   "publishConfig": {
@@ -11,7 +11,7 @@
     "start": "next start",
     "lint": "next lint",
     "postinstall": "npx prettier --write '**/*.{js,mdx}'",
-    "prepare": "husky install",
+    "prepare": "cd .. && husky install",
     "alex": "npx alex docs/**/*.mdx --mdx"
   },
   "dependencies": {
