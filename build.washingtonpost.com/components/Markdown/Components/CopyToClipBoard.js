@@ -112,5 +112,4 @@ const CopyCodeButton = ({ as, css, children, textToCopy, hideIcon }) => {
   );
 };
 
-export { CopyCodeButton };
 export default CopyCodeButton;

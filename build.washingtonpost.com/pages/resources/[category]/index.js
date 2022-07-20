@@ -1,3 +1,4 @@
+import React from "react";
 import { styled } from "@washingtonpost/wpds-ui-kit";
 import { NextSeo } from "next-seo";
 import Header from "~/components/Typography/Headers";
@@ -112,7 +113,7 @@ export const getStaticProps = async ({ params }) => {
 
 const SECTION = "resources";
 
-export const getStaticPaths = async (response) => {
+export const getStaticPaths = async () => {
   const paths = await getAllPathsByCategory(`${SECTION}`);
 
   return {

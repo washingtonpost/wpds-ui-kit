@@ -1,3 +1,4 @@
+import React from "react";
 import { Box } from "@washingtonpost/wpds-ui-kit";
 
 import { Header } from "~/components/Markdown/Components/headers";
@@ -11,7 +12,7 @@ export const THUMBNAIL_WIDE = "wide";
 export const THUMBNAIL_SQUARE = "square";
 
 export const Thumbnail = (props) => {
-  // switches based on the size of the post displayed – full for workshops and tutorials, mini for guides
+  // switches based on the size of the post displayed – full for workshops and tutorials, mini for guides
   // note the description is hidden for what's new and the publish date is hidden for tutorials on the resources landing page
   const { name, description, publishDate, imageTag, thumbnail, size } = props;
 

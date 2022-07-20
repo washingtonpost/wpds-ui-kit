@@ -29,7 +29,7 @@ export const logoList = [
   "google",
   "election-default",
   "election-redbackground",
-  "election-bluebackground"
+  "election-bluebackground",
 ];
 
 export const darkLogos = [
@@ -39,27 +39,27 @@ export const darkLogos = [
   "olympics-dark",
 ];
 
-export default function Logos() {
-  const SuccessToast = () => {
-    return (
+const Logos = () => {
+  const [exampleToCopy, setExampleToCopy] = useState(null);
+  const [name, setName] = useState("");
+
+  useEffect(() => {
+    const SuccessToast = () => (
       <AlertBanner.Root variant="success">
         <AlertBanner.Content css={{ minWidth: 250, paddingRight: "$050" }}>
           <b>Copied: </b>
           <Box as="span" css={{ fontSize: 16 }}>
             Import statement for{" "}
             <Box as="i" css={{ textTransform: "capitalize" }}>
-              {Name}
+              {name}
             </Box>
           </Box>
         </AlertBanner.Content>
       </AlertBanner.Root>
     );
-  };
-  const [ExampleToCopy, setExampleToCopy] = useState(null);
-  const [Name, setName] = useState("");
-  useEffect(() => {
-    if (ExampleToCopy) {
-      window.navigator.clipboard.writeText(ExampleToCopy);
+
+    if (exampleToCopy) {
+      window.navigator.clipboard.writeText(exampleToCopy);
       toast(<SuccessToast />, {
         position: "top-center",
         closeButton: false,
@@ -72,9 +72,10 @@ export default function Logos() {
         },
       });
     }
-  }, [ExampleToCopy]);
-  function setVariables(example, Name) {
-    setName(Name);
+  }, [exampleToCopy, name]);
+
+  function setVariables(example, name) {
+    setName(name);
     setExampleToCopy(example);
   }
 
@@ -120,4 +121,6 @@ export default function Logos() {
   };
 
   return <GetLogos />;
-}
+};
+
+export default Logos;

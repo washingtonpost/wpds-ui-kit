@@ -1,3 +1,4 @@
+import React from "react";
 import { MDXRemote } from "next-mdx-remote";
 import { NextSeo } from "next-seo";
 import MDXStyling from "~/components/Markdown/Styling";

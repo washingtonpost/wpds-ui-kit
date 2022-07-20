@@ -1,5 +1,5 @@
 import React from "react";
-import { styled, theme } from "@washingtonpost/wpds-ui-kit";
+import { styled } from "@washingtonpost/wpds-ui-kit";
 import Link from "next/link";
 import Header from "../../Typography/Headers";
 

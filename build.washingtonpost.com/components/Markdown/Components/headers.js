@@ -1,5 +1,5 @@
-import { styled } from "@washingtonpost/wpds-ui-kit";
 import React from "react";
+import { styled } from "@washingtonpost/wpds-ui-kit";
 import Link from "./link";
 
 export const Header = styled("h1", {

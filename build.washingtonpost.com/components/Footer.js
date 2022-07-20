@@ -1,4 +1,5 @@
-import { Box, styled, theme } from "@washingtonpost/wpds-ui-kit";
+import React from "react";
+import { Box, styled } from "@washingtonpost/wpds-ui-kit";
 import { Footer as SiteFooter } from "@washingtonpost/site-footer";
 import { useRouter } from "next/router";
 

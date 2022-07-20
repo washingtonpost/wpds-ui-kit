@@ -1,4 +1,5 @@
-const docgen = require("react-docgen-typescript");
+import docgen from "react-docgen-typescript";
+
 const cache = new Map();
 
 export const getPropsTable = async (component = "icon") => {

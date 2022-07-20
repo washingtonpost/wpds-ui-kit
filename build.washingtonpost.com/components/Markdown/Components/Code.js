@@ -1,3 +1,4 @@
+import React from "react";
 import { theme, Box } from "@washingtonpost/wpds-ui-kit";
 import dynamic from "next/dynamic";
 const Sandbox = dynamic(() => import("./Sandbox"));

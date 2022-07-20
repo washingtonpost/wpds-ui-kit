@@ -55,7 +55,9 @@ export default function inlineSVG({
   function lookUpValue(rgba) {
     let value;
     for (var token in Tokens.color.light) {
-      if (Tokens.color.light[token].hasOwnProperty("value")) {
+      if (
+        Object.prototype.hasOwnProperty.call(Tokens.color.light[token], "value")
+      ) {
         const tokenValue = Tokens.color.light[token].value.replaceAll(" ", "");
         if (rgba == tokenValue) {
           value = `var(--wpds-colors-${token})`;

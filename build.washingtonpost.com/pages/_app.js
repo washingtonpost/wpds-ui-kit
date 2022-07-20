@@ -1,12 +1,11 @@
-import { ThemeProvider } from "next-themes";
 import React from "react";
+import { ThemeProvider } from "next-themes";
 import Script from "next/script";
 import { DefaultSeo } from "next-seo";
 import "react-toastify/dist/ReactToastify.css";
 import {
   globalStyles,
   darkTheme,
-  Box,
   globalCss,
 } from "@washingtonpost/wpds-ui-kit";
 import { darkModeStyles } from "~/components/DarkModeStyles";
