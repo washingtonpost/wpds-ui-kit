@@ -25,7 +25,8 @@
         ".storybook/**/*",
         ".zeplin",
         "scripts/**/*",
-        ".github/**/*"
+        ".github/**/*",
+        "build.washingtonpost.com/**/*"
       ],
       "registry": "https://registry.npmjs.org/"
     }

@@ -128,7 +128,8 @@
     "lint": "eslint --ext .ts,.tsx ui/",
     "test-storybook": "test-storybook",
     "dev": "turbo run dev --no-cache --parallel --continue",
-    "clean": "turbo run clean && rm -rf node_modules"
+    "clean": "turbo run clean && rm -rf node_modules",
+    "docsite:dev": "lerna run dev --scope build.washingtonpost.com --stream"
   },
   "prettier": {},
   "jest": {
