@@ -50,10 +50,24 @@ export const useFloating = (
 ] => {
   const [isFloating, setIsFloating] = React.useState(val ? true : false);
   const [isTouched, setIsTouched] = React.useState(val ? true : false);
+  const [isFocused, setIsFocused] = React.useState(false);
+  const prevValue = React.useRef();
+
+  React.useEffect(() => {
+    if (val && !isFloating) {
+      setIsFloating(true);
+      setIsTouched(true);
+    } else if (!val && prevValue.current && !isFocused && isFloating) {
+      setIsFloating(false);
+      setIsTouched(false);
+    }
+    prevValue.current = val;
+  }, [val, prevValue, isFloating, isFocused, setIsFloating, setIsTouched]);
 
   function handleFocus(
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) {
+    setIsFocused(true);
     setIsFloating(true);
     onFocus && onFocus(event);
   }
@@ -61,6 +75,7 @@ export const useFloating = (
   function handleBlur(
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) {
+    setIsFocused(false);
     if (!isTouched) {
       setIsFloating(false);
     }
