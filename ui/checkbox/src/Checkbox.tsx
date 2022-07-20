@@ -256,6 +256,10 @@ const StyledInputLabel = styled(InputLabel, {
   display: "flex",
   cursor: "default",
   gap: "$025",
+  flexDirection: "row",
+  alignItems: "flex-end",
+  justifyContent: "center",
+  lineHeight: theme.lineHeights["050"],
 });
 
 export const Checkbox = React.forwardRef<HTMLButtonElement, CheckboxInterface>(
