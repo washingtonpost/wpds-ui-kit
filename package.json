@@ -85,7 +85,8 @@
   },
   "workspaces": [
     "./ui/*",
-    "./app"
+    "./app",
+    "./build.washingtonpost.com"
   ],
   "dependencies": {
     "@radix-ui/react-avatar": "latest",
