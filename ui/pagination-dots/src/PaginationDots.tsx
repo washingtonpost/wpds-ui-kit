@@ -6,7 +6,7 @@ const NAME = "PaginationDots";
 const ACTIVECOLOR = "primary";
 const INACTIVECOLOR = "onDisabled";
 
-const bound = (value: number, min: number, max: number) =>
+const bind = (value: number, min: number, max: number) =>
   Math.max(min, Math.min(max, value));
 
 interface PaginationDotsProps {
@@ -43,10 +43,10 @@ export const PaginationDots = React.forwardRef<
     return null;
   }
   // Always show at least one dot
-  const nPages = bound(Math.round(amount), 1, Infinity);
+  const nPages = bind(Math.round(amount), 1, Infinity);
 
   // 'Index' is 1-indexed, but we want to use 0-indexed integers
-  const activeIndex = bound(Math.round(index) - 1, 0, nPages - 1);
+  const activeIndex = bind(Math.round(index) - 1, 0, nPages - 1);
 
   // Construct the dot configurations, scaling dots based on position and total amount
   const dots = configureDots(nPages, activeIndex, amount);
@@ -89,22 +89,26 @@ export type { PaginationDotsProps };
 
 function configureDots(nPages: number, activeIndex: number, amount: number) {
   // creates and returns dots array with each dot's background color and scale
-  return [...Array(nPages)].map((_, dotIndex) => {
-    const stepsFromActive = Math.abs(dotIndex - activeIndex);
+  const dots: { background: string; scale: number }[] = new Array();
+  for (let i: number = 0; i < nPages; i++) {
+    const stepsFromActive = Math.abs(i - activeIndex);
     const isActive = stepsFromActive === 0;
     const background = isActive ? ACTIVECOLOR : INACTIVECOLOR;
 
+    // SCALING DOTS
     // default: active dot has scale = 1, each dot previous/next's scale reduces by 25%
     let scale = 1 - stepsFromActive / 4;
-
-    // if active dot is first or last in the arr, the 3rd-from-active dot should be 4px, not 2px
-    if (
-      (activeIndex === 0 && dotIndex > 2) ||
-      (activeIndex === nPages - 1 && dotIndex < nPages - 3)
+    if (amount <= 5 && stepsFromActive > 1) {
+      // if there are 5 or less dots, make all dots at least 4px
+      scale = 0.5;
+    } else if (
+      // else if active dot is first or last in the arr, the 3rd-from-active dot should be 4px, not 2px
+      (activeIndex === 0 && i > 2) ||
+      (activeIndex === nPages - 1 && i < nPages - 3)
     ) {
       scale = 1.25 - stepsFromActive / 4;
     } else if (
-      // if there are more than 5 dots, dots on the end should be 2px
+      // else if there are more than 5 dots, dots on the end should be 2px
       amount > 5 &&
       stepsFromActive > 1 &&
       activeIndex > 1 &&
@@ -112,17 +116,11 @@ function configureDots(nPages: number, activeIndex: number, amount: number) {
     ) {
       scale = 0.75 - stepsFromActive / 4;
     }
-    if (amount <= 5 && stepsFromActive > 1) {
-      // if there are 5 or less dots, make all dots at least 4px
-      scale = 0.5;
-    }
-    scale = bound(scale, 0, 1);
+    scale = bind(scale, 0, 1);
 
-    return {
-      background,
-      scale,
-    };
-  });
+    dots.push({ background, scale });
+  }
+  return dots;
 }
 
 function getTranslate(nPages: number, activeIndex: number) {
@@ -148,6 +146,6 @@ function getTranslate(nPages: number, activeIndex: number) {
     }
   }
   // Each dot is 8px wide with 2px margin (potentially scaled down within the 8px box)
-  const DOT_CONTAINER_WIDTH = 10;
-  return `-${DOT_CONTAINER_WIDTH * centeredDotIndex}px`;
+  const dotContainerWidth = 10;
+  return `-${dotContainerWidth * centeredDotIndex}px`;
 }
