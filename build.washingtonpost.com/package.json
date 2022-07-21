@@ -1,8 +1,8 @@
 {
   "name": "@washingtonpost/wpds-docs",
-  "private": true,
+  "version": "0.11.2",
   "publishConfig": {
-    "access": "restricted"
+    "access": "public"
   },
   "scripts": {
     "dev": "next-remote-watch ./docs/**/*",
