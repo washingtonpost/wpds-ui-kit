@@ -1,0 +1,145 @@
+---
+title: Avatar
+description: Avatar is a round container that holds a profile image to be used.
+component: avatar
+status: "Draft"
+---
+
+---
+
+## Anatomy
+
+<Container caption="Note: Image is not to scale" css={{ padding: "$150" }}>
+  <InlineSVG
+    width="169"
+    height="80"
+    path="/img/components/avatar/anatomy.svg"
+    alt="Image shows a purple circle with the number 1 pointing to an avatar that contains the headshot of a man with dark brown hair. The number one references the note below the image."
+  />
+</Container>
+
+1. Image container
+
+---
+
+## Options
+
+### Size
+
+Avatar supports any size token. The default size token is 200.
+
+```jsx withPreview
+export default function Example() {
+  return (
+    <Box
+      css={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        width: "100%",
+        gap: "$100",
+      }}
+    >
+      <Avatar size="200">
+        <img
+          src="https://i.pravatar.cc/300"
+          alt="An avatar is an atomic component that represents an individual’s identity through a circular photo."
+        />
+      </Avatar>
+      <Avatar size="300">
+        <img
+          src="https://i.pravatar.cc/300"
+          alt="An avatar is an atomic component that represents an individual’s identity through a circular photo."
+        />
+      </Avatar>
+      <Avatar size="400">
+        <img
+          src="https://i.pravatar.cc/300"
+          alt="An avatar is an atomic component that represents an individual’s identity through a circular photo."
+        />
+      </Avatar>
+      <Avatar size="500">
+        <img
+          src="https://i.pravatar.cc/300"
+          alt="An avatar is an atomic component that represents an individual’s identity through a circular photo."
+        />
+      </Avatar>
+    </Box>
+  );
+}
+```
+
+---
+
+## Guidance
+
+### Supports only 1:1 image ratios
+
+Images set to the height and clipped in a round container. When images are not in a 1:1 aspect they will be distorted.
+
+```jsx withPreview isGuide="information"
+export default function Example() {
+  return (
+    <Box
+      css={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        width: "100%",
+        gap: "$100",
+      }}
+    >
+      <img
+        height="64"
+        src="https://i.pravatar.cc/300"
+        alt="An avatar is an atomic component that represents an individual’s identity through a circular photo."
+      />
+      <Avatar size="400">
+        <img
+          src="https://i.pravatar.cc/300"
+          alt="An avatar is an atomic component that represents an individual’s identity through a circular photo."
+        />
+      </Avatar>
+      <img
+        width="64"
+        height="96"
+        src="https://images.pexels.com/photos/2220401/pexels-photo-2220401.jpeg?dpr=2"
+        alt="A 64px wide and 96 pixel high image."
+      />
+      <Avatar size="400">
+        <img
+          width="64"
+          height="96"
+          src="https://images.pexels.com/photos/2220401/pexels-photo-2220401.jpeg?dpr=2"
+          alt="A 64px wide and 96 pixel high image."
+        />
+      </Avatar>
+    </Box>
+  );
+}
+```
+
+### Recommended spacing
+
+When inline, Avatars should maintain at least the recommended spacing
+
+<GuideContainer variant="signal">
+  <InlineSVG
+    width="395"
+    height="111"
+    path="/img/components/avatar/avatar-label-spacing.svg"
+    alt="Image contains two avatars, both showing the headshot of a man with dark brown hair. The first avatar has a red line to the right of the image showing minimum right padding as 050 along with sample text that reads 'User profile'.The second avatar has a red line below the image showing minimum bottom padding as 025 along with sample text that reads 'User profile'."
+  />
+</GuideContainer>
+
+---
+
+## Accessibility
+
+Avatars should always include alt text of the image.
+
+---
+
+## API Reference
+
+<PropsTable props={propsTable} />
