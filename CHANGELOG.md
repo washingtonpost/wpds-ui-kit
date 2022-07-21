@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.11.2](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.11.1...v0.11.2) (2022-07-21)
+
+
+### Bug Fixes
+
+* add label to checkbox ([deffc54](https://github.com/washingtonpost/wpds-ui-kit/commit/deffc5411d7353198a8160ea1484efc31c92a041))
+* label alignment ([7a0e3c6](https://github.com/washingtonpost/wpds-ui-kit/commit/7a0e3c6251c827c7a532a81c7b4aa745f546be20))
+* preventing checkbox squish ([c435a83](https://github.com/washingtonpost/wpds-ui-kit/commit/c435a83270e14f7c15aaab890118c0da5af3fec7))
+* wrapping checkbox in input ([2ef1009](https://github.com/washingtonpost/wpds-ui-kit/commit/2ef10097ab352f881ddce4ace374a267dde2b6e1))
+
+
+### Features
+
+* add new architecture section to docs and initial ADR for branching ([6ca01ae](https://github.com/washingtonpost/wpds-ui-kit/commit/6ca01ae55fe2123e78216f3d51b5179345c4166d))
+* dark mode panel to storybook coding with claire ([4e27369](https://github.com/washingtonpost/wpds-ui-kit/commit/4e27369c9c8a874ce4cd94de6767edad91bdb0b5))
+
+
+
+
+
 ## [0.11.1](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.11.0...v0.11.1) (2022-06-24)
 
 
