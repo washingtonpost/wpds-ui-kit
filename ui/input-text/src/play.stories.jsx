@@ -5,7 +5,7 @@ import { InputText as Component } from "./";
 import { Icon } from "@washingtonpost/wpds-icon";
 import Asset from "@washingtonpost/wpds-assets/asset/settings";
 import { VisuallyHidden } from "@washingtonpost/wpds-visually-hidden";
-import { styled } from "@washingtonpost/wpds-theme";
+import { styled, theme } from "@washingtonpost/wpds-theme";
 
 export default {
   title: "InputText",
@@ -48,9 +48,15 @@ const Column = styled("div", {
   gap: "$100",
 });
 
+const Heading = styled("h2", {
+  color: theme.colors.primary,
+  fontSize: theme.fontSizes["100"],
+  marginBlock: 0,
+});
+
 const ChromaticTemplate = () => (
   <Column>
-    <h4>Standard input</h4>
+    <Heading>Standard input</Heading>
     <Component label="Label" />
     <Component label="Label" defaultValue="With value" />
     <Component
@@ -59,7 +65,7 @@ const ChromaticTemplate = () => (
       helperText="Helper text"
     />
 
-    <h4>Icon Placements</h4>
+    <Heading>Icon Placements</Heading>
     <Component label="Icon" defaultValue="Left" icon="left">
       <Icon label="">
         <Asset />
@@ -76,13 +82,13 @@ const ChromaticTemplate = () => (
       </Icon>
     </Component>
 
-    <h4>Types</h4>
+    <Heading>Types</Heading>
     <Component label="Type" defaultValue="Search" type="search" />
     <Component label="Type" defaultValue="Url" type="url" />
     <Component label="Type" defaultValue="Tel" type="tel" />
     <Component label="Type" defaultValue="Email" type="email" />
 
-    <h4>Behaviors</h4>
+    <Heading>Behaviors</Heading>
     <Component label="Behavior" defaultValue="Disabled" disabled />
     <Component
       label="Behavior"
