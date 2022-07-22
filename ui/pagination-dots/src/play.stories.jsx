@@ -1,7 +1,9 @@
 import * as React from "react";
 import { PaginationDots as Component } from "./";
 import { theme, styled, darkTheme } from "@washingtonpost/wpds-theme";
-import { Stack } from "../../../app/pages/index.tsx";
+import { Stack, HStack } from "../../../app/pages/index.tsx";
+import { Button } from "@washingtonpost/wpds-button";
+import { InputText } from "@washingtonpost/wpds-ui-kit";
 
 export default {
   title: "PaginationDots",
@@ -42,5 +44,47 @@ export const Chromatic = () => (
     <Component amount={6} index={6} label="Sample label" />
   </Stack>
 );
+
+export const WithControls = (args) => {
+  const { amount: amountArg, index: indexArg, ...rest } = args;
+  const id = React.useMemo(() => `${Math.random()}-amount`.slice(2), []);
+  const [amount, setAmount] = React.useState(5);
+  const [index, setIndex] = React.useState(1);
+
+  React.useEffect(() => setAmount(amountArg), [amountArg]);
+
+  return (
+    <Stack>
+      <Label>Pagination Dots with Controller</Label>
+      <InputText
+        id={id}
+        type="number"
+        min="0"
+        value={amount}
+        onChange={(e) => setAmount(e.target.value)}
+        label="Total dots"
+      />
+      <HStack css={{ alignItems: "center" }}>
+        <Button onClick={() => setIndex(index - 1)}>-</Button>
+        <Label
+          css={{
+            fontSize: theme.fontSizes[100],
+            fontWeight: theme.fontWeights["regular"],
+          }}
+        >
+          increase/decrease index
+        </Label>
+        <Button css={{ float: "right" }} onClick={() => setIndex(index + 1)}>
+          +
+        </Button>
+      </HStack>
+      <Component
+        index={index ? index : 1}
+        amount={amount ? amount : 5}
+        {...rest}
+      />
+    </Stack>
+  );
+};
 
 PaginationDots.args = { ...DefaultArgs };

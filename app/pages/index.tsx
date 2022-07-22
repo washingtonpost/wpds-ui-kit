@@ -49,7 +49,7 @@ export const Stack = styled("section", {
   borderRadius: "$075",
 });
 
-const HStack = styled("section", {
+export const HStack = styled("section", {
   display: "flex",
   flexDirection: "row",
   gap: "$100",
