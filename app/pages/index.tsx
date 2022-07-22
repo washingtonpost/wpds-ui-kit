@@ -17,6 +17,7 @@ import {
   css,
   Divider,
   Avatar,
+  PaginationDots,
 } from "@washingtonpost/wpds-ui-kit";
 import Chart from "@washingtonpost/wpds-assets/asset/chart";
 import Settings from "@washingtonpost/wpds-assets/asset/settings";
@@ -40,7 +41,7 @@ const SubHeadline = styled("h2", {
   fontSize: "$100",
 });
 
-const Stack = styled("section", {
+export const Stack = styled("section", {
   display: "flex",
   flexDirection: "column",
   gap: "$100",
@@ -48,7 +49,7 @@ const Stack = styled("section", {
   borderRadius: "$075",
 });
 
-const HStack = styled("section", {
+export const HStack = styled("section", {
   display: "flex",
   flexDirection: "row",
   gap: "$100",
@@ -348,6 +349,21 @@ function HomePage() {
             alt="An avatar is an atomic component that represents an individual’s identity through a circular photo."
           />
         </Avatar>
+        <h2>Pagination Dots</h2>
+        <Stack css={{ width: "200px", marginBlockStart: "0" }}>
+          <HStack>
+            <PaginationDots amount={6} index={1} label="Pagination label" />
+          </HStack>
+          <HStack>
+            <PaginationDots amount={7} index={4} label="Pagination label" />
+          </HStack>
+          <HStack>
+            <PaginationDots amount={5} index={3} label="Pagination label" />
+          </HStack>
+          <HStack>
+            <PaginationDots amount={5} index={5} label="Pagination label" />
+          </HStack>
+        </Stack>
       </Stack>
     </>
   );
