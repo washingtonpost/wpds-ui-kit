@@ -23,7 +23,7 @@
     "@stitches/react": "^1.2.7",
     "@washingtonpost/site-components": "latest",
     "@washingtonpost/site-footer": "latest",
-    "@washingtonpost/site-third-party-scripts": "v0.3.3",
+    "@washingtonpost/site-third-party-scripts": "latest",
     "@washingtonpost/wpds-assets": "v1.8.0",
     "@washingtonpost/wpds-ui-kit": "file:ui/kit",
     "gray-matter": "^4.0.2",
