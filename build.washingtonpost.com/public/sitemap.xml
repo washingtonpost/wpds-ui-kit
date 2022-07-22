@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://build.washingtonpost.com</loc>
+  </url>
+
+  <url>
+    <loc>https://build.washingtonpost.com/components/alert-banner</loc>
+  </url>
+
+  <url>
+    <loc>https://build.washingtonpost.com/components/app-bar</loc>
+  </url>
+
+  <url>
+    <loc>https://build.washingtonpost.com/components/avatar</loc>
+  </url>
+
+  <url>
+    <loc>https://build.washingtonpost.com/components/button</loc>
+  </url>
+
+  <url>
+    <loc>https://build.washingtonpost.com/components/checkbox</loc>
+  </url>
+
+  <url>
+    <loc>https://build.washingtonpost.com/components/container</loc>
+  </url>
+
+  <url>
+    <loc>https://build.washingtonpost.com/components/divider</loc>
+  </url>
+
+  <url>
+    <loc>https://build.washingtonpost.com/components/icon</loc>
+  </url>
+
+  <url>
+    <loc>https://build.washingtonpost.com/components/image</loc>
+  </url>
+
+  <url>
+    <loc>https://build.washingtonpost.com/components/input-password</loc>
+  </url>
+
+  <url>
+    <loc>https://build.washingtonpost.com/components/input-text</loc>
+  </url>
+
+  <url>
+    <loc>https://build.washingtonpost.com/components/input-textarea</loc>
+  </url>
+
+  <url>
+    <loc>https://build.washingtonpost.com/components/radio-group</loc>
+  </url>
+
+  <url>
+    <loc>https://build.washingtonpost.com/components/text</loc>
+  </url>
+
+  <url>
+    <loc>https://build.washingtonpost.com/components/visually-hidden</loc>
+  </url>
+
+  <url>
+    <loc>https://build.washingtonpost.com/foundations/base</loc>
+  </url>
+
+  <url>
+    <loc>https://build.washingtonpost.com/foundations/color</loc>
+  </url>
+
+  <url>
+    <loc>https://build.washingtonpost.com/foundations/icons</loc>
+  </url>
+
+  <url>
+    <loc>https://build.washingtonpost.com/foundations/logos</loc>
+  </url>
+
+  <url>
+    <loc>https://build.washingtonpost.com/foundations/principles</loc>
+  </url>
+
+  <url>
+    <loc>https://build.washingtonpost.com/foundations/radius</loc>
+  </url>
+
+  <url>
+    <loc>https://build.washingtonpost.com/foundations/shadow</loc>
+  </url>
+
+  <url>
+    <loc>https://build.washingtonpost.com/foundations/size</loc>
+  </url>
+
+  <url>
+    <loc>https://build.washingtonpost.com/foundations/space</loc>
+  </url>
+
+  <url>
+    <loc>https://build.washingtonpost.com/foundations/typography</loc>
+  </url>
+
+  <url>
+    <loc>https://build.washingtonpost.com/foundations/wam</loc>
+  </url>
+
+  <url>
+    <loc>https://build.washingtonpost.com/foundations/z-index</loc>
+  </url>
+
+  <url>
+    <loc>https://build.washingtonpost.com/playroom</loc>
+  </url>
+
+  <url>
+    <loc>https://build.washingtonpost.com/release-notes</loc>
+  </url>
+
+  <url>
+    <loc>https://build.washingtonpost.com/release-notes/End Of April 2022</loc>
+  </url>
+
+  <url>
+    <loc>https://build.washingtonpost.com/release-notes/v1.0.0</loc>
+  </url>
+
+  <url>
+    <loc>https://build.washingtonpost.com/release-notes/v1.0.1</loc>
+  </url>
+
+  <url>
+    <loc>https://build.washingtonpost.com/release-notes/v1.0.2</loc>
+  </url>
+
+  <url>
+    <loc>https://build.washingtonpost.com/resources</loc>
+  </url>
+
+  <url>
+    <loc>https://build.washingtonpost.com/resources/guides/coding-a-page</loc>
+  </url>
+
+  <url>
+    <loc
+      >https://build.washingtonpost.com/resources/guides/contribute-a-component</loc
+    >
+  </url>
+
+  <url>
+    <loc>https://build.washingtonpost.com/resources/guides/figma-guide</loc>
+  </url>
+
+  <url>
+    <loc
+      >https://build.washingtonpost.com/resources/guides/migrating-to-our-new-palette</loc
+    >
+  </url>
+
+  <url>
+    <loc>https://build.washingtonpost.com/resources/guides/react-guide</loc>
+  </url>
+
+  <url>
+    <loc>https://build.washingtonpost.com/resources/guides/stitches</loc>
+  </url>
+
+  <url>
+    <loc
+      >https://build.washingtonpost.com/resources/guides/tachyons-stitches</loc
+    >
+  </url>
+
+  <url>
+    <loc>https://build.washingtonpost.com/resources/guides/themes</loc>
+  </url>
+
+  <url>
+    <loc>https://build.washingtonpost.com/resources/guides/zeplin-guide</loc>
+  </url>
+
+  <url>
+    <loc
+      >https://build.washingtonpost.com/resources/tutorials/how-to-use-our-theme</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://build.washingtonpost.com/resources/tutorials/how-to-use-slots</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://build.washingtonpost.com/resources/workshops/design_3-16-22</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://build.washingtonpost.com/resources/workshops/design_4-6-22</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://build.washingtonpost.com/resources/workshops/developer_3-17-22</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://build.washingtonpost.com/resources/workshops/developer_4-7-22</loc
+    >
+  </url>
+
+  <url>
+    <loc>https://build.washingtonpost.com/support</loc>
+  </url>
+
+  <url>
+    <loc>https://build.washingtonpost.com/support/get-help</loc>
+  </url>
+
+  <url>
+    <loc>https://build.washingtonpost.com/support/legacy-v0</loc>
+  </url>
+
+  <url>
+    <loc>https://build.washingtonpost.com/support/release-cycles</loc>
+  </url>
+
+  <url>
+    <loc>https://build.washingtonpost.com/support/supported-platforms</loc>
+  </url>
+</urlset>
