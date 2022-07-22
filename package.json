@@ -95,7 +95,7 @@
   "workspaces": [
     "./ui/*",
     "./app",
-    "build.washingtonpost.com/**/*"
+    "./build.washingtonpost.com"
   ],
   "dependencies": {
     "@radix-ui/react-avatar": "latest",
@@ -139,7 +139,8 @@
     "dev": "turbo run dev --no-cache --parallel --continue",
     "clean": "turbo run clean && rm -rf node_modules",
     "docsite:dev": "lerna run dev --scope @washingtonpost/wpds-docs --stream",
-    "docsite:build": "lerna run build --scope @washingtonpost/wpds-docs --stream"
+    "docsite:build": "lerna run build --scope @washingtonpost/wpds-docs --stream",
+    "docsite:lint": "lerna run lint --scope @washingtonpost/wpds-docs --stream"
   },
   "prettier": {},
   "jest": {

@@ -1,5 +1,4 @@
 {
-  "packages": ["./ui/*", "./app", "build.washingtonpost.com/**/*"],
   "useWorkspaces": true,
   "useNx": false,
   "npmClient": "npm",
