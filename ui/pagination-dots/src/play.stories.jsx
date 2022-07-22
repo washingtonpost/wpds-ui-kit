@@ -46,12 +46,11 @@ export const Chromatic = () => (
 );
 
 export const WithControls = (args) => {
-  const { amount: amountArg, index: indexArg, ...rest } = args;
   const id = React.useMemo(() => `${Math.random()}-amount`.slice(2), []);
   const [amount, setAmount] = React.useState(5);
   const [index, setIndex] = React.useState(1);
 
-  React.useEffect(() => setAmount(amountArg), [amountArg]);
+  React.useEffect(() => setAmount(amount), [amount]);
 
   return (
     <Stack>
@@ -61,6 +60,7 @@ export const WithControls = (args) => {
         type="number"
         min="0"
         value={amount}
+        defaultValue={5}
         onChange={(e) => setAmount(e.target.value)}
         label="Total dots"
       />
@@ -78,11 +78,7 @@ export const WithControls = (args) => {
           +
         </Button>
       </HStack>
-      <Component
-        index={index ? index : 1}
-        amount={amount ? amount : 5}
-        {...rest}
-      />
+      <Component index={index ? index : 1} amount={amount ? amount : 5} />
     </Stack>
   );
 };
