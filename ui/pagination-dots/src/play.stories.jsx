@@ -1,6 +1,7 @@
 import * as React from "react";
 import { PaginationDots as Component } from "./";
-import { theme, styled } from "@washingtonpost/wpds-theme";
+import { theme, styled, darkTheme } from "@washingtonpost/wpds-theme";
+import { Stack } from "../../../app/pages/index.tsx";
 
 export default {
   title: "PaginationDots",
@@ -13,39 +14,33 @@ const DefaultArgs = {
   label: "Progress Bar",
 };
 
-const Container = styled("div", {
-  textAlign: "center",
-});
 const Label = styled("h3", {
   textAlign: "center",
-  [".wpds-dark &"]: { color: theme.colors.primary },
+  [`.${darkTheme} &`]: { color: theme.colors.primary },
 });
 
 export const PaginationDots = (args) => (
-  <Container>
-    <Label css={{ fontSize: "$150" }}>Pagination Dots</Label>
-    <br />
-    <Label>Interactive (with controls)</Label>
+  <Stack>
+    <Label>Pagination Dots</Label>
     <Component {...args} />
-    <br />
+  </Stack>
+);
+
+export const Chromatic = () => (
+  <Stack>
     <Label>First item active, 5 or less items</Label>
     <Component amount={5} index={1} label="Sample label" />
-    <br />
     <Label>First item active, more than 5 items</Label>
     <Component amount={6} index={1} label="Sample label" />
-    <br />
     <Label>Middle item active, 5 or less items</Label>
     <Component amount={5} index={3} label="Sample label" />
-    <br />
     <Label>Middle item active, more than 5 items</Label>
     <Component amount={7} index={4} label="Sample label" />
-    <br />
     <Label>Last item active, 5 or less items</Label>
     <Component amount={5} index={5} label="Sample label" />
-    <br />
     <Label>Last item active, more than 5 items</Label>
     <Component amount={6} index={6} label="Sample label" />
-  </Container>
+  </Stack>
 );
 
 PaginationDots.args = { ...DefaultArgs };

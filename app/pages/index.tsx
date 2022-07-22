@@ -41,7 +41,7 @@ const SubHeadline = styled("h2", {
   fontSize: "$100",
 });
 
-const Stack = styled("section", {
+export const Stack = styled("section", {
   display: "flex",
   flexDirection: "column",
   gap: "$100",

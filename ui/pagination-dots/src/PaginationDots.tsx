@@ -9,7 +9,7 @@ const INACTIVECOLOR = "onDisabled";
 const bind = (value: number, min: number, max: number) =>
   Math.max(min, Math.min(max, value));
 
-interface PaginationDotsProps {
+interface PaginationDotsProps extends React.ComponentPropsWithRef<"div"> {
   css?: WPDS.CSS;
   index: number;
   amount: number;
