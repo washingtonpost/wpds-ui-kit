@@ -106,8 +106,6 @@ export const globalStyles = globalCss({
     lineHeight: "$meta",
   },
   "*": {
-    margin: 0,
-    padding: 0,
     boxSizing: "border-box",
   },
   html: {
