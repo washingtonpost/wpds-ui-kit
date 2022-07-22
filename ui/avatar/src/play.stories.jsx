@@ -23,6 +23,8 @@ const Container = styled("div", {
   textAlign: "center",
 });
 const Label = styled("h3", {
+  color: theme.colors.primary,
+  marginBlock: 0,
   textAlign: "center",
 });
 
