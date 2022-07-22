@@ -2,7 +2,7 @@ import * as React from "react";
 import { screen, userEvent } from "@storybook/testing-library";
 import { expect } from "@storybook/jest";
 import { RadioGroup as Component, RadioButton } from "./";
-import { styled, css } from "@washingtonpost/wpds-theme";
+import { styled, css, theme } from "@washingtonpost/wpds-theme";
 
 export default {
   title: "RadioGroup",
@@ -91,9 +91,15 @@ const HStack = styled("section", {
   borderRadius: "$075",
 });
 
+const Heading = styled("h2", {
+  color: theme.colors.primary,
+  fontSize: theme.fontSizes["125"],
+  marginBlock: 0,
+});
+
 const ChromaticTemplate = () => (
   <Column>
-    <h3>Variants</h3>
+    <Heading>Variants</Heading>
     <HStack>
       <Component legend="Primary" variant="primary" name="pri">
         <RadioButton label="Option 1" value="opt1" id="p-opt1" checked />
@@ -108,7 +114,7 @@ const ChromaticTemplate = () => (
         <RadioButton label="Option 2" value="opt2" id="c-opt2" />
       </Component>
     </HStack>
-    <h3>isOutline</h3>
+    <Heading>isOutline</Heading>
     <HStack>
       <Component legend="Primary" variant="primary" name="o-pri" isOutline>
         <RadioButton label="Option 1" value="opt1" id="op-opt1" checked />
@@ -134,12 +140,12 @@ const ChromaticTemplate = () => (
         <RadioButton label="Option 2" value="opt2" id="oc-opt2" />
       </Component>
     </HStack>
-    <h3>Disabled</h3>
+    <Heading>Disabled</Heading>
     <Component legend="Select an option" name="dis" disabled>
       <RadioButton label="Option 1" value="opt1" id="d-opt1" checked />
       <RadioButton label="Option 2" value="opt2" id="d-opt2" />
     </Component>
-    <h3>Error</h3>
+    <Heading>Error</Heading>
     <Component
       legend="Select an option"
       name="err"
@@ -149,7 +155,7 @@ const ChromaticTemplate = () => (
       <RadioButton label="Option 1" value="opt1" id="e-opt1" checked />
       <RadioButton label="Option 2" value="opt2" id="e-opt2" />
     </Component>
-    <h3>Overflow</h3>
+    <Heading>Overflow</Heading>
     <Component
       legend="Select an option"
       name="overflow"

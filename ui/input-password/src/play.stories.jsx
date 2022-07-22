@@ -2,7 +2,7 @@ import * as React from "react";
 import { screen, userEvent } from "@storybook/testing-library";
 import { expect } from "@storybook/jest";
 import { InputPassword as Component } from "./";
-import { styled } from "@washingtonpost/wpds-theme";
+import { styled, theme } from "@washingtonpost/wpds-theme";
 
 export default {
   title: "InputPassword",
@@ -23,13 +23,19 @@ const Column = styled("div", {
   gap: "$100",
 });
 
+const Heading = styled("h2", {
+  color: theme.colors.primary,
+  fontSize: theme.fontSizes["100"],
+  marginBlock: 0,
+});
+
 const ChromaticTemplate = () => (
   <Column>
-    <h4>Standard password</h4>
+    <Heading>Standard password</Heading>
     <Component />
     <Component defaultValue="With value" />
 
-    <h4>Behaviors</h4>
+    <Heading>Behaviors</Heading>
     <Component defaultValue="Disabled" disabled helperText="Disabled" />
     <Component defaultValue="Error" error errorMessage="Error Message" />
     <Component defaultValue="Success" success helperText="Success" />
