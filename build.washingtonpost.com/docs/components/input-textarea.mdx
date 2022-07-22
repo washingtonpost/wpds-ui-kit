@@ -1,0 +1,126 @@
+---
+title: Input Text Area
+description: A text area lets users enter long form text which spans over multiple lines.
+component: InputTextarea
+status: "Draft"
+---
+
+## Anatomy
+
+<Container caption="Note: Image is not  to scale" css={{ padding: "$150" }}>
+  <InlineSVG
+    path="/img/components/input-textarea/anatomy.svg"
+    width={555}
+    height={196}
+  />
+</Container>
+
+1. Label
+2. Value
+3. Border
+4. Browser Default drag icon
+
+---
+
+## Options
+
+### Resize
+
+The text area can prevent reize by setting `canResize` to false.
+
+```jsx withPreview
+export default function Example() {
+  return (
+    <Box css={{ display: "flex", flexDirection: "column", gap: "$050" }}>
+      <InputTextarea canResize={false} label="Label" />
+      <InputTextarea label="Label" />
+    </Box>
+  );
+}
+```
+
+### Helper text
+
+The text area has optional helper text.
+
+```jsx withPreview
+export default function Example() {
+  return (
+    <Box css={{ display: "flex", flexDirection: "column", gap: "$050" }}>
+      <InputTextarea
+        helperText={<p>Please keep your message brief</p>}
+        label="Label"
+      />
+    </Box>
+  );
+}
+```
+
+<BR />
+
+---
+
+## Behavior
+
+### Default
+
+The text area can resize by default.
+
+```jsx withPreview
+export default function Example() {
+  return <InputTextarea label="Label" />;
+}
+```
+
+### Error
+
+```jsx withPreview
+export default function Example() {
+  return (
+    <InputTextarea
+      error
+      errorMessage={<p>Please enter your message before submitting</p>}
+      required
+      label="Label"
+    />
+  );
+}
+```
+
+### Success
+
+```jsx withPreview
+export default function Example() {
+  const message =
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut dignissim eros at velit iaculis accumsan. Praesent ullamcorper faucibus lobortis. Fusce accumsan tempus nisi, a pulvinar nunc pharetra ut. Integer mauris dui, sollicitudin a aliquam sed, aliquam sed sapien. Vivamus nibh arcu, laoreet nec aliquam sed, rutrum eget elit. Etiam et hendrerit lorem. Nunc ac nisi vel massa mollis pretium. Sed ac fermentum quam. Vivamus nulla libero, consequat sed efficitur vel, vulputate vel nunc. Proin purus nisl, vestibulum venenatis vulputate ac, tempor eget nunc. Integer tortor justo, viverra accumsan diam sed, laoreet mattis quam. Donec dapibus risus vitae urna suscipit ultrices. Vivamus dapibus tortor ligula, a feugiat eros fringilla a.";
+  return <InputTextarea defaultValue={message} success={true} label="Label" />;
+}
+```
+
+### Required
+
+```jsx withPreview
+export default function Example() {
+  return <InputTextarea required label="Label" />;
+}
+```
+
+<BR />
+
+---
+
+## Guidance
+
+### Do not use textarea for single or short inputs
+
+Textarea are for multiline text such as a sentence or a paragraph.
+
+```jsx withPreview
+export default function Example() {
+  return <InputTextarea defaultValue="John Doe" required label="Name" />;
+}
+```
+
+## API Reference
+
+<PropsTable props={propsTable} />

@@ -1,0 +1,35 @@
+---
+order: 3
+title: Space
+description:
+---
+
+Space tokens are relative to the [baseSize](/foundations/base).
+Use space tokens to define padding or margin when designing a component or layout.
+When using space tokens in code, you can access them using `theme.space.[tokenName]`
+
+<BR />
+
+```jsx withPreview
+export default function Example() {
+  const SpaceExample = styled("div", {
+    padding: theme.space["300"], // Space example
+    marginRight: theme.space["200"], // Space example
+    backgroundColor: theme.colors.primary,
+    color: theme.colors.onPrimary,
+  });
+  return (
+    <>
+      <SpaceExample>Item 1</SpaceExample>
+      <SpaceExample>Item 2</SpaceExample>
+    </>
+  );
+}
+```
+
+<Table
+  headers={["Name", "Value", "Calculated", "Description"]}
+  useTokenData={true}
+  data={"space"}
+  calculateValue
+/>

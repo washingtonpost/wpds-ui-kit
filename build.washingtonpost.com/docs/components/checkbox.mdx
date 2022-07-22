@@ -1,0 +1,327 @@
+---
+title: Checkbox
+description:
+component: checkbox
+---
+
+## Anatomy
+
+<Container caption="Note: Image is not  to scale" css={{ padding: "$150" }}>
+  <InlineSVG
+    path="/img/components/checkbox/anatomy.svg"
+    width={110}
+    height={81}
+  />
+</Container>
+
+1. Icon
+2. Background Fill
+3. Border
+
+---
+
+## Options
+
+### Size
+
+There are two sizes available `125` & `087`.
+
+```jsx withPreview
+export default function Example() {
+  return (
+    <Box
+      css={{
+        display: "flex",
+        justifyContent: "center",
+        width: "100%",
+        gap: "$100",
+      }}
+    >
+      <Checkbox checked variant="primary" size="125" />
+      <Checkbox checked variant="primary" size="087" />
+    </Box>
+  );
+}
+```
+
+### Variant
+
+There are 3 variants available `primary` `secondary` & `cta`.
+
+```jsx withPreview
+export default function Example() {
+  const [Check1, setCheck1] = useState(true);
+  const [Check2, setCheck2] = useState(true);
+  const [Check3, setCheck3] = useState(true);
+  return (
+    <Box
+      css={{
+        display: "flex",
+        justifyContent: "center",
+        width: "100%",
+        gap: "$100",
+      }}
+    >
+      <Checkbox
+        onClick={() => setCheck1(!Check1)}
+        checked={Check1}
+        variant="primary"
+        size="125"
+      />
+      <Checkbox
+        onClick={() => setCheck2(!Check2)}
+        checked={Check2}
+        variant="secondary"
+        size="125"
+      />
+      <Checkbox
+        onClick={() => setCheck3(!Check3)}
+        checked={Check3}
+        variant="cta"
+        size="125"
+      />
+    </Box>
+  );
+}
+```
+
+### Style
+
+There are 2 styles available `fill` & `outline`.
+
+```jsx withPreview
+export default function Example() {
+  const [Check1, setCheck1] = useState(true);
+  const [Check2, setCheck2] = useState(true);
+  const [Check3, setCheck3] = useState(true);
+  return (
+    <Box
+      css={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        width: "100%",
+        gap: "$100",
+      }}
+    >
+      <Checkbox
+        onClick={() => setCheck1(!Check1)}
+        checked={Check1}
+        variant="primary"
+        isOutline
+        size="125"
+      />
+      <Box css={{ padding: "$100", backgroundColor: "$gray0" }}>
+        <Checkbox
+          onClick={() => setCheck2(!Check2)}
+          checked={Check2}
+          variant="secondary"
+          isOutline
+          size="125"
+        />
+      </Box>
+      <Checkbox
+        onClick={() => setCheck3(!Check3)}
+        checked={Check3}
+        variant="cta"
+        isOutline
+        size="125"
+      />
+    </Box>
+  );
+}
+```
+
+### Check states
+
+A checkbox state can be `true`, `false` or `indeterminate`.
+
+```jsx withPreview
+export default function Example() {
+  return (
+    <Box
+      css={{
+        display: "flex",
+        justifyContent: "center",
+        width: "100%",
+        gap: "$100",
+      }}
+    >
+      <Checkbox checked variant="primary" size="125" />
+      <Checkbox variant="primary" size="125" />
+      <Checkbox checked={"indeterminate"} variant="primary" size="125" />
+    </Box>
+  );
+}
+```
+
+---
+
+## Behavior
+
+### Disabled
+
+```jsx withPreview
+export default function Example() {
+  return (
+    <Box
+      css={{
+        display: "flex",
+        justifyContent: "center",
+        width: "100%",
+        gap: "$100",
+      }}
+    >
+      <Checkbox disabled checked variant="primary" size="125" />
+      <Checkbox disabled variant="primary" size="125" />
+      <Checkbox
+        disabled
+        checked={"indeterminate"}
+        variant="primary"
+        size="125"
+      />
+    </Box>
+  );
+}
+```
+
+### Focus
+
+```jsx withPreview
+export default function Example() {
+  return (
+    <Box
+      css={{
+        display: "flex",
+        justifyContent: "center",
+        width: "100%",
+        gap: "$100",
+      }}
+    >
+      <Checkbox checked variant="primary" size="125" />
+      <p>Click checkbox to see focus</p>
+    </Box>
+  );
+}
+```
+
+---
+
+## Guidance
+
+### When to use indeterminate state
+
+When checkbox are in a group the _parent_ checkbox will reflect the group status of the checkbox.
+
+```jsx withPreview isGuide="success"
+export default function Example() {
+  const [Check1, setCheck1] = useState(true);
+  const [Check2, setCheck2] = useState(false);
+  const [Check3, setCheck3] = useState(false);
+  useEffect(() => {
+    setCheck3(true);
+  }, []);
+  useEffect(() => {
+    if (Check2 != Check3) {
+      setCheck1("indeterminate");
+    } else if (Check2 && Check3) {
+      setCheck1(true);
+    } else {
+      setCheck1(false);
+    }
+  }, [Check2, Check3]);
+  function HandleCategory(bool) {
+    if (bool) {
+      setCheck2(true);
+      setCheck3(true);
+    } else {
+      setCheck2(false);
+      setCheck3(false);
+    }
+  }
+  return (
+    <Box
+      css={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        gap: "$100",
+      }}
+    >
+      <Box
+        onClick={() => HandleCategory(!Check1)}
+        css={{
+          cursor: "pointer",
+          display: "flex",
+          gap: "$025",
+          fontWeight: "bold",
+        }}
+      >
+        <Checkbox checked={Check1} variant="primary" isOutline size="125" />
+        <label>Category</label>
+      </Box>
+      <Box css={{ paddingLeft: "$100" }}>
+        <Box
+          onClick={() => setCheck2(!Check2)}
+          css={{ cursor: "pointer", display: "flex", gap: "$025" }}
+        >
+          <Checkbox checked={Check2} variant="primary" isOutline size="125" />
+          <label>Option 1</label>
+        </Box>
+        <Box
+          onClick={() => setCheck3(!Check3)}
+          css={{
+            cursor: "pointer",
+            display: "flex",
+            marginTop: "$100",
+            gap: "$025",
+          }}
+        >
+          <Checkbox checked={Check3} variant="primary" isOutline size="125" />
+          <label>Option 2</label>
+        </Box>
+      </Box>
+    </Box>
+  );
+}
+```
+
+### Click/Tap targets
+
+The click/tap target should include the label and control the checkbox.
+
+```jsx withPreview isGuide="success"
+export default function Example() {
+  const [Check1, setCheck1] = useState(false);
+
+  return (
+    <Box
+      css={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        gap: "$100",
+      }}
+    >
+      <Box
+        onClick={() => setCheck1(!Check1)}
+        css={{
+          cursor: "pointer",
+          display: "flex",
+          marginTop: "$100",
+          gap: "$025",
+        }}
+      >
+        <Checkbox checked={Check1} variant="primary" isOutline size="125" />
+        <label>Checkbox label</label>
+      </Box>
+    </Box>
+  );
+}
+```
+
+---
+
+## API Reference
+
+<PropsTable props={propsTable} />

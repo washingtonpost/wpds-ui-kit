@@ -1,0 +1,540 @@
+{
+    "plugins": [
+        {
+            "name": "@zeplin/cli-connect-react-plugin"
+        }
+    ],
+    "projects": [],
+    "styleguides": [
+        "619bad1e0be4e8ad4be3aa3c"
+    ],
+    "github": {
+        "repository": "washingtonpost/wpds-ui-kit",
+        "branch": "main"
+    },
+    "components": [
+        {
+            "name": "Icon",
+            "path": "build.washingtonpost.com/snippets/icon/size100.jsx",
+            "zeplinIds": [
+                "61e9d9997aeea49ea3eef027",
+                "61e9d99aad963b8b3e14fd22",
+                "61e9d9994b0c41b7a99b197f"
+            ],
+            "documentation": {
+                "urlPath": "/components/icon"
+            }
+        },
+        {
+            "name": "Icon using any token size",
+            "path": "build.washingtonpost.com/snippets/icon/custom.jsx",
+            "zeplinIds": [
+                "622682051da362147be7a07c"
+            ],
+            "documentation": {
+                "urlPath": "/components/icon"
+            }
+        },
+        {
+            "name": "AppBar",
+            "path": "build.washingtonpost.com/snippets/appbar/example.jsx",
+            "zeplinIds": [
+                "621e298d3c3f7bac1d0656a8",
+                "621e298c9b7e8aab07eb8920",
+                "621e298cd1b184a0f2953371",
+                "621e298cd83036a0c10ebe13",
+                "621e298bac3c25a05c7b614a",
+                "621e298bf7e8bfa94627a87f",
+                "621e298d0057e7abc285a2c2",
+                "621e298c64a7d2acc2b00d82"
+            ],
+            "documentation": {
+                "urlPath": "/components/app-bar"
+            }
+        },
+        {
+            "name": "Container",
+            "path": "build.washingtonpost.com/snippets/container/example.jsx",
+            "zeplinIds": [
+                "621e2aa15d7d46aaac88a546",
+                "621e2aa0357f8aa0b460941a",
+                "621e2aa09e72cb9f375b273c",
+                "621e2aa0d98044a37b0cf392",
+                "621e2aa1db146d9f6e293185"
+            ],
+            "documentation": {
+                "urlPath": "/components/container"
+            }
+        },
+        {
+            "name": "Example of an error AlertBanner",
+            "path": "build.washingtonpost.com/snippets/alertbanner/errorExample.jsx",
+            "zeplinIds": [
+                "621d41910c0428624e60f716",
+                "621d4190512d7e6148d97acb",
+                "621d419037d53855cb7ce37d",
+                "621d41902fd9c56073d39d12"
+            ],
+            "documentation": {
+                "urlPath": "/components/alert-banner"
+            }
+        },
+        {
+            "name": "Example of a warning AlertBanner",
+            "path": "build.washingtonpost.com/snippets/alertbanner/warning.jsx",
+            "zeplinIds": [
+                "621d41913afc93577d42cc7c",
+                "621d41909df00658e425cc27",
+                "621d41913aa8296052f58ac2",
+                "621d4190af83686225012838"
+            ],
+            "documentation": {
+                "urlPath": "/components/alert-banner"
+            }
+        },
+        {
+            "name": "Example of an information AlertBanner",
+            "path": "build.washingtonpost.com/snippets/alertbanner/info.jsx",
+            "zeplinIds": [
+                "621d41929b171962820af64c",
+                "621d4192d609246473cb3345",
+                "621d4192d62d126278e74cd7",
+                "621d4193fc4d9a5504d6590c"
+            ],
+            "documentation": {
+                "urlPath": "/components/alert-banner"
+            }
+        },
+        {
+            "name": "Example of a success AlerBanner",
+            "path": "build.washingtonpost.com/snippets/alertbanner/success.jsx",
+            "zeplinIds": [
+                "621d41923fc6256001fe5686",
+                "621d4191dccf0d54f6ef54a6",
+                "621d41929f8d225f74fe3693",
+                "621d419177101a641939a427"
+            ],
+            "documentation": {
+                "urlPath": "/components/alert-banner"
+            }
+        },
+        {
+            "name": "Button Icon-center",
+            "path": "build.washingtonpost.com/snippets/button/button-icon-center.jsx",
+            "zeplinIds": [
+                "623208356b32e3037b123f2e",
+                "623208183bd6eeb75f8ef25d",
+                "62320820e4e512b81b060cc8",
+                "62320832c954b7b6437830b7",
+                "623208364b4592b6d45a9278",
+                "62320836c76590b6866e468b",
+                "623208195a2a6bb3e92a841f",
+                "62320821b90a8b063cd35c3d",
+                "6232083227074cb6a647389c",
+                "62320837483a6eb1e932d99c",
+                "62320819742facb23d41eca7",
+                "6232081a81dbc0b48a2481c1",
+                "623208153126deb61f16e127",
+                "6232081f89f3f103d021a399",
+                "6232083115e190b1d3f273a0",
+                "62320816e2a6acb5f1496e44",
+                "6232081f53c89fb29cd6a9c8",
+                "62320830c242a3b3c1264cd3",
+                "62320816469c70038632976f",
+                "623208168dd4b9b2694a5f4d",
+                "6232083c0d9b28b2271828b6",
+                "62320845072d74b78e622bdc",
+                "623208402e8f97b7f1d97c79",
+                "6232084e822592b6066ee2cc",
+                "6232083c01bbf7b35f0a9a12",
+                "62320846ad7f2608b44f9b70",
+                "623208400bac3db4b738c1d5",
+                "6232084f9d4fe7b45d4f3a05",
+                "6232083931480508074bd7a4",
+                "62320843c954b7b643783101",
+                "6232083ec4debcb2ac05074e",
+                "6232084bb03079b54e7c9047",
+                "6232083ad547dbb3159562cb",
+                "6232084453c89fb29cd6aa5b",
+                "6232083fd403d5b7cf69417b",
+                "6232084d4b4592b6d45a92f3",
+                "6232080a6b32e3037b123db5",
+                "6232080fb1416ab215a7e0bd",
+                "62320823ad7f2608b44f95dd",
+                "6232082c01bbf7b35f0a99c5",
+                "6232080ac8d72eb1cc19452f",
+                "6232080fc954b7b643783048",
+                "623208244312c8b1defa05fa",
+                "6232082cc26c52b335309603",
+                "6232080c4fef58b700f5dbe2",
+                "623208114d4712b431091228",
+                "62320826120145b253517a6f",
+                "6232082e611d21b658c7b145",
+                "6232080ca7c474b847bcbe89",
+                "62320812db0a010419886f3e",
+                "62320827c26c52b3353095dc",
+                "6232082ec26c52b335309628"
+            ],
+            "documentation": {
+                "urlPath": "/components/button"
+            }
+        },
+        {
+            "name": "Button icon-left",
+            "path": "build.washingtonpost.com/snippets/button/button-icon-left.jsx",
+            "zeplinIds": [
+                "6232083b6fe59eb2e54aa0f0",
+                "623208456fe59eb2e54aa142",
+                "6232083fdb0a010419886fc1",
+                "6232084e16f3b7b4134d5029",
+                "623208394b4592b6d45a929b",
+                "62320843b8bc62b2c1f5938d",
+                "6232083ee69228b4761b73f8",
+                "6232084acae2ed09022baea2",
+                "62320817bc0406b7b9561035",
+                "6232082052246004e4c7a959",
+                "62320832c4debcb2ac0506fe",
+                "62320837714641b5823d6c38",
+                "623208182809f4b2a7be2eff",
+                "62320814b03079b54e7c89aa",
+                "6232081e06586a031c296778",
+                "62320830c8d72eb1cc194599",
+                "623208352fcfeb03c4dc4ff6",
+                "623208154d4712b43109124a",
+                "6232080b7cb96fb2b6026479",
+                "62320811d2c5b1b2b721a090",
+                "62320826318558b4cdaf88a3",
+                "6232082d5a2a6bb3e92a8472",
+                "6232080a742facb23d41ec5c",
+                "6232080f16f3b7b4134d4f67",
+                "62320823b90a8b063cd35c5e",
+                "6232082bbe03f4b70a365826"
+            ],
+            "documentation": {
+                "urlPath": "/components/button"
+            }
+        },
+        {
+            "name": "Button icon-right",
+            "path": "build.washingtonpost.com/snippets/button/button-icon-right.jsx",
+            "zeplinIds": [
+                "6232083d6fe59eb2e54aa111",
+                "6232084953c89fb29cd6aad1",
+                "62320842db0a010419886feb",
+                "62320852db0a010419887039",
+                "6232083d62eded06ae75e910",
+                "62320848c4debcb2ac050781",
+                "6232084281dbc0b48a24832a",
+                "62320850d403d5b7cf6941cb",
+                "6232081d53c89fb29cd6a9a6",
+                "6232082231480508074bd741",
+                "62320833a6b5e4b4b4c90536",
+                "62320838f5a6f7b2574da4de",
+                "6232081d605ccb0365c027b0",
+                "6232081ce2c8abb454dc6605",
+                "6232082298e286b75c45bf1f",
+                "62320833c76590b6866e466b",
+                "62320838469c700386329902",
+                "6232081c2869bd06d728691a",
+                "6232080eb8bc62b2c1f58ba4",
+                "6232081445a1b9b46d2ed5e6",
+                "6232082ab7a65f034e58e8a7",
+                "6232082f155a03b274457af1",
+                "6232080d16f3b7b4134d4f42",
+                "62320813155a03b27445797e",
+                "6232082a0bac3db4b738c178",
+                "6232082fe4e512b81b060d10"
+            ],
+            "documentation": {
+                "urlPath": "/components/button"
+            }
+        },
+        {
+            "name": "Button icon-none",
+            "path": "build.washingtonpost.com/snippets/button/button-icon-none.jsx",
+            "zeplinIds": [
+                "62320846234516b38d061afe",
+                "6232084031480508074bd7d1",
+                "623208506a389fb21c3e3677",
+                "62320844c954b7b643783121",
+                "6232083fdbe19bb56240f336",
+                "6232084d483a6eb1e932d9ee",
+                "6232083c742facb23d41ed16",
+                "6232083a64a42cb5da54a29f",
+                "6232081aac9c76b4efee416e",
+                "62320821ef5626b3e4012531",
+                "623208332e313e0448a23d25",
+                "62320837fede3cb2f872212c",
+                "6232081bd403d5b7cf69402b",
+                "62320817d2cd5b040679f149",
+                "6232081fe4e512b81b060cac",
+                "623208314b4592b6d45a924f",
+                "62320837be03f4b70a365855",
+                "623208174665c105f754616d",
+                "6232080b01bbf7b35f0a9948",
+                "623208104fef58b700f5dc03",
+                "62320825b8807805e0bd83d7",
+                "6232082cc87f790467caecff",
+                "6232080d605ccb0365c022b2",
+                "62320812072d74b78e622b43",
+                "6232082827074cb6a64735c1",
+                "6232082fb8bc62b2c1f59015"
+            ],
+            "documentation": {
+                "urlPath": "/components/button"
+            }
+        },
+        {
+            "name": "Checkbox example",
+            "path": "build.washingtonpost.com/snippets/checkbox/checkbox.jsx",
+            "zeplinIds": [
+                "6232086f7b95a6b33985fd0b",
+                "6232086fe4e512b81b06101b",
+                "623208712fcfeb03c4dc51c1",
+                "62320872630f41b5b6883f12",
+                "623208732fcfeb03c4dc51e6",
+                "6232086e27074cb6a6473984",
+                "62320879e2a6acb5f1496f5b",
+                "6232087815e190b1d3f2748e",
+                "6232087871595ab4a7e41d42",
+                "62320879d2cd5b040679f253",
+                "623208700d9085b1f4afcfed",
+                "6232087583734e069a7fb924",
+                "6232087450bf27b7a4b291b5",
+                "62320875d547dbb315956381",
+                "62320876b7a65f034e58eb76",
+                "6232086efb339907c5a77b39",
+                "6232086f1723ffb89ee74003",
+                "6232086f6fe59eb2e54aa1e1",
+                "623208724c349eb6b95bc4ca",
+                "62320877611d21b658c7b210",
+                "62320874d403d5b7cf69423b",
+                "62320873cae2ed09022baf1b",
+                "62320877ef5626b3e4012788",
+                "623208772e8f97b7f1d97f7c",
+                "62320872c242a3b3c1265655",
+                "62320878ef5626b3e40127a8",
+                "62320875b8807805e0bd8ae0",
+                "62320874a7112505a59a790d",
+                "623208794fef58b700f5dd2b",
+                "623208760000e703960f8c64",
+                "6232087027074cb6a6473994",
+                "6232086e469c700386329996",
+                "623208707cb96fb2b60265b2",
+                "62320871c242a3b3c1265635",
+                "6232087162eded06ae75e9ac",
+                "62320873c26c52b33530a067"
+            ],
+            "documentation": {
+                "urlPath": "/components/checkbox"
+            }
+        },
+        {
+            "name": "RadioGroup Example",
+            "path": "build.washingtonpost.com/snippets/RadioGroup/sample.jsx",
+            "zeplinIds": [
+                "62992b8636c7759e9c645101",
+                "62992b92f92d0fabb1a8e456",
+                "62992b863cd05206273d8709",
+                "62992b9107b597abf6ef0c80",
+                "62992b8a6b182faa58e0414f",
+                "62992b916b0d6fabc5fb3ae5",
+                "62992b95e386eaab4358cdc8",
+                "62992b94b9344fa370585131",
+                "62992b9688c3bb060138206e",
+                "62992b9343354502bc43776f",
+                "62992b9c116271064d4d6646",
+                "62992b9863fc8a02e41bf76b",
+                "62992b98e858d79fe1354c14",
+                "62992b968f803503f36370d2",
+                "62992b97a9a268ad002ed39a",
+                "62992b9a9ee06c02c3eaeaa3",
+                "62992b9b966264a30832ab4f",
+                "62992b9a684d6daa794c8e63",
+                "62992b998dd79cade061e1e6",
+                "62992b9be79d410497a9d2da",
+                "62992b8b15c0a2039f29ab7f",
+                "62992b8cb8a7b59fae1ee3b9",
+                "62992b8817ee30a198f9cdb5",
+                "62992b8ddac041a3cf0fd5a1",
+                "62992b87875d8cab6d6f5670",
+                "62992b8ca1bb8e9ecdc1688b",
+                "62992b87a1bb8e9ecdc16862",
+                "62992b8d8833c4a0b1dbbeb4",
+                "62992b88454ec5adcd3580c0",
+                "62992b8f7df0fe04cd698498",
+                "62992b8b07b597abf6ef0c50",
+                "62992b9081ae2f03657389e3",
+                "62992b892dce96051ebe16e8",
+                "62992b8f3d70c403caaaf7ad",
+                "62992b8ae56e46a14a0259c9",
+                "62992b935ba0209e8a55d1a0",
+                "62992b8ef7f505aa93baee25",
+                "62992b9410ddab03428f2a17",
+                "62992b8e7bdcdea0c6251a8c",
+                "62992b905c8d51aa6ed3f622"
+            ],
+            "documentation": {
+                "urlPath": "/components/radio-group"
+            }
+        },
+        {
+            "name": "Input Text example",
+            "path": "build.washingtonpost.com/snippets/inputs/input-base.jsx",
+            "zeplinIds": [
+                "6299299b3d70c403caaaf2c7",
+                "629929a7d7b10baab54f529c",
+                "6299299d3e293c05ed1a7764",
+                "629929a99dc52c05b0ba5e8a",
+                "629929a007b597abf6ef061b",
+                "629929abe386eaab4358c6ed",
+                "629929a29dc52c05b0ba5e63",
+                "629929a7454ec5adcd357ce0",
+                "629929a47c668005db774c73",
+                "629929a69c2682abe3ec555a",
+                "629929a563fc8a02e41beb7f",
+                "629929a1d5874f045575ec2d",
+                "629929a2684d6daa794c894b",
+                "6299299fed4b4eacacb5aa21",
+                "629929a8d91383ad919eb6ec",
+                "6299299ce75d04a25495ee27",
+                "629929aded4b4eacacb5aa4e",
+                "6299299e519a40030ce603ab",
+                "629929aa43354502bc4374bc",
+                "6299299ceaf36a03e307da1b",
+                "629929a6684fa59fb91077a4",
+                "6299299d874d8ea2dd5bc99b",
+                "629929abf92d0fabb1a8d7fe",
+                "629929a03cd05206273d8210",
+                "629929a18aa1b8ac982ff3c9",
+                "629929a8fb9683041572b2de",
+                "629929a3b1354dab80cc84c8",
+                "629929a4215b830318874058",
+                "629929a5684fa59fb910777f",
+                "6299299f590c7704a2bac116",
+                "629929a9a1bb8e9ecdc162fa",
+                "629929b15ba92ba1122d4139",
+                "629929b5887ee1a17499e791",
+                "629929be547477a2ba881f99",
+                "629929b6fb664d0447d6eb40",
+                "629929ac17ee30a198f9c80e",
+                "629929bcb9d4ca0477707476",
+                "629929ba9ee06c02c3ead951",
+                "629929af116271064d4d597f",
+                "629929af8833c4a0b1dbb65d",
+                "629929bdaf5f55ac36133da9",
+                "629929b019a5439ef9f8016c",
+                "629929bc62a674acecaeee06",
+                "629929b1780907aa516cac07",
+                "629929b7ce9cbea104dd9090",
+                "629929aa9319cbac72161f9d",
+                "629929b90ceb1004e3ef971b",
+                "629929b23e293c05ed1a7798",
+                "629929b9874d8ea2dd5bc9db",
+                "629929b47b7003adb5346993",
+                "629929b8394d74a0903221d5",
+                "629929b42677baad84d7899c",
+                "629929b3a9a268ad002ecd62",
+                "629929b68aa1b8ac982ff3fe",
+                "629929ad6c7866abd7ca2093",
+                "629929b8b8a7b59fae1eded1",
+                "629929ac9dc52c05b0ba5eaf",
+                "629929bb19a5439ef9f8019d",
+                "629929baad5933a4aebdf2ec",
+                "629929aea7f5faa1f0e09ded",
+                "629929ae590c7704a2bac14c",
+                "629929bb5397eaad4cf95522",
+                "629929b07c668005db774c9b",
+                "629929bd024d2e02d93136ef",
+                "629929b35f44b8032f786362",
+                "629929b536c7759e9c644b32"
+            ],
+            "documentation": {
+                "urlPath": "/components/input-text"
+            }
+        },
+        {
+            "name": "Input TextArea example",
+            "path": "build.washingtonpost.com/snippets/inputs/text-area.jsx",
+            "zeplinIds": [
+                "629929ffe79d410497a9d145",
+                "62992a01e858d79fe1354707",
+                "62992a066b182faa58e04000",
+                "62992a03e7c211a454829cf1",
+                "62992a00b9344fa370584d67",
+                "62992a02fe054aa3a3ff946f",
+                "62992a038aace2ac85384b9f",
+                "62992a07b9d4ca04777077d2",
+                "62992a07875d8cab6d6f5480",
+                "629929ff5ba92ba1122d41a9",
+                "62992a02367d5ba266735d73",
+                "62992a056b284aaaa20ff146",
+                "62992a001818b704bc84193d",
+                "62992a08dff4e806149767b8",
+                "62992a0510ddab03428f2794",
+                "62992a04ec7c839ed8ce812a",
+                "62992a08e56e46a14a0250b8",
+                "62992a06692ca4ad26741b60"
+            ],
+            "documentation": {
+                "urlPath": "/components/input-textarea"
+            }
+        },
+        {
+            "name": "Input Password example",
+            "path": "build.washingtonpost.com/snippets/inputs/input-password.jsx",
+            "zeplinIds": [
+                "629929e3dff4e8061497676a",
+                "629929e2b8b297a349eb80da",
+                "629929e072064b9f40505290",
+                "629929e4a877e004f5543f47",
+                "629929e1e7c211a454829cb0",
+                "629929e5a1bb8e9ecdc1653e",
+                "629929e4875d8cab6d6f5438",
+                "629929e3cfd3deac09f46530",
+                "629929e17bdcdea0c6251700",
+                "629929e52677baad84d78b85"
+            ],
+            "documentation": {
+                "urlPath": "/components/input-password"
+            }
+        },
+        {
+            "name": "Divider example",
+            "path": "build.washingtonpost.com/snippets/divider/example.jsx",
+            "zeplinIds": [
+                "629a5fd24bb4bdacd38c883b",
+                "629a5fd1fd47e614c9062e80",
+                "629a5fd3ec7c839ed8d683b7",
+                "629a5fd209369c163c14b166"
+            ],
+            "documentation": {
+                "urlPath": "/components/divider"
+            }
+        },
+        {
+            "name": "Avatar example",
+            "path": "build.washingtonpost.com/snippets/avatar/avatar.jsx",
+            "zeplinIds": [
+                "62b2457a79deb620a2e94c87",
+                "62b24578fab2381ac774a72b",
+                "62b2457be781581d3f5f6f5a",
+                "62b24579f3c68b1ed98e5377",
+                "62b2457cb6ff66223631d1a8",
+                "62b2457b1810441e7b67db26",
+                "62b245796490b51bd8cc4cc5",
+                "62b24578308f521b04b3420e"
+            ],
+            "documentation": {
+                "urlPath": "/components/avatar"
+            }
+        }
+    ],
+    "links": [
+        {
+            "name": "📄 WPDS Doc site",
+            "type": "documentation",
+            "url": "https://build.washingtonpost.com"
+        }
+    ]
+}

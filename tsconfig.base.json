@@ -1,5 +1,5 @@
 {
-  "include": ["ui", "types", "scripts", "next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["ui", "types", "scripts", "build.washingtonpost.com", "next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"],
   "compilerOptions": {
     "baseUrl": ".",

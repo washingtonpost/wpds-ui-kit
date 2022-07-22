@@ -105,7 +105,6 @@ dist
 
 # storybook
 storybook-static
-public
 out
 
 # ignore caches
