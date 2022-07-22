@@ -300,6 +300,7 @@ const Index = ({ recentPosts, rankedArticles }) => {
                     }}
                   >
                     <Header
+                      href={article.slug}
                       as="h3"
                       css={{
                         "@sm": {
