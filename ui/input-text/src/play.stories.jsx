@@ -3,9 +3,10 @@ import { screen, userEvent } from "@storybook/testing-library";
 import { expect } from "@storybook/jest";
 import { InputText as Component } from "./";
 import { Icon } from "@washingtonpost/wpds-icon";
+import { Button } from "@washingtonpost/wpds-button";
 import Asset from "@washingtonpost/wpds-assets/asset/settings";
 import { VisuallyHidden } from "@washingtonpost/wpds-visually-hidden";
-import { styled } from "@washingtonpost/wpds-theme";
+import { styled, theme } from "@washingtonpost/wpds-theme";
 
 export default {
   title: "InputText",
@@ -37,6 +38,45 @@ export default {
 const Template = (args) => <Component {...args} />;
 
 export const InputText = Template.bind({});
+InputText.parameters = {
+  chromatic: { disableSnapshot: true },
+};
+
+const SynchContainer = styled("div", {
+  display: "flex",
+  alignItems: "center",
+  gap: theme.space["050"],
+});
+
+const SynchTemplate = () => {
+  const [val1, setVal1] = React.useState("Value");
+  const [val2, setVal2] = React.useState("");
+
+  return (
+    <SynchContainer>
+      <Component
+        label="Value 1"
+        name="v1"
+        id="v1"
+        value={val1}
+        onChange={(e) => setVal1(e.target.value)}
+      />
+      <div>
+        <Button onClick={() => setVal2(val1)}>Synch</Button>
+        <Button onClick={() => setVal2("")}>Clear</Button>
+      </div>
+      <Component
+        label="Value 2"
+        name="v2"
+        id="v2"
+        value={val2}
+        onChange={(e) => setVal2(e.target.value)}
+      />
+    </SynchContainer>
+  );
+};
+
+export const InputSynch = SynchTemplate.bind({});
 InputText.parameters = {
   chromatic: { disableSnapshot: true },
 };
@@ -135,7 +175,7 @@ function sleep(ms) {
 Interactions.play = async ({ args }) => {
   // radix Label needs a tick to associate labels with inputs
   await sleep(0);
-  const label1 = screen.getByText("Field 1");
+  const label1 = screen.getAllByText("Field 1")[0];
   await expect(label1).toHaveStyle("font-size: 16px");
   await userEvent.type(screen.getByLabelText("Field 1"), "user text", {
     delay: 100,
@@ -143,11 +183,11 @@ Interactions.play = async ({ args }) => {
   await expect(label1).toHaveStyle("font-size: 12px");
   await userEvent.tab();
   await sleep(250);
-  const label2 = screen.getByText("Field 2");
+  const label2 = screen.getAllByText("Field 2")[0];
   await expect(label2).toHaveStyle("font-size: 12px");
   await userEvent.tab();
   await sleep(250);
   await expect(label2).toHaveStyle("font-size: 16px");
-  await userEvent.click(screen.getByRole("button"));
+  await userEvent.click(screen.getAllByRole("button")[0]);
   await expect(args.onButtonIconClick).toHaveBeenCalled();
 };
