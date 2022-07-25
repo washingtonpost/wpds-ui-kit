@@ -254,19 +254,30 @@ export default function Example() {
           cursor: "pointer",
           display: "flex",
           gap: "$025",
-          fontWeight: "bold",
         }}
       >
-        <Checkbox checked={Check1} variant="primary" isOutline size="125" />
-        <label>Category</label>
+        <Checkbox
+          checked={Check1}
+          variant="primary"
+          isOutline
+          size="125"
+          label="Category"
+          id="cb1"
+        />
       </Box>
       <Box css={{ paddingLeft: "$100" }}>
         <Box
           onClick={() => setCheck2(!Check2)}
           css={{ cursor: "pointer", display: "flex", gap: "$025" }}
         >
-          <Checkbox checked={Check2} variant="primary" isOutline size="125" />
-          <label>Option 1</label>
+          <Checkbox
+            checked={Check2}
+            variant="primary"
+            isOutline
+            size="125"
+            label="Option 1"
+            id="cb2"
+          />
         </Box>
         <Box
           onClick={() => setCheck3(!Check3)}
@@ -277,8 +288,14 @@ export default function Example() {
             gap: "$025",
           }}
         >
-          <Checkbox checked={Check3} variant="primary" isOutline size="125" />
-          <label>Option 2</label>
+          <Checkbox
+            checked={Check3}
+            variant="primary"
+            isOutline
+            size="125"
+            label="Option 2"
+            id="cb3"
+          />
         </Box>
       </Box>
     </Box>
@@ -312,8 +329,14 @@ export default function Example() {
           gap: "$025",
         }}
       >
-        <Checkbox checked={Check1} variant="primary" isOutline size="125" />
-        <label>Checkbox label</label>
+        <Checkbox
+          checked={Check1}
+          variant="primary"
+          isOutline
+          size="125"
+          label="Checkbox"
+          id="cb4"
+        />
       </Box>
     </Box>
   );
