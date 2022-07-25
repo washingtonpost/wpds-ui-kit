@@ -51,22 +51,15 @@ const Layout = styled("div", {
   flexDirection: "column",
 });
 
-function SiteNavigation() {
-  return (
-    <List>
-      <ListItem>
-        <Link href="/kitchen-sink" passHref>
-          <Anchor>Kitchen Sink</Anchor>
-        </Link>
-      </ListItem>
-      <ListItem>
-        <Link href="/storybook" passHref>
-          <Anchor>Storybook</Anchor>
-        </Link>
-      </ListItem>
-    </List>
-  );
-}
+const SiteNavigation = () => (
+  <List>
+    <ListItem>
+      <Link href="/storybook" passHref>
+        <Anchor>Storybook</Anchor>
+      </Link>
+    </ListItem>
+  </List>
+);
 
 function App({ Component, pageProps }) {
   globalStyles();
