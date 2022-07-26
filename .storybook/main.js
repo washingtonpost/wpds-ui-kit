@@ -17,7 +17,7 @@ module.exports = {
 </script>`
         : ""
     }`,
-  webpackFinal: async (config, { configType }) => {
+  webpackFinal: async (config) => {
     if (process.env.VERCEL) {
       config.output.publicPath = "/storybook/";
     }
