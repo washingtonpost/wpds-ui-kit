@@ -1,4 +1,0 @@
-{
-  "sandboxes": ["new", "/app", "next.js"],
-  "node": "16"
-}

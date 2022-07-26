@@ -1,8 +1,4 @@
 {
-  "packages": [
-    "./ui/*",
-    "./app"
-  ],
   "useWorkspaces": true,
   "useNx": false,
   "npmClient": "npm",
