@@ -122,3 +122,6 @@ yalc.lock
 # vscode plugin
 .history/*
 .vscode/*
+
+# ignore the storybook build 
+build.washingtonpost.com/storybook/**/*
