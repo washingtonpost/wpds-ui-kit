@@ -1,5 +1,4 @@
-import docgen from "react-docgen-typescript";
-
+const docgen = require("react-docgen-typescript");
 const cache = new Map();
 
 export const getPropsTable = async (component = "icon") => {
@@ -32,9 +31,10 @@ export const getPropsTable = async (component = "icon") => {
     return propsArray;
   } else {
     // Parse a file for docgen info
+
     try {
       const [{ props }] = docgen.parse(
-        `node_modules/@washingtonpost/wpds-${component}/src/index.ts`,
+        `../ui/${component}/src/index.ts`,
         options
       );
 
