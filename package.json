@@ -129,7 +129,7 @@
   "scripts": {
     "build:packages": "make build",
     "storybook": "make start-storybook",
-    "build-storybook": "npm run build:packages;build-storybook",
+    "build-storybook": "npm run turbo:build;build-storybook --force-build-preview --quiet",
     "bootstrap": "lerna bootstrap --hoist;npx lerna link --force-local",
     "build": "npx lerna link --force-local;make build;",
     "turbo:build": "turbo run build",
