@@ -3,10 +3,9 @@ localdev-storybook-in-nextjs:
 
 build: 
 	npm run turbo:build
-	bash scripts/vercel-build.sh
 
 building-storybook:
-	npx build-storybook --output-dir ./build.washingtonpost.com/public/storybook --preview-url /storybook/iframe.html --force-build-preview --quiet
+	npx build-storybook --output-dir ./storybook-static --preview-url /storybook/iframe.html --force-build-preview --quiet
 
 all-dev:
 	npx concurrently -n 'workspaces,storybook,website' 'npm run watch --workspaces' 'make localdev-storybook-in-nextjs' 'npm run website:dev'

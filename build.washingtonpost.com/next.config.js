@@ -20,10 +20,6 @@ module.exports = withBundleAnalyzer({
           source: "/support",
           destination: "/resources/process/support",
         },
-        {
-          source: "/storybook",
-          destination: "/storybook/index.html",
-        },
       ],
       fallback: [
         {
@@ -60,7 +56,7 @@ module.exports = withBundleAnalyzer({
   },
   swcMinify: false,
   images: {
-    domains: ["img.youtube.com", "media.giphy.com", "i.pravatar.cc"],
+    domains: ["img.youtube.com", "media.giphy.com"],
   },
   async redirects() {
     return [
