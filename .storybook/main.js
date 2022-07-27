@@ -9,14 +9,6 @@ module.exports = {
     "@storybook/addon-a11y",
   ],
   previewBody: (body) => `${body}`,
-  managerHead: (head) =>
-    `${head}${
-      process.env.VERCEL
-        ? `<script>
-    window['PREVIEW_URL'] = '/storybook/iframe.html';
-</script>`
-        : ""
-    }`,
   features: {
     storyStoreV7: true,
     interactionsDebugger: true,
