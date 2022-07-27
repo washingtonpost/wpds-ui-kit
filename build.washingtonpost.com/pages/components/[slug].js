@@ -256,9 +256,7 @@ export const getStaticProps = async ({ params }) => {
 
   if (source.scope.status !== "Coming soon") {
     try {
-      console.log("before call");
       propsTable = await getPropsTable(params.slug);
-      console.log("after call");
       bundleSize = await getPackageData(params.slug);
     } catch (e) {
       console.warn({ e });
