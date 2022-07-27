@@ -1,18 +1,3 @@
-localdev-storybook-in-nextjs:
-	npx start-storybook -p 6006 --preview-url=/storybook/iframe.html --quiet --ci --force-build-preview
-
-build: 
-	npm run turbo:build
-
-building-storybook:
-	npx build-storybook --output-dir ./storybook-static --preview-url /storybook/iframe.html --force-build-preview --quiet
-
-all-dev:
-	npx concurrently -n 'workspaces,storybook,website' 'npm run watch --workspaces' 'make localdev-storybook-in-nextjs' 'npm run website:dev'
-
-start-storybook:
-	start-storybook -p 6006 --quiet --ci
-
 experimental-version:
 	npx lerna version --conventional-commits --conventional-prerelease  --preid=experimental --sign-git-tag=experimental --no-changelog --yes --force-publish
 
