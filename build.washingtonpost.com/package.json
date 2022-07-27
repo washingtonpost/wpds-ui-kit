@@ -1,9 +1,6 @@
 {
   "name": "@washingtonpost/wpds-docs",
-  "private": true,
-  "publishConfig": {
-    "access": "restricted"
-  },
+  "version": "0.11.2",
   "scripts": {
     "dev": "next-remote-watch ./docs/**/*",
     "build": "node -v && node scripts/sitemap.js;next build",
@@ -28,7 +25,7 @@
     "@washingtonpost/site-footer": "latest",
     "@washingtonpost/site-third-party-scripts": "latest",
     "@washingtonpost/wpds-assets": "v1.8.0",
-    "@washingtonpost/wpds-ui-kit": "file:ui/kit",
+    "@washingtonpost/wpds-ui-kit": "*",
     "gray-matter": "^4.0.2",
     "lz-string": "^1.4.4",
     "next": "^12.1.0",

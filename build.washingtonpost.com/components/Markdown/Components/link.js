@@ -1,5 +1,5 @@
+import React from "react";
 import Link from "next/link";
-import * as React from "react";
 import { styled } from "@washingtonpost/wpds-ui-kit";
 
 export default function CustomLink({

@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { styled, theme } from "@washingtonpost/wpds-ui-kit";
+import React from "react";
+import { styled } from "@washingtonpost/wpds-ui-kit";
 import Tokens from "@washingtonpost/wpds-theme/src/wpds.tokens.json";
 
 /**
@@ -20,7 +20,7 @@ export default function Table({
       let _value;
       let _description;
       let _calculatedValue;
-      if (_Tokens[_token].hasOwnProperty("value")) {
+      if (Object.prototype.hasOwnProperty.call(_Tokens[_token], "value")) {
         _value = _Tokens[_token].value;
         if (calculateValue) {
           let _rawValue;
@@ -32,7 +32,9 @@ export default function Table({
           _calculatedValue = `${_rawValue[0] * 16}px`;
         }
       }
-      if (_Tokens[_token].hasOwnProperty("description")) {
+      if (
+        Object.prototype.hasOwnProperty.call(_Tokens[_token], "description")
+      ) {
         _description = _Tokens[_token].description;
       }
       if (_token != "description") {
@@ -125,12 +127,6 @@ export default function Table({
       color: "$primary",
     },
   });
-
-  function MapData({ item }) {
-    for (let td in item) {
-      return <td>{td}</td>;
-    }
-  }
 
   return (
     <Container>

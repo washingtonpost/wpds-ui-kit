@@ -20,6 +20,6 @@
     "isolatedModules": true,
     "jsx": "preserve"
   },
-  "exclude": ["node_modules", ".next", "coverage", "public"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"]
+  "exclude": ["node_modules", ".next", "coverage", "public", "pages/kitchen-sink/**/*"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"],
 }

@@ -1,3 +1,0 @@
-# philosophy.md
-
-TBD.

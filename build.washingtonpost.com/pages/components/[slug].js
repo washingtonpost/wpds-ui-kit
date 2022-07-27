@@ -1,3 +1,4 @@
+import React from "react";
 import { MDXRemote } from "next-mdx-remote";
 import { NextSeo } from "next-seo";
 import { AlertBanner, Box, styled, theme } from "@washingtonpost/wpds-ui-kit";
@@ -258,7 +259,7 @@ export const getStaticProps = async ({ params }) => {
       propsTable = await getPropsTable(params.slug);
       bundleSize = await getPackageData(params.slug);
     } catch (e) {
-      console.warning({ e });
+      console.warn({ e });
     }
   }
 

@@ -5,40 +5,32 @@ import MDXStyling from "~/components/Markdown/Styling";
 import { Grid } from "../Components/Grid";
 import { InputText } from "@washingtonpost/wpds-input-text";
 import Search from "@washingtonpost/wpds-assets/asset/search";
-import {
-  Icon,
-  theme,
-  Button,
-  AlertBanner,
-  Box,
-  styled,
-} from "@washingtonpost/wpds-ui-kit";
+import { Icon, theme, AlertBanner, Box } from "@washingtonpost/wpds-ui-kit";
 import { paramCase } from "param-case";
 import { logoList } from "./LogoSamples";
 
-export default function Icons() {
-  const SuccessToast = () => {
-    return (
+const Icons = () => {
+  const [exampleToCopy, setExampleToCopy] = useState(null);
+  const [name, setName] = useState("");
+  const [filter, setFilter] = useState("");
+
+  useEffect(() => {
+    const SuccessToast = () => (
       <AlertBanner.Root variant="success">
         <AlertBanner.Content css={{ minWidth: 250, paddingRight: "$050" }}>
           <b>Copied: </b>
           <Box as="span" css={{ fontSize: 16 }}>
             Import statement for{" "}
             <Box as="i" css={{ textTransform: "capitalize" }}>
-              {Name}
+              {name}
             </Box>
           </Box>
         </AlertBanner.Content>
       </AlertBanner.Root>
     );
-  };
-  const [ExampleToCopy, setExampleToCopy] = useState(null);
-  const [Name, setName] = useState("");
-  const [inFocus, setInFocus] = useState(false);
-  const [Filter, setFilter] = useState("");
-  useEffect(() => {
-    if (ExampleToCopy) {
-      window.navigator.clipboard.writeText(ExampleToCopy);
+
+    if (exampleToCopy) {
+      window.navigator.clipboard.writeText(exampleToCopy);
       toast(<SuccessToast />, {
         position: "top-center",
         closeButton: false,
@@ -50,10 +42,10 @@ export default function Icons() {
         },
       });
     }
-  }, [ExampleToCopy]);
+  }, [exampleToCopy, name]);
 
-  function setVariables(example, Name) {
-    setName(Name);
+  function setVariables(example, name) {
+    setName(name);
     setExampleToCopy(example);
   }
 
@@ -75,7 +67,7 @@ export default function Icons() {
       )}";`;
 
       if (logoList.includes(componentName)) return;
-      if (Filter != "" && !componentName.includes(Filter)) return;
+      if (filter != "" && !componentName.includes(filter)) return;
       return (
         <MDXStyling.Cell key={i}>
           <Box
@@ -121,4 +113,6 @@ export default function Icons() {
       </Grid>
     </>
   );
-}
+};
+
+export default Icons;

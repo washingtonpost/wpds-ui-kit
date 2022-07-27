@@ -2,7 +2,7 @@ import React from "react";
 import { Box, styled, theme } from "@washingtonpost/wpds-ui-kit";
 
 import { getAllDocs, getNavigation } from "~/services";
-import Header from "~/components/Markdown/Components/headers";
+import { Header } from "~/components/Markdown/Components/headers";
 import { List, ListItem } from "~/components/Markdown/Components/list";
 import {
   LandingContentGrid,
@@ -300,6 +300,7 @@ const Index = ({ recentPosts, rankedArticles }) => {
                     }}
                   >
                     <Header
+                      href={article.slug}
                       as="h3"
                       css={{
                         "@sm": {

@@ -1,6 +1,6 @@
+import * as React from "react";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from "next-mdx-remote";
-import * as React from "react";
 import * as Kit from "@washingtonpost/wpds-ui-kit";
 import * as Assets from "@washingtonpost/wpds-assets/asset";
 import {
@@ -187,13 +187,12 @@ export default function Playroom({
   isGuide,
 }) {
   const [receivedSource, setSource] = React.useState(source);
-  const [editorMode, setEditorMode] = React.useState(hasEditor);
   const [code, setCode] = React.useState(thisCode);
   const { resolvedTheme } = useTheme();
   const [sandboxEmbedTheme, setSandboxEmbedTheme] = React.useState(lightTheme);
 
   const Preview = () => {
-    const { code: thatCode, updateCode } = useActiveCode();
+    const { code: thatCode } = useActiveCode();
     const [firstRenderCode, setFirstRenderCode] = React.useState(null);
     const iframeRef = React.useRef(null);
 

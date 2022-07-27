@@ -1,5 +1,5 @@
-import { styled, css } from "@washingtonpost/wpds-ui-kit";
 import React from "react";
+import { styled, css } from "@washingtonpost/wpds-ui-kit";
 import Image from "next/image";
 
 export default function InlineImage({
