@@ -17,18 +17,6 @@ module.exports = {
 </script>`
         : ""
     }`,
-  webpackFinal: async (config) => {
-    if (process.env.VERCEL) {
-      config.output.publicPath = "/storybook/";
-    }
-    return config;
-  },
-  managerWebpack: async (config) => {
-    if (process.env.VERCEL) {
-      config.output.publicPath = "/storybook/";
-    }
-    return config;
-  },
   features: {
     storyStoreV7: true,
     interactionsDebugger: true,
