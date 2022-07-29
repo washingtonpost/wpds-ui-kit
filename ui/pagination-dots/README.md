@@ -4,12 +4,12 @@ Pagination dots show progress over a range of items (such as a carousel of image
 
 The PaginationDots component is meant to be controlled by another component, such as a Carousel which sets/updates `amount` and `index` to represent the items being traversed.
 
+The parent element is meant to have a `position: relative` or `position: absolute` in order for the dots to attach to the element.
+
 ```jsx
 import { PaginationDots } from "@washingtonpost/wpds-ui-kit";
 
 function Component() {
-	return (
-		<PaginationDots amount={5} index={1} unitName="Page"/>
-	);
+  return <PaginationDots amount={5} index={1} unitName="Page" />;
 }
 ```

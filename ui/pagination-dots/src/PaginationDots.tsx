@@ -22,6 +22,7 @@ const Dot = styled("div", {
   margin: "1px",
   borderRadius: "100%",
   length: 0,
+  minHeight: "$050",
 });
 
 const PaginationContainer = styled("div", {
@@ -29,9 +30,11 @@ const PaginationContainer = styled("div", {
   display: "flex",
   length: 0,
   overflow: "hidden",
-  position: "relative",
+  position: "absolute",
   transition: "transform .4s",
   transitionTimingFunction: "ease-out",
+  top: "100%",
+  marginTop: "$050",
 });
 
 export const PaginationDots = React.forwardRef<
