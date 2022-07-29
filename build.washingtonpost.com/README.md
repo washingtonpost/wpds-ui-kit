@@ -4,33 +4,37 @@ We built this site to document the WPDS UI Kit. It's built with [Next.js](https:
 
 ## Getting started
 
-We assume a Node.js environment using `lts/gallium` version of Node.js.
+Run the following commands _at root level_ to get your local development environment set up.
 
-1. Install nvm in order to control the node versions you're using
+1. To use the node version specified in our `.npmrc`. You can install nvm using `brew install nvm`.
 
-```bash
-brew install nvm
+```shell
+nvm use
 ```
 
-2. Install `node v14.18.2`. Using `v14` or `v14:latest` won't work. You can also check the `.nvmrc` for the exact version.
+2. To install all the dependencies from package-lock.json (unless you're adding a new dependency)
 
-```bash
-nvm install v14.18.2
-```
-
-3. After installing node v14.18.2, you'll need to override the npm version with version 8.3.0. It's important to do this second, as installing node will override the npm version.
-
-```bash
-npm -g npm@8.3.0
-```
-
-4. Install all the dependencies from package-lock.json (unless you're adding a new dependency)
-
-```bash
+```shell
 npm ci
 ```
 
+3. To build all the wpds-docs packages
+
+```shell
+npm run docsite:build
+```
+
+4. We use Storybook to develop locally along with Next.js.
+
+```bash
+npm run storybook
+```
+
 5. Open http://localhost:3000/. If you get an error, try reloading the page. It's a feature, not a bug ;)
+
+```
+npm run docsite:dev
+```
 
 ## Environment variables
 

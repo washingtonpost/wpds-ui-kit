@@ -4,29 +4,35 @@ This project uses the [fork feature](https://docs.github.com/en/get-started/quic
 
 ## Develop Locally
 
-We use NVM to manage node versions. Our node version is in the `./nvmrc` file.  We also assume you have access to our private org on NPM.
+We use NVM to manage node versions. Our node version is in the `./nvmrc` file. We also assume you have access to our private org on NPM.
 
 Run the following commands to get your local development environment set up.
+
+1. Make sure you're using the specified npm version
 
 ```shell
 nvm use
 ```
 
+2. Install all dependencies off of the package-lock.json. (Use `npm i` if you're introducing new dependencies. Please note that all dev-dependencies need to be listed on the root package.json as well as the package specific package.json)
+
 ```shell
 npm ci
 ```
+
+3. Builds all the things
 
 ```shell
 npm run build
 ```
 
-We use Storybook to develop locally along with Next.js.
+4. We use Storybook to develop locally along with Next.js.
 
 ```bash
 npm run storybook
 ```
 
-You can run `npm run dev` to develop and test with the test app.
+5. Don't forget to add your component to the kitchen-sink page. You can run `npm run docsite:dev` to develop and test with the [kitchen-sink page](https://github.com/washingtonpost/wpds-ui-kit/blob/main/build.washingtonpost.com/pages/kitchen-sink/index.tsx). You can only access this page directly via `http://localhost:3000/kitchen-sink`. This page allows us to quickly check that all the components render as expected.
 
 ## Testing
 
