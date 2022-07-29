@@ -38,6 +38,7 @@ const TextAreaLabel = Theme.styled(InputLabel, {
   insetInlineStart: "$050",
   pointerEvents: "none",
   position: "absolute",
+  transition: Theme.theme.transitions.allFast,
   variants: {
     isFloating: {
       true: {
