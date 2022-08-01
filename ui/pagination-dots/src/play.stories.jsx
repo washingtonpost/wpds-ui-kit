@@ -62,7 +62,7 @@ const Template = (args, context) => {
         type="number"
         min="0"
         value={amount}
-        defaultValue={5}
+        // defaultValue={5}
         onChange={(e) => setAmount(e.target.value)}
         label="Total dots"
       />
@@ -108,14 +108,15 @@ function sleep(ms) {
 export const Interactions = Template.bind({});
 Interactions.play = async ({ canvasElement }) => {
   const canvas = within(canvasElement);
-  const dotties = canvas.getByLabelText("light-pagination");
+  const paginationDots = canvas.getByLabelText("light-pagination");
 
   // change amount of dots
   userEvent.type(canvas.getByTestId("light-input-text"), "{backspace}6");
   await sleep(500);
   // check incrementing index changes ariaValueNow
   userEvent.click(canvas.getByTestId("light-inc-btn"));
-  expect(dotties.ariaValueNow).toBe("2");
+  let ariaValueNow = paginationDots.getAttribute("aria-valuenow");
+  expect(ariaValueNow).toBe("2");
   await sleep(500);
 
   // traverse all dots
@@ -128,7 +129,8 @@ Interactions.play = async ({ canvasElement }) => {
   // test ariaValueMax change on amount change
   userEvent.type(canvas.getByTestId("light-input-text"), "{backspace}12");
   await sleep(500);
-  expect(dotties.ariaValueMax).toBe("12");
+  let ariaValueMax = paginationDots.getAttribute("aria-valuemax");
+  expect(ariaValueMax).toBe("12");
 
   // test dots never go below 0
   userEvent.type(
@@ -136,8 +138,10 @@ Interactions.play = async ({ canvasElement }) => {
     "{backspace}{backspace}0"
   );
   await sleep(500);
-  expect(dotties.ariaValueMax).toBe("1");
-  expect(dotties.ariaValueNow).toBe("1");
+  ariaValueMax = paginationDots.getAttribute("aria-valuemax");
+  ariaValueNow = paginationDots.getAttribute("aria-valuenow");
+  expect(ariaValueMax).toBe("1");
+  expect(ariaValueNow).toBe("1");
 
   // tests a large number of dots doesn't modify other elements
   userEvent.type(canvas.getByTestId("light-input-text"), "{backspace}100");
