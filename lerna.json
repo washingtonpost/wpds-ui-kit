@@ -1,8 +1,4 @@
 {
-  "packages": [
-    "./ui/*",
-    "./app"
-  ],
   "useWorkspaces": true,
   "useNx": false,
   "npmClient": "npm",
@@ -23,7 +19,6 @@
         "*.test.ts",
         "*.spec.ts",
         "**/__snapshots__/**",
-        "app/**/*",
         "docs/**/*",
         ".storybook/**/*",
         ".zeplin",

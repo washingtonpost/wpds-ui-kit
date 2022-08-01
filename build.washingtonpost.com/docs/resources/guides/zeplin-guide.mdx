@@ -1,0 +1,120 @@
+---
+title: Zeplin Guide
+description: Zeplin is our tool of choice when it comes to hand-off. It offers a layer of connection to code and design not yet realized by other tools.
+kicker: Guides
+publishDate: March 24, 2022
+thumbnail: /img/resources/thumbnails/guide_zeplin.png
+imageTag: /img/resources/guides/guide_zeplin_2.png
+rank: 2
+---
+
+---
+
+## Getting started
+
+### Requesting access
+
+If you are a Washington Post employee, please submit a SAR to access our Zeplin Product & Design workspace. If you are not a post-employee and want to use Zeplin in your suite, please reference our Figma file to upload and create your style guide.
+
+### Creating a Zeplin project
+
+<Container>
+  <Box
+    as="iframe"
+    css={{ minHeight: "640px", padding: "$100 $100" }}
+    src="https://scribehow.com/embed/Creating_a_Zeplin_project__3QIHj0krQKKwmVOizwQ50Q"
+    width="100%"
+    height="640"
+    allowfullscreen
+    frameborder="0"
+  ></Box>
+</Container>
+
+### Connecting WPDS Styleguide
+
+<Container>
+  <Box
+    as="iframe"
+    css={{ minHeight: "640px", maxWidth: "100%", padding: "$100 $100" }}
+    src="https://scribehow.com/embed/Zeplin_Workflow__Sl-5tsJ3R26TMT8HyT_4QQ"
+    width="100%"
+    height="640"
+    allowfullscreen
+    frameborder="0"
+  ></Box>
+</Container>
+
+### Connected Components
+
+By linking the style guide you unlock our connected compoents. Selecting a component connected to code in Zeplin will reveal a code snippet and the props chosen for the component variant. This happens when you use our Figma Ui Kit components!
+
+<Container caption="In this example the properties reveal taht 32 was selected for the prop `size`">
+  <InlineImage
+    src="/img/guides/zeplin/connected.png"
+    width={520}
+    height={671}
+    maxWidth="100%"
+  />
+</Container>
+
+#### Properties
+
+We do our best to ensure that our Figma API that translates to Zeplin properties matches as close to 1:1 of the actual coded component. However, you might find some properties like states that are not in the coded component; this is due to the nature of Figma. In those instances, you can ignore it unless otherwise documented.
+
+---
+
+## Extension
+
+### Getting WPDS Extension
+
+Zeplin supports a good amount of tokens; there are some limitations in how some tokens are managed or not managed at all. Right not the current tokens managed by Zeplin is only color. We chose not to manage typestyles; instead, we highlight individual tokens font size, font, line height using our extension. We also manage tokens like border radius and shadows using our extension.
+
+#### Installing the extension
+
+Select the project in Zeplin you would like to add the extension to and then select extension > explore extensions > add WPDS Tokens.
+
+<Container>
+  <Box
+    as="iframe"
+    css={{ minHeight: "640px", padding: "$100 $100" }}
+    src="https://scribehow.com/embed/WPDS_Zeplin_Extension__5t1hkwhtTzWyXS749Yk-2g"
+    width="100%"
+    height="640"
+    allowfullscreen
+    frameborder="0"
+  ></Box>
+</Container>
+
+#### Typography tokens
+
+To reveal the typography tokens, select a text layer to have the extension show the properties of that text.
+
+<Container>
+  <InlineImage
+    alt="Animated image of showing how to add the WPDS extension"
+    width={323}
+    height={195}
+    maxWidth="100%"
+    src="/img/guides/zeplin/text_tokens.png"
+  />
+</Container>
+
+#### Border radius and shadows
+
+To reveal the border radius or shadow, select a layer with a border radius or shadow, and the extension will show the corresponding tokens.
+
+<Container>
+  <InlineImage
+    alt="Animated image of showing how to add the WPDS extension"
+    width={318}
+    height={156}
+    maxWidth="100%"
+    src="/img/guides/zeplin/shadow_border.png"
+  />
+</Container>
+
+#### Token syntax
+
+Note that all tokens will display in stitches token string format by adding a $. Stitches is our default styling framework for our system, but if you need to refer to the token, drop the $.
+
+<BR size="xl" />

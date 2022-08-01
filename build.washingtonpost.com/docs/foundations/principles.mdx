@@ -1,0 +1,471 @@
+---
+order: 0
+title: Principles
+description: These are our design and engineering principles as it relates to our design system.
+---
+
+<BR />
+
+---
+
+## The role of Color
+
+When we refer to color we exclude the entire grayscale. The use of color in our
+system is limited and it is deliberate. Our products focus on the content
+and the reader experience. Color should always be a minimal distraction and used with intention.
+
+import Tokens from "@washingtonpost/wpds-theme/src/wpds.tokens.json";
+
+- [Guidance](/foundations/principles#Guidance)
+- [Themes](/foundations/principles#Themes)
+- [Semantic Colors](/foundations/principles#Semantic)
+- [Static Colors](/foundations/principles#Static)
+- [Accessibility](/foundations/principles#Accessibility)
+- [Tokens](/foundations/color)
+
+---
+
+## Guidance
+
+#### Hierarchy and layout structure
+
+Utilize color to separate sections of information and highlight elements of importance.
+
+<Container caption="Example of color to create layout structure">
+  <InlineImage
+    width={836}
+    height={839}
+    maxWidth={"100%"}
+    src="/images/color-tokens/layout_and_structure.png"
+  />
+</Container>
+
+<BR size="xl" />
+
+#### Affordance
+
+Use color to create an [affordance](https://www.merriam-webster.com/dictionary/affordance#:~:text=Definition%20of%20affordance,those%20affordances%20are%20fairly%20obvious) to signal interaction, call to action, or a link.
+
+<Container caption="Example of color to create layout structure">
+  <Box css={{ display: "flex", justifyContent: "center", margin: "auto" }}>
+    <InlineImage
+      width={214}
+      height={56}
+      src="/images/color-tokens/affordance.png"
+    />
+  </Box>
+</Container>
+
+<BR size="xl" />
+
+#### System status
+
+`Semantic colors` represent system status of default, success, or failed states when completing an action or goal.
+
+<Container caption="Example of color to communicate system status">
+  <Box css={{ display: "flex", justifyContent: "center", margin: "auto" }}>
+    <InlineImage
+      width={500}
+      height={167}
+      maxWidth="100%"
+      src="/images/color-tokens/system_status.svg"
+    />
+  </Box>
+</Container>
+
+<BR size="xl" />
+
+#### Editorial tone
+
+Color used within the editorial palette to differentiate content with various lines of coverage.
+
+<Container caption="The use of color to show something is live or an opinion">
+  <Box css={{ display: "flex", justifyContent: "center", margin: "auto" }}>
+    <InlineImage
+      width={1190}
+      height={205}
+      maxWidth="100%"
+      src="/images/color-tokens/editorial_tone.png"
+    />
+  </Box>
+</Container>
+
+<BR size="xl" />
+
+#### Illustration
+
+Apply color to illustrations and icons to achieve a visual style that varies across editorial tones, product functions, and sub-brand art direction.
+
+<Container>
+  <Box css={{ display: "flex", justifyContent: "center", margin: "auto" }}>
+    <InlineImage
+      width={261}
+      height={176}
+      src="/images/color-tokens/illustration.png"
+    />
+  </Box>
+</Container>
+
+<BR size="xl" />
+
+#### Brand recognition
+
+Sub-brands have a unique palette, art direction, visual look, and distinction from The Washington Post brand.
+
+<Container>
+  <Box css={{ display: "flex", justifyContent: "center", margin: "auto" }}>
+    <InlineImage
+      width={1016}
+      height={289}
+      maxWidth="100%"
+      src="/images/color-tokens/brand_recognition.png"
+    />
+  </Box>
+</Container>
+
+<BR size="xl" />
+
+#### Visual information
+
+Continuous and categorical datasets projected in a chart or map often require color to distinguish types of information and values.
+
+<Container>
+  <Box css={{ display: "flex", justifyContent: "center", margin: "auto" }}>
+    <InlineImage
+      width={296}
+      height={180}
+      src="/images/color-tokens/visual.png"
+    />
+  </Box>
+</Container>
+
+<BR size="xl" />
+
+<hr />
+
+## Themes
+
+The theme palette is a level of abstraction that allows the system to assign color across the product with intention. It creates an alias and
+assigns a color intention.
+
+<Container>
+  <div style={{ maxWidth: 600, margin: "auto" }}>
+    <Box
+      css={{
+        padding:"$100 0",
+        display: "grid",
+        gridTemplateColumns: "1fr 1fr 1fr 1fr",
+        gridTemplateRows: "150px 75px 75px",
+        justifyContent: "center",
+        margin: "auto",
+        "@sm":{
+          gridTemplateColumns: "1fr 1fr",
+          gridTemplateRows: "repeat(6,$400)",
+        }
+      }}
+    >
+      <Box
+        css={{
+          padding:"$025",
+          backgroundColor: "$primary",
+          color: "$onPrimary"
+        }}
+      >
+        Primary
+      </Box>
+      <Box
+        css={{
+          padding:"$025",
+          backgroundColor: "$secondary",
+          color: "$onSecondary"
+        }}
+      >
+        Secondary
+      </Box>
+      <Box
+        css={{
+          "@sm":{
+            order:5,
+          },
+          padding:"$025",
+          backgroundColor: "$cta",
+          color: "$onCta"
+        }}
+      >
+        Cta
+      </Box>
+      <Box
+        css={{
+          "@sm":{
+            order:6,
+          },
+          padding:"$025",
+          backgroundColor: "$disabled",
+          color: "$onDisabled"
+        }}
+      >
+        Disabled
+      </Box>
+      <Box
+        css={{
+          "@sm":{
+            order:3,
+          },
+          padding:"$025",
+          backgroundColor: "$onPrimary",
+          color: "$primary"
+        }}
+      >
+        onPrimary
+      </Box>
+      <Box
+        css={{
+          "@sm":{
+            order:4,
+          },
+          padding:"$025",
+          backgroundColor: "$onSecondary",
+          color: "$secondary"
+        }}
+      >
+        onSecondary
+      </Box>
+      <Box
+        css={{
+          "@sm":{
+            order:7,
+          },
+          padding:"$025",
+          backgroundColor: "$onCta",
+          color: "$gray0-static"
+        }}
+      >
+        Cta
+      </Box>
+      <Box
+        css={{
+          "@sm":{
+            order:8,
+          },
+          padding:"$025",
+          backgroundColor: "$onDisabled",
+          color: "$Disabled"
+        }}
+      >
+        onDisabled
+      </Box>
+            <Box
+        css={{
+          "@sm":{
+            order:9,
+          },
+          padding:"$025",
+          gridColumn:"span 2",
+          backgroundColor: "$accessible",
+          color: "$onPrimary"
+        }}
+      >
+        Accessible
+      </Box>
+        <Box
+        css={{
+         "@sm":{
+          order:10,
+         },
+          padding:"$025",
+          gridColumn:"span 2",
+          backgroundColor: "$subtle",
+          color: "$onSecondary"
+        }}
+      >
+        Subtle
+      </Box>
+    </Box>
+
+  </div>
+</Container>
+
+<BR size="xl" />
+
+#### How to use theme
+
+Theme tokens with `on`(`onPrimary` or `onMessage`) in the name are paired with the base alias. One example is `onPrimary`
+is used when an element or content is on the `primary` color token.
+
+<Container>
+  <Box css={{ display: "flex", justifyContent: "center", margin: "auto" }}>
+    <InlineSVG
+      width={458}
+      height={212}
+      path="/images/color-tokens/theme_how_to_use.svg"
+    />
+  </Box>
+</Container>
+
+<BR size="xl" />
+
+<hr />
+
+## Semantic
+
+Semantic colors have assigned meanings and are used consistently throughout our
+product to convey a system status. These colors help signal to our users a consistent
+message around system status and actions taken by the user.
+
+<Container>
+  <Grid
+    css={{ gridGap: 0, padding: "$100 0", maxWidth: "50%" }}
+    maxSize={"1fr"}
+  >
+    <Cell>
+      <Box
+        css={{
+          width: "100%",
+          padding: "$050 0",
+          backgroundColor: "$error",
+          color: "$onMessage",
+        }}
+      >
+        Error
+      </Box>
+    </Cell>
+    <Cell>
+      <Box
+        css={{
+          width: "100%",
+          padding: "$050 0",
+          backgroundColor: "$warning",
+          color: "$onMessage",
+        }}
+      >
+        Warning
+      </Box>
+    </Cell>
+    <Cell>
+      <Box
+        css={{
+          width: "100%",
+          padding: "$050 0",
+          backgroundColor: "$success",
+          color: "$onMessage",
+        }}
+      >
+        Success
+      </Box>
+    </Cell>
+    <Cell>
+      <Box
+        css={{
+          width: "100%",
+          padding: "$050 0",
+          backgroundColor: "$signal",
+          color: "$onMessage",
+        }}
+      >
+        Signal
+      </Box>
+    </Cell>
+    <Cell>
+      <Box
+        css={{
+          width: "100%",
+          padding: "$050 0",
+          gridColumn: "span 1/-1",
+          backgroundColor: "$onMessage",
+          color: "$gray0-static",
+        }}
+      >
+        onMessage
+      </Box>
+    </Cell>
+  </Grid>
+</Container>
+
+<BR size="xl" />
+
+<hr />
+
+## Static
+
+Static colors tokens that do not change value regardless of what theme context
+they are in (dark or light). These colors remain static to ensure they are accessible
+when applied on a color where minimum contrast is required or branding requirements are applied. To use
+a static color add `-static` at the end of a color token name and it will lock the color in the light value of that token.
+
+<BR />
+
+#### Example
+
+Our theme token `onCta` and semantic color token `onMessage` both are tied to `gray-600-static`
+to ensure they remain with the correct minimal color contrast needed for the element to be accessible.
+
+<Container>
+  <Box
+    css={{
+      padding: "$100 0",
+      display: "flex",
+      justifyContent: "center",
+      margin: "auto",
+      "@sm": {
+        flexDirection: "column",
+      },
+    }}
+  >
+    <Box
+      css={{
+        padding: "$300",
+        backgroundColor: "$error",
+        color: "$onMessage",
+      }}
+    >
+      onMessage on Error
+    </Box>
+    <Box css={{ padding: "$300", backgroundColor: "$cta", color: "$onCta" }}>
+      onCta on Error
+    </Box>
+  </Box>
+</Container>
+
+<BR size="xl" />
+
+<hr />
+
+## Accessibility
+
+At The Washington Post, access to information is core to our mission. We are committed
+to this ideal through not only our journalism but also our engineering and design practices.
+When it comes to color we want to ensure that visual information required to identify components
+and states (except inactive components), any text, and or any important signal/message meets a
+contrast ratio outlined by WCAG 2.0 level AA.
+
+<BR />
+
+#### Accessible
+
+One of our theme tokens named `accessible` is accessible on the target background (`gray600` or `gray0`).
+
+<Container>
+  <Box
+    css={{
+      padding: "$100 0",
+      display: "flex",
+      justifyContent: "center",
+      margin: "auto",
+    }}
+  >
+    <Box
+      css={{
+        padding: "$300",
+        backgroundColor: "$gray600",
+        color: "$accessible",
+        textAlign: "center",
+      }}
+    >
+      Accessible color on target background
+    </Box>
+  </Box>
+</Container>
+
+<BR />
+
+### [Color tokens >](/foundations/color)
