@@ -33,3 +33,12 @@ npm i @washingtonpost/wpds-ui-kit
 - Feel free to reach out to [#wpds on Slack](https://washpost.slack.com/archives/C01FWHF12BG) if you have any questions or run into any problems.
 - [Explore the Docs Site](https://build.washingtonpost.com) for usage examples and additional documentation on each component. You can also find additional resources under the [resources](https://build.washingtonpost.com/resources), [guides](https://build.washingtonpost.com/resources/guides), and [support](https://build.washingtonpost.com/support) pages.
 - There is also a storybook site that is used for component development only. If you're looking for code examples or information on how to use a specific component, please refer to build.washingtonpost.com.
+
+### Upgrading
+
+- Previous v0.12 `globalStyles` contained a globally applied transition to all CSS properties on all elements. After upgrading any component element that relied on that transition will need to apply one locally using wpds theme variables.
+  ```javascript
+  transition: theme.transitions.allFast,
+  // or
+  transition: `background ${theme.transitions.fast} ${theme.transitions.inOut`
+  ```
