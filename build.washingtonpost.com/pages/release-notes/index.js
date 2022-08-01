@@ -42,7 +42,8 @@ export default function Page() {
             </Header>
             <P>
               WPDS&apos;s UiKit coded in React using Stitches, Radix UI and
-              more!
+              more!. Also our static site to host our latest documentation around our design
+              system
             </P>
           </Card>
         </Link>
@@ -78,24 +79,6 @@ export default function Page() {
               </Icon>
             </Header>
             <P>WPDS Design Tools and Plugins for Figma, Zeplin, and more!</P>
-          </Card>
-        </Link>
-        <Link
-          href="https://github.com/washingtonpost/wpds-docs/releases"
-          target="_blank"
-          rel="noopener"
-        >
-          <Card>
-            <Header as="h2">
-              Docs Release notes{" "}
-              <Icon size="100">
-                <External></External>
-              </Icon>
-            </Header>
-            <P>
-              Static site to host our latest documentation around our design
-              system
-            </P>
           </Card>
         </Link>
       </section>
