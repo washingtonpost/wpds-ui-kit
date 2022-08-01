@@ -1,6 +1,7 @@
 {
   "name": "@washingtonpost/wpds-docs",
   "version": "0.11.2",
+  "private": true,
   "scripts": {
     "dev": "next-remote-watch ./docs/**/*",
     "build": "node -v && node scripts/sitemap.js;next build",

@@ -4,6 +4,8 @@
     "baseUrl": ".",
     "paths": {
       "*": ["node_modules/*"],
+      "~/*": ["./build.washingtonpost.com/*"],
+      "@/*": ["./build.washingtonpost.com/*"],
       "@washingtonpost/wpds-docs": ["./build.washingtonpost.com/*"],
       "@washingtonpost/wpds-ui-kit": ["./ui/kit/src/*"],
       "@washingtonpost/wpds-container": ["./ui/container/src/*"],
