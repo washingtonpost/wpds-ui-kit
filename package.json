@@ -94,7 +94,6 @@
   },
   "workspaces": [
     "./ui/*",
-    "./app",
     "./build.washingtonpost.com"
   ],
   "dependencies": {

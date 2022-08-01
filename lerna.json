@@ -19,7 +19,6 @@
         "*.test.ts",
         "*.spec.ts",
         "**/__snapshots__/**",
-        "app/**/*",
         "docs/**/*",
         ".storybook/**/*",
         ".zeplin",
