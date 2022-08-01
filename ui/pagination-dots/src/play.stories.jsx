@@ -1,11 +1,25 @@
 import * as React from "react";
 import { PaginationDots as Component } from "./";
 import { theme, styled, darkTheme } from "@washingtonpost/wpds-theme";
-import { Stack, HStack } from "../../../app/pages/index.tsx";
 import { Button } from "@washingtonpost/wpds-button";
 import { InputText } from "@washingtonpost/wpds-ui-kit";
 import { within, userEvent } from "@storybook/testing-library";
 import { expect } from "@storybook/jest";
+
+const Stack = styled("section", {
+  display: "flex",
+  flexDirection: "column",
+  gap: "$100",
+  marginBlockStart: "$200",
+  borderRadius: "$075",
+});
+
+const HStack = styled("section", {
+  display: "flex",
+  flexDirection: "row",
+  gap: "$100",
+  borderRadius: "$075",
+});
 
 export default {
   title: "PaginationDots",
