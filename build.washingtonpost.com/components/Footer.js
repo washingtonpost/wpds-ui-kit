@@ -112,7 +112,7 @@ export const Footer = () => {
       {/* // slug aka a mdx file */}
       {router?.route?.includes("slug") && (
         <EditInGithub
-          href={`http://github.com/washingtonpost/wpds/ui-kit/edit/main/build.washingtonpost.com/docs/${router.asPath.replace(
+          href={`http://github.com/washingtonpost/wpds-ui-kit/edit/main/build.washingtonpost.com/docs/${router.asPath.replace(
             "/",
             ""
           )}.mdx`}
