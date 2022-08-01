@@ -38,7 +38,6 @@ const Template = (args, context) => {
   const [index, setIndex] = React.useState(1);
 
   React.useEffect(() => setAmount(amount), [amount]);
-  console.log(context.theme);
 
   return (
     <Stack css={{ position: "relative" }}>
