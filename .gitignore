@@ -105,7 +105,6 @@ dist
 
 # storybook
 storybook-static
-public
 out
 
 # ignore caches
@@ -123,3 +122,6 @@ yalc.lock
 # vscode plugin
 .history/*
 .vscode/*
+
+# ignore the storybook build 
+build.washingtonpost.com/public/storybook/**/*
