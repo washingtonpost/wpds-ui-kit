@@ -393,28 +393,27 @@ export default function Playroom({
       </Head>
       <SandpackProvider
         template="react"
-        customSetup={{
-          files: {
-            "/App.js": {
-              code,
-              active: true,
-            },
+        files={{
+          "/App.js": {
+            code,
+            active: true,
           },
         }}
+        theme={sandboxEmbedTheme}
       >
         <Canvas hasEditor={hasEditor}>
           <Preview />
         </Canvas>
-        <SandpackLayout theme={sandboxEmbedTheme}>
-          {hasEditor && (
+        {hasEditor && (
+          <SandpackLayout>
             <SandpackCodeEditor
               showLineNumbers
-              customStyle={{
+              style={{
                 border: "1px solid var(--wpds-colors-subtle)",
               }}
             />
-          )}
-        </SandpackLayout>
+          </SandpackLayout>
+        )}
       </SandpackProvider>
     </Kit.Box>
   );
