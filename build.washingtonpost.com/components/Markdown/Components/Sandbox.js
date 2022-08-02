@@ -149,8 +149,8 @@ const CodeIcon = (props) => (
 const CopyCodeButton = () => {
   const [copied, setCopied] = useState(false);
   const { sandpack } = useSandpack();
-  const { files, activePath } = sandpack;
-  const code = files[activePath].code;
+  const { files, activeFile } = sandpack;
+  const code = files[activeFile].code;
 
   // set the copied state to false after a second
   useEffect(() => {
@@ -376,20 +376,19 @@ const CustomSandpack = ({
       initMode="user-visible"
       initModeObserverOptions={{ rootMargin: "1400px 0px" }}
       template="react"
-      customSetup={{
-        files: {
-          "/Example.js": {
-            code: children,
-            active: true,
-          },
+      files={{
+        "/Example.js": {
+          code: children,
+          active: true,
         },
       }}
+      theme={sandboxEmbedTheme}
     >
-      <SandpackLayout theme={sandboxEmbedTheme}>
+      <SandpackLayout>
         {withPreview && <Preview isGuide={isGuide} />}
         {showCode && (
           <SandpackCodeEditor
-            customStyle={{
+            style={{
               border: "1px solid var(--wpds-colors-subtle)",
             }}
             showTabs={false}
