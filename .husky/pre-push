@@ -1,6 +1,9 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
+echo "--> Cleaning..."
+npm run clean
+
 echo "--> Installing libraries..."
 npm ci
 
