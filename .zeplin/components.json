@@ -528,6 +528,34 @@
             "documentation": {
                 "urlPath": "/components/avatar"
             }
+        },
+        {
+            "name": "PaginationDots example",
+            "path": "build.washingtonpost.com/snippets/paginationDots/pagination-dots.tsx",
+            "zeplinIds": [
+                "62e9628643924613beb600cb",
+                "62e9628999346110fe27bc59",
+                "62e9628bc77a2210a63689fc",
+                "62e9628f917355113fed7cd0",
+                "62e9628dfa6ac210b9a3f9c6",
+                "62e96286c116ca133a12a84d",
+                "62e9628830be21131a608f6c",
+                "62e9628c6d6a6013df12ffe5",
+                "62e9628f51114315b470f73f",
+                "62e9628e0335f016bea8f9cb",
+                "62e9628aaffd3315665cf794",
+                "62e9628ad43bd21357055e7f",
+                "62e9628b72f7c612b2362ae8",
+                "62e9628d0cd52a11e93db7d7",
+                "62e96288ae7b5a1142509a69",
+                "62e96287917355113fed7caf",
+                "62e9628c6c612814d1517124",
+                "62e9628715c39115e40f1a04",
+                "62e9628ef994ae10be9a3f4b"
+            ],
+            "documentation": {
+                "urlPath": "/components/pagination-dots"
+            }
         }
     ],
     "links": [
