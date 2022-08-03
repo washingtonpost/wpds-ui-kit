@@ -74,7 +74,7 @@ const StyledFooter = styled(SiteFooter, {
 });
 
 const EditInGithub = styled("a", {
-  display: "inline-block",
+  display: "flex",
   textDecoration: "none",
   color: "$colors$onSecondary",
   fontSize: "$087",
@@ -100,6 +100,10 @@ export const Footer = () => {
         paddingTop: "$050",
         marginBottom: "$100",
         marginTop: "$500",
+        marginLeft: "auto",
+        marginRight: "auto",
+        maxWidth: "1028px",
+        width: "100%",
 
         "@sm": {
           marginTop: "$200",
@@ -118,6 +122,7 @@ export const Footer = () => {
           )}.mdx`}
           target="_blank"
           rel="noopener noreferrer"
+          className="site-footer"
         >
           Edit this page on GitHub.
         </EditInGithub>
