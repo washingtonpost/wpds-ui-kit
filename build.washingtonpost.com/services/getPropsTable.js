@@ -24,8 +24,6 @@ export const getPropsTable = async (component = "icon") => {
   let propsArray = [];
 
   if (cache.has(component)) {
-    console.log("cache hit: getPropsTable");
-
     propsArray = cache.get(component);
 
     return propsArray;

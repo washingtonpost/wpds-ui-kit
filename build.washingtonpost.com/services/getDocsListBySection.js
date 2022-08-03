@@ -8,8 +8,8 @@ export const getAllDocs = async () => {
   let posts = null;
 
   if (cache.has("all")) {
-    console.log("cache hit: getAllDocs", cache);
     posts = cache.get("all");
+    cache.delete("all");
   } else {
     const files = await globby("docs/**/*.mdx");
     posts = await Promise.all(
@@ -31,8 +31,6 @@ export const getAllDocs = async () => {
     cache.set("all", posts);
   }
 
-  console.log("getAllDocs");
-
   return posts;
 };
 
@@ -41,8 +39,8 @@ export const getDocsListBySection = async (input) => {
   let posts = null;
 
   if (cache.has(input)) {
-    console.log(`cache hit: getDocsListBySection for ${input}`);
     posts = cache.get(input);
+    cache.delete(input);
   } else {
     const files = await globby(`docs/${input}/**/*.mdx`);
     posts = await Promise.all(
@@ -82,8 +80,6 @@ export const getResources = async (input) => {
       slug,
     };
   });
-
-  console.log(`getResources for ${input}`);
 
   return docs;
 };

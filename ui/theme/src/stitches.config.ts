@@ -1,11 +1,11 @@
-import * as stitches from "@stitches/react";
-import type * as Stitches from "@stitches/react";
+import { createStitches, type CSS as stitchesCss } from "@stitches/react";
+import type { PropertyValue } from "@stitches/react";
 import * as tokens from "./tokens";
 export type { VariantProps } from "@stitches/react";
 
 const prefix = "wpds";
 
-const WPDS = stitches.createStitches({
+const WPDS = createStitches({
   prefix,
   theme: {
     colors: {
@@ -54,30 +54,30 @@ const WPDS = stitches.createStitches({
     light: "(prefers-color-scheme: light)",
   },
   utils: {
-    px: (value: Stitches.PropertyValue<"padding">) => ({
+    px: (value: PropertyValue<"padding">) => ({
       paddingLeft: value,
       paddingRight: value,
     }),
-    py: (value: Stitches.PropertyValue<"padding">) => ({
+    py: (value: PropertyValue<"padding">) => ({
       paddingTop: value,
       paddingBottom: value,
     }),
-    my: (value: Stitches.PropertyValue<"margin">) => ({
+    my: (value: PropertyValue<"margin">) => ({
       marginTop: value,
       marginBottom: value,
     }),
-    mx: (value: Stitches.PropertyValue<"margin">) => ({
+    mx: (value: PropertyValue<"margin">) => ({
       marginLeft: value,
       marginRight: value,
     }),
-    size: (value: Stitches.PropertyValue<"width" | "height">) => ({
+    size: (value: PropertyValue<"width" | "height">) => ({
       width: value,
       height: value,
     }),
   },
 });
 
-export type CSS = stitches.CSS<typeof WPDS>;
+export type CSS = stitchesCss<typeof WPDS>;
 export const {
   styled,
   css,
