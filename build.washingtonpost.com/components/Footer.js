@@ -122,7 +122,6 @@ export const Footer = () => {
           )}.mdx`}
           target="_blank"
           rel="noopener noreferrer"
-          className="site-footer"
         >
           Edit this page on GitHub.
         </EditInGithub>
