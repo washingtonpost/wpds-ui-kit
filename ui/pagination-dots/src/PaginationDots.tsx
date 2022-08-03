@@ -11,9 +11,13 @@ const bind = (value: number, min: number, max: number) =>
 
 interface PaginationDotsProps extends React.ComponentPropsWithRef<"div"> {
   css?: WPDS.CSS;
+  /** The 1-indexed position of the currently active dot */
   index: number;
+  /** The total amount of dots in range */
   amount: number;
+  /** The root node's label, required for accessibility */
   label: string;
+  /** Specifies the type of element represented by the dots (e.g., "Page") */
   unitName?: string;
 }
 
