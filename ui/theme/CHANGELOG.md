@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.12.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.11.2...v0.12.0) (2022-08-03)
+
+
+### Features
+
+* upgrade to stitches 1.2.8, fix * imports in theme ([8cbff76](https://github.com/washingtonpost/wpds-ui-kit/commit/8cbff76b14fc99ac84eba21492e76dc0c64fc784))
+
+
+
+
+
 ## [0.11.1](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.11.0...v0.11.1) (2022-06-24)
 
 **Note:** Version bump only for package @washingtonpost/wpds-theme
