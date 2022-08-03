@@ -42,8 +42,8 @@ export default function Page() {
             </Header>
             <P>
               WPDS&apos;s UiKit coded in React using Stitches, Radix UI and
-              more!. Also our static site to host our latest documentation around our design
-              system
+              more!. Also our static site to host our latest documentation
+              around our design system
             </P>
           </Card>
         </Link>
