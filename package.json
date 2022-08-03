@@ -7,7 +7,6 @@
     "@babel/plugin-transform-typescript": "^7.16.1",
     "@babel/preset-react": "^7.14.5",
     "@babel/template": "^7.15.4",
-    "@playwright/test": "^1.17.1",
     "@size-limit/preset-small-lib": "^6.0.3",
     "@storybook/addon-a11y": "^6.4.19",
     "@storybook/addon-actions": "^6.4.19",
