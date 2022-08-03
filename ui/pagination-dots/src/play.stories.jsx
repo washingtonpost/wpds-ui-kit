@@ -29,7 +29,7 @@ export default {
 const DefaultArgs = {
   amount: 6,
   index: 1,
-  label: "Progress Bar",
+  label: "Pagination Dots",
 };
 
 const Label = styled("h3", {
@@ -62,14 +62,13 @@ const Template = (args, context) => {
         type="number"
         min="0"
         value={amount}
-        // defaultValue={5}
         onChange={(e) => setAmount(e.target.value)}
         label="Total dots"
       />
       <HStack css={{ alignItems: "center" }}>
         <Button
           data-testid={`${context.theme}-dec-btn`}
-          onClick={() => setIndex(index - 1)}
+          onClick={() => setIndex(index - 1 > 0 ? index - 1 : 1)}
         >
           -
         </Button>
@@ -84,7 +83,7 @@ const Template = (args, context) => {
         <Button
           data-testid={`${context.theme}-inc-btn`}
           css={{ float: "right" }}
-          onClick={() => setIndex(index + 1)}
+          onClick={() => setIndex(index + 1 < amount ? index + 1 : amount)}
         >
           +
         </Button>
@@ -92,7 +91,6 @@ const Template = (args, context) => {
       <Component
         index={index ? index : 1}
         amount={amount ? amount : 5}
-        // label="Pagination Dots controlled by buttons and input text"
         label={`${context.theme}-pagination`}
       />
     </Stack>
@@ -101,9 +99,9 @@ const Template = (args, context) => {
 
 export const WithControls = Template.bind({});
 // Function to emulate pausing between interactions
-function sleep(ms) {
+const sleep = (ms) => {
   return new Promise((resolve) => setTimeout(resolve, ms));
-}
+};
 
 export const Interactions = Template.bind({});
 Interactions.play = async ({ canvasElement }) => {

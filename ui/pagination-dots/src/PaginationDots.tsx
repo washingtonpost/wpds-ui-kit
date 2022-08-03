@@ -10,15 +10,21 @@ const bind = (value: number, min: number, max: number) =>
   Math.max(min, Math.min(max, value));
 
 interface PaginationDotsProps extends React.ComponentPropsWithRef<"div"> {
-  css?: WPDS.CSS;
-  /** The 1-indexed position of the currently active dot */
+  /**
+   * The 1-indexed position of the currently active dot
+   * @default 1
+   */
   index: number;
   /** The total amount of dots in range */
   amount: number;
-  /** The root node's label, required for accessibility */
-  label: string;
+  /**
+   * The input's label text, required for accessibility
+   * @default Pagination Dots
+   */
+  label?: string;
   /** Specifies the type of element represented by the dots (e.g., "Page") */
   unitName?: string;
+  css?: WPDS.CSS;
 }
 
 const Dot = styled("div", {
@@ -44,11 +50,16 @@ const PaginationContainer = styled("div", {
 export const PaginationDots = React.forwardRef<
   HTMLDivElement,
   PaginationDotsProps
->(({ css, index, amount, unitName, label }, ref) => {
-  // catch this error gracefully
+>(({ css, index = 1, amount, unitName, label = "Pagination Dots" }, ref) => {
+  // Limit index within the bounds of the range
   if (!amount && !index) {
     return null;
+  } else if (index < 1) {
+    index = 1;
+  } else if (index > amount) {
+    index = amount;
   }
+
   // Always show at least one dot
   const nPages = bind(Math.round(amount), 1, Infinity);
 

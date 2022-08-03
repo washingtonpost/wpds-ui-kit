@@ -4,12 +4,13 @@ import React from "react";
  * See documentation for full component api
 ```jsx
 //Example
-import { InputTextarea } from "@washingtonpost/wpds-input-textarea";
+import { PaginationDots } from "@washingtonpost/wpds-pagination-dots";
 
 export default function Example() {
   return (
-      <InputTextarea
-        helperText={<p>Please keep your message brief</p>}
+      <PaginationDots
+        index={1}
+        amount={5}
         label="Label"
       />
   );
