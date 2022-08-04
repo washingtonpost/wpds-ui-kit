@@ -118,6 +118,7 @@
     "@washingtonpost/wpds-theme": "*",
     "@washingtonpost/wpds-ui-kit": "*",
     "@washingtonpost/wpds-visually-hidden": "*",
+    "fuse.js": "^6.6.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "rgb-hex": "^4.0.0"
