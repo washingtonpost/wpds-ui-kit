@@ -202,6 +202,9 @@ const components = {
   IconSamples: dynamic(() => import("../Markdown/Examples/IconSamples")),
   LogoSamples: dynamic(() => import("../Markdown/Examples/LogoSamples")),
   ColorSamples: dynamic(() => import("../Markdown/Examples/ColorSamples")),
+  HexRGBAColorSamples: dynamic(() =>
+    import("../Markdown/Examples/HexRGBAColorSamples")
+  ),
   Table: dynamic(() => import("./Components/table")),
   Img: dynamic(() => import("./Components/InlineImage")),
   TableOfContents: dynamic(() => import("./Components/tableofcontents")),
