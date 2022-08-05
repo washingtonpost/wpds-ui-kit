@@ -186,8 +186,7 @@
     }
   },
   "overrides": {
-    "react-docgen-typescript": "^2.2.2",
-    "@washingtonpost/wpds-assets": "^1.8.2"
+    "react-docgen-typescript": "^2.2.2"
   },
   "packageManager": "npm@8.11.0"
 }
