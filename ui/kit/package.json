@@ -52,13 +52,15 @@
     "@washingtonpost/wpds-input-textarea": "0.12.0",
     "@washingtonpost/wpds-radio-group": "0.12.0",
     "@washingtonpost/wpds-theme": "0.12.0",
-    "@washingtonpost/wpds-visually-hidden": "0.12.0"
+    "@washingtonpost/wpds-visually-hidden": "0.12.0",
+    "@washingtonpost/wpds-pagination-dots": "0.11.1"
   },
   "devDependencies": {
     "tsup": "^5.11.13",
     "typescript": "4.5.5"
   },
   "peerDependencies": {
+    "@washingtonpost/wpds-pagination-dots": "*",
     "@washingtonpost/eslint-plugin-wpds": "*",
     "@washingtonpost/wpds-alert-banner": "*",
     "@washingtonpost/wpds-app-bar": "*",
