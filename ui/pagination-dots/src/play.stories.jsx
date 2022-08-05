@@ -142,7 +142,7 @@ Interactions.play = async ({ canvasElement }) => {
   expect(ariaValueNow).toBe("1");
 
   // tests a large number of dots doesn't modify other elements
-  userEvent.type(canvas.getByTestId("light-input-text"), "{backspace}100");
+  userEvent.type(canvas.getByTestId("light-input-text"), "{backspace}50");
   await sleep(500);
 };
 

@@ -59,6 +59,10 @@ export const PaginationDots = React.forwardRef<
   } else if (index > amount) {
     index = amount;
   }
+  // Limit component's support to 50 items
+  if (amount > 50) {
+    throw new Error("Please use an amount less than 50");
+  }
 
   // Always show at least one dot
   const nPages = bind(Math.round(amount), 1, Infinity);
