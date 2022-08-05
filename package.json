@@ -99,7 +99,7 @@
     "@stitches/react": "^1.2.8",
     "@washingtonpost/wpds-alert-banner": "*",
     "@washingtonpost/wpds-app-bar": "*",
-    "@washingtonpost/wpds-assets": "^1.8.1",
+    "@washingtonpost/wpds-assets": "^1.8.2",
     "@washingtonpost/wpds-avatar": "*",
     "@washingtonpost/wpds-box": "*",
     "@washingtonpost/wpds-button": "*",
@@ -186,7 +186,8 @@
     }
   },
   "overrides": {
-    "react-docgen-typescript": "^2.2.2"
+    "react-docgen-typescript": "^2.2.2",
+    "@washingtonpost/wpds-assets": "^1.8.2"
   },
   "packageManager": "npm@8.11.0"
 }
