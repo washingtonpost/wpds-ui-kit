@@ -241,4 +241,8 @@
   <url>
     <loc>https://build.washingtonpost.com/support/supported-platforms</loc>
   </url>
+
+  <url>
+    <loc>https://build.washingtonpost.com/zzz/color-codes</loc>
+  </url>
 </urlset>

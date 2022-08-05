@@ -25,6 +25,7 @@
   },
   "scripts": {
     "build:transform": "node build/transform.js",
+    "build:createHex": "node build/modules/createHex.js",
     "build": "npm run build:transform && npx tsup src/index.ts --loader .ts=tsx --minify --format esm,cjs --dts --sourcemap --legacy-output --external react --clean @stitches/react",
     "test": "echo \"Error: run tests from root\" && exit 1",
     "dev": "tsup src/index.ts --format esm,cjs --watch --dts --legacy-output --external react",
