@@ -31,7 +31,8 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
 
-      - uses: chromaui/action@v1
+      - name: Run visual regression tests
+        uses: chromaui/action@v1
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
         with:
