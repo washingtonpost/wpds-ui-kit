@@ -66,22 +66,28 @@ function DarkPanel(props) {
 }
 
 export const decorators = [
-  (Story) => (
-    <Box
-      css={{
-        display: "flex",
-        width: "100%",
-        height: "50%",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <GlobalStyles>
-        <Story theme="light" />
-      </GlobalStyles>
-      <DarkPanel>
-        <Story theme="dark" />
-      </DarkPanel>
-    </Box>
-  ),
+  (Story, Context) => {
+    if (Context.story === "Interactions") {
+      return <Story theme="light" />;
+    }
+
+    return (
+      <Box
+        css={{
+          display: "flex",
+          width: "100%",
+          height: "50%",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <GlobalStyles>
+          <Story theme="light" />
+        </GlobalStyles>
+        <DarkPanel>
+          <Story theme="dark" />
+        </DarkPanel>
+      </Box>
+    );
+  },
 ];

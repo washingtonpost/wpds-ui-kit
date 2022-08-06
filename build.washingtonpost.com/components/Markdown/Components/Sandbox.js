@@ -11,126 +11,11 @@ import {
   Box,
   Icon,
   theme,
-  globalCss,
   Button,
 } from "@washingtonpost/wpds-ui-kit";
 import External from "@washingtonpost/wpds-assets/asset/external";
 import LZString from "lz-string";
 import InlineSVG from "./inlineSVG";
-
-const sandboxGlobalcss = globalCss({
-  ".sp-preview-iframe": {
-    background: theme.colors.gray500,
-    border: 0,
-    width: "100%",
-    minHeight: 300,
-    overflow: "hidden",
-
-    // style the scrollbar
-    "&::-webkit-scrollbar": {
-      width: "0",
-      height: "0",
-      backgroundColor: "transparent",
-    },
-    // style the scrollbar handle
-    "&::-webkit-scrollbar-thumb": {
-      backgroundColor: "transparent",
-      borderRadius: "0",
-    },
-    // style the scrollbar handle on hover
-    "&::-webkit-scrollbar-thumb:hover": {
-      backgroundColor: "transparent",
-    },
-  },
-  ".sp-preview-container": {
-    background: "theme.colors.secondary",
-    height: 300,
-    overflow: "hidden",
-    "&::-webkit-scrollbar": {
-      width: "0",
-      height: "0",
-      backgroundColor: "transparent",
-    },
-    // style the scrollbar handle
-    "&::-webkit-scrollbar-thumb": {
-      backgroundColor: "transparent",
-      borderRadius: "0",
-    },
-    // style the scrollbar handle on hover
-    "&::-webkit-scrollbar-thumb:hover": {
-      backgroundColor: "transparent",
-    },
-  },
-  ".sp-layout": {
-    borderColor: "transparent",
-    borderBottomLeftRadius: "0 !important",
-    borderBottomRightRadius: "0 !important",
-    background: "$secondary !important",
-  },
-
-  ".sp-code-editor": {
-    py: "var(--sp-space-2)",
-    background: "$secondary",
-  },
-
-  ".sp-wrapper": {
-    "--sp-colors-fg-active": "#1f2933",
-    "--sp-colors-fg-default": "#757678",
-    "--sp-colors-fg-inactive": "#e4e7eb",
-    "--sp-colors-bg-active": "#e4e7eb",
-    "--sp-colors-bg-default": "#f8f9fb",
-    "--sp-colors-bg-default-overlay": "rgba(248,249,251,0.8117647058823529)",
-    "--sp-colors-bg-input": "#fff",
-    "--sp-colors-accent": "#64d2ff",
-    "--sp-colors-bg-error": "#ffcdca",
-    "--sp-colors-fg-error": "#811e18",
-    "--sp-layout-height": "300px",
-    "--sp-font-size": "14px",
-    "--sp-font-body":
-      '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"',
-    "--sp-font-mono":
-      '"Fira Mono","DejaVu Sans Mono",Menlo,Consolas,"Liberation Mono",Monaco,"Lucida Console",monospace',
-    "--sp-space-1": "4px",
-    "--sp-space-2": "8px",
-    "--sp-space-3": "12px",
-    "--sp-space-4": "16px",
-    "--sp-space-5": "20px",
-    "--sp-space-6": "24px",
-    "--sp-space-7": "28px",
-    "--sp-space-8": "32px",
-    "--sp-border-radius": "4px",
-    background: "$secondary",
-    overflow: "hidden",
-    fontSize: "var(--sp-font-size)",
-    fontFamily: "var(--sp-font-body)",
-    display: "block",
-    boxSizing: "border-box",
-    textRendering: "optimizeLegibility",
-    WebkitTapHighlightColor: "transparent",
-    WebkitFontSmoothing: "subpixel-antialiased",
-
-    "&::-webkit-scrollbar": {
-      width: "0",
-      height: "0",
-      backgroundColor: "transparent",
-    },
-    // style the scrollbar handle
-    "&::-webkit-scrollbar-thumb": {
-      backgroundColor: "transparent",
-      borderRadius: "0",
-    },
-    // style the scrollbar handle on hover
-    "&::-webkit-scrollbar-thumb:hover": {
-      backgroundColor: "transparent",
-    },
-  },
-  ".sp-preview-actions": {
-    display: "none",
-  },
-  ".sp-overlay": {
-    display: "none",
-  },
-});
 
 const CodeIcon = (props) => (
   <svg
@@ -187,78 +72,6 @@ const CopyCodeButton = () => {
       {copied ? "Copied!" : "Copy"}
     </Button>
   );
-};
-
-const lightTheme = {
-  palette: {
-    activeText: "#166dfc",
-    defaultText: "#666666",
-    inactiveText: "#e9e9e9",
-    activeBackground: "#dde6f2",
-    defaultBackground: "#ffffff",
-    inputBackground: "#ffffff",
-    accent: "#166dfc",
-    errorBackground: "#ffffff",
-    errorForeground: "#f27b81",
-  },
-  syntax: {
-    plain: "#111111",
-    comment: {
-      color: "#999",
-      fontStyle: "italic",
-    },
-    keyword: "#166dfc",
-    tag: "#498a0c",
-    punctuation: "#111111",
-    definition: "#092c65",
-    property: "#166dfc",
-    static: "#b16e00",
-    string: "#498a0c",
-  },
-  typography: {
-    bodyFont:
-      '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
-    monoFont:
-      '"Fira Mono", "DejaVu Sans Mono", Menlo, Consolas, "Liberation Mono", Monaco, "Lucida Console", monospace',
-    fontSize: "14px",
-    lineHeight: "1.4",
-  },
-};
-
-const darkTheme = {
-  palette: {
-    activeText: "#1761f1",
-    defaultText: "#868585",
-    inactiveText: "#e9e9e9",
-    activeBackground: "#0f1218",
-    defaultBackground: "#020202",
-    inputBackground: "#020202",
-    accent: "#1761f1",
-    errorBackground: "#020202",
-    errorForeground: "#f27b81",
-  },
-  syntax: {
-    plain: "#f3f3f3",
-    comment: {
-      color: "#f3f3f3",
-      fontStyle: "italic",
-    },
-    keyword: "#166dfc",
-    tag: "#517c2a",
-    punctuation: "#f3f3f3",
-    definition: "#cdd4df",
-    property: "#166dfc",
-    static: "#906629",
-    string: "#517c2a",
-  },
-  typography: {
-    bodyFont:
-      '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
-    monoFont:
-      '"Fira Mono", "DejaVu Sans Mono", Menlo, Consolas, "Liberation Mono", Monaco, "Lucida Console", monospace',
-    fontSize: "14px",
-    lineHeight: "1.4",
-  },
 };
 
 const useDebounce = (value, delay) => {
@@ -356,17 +169,15 @@ const CustomSandpack = ({
   hideNavBar = false,
   children,
 }) => {
-  sandboxGlobalcss();
-
   const [showCode, setShowCode] = useState(!withPreview);
   const { resolvedTheme } = useTheme();
-  const [sandboxEmbedTheme, setSandboxEmbedTheme] = useState(lightTheme);
+  const [sandboxEmbedTheme, setSandboxEmbedTheme] = useState("light");
 
   useEffect(() => {
     if (resolvedTheme === "dark") {
-      setSandboxEmbedTheme(darkTheme);
+      setSandboxEmbedTheme("dark");
     } else {
-      setSandboxEmbedTheme(lightTheme);
+      setSandboxEmbedTheme("light");
     }
   }, [resolvedTheme]);
 
@@ -384,7 +195,12 @@ const CustomSandpack = ({
       }}
       theme={sandboxEmbedTheme}
     >
-      <SandpackLayout>
+      <SandpackLayout
+        style={{
+          border: "1px solid var(--wpds-colors-subtle)",
+          borderRadius: 0,
+        }}
+      >
         {withPreview && <Preview isGuide={isGuide} />}
         {showCode && (
           <SandpackCodeEditor
@@ -402,6 +218,7 @@ const CustomSandpack = ({
         as="nav"
         css={{
           border: "1px solid $subtle",
+          borderTop: 0,
           flexGrow: 0,
           width: "100%",
           flexDirection: "row",
