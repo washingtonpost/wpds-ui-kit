@@ -4,6 +4,7 @@ on: deployment_status
 
 jobs:
   tests:
+    if: github.event.deployment_status.state == 'success' && contains(github.event.deployment_status.target_url, 'storybook')
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -16,7 +17,6 @@ jobs:
           node-version-file: ".nvmrc"
           registry-url: "https://registry.npmjs.org"
           always-auth: true
-          cache: npm
 
       - name: Install npm dependencies
         run: npm ci
@@ -24,7 +24,6 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
 
       - name: Run interaction tests
-        if: github.event.deployment_status.state == 'success'
         run: npm run test-storybook
         env:
           TARGET_URL: "${{ github.event.deployment_status.target_url }}"
