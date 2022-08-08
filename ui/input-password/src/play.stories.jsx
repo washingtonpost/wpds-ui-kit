@@ -2,7 +2,7 @@ import * as React from "react";
 import { screen, userEvent } from "@storybook/testing-library";
 import { expect } from "@storybook/jest";
 import { InputPassword as Component } from "./";
-import { styled } from "@washingtonpost/wpds-theme";
+import { styled, theme } from "@washingtonpost/wpds-theme";
 
 export default {
   title: "InputPassword",
