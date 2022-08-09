@@ -85,6 +85,7 @@ const TextInputLabel = styled(InputLabel, {
   position: "absolute",
   pointerEvents: "none",
   transform: `translateY(${theme.space["100"]})`,
+  transition: theme.transitions.allFast,
   variants: {
     isFloating: {
       true: {
