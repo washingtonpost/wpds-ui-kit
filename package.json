@@ -63,7 +63,7 @@
     "storybook-dark-mode": "^1.0.9",
     "tsup": "^5.12.5",
     "turbo": "^1.2.16",
-    "typescript": "4.5.5"
+    "typescript": "^4.7.4"
   },
   "optionalDependencies": {
     "esbuild-android-64": "0.14.25",
@@ -94,10 +94,11 @@
   "dependencies": {
     "@radix-ui/react-avatar": "latest",
     "@radix-ui/react-checkbox": "latest",
+    "@radix-ui/react-toggle-group": "^1.0.0",
     "@stitches/react": "^1.2.8",
     "@washingtonpost/wpds-alert-banner": "*",
     "@washingtonpost/wpds-app-bar": "*",
-    "@washingtonpost/wpds-assets": "^1.8.1",
+    "@washingtonpost/wpds-assets": "^1.8.2",
     "@washingtonpost/wpds-avatar": "*",
     "@washingtonpost/wpds-box": "*",
     "@washingtonpost/wpds-button": "*",
@@ -118,7 +119,8 @@
     "@washingtonpost/wpds-ui-kit": "*",
     "@washingtonpost/wpds-visually-hidden": "*",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "rgb-hex": "^4.0.0"
   },
   "scripts": {
     "build": "lerna link --force-local;npm run turbo:build;",
