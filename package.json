@@ -7,7 +7,6 @@
     "@babel/plugin-transform-typescript": "^7.16.1",
     "@babel/preset-react": "^7.14.5",
     "@babel/template": "^7.15.4",
-    "@playwright/test": "^1.17.1",
     "@size-limit/preset-small-lib": "^6.0.3",
     "@storybook/addon-a11y": "^6.4.19",
     "@storybook/addon-actions": "^6.4.19",
@@ -129,7 +128,6 @@
     "storybook": "start-storybook -p 6006 --quiet --ci",
     "test-storybook": "test-storybook",
     "build-storybook": "npm run turbo:build;build-storybook --force-build-preview --quiet",
-    "bootstrap": "lerna bootstrap --hoist;npx lerna link --force-local",
     "turbo:build": "turbo run build",
     "turbo:build:force": "turbo run build --force",
     "test": "jest",
@@ -138,14 +136,13 @@
     "main-version": "make main-version",
     "experimental-version": "make experimental-version",
     "experimental-publish": "make experimental-publish",
-    "postinstall": "npm run bootstrap",
     "new-component": "make new-component",
     "lint": "eslint --ext .ts,.tsx ui/",
     "clean": "turbo run clean && rm -rf node_modules",
     "dev": "turbo run dev --no-cache --parallel --continue",
-    "docsite:dev": "turbo run dev --scope @washingtonpost/wpds-docs --stream",
+    "docsite:dev": "turbo run dev --scope @washingtonpost/wpds-docs",
     "docsite:build": "turbo run build --scope @washingtonpost/wpds-docs --stream",
-    "docsite:lint": "turbo run lint --scope @washingtonpost/wpds-docs --stream"
+    "docsite:lint": "turbo run lint --scope @washingtonpost/wpds-docs"
   },
   "prettier": {},
   "jest": {
