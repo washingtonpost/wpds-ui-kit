@@ -50,14 +50,12 @@ This command runs the Storybook Test runner
 npm run test-storybook
 ```
 
-We use Playwright for Integration testing
-
 Good resources on testing:
 
 - https://kentcdodds.com/blog/testing-implementation-details
 - https://kentcdodds.com/blog/making-your-ui-tests-resilient-to-change
 
-Avoid writing "render" or "display" unit or playwright tests. Leverage our "Tests" stories in Storybook for this. Those UI tests will be tested in Chromatic.
+Avoid writing "render" or "display" tests. Leverage our "Tests" stories in Storybook for this. Those UI tests will be tested in Chromatic.
 
 ## Component Development
 

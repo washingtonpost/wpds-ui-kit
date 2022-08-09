@@ -17,6 +17,7 @@ export const Button = styled("button", {
   fontSize: "$100",
   lineHeight: "$100",
   gap: "$050",
+  transition: `background ${theme.transitions.fast} ${theme.transitions.inOut}`,
 
   "&:disabled": {
     color: "$onDisabled",
