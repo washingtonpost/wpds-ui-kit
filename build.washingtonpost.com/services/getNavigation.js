@@ -6,7 +6,6 @@ export const getNavigation = async () => {
   let navData = [];
 
   if (cache.has("nav")) {
-    console.log("cache hit: getNavigation");
     navData = cache.get("nav");
   } else {
     const foundationDocs = await getDocsListBySection("foundations");

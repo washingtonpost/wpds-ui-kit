@@ -168,12 +168,11 @@ export const NavigationBar = ({ setMobileMenu, mobileMenuState, isClosed }) => {
       </Container>
       <List>
         <ListItem>
-          <Link
-            onClick={() => setMobileMenu(!mobileMenuState)}
-            href="/release-notes"
-            passHref
-          >
-            <Anchor isCurrent={router.asPath.includes("/release-notes")}>
+          <Link href="/release-notes" passHref>
+            <Anchor
+              isCurrent={router.asPath.includes("/release-notes")}
+              onClick={() => setMobileMenu(!mobileMenuState)}
+            >
               Release Notes
             </Anchor>
           </Link>

@@ -17,7 +17,6 @@ export async function getPackageData(name) {
   let size = null;
   try {
     if (cache.has(name)) {
-      console.log("cache hit: getPackageData");
       size = cache.get(name);
 
       return size;
