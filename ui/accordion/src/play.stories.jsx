@@ -8,26 +8,27 @@ export default {
   component: Accordion.Root,
   subcomponents: {
     Item: Accordion.Item,
-    Trigger: Accordion.Trigger,
+    Header: Accordion.Header,
     Content: Accordion.Content,
   },
 };
 
-// var l = document.getElementsByTagName('a');
-// l[0].focus();
-
 const Template = (args) => {
-  const myTriggerRef = React.createRef();
+  const myHeaderRef = React.createRef();
   const myContentRef = React.createRef();
+
+  const myLoader = ({ src }) => {
+    return `${src}`;
+  };
 
   return (
     <Accordion.Root {...args}>
       <Accordion.Item value={"item-1"}>
-        <Accordion.Trigger density={args.density} ref={myTriggerRef} {...args}>
+        <Accordion.Header density={args.density} ref={myHeaderRef} {...args}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in
           augue in felis pharetra finibus. In sagittis aliquam augue. Lorem
           ipsum dolor sit amet, consectetur adipiscing elit.
-        </Accordion.Trigger>
+        </Accordion.Header>
         <Accordion.Content ref={myContentRef}>
           No! You don't even believe that! Gus has cameras everywhere, please.
           Listen to yourself! No, he has known everything, all along. Where were
@@ -37,15 +38,18 @@ const Template = (args) => {
         </Accordion.Content>
       </Accordion.Item>
       <Accordion.Item value={"item-2"}>
-        <Accordion.Trigger density={args.density} ref={myTriggerRef} {...args}>
+        <Accordion.Header density={args.density} ref={myHeaderRef} {...args}>
           How long will I have to social distance?
-        </Accordion.Trigger>
+        </Accordion.Header>
         <Accordion.Content {...args} ref={myContentRef}>
-          No! You don't even believe that! Gus has cameras everywhere, please.
-          Listen to yourself! No, he has known everything, all along. Where were
-          you today? In the lab? And you don't think it's possible that Tyrus
-          lifted the cigarette out of your locker? Come on! Don't you see? You
-          are the last piece of the puzzle. You are everything that he's wanted.
+          <Image
+            loader={myLoader}
+            src="https://i.pravatar.cc/300"
+            width="100"
+            height="100"
+            layout="fixed"
+            alt="An avatar is an atomic component that represents an individual’s identity through a circular photo."
+          />
         </Accordion.Content>
       </Accordion.Item>
     </Accordion.Root>

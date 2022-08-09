@@ -4,7 +4,13 @@ import { ChevronDown } from "@washingtonpost/wpds-assets";
 import { theme } from "@washingtonpost/wpds-theme";
 import { Icon } from "@washingtonpost/wpds-icon";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
-import { AccordionTriggerType, AccordionContentProps } from "./types";
+import {
+  AccordionTriggerType,
+  AccordionTriggerProps,
+  AccordionContentProps,
+  AccordionHeaderType,
+  AccordionItemProps,
+} from "./types";
 
 export enum ACCORDION_TYPE {
   single = "single",
@@ -115,14 +121,21 @@ const StyledContent = styled(AccordionPrimitive.Content, {
 const AccordionTrigger = React.forwardRef<
   HTMLButtonElement,
   AccordionTriggerType
->(({ children, disabled = false, ...props }, ref) => (
-  <StyledHeader disabled={disabled} {...props}>
-    <StyledTrigger {...props} ref={ref}>
-      {children}
-      <StyledIcon label="Chevron Icon">
-        <StyledChevron aria-hidden />
-      </StyledIcon>
-    </StyledTrigger>
+>(({ children, ...props }, ref) => (
+  <StyledTrigger {...props} ref={ref}>
+    {children}
+    <StyledIcon label="Chevron Icon">
+      <StyledChevron aria-hidden />
+    </StyledIcon>
+  </StyledTrigger>
+));
+
+const AccordionHeader = React.forwardRef<
+  HTMLHeadingElement,
+  AccordionHeaderType
+>(({ ...props }, ref) => (
+  <StyledHeader {...props} ref={ref}>
+    <AccordionTrigger {...props} />
   </StyledHeader>
 ));
 
@@ -154,19 +167,40 @@ const StyledAccordion = styled(AccordionPrimitive.Root, {
   },
 });
 
-AccordionContent.displayName = "Accordion";
-AccordionTrigger.displayName = "AccordionTrigger";
+type AccordionPrimitiveProps = React.ComponentProps<
+  typeof AccordionPrimitive.Root
+>;
+type StyledAccordionProps = React.ComponentProps<typeof StyledAccordion>;
+type AccordionProps = AccordionPrimitiveProps & StyledAccordionProps;
 
-const Root = StyledAccordion;
+const AccordionRoot = React.forwardRef<HTMLDivElement, AccordionProps>(
+  ({ ...props }, ref) => <StyledAccordion {...props} ref={ref} />
+);
+
+type AccordionRootProps = React.ComponentProps<typeof AccordionRoot>;
+
+AccordionRoot.displayName = "AccordionComponentRoot";
+AccordionContent.displayName = "AccordionComponentContent";
+AccordionTrigger.displayName = "AccordionComponentTrigger";
+AccordionHeader.displayName = "AccordionComponentHeader";
+
+const Root = AccordionRoot;
 const Item = StyledItem;
-const Trigger = AccordionTrigger;
+const Header = AccordionHeader;
 const Content = AccordionContent;
 
 export const Accordion = {
   Root,
   Item,
-  Trigger,
+  Header,
   Content,
 };
 
-export { Root, Item, Trigger, Content };
+export type {
+  AccordionRootProps,
+  AccordionTriggerType,
+  AccordionContentProps,
+  AccordionHeaderType,
+  AccordionTriggerProps,
+  AccordionItemProps,
+};
