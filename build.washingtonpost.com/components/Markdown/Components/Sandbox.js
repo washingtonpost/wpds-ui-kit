@@ -7,12 +7,7 @@ import {
   useActiveCode,
 } from "@codesandbox/sandpack-react";
 import { useTheme } from "next-themes";
-import {
-  Box,
-  Icon,
-  theme,
-  Button,
-} from "@washingtonpost/wpds-ui-kit";
+import { Box, Icon, theme, Button } from "@washingtonpost/wpds-ui-kit";
 import External from "@washingtonpost/wpds-assets/asset/external";
 import LZString from "lz-string";
 import InlineSVG from "./inlineSVG";
