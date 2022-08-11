@@ -37,10 +37,6 @@
   </url>
 
   <url>
-    <loc>https://build.washingtonpost.com/components/image</loc>
-  </url>
-
-  <url>
     <loc>https://build.washingtonpost.com/components/input-password</loc>
   </url>
 
@@ -58,10 +54,6 @@
 
   <url>
     <loc>https://build.washingtonpost.com/components/radio-group</loc>
-  </url>
-
-  <url>
-    <loc>https://build.washingtonpost.com/components/text</loc>
   </url>
 
   <url>
