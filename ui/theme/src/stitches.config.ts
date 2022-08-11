@@ -48,7 +48,7 @@ const WPDS = createStitches({
     notMd: "(min-width: 900px)",
     notLg: "(min-width: 1024px)",
     notXl: "(min-width: 1280px)",
-    notXxl: "(min-width: 1440px)",
+    notXxl: "(min-width: 1441px)",
     motion: "(prefers-reduced-motion)",
     hover: "(any-hover: hover)",
     dark: "(prefers-color-scheme: dark)",
