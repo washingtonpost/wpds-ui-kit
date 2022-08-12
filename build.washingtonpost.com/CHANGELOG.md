@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.14.0](https://github.com/washingtonpost/wpds-docs/compare/v0.13.0...v0.14.0) (2022-08-12)
+
+
+### Bug Fixes
+
+* bump wpds-assets deps ([#155](https://github.com/washingtonpost/wpds-docs/issues/155)) ([c9af732](https://github.com/washingtonpost/wpds-docs/commit/c9af732bda2ab238d4decd2bd9ab93d165efd69c))
+* word ([06a92e4](https://github.com/washingtonpost/wpds-docs/commit/06a92e4a6fc977636a39f282f241426fb1c6a86a))
+
+
+### Features
+
+* **docs:** add hex/rgba copy-capable swatches page ([1735588](https://github.com/washingtonpost/wpds-docs/commit/1735588bd411729190a6a8cc7260206d1cc5b450))
+
+
+
+
+
 # [0.13.0](https://github.com/washingtonpost/wpds-docs/compare/v0.12.0...v0.13.0) (2022-08-05)
 
 
