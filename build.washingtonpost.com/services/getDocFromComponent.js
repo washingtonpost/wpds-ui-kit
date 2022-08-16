@@ -1,4 +1,4 @@
-import { parse, withCustomConfig } from "react-docgen-typescript";
+import { withCustomConfig } from "react-docgen-typescript";
 
 /**
  * take a component source code and return the doc object

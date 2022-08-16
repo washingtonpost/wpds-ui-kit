@@ -41,9 +41,9 @@ export default function Example() {
     >
       <Accordion.Root type={ACCORDION_TYPE.single} collapsible={true}>
         <Accordion.Item value={"item-1"}>
-          <Accordion.Header>
+          <Accordion.Trigger>
             Here's some sample text for an accordion header item
-          </Accordion.Header>
+          </Accordion.Trigger>
           <Accordion.Content>
             No! You don't even believe that! Gus has cameras everywhere, please.
             Listen to yourself! No, he has known everything, all along. Where
@@ -56,11 +56,11 @@ export default function Example() {
       </Accordion.Root>
       <Accordion.Root type={ACCORDION_TYPE.single} collapsible={true}>
         <Accordion.Item value={"item-1"}>
-          <Accordion.Header>
+          <Accordion.Trigger>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in
             augue in felis pharetra finibus. In sagittis aliquam augue. Lorem
             ipsum dolor sit amet, consectetur adipiscing elit.
-          </Accordion.Header>
+          </Accordion.Trigger>
           <Accordion.Content>
             No! You don't even believe that! Gus has cameras everywhere, please.
             Listen to yourself! No, he has known everything, all along. Where
@@ -95,9 +95,9 @@ export default function Example() {
     >
       <Accordion.Root type={ACCORDION_TYPE.single} collapsible={true}>
         <Accordion.Item value={"item-1"}>
-          <Accordion.Header density={ACCORDION_DENSITY.compact}>
+          <Accordion.Trigger density={ACCORDION_DENSITY.compact}>
             Here's some sample text for an accordion header item
-          </Accordion.Header>
+          </Accordion.Trigger>
           <Accordion.Content>
             No! You don't even believe that! Gus has cameras everywhere, please.
             Listen to yourself! No, he has known everything, all along. Where
@@ -110,11 +110,11 @@ export default function Example() {
       </Accordion.Root>
       <Accordion.Root type={ACCORDION_TYPE.single} collapsible={true}>
         <Accordion.Item value={"item-1"}>
-          <Accordion.Header density={ACCORDION_DENSITY.compact}>
+          <Accordion.Trigger density={ACCORDION_DENSITY.compact}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in
             augue in felis pharetra finibus. In sagittis aliquam augue. Lorem
             ipsum dolor sit amet, consectetur adipiscing elit.
-          </Accordion.Header>
+          </Accordion.Trigger>
           <Accordion.Content>
             No! You don't even believe that! Gus has cameras everywhere, please.
             Listen to yourself! No, he has known everything, all along. Where
@@ -147,9 +147,9 @@ export default function Example() {
     >
       <Accordion.Root type={ACCORDION_TYPE.single} collapsible={true}>
         <Accordion.Item value={"item-1"}>
-          <Accordion.Header density={ACCORDION_DENSITY.loose}>
+          <Accordion.Trigger density={ACCORDION_DENSITY.loose}>
             Here's some sample text for an accordion header item
-          </Accordion.Header>
+          </Accordion.Trigger>
           <Accordion.Content>
             No! You don't even believe that! Gus has cameras everywhere, please.
             Listen to yourself! No, he has known everything, all along. Where
@@ -162,11 +162,11 @@ export default function Example() {
       </Accordion.Root>
       <Accordion.Root type={ACCORDION_TYPE.single} collapsible={true}>
         <Accordion.Item value={"item-1"}>
-          <Accordion.Header density={ACCORDION_DENSITY.loose}>
+          <Accordion.Trigger density={ACCORDION_DENSITY.loose}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in
             augue in felis pharetra finibus. In sagittis aliquam augue. Lorem
             ipsum dolor sit amet, consectetur adipiscing elit.
-          </Accordion.Header>
+          </Accordion.Trigger>
           <Accordion.Content>
             No! You don't even believe that! Gus has cameras everywhere, please.
             Listen to yourself! No, he has known everything, all along. Where
@@ -196,7 +196,7 @@ export default function Example() {
     <Box css={{ width: 500 }}>
       <Accordion.Root type={ACCORDION_TYPE.single} collapsible={true}>
         <Accordion.Item value={"item-1"}>
-          <Accordion.Header>Header example text</Accordion.Header>
+          <Accordion.Trigger>Header example text</Accordion.Trigger>
           <Accordion.Content>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in
             augue in felis pharetra finibus. In sagittis aliquam augue. Lorem
@@ -223,7 +223,7 @@ export default function Example() {
         collapsible={true}
       >
         <Accordion.Item value="item-1">
-          <Accordion.Header>Header example text</Accordion.Header>
+          <Accordion.Trigger>Header example text</Accordion.Trigger>
           <Accordion.Content>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in
             augue in felis pharetra finibus. In sagittis aliquam augue. Lorem
@@ -246,9 +246,9 @@ export default function Example() {
     <Box css={{ width: 500 }}>
       <Accordion.Root type={ACCORDION_TYPE.single} collapsible={true}>
         <Accordion.Item value="item-1">
-          <Accordion.Header forcehover="true">
+          <Accordion.Trigger forcehover="true">
             Header text item one
-          </Accordion.Header>
+          </Accordion.Trigger>
           <Accordion.Content>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in
             augue in felis pharetra finibus. In sagittis aliquam augue. Lorem
@@ -256,7 +256,7 @@ export default function Example() {
           </Accordion.Content>
         </Accordion.Item>
         <Accordion.Item value="item-2">
-          <Accordion.Header>Header text item two</Accordion.Header>
+          <Accordion.Trigger>Header text item two</Accordion.Trigger>
           <Accordion.Content>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in
             augue in felis pharetra finibus. In sagittis aliquam augue. Lorem
@@ -264,7 +264,7 @@ export default function Example() {
           </Accordion.Content>
         </Accordion.Item>
         <Accordion.Item value="item-3">
-          <Accordion.Header>Header text item three</Accordion.Header>
+          <Accordion.Trigger>Header text item three</Accordion.Trigger>
           <Accordion.Content>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in
             augue in felis pharetra finibus. In sagittis aliquam augue. Lorem
@@ -287,9 +287,9 @@ export default function Example() {
     <Box css={{ width: 500 }}>
       <Accordion.Root type={ACCORDION_TYPE.single} defaultValue="item-1">
         <Accordion.Item value="item-1">
-          <Accordion.Header forcefocus="true">
+          <Accordion.Trigger forcefocus="true">
             Header text item one
-          </Accordion.Header>
+          </Accordion.Trigger>
           <Accordion.Content>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in
             augue in felis pharetra finibus. In sagittis aliquam augue. Lorem
@@ -297,7 +297,7 @@ export default function Example() {
           </Accordion.Content>
         </Accordion.Item>
         <Accordion.Item value="item-2">
-          <Accordion.Header>Header text item two</Accordion.Header>
+          <Accordion.Trigger>Header text item two</Accordion.Trigger>
           <Accordion.Content>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in
             augue in felis pharetra finibus. In sagittis aliquam augue. Lorem
@@ -305,7 +305,7 @@ export default function Example() {
           </Accordion.Content>
         </Accordion.Item>
         <Accordion.Item value="item-3">
-          <Accordion.Header>Header text item three</Accordion.Header>
+          <Accordion.Trigger>Header text item three</Accordion.Trigger>
           <Accordion.Content>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in
             augue in felis pharetra finibus. In sagittis aliquam augue. Lorem
@@ -328,7 +328,7 @@ export default function Example() {
     <Box css={{ width: 500 }}>
       <Accordion.Root type={ACCORDION_TYPE.single} disabled={true}>
         <Accordion.Item value="item-1">
-          <Accordion.Header>Header example text</Accordion.Header>
+          <Accordion.Trigger>Header example text</Accordion.Trigger>
           <Accordion.Content>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in
             augue in felis pharetra finibus. In sagittis aliquam augue. Lorem
@@ -355,9 +355,9 @@ export default function Example() {
     <Box css={{ width: 500 }}>
       <Accordion.Root type={ACCORDION_TYPE.single}>
         <Accordion.Item value="item-1">
-          <Accordion.Header css={{ fontFamily: theme.fonts.headline }}>
+          <Accordion.Trigger css={{ fontFamily: theme.fonts.headline }}>
             Header example text
-          </Accordion.Header>
+          </Accordion.Trigger>
           <Accordion.Content>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in
             augue in felis pharetra finibus. In sagittis aliquam augue. Lorem
@@ -387,9 +387,9 @@ export default function Example() {
     >
       <Accordion.Root type={ACCORDION_TYPE.single} collapsible={true}>
         <Accordion.Item value="item-1">
-          <Accordion.Header css={{ fontSize: theme.fontSizes["075"] }}>
+          <Accordion.Trigger css={{ fontSize: theme.fontSizes["075"] }}>
             Header example text
-          </Accordion.Header>
+          </Accordion.Trigger>
           <Accordion.Content>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in
             augue in felis pharetra finibus. In sagittis aliquam augue. Lorem
@@ -400,9 +400,9 @@ export default function Example() {
 
       <Accordion.Root type={ACCORDION_TYPE.single} collapsible={true}>
         <Accordion.Item value="item-1">
-          <Accordion.Header css={{ fontSize: theme.fontSizes[400] }}>
+          <Accordion.Trigger css={{ fontSize: theme.fontSizes[400] }}>
             Header example text
-          </Accordion.Header>
+          </Accordion.Trigger>
           <Accordion.Content>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in
             augue in felis pharetra finibus. In sagittis aliquam augue. Lorem
@@ -425,7 +425,7 @@ export default function Example() {
     <Box css={{ width: 500 }}>
       <Accordion.Root type={ACCORDION_TYPE.single} collapsible={true}>
         <Accordion.Item value="item-1">
-          <Accordion.Header>The rest of the sentence is...</Accordion.Header>
+          <Accordion.Trigger>The rest of the sentence is...</Accordion.Trigger>
           <Accordion.Content>inside of the content.</Accordion.Content>
         </Accordion.Item>
       </Accordion.Root>

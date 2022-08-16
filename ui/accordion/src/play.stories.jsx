@@ -1,7 +1,6 @@
 import * as React from "react";
 import Image from "next/image";
 import { Accordion, ACCORDION_DENSITY, ACCORDION_TYPE } from ".";
-import { theme } from "@washingtonpost/wpds-theme";
 
 export default {
   title: "Accordion",
@@ -24,11 +23,11 @@ const Template = (args) => {
   return (
     <Accordion.Root {...args}>
       <Accordion.Item value={"item-1"}>
-        <Accordion.Header density={args.density} ref={myHeaderRef} {...args}>
+        <Accordion.Trigger density={args.density} ref={myHeaderRef} {...args}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in
           augue in felis pharetra finibus. In sagittis aliquam augue. Lorem
           ipsum dolor sit amet, consectetur adipiscing elit.
-        </Accordion.Header>
+        </Accordion.Trigger>
         <Accordion.Content ref={myContentRef}>
           No! You don't even believe that! Gus has cameras everywhere, please.
           Listen to yourself! No, he has known everything, all along. Where were
@@ -38,9 +37,9 @@ const Template = (args) => {
         </Accordion.Content>
       </Accordion.Item>
       <Accordion.Item value={"item-2"}>
-        <Accordion.Header density={args.density} ref={myHeaderRef} {...args}>
+        <Accordion.Trigger density={args.density} ref={myHeaderRef} {...args}>
           How long will I have to social distance?
-        </Accordion.Header>
+        </Accordion.Trigger>
         <Accordion.Content {...args} ref={myContentRef}>
           <Image
             loader={myLoader}
