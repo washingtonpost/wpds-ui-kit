@@ -15,10 +15,10 @@ export const DrawerTrigger = React.forwardRef<
     <Button
       ref={ref}
       aria-haspopup="dialog"
-      aria-expanded={context?.open || false}
-      aria-controls={context?.contentId}
+      aria-expanded={context.open || false}
+      aria-controls={context.contentId}
       onClick={() => {
-        context?.onOpenChange(true);
+        context.onOpenChange(true);
       }}
       {...props}
     >

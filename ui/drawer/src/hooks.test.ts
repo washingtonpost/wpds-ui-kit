@@ -64,3 +64,27 @@ test("should use controllable state with default value", () => {
 
   expect(handleChange).toBeCalled();
 });
+
+test("should use controllable state with controlled value that is a setter", () => {
+  const handleChange = jest.fn();
+  const { result } = renderHook(() => {
+    const [id] = React.useState("my-id");
+    const [next, setNext] = React.useState();
+    return {
+      state: useControllableState({
+        prop: id,
+        defaultProp: undefined,
+        onChange: handleChange,
+      }),
+      setter: setNext,
+      value: next,
+    };
+  });
+  const [, setValue] = result.current.state;
+  act(() => {
+    setValue(result.current.setter);
+  });
+
+  expect(result.current.value).toEqual("my-id");
+  expect(handleChange).toBeCalled();
+});

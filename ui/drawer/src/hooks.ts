@@ -8,7 +8,7 @@ export function useCallbackRef(callback) {
   });
 
   return React.useCallback((...args) => {
-    return callbackRef.current?.(...args);
+    return callbackRef.current(...args);
   }, []);
 }
 

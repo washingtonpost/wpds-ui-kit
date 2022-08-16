@@ -14,20 +14,45 @@ const StyledContainer = styled("div", {
   overflow: "auto",
   position: "fixed",
   variants: {
-    /** controls where the drawer comes from,
-     * either a side of screen or in-place
-     * @default bottom
-     */
+    /** controls where the drawer comes from, either a side of screen or in-place @default bottom */
     position: {
       top: {
         top: 0,
         right: 0,
         left: 0,
+        "&.wpds-drawer-enter": {
+          transform: "translateY(-100%)",
+        },
+        "&.wpds-drawer-enter-active": {
+          transform: "translateY(0%)",
+          transition: drawerTransition,
+        },
+        "&.wpds-drawer-exit": {
+          transform: "translateY(0%)",
+        },
+        "&.wpds-drawer-exit-active": {
+          transform: "translateY(-100%)",
+          transition: drawerTransition,
+        },
       },
       right: {
         top: 0,
         right: 0,
         bottom: 0,
+        "&.wpds-drawer-enter": {
+          transform: "translateX(100%)",
+        },
+        "&.wpds-drawer-enter-active": {
+          transform: "translateX(0%)",
+          transition: drawerTransition,
+        },
+        "&.wpds-drawer-exit": {
+          transform: "translateX(0%)",
+        },
+        "&.wpds-drawer-exit-active": {
+          transform: "translateX(100%)",
+          transition: drawerTransition,
+        },
       },
       bottom: {
         right: 0,
@@ -52,6 +77,20 @@ const StyledContainer = styled("div", {
         top: 0,
         bottom: 0,
         left: 0,
+        "&.wpds-drawer-enter": {
+          transform: "translateX(-100%)",
+        },
+        "&.wpds-drawer-enter-active": {
+          transform: "translateX(0%)",
+          transition: drawerTransition,
+        },
+        "&.wpds-drawer-exit": {
+          transform: "translateX(0%)",
+        },
+        "&.wpds-drawer-exit-active": {
+          transform: "translateX(-100%)",
+          transition: drawerTransition,
+        },
       },
       "in-place": {},
     },
@@ -81,7 +120,15 @@ export const DrawerContent = React.forwardRef<
   DrawerContentProps
 >(
   (
-    { children, css, height = 500, width = 400, position = "bottom", ...props },
+    {
+      children,
+      css,
+      height = 500,
+      width = 400,
+      position = "bottom",
+      innerClassName,
+      ...props
+    },
     ref
   ) => {
     const context = React.useContext(DrawerContext);
@@ -89,12 +136,12 @@ export const DrawerContent = React.forwardRef<
       <CSSTransition
         mountOnEnter
         unmountOnExit
-        in={context?.open}
-        timeout={10000}
+        in={context.open}
+        timeout={300}
         classNames="wpds-drawer"
       >
         <StyledContainer
-          id={context?.contentId}
+          id={context.contentId}
           ref={ref}
           css={{
             ...css,
@@ -106,7 +153,7 @@ export const DrawerContent = React.forwardRef<
           position={position}
           {...props}
         >
-          <StyledInner>{children}</StyledInner>
+          <StyledInner className={innerClassName}>{children}</StyledInner>
         </StyledContainer>
       </CSSTransition>
     );

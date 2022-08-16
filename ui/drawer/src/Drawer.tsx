@@ -1,6 +1,6 @@
 import { DrawerRoot } from "./DrawerRoot";
 import { DrawerContent } from "./DrawerContent";
-import { DrawerTrigger } from "./DrawerTriger";
+import { DrawerTrigger } from "./DrawerTrigger";
 
 type DrawerProps = {
   Root: typeof DrawerRoot;

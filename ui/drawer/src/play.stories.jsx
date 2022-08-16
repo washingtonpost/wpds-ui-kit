@@ -7,6 +7,7 @@ export default {
   component: Component.Root,
   subcomponents: {
     DrawerContent: Component.Content,
+    DrawerTrigger: Component.Trigger,
   },
 };
 
@@ -28,7 +29,7 @@ const Template = (args) => {
     <div style={{ position: "absolute", top: 16, left: 16 }}>
       <Component.Root {...args} onOpenChange={handleChange} open={open}>
         <Component.Trigger>Trigger Drawer</Component.Trigger>
-        <Component.Content>Drawer</Component.Content>
+        <Component.Content height={100}>Drawer</Component.Content>
       </Component.Root>
     </div>
   );
