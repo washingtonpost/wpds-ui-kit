@@ -14,7 +14,8 @@ export default function Container({ children, caption }) {
   const Caption = styled("p", {
     color: theme.colors.accessible,
     fontSize: "$087",
-    marginTop: "$050",
+    marginBlockStart: "$050",
+    marginBlockEnd: 0,
   });
   return (
     <>

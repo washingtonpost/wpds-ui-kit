@@ -16,6 +16,7 @@ const StyledCheckbox = styled(PrimitiveCheckbox.Root, {
   display: "block",
   cursor: "pointer",
   overflow: "hidden",
+  padding: 0,
   backgroundColor: "$$backgroundColor",
   color: "$$color",
   flexShrink: "0",

@@ -22,6 +22,8 @@ const Container = styled("div", {
   textAlign: "center",
 });
 const Label = styled("h3", {
+  color: theme.colors.primary,
+  margin: 0,
   textAlign: "center",
 });
 
@@ -32,7 +34,7 @@ export const Avatar = (args) => (
     </Label>
     <Component {...args}>
       <img
-        src="https://i.pravatar.cc/300"
+        src="https://i.pravatar.cc/300?u=test-user@wapo.com"
         alt="An avatar is an atomic component that represents an individual’s identity through a circular photo."
       />
     </Component>

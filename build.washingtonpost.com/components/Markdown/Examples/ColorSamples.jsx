@@ -55,6 +55,7 @@ const ColorSamples = ({ group }) => {
   const Swatch = styled("button", {
     backgroundColor: "transparent",
     border: "1px solid $subtle",
+    padding: 0,
     "&:hover": {
       opacity: 0.5,
     },
@@ -69,6 +70,7 @@ const ColorSamples = ({ group }) => {
   });
   const ColorID = styled("p", {
     fontSize: "$100",
+    marginBlock: 0,
     padding: "$025",
     fontFamily: "$meta",
     color: "$primary",
