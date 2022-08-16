@@ -49,7 +49,7 @@ const ChromaticTemplate = () => (
 
 export const Chromatic = ChromaticTemplate.bind({});
 
-const InteractionsTemplate = () => <Component />;
+const InteractionsTemplate = () => <Component id="test-id" />;
 
 export const Interactions = InteractionsTemplate.bind({});
 Interactions.parameters = {
