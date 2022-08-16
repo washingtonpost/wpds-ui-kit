@@ -438,4 +438,109 @@ export default function Example() {
 
 ## API Reference
 
-<PropsTable props={propsTable} />
+<PropsTable
+  props={[
+    {
+      name: "density",
+      type: "enum",
+      rawType: "ACCORDION_DENSITY.compact | ACCORDION_DENSITY.loose | ACCORDION_DENSITY.default",
+      required: "false",
+      description:
+        "Trigger only. By default, accordion items are styled with a padding value that is appropriate for most use-cases. You can use compact or loose for smaller or larger padding.",
+      defaultValue: "ACCORDION_DENSITY.default",
+    },
+    {
+      name: "type",
+      type: "enum",
+      rawType: "ACCORDION_TYPE.single | ACCORDION_TYPE.multiple ",
+      required: "true",
+      description:
+        "Determines whether one or multiple items can be opened at the same time.",
+      defaultValue: "ACCORDION_TYPE.single",
+    },
+    {
+      name: "value",
+      type: "string",
+      rawType: "",
+      required: "true",
+      description:
+        "type='single' ONLY. A unique value for the item. Used with defaultValue",
+      defaultValue: "",
+    },
+    {
+      name: "defaultValue",
+      type: "string",
+      rawType: "",
+      required: false,
+      description: "type='single' ONLY. Determines which item should be expanded on render. Should match one of the values",
+      defaultValue: "",
+    },
+    {
+      name: "onValueChange",
+      type: "function",
+      rawType: `(value: string) => void`,
+      required: "false",
+      description: "type='single' ONLY. Event handler called when the expanded state of an item changes",
+      defaultValue: "",
+    },
+    {
+      name: "value",
+      type: "string[]",
+      rawType: "",
+      required: "true",
+      description:
+        "type='multiple' ONLY. A unique value for the item. Used with defaultValue",
+      defaultValue: "[]",
+    },
+    {
+      name: "defaultValue",
+      type: "string[]",
+      rawType: "",
+      required: false,
+      description: "type='multiple' ONLY. Determines which item should be expanded on render. Should match one of the values",
+      defaultValue: "[]",
+    },
+    {
+      name: "onValueChange",
+      type: "function",
+      rawType: `(value: string[]) => void`,
+      required: "false",
+      description: "type='multiple' ONLY. Event handler called when the expanded state of an item changes",
+      defaultValue: "",
+    },
+    {
+      name: "collapsible",
+      type: "boolean",
+      rawType: "true | false",
+      required: false,
+      description:
+        "type='single' ONLY. Allows items to collapse after they're expanded",
+      defaultValue: 'false',
+    },
+    {
+      name: "disabled",
+      type: "boolean",
+      rawType: "true | false",
+      required: false,
+      description: "When true, prevents the user from interacting with the accordion and all its items. If added to the root, the whole accordion will be disabled. If added to an item, the item will be disabled.",
+      defaultValue: "false",
+    },
+    {
+      name: "forceMount",
+      type: "boolean",
+      rawType: "true | false",
+      required: false,
+      description: "Used to force mounting when more control is needed. Useful when controlling animation with React animation libraries.",
+      defaultValue: "false",
+    },
+    {
+      name: "asChild",
+      type: "boolean",
+      rawType: "true | false",
+      required: false,
+      description: "Change the component to the HTML tag or custom component of the only child. This will merge the original component props with the props of the supplied element/component and change the underlying DOM node.",
+      defaultValue: "false",
+    },
+
+]}
+/>

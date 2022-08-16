@@ -21,7 +21,7 @@ const Template = (args) => {
   };
 
   return (
-    <Accordion.Root {...args}>
+    <Accordion.Root {...args} defaultValue="item-1">
       <Accordion.Item value={"item-1"}>
         <Accordion.Trigger density={args.density} ref={myHeaderRef} {...args}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in

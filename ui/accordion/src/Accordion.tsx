@@ -1,7 +1,6 @@
 import * as React from "react";
-import { styled, keyframes } from "@stitches/react";
 import { ChevronDown } from "@washingtonpost/wpds-assets";
-import { theme } from "@washingtonpost/wpds-theme";
+import { theme, styled, keyframes } from "@washingtonpost/wpds-theme";
 import { Icon } from "@washingtonpost/wpds-icon";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
 import type * as WPDS from "@washingtonpost/wpds-theme";
