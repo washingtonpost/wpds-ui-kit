@@ -46,11 +46,15 @@
   "peerDependencies": {
     "@washingtonpost/wpds-theme": "*",
     "@washingtonpost/wpds-button": "*",
+    "@washingtonpost/wpds-icon": "*",
+    "@washingtonpost/wpds-assets": "*",
     "react": "^16.8.6 || ^17.0.2"
   },
   "dependencies": {
     "@washingtonpost/wpds-theme": "*",
     "@washingtonpost/wpds-button": "*",
+    "@washingtonpost/wpds-icon": "*",
+    "@washingtonpost/wpds-assets": "*",
     "react-transition-group": "^4.4.5"
   }
 }

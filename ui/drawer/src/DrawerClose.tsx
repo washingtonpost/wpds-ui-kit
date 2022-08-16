@@ -1,6 +1,7 @@
 import * as React from "react";
 import { DrawerContext } from "./DrawerRoot";
 import { Button } from "@washingtonpost/wpds-button";
+import { Icon } from "@washingtonpost/wpds-icon";
 import { Close } from "@washingtonpost/wpds-assets";
 
 //DrawerClose.propTypes = {
@@ -10,19 +11,26 @@ import { Close } from "@washingtonpost/wpds-assets";
 //  sticky: PropTypes.bool,
 //};
 
-export const DrawerClose = ({ as = "button", sticky = true, ...props }) => {
+const NAME = "DrawerClose";
+
+interface DrawerCloseProps extends React.ComponentPropsWithRef<typeof Button> {
+  sticky?: boolean;
+}
+
+export const DrawerClose = React.forwardRef<
+  HTMLButtonElement,
+  DrawerCloseProps
+>(({ sticky = true, ...props }, ref) => {
   const context = React.useContext(DrawerContext);
 
   return (
     <Button
-      size="small"
-      as={as}
+      ref={ref}
       onClick={() => {
         context.onOpenChange(false);
       }}
       color="white"
-      renderIcon={Close}
-      ariaLabel="Close Drawer"
+      aria-label="Close Drawer"
       className={
         sticky ? "sticky" : ""
         //getClasses("fr pointer", {
@@ -32,6 +40,14 @@ export const DrawerClose = ({ as = "button", sticky = true, ...props }) => {
         //})
       }
       {...props}
-    />
+    >
+      <Icon label="">
+        <Close />
+      </Icon>
+    </Button>
   );
-};
+});
+
+DrawerClose.displayName = NAME;
+
+export type { DrawerCloseProps };

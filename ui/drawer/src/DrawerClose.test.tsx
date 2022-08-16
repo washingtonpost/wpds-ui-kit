@@ -8,6 +8,6 @@ describe("DrawerTrigger", () => {
   test("renders visibly into the document", () => {
     render(<DrawerClose />);
 
-    expect(screen.getByText("Trigger Drawer")).toBeVisible();
+    expect(screen.getByRole("button")).toBeVisible();
   });
 });
