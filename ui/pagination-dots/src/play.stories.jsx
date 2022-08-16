@@ -33,8 +33,9 @@ const DefaultArgs = {
 };
 
 const Label = styled("h3", {
+  color: theme.colors.primary,
+  margin: 0,
   textAlign: "center",
-  [`.${darkTheme} &`]: { color: theme.colors.primary },
 });
 
 export const PaginationDots = (args) => (
