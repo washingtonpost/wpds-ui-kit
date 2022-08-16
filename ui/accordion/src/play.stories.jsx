@@ -10,6 +10,24 @@ export default {
     Header: Accordion.Header,
     Content: Accordion.Content,
   },
+  argTypes: {
+    density: {
+      options: [
+        ACCORDION_DENSITY.compact,
+        ACCORDION_DENSITY.default,
+        ACCORDION_DENSITY.loose,
+      ],
+      control: "select",
+    },
+    type: {
+      options: [ACCORDION_TYPE.single, ACCORDION_TYPE.multiple],
+      control: "select",
+    },
+    disabled: {
+      options: [true, false],
+      control: "boolean",
+    },
+  },
 };
 
 const Template = (args) => {
@@ -21,7 +39,7 @@ const Template = (args) => {
   };
 
   return (
-    <Accordion.Root {...args} defaultValue="item-1">
+    <Accordion.Root {...args}>
       <Accordion.Item value={"item-1"}>
         <Accordion.Trigger density={args.density} ref={myHeaderRef} {...args}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in
@@ -60,4 +78,7 @@ export const Play = Template.bind({});
 Play.args = {
   density: ACCORDION_DENSITY.compact,
   type: ACCORDION_TYPE.single,
+  defaultValue: "item-1",
 };
+
+Play.storyName = "Accordion";

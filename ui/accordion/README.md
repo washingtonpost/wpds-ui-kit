@@ -98,6 +98,7 @@ export enum ACCORDION_DENSITY {
 | Name    | Description                                                                                                                                                                                                   | Type | Required |
 | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---- | -------- |
 | density | Applies a certain amount of padding to the accordion trigger/header                                                                                                                                           | enum | false    |
+| ref     | A standard React ref                                                                                                                                                                                          | ref  | false    |
 | asChild | Change the component to the HTML tag or custom component of the only child. This will merge the original component props with the props of the supplied element/component and change the underlying DOM node. | bool | false    |
 
 ## Accordion.Content
@@ -108,5 +109,6 @@ Contains the collapsible content for an item. The Accordion.Content can hold any
 
 | Name       | Description                                                                                                                                                                                                   | Type | Required |
 | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---- | -------- |
+| ref        | A standard React reference                                                                                                                                                                                    | ref  | false    |
 | asChild    | Change the component to the HTML tag or custom component of the only child. This will merge the original component props with the props of the supplied element/component and change the underlying DOM node. | bool | false    |
 | forceMount | Used to force mounting when more control is needed. Useful when controlling animation with React animation libraries.                                                                                         | bool | false    |
