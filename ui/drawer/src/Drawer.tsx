@@ -1,17 +1,20 @@
 import { DrawerRoot } from "./DrawerRoot";
 import { DrawerContent } from "./DrawerContent";
 import { DrawerTrigger } from "./DrawerTrigger";
+import { DrawerClose } from "./DrawerClose";
 
 type DrawerProps = {
   Root: typeof DrawerRoot;
   Content: typeof DrawerContent;
   Trigger: typeof DrawerTrigger;
+  Close: typeof DrawerClose;
 };
 
 export const Drawer: DrawerProps = {
   Root: DrawerRoot,
   Content: DrawerContent,
   Trigger: DrawerTrigger,
+  Close: DrawerClose,
 };
 
 /* ------ */

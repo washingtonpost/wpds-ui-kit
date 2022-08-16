@@ -13,9 +13,9 @@ import { Close } from "@washingtonpost/wpds-assets";
 
 const NAME = "DrawerClose";
 
-interface DrawerCloseProps extends React.ComponentPropsWithRef<typeof Button> {
+type DrawerCloseProps = React.ComponentPropsWithRef<typeof Button> & {
   sticky?: boolean;
-}
+};
 
 export const DrawerClose = React.forwardRef<
   HTMLButtonElement,

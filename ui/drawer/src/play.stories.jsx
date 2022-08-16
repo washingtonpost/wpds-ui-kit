@@ -8,6 +8,7 @@ export default {
   subcomponents: {
     DrawerContent: Component.Content,
     DrawerTrigger: Component.Trigger,
+    DrawerClose: Component.Close,
   },
 };
 
