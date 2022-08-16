@@ -51,14 +51,17 @@ export const getStaticProps = async ({ params }) => {
       "https://api.figma.com/v1/files/LA6qKUukk8v3YkkuKq6IC6/components",
       { headers: { "X-FIGMA-TOKEN": process.env.FIGMA_API_TOKEN } }
     );
-    const allComponents = await response.json();
-    const iconComponents = allComponents.meta.components
-      .filter((component) => component.containing_frame.pageName === "Icons")
-      .map((component) => ({
-        name: component.name,
-        description: component.description.replace(/(\n)/gm, " "),
-      }));
-    iconData = { components: iconComponents };
+    const responseBody = await response.json();
+    if(responseBody.status === 200){
+      const iconComponents = responseBody.meta.components
+        .filter((component) => component.containing_frame.pageName === "Icons")
+        .map((component) => ({
+          name: component.name,
+          description: component.description.replace(/(\n)/gm, " "),
+        }));
+      iconData = { components: iconComponents };
+    }
+    
   }
 
   return {
