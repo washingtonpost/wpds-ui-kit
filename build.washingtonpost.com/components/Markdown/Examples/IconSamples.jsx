@@ -15,6 +15,7 @@ import {
   styled,
 } from "@washingtonpost/wpds-ui-kit";
 import { paramCase } from "param-case";
+import { pascalCase } from "pascal-case";
 import { logoList } from "./LogoSamples";
 
 export default function Icons({ data }) {
@@ -68,8 +69,23 @@ export default function Icons({ data }) {
     setFilter(result);
   }
   const GetIcons = () => {
-    return Object.keys(AllAssets).map((Asset, i) => {
+    let list;
+
+    if (Filter.length === 0) {
+      list = Object.keys(AllAssets).filter(
+        (asset) => !logoList.includes(paramCase(asset))
+      );
+    } else {
+      list = Filter.map((filtered) =>
+        pascalCase(filtered.item.name).replace("15", "Svg15")
+      );
+    }
+
+    return list.map((Asset, i) => {
       const Sample = AllAssets[Asset];
+      if (!Sample) {
+        return;
+      }
       const componentName = paramCase(Asset);
 
       const importExample = `import ${Asset.replace(
@@ -79,16 +95,6 @@ export default function Icons({ data }) {
         "svg",
         ""
       )}";`;
-
-      if (logoList.includes(componentName)) return;
-
-      if (
-        Filter.length !== 0 &&
-        Filter.findIndex(
-          (icon) => icon.item.name.toLowerCase() === componentName
-        ) === -1
-      )
-        return;
 
       return (
         <MDXStyling.Cell key={i}>
