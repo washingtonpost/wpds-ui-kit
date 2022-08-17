@@ -1,5 +1,4 @@
 import * as React from "react";
-import Image from "next/image";
 import { Accordion, ACCORDION_DENSITY, ACCORDION_TYPE } from ".";
 
 export default {
@@ -34,10 +33,6 @@ const Template = (args) => {
   const myHeaderRef = React.createRef();
   const myContentRef = React.createRef();
 
-  const myLoader = ({ src }) => {
-    return `${src}`;
-  };
-
   return (
     <Accordion.Root {...args}>
       <Accordion.Item value={"item-1"}>
@@ -59,12 +54,8 @@ const Template = (args) => {
           How long will I have to social distance?
         </Accordion.Trigger>
         <Accordion.Content {...args} ref={myContentRef}>
-          <Image
-            loader={myLoader}
+          <img
             src="https://i.pravatar.cc/300"
-            width="100"
-            height="100"
-            layout="fixed"
             alt="An avatar is an atomic component that represents an individual’s identity through a circular photo."
           />
         </Accordion.Content>
