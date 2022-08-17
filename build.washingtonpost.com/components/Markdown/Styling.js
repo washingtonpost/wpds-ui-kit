@@ -53,6 +53,7 @@ const HR = styled("hr", {
 
 export const P = styled("p", {
   fontSize: "$100",
+  marginBlock: 0,
   paddingBottom: "$050",
   fontFamily: "$meta",
   fontWeight: "$light",
@@ -202,6 +203,9 @@ const components = {
   IconSamples: dynamic(() => import("../Markdown/Examples/IconSamples")),
   LogoSamples: dynamic(() => import("../Markdown/Examples/LogoSamples")),
   ColorSamples: dynamic(() => import("../Markdown/Examples/ColorSamples")),
+  HexRGBAColorSamples: dynamic(() =>
+    import("../Markdown/Examples/HexRGBAColorSamples")
+  ),
   Table: dynamic(() => import("./Components/table")),
   Img: dynamic(() => import("./Components/InlineImage")),
   TableOfContents: dynamic(() => import("./Components/tableofcontents")),

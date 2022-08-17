@@ -8,6 +8,7 @@ export const Header = styled("h1", {
   fontFamily: "$headline",
   color: "$primary",
   fontWeight: "$bold",
+  marginBlock: 0,
   "@sm": {
     fontSize: "$250",
   },

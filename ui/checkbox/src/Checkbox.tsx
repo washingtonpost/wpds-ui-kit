@@ -9,13 +9,14 @@ import * as PrimitiveCheckbox from "@radix-ui/react-checkbox";
 import { InputLabel } from "@washingtonpost/wpds-input-label";
 
 const StyledCheckbox = styled(PrimitiveCheckbox.Root, {
-  transition: "$allFast",
+  transition: `background ${theme.transitions.fast} ${theme.transitions.inOut}`,
   appearance: "none",
   borderRadius: "$012",
   border: "1px solid",
   display: "block",
   cursor: "pointer",
   overflow: "hidden",
+  padding: 0,
   backgroundColor: "$$backgroundColor",
   color: "$$color",
   flexShrink: "0",

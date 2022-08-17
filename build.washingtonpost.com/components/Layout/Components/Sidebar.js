@@ -53,26 +53,38 @@ const Container = styled("div", {
   },
 });
 
+const AccordionHeader = styled(Accordion.Header, {
+  width: "100%",
+  justifySelf: "flex-start",
+  marginBlock: 0,
+  padding: "$050 0 $050 $125",
+  "@sm": {
+    cursor: "pointer",
+  },
+});
+
 const AccordionTrigger = styled(Accordion.Trigger, {
   border: "none",
   display: "flex",
   width: "100%",
   alignItems: "center",
-  justifyItems: "flex-start",
-  textAlign: "left",
-  paddingRight: "$150",
+  paddingBlock: 0,
+  paddingInlineStart: 0,
+  paddingInlineEnd: "$150",
   backgroundColor: "transparent",
+  textAlign: "left",
 });
 
-const AccordionHeader = styled(Header, {
-  width: "100%",
-  justifySelf: "flex-start",
+const AccordionLabel = styled("span", {
+  fontFamily: "$meta",
+  fontSize: "$100",
+  fontWeight: "$bold",
+  flex: 1,
 });
 
 const AccordionChevron = styled(ChevronDown, {
   height: 16,
   fill: theme.colors.accessible,
-  justifySelf: "flex-end",
   transition: "transform 300ms",
   "[data-state=open] &": { transform: "rotate(180deg)" },
 });
@@ -81,7 +93,7 @@ const AccordionChevron = styled(ChevronDown, {
 const SideBarList = styled("ul", {
   listStyle: "none",
   paddingLeft: "0",
-  marginLeft: "0",
+  marginBlock: "0",
 });
 
 const ListItem = styled("li", {
@@ -228,25 +240,12 @@ export default function Sidebar({ navigation, setMobileMenu }) {
                 collapsible
               >
                 <Accordion.Item value={nav.category}>
-                  <Accordion.Header>
+                  <AccordionHeader>
                     <AccordionTrigger>
-                      <AccordionHeader
-                        css={{
-                          textTransform: "capitalize",
-                          width: "100%",
-                          marginTop: 0,
-                          padding: "$050 0 $050 $125",
-                          "@sm": {
-                            cursor: "pointer",
-                          },
-                        }}
-                        as="h4"
-                      >
-                        {nav.category}
-                      </AccordionHeader>
+                      <AccordionLabel>{nav.category}</AccordionLabel>
                       <AccordionChevron aria-hidden />
                     </AccordionTrigger>
-                  </Accordion.Header>
+                  </AccordionHeader>
                   <Accordion.Content>
                     <SideBarList>
                       {nav.sortItems ? (

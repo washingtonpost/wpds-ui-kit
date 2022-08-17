@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.14.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.13.0...v0.14.0) (2022-08-12)
+
+
+### Bug Fixes
+
+* update notXl breakpoint to match xl and add notXxl ([5b7ddae](https://github.com/washingtonpost/wpds-ui-kit/commit/5b7ddaef6d5c9aec7ae853e2d69693928affa082))
+
+
+
+
+
 # [0.13.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.12.0...v0.13.0) (2022-08-05)
 
 **Note:** Version bump only for package @washingtonpost/wpds-container

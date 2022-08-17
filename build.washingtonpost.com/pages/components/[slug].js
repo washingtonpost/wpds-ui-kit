@@ -26,6 +26,7 @@ const components = {
 
 const P = styled("p", {
   color: theme.colors.accessible,
+  marginBlock: 0,
 });
 
 const Article = styled("article", {

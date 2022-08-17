@@ -1,8 +1,9 @@
 import { styled, theme } from "@washingtonpost/wpds-ui-kit";
 
 export const List = styled("ul", {
-  marginTop: "0",
+  marginBlock: "0",
   marginLeft: "$100",
+  paddingInlineStart: 0,
 
   "&.contains-task-list": {
     listStyle: "none",

@@ -47,7 +47,8 @@ const WPDS = createStitches({
     notSm: "(min-width: 768px)",
     notMd: "(min-width: 900px)",
     notLg: "(min-width: 1024px)",
-    notXl: "(min-width: 1440px)",
+    notXl: "(min-width: 1280px)",
+    notXxl: "(min-width: 1441px)",
     motion: "(prefers-reduced-motion)",
     hover: "(any-hover: hover)",
     dark: "(prefers-color-scheme: dark)",
@@ -106,10 +107,7 @@ export const globalStyles = globalCss({
     lineHeight: "$meta",
   },
   "*": {
-    margin: 0,
-    padding: 0,
     boxSizing: "border-box",
-    transition: "$allFast",
   },
   html: {
     overflowX: "hidden",

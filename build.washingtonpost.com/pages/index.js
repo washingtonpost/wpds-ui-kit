@@ -29,6 +29,8 @@ const P = styled("p", {
   fontSize: theme.fontSizes[100],
   fontWeight: theme.fontWeights.light,
   lineHeight: theme.lineHeights[125],
+  marginBlockStart: 0,
+  marginBlockEnd: theme.space["100"],
 });
 
 const BoldTextLooksLikeLink = styled("span", {

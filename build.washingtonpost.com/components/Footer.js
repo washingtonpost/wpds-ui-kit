@@ -44,7 +44,9 @@ const StyledFooter = styled(SiteFooter, {
   },
 
   "div + ul": {
-    marginTop: "$050",
+    marginBlockStart: "$050",
+    marginBlockEnd: 0,
+    paddingInlineStart: 0,
   },
 
   "@notSm": {

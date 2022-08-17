@@ -9,7 +9,7 @@ export const Container = Theme.styled("div", {
   margin: "0 auto",
   width: "100%",
 
-  $$xl: "1440px",
+  $$xl: "1280px",
   $$lg: "1024px",
   $$md: "900px",
   $$sm: "768px",

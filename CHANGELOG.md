@@ -3,6 +3,32 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.14.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.13.0...v0.14.0) (2022-08-12)
+
+
+### Bug Fixes
+
+* bump wpds-assets deps ([#155](https://github.com/washingtonpost/wpds-ui-kit/issues/155)) ([c9af732](https://github.com/washingtonpost/wpds-ui-kit/commit/c9af732bda2ab238d4decd2bd9ab93d165efd69c))
+* update notXl breakpoint to match xl and add notXxl ([5b7ddae](https://github.com/washingtonpost/wpds-ui-kit/commit/5b7ddaef6d5c9aec7ae853e2d69693928affa082))
+* word ([06a92e4](https://github.com/washingtonpost/wpds-ui-kit/commit/06a92e4a6fc977636a39f282f241426fb1c6a86a))
+
+
+* fix!: remove global transition (#142) ([bb0cf39](https://github.com/washingtonpost/wpds-ui-kit/commit/bb0cf3947643b3e048b1f9834a6226ed1728d1ed)), closes [#142](https://github.com/washingtonpost/wpds-ui-kit/issues/142)
+
+
+### Features
+
+* **docs:** add hex/rgba copy-capable swatches page ([1735588](https://github.com/washingtonpost/wpds-ui-kit/commit/1735588bd411729190a6a8cc7260206d1cc5b450))
+
+
+### BREAKING CHANGES
+
+* any element relying on global transition being present will no longer have a transition
+
+
+
+
+
 # [0.13.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.12.0...v0.13.0) (2022-08-05)
 
 
