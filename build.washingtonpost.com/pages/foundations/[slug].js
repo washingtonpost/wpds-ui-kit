@@ -53,7 +53,7 @@ export const getStaticProps = async ({ params }) => {
       { headers: { "X-FIGMA-TOKEN": process.env.FIGMA_API_TOKEN } }
     );
     const responseBody = await response.json();
-    if(responseBody.status === 200){
+    if (responseBody.status === 200) {
       const iconComponents = responseBody.meta.components
         .filter((component) => component.containing_frame.pageName === "Icons")
         .map((component) => ({
@@ -62,7 +62,6 @@ export const getStaticProps = async ({ params }) => {
         }));
       iconData = { components: iconComponents };
     }
-    
   }
 
   return {
