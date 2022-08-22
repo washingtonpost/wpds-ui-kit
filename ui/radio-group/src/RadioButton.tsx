@@ -18,6 +18,7 @@ const StyledRadioButton = Theme.styled(RadioGroupPrimitive.Item, {
   borderRadius: "50%",
   borderWidth: "1px",
   cursor: "pointer",
+  padding: 0,
   transition: Theme.theme.transitions.allFast,
   width: Theme.theme.sizes["125"],
   minWidth: Theme.theme.sizes["125"],

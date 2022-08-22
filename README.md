@@ -36,9 +36,10 @@ npm i @washingtonpost/wpds-ui-kit
 
 ### Upgrading
 
-- Previous v0.12 `globalStyles` contained a globally applied transition to all CSS properties on all elements. After upgrading any component element that relied on that transition will need to apply one locally using wpds theme variables.
+- Previous to v0.12 `globalStyles` contained a globally applied transition to all CSS properties on all elements. After upgrading any component element that relied on that transition will need to apply one locally using wpds theme variables.
   ```javascript
   transition: theme.transitions.allFast,
   // or
   transition: `background ${theme.transitions.fast} ${theme.transitions.inOut`
   ```
+- Previous to v0.15 `globalStyles` contained a global removal of margin and padding for all elements. After upgrading any component element that relied on having that spacing removed will need to add spacing rules with styles local to the component.
