@@ -5,20 +5,10 @@ import { DrawerRoot, DrawerContext } from "./DrawerRoot";
 
 describe("DrawerRoot", () => {
   const TestComponent = () => {
-    const {
-      contentId,
-      open,
-      defaultOpen,
-      customScrimBackgroundClass,
-      zIndex,
-      onOpenChange,
-    } = React.useContext(DrawerContext);
+    const { contentId, open, defaultOpen, zIndex, onOpenChange } =
+      React.useContext(DrawerContext);
     return (
-      <div
-        id={contentId}
-        className={customScrimBackgroundClass}
-        style={{ zIndex: zIndex as number }}
-      >
+      <div id={contentId} style={{ zIndex: zIndex as number }}>
         Drawer Sub-Component <br />
         {open && <span>open</span>} <br />
         {defaultOpen && <span>default open</span>} <br />
@@ -80,16 +70,6 @@ describe("DrawerRoot", () => {
     );
 
     expect(screen.getByText("Drawer Sub-Component")).toHaveStyle("zIndex: 2");
-  });
-
-  test("context passes customScrimBackgroundClass prop", () => {
-    render(
-      <DrawerRoot id="test-id" customScrimBackgroundClass="scrim-class">
-        <TestComponent />
-      </DrawerRoot>
-    );
-
-    expect(screen.getByText("Drawer Sub-Component")).toHaveClass("scrim-class");
   });
 
   test("context sets open change callback and gets called", async () => {

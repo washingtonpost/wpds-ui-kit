@@ -1,13 +1,13 @@
 import * as React from "react";
+import { theme } from "@washingtonpost/wpds-theme";
 import { useControllableState } from "./hooks";
 
 interface DrawerContextInterface {
-  triggerRef: React.RefObject<HTMLElement>;
+  triggerRef: React.RefObject<HTMLButtonElement>;
   contentId: string;
   open: boolean;
   defaultOpen: boolean | undefined;
-  zIndex: [0, 1, 2, 3, 4, 5, 6] | number;
-  customScrimBackgroundClass: string | undefined;
+  zIndex: typeof theme.zIndices.shell | number;
   onOpenChange: (boolean) => void;
 }
 
@@ -23,11 +23,8 @@ type DrawerRootProps = {
   /** should the drawer be open by default (on mount) */
   defaultOpen?: boolean | undefined;
   children: React.ReactNode;
-  /** custom scrim background class */
-  customScrimBackgroundClass?: string;
-  /** Uses our z-index tachyons
-   * * it maxes out at z-6 since the DrawerContent will be z-7 if zIndex 6 is picked */
-  zIndex?: 0 | 1 | 2 | 3 | 4 | 5 | 6;
+  /** zIndex of drawer @default theme.zIndices.shell */
+  zIndex?: typeof theme.zIndices.shell | number;
 };
 
 export const DrawerRoot: React.FC<DrawerRootProps> = ({
@@ -36,8 +33,7 @@ export const DrawerRoot: React.FC<DrawerRootProps> = ({
   id,
   defaultOpen,
   children,
-  customScrimBackgroundClass,
-  zIndex = 1,
+  zIndex = theme.zIndices.shell,
 }) => {
   const triggerRef = React.useRef(null);
 
@@ -56,7 +52,6 @@ export const DrawerRoot: React.FC<DrawerRootProps> = ({
         open,
         onOpenChange: setOpen,
         zIndex,
-        customScrimBackgroundClass,
       }}
     >
       {children}

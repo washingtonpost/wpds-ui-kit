@@ -1,19 +1,26 @@
 import * as React from "react";
 import { DrawerContext } from "./DrawerRoot";
+import { styled, theme } from "@washingtonpost/wpds-theme";
 import { Button } from "@washingtonpost/wpds-button";
 import { Icon } from "@washingtonpost/wpds-icon";
 import { Close } from "@washingtonpost/wpds-assets";
 
-//DrawerClose.propTypes = {
-//  as: PropTypes.string,
-//  className: PropTypes.string,
-//  /** Should the close button be fixed and sit above text on scroll */
-//  sticky: PropTypes.bool,
-//};
-
 const NAME = "DrawerClose";
 
-type DrawerCloseProps = React.ComponentPropsWithRef<typeof Button> & {
+const CloseButton = styled(Button, {
+  variants: {
+    sticky: {
+      true: {
+        position: "sticky",
+        top: theme.space["100"],
+        right: theme.space["100"],
+        float: "right",
+      },
+    },
+  },
+});
+
+type DrawerCloseProps = React.ComponentPropsWithRef<typeof CloseButton> & {
   sticky?: boolean;
 };
 
@@ -24,27 +31,21 @@ export const DrawerClose = React.forwardRef<
   const context = React.useContext(DrawerContext);
 
   return (
-    <Button
+    <CloseButton
       ref={ref}
       onClick={() => {
         context.onOpenChange(false);
       }}
-      color="white"
       aria-label="Close Drawer"
-      className={
-        sticky ? "sticky" : ""
-        //getClasses("fr pointer", {
-        //  "sticky z-1 top-sm right-sm": sticky,
-        //  "mr-sm mt-sm": !sticky && !className,
-        //  [className]: className,
-        //})
-      }
+      sticky={sticky}
+      density="compact"
+      icon="center"
       {...props}
     >
       <Icon label="">
         <Close />
       </Icon>
-    </Button>
+    </CloseButton>
   );
 });
 

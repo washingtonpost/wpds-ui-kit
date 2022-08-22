@@ -38,6 +38,6 @@ describe("DrawerTrigger", () => {
       onOpenChange: handleChange,
     });
     userEvent.click(screen.getByRole("button"));
-    expect(handleChange).toHaveBeenCalled();
+    expect(handleChange).toHaveBeenCalledWith(true);
   });
 });

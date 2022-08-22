@@ -1,6 +1,7 @@
 import * as React from "react";
 import { render, screen } from "@testing-library/react";
 import { DrawerContent } from "./DrawerContent";
+import { DrawerTrigger } from "./DrawerTrigger";
 import { DrawerRoot } from "./DrawerRoot";
 
 describe("DrawerContent", () => {
@@ -79,5 +80,40 @@ describe("DrawerContent", () => {
       "class",
       expect.stringContaining("position-top")
     );
+  });
+
+  test("uses the in-place position property", () => {
+    customRender(
+      <>
+        <DrawerTrigger />
+        <DrawerContent data-testid="drawer-content" position="in-place">
+          Drawer Content
+        </DrawerContent>
+      </>,
+      {
+        defaultOpen: true,
+      }
+    );
+    expect(screen.getByTestId("drawer-content")).toBeVisible();
+  });
+
+  test("uses the inPlaceSelector property", () => {
+    customRender(
+      <>
+        <span id="in-place"></span>
+        <DrawerTrigger />
+        <DrawerContent
+          data-testid="drawer-content"
+          position="in-place"
+          inPlaceSelector="#in-place"
+        >
+          Drawer Content
+        </DrawerContent>
+      </>,
+      {
+        defaultOpen: true,
+      }
+    );
+    expect(screen.getByTestId("drawer-content")).toBeVisible();
   });
 });

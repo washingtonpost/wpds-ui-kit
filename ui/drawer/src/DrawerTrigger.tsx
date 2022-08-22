@@ -4,16 +4,16 @@ import { DrawerContext } from "./DrawerRoot";
 
 const NAME = "DrawerTrigger";
 
-type DrawerTriggerProps = React.ComponentPropsWithRef<typeof Button>;
+type DrawerTriggerProps = React.ComponentPropsWithoutRef<typeof Button>;
 
-export const DrawerTrigger = React.forwardRef<
-  HTMLButtonElement,
-  DrawerTriggerProps
->(({ children, ...props }, ref) => {
+export const DrawerTrigger: React.FC<DrawerTriggerProps> = ({
+  children,
+  ...props
+}) => {
   const context = React.useContext(DrawerContext);
   return (
     <Button
-      ref={ref}
+      ref={context.triggerRef}
       aria-haspopup="dialog"
       aria-expanded={context.open || false}
       aria-controls={context.contentId}
@@ -25,7 +25,7 @@ export const DrawerTrigger = React.forwardRef<
       {children}
     </Button>
   );
-});
+};
 
 DrawerTrigger.displayName = NAME;
 

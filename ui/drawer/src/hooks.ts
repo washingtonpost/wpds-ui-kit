@@ -4,7 +4,11 @@ export function useCallbackRef(callback) {
   const callbackRef = React.useRef(callback);
 
   React.useEffect(() => {
-    callbackRef.current = callback;
+    if (callback) {
+      callbackRef.current = callback;
+    } else {
+      callbackRef.current = () => undefined;
+    }
   });
 
   return React.useCallback((...args) => {
