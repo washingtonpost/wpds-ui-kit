@@ -383,6 +383,7 @@ export default function Example() {
         width: "100%",
         rowGap: "$100",
         flexDirection: "column",
+        marginTop: "50px",
       }}
     >
       <Accordion.Root type={ACCORDION_TYPE.single} collapsible={true}>
@@ -400,7 +401,7 @@ export default function Example() {
 
       <Accordion.Root type={ACCORDION_TYPE.single} collapsible={true}>
         <Accordion.Item value="item-1">
-          <Accordion.Trigger css={{ fontSize: theme.fontSizes[400] }}>
+          <Accordion.Trigger css={{ fontSize: theme.fontSizes[250] }}>
             Header example text
           </Accordion.Trigger>
           <Accordion.Content>
