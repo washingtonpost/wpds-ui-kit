@@ -73,7 +73,7 @@
     "esbuild-darwin-64": "0.14.25",
     "esbuild-darwin-arm64": "0.14.25",
     "esbuild-freebsd-64": "0.14.25",
-    "esbuild-freebsd-arm64": "0.14.25",
+    "esbuild-freebsd-arm64": "0.15.5",
     "esbuild-linux-32": "0.14.25",
     "esbuild-linux-64": "0.14.25",
     "esbuild-linux-arm": "0.14.25",
