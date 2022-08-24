@@ -100,7 +100,7 @@
     "@stitches/react": "^1.2.8",
     "@washingtonpost/wpds-alert-banner": "*",
     "@washingtonpost/wpds-app-bar": "*",
-    "@washingtonpost/wpds-assets": "^1.10.0",
+    "@washingtonpost/wpds-assets": "^1.11.0",
     "@washingtonpost/wpds-avatar": "*",
     "@washingtonpost/wpds-box": "*",
     "@washingtonpost/wpds-button": "*",
