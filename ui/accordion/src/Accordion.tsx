@@ -56,9 +56,8 @@ const StyledTrigger = styled(AccordionPrimitive.Trigger, {
   paddingBottom: theme.space[150],
   "&:hover": {
     cursor: "pointer",
-    backgroundColor: theme.colors.faint,
   },
-  "&:focus-within": {
+  "&:focus-visible": {
     position: "relative",
     zIndex: 1,
     boxShadow: `0 0 0 2px ${theme.colors.cta}`,
@@ -75,13 +74,7 @@ const StyledTrigger = styled(AccordionPrimitive.Trigger, {
         paddingBottom: theme.space[200],
       },
     },
-    // these two classes are for the benefit of the docs only
-    forcehover: {
-      true: {
-        cursor: "pointer",
-        backgroundColor: theme.colors.faint,
-      },
-    },
+    // this class is for the benefit of the docs only
     forcefocus: {
       true: {
         position: "relative",
@@ -97,7 +90,6 @@ type AccordionTriggerVariants = React.ComponentPropsWithRef<
 >;
 type AccordionTriggerType = AccordionTriggerVariants & {
   css?: WPDS.CSS;
-  forcehover?: boolean;
   forcefocus?: boolean;
 };
 const AccordionTrigger = React.forwardRef<
@@ -122,8 +114,10 @@ const StyledIcon = styled(Icon, {
   minWidth: theme.fontSizes[100],
 });
 
+const easeInOutExpo = `cubic-bezier(0.87, 0, 0.13, 1)`;
+
 const StyledChevron = styled(ChevronDown, {
-  transition: "transform 300ms cubic-bezier(0.87, 0, 0.13, 1)",
+  transition: `transform ${theme.transitions.normal} ${easeInOutExpo}`,
   "[data-state=open] &": { transform: "rotate(180deg)" },
 });
 
@@ -132,10 +126,10 @@ const StyledContent = styled(AccordionPrimitive.Content, {
   color: theme.colors.primary,
 
   '&[data-state="open"]': {
-    animation: `${slideDown} 300ms cubic-bezier(0.87, 0, 0.13, 1)`,
+    animation: `${slideDown} ${theme.transitions.normal} ${easeInOutExpo}`,
   },
   '&[data-state="closed"]': {
-    animation: `${slideUp} 300ms cubic-bezier(0.87, 0, 0.13, 1)`,
+    animation: `${slideUp} ${theme.transitions.normal} ${easeInOutExpo}`,
   },
 });
 
@@ -171,6 +165,8 @@ const StyledAccordion = styled(AccordionPrimitive.Root, {
       true: {
         [`${StyledHeader}`]: {
           pointerEvents: "none",
+          cursor: "not-allowed",
+          color: theme.colors.accessible,
         },
       },
     },

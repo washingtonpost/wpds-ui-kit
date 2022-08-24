@@ -54,23 +54,6 @@ export default function Example() {
           </Accordion.Content>
         </Accordion.Item>
       </Accordion.Root>
-      <Accordion.Root type={ACCORDION_TYPE.single} collapsible={true}>
-        <Accordion.Item value={"item-1"}>
-          <Accordion.Trigger>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in
-            augue in felis pharetra finibus. In sagittis aliquam augue. Lorem
-            ipsum dolor sit amet, consectetur adipiscing elit.
-          </Accordion.Trigger>
-          <Accordion.Content>
-            No! You don't even believe that! Gus has cameras everywhere, please.
-            Listen to yourself! No, he has known everything, all along. Where
-            were you today? In the lab? And you don't think it's possible that
-            Tyrus lifted the cigarette out of your locker? Come on! Don't you
-            see? You are the last piece of the puzzle. You are everything that
-            he's wanted.
-          </Accordion.Content>
-        </Accordion.Item>
-      </Accordion.Root>
     </Box>
   );
 }
@@ -108,23 +91,6 @@ export default function Example() {
           </Accordion.Content>
         </Accordion.Item>
       </Accordion.Root>
-      <Accordion.Root type={ACCORDION_TYPE.single} collapsible={true}>
-        <Accordion.Item value={"item-1"}>
-          <Accordion.Trigger density={ACCORDION_DENSITY.compact}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in
-            augue in felis pharetra finibus. In sagittis aliquam augue. Lorem
-            ipsum dolor sit amet, consectetur adipiscing elit.
-          </Accordion.Trigger>
-          <Accordion.Content>
-            No! You don't even believe that! Gus has cameras everywhere, please.
-            Listen to yourself! No, he has known everything, all along. Where
-            were you today? In the lab? And you don't think it's possible that
-            Tyrus lifted the cigarette out of your locker? Come on! Don't you
-            see? You are the last piece of the puzzle. You are everything that
-            he's wanted.
-          </Accordion.Content>
-        </Accordion.Item>
-      </Accordion.Root>
     </Box>
   );
 }
@@ -149,23 +115,6 @@ export default function Example() {
         <Accordion.Item value={"item-1"}>
           <Accordion.Trigger density={ACCORDION_DENSITY.loose}>
             Here's some sample text for an accordion header item
-          </Accordion.Trigger>
-          <Accordion.Content>
-            No! You don't even believe that! Gus has cameras everywhere, please.
-            Listen to yourself! No, he has known everything, all along. Where
-            were you today? In the lab? And you don't think it's possible that
-            Tyrus lifted the cigarette out of your locker? Come on! Don't you
-            see? You are the last piece of the puzzle. You are everything that
-            he's wanted.
-          </Accordion.Content>
-        </Accordion.Item>
-      </Accordion.Root>
-      <Accordion.Root type={ACCORDION_TYPE.single} collapsible={true}>
-        <Accordion.Item value={"item-1"}>
-          <Accordion.Trigger density={ACCORDION_DENSITY.loose}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in
-            augue in felis pharetra finibus. In sagittis aliquam augue. Lorem
-            ipsum dolor sit amet, consectetur adipiscing elit.
           </Accordion.Trigger>
           <Accordion.Content>
             No! You don't even believe that! Gus has cameras everywhere, please.
@@ -246,9 +195,7 @@ export default function Example() {
     <Box css={{ width: 500 }}>
       <Accordion.Root type={ACCORDION_TYPE.single} collapsible={true}>
         <Accordion.Item value="item-1">
-          <Accordion.Trigger forcehover="true">
-            Header text item one
-          </Accordion.Trigger>
+          <Accordion.Trigger>Header text item one</Accordion.Trigger>
           <Accordion.Content>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in
             augue in felis pharetra finibus. In sagittis aliquam augue. Lorem
@@ -257,14 +204,6 @@ export default function Example() {
         </Accordion.Item>
         <Accordion.Item value="item-2">
           <Accordion.Trigger>Header text item two</Accordion.Trigger>
-          <Accordion.Content>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in
-            augue in felis pharetra finibus. In sagittis aliquam augue. Lorem
-            ipsum dolor sit amet, consectetur adipiscing elit.
-          </Accordion.Content>
-        </Accordion.Item>
-        <Accordion.Item value="item-3">
-          <Accordion.Trigger>Header text item three</Accordion.Trigger>
           <Accordion.Content>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in
             augue in felis pharetra finibus. In sagittis aliquam augue. Lorem
@@ -285,7 +224,11 @@ The accordion component is accessible via keyboard interaction. The "tab" key ca
 export default function Example() {
   return (
     <Box css={{ width: 500 }}>
-      <Accordion.Root type={ACCORDION_TYPE.single} defaultValue="item-1">
+      <Accordion.Root
+        type={ACCORDION_TYPE.single}
+        defaultValue="item-1"
+        collapsible={true}
+      >
         <Accordion.Item value="item-1">
           <Accordion.Trigger forcefocus="true">
             Header text item one
@@ -298,14 +241,6 @@ export default function Example() {
         </Accordion.Item>
         <Accordion.Item value="item-2">
           <Accordion.Trigger>Header text item two</Accordion.Trigger>
-          <Accordion.Content>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in
-            augue in felis pharetra finibus. In sagittis aliquam augue. Lorem
-            ipsum dolor sit amet, consectetur adipiscing elit.
-          </Accordion.Content>
-        </Accordion.Item>
-        <Accordion.Item value="item-3">
-          <Accordion.Trigger>Header text item three</Accordion.Trigger>
           <Accordion.Content>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in
             augue in felis pharetra finibus. In sagittis aliquam augue. Lorem
@@ -326,7 +261,11 @@ The purpose of the accordion is to act as a container and visual interface for d
 export default function Example() {
   return (
     <Box css={{ width: 500 }}>
-      <Accordion.Root type={ACCORDION_TYPE.single} disabled={true}>
+      <Accordion.Root
+        type={ACCORDION_TYPE.single}
+        collapsible={true}
+        disabled={true}
+      >
         <Accordion.Item value="item-1">
           <Accordion.Trigger>Header example text</Accordion.Trigger>
           <Accordion.Content>
@@ -353,9 +292,15 @@ By default, the accordion component uses "Franklin Light" as its primary font fo
 export default function Example() {
   return (
     <Box css={{ width: 500 }}>
-      <Accordion.Root type={ACCORDION_TYPE.single}>
+      <Accordion.Root type={ACCORDION_TYPE.single} collapsible={true}>
         <Accordion.Item value="item-1">
-          <Accordion.Trigger css={{ fontFamily: theme.fonts.headline }}>
+          <Accordion.Trigger
+            css={{
+              fontFamily: theme.fonts.headline,
+              fontSize: theme.fontSizes[125],
+              fontWeight: theme.fontWeights.bold,
+            }}
+          >
             Header example text
           </Accordion.Trigger>
           <Accordion.Content>
@@ -398,10 +343,31 @@ export default function Example() {
           </Accordion.Content>
         </Accordion.Item>
       </Accordion.Root>
+    </Box>
+  );
+}
+```
 
+```jsx withPreview isGuide="warning"
+export default function Example() {
+  return (
+    <Box
+      css={{
+        display: "flex",
+        width: "100%",
+        rowGap: "$100",
+        flexDirection: "column",
+        marginTop: "50px",
+      }}
+    >
       <Accordion.Root type={ACCORDION_TYPE.single} collapsible={true}>
         <Accordion.Item value="item-1">
-          <Accordion.Trigger css={{ fontSize: theme.fontSizes[250] }}>
+          <Accordion.Trigger
+            css={{
+              fontSize: theme.fontSizes[500],
+              fontFamily: theme.fonts.headline,
+            }}
+          >
             Header example text
           </Accordion.Trigger>
           <Accordion.Content>
