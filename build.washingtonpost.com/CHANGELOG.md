@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.15.0](https://github.com/washingtonpost/wpds-docs/compare/v0.14.0...v0.15.0) (2022-08-24)
+
+
+### Bug Fixes
+
+* **docs:** bug with dark mode and assets ([db00183](https://github.com/washingtonpost/wpds-docs/commit/db00183e997e6c22f16f54799a1213e9723cb66c))
+* **docs:** fix sizes typo ([f440bcd](https://github.com/washingtonpost/wpds-docs/commit/f440bcd9ca07501dd4fbd247391f2ca3c01ccc87))
+
+
+* fix(theme)!: remove global margin and padding (#151) ([78c65c8](https://github.com/washingtonpost/wpds-docs/commit/78c65c8b590c3d90ef74aeef531269b60eccacfa)), closes [#151](https://github.com/washingtonpost/wpds-docs/issues/151)
+
+
+### BREAKING CHANGES
+
+* removes rule that set all margin and padding to zero, any component relying on this rule will need to add it back locally
+
+
+
+
+
 # [0.14.0](https://github.com/washingtonpost/wpds-docs/compare/v0.13.0...v0.14.0) (2022-08-12)
 
 

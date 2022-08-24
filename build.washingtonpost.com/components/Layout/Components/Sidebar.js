@@ -79,6 +79,7 @@ const AccordionLabel = styled("span", {
   fontFamily: "$meta",
   fontSize: "$100",
   fontWeight: "$bold",
+  color: "$primary",
   flex: 1,
 });
 
