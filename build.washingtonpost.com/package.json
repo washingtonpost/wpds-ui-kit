@@ -23,7 +23,7 @@
     "@washingtonpost/site-components": "7.14.3",
     "@washingtonpost/site-footer": "0.11.3",
     "@washingtonpost/site-third-party-scripts": "latest",
-    "@washingtonpost/wpds-assets": "^1.10.0",
+    "@washingtonpost/wpds-assets": "^1.11.0",
     "@washingtonpost/wpds-ui-kit": "0.15.0",
     "gray-matter": "^4.0.2",
     "lz-string": "^1.4.4",

@@ -37,7 +37,7 @@
   },
   "peerDependencies": {
     "@washingtonpost/wpds-app-bar": "*",
-    "@washingtonpost/wpds-assets": "^1.10.0",
+    "@washingtonpost/wpds-assets": "^1.11.0",
     "@washingtonpost/wpds-button": "*",
     "@washingtonpost/wpds-container": "*",
     "@washingtonpost/wpds-icon": "*",
@@ -46,7 +46,7 @@
   },
   "dependencies": {
     "@washingtonpost/wpds-app-bar": "0.15.0",
-    "@washingtonpost/wpds-assets": "^1.10.0",
+    "@washingtonpost/wpds-assets": "^1.11.0",
     "@washingtonpost/wpds-button": "0.15.0",
     "@washingtonpost/wpds-container": "0.15.0",
     "@washingtonpost/wpds-icon": "0.15.0",
