@@ -89,15 +89,16 @@ describe("DrawerContent", () => {
     expect(screen.getByTestId("drawer-content")).toBeVisible();
   });
 
-  test("uses the inPlaceSelector property", () => {
+  test("uses the inPlaceRef property", () => {
     customRender(
       <>
-        <span id="in-place"></span>
         <DrawerTrigger />
         <DrawerContent
           data-testid="drawer-content"
           position="in-place"
-          inPlaceSelector="#in-place"
+          inPlaceRef={{
+            current: { getBoundingClientRect: () => ({}) } as HTMLElement,
+          }}
         >
           Drawer Content
         </DrawerContent>

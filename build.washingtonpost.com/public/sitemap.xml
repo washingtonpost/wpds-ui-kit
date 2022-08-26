@@ -33,6 +33,10 @@
   </url>
 
   <url>
+    <loc>https://build.washingtonpost.com/components/drawer</loc>
+  </url>
+
+  <url>
     <loc>https://build.washingtonpost.com/components/icon</loc>
   </url>
 

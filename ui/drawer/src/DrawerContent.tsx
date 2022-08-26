@@ -141,7 +141,7 @@ interface DrawerContentProps
   /** Additional class names for inner drawer element */
   innerClassName?: string;
   /** Override pinned location for in-place drawer. */
-  inPlaceSelector?: string;
+  inPlaceRef?: React.RefObject<HTMLElement>;
   /** Width for a left or right positioned drawer  @default 400 */
   width?: number;
 }
@@ -162,7 +162,7 @@ export const DrawerContent = React.forwardRef<
       width = 400,
       position = "bottom",
       innerClassName,
-      inPlaceSelector,
+      inPlaceRef,
       ...props
     },
     ref
@@ -174,8 +174,8 @@ export const DrawerContent = React.forwardRef<
 
     const memoizedRepositionModal = React.useCallback(() => {
       let element;
-      if (inPlaceSelector && document) {
-        const pin = document.querySelector(inPlaceSelector);
+      if (inPlaceRef && document) {
+        const pin = inPlaceRef.current;
         if (pin) {
           element = pin;
         }
@@ -200,7 +200,7 @@ export const DrawerContent = React.forwardRef<
           left: triggerBounds.x - width / 2 + triggerBounds.width / 2,
         });
       }
-    }, [context, inPlaceSelector, width]);
+    }, [context, inPlaceRef, width]);
 
     React.useEffect(() => {
       if ("in-place" !== position) {

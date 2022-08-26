@@ -99,6 +99,35 @@ Position.parameters = {
   chromatic: { disableSnapshot: true },
 };
 
+const InPlaceRefTemplate = () => {
+  const targetRef = React.useRef();
+  return (
+    <>
+      <div
+        ref={targetRef}
+        style={{
+          alignSelf: "center",
+          marginBlockEnd: `calc(25vh - ${theme.sizes["100"]})`,
+        }}
+      >
+        Target
+      </div>
+      <Component.Root id="in-place-id">
+        <Component.Trigger>In Place with ref</Component.Trigger>
+        <Component.Content position="in-place" inPlaceRef={targetRef}>
+          <Component.Close />
+          Drawer
+        </Component.Content>
+      </Component.Root>
+    </>
+  );
+};
+
+export const InPlaceRef = InPlaceRefTemplate.bind({});
+InPlaceRef.parameters = {
+  chromatic: { disableSnapshot: true },
+};
+
 const ChromaticTemplate = () => (
   <>
     <Component.Root id="top-id" defaultOpen={true}>
@@ -148,6 +177,9 @@ const ChromaticTemplate = () => (
 );
 
 export const Chromatic = ChromaticTemplate.bind({});
+Chromatic.parameters = {
+  docs: { disable: true },
+};
 
 const InteractionsTemplate = () => (
   <Component.Root>
