@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.15.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.14.0...v0.15.0) (2022-08-24)
+
+
+* fix(theme)!: remove global margin and padding (#151) ([78c65c8](https://github.com/washingtonpost/wpds-ui-kit/commit/78c65c8b590c3d90ef74aeef531269b60eccacfa)), closes [#151](https://github.com/washingtonpost/wpds-ui-kit/issues/151)
+
+
+### BREAKING CHANGES
+
+* removes rule that set all margin and padding to zero, any component relying on this rule will need to add it back locally
+
+
+
+
+
 # [0.14.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.13.0...v0.14.0) (2022-08-12)
 
 **Note:** Version bump only for package @washingtonpost/wpds-avatar

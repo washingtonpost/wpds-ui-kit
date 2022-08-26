@@ -125,3 +125,7 @@ yalc.lock
 
 # ignore the storybook build 
 build.washingtonpost.com/public/storybook/**/*
+
+.env
+.env.*
+.vercel

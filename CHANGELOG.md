@@ -3,6 +3,32 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.15.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.14.0...v0.15.0) (2022-08-24)
+
+
+### Bug Fixes
+
+* **docs:** bug with dark mode and assets ([db00183](https://github.com/washingtonpost/wpds-ui-kit/commit/db00183e997e6c22f16f54799a1213e9723cb66c))
+* **docs:** fix sizes typo ([f440bcd](https://github.com/washingtonpost/wpds-ui-kit/commit/f440bcd9ca07501dd4fbd247391f2ca3c01ccc87))
+* **storybook:** upgrade Storybook without addons conflict ([#173](https://github.com/washingtonpost/wpds-ui-kit/issues/173)) ([73e2029](https://github.com/washingtonpost/wpds-ui-kit/commit/73e2029eff4251acd7ab9d3c0cd677910c15e330))
+
+
+* fix(theme)!: remove global margin and padding (#151) ([78c65c8](https://github.com/washingtonpost/wpds-ui-kit/commit/78c65c8b590c3d90ef74aeef531269b60eccacfa)), closes [#151](https://github.com/washingtonpost/wpds-ui-kit/issues/151)
+
+
+### Features
+
+* add maximum breakpoints ([815a944](https://github.com/washingtonpost/wpds-ui-kit/commit/815a94449907cd26632a155240bb61e65fa9f73e))
+
+
+### BREAKING CHANGES
+
+* removes rule that set all margin and padding to zero, any component relying on this rule will need to add it back locally
+
+
+
+
+
 # [0.14.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.13.0...v0.14.0) (2022-08-12)
 
 
