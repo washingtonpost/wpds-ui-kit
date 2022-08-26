@@ -1,0 +1,124 @@
+---
+title: Tooltip
+description: Non-actionable UI element that only contains text and does not require the user to take action but serves only to inform the user before taking an action, contextualizing an action, or act as simply supplementary information to an element.
+component: tooltip
+status: "Draft"
+---
+
+---
+
+## Anatomy
+
+<Container caption="Note: Image is not to scale" css={{ padding: "$150" }}>
+  <InlineSVG
+    path="/img/components/tooltip/anatomy.svg"
+    width={157}
+    height={200}
+  />
+</Container>
+
+1. Content Container
+2. Arrow
+
+---
+
+## Options
+
+### Positioning
+
+The tooltip can be positioned top, left, right, and bottom with each having ability to position at the start, or end of the content container.
+
+<AlertBanner.Root css={{ marginBottom: "$200" }} variant="information">
+  <AlertBanner.Content>
+    <b>Note:{` `}</b>This option sets the preferred position of the tooltip to
+    render against when open. Will be reveresed when collisions occur with other
+    elements.
+  </AlertBanner.Content>
+</AlertBanner.Root>
+
+```jsx withPreview
+export default function Example() {
+  return (
+    <Box css={{ maxWidth: 400 }}>
+      <Tooltip.Provider>
+        <Tooltip.Root defaultOpen={true}>
+          <Tooltip.Trigger>
+            <span>This is a tooltip trigger</span>
+          </Tooltip.Trigger>
+          <Tooltip.Content side="bottom">
+            i want lots of things to go here and for this to get super super
+            long and for this to never stop and i want more fries and i want it
+            to rain but i also want the sun and i wasnt a vacataions and it
+            doesn't matter if this is misspelled or whatverer.
+          </Tooltip.Content>
+        </Tooltip.Root>
+      </Tooltip.Provider>
+    </Box>
+  );
+}
+```
+
+<BR />
+
+### Density
+
+There are two options for the property density: compact and default.
+
+### Offset
+
+The option offset can use any spacing token to offset its position from the origin point of the tooltip. The defualt offset is the spacing token 025.
+
+---
+
+## Behavior
+
+### Avoids collisions
+
+When appropriate, helper text should be placed closest to the Legend.
+
+---
+
+## Guidance
+
+### Do not hide content
+
+A tooltip is not meant to hide necessary contextual information. It should only be used as a supplementary element. The nautre of a tooltip is non-persistent and should not require users to discover content within a tooltip.
+
+<GuideContainer variant="error">
+
+</GuideContainer>
+
+### Avoid nesting actionable elements
+
+The nautre of the tooltip is non-persistent. When the user is required to take an action on an element nested inside the tooltip it makes the action less accessible for those with limited mobility.
+
+<GuideContainer variant="warning">
+
+</GuideContainer>
+
+### Do not nest Popovers or Tooltips
+
+Tooltips should not have additional tooltips or popover within the same container.
+
+<GuideContainer variant="warning">
+
+</GuideContainer>
+
+---
+
+## Accessibility
+
+### Design considerations
+
+While tooltips are a convenient way of revealing content, please keep in mind the nautre of a tooltip and how it shows/hides on hover. consider alternatives like a more persistent element like a popover.
+
+### Keyboard controls
+
+Tooltips will show/hide without delay when the trigger is in focus and _tab_ is selected on the keyboard. If the tooltip is open and either _escape, space,_ or _enter_ is selected on the keyboard, it will close the tooltip.
+
+---
+
+## API Reference
+
+<PropsTable props={propsTable} />
+````
