@@ -18,6 +18,7 @@ import {
   Divider,
   Avatar,
   PaginationDots,
+  Drawer,
 } from "@washingtonpost/wpds-ui-kit";
 import Chart from "@washingtonpost/wpds-assets/asset/chart";
 import Settings from "@washingtonpost/wpds-assets/asset/settings";
@@ -365,6 +366,15 @@ function HomePage() {
           </HStack>
         </Stack>
       </Stack>
+      <h2>Drawer</h2>
+      <Drawer.Root id="drawer-id">
+        <Drawer.Trigger>Trigger Drawer</Drawer.Trigger>
+        <Drawer.Content>
+          <Drawer.Close />
+          Drawer Content
+        </Drawer.Content>
+        <Drawer.Scrim />
+      </Drawer.Root>
     </>
   );
 }
