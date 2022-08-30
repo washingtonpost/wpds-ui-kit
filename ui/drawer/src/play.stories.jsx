@@ -69,13 +69,6 @@ const PositionTemplate = () => (
           Drawer
         </Component.Content>
       </Component.Root>
-      <Component.Root id="in-place-id">
-        <Component.Trigger>In Place</Component.Trigger>
-        <Component.Content position="in-place">
-          <Component.Close />
-          Drawer
-        </Component.Content>
-      </Component.Root>
       <Component.Root id="right-id">
         <Component.Trigger>Right</Component.Trigger>
         <Component.Content position="right">
@@ -99,35 +92,6 @@ Position.parameters = {
   chromatic: { disableSnapshot: true },
 };
 
-const InPlaceRefTemplate = () => {
-  const targetRef = React.useRef();
-  return (
-    <>
-      <div
-        ref={targetRef}
-        style={{
-          alignSelf: "center",
-          marginBlockEnd: `calc(25vh - ${theme.sizes["100"]})`,
-        }}
-      >
-        Target
-      </div>
-      <Component.Root id="in-place-id">
-        <Component.Trigger>In Place with ref</Component.Trigger>
-        <Component.Content position="in-place" inPlaceRef={targetRef}>
-          <Component.Close />
-          Drawer
-        </Component.Content>
-      </Component.Root>
-    </>
-  );
-};
-
-export const InPlaceRef = InPlaceRefTemplate.bind({});
-InPlaceRef.parameters = {
-  chromatic: { disableSnapshot: true },
-};
-
 const ChromaticTemplate = () => (
   <>
     <Component.Root id="top-id" defaultOpen={true}>
@@ -139,14 +103,6 @@ const ChromaticTemplate = () => (
 
     <Component.Root id="left-id" defaultOpen={true}>
       <Component.Content position="left" width="200px" css={{ opacity: "0.5" }}>
-        <Component.Close />
-        Drawer
-      </Component.Content>
-    </Component.Root>
-
-    <Component.Root id="in-place-id" defaultOpen={true}>
-      <Component.Trigger>In Place</Component.Trigger>
-      <Component.Content position="in-place">
         <Component.Close />
         Drawer
       </Component.Content>

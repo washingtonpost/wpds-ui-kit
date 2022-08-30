@@ -25,7 +25,7 @@ status: "Draft"
 
 ### Position
 
-The drawer can be attached to any side of the screen or in-place with its trigger
+The drawer can be attached to any side of the screen.
 
 ```jsx withPreview
 export default function Example() {
@@ -57,13 +57,6 @@ export default function Example() {
             Your Drawer Content. Click scrim to close
           </Drawer.Content>
           <Drawer.Scrim />
-        </Drawer.Root>
-        <Drawer.Root id="in-place-id">
-          <Drawer.Trigger>In Place</Drawer.Trigger>
-          <Drawer.Content position="in-place" css={{ minHeight: "66px" }}>
-            <Drawer.Close />
-            Your Drawer Content
-          </Drawer.Content>
         </Drawer.Root>
         <Drawer.Root id="right-id">
           <Drawer.Trigger css={{ minWidth: "93px" }}>Right</Drawer.Trigger>
@@ -256,58 +249,6 @@ export default function Example() {
 
 ## Guidance
 
-### In-place to bottom drawer
-
-A drawer can be used as an alternative to a popover. This is best when the content can be too overwhelming in a popover.
-
-```jsx withPreview isGuide="success"
-export default function Example() {
-  const [position, setPosition] = useState("in-place");
-  useEffect(() => {
-    function handleResize() {
-      if (window.innerWidth < 767) {
-        setPosition((prevPosition) =>
-          prevPosition !== "bottom" ? "bottom" : prevPosition
-        );
-      } else {
-        setPosition((prevPosition) =>
-          prevPosition !== "in-place" ? "in-place" : prevPosition
-        );
-      }
-    }
-    window.addEventListener("resize", handleResize);
-    handleResize();
-    return () => window.removeEventListener("resize", handleResize);
-  }, [setPosition]);
-  return (
-    <Drawer.Root id="in-place">
-      <Box
-        css={{
-          display: "flex",
-          flexDirection: "column",
-          gap: "$100",
-          alignItems: "center",
-        }}
-      >
-        <Drawer.CustomTrigger
-          as="span"
-          css={{ color: "$cta", cursor: "pointer" }}
-        >
-          In Place Menu
-        </Drawer.CustomTrigger>
-        <p>Resize screen to see behavior</p>
-      </Box>
-      <Drawer.Content position={position} width="200px">
-        <Drawer.Close />
-        <Box css={{ paddingBlock: "$050", paddingInline: "$025" }}>Item 1</Box>
-        <Box css={{ paddingBlock: "$050", paddingInline: "$025" }}>Item 2</Box>
-        <Box css={{ paddingBlock: "$050", paddingInline: "$025" }}>Item 3</Box>
-      </Drawer.Content>
-    </Drawer.Root>
-  );
-}
-```
-
 ### Content should be accessible
 
 Do not combine colors of the drawer where text is not accessible to the user. Read more about [WCAG accessible contrast requirements](https://webaim.org/articles/contrast/).
@@ -340,7 +281,7 @@ export default function Example() {
     <Drawer.Root id="fullscreen">
       <Drawer.Trigger>See example</Drawer.Trigger>
       <Drawer.Content>
-        <Drawer.Close /> Tap <kbd>esc</kbd> or refresh if on mobile.
+        <Drawer.Close /> Click close button to close
       </Drawer.Content>
     </Drawer.Root>
   );
@@ -483,10 +424,10 @@ export default function Example() {
     {
       name: "position",
       type: "enum",
-      rawType: "top | right | left | bottom | in-place ",
+      rawType: "top | right | left | bottom ",
       required: "false",
       description:
-        "controls where the drawer comes from, either a side of screen or in-place @default bottom",
+        "controls which side of the screen the drawer comes from @default bottom",
       defaultValue: "\n   bottom\n",
     },
     {
@@ -511,14 +452,6 @@ export default function Example() {
       rawType: "",
       required: "false",
       description: "Additional class names for inner drawer element",
-      defaultValue: "----",
-    },
-    {
-      name: "inPlaceRef",
-      type: "RefObject<HTMLElement>",
-      rawType: "",
-      required: "false",
-      description: "Override pinned location for in-place drawer.",
       defaultValue: "----",
     },
   ]}

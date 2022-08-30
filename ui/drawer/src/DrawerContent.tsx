@@ -14,7 +14,7 @@ const StyledContainer = styled("div", {
   overflow: "auto",
   position: "fixed",
   variants: {
-    /** controls where the drawer comes from, either a side of screen or in-place @default bottom */
+    /** controls which side of the screen the drawer comes from @default bottom */
     position: {
       top: {
         top: 0,
@@ -108,22 +108,6 @@ const StyledContainer = styled("div", {
           transition: drawerTransition,
         },
       },
-      "in-place": {
-        "&.wpds-drawer-enter": {
-          opacity: 0,
-        },
-        "&.wpds-drawer-enter-active": {
-          opacity: 1,
-          transition: drawerTransition,
-        },
-        "&.wpds-drawer-exit": {
-          opacity: 1,
-        },
-        "&.wpds-drawer-exit-active": {
-          opacity: 0,
-          transition: drawerTransition,
-        },
-      },
     },
   },
 });
@@ -140,16 +124,9 @@ interface DrawerContentProps
   height?: number;
   /** Additional class names for inner drawer element */
   innerClassName?: string;
-  /** Override pinned location for in-place drawer. */
-  inPlaceRef?: React.RefObject<HTMLElement>;
   /** Width for a left or right positioned drawer  @default 400 */
   width?: number;
 }
-
-type inPlaceStyle = {
-  top: number;
-  left: number;
-};
 
 export const DrawerContent = React.forwardRef<
   HTMLDivElement,
@@ -162,58 +139,11 @@ export const DrawerContent = React.forwardRef<
       width = 400,
       position = "bottom",
       innerClassName,
-      inPlaceRef,
       ...props
     },
     ref
   ) => {
     const context = React.useContext(DrawerContext);
-    const [inPlaceStyles, setInPlaceStyles] = React.useState<
-      inPlaceStyle | undefined
-    >();
-
-    const memoizedRepositionModal = React.useCallback(() => {
-      let element;
-      if (inPlaceRef && document) {
-        const pin = inPlaceRef.current;
-        if (pin) {
-          element = pin;
-        }
-      } else if (context?.triggerRef && context.triggerRef.current) {
-        element = context.triggerRef.current;
-      }
-
-      if (element) {
-        const triggerBounds = element.getBoundingClientRect();
-        if (
-          typeof triggerBounds !== "object" ||
-          typeof triggerBounds.y !== "number" ||
-          typeof triggerBounds.height !== "number" ||
-          typeof triggerBounds.x !== "number" ||
-          typeof triggerBounds.width !== "number"
-        ) {
-          return;
-        }
-
-        setInPlaceStyles({
-          top: triggerBounds.y + triggerBounds.height,
-          left: triggerBounds.x - width / 2 + triggerBounds.width / 2,
-        });
-      }
-    }, [context, inPlaceRef, width]);
-
-    React.useEffect(() => {
-      if ("in-place" !== position) {
-        return;
-      }
-      memoizedRepositionModal();
-      document.addEventListener("scroll", memoizedRepositionModal);
-      document.addEventListener("resize", memoizedRepositionModal);
-      return () => {
-        document.removeEventListener("resize", memoizedRepositionModal);
-        document.removeEventListener("scroll", memoizedRepositionModal);
-      };
-    }, [memoizedRepositionModal, position]);
 
     return (
       <CSSTransition
@@ -228,15 +158,9 @@ export const DrawerContent = React.forwardRef<
           ref={ref}
           style={{
             width:
-              position === "left" ||
-              position === "right" ||
-              position === "in-place"
-                ? width
-                : undefined,
+              position === "left" || position === "right" ? width : undefined,
             height:
               position === "top" || position === "bottom" ? height : undefined,
-            top: inPlaceStyles && inPlaceStyles.top,
-            left: inPlaceStyles && inPlaceStyles.left,
             zIndex: context.zIndex as number,
           }}
           position={position}
