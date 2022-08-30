@@ -145,7 +145,13 @@ export default function Example() {
     <Box css={{ width: 500 }}>
       <Accordion.Root type={ACCORDION_TYPE.single} collapsible={true}>
         <Accordion.Item value={"item-1"}>
-          <Accordion.Trigger>Header example text</Accordion.Trigger>
+          <Accordion.Trigger
+            css={{
+              fontWeight: theme.fontWeights.bold,
+            }}
+          >
+            Header example text
+          </Accordion.Trigger>
           <Accordion.Content>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in
             augue in felis pharetra finibus. In sagittis aliquam augue. Lorem
@@ -172,38 +178,13 @@ export default function Example() {
         collapsible={true}
       >
         <Accordion.Item value="item-1">
-          <Accordion.Trigger>Header example text</Accordion.Trigger>
-          <Accordion.Content>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in
-            augue in felis pharetra finibus. In sagittis aliquam augue. Lorem
-            ipsum dolor sit amet, consectetur adipiscing elit.
-          </Accordion.Content>
-        </Accordion.Item>
-      </Accordion.Root>
-    </Box>
-  );
-}
-```
-
-### Hover
-
-When the accordion item is hovered over, the background of the _header_ changes color to provide visual feedback and to signal the item is clickable.
-
-```jsx withPreview
-export default function Example() {
-  return (
-    <Box css={{ width: 500 }}>
-      <Accordion.Root type={ACCORDION_TYPE.single} collapsible={true}>
-        <Accordion.Item value="item-1">
-          <Accordion.Trigger>Header text item one</Accordion.Trigger>
-          <Accordion.Content>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in
-            augue in felis pharetra finibus. In sagittis aliquam augue. Lorem
-            ipsum dolor sit amet, consectetur adipiscing elit.
-          </Accordion.Content>
-        </Accordion.Item>
-        <Accordion.Item value="item-2">
-          <Accordion.Trigger>Header text item two</Accordion.Trigger>
+          <Accordion.Trigger
+            css={{
+              fontWeight: theme.fontWeights.bold,
+            }}
+          >
+            Header example text
+          </Accordion.Trigger>
           <Accordion.Content>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in
             augue in felis pharetra finibus. In sagittis aliquam augue. Lorem
@@ -334,7 +315,7 @@ export default function Example() {
       <Accordion.Root type={ACCORDION_TYPE.single} collapsible={true}>
         <Accordion.Item value="item-1">
           <Accordion.Trigger css={{ fontSize: theme.fontSizes["075"] }}>
-            Header example text
+            This header is too small
           </Accordion.Trigger>
           <Accordion.Content>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in
@@ -368,7 +349,7 @@ export default function Example() {
               fontFamily: theme.fonts.headline,
             }}
           >
-            Header example text
+            This header is too large
           </Accordion.Trigger>
           <Accordion.Content>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in

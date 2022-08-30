@@ -163,9 +163,9 @@ const StyledAccordion = styled(AccordionPrimitive.Root, {
   variants: {
     disabled: {
       true: {
+        cursor: "not-allowed",
         [`${StyledHeader}`]: {
           pointerEvents: "none",
-          cursor: "not-allowed",
           color: theme.colors.accessible,
         },
       },
