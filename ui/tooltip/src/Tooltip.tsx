@@ -123,10 +123,10 @@ const TooltipTrigger = React.forwardRef<HTMLButtonElement, TooltipTriggerType>(
 
 TooltipTrigger.displayName = "TooltipComponentTrigger";
 
-export const Provider = TooltipPrimitive.Provider;
-export const Root = TooltipPrimitive.Root;
-export const Trigger = TooltipTrigger;
-export const Content = TooltipContent;
+const Provider = TooltipPrimitive.Provider;
+const Root = TooltipPrimitive.Root;
+const Trigger = TooltipTrigger;
+const Content = TooltipContent;
 
 export const Tooltip = {
   Provider,

@@ -1,4 +1,5 @@
 // insert new component exports here
+export * from "@washingtonpost/wpds-tooltip";
 export * from "@washingtonpost/wpds-pagination-dots";
 export * from "@washingtonpost/wpds-avatar";
 export * from "@washingtonpost/wpds-divider";
