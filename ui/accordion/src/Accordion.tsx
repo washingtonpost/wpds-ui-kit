@@ -4,11 +4,7 @@ import { theme, styled, keyframes } from "@washingtonpost/wpds-theme";
 import { Icon } from "@washingtonpost/wpds-icon";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
 import type * as WPDS from "@washingtonpost/wpds-theme";
-import {
-  AccordionTriggerProps as RadixAccordionTriggerProps,
-  AccordionContentProps as RadixAccordionContentProps,
-  AccordionItemProps as RadixAccordionItemProps,
-} from "@radix-ui/react-accordion";
+import { AccordionContentProps as RadixAccordionContentProps } from "@radix-ui/react-accordion";
 
 export enum ACCORDION_TYPE {
   single = "single",
@@ -203,7 +199,4 @@ export type {
   AccordionRootProps,
   AccordionContentProps,
   AccordionTriggerProps,
-  RadixAccordionItemProps,
-  RadixAccordionContentProps,
-  RadixAccordionTriggerProps,
 };
