@@ -65,7 +65,11 @@
     "storybook-dark-mode": "^1.1.0",
     "tsup": "^5.12.5",
     "turbo": "^1.2.16",
-    "typescript": "^4.7.4"
+    "typescript": "^4.7.4",
+    "@next/bundle-analyzer": "^12.1.0",
+    "eslint-config-next": "^12.2.4",
+    "prettier": "^2.5.1",
+    "react-docgen-typescript": "^2.2.2"
   },
   "optionalDependencies": {
     "esbuild-android-64": "0.14.25",
@@ -97,7 +101,7 @@
     "@babel/standalone": "^7.17.11",
     "@codesandbox/sandpack-react": "^1.3.2",
     "@docsearch/react": "^3.0.0",
-    "@radix-ui/react-accordion": "^0.1.5",
+    "@radix-ui/react-accordion": "latest",
     "@radix-ui/react-avatar": "latest",
     "@radix-ui/react-checkbox": "latest",
     "@radix-ui/react-collapsible": "^0.1.6",
@@ -108,6 +112,7 @@
     "@washingtonpost/site-components": "7.14.3",
     "@washingtonpost/site-footer": "0.11.3",
     "@washingtonpost/site-third-party-scripts": "latest",
+    "@washingtonpost/wpds-accordion": "*",
     "@washingtonpost/wpds-alert-banner": "*",
     "@washingtonpost/wpds-app-bar": "*",
     "@washingtonpost/wpds-assets": "^1.11.0",
@@ -131,6 +136,7 @@
     "@washingtonpost/wpds-ui-kit": "*",
     "@washingtonpost/wpds-visually-hidden": "*",
     "fuse.js": "^6.6.2",
+    "react": "^17.0.2",
     "gray-matter": "^4.0.2",
     "lz-string": "^1.4.4",
     "next": "^12.2.5",
@@ -139,7 +145,6 @@
     "next-themes": "^0.2.0",
     "param-case": "^3.0.4",
     "pascal-case": "^3.1.2",
-    "react": "^17.0.2",
     "react-docgen": "^5.4.0",
     "react-dom": "^17.0.2",
     "react-error-boundary": "^3.1.4",
@@ -167,10 +172,7 @@
     "new-component": "make new-component",
     "lint": "eslint --ext .ts,.tsx ui/",
     "clean": "turbo run clean && rm -rf node_modules",
-    "dev": "turbo run dev --no-cache --parallel --continue",
-    "docsite:dev": "turbo run dev --scope @washingtonpost/wpds-docs",
-    "docsite:build": "turbo run build --scope @washingtonpost/wpds-docs --stream",
-    "docsite:lint": "turbo run lint --scope @washingtonpost/wpds-docs"
+    "dev": "turbo run dev --no-cache --parallel --continue"
   },
   "prettier": {},
   "jest": {
