@@ -15,25 +15,8 @@ const Template = (args) => {
   }
   return (
     <Box css={{ color: theme.colors.primary, maxWidth: "30rem" }}>
-      <Component
-        {...args}
-        context={{
-          zIndex: theme.zIndices.shell,
-          defaultOpen: undefined,
-          onOpenChange: handleOpenChange,
-          open: open,
-          lockScroll: undefined,
-        }}
-      />
+      <Component {...args} onOpenChange={handleOpenChange} open={open} />
       <p>
-        <button
-          onClick={() => {
-            handleOpenChange(true);
-          }}
-        >
-          Open Scrim
-        </button>
-        &nbsp;
         <a href="#">Lorem ipsum dolor sit</a>, amet consectetur adipisicing
         elit. Natus praesentium repudiandae architecto, incidunt quam, nisi
         nihil deserunt tempora quas eos ducimus voluptatem magni consectetur?
@@ -46,7 +29,14 @@ const Template = (args) => {
         excepturi.
       </p>
       <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus
+        <button
+          onClick={() => {
+            handleOpenChange(true);
+          }}
+        >
+          Open Scrim
+        </button>
+        &nbsp; Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus
         praesentium repudiandae architecto, incidunt quam, nisi nihil deserunt
         tempora quas eos ducimus voluptatem magni consectetur? Odio tempora
         earum deleniti. Qui, accusamus?
@@ -75,4 +65,7 @@ const Template = (args) => {
 
 export const Scrim = Template.bind({});
 
-Scrim.args = {};
+Scrim.args = {
+  zIndex: theme.zIndices.shell,
+  lockScroll: true,
+};
