@@ -21,7 +21,7 @@ npm ci
 3. To build all the wpds-docs packages
 
 ```shell
-npm run docsite:build
+npm run build
 ```
 
 4. We use Storybook to develop locally along with Next.js.
@@ -33,7 +33,7 @@ npm run storybook
 5. Open http://localhost:3000/. If you get an error, try reloading the page. It's a feature, not a bug ;)
 
 ```
-npm run docsite:dev
+npm run dev
 ```
 
 ## Environment variables

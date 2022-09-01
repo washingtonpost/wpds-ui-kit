@@ -1,9 +1,9 @@
 {
-  "name": "@washingtonpost/wpds-input-password",
-  "version": "0.15.0",
-  "description": "WPDS InputPassword",
+  "name": "@washingtonpost/wpds-accordion",
+  "version": "0.13.0",
+  "description": "> TODO: description",
   "author": "WPDS Support <wpds@washpost.com>",
-  "homepage": "https://github.com/WPMedia/wpds-ui-kit#readme",
+  "homepage": "https://github.com/washingtonpost/wpds-ui-kit#readme",
   "license": "MIT",
   "source": "src/index.ts",
   "main": "dist/index.js",
@@ -20,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/WPMedia/wpds-ui-kit.git"
+    "url": "git+https://github.com/washingtonpost/wpds-ui-kit.git"
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
@@ -29,22 +29,23 @@
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
   "bugs": {
-    "url": "https://github.com/WPMedia/wpds-ui-kit/issues"
+    "url": "https://github.com/washingtonpost/wpds-ui-kit/issues"
   },
   "devDependencies": {
     "tsup": "^5.11.13",
     "typescript": "4.5.5"
   },
   "peerDependencies": {
-    "@washingtonpost/wpds-assets": "^1.12.0",
+    "@radix-ui/react-accordion": "latest",
+    "@washingtonpost/wpds-theme": "*",
     "@washingtonpost/wpds-icon": "*",
-    "@washingtonpost/wpds-input-text": "*",
+    "@washingtonpost/wpds-assets": "*",
     "react": "^16.8.6 || ^17.0.2"
   },
   "dependencies": {
-    "@washingtonpost/wpds-assets": "^1.12.0",
-    "@washingtonpost/wpds-icon": "0.15.0",
-    "@washingtonpost/wpds-input-text": "0.15.0"
-  },
-  "gitHead": "dcdf670812681188707d23ae5e5aed42101360ac"
+    "@radix-ui/react-accordion": "latest",
+    "@washingtonpost/wpds-theme": "*",
+    "@washingtonpost/wpds-icon": "*",
+    "@washingtonpost/wpds-assets": "*"
+  }
 }
