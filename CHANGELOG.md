@@ -17,7 +17,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 ### Features
 
 * add drawer component ([#190](https://github.com/washingtonpost/wpds-ui-kit/issues/190)) ([94c6276](https://github.com/washingtonpost/wpds-ui-kit/commit/94c62764a6bacf3756b5fd5da7089e018ddaf212))
-
+* create accordion by @atomictangerine in https://github.com/washingtonpost/wpds-ui-kit/pull/159
 
 
 
