@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.16.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.15.0...v0.16.0) (2022-09-02)
+
+
+### Bug Fixes
+
+* update max breakpoints to be consistent with other breakpoints ([c3f66d7](https://github.com/washingtonpost/wpds-ui-kit/commit/c3f66d7f7c6c07cd1404323946b1f83c6f8dd159))
+
+
+
+
+
 # [0.15.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.14.0...v0.15.0) (2022-08-24)
 
 

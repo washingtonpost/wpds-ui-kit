@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.16.0](https://github.com/washingtonpost/wpds-docs/compare/v0.15.0...v0.16.0) (2022-09-02)
+
+
+### Bug Fixes
+
+* **deps:** bump @washingtonpost/wpds-assets from 1.11.0 to 1.12.0 ([#205](https://github.com/washingtonpost/wpds-docs/issues/205)) ([aed89ae](https://github.com/washingtonpost/wpds-docs/commit/aed89aeb8ad75b8b6bfe7636498e785b2788fad9))
+
+
+### Features
+
+* add drawer component ([#190](https://github.com/washingtonpost/wpds-docs/issues/190)) ([94c6276](https://github.com/washingtonpost/wpds-docs/commit/94c62764a6bacf3756b5fd5da7089e018ddaf212))
+
+
+
+
+
 # [0.15.0](https://github.com/washingtonpost/wpds-docs/compare/v0.14.0...v0.15.0) (2022-08-24)
 
 

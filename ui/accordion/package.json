@@ -1,6 +1,6 @@
 {
   "name": "@washingtonpost/wpds-accordion",
-  "version": "0.13.0",
+  "version": "0.16.0",
   "description": "> TODO: description",
   "author": "WPDS Support <wpds@washpost.com>",
   "homepage": "https://github.com/washingtonpost/wpds-ui-kit#readme",
@@ -37,15 +37,15 @@
   },
   "peerDependencies": {
     "@radix-ui/react-accordion": "latest",
-    "@washingtonpost/wpds-theme": "*",
-    "@washingtonpost/wpds-icon": "*",
     "@washingtonpost/wpds-assets": "*",
+    "@washingtonpost/wpds-icon": "*",
+    "@washingtonpost/wpds-theme": "*",
     "react": "^16.8.6 || ^17.0.2"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "latest",
-    "@washingtonpost/wpds-theme": "*",
-    "@washingtonpost/wpds-icon": "*",
-    "@washingtonpost/wpds-assets": "*"
+    "@washingtonpost/wpds-assets": "*",
+    "@washingtonpost/wpds-icon": "0.16.0",
+    "@washingtonpost/wpds-theme": "0.16.0"
   }
 }

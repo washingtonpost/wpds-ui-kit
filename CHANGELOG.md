@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.16.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.15.0...v0.16.0) (2022-09-02)
+
+
+### Bug Fixes
+
+* **deps:** bump @washingtonpost/wpds-assets from 1.11.0 to 1.12.0 ([#205](https://github.com/washingtonpost/wpds-ui-kit/issues/205)) ([aed89ae](https://github.com/washingtonpost/wpds-ui-kit/commit/aed89aeb8ad75b8b6bfe7636498e785b2788fad9))
+* interaction tests only run for storybook urls ([4cbe822](https://github.com/washingtonpost/wpds-ui-kit/commit/4cbe822427cfd8d4cb43d79899dc38455c2d6972))
+* update max breakpoints to be consistent with other breakpoints ([c3f66d7](https://github.com/washingtonpost/wpds-ui-kit/commit/c3f66d7f7c6c07cd1404323946b1f83c6f8dd159))
+* **workflows:** typo ([7a61393](https://github.com/washingtonpost/wpds-ui-kit/commit/7a613939068c99597528abe6a17fb8c5614f24f4))
+
+
+### Features
+
+* add drawer component ([#190](https://github.com/washingtonpost/wpds-ui-kit/issues/190)) ([94c6276](https://github.com/washingtonpost/wpds-ui-kit/commit/94c62764a6bacf3756b5fd5da7089e018ddaf212))
+
+
+
+
+
 # [0.15.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.14.0...v0.15.0) (2022-08-24)
 
 

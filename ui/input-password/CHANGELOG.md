@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.16.0](https://github.com/WPMedia/wpds-ui-kit/compare/v0.15.0...v0.16.0) (2022-09-02)
+
+
+### Bug Fixes
+
+* **deps:** bump @washingtonpost/wpds-assets from 1.11.0 to 1.12.0 ([#205](https://github.com/WPMedia/wpds-ui-kit/issues/205)) ([aed89ae](https://github.com/WPMedia/wpds-ui-kit/commit/aed89aeb8ad75b8b6bfe7636498e785b2788fad9))
+
+
+
+
+
 # [0.15.0](https://github.com/WPMedia/wpds-ui-kit/compare/v0.14.0...v0.15.0) (2022-08-24)
 
 
