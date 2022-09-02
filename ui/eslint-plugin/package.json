@@ -28,10 +28,11 @@
     "@washingtonpost/wpds-theme": "*"
   },
   "dependencies": {
-    "@washingtonpost/wpds-theme": "0.16.0"
+    "@washingtonpost/wpds-theme": "*"
   },
   "devDependencies": {
-    "jest": "^28.1.0"
+    "jest": "^28.1.0",
+    "typescript": "^4.7.4"
   },
   "gitHead": "dcdf670812681188707d23ae5e5aed42101360ac"
 }

@@ -59,7 +59,7 @@
     "start-server-and-test": "^1.14.0",
     "storybook-addon-themes": "^6.1.0",
     "storybook-dark-mode": "^1.1.0",
-    "tsup": "^5.12.5",
+    "tsup": "^5.11.13",
     "turbo": "^1.2.16",
     "typescript": "^4.7.4",
     "@next/bundle-analyzer": "^12.1.0",

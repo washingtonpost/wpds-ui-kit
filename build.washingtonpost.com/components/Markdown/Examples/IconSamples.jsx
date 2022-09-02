@@ -6,14 +6,7 @@ import MDXStyling from "~/components/Markdown/Styling";
 import { Grid } from "../Components/Grid";
 import { InputText } from "@washingtonpost/wpds-input-text";
 import Search from "@washingtonpost/wpds-assets/asset/search";
-import {
-  Icon,
-  theme,
-  Button,
-  AlertBanner,
-  Box,
-  styled,
-} from "@washingtonpost/wpds-ui-kit";
+import { Icon, theme, AlertBanner, Box } from "@washingtonpost/wpds-ui-kit";
 import { paramCase } from "param-case";
 import { pascalCase } from "pascal-case";
 import { logoList } from "./LogoSamples";
@@ -40,7 +33,6 @@ export default function Icons({ data }) {
   };
   const [ExampleToCopy, setExampleToCopy] = useState(null);
   const [Name, setName] = useState("");
-  const [inFocus, setInFocus] = useState(false);
   const [Filter, setFilter] = useState([]);
   useEffect(() => {
     if (ExampleToCopy) {
@@ -56,6 +48,7 @@ export default function Icons({ data }) {
         },
       });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ExampleToCopy]);
 
   function setVariables(example, Name) {
