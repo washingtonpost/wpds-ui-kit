@@ -73,7 +73,7 @@ export const PageLayout = ({ children, ...pageProps }) => {
           navigation={pageProps.navigation}
         />
       </DesktopMenu>
-      <Container>
+      <Container id="main">
         {children}
         <ToastContainer
           role="alert"

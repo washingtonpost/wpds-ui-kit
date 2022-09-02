@@ -4,7 +4,14 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-import { Box, Icon, styled, Button } from "@washingtonpost/wpds-ui-kit";
+import {
+  Box,
+  Icon,
+  styled,
+  Button,
+  VisuallyHidden,
+  theme,
+} from "@washingtonpost/wpds-ui-kit";
 import Menu from "@washingtonpost/wpds-assets/asset/menu";
 import Close from "@washingtonpost/wpds-assets/asset/close";
 
@@ -126,6 +133,22 @@ export const NavigationBar = ({ setMobileMenu, mobileMenuState, isClosed }) => {
   return (
     <>
       <Container>
+        <VisuallyHidden
+          as="a"
+          href="#main"
+          css={{
+            color: theme.colors.cta,
+            left: "$050",
+            "&:active": {
+              position: "relative",
+            },
+            "&:focus": {
+              position: "relative",
+            },
+          }}
+        >
+          Jump to content
+        </VisuallyHidden>
         <Logo css={{ width: "100%" }} />
         <Box
           css={{
