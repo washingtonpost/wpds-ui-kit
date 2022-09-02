@@ -114,6 +114,17 @@ const CloseMenu = styled(Close, {
   },
 });
 
+const SkipToMainContent = styled(VisuallyHidden, {
+  color: theme.colors.cta,
+  left: "$050",
+  "&:active": {
+    position: "relative",
+  },
+  "&:focus": {
+    position: "relative",
+  },
+});
+
 export const NavigationBar = ({ setMobileMenu, mobileMenuState, isClosed }) => {
   const router = useRouter();
 
@@ -133,22 +144,9 @@ export const NavigationBar = ({ setMobileMenu, mobileMenuState, isClosed }) => {
   return (
     <>
       <Container>
-        <VisuallyHidden
-          as="a"
-          href="#main"
-          css={{
-            color: theme.colors.cta,
-            left: "$050",
-            "&:active": {
-              position: "relative",
-            },
-            "&:focus": {
-              position: "relative",
-            },
-          }}
-        >
-          Jump to content
-        </VisuallyHidden>
+        <SkipToMainContent as="a" href="#main">
+          Skip to main content
+        </SkipToMainContent>
         <Logo css={{ width: "100%" }} />
         <Box
           css={{
