@@ -134,4 +134,4 @@ const PropTable = ({ props, displayName }) => (
 );
 
 export const PropsTable = ({ props }) =>
-  props.map((args) => <PropTable {...args} />);
+  props.map((args, index) => <PropTable key={index} {...args} />);
