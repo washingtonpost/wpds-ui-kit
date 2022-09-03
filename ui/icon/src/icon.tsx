@@ -5,6 +5,9 @@ import { css, theme } from "@washingtonpost/wpds-theme";
 const NAME = "Icon";
 
 interface IconInterface extends React.SVGProps<HTMLOrSVGElement> {
+  /**
+   * The name of the icon to display.
+   */
   size?: "100" | "150" | "200" | number;
   label: string;
   children?: React.ReactNode;

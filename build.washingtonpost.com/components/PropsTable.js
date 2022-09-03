@@ -2,7 +2,9 @@ import React from "react";
 import { Box, Icon, theme } from "@washingtonpost/wpds-ui-kit";
 import Success from "@washingtonpost/wpds-assets/asset/success";
 
-export const PropsTable = ({ props }) => (
+import Header from "./Typography/Headers";
+
+const PropTable = ({ props, displayName }) => (
   <Box
     role="region"
     tabIndex={0}
@@ -15,6 +17,9 @@ export const PropsTable = ({ props }) => (
       },
     }}
   >
+    <Header as="h3" css={{ marginBottom: "$100" }}>
+      {displayName}
+    </Header>
     <Box
       as="table"
       css={{
@@ -127,3 +132,6 @@ export const PropsTable = ({ props }) => (
     </Box>
   </Box>
 );
+
+export const PropsTable = ({ props }) =>
+  props.map((args) => <PropTable {...args} />);

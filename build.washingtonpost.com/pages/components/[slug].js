@@ -1,6 +1,7 @@
 import React from "react";
 import { MDXRemote } from "next-mdx-remote";
 import { NextSeo } from "next-seo";
+
 import { AlertBanner, Box, styled, theme } from "@washingtonpost/wpds-ui-kit";
 
 import MDXStyling from "~/components/Markdown/Styling";

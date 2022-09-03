@@ -1,10 +1,14 @@
 import * as React from "react";
-import { ChevronDown } from "@washingtonpost/wpds-assets";
-import { theme, styled, keyframes } from "@washingtonpost/wpds-theme";
-import { Icon } from "@washingtonpost/wpds-icon";
-import * as AccordionPrimitive from "@radix-ui/react-accordion";
+import { theme, styled } from "@washingtonpost/wpds-theme";
 import type * as WPDS from "@washingtonpost/wpds-theme";
-import { AccordionContentProps as RadixAccordionContentProps } from "@radix-ui/react-accordion";
+import * as AccordionPrimitive from "@radix-ui/react-accordion";
+import { AccordionTrigger, AccordionHeader } from "./AccordionTrigger";
+import { AccordionItem } from "./AccordionItem";
+import { AccordionContent } from "./AccordionContent";
+import {
+  AccordionSingleProps as RadixAccordionSingleProps,
+  AccordionMultipleProps as RadixAccordionMultipleProps,
+} from "@radix-ui/react-accordion";
 
 export enum ACCORDION_TYPE {
   single = "single",
@@ -17,150 +21,13 @@ export enum ACCORDION_DENSITY {
   default = "default",
 }
 
-const slideDown = keyframes({
-  from: { height: 0 },
-  to: { height: "var(--radix-accordion-content-height)" },
-});
-
-const slideUp = keyframes({
-  from: { height: "var(--radix-accordion-content-height)" },
-  to: { height: 0 },
-});
-
-const StyledItem = styled(AccordionPrimitive.Item, {
-  borderBottom: `1px solid ${theme.colors.subtle}`,
-});
-
-const StyledHeader = styled(AccordionPrimitive.Header, {
-  all: "unset",
-  color: theme.colors.primary,
-  backgroundColor: theme.colors.gray700,
-  display: "flex",
-  width: "100%",
-  fontSize: theme.fontSizes[100],
-});
-
-const StyledTrigger = styled(AccordionPrimitive.Trigger, {
-  all: "unset",
-  fontFamily: "inherit",
-  backgroundColor: "transparent",
-  flex: 1,
-  display: "flex",
-  justifyContent: "space-between",
-  alignItems: "center",
-  paddingTop: theme.space[150],
-  paddingBottom: theme.space[150],
-  "&:hover": {
-    cursor: "pointer",
-  },
-  "&:focus-visible": {
-    position: "relative",
-    zIndex: 1,
-    boxShadow: `0 0 0 2px ${theme.colors.cta}`,
-  },
-  variants: {
-    density: {
-      default: {},
-      compact: {
-        paddingTop: theme.space[100],
-        paddingBottom: theme.space[100],
-      },
-      loose: {
-        paddingTop: theme.space[200],
-        paddingBottom: theme.space[200],
-      },
-    },
-    // this class is for the benefit of the docs only
-    forcefocus: {
-      true: {
-        position: "relative",
-        zIndex: 1,
-        boxShadow: `0 0 0 2px ${theme.colors.cta}`,
-      },
-    },
-  },
-});
-
-type AccordionTriggerVariants = React.ComponentPropsWithRef<
-  typeof StyledTrigger
->;
-type AccordionTriggerType = AccordionTriggerVariants & {
-  css?: WPDS.CSS;
-  forcefocus?: boolean;
-};
-const AccordionTrigger = React.forwardRef<
-  HTMLButtonElement,
-  AccordionTriggerType
->(({ children, ...props }, ref) => (
-  <StyledHeader>
-    <StyledTrigger {...props} ref={ref}>
-      {children}
-      <StyledIcon label="Chevron Icon">
-        <StyledChevron aria-hidden />
-      </StyledIcon>
-    </StyledTrigger>
-  </StyledHeader>
-));
-
-type AccordionTriggerProps = React.ComponentProps<typeof AccordionTrigger>;
-AccordionTrigger.displayName = "AccordionComponentHeader";
-
-const StyledIcon = styled(Icon, {
-  marginLeft: theme.space[150],
-  minWidth: theme.fontSizes[100],
-});
-
-const easeInOutExpo = `cubic-bezier(0.87, 0, 0.13, 1)`;
-
-const StyledChevron = styled(ChevronDown, {
-  transition: `transform ${theme.transitions.normal} ${easeInOutExpo}`,
-  "[data-state=open] &": { transform: "rotate(180deg)" },
-});
-
-const StyledContent = styled(AccordionPrimitive.Content, {
-  overflow: "hidden",
-  color: theme.colors.primary,
-
-  '&[data-state="open"]': {
-    animation: `${slideDown} ${theme.transitions.normal} ${easeInOutExpo}`,
-  },
-  '&[data-state="closed"]': {
-    animation: `${slideUp} ${theme.transitions.normal} ${easeInOutExpo}`,
-  },
-});
-
-type AccordionContentVariant = React.ComponentProps<typeof StyledContent>;
-type AccordionContentType = AccordionContentVariant &
-  RadixAccordionContentProps & {
-    css?: WPDS.CSS;
-  };
-
-const StyledContentText = styled("div", {
-  background: theme.colors.gray700,
-  paddingBottom: theme.space[150],
-  paddingRight: theme.space[150],
-});
-
-const AccordionContent = React.forwardRef<HTMLDivElement, AccordionContentType>(
-  ({ children, ...props }, ref) => (
-    <StyledContent {...props} ref={ref}>
-      <StyledContentText>{children}</StyledContentText>
-    </StyledContent>
-  )
-);
-
-type AccordionContentProps = React.ComponentPropsWithRef<
-  typeof AccordionContent
->;
-AccordionContent.displayName = "AccordionComponentContent";
-
 const StyledAccordion = styled(AccordionPrimitive.Root, {
   width: "100%",
   variants: {
     disabled: {
       true: {
         cursor: "not-allowed",
-        [`${StyledHeader}`]: {
+        [`${AccordionHeader}`]: {
           pointerEvents: "none",
           color: theme.colors.accessible,
         },
@@ -169,22 +36,25 @@ const StyledAccordion = styled(AccordionPrimitive.Root, {
   },
 });
 
-type AccordionPrimitiveProps = React.ComponentProps<
-  typeof AccordionPrimitive.Root
->;
-type StyledAccordionVariant = React.ComponentProps<typeof StyledAccordion>;
-type AccordionProps = AccordionPrimitiveProps & StyledAccordionVariant;
+type AccordionRootVariants = WPDS.VariantProps<typeof StyledAccordion>;
 
-const AccordionRoot = React.forwardRef<HTMLDivElement, AccordionProps>(
-  ({ ...props }, ref) => <StyledAccordion {...props} ref={ref} />
-);
+export type AccordionRootCombined = (
+  | RadixAccordionSingleProps
+  | RadixAccordionMultipleProps
+) &
+  AccordionRootVariants;
 
-type AccordionRootProps = React.ComponentPropsWithRef<typeof AccordionRoot>;
+export const AccordionRoot = React.forwardRef<
+  HTMLDivElement,
+  AccordionRootCombined
+>(({ ...props }: AccordionRootCombined, ref) => (
+  <StyledAccordion {...props} ref={ref} />
+));
 
-AccordionRoot.displayName = "AccordionComponentRoot";
+AccordionRoot.displayName = "AccordionRoot";
 
 const Root = AccordionRoot;
-const Item = StyledItem;
+const Item = AccordionItem;
 const Content = AccordionContent;
 const Trigger = AccordionTrigger;
 
@@ -193,10 +63,4 @@ export const Accordion = {
   Item,
   Content,
   Trigger,
-};
-
-export type {
-  AccordionRootProps,
-  AccordionContentProps,
-  AccordionTriggerProps,
 };
