@@ -46,6 +46,46 @@ Drawer.parameters = {
   chromatic: { disableSnapshot: true },
 };
 
+const FocusTemplate = ({ loopFocus, ...args }) => {
+  return (
+    <>
+      <Component.Root {...args}>
+        <Component.Trigger>Trigger Drawer</Component.Trigger>
+        <Component.Content position={"left"} width={200} loopFocus={loopFocus}>
+          <Component.Close />
+          Menu
+          <ul
+            style={{
+              marginBlock: theme.space["100"],
+              paddingInlineStart: 0,
+              listStyle: "none",
+            }}
+          >
+            <li>
+              <a href="#">One</a>
+            </li>
+            <li>
+              <a href="#">Two</a>
+            </li>
+            <li>
+              <a href="#">Three</a>
+            </li>
+          </ul>
+        </Component.Content>
+        <Component.Scrim />
+      </Component.Root>
+    </>
+  );
+};
+
+export const Focus = FocusTemplate.bind({});
+Focus.args = {
+  loopFocus: true,
+};
+Focus.parameters = {
+  chromatic: { disableSnapshot: true },
+};
+
 const PositionTemplate = () => (
   <>
     <Component.Root id="top-id">

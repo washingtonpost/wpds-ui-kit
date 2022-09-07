@@ -15,7 +15,14 @@ const Template = (args) => {
   }
   return (
     <Box css={{ color: theme.colors.primary, maxWidth: "30rem" }}>
-      <Component {...args} onOpenChange={handleOpenChange} open={open} />
+      <Component
+        {...args}
+        onOpenChange={handleOpenChange}
+        open={open}
+        onClick={() => {
+          handleOpenChange(false);
+        }}
+      />
       <p>
         <a href="#">Lorem ipsum dolor sit</a>, amet consectetur adipisicing
         elit. Natus praesentium repudiandae architecto, incidunt quam, nisi
@@ -69,3 +76,24 @@ Scrim.args = {
   zIndex: theme.zIndices.shell,
   lockScroll: true,
 };
+
+Scrim.parameters = {
+  chromatic: { disableSnapshot: true },
+};
+
+const ChromaticTemplate = () => {
+  return (
+    <>
+      <Box
+        css={{
+          backgroundColor: theme.colors.primary,
+          width: theme.sizes["500"],
+          height: theme.sizes["500"],
+        }}
+      ></Box>
+      <Component open={true} />
+    </>
+  );
+};
+
+export const Chromatic = ChromaticTemplate.bind({});
