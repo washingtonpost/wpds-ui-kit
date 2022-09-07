@@ -46,6 +46,7 @@ export const DrawerClose = React.forwardRef<
     ref
   ) => {
     const context = React.useContext(DrawerContext);
+
     return (
       <CloseButton
         ref={ref}
