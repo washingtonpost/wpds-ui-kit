@@ -103,8 +103,12 @@ type TooltipContentVariants = React.ComponentPropsWithRef<
 >;
 
 type TooltipContentType = TooltipContentVariants & {
+  /** Override CSS */
   css?: WPDS.CSS;
+  /** Prevent the tooltip from showing up */
   disabled?: boolean;
+  /** How far away from the side of the parent should the tooltip be? */
+  /** @default theme.space["025"] */
   sideOffset?: string | WPDSThemeSpaceObject;
   /** @default TOOLTIP_CONTENT_SIDE.top */
   side?: string;
@@ -137,7 +141,7 @@ export const TooltipContent = React.forwardRef<
           ref={ref}
         >
           {children}
-          <StyledArrow />
+          <StyledArrow stroke={theme.colors.subtle} strokeWidth="2" />
         </StyledContentWrapper>
       </TooltipPrimitive.Portal>
     )
