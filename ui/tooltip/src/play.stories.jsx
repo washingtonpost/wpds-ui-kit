@@ -1,6 +1,6 @@
 import { theme } from "@washingtonpost/wpds-theme";
 import * as React from "react";
-import { Tooltip, TOOLTIP_CONTENT_SIDE } from "./";
+import { Tooltip, TOOLTIP_CONTENT_SIDE, TOOLTIP_CONTENT_ALIGN } from "./";
 
 export default {
   title: "Tooltip",
@@ -117,7 +117,11 @@ export const PlacedOnLeft = TemplateLeft.bind({});
 export const PlacedOnBottom = TemplateBottom.bind({});
 export const Disabled = TemplateDisabled.bind({});
 
-Default.args = { density: "compact", sideOffset: theme.space[100] };
+Default.args = {
+  density: "compact",
+  sideOffset: theme.space[100],
+  align: TOOLTIP_CONTENT_ALIGN.start,
+};
 PlacedOnRight.args = {};
 PlacedOnLeft.args = {};
 PlacedOnBottom.args = {};

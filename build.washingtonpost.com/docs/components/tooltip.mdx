@@ -39,20 +39,442 @@ The tooltip can be positioned top, left, right, and bottom with each having abil
 ```jsx withPreview
 export default function Example() {
   return (
-    <Box css={{ maxWidth: 400 }}>
-      <Tooltip.Provider>
-        <Tooltip.Root defaultOpen={true}>
-          <Tooltip.Trigger>
-            <span>This is a tooltip trigger</span>
-          </Tooltip.Trigger>
-          <Tooltip.Content side="bottom">
-            i want lots of things to go here and for this to get super super
-            long and for this to never stop and i want more fries and i want it
-            to rain but i also want the sun and i wasnt a vacataions and it
-            doesn't matter if this is misspelled or whatverer.
-          </Tooltip.Content>
-        </Tooltip.Root>
-      </Tooltip.Provider>
+    <Box
+      css={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        width: "100%",
+        gap: "$350",
+        height: "300px",
+      }}
+    >
+      <Box>
+        <Tooltip.Provider>
+          <Tooltip.Root defaultOpen={true}>
+            <Tooltip.Trigger>
+              <Box
+                css={{
+                  height: "100px",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                Trigger
+              </Box>
+            </Tooltip.Trigger>
+            <Tooltip.Content side="left" align="start" alignOffset={90}>
+              <Box
+                css={{
+                  height: "48px",
+                  backgroundColor: theme.colors.gray500,
+                  alignSelf: "stretch",
+                  flexGrow: 1,
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  padding: 0,
+                }}
+              >
+                <Box
+                  css={{
+                    fontSize: "$075",
+                    fontWeight: "$bold",
+                    color: "$primary",
+                  }}
+                >
+                  Left-Start
+                </Box>
+                <Box css={{ fontSize: "8px", fontWeight: "$light" }}>
+                  (swap with local component)
+                </Box>
+              </Box>
+            </Tooltip.Content>
+            <Tooltip.Content side="left">
+              <Box
+                css={{
+                  height: "48px",
+                  backgroundColor: theme.colors.gray500,
+                  alignSelf: "stretch",
+                  flexGrow: 1,
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  padding: 0,
+                }}
+              >
+                <Box
+                  css={{
+                    fontSize: "$075",
+                    fontWeight: "$bold",
+                    color: "$primary",
+                  }}
+                >
+                  Left-Center
+                </Box>
+                <Box css={{ fontSize: "8px", fontWeight: "$light" }}>
+                  (swap with local component)
+                </Box>
+              </Box>
+            </Tooltip.Content>
+            <Tooltip.Content side="left" align="end" alignOffset={90}>
+              <Box
+                css={{
+                  height: "48px",
+                  backgroundColor: theme.colors.gray500,
+                  alignSelf: "stretch",
+                  flexGrow: 1,
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  padding: 0,
+                }}
+              >
+                <Box
+                  css={{
+                    fontSize: "$075",
+                    fontWeight: "$bold",
+                    color: "$primary",
+                  }}
+                >
+                  Left-End
+                </Box>
+                <Box css={{ fontSize: "8px", fontWeight: "$light" }}>
+                  (swap with local component)
+                </Box>
+              </Box>
+            </Tooltip.Content>
+          </Tooltip.Root>
+        </Tooltip.Provider>
+      </Box>
+      <Box>
+        <Tooltip.Provider>
+          <Tooltip.Root defaultOpen={true}>
+            <Tooltip.Trigger>
+              <Box
+                css={{
+                  height: "70px",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                Trigger
+              </Box>
+            </Tooltip.Trigger>
+            <Tooltip.Content side="top" align="end" sideOffset={"0rem"}>
+              <Box
+                css={{
+                  height: "48px",
+                  backgroundColor: theme.colors.gray500,
+                  alignSelf: "stretch",
+                  flexGrow: 1,
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  padding: 0,
+                }}
+              >
+                <Box
+                  css={{
+                    fontSize: "$075",
+                    fontWeight: "$bold",
+                    color: "$primary",
+                  }}
+                >
+                  Top-End
+                </Box>
+                <Box css={{ fontSize: "8px", fontWeight: "$light" }}>
+                  (swap with local component)
+                </Box>
+              </Box>
+            </Tooltip.Content>
+            <Tooltip.Content side="bottom" align="end" sideOffset={"0rem"}>
+              <Box
+                css={{
+                  height: "48px",
+                  backgroundColor: theme.colors.gray500,
+                  alignSelf: "stretch",
+                  flexGrow: 1,
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  padding: 0,
+                }}
+              >
+                <Box
+                  css={{
+                    fontSize: "$075",
+                    fontWeight: "$bold",
+                    color: "$primary",
+                  }}
+                >
+                  Bottom-End
+                </Box>
+                <Box css={{ fontSize: "8px", fontWeight: "$light" }}>
+                  (swap with local component)
+                </Box>
+              </Box>
+            </Tooltip.Content>
+          </Tooltip.Root>
+        </Tooltip.Provider>
+      </Box>
+      <Box>
+        <Tooltip.Provider>
+          <Tooltip.Root defaultOpen={true}>
+            <Tooltip.Trigger>
+              <Box
+                css={{
+                  height: "70px",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                Trigger
+              </Box>
+            </Tooltip.Trigger>
+            <Tooltip.Content side="top" sideOffset={"0rem"}>
+              <Box
+                css={{
+                  height: "48px",
+                  backgroundColor: theme.colors.gray500,
+                  alignSelf: "stretch",
+                  flexGrow: 1,
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  padding: 0,
+                }}
+              >
+                <Box
+                  css={{
+                    fontSize: "$075",
+                    fontWeight: "$bold",
+                    color: "$primary",
+                  }}
+                >
+                  Top-Center
+                </Box>
+                <Box css={{ fontSize: "8px", fontWeight: "$light" }}>
+                  (swap with local component)
+                </Box>
+              </Box>
+            </Tooltip.Content>
+            <Tooltip.Content side="bottom" sideOffset={"0rem"}>
+              <Box
+                css={{
+                  height: "48px",
+                  backgroundColor: theme.colors.gray500,
+                  alignSelf: "stretch",
+                  flexGrow: 1,
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  padding: 0,
+                }}
+              >
+                <Box
+                  css={{
+                    fontSize: "$075",
+                    fontWeight: "$bold",
+                    color: "$primary",
+                  }}
+                >
+                  Bottom-Center
+                </Box>
+                <Box css={{ fontSize: "8px", fontWeight: "$light" }}>
+                  (swap with local component)
+                </Box>
+              </Box>
+            </Tooltip.Content>
+          </Tooltip.Root>
+        </Tooltip.Provider>
+      </Box>
+      <Box>
+        <Tooltip.Provider>
+          <Tooltip.Root defaultOpen={true}>
+            <Tooltip.Trigger>
+              <Box
+                css={{
+                  height: "70px",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                Trigger
+              </Box>
+            </Tooltip.Trigger>
+            <Tooltip.Content side="top" align="start" sideOffset={"0rem"}>
+              <Box
+                css={{
+                  height: "48px",
+                  backgroundColor: theme.colors.gray500,
+                  alignSelf: "stretch",
+                  flexGrow: 1,
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  padding: 0,
+                }}
+              >
+                <Box
+                  css={{
+                    fontSize: "$075",
+                    fontWeight: "$bold",
+                    color: "$primary",
+                  }}
+                >
+                  Top-Start
+                </Box>
+                <Box css={{ fontSize: "8px", fontWeight: "$light" }}>
+                  (swap with local component)
+                </Box>
+              </Box>
+            </Tooltip.Content>
+            <Tooltip.Content side="bottom" align="start" sideOffset={"0rem"}>
+              <Box
+                css={{
+                  height: "48px",
+                  backgroundColor: theme.colors.gray500,
+                  alignSelf: "stretch",
+                  flexGrow: 1,
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  padding: 0,
+                }}
+              >
+                <Box
+                  css={{
+                    fontSize: "$075",
+                    fontWeight: "$bold",
+                    color: "$primary",
+                  }}
+                >
+                  Bottom-Start
+                </Box>
+                <Box css={{ fontSize: "8px", fontWeight: "$light" }}>
+                  (swap with local component)
+                </Box>
+              </Box>
+            </Tooltip.Content>
+          </Tooltip.Root>
+        </Tooltip.Provider>
+      </Box>
+      <Box>
+        <Tooltip.Provider>
+          <Tooltip.Root defaultOpen={true}>
+            <Tooltip.Trigger>
+              <Box
+                css={{
+                  height: "100px",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                Trigger
+              </Box>
+            </Tooltip.Trigger>
+            <Tooltip.Content side="right" align="start" alignOffset={90}>
+              <Box
+                css={{
+                  height: "48px",
+                  backgroundColor: theme.colors.gray500,
+                  alignSelf: "stretch",
+                  flexGrow: 1,
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  padding: 0,
+                }}
+              >
+                <Box
+                  css={{
+                    fontSize: "$075",
+                    fontWeight: "$bold",
+                    color: "$primary",
+                  }}
+                >
+                  Right-Start
+                </Box>
+                <Box css={{ fontSize: "8px", fontWeight: "$light" }}>
+                  (swap with local component)
+                </Box>
+              </Box>
+            </Tooltip.Content>
+            <Tooltip.Content side="right">
+              <Box
+                css={{
+                  height: "48px",
+                  backgroundColor: theme.colors.gray500,
+                  alignSelf: "stretch",
+                  flexGrow: 1,
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  padding: 0,
+                }}
+              >
+                <Box
+                  css={{
+                    fontSize: "$075",
+                    fontWeight: "$bold",
+                    color: "$primary",
+                  }}
+                >
+                  Right-Center
+                </Box>
+                <Box css={{ fontSize: "8px", fontWeight: "$light" }}>
+                  (swap with local component)
+                </Box>
+              </Box>
+            </Tooltip.Content>
+            <Tooltip.Content side="right" align="end" alignOffset={90}>
+              <Box
+                css={{
+                  height: "48px",
+                  backgroundColor: theme.colors.gray500,
+                  alignSelf: "stretch",
+                  flexGrow: 1,
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  padding: 0,
+                }}
+              >
+                <Box
+                  css={{
+                    fontSize: "$075",
+                    fontWeight: "$bold",
+                    color: "$primary",
+                  }}
+                >
+                  Right-End
+                </Box>
+                <Box css={{ fontSize: "8px", fontWeight: "$light" }}>
+                  (swap with local component)
+                </Box>
+              </Box>
+            </Tooltip.Content>
+          </Tooltip.Root>
+        </Tooltip.Provider>
+      </Box>
     </Box>
   );
 }
@@ -63,6 +485,97 @@ export default function Example() {
 ### Density
 
 There are two options for the property density: compact and default.
+
+```jsx withPreview
+export default function Example() {
+  return (
+    <Box
+      css={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        width: "100%",
+        gap: "125px",
+      }}
+    >
+      <Box>
+        <Tooltip.Provider>
+          <Tooltip.Root defaultOpen={true}>
+            <Tooltip.Trigger>
+              <Box>Trigger</Box>
+            </Tooltip.Trigger>
+            <Tooltip.Content side="bottom">
+              <Box
+                css={{
+                  height: "48px",
+                  backgroundColor: theme.colors.gray500,
+                  alignSelf: "stretch",
+                  flexGrow: 1,
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  padding: 0,
+                }}
+              >
+                <Box
+                  css={{
+                    fontSize: "$075",
+                    fontWeight: "$bold",
+                    color: "$primary",
+                  }}
+                >
+                  Bottom-Center
+                </Box>
+                <Box css={{ fontSize: "8px", fontWeight: "$light" }}>
+                  (swap with local component)
+                </Box>
+              </Box>
+            </Tooltip.Content>
+          </Tooltip.Root>
+        </Tooltip.Provider>
+      </Box>
+      <Box>
+        <Tooltip.Provider>
+          <Tooltip.Root defaultOpen={true}>
+            <Tooltip.Trigger>
+              <Box>Trigger</Box>
+            </Tooltip.Trigger>
+            <Tooltip.Content side="bottom" density="compact">
+              <Box
+                css={{
+                  height: "48px",
+                  backgroundColor: theme.colors.gray500,
+                  alignSelf: "stretch",
+                  flexGrow: 1,
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  padding: 0,
+                }}
+              >
+                <Box
+                  css={{
+                    fontSize: "$075",
+                    fontWeight: "$bold",
+                    color: "$primary",
+                  }}
+                >
+                  Bottom-Center
+                </Box>
+                <Box css={{ fontSize: "8px", fontWeight: "$light" }}>
+                  (swap with local component)
+                </Box>
+              </Box>
+            </Tooltip.Content>
+          </Tooltip.Root>
+        </Tooltip.Provider>
+      </Box>
+    </Box>
+  );
+}
+```
 
 ### Offset
 
@@ -84,25 +597,166 @@ When appropriate, helper text should be placed closest to the Legend.
 
 A tooltip is not meant to hide necessary contextual information. It should only be used as a supplementary element. The nautre of a tooltip is non-persistent and should not require users to discover content within a tooltip.
 
-<GuideContainer variant="error">
-
-</GuideContainer>
+```jsx withPreview isGuide="error"
+export default function Example() {
+  return (
+    <Box>
+      <Tooltip.Provider>
+        <Tooltip.Root defaultOpen={true}>
+          <Tooltip.Trigger>
+            <Box
+              css={{
+                textDecoration: "underline",
+                fontWeight: theme.fontWeights.light,
+                fontSize: theme.fontSizes[100],
+                color: theme.colors.accessible,
+              }}
+            >
+              Find your state
+            </Box>
+          </Tooltip.Trigger>
+          <Tooltip.Content side="bottom">
+            <InputText icon="right" label="Search">
+              <Icon label="State">
+                <Search />
+              </Icon>
+            </InputText>
+          </Tooltip.Content>
+        </Tooltip.Root>
+      </Tooltip.Provider>
+    </Box>
+  );
+}
+```
 
 ### Avoid nesting actionable elements
 
 The nautre of the tooltip is non-persistent. When the user is required to take an action on an element nested inside the tooltip it makes the action less accessible for those with limited mobility.
 
-<GuideContainer variant="warning">
-
-</GuideContainer>
+```jsx withPreview isGuide="error"
+export default function Example() {
+  return (
+    <Box>
+      <Tooltip.Provider>
+        <Tooltip.Root defaultOpen={true}>
+          <Tooltip.Trigger>
+            <Box
+              css={{
+                textDecoration: "underline",
+                fontWeight: theme.fontWeights.light,
+                fontSize: theme.fontSizes[100],
+                color: theme.colors.accessible,
+              }}
+            >
+              Find your state
+            </Box>
+          </Tooltip.Trigger>
+          <Tooltip.Content side="bottom">
+            <InputText icon="right" label="Search">
+              <Icon label="State">
+                <Search />
+              </Icon>
+            </InputText>
+          </Tooltip.Content>
+        </Tooltip.Root>
+      </Tooltip.Provider>
+    </Box>
+  );
+}
+```
 
 ### Do not nest Popovers or Tooltips
 
 Tooltips should not have additional tooltips or popover within the same container.
 
-<GuideContainer variant="warning">
-
-</GuideContainer>
+```jsx withPreview isGuide="error"
+export default function Example() {
+  return (
+    <Box>
+      <Tooltip.Provider>
+        <Tooltip.Root defaultOpen={true}>
+          <Tooltip.Trigger>
+            <Box>
+              <Tooltip.Provider>
+                <Tooltip.Root defaultOpen={true}>
+                  <Tooltip.Trigger>
+                    <Box
+                      css={{
+                        textDecoration: "underline",
+                        fontWeight: theme.fontWeights.light,
+                        fontSize: theme.fontSizes[100],
+                        color: theme.colors.accessible,
+                      }}
+                    >
+                      Trigger
+                    </Box>
+                  </Tooltip.Trigger>
+                  <Tooltip.Content side="bottom">
+                    <Box
+                      css={{
+                        height: "48px",
+                        backgroundColor: theme.colors.gray500,
+                        alignSelf: "stretch",
+                        flexGrow: 1,
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        padding: 0,
+                      }}
+                    >
+                      <Box
+                        css={{
+                          fontSize: "$075",
+                          fontWeight: "$bold",
+                          color: "$primary",
+                        }}
+                      >
+                        Trigger 2
+                      </Box>
+                      <Box css={{ fontSize: "8px", fontWeight: "$light" }}>
+                        (swap with local component)
+                      </Box>
+                    </Box>
+                  </Tooltip.Content>
+                </Tooltip.Root>
+              </Tooltip.Provider>
+            </Box>
+          </Tooltip.Trigger>
+          <Tooltip.Content side="left" align="start" alignOffset={500}>
+            <Box
+              css={{
+                height: "48px",
+                backgroundColor: theme.colors.gray500,
+                alignSelf: "stretch",
+                flexGrow: 1,
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+                padding: 0,
+              }}
+            >
+              <Box
+                css={{
+                  fontSize: "$075",
+                  fontWeight: "$bold",
+                  color: "$primary",
+                }}
+              >
+                Slot
+              </Box>
+              <Box css={{ fontSize: "8px", fontWeight: "$light" }}>
+                (swap with local component)
+              </Box>
+            </Box>
+          </Tooltip.Content>
+        </Tooltip.Root>
+      </Tooltip.Provider>
+    </Box>
+  );
+}
+```
 
 ---
 

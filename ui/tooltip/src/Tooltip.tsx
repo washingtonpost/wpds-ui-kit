@@ -10,6 +10,12 @@ export const enum TOOLTIP_CONTENT_SIDE {
   bottom = "bottom",
 }
 
+export const enum TOOLTIP_CONTENT_ALIGN {
+  start = "start",
+  center = "center",
+  end = "end",
+}
+
 const slideUpAndFade = keyframes({
   "0%": { opacity: 0, transform: "translateY(2px)" },
   "100%": { opacity: 1, transform: "translateY(0)" },
@@ -62,17 +68,34 @@ const StyledArrow = styled(TooltipPrimitive.Arrow, {
   fill: theme.colors.secondary,
 });
 
+type WPDSThemeSpaceObject = {
+  token: string;
+  value: string;
+  scale: string;
+  prefix: string;
+};
 // Radix offset only accepts a number of pixels it should be offsetting
-const convertRemToPixels = (valToConvert) => {
-  let remVal = "";
-  if (valToConvert.value) {
-    remVal = valToConvert.value.split("rem")[0];
-  } else {
-    // handles storybook examples of directly passing in rem values only
-    remVal = valToConvert.split("rem")[0];
+const convertRemToPixels = (
+  valToConvert: number | string | WPDSThemeSpaceObject
+): number => {
+  let val = "";
+
+  if (typeof valToConvert === "number" && valToConvert === 0) {
+    val = "0";
   }
 
-  return (remVal as unknown as number) * 16;
+  // if we pass a string that includes the words rem
+  //mainly used for docs site examples and storybook example
+  if (typeof valToConvert === "string" && valToConvert.includes("rem")) {
+    val = valToConvert.split("rem")[0];
+  }
+
+  if (typeof valToConvert === "object") {
+    // if we pass in an object and it has a value
+    val = valToConvert.value.split("rem")[0];
+  }
+
+  return (val as unknown as number) * 16;
 };
 
 type TooltipContentVariants = React.ComponentPropsWithRef<
@@ -82,13 +105,23 @@ type TooltipContentVariants = React.ComponentPropsWithRef<
 type TooltipContentType = TooltipContentVariants & {
   css?: WPDS.CSS;
   disabled?: boolean;
-  sideOffset?: string | { value: string };
+  sideOffset?: string | WPDSThemeSpaceObject;
+  /** @default TOOLTIP_CONTENT_SIDE.top */
   side?: string;
+  /** @default TOOLTIP_CONTENT_ALIGN.center */
+  align?: string;
 };
 
 const TooltipContent = React.forwardRef<HTMLDivElement, TooltipContentType>(
   (
-    { children, sideOffset = theme.space["025"], disabled = false, ...props },
+    {
+      children,
+      sideOffset = theme.space["025"],
+      disabled = false,
+      side = TOOLTIP_CONTENT_SIDE.top,
+      align = TOOLTIP_CONTENT_ALIGN.center,
+      ...props
+    },
     ref
   ) =>
     disabled ? null : (
@@ -96,6 +129,8 @@ const TooltipContent = React.forwardRef<HTMLDivElement, TooltipContentType>(
         <StyledContentWrapper
           {...props}
           sideOffset={convertRemToPixels(sideOffset)}
+          side={side}
+          align={align}
           ref={ref}
         >
           {children}

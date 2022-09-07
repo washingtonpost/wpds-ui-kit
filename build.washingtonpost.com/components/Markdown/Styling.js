@@ -9,7 +9,7 @@ import { styled, theme, Box, Button } from "@washingtonpost/wpds-ui-kit";
 import { List, ListItem } from "~/components/Markdown/Components/list";
 import dynamic from "next/dynamic";
 import { Grid, Cell } from "./Components/Grid";
-import * as AlertBanner from "@washingtonpost/wpds-alert-banner";
+import { AlertBanner } from "@washingtonpost/wpds-alert-banner";
 import CollapsibleContainer from "./Components/collapsible";
 const InputCheckbox = dynamic(() =>
   import("./Components/Checkbox").then((mod) => mod.InputCheckbox)

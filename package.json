@@ -65,11 +65,7 @@
     "storybook-dark-mode": "^1.1.0",
     "tsup": "^5.12.5",
     "turbo": "^1.2.16",
-    "typescript": "^4.7.4",
-    "@next/bundle-analyzer": "^12.1.0",
-    "eslint-config-next": "^12.2.4",
-    "prettier": "^2.5.1",
-    "react-docgen-typescript": "^2.2.2"
+    "typescript": "^4.7.4"
   },
   "optionalDependencies": {
     "esbuild-android-64": "0.14.25",
