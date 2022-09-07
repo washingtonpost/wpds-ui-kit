@@ -1,5 +1,4 @@
 const docgen = require("react-docgen-typescript");
-const cache = new Map();
 
 export const getPropsTable = async (component = "icon") => {
   const options = {
@@ -21,24 +20,16 @@ export const getPropsTable = async (component = "icon") => {
     },
   };
 
-  let propsArray = [];
+  // Parse a file for docgen info
 
-  if (cache.has(component)) {
-    propsArray = cache.get(component);
+  try {
+    const componentsData = docgen.parse(
+      `../ui/${component}/src/index.ts`,
+      options
+    );
 
-    return propsArray;
-  } else {
-    // Parse a file for docgen info
-
-    try {
-      const [{ props }] = docgen.parse(
-        `../ui/${component}/src/index.ts`,
-        options
-      );
-
-      // Get the component's docgen info
-      // object of objects into an array
-      propsArray = Object.entries(props)
+    const generatedData = componentsData.map((component) => {
+      const generatedProps = Object.entries(component?.props)
         .map(([key, value]) => {
           let rawType =
             value.type.name === "enum"
@@ -67,14 +58,17 @@ export const getPropsTable = async (component = "icon") => {
         .filter((prop) => {
           return prop.name !== "as";
         });
+      return {
+        displayName: component.displayName,
+        description: component.description,
+        props: generatedProps,
+      };
+    });
 
-      // add to cache
-      cache.set(component, propsArray);
-      return propsArray;
-    } catch (error) {
-      // no component found
-      console.log(`No ${component} found inside getPropsTable`);
-      return [];
-    }
+    return generatedData;
+  } catch (error) {
+    // no component found
+    console.log(`No ${component} found inside getPropsTable`);
+    return [];
   }
 };

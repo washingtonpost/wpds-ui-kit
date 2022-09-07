@@ -1,5 +1,9 @@
 // insert new component exports here
+<<<<<<< HEAD
 export * from "@washingtonpost/wpds-tooltip";
+=======
+export * from "@washingtonpost/wpds-drawer";
+>>>>>>> main
 export * from "@washingtonpost/wpds-accordion";
 export * from "@washingtonpost/wpds-pagination-dots";
 export * from "@washingtonpost/wpds-avatar";
