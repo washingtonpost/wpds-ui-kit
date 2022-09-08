@@ -1,26 +1,36 @@
 import * as React from "react";
-import { styled, theme } from "@washingtonpost/wpds-theme";
-import { TooltipContent } from "./TooltipContent";
+import { TooltipContent, TooltipContentInterface } from "./TooltipContent";
+import { TooltipTrigger, TooltipTriggerInterface } from "./TooltipTrigger";
 import * as TooltipPrimitive from "@radix-ui/react-tooltip";
+import {
+  TooltipProps as RadixTooltipRootProps,
+  TooltipPortalProps as RadixTooltipPortalProps,
+  TooltipProviderProps as RadixTooltipProviderProps,
+} from "@radix-ui/react-tooltip";
 
-const StyledTrigger = styled(TooltipPrimitive.Trigger, {
-  color: theme.colors.primary,
-});
-
-type TooltipTriggerType = React.ComponentPropsWithRef<typeof StyledTrigger>;
-
-const TooltipTrigger = React.forwardRef<HTMLButtonElement, TooltipTriggerType>(
-  ({ children, ...props }: TooltipTriggerType, ref) => (
-    <StyledTrigger {...props} ref={ref} asChild>
-      {children}
-    </StyledTrigger>
-  )
+const TooltipRoot = ({ children, ...props }: RadixTooltipRootProps) => (
+  <TooltipPrimitive.Root {...props}>{children}</TooltipPrimitive.Root>
 );
 
-TooltipTrigger.displayName = "TooltipTrigger";
+TooltipRoot.displayName = "TooltipRoot";
 
-const Provider = TooltipPrimitive.Provider;
-const Root = TooltipPrimitive.Root;
+const TooltipPortal = (props: RadixTooltipPortalProps) => (
+  <TooltipPrimitive.Portal {...props}>{props.children}</TooltipPrimitive.Portal>
+);
+
+TooltipPortal.displayName = "TooltipPortal";
+
+const TooltipProvider = (props: RadixTooltipProviderProps) => (
+  <TooltipPrimitive.Provider {...props}>
+    {props.children}
+  </TooltipPrimitive.Provider>
+);
+
+TooltipProvider.displayName = "TooltipProvider";
+
+const Provider = TooltipProvider;
+const Root = TooltipRoot;
+const Portal = TooltipPortal;
 const Trigger = TooltipTrigger;
 const Content = TooltipContent;
 
@@ -29,4 +39,13 @@ export const Tooltip = {
   Root,
   Content,
   Trigger,
+  Portal,
+};
+
+export type {
+  RadixTooltipRootProps as TooltipRootProps,
+  RadixTooltipPortalProps as TooltipPortalProps,
+  RadixTooltipProviderProps as TooltipProviderProps,
+  TooltipContentInterface as TooltipContentProps,
+  TooltipTriggerInterface as TooltipTriggerProps,
 };

@@ -10,7 +10,7 @@ export default {
       options: ["default", "compact"],
       control: "select",
     },
-    sideOffset: {
+    offsetSide: {
       options: [
         theme.space["025"].value,
         theme.space["050"].value,
@@ -119,7 +119,7 @@ export const Disabled = TemplateDisabled.bind({});
 
 Default.args = {
   density: "compact",
-  sideOffset: theme.space[100],
+  offsetSide: theme.space[100],
   align: TOOLTIP_CONTENT_ALIGN.start,
 };
 PlacedOnRight.args = {};
