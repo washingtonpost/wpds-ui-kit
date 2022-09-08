@@ -1,5 +1,6 @@
 import React from "react";
-import { Box, styled, theme } from "@washingtonpost/wpds-ui-kit";
+import { Box, styled, theme, Divider } from "@washingtonpost/wpds-ui-kit";
+import { Octokit } from "@octokit/core";
 
 import { getAllDocs, getNavigation } from "~/services";
 import { Header } from "~/components/Markdown/Components/headers";
@@ -11,6 +12,7 @@ import {
 import { SeeAllLink, sortByRank, NewCustomLink } from "~/components/utils";
 
 import Image from "next/image";
+import { Contributors } from "~/components/Contributors";
 
 const HeroBlock = styled("div", {
   gridColumn: "span 2",
@@ -43,7 +45,7 @@ const BoldTextLooksLikeLink = styled("span", {
   },
 });
 
-const Index = ({ recentPosts, rankedArticles }) => {
+const Index = ({ recentPosts, rankedArticles, contributors }) => {
   return (
     <>
       <LandingContentGrid size="wide">
@@ -318,9 +320,18 @@ const Index = ({ recentPosts, rankedArticles }) => {
               </NewCustomLink>
             ))}
             <SeeAllLink href="/resources" name="resources" type="Last" />
+            <Box
+              css={{
+                marginBottom: "$200",
+              }}
+            ></Box>
           </LandingContentGrid>
         </>
       )}
+
+      <Divider variant="default" />
+
+      {contributors && <Contributors contributors={contributors} />}
     </>
   );
 };
@@ -367,7 +378,42 @@ export async function getStaticProps() {
     ...sortByRank(workshops, 4),
     ...sortByRank(guides, 2),
   ];
+
+  /**
+   * get a list of repo's contributors
+   */
+
+  const getListOfContributors = async () => {
+    const octokit = new Octokit({
+      auth: process.env.GITHUB_TOKEN,
+    });
+
+    const response = await octokit.request(
+      "GET /repos/{owner}/{repo}/contributors",
+      {
+        owner: "washingtonpost",
+        repo: "wpds-ui-kit",
+      }
+    );
+
+    return response.data;
+  };
+
+  const contributors = await getListOfContributors().then((data) => {
+    return data
+      .map((contributor) => {
+        return {
+          name: contributor?.login,
+          avatar: contributor?.avatar_url,
+          url: contributor?.html_url,
+        };
+      })
+      .filter((contributor) => {
+        return !contributor?.name?.includes("bot");
+      });
+  });
+
   return {
-    props: { recentPosts, rankedArticles, navigation },
+    props: { recentPosts, rankedArticles, navigation, contributors },
   };
 }
