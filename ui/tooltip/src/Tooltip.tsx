@@ -8,19 +8,19 @@ import {
   TooltipProviderProps as RadixTooltipProviderProps,
 } from "@radix-ui/react-tooltip";
 
-const TooltipRoot = ({ children, ...props }: RadixTooltipRootProps) => (
+export const TooltipRoot = ({ children, ...props }: RadixTooltipRootProps) => (
   <TooltipPrimitive.Root {...props}>{children}</TooltipPrimitive.Root>
 );
 
 TooltipRoot.displayName = "TooltipRoot";
 
-const TooltipPortal = (props: RadixTooltipPortalProps) => (
+export const TooltipPortal = (props: RadixTooltipPortalProps) => (
   <TooltipPrimitive.Portal {...props}>{props.children}</TooltipPrimitive.Portal>
 );
 
 TooltipPortal.displayName = "TooltipPortal";
 
-const TooltipProvider = (props: RadixTooltipProviderProps) => (
+export const TooltipProvider = (props: RadixTooltipProviderProps) => (
   <TooltipPrimitive.Provider {...props}>
     {props.children}
   </TooltipPrimitive.Provider>
