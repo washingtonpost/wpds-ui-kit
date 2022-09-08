@@ -10,14 +10,14 @@ const StyledTrigger = styled(TooltipPrimitive.Trigger, {
 type TooltipTriggerType = React.ComponentPropsWithRef<typeof StyledTrigger>;
 
 const TooltipTrigger = React.forwardRef<HTMLButtonElement, TooltipTriggerType>(
-  ({ children, ...props }, ref) => (
+  ({ children, ...props }: TooltipTriggerType, ref) => (
     <StyledTrigger {...props} ref={ref} asChild>
       {children}
     </StyledTrigger>
   )
 );
 
-TooltipTrigger.displayName = "TooltipComponentTrigger";
+TooltipTrigger.displayName = "TooltipTrigger";
 
 const Provider = TooltipPrimitive.Provider;
 const Root = TooltipPrimitive.Root;

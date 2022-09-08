@@ -46,6 +46,7 @@ type WPDSThemeSpaceObject = {
   scale: string;
   prefix: string;
 };
+
 // Radix offset only accepts a number of pixels it should be offsetting
 const convertRemToPixels = (
   valToConvert: number | string | WPDSThemeSpaceObject
@@ -129,7 +130,7 @@ export const TooltipContent = React.forwardRef<
       side = TOOLTIP_CONTENT_SIDE.top,
       align = TOOLTIP_CONTENT_ALIGN.center,
       ...props
-    },
+    }: TooltipContentType,
     ref
   ) =>
     disabled ? null : (
@@ -148,4 +149,4 @@ export const TooltipContent = React.forwardRef<
     )
 );
 
-TooltipContent.displayName = "TooltipComponentContent";
+TooltipContent.displayName = "TooltipContent";
