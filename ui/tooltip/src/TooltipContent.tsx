@@ -90,6 +90,7 @@ const StyledContentWrapper = styled(TooltipPrimitive.Content, {
     },
   },
   variants: {
+    /** Two options of density to specify the padding for the inner components. Default + compact  */
     density: {
       compact: {
         padding: theme.space["025"],
@@ -141,7 +142,7 @@ export const TooltipContent = React.forwardRef<
           ref={ref}
         >
           {children}
-          <StyledArrow stroke={theme.colors.subtle} strokeWidth="2" />
+          <StyledArrow />
         </StyledContentWrapper>
       </TooltipPrimitive.Portal>
     )
