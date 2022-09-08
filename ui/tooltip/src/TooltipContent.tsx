@@ -155,7 +155,11 @@ export const TooltipContent = React.forwardRef<
           ref={ref}
         >
           {children}
-          <StyledArrow />
+          <StyledArrow
+            stroke={theme.colors.subtle}
+            strokeWidth="2"
+            strokeDasharray="0 30 28.284"
+          />
         </StyledContentWrapper>
       </TooltipPrimitive.Portal>
     )
