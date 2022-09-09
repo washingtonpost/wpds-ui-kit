@@ -1,5 +1,8 @@
-import { theme } from "@washingtonpost/wpds-theme";
+/* eslint-disable @next/next/no-img-element */
 import * as React from "react";
+import { screen, userEvent } from "@storybook/testing-library";
+import { expect } from "@storybook/jest";
+import { theme } from "@washingtonpost/wpds-theme";
 import { Tooltip, TOOLTIP_CONTENT_SIDE, TOOLTIP_CONTENT_ALIGN } from "./";
 
 export default {
@@ -126,3 +129,28 @@ PlacedOnRight.args = {};
 PlacedOnLeft.args = {};
 PlacedOnBottom.args = {};
 Disabled.args = { disabled: true };
+
+const InteractionsTemplate = () => (
+  <Tooltip.Provider>
+    <Tooltip.Root>
+      <Tooltip.Trigger>
+        <span>Trigger</span>
+      </Tooltip.Trigger>
+      <Tooltip.Content side={TOOLTIP_CONTENT_SIDE.right}>
+        <div data-testid="tooltip-content">My Tooltip</div>
+      </Tooltip.Content>
+    </Tooltip.Root>
+  </Tooltip.Provider>
+);
+
+export const Interactions = InteractionsTemplate.bind({});
+
+Interactions.parameters = {
+  chromatic: { disableSnapshot: true },
+};
+
+Interactions.play = async () => {
+  await userEvent.hover(screen.getAllByText("Trigger")[0]);
+  const contentArray = await screen.findAllByTestId("tooltip-content");
+  await expect(contentArray[0]).toBeVisible();
+};
