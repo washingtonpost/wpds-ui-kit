@@ -42,7 +42,7 @@ const StyledArrow = styled(TooltipPrimitive.Arrow, {
   fill: theme.colors.secondary,
 });
 
-type WPDSThemeSpaceObject = {
+export type WPDSThemeSpaceObject = {
   token: string;
   value: string;
   scale: string;
