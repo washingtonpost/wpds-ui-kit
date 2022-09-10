@@ -83,3 +83,35 @@ export const getResources = async (input) => {
 
   return docs;
 };
+
+export const getResourcesCategories = async (input) => {
+  const posts = await globby(`docs/${input}/**/*.mdx`);
+
+  let kickers = [];
+  const docs = posts
+    .map((filePath) => {
+      const source = fs.readFileSync(filePath);
+      const { content, data } = matter(source);
+      if (!kickers.includes(data.kicker)) {
+        console.log({ kickers });
+        kickers.push(data.kicker);
+        console.log(kickers);
+
+        const slug = `/${input}/${data.kicker.toLowerCase()}`;
+        return {
+          content,
+          data,
+          filePath,
+          slug,
+        };
+      } else {
+        console.log("here");
+        return null;
+      }
+    })
+    .filter((item) => {
+      return item !== null;
+    });
+
+  return docs;
+};

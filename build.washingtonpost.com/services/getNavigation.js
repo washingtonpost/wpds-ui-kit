@@ -1,4 +1,4 @@
-import { getDocsListBySection } from ".";
+import { getDocsListBySection, getResourcesCategories } from ".";
 
 const cache = new Map();
 
@@ -10,6 +10,7 @@ export const getNavigation = async () => {
   } else {
     const foundationDocs = await getDocsListBySection("foundations");
     const componentDocs = await getDocsListBySection("components");
+    const resourceCategories = await getResourcesCategories("resources");
 
     // filter out content from docs
 
@@ -41,6 +42,24 @@ export const getNavigation = async () => {
       };
     });
 
+    const resourceCategoriesList = resourceCategories
+      .map((category) => {
+        const { data, content, slug, filePath } = category;
+        return {
+          data: {
+            title: `${data?.kicker}` || "",
+            order: data?.order || null,
+            status: data?.status || "",
+          },
+          slug,
+          filePath: "",
+        };
+      })
+      .sort((a, b) => {
+        // alpha sort
+        return a.data.title.localeCompare(b.data.title);
+      });
+
     navData = [
       {
         sortItems: true,
@@ -50,6 +69,10 @@ export const getNavigation = async () => {
       {
         category: "Components",
         docs: componentDocsList,
+      },
+      {
+        category: "Resources",
+        docs: resourceCategoriesList,
       },
     ];
 
