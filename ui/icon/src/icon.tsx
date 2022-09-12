@@ -1,27 +1,19 @@
 import * as React from "react";
 import { VisuallyHidden } from "@washingtonpost/wpds-visually-hidden";
-import { theme, styled } from "@washingtonpost/wpds-theme";
+import { css, theme } from "@washingtonpost/wpds-theme";
 import type * as WPDS from "@washingtonpost/wpds-theme";
 
 const NAME = "Icon";
 
 interface IconInterface extends React.SVGProps<HTMLOrSVGElement> {
   /**
-   * The size of the icon. Can use a number or a size token
-   */
-  size?: "100" | "150" | "200" | number;
-  /**
    * The name of the icon to display.
    */
+  size?: "100" | "150" | "200" | number;
   label: string;
-  /**
-   * fill color of the icon
-   */
-  fill?: string;
-  /**
-   * css overrides
-   */
-  css?: WPDS.CSS;
+  children?: React.ReactNode;
+  className?: string;
+  css: WPDS.CSS;
 }
 
 export const Icon = React.forwardRef<React.ReactSVGElement, IconInterface>(
@@ -32,35 +24,29 @@ export const Icon = React.forwardRef<React.ReactSVGElement, IconInterface>(
       fill = "currentColor",
       label,
       className = "",
-      css = {},
       ...props
-    }: IconInterface,
+    },
     ref
   ) => {
-    const child = typeof children === "function" ? children() : children;
+    const child = React.Children.only(children);
 
-    if (!child) {
-      throw new Error(
-        "Icon requires an asset from WAM. https://build.washingtonpost.com/components/icon"
-      );
-    }
-
-    const StyledIcon = styled(child, {
+    const IconSizeStyle = css({
       size: theme.sizes[size] || size,
       fill,
     });
 
     return (
       <>
-        <StyledIcon
-          ref={ref}
-          className={className}
-          aria-hidden="true"
-          focusable="false"
-          role="img"
-          css={css}
-          {...props}
-        />
+        {React.cloneElement(child as React.ReactElement, {
+          "aria-hidden": true,
+          focusable: false,
+          role: "img",
+          ref,
+          className: `${IconSizeStyle({
+            css: props.css,
+          })} ${className}`,
+          ...props,
+        })}
         {label ? <VisuallyHidden>{label}</VisuallyHidden> : null}
       </>
     );
