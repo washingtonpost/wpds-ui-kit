@@ -13,7 +13,7 @@ interface IconInterface extends React.SVGProps<HTMLOrSVGElement> {
   label: string;
   children?: React.ReactNode;
   className?: string;
-  css: WPDS.CSS;
+  css?: WPDS.CSS;
 }
 
 export const Icon = React.forwardRef<React.ReactSVGElement, IconInterface>(
@@ -24,6 +24,7 @@ export const Icon = React.forwardRef<React.ReactSVGElement, IconInterface>(
       fill = "currentColor",
       label,
       className = "",
+      css: cssProp,
       ...props
     },
     ref
@@ -43,7 +44,7 @@ export const Icon = React.forwardRef<React.ReactSVGElement, IconInterface>(
           role: "img",
           ref,
           className: `${IconSizeStyle({
-            css: props.css,
+            css: cssProp,
           })} ${className}`,
           ...props,
         })}
