@@ -7,4 +7,15 @@ describe("Scrim", () => {
     render(<Scrim data-testid="test" open={true} />);
     expect(screen.getByTestId("test")).toBeVisible();
   });
+
+  test("removes style and margin from body when closed ", () => {
+    const { rerender } = render(<Scrim open={true} />);
+    expect(document.documentElement).toHaveAttribute(
+      "class",
+      expect.stringContaining("wpds")
+    );
+
+    rerender(<Scrim open={false} />);
+    expect(document.documentElement).not.toHaveClass();
+  });
 });

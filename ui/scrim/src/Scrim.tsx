@@ -72,9 +72,6 @@ export const Scrim = React.forwardRef<HTMLDivElement, ScrimProps>(
       <CSSTransition
         mountOnEnter
         unmountOnExit
-        onEntered={() => {
-          console.log("!!! on entered !!!");
-        }}
         in={open}
         timeout={{
           enter: 300,
