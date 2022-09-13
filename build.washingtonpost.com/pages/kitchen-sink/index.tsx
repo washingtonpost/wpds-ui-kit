@@ -386,7 +386,7 @@ function HomePage() {
             i want lots of things to go here and for this to get super super
             long and for this to never stop and i want more fries and i want it
             to rain but i also want the sun and i wasnt a vacataions and it
-            doesn't matter if this is misspelled or whatverer.
+            doesn&apos;t matter if this is misspelled or whatverer.
           </Tooltip.Content>
         </Tooltip.Root>
       </Tooltip.Provider>
