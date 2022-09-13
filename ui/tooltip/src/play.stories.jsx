@@ -3,7 +3,7 @@ import * as React from "react";
 import { screen, userEvent } from "@storybook/testing-library";
 import { expect } from "@storybook/jest";
 import { theme } from "@washingtonpost/wpds-theme";
-import { Tooltip, TOOLTIP_CONTENT_SIDE, TOOLTIP_CONTENT_ALIGN } from "./";
+import { Tooltip } from "./";
 
 export default {
   title: "Tooltip",
@@ -52,7 +52,7 @@ const TemplateRight = (args) => (
       <Tooltip.Trigger>
         <span>This is a tooltip trigger</span>
       </Tooltip.Trigger>
-      <Tooltip.Content side={TOOLTIP_CONTENT_SIDE.right} {...args}>
+      <Tooltip.Content side="right" {...args}>
         <div>
           My Tooltip <br />
           <a href="/">my link</a> <br /> Lorem ipsum dolor sit amet consectetur
@@ -72,7 +72,7 @@ const TemplateLeft = (args) => (
           alt="avatar image"
         />
       </Tooltip.Trigger>
-      <Tooltip.Content side={TOOLTIP_CONTENT_SIDE.left} {...args}>
+      <Tooltip.Content side="left" {...args}>
         i want lots of things to go here and for this to get super super long
         and for this to never stop and i want more fries and i want it to rain
         but i also want the sun and i wasnt a vacataions and it doesn't matter
@@ -88,7 +88,7 @@ const TemplateBottom = (args) => (
       <Tooltip.Trigger>
         <span>This is a tooltip trigger</span>
       </Tooltip.Trigger>
-      <Tooltip.Content side={TOOLTIP_CONTENT_SIDE.bottom} {...args}>
+      <Tooltip.Content side="bottom" {...args}>
         i want lots of things to go here and for this to get super super long
         and for this to never stop and i want more fries and i want it to rain
         but i also want the sun and i wasnt a vacataions and it doesn't matter
@@ -104,7 +104,7 @@ const TemplateDisabled = (args) => (
       <Tooltip.Trigger>
         <span>This is a tooltip trigger</span>
       </Tooltip.Trigger>
-      <Tooltip.Content {...args} side={TOOLTIP_CONTENT_SIDE.bottom}>
+      <Tooltip.Content {...args} side="bottom">
         i want lots of things to go here and for this to get super super long
         and for this to never stop and i want more fries and i want it to rain
         but i also want the sun and i wasnt a vacataions and it doesn't matter
@@ -123,7 +123,7 @@ export const Disabled = TemplateDisabled.bind({});
 Default.args = {
   density: "compact",
   offsetSide: theme.space[100],
-  align: TOOLTIP_CONTENT_ALIGN.start,
+  align: "start",
 };
 PlacedOnRight.args = {};
 PlacedOnLeft.args = {};
@@ -136,7 +136,7 @@ const InteractionsTemplate = () => (
       <Tooltip.Trigger>
         <span>Trigger</span>
       </Tooltip.Trigger>
-      <Tooltip.Content side={TOOLTIP_CONTENT_SIDE.right}>
+      <Tooltip.Content side="right">
         <div data-testid="tooltip-content">My Tooltip</div>
       </Tooltip.Content>
     </Tooltip.Root>

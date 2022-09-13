@@ -5,19 +5,6 @@ import type * as WPDS from "@washingtonpost/wpds-theme";
 import { TooltipContentProps as RadixTooltipContentProps } from "@radix-ui/react-tooltip";
 import { getPixelsFromRem } from "./utils";
 
-export const enum TOOLTIP_CONTENT_SIDE {
-  left = "left",
-  right = "right",
-  top = "top",
-  bottom = "bottom",
-}
-
-export const enum TOOLTIP_CONTENT_ALIGN {
-  start = "start",
-  center = "center",
-  end = "end",
-}
-
 const slideUpAndFade = keyframes({
   "0%": { opacity: 0, transform: "translateY(2px)" },
   "100%": { opacity: 1, transform: "translateY(0)" },
@@ -90,10 +77,10 @@ export interface TooltipContentInterface extends ContentCombinedProps {
   /** How far away from the side of the parent should the tooltip be? */
   /** @default theme.space["025"] */
   offsetSide?: number | string | WPDSThemeSpaceObject;
-  /** @default TOOLTIP_CONTENT_SIDE.top */
-  side?: TOOLTIP_CONTENT_SIDE;
-  /** @default TOOLTIP_CONTENT_ALIGN.center */
-  align?: TOOLTIP_CONTENT_ALIGN;
+  /** @default "top"*/
+  side?: "left" | "right" | "top" | "bottom";
+  /** @default "center" */
+  align?: "start" | "center" | "end";
   /** how far away from the center do you want the tooltip to be? */
   /** @default 0 */
   offsetAlign?: number | string | WPDSThemeSpaceObject;
@@ -108,8 +95,8 @@ export const TooltipContent = React.forwardRef<
       children,
       offsetSide = theme.space["025"],
       disabled = false,
-      side = TOOLTIP_CONTENT_SIDE.top,
-      align = TOOLTIP_CONTENT_ALIGN.center,
+      side = "top",
+      align = "center",
       offsetAlign = 0,
       ...props
     }: TooltipContentInterface,
