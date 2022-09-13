@@ -1,5 +1,6 @@
 import * as React from "react";
 import { CSSTransition } from "react-transition-group";
+import { FocusScope } from "@radix-ui/react-focus-scope";
 import { styled, theme } from "@washingtonpost/wpds-theme";
 import type * as WPDS from "@washingtonpost/wpds-theme";
 import { DrawerContext } from "./DrawerRoot";
@@ -124,6 +125,10 @@ interface DrawerContentProps
   height?: number;
   /** Additional class names for inner drawer element */
   innerClassName?: string;
+  /** When `true`, tabbing from last item will focus first tabbable and shift+tab from first item will focus last tababble. @defaultValue true */
+  loopFocus?: boolean;
+  /** When `true`, focus cannot escape the `Content` via keyboard, pointer, or a programmatic focus  @defaultValue false */
+  trapFocus?: boolean;
   /** Width for a left or right positioned drawer  @default 400 */
   width?: number;
 }
@@ -139,35 +144,57 @@ export const DrawerContent = React.forwardRef<
       width = 400,
       position = "bottom",
       innerClassName,
+      loopFocus = true,
+      trapFocus = false,
       ...props
     },
     ref
   ) => {
     const context = React.useContext(DrawerContext);
 
+    function handleEnter() {
+      document.addEventListener("keydown", handleKeyDown);
+    }
+
+    function handleExit() {
+      document.removeEventListener("keydown", handleKeyDown);
+    }
+
+    function handleKeyDown(event) {
+      if (event.key === "Escape") {
+        context.onOpenChange(false);
+      }
+    }
+
     return (
       <CSSTransition
         mountOnEnter
         unmountOnExit
+        onEnter={handleEnter}
+        onExit={handleExit}
         in={context.open}
         timeout={300}
         classNames="wpds-drawer"
       >
-        <StyledContainer
-          id={context.contentId}
-          ref={ref}
-          style={{
-            width:
-              position === "left" || position === "right" ? width : undefined,
-            height:
-              position === "top" || position === "bottom" ? height : undefined,
-            zIndex: context.zIndex as number,
-          }}
-          position={position}
-          {...props}
-        >
-          <StyledInner className={innerClassName}>{children}</StyledInner>
-        </StyledContainer>
+        <FocusScope loop={loopFocus} trapped={trapFocus} asChild>
+          <StyledContainer
+            id={context.contentId}
+            ref={ref}
+            style={{
+              width:
+                position === "left" || position === "right" ? width : undefined,
+              height:
+                position === "top" || position === "bottom"
+                  ? height
+                  : undefined,
+              zIndex: context.zIndex as number,
+            }}
+            position={position}
+            {...props}
+          >
+            <StyledInner className={innerClassName}>{children}</StyledInner>
+          </StyledContainer>
+        </FocusScope>
       </CSSTransition>
     );
   }

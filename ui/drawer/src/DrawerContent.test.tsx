@@ -1,7 +1,21 @@
 import * as React from "react";
 import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { DrawerContent } from "./DrawerContent";
 import { DrawerRoot } from "./DrawerRoot";
+
+jest.mock("react-transition-group", () => {
+  const MocCSSTransition = jest.fn(({ children, ...props }) => {
+    if (props.in) {
+      props.onEnter && props.onEnter();
+      return children;
+    } else if (props.in === false) {
+      props.onExit && props.onExit();
+    }
+    return setTimeout(() => null, 0);
+  });
+  return { CSSTransition: MocCSSTransition };
+});
 
 describe("DrawerContent", () => {
   const customRender = (ui, contextProps) => {
@@ -56,20 +70,30 @@ describe("DrawerContent", () => {
     expect(screen.getByTestId("drawer-content")).toHaveStyle("width: 100px;");
   });
 
-  test("uses the position property to add a class", () => {
-    customRender(
-      <DrawerContent data-testid="drawer-content" position="top">
-        Drawer Content
-      </DrawerContent>,
-      {
-        defaultOpen: true,
-      }
-    );
+  test("adds a key listener to the document after open", () => {
+    const spy = jest.spyOn(document, "addEventListener");
+    customRender(<DrawerContent>Drawer Content</DrawerContent>, {
+      defaultOpen: true,
+    });
+    expect(spy).toHaveBeenCalled();
+  });
 
-    // eslint-disable-next-line jest-dom/prefer-to-have-class
-    expect(screen.getByTestId("drawer-content")).toHaveAttribute(
-      "class",
-      expect.stringContaining("position-top")
-    );
+  test("removes a key listener from the document after close", () => {
+    const spy = jest.spyOn(document, "removeEventListener");
+    customRender(<DrawerContent>Drawer Content</DrawerContent>, {
+      defaultOpen: true,
+    });
+    userEvent.keyboard("{esc}");
+    expect(spy).toHaveBeenCalled();
+  });
+
+  test("closes with esc key", () => {
+    const handleChange = jest.fn();
+    customRender(<DrawerContent>Drawer Content</DrawerContent>, {
+      defaultOpen: true,
+      onOpenChange: handleChange,
+    });
+    userEvent.keyboard("{esc}");
+    expect(handleChange).toHaveBeenCalledWith(false);
   });
 });
