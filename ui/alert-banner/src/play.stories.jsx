@@ -1,6 +1,6 @@
 /* eslint react/prop-types: 0 */
 import * as React from "react";
-import * as AlertBanner from ".";
+import { AlertBanner } from ".";
 import { styled } from "@washingtonpost/wpds-ui-kit";
 
 export default {

@@ -56,6 +56,7 @@
     "@washingtonpost/wpds-radio-group": "0.16.0",
     "@washingtonpost/wpds-scrim": "0.16.0",
     "@washingtonpost/wpds-theme": "0.16.0",
+    "@washingtonpost/wpds-tooltip": "0.16.0",
     "@washingtonpost/wpds-visually-hidden": "0.16.0"
   },
   "devDependencies": {
@@ -87,6 +88,7 @@
     "@washingtonpost/wpds-radio-group": "*",
     "@washingtonpost/wpds-scrim": "*",
     "@washingtonpost/wpds-theme": "*",
+    "@washingtonpost/wpds-tooltip": "*",
     "@washingtonpost/wpds-visually-hidden": "*"
   },
   "gitHead": "dcdf670812681188707d23ae5e5aed42101360ac"
