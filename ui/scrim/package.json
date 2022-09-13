@@ -1,6 +1,6 @@
 {
   "name": "@washingtonpost/wpds-scrim",
-  "version": "0.16.0",
+  "version": "0.17.0",
   "description": "WPDS Scrim",
   "author": "WPDS Support <wpds@washpost.com>",
   "homepage": "https://github.com/washingtonpost/wpds-ui-kit#readme",
@@ -42,7 +42,7 @@
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.0.0",
-    "@washingtonpost/wpds-theme": "*",
+    "@washingtonpost/wpds-theme": "0.17.0",
     "react-transition-group": "^4.4.5"
   }
 }
