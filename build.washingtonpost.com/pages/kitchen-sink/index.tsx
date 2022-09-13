@@ -382,7 +382,7 @@ function HomePage() {
           <Tooltip.Trigger>
             <span>This is a tooltip trigger</span>
           </Tooltip.Trigger>
-          <Tooltip.Content side="right">
+          <Tooltip.Content side={Tooltip.TOOLTIP_CONTENT_SIDE}>
             i want lots of things to go here and for this to get super super
             long and for this to never stop and i want more fries and i want it
             to rain but i also want the sun and i wasnt a vacataions and it
