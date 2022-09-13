@@ -4,15 +4,13 @@ export function useCallbackRef(callback) {
   const callbackRef = React.useRef(callback);
 
   React.useEffect(() => {
-    if (callback) {
-      callbackRef.current = callback;
-    } else {
-      callbackRef.current = () => undefined;
-    }
+    callbackRef.current = callback;
   });
 
   return React.useCallback((...args) => {
-    return callbackRef.current(...args);
+    if (callbackRef.current) {
+      return callbackRef.current(...args);
+    }
   }, []);
 }
 
@@ -33,6 +31,13 @@ export function useUncontrolledState({ defaultProp, onChange }) {
 }
 
 export const useControllableState = ({ prop, defaultProp, onChange }) => {
+  const mounted = React.useRef(false);
+  React.useEffect(() => {
+    mounted.current = true;
+    return function cleanup() {
+      mounted.current = false;
+    };
+  }, []);
   const [uncontrolledProp, setUncontrolledProp] = useUncontrolledState({
     defaultProp,
     onChange,
@@ -49,7 +54,7 @@ export const useControllableState = ({ prop, defaultProp, onChange }) => {
         if (thatValue !== prop) {
           handleChange(thatValue);
         }
-      } else {
+      } else if (mounted.current) {
         setUncontrolledProp(nextValue);
       }
     },

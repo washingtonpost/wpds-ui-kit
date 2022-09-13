@@ -42,6 +42,7 @@
     "@washingtonpost/wpds-checkbox": "0.16.0",
     "@washingtonpost/wpds-container": "0.16.0",
     "@washingtonpost/wpds-divider": "0.16.0",
+    "@washingtonpost/wpds-drawer": "0.16.0",
     "@washingtonpost/wpds-error-message": "0.16.0",
     "@washingtonpost/wpds-fieldset": "0.16.0",
     "@washingtonpost/wpds-helper-text": "0.16.0",
@@ -53,6 +54,7 @@
     "@washingtonpost/wpds-input-textarea": "0.16.0",
     "@washingtonpost/wpds-pagination-dots": "0.16.0",
     "@washingtonpost/wpds-radio-group": "0.16.0",
+    "@washingtonpost/wpds-scrim": "0.16.0",
     "@washingtonpost/wpds-theme": "0.16.0",
     "@washingtonpost/wpds-visually-hidden": "0.16.0"
   },
@@ -83,6 +85,7 @@
     "@washingtonpost/wpds-input-textarea": "*",
     "@washingtonpost/wpds-pagination-dots": "*",
     "@washingtonpost/wpds-radio-group": "*",
+    "@washingtonpost/wpds-scrim": "*",
     "@washingtonpost/wpds-theme": "*",
     "@washingtonpost/wpds-visually-hidden": "*"
   },

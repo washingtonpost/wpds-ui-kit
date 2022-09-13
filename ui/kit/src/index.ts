@@ -1,4 +1,5 @@
 // insert new component exports here
+export * from "@washingtonpost/wpds-scrim";
 export * from "@washingtonpost/wpds-drawer";
 export * from "@washingtonpost/wpds-accordion";
 export * from "@washingtonpost/wpds-pagination-dots";

@@ -36,7 +36,7 @@ type DrawerRootProps = {
   /** callback to respond to open state */
   onOpenChange?: (boolean) => void;
   children: React.ReactNode;
-  /** zIndex of drawer @default theme.zIndices.shell */
+  /** Css z-index of drawer @default theme.zIndices.shell */
   zIndex?:
     | StandardLonghandProperties["zIndex"]
     | Token<"shell", string, "zIndices", "wpds">;
