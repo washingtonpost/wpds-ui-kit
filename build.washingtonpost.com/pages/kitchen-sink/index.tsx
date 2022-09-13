@@ -19,6 +19,7 @@ import {
   Avatar,
   PaginationDots,
   Drawer,
+  Tooltip,
 } from "@washingtonpost/wpds-ui-kit";
 import Chart from "@washingtonpost/wpds-assets/asset/chart";
 import Settings from "@washingtonpost/wpds-assets/asset/settings";
@@ -375,6 +376,20 @@ function HomePage() {
         </Drawer.Content>
         <Drawer.Scrim />
       </Drawer.Root>
+      <h2>Tooltip</h2>
+      <Tooltip.Provider>
+        <Tooltip.Root defaultOpen={true}>
+          <Tooltip.Trigger>
+            <span>This is a tooltip trigger</span>
+          </Tooltip.Trigger>
+          <Tooltip.Content side="right">
+            i want lots of things to go here and for this to get super super
+            long and for this to never stop and i want more fries and i want it
+            to rain but i also want the sun and i wasnt a vacataions and it
+            doesn't matter if this is misspelled or whatverer.
+          </Tooltip.Content>
+        </Tooltip.Root>
+      </Tooltip.Provider>
     </>
   );
 }
