@@ -33,7 +33,7 @@ const Template = (args) => (
       <Tooltip.Trigger asChild>
         <img
           src="https://i.pravatar.cc/100?u=test-user@wapo.com"
-          alt="An avatar is an atomic component that represents an individual’s identity through a circular photo."
+          alt="avatar image"
         />
       </Tooltip.Trigger>
       <Tooltip.Content {...args}>
@@ -69,7 +69,7 @@ const TemplateLeft = (args) => (
       <Tooltip.Trigger asChild>
         <img
           src="https://i.pravatar.cc/100?u=test-user@wapo.com"
-          alt="An avatar is an atomic component that represents an individual’s identity through a circular photo."
+          alt="avatar image"
         />
       </Tooltip.Trigger>
       <Tooltip.Content side={TOOLTIP_CONTENT_SIDE.left} {...args}>
