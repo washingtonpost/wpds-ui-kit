@@ -47,6 +47,8 @@ export const getContributors = async () => {
         avatar: "https://avatars.githubusercontent.com/u/4473245?v=4",
         url: "https://github.com/unconstruct",
       })
+      // sort alphabetically
+      .sort((a, b) => (a.name > b.name ? 1 : -1))
       .filter((contributor) => {
         return !contributor?.name?.includes("bot");
       })
