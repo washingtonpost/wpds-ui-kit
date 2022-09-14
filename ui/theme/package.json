@@ -1,6 +1,6 @@
 {
   "name": "@washingtonpost/wpds-theme",
-  "version": "0.16.0",
+  "version": "0.17.0",
   "description": "WPDS Theme and System",
   "author": "WPDS Support <wpds@washpost.com>",
   "homepage": "https://github.com/washingtonpost/wpds-ui-kit#readme",
@@ -34,11 +34,8 @@
   "bugs": {
     "url": "https://github.com/washingtonpost/wpds-ui-kit/issues"
   },
-  "peerDependencies": {
-    "@stitches/react": "*"
-  },
   "dependencies": {
-    "@stitches/react": "*"
+    "@stitches/react": "^1.2.8"
   },
   "devDependencies": {
     "tsup": "^5.11.13",

@@ -217,8 +217,6 @@ export const AlertBanner = {
   Content,
 };
 
-export { Root, Trigger, Content };
-
 export type {
   AlertBannerProps,
   AlertBannerTriggerProps,
