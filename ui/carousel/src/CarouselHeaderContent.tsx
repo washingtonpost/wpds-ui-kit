@@ -2,30 +2,30 @@ import * as React from "react";
 import { styled, theme } from "@washingtonpost/wpds-theme";
 import type * as WPDS from "@washingtonpost/wpds-theme";
 
-const NAME = "CarouselRoot";
+const NAME = "CarouselHeaderContent";
 
 const Container = styled("div", {
   border: `1px dotted ${theme.colors.accessible}`,
+  color: theme.colors.primary,
+  flex: "1",
   padding: theme.space["025"],
-  maxWidth: "100%",
   "&:before": {
     color: theme.colors.accessible,
     display: "block",
     content: NAME,
     fontSize: theme.fontSizes["075"],
-    marginBlockEnd: theme.space["025"],
   },
 });
 
-export type CarouselRootProps = {
+export type CarouselHeaderContentProps = {
   css?: WPDS.CSS;
 };
 
-export const CarouselRoot: React.FC<CarouselRootProps> = ({
+export const CarouselHeaderContent: React.FC<CarouselHeaderContentProps> = ({
   children,
   ...props
 }) => {
   return <Container {...props}>{children}</Container>;
 };
 
-CarouselRoot.displayName = NAME;
+CarouselHeaderContent.displayName = NAME;

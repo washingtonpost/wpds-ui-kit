@@ -40,12 +40,14 @@
     "@washingtonpost/wpds-theme": "*",
     "@washingtonpost/wpds-button": "*",
     "@washingtonpost/wpds-icon": "*",
+    "@washingtonpost/wpds-pagination-dots": "*",
     "react": "^16.8.6 || ^17.0.2"
   },
   "dependencies": {
     "@washingtonpost/wpds-theme": "0.17.0",
     "@washingtonpost/wpds-button": "0.17.0",
     "@washingtonpost/wpds-icon": "0.17.0",
+    "@washingtonpost/wpds-pagination-dots": "0.17.0",
     "@washingtonpost/wpds-assets": "^1.12.0"
   }
 }

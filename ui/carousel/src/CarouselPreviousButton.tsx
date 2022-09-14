@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Button } from "@washingtonpost/wpds-button";
 import { Icon } from "@washingtonpost/wpds-icon";
-import { ChevronLeft } from "@washingtonpost/wpds-assets/";
+import { ArrowLeft } from "@washingtonpost/wpds-assets/";
 import type * as WPDS from "@washingtonpost/wpds-theme";
 
 const NAME = "CarouselPreviousButton";
@@ -22,15 +22,15 @@ export const CarouselPreviousButton: React.FC<CarouselPreviousButtonProps> = ({
 
   return (
     <Button
-      {...props}
-      css={{ ...css, display: "inline-flex" }}
+      css={{ display: "inline-flex", ...css }}
       onClick={handleClick}
       density="compact"
       icon="center"
       variant="primary"
+      {...props}
     >
       <Icon label="Previous" size="100">
-        <ChevronLeft />
+        <ArrowLeft />
       </Icon>
     </Button>
   );
