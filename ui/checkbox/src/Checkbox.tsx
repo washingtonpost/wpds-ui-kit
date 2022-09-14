@@ -221,9 +221,7 @@ const StyledIndicator = styled(PrimitiveCheckbox.Indicator, {
   },
 });
 
-type CheckboxVariants = React.ComponentPropsWithRef<typeof StyledCheckbox>;
-
-interface CheckboxInterface extends CheckboxVariants {
+type CheckboxInterface = React.ComponentPropsWithRef<typeof StyledCheckbox> & {
   defaultChecked?: boolean | "indeterminate";
   checked?: boolean | "indeterminate";
   onCheckedChange?: (checked: boolean | "indeterminate") => void;
@@ -233,7 +231,7 @@ interface CheckboxInterface extends CheckboxVariants {
   value?: string;
   id?: string;
   label?: string;
-}
+};
 
 const StyledCheck = styled("span", {
   flex: "0 0 $$checkSize",
