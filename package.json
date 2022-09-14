@@ -100,6 +100,7 @@
     "@babel/standalone": "^7.17.11",
     "@codesandbox/sandpack-react": "^1.3.2",
     "@docsearch/react": "^3.0.0",
+    "@octokit/core": "^4.0.5",
     "@radix-ui/react-accordion": "latest",
     "@radix-ui/react-avatar": "latest",
     "@radix-ui/react-checkbox": "latest",
@@ -132,7 +133,7 @@
     "@washingtonpost/wpds-input-textarea": "*",
     "@washingtonpost/wpds-radio-group": "*",
     "@washingtonpost/wpds-theme": "*",
-    "@washingtonpost/wpds-ui-kit": "*",
+    "@washingtonpost/wpds-ui-kit": "^0.16.0",
     "@washingtonpost/wpds-visually-hidden": "*",
     "fuse.js": "^6.6.2",
     "gray-matter": "^4.0.2",
@@ -171,7 +172,7 @@
     "new-component": "make new-component",
     "lint": "eslint --ext .ts,.tsx ui/",
     "clean": "turbo run clean && rm -rf node_modules",
-    "dev": "turbo run dev --no-cache --parallel --continue"
+    "dev": "turbo run dev --no-cache --continue"
   },
   "prettier": {},
   "jest": {
