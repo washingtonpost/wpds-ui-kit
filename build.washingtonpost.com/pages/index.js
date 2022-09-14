@@ -1,8 +1,7 @@
 import React from "react";
 import { Box, styled, theme, Divider } from "@washingtonpost/wpds-ui-kit";
-import { Octokit } from "@octokit/core";
 
-import { getAllDocs, getNavigation } from "~/services";
+import { getAllDocs, getNavigation, getContributors } from "~/services";
 import { Header } from "~/components/Markdown/Components/headers";
 import { List, ListItem } from "~/components/Markdown/Components/list";
 import {
@@ -379,39 +378,7 @@ export async function getStaticProps() {
     ...sortByRank(guides, 2),
   ];
 
-  /**
-   * get a list of repo's contributors
-   */
-
-  const getListOfContributors = async () => {
-    const octokit = new Octokit({
-      auth: process.env.GITHUB_TOKEN,
-    });
-
-    const response = await octokit.request(
-      "GET /repos/{owner}/{repo}/contributors",
-      {
-        owner: "washingtonpost",
-        repo: "wpds-ui-kit",
-      }
-    );
-
-    return response.data;
-  };
-
-  const contributors = await getListOfContributors().then((data) => {
-    return data
-      .map((contributor) => {
-        return {
-          name: contributor?.login,
-          avatar: contributor?.avatar_url,
-          url: contributor?.html_url,
-        };
-      })
-      .filter((contributor) => {
-        return !contributor?.name?.includes("bot");
-      });
-  });
+  const contributors = await getContributors();
 
   return {
     props: { recentPosts, rankedArticles, navigation, contributors },
