@@ -14,9 +14,9 @@ updates:
     ignore:
       - dependency-name: "@washingtonpost*"
     versioning-strategy: "auto"
-    open-pull-requests-limit: 10
+    open-pull-requests-limit: 3
     schedule:
-      interval: "daily"
+      interval: "weekly"
     pull-request-branch-name:
       separator: "-"
   # Inner sourcing - daily, takes priority, bumps package.json
