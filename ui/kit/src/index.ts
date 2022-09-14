@@ -1,4 +1,5 @@
 // insert new component exports here
+export * from "@washingtonpost/wpds-carousel";
 export * from "@washingtonpost/wpds-tooltip";
 export * from "@washingtonpost/wpds-scrim";
 export * from "@washingtonpost/wpds-drawer";
