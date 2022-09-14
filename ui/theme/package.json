@@ -34,11 +34,8 @@
   "bugs": {
     "url": "https://github.com/washingtonpost/wpds-ui-kit/issues"
   },
-  "peerDependencies": {
-    "@stitches/react": "*"
-  },
   "dependencies": {
-    "@stitches/react": "*"
+    "@stitches/react": "^1.2.8"
   },
   "devDependencies": {
     "tsup": "^5.11.13",
