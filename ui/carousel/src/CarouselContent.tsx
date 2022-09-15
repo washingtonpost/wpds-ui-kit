@@ -34,10 +34,12 @@ export const CarouselContent = React.forwardRef<
   CarouselContentProps
 >(({ children, ...props }, ref) => {
   const { setTotalPages } = React.useContext(CarouselContext);
+
   React.useEffect(() => {
     const totalPages = React.Children.count(children);
     setTotalPages(totalPages);
   }, [children, setTotalPages]);
+
   return (
     <Container {...props} ref={ref}>
       {children}
