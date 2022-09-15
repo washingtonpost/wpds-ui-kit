@@ -9,6 +9,7 @@ type CarouselContextProps = {
   setPage: (page: number) => void;
   totalPages?: number;
   setTotalPages: React.Dispatch<React.SetStateAction<number | undefined>>;
+  slidesPerPage: number;
 };
 
 export const CarouselContext = React.createContext({} as CarouselContextProps);
@@ -38,6 +39,7 @@ export type CarouselRootProps = {
   itemsPerPage?: number;
   /** callback for page change */
   onPageChange?: () => void;
+  slidesPerPage?: number;
   /* TODO :: do we need these?
   onScroll={event => {}}        // default `undefined`
   onDragScroll={event => {}}    // default `undefined`
@@ -47,7 +49,14 @@ export type CarouselRootProps = {
 
 export const CarouselRoot = React.forwardRef<HTMLDivElement, CarouselRootProps>(
   (
-    { page: pageProp = 0, defaultPage, onPageChange, children, ...props },
+    {
+      page: pageProp = 0,
+      defaultPage,
+      onPageChange,
+      slidesPerPage = 1,
+      children,
+      ...props
+    },
     ref
   ) => {
     const [page, setPage] = useControllableState({
@@ -58,7 +67,7 @@ export const CarouselRoot = React.forwardRef<HTMLDivElement, CarouselRootProps>(
     const [totalPages, setTotalPages] = React.useState<number>();
     return (
       <CarouselContext.Provider
-        value={{ page, setPage, totalPages, setTotalPages }}
+        value={{ page, setPage, totalPages, setTotalPages, slidesPerPage }}
       >
         <Container {...props} ref={ref}>
           {children}
