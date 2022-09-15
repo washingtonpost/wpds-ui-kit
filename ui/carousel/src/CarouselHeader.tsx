@@ -5,33 +5,23 @@ import type * as WPDS from "@washingtonpost/wpds-theme";
 const NAME = "CarouselHeader";
 
 const Container = styled("div", {
-  border: `1px dotted ${theme.colors.accessible}`,
-  color: theme.colors.primary,
   display: "flex",
-  alignItems: "stretch",
-  padding: theme.space["025"],
-  paddingTop: theme.space["150"],
-  position: "relative",
-  "&:before": {
-    color: theme.colors.accessible,
-    display: "block",
-    content: NAME,
-    fontSize: theme.fontSizes["075"],
-    position: "absolute",
-    insetBlockStart: theme.space["025"],
-    insetInlineStart: theme.space["025"],
-  },
+  marginBlockEnd: theme.space["100"],
 });
 
 export type CarouselHeaderProps = {
   css?: WPDS.CSS;
-};
+} & React.ComponentPropsWithRef<typeof Container>;
 
-export const CarouselHeader: React.FC<CarouselHeaderProps> = ({
-  children,
-  ...props
-}) => {
-  return <Container {...props}>{children}</Container>;
-};
+export const CarouselHeader = React.forwardRef<
+  HTMLDivElement,
+  CarouselHeaderProps
+>(({ children, ...props }, ref) => {
+  return (
+    <Container {...props} ref={ref}>
+      {children}
+    </Container>
+  );
+});
 
 CarouselHeader.displayName = NAME;
