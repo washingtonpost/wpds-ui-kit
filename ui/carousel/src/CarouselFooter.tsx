@@ -6,9 +6,12 @@ const NAME = "CarouselFooter";
 
 const Container = styled("div", {
   border: `1px dotted ${theme.colors.accessible}`,
+  backgroundImage:
+    "linear-gradient(90deg, transparent, transparent 50%, rgb(255 0 0) 50%, rgb(255 0 0) calc(50% + 1px), transparent calc(50% + 1px))",
+  backgroundRepeat: "no-repeat",
   color: theme.colors.primary,
   display: "flex",
-  alignItems: "center",
+  justifyContent: "center",
   padding: theme.space["025"],
   paddingTop: theme.space["150"],
   position: "relative",

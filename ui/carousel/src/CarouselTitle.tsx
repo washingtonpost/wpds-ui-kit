@@ -4,28 +4,25 @@ import type * as WPDS from "@washingtonpost/wpds-theme";
 
 const NAME = "CarouselTitle";
 
-const Container = styled("div", {
-  border: `1px dotted ${theme.colors.accessible}`,
+const StyledHeading = styled("h2", {
   color: theme.colors.primary,
-  padding: theme.space["025"],
-  "&:before": {
-    color: theme.colors.accessible,
-    display: "block",
-    content: NAME,
-    fontSize: theme.fontSizes["075"],
-    marginBlockEnd: theme.space["025"],
-  },
+  fontSize: theme.fontSizes["150"],
+  marginBlock: 0,
 });
 
 export type CarouselTitleProps = {
   css?: WPDS.CSS;
-};
+} & React.ComponentPropsWithRef<typeof StyledHeading>;
 
-export const CarouselTitle: React.FC<CarouselTitleProps> = ({
-  children,
-  ...props
-}) => {
-  return <Container {...props}>{children}</Container>;
-};
+export const CarouselTitle = React.forwardRef<
+  HTMLHeadingElement,
+  CarouselTitleProps
+>(({ children, ...props }, ref) => {
+  return (
+    <StyledHeading ref={ref} {...props}>
+      {children}
+    </StyledHeading>
+  );
+});
 
 CarouselTitle.displayName = NAME;

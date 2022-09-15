@@ -8,7 +8,7 @@ const Container = styled("div", {
   border: `1px dotted ${theme.colors.accessible}`,
   color: theme.colors.primary,
   display: "flex",
-  alignItems: "center",
+  alignItems: "stretch",
   padding: theme.space["025"],
   paddingTop: theme.space["150"],
   position: "relative",
