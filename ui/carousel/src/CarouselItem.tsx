@@ -9,6 +9,7 @@ const Container = styled("div", {
   color: theme.colors.primary,
   padding: theme.space["025"],
   width: "200px",
+  height: "150px",
   flexShrink: "0",
   "&:before": {
     color: theme.colors.accessible,

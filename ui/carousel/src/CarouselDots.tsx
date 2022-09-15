@@ -1,21 +1,32 @@
 import * as React from "react";
 import { PaginationDots } from "@washingtonpost/wpds-pagination-dots";
-import type * as WPDS from "@washingtonpost/wpds-theme";
+import { CarouselContext } from "./CarouselRoot";
 
 const NAME = "CarouselDots";
 
-export type CarouselDotsProps = {
-  index?: number;
-  amount?: number;
-  css?: WPDS.CSS;
-};
+export type CarouselDotsProps = Omit<
+  React.ComponentPropsWithRef<typeof PaginationDots>,
+  "index" | "amount"
+>;
 
-export const CarouselDots: React.FC<CarouselDotsProps> = ({
-  index = 0,
-  amount = 3,
-  ...props
-}) => {
-  return <PaginationDots index={index} amount={amount} {...props} />;
-};
+export const CarouselDots = React.forwardRef<HTMLDivElement, CarouselDotsProps>(
+  ({ css, ...props }, ref) => {
+    const { page, totalPages } = React.useContext(CarouselContext);
+    return (
+      <PaginationDots
+        ref={ref}
+        index={page + 1 || 1}
+        amount={totalPages || 1}
+        css={{
+          position: "static",
+          marginBlockStart: 0,
+          transform: "none",
+          ...css,
+        }}
+        {...props}
+      />
+    );
+  }
+);
 
 CarouselDots.displayName = NAME;

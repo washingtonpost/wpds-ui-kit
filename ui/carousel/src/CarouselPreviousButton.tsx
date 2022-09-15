@@ -2,22 +2,25 @@ import * as React from "react";
 import { Button } from "@washingtonpost/wpds-button";
 import { Icon } from "@washingtonpost/wpds-icon";
 import { ArrowLeft } from "@washingtonpost/wpds-assets/";
-import type * as WPDS from "@washingtonpost/wpds-theme";
+import { CarouselContext } from "./CarouselRoot";
 
 const NAME = "CarouselPreviousButton";
 
-export type CarouselPreviousButtonProps = {
-  css?: WPDS.CSS;
-  onClick?: () => void;
-};
+export type CarouselPreviousButtonProps = React.ComponentPropsWithRef<
+  typeof Button
+>;
 
-export const CarouselPreviousButton: React.FC<CarouselPreviousButtonProps> = ({
-  onClick,
-  css,
-  ...props
-}) => {
-  const handleClick = () => {
-    onClick && onClick();
+export const CarouselPreviousButton = React.forwardRef<
+  HTMLButtonElement,
+  CarouselPreviousButtonProps
+>(({ onClick, css, ...props }) => {
+  const { page, setPage, totalPages } = React.useContext(CarouselContext);
+
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    if (totalPages && page > 0) {
+      setPage(page - 1);
+      onClick && onClick(event);
+    }
   };
 
   return (
@@ -34,6 +37,6 @@ export const CarouselPreviousButton: React.FC<CarouselPreviousButtonProps> = ({
       </Icon>
     </Button>
   );
-};
+});
 
 CarouselPreviousButton.displayName = NAME;
