@@ -1,4 +1,5 @@
 import * as React from "react";
+import { theme } from "@washingtonpost/wpds-theme";
 import { Carousel as Component } from "./";
 
 export default {
@@ -20,7 +21,13 @@ export default {
 
 const Template = (args) => {
   const [page, setPage] = React.useState(0);
-
+  const items = [
+    theme.colors.red400,
+    theme.colors.orange400,
+    theme.colors.gold400,
+    theme.colors.green400,
+    theme.colors.blue400,
+  ];
   return (
     <Component.Root
       {...args}
@@ -40,11 +47,22 @@ const Template = (args) => {
         </Component.HeaderActions>
       </Component.Header>
       <Component.Content>
-        <Component.Item>0</Component.Item>
-        <Component.Item>1</Component.Item>
-        <Component.Item>2</Component.Item>
-        <Component.Item>3</Component.Item>
-        <Component.Item>4</Component.Item>
+        {items.map((item, i) => (
+          <Component.Item key={item}>
+            <div
+              style={{
+                width: "150px",
+                height: "200px",
+                backgroundColor: item,
+                borderRadius: theme.radii["025"],
+                marginInlineEnd: theme.space["050"],
+                padding: theme.space["050"],
+              }}
+            >
+              {i + 1}
+            </div>
+          </Component.Item>
+        ))}
       </Component.Content>
       <Component.Footer>
         <Component.Dots />
