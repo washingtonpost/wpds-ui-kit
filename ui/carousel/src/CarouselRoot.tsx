@@ -5,7 +5,7 @@ import { useControllableState } from "@radix-ui/react-use-controllable-state";
 import type * as WPDS from "@washingtonpost/wpds-theme";
 
 type CarouselContextProps = {
-  page?: number;
+  page: number;
   setPage: (page: number) => void;
   totalPages?: number;
   setTotalPages: React.Dispatch<React.SetStateAction<number | undefined>>;
@@ -58,11 +58,12 @@ export const CarouselRoot = React.forwardRef<HTMLDivElement, CarouselRootProps>(
     },
     ref
   ) => {
-    const [page, setPage] = useControllableState({
+    const [page = 0, setPage] = useControllableState({
       prop: pageProp,
       defaultProp: defaultPage,
       onChange: onPageChange,
     });
+
     const [totalPages, setTotalPages] = React.useState<number>();
     return (
       <CarouselContext.Provider
