@@ -32,8 +32,8 @@ const getItemsShownPerPage = (
 
 export const CarouselItem = React.forwardRef<HTMLDivElement, CarouselItemProps>(
   ({ children, ...props }, ref) => {
-    const { slidesPerPage, totalPages } = React.useContext(CarouselContext);
-    const itemsShownPerPage = getItemsShownPerPage(slidesPerPage, totalPages);
+    const { itemsPerPage, totalPages } = React.useContext(CarouselContext);
+    const itemsShownPerPage = getItemsShownPerPage(itemsPerPage, totalPages);
 
     return (
       <Container
