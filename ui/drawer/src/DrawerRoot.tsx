@@ -1,6 +1,6 @@
 import * as React from "react";
 import { theme } from "@washingtonpost/wpds-theme";
-import { useControllableState } from "./hooks";
+import { useControllableState } from "@radix-ui/react-use-controllable-state";
 
 import type { Token } from "@stitches/react/types/theme";
 import type { StandardLonghandProperties } from "@stitches/react/types/css";
@@ -8,7 +8,7 @@ import type { StandardLonghandProperties } from "@stitches/react/types/css";
 interface DrawerContextInterface {
   triggerRef: React.RefObject<HTMLButtonElement>;
   contentId: string;
-  open: boolean;
+  open: boolean | undefined;
   defaultOpen: boolean | undefined;
   zIndex:
     | StandardLonghandProperties["zIndex"]
@@ -18,17 +18,19 @@ interface DrawerContextInterface {
 
 export const DrawerContext = React.createContext({} as DrawerContextInterface);
 
-type OpenOrDefaultOpen =
-  | {
-      /** controlled drawer open state, used with onOpenChange */
-      open: boolean;
-      defaultOpen?: never;
-    }
-  | {
-      open?: never;
-      /** uncontrolled drawer open on mount */
-      defaultOpen?: boolean;
-    };
+type Controlled = {
+  /** controlled drawer open state, used with onOpenChange */
+  open: boolean;
+  defaultOpen?: never;
+};
+
+type Uncontrolled = {
+  open?: never;
+  /** uncontrolled drawer open on mount */
+  defaultOpen?: boolean;
+};
+
+type ControlledOrUncontrolled = Controlled | Uncontrolled;
 
 type DrawerRootProps = {
   /** content id used for a11y */
@@ -40,7 +42,7 @@ type DrawerRootProps = {
   zIndex?:
     | StandardLonghandProperties["zIndex"]
     | Token<"shell", string, "zIndices", "wpds">;
-} & OpenOrDefaultOpen;
+} & ControlledOrUncontrolled;
 
 export const DrawerRoot: React.FC<DrawerRootProps> = ({
   onOpenChange,
