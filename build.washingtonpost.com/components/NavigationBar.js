@@ -198,6 +198,13 @@ export const NavigationBar = ({ setMobileMenu, mobileMenuState, isClosed }) => {
             </Anchor>
           </Link>
         </ListItem>
+        <ListItem>
+          <Link href="/resources" passHref>
+            <Anchor isCurrent={router.asPath.includes("/resources")}>
+              Resources
+            </Anchor>
+          </Link>
+        </ListItem>
         <ListItem css={{ margin: "0 $100 0 0" }}>
           <Link href="/support" passHref>
             <Anchor isCurrent={router.asPath.includes("/support")}>

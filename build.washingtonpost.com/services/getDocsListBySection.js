@@ -93,9 +93,7 @@ export const getResourcesCategories = async (input) => {
       const source = fs.readFileSync(filePath);
       const { content, data } = matter(source);
       if (!kickers.includes(data.kicker)) {
-        console.log({ kickers });
         kickers.push(data.kicker);
-        console.log(kickers);
 
         const slug = `/${input}/${data.kicker.toLowerCase()}`;
         return {
@@ -105,7 +103,6 @@ export const getResourcesCategories = async (input) => {
           slug,
         };
       } else {
-        console.log("here");
         return null;
       }
     })

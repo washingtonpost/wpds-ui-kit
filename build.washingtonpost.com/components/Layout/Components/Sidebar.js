@@ -2,8 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { styled, theme } from "@washingtonpost/wpds-ui-kit";
 import Header from "../../Typography/Headers";
-import * as Accordion from "@radix-ui/react-accordion";
-import ChevronDown from "@washingtonpost/wpds-assets/asset/chevron-down";
+import { Accordion } from "@washingtonpost/wpds-ui-kit";
 import { useRouter } from "next/router";
 import { Change } from "~/components/Markdown/Styling";
 
@@ -81,13 +80,6 @@ const AccordionLabel = styled("span", {
   fontWeight: "$bold",
   color: "$primary",
   flex: 1,
-});
-
-const AccordionChevron = styled(ChevronDown, {
-  height: 16,
-  fill: theme.colors.accessible,
-  transition: "transform 300ms",
-  "[data-state=open] &": { transform: "rotate(180deg)" },
 });
 
 //List in sidebars Accordion Content
@@ -236,7 +228,7 @@ export default function Sidebar({ navigation, setMobileMenu }) {
             return (
               <StyledAccordionRoot
                 key={index}
-                defaultValue={nav.category}
+                defaultValue={"Components"}
                 type="single"
                 collapsible
               >
@@ -244,7 +236,6 @@ export default function Sidebar({ navigation, setMobileMenu }) {
                   <AccordionHeader>
                     <AccordionTrigger>
                       <AccordionLabel>{nav.category}</AccordionLabel>
-                      <AccordionChevron aria-hidden />
                     </AccordionTrigger>
                   </AccordionHeader>
                   <Accordion.Content>
