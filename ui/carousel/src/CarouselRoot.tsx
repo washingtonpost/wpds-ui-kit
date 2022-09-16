@@ -1,8 +1,8 @@
 import * as React from "react";
 import { styled, theme } from "@washingtonpost/wpds-theme";
+import { useControllableState } from "@radix-ui/react-use-controllable-state";
+
 import type * as WPDS from "@washingtonpost/wpds-theme";
-/* TODO: Refactor to lift this up into a shared lib */
-import { useControllableState } from "./hooks";
 
 type CarouselContextProps = {
   page: number;
