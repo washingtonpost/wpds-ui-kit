@@ -13,7 +13,7 @@ export type CarouselPreviousButtonProps = React.ComponentPropsWithRef<
 export const CarouselPreviousButton = React.forwardRef<
   HTMLButtonElement,
   CarouselPreviousButtonProps
->(({ onClick, css, ...props }) => {
+>(({ onClick, css, ...props }, ref) => {
   const { page, setPage, totalPages } = React.useContext(CarouselContext);
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -31,6 +31,7 @@ export const CarouselPreviousButton = React.forwardRef<
       icon="center"
       variant="primary"
       {...props}
+      ref={ref}
     >
       <Icon label="Previous" size="100">
         <ArrowLeft />
