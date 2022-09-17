@@ -7,7 +7,6 @@ import { useRouter } from "next/router";
 import { Change } from "~/components/Markdown/Styling";
 
 const StyledAccordionRoot = styled(Accordion.Root, {
-  marginBottom: "$150",
   "@sm": {
     marginBottom: "0",
   },
@@ -27,7 +26,7 @@ const Panel = styled("div", {
 
 //Container
 const Container = styled("div", {
-  padding: "$100 0",
+  // padding: "$100 0",
   overflowY: "auto",
   height: "90%",
   // style the scrollbar
@@ -45,7 +44,6 @@ const Container = styled("div", {
   "@md": { marginTop: "0" },
   "@notSm": {
     width: "300px",
-    // position: "fixed",
   },
   "@sm": {
     paddingBottom: 0,
@@ -54,9 +52,9 @@ const Container = styled("div", {
 
 const AccordionHeader = styled(Accordion.Header, {
   width: "100%",
+  backgroundColor: theme.colors.gray500,
   justifySelf: "flex-start",
   marginBlock: 0,
-  padding: "$050 0 $050 $125",
   "@sm": {
     cursor: "pointer",
   },
@@ -72,21 +70,33 @@ const AccordionTrigger = styled(Accordion.Trigger, {
   paddingInlineEnd: "$150",
   backgroundColor: "transparent",
   textAlign: "left",
+  backgroundColor: theme.colors.gray500,
 });
 
 const AccordionLabel = styled("span", {
   fontFamily: "$meta",
+  paddingLeft: "$100",
   fontSize: "$100",
   fontWeight: "$bold",
   color: "$primary",
   flex: 1,
 });
 
+const AccordionContent = styled(Accordion.Content, {
+  backgroundColor: theme.colors.gray500,
+  paddingRight: "0px",
+});
+
+const AccordionItem = styled(Accordion.Item, {
+  border: "none",
+});
+
 //List in sidebars Accordion Content
 const SideBarList = styled("ul", {
   listStyle: "none",
-  paddingLeft: "0",
+  padding: "0px",
   marginBlock: "0",
+  backgroundColor: theme.colors.gray500,
 });
 
 const ListItem = styled("li", {
@@ -232,13 +242,13 @@ export default function Sidebar({ navigation, setMobileMenu }) {
                 type="single"
                 collapsible
               >
-                <Accordion.Item value={nav.category}>
+                <AccordionItem value={nav.category}>
                   <AccordionHeader>
-                    <AccordionTrigger>
+                    <AccordionTrigger density={"compact"}>
                       <AccordionLabel>{nav.category}</AccordionLabel>
                     </AccordionTrigger>
                   </AccordionHeader>
-                  <Accordion.Content>
+                  <AccordionContent>
                     <SideBarList>
                       {nav.sortItems ? (
                         <SortedList
@@ -300,8 +310,8 @@ export default function Sidebar({ navigation, setMobileMenu }) {
                         </>
                       )}
                     </SideBarList>
-                  </Accordion.Content>
-                </Accordion.Item>
+                  </AccordionContent>
+                </AccordionItem>
               </StyledAccordionRoot>
             );
           })}
