@@ -15,16 +15,16 @@ export type CarouselItemProps = {
 
 const getItemsShownPerPage = (
   slidesPerPage: number,
-  totalPages: number | undefined
+  totalItems: number | undefined
 ): number => {
   // make sure we always show at least one item
-  if (slidesPerPage < 1 || totalPages === undefined) {
+  if (slidesPerPage < 1 || totalItems === undefined) {
     return 1;
   }
 
   // don't show more than the amount of pages we have
-  if (slidesPerPage > totalPages) {
-    return totalPages;
+  if (slidesPerPage > totalItems) {
+    return totalItems;
   }
 
   return slidesPerPage;
@@ -33,9 +33,9 @@ const getItemsShownPerPage = (
 export const CarouselItem = React.forwardRef<HTMLDivElement, CarouselItemProps>(
   ({ children, ...props }, ref) => {
     const [translateVal, setTranslateVal] = useState(0);
-    const { itemsPerPage, totalPages, page } =
+    const { itemsPerPage, totalItems, page } =
       React.useContext(CarouselContext);
-    const itemsShownPerPage = getItemsShownPerPage(itemsPerPage, totalPages);
+    const itemsShownPerPage = getItemsShownPerPage(itemsPerPage, totalItems);
 
     useEffect(() => {
       setTranslateVal(page * itemsPerPage * 100);
