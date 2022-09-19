@@ -10,6 +10,8 @@ type CarouselContextProps = {
   totalPages?: number;
   setTotalPages: React.Dispatch<React.SetStateAction<number | undefined>>;
   itemsPerPage: number;
+  totalItems: number;
+  setTotalItems: (items: number) => void;
 };
 
 export const CarouselContext = React.createContext({} as CarouselContextProps);
@@ -65,9 +67,18 @@ export const CarouselRoot = React.forwardRef<HTMLDivElement, CarouselRootProps>(
     });
 
     const [totalPages, setTotalPages] = React.useState<number>();
+    const [totalItems, setTotalItems] = React.useState<number>(0);
     return (
       <CarouselContext.Provider
-        value={{ page, setPage, totalPages, setTotalPages, itemsPerPage }}
+        value={{
+          page,
+          setPage,
+          totalPages,
+          setTotalPages,
+          itemsPerPage,
+          totalItems,
+          setTotalItems,
+        }}
       >
         <Container {...props} ref={ref}>
           {children}
