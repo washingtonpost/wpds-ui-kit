@@ -26,7 +26,13 @@ const Template = (args) => {
     theme.colors.orange400,
     theme.colors.gold400,
     theme.colors.green400,
-    theme.colors.blue400,
+    theme.colors.pink400,
+    theme.colors.purple400,
+    theme.colors.teal400,
+    theme.colors.mustard400,
+    theme.colors.yellow600,
+    theme.colors.pink80,
+    theme.colors.purple40,
   ];
   return (
     <Component.Root
