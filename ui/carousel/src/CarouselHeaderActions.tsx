@@ -7,6 +7,9 @@ const NAME = "CarouselHeaderActions";
 const Container = styled("div", {
   display: "flex",
   gap: theme.space["025"],
+  "@sm": {
+    display: "none",
+  },
 });
 
 export type CarouselHeaderActionsProps = {
