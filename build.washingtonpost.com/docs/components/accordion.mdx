@@ -41,10 +41,10 @@ export default function Example() {
     >
       <Accordion.Root type={ACCORDION_TYPE.single} collapsible={true}>
         <Accordion.Item value={"item-1"}>
-          <Accordion.Trigger>
+          <Accordion.Trigger css={{ background: theme.colors.gray700 }}>
             Here's some sample text for an accordion header item
           </Accordion.Trigger>
-          <Accordion.Content>
+          <Accordion.Content css={{ background: theme.colors.gray700 }}>
             No! You don't even believe that! Gus has cameras everywhere, please.
             Listen to yourself! No, he has known everything, all along. Where
             were you today? In the lab? And you don't think it's possible that
@@ -78,10 +78,13 @@ export default function Example() {
     >
       <Accordion.Root type={ACCORDION_TYPE.single} collapsible={true}>
         <Accordion.Item value={"item-1"}>
-          <Accordion.Trigger density={ACCORDION_DENSITY.compact}>
+          <Accordion.Trigger
+            css={{ background: theme.colors.gray700 }}
+            density={ACCORDION_DENSITY.compact}
+          >
             Here's some sample text for an accordion header item
           </Accordion.Trigger>
-          <Accordion.Content>
+          <Accordion.Content css={{ background: theme.colors.gray700 }}>
             No! You don't even believe that! Gus has cameras everywhere, please.
             Listen to yourself! No, he has known everything, all along. Where
             were you today? In the lab? And you don't think it's possible that
@@ -113,10 +116,13 @@ export default function Example() {
     >
       <Accordion.Root type={ACCORDION_TYPE.single} collapsible={true}>
         <Accordion.Item value={"item-1"}>
-          <Accordion.Trigger density={ACCORDION_DENSITY.loose}>
+          <Accordion.Trigger
+            density={ACCORDION_DENSITY.loose}
+            css={{ background: theme.colors.gray700 }}
+          >
             Here's some sample text for an accordion header item
           </Accordion.Trigger>
-          <Accordion.Content>
+          <Accordion.Content css={{ background: theme.colors.gray700 }}>
             No! You don't even believe that! Gus has cameras everywhere, please.
             Listen to yourself! No, he has known everything, all along. Where
             were you today? In the lab? And you don't think it's possible that
@@ -148,11 +154,12 @@ export default function Example() {
           <Accordion.Trigger
             css={{
               fontWeight: theme.fontWeights.bold,
+              background: theme.colors.gray700,
             }}
           >
             Header example text
           </Accordion.Trigger>
-          <Accordion.Content>
+          <Accordion.Content css={{ background: theme.colors.gray700 }}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in
             augue in felis pharetra finibus. In sagittis aliquam augue. Lorem
             ipsum dolor sit amet, consectetur adipiscing elit.
@@ -181,11 +188,12 @@ export default function Example() {
           <Accordion.Trigger
             css={{
               fontWeight: theme.fontWeights.bold,
+              background: theme.colors.gray700,
             }}
           >
             Header example text
           </Accordion.Trigger>
-          <Accordion.Content>
+          <Accordion.Content css={{ background: theme.colors.gray700 }}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in
             augue in felis pharetra finibus. In sagittis aliquam augue. Lorem
             ipsum dolor sit amet, consectetur adipiscing elit.
@@ -211,18 +219,23 @@ export default function Example() {
         collapsible={true}
       >
         <Accordion.Item value="item-1">
-          <Accordion.Trigger forcefocus="true">
+          <Accordion.Trigger
+            forcefocus="true"
+            css={{ background: theme.colors.gray700 }}
+          >
             Header text item one
           </Accordion.Trigger>
-          <Accordion.Content>
+          <Accordion.Content css={{ background: theme.colors.gray700 }}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in
             augue in felis pharetra finibus. In sagittis aliquam augue. Lorem
             ipsum dolor sit amet, consectetur adipiscing elit.
           </Accordion.Content>
         </Accordion.Item>
         <Accordion.Item value="item-2">
-          <Accordion.Trigger>Header text item two</Accordion.Trigger>
-          <Accordion.Content>
+          <Accordion.Trigger css={{ background: theme.colors.gray700 }}>
+            Header text item two
+          </Accordion.Trigger>
+          <Accordion.Content css={{ background: theme.colors.gray700 }}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in
             augue in felis pharetra finibus. In sagittis aliquam augue. Lorem
             ipsum dolor sit amet, consectetur adipiscing elit.
@@ -248,8 +261,10 @@ export default function Example() {
         disabled={true}
       >
         <Accordion.Item value="item-1">
-          <Accordion.Trigger>Header example text</Accordion.Trigger>
-          <Accordion.Content>
+          <Accordion.Trigger css={{ background: theme.colors.gray700 }}>
+            Header example text
+          </Accordion.Trigger>
+          <Accordion.Content css={{ background: theme.colors.gray700 }}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in
             augue in felis pharetra finibus. In sagittis aliquam augue. Lorem
             ipsum dolor sit amet, consectetur adipiscing elit.
@@ -280,11 +295,12 @@ export default function Example() {
               fontFamily: theme.fonts.headline,
               fontSize: theme.fontSizes[125],
               fontWeight: theme.fontWeights.bold,
+              background: theme.colors.gray700,
             }}
           >
             Header example text
           </Accordion.Trigger>
-          <Accordion.Content>
+          <Accordion.Content css={{ background: theme.colors.gray700 }}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in
             augue in felis pharetra finibus. In sagittis aliquam augue. Lorem
             ipsum dolor sit amet, consectetur adipiscing elit.
@@ -314,10 +330,15 @@ export default function Example() {
     >
       <Accordion.Root type={ACCORDION_TYPE.single} collapsible={true}>
         <Accordion.Item value="item-1">
-          <Accordion.Trigger css={{ fontSize: theme.fontSizes["075"] }}>
+          <Accordion.Trigger
+            css={{
+              fontSize: theme.fontSizes["075"],
+              background: theme.colors.gray700,
+            }}
+          >
             This header is too small
           </Accordion.Trigger>
-          <Accordion.Content>
+          <Accordion.Content css={{ background: theme.colors.gray700 }}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in
             augue in felis pharetra finibus. In sagittis aliquam augue. Lorem
             ipsum dolor sit amet, consectetur adipiscing elit.
@@ -347,11 +368,12 @@ export default function Example() {
             css={{
               fontSize: theme.fontSizes[500],
               fontFamily: theme.fonts.headline,
+              background: theme.colors.gray700,
             }}
           >
             This header is too large
           </Accordion.Trigger>
-          <Accordion.Content>
+          <Accordion.Content css={{ background: theme.colors.gray700 }}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in
             augue in felis pharetra finibus. In sagittis aliquam augue. Lorem
             ipsum dolor sit amet, consectetur adipiscing elit.
@@ -373,8 +395,12 @@ export default function Example() {
     <Box css={{ width: 500 }}>
       <Accordion.Root type={ACCORDION_TYPE.single} collapsible={true}>
         <Accordion.Item value="item-1">
-          <Accordion.Trigger>The rest of the sentence is...</Accordion.Trigger>
-          <Accordion.Content>inside of the content.</Accordion.Content>
+          <Accordion.Trigger css={{ background: theme.colors.gray700 }}>
+            The rest of the sentence is...
+          </Accordion.Trigger>
+          <Accordion.Content css={{ background: theme.colors.gray700 }}>
+            inside of the content.
+          </Accordion.Content>
         </Accordion.Item>
       </Accordion.Root>
     </Box>

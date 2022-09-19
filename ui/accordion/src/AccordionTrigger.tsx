@@ -74,7 +74,6 @@ type AccordionTriggerCombined = RadixAccordionTriggerProps &
 const StyledHeader = styled(AccordionPrimitive.Header, {
   all: "unset",
   color: theme.colors.primary,
-  backgroundColor: theme.colors.gray700,
   display: "flex",
   width: "100%",
   fontSize: theme.fontSizes[100],

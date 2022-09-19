@@ -19,6 +19,8 @@ const easeInOutExpo = `cubic-bezier(0.87, 0, 0.13, 1)`;
 const StyledContent = styled(AccordionPrimitive.Content, {
   overflow: "hidden",
   color: theme.colors.primary,
+  paddingBottom: theme.space[150],
+  paddingRight: theme.space[150],
 
   '&[data-state="open"]': {
     animation: `${slideDown} ${theme.transitions.normal} ${easeInOutExpo}`,
@@ -28,12 +30,6 @@ const StyledContent = styled(AccordionPrimitive.Content, {
   },
 });
 
-const StyledContentText = styled("div", {
-  background: theme.colors.gray700,
-  paddingBottom: theme.space[150],
-  paddingRight: theme.space[150],
-});
-  
 type AccordionContentVariants = WPDS.VariantProps<typeof StyledContent>;
 type CombinedProps = RadixAccordionContentProps & AccordionContentVariants;
 
@@ -46,7 +42,7 @@ export const AccordionContent = React.forwardRef<
   AccordionContentInterface
 >(({ children, ...props }: AccordionContentInterface, ref) => (
   <StyledContent {...props} ref={ref}>
-    <StyledContentText>{children}</StyledContentText>
+    {children}
   </StyledContent>
 ));
 
