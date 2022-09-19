@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useEffect } from "react";
 import { styled, theme } from "@washingtonpost/wpds-theme";
 import type * as WPDS from "@washingtonpost/wpds-theme";
 import { CarouselContext } from "./CarouselRoot";
@@ -22,7 +22,7 @@ export const CarouselContent = React.forwardRef<
 >(({ children, ...props }, ref) => {
   const { setTotalPages } = React.useContext(CarouselContext);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const totalPages = React.Children.count(children);
     setTotalPages(totalPages);
   }, [children, setTotalPages]);

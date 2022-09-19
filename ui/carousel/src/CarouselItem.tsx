@@ -1,5 +1,5 @@
-import * as React from "react";
-import { styled } from "@washingtonpost/wpds-theme";
+import React, { useEffect, useState } from "react";
+import { styled, theme } from "@washingtonpost/wpds-theme";
 import type * as WPDS from "@washingtonpost/wpds-theme";
 import { CarouselContext } from "./CarouselRoot";
 
@@ -32,14 +32,24 @@ const getItemsShownPerPage = (
 
 export const CarouselItem = React.forwardRef<HTMLDivElement, CarouselItemProps>(
   ({ children, ...props }, ref) => {
-    const { itemsPerPage, totalPages } = React.useContext(CarouselContext);
+    const [translateVal, setTranslateVal] = useState(0);
+    const { itemsPerPage, totalPages, page } =
+      React.useContext(CarouselContext);
     const itemsShownPerPage = getItemsShownPerPage(itemsPerPage, totalPages);
+
+    useEffect(() => {
+      setTranslateVal(page * itemsPerPage * 100);
+    }, [page, itemsPerPage]);
 
     return (
       <Container
         {...props}
         ref={ref}
-        css={{ width: `calc(100%/${itemsShownPerPage})` }}
+        css={{
+          width: `calc(100%/${itemsShownPerPage})`,
+          transform: `translateX(-${translateVal}%)`,
+          transition: `transform ${theme.transitions.normal} ${theme.transitions.inOut}`,
+        }}
       >
         {children}
       </Container>
