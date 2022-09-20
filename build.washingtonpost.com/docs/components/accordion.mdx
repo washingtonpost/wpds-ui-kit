@@ -19,6 +19,7 @@ status: "Draft"
 2. Panel _(text or mixed content)_
 3. Icon _(state indicator e.g., Expanded, Collapsed)_
 4. Divider
+5. Background color _(set manually, default is "none")_
 
 ---
 
@@ -148,7 +149,6 @@ export default function Example() {
           <Accordion.Trigger
             css={{
               fontWeight: theme.fontWeights.bold,
-              background: theme.colors.gray700,
             }}
           >
             Header example text
@@ -182,7 +182,6 @@ export default function Example() {
           <Accordion.Trigger
             css={{
               fontWeight: theme.fontWeights.bold,
-              background: theme.colors.gray700,
             }}
           >
             Header example text
@@ -282,7 +281,6 @@ export default function Example() {
               fontFamily: theme.fonts.headline,
               fontSize: theme.fontSizes[125],
               fontWeight: theme.fontWeights.bold,
-              background: theme.colors.gray700,
             }}
           >
             Header example text
@@ -320,7 +318,6 @@ export default function Example() {
           <Accordion.Trigger
             css={{
               fontSize: theme.fontSizes["075"],
-              background: theme.colors.gray700,
             }}
           >
             This header is too small
@@ -355,7 +352,6 @@ export default function Example() {
             css={{
               fontSize: theme.fontSizes[500],
               fontFamily: theme.fonts.headline,
-              background: theme.colors.gray700,
             }}
           >
             This header is too large
