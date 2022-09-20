@@ -46,7 +46,6 @@ export const CarouselContent = React.forwardRef<
 
   const handlers = useSwipeable({
     onSwipedLeft: () => {
-      console.log("swiped left");
       if (totalPages && page < totalPages - 1) {
         setPage(page + 1);
       }
@@ -55,7 +54,6 @@ export const CarouselContent = React.forwardRef<
       if (totalPages && page > 0) {
         setPage(page - 1);
       }
-      console.log("swiped right");
     },
     preventScrollOnSwipe: true,
   });
