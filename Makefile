@@ -21,6 +21,7 @@ main-release:
 	make main-version
 	npm run turbo:build:force
 	make main-publish
+	npm install
 
 # create command for plop templates
 new-component:
