@@ -42,4 +42,13 @@ describe("CarouselPreviousButton", () => {
     userEvent.click(screen.getByRole("button"));
     expect(clickHandler).toHaveBeenCalled();
   });
+
+  test("renders custom content using asChild prop", () => {
+    render(
+      <CarouselPreviousButton asChild>
+        <button>test</button>
+      </CarouselPreviousButton>
+    );
+    expect(screen.getByRole("button")).toHaveTextContent("test");
+  });
 });

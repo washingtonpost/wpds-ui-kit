@@ -1,5 +1,5 @@
 import * as React from "react";
-import { theme } from "@washingtonpost/wpds-theme";
+import { styled, theme } from "@washingtonpost/wpds-theme";
 import { Carousel as Component } from "./";
 
 export default {
@@ -80,3 +80,69 @@ const Template = (args) => {
 export const Carousel = Template.bind({});
 
 Carousel.args = {};
+
+const grayBoxStyle = {
+  width: "355px",
+  height: "200px",
+  backgroundColor: theme.colors.gray300,
+  borderRadius: theme.radii["025"],
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  marginInlineEnd: theme.space["050"],
+  padding: theme.space["050"],
+};
+
+const CustomButton = styled("button", {
+  backgroundColor: "transparent",
+  border: "none",
+  color: theme.colors.accessible,
+  cursor: "pointer",
+  position: "absolute",
+  top: "2.875rem",
+  bottom: "1.625rem",
+  zIndex: 1,
+  width: "20%",
+  "&:hover": {
+    backgroundColor: theme.colors.alpha25,
+  },
+  "&:disabled": {
+    display: "none",
+  },
+});
+
+const CustomButtonsTemplate = (args) => {
+  return (
+    <Component.Root {...args} css={{ width: "357px", position: "relative" }}>
+      <Component.Header>
+        <Component.Title>Custom Buttons</Component.Title>
+      </Component.Header>
+      <Component.PreviousButton asChild={true}>
+        <CustomButton css={{ left: 0 }}>&lt; Prev</CustomButton>
+      </Component.PreviousButton>
+      <Component.NextButton asChild={true}>
+        <CustomButton css={{ right: 0 }}>Next &gt;</CustomButton>
+      </Component.NextButton>
+      <Component.Content>
+        <Component.Item>
+          <div style={grayBoxStyle}>One</div>
+        </Component.Item>
+        <Component.Item>
+          <div style={grayBoxStyle}>Two</div>
+        </Component.Item>
+        <Component.Item>
+          <div style={grayBoxStyle}>Three</div>
+        </Component.Item>
+      </Component.Content>
+      <Component.Footer>
+        <Component.Dots />
+      </Component.Footer>
+    </Component.Root>
+  );
+};
+
+export const CustomButtons = CustomButtonsTemplate.bind({});
+
+CustomButtons.parameters = {
+  chromatic: { disableSnapshot: true },
+};

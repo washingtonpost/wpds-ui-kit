@@ -19,7 +19,7 @@ describe("CarouselNextButton", () => {
     expect(screen.getByRole("button")).toBeVisible();
   });
 
-  test("triggers callback on click", () => {
+  test("triggers context callback on click", () => {
     const pageChangeHandler = jest.fn();
     renderWithContext(<CarouselNextButton />, {
       page: 0,
@@ -41,5 +41,14 @@ describe("CarouselNextButton", () => {
 
     userEvent.click(screen.getByRole("button"));
     expect(clickHandler).toHaveBeenCalled();
+  });
+
+  test("renders custom content using asChild prop", () => {
+    render(
+      <CarouselNextButton asChild>
+        <button>test</button>
+      </CarouselNextButton>
+    );
+    expect(screen.getByRole("button")).toHaveTextContent("test");
   });
 });
