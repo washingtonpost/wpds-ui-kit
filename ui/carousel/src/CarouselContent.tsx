@@ -1,6 +1,10 @@
 import React, { useEffect } from "react";
+
 import { styled, theme } from "@washingtonpost/wpds-theme";
 import type * as WPDS from "@washingtonpost/wpds-theme";
+
+import { useSwipeable } from "react-swipeable";
+
 import { CarouselContext } from "./CarouselRoot";
 
 const NAME = "CarouselContent";
@@ -20,8 +24,15 @@ export const CarouselContent = React.forwardRef<
   HTMLDivElement,
   CarouselContentProps
 >(({ children, ...props }, ref) => {
-  const { setTotalPages, itemsPerPage, setTotalItems, totalItems } =
-    React.useContext(CarouselContext);
+  const {
+    setTotalPages,
+    itemsPerPage,
+    setTotalItems,
+    totalItems,
+    totalPages,
+    page,
+    setPage,
+  } = React.useContext(CarouselContext);
 
   useEffect(
     () => setTotalItems(React.Children.count(children)),
@@ -33,10 +44,28 @@ export const CarouselContent = React.forwardRef<
     setTotalPages(totalPages);
   }, [totalItems, setTotalPages, itemsPerPage]);
 
+  const handlers = useSwipeable({
+    onSwipedLeft: () => {
+      console.log("swiped left");
+      if (totalPages && page < totalPages - 1) {
+        setPage(page + 1);
+      }
+    },
+    onSwipedRight: () => {
+      if (totalPages && page > 0) {
+        setPage(page - 1);
+      }
+      console.log("swiped right");
+    },
+    preventScrollOnSwipe: true,
+  });
+
   return (
-    <Container {...props} ref={ref}>
-      {children}
-    </Container>
+    <div {...handlers}>
+      <Container {...props} ref={ref}>
+        {children}
+      </Container>
+    </div>
   );
 });
 

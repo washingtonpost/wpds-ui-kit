@@ -14,20 +14,20 @@ export type CarouselItemProps = {
 } & React.ComponentPropsWithRef<typeof Container>;
 
 const getItemsShownPerPage = (
-  slidesPerPage: number,
+  itemsPerPage: number,
   totalItems: number | undefined
 ): number => {
   // make sure we always show at least one item
-  if (slidesPerPage < 1 || totalItems === undefined) {
+  if (itemsPerPage < 1 || totalItems === undefined) {
     return 1;
   }
 
   // don't show more than the amount of pages we have
-  if (slidesPerPage > totalItems) {
+  if (itemsPerPage > totalItems) {
     return totalItems;
   }
 
-  return slidesPerPage;
+  return itemsPerPage;
 };
 
 export const CarouselItem = React.forwardRef<HTMLDivElement, CarouselItemProps>(
