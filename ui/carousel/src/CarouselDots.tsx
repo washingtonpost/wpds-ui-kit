@@ -10,19 +10,13 @@ export type CarouselDotsProps = Omit<
 >;
 
 export const CarouselDots = React.forwardRef<HTMLDivElement, CarouselDotsProps>(
-  ({ css, ...props }, ref) => {
+  ({ ...props }, ref) => {
     const { page, totalPages } = React.useContext(CarouselContext);
     return (
       <PaginationDots
         ref={ref}
         index={page + 1 || 1}
         amount={totalPages || 1}
-        css={{
-          position: "static",
-          marginBlockStart: 0,
-          transform: "none",
-          ...css,
-        }}
         {...props}
       />
     );

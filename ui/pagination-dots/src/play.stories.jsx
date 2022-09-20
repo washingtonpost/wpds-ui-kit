@@ -1,6 +1,6 @@
 import * as React from "react";
 import { PaginationDots as Component } from "./";
-import { theme, styled, darkTheme } from "@washingtonpost/wpds-theme";
+import { theme, styled } from "@washingtonpost/wpds-theme";
 import { Button } from "@washingtonpost/wpds-button";
 import { InputText } from "@washingtonpost/wpds-ui-kit";
 import { within, userEvent } from "@storybook/testing-library";
@@ -38,10 +38,17 @@ const Label = styled("h3", {
   textAlign: "center",
 });
 
+const Centered = styled("div", {
+  display: "flex",
+  justifyContent: "center",
+});
+
 export const PaginationDots = (args) => (
-  <Stack css={{ position: "relative" }}>
+  <Stack>
     <Label>Pagination Dots</Label>
-    <Component {...args} />
+    <Centered>
+      <Component {...args} />
+    </Centered>
   </Stack>
 );
 
@@ -89,11 +96,13 @@ const Template = (args, context) => {
           +
         </Button>
       </HStack>
-      <Component
-        index={index ? index : 1}
-        amount={amount ? amount : 5}
-        label={`${context.theme}-pagination`}
-      />
+      <Centered>
+        <Component
+          index={index ? index : 1}
+          amount={amount ? amount : 5}
+          label={`${context.theme}-pagination`}
+        />
+      </Centered>
     </Stack>
   );
 };
@@ -151,27 +160,39 @@ export const Chromatic = () => (
   <Stack>
     <Stack css={{ position: "relative" }}>
       <Label>First item active, 5 or less items</Label>
-      <Component amount={5} index={1} label="Sample label" />
+      <Centered>
+        <Component amount={5} index={1} label="Sample label" />
+      </Centered>
     </Stack>
     <Stack css={{ position: "relative" }}>
       <Label>First item active, more than 5 items</Label>
-      <Component amount={6} index={1} label="Sample label" />
+      <Centered>
+        <Component amount={6} index={1} label="Sample label" />
+      </Centered>
     </Stack>
     <Stack css={{ position: "relative" }}>
       <Label>Middle item active, 5 or less items</Label>
-      <Component amount={5} index={3} label="Sample label" />
+      <Centered>
+        <Component amount={5} index={3} label="Sample label" />
+      </Centered>
     </Stack>
     <Stack css={{ position: "relative" }}>
       <Label>Middle item active, more than 5 items</Label>
-      <Component amount={7} index={4} label="Sample label" />
+      <Centered>
+        <Component amount={7} index={4} label="Sample label" />
+      </Centered>
     </Stack>
     <Stack css={{ position: "relative" }}>
       <Label>Last item active, 5 or less items</Label>
-      <Component amount={5} index={5} label="Sample label" />
+      <Centered>
+        <Component amount={5} index={5} label="Sample label" />
+      </Centered>
     </Stack>
     <Stack css={{ position: "relative" }}>
       <Label>Last item active, more than 5 items</Label>
-      <Component amount={6} index={6} label="Sample label" />
+      <Centered>
+        <Component amount={6} index={6} label="Sample label" />
+      </Centered>
     </Stack>
   </Stack>
 );
