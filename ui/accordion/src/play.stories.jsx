@@ -42,11 +42,14 @@ const Template = (args) => {
           ipsum dolor sit amet, consectetur adipiscing elit.
         </Accordion.Trigger>
         <Accordion.Content ref={myContentRef}>
-          No! You don't even believe that! Gus has cameras everywhere, please.
-          Listen to yourself! No, he has known everything, all along. Where were
-          you today? In the lab? And you don't think it's possible that Tyrus
-          lifted the cigarette out of your locker? Come on! Don't you see? You
-          are the last piece of the puzzle. You are everything that he's wanted.
+          <div>
+            No! You don't even believe that! Gus has cameras everywhere, please.
+            Listen to yourself! No, he has known everything, all along. Where
+            were you today? In the lab? And you don't think it's possible that
+            Tyrus lifted the cigarette out of your locker? Come on! Don't you
+            see? You are the last piece of the puzzle. You are everything that
+            he's wanted.
+          </div>
         </Accordion.Content>
       </Accordion.Item>
       <Accordion.Item value={"item-2"}>
