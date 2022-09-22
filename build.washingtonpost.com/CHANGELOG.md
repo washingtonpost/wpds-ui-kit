@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.18.0](https://github.com/washingtonpost/wpds-docs/compare/v0.17.0...v0.18.0) (2022-09-22)
+
+
+### Bug Fixes
+
+* encourage use of ui-kit import and pkg ([#224](https://github.com/washingtonpost/wpds-docs/issues/224)) ([2e68b33](https://github.com/washingtonpost/wpds-docs/commit/2e68b3304a5c15231702ff7e77b5029565579ceb))
+* remove styledContextText and all set background colors from accordion component ([#226](https://github.com/washingtonpost/wpds-docs/issues/226)) ([1f23c46](https://github.com/washingtonpost/wpds-docs/commit/1f23c4637f949bf32a7bfb6416b61fa493aef186))
+
+
+### Features
+
+* **build.washingtonpost.com:** add contributors to homepage ([#213](https://github.com/washingtonpost/wpds-docs/issues/213)) ([e67cffb](https://github.com/washingtonpost/wpds-docs/commit/e67cffb0fc8066a310e3ec6b5964c4b504df4202))
+
+
+
+
+
 # [0.17.0](https://github.com/washingtonpost/wpds-docs/compare/v0.16.0...v0.17.0) (2022-09-13)
 
 

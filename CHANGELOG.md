@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.18.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.17.0...v0.18.0) (2022-09-22)
+
+
+### Bug Fixes
+
+* encourage use of ui-kit import and pkg ([#224](https://github.com/washingtonpost/wpds-ui-kit/issues/224)) ([2e68b33](https://github.com/washingtonpost/wpds-ui-kit/commit/2e68b3304a5c15231702ff7e77b5029565579ceb))
+* remove styledContextText and all set background colors from accordion component ([#226](https://github.com/washingtonpost/wpds-ui-kit/issues/226)) ([1f23c46](https://github.com/washingtonpost/wpds-ui-kit/commit/1f23c4637f949bf32a7bfb6416b61fa493aef186))
+
+
+### Features
+
+* add size util and css prop to icon component ([#217](https://github.com/washingtonpost/wpds-ui-kit/issues/217)) ([5849a85](https://github.com/washingtonpost/wpds-ui-kit/commit/5849a85f42f8d49620bfc6bfee470bca3a1ebc05))
+* add specific version of stitches/react ([#215](https://github.com/washingtonpost/wpds-ui-kit/issues/215)) ([3e10dd4](https://github.com/washingtonpost/wpds-ui-kit/commit/3e10dd471c67da852ee302e30cdd9f7edd3e9bbc))
+* **build.washingtonpost.com:** add contributors to homepage ([#213](https://github.com/washingtonpost/wpds-ui-kit/issues/213)) ([e67cffb](https://github.com/washingtonpost/wpds-ui-kit/commit/e67cffb0fc8066a310e3ec6b5964c4b504df4202))
+
+
+
+
+
 # [0.17.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.16.0...v0.17.0) (2022-09-13)
 
 

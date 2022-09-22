@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.18.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.17.0...v0.18.0) (2022-09-22)
+
+
+### Features
+
+* add size util and css prop to icon component ([#217](https://github.com/washingtonpost/wpds-ui-kit/issues/217)) ([5849a85](https://github.com/washingtonpost/wpds-ui-kit/commit/5849a85f42f8d49620bfc6bfee470bca3a1ebc05))
+
+
+
+
+
 # [0.17.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.16.0...v0.17.0) (2022-09-13)
 
 
