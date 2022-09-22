@@ -2,7 +2,7 @@ import React from "react";
 import { MDXRemote } from "next-mdx-remote";
 import { NextSeo } from "next-seo";
 
-import { AlertBanner, Box, styled, theme } from "@washingtonpost/wpds-ui-kit";
+import { AlertBanner, styled, theme } from "@washingtonpost/wpds-ui-kit";
 
 import MDXStyling from "~/components/Markdown/Styling";
 import Header from "~/components/Typography/Headers";
@@ -17,8 +17,7 @@ import {
 } from "~/services";
 
 import { PropsTable } from "~/components/PropsTable";
-import CopyCodeButton from "~/components/Markdown/Components/CopyToClipBoard";
-import CustomLink from "~/components/Typography/link";
+import { ComponentDetails } from "~/components/ComponentPage/ComponentDetails";
 
 const components = {
   ...MDXStyling,
@@ -93,125 +92,13 @@ export default function Page({
         )}
 
         {source.scope.status !== "Coming soon" && (
-          <Box
-            css={{
-              marginBlockStart: "$100",
-              display: "flex",
-              rowGap: "$100",
-              flexDirection: "column",
-              fontFamily: "$meta",
-              fontSize: "$075",
-
-              pre: {
-                display: "inline",
-              },
+          <ComponentDetails
+            {...{
+              bundleSize,
+              componentName,
+              current,
             }}
-          >
-            <Box
-              css={{
-                display: "flex",
-                fontWeight: "$bold",
-                textDecoration: "none",
-                color: "inherit",
-              }}
-            >
-              Bundle size:&nbsp;
-              <CustomLink
-                css={{
-                  color: theme.colors.accessible,
-                  textDecoration: "underline",
-                  fontWeight: theme.fontWeights.regular,
-                  "&:focus": {
-                    outlineColor: "$signal",
-                    outlineStyle: "solid",
-                    outlineOffset: "2px",
-                    outlineWidth: "2px",
-                  },
-                }}
-                href={`https://bundlephobia.com/package/@washingtonpost/wpds-${current}`}
-                title={"Learn more about the bundle size at Bundlephobia.com"}
-              >
-                {bundleSize}
-              </CustomLink>
-            </Box>
-            <Box
-              css={{
-                fontWeight: "$bold",
-              }}
-            >
-              Install:{" "}
-              <pre>
-                <CopyCodeButton
-                  as="code"
-                  css={{
-                    display: "inline",
-                    fontWeight: "$light",
-                    borderRadius: "$012",
-                    backgroundColor: "$gray500",
-                    color: "$accessible",
-                    padding: "$025",
-                  }}
-                  textToCopy={`npm install @washingtonpost/wpds-${current}`}
-                >
-                  npm install @washingtonpost/wpds-{current}
-                </CopyCodeButton>
-              </pre>
-            </Box>
-            <Box
-              css={{
-                fontWeight: "$bold",
-              }}
-            >
-              Usage:{" "}
-              <pre>
-                <CopyCodeButton
-                  as="code"
-                  css={{
-                    display: "inline",
-                    fontWeight: "$light",
-                    borderRadius: "$012",
-                    backgroundColor: "$gray500",
-                    color: "$accessible",
-                    padding: "$025",
-                  }}
-                  textToCopy={`import { ${componentName} } from
-               "@washingtonpost/wpds-
-                ${current}";`}
-                >
-                  import {"{"} {componentName} {"}"} from
-                  &quot;@washingtonpost/wpds-
-                  {current}&quot;
-                </CopyCodeButton>
-              </pre>
-            </Box>
-            <Box
-              css={{
-                display: "flex",
-                fontWeight: "$bold",
-                textDecoration: "none",
-                color: "inherit",
-              }}
-            >
-              Source:&nbsp;
-              <CustomLink
-                css={{
-                  color: theme.colors.accessible,
-                  textDecoration: "underline",
-                  fontWeight: theme.fontWeights.regular,
-                  "&:focus": {
-                    outlineColor: "$signal",
-                    outlineStyle: "solid",
-                    outlineOffset: "2px",
-                    outlineWidth: "2px",
-                  },
-                }}
-                href={`https://github.com/washingtonpost/wpds-ui-kit/tree/main/ui/${current}`}
-                title={"View on Github"}
-              >
-                View on Github
-              </CustomLink>
-            </Box>
-          </Box>
+          />
         )}
 
         <TableofContents

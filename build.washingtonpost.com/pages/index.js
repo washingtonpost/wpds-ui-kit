@@ -1,7 +1,7 @@
 import React from "react";
-import { Box, styled, theme } from "@washingtonpost/wpds-ui-kit";
+import { Box, styled, theme, Divider } from "@washingtonpost/wpds-ui-kit";
 
-import { getAllDocs, getNavigation } from "~/services";
+import { getAllDocs, getNavigation, getContributors } from "~/services";
 import { Header } from "~/components/Markdown/Components/headers";
 import { List, ListItem } from "~/components/Markdown/Components/list";
 import {
@@ -11,6 +11,7 @@ import {
 import { SeeAllLink, sortByRank, NewCustomLink } from "~/components/utils";
 
 import Image from "next/image";
+import { Contributors } from "~/components/Contributors";
 
 const HeroBlock = styled("div", {
   gridColumn: "span 2",
@@ -43,7 +44,7 @@ const BoldTextLooksLikeLink = styled("span", {
   },
 });
 
-const Index = ({ recentPosts, rankedArticles }) => {
+const Index = ({ recentPosts, rankedArticles, contributors }) => {
   return (
     <>
       <LandingContentGrid size="wide">
@@ -318,9 +319,18 @@ const Index = ({ recentPosts, rankedArticles }) => {
               </NewCustomLink>
             ))}
             <SeeAllLink href="/resources" name="resources" type="Last" />
+            <Box
+              css={{
+                marginBottom: "$200",
+              }}
+            ></Box>
           </LandingContentGrid>
         </>
       )}
+
+      <Divider variant="default" />
+
+      {contributors && <Contributors contributors={contributors} />}
     </>
   );
 };
@@ -367,7 +377,10 @@ export async function getStaticProps() {
     ...sortByRank(workshops, 4),
     ...sortByRank(guides, 2),
   ];
+
+  const contributors = await getContributors();
+
   return {
-    props: { recentPosts, rankedArticles, navigation },
+    props: { recentPosts, rankedArticles, navigation, contributors },
   };
 }

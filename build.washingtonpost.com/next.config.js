@@ -56,7 +56,11 @@ module.exports = withBundleAnalyzer({
   },
   swcMinify: true,
   images: {
-    domains: ["img.youtube.com", "media.giphy.com"],
+    domains: [
+      "img.youtube.com",
+      "media.giphy.com",
+      "avatars.githubusercontent.com",
+    ],
   },
   async redirects() {
     return [

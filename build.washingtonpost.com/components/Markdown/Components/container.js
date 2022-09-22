@@ -1,6 +1,6 @@
 import React from "react";
 import { styled, theme } from "@washingtonpost/wpds-ui-kit";
-export default function Container({ children, caption }) {
+export default function Container({ children, caption, css }) {
   const Div = styled("div", {
     width: "100%",
     maxWidth: "100vw",
@@ -19,7 +19,7 @@ export default function Container({ children, caption }) {
   });
   return (
     <>
-      <Div>{children}</Div>
+      <Div css={css}>{children}</Div>
       {caption && <Caption>{caption}</Caption>}
     </>
   );

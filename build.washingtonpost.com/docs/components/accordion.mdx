@@ -19,6 +19,7 @@ status: "Draft"
 2. Panel _(text or mixed content)_
 3. Icon _(state indicator e.g., Expanded, Collapsed)_
 4. Divider
+5. Background color _(set manually, default is "none")_
 
 ---
 
@@ -314,7 +315,11 @@ export default function Example() {
     >
       <Accordion.Root type={ACCORDION_TYPE.single} collapsible={true}>
         <Accordion.Item value="item-1">
-          <Accordion.Trigger css={{ fontSize: theme.fontSizes["075"] }}>
+          <Accordion.Trigger
+            css={{
+              fontSize: theme.fontSizes["075"],
+            }}
+          >
             This header is too small
           </Accordion.Trigger>
           <Accordion.Content>
