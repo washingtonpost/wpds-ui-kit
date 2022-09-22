@@ -54,6 +54,7 @@ module.exports = withBundleAnalyzer({
       ],
     };
   },
+  experimental: { esmExternals: "loose" },
   swcMinify: true,
   images: {
     domains: [

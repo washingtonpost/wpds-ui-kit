@@ -51,6 +51,7 @@
     "@washingtonpost/wpds-icon": "0.17.0",
     "@washingtonpost/wpds-pagination-dots": "0.17.0",
     "@washingtonpost/wpds-theme": "0.17.0",
+    "nanoid": "^4.0.0",
     "react-swipeable": "^7.0.0"
   }
 }

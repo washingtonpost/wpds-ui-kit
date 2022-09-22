@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState } from "react";
 import { styled, theme } from "@washingtonpost/wpds-theme";
 import { useControllableState } from "@radix-ui/react-use-controllable-state";
 
@@ -12,6 +12,8 @@ type CarouselContextProps = {
   itemsPerPage: number;
   totalItems: number;
   setTotalItems: (items: number) => void;
+  activeId: string;
+  setActiveId: (id: string) => void;
 };
 
 export const CarouselContext = React.createContext({} as CarouselContextProps);
@@ -66,8 +68,10 @@ export const CarouselRoot = React.forwardRef<HTMLDivElement, CarouselRootProps>(
       onChange: onPageChange,
     });
 
-    const [totalPages, setTotalPages] = React.useState<number>();
-    const [totalItems, setTotalItems] = React.useState<number>(0);
+    const [totalPages, setTotalPages] = useState<number>();
+    const [totalItems, setTotalItems] = useState<number>(0);
+    const [activeId, setActiveId] = useState<string>("");
+
     return (
       <CarouselContext.Provider
         value={{
@@ -78,14 +82,11 @@ export const CarouselRoot = React.forwardRef<HTMLDivElement, CarouselRootProps>(
           itemsPerPage,
           totalItems,
           setTotalItems,
+          activeId,
+          setActiveId,
         }}
       >
-        <Container
-          {...props}
-          ref={ref}
-          role="region"
-          aria-labelledby="carousel-heading"
-        >
+        <Container {...props} ref={ref} role="composite">
           {children}
         </Container>
       </CarouselContext.Provider>
