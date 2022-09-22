@@ -6,14 +6,17 @@ import { Accordion } from "@washingtonpost/wpds-ui-kit";
 import { useRouter } from "next/router";
 import { Change } from "~/components/Markdown/Styling";
 
+const StyledChange = styled(Change, {});
+
 const StyledAccordionRoot = styled(Accordion.Root, {
+  backgroundColor: theme.colors.gray500,
   "@sm": {
     marginBottom: "0",
   },
 });
 
 const Panel = styled("div", {
-  backgroundColor: "$gray500",
+  backgroundColor: theme.colors.gray500,
   "@notSm": {
     position: "fixed",
     height: "100%",
@@ -52,7 +55,6 @@ const Container = styled("div", {
 
 const AccordionHeader = styled(Accordion.Header, {
   width: "100%",
-  backgroundColor: theme.colors.gray500,
   justifySelf: "flex-start",
   marginBlock: 0,
   "@sm": {
@@ -64,13 +66,12 @@ const AccordionTrigger = styled(Accordion.Trigger, {
   border: "none",
   display: "flex",
   width: "100%",
+  backgroundColor: theme.colors.gray500,
   alignItems: "center",
   paddingBlock: 0,
   paddingInlineStart: 0,
   paddingInlineEnd: "$150",
-  backgroundColor: "transparent",
   textAlign: "left",
-  backgroundColor: theme.colors.gray500,
 });
 
 const AccordionLabel = styled("span", {
@@ -83,8 +84,10 @@ const AccordionLabel = styled("span", {
 });
 
 const AccordionContent = styled(Accordion.Content, {
-  backgroundColor: theme.colors.gray500,
-  paddingRight: "0px",
+  "> div": {
+    paddingBlockEnd: 0,
+    paddingInlineEnd: 0,
+  },
 });
 
 const AccordionItem = styled(Accordion.Item, {
@@ -94,9 +97,9 @@ const AccordionItem = styled(Accordion.Item, {
 //List in sidebars Accordion Content
 const SideBarList = styled("ul", {
   listStyle: "none",
-  padding: "0px",
-  marginBlock: "0",
   backgroundColor: theme.colors.gray500,
+  paddingLeft: "0px",
+  marginBlock: "0",
 });
 
 const ListItem = styled("li", {
