@@ -6,6 +6,7 @@ import type * as WPDS from "@washingtonpost/wpds-theme";
 import { useSwipeable } from "react-swipeable";
 
 import { CarouselContext } from "./CarouselRoot";
+import { CarouselItemProps } from "./CarouselItem";
 
 const NAME = "CarouselContent";
 
@@ -60,8 +61,17 @@ export const CarouselContent = React.forwardRef<
 
   return (
     <div {...handlers}>
-      <Container {...props} ref={ref}>
-        {children}
+      <Container {...props} ref={ref} tabIndex={0}>
+        {React.Children.map(children, (child, index) => {
+          if (React.isValidElement(child)) {
+            return React.cloneElement(
+              child as React.ReactElement<CarouselItemProps>,
+              {
+                index,
+              }
+            );
+          }
+        })}
       </Container>
     </div>
   );

@@ -64,6 +64,7 @@ const Template = (args) => {
                 marginInlineEnd: theme.space["050"],
                 padding: theme.space["050"],
               }}
+              aria-label={`item ${i}`}
             >
               {i + 1}
             </div>
