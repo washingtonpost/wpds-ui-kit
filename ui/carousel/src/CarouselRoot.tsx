@@ -80,7 +80,12 @@ export const CarouselRoot = React.forwardRef<HTMLDivElement, CarouselRootProps>(
           setTotalItems,
         }}
       >
-        <Container {...props} ref={ref}>
+        <Container
+          {...props}
+          ref={ref}
+          role="region"
+          aria-labelledby="carousel-heading"
+        >
           {children}
         </Container>
       </CarouselContext.Provider>

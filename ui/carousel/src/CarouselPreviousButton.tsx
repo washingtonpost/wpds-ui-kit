@@ -60,6 +60,7 @@ export const CarouselPreviousButton = React.forwardRef<
             disabled={isDisabled}
             {...props}
             ref={ref}
+            aria-label="previous"
           >
             <Icon label="Previous" size="100">
               <ArrowLeft />
