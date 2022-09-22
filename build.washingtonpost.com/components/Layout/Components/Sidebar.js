@@ -6,8 +6,6 @@ import { Accordion } from "@washingtonpost/wpds-ui-kit";
 import { useRouter } from "next/router";
 import { Change } from "~/components/Markdown/Styling";
 
-const StyledChange = styled(Change, {});
-
 const StyledAccordionRoot = styled(Accordion.Root, {
   backgroundColor: theme.colors.gray500,
   "@sm": {
@@ -16,20 +14,19 @@ const StyledAccordionRoot = styled(Accordion.Root, {
 });
 
 const Panel = styled("div", {
-  backgroundColor: theme.colors.gray500,
+  paddingBottom: "$100",
   "@notSm": {
     position: "fixed",
     height: "100%",
   },
   "@sm": {
     width: "100%",
-    paddingBottom: "$100",
   },
 });
 
 //Container
 const Container = styled("div", {
-  // padding: "$100 0",
+  padding: "$100 0",
   overflowY: "auto",
   height: "90%",
   // style the scrollbar
@@ -66,7 +63,6 @@ const AccordionTrigger = styled(Accordion.Trigger, {
   border: "none",
   display: "flex",
   width: "100%",
-  backgroundColor: theme.colors.gray500,
   alignItems: "center",
   paddingBlock: 0,
   paddingInlineStart: 0,
@@ -84,10 +80,8 @@ const AccordionLabel = styled("span", {
 });
 
 const AccordionContent = styled(Accordion.Content, {
-  "> div": {
-    paddingBlockEnd: 0,
-    paddingInlineEnd: 0,
-  },
+  paddingBlockEnd: 0,
+  paddingInlineEnd: 0,
 });
 
 const AccordionItem = styled(Accordion.Item, {
