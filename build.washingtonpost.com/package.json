@@ -3,7 +3,7 @@
   "version": "0.18.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next-remote-watch ./docs",
     "build": "node -v && node scripts/sitemap.js;next build",
     "start": "next start",
     "lint": "next lint",
@@ -30,6 +30,7 @@
     "lz-string": "^1.4.4",
     "next": "^12.2.5",
     "next-mdx-remote": "^4.1.0",
+    "next-remote-watch": "^2.0.0",
     "next-seo": "^5.5.0",
     "next-themes": "^0.2.0",
     "param-case": "^3.0.4",
