@@ -2,27 +2,25 @@ import React from "react";
 import Link from "next/link";
 import { styled, theme } from "@washingtonpost/wpds-ui-kit";
 import Header from "../../Typography/Headers";
-import * as Accordion from "@radix-ui/react-accordion";
-import ChevronDown from "@washingtonpost/wpds-assets/asset/chevron-down";
+import { Accordion } from "@washingtonpost/wpds-ui-kit";
 import { useRouter } from "next/router";
 import { Change } from "~/components/Markdown/Styling";
 
 const StyledAccordionRoot = styled(Accordion.Root, {
-  marginBottom: "$150",
+  backgroundColor: theme.colors.gray500,
   "@sm": {
     marginBottom: "0",
   },
 });
 
 const Panel = styled("div", {
-  backgroundColor: "$gray500",
+  paddingBottom: "$100",
   "@notSm": {
     position: "fixed",
     height: "100%",
   },
   "@sm": {
     width: "100%",
-    paddingBottom: "$100",
   },
 });
 
@@ -46,7 +44,6 @@ const Container = styled("div", {
   "@md": { marginTop: "0" },
   "@notSm": {
     width: "300px",
-    // position: "fixed",
   },
   "@sm": {
     paddingBottom: 0,
@@ -57,7 +54,6 @@ const AccordionHeader = styled(Accordion.Header, {
   width: "100%",
   justifySelf: "flex-start",
   marginBlock: 0,
-  padding: "$050 0 $050 $125",
   "@sm": {
     cursor: "pointer",
   },
@@ -71,29 +67,32 @@ const AccordionTrigger = styled(Accordion.Trigger, {
   paddingBlock: 0,
   paddingInlineStart: 0,
   paddingInlineEnd: "$150",
-  backgroundColor: "transparent",
   textAlign: "left",
 });
 
 const AccordionLabel = styled("span", {
   fontFamily: "$meta",
+  paddingLeft: "$100",
   fontSize: "$100",
   fontWeight: "$bold",
   color: "$primary",
   flex: 1,
 });
 
-const AccordionChevron = styled(ChevronDown, {
-  height: 16,
-  fill: theme.colors.accessible,
-  transition: "transform 300ms",
-  "[data-state=open] &": { transform: "rotate(180deg)" },
+const AccordionContent = styled(Accordion.Content, {
+  paddingBlockEnd: 0,
+  paddingInlineEnd: 0,
+});
+
+const AccordionItem = styled(Accordion.Item, {
+  border: "none",
 });
 
 //List in sidebars Accordion Content
 const SideBarList = styled("ul", {
   listStyle: "none",
-  paddingLeft: "0",
+  backgroundColor: theme.colors.gray500,
+  paddingLeft: "0px",
   marginBlock: "0",
 });
 
@@ -236,18 +235,17 @@ export default function Sidebar({ navigation, setMobileMenu }) {
             return (
               <StyledAccordionRoot
                 key={index}
-                defaultValue={nav.category}
+                defaultValue={"Components"}
                 type="single"
                 collapsible
               >
-                <Accordion.Item value={nav.category}>
+                <AccordionItem value={nav.category}>
                   <AccordionHeader>
-                    <AccordionTrigger>
+                    <AccordionTrigger density={"compact"}>
                       <AccordionLabel>{nav.category}</AccordionLabel>
-                      <AccordionChevron aria-hidden />
                     </AccordionTrigger>
                   </AccordionHeader>
-                  <Accordion.Content>
+                  <AccordionContent>
                     <SideBarList>
                       {nav.sortItems ? (
                         <SortedList
@@ -309,8 +307,8 @@ export default function Sidebar({ navigation, setMobileMenu }) {
                         </>
                       )}
                     </SideBarList>
-                  </Accordion.Content>
-                </Accordion.Item>
+                  </AccordionContent>
+                </AccordionItem>
               </StyledAccordionRoot>
             );
           })}
