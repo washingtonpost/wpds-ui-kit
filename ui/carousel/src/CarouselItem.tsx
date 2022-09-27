@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect } from "react";
 import { styled, theme } from "@washingtonpost/wpds-theme";
 import type * as WPDS from "@washingtonpost/wpds-theme";
 import { CarouselContext } from "./CarouselRoot";
-
 import { isItemShown } from "./utils";
 
 const NAME = "CarouselItem";
@@ -24,17 +23,28 @@ export type CarouselItemProps = {
   id?: string;
   index?: number;
   itemsShownPerPage?: number;
+  onKeyDown?: (event: React.KeyboardEvent<HTMLDivElement>) => void;
 } & React.ComponentPropsWithRef<typeof Container>;
 
 export const CarouselItem = React.forwardRef<HTMLDivElement, CarouselItemProps>(
-  ({ children, index, id, itemsShownPerPage, ...props }, ref) => {
-    const [translateVal, setTranslateVal] = useState(0);
-    const { itemsPerPage, page, activeId } = React.useContext(CarouselContext);
+  ({ children, index, id, itemsShownPerPage, onKeyDown, ...props }, ref) => {
+    const { page, activeId, translateVal } = React.useContext(CarouselContext);
     const isShown = isItemShown(index, page, itemsShownPerPage);
 
+    const handleKeyPress = useCallback(
+      (event) => {
+        onKeyDown && onKeyDown(event);
+      },
+      [onKeyDown]
+    );
+
     useEffect(() => {
-      setTranslateVal(page * itemsPerPage * 100);
-    }, [page, itemsPerPage]);
+      window.addEventListener("keydown", handleKeyPress);
+
+      return () => {
+        window.removeEventListener("keydown", handleKeyPress);
+      };
+    }, [handleKeyPress]);
 
     return (
       <Container

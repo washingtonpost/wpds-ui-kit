@@ -14,6 +14,8 @@ type CarouselContextProps = {
   setTotalItems: (items: number) => void;
   activeId: string;
   setActiveId: (id: string) => void;
+  translateVal: number;
+  setTranslateVal: (value: number) => void;
 };
 
 export const CarouselContext = React.createContext({} as CarouselContextProps);
@@ -70,6 +72,7 @@ export const CarouselRoot = React.forwardRef<HTMLDivElement, CarouselRootProps>(
 
     const [totalPages, setTotalPages] = useState<number>();
     const [totalItems, setTotalItems] = useState<number>(0);
+    const [translateVal, setTranslateVal] = useState<number>(0);
     const [activeId, setActiveId] = useState<string>("");
 
     return (
@@ -84,6 +87,8 @@ export const CarouselRoot = React.forwardRef<HTMLDivElement, CarouselRootProps>(
           setTotalItems,
           activeId,
           setActiveId,
+          translateVal,
+          setTranslateVal,
         }}
       >
         <Container {...props} ref={ref} role="composite">

@@ -9,7 +9,7 @@ import { useSwipeable } from "react-swipeable";
 import { CarouselContext } from "./CarouselRoot";
 import { CarouselItemProps } from "./CarouselItem";
 
-import { getItemsShownPerPage, isItemShown } from "./utils";
+import { getItemsShownPerPage } from "./utils";
 
 const NAME = "CarouselContent";
 
@@ -43,86 +43,18 @@ export const CarouselContent = React.forwardRef<
     setPage,
     activeId,
     setActiveId,
+    setTranslateVal,
   } = React.useContext(CarouselContext);
 
   const idRef = useRef<string | null>(null);
-  const containerRef = useRef<HTMLDivElement | null>(null);
   const itemsShownPerPage = getItemsShownPerPage(itemsPerPage, totalItems);
+  const focusDescendantIndex = useRef(-1);
+  const prevItemIndex = useRef(-1);
 
   //create the prefix using a random id when the component is first rendered
   useEffect(() => {
     idRef.current = String(nanoid(5));
   }, []);
-
-  //set onFocus and onBlur handlers to work with arrowkeys
-  useEffect(() => {
-    const el = containerRef?.current;
-    let currentIndex = 0;
-
-    const handleOnFocus = () => {
-      setActiveId(`${idRef.current}-item${currentIndex}`);
-
-      // handles what happens when we arrow left or right inside
-      // the container
-      const handleOnKeyDown = (e) => {
-        if (e.key === "ArrowLeft") {
-          if (currentIndex - 1 < 0) {
-            currentIndex = 0;
-          }
-
-          if (!isItemShown(currentIndex - 1, page, itemsShownPerPage)) {
-            return;
-          } else {
-            currentIndex = currentIndex - 1;
-          }
-          setActiveId(`${idRef.current}-item${currentIndex}`);
-        }
-        if (e.key === "ArrowRight") {
-          // no longer than number of children
-          if (currentIndex + 1 > totalItems) {
-            currentIndex = totalItems;
-            return;
-          }
-
-          if (!isItemShown(currentIndex + 1, page, itemsShownPerPage)) {
-            return;
-          } else {
-            currentIndex = currentIndex + 1;
-          }
-
-          setActiveId(`${idRef.current}-item${currentIndex}`);
-        }
-      };
-
-      el?.addEventListener("keydown", handleOnKeyDown);
-
-      return () => {
-        el?.removeEventListener("keydown", handleOnKeyDown);
-      };
-    };
-
-    // on blur setActiveId to empty string to remove styling from items
-    const handleOnBlur = () => {
-      setActiveId("");
-      currentIndex = 0;
-    };
-
-    el?.addEventListener("focus", handleOnFocus);
-    el?.addEventListener("blur", handleOnBlur);
-
-    return () => {
-      el?.removeEventListener("focus", handleOnFocus);
-      el?.removeEventListener("blur", handleOnBlur);
-    };
-  }, [
-    setActiveId,
-    activeId,
-    totalItems,
-    page,
-    itemsShownPerPage,
-    totalPages,
-    setPage,
-  ]);
 
   // get the total amount of items we're passing
   // to be able to index the items
@@ -136,6 +68,10 @@ export const CarouselContent = React.forwardRef<
     const totalPages = Math.ceil(totalItems / itemsPerPage);
     setTotalPages(totalPages);
   }, [totalItems, setTotalPages, itemsPerPage]);
+
+  useEffect(() => {
+    setTranslateVal(page * itemsPerPage * 100);
+  }, [page, itemsPerPage, setTranslateVal]);
 
   // handlers to handle swiping when on mobile
   const handlers = useSwipeable({
@@ -152,12 +88,62 @@ export const CarouselContent = React.forwardRef<
     preventScrollOnSwipe: true,
   });
 
+  const handleOnFocus = () => {
+    if (focusDescendantIndex.current === -1) {
+      focusDescendantIndex.current = 0;
+      prevItemIndex.current = -1;
+    }
+    setActiveId(`${idRef.current}-item${focusDescendantIndex.current}`);
+  };
+
+  const handleOnBlur = () => {
+    if (focusDescendantIndex.current !== -1) {
+      focusDescendantIndex.current = -1;
+      prevItemIndex.current = -1;
+    }
+  };
+
+  const handleOnKeyDown = (event: React.KeyboardEvent) => {
+    if (focusDescendantIndex.current === -1) return;
+
+    const currentIndex = parseInt(activeId.split("item")[1], 10);
+
+    if (event.key === "ArrowLeft") {
+      const prevIndex = currentIndex - 1;
+      if (prevIndex < 0) return;
+      setActiveId(`${idRef.current}-item${prevIndex}`);
+      if (prevIndex % itemsPerPage === itemsPerPage - 1 && page !== 0) {
+        setPage(page - 1);
+      }
+    }
+
+    if (event.key === "ArrowRight") {
+      const nextIndex = currentIndex + 1;
+      if (nextIndex > totalItems - 1) return;
+      setActiveId(`${idRef.current}-item${nextIndex}`);
+      if (nextIndex % itemsPerPage === 0) {
+        setPage(page + 1);
+      }
+    }
+  };
+
+  const handleMouseDown = (event: React.MouseEvent<HTMLElement>) => {
+    const el = event.target as HTMLElement;
+    const item = el.closest("[id*='item']");
+    if (!item) return;
+    focusDescendantIndex.current = parseInt(item.id.split("item")[1], 10);
+    prevItemIndex.current = focusDescendantIndex.current;
+  };
+
   return (
     <div {...handlers}>
       <Container
         {...props}
-        ref={containerRef}
+        ref={ref}
         tabIndex={0}
+        onFocus={handleOnFocus}
+        onBlur={handleOnBlur}
+        onMouseDown={handleMouseDown}
         aria-activedescendant={activeId}
       >
         {React.Children.map(children, (child, index) => {
@@ -168,6 +154,7 @@ export const CarouselContent = React.forwardRef<
                 index,
                 id: `${idRef.current}-item${index}`,
                 itemsShownPerPage,
+                onKeyDown: handleOnKeyDown,
               }
             );
           }

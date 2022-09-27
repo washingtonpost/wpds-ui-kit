@@ -38,7 +38,6 @@ const Template = (args) => {
     <Component.Root
       {...args}
       page={page}
-      itemsPerPage={3}
       onPageChange={(p) => {
         console.log("page is", p);
         setPage(p);
