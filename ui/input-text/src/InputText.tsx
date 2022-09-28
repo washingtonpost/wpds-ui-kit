@@ -1,56 +1,18 @@
 import * as React from "react";
 import { nanoid } from "nanoid";
 import { theme, styled } from "@washingtonpost/wpds-theme";
-import { Box } from "@washingtonpost/wpds-box";
 import { Button } from "@washingtonpost/wpds-button";
 import { Icon } from "@washingtonpost/wpds-icon";
-import {
-  sharedInputStyles,
-  sharedInputVariants,
-  useFloating,
-} from "@washingtonpost/wpds-input-shared";
+import { useFloating } from "@washingtonpost/wpds-input-shared";
 import { InputLabel } from "@washingtonpost/wpds-input-label";
 import { ErrorMessage } from "@washingtonpost/wpds-error-message";
 import { HelperText } from "@washingtonpost/wpds-helper-text";
 import { VisuallyHidden } from "@washingtonpost/wpds-visually-hidden";
 import { Search, Globe, Phone, Email } from "@washingtonpost/wpds-assets";
+import { StyledContainer } from "./StyledContainer";
+import type * as WPDS from "@washingtonpost/wpds-theme";
 
 const NAME = "InputText";
-
-const StyledContainer = styled(Box, {
-  ...sharedInputStyles,
-  alignItems: "center",
-  display: "flex",
-
-  "&:focus-within": {
-    borderColor: theme.colors.signal,
-  },
-
-  variants: {
-    ...sharedInputVariants,
-    isDisabled: {
-      true: {
-        ...sharedInputVariants.isDisabled.true,
-        "&:focus-within": {
-          borderColor: theme.colors.disabled,
-        },
-      },
-    },
-    isInvalid: {
-      true: {
-        ...sharedInputVariants.isInvalid.true,
-        "&:focus-within": {
-          borderColor: theme.colors.error,
-        },
-      },
-    },
-    isSuccessful: {
-      true: {
-        borderColor: theme.colors.success,
-      },
-    },
-  },
-});
 
 const LabelInputWrapper = styled("div", {
   flex: 1,
@@ -158,6 +120,8 @@ export interface InputTextProps
   type?: "text" | "search" | "url" | "tel" | "email" | "password";
   /** The input element value for controlled components */
   value?: string;
+  /** Overrides for the container styles. This is different than the styles for the input */
+  containerStyleOverrides?: WPDS.CSS;
 }
 
 export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
@@ -181,6 +145,7 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
       success,
       type = "text",
       value,
+      containerStyleOverrides,
       ...rest
     },
     ref
@@ -244,11 +209,12 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
     }
 
     return (
-      <div>
+      <>
         <StyledContainer
           isDisabled={disabled}
           isInvalid={error}
           isSuccessful={success}
+          css={{ ...containerStyleOverrides }}
         >
           {child && icon === "left" && (
             <IconContainer isDisabled={disabled}>{child}</IconContainer>
@@ -307,7 +273,7 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
             {errorMessage}
           </ErrorMessage>
         )}
-      </div>
+      </>
     );
   }
 );
