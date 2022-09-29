@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { nanoid } from "nanoid";
 import { theme, styled } from "@washingtonpost/wpds-theme";
 import { Button } from "@washingtonpost/wpds-button";
@@ -120,8 +120,8 @@ export interface InputTextProps
   type?: "text" | "search" | "url" | "tel" | "email" | "password";
   /** The input element value for controlled components */
   value?: string;
-  /** Overrides for the container styles. This is different than the styles for the input */
-  containerStyleOverrides?: WPDS.CSS;
+  /** Overrides for the input text styles. Padding overrides affect the input container and  */
+  css?: WPDS.CSS;
 }
 
 export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
@@ -145,7 +145,7 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
       success,
       type = "text",
       value,
-      containerStyleOverrides,
+      css,
       ...rest
     },
     ref
@@ -208,13 +208,20 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
         }
     }
 
+    const {
+      paddingBlockStart,
+      paddingBlockEnd,
+      paddingInline,
+      ...overrideCss
+    } = css;
+
     return (
       <>
         <StyledContainer
           isDisabled={disabled}
           isInvalid={error}
           isSuccessful={success}
-          css={{ ...containerStyleOverrides }}
+          css={overrideCss}
         >
           {child && icon === "left" && (
             <IconContainer isDisabled={disabled}>{child}</IconContainer>
@@ -242,6 +249,11 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
               aria-invalid={error}
               aria-errormessage={error ? errorId : undefined}
               aria-describedby={helperText ? helperId : undefined}
+              css={{
+                paddingBlockStart,
+                paddingBlockEnd,
+                paddingInline,
+              }}
               {...rest}
             />
           </LabelInputWrapper>
