@@ -208,12 +208,22 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
         }
     }
 
-    const {
-      paddingBlockStart,
-      paddingBlockEnd,
-      paddingInline,
-      ...overrideCss
-    } = css;
+    // ----
+    // This code block because we want to filter out the padding elements and pass those
+    // only to the input element. All other styles should go into the StyledContainer.
+    // If we ever need to check for more attributes, then we should pull this out into a function.
+    let inputStyles = {};
+    let containerStyles = {};
+
+    css &&
+      Object.keys(css).map((key) => {
+        if (key.includes("padding")) {
+          inputStyles = { ...inputStyles, [key]: css.key };
+          return;
+        }
+        containerStyles = { ...containerStyles, [key]: css.key };
+      });
+    // ----
 
     return (
       <>
@@ -221,7 +231,8 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
           isDisabled={disabled}
           isInvalid={error}
           isSuccessful={success}
-          css={overrideCss}
+          // if you take out this check, then you'll get TS2339 and the build will fail
+          css={containerStyles && containerStyles}
         >
           {child && icon === "left" && (
             <IconContainer isDisabled={disabled}>{child}</IconContainer>
@@ -249,11 +260,8 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
               aria-invalid={error}
               aria-errormessage={error ? errorId : undefined}
               aria-describedby={helperText ? helperId : undefined}
-              css={{
-                paddingBlockStart,
-                paddingBlockEnd,
-                paddingInline,
-              }}
+              // if you take out this check, then you'll get TS2339 and the build will fail
+              css={inputStyles && inputStyles}
               {...rest}
             />
           </LabelInputWrapper>
