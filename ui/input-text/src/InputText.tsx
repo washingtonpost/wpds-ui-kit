@@ -226,7 +226,7 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
     // ----
 
     return (
-      <>
+      <div>
         <StyledContainer
           isDisabled={disabled}
           isInvalid={error}
@@ -293,7 +293,7 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
             {errorMessage}
           </ErrorMessage>
         )}
-      </>
+      </div>
     );
   }
 );
