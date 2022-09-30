@@ -93,6 +93,7 @@ export const CarouselContent = React.forwardRef<
   const handleOnBlur = () => {
     if (focusDescendantIndex.current !== -1) {
       focusDescendantIndex.current = -1;
+      setActiveId("");
     }
   };
 
@@ -119,6 +120,9 @@ export const CarouselContent = React.forwardRef<
     const item = el.closest("[id*='item']");
     if (!item) return;
     focusDescendantIndex.current = parseInt(item.id.split("item")[1], 10);
+    if (focusDescendantIndex.current !== -1) {
+      setActiveId(`${idRef.current}-item${focusDescendantIndex.current}`);
+    }
   };
 
   return (
