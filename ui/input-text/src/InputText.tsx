@@ -218,10 +218,10 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
     css &&
       Object.keys(css).map((key) => {
         if (key.includes("padding")) {
-          inputStyles = { ...inputStyles, [key]: css.key };
+          inputStyles = { ...inputStyles, [key]: css[key] };
           return;
         }
-        containerStyles = { ...containerStyles, [key]: css.key };
+        containerStyles = { ...containerStyles, [key]: css[key] };
       });
     // ----
 
