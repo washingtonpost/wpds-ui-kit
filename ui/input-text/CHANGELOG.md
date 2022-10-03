@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.19.0](https://github.com/WPMedia/wpds-ui-kit/compare/v0.18.0...v0.19.0) (2022-10-03)
+
+
+### Bug Fixes
+
+* add css prop input text  container ([#234](https://github.com/WPMedia/wpds-ui-kit/issues/234)) ([2945f1f](https://github.com/WPMedia/wpds-ui-kit/commit/2945f1ffff6e5d961da60848d2e4c3cbc6eabb2a))
+
+
+
+
+
 # [0.18.0](https://github.com/WPMedia/wpds-ui-kit/compare/v0.17.0...v0.18.0) (2022-09-22)
 
 **Note:** Version bump only for package @washingtonpost/wpds-input-text
