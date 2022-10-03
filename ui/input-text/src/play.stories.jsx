@@ -1,6 +1,6 @@
 import * as React from "react";
 import { screen, userEvent } from "@storybook/testing-library";
-import { expect } from "@storybook/jest";
+import { expect, jest } from "@storybook/jest";
 import { InputText as Component } from "./";
 import { Icon } from "@washingtonpost/wpds-icon";
 import { Button } from "@washingtonpost/wpds-button";
@@ -21,6 +21,7 @@ export default {
     icon: {
       defaultValue: "left",
     },
+    onButtonIconClick: jest.fn(),
     children: {
       options: ["None", "Settings Icon"],
       mapping: {

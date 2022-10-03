@@ -1,56 +1,18 @@
-import * as React from "react";
+import React from "react";
 import { nanoid } from "nanoid";
 import { theme, styled } from "@washingtonpost/wpds-theme";
-import { Box } from "@washingtonpost/wpds-box";
 import { Button } from "@washingtonpost/wpds-button";
 import { Icon } from "@washingtonpost/wpds-icon";
-import {
-  sharedInputStyles,
-  sharedInputVariants,
-  useFloating,
-} from "@washingtonpost/wpds-input-shared";
+import { useFloating } from "@washingtonpost/wpds-input-shared";
 import { InputLabel } from "@washingtonpost/wpds-input-label";
 import { ErrorMessage } from "@washingtonpost/wpds-error-message";
 import { HelperText } from "@washingtonpost/wpds-helper-text";
 import { VisuallyHidden } from "@washingtonpost/wpds-visually-hidden";
 import { Search, Globe, Phone, Email } from "@washingtonpost/wpds-assets";
+import { StyledContainer } from "./StyledContainer";
+import type * as WPDS from "@washingtonpost/wpds-theme";
 
 const NAME = "InputText";
-
-const StyledContainer = styled(Box, {
-  ...sharedInputStyles,
-  alignItems: "center",
-  display: "flex",
-
-  "&:focus-within": {
-    borderColor: theme.colors.signal,
-  },
-
-  variants: {
-    ...sharedInputVariants,
-    isDisabled: {
-      true: {
-        ...sharedInputVariants.isDisabled.true,
-        "&:focus-within": {
-          borderColor: theme.colors.disabled,
-        },
-      },
-    },
-    isInvalid: {
-      true: {
-        ...sharedInputVariants.isInvalid.true,
-        "&:focus-within": {
-          borderColor: theme.colors.error,
-        },
-      },
-    },
-    isSuccessful: {
-      true: {
-        borderColor: theme.colors.success,
-      },
-    },
-  },
-});
 
 const LabelInputWrapper = styled("div", {
   flex: 1,
@@ -158,6 +120,8 @@ export interface InputTextProps
   type?: "text" | "search" | "url" | "tel" | "email" | "password";
   /** The input element value for controlled components */
   value?: string;
+  /** Overrides for the input text styles. Padding overrides affect the input container and  */
+  css?: WPDS.CSS;
 }
 
 export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
@@ -181,6 +145,7 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
       success,
       type = "text",
       value,
+      css,
       ...rest
     },
     ref
@@ -243,12 +208,31 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
         }
     }
 
+    // ----
+    // This code block because we want to filter out the padding elements and pass those
+    // only to the input element. All other styles should go into the StyledContainer.
+    // If we ever need to check for more attributes, then we should pull this out into a function.
+    let inputStyles = {};
+    let containerStyles = {};
+
+    css &&
+      Object.keys(css).map((key) => {
+        if (key.includes("padding")) {
+          inputStyles = { ...inputStyles, [key]: css[key] };
+          return;
+        }
+        containerStyles = { ...containerStyles, [key]: css[key] };
+      });
+    // ----
+
     return (
       <div>
         <StyledContainer
           isDisabled={disabled}
           isInvalid={error}
           isSuccessful={success}
+          // if you take out this check, then you'll get TS2339 and the build will fail
+          css={containerStyles && containerStyles}
         >
           {child && icon === "left" && (
             <IconContainer isDisabled={disabled}>{child}</IconContainer>
@@ -276,6 +260,8 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
               aria-invalid={error}
               aria-errormessage={error ? errorId : undefined}
               aria-describedby={helperText ? helperId : undefined}
+              // if you take out this check, then you'll get TS2339 and the build will fail
+              css={inputStyles && inputStyles}
               {...rest}
             />
           </LabelInputWrapper>
