@@ -37,6 +37,28 @@ export const sharedInputVariants = {
   },
 };
 
+export const unstyledInputStyles = {
+  backgroundColor: "transparent",
+  border: "none",
+  color: "inherit",
+  display: "block",
+  fontSize: "inherit",
+  lineHeight: "inherit",
+  paddingBlockStart: theme.space["125"],
+  paddingBlockEnd: theme.space["050"],
+  paddingInline: theme.space["050"],
+  textOverflow: "ellipsis",
+  width: "100%",
+
+  "&:focus": {
+    outline: "none",
+  },
+
+  "&:disabled": {
+    color: "inherit",
+  },
+};
+
 export const useFloating = (
   val,
   onFocus,

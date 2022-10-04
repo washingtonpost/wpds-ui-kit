@@ -3,7 +3,10 @@ import { nanoid } from "nanoid";
 import { theme, styled } from "@washingtonpost/wpds-theme";
 import { Button } from "@washingtonpost/wpds-button";
 import { Icon } from "@washingtonpost/wpds-icon";
-import { useFloating } from "@washingtonpost/wpds-input-shared";
+import {
+  useFloating,
+  unstyledInputStyles,
+} from "@washingtonpost/wpds-input-shared";
 import { InputLabel } from "@washingtonpost/wpds-input-label";
 import { ErrorMessage } from "@washingtonpost/wpds-error-message";
 import { HelperText } from "@washingtonpost/wpds-helper-text";
@@ -20,25 +23,7 @@ const LabelInputWrapper = styled("div", {
 });
 
 const UnstyledInput = styled("input", {
-  backgroundColor: "transparent",
-  border: "none",
-  color: "inherit",
-  display: "block",
-  fontSize: "inherit",
-  lineHeight: "inherit",
-  paddingBlockStart: theme.space["125"],
-  paddingBlockEnd: theme.space["050"],
-  paddingInline: theme.space["050"],
-  textOverflow: "ellipsis",
-  width: "100%",
-
-  "&:focus": {
-    outline: "none",
-  },
-
-  "&:disabled": {
-    color: "inherit",
-  },
+  ...unstyledInputStyles,
 });
 
 const TextInputLabel = styled(InputLabel, {
