@@ -1,9 +1,6 @@
 import * as React from "react";
-import { styled } from "@washingtonpost/wpds-theme";
 import * as SelectPrimitive from "@radix-ui/react-select";
 import { SelectProps as SelectPrimitiveProps } from "@radix-ui/react-select";
-
-const StyledSelect = styled(SelectPrimitive.Root, {});
 
 export type SelectProps = SelectPrimitiveProps;
 
@@ -20,9 +17,9 @@ export const SelectRoot = React.forwardRef<HTMLDivElement, any>(
         currentValue: value,
       }}
     >
-      <StyledSelect {...props} ref={ref}>
+      <SelectPrimitive.Root {...props} ref={ref}>
         {children}
-      </StyledSelect>
+      </SelectPrimitive.Root>
     </SelectContext.Provider>
   )
 );

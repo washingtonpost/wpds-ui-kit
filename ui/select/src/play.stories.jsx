@@ -25,22 +25,13 @@ export default {
 };
 
 const Template = (args) => {
-  const countries = {
-    france: "🇫🇷",
-    "united-kingdom": "🇬🇧",
-    spain: "🇪🇸 Spain",
-    peru: "🇵🇪 Peru",
-    chile: "🇨🇱",
-    ecuador: "🇪🇨 Ecuador",
-  };
-
   const [value, setValue] = React.useState("");
 
   return (
     <Select.Root value={value} onValueChange={setValue}>
       <SelectTrigger aria-label="Countries">
         <SelectLabel>Countries</SelectLabel>
-        <SelectValue aria-label={value}>{countries[value]}</SelectValue>
+        <SelectValue aria-label={value} />
       </SelectTrigger>
       <SelectContent>
         <SelectGroup label="Europe">
