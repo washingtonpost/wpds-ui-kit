@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import { theme, styled } from "@washingtonpost/wpds-theme";
-import ChevronDown from "@washingtonpost/wpds-assets/asset/chevron-down";
+import { ChevronDown } from "@washingtonpost/wpds-assets";
 import { Icon } from "@washingtonpost/wpds-icon";
 import { sharedInputStyles } from "@washingtonpost/wpds-input-shared";
 
@@ -32,14 +32,14 @@ const IconWrapper = styled("div", {
   maxWidth: "fit-content",
 });
 
-export const SelectTrigger = React.forwardRef<HTMLButtonElement, any>(
+export const SelectTrigger = React.forwardRef<HTMLDivElement, any>(
   ({ children, ...props }: any, ref) => {
     return (
       <StyledTrigger {...props} ref={ref}>
         {children}
         <IconWrapper>
           <Icon label="">
-            <ChevronDown aria-hidden />
+            <ChevronDown />
           </Icon>
         </IconWrapper>
       </StyledTrigger>

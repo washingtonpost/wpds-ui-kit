@@ -29,7 +29,7 @@ const TextInputLabel = styled(InputLabel, {
 
 export const SelectLabel = ({ children, ...props }) => (
   <LabelInputWrapper {...props}>
-    <TextInputLabel isFloating={false}>{children}</TextInputLabel>
+    <TextInputLabel isFloating={true}>{children}</TextInputLabel>
   </LabelInputWrapper>
 );
 

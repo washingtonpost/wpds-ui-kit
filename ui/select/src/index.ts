@@ -5,3 +5,4 @@ export * from "./SelectValue";
 export * from "./SelectContent";
 export * from "./SelectItem";
 export * from "./SelectLabel";
+export * from "./SelectGroup";
