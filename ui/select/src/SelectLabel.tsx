@@ -1,4 +1,5 @@
-import * as React from "react";
+import React, { useEffect, useState } from "react";
+import { SelectContext } from "./SelectRoot";
 
 import { theme, styled } from "@washingtonpost/wpds-theme";
 import { InputLabel } from "@washingtonpost/wpds-input-label";
@@ -27,10 +28,21 @@ const TextInputLabel = styled(InputLabel, {
   },
 });
 
-export const SelectLabel = ({ children, ...props }) => (
-  <LabelInputWrapper {...props}>
-    <TextInputLabel isFloating={true}>{children}</TextInputLabel>
-  </LabelInputWrapper>
-);
+export const SelectLabel = ({ children, ...props }) => {
+  const { currentValue } = React.useContext(SelectContext);
+  const [isFloating, setIsFloating] = useState(false);
+
+  useEffect(() => {
+    if (currentValue.trim().length !== 0) {
+      setIsFloating(true);
+    }
+  }, [currentValue]);
+
+  return (
+    <LabelInputWrapper {...props}>
+      <TextInputLabel isFloating={isFloating}>{children}</TextInputLabel>
+    </LabelInputWrapper>
+  );
+};
 
 SelectLabel.displayName = "SelectLabel";

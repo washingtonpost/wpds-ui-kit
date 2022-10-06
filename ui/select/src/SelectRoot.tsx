@@ -7,11 +7,23 @@ const StyledSelect = styled(SelectPrimitive.Root, {});
 
 export type SelectProps = SelectPrimitiveProps;
 
+type SelectContextProps = {
+  currentValue: string;
+};
+
+export const SelectContext = React.createContext({} as SelectContextProps);
+
 export const SelectRoot = React.forwardRef<HTMLDivElement, any>(
-  ({ children, ...props }: any, ref) => (
-    <StyledSelect {...props} ref={ref}>
-      {children}
-    </StyledSelect>
+  ({ children, value, ...props }: any, ref) => (
+    <SelectContext.Provider
+      value={{
+        currentValue: value,
+      }}
+    >
+      <StyledSelect {...props} ref={ref}>
+        {children}
+      </StyledSelect>
+    </SelectContext.Provider>
   )
 );
 
