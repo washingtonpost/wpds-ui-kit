@@ -8,10 +8,13 @@ import * as SelectPrimitive from "@radix-ui/react-select";
 
 const StyledValue = styled("div", {
   ...unstyledInputStyles,
-  width: "100%",
+  width: "90%",
   textAlign: "start",
   cursor: "pointer",
   height: theme.space[300],
+  whiteSpace: "nowrap",
+  overflow: "hidden",
+  paddingInline: "none",
 
   variants: {
     isDisabled: {

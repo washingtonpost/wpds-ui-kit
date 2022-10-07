@@ -28,7 +28,10 @@ const Template = (args) => {
       <Select.Content>
         <Select.Group label="Europe">
           <Select.Item value="france">France</Select.Item>
-          <Select.Item value="united-kingdom">United Kingdom</Select.Item>
+          <Select.Item value="united-kingdom">
+            United Kingdom - Scotland, Ireland, Wales, Great Britain, and the
+            commonwealth states of Canada, Australia, Turks and Caicos
+          </Select.Item>
           <Select.Item value="spain">Spain</Select.Item>
         </Select.Group>
         <Select.Group label="South America" divider={false}>
