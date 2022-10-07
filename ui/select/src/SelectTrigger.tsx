@@ -3,13 +3,17 @@ import * as React from "react";
 import { theme, styled } from "@washingtonpost/wpds-theme";
 import { ChevronDown } from "@washingtonpost/wpds-assets";
 import { Icon } from "@washingtonpost/wpds-icon";
-import { sharedInputStyles } from "@washingtonpost/wpds-input-shared";
+import {
+  sharedInputStyles,
+  sharedInputVariants,
+} from "@washingtonpost/wpds-input-shared";
 
 import { SelectContext } from "./SelectRoot";
 import * as SelectPrimitive from "@radix-ui/react-select";
 
 const StyledTrigger = styled(SelectPrimitive.Trigger, {
   ...sharedInputStyles,
+
   display: "flex",
   justifyContent: "space-between",
   width: "100%",
@@ -19,6 +23,8 @@ const StyledTrigger = styled(SelectPrimitive.Trigger, {
   },
 
   variants: {
+    ...sharedInputVariants,
+
     success: {
       true: {
         borderColor: theme.colors.success,
@@ -39,15 +45,28 @@ const IconWrapper = styled("div", {
   lineHeight: "0",
   gap: "0",
   maxWidth: "fit-content",
+  variants: {
+    isDisabled: {
+      true: {
+        cursor: "not-allowed",
+      },
+    },
+  },
 });
 
 export const SelectTrigger = React.forwardRef<HTMLDivElement, any>(
   ({ children, ...props }: any, ref) => {
-    const { success } = React.useContext(SelectContext);
+    const { success, disabled } = React.useContext(SelectContext);
     return (
-      <StyledTrigger {...props} success={success} ref={ref}>
+      <StyledTrigger
+        {...props}
+        success={success}
+        disabled={disabled}
+        isDisabled={disabled} //for styling purposes only
+        ref={ref}
+      >
         {children}
-        <IconWrapper>
+        <IconWrapper isDisabled={disabled}>
           <Icon label="">
             <ChevronDown />
           </Icon>

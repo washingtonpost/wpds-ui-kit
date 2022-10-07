@@ -12,14 +12,22 @@ const StyledValue = styled("div", {
   textAlign: "start",
   cursor: "pointer",
   height: theme.space[300],
+
+  variants: {
+    isDisabled: {
+      true: {
+        cursor: "not-allowed",
+      },
+    },
+  },
 });
 
 export const SelectValue = React.forwardRef<HTMLDivElement, any>(
   ({ children, ...props }: any, ref) => {
-    const { currentValue } = React.useContext(SelectContext);
+    const { currentValue, disabled } = React.useContext(SelectContext);
 
     return (
-      <StyledValue {...props}>
+      <StyledValue {...props} isDisabled={disabled}>
         <SelectPrimitive.Value aria-label={currentValue} ref={ref}>
           {children}
         </SelectPrimitive.Value>

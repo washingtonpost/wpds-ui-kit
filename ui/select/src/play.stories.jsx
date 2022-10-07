@@ -43,6 +43,6 @@ const Template = (args) => {
 
 export const Play = Template.bind({});
 
-Play.args = { success: false, required: false };
+Play.args = { success: false, required: false, disabled: false };
 
 Play.storyName = "Select";

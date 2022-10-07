@@ -8,13 +8,21 @@ type SelectContextProps = {
   currentValue: string;
   required: boolean;
   success: boolean;
+  disabled: boolean;
 };
 
 export const SelectContext = React.createContext({} as SelectContextProps);
 
 export const SelectRoot = React.forwardRef<HTMLDivElement, any>(
   (
-    { children, value, required = false, success = false, ...props }: any,
+    {
+      children,
+      value,
+      required = false,
+      success = false,
+      disabled = false,
+      ...props
+    }: any,
     ref
   ) => (
     <SelectContext.Provider
@@ -22,6 +30,7 @@ export const SelectRoot = React.forwardRef<HTMLDivElement, any>(
         currentValue: value,
         required,
         success,
+        disabled,
       }}
     >
       <SelectPrimitive.Root {...props} ref={ref}>
