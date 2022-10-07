@@ -5,6 +5,7 @@ import { ChevronDown } from "@washingtonpost/wpds-assets";
 import { Icon } from "@washingtonpost/wpds-icon";
 import { sharedInputStyles } from "@washingtonpost/wpds-input-shared";
 
+import { SelectContext } from "./SelectRoot";
 import * as SelectPrimitive from "@radix-ui/react-select";
 
 const StyledTrigger = styled(SelectPrimitive.Trigger, {
@@ -15,6 +16,14 @@ const StyledTrigger = styled(SelectPrimitive.Trigger, {
 
   "&:focus-within": {
     borderColor: theme.colors.signal,
+  },
+
+  variants: {
+    success: {
+      true: {
+        borderColor: theme.colors.success,
+      },
+    },
   },
 });
 
@@ -34,8 +43,9 @@ const IconWrapper = styled("div", {
 
 export const SelectTrigger = React.forwardRef<HTMLDivElement, any>(
   ({ children, ...props }: any, ref) => {
+    const { success } = React.useContext(SelectContext);
     return (
-      <StyledTrigger {...props} ref={ref}>
+      <StyledTrigger {...props} success={success} ref={ref}>
         {children}
         <IconWrapper>
           <Icon label="">

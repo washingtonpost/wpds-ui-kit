@@ -28,8 +28,12 @@ const TextInputLabel = styled(InputLabel, {
   },
 });
 
+const RequiredTag = styled("span", {
+  color: theme.colors.red100,
+});
+
 export const SelectLabel = ({ children, ...props }) => {
-  const { currentValue } = React.useContext(SelectContext);
+  const { currentValue, required } = React.useContext(SelectContext);
   const [isFloating, setIsFloating] = useState(false);
 
   useEffect(() => {
@@ -40,7 +44,10 @@ export const SelectLabel = ({ children, ...props }) => {
 
   return (
     <LabelInputWrapper {...props}>
-      <TextInputLabel isFloating={isFloating}>{children}</TextInputLabel>
+      <TextInputLabel isFloating={isFloating}>
+        {children}
+        {required && <RequiredTag>*</RequiredTag>}
+      </TextInputLabel>
     </LabelInputWrapper>
   );
 };
