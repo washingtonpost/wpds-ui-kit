@@ -13,7 +13,7 @@ const StyledItem = styled(SelectPrimitive.Item, {
   fontSize: theme.fontSizes[100],
   height: theme.sizes[200],
   lineHeight: 1.25,
-  padding: `0px ${theme.space["050"]} 0px ${theme.space[175]}`,
+  padding: `0px ${theme.space[100]} 0px ${theme.space[175]}`,
   position: "relative",
   userSelect: "none",
 
