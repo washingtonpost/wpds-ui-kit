@@ -9,7 +9,25 @@ type SelectContextProps = {
   required: boolean;
   success: boolean;
   disabled: boolean;
+  error?: boolean;
+  errorMessage?: React.ReactNode;
+  helperText?: React.ReactNode;
 };
+
+export interface SelectRootProps extends React.ComponentPropsWithRef<any> {
+  /** The underlying input element disabled attribute */
+  disabled?: boolean;
+  /** Indicates there is an error */
+  error?: boolean;
+  /** Text displayed below the select to describe the cause of the error */
+  errorMessage?: React.ReactNode;
+  /** Text displayed below the input to provide additional context */
+  helperText?: React.ReactNode;
+  /** The select element's required attribute */
+  required?: boolean;
+  /** Indicates there is a success*/
+  success?: boolean;
+}
 
 export const SelectContext = React.createContext({} as SelectContextProps);
 
@@ -17,27 +35,41 @@ export const SelectRoot = React.forwardRef<HTMLDivElement, any>(
   (
     {
       children,
-      value,
-      required = false,
-      success = false,
-      disabled = false,
+      required,
+      success,
+      disabled,
+      error,
+      errorMessage,
+      helperText,
       ...props
     }: any,
     ref
-  ) => (
-    <SelectContext.Provider
-      value={{
-        currentValue: value,
-        required,
-        success,
-        disabled,
-      }}
-    >
-      <SelectPrimitive.Root {...props} ref={ref}>
-        {children}
-      </SelectPrimitive.Root>
-    </SelectContext.Provider>
-  )
+  ) => {
+    const [value, setValue] = React.useState("");
+
+    return (
+      <SelectContext.Provider
+        value={{
+          currentValue: value,
+          required,
+          success,
+          disabled,
+          error,
+          errorMessage,
+          helperText,
+        }}
+      >
+        <SelectPrimitive.Root
+          value={value}
+          onValueChange={setValue}
+          {...props}
+          ref={ref}
+        >
+          {children}
+        </SelectPrimitive.Root>
+      </SelectContext.Provider>
+    );
+  }
 );
 
 SelectRoot.displayName = "SelectRoot";

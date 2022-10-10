@@ -44,7 +44,7 @@ export const SelectLabel = ({ children, ...props }) => {
   const [isFloating, setIsFloating] = useState(false);
 
   useEffect(() => {
-    if (currentValue.trim().length !== 0) {
+    if (currentValue && currentValue.trim().length !== 0) {
       setIsFloating(true);
     }
   }, [currentValue]);

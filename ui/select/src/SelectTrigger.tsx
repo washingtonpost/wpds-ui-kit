@@ -1,15 +1,19 @@
 import * as React from "react";
+import { nanoid } from "nanoid";
 
 import { theme, styled } from "@washingtonpost/wpds-theme";
 import { ChevronDown } from "@washingtonpost/wpds-assets";
 import { Icon } from "@washingtonpost/wpds-icon";
+import { ErrorMessage } from "@washingtonpost/wpds-error-message";
+import { HelperText } from "@washingtonpost/wpds-helper-text";
 import {
   sharedInputStyles,
   sharedInputVariants,
 } from "@washingtonpost/wpds-input-shared";
 
-import { SelectContext } from "./SelectRoot";
 import * as SelectPrimitive from "@radix-ui/react-select";
+
+import { SelectContext } from "./SelectRoot";
 
 const StyledTrigger = styled(SelectPrimitive.Trigger, {
   ...sharedInputStyles,
@@ -30,7 +34,16 @@ const StyledTrigger = styled(SelectPrimitive.Trigger, {
         borderColor: theme.colors.success,
       },
     },
+    error: {
+      true: {
+        borderColor: theme.colors.error,
+      },
+    },
   },
+});
+
+const SubTextWrapper = styled("div", {
+  width: "100%",
 });
 
 const IconWrapper = styled("div", {
@@ -56,22 +69,47 @@ const IconWrapper = styled("div", {
 
 export const SelectTrigger = React.forwardRef<HTMLDivElement, any>(
   ({ children, ...props }: any, ref) => {
-    const { success, disabled } = React.useContext(SelectContext);
+    const [helperId, setHelperId] = React.useState<string | undefined>();
+    const [errorId, setErrorId] = React.useState<string | undefined>();
+
+    const { success, disabled, error, helperText, errorMessage } =
+      React.useContext(SelectContext);
+
+    React.useEffect(() => {
+      setHelperId(`wpds-input-helper-${nanoid(6)}`);
+      setErrorId(`wpds-input-error-${nanoid(6)}`);
+    }, []);
+
     return (
-      <StyledTrigger
-        {...props}
-        success={success}
-        disabled={disabled}
-        isDisabled={disabled} //for styling purposes only
-        ref={ref}
-      >
-        {children}
-        <IconWrapper isDisabled={disabled}>
-          <Icon label="">
-            <ChevronDown />
-          </Icon>
-        </IconWrapper>
-      </StyledTrigger>
+      <>
+        <StyledTrigger
+          success={success}
+          error={error}
+          disabled={disabled}
+          isDisabled={disabled} //for styling purposes only
+          ref={ref}
+          {...props}
+        >
+          {children}
+          <IconWrapper isDisabled={disabled}>
+            <Icon label="">
+              <ChevronDown />
+            </Icon>
+          </IconWrapper>
+        </StyledTrigger>
+        <SubTextWrapper>
+          {helperText && !errorMessage && (
+            <HelperText id={helperId} aria-live="polite">
+              {helperText}
+            </HelperText>
+          )}
+          {errorMessage && (
+            <ErrorMessage id={errorId} aria-live="assertive">
+              {errorMessage}
+            </ErrorMessage>
+          )}
+        </SubTextWrapper>
+      </>
     );
   }
 );

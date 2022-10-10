@@ -1,8 +1,6 @@
 import * as React from "react";
 import { Select } from "./";
 
-import * as SelectPrimitive from "@radix-ui/react-select";
-
 export default {
   title: "Select",
   component: Select.Root,
@@ -17,13 +15,11 @@ export default {
 };
 
 const Template = (args) => {
-  const [value, setValue] = React.useState("");
-
   return (
-    <Select.Root value={value} onValueChange={setValue} {...args}>
+    <Select.Root {...args}>
       <Select.Trigger aria-label="Countries">
         <Select.Label>Countries</Select.Label>
-        <Select.Value aria-label={value} />
+        <Select.Value />
       </Select.Trigger>
       <Select.Content>
         <Select.Group label="Europe">
@@ -46,6 +42,13 @@ const Template = (args) => {
 
 export const Play = Template.bind({});
 
-Play.args = { success: false, required: false, disabled: false };
+Play.args = {
+  success: false,
+  required: false,
+  disabled: false,
+  error: false,
+  errorMessage: "",
+  helperText: "",
+};
 
 Play.storyName = "Select";
