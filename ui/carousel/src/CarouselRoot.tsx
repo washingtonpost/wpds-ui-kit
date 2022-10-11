@@ -1,7 +1,6 @@
-import React, { useState } from "react";
-import { styled, theme } from "@washingtonpost/wpds-theme";
+import * as React from "react";
 import { useControllableState } from "@radix-ui/react-use-controllable-state";
-
+import { styled } from "@washingtonpost/wpds-theme";
 import type * as WPDS from "@washingtonpost/wpds-theme";
 
 type CarouselContextProps = {
@@ -9,13 +8,13 @@ type CarouselContextProps = {
   setPage: (page: number) => void;
   totalPages?: number;
   setTotalPages: React.Dispatch<React.SetStateAction<number | undefined>>;
-  itemsPerPage: number;
-  totalItems: number;
-  setTotalItems: (items: number) => void;
-  activeId: string;
+  itemsPerPage: number | "auto";
+  titleId?: string;
+  setTitleId: (id: string) => void;
+  activeId?: string;
   setActiveId: (id: string) => void;
-  translateVal: number;
-  setTranslateVal: (value: number) => void;
+  isTransitioning: boolean;
+  setIsTransitioning: (transition: boolean) => void;
 };
 
 export const CarouselContext = React.createContext({} as CarouselContextProps);
@@ -24,7 +23,6 @@ const NAME = "CarouselRoot";
 
 const Container = styled("div", {
   maxWidth: "100%",
-  marginBlockEnd: theme.space["100"],
 });
 
 type Controlled = {
@@ -41,10 +39,12 @@ type ControlledOrUncontrolled = Controlled | Uncontrolled;
 
 export type CarouselRootProps = {
   css?: WPDS.CSS;
-  /** number of items to move when the page changes */
-  itemsPerPage?: number;
+  /** number of items to move when the page changes @defaut auto*/
+  itemsPerPage?: number | "auto";
   /** callback for page change */
   onPageChange?: () => void;
+  /** callback for internal focus */
+  onDescendentFocus?: (index: number) => void;
   /* TODO :: do we need these?
   onScroll={event => {}}        // default `undefined`
   onDragScroll={event => {}}    // default `undefined`
@@ -58,7 +58,8 @@ export const CarouselRoot = React.forwardRef<HTMLDivElement, CarouselRootProps>(
       page: pageProp,
       defaultPage,
       onPageChange,
-      itemsPerPage = 1,
+      itemsPerPage = "auto",
+      onDescendentFocus = () => undefined,
       children,
       ...props
     },
@@ -69,11 +70,22 @@ export const CarouselRoot = React.forwardRef<HTMLDivElement, CarouselRootProps>(
       defaultProp: defaultPage,
       onChange: onPageChange,
     });
+    const [totalPages, setTotalPages] = React.useState<number>();
+    const [titleId, setTitleId] = React.useState<string | undefined>();
+    const [activeId, setActiveId] = React.useState<string | undefined>();
+    const [isTransitioning, setIsTransitioning] = React.useState(false);
+    const prevIndex = React.useRef();
 
-    const [totalPages, setTotalPages] = useState<number>();
-    const [totalItems, setTotalItems] = useState<number>(0);
-    const [translateVal, setTranslateVal] = useState<number>(0);
-    const [activeId, setActiveId] = useState<string>("");
+    React.useEffect(() => {
+      let currentIndex;
+      if (activeId) {
+        currentIndex = parseInt(activeId.split("item")[1], 10);
+      }
+      if (prevIndex.current !== currentIndex) {
+        onDescendentFocus(currentIndex);
+        prevIndex.current = currentIndex;
+      }
+    }, [activeId, onDescendentFocus]);
 
     return (
       <CarouselContext.Provider
@@ -83,15 +95,21 @@ export const CarouselRoot = React.forwardRef<HTMLDivElement, CarouselRootProps>(
           totalPages,
           setTotalPages,
           itemsPerPage,
-          totalItems,
-          setTotalItems,
+          titleId,
+          setTitleId,
           activeId,
           setActiveId,
-          translateVal,
-          setTranslateVal,
+          isTransitioning,
+          setIsTransitioning,
         }}
       >
-        <Container {...props} ref={ref} role="composite">
+        <Container
+          {...props}
+          ref={ref}
+          role="group"
+          aria-roledescription="carousel"
+          aria-labelledby={titleId ? titleId : undefined}
+        >
           {children}
         </Container>
       </CarouselContext.Provider>

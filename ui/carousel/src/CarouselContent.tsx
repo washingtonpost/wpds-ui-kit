@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import * as React from "react";
 
 import { styled, theme } from "@washingtonpost/wpds-theme";
 import type * as WPDS from "@washingtonpost/wpds-theme";
@@ -8,21 +8,20 @@ import { useSwipeable } from "react-swipeable";
 
 import { CarouselContext } from "./CarouselRoot";
 import { CarouselItemProps } from "./CarouselItem";
-
-import { getItemsShownPerPage } from "./utils";
+import { measurePages, useDebounce, findFirstVisibleItem } from "./utils";
 
 const NAME = "CarouselContent";
 
 const Container = styled("div", {
-  display: "flex",
-  alignItems: "center",
-  marginBlockEnd: theme.space["100"],
   overflow: "hidden",
-
   "&:focus": {
     outline: "none",
-    border: "1px dotted grey",
   },
+});
+
+const Slider = styled("div", {
+  display: "flex",
+  transition: `transform 0.5s ${theme.transitions.inOut}`,
 });
 
 export type CarouselContentProps = {
@@ -32,79 +31,148 @@ export type CarouselContentProps = {
 export const CarouselContent = React.forwardRef<
   HTMLDivElement,
   CarouselContentProps
->(({ children, ...props }, ref) => {
+>(({ children, onKeyDown, ...props }, ref) => {
   const {
     setTotalPages,
     itemsPerPage,
-    setTotalItems,
-    totalItems,
     totalPages,
     page,
     setPage,
     activeId,
     setActiveId,
-    setTranslateVal,
+    setIsTransitioning,
+    isTransitioning,
   } = React.useContext(CarouselContext);
 
-  const idRef = useRef<string | null>(null);
-  const itemsShownPerPage = getItemsShownPerPage(itemsPerPage, totalItems);
-  const focusDescendantIndex = useRef(-1);
-  const prevItemIndex = useRef(-1);
+  const [totalItems, setTotalItems] = React.useState(0);
+  const idRef = React.useRef<string | null>(null);
+  const childRefs = React.useRef<HTMLDivElement[]>([]);
+  const internalRef = React.useRef<HTMLDivElement>(null);
+  const [xPos, setXpos] = React.useState(0);
+  const pagePositions = React.useRef([]);
+  const xPosRef = React.useRef(0);
+
+  // make use of both external and internal ref
+  React.useEffect(() => {
+    if (!ref) return;
+    typeof ref === "function"
+      ? ref(internalRef.current)
+      : (ref.current = internalRef.current);
+  }, [ref, internalRef]);
 
   //create the prefix using a random id when the component is first rendered
-  useEffect(() => {
+  React.useEffect(() => {
     idRef.current = String(nanoid(5));
   }, []);
 
   // get the total amount of items we're passing
   // to be able to index the items
-  useEffect(() => {
+  React.useEffect(() => {
     setTotalItems(React.Children.count(children));
   }, [children, setTotalItems]);
 
   // gets the total number of pages based on how many items per page
   // we want to show
-  useEffect(() => {
-    const totalPages = Math.ceil(totalItems / itemsPerPage);
-    setTotalPages(totalPages);
-  }, [totalItems, setTotalPages, itemsPerPage]);
+  const updatePages = React.useCallback(() => {
+    const newPagePositions = measurePages(internalRef, childRefs, itemsPerPage);
+    pagePositions.current = newPagePositions;
+    setTotalPages(pagePositions.current.length);
+  }, [itemsPerPage, setTotalPages]);
 
-  useEffect(() => {
-    setTranslateVal(page * itemsPerPage * 100);
-  }, [page, itemsPerPage, setTranslateVal]);
+  React.useEffect(() => {
+    updatePages();
+  }, [updatePages]);
+
+  const setClosestPage = React.useCallback(() => {
+    const closestPagePosition = pagePositions.current.reduce(function (
+      prev,
+      curr
+    ) {
+      return Math.abs(curr - xPosRef.current) < Math.abs(prev - xPosRef.current)
+        ? curr
+        : prev;
+    });
+    const closestPage = pagePositions.current.findIndex(
+      (p) => p === closestPagePosition
+    );
+    setPage(closestPage);
+  }, [setPage]);
+
+  const debouncedHandleResize = useDebounce(() => {
+    updatePages();
+    setClosestPage();
+    if (activeId) {
+      setActiveId(``);
+    }
+  }, 300);
+
+  React.useEffect(() => {
+    window.addEventListener("resize", debouncedHandleResize);
+    return () => {
+      window.removeEventListener("resize", debouncedHandleResize);
+    };
+  }, [debouncedHandleResize]);
+
+  // when page changes, set xPos to move slider
+  React.useEffect(() => {
+    if (
+      pagePositions.current[page] === undefined ||
+      pagePositions.current[page] === xPos
+    )
+      return;
+
+    setXpos(pagePositions.current[page]);
+    xPosRef.current = pagePositions.current[page];
+    setIsTransitioning(true);
+  }, [page, xPos, setXpos, setIsTransitioning]);
+
+  // listener for transition end
+  React.useEffect(() => {
+    if (!internalRef.current) return;
+    const containerEl = internalRef.current;
+    const handleTransitionEnd = () => {
+      setIsTransitioning(false);
+    };
+    containerEl.addEventListener("transitionend", handleTransitionEnd);
+    return () => {
+      containerEl.removeEventListener("transitionend", handleTransitionEnd);
+    };
+  }, [setIsTransitioning, internalRef]);
 
   // handlers to handle swiping when on mobile
   const handlers = useSwipeable({
     onSwipedLeft: () => {
       if (totalPages && page < totalPages - 1) {
         setPage(page + 1);
+        if (activeId) {
+          setActiveId(``);
+        }
       }
     },
     onSwipedRight: () => {
       if (totalPages && page > 0) {
         setPage(page - 1);
+        if (activeId) {
+          setActiveId(``);
+        }
       }
     },
     preventScrollOnSwipe: true,
   });
 
   const handleOnFocus = () => {
-    if (focusDescendantIndex.current === -1) {
-      focusDescendantIndex.current = 0;
-      prevItemIndex.current = -1;
+    if (!activeId) {
+      const firstVisible = findFirstVisibleItem(internalRef, childRefs);
+      setActiveId(firstVisible.id);
     }
-    setActiveId(`${idRef.current}-item${focusDescendantIndex.current}`);
   };
 
   const handleOnBlur = () => {
-    if (focusDescendantIndex.current !== -1) {
-      focusDescendantIndex.current = -1;
-      prevItemIndex.current = -1;
-    }
+    setActiveId(``);
   };
 
-  const handleOnKeyDown = (event: React.KeyboardEvent) => {
-    if (focusDescendantIndex.current === -1) return;
+  const handleOnKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    if (!activeId || isTransitioning) return;
 
     const currentIndex = parseInt(activeId.split("item")[1], 10);
 
@@ -112,53 +180,73 @@ export const CarouselContent = React.forwardRef<
       const prevIndex = currentIndex - 1;
       if (prevIndex < 0) return;
       setActiveId(`${idRef.current}-item${prevIndex}`);
-      if (prevIndex % itemsPerPage === itemsPerPage - 1 && page !== 0) {
-        setPage(page - 1);
-      }
     }
 
     if (event.key === "ArrowRight") {
       const nextIndex = currentIndex + 1;
       if (nextIndex > totalItems - 1) return;
       setActiveId(`${idRef.current}-item${nextIndex}`);
-      if (nextIndex % itemsPerPage === 0) {
-        setPage(page + 1);
-      }
     }
+
+    onKeyDown && onKeyDown(event);
   };
 
   const handleMouseDown = (event: React.MouseEvent<HTMLElement>) => {
     const el = event.target as HTMLElement;
     const item = el.closest("[id*='item']");
     if (!item) return;
-    focusDescendantIndex.current = parseInt(item.id.split("item")[1], 10);
-    prevItemIndex.current = focusDescendantIndex.current;
+    setActiveId(item.id);
   };
+
+  React.useEffect(() => {
+    const activeEl = childRefs.current.find((child) => child.id === activeId);
+    const parentEl = internalRef.current;
+
+    if (!activeEl || !parentEl) return;
+
+    const isHidden = activeEl.getAttribute("aria-hidden") === "true";
+    if (isHidden && !isTransitioning) {
+      activeEl.setAttribute("aria-hidden", "false");
+
+      if (
+        parentEl.getBoundingClientRect().right <
+        activeEl.getBoundingClientRect().right
+      ) {
+        setPage(page + 1);
+      } else {
+        setPage(page - 1);
+      }
+    }
+  }, [activeId, isTransitioning, page, setPage]);
 
   return (
     <div {...handlers}>
       <Container
         {...props}
-        ref={ref}
+        ref={internalRef}
         tabIndex={0}
         onFocus={handleOnFocus}
         onBlur={handleOnBlur}
         onMouseDown={handleMouseDown}
-        aria-activedescendant={activeId}
+        onKeyDown={handleOnKeyDown}
+        role="group"
+        aria-activedescendant={props["aria-activedescendant"] || activeId}
       >
-        {React.Children.map(children, (child, index) => {
-          if (React.isValidElement(child)) {
-            return React.cloneElement(
-              child as React.ReactElement<CarouselItemProps>,
-              {
-                index,
-                id: `${idRef.current}-item${index}`,
-                itemsShownPerPage,
-                onKeyDown: handleOnKeyDown,
-              }
-            );
-          }
-        })}
+        <Slider css={{ transform: `translateX(${xPos}px)` }}>
+          {React.Children.map(children, (child, index) => {
+            if (React.isValidElement(child)) {
+              return React.cloneElement(
+                child as React.ReactElement<CarouselItemProps>,
+                {
+                  "aria-label": `${index + 1} of ${totalItems}`,
+                  id: `${idRef.current}-item${index}`,
+                  ref: (ref: HTMLDivElement) =>
+                    (childRefs.current[index] = ref),
+                }
+              );
+            }
+          })}
+        </Slider>
       </Container>
     </div>
   );

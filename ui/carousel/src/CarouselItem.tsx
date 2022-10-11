@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from "react";
+import * as React from "react";
 import { styled, theme } from "@washingtonpost/wpds-theme";
 import type * as WPDS from "@washingtonpost/wpds-theme";
 import { CarouselContext } from "./CarouselRoot";
@@ -11,7 +11,12 @@ const Container = styled("div", {
   variants: {
     focused: {
       true: {
-        border: "1px solid blue",
+        "& > *": {
+          outline: `2px solid ${theme.colors.cta}`,
+          outlineOffset: "-2px",
+          position: "relative",
+          zIndex: 1,
+        },
       },
       false: {},
     },
@@ -27,37 +32,33 @@ export type CarouselItemProps = {
 } & React.ComponentPropsWithRef<typeof Container>;
 
 export const CarouselItem = React.forwardRef<HTMLDivElement, CarouselItemProps>(
-  ({ children, index, id, itemsShownPerPage, onKeyDown, ...props }, ref) => {
-    const { page, activeId, translateVal } = React.useContext(CarouselContext);
-    const isShown = isItemShown(index, page, itemsShownPerPage);
+  ({ children, id, ...props }, ref) => {
+    const internalRef = React.useRef(null);
+    const [isShown, setIsShown] = React.useState(false);
+    const { activeId, isTransitioning } = React.useContext(CarouselContext);
 
-    const handleKeyPress = useCallback(
-      (event) => {
-        onKeyDown && onKeyDown(event);
-      },
-      [onKeyDown]
-    );
+    React.useEffect(() => {
+      if (!ref) return;
+      typeof ref === "function"
+        ? ref(internalRef.current)
+        : (ref.current = internalRef.current);
+    }, [ref, internalRef]);
 
-    useEffect(() => {
-      window.addEventListener("keydown", handleKeyPress);
-
-      return () => {
-        window.removeEventListener("keydown", handleKeyPress);
-      };
-    }, [handleKeyPress]);
+    React.useEffect(() => {
+      if (!isTransitioning) {
+        setIsShown(isItemShown(internalRef));
+      }
+    }, [setIsShown, internalRef, isTransitioning]);
 
     return (
       <Container
         {...props}
-        ref={ref}
-        css={{
-          width: `calc(100%/${itemsShownPerPage})`,
-          transform: `translateX(-${translateVal}%)`,
-          transition: `transform ${theme.transitions.normal} ${theme.transitions.inOut}`,
-        }}
+        ref={internalRef}
         aria-hidden={isShown ? false : true}
         id={id}
         focused={id === activeId}
+        role="group"
+        aria-roledescription="slide"
       >
         {children}
       </Container>

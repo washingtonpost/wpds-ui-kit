@@ -60,7 +60,7 @@ export const CarouselNextButton = React.forwardRef<
             variant={variant}
             disabled={isDisabled}
             {...props}
-            aria-label="next"
+            aria-label="next slide"
           >
             <Icon label="Next" size="100">
               <ArrowRight />

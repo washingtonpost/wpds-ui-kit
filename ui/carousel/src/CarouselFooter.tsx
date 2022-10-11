@@ -1,5 +1,5 @@
 import * as React from "react";
-import { styled } from "@washingtonpost/wpds-theme";
+import { styled, theme } from "@washingtonpost/wpds-theme";
 import type * as WPDS from "@washingtonpost/wpds-theme";
 
 const NAME = "CarouselFooter";
@@ -7,6 +7,7 @@ const NAME = "CarouselFooter";
 const Container = styled("div", {
   display: "flex",
   justifyContent: "center",
+  marginBlockStart: theme.space["100"],
 });
 
 export type CarouselFooterProps = {

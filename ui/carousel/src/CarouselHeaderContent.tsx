@@ -17,7 +17,7 @@ export const CarouselHeaderContent = React.forwardRef<
   CarouselHeaderContentProps
 >(({ children, ...props }, ref) => {
   return (
-    <Container {...props} ref={ref} id="carousel-heading">
+    <Container {...props} ref={ref}>
       {children}
     </Container>
   );

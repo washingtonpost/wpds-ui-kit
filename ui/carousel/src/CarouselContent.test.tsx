@@ -13,9 +13,14 @@ describe("CarouselContent", () => {
   };
 
   test("renders visibly into the document", () => {
-    renderWithContext(<CarouselContent>Test</CarouselContent>, {
-      setTotalPages: () => undefined,
-    });
+    renderWithContext(
+      <CarouselContent>
+        <span>Test</span>
+      </CarouselContent>,
+      {
+        setTotalPages: () => undefined,
+      }
+    );
 
     expect(screen.getByText("Test")).toBeVisible();
   });
