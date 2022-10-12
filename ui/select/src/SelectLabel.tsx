@@ -4,6 +4,8 @@ import { SelectContext } from "./SelectRoot";
 import { theme, styled } from "@washingtonpost/wpds-theme";
 import { InputLabel } from "@washingtonpost/wpds-input-label";
 
+import type * as WPDS from "@washingtonpost/wpds-theme";
+
 const LabelInputWrapper = styled("div", {
   flex: 1,
   position: "relative",
@@ -38,6 +40,13 @@ const TextInputLabel = styled(InputLabel, {
 const RequiredTag = styled("span", {
   color: theme.colors.red100,
 });
+
+export type SelectLabelProps = {
+  /** Used to insert select elements into the root component*/
+  children?: React.ReactNode;
+  /** Overrides for the input text styles. Padding overrides affect the input container and  */
+  css?: WPDS.CSS;
+} & React.ComponentPropsWithRef<typeof TextInputLabel>;
 
 export const SelectLabel = ({ children, ...props }) => {
   const { currentValue, required, disabled } = React.useContext(SelectContext);

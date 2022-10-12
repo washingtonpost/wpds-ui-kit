@@ -5,6 +5,7 @@ import { theme, styled } from "@washingtonpost/wpds-theme";
 import { unstyledInputStyles } from "@washingtonpost/wpds-input-shared";
 
 import * as SelectPrimitive from "@radix-ui/react-select";
+import type * as WPDS from "@washingtonpost/wpds-theme";
 
 const StyledValue = styled("div", {
   ...unstyledInputStyles,
@@ -25,8 +26,15 @@ const StyledValue = styled("div", {
   },
 });
 
-export const SelectValue = React.forwardRef<HTMLDivElement, any>(
-  ({ children, ...props }: any, ref) => {
+export type SelectValueProps = {
+  /** Used to insert select elements into the root component*/
+  children?: React.ReactNode;
+  /** Overrides for the input text styles. Padding overrides affect the input container and  */
+  css?: WPDS.CSS;
+} & React.ComponentPropsWithRef<typeof StyledValue>;
+
+export const SelectValue = React.forwardRef<HTMLDivElement, SelectValueProps>(
+  ({ children, ...props }: SelectValueProps, ref) => {
     const { currentValue, disabled } = React.useContext(SelectContext);
 
     return (

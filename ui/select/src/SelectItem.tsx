@@ -11,7 +11,7 @@ const StyledItem = styled(SelectPrimitive.Item, {
   color: theme.colors["primary"],
   display: "flex",
   fontSize: theme.fontSizes[100],
-  height: theme.sizes[200],
+  minHeight: theme.sizes[200],
   lineHeight: 1.25,
   padding: `0px ${theme.space[100]} 0px ${theme.space[175]}`,
   position: "relative",

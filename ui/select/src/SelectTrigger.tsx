@@ -12,6 +12,7 @@ import {
 } from "@washingtonpost/wpds-input-shared";
 
 import * as SelectPrimitive from "@radix-ui/react-select";
+import type * as WPDS from "@washingtonpost/wpds-theme";
 
 import { SelectContext } from "./SelectRoot";
 
@@ -67,51 +68,59 @@ const IconWrapper = styled("div", {
   },
 });
 
-export const SelectTrigger = React.forwardRef<HTMLDivElement, any>(
-  ({ children, ...props }: any, ref) => {
-    const [helperId, setHelperId] = React.useState<string | undefined>();
-    const [errorId, setErrorId] = React.useState<string | undefined>();
+export type SelectTriggerProps = {
+  /** Used to insert select elements into the root component*/
+  children?: React.ReactNode;
+  /** Overrides for the input text styles. Padding overrides affect the input container and  */
+  css?: WPDS.CSS;
+} & React.ComponentPropsWithRef<typeof StyledTrigger>;
 
-    const { success, disabled, error, helperText, errorMessage } =
-      React.useContext(SelectContext);
+export const SelectTrigger = React.forwardRef<
+  HTMLButtonElement,
+  SelectTriggerProps
+>(({ children, ...props }: SelectTriggerProps, ref) => {
+  const [helperId, setHelperId] = React.useState<string | undefined>();
+  const [errorId, setErrorId] = React.useState<string | undefined>();
 
-    React.useEffect(() => {
-      setHelperId(`wpds-input-helper-${nanoid(6)}`);
-      setErrorId(`wpds-input-error-${nanoid(6)}`);
-    }, []);
+  const { success, disabled, error, helperText, errorMessage } =
+    React.useContext(SelectContext);
 
-    return (
-      <>
-        <StyledTrigger
-          success={success}
-          error={error}
-          disabled={disabled}
-          isDisabled={disabled} //for styling purposes only
-          ref={ref}
-          {...props}
-        >
-          {children}
-          <IconWrapper isDisabled={disabled}>
-            <Icon label="">
-              <ChevronDown />
-            </Icon>
-          </IconWrapper>
-        </StyledTrigger>
-        <SubTextWrapper>
-          {helperText && !errorMessage && (
-            <HelperText id={helperId} aria-live="polite">
-              {helperText}
-            </HelperText>
-          )}
-          {errorMessage && (
-            <ErrorMessage id={errorId} aria-live="assertive">
-              {errorMessage}
-            </ErrorMessage>
-          )}
-        </SubTextWrapper>
-      </>
-    );
-  }
-);
+  React.useEffect(() => {
+    setHelperId(`wpds-input-helper-${nanoid(6)}`);
+    setErrorId(`wpds-input-error-${nanoid(6)}`);
+  }, []);
+
+  return (
+    <>
+      <StyledTrigger
+        success={success}
+        error={error}
+        disabled={disabled}
+        isDisabled={disabled} //for styling purposes only
+        ref={ref}
+        {...props}
+      >
+        {children}
+        <IconWrapper isDisabled={disabled}>
+          <Icon label="">
+            <ChevronDown />
+          </Icon>
+        </IconWrapper>
+      </StyledTrigger>
+      <SubTextWrapper>
+        {helperText && !errorMessage && (
+          <HelperText id={helperId} aria-live="polite">
+            {helperText}
+          </HelperText>
+        )}
+        {errorMessage && (
+          <ErrorMessage id={errorId} aria-live="assertive">
+            {errorMessage}
+          </ErrorMessage>
+        )}
+      </SubTextWrapper>
+    </>
+  );
+});
 
 SelectTrigger.displayName = "SelectTrigger";

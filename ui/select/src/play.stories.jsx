@@ -16,7 +16,7 @@ export default {
 
 const Template = (args) => {
   return (
-    <Select.Root {...args}>
+    <Select.Root {...args} defaultValue="ecuador" open={true}>
       <Select.Trigger aria-label="Countries">
         <Select.Label>Countries</Select.Label>
         <Select.Value />
@@ -30,7 +30,7 @@ const Template = (args) => {
           </Select.Item>
           <Select.Item value="spain">Spain</Select.Item>
         </Select.Group>
-        <Select.Group label="South America" divider={false}>
+        <Select.Group label="South America">
           <Select.Item value="peru">Peru</Select.Item>
           <Select.Item value="chile">Chile</Select.Item>
           <Select.Item value="ecuador">Ecuador</Select.Item>

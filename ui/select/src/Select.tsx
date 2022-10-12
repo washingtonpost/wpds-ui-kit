@@ -6,20 +6,22 @@ import { SelectTrigger } from "./SelectTrigger";
 import { SelectValue } from "./SelectValue";
 import { SelectLabel } from "./SelectLabel";
 
-const Root = SelectRoot;
-const Content = SelectContent;
-const Group = SelectGroup;
-const Trigger = SelectTrigger;
-const Item = SelectItem;
-const Value = SelectValue;
-const Label = SelectLabel;
+type SelectProps = {
+  Root: typeof SelectRoot;
+  Content: typeof SelectContent;
+  Group: typeof SelectGroup;
+  Item: typeof SelectItem;
+  Trigger: typeof SelectTrigger;
+  Value: typeof SelectValue;
+  Label: typeof SelectLabel;
+};
 
-export const Select = {
-  Root,
-  Content,
-  Item,
-  Group,
-  Label,
-  Trigger,
-  Value,
+export const Select: SelectProps = {
+  Root: SelectRoot,
+  Content: SelectContent,
+  Item: SelectItem,
+  Group: SelectGroup,
+  Label: SelectLabel,
+  Trigger: SelectTrigger,
+  Value: SelectValue,
 };
