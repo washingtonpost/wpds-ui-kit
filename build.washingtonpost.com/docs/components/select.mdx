@@ -1,0 +1,129 @@
+---
+title: Select
+description: Avatar is a round container that holds a profile image to be used.
+component: select
+status: "Draft"
+---
+
+---
+
+## Anatomy
+
+<Container css={{ padding: "$150" }}>
+  <InlineSVG
+    width="512"
+    height="422"
+    path="/img/components/select/anatomy.svg"
+    alt="Image shows a purple circle with the number 1 pointing to an avatar that contains the headshot of a man with dark brown hair. The number one references the note below the image."
+  />
+</Container>
+
+1. Selected value
+2. Label/placeholder
+3. Helper text (optional)
+4. Chevron icon (actionable)
+5. Border
+6. Check icon (indicates selected option)
+7. Options list
+8. Option hover state
+9. Option
+
+---
+
+## Options
+
+### No styling options
+
+The select component currently supports only one size and variant.
+
+```jsx withPreview
+export default function Example() {
+  return <></>;
+}
+```
+
+---
+
+## Behavior
+
+### Options list (Active)
+
+Clicking or tapping the select field initiates the active state, revealing an options list that consists of a set of values. When in the active state, the label/placeholder is reduced in size and the chevron icon rotates 180 degrees, pointing upwards.
+
+The options list may contain as many values as needed and becomes scrollable if there are more options that what is currently in view.
+
+```jsx withPreview
+export default function Example() {
+  return <></>;
+}
+```
+
+### Making a selection (Active)
+
+The optiojns list can be navigated by mouse hover or via the up/down arrow keys (indicated by a faint highlight). Clicking or tapping and option in the list will select the chosen value (indicated by the check icon). The select field also provides _typeahead_ support - a kind of autocomplete feature, which attempts to make a selection based on the first one or two characters of a user's keyboard input.
+
+```jsx withPreview
+export default function Example() {
+  return <></>;
+}
+```
+
+### Select groups
+
+The options list can be segmented into groups. Grouping options within a select field can be helpful for creating categories or subcategories of similar items.
+
+```jsx withPreview
+export default function Example() {
+  return <></>;
+}
+```
+
+### Text overflow
+
+Overflow of the selected value is indicate by an ellipsis.
+
+```jsx withPreview
+export default function Example() {
+  return <></>;
+}
+```
+
+### Show Required
+
+```jsx withPreview
+export default function Example() {
+  return <></>;
+}
+```
+
+### Focus
+
+```jsx withPreview
+export default function Example() {
+  return <></>;
+}
+```
+
+### Error
+
+```jsx withPreview
+export default function Example() {
+  return <></>;
+}
+```
+
+### Success
+
+```jsx withPreview
+export default function Example() {
+  return <></>;
+}
+```
+
+### Disabled
+
+```jsx withPreview
+export default function Example() {
+  return <></>;
+}
+```
