@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.19.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.18.0...v0.19.0) (2022-10-03)
+
+**Note:** Version bump only for package @washingtonpost/wpds-scrim
+
+
+
+
+
 # [0.18.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.17.0...v0.18.0) (2022-09-22)
 
 **Note:** Version bump only for package @washingtonpost/wpds-scrim

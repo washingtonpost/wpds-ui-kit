@@ -1,6 +1,6 @@
 {
   "name": "@washingtonpost/wpds-divider",
-  "version": "0.18.0",
+  "version": "0.19.0",
   "description": "WPDS Divider",
   "author": "WPDS Support <wpds@washpost.com>",
   "homepage": "https://github.com/washingtonpost/wpds-ui-kit#readme",
@@ -41,7 +41,7 @@
   },
   "dependencies": {
     "@radix-ui/react-separator": "^0.1.4",
-    "@washingtonpost/wpds-theme": "0.18.0"
+    "@washingtonpost/wpds-theme": "0.19.0"
   },
-  "gitHead": "dcdf670812681188707d23ae5e5aed42101360ac"
+  "gitHead": "e6178311a33bae5d56b9d017315e1fde8172dc57"
 }

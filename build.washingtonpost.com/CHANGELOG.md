@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.19.0](https://github.com/washingtonpost/wpds-docs/compare/v0.18.0...v0.19.0) (2022-10-03)
+
+
+### Features
+
+* **docs:** move resources to side navigation ([c647285](https://github.com/washingtonpost/wpds-docs/commit/c647285bcb0bb660be53e5de20b8581953a291a0))
+
+
+
+
+
 # [0.18.0](https://github.com/washingtonpost/wpds-docs/compare/v0.17.0...v0.18.0) (2022-09-22)
 
 
