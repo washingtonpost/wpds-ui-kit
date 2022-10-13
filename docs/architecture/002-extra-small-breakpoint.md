@@ -24,11 +24,6 @@ const b = styled(B, {
 })
 ```
 
-## Resources
-
-1. [The original ticket suggesting specific style changes at a threshold far below our smallest breakpoint](https://arcpublishing.atlassian.net/browse/SPECT-2625)
-2. [A Slack discussion about extending breakpoints in Spectrum, and proposing this ADR](https://washpost.slack.com/archives/C01FWHF12BG/p1665608907571409)
-
 ## Scope
 
 This proposal will be opt in. It will not affect any of the other breakpoints we currently have, nor break existing code. The new breakpoint will only come into effect should developers choose to use it in new circumstances.
