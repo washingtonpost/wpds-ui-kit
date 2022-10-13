@@ -1,0 +1,284 @@
+---
+order: 12
+title: Breakpoints
+description:
+---
+
+WPDS has 5 breakpoints with the following values
+
+- **sm**: 768px
+- **md**: 900px
+- **lg**: 1024px
+- **xl**: 1280px
+- **xxl**: 1440px
+
+<BR />
+
+```jsx withPreview
+export default function Example() {
+  const BreakpointExample = styled("div", {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: theme.colors.secondary,
+    color: theme.colors.onSecondary,
+    width: "150px",
+    height: "150px",
+    variants: {
+      color: {
+        orange: {
+          backgroundColor: theme.colors.orange300,
+          "&:before": {
+            content: "sm",
+          },
+        },
+        yellow: {
+          backgroundColor: theme.colors.gold300,
+          "&:before": {
+            content: "md",
+          },
+        },
+        green: {
+          backgroundColor: theme.colors.green300,
+          "&:before": {
+            content: "lg",
+          },
+        },
+        blue: {
+          backgroundColor: theme.colors.blue300,
+          "&:before": {
+            content: "xl",
+          },
+        },
+      },
+    },
+  });
+
+  return (
+    <div>
+      <p>Resize window to update</p>
+      <BreakpointExample
+        color={{
+          "@sm": "orange",
+          "@md": "yellow",
+          "@lg": "green",
+          "@xl": "blue",
+        }}
+      ></BreakpointExample>
+    </div>
+  );
+}
+```
+
+<BR />
+
+## WPDS Media At-Rules
+
+<Table
+  headers={["Name", "Value", "Description"]}
+  data={[
+    ["sm", "(max-width: 767px)", "Targets the small breakpoint only"],
+    [
+      "md",
+      "(min-width: 768px) and (max-width: 899px)",
+      "Targets the medium breakpoint only",
+    ],
+    [
+      "lg",
+      "(min-width: 900px) and (max-width: 1023px)",
+      "Targets the large breakpoint only",
+    ],
+    [
+      "xl",
+      "(min-width: 1024px) and (max-width: 1279px)",
+      "Targets the extra-large breakpoint only",
+    ],
+    [
+      "xxl",
+      "(min-width: 1280px) and (max-width: 1440px)",
+      "Targets the extra-extra-large breakpoint only",
+    ],
+    [
+      "minSm, notSm",
+      "(min-width: 768px)",
+      'A "mobile first" style breakpoint that targets the small breakpoint and above',
+    ],
+    [
+      "minMd, notMd",
+      "(min-width: 900px)",
+      'A "mobile first" style breakpoint that targets the medium breakpoint and above',
+    ],
+    [
+      "minLg, notLg",
+      "(min-width: 1024px)",
+      'A "mobile first" style breakpoint that targets the large breakpoint and above',
+    ],
+    [
+      "minXl, notXl",
+      "(min-width: 1280px)",
+      'A "mobile first" style breakpoint that targets the extra-large breakpoint and above',
+    ],
+    [
+      "minXxl, notXxl",
+      "(min-width: 1441px)",
+      'A "mobile first" style breakpoint that targets the extra-extra-large breakpoint and above',
+    ],
+    [
+      "maxSm",
+      "(max-width: 767px)",
+      'A "desktop first" style breakpoint that targets the small breakpoint and below',
+    ],
+    [
+      "maxMd",
+      "(max-width: 900px)",
+      'A "desktop first" style breakpoint that targets the medium breakpoint and below',
+    ],
+    [
+      "maxLg",
+      "(max-width: 1024px)",
+      'A "desktop first" style breakpoint that targets the large breakpoint and below',
+    ],
+    [
+      "maxXl",
+      "(max-width: 1280px)",
+      'A "desktop first" style breakpoint that targets the extra-large breakpoint and below',
+    ],
+    [
+      "maxXxl",
+      "(max-width: 1441px)",
+      'A "desktop first" style breakpoint that targets the extra-extra-large breakpoint and below',
+    ],
+  ]}
+/>
+
+<BR />
+
+## Using Rules
+
+### Responsive Variants
+
+Stitches recommends defining variants [that are applied responsively](https://stitches.dev/docs/responsive-styles#responsive-variants) to keep component styles immutable.
+
+```jsx withPreview
+export default function Example() {
+  const MenuButton = styled(Button, {
+    variants: {
+      hidden: {
+        true: {
+          display: "none",
+        },
+        false: {
+          display: "inline-block",
+        },
+      },
+    },
+  });
+
+  const Container = styled("div", {
+    display: "flex",
+    justifyContent: "space-between",
+    backgroundColor: theme.colors.secondary,
+    boxShadow: theme.shadows["200"],
+    color: theme.colors.onSecondary,
+    padding: theme.space["100"],
+    width: "150px",
+    height: "150px",
+  });
+
+  const Row = styled("div", {
+    display: "flex",
+    gap: theme.space["100"],
+  });
+
+  return (
+    <div>
+      <p>Show a menu button below the medium breakpoint</p>
+      <Row>
+        <Container>
+          Mobile first
+          <MenuButton
+            icon="center"
+            hidden={{ "@initial": false, "@notMd": true }}
+          >
+            <Icon>
+              <Menu />
+            </Icon>
+          </MenuButton>
+        </Container>
+        <Container>
+          Desktop first
+          <MenuButton
+            icon="center"
+            hidden={{ "@initial": true, "@maxMd": false }}
+          >
+            <Icon>
+              <Menu />
+            </Icon>
+          </MenuButton>
+        </Container>
+      </Row>
+    </div>
+  );
+}
+```
+
+### Breakpoints in Style Objects
+
+While not recommended it is possible to use breakpoints inline
+
+```jsx withPreview
+export default function Example() {
+  const MenuButtonMobile = styled(Button, {
+    "@notMd": {
+      display: "none",
+    },
+  });
+
+  const MenuButtonDesktop = styled(Button, {
+    display: "none",
+    "@maxMd": {
+      display: "inline-block",
+    },
+  });
+
+  const Container = styled("div", {
+    display: "flex",
+    justifyContent: "space-between",
+    backgroundColor: theme.colors.secondary,
+    boxShadow: theme.shadows["200"],
+    color: theme.colors.onSecondary,
+    padding: theme.space["100"],
+    width: "150px",
+    height: "150px",
+  });
+
+  const Row = styled("div", {
+    display: "flex",
+    gap: theme.space["100"],
+  });
+
+  return (
+    <div>
+      <p>Show a menu button below the medium breakpoint</p>
+      <Row>
+        <Container>
+          Mobile first
+          <MenuButtonMobile icon="center">
+            <Icon>
+              <Menu />
+            </Icon>
+          </MenuButtonMobile>
+        </Container>
+        <Container>
+          Desktop first
+          <MenuButtonDesktop icon="center">
+            <Icon>
+              <Menu />
+            </Icon>
+          </MenuButtonDesktop>
+        </Container>
+      </Row>
+    </div>
+  );
+}
+```

@@ -5,6 +5,14 @@ export type { VariantProps } from "@stitches/react";
 
 const prefix = "wpds";
 
+const breakpoints = {
+  sm: "767px",
+  md: "900px",
+  lg: "1024px",
+  xl: "1280px",
+  xxl: "1440px",
+};
+
 const WPDS = createStitches({
   prefix,
   theme: {
@@ -39,20 +47,26 @@ const WPDS = createStitches({
     letterSpacings: {},
   },
   media: {
-    sm: "(max-width: 767px)",
-    md: "(min-width: 768px) and (max-width: 899px)",
-    lg: "(min-width: 900px) and (max-width: 1023px)",
-    xl: "(min-width: 1024px) and (max-width: 1279px)",
-    xxl: "(min-width: 1280px) and (max-width: 1440px)",
-    notSm: "(min-width: 768px)",
-    notMd: "(min-width: 900px)",
-    notLg: "(min-width: 1024px)",
-    notXl: "(min-width: 1280px)",
-    notXxl: "(min-width: 1441px)",
-    maxMd: "(max-width: 899px)",
-    maxLg: "(max-width: 1023px)",
-    maxXl: "(max-width: 1279px)",
-    maxXxl: "(max-width: 1440px)",
+    sm: `(max-width: calc(${breakpoints.sm} - 1px))`,
+    md: `(min-width: ${breakpoints.sm}) and (max-width: calc(${breakpoints.md} - 1px))`,
+    lg: `(min-width: ${breakpoints.md}) and (max-width: calc(${breakpoints.lg} - 1px))`,
+    xl: `(min-width: ${breakpoints.lg}) and (max-width: calc(${breakpoints.xl} - 1px))`,
+    xxl: `(min-width: ${breakpoints.xl}) and (max-width: ${breakpoints.xxl})`,
+    notSm: `(min-width: ${breakpoints.sm})`,
+    notMd: `(min-width: ${breakpoints.md})`,
+    notLg: `(min-width: ${breakpoints.lg})`,
+    notXl: `(min-width: ${breakpoints.xl})`,
+    notXxl: `(min-width: calc(${breakpoints.xxl} + 1px ))`,
+    minSm: `(min-width: ${breakpoints.sm})`,
+    minMd: `(min-width: ${breakpoints.md})`,
+    minLg: `(min-width: ${breakpoints.lg})`,
+    minXl: `(min-width: ${breakpoints.xl})`,
+    minXxl: `(min-width: calc(${breakpoints.xxl} + 1px ))`,
+    maxSm: `(max-width: calc(${breakpoints.sm} - 1px))`,
+    maxMd: `(max-width: calc(${breakpoints.md} - 1px))`,
+    maxLg: `(max-width: calc(${breakpoints.lg} - 1px))`,
+    maxXl: `(max-width: calc(${breakpoints.xl} - 1px))`,
+    maxXxl: `(max-width: ${breakpoints.xxl})`,
     motion: "(prefers-reduced-motion)",
     hover: "(any-hover: hover)",
     dark: "(prefers-color-scheme: dark)",
