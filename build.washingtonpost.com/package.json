@@ -17,7 +17,7 @@
     "@docsearch/react": "^3.0.0",
     "@octokit/core": "^4.0.5",
     "@radix-ui/react-accordion": "^0.1.5",
-    "@radix-ui/react-checkbox": "^0.1.5",
+    "@radix-ui/react-checkbox": "^1.0.0",
     "@radix-ui/react-collapsible": "^0.1.6",
     "@react-aria/ssr": "^3.1.0",
     "@stitches/react": "^1.2.8",
