@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { SelectContext } from "./SelectRoot";
+import React, { useEffect } from "react";
+import { SelectContext } from "./Select";
 
 import { theme, styled } from "@washingtonpost/wpds-theme";
 import { InputLabel } from "@washingtonpost/wpds-input-label";
@@ -12,8 +12,8 @@ const LabelInputWrapper = styled("div", {
 });
 
 const TextInputLabel = styled(InputLabel, {
+  whiteSpace: "nowrap",
   insetBlockStart: "0",
-  insetInlineStart: "$050",
   position: "absolute",
   cursor: "pointer",
   transform: `translateY(${theme.space["100"]})`,
@@ -41,22 +41,24 @@ const RequiredTag = styled("span", {
   color: theme.colors.red100,
 });
 
-export type SelectLabelProps = {
+type SelectLabelVariants = WPDS.VariantProps<typeof TextInputLabel>;
+
+type SelectLabelProps = SelectLabelVariants & {
   /** Used to insert select elements into the root component*/
   children?: React.ReactNode;
   /** Overrides for the input text styles. Padding overrides affect the input container and  */
   css?: WPDS.CSS;
-} & React.ComponentPropsWithRef<typeof TextInputLabel>;
+};
 
-export const SelectLabel = ({ children, ...props }) => {
-  const { currentValue, required, disabled } = React.useContext(SelectContext);
-  const [isFloating, setIsFloating] = useState(false);
+export const SelectLabel = ({ children, ...props }: SelectLabelProps) => {
+  const { currentValue, required, disabled, isFloating, setIsFloating } =
+    React.useContext(SelectContext);
 
   useEffect(() => {
     if (currentValue && currentValue.trim().length !== 0) {
       setIsFloating(true);
     }
-  }, [currentValue]);
+  }, [currentValue, isFloating, setIsFloating]);
 
   return (
     <LabelInputWrapper {...props}>

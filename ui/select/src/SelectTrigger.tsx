@@ -13,8 +13,9 @@ import {
 
 import * as SelectPrimitive from "@radix-ui/react-select";
 import type * as WPDS from "@washingtonpost/wpds-theme";
+import { SelectTriggerProps as RadixAccordionTriggerProps } from "@radix-ui/react-select";
 
-import { SelectContext } from "./SelectRoot";
+import { SelectContext } from "./Select";
 
 const StyledTrigger = styled(SelectPrimitive.Trigger, {
   ...sharedInputStyles,
@@ -68,12 +69,15 @@ const IconWrapper = styled("div", {
   },
 });
 
-export type SelectTriggerProps = {
-  /** Used to insert select elements into the root component*/
-  children?: React.ReactNode;
-  /** Overrides for the input text styles. Padding overrides affect the input container and  */
-  css?: WPDS.CSS;
-} & React.ComponentPropsWithRef<typeof StyledTrigger>;
+type SelectTriggerVariants = WPDS.VariantProps<typeof StyledTrigger>;
+
+type SelectTriggerProps = RadixAccordionTriggerProps &
+  SelectTriggerVariants & {
+    /** Used to insert select elements into the root component*/
+    children?: React.ReactNode;
+    /** Overrides for the input text styles. Padding overrides affect the input container and  */
+    css?: WPDS.CSS;
+  };
 
 export const SelectTrigger = React.forwardRef<
   HTMLButtonElement,
