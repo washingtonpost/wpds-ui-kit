@@ -41,6 +41,8 @@
     "@washingtonpost/wpds-divider": "*",
     "@washingtonpost/wpds-icon": "*",
     "@washingtonpost/wpds-assets": "*",
+    "@washingtonpost/wpds-input-label": "*",
+    "@washingtonpost/wpds-input-shared": "*",
     "react": "^16.8.6 || ^17.0.2",
     "@radix-ui/react-use-controllable-state": "^1.0.0"
   },
@@ -50,6 +52,8 @@
     "@washingtonpost/wpds-icon": "*",
     "@washingtonpost/wpds-assets": "*",
     "@washingtonpost/wpds-theme": "*",
+    "@washingtonpost/wpds-input-label": "*",
+    "@washingtonpost/wpds-input-shared": "*",
     "@radix-ui/react-use-controllable-state": "^1.0.0"
   }
 }

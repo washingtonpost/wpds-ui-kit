@@ -4,6 +4,7 @@ import { styled, theme } from "@washingtonpost/wpds-theme";
 import { Check } from "@washingtonpost/wpds-assets";
 
 import * as SelectPrimitive from "@radix-ui/react-select";
+import type * as WPDS from "@washingtonpost/wpds-theme";
 
 const StyledItem = styled(SelectPrimitive.Item, {
   all: "unset",
@@ -39,10 +40,19 @@ const StyledItemIndicator = styled(SelectPrimitive.ItemIndicator, {
 
 const StyledCheck = styled(Check, {});
 
-export const SelectItem = React.forwardRef<any, any>(
-  ({ children, value, ...props }) => {
+export type SelectItemProps = {
+  /** Used to insert select elements into the root component*/
+  children?: React.ReactNode;
+  /** Overrides for the input text styles. Padding overrides affect the input container and  */
+  css?: WPDS.CSS;
+  /** The value associated with this item */
+  value: string;
+} & React.ComponentPropsWithRef<typeof StyledItem>;
+
+export const SelectItem = React.forwardRef<HTMLDivElement, SelectItemProps>(
+  ({ children, value, ...props }: SelectItemProps, ref) => {
     return (
-      <StyledItem value={value} {...props}>
+      <StyledItem value={value} {...props} ref={ref}>
         <SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>
         <StyledItemIndicator>
           <StyledCheck />
