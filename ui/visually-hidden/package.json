@@ -1,6 +1,6 @@
 {
   "name": "@washingtonpost/wpds-visually-hidden",
-  "version": "0.20.0-experimental.1",
+  "version": "0.19.0",
   "description": "WPDS Visually Hidden",
   "author": "WPDS Support <wpds@washpost.com>",
   "homepage": "https://github.com/washingtonpost/wpds-ui-kit#readme",
@@ -40,7 +40,7 @@
     "react": "^16.8.6 || ^17.0.2"
   },
   "dependencies": {
-    "@washingtonpost/wpds-theme": "0.20.0-experimental.1",
+    "@washingtonpost/wpds-theme": "0.19.0",
     "react": "^16.8.6 || ^17.0.2"
   },
   "gitHead": "e6178311a33bae5d56b9d017315e1fde8172dc57"
