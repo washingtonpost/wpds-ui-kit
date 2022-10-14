@@ -1,6 +1,6 @@
 {
   "name": "@washingtonpost/wpds-radio-group",
-  "version": "0.20.0-experimental.0",
+  "version": "0.20.0-experimental.1",
   "description": "WPDS RadioGroup",
   "author": "WPDS Support <wpds@washpost.com>",
   "homepage": "https://github.com/WPMedia/wpds-ui-kit#readme",
@@ -44,10 +44,10 @@
   },
   "dependencies": {
     "@radix-ui/react-radio-group": "^0.1.5",
-    "@washingtonpost/wpds-error-message": "0.20.0-experimental.0",
-    "@washingtonpost/wpds-fieldset": "0.20.0-experimental.0",
-    "@washingtonpost/wpds-input-label": "0.20.0-experimental.0",
-    "@washingtonpost/wpds-theme": "0.20.0-experimental.0",
+    "@washingtonpost/wpds-error-message": "0.20.0-experimental.1",
+    "@washingtonpost/wpds-fieldset": "0.20.0-experimental.1",
+    "@washingtonpost/wpds-input-label": "0.20.0-experimental.1",
+    "@washingtonpost/wpds-theme": "0.20.0-experimental.1",
     "nanoid": "^3.3.3"
   },
   "gitHead": "e6178311a33bae5d56b9d017315e1fde8172dc57"
