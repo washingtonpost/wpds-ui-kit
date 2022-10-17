@@ -22,6 +22,8 @@ type SelectContextProps = {
   helperText?: React.ReactNode;
   isFloating: boolean;
   setIsFloating: (boolean: boolean) => void;
+  contentWidth: number;
+  setContentWidth: (number: number) => void;
 };
 
 export const SelectContext = React.createContext({} as SelectContextProps);
@@ -90,6 +92,8 @@ export const SelectRoot = ({
   });
 
   const [isFloating, setIsFloating] = React.useState(false);
+  // default with for the content. Will be updated in trigger
+  const [contentWidth, setContentWidth] = React.useState(300);
 
   return (
     <SelectContext.Provider
@@ -103,6 +107,8 @@ export const SelectRoot = ({
         helperText,
         isFloating,
         setIsFloating,
+        contentWidth,
+        setContentWidth,
       }}
     >
       <SelectPrimitive.Root value={value} onValueChange={setValue} {...props}>

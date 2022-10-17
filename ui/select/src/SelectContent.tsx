@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+import React from "react";
+import { SelectContext } from "./Select";
 
 import { styled, theme } from "@washingtonpost/wpds-theme";
 import { Icon } from "@washingtonpost/wpds-icon";
@@ -8,14 +9,12 @@ import * as SelectPrimitive from "@radix-ui/react-select";
 import type * as WPDS from "@washingtonpost/wpds-theme";
 
 const StyledContent = styled(SelectPrimitive.Content, {
-  overflow: "hidden",
   backgroundColor: theme.colors.secondary,
   color: theme.colors.primary,
   fontFamily: theme.fonts.meta,
   fontSize: theme.fontSizes["100"],
   fontWeight: theme.fontWeights.light,
   lineHeight: theme.lineHeights["125"],
-  maxWidth: "350px", //this should be based on the width of the trigger
 });
 
 const StyledViewport = styled(SelectPrimitive.Viewport, {});
@@ -49,17 +48,17 @@ export type SelectContentProps = {
 export const SelectContent = React.forwardRef<
   HTMLDivElement,
   SelectContentProps
->(({ children, ...props }: SelectContentProps, ref) => {
-  // const contentRef = React.createRef();
+>(({ children, css, ...props }: SelectContentProps, ref) => {
+  const { contentWidth } = React.useContext(SelectContext);
 
-  useEffect(() => {
-    // contentRef.current.getBoundingClientRect();
-  }, []);
-
-  // let rect = StyledContent.getBoundingClientRect()
   return (
     <SelectPrimitive.Portal>
-      <StyledContent {...props} ref={ref}>
+      <StyledContent
+        //make width match that of the trigger. Allow override
+        css={{ width: `${contentWidth}px`, ...css }}
+        {...props}
+        ref={ref}
+      >
         <StyledScrollUpButton>
           <Icon label="">
             <ChevronUp />

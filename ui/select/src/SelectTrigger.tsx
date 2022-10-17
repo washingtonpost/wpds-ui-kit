@@ -86,8 +86,21 @@ export const SelectTrigger = React.forwardRef<
   const [helperId, setHelperId] = React.useState<string | undefined>();
   const [errorId, setErrorId] = React.useState<string | undefined>();
 
-  const { success, disabled, error, helperText, errorMessage } =
-    React.useContext(SelectContext);
+  const {
+    success,
+    disabled,
+    error,
+    helperText,
+    errorMessage,
+    setContentWidth,
+  } = React.useContext(SelectContext);
+
+  const refCallback = React.useCallback(
+    (el) => {
+      el && setContentWidth(el.getBoundingClientRect().width);
+    },
+    [setContentWidth]
+  );
 
   React.useEffect(() => {
     setHelperId(`wpds-input-helper-${nanoid(6)}`);
@@ -101,7 +114,7 @@ export const SelectTrigger = React.forwardRef<
         error={error}
         disabled={disabled}
         isDisabled={disabled} //for styling purposes only
-        ref={ref}
+        ref={refCallback}
         {...props}
       >
         {children}
