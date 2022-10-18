@@ -18,6 +18,7 @@ const easeInOutExpo = `cubic-bezier(0.87, 0, 0.13, 1)`;
 
 const AnimatedContent = styled(AccordionPrimitive.Content, {
   overflow: "hidden",
+  color: theme.colors.primary,
   '&[data-state="open"]': {
     animation: `${slideDown} ${theme.transitions.normal} ${easeInOutExpo}`,
   },
@@ -27,7 +28,6 @@ const AnimatedContent = styled(AccordionPrimitive.Content, {
 });
 
 const ContentContainer = styled("div", {
-  color: theme.colors.primary,
   paddingBottom: theme.space[150],
   paddingRight: theme.space[150],
 });
@@ -42,10 +42,27 @@ export interface AccordionContentInterface extends CombinedProps {
 export const AccordionContent = React.forwardRef<
   HTMLDivElement,
   AccordionContentInterface
->(({ children, ...props }: AccordionContentInterface, ref) => (
-  <AnimatedContent {...props} ref={ref}>
-    <ContentContainer>{children}</ContentContainer>
-  </AnimatedContent>
-));
+>(({ children, ...props }: AccordionContentInterface, ref) => {
+  const {
+    padding = "",
+    paddingTop = "",
+    paddingBottom = "",
+    paddingLeft = "",
+    paddingRight = "",
+    ...restOfCss
+  } = props.css ? props.css : {};
+
+  const otherProps = { ...props, css: { ...restOfCss } };
+
+  return (
+    <AnimatedContent {...otherProps} ref={ref}>
+      <ContentContainer
+        css={{ padding, paddingTop, paddingBottom, paddingLeft, paddingRight }}
+      >
+        {children}
+      </ContentContainer>
+    </AnimatedContent>
+  );
+});
 
 AccordionContent.displayName = "AccordionContent";
