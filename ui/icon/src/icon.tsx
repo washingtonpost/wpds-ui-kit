@@ -5,6 +5,13 @@ import type * as WPDS from "@washingtonpost/wpds-theme";
 
 const NAME = "Icon";
 
+export type WPDSThemeColorObject = {
+  token: string;
+  value: string;
+  scale: string;
+  prefix: string;
+};
+
 interface IconInterface extends React.SVGProps<HTMLOrSVGElement> {
   /**
    * The name of the icon to display.
@@ -14,6 +21,7 @@ interface IconInterface extends React.SVGProps<HTMLOrSVGElement> {
   children?: React.ReactNode;
   className?: string;
   css?: WPDS.CSS;
+  fill?: string & WPDSThemeColorObject;
 }
 
 export const Icon = React.forwardRef<React.ReactSVGElement, IconInterface>(
