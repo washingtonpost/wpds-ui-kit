@@ -1,22 +1,14 @@
-import * as React from "react";
-import { Select } from "./";
+import React from "react";
 
-export default {
-  title: "Select",
-  component: Select.Root,
-  subcomponents: {
-    Trigger: Select.Trigger,
-    Value: Select.Value,
-    Item: Select.Item,
-    Group: Select.Group,
-    Label: Select.Label,
-    Content: Select.Content,
-  },
-};
+/**
+ * See documentation for full component api
+ *
+```jsx
+import { Select } from "@washingtonpost/wpds-ui-kit";
 
-const Template = (args) => {
+export default function Example() {
   return (
-    <Select.Root {...args} defaultValue="ecuador">
+    <Select.Root defaultValue="ecuador">
       <Select.Trigger aria-label="Countries">
         <Select.Label>Countries</Select.Label>
         <Select.Value />
@@ -38,17 +30,9 @@ const Template = (args) => {
       </Select.Content>
     </Select.Root>
   );
-};
-
-export const Play = Template.bind({});
-
-Play.args = {
-  success: false,
-  required: false,
-  disabled: false,
-  error: false,
-  errorMessage: "",
-  helperText: "",
-};
-
-Play.storyName = "Select";
+}
+```
+ */
+export default function Example() {
+  return <div>See documentation for full example</div>;
+}
