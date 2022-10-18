@@ -52,3 +52,7 @@ Play.args = {
 };
 
 Play.storyName = "Select";
+
+Play.parameters = {
+  chromatic: { disableSnapshot: true },
+};
