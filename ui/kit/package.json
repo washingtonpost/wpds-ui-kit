@@ -87,7 +87,7 @@
     "@washingtonpost/wpds-pagination-dots": "*",
     "@washingtonpost/wpds-radio-group": "*",
     "@washingtonpost/wpds-scrim": "*",
-    "@washingtonpost/wpds-select": "0.19.0",
+    "@washingtonpost/wpds-select": "*",
     "@washingtonpost/wpds-theme": "*",
     "@washingtonpost/wpds-tooltip": "*",
     "@washingtonpost/wpds-visually-hidden": "*"
