@@ -1,6 +1,6 @@
 {
   "name": "@washingtonpost/wpds-pagination-dots",
-  "version": "0.19.1-experimental.0",
+  "version": "0.19.1",
   "description": "WPDS Pagination Dots and Container",
   "author": "WPDS Support <wpds@washpost.com>",
   "homepage": "https://github.com/washingtonpost/wpds-ui-kit#readme",
@@ -40,7 +40,7 @@
     "react": "^16.8.6 || ^17.0.2"
   },
   "dependencies": {
-    "@washingtonpost/wpds-theme": "0.19.1-experimental.0"
+    "@washingtonpost/wpds-theme": "0.19.1"
   },
-  "gitHead": "e6178311a33bae5d56b9d017315e1fde8172dc57"
+  "gitHead": "1fd2f876e8bb06591fa88e23920e9ae6e7721629"
 }

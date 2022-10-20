@@ -16,12 +16,9 @@ const slideUp = keyframes({
 
 const easeInOutExpo = `cubic-bezier(0.87, 0, 0.13, 1)`;
 
-const StyledContent = styled(AccordionPrimitive.Content, {
+const AnimatedContent = styled(AccordionPrimitive.Content, {
   overflow: "hidden",
   color: theme.colors.primary,
-  paddingBottom: theme.space[150],
-  paddingRight: theme.space[150],
-
   '&[data-state="open"]': {
     animation: `${slideDown} ${theme.transitions.normal} ${easeInOutExpo}`,
   },
@@ -30,7 +27,12 @@ const StyledContent = styled(AccordionPrimitive.Content, {
   },
 });
 
-type AccordionContentVariants = WPDS.VariantProps<typeof StyledContent>;
+const ContentContainer = styled("div", {
+  paddingBottom: theme.space[150],
+  paddingRight: theme.space[150],
+});
+
+type AccordionContentVariants = WPDS.VariantProps<typeof AnimatedContent>;
 type CombinedProps = RadixAccordionContentProps & AccordionContentVariants;
 
 export interface AccordionContentInterface extends CombinedProps {
@@ -40,10 +42,27 @@ export interface AccordionContentInterface extends CombinedProps {
 export const AccordionContent = React.forwardRef<
   HTMLDivElement,
   AccordionContentInterface
->(({ children, ...props }: AccordionContentInterface, ref) => (
-  <StyledContent {...props} ref={ref}>
-    {children}
-  </StyledContent>
-));
+>(({ children, ...props }: AccordionContentInterface, ref) => {
+  const {
+    padding = "",
+    paddingTop = "",
+    paddingBottom = "",
+    paddingLeft = "",
+    paddingRight = "",
+    ...restOfCss
+  } = props.css ? props.css : {};
+
+  const otherProps = { ...props, css: { ...restOfCss } };
+
+  return (
+    <AnimatedContent {...otherProps} ref={ref}>
+      <ContentContainer
+        css={{ padding, paddingTop, paddingBottom, paddingLeft, paddingRight }}
+      >
+        {children}
+      </ContentContainer>
+    </AnimatedContent>
+  );
+});
 
 AccordionContent.displayName = "AccordionContent";

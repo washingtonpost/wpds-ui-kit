@@ -17,6 +17,7 @@ Default.storyName = "Icon";
 Default.args = {
   size: "200",
   label: "Find out more information.",
+  fill: theme.colors["primary"],
   children: <Info />,
 };
 

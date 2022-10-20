@@ -65,6 +65,10 @@
   </url>
 
   <url>
+    <loc>https://build.washingtonpost.com/components/select</loc>
+  </url>
+
+  <url>
     <loc>https://build.washingtonpost.com/components/tooltip</loc>
   </url>
 
