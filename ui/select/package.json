@@ -1,6 +1,6 @@
 {
   "name": "@washingtonpost/wpds-select",
-  "version": "0.19.1",
+  "version": "0.20.0",
   "description": "WPDS Select",
   "author": "WPDS Support <wpds@washpost.com>",
   "homepage": "https://github.com/washingtonpost/wpds-ui-kit#readme",
@@ -50,10 +50,10 @@
     "@radix-ui/react-select": "^1.0.0",
     "@radix-ui/react-use-controllable-state": "^1.0.0",
     "@washingtonpost/wpds-assets": "*",
-    "@washingtonpost/wpds-divider": "0.19.1",
-    "@washingtonpost/wpds-icon": "0.19.1",
-    "@washingtonpost/wpds-input-label": "0.19.1",
-    "@washingtonpost/wpds-input-shared": "0.19.1",
-    "@washingtonpost/wpds-theme": "0.19.1"
+    "@washingtonpost/wpds-divider": "0.20.0",
+    "@washingtonpost/wpds-icon": "0.20.0",
+    "@washingtonpost/wpds-input-label": "0.20.0",
+    "@washingtonpost/wpds-input-shared": "0.20.0",
+    "@washingtonpost/wpds-theme": "0.20.0"
   }
 }

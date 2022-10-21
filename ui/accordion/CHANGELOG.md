@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.20.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.19.1...v0.20.0) (2022-10-21)
+
+
+### Bug Fixes
+
+* move Accordion padding css ([9239cb6](https://github.com/washingtonpost/wpds-ui-kit/commit/9239cb620ac8a7bdfca31adea2e67212eb21d2b1))
+* move padding css out of transition element to avoid jumpy transition ([44c386c](https://github.com/washingtonpost/wpds-ui-kit/commit/44c386ce7a082fee88d41ffca817fcd61e6a5c43))
+
+
+
+
+
 ## [0.19.1](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.19.1-experimental.0...v0.19.1) (2022-10-17)
 
 **Note:** Version bump only for package @washingtonpost/wpds-accordion
