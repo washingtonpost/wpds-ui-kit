@@ -77,11 +77,11 @@
   </url>
 
   <url>
-    <loc>https://build.washingtonpost.com/foundations/ breakpoints</loc>
+    <loc>https://build.washingtonpost.com/foundations/base</loc>
   </url>
 
   <url>
-    <loc>https://build.washingtonpost.com/foundations/base</loc>
+    <loc>https://build.washingtonpost.com/foundations/breakpoints</loc>
   </url>
 
   <url>
@@ -256,5 +256,9 @@
 
   <url>
     <loc>https://build.washingtonpost.com/zzz/color-codes</loc>
+  </url>
+
+  <url>
+    <loc>https://build.washingtonpost.com/zzz/tachyons-to-stitches</loc>
   </url>
 </urlset>
