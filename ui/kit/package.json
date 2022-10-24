@@ -54,6 +54,7 @@
     "@washingtonpost/wpds-input-textarea": "0.20.0",
     "@washingtonpost/wpds-pagination-dots": "0.20.0",
     "@washingtonpost/wpds-radio-group": "0.20.0",
+    "@washingtonpost/wpds-select": "0.20.0",
     "@washingtonpost/wpds-scrim": "0.20.0",
     "@washingtonpost/wpds-theme": "0.20.0",
     "@washingtonpost/wpds-tooltip": "0.20.0",
