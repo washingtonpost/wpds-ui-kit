@@ -1,6 +1,6 @@
 {
   "name": "@washingtonpost/wpds-docs",
-  "version": "0.20.0",
+  "version": "0.20.1",
   "private": true,
   "scripts": {
     "dev": "next-remote-watch ./docs",
@@ -26,7 +26,7 @@
     "@washingtonpost/site-third-party-scripts": "latest",
     "@washingtonpost/wpds-accordion": "^0.17.0",
     "@washingtonpost/wpds-assets": "^1.12.0",
-    "@washingtonpost/wpds-ui-kit": "0.20.0",
+    "@washingtonpost/wpds-ui-kit": "0.20.1",
     "gray-matter": "^4.0.2",
     "lz-string": "^1.4.4",
     "next": "^12.2.5",
