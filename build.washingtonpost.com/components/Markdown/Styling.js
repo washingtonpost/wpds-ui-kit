@@ -239,6 +239,7 @@ const components = {
     </Box>
   ),
   YoutubeEmbed: dynamic(() => import("./Components/YouTubeEmbed")),
+  StyleConverter: dynamic(() => import("./Components/StyleConverter")),
 };
 
 export default components;
