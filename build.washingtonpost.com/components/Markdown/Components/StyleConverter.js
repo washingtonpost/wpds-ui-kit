@@ -267,7 +267,7 @@ const StyleConverter = () => {
     >
       <Box css={{ flex: 1 }}>
         <InputTextarea
-          label="Class Names"
+          placeholder="flex blue font-lg"
           name="classes"
           id="classes"
           value={classesValue}
