@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.20.1](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.20.0...v0.20.1) (2022-10-24)
+
+
+### Bug Fixes
+
+* update kit package with select dependency ([#255](https://github.com/washingtonpost/wpds-ui-kit/issues/255)) ([a3b3f2e](https://github.com/washingtonpost/wpds-ui-kit/commit/a3b3f2e8dea90bc3c644fd47308bbd8f56ea2412))
+
+
+
+
+
+# [0.20.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.19.1...v0.20.0) (2022-10-21)
+
+**Note:** Version bump only for package @washingtonpost/wpds-ui-kit
+
+
+
+
+
 ## [0.19.1](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.19.1-experimental.0...v0.19.1) (2022-10-17)
 
 **Note:** Version bump only for package @washingtonpost/wpds-ui-kit

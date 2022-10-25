@@ -3,6 +3,35 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.20.1](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.20.0...v0.20.1) (2022-10-24)
+
+
+### Bug Fixes
+
+* update kit package with select dependency ([#255](https://github.com/washingtonpost/wpds-ui-kit/issues/255)) ([a3b3f2e](https://github.com/washingtonpost/wpds-ui-kit/commit/a3b3f2e8dea90bc3c644fd47308bbd8f56ea2412))
+
+
+
+
+
+# [0.20.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.19.1...v0.20.0) (2022-10-21)
+
+
+### Bug Fixes
+
+* move Accordion padding css ([9239cb6](https://github.com/washingtonpost/wpds-ui-kit/commit/9239cb620ac8a7bdfca31adea2e67212eb21d2b1))
+* move padding css out of transition element to avoid jumpy transition ([44c386c](https://github.com/washingtonpost/wpds-ui-kit/commit/44c386ce7a082fee88d41ffca817fcd61e6a5c43))
+* **ui kit:** support wpds color tokens for icon 'fill' property ([5021824](https://github.com/washingtonpost/wpds-ui-kit/commit/50218245e013ba14d98f77932d9780f40a5af339))
+
+
+### Features
+
+* add new Foundations page for breakpoints ([#243](https://github.com/washingtonpost/wpds-ui-kit/issues/243)) ([dd1a7b8](https://github.com/washingtonpost/wpds-ui-kit/commit/dd1a7b8ea5d60bf9cf53ac6468a4f0723a9d34cf))
+
+
+
+
+
 ## [0.19.1](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.19.1-experimental.0...v0.19.1) (2022-10-17)
 
 **Note:** Version bump only for package root
