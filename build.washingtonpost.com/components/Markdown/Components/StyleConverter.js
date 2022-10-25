@@ -145,7 +145,10 @@ const StyleConverter = () => {
 
     let convertedVal = val;
 
-    if (convertedVal.indexOf("px") === convertedVal.length - 2) {
+    if (
+      convertedVal.indexOf("px") !== -1 &&
+      convertedVal.indexOf("px") === convertedVal.length - 2
+    ) {
       convertedVal = pxToRems(val);
     }
 
