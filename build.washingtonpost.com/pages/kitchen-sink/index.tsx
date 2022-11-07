@@ -393,7 +393,7 @@ function HomePage() {
       </Tooltip.Provider>
       <h2>Card</h2>
       <Card
-        label="card example"
+        label="Card example"
         css={{
           display: "flex",
           alignItems: "center",
