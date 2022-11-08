@@ -47,7 +47,6 @@ const DefaultTemplate = (args) => (
 );
 
 export const Card = DefaultTemplate.bind({});
-Card.args = { label: "Card component" };
 
 const OptionsT = (args) => (
   <Stack>
@@ -102,4 +101,3 @@ const OptionsT = (args) => (
   </Stack>
 );
 export const Options = OptionsT.bind({});
-Options.args = { label: "Card component" };

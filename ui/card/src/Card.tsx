@@ -5,10 +5,6 @@ import { theme, styled } from "@washingtonpost/wpds-theme";
 const NAME = "Card";
 
 interface CardProps extends React.ComponentPropsWithRef<"div"> {
-  /**
-   * The input's label text, required for accessibility
-   */
-  label: string;
   css?: WPDS.CSS;
 }
 
@@ -27,7 +23,7 @@ const StyledCard = styled("div", {
 export const Card = React.forwardRef<HTMLDivElement, CardProps>(
   (props, ref) => {
     return (
-      <StyledCard ref={ref} css={props.css} aria-label={props.label}>
+      <StyledCard ref={ref} css={props.css}>
         {props.children}
       </StyledCard>
     );
