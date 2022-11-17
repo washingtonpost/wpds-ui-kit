@@ -30,6 +30,9 @@ export const logoList = [
   "election-default",
   "election-redbackground",
   "election-bluebackground",
+  "qatar-world-cup",
+  "qatar-world-cup-reverse",
+  "qatar-world-cup-bw",
 ];
 
 export const darkLogos = [

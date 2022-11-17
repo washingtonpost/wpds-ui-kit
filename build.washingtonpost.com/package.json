@@ -25,7 +25,7 @@
     "@washingtonpost/site-footer": "0.11.3",
     "@washingtonpost/site-third-party-scripts": "latest",
     "@washingtonpost/wpds-accordion": "^0.17.0",
-    "@washingtonpost/wpds-assets": "^1.12.0",
+    "@washingtonpost/wpds-assets": "^1.13.0",
     "@washingtonpost/wpds-ui-kit": "0.20.1",
     "gray-matter": "^4.0.2",
     "lz-string": "^1.4.4",
