@@ -24,7 +24,6 @@ import {
 import Chart from "@washingtonpost/wpds-assets/asset/chart";
 import Settings from "@washingtonpost/wpds-assets/asset/settings";
 import Image from "next/image";
-import Form from "./form";
 
 const ImageLoader = ({ src }) => {
   return `${src}`;
@@ -70,8 +69,6 @@ function HomePage() {
       </p>
 
       <Stack>
-        <h2>Example Form</h2>
-        <Form />
         <h2>Container</h2>
         <Container
           maxWidth="lg"
@@ -354,7 +351,7 @@ function HomePage() {
             alt="An avatar is an atomic component that represents an individual’s identity through a circular photo."
           />
         </Avatar>
-        {/* <h2>Pagination Dots</h2>
+        <h2>Pagination Dots</h2>
         <Stack css={{ width: "200px", marginBlockStart: "0" }}>
           <HStack>
             <PaginationDots amount={6} index={1} label="Pagination label" />
@@ -368,7 +365,7 @@ function HomePage() {
           <HStack>
             <PaginationDots amount={5} index={5} label="Pagination label" />
           </HStack>
-        </Stack> */}
+        </Stack>
       </Stack>
       <h2>Drawer</h2>
       <Drawer.Root id="drawer-id">
