@@ -1,4 +1,3 @@
-/* eslint-disable testing-library/prefer-screen-queries */
 import { test, expect } from "@playwright/test";
 
 test.describe("errors should show", () => {
@@ -7,17 +6,17 @@ test.describe("errors should show", () => {
   }) => {
     await page.goto("http://localhost:3000/working-examples");
 
-    await page.getByRole("button", { name: /submit/i }).click();
+    await page.locator("[type=submit]").click();
 
-    await expect(page.getByText("First Name is required")).toBeVisible();
-    await expect(page.getByText("Last Name is required")).toBeVisible();
-    await expect(page.getByText("Email is required")).toBeVisible();
-    await expect(page.getByText("Phone number is required")).toBeVisible();
-    await expect(page.getByText("Address is required")).toBeVisible();
-    await expect(page.getByText("City is required")).toBeVisible();
-    await expect(page.getByText("Zipcode is required")).toBeVisible();
-    await expect(page.getByText("State is required")).toBeVisible();
-    await expect(page.getByText("Please select one")).toBeVisible();
+    await expect(page.locator("text=First Name is required")).toBeVisible();
+    await expect(page.locator("text=Last Name is required")).toBeVisible();
+    await expect(page.locator("text=Email is required")).toBeVisible();
+    await expect(page.locator("text=Phone number is required")).toBeVisible();
+    await expect(page.locator("text=Address is required")).toBeVisible();
+    await expect(page.locator("text=City is required")).toBeVisible();
+    await expect(page.locator("text=Zipcode is required")).toBeVisible();
+    await expect(page.locator("text=State is required")).toBeVisible();
+    await expect(page.locator("text=Please select one")).toBeVisible();
   });
 
   test.describe("in email field when value entered", () => {
@@ -26,10 +25,10 @@ test.describe("errors should show", () => {
 
       await page.locator("input[aria-labelledby='radix-2']").fill("j");
 
-      await page.getByRole("button", { name: /submit/i }).click();
+      await page.locator("[type=submit]").click();
 
       await expect(
-        page.getByText("Entered value does not match email format")
+        page.locator("text=Entered value does not match email format")
       ).toBeVisible();
     });
     test("does not pass .com", async ({ page }) => {
@@ -39,10 +38,10 @@ test.describe("errors should show", () => {
         .locator("input[aria-labelledby='radix-2']")
         .fill("john.doe@washpost");
 
-      await page.getByRole("button", { name: /submit/i }).click();
+      await page.locator("[type=submit]").click();
 
       await expect(
-        page.getByText("Entered value does not match email format")
+        page.locator("text=Entered value does not match email format")
       ).toBeVisible();
     });
     test("does not pass @", async ({ page }) => {
@@ -52,10 +51,10 @@ test.describe("errors should show", () => {
         .locator("input[aria-labelledby='radix-2']")
         .fill("john.doewashpost.com");
 
-      await page.getByRole("button", { name: /submit/i }).click();
+      await page.locator("[type=submit]").click();
 
       await expect(
-        page.getByText("Entered value does not match email format")
+        page.locator("text=Entered value does not match email format")
       ).toBeVisible();
     });
   });
@@ -65,9 +64,11 @@ test.describe("errors should show", () => {
       await page.goto("http://localhost:3000/working-examples");
 
       await page.locator("input[aria-labelledby='radix-3']").fill("123456789");
-      await page.getByRole("button", { name: /submit/i }).click();
+
+      await page.locator("[type=submit]").click();
+
       await expect(
-        page.getByText("Please pass in a valid phone number")
+        page.locator("text=Please pass in a valid phone number")
       ).toBeVisible();
     });
     test("has too many digits", async ({ page }) => {
@@ -76,18 +77,20 @@ test.describe("errors should show", () => {
       await page
         .locator("input[aria-labelledby='radix-3']")
         .fill("1234567890112");
-      await page.getByRole("button", { name: /submit/i }).click();
+
+      await page.locator("[type=submit]").click();
+
       await expect(
-        page.getByText("Please pass in a valid phone number")
+        page.locator("text=Please pass in a valid phone number")
       ).toBeVisible();
     });
     test("passes in a letter", async ({ page }) => {
       await page.goto("http://localhost:3000/working-examples");
 
       await page.locator("input[aria-labelledby='radix-3']").fill("123456789a");
-      await page.getByRole("button", { name: /submit/i }).click();
+      await page.locator("[type=submit]").click();
       await expect(
-        page.getByText("Please pass in a valid phone number")
+        page.locator("text=Please pass in a valid phone number")
       ).toBeVisible();
     });
   });
@@ -117,28 +120,30 @@ test.describe("no errors should show", () => {
     await page.locator("button[aria-labelledby='radix-13']").click(); // radio buttons
     await page.locator("[role='checkbox']").check();
 
-    await page.getByRole("button", { name: /submit/i }).click();
+    await page.locator("[type=submit]").click();
 
-    await expect(page.getByText("First Name is required")).not.toBeVisible();
-    await expect(page.getByText("Last Name is required")).not.toBeVisible();
-    await expect(page.getByText("Email is required")).not.toBeVisible();
-    await expect(page.getByText("Phone number is required")).not.toBeVisible();
-    await expect(page.getByText("Address is required")).not.toBeVisible();
-    await expect(page.getByText("City is required")).not.toBeVisible();
-    await expect(page.getByText("Zipcode is required")).not.toBeVisible();
-    await expect(page.getByText("State is required")).not.toBeVisible();
-    await expect(page.getByText("Please select one")).not.toBeVisible();
+    await expect(page.locator("text=First Name is required")).not.toBeVisible();
+    await expect(page.locator("text=Last Name is required")).not.toBeVisible();
+    await expect(page.locator("text=Email is required")).not.toBeVisible();
+    await expect(
+      page.locator("text=Phone number is required")
+    ).not.toBeVisible();
+    await expect(page.locator("text=Address is required")).not.toBeVisible();
+    await expect(page.locator("text=City is required")).not.toBeVisible();
+    await expect(page.locator("text=Zipcode is required")).not.toBeVisible();
+    await expect(page.locator("text=State is required")).not.toBeVisible();
+    await expect(page.locator("text=Please select one")).not.toBeVisible();
   });
 
   test("when Reset Form button is pressed", async ({ page }) => {
     await page.goto("http://localhost:3000/working-examples");
 
-    await page.getByRole("button", { name: /submit/i }).click();
+    await page.locator("[type=submit]").click();
 
-    await expect(page.getByText("First Name is required")).toBeVisible();
+    await expect(page.locator("text=First Name is required")).toBeVisible();
 
-    await page.getByRole("button", { name: /reset form/i }).click();
+    await page.locator("text=Reset Form").click();
 
-    await expect(page.getByText("First Name is required")).not.toBeVisible();
+    await expect(page.locator("text=First Name is required")).not.toBeVisible();
   });
 });

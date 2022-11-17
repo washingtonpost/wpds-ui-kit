@@ -155,6 +155,7 @@
     "react-phone-number-input": "^3.2.12",
     "react-svg": "^15.0.4",
     "react-toastify": "^8.2.0",
+    "react-transition-group": "^4.4.5",
     "remark-gfm": "^3.0.1",
     "remark-mdx-code-meta": "^1.0.0",
     "rgb-hex": "^4.0.0",
