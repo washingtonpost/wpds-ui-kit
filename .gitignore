@@ -129,3 +129,6 @@ build.washingtonpost.com/public/storybook/**/*
 .env
 .env.*
 .vercel
+/test-results/
+/playwright-report/
+/playwright/.cache/

@@ -151,15 +151,12 @@ const Form = () => {
                 label="First Name"
                 id="firstName"
                 error={!!errors.firstName}
-                errorMessage={
-                  errors.firstName?.type === "required" &&
-                  "First name is required"
-                }
+                errorMessage={errors.firstName?.message}
                 required
                 {...register("firstName", {
                   required: {
                     value: true,
-                    message: "First Name field is required",
+                    message: "First Name is required",
                   },
                 })}
               />
@@ -171,15 +168,12 @@ const Form = () => {
                 label="Last Name"
                 id="lastName"
                 error={!!errors.lastName}
-                errorMessage={
-                  errors.lastName?.type === "required" &&
-                  "Last name is required"
-                }
+                errorMessage={errors.lastName?.message}
                 required
                 {...register("lastName", {
                   required: {
                     value: true,
-                    message: "Last Name field is required",
+                    message: "Last Name is required",
                   },
                 })}
               />
@@ -390,7 +384,7 @@ const Form = () => {
                 }}
                 render={({ field }) => (
                   <RadioGroup
-                    legend="Where did you hear about us?"
+                    legend="How did you hear about us?"
                     name="radioGroup"
                     css={{ marginRight: "$050" }}
                     variant="primary"
@@ -435,7 +429,7 @@ const Form = () => {
                   reset();
                 }}
               >
-                Clear
+                Reset Form
               </Button>
             </InputWrapper>
             <InputWrapper>
