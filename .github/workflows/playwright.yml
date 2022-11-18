@@ -37,7 +37,7 @@ jobs:
       - name: Run Playwright tests
         run: npx playwright test
         env:
-          BASEURL: "https://${{ steps.vercel_preview_url.outputs.preview_url }}"
+          BASEURL: "https://${{ env.VERCEL_URL }}"
 
       - uses: actions/upload-artifact@v3
         if: always()
