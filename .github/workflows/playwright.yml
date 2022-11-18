@@ -6,6 +6,7 @@ on:
     branches: [main, master]
 jobs:
   test:
+    if: (github.event.deployment_status.state == 'success')
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -30,8 +31,7 @@ jobs:
       - name: Run Playwright tests
         run: npx playwright test
         env:
-          PLAYWRIGHT_VERCEL_KEY: ${{secrets.VERCEL_TOKEN}}
-          BASEURL: ${{ github.event.deployment_status.target_url }}
+          BASEURL: "https://wpds-ui-${{ github.head_ref }}.preview.now.washingtonpost.com/"
 
       - uses: actions/upload-artifact@v3
         if: always()
