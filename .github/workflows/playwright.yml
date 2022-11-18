@@ -6,21 +6,31 @@ on:
     branches: [main, master]
 jobs:
   test:
-    timeout-minutes: 60
+    if: github.event.deployment_status.state == 'success' && contains(github.event.deployment_status.target_url, 'storybook')
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v2.4.0
         with:
-          node-version: 16
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v2.5.1
+        with:
+          node-version-file: ".nvmrc"
+          registry-url: "https://registry.npmjs.org"
+          always-auth: true
+
       - name: Install dependencies
         run: npm ci
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
+
       - name: Run Playwright tests
         run: npx playwright test
+
       - uses: actions/upload-artifact@v3
         if: always()
         with:
