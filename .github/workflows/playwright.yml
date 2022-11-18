@@ -29,6 +29,9 @@ jobs:
 
       - name: Run Playwright tests
         run: npx playwright test
+        env:
+          PLAYWRIGHT_VERCEL_KEY: ${{secrets.VERCEL_KEY}}
+          BASEURL: ${{ github.event.deployment_status.target_url }}
 
       - uses: actions/upload-artifact@v3
         if: always()

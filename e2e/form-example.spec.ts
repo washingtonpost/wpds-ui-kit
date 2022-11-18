@@ -4,7 +4,7 @@ test.describe("errors should show", () => {
   test("in required fields when left empty and form is submitted", async ({
     page,
   }) => {
-    await page.goto("http://localhost:3000/working-examples");
+    await page.goto("/working-examples");
 
     await page.locator("[type=submit]").click();
 
@@ -21,7 +21,7 @@ test.describe("errors should show", () => {
 
   test.describe("in email field when value entered", () => {
     test("does not pass @ or .com", async ({ page }) => {
-      await page.goto("http://localhost:3000/working-examples");
+      await page.goto("/working-examples");
 
       await page.locator("input[aria-labelledby='radix-2']").fill("j");
 
@@ -32,7 +32,7 @@ test.describe("errors should show", () => {
       ).toBeVisible();
     });
     test("does not pass .com", async ({ page }) => {
-      await page.goto("http://localhost:3000/working-examples");
+      await page.goto("/working-examples");
 
       await page
         .locator("input[aria-labelledby='radix-2']")
@@ -45,7 +45,7 @@ test.describe("errors should show", () => {
       ).toBeVisible();
     });
     test("does not pass @", async ({ page }) => {
-      await page.goto("http://localhost:3000/working-examples");
+      await page.goto("/working-examples");
 
       await page
         .locator("input[aria-labelledby='radix-2']")
@@ -61,7 +61,7 @@ test.describe("errors should show", () => {
 
   test.describe("in phone number field when value entered", () => {
     test("has less than 10 digits", async ({ page }) => {
-      await page.goto("http://localhost:3000/working-examples");
+      await page.goto("/working-examples");
 
       await page.locator("input[aria-labelledby='radix-3']").fill("123456789");
 
@@ -72,7 +72,7 @@ test.describe("errors should show", () => {
       ).toBeVisible();
     });
     test("has too many digits", async ({ page }) => {
-      await page.goto("http://localhost:3000/working-examples");
+      await page.goto("/working-examples");
 
       await page
         .locator("input[aria-labelledby='radix-3']")
@@ -85,7 +85,7 @@ test.describe("errors should show", () => {
       ).toBeVisible();
     });
     test("passes in a letter", async ({ page }) => {
-      await page.goto("http://localhost:3000/working-examples");
+      await page.goto("/working-examples");
 
       await page.locator("input[aria-labelledby='radix-3']").fill("123456789a");
       await page.locator("[type=submit]").click();
@@ -100,7 +100,7 @@ test.describe("no errors should show", () => {
   test("in required fields when filled and form is submitted", async ({
     page,
   }) => {
-    await page.goto("http://localhost:3000/working-examples");
+    await page.goto("/working-examples");
 
     await page.locator("input[aria-labelledby='radix-0']").fill("John");
     await page.locator("input[aria-labelledby='radix-1']").fill("Doe");
@@ -136,7 +136,7 @@ test.describe("no errors should show", () => {
   });
 
   test("when Reset Form button is pressed", async ({ page }) => {
-    await page.goto("http://localhost:3000/working-examples");
+    await page.goto("/working-examples");
 
     await page.locator("[type=submit]").click();
 
