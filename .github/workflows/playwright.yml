@@ -19,13 +19,6 @@ jobs:
           registry-url: "https://registry.npmjs.org"
           always-auth: true
 
-      - uses: zentered/vercel-preview-url@v1.0.0
-        id: vercel_preview_url
-        env:
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-        with:
-          vercel_project_id: "wpds-ui-kit"
-
       - name: Install dependencies
         run: npm ci
         env:
