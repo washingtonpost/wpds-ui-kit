@@ -12,7 +12,7 @@ export type WPDSThemeColorObject = {
   prefix: string;
 };
 
-interface IconInterface extends React.SVGProps<HTMLOrSVGElement> {
+interface IconInterface extends Omit<React.SVGProps<HTMLOrSVGElement>, 'fill'> {
   /**
    * The name of the icon to display.
    */
