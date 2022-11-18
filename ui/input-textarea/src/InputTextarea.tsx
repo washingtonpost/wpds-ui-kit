@@ -144,6 +144,7 @@ export const InputTextarea = React.forwardRef<
             isInvalid: error,
             isDisabled: disabled,
           })}
+          required={required}
           disabled={disabled}
           onFocus={handleFocus}
           onBlur={handleBlur}
