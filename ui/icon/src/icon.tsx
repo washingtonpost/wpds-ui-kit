@@ -21,7 +21,7 @@ interface IconInterface extends React.SVGProps<HTMLOrSVGElement> {
   children?: React.ReactNode;
   className?: string;
   css?: WPDS.CSS;
-  fill?: string & WPDSThemeColorObject;
+  fill?: string | WPDSThemeColorObject;
 }
 
 export const Icon = React.forwardRef<React.ReactSVGElement, IconInterface>(
