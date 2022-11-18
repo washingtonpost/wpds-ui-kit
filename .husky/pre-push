@@ -1,11 +1,11 @@
 #!/bin/sh
-# . "$(dirname "$0")/_/husky.sh"
+. "$(dirname "$0")/_/husky.sh"
 
-# echo "--> Cleaning..."
-# npm run clean
+echo "--> Cleaning..."
+npm run clean
 
-# echo "--> Installing libraries..."
-# npm ci
+echo "--> Installing libraries..."
+npm ci
 
-# echo "--> Building the application..."
-# npm run build
+echo "--> Building the application..."
+npm run build
