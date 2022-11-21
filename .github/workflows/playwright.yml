@@ -26,7 +26,7 @@ jobs:
       - name: Run Playwright tests
         run: npx playwright test
         env:
-          BASEURL: `${VERCEL_URL}/working-examples`
+          BASEURL: "https://${{ VERCEL_URL }}"
 
       - uses: actions/upload-artifact@v3
         if: always()
