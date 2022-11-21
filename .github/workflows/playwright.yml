@@ -26,7 +26,7 @@ jobs:
       - name: Run Playwright tests
         run: npx playwright test
         env:
-          BASEURL: "${{ console.log(github.event.deployment_status.url); console.log(env.toString()); console.log(github.event.deployment_status.toString()) }}"
+          BASEURL: "${{ process.env.VERCEL_URL }}"
 
       - uses: actions/upload-artifact@v3
         if: always()
