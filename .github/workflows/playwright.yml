@@ -2,7 +2,7 @@ name: Playwright Tests
 on: deployment_status
 jobs:
   test:
-    if: github.event.deployment_status.state == 'success'
+    if: github.event.deployment_status.state == 'success' && ${{ !contains(github.event.deployment_status.target_url, 'storybook') }}
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
