@@ -17,8 +17,10 @@ jobs:
       - name: echo things
         run: |
           echo "GITHUB_EVENT_NAME: ${GITHUB_EVENT_NAME}"
-          echo "env: ${env}"
-          echo "VERCE_URL: ${VERCEL_URL}"
+          echo "GITHUB_EVENT_PATH: ${GITHUB_EVENT_PATH}""
+          echo "vercel: ${vercel.VERCEL_URL}""
+          echo "github.event: ${github.event.}"
+          echo "github.head_ref: ${{ github.head_ref }}"
       # - name: Install dependencies
       #   run: npm ci
       #   env:
@@ -30,7 +32,7 @@ jobs:
       # - name: Run Playwright tests
       #   run: npx playwright test
       #   env:
-      #     BASEURL: "echo ${{env }}"
+      #     BASEURL: "echo ${{https://wpds-ui-${{ github.head_ref }}.preview.now.washingtonpost.com/working-examples }}"
 
       # - uses: actions/upload-artifact@v3
       #   if: always()
