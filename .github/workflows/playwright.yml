@@ -18,8 +18,7 @@ jobs:
         run: |
           echo "GITHUB_EVENT_NAME: ${GITHUB_EVENT_NAME}"
           echo "GITHUB_EVENT_PATH: ${GITHUB_EVENT_PATH}""
-          echo "vercel: ${vercel.VERCEL_URL}""
-          echo "github.event: ${github.event.}"
+          echo "github.event: ${github.event}"
           echo "github.head_ref: ${{ github.head_ref }}"
       # - name: Install dependencies
       #   run: npm ci
