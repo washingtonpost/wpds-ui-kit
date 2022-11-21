@@ -25,7 +25,7 @@ jobs:
       - name: Run Playwright tests
         run: npx playwright test
         env:
-          BASEURL: "echo ${{https://wpds-ui-${{ github.head_ref }}.preview.now.washingtonpost.com/working-examples }}"
+          BASEURL: "https://wpds-ui-${{ github.head_ref }}.preview.now.washingtonpost.com/working-examples"
 
       - uses: actions/upload-artifact@v3
         if: always()
