@@ -4,6 +4,7 @@ on:
     branches: [dev, main]
 jobs:
   test:
+    if: github.event.deployment_status.state == 'success'
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
