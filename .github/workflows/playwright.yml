@@ -1,5 +1,7 @@
 name: Playwright Tests
-on: deployment_status
+on:
+  pull_request:
+    branches: [dev, main]
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -25,11 +27,11 @@ jobs:
       - name: Run Playwright tests
         run: npx playwright test
         env:
-          BASEURL: "https://wpds-ui-${{ github.head_ref }}.preview.now.washingtonpost.com/working-examples"
+          BASEURL: "${{ github.event.deployment_status.target_url }}"
 
-      - uses: actions/upload-artifact@v3
-        if: always()
-        with:
-          name: playwright-report
-          path: playwright-report/
-          retention-days: 30
+      # - uses: actions/upload-artifact@v3
+      #   if: always()
+      #   with:
+      #     name: playwright-report
+      #     path: playwright-report/
+      #     retention-days: 30
