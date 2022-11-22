@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { isPossiblePhoneNumber } from "react-phone-number-input";
-import { styled } from "@washingtonpost/wpds-theme";
 import {
   Box,
   Button,
@@ -13,6 +12,7 @@ import {
   RadioButton,
   RadioGroup,
   Select,
+  styled,
 } from "@washingtonpost/wpds-ui-kit";
 
 const STATES = [
