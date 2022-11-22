@@ -82,12 +82,12 @@ const SubHeadline = styled("h2", {
 });
 
 const FormContainer = styled(Container, {
-  display: "flex",
-  width: "50%",
-  margin: "30px 0 0 0",
   alignItems: "unset",
-  "@maxMd": {
-    width: "100%",
+  width: "100%",
+  display: "flex",
+  margin: "30px 0 0 0",
+  "@notMd": {
+    width: "50%",
   },
 });
 
