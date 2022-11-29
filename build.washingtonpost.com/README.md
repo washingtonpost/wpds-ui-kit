@@ -18,22 +18,16 @@ nvm use
 npm ci
 ```
 
-3. To build all the wpds-docs packages
+3. To build all the wpds packages
 
 ```shell
 npm run build
 ```
 
-4. We use Storybook to develop locally along with Next.js.
-
-```bash
-npm run storybook
-```
-
-5. Open http://localhost:3000/. If you get an error, try reloading the page. It's a feature, not a bug ;)
+5. Open http://localhost:3000
 
 ```
-npm run dev
+npm run dev --workspace=build.washingtonpost.com
 ```
 
 ## Environment variables

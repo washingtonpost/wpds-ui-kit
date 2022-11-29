@@ -2,7 +2,7 @@
 
 This WPDS UI Kit repo is now a mono-repo that contains not only our UI Kit, but also our build.washingtonpost.com docs site.
 
-![npm (tag)](https://img.shields.io/npm/v/@washingtonpost/wpds-ui-kit/latest) [![Chromatic Production](https://github.com/WPMedia/wpds-ui-kit/actions/workflows/chromatic-prod.yml/badge.svg)](https://github.com/WPMedia/wpds-ui-kit/actions/workflows/chromatic-prod.yml) [![Validate](https://github.com/WPMedia/wpds-ui-kit/actions/workflows/validation.yml/badge.svg)](https://github.com/WPMedia/wpds-ui-kit/actions/workflows/validation.yml) [![Release to Latest NPM Channel](https://github.com/WPMedia/wpds-ui-kit/actions/workflows/latest-release.yml/badge.svg)](https://github.com/WPMedia/wpds-ui-kit/actions/workflows/latest-release.yml)
+![npm (tag)](https://img.shields.io/npm/v/@washingtonpost/wpds-ui-kit/latest) [![Chromatic Production](https://github.com/WPMedia/wpds-ui-kit/actions/workflows/chromatic-prod.yml/badge.svg)](https://github.com/WPMedia/wpds-ui-kit/actions/workflows/chromatic-prod.yml) [![Validate](https://github.com/WPMedia/wpds-ui-kit/actions/workflows/validation.yml/badge.svg)](https://github.com/WPMedia/wpds-ui-kit/actions/workflows/validation.yml) [![Release to Latest NPM Channel](https://github.com/WPMedia/wpds-ui-kit/actions/workflows/latest-release.yml/badge.svg)](https://github.com/WPMedia/wpds-ui-kit/actions/workflows/latest-release.yml) ![Playwright Tests](https://github.com/WPMedia/wpds-ui-kit/actions/workflows/playwright.yml/badge.svg)
 
 ## Dependency Graph
 

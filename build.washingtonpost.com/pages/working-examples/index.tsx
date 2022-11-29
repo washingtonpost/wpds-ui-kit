@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { isPossiblePhoneNumber } from "react-phone-number-input";
-import { styled } from "@washingtonpost/wpds-theme";
 import {
   Box,
   Button,
@@ -13,6 +12,7 @@ import {
   RadioButton,
   RadioGroup,
   Select,
+  styled,
 } from "@washingtonpost/wpds-ui-kit";
 
 const STATES = [
@@ -82,12 +82,12 @@ const SubHeadline = styled("h2", {
 });
 
 const FormContainer = styled(Container, {
-  display: "flex",
-  width: "50%",
-  margin: "30px 0 0 0",
   alignItems: "unset",
-  "@maxMd": {
-    width: "100%",
+  width: "100%",
+  display: "flex",
+  margin: "30px 0 0 0",
+  "@notMd": {
+    width: "50%",
   },
 });
 

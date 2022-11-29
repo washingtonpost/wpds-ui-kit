@@ -87,13 +87,7 @@ const Logos = () => {
       const Sample = AllAssets[Asset];
       const componentName = paramCase(Asset);
 
-      const importExample = `import ${Asset.replace(
-        "Svg",
-        ""
-      )} from "@washingtonpost/wpds-assets/asset/${componentName.replace(
-        "svg",
-        ""
-      )}";`;
+      const importExample = `import { ${Asset} } from "@washingtonpost/wpds-assets";`;
 
       if (!logoList.includes(componentName)) return;
       return (
