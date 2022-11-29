@@ -37,14 +37,14 @@
   },
   "peerDependencies": {
     "@radix-ui/react-accordion": "latest",
-    "@washingtonpost/wpds-assets": "^1.13.0",
+    "@washingtonpost/wpds-assets": "^1.14.0",
     "@washingtonpost/wpds-icon": "*",
     "@washingtonpost/wpds-theme": "*",
     "react": "^16.8.6 || ^17.0.2"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "latest",
-    "@washingtonpost/wpds-assets": "^1.13.0",
+    "@washingtonpost/wpds-assets": "^1.14.0",
     "@washingtonpost/wpds-icon": "0.20.1",
     "@washingtonpost/wpds-theme": "0.20.1"
   },
