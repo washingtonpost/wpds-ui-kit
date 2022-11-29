@@ -6,14 +6,7 @@ import MDXStyling from "~/components/Markdown/Styling";
 import { Grid } from "../Components/Grid";
 import { InputText } from "@washingtonpost/wpds-input-text";
 import Search from "@washingtonpost/wpds-assets/asset/search";
-import {
-  Icon,
-  theme,
-  Button,
-  AlertBanner,
-  Box,
-  styled,
-} from "@washingtonpost/wpds-ui-kit";
+import { Icon, theme, AlertBanner, Box } from "@washingtonpost/wpds-ui-kit";
 import { paramCase } from "param-case";
 import { pascalCase } from "pascal-case";
 import { logoList } from "./LogoSamples";
@@ -23,28 +16,28 @@ export default function Icons({ data }) {
     keys: ["name", "description"],
     threshold: 0.5,
   });
-  const SuccessToast = () => {
-    return (
-      <AlertBanner.Root variant="success">
-        <AlertBanner.Content css={{ minWidth: 250, paddingRight: "$050" }}>
-          <b>Copied: </b>
-          <Box as="span" css={{ fontSize: 16 }}>
-            Import statement for{" "}
-            <Box as="i" css={{ textTransform: "capitalize" }}>
-              {Name}
-            </Box>
-          </Box>
-        </AlertBanner.Content>
-      </AlertBanner.Root>
-    );
-  };
+
   const [ExampleToCopy, setExampleToCopy] = useState(null);
   const [Name, setName] = useState("");
-  const [inFocus, setInFocus] = useState(false);
   const [Filter, setFilter] = useState([]);
   useEffect(() => {
     if (ExampleToCopy) {
       window.navigator.clipboard.writeText(ExampleToCopy);
+      const SuccessToast = () => {
+        return (
+          <AlertBanner.Root variant="success">
+            <AlertBanner.Content css={{ minWidth: 250, paddingRight: "$050" }}>
+              <b>Copied: </b>
+              <Box as="span" css={{ fontSize: 16 }}>
+                Import statement for{" "}
+                <Box as="i" css={{ textTransform: "capitalize" }}>
+                  {Name}
+                </Box>
+              </Box>
+            </AlertBanner.Content>
+          </AlertBanner.Root>
+        );
+      };
       toast(<SuccessToast />, {
         position: "top-center",
         closeButton: false,
@@ -56,7 +49,7 @@ export default function Icons({ data }) {
         },
       });
     }
-  }, [ExampleToCopy]);
+  }, [ExampleToCopy, Name]);
 
   function setVariables(example, Name) {
     setName(Name);
@@ -88,13 +81,7 @@ export default function Icons({ data }) {
       }
       const componentName = paramCase(Asset);
 
-      const importExample = `import ${Asset.replace(
-        "Svg",
-        ""
-      )} from "@washingtonpost/wpds-assets/asset/${componentName.replace(
-        "svg",
-        ""
-      )}";`;
+      const importExample = `import { ${Asset} } from "@washingtonpost/wpds-assets";`;
 
       return (
         <MDXStyling.Cell key={i}>
