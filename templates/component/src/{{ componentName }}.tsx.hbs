@@ -3,35 +3,17 @@ import * as Theme from "@washingtonpost/wpds-theme";
 
 const NAME = "{{ componentName }}";
 
-interface {{ componentName }}Props {}
+type {{ componentName }}Props = {
+  /** Any React node may be used as a child to allow for formatting */
+  children?: React.ReactNode;
+  /** Override CSS */
+  css?: WPDS.CSS;
+} & React.ComponentPropsWithRef<"div">
 
-/**
- * @washingtonpost/wpds-ui-kit
- * # add description
- * 
- * # {{ componentName }}
-
-```jsx
-import { {{ componentName }} } from "@washingtonpost/wpds-ui-kit";
-
-function Component() {
-	return (
-		<{{ componentName }}>
-		</{{ componentName }}>
-	);
-}
-```
-
-## Component API
-
-## Do's and Don'ts
-
- * 
- */
-export const {{ componentName }}: React.FC<{{ componentName }}Props> = ({}) => {
+export const {{ componentName }}: React.ForwardRef<{{ componentName }}Props> = ({...props}, ref) => {
 
 	return (
-		<div />
+		<div {...props} ref={ref} />
 	);
 };
 
