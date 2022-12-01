@@ -109,7 +109,7 @@ type AvatarProps = {
    * Sizes - supports any size token
    * @default 200
    * */
-  size: StitchesSize | SizeToken;
+  size?: StitchesSize | SizeToken;
 } & Omit<React.ComponentPropsWithRef<typeof StyledAvatar>, "size">;
 
 export const Avatar = React.forwardRef<HTMLElement, AvatarProps>(
