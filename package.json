@@ -37,7 +37,7 @@
     "@typescript-eslint/parser": "^5.12.0",
     "@washingtonpost/eslint-plugin-wpds": "*",
     "babel-loader": "^8.2.2",
-    "babel-plugin-extract-react-types": "^0.1.14",
+    "babel-plugin-extract-react-types": "^0.2.0",
     "chromatic": "^6.0.6",
     "concurrently": "^6.3.0",
     "dotenv": "^14.2.0",
