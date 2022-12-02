@@ -3,6 +3,7 @@ import { theme, styled, Box, Icon } from "@washingtonpost/wpds-ui-kit";
 import ChevronRight from "@washingtonpost/wpds-assets/asset/chevron-right";
 
 import Header from "~/components/Typography/Headers";
+import Link from "next/link";
 
 const A = styled("a", {
   cursor: "pointer",
@@ -76,9 +77,11 @@ export default function Page() {
         <A onClick={onClick}>
           <StyledLink>Search</StyledLink>
         </A>
-        <A href="/">
-          <StyledLink>Return to homepage</StyledLink>
-        </A>
+        <Link href="/" passhref>
+          <A>
+            <StyledLink>Return to homepage</StyledLink>
+          </A>
+        </Link>
       </header>
     </Container>
   );
