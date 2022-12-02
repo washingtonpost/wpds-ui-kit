@@ -5,6 +5,8 @@ import ChevronRight from "@washingtonpost/wpds-assets/asset/chevron-right";
 import Header from "~/components/Typography/Headers";
 import CustomLink, { A } from "~/components/Typography/link";
 
+import { getNavigation } from "~/services";
+
 const P = styled("p", {
   color: theme.colors.accessible,
   marginBlock: 0,
@@ -71,4 +73,12 @@ export default function Page() {
       </header>
     </Container>
   );
+}
+
+export async function getStaticProps() {
+  const navigation = await getNavigation();
+
+  return {
+    props: { navigation },
+  };
 }
