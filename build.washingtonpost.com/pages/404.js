@@ -3,22 +3,7 @@ import { theme, styled, Box, Icon } from "@washingtonpost/wpds-ui-kit";
 import ChevronRight from "@washingtonpost/wpds-assets/asset/chevron-right";
 
 import Header from "~/components/Typography/Headers";
-import Link from "next/link";
-
-const A = styled("a", {
-  cursor: "pointer",
-  textDecoration: "none",
-  color: "$primary",
-  "&:hover": {
-    opacity: ".75",
-  },
-  "&:focus": {
-    outlineColor: "$signal",
-    outlineStyle: "solid",
-    outlineOffset: "2px",
-    outlineWidth: "2px",
-  },
-});
+import CustomLink, { A } from "~/components/Typography/link";
 
 const P = styled("p", {
   color: theme.colors.accessible,
@@ -77,11 +62,12 @@ export default function Page() {
         <A onClick={onClick}>
           <StyledLink>Search</StyledLink>
         </A>
-        <Link href="/" passhref>
+
+        <CustomLink href="/">
           <A>
             <StyledLink>Return to homepage</StyledLink>
           </A>
-        </Link>
+        </CustomLink>
       </header>
     </Container>
   );
