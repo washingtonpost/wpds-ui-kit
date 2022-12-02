@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.21.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.20.1...v0.21.0) (2022-12-02)
+
+
+### Bug Fixes
+
+* IconInterface fill type definition ([151d52e](https://github.com/washingtonpost/wpds-ui-kit/commit/151d52e65a48dfb5b006ccef6181c811e988a4a8))
+
+
+
+
+
 ## [0.20.1](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.20.0...v0.20.1) (2022-10-24)
 
 **Note:** Version bump only for package @washingtonpost/wpds-icon

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.21.0](https://github.com/WPMedia/wpds-ui-kit/compare/v0.20.1...v0.21.0) (2022-12-02)
+
+
+### Bug Fixes
+
+* honor required prop in InputTextarea ([46e0b19](https://github.com/WPMedia/wpds-ui-kit/commit/46e0b19c25ac99e6f2fb956ca4c21d0a7c34b108))
+
+
+
+
+
 ## [0.20.1](https://github.com/WPMedia/wpds-ui-kit/compare/v0.20.0...v0.20.1) (2022-10-24)
 
 **Note:** Version bump only for package @washingtonpost/wpds-input-textarea

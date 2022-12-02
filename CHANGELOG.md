@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.21.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.20.1...v0.21.0) (2022-12-02)
+
+
+### Bug Fixes
+
+* add sidenav to 404 ([#287](https://github.com/washingtonpost/wpds-ui-kit/issues/287)) ([99488a4](https://github.com/washingtonpost/wpds-ui-kit/commit/99488a48048942250ba48cd9facbedf870a65d63))
+* honor required prop in InputTextarea ([46e0b19](https://github.com/washingtonpost/wpds-ui-kit/commit/46e0b19c25ac99e6f2fb956ca4c21d0a7c34b108))
+* IconInterface fill type definition ([151d52e](https://github.com/washingtonpost/wpds-ui-kit/commit/151d52e65a48dfb5b006ccef6181c811e988a4a8))
+
+
+### Features
+
+* add custom 404 page ([#286](https://github.com/washingtonpost/wpds-ui-kit/issues/286)) ([6282314](https://github.com/washingtonpost/wpds-ui-kit/commit/62823144b372afa6adfe2bf529df62b154f817f7))
+* bump wam to v1.13.0 ([2f027f0](https://github.com/washingtonpost/wpds-ui-kit/commit/2f027f005d7d150ef7bcc837319e2f3047419c6b))
+* create form working example + add playwright tests ([2324711](https://github.com/washingtonpost/wpds-ui-kit/commit/232471170684deb33815ca196ce4323c6057bce2))
+* refactor Avatar to better handle style and size variations ([#285](https://github.com/washingtonpost/wpds-ui-kit/issues/285)) ([1e4235c](https://github.com/washingtonpost/wpds-ui-kit/commit/1e4235c56448d64c0d4b0460a169b3265a8f72ad))
+* replace StyleConverter label with placeholder text ([257c5d5](https://github.com/washingtonpost/wpds-ui-kit/commit/257c5d5831ff1108af6e3eee584b59f8154a06de))
+* updated wam version and asset import copy text ([#276](https://github.com/washingtonpost/wpds-ui-kit/issues/276)) ([d9305cb](https://github.com/washingtonpost/wpds-ui-kit/commit/d9305cb1fa903cb72af9d10355a45a21e7ae50d7))
+
+
+
+
+
 ## [0.20.1](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.20.0...v0.20.1) (2022-10-24)
 
 
