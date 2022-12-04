@@ -3,27 +3,21 @@ import type * as WPDS from "@washingtonpost/wpds-theme";
 import { theme, styled } from "@washingtonpost/wpds-theme";
 
 const NAME = "Card";
-
-interface CardProps extends React.ComponentPropsWithRef<"div"> {
-  css?: WPDS.CSS;
-}
+type CardType = { CSS?: WPDS.CSS } & HTMLDivElement;
 
 const StyledCard = styled("div", {
   padding: theme.space["100"],
-  // border: theme.colors.subtle,
-  // borderWidth: "1px",
-  // borderStyle: "solid",
-  boxShadow: theme.shadows["200"], //Shadow example
+  border: theme.colors.subtle,
+  borderWidth: "1px",
+  borderStyle: "solid",
   backgroundColor: theme.colors.secondary,
   color: theme.colors.onSecondary,
 });
 
-// styled components here
-
-export const Card = React.forwardRef<HTMLDivElement, CardProps>(
+export const Card = React.forwardRef<CardType>(
   (props, ref) => {
     return (
-      <StyledCard ref={ref} css={props.css}>
+      <StyledCard ref={ref} {...props}>
         {props.children}
       </StyledCard>
     );
@@ -31,5 +25,3 @@ export const Card = React.forwardRef<HTMLDivElement, CardProps>(
 );
 
 Card.displayName = NAME;
-
-export type { CardProps };
