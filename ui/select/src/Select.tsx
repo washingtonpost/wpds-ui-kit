@@ -28,18 +28,6 @@ type SelectContextProps = {
 
 export const SelectContext = React.createContext({} as SelectContextProps);
 
-type Controlled = {
-  /** Controlled value for the current page */
-  value: number;
-  defaultValue?: never;
-};
-type Uncontrolled = {
-  value?: never;
-  /** Uncontrolled value for the initial page shown */
-  defaultValue?: number;
-};
-type ControlledOrUncontrolled = Controlled | Uncontrolled;
-
 type SelectRootVariants = WPDS.VariantProps<typeof SelectPrimitive.Root>;
 
 export type SelectRootProps = {
@@ -47,8 +35,6 @@ export type SelectRootProps = {
   children?: React.ReactNode;
   /** Overrides for the input text styles. Padding overrides affect the input container and  */
   css?: WPDS.CSS;
-  /** The value of the select when initially rendered. Use when you do not need to control the state of the select. */
-  defaultValue?: string;
   // /** Whether the content should be displayed from the beginning. */
   // defaultOpen?: boolean;
   /** The underlying input element disabled attribute */
@@ -69,8 +55,11 @@ export type SelectRootProps = {
   success?: boolean;
   /** The controlled value of the select. Should be used in conjunction with onValueChange */
   value?: string;
-} & ControlledOrUncontrolled &
-  SelectRootVariants;
+  /** The value of the select when initially rendered. Use when you do not need to control the state of the select. */
+  defaultValue?: string;
+  /** force overlay open */
+  open?: boolean;
+} & SelectRootVariants;
 
 export const SelectRoot = ({
   children,

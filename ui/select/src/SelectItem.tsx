@@ -33,12 +33,16 @@ const StyledItemIndicator = styled(SelectPrimitive.ItemIndicator, {
   position: "absolute",
   left: theme.sizes["050"],
   width: theme.sizes[100],
+  height: theme.sizes[100],
   display: "inline-flex",
   alignItems: "center",
   justifyContent: "center",
 });
 
-const StyledCheck = styled(Check, {});
+const StyledCheck = styled(Check, {
+  width: "100%",
+  height: "100%",
+});
 
 export type SelectItemProps = {
   /** Used to insert select elements into the root component*/

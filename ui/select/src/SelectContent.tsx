@@ -16,7 +16,8 @@ const StyledContent = styled(SelectPrimitive.Content, {
   fontSize: theme.fontSizes["100"],
   fontWeight: theme.fontWeights.light,
   lineHeight: theme.lineHeights["125"],
-  transform: "translate(22px, 9px)",
+  paddingBlock: "11px",
+  transform: "translateX(22px)",
   overflowWrap: "anywhere",
 });
 
@@ -65,13 +66,13 @@ export const SelectContent = React.forwardRef<
         {...props}
         ref={ref}
       >
-        <StyledScrollUpButton>
+        <StyledScrollUpButton css={{ marginTop: "-11px" }}>
           <Icon label="">
             <ChevronUp />
           </Icon>
         </StyledScrollUpButton>
         <StyledViewport>{children}</StyledViewport>
-        <StyledScrollDownButton>
+        <StyledScrollDownButton css={{ marginBottom: "-11px" }}>
           <Icon label="">
             <ChevronDown />
           </Icon>
