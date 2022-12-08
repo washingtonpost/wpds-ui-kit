@@ -30,6 +30,18 @@ const scrollButtonStyles = {
   height: 25,
   backgroundColor: theme.colors["secondary"],
   cursor: "default",
+  variants: {
+    top: {
+      true: {
+        marginBlockStart: "-11px",
+      },
+    },
+    bottom: {
+      true: {
+        marginBlockEnd: "-11px",
+      },
+    },
+  },
 };
 
 const StyledScrollUpButton = styled(
@@ -66,13 +78,13 @@ export const SelectContent = React.forwardRef<
         {...props}
         ref={ref}
       >
-        <StyledScrollUpButton css={{ marginTop: "-11px" }}>
+        <StyledScrollUpButton top>
           <Icon label="">
             <ChevronUp />
           </Icon>
         </StyledScrollUpButton>
         <StyledViewport>{children}</StyledViewport>
-        <StyledScrollDownButton css={{ marginBottom: "-11px" }}>
+        <StyledScrollDownButton bottom>
           <Icon label="">
             <ChevronDown />
           </Icon>
