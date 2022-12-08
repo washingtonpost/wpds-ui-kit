@@ -7,25 +7,9 @@ status: "Draft"
 
 ---
 
-## Anatomy
-
-<Container caption="Note: Image is not to scale" css={{ padding: "$150" }}>
-  <p>TODO: add Zeplin anatomy img</p>
-</Container>
-
-1. description of part
-
----
-
 ## Options
 
 Although a card defaults to the size of container it resides in, the dimensions and layout of a card depend entirely on its contents. Use the `css` property to designate styling for your specific needs.
-
----
-
-## Behavior
-
-// Need design input?
 
 ---
 
@@ -58,6 +42,13 @@ Use cards in an unordered list to display a collection of related content.
 
 ```jsx withPreview
 export default function Example() {
+  const styledText = styled("p", {
+    overflow: "wrap",
+    width: "100px",
+  });
+  const Container = styled({
+    padding: theme.space["100"],
+  });
   return (
     <Box
       css={{
@@ -70,31 +61,53 @@ export default function Example() {
     >
       <ul style={{ display: "flex", listStyleType: "none" }}>
         <li style={{ marginRight: "10px" }}>
-          <Card css={{ display: "flex", alignItems: "center", gap: "$100" }}>
+          <Card
+            css={{
+              display: "flex",
+              alignItems: "center",
+              flexDirection: "column",
+              padding: "0",
+              maxWidth: "211px",
+            }}
+          >
             <img
               height="140"
-              width="auto"
+              width="210"
               layout="fixed"
-              alt="Vibrant quinoa bowl with carrots, tomatoes, and cucumbers."
+              alt="Vibrant quinoa bowl with carrots, tomatoes, and cucumbers"
               src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg"
             />
-            <p>
-              Yummy weeknight <a href="">quinoa bowl</a>
-            </p>
+            <Container>
+              <styledText>
+                How Saria makes ready-to-eat <a href="">quinoa bowls</a> with
+                lots of veggies.
+              </styledText>
+            </Container>
           </Card>
         </li>
         <li>
-          <Card css={{ display: "flex", alignItems: "center", gap: "$100" }}>
+          <Card
+            css={{
+              display: "flex",
+              alignItems: "center",
+              flexDirection: "column",
+              padding: "0",
+              maxWidth: "211px",
+            }}
+          >
             <img
               height="140"
-              width="auto"
+              width="210"
               layout="fixed"
               alt="Pad thai plated with atop a green tablecloth."
               src="https://images.pexels.com/photos/12481161/pexels-photo-12481161.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
             />
-            <p style={{ overflow: "hidden" }}>
-              This <a href="">pad thai</a> only takes 15 minutes to prepare!
-            </p>
+            <Container>
+              <styledText>
+                This <a href="">pad thai</a> with chicken and shrimp only takes
+                15 minutes to prepare!
+              </styledText>
+            </Container>
           </Card>
         </li>
       </ul>
@@ -200,8 +213,6 @@ export default function Example() {
 }
 ```
 
-// Others based on design input
-
 ---
 
 ## Accessibility
@@ -214,7 +225,7 @@ The order of elements inside a card should be logical, and each interactive elem
 
 ## API Reference
 
-Card has no props.
+<PropsTable props={propsTable} />
 
 ```
 
