@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { theme } from "@washingtonpost/wpds-theme";
 
 export const sharedInputStyles = {
@@ -57,6 +57,18 @@ export const unstyledInputStyles = {
   "&:disabled": {
     color: "inherit",
   },
+
+  "&:-webkit-autofill": {
+    "-webkit-box-shadow": `0 0 0 100px ${theme.colors.secondary} inset`,
+    "-webkit-text-fill-color": `${theme.colors.primary}`,
+    // used to trigger JS so that we can do the label shrinking
+    animation: "jsTriggerAutoFillStart 200ms",
+  },
+
+  "&:not(:-webkit-autofill)": {
+    // used to trigger JS so that we can stop the label shrinking
+    animation: "jsTriggerAutoFillCancel 200ms",
+  },
 };
 
 export const useFloating = (
@@ -75,7 +87,7 @@ export const useFloating = (
   const [isFocused, setIsFocused] = React.useState(false);
   const prevValue = React.useRef();
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (val && !isFloating) {
       setIsFloating(true);
       setIsTouched(true);

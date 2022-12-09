@@ -163,6 +163,16 @@ export const globalStyles = globalCss({
       src: "url(https://www.washingtonpost.com/wp-stat/assets/fonts/ITC_Franklin-Light.woff2)",
     },
   ],
+  "@keyframes jsTriggerAutoFillStart": {
+    from: {
+      alpha: 1,
+    },
+  },
+  "@keyframes jsTriggerAutoFillCancel": {
+    from: {
+      alpha: 1,
+    },
+  },
 });
 
 export const darkModeGlobalStyles = globalCss({

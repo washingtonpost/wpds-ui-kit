@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { nanoid } from "nanoid";
 import { theme, styled } from "@washingtonpost/wpds-theme";
 import { Button } from "@washingtonpost/wpds-button";
@@ -135,16 +135,53 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
     },
     ref
   ) => {
-    const [helperId, setHelperId] = React.useState<string | undefined>();
-    const [errorId, setErrorId] = React.useState<string | undefined>();
+    const [helperId, setHelperId] = useState<string | undefined>();
+    const [errorId, setErrorId] = useState<string | undefined>();
+    const [isAutofilled, setIsAutofilled] = useState<boolean>(false);
+    const internalRef = React.useRef<HTMLInputElement>(null);
 
-    React.useEffect(() => {
+    useEffect(() => {
       setHelperId(`wpds-input-helper-${nanoid(6)}`);
       setErrorId(`wpds-input-error-${nanoid(6)}`);
     }, []);
 
+    //takes into account ref that might be passed into the component
+    useEffect(() => {
+      if (!ref) return;
+
+      if (typeof ref === "function") {
+        ref(internalRef.current);
+      } else {
+        ref.current = internalRef.current;
+      }
+    }, [ref, internalRef]);
+
+    useEffect(() => {
+      const element = internalRef.current;
+
+      const onAnimationStart = (e) => {
+        switch (e.animationName) {
+          case "jsTriggerAutoFillStart":
+            return setIsAutofilled(true);
+          case "jsTriggerAutoFillCancel":
+            return setIsAutofilled(false);
+        }
+      };
+
+      element?.addEventListener("animationstart", onAnimationStart, false);
+
+      return () => {
+        element?.removeEventListener("animationstart", onAnimationStart, false);
+      };
+    });
+
     const [isFloating, handleOnFocus, handleOnBlur, handleOnChange] =
-      useFloating(value || defaultValue, onFocus, onBlur, onChange);
+      useFloating(
+        value || defaultValue || isAutofilled,
+        onFocus,
+        onBlur,
+        onChange
+      );
 
     function handleButtonIconClick(event) {
       onButtonIconClick && onButtonIconClick(event);
@@ -238,7 +275,7 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
               onBlur={handleOnBlur}
               onChange={handleOnChange}
               onFocus={handleOnFocus}
-              ref={ref}
+              ref={internalRef}
               required={required}
               type={type}
               value={value}
