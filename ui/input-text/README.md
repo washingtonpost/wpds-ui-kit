@@ -33,10 +33,10 @@ Approaches we can take:
 
 From all the possible approaches, we opted to go with listening to the animation. This solution was adapted from a [solution Klarna UI](https://medium.com/@brunn/detecting-autofilled-fields-in-javascript-aed598d25da7) has used in the past.
 
-To start, we had to add the animation on the autofill pseudo selectors. So we created two animations and then called them inside the autofill selectors. Note: We need to add these animations to the globalStyles because stitches will change the class names and we won't be able to match them inside of our component.
+To start, we had to add the animation on the autofill pseudo selectors. We created two animations and called them inside the autofill selectors. Note: We need to add these animations to the globalCss because stitches will change the class names and we won't be able to match them inside of our component. We couldn't just add them to globalStyles, however, because not all teams have adopted and/or are using our global styles.
 
 ```js
-export const globalStyles = globalCss({
+export const globalJsTriggerAnimations = globalCss({
   "@keyframes jsTriggerAutoFillStart": {
     from: {
       alpha: 1,
