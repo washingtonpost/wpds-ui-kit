@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { theme } from "@washingtonpost/wpds-theme";
+import { globalCss } from "@stitches/react";
 
 export const sharedInputStyles = {
   borderRadius: theme.radii["012"],
@@ -36,6 +37,19 @@ export const sharedInputVariants = {
     },
   },
 };
+
+export const globalInputAutoFillTriggerAnimations = globalCss({
+  "@keyframes jsTriggerAutoFillStart": {
+    from: {
+      alpha: 1,
+    },
+  },
+  "@keyframes jsTriggerAutoFillCancel": {
+    from: {
+      alpha: 1,
+    },
+  },
+});
 
 export const unstyledInputStyles = {
   backgroundColor: "transparent",

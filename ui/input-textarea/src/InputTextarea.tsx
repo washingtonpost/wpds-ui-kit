@@ -1,20 +1,17 @@
 import * as React from "react";
 import { nanoid } from "nanoid";
-import {
-  theme,
-  css,
-  styled,
-  globalJsTriggerAnimations,
-} from "@washingtonpost/wpds-theme";
+import { theme, css, styled } from "@washingtonpost/wpds-theme";
 import type * as WPDS from "@washingtonpost/wpds-theme";
 import {
   sharedInputStyles,
   sharedInputVariants,
   useFloating,
+  globalInputAutoFillTriggerAnimations,
 } from "@washingtonpost/wpds-input-shared";
 import { InputLabel } from "@washingtonpost/wpds-input-label";
 import { ErrorMessage } from "@washingtonpost/wpds-error-message";
 import { HelperText } from "@washingtonpost/wpds-helper-text";
+
 import { useEffect, useState } from "react";
 
 const NAME = "InputTextarea";
@@ -122,7 +119,7 @@ export const InputTextarea = React.forwardRef<
     },
     ref
   ) => {
-    globalJsTriggerAnimations();
+    globalInputAutoFillTriggerAnimations();
 
     const [helperId, setHelperId] = useState<string | undefined>();
     const [errorId, setErrorId] = useState<string | undefined>();
