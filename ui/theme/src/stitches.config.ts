@@ -182,7 +182,7 @@ export const darkModeGlobalStyles = globalCss({
   },
 });
 
-export const globalAnimations = globalCss({
+export const globalJsTriggerAnimations = globalCss({
   "@keyframes jsTriggerAutoFillStart": {
     from: {
       alpha: 1,
