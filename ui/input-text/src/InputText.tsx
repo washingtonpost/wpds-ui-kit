@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { nanoid } from "nanoid";
-import { theme, styled } from "@washingtonpost/wpds-theme";
+import {
+  theme,
+  styled,
+  globalJsTriggerAnimations,
+} from "@washingtonpost/wpds-theme";
 import { Button } from "@washingtonpost/wpds-button";
 import { Icon } from "@washingtonpost/wpds-icon";
 import {
@@ -135,6 +139,8 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
     },
     ref
   ) => {
+    globalJsTriggerAnimations();
+
     const [helperId, setHelperId] = useState<string | undefined>();
     const [errorId, setErrorId] = useState<string | undefined>();
     const [isAutofilled, setIsAutofilled] = useState<boolean>(false);

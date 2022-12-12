@@ -1,6 +1,11 @@
 import * as React from "react";
 import { nanoid } from "nanoid";
-import * as Theme from "@washingtonpost/wpds-theme";
+import {
+  theme,
+  css,
+  styled,
+  globalJsTriggerAnimations,
+} from "@washingtonpost/wpds-theme";
 import type * as WPDS from "@washingtonpost/wpds-theme";
 import {
   sharedInputStyles,
@@ -10,10 +15,11 @@ import {
 import { InputLabel } from "@washingtonpost/wpds-input-label";
 import { ErrorMessage } from "@washingtonpost/wpds-error-message";
 import { HelperText } from "@washingtonpost/wpds-helper-text";
+import { useEffect, useState } from "react";
 
 const NAME = "InputTextarea";
 
-const InputTextareaCSS = Theme.css({
+const InputTextareaCSS = css({
   ...sharedInputStyles,
   display: "block",
   minHeight: "$500",
@@ -33,23 +39,23 @@ const InputTextareaCSS = Theme.css({
   },
 });
 
-const TextAreaLabel = Theme.styled(InputLabel, {
+const TextAreaLabel = styled(InputLabel, {
   insetBlockStart: "$050",
   insetInlineStart: "$050",
   pointerEvents: "none",
   position: "absolute",
-  transition: Theme.theme.transitions.allFast,
+  transition: theme.transitions.allFast,
   variants: {
     isFloating: {
       true: {
-        fontSize: Theme.theme.fontSizes["075"],
-        lineHeight: Theme.theme.lineHeights["100"],
+        fontSize: theme.fontSizes["075"],
+        lineHeight: theme.lineHeights["100"],
       },
     },
   },
 });
 
-const ControlCSS = Theme.css({
+const ControlCSS = css({
   display: "flex",
   flexDirection: "column",
   position: "relative",
@@ -116,16 +122,52 @@ export const InputTextarea = React.forwardRef<
     },
     ref
   ) => {
-    const [helperId, setHelperId] = React.useState<string | undefined>();
-    const [errorId, setErrorId] = React.useState<string | undefined>();
+    globalJsTriggerAnimations();
 
-    React.useEffect(() => {
+    const [helperId, setHelperId] = useState<string | undefined>();
+    const [errorId, setErrorId] = useState<string | undefined>();
+    const [isAutofilled, setIsAutofilled] = useState<boolean>(false);
+
+    const internalRef = React.useRef<HTMLTextAreaElement>(null);
+
+    useEffect(() => {
       setHelperId(`wpds-input-helper-${nanoid(6)}`);
       setErrorId(`wpds-input-error-${nanoid(6)}`);
     }, []);
 
+    //takes into account ref that might be passed into the component
+    useEffect(() => {
+      if (!ref) return;
+
+      if (typeof ref === "function") {
+        ref(internalRef.current);
+      } else {
+        ref.current = internalRef.current;
+      }
+    }, [ref, internalRef]);
+
+    useEffect(() => {
+      const element = internalRef.current;
+
+      const onAnimationStart = (e) => {
+        console.log(e.animationName);
+        switch (e.animationName) {
+          case "jsTriggerAutoFillStart":
+            return setIsAutofilled(true);
+          case "jsTriggerAutoFillCancel":
+            return setIsAutofilled(false);
+        }
+      };
+
+      element?.addEventListener("animationstart", onAnimationStart, false);
+
+      return () => {
+        element?.removeEventListener("animationstart", onAnimationStart, false);
+      };
+    });
+
     const [isFloating, handleFocus, handleBlur, handleChange] = useFloating(
-      value || defaultValue,
+      value || defaultValue || isAutofilled,
       onFocus,
       onBlur,
       onChange
@@ -137,7 +179,7 @@ export const InputTextarea = React.forwardRef<
           {...props}
           id={id}
           name={name}
-          ref={ref}
+          ref={internalRef}
           className={InputTextareaCSS({
             css: css,
             canResize: canResize,
