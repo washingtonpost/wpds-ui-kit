@@ -9,7 +9,7 @@ Reasons this can be tricky:
 - Browsers override our styles with theirs in these situations. This means they add a blue or yellow background on the inputs that have been autofilled and that could clash with our styles.
 - Autofilling a form does _not_ trigger any events on the input. This can cause issues if, for instance, you have a floating label that is triggered solely by JS like we do.
 
-Tackling the first problem isn't too difficult. All we have to do is apply the styels that we want targeting the pseudo element that the browsers add. We use `-webkit-box-shadow` to override the yellow/blue background color the browser adds to the input. We also need to set the color of the font - especially so that you can read the text in dark mode.
+Tackling the first problem isn't too difficult. All we have to do is apply the styles that we want targeting the pseudo element that the browsers add. We use `-webkit-box-shadow` to override the yellow/blue background color the browser adds to the input. We also need to set the color of the font - especially so that you can read the text in dark mode.
 
 ```js
 "&:-webkit-autofill": {
@@ -36,7 +36,7 @@ From all the possible approaches, we opted to go with listening to the animation
 To start, we had to add the animation on the autofill pseudo selectors. We created two animations and called them inside the autofill selectors. Note: We need to add these animations to the globalCss because stitches will change the class names and we won't be able to match them inside of our component. We couldn't just add them to globalStyles, however, because not all teams have adopted and/or are using our global styles.
 
 ```js
-export const globalJsTriggerAnimations = globalCss({
+export const globalInputAutoFillTriggerAnimations = globalCss({
   "@keyframes jsTriggerAutoFillStart": {
     from: {
       alpha: 1,
