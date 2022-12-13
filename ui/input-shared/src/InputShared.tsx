@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
-import { theme } from "@washingtonpost/wpds-theme";
-import { globalCss } from "@stitches/react";
+import { theme, globalCss } from "@washingtonpost/wpds-theme";
 
 export const sharedInputStyles = {
   borderRadius: theme.radii["012"],
