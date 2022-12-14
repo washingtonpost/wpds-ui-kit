@@ -1,8 +1,7 @@
 import React from "react";
 import Link from "next/link";
-import { styled, theme } from "@washingtonpost/wpds-ui-kit";
+import { styled, theme, Accordion } from "@washingtonpost/wpds-ui-kit";
 import Header from "../../Typography/Headers";
-import { Accordion } from "@washingtonpost/wpds-ui-kit";
 import { useRouter } from "next/router";
 import { Change } from "~/components/Markdown/Styling";
 
