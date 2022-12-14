@@ -40,7 +40,7 @@
     "react": "^16.8.6 || ^17.0.2"
   },
   "dependencies": {
-    "@radix-ui/react-separator": "^0.1.4",
+    "@radix-ui/react-separator": "^1.0.0",
     "@washingtonpost/wpds-theme": "0.21.0"
   },
   "gitHead": "1beafc08321d99e39b87d98cccf0d74c8568bbb0"
