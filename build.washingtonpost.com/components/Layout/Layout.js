@@ -21,7 +21,7 @@ const Grid = styled("div", {
     paddingRight: "$100",
   },
   "@sm": {
-    height: "100vh",
+    minHeight: "100vh",
     gridTemplateColumns: "1fr",
     gridTemplateRows: "auto auto 1fr",
     gridTemplateAreas: `
