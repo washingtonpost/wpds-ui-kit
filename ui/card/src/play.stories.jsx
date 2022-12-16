@@ -48,26 +48,45 @@ const DefaultTemplate = (args) => (
 
 export const Card = DefaultTemplate.bind({});
 
+const styledText = styled("p", {
+  overflow: "wrap",
+  width: "100px",
+});
+const Container = styled({
+  padding: theme.space["100"],
+});
+
 const OptionsT = (args) => (
   <Stack>
     <Label>Card with button</Label>
     <Component css={{ display: "flex", alignItems: "center", gap: "$075" }}>
-      <p>Brand new digital content free with subscription!</p>
+      <styledText>Brand new digital content free with subscription!</styledText>
       <Button variant="primary">Subscribe</Button>
     </Component>
 
     <Label>Card with image and link</Label>
-    <Component css={{ display: "flex", alignItems: "center", gap: "$100" }}>
+    <Component
+      css={{
+        display: "flex",
+        alignItems: "center",
+        flexDirection: "column",
+        padding: "0",
+        maxWidth: "211px",
+      }}
+    >
       <img
         height="140"
-        width="auto"
+        width="210"
         layout="fixed"
         alt="Vibrant quinoa bowl with carrots, tomatoes, and cucumbers"
         src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg"
       />
-      <a href="">
-        How Saria makes ready-to-eat quinoa bowls with lots of veggies.
-      </a>
+      <Container>
+        <styledText>
+          How Saria makes ready-to-eat <a href="">quinoa bowls</a> with lots of
+          veggies.
+        </styledText>
+      </Container>
     </Component>
 
     <Label>Card with accordion</Label>
