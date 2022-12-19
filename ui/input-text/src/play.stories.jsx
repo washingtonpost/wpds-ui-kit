@@ -143,6 +143,7 @@ const ChromaticTemplate = () => (
       label="Behavior"
       defaultValue="Overflow - Four score and seven years ago"
     />
+    <Component label="Placeholder" placeholder="Example input" />
   </Column>
 );
 

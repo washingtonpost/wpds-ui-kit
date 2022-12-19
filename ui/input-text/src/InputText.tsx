@@ -97,6 +97,8 @@ export interface InputTextProps
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   /** Callback executed when the input fires a focus event */
   onFocus?: React.FocusEventHandler<HTMLInputElement>;
+  /** placeholder text */
+  placeholder?: string;
   /** The input elements required attribute */
   required?: boolean;
   /** indicates there is a success */
@@ -127,6 +129,7 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
       onChange,
       onFocus,
       onButtonIconClick,
+      placeholder,
       required,
       success,
       type = "text",
@@ -180,7 +183,7 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
 
     const [isFloating, handleOnFocus, handleOnBlur, handleOnChange] =
       useFloating(
-        value || defaultValue || isAutofilled,
+        value || defaultValue || placeholder || isAutofilled,
         onFocus,
         onBlur,
         onChange
@@ -278,6 +281,7 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
               onBlur={handleOnBlur}
               onChange={handleOnChange}
               onFocus={handleOnFocus}
+              placeholder={placeholder}
               ref={internalRef}
               required={required}
               type={type}

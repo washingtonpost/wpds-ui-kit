@@ -87,6 +87,8 @@ export interface InputTextareaProps
   onChange?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
   /** Callback executed when the input fires a focus event */
   onFocus?: React.FocusEventHandler<HTMLTextAreaElement>;
+  /** placeholder text */
+  placeholder?: string;
   /** The input elements required attribute */
   required?: boolean;
   /** The input element value for controlled components */
@@ -115,6 +117,7 @@ export const InputTextarea = React.forwardRef<
       onBlur,
       onChange,
       required,
+      placeholder,
       ...props
     },
     ref
@@ -164,7 +167,7 @@ export const InputTextarea = React.forwardRef<
     });
 
     const [isFloating, handleFocus, handleBlur, handleChange] = useFloating(
-      value || defaultValue || isAutofilled,
+      value || defaultValue || placeholder || isAutofilled,
       onFocus,
       onBlur,
       onChange
@@ -185,6 +188,7 @@ export const InputTextarea = React.forwardRef<
           })}
           required={required}
           disabled={disabled}
+          placeholder={placeholder}
           onFocus={handleFocus}
           onBlur={handleBlur}
           onChange={handleChange}
