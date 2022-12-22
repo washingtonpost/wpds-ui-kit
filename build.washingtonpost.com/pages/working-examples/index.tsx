@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import * as React from "react";
+import { useState } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { isPossiblePhoneNumber } from "react-phone-number-input";
 import {
