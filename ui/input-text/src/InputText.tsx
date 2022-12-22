@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import * as React from "react";
+import { useEffect, useState } from "react";
 import { nanoid } from "nanoid";
 import { theme, styled } from "@washingtonpost/wpds-theme";
 import { Button } from "@washingtonpost/wpds-button";
@@ -139,8 +140,6 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
     },
     ref
   ) => {
-    globalInputAutoFillTriggerAnimations();
-
     const [helperId, setHelperId] = useState<string | undefined>();
     const [errorId, setErrorId] = useState<string | undefined>();
     const [isAutofilled, setIsAutofilled] = useState<boolean>(false);
@@ -163,6 +162,7 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
     }, [ref, internalRef]);
 
     useEffect(() => {
+      globalInputAutoFillTriggerAnimations();
       const element = internalRef.current;
 
       const onAnimationStart = (e) => {
@@ -179,7 +179,7 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
       return () => {
         element?.removeEventListener("animationstart", onAnimationStart, false);
       };
-    });
+    }, []);
 
     const [isFloating, handleOnFocus, handleOnBlur, handleOnChange] =
       useFloating(
