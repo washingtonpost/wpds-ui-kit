@@ -162,6 +162,9 @@ const ChromaticTemplate = () => (
         id="l1"
       />
       <Component variant="primary" label="Checkbox 2" id="l2" />
+      <Component variant="primary" id="l3">
+        Checkbox 3
+      </Component>
     </HStack>
     <HStack>
       <Component
