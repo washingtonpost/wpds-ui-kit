@@ -1,12 +1,14 @@
 import * as React from "react";
 
-import { css, styled, theme } from "@washingtonpost/wpds-theme";
+import { styled, theme } from "@washingtonpost/wpds-theme";
 
 import { Check, Indeterminate } from "@washingtonpost/wpds-assets";
 
 import * as PrimitiveCheckbox from "@radix-ui/react-checkbox";
 
 import { InputLabel } from "@washingtonpost/wpds-input-label";
+
+import { RequiredIndicatorCSS } from "@washingtonpost/wpds-input-shared";
 
 const StyledCheckbox = styled(PrimitiveCheckbox.Root, {
   transition: `background ${theme.transitions.fast} ${theme.transitions.inOut}`,
@@ -261,10 +263,6 @@ const StyledInputLabel = styled(InputLabel, {
   alignItems: "flex-end",
   justifyContent: "center",
   lineHeight: theme.lineHeights["050"],
-});
-
-const RequiredIndicatorCSS = css({
-  color: theme.colors.error,
 });
 
 export const Checkbox = React.forwardRef<HTMLButtonElement, CheckboxInterface>(
