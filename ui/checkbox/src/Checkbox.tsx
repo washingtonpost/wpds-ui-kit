@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { theme, styled } from "@washingtonpost/wpds-theme";
+import { css, styled, theme } from "@washingtonpost/wpds-theme";
 
 import { Check, Indeterminate } from "@washingtonpost/wpds-assets";
 
@@ -263,6 +263,10 @@ const StyledInputLabel = styled(InputLabel, {
   lineHeight: theme.lineHeights["050"],
 });
 
+const RequiredIndicatorCSS = css({
+  color: theme.colors.error,
+});
+
 export const Checkbox = React.forwardRef<HTMLButtonElement, CheckboxInterface>(
   (props, ref) => {
     return (
@@ -299,6 +303,7 @@ export const Checkbox = React.forwardRef<HTMLButtonElement, CheckboxInterface>(
           </StyledIndicator>
         </StyledCheckbox>
         {props.label}
+        {props.required && <span className={RequiredIndicatorCSS()}>*</span>}
       </StyledInputLabel>
     );
   }
