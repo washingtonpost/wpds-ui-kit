@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useEffect, useState } from "react";
 import { nanoid } from "nanoid";
 import { theme, css, styled } from "@washingtonpost/wpds-theme";
 import type * as WPDS from "@washingtonpost/wpds-theme";
@@ -11,8 +12,6 @@ import {
 import { InputLabel } from "@washingtonpost/wpds-input-label";
 import { ErrorMessage } from "@washingtonpost/wpds-error-message";
 import { HelperText } from "@washingtonpost/wpds-helper-text";
-
-import { useEffect, useState } from "react";
 
 const NAME = "InputTextarea";
 
@@ -122,8 +121,6 @@ export const InputTextarea = React.forwardRef<
     },
     ref
   ) => {
-    globalInputAutoFillTriggerAnimations();
-
     const [helperId, setHelperId] = useState<string | undefined>();
     const [errorId, setErrorId] = useState<string | undefined>();
     const [isAutofilled, setIsAutofilled] = useState<boolean>(false);
@@ -147,10 +144,10 @@ export const InputTextarea = React.forwardRef<
     }, [ref, internalRef]);
 
     useEffect(() => {
+      globalInputAutoFillTriggerAnimations();
       const element = internalRef.current;
 
       const onAnimationStart = (e) => {
-        console.log(e.animationName);
         switch (e.animationName) {
           case "jsTriggerAutoFillStart":
             return setIsAutofilled(true);
@@ -164,7 +161,7 @@ export const InputTextarea = React.forwardRef<
       return () => {
         element?.removeEventListener("animationstart", onAnimationStart, false);
       };
-    });
+    }, []);
 
     const [isFloating, handleFocus, handleBlur, handleChange] = useFloating(
       value || defaultValue || placeholder || isAutofilled,
