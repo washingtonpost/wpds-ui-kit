@@ -198,8 +198,37 @@ export default function Example() {
         gap: "$100",
       }}
     >
-      <Checkbox checked variant="primary" size="125" />
-      <p>Click checkbox to see focus</p>
+      <Checkbox
+        checked
+        variant="primary"
+        size="125"
+        label="Click checkbox to see focus"
+      />
+    </Box>
+  );
+}
+```
+
+### Required
+
+```jsx withPreview
+export default function Example() {
+  return (
+    <Box
+      css={{
+        display: "flex",
+        justifyContent: "center",
+        width: "100%",
+        gap: "$100",
+      }}
+    >
+      <Checkbox
+        checked
+        variant="primary"
+        size="125"
+        label="This is a required checkbox"
+        required
+      />
     </Box>
   );
 }
@@ -348,3 +377,4 @@ export default function Example() {
 ## API Reference
 
 <PropsTable props={propsTable} />
+````
