@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { theme, globalCss } from "@washingtonpost/wpds-theme";
+import { css, theme, globalCss } from "@washingtonpost/wpds-theme";
 
 export const sharedInputStyles = {
   borderRadius: theme.radii["012"],
@@ -36,6 +36,10 @@ export const sharedInputVariants = {
     },
   },
 };
+
+export const RequiredIndicatorCSS = css({
+  color: theme.colors.error,
+});
 
 export const globalInputAutoFillTriggerAnimations = globalCss({
   "@keyframes jsTriggerAutoFillStart": {
