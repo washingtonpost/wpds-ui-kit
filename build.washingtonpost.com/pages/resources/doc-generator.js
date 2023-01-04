@@ -98,9 +98,9 @@ export default function Editor() {
   const [Render, setRender] = React.useState(false);
   const [eBlocks, setEBlocks] = React.useState([]);
   const [Title, setTitle] = React.useState("");
-  const [ImageFile, setImageFile] = React.useState("");
-  const [SVGFile, setSVGFile] = React.useState("");
-  const [JSONFile, setJSONFile] = React.useState("");
+  const [ImageFile, setImageFile] = React.useState(null);
+  const [SVGFile, setSVGFile] = React.useState(null);
+  const [JSONFile, setJSONFile] = React.useState(null);
   const [Description, setDescription] = React.useState("");
   const JSONLoader = React.useRef();
   const ImageInput = React.useRef();
