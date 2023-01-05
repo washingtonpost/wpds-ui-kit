@@ -300,7 +300,7 @@ export const Checkbox = React.forwardRef<HTMLButtonElement, CheckboxInterface>(
             </StyledCheck>
           </StyledIndicator>
         </StyledCheckbox>
-        {props.label}
+        {props.label || props.children}
         {props.required && <span className={RequiredIndicatorCSS()}>*</span>}
       </StyledInputLabel>
     );
