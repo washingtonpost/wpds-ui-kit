@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.22.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.21.0...v0.22.0) (2023-01-05)
+
+
+### Bug Fixes
+
+* add asterisk to required checkbox to match input required styles ([#299](https://github.com/washingtonpost/wpds-ui-kit/issues/299)) ([f1bdc33](https://github.com/washingtonpost/wpds-ui-kit/commit/f1bdc33f94cb0b14058fe988f4b1e5074f8a1bf2))
+* allow passing in checkbox label as child ([#297](https://github.com/washingtonpost/wpds-ui-kit/issues/297)) ([9e63975](https://github.com/washingtonpost/wpds-ui-kit/commit/9e63975badd1a62ae958ca74ef84566e6d6b209d))
+
+
+
+
+
 # [0.21.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.20.1...v0.21.0) (2022-12-02)
 
 

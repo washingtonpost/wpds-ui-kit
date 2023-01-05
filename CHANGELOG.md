@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.22.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.21.0...v0.22.0) (2023-01-05)
+
+
+### Bug Fixes
+
+* add asterisk to required checkbox to match input required styles ([#299](https://github.com/washingtonpost/wpds-ui-kit/issues/299)) ([f1bdc33](https://github.com/washingtonpost/wpds-ui-kit/commit/f1bdc33f94cb0b14058fe988f4b1e5074f8a1bf2))
+* allow passing in checkbox label as child ([#297](https://github.com/washingtonpost/wpds-ui-kit/issues/297)) ([9e63975](https://github.com/washingtonpost/wpds-ui-kit/commit/9e63975badd1a62ae958ca74ef84566e6d6b209d))
+* changed import style to fix missing api table ([#296](https://github.com/washingtonpost/wpds-ui-kit/issues/296)) ([0338e1a](https://github.com/washingtonpost/wpds-ui-kit/commit/0338e1ac61f7ca38c52296216254679ff4955812))
+* float input label when placeholder text is present ([6fe91b4](https://github.com/washingtonpost/wpds-ui-kit/commit/6fe91b43e91cdf2646f85bdef66822b01eecd0b1))
+* included Scrim props in DrawerScrim ([7ae9ba0](https://github.com/washingtonpost/wpds-ui-kit/commit/7ae9ba0c1f1c25592ae349df38313f7b613210a6))
+* input field label autocomplete bug fix ([#289](https://github.com/washingtonpost/wpds-ui-kit/issues/289)) ([09c2bd0](https://github.com/washingtonpost/wpds-ui-kit/commit/09c2bd09780c2c9cc0ab05fcbaa0b2d47d5ff1d7))
+
+
+### Features
+
+* **add:** missing snippet and connection ([0b0b403](https://github.com/washingtonpost/wpds-ui-kit/commit/0b0b403c451985b024e0a3752e3d462d2e5435b8))
+* allow for use of Select in example form on mobile ([#288](https://github.com/washingtonpost/wpds-ui-kit/issues/288)) ([72291c6](https://github.com/washingtonpost/wpds-ui-kit/commit/72291c65dc51d5627e0d3f18fd816637eb29c523))
+* bump radix deps ([6c85f68](https://github.com/washingtonpost/wpds-ui-kit/commit/6c85f68fec01df5d2a62843667ad7589dccf213b))
+
+
+
+
+
 # [0.21.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.20.1...v0.21.0) (2022-12-02)
 
 

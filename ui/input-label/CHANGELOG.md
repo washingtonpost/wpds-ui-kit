@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.22.0](https://github.com/WPMedia/wpds-ui-kit/compare/v0.21.0...v0.22.0) (2023-01-05)
+
+
+### Bug Fixes
+
+* add asterisk to required checkbox to match input required styles ([#299](https://github.com/WPMedia/wpds-ui-kit/issues/299)) ([f1bdc33](https://github.com/WPMedia/wpds-ui-kit/commit/f1bdc33f94cb0b14058fe988f4b1e5074f8a1bf2))
+
+
+### Features
+
+* bump radix deps ([6c85f68](https://github.com/WPMedia/wpds-ui-kit/commit/6c85f68fec01df5d2a62843667ad7589dccf213b))
+
+
+
+
+
 # [0.21.0](https://github.com/WPMedia/wpds-ui-kit/compare/v0.20.1...v0.21.0) (2022-12-02)
 
 **Note:** Version bump only for package @washingtonpost/wpds-input-label

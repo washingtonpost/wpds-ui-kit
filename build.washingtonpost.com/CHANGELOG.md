@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.22.0](https://github.com/washingtonpost/wpds-docs/compare/v0.21.0...v0.22.0) (2023-01-05)
+
+
+### Bug Fixes
+
+* add asterisk to required checkbox to match input required styles ([#299](https://github.com/washingtonpost/wpds-docs/issues/299)) ([f1bdc33](https://github.com/washingtonpost/wpds-docs/commit/f1bdc33f94cb0b14058fe988f4b1e5074f8a1bf2))
+* changed import style to fix missing api table ([#296](https://github.com/washingtonpost/wpds-docs/issues/296)) ([0338e1a](https://github.com/washingtonpost/wpds-docs/commit/0338e1ac61f7ca38c52296216254679ff4955812))
+
+
+### Features
+
+* **add:** missing snippet and connection ([0b0b403](https://github.com/washingtonpost/wpds-docs/commit/0b0b403c451985b024e0a3752e3d462d2e5435b8))
+* allow for use of Select in example form on mobile ([#288](https://github.com/washingtonpost/wpds-docs/issues/288)) ([72291c6](https://github.com/washingtonpost/wpds-docs/commit/72291c65dc51d5627e0d3f18fd816637eb29c523))
+* bump radix deps ([6c85f68](https://github.com/washingtonpost/wpds-docs/commit/6c85f68fec01df5d2a62843667ad7589dccf213b))
+
+
+
+
+
 # [0.21.0](https://github.com/washingtonpost/wpds-docs/compare/v0.20.1...v0.21.0) (2022-12-02)
 
 
