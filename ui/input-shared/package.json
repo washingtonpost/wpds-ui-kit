@@ -1,6 +1,6 @@
 {
   "name": "@washingtonpost/wpds-input-shared",
-  "version": "0.20.1",
+  "version": "0.22.0",
   "description": "WPDS InputShared",
   "author": "WPDS Support <wpds@washpost.com>",
   "homepage": "https://github.com/WPMedia/wpds-ui-kit#readme",
@@ -40,7 +40,7 @@
     "react": "^16.8.6 || ^17.0.2"
   },
   "dependencies": {
-    "@washingtonpost/wpds-theme": "0.20.1"
+    "@washingtonpost/wpds-theme": "0.22.0"
   },
-  "gitHead": "fb44cba9b71bb3e526d167a942b79fab9b752ca3"
+  "gitHead": "1beafc08321d99e39b87d98cccf0d74c8568bbb0"
 }

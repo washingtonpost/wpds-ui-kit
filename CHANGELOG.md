@@ -3,6 +3,52 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.22.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.21.0...v0.22.0) (2023-01-05)
+
+
+### Bug Fixes
+
+* add asterisk to required checkbox to match input required styles ([#299](https://github.com/washingtonpost/wpds-ui-kit/issues/299)) ([f1bdc33](https://github.com/washingtonpost/wpds-ui-kit/commit/f1bdc33f94cb0b14058fe988f4b1e5074f8a1bf2))
+* allow passing in checkbox label as child ([#297](https://github.com/washingtonpost/wpds-ui-kit/issues/297)) ([9e63975](https://github.com/washingtonpost/wpds-ui-kit/commit/9e63975badd1a62ae958ca74ef84566e6d6b209d))
+* changed import style to fix missing api table ([#296](https://github.com/washingtonpost/wpds-ui-kit/issues/296)) ([0338e1a](https://github.com/washingtonpost/wpds-ui-kit/commit/0338e1ac61f7ca38c52296216254679ff4955812))
+* float input label when placeholder text is present ([6fe91b4](https://github.com/washingtonpost/wpds-ui-kit/commit/6fe91b43e91cdf2646f85bdef66822b01eecd0b1))
+* included Scrim props in DrawerScrim ([7ae9ba0](https://github.com/washingtonpost/wpds-ui-kit/commit/7ae9ba0c1f1c25592ae349df38313f7b613210a6))
+* input field label autocomplete bug fix ([#289](https://github.com/washingtonpost/wpds-ui-kit/issues/289)) ([09c2bd0](https://github.com/washingtonpost/wpds-ui-kit/commit/09c2bd09780c2c9cc0ab05fcbaa0b2d47d5ff1d7))
+
+
+### Features
+
+* **add:** missing snippet and connection ([0b0b403](https://github.com/washingtonpost/wpds-ui-kit/commit/0b0b403c451985b024e0a3752e3d462d2e5435b8))
+* allow for use of Select in example form on mobile ([#288](https://github.com/washingtonpost/wpds-ui-kit/issues/288)) ([72291c6](https://github.com/washingtonpost/wpds-ui-kit/commit/72291c65dc51d5627e0d3f18fd816637eb29c523))
+* bump radix deps ([6c85f68](https://github.com/washingtonpost/wpds-ui-kit/commit/6c85f68fec01df5d2a62843667ad7589dccf213b))
+
+
+
+
+
+# [0.21.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.20.1...v0.21.0) (2022-12-02)
+
+
+### Bug Fixes
+
+* add sidenav to 404 ([#287](https://github.com/washingtonpost/wpds-ui-kit/issues/287)) ([99488a4](https://github.com/washingtonpost/wpds-ui-kit/commit/99488a48048942250ba48cd9facbedf870a65d63))
+* honor required prop in InputTextarea ([46e0b19](https://github.com/washingtonpost/wpds-ui-kit/commit/46e0b19c25ac99e6f2fb956ca4c21d0a7c34b108))
+* IconInterface fill type definition ([151d52e](https://github.com/washingtonpost/wpds-ui-kit/commit/151d52e65a48dfb5b006ccef6181c811e988a4a8))
+
+
+### Features
+
+* add custom 404 page ([#286](https://github.com/washingtonpost/wpds-ui-kit/issues/286)) ([6282314](https://github.com/washingtonpost/wpds-ui-kit/commit/62823144b372afa6adfe2bf529df62b154f817f7))
+* bump wam to v1.13.0 ([2f027f0](https://github.com/washingtonpost/wpds-ui-kit/commit/2f027f005d7d150ef7bcc837319e2f3047419c6b))
+* create form working example + add playwright tests ([2324711](https://github.com/washingtonpost/wpds-ui-kit/commit/232471170684deb33815ca196ce4323c6057bce2))
+* refactor Avatar to better handle style and size variations ([#285](https://github.com/washingtonpost/wpds-ui-kit/issues/285)) ([1e4235c](https://github.com/washingtonpost/wpds-ui-kit/commit/1e4235c56448d64c0d4b0460a169b3265a8f72ad))
+* replace StyleConverter label with placeholder text ([257c5d5](https://github.com/washingtonpost/wpds-ui-kit/commit/257c5d5831ff1108af6e3eee584b59f8154a06de))
+* updated wam version and asset import copy text ([#276](https://github.com/washingtonpost/wpds-ui-kit/issues/276)) ([d9305cb](https://github.com/washingtonpost/wpds-ui-kit/commit/d9305cb1fa903cb72af9d10355a45a21e7ae50d7))
+
+
+
+
+
 ## [0.20.1](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.20.0...v0.20.1) (2022-10-24)
 
 

@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.22.0](https://github.com/WPMedia/wpds-ui-kit/compare/v0.21.0...v0.22.0) (2023-01-05)
+
+
+### Bug Fixes
+
+* changed import style to fix missing api table ([#296](https://github.com/WPMedia/wpds-ui-kit/issues/296)) ([0338e1a](https://github.com/WPMedia/wpds-ui-kit/commit/0338e1ac61f7ca38c52296216254679ff4955812))
+* float input label when placeholder text is present ([6fe91b4](https://github.com/WPMedia/wpds-ui-kit/commit/6fe91b43e91cdf2646f85bdef66822b01eecd0b1))
+* input field label autocomplete bug fix ([#289](https://github.com/WPMedia/wpds-ui-kit/issues/289)) ([09c2bd0](https://github.com/WPMedia/wpds-ui-kit/commit/09c2bd09780c2c9cc0ab05fcbaa0b2d47d5ff1d7))
+
+
+
+
+
+# [0.21.0](https://github.com/WPMedia/wpds-ui-kit/compare/v0.20.1...v0.21.0) (2022-12-02)
+
+
+### Bug Fixes
+
+* honor required prop in InputTextarea ([46e0b19](https://github.com/WPMedia/wpds-ui-kit/commit/46e0b19c25ac99e6f2fb956ca4c21d0a7c34b108))
+
+
+
+
+
 ## [0.20.1](https://github.com/WPMedia/wpds-ui-kit/compare/v0.20.0...v0.20.1) (2022-10-24)
 
 **Note:** Version bump only for package @washingtonpost/wpds-input-textarea

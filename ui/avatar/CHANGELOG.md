@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.22.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.21.0...v0.22.0) (2023-01-05)
+
+**Note:** Version bump only for package @washingtonpost/wpds-avatar
+
+
+
+
+
+# [0.21.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.20.1...v0.21.0) (2022-12-02)
+
+
+### Features
+
+* refactor Avatar to better handle style and size variations ([#285](https://github.com/washingtonpost/wpds-ui-kit/issues/285)) ([1e4235c](https://github.com/washingtonpost/wpds-ui-kit/commit/1e4235c56448d64c0d4b0460a169b3265a8f72ad))
+
+
+
+
+
 ## [0.20.1](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.20.0...v0.20.1) (2022-10-24)
 
 **Note:** Version bump only for package @washingtonpost/wpds-avatar

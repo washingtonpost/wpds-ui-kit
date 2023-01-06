@@ -75,7 +75,7 @@ function HomePage() {
           maxWidth="lg"
           css={{
             width: "100%",
-            border: "1px dashed #94538c",
+            border: "1px dashed $gray100",
             background: "rgb(148, 83, 140, 0.2)",
             height: "$500",
             color: "$primary",

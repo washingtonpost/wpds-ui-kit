@@ -1,6 +1,8 @@
 import * as React from "react";
 import { Select } from "./";
 
+import type { ComponentStory } from "@storybook/react";
+
 export default {
   title: "Select",
   component: Select.Root,
@@ -14,7 +16,7 @@ export default {
   },
 };
 
-const Template = (args) => {
+const Template: ComponentStory<typeof Select.Root> = (args) => {
   return (
     <Select.Root {...args} defaultValue="ecuador">
       <Select.Trigger aria-label="Countries">
@@ -54,5 +56,34 @@ Play.args = {
 Play.storyName = "Select";
 
 Play.parameters = {
+  chromatic: { disableSnapshot: true },
+};
+
+const ControlledTemplate: ComponentStory<typeof Select.Root> = (args) => {
+  const [country, setCountry] = React.useState("spain");
+  function handleValueChange(val) {
+    setCountry(val);
+  }
+  return (
+    <Select.Root {...args} value={country} onValueChange={handleValueChange}>
+      <Select.Trigger aria-label="Countries">
+        <Select.Label>Countries</Select.Label>
+        <Select.Value />
+      </Select.Trigger>
+      <Select.Content>
+        <Select.Item value="france">France</Select.Item>
+        <Select.Item value="united-kingdom">United Kingdom</Select.Item>
+        <Select.Item value="spain">Spain</Select.Item>
+        <Select.Item value="peru">Peru</Select.Item>
+        <Select.Item value="chile">Chile</Select.Item>
+        <Select.Item value="ecuador">Ecuador</Select.Item>
+      </Select.Content>
+    </Select.Root>
+  );
+};
+
+export const Controlled = ControlledTemplate.bind({});
+
+Controlled.parameters = {
   chromatic: { disableSnapshot: true },
 };
