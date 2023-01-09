@@ -29,6 +29,10 @@
   </url>
 
   <url>
+    <loc>https://build.washingtonpost.com/components/card</loc>
+  </url>
+
+  <url>
     <loc>https://build.washingtonpost.com/components/checkbox</loc>
   </url>
 

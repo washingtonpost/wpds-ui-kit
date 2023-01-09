@@ -20,6 +20,7 @@ import {
   PaginationDots,
   Drawer,
   Tooltip,
+  Card,
 } from "@washingtonpost/wpds-ui-kit";
 import Chart from "@washingtonpost/wpds-assets/asset/chart";
 import Settings from "@washingtonpost/wpds-assets/asset/settings";
@@ -390,6 +391,18 @@ function HomePage() {
           </Tooltip.Content>
         </Tooltip.Root>
       </Tooltip.Provider>
+      <h2>Card</h2>
+      <Card
+        css={{
+          display: "flex",
+          alignItems: "center",
+          gap: "$075",
+          maxWidth: "500px",
+        }}
+      >
+        <p>Brand new digital content free with subscription!</p>
+        <Button variant="primary">Subscribe</Button>
+      </Card>
     </>
   );
 }
