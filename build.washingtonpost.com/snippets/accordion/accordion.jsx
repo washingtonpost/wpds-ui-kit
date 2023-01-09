@@ -29,7 +29,7 @@ export default function Example() {
         </Accordion.Trigger>
         <Accordion.Content ref={myContentRef}>
           <img
-            src="https://i.pravatar.cc/300"
+            src="https://i.pravatar.cc/300/300"
             alt="An avatar is an atomic component that represents an individual’s identity through a circular photo."
           />
         </Accordion.Content>
