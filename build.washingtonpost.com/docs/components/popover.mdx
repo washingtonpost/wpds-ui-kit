@@ -54,7 +54,7 @@ export default function Example() {
     gridTemplateColumns: "auto auto auto auto auto",
     gridTemplateAreas:
       "'leftstart topstart topcenter topend rightstart' 'leftcenter blank blank blank rightcenter' 'leftend bottomstart bottomcenter bottomend rightend'",
-    gap: "40px 95px",
+    gap: "40px 105px",
   });
 
   return (
@@ -63,7 +63,7 @@ export default function Example() {
         <Popover.Root open={true}>
           <Popover.Trigger css={triggerCss}>Trigger</Popover.Trigger>
           <Popover.Portal>
-            <Popover.Content side="left" align="start">
+            <Popover.Content side="left" align="start" width={116}>
               Left Start
             </Popover.Content>
           </Popover.Portal>
@@ -73,7 +73,7 @@ export default function Example() {
         <Popover.Root open={true}>
           <Popover.Trigger css={triggerCss}>Trigger</Popover.Trigger>
           <Popover.Portal>
-            <Popover.Content side="left" align="center">
+            <Popover.Content side="left" align="center" width={116}>
               Left Center
             </Popover.Content>
           </Popover.Portal>
@@ -83,7 +83,7 @@ export default function Example() {
         <Popover.Root open={true}>
           <Popover.Trigger css={triggerCss}>Trigger</Popover.Trigger>
           <Popover.Portal>
-            <Popover.Content side="left" align="end">
+            <Popover.Content side="left" align="end" width={116}>
               Left End
             </Popover.Content>
           </Popover.Portal>
@@ -93,7 +93,7 @@ export default function Example() {
         <Popover.Root open={true}>
           <Popover.Trigger css={triggerCss}>Trigger</Popover.Trigger>
           <Popover.Portal>
-            <Popover.Content side="top" align="start">
+            <Popover.Content side="top" align="start" width={116}>
               Top Start
             </Popover.Content>
           </Popover.Portal>
@@ -103,7 +103,7 @@ export default function Example() {
         <Popover.Root open={true}>
           <Popover.Trigger css={triggerCss}>Trigger</Popover.Trigger>
           <Popover.Portal>
-            <Popover.Content side="top" align="center">
+            <Popover.Content side="top" align="center" width={116}>
               Top Center
             </Popover.Content>
           </Popover.Portal>
@@ -113,7 +113,7 @@ export default function Example() {
         <Popover.Root open={true}>
           <Popover.Trigger css={triggerCss}>Trigger</Popover.Trigger>
           <Popover.Portal>
-            <Popover.Content side="top" align="end">
+            <Popover.Content side="top" align="end" width={116}>
               Top End
             </Popover.Content>
           </Popover.Portal>
@@ -123,7 +123,7 @@ export default function Example() {
         <Popover.Root open={true}>
           <Popover.Trigger css={triggerCss}>Trigger</Popover.Trigger>
           <Popover.Portal>
-            <Popover.Content side="bottom" align="start">
+            <Popover.Content side="bottom" align="start" width={116}>
               Bottom Start
             </Popover.Content>
           </Popover.Portal>
@@ -133,7 +133,7 @@ export default function Example() {
         <Popover.Root open={true}>
           <Popover.Trigger css={triggerCss}>Trigger</Popover.Trigger>
           <Popover.Portal>
-            <Popover.Content side="bottom" align="center">
+            <Popover.Content side="bottom" align="center" width={116}>
               Bottom Center
             </Popover.Content>
           </Popover.Portal>
@@ -143,7 +143,7 @@ export default function Example() {
         <Popover.Root open={true}>
           <Popover.Trigger css={triggerCss}>Trigger</Popover.Trigger>
           <Popover.Portal>
-            <Popover.Content side="bottom" align="end">
+            <Popover.Content side="bottom" align="end" width={116}>
               Bottom End
             </Popover.Content>
           </Popover.Portal>
@@ -153,7 +153,7 @@ export default function Example() {
         <Popover.Root open={true}>
           <Popover.Trigger css={triggerCss}>Trigger</Popover.Trigger>
           <Popover.Portal>
-            <Popover.Content side="right" align="start">
+            <Popover.Content side="right" align="start" width={116}>
               Right Start
             </Popover.Content>
           </Popover.Portal>
@@ -163,7 +163,7 @@ export default function Example() {
         <Popover.Root open={true}>
           <Popover.Trigger css={triggerCss}>Trigger</Popover.Trigger>
           <Popover.Portal>
-            <Popover.Content side="right" align="center">
+            <Popover.Content side="right" align="center" width={116}>
               Right Center
             </Popover.Content>
           </Popover.Portal>
@@ -173,7 +173,7 @@ export default function Example() {
         <Popover.Root open={true}>
           <Popover.Trigger css={triggerCss}>Trigger</Popover.Trigger>
           <Popover.Portal>
-            <Popover.Content side="right" align="end">
+            <Popover.Content side="right" align="end" width={116}>
               Right End
             </Popover.Content>
           </Popover.Portal>
@@ -211,14 +211,13 @@ export default function Example() {
       <Popover.Root open={true}>
         <Popover.Trigger css={triggerCss}>Trigger</Popover.Trigger>
         <Popover.Portal>
-          <Popover.Content>
+          <Popover.Content width={96}>
             <Box
               css={{
                 backgroundColor: theme.colors.gray500,
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                width: theme.space["500"],
                 height: theme.space["500"],
               }}
             >
@@ -230,14 +229,13 @@ export default function Example() {
       <Popover.Root open={true}>
         <Popover.Trigger css={triggerCss}>Trigger</Popover.Trigger>
         <Popover.Portal>
-          <Popover.Content density="compact">
+          <Popover.Content density="compact" width={88}>
             <Box
               css={{
                 backgroundColor: theme.colors.gray500,
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                width: theme.space["500"],
                 height: theme.space["500"],
               }}
             >
@@ -292,7 +290,7 @@ Popovers should not be used to display non-actionable ui that could otherwise li
 ```jsx withPreview isGuide="error"
 export default function Example() {
   return (
-    <Popover.Root open={true}>
+    <Popover.Root defaultOpen={true}>
       <Popover.Trigger icon="center" css={{ marginBlockStart: "100px" }}>
         <Icon>
           <Info />
@@ -327,23 +325,16 @@ export default function Example() {
     },
   };
 
-  const [tooltipOpen, setTooltipOpen] = useState(false);
-  useEffect(() => {
-    setInterval(() => {
-      setTooltipOpen(true);
-    }, 0);
-  }, [setTooltipOpen]);
-
   return (
-    <Popover.Root open={true}>
+    <Popover.Root defaultOpen={true}>
       <Popover.Trigger css={triggerCss}>Trigger</Popover.Trigger>
       <Popover.Portal>
         <Popover.Content>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.{" "}
           <Tooltip.Provider>
-            <Tooltip.Root open={tooltipOpen}>
+            <Tooltip.Root>
               <Tooltip.Trigger>
-                <u>Diam non</u>
+                <u>Hover over me</u>
               </Tooltip.Trigger>
               <Tooltip.Content>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>

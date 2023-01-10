@@ -58,7 +58,6 @@ const StyledContent = styled(PopoverPrimitive.Content, {
   border: `1px solid ${theme.colors.gray300}`,
   boxShadow: theme.shadows["200"],
   color: theme.colors.primary,
-  maxWidth: "275px",
   animationDuration: "400ms",
   animationTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
   willChange: "transform, opacity",
@@ -89,6 +88,8 @@ export type PopoverContentProps = {
   sideOffset?:
     | number
     | Token<keyof typeof Tokens.sizes, string, "space", "wpds">;
+  /** Width of the popover content */
+  width?: number;
 } & WPDS.VariantProps<typeof StyledContent> &
   Omit<RadixPopoverContentProps, "sideOffset">;
 
@@ -99,8 +100,10 @@ export const PopoverContent = React.forwardRef<
   (
     {
       children,
+      css,
       density = "default",
       sideOffset = theme.space["025"],
+      width = 240,
       ...props
     },
     ref
@@ -117,7 +120,13 @@ export const PopoverContent = React.forwardRef<
       so = sideOffset;
     }
     return (
-      <StyledContent density={density} sideOffset={so} {...props} ref={ref}>
+      <StyledContent
+        density={density}
+        sideOffset={so}
+        css={{ width: `${width}px`, ...css }}
+        {...props}
+        ref={ref}
+      >
         {children}
       </StyledContent>
     );

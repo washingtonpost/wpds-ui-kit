@@ -112,7 +112,9 @@ const CloseButtonTemplate = (args) => {
             e.preventDefault();
           }}
         >
-          {args.children}
+          <div style={{ marginInlineEnd: theme.sizes["175"] }}>
+            {args.children}
+          </div>
           <Popover.Close />
         </Popover.Content>
       </Popover.Portal>
@@ -272,7 +274,7 @@ const FullPopover = ({ side, align }) => {
         </u>
       </Popover.Trigger>
       <Popover.Portal container={parentElement}>
-        <Popover.Content side={side} align={align}>
+        <Popover.Content side={side} align={align} width={114}>
           {side} {align}
         </Popover.Content>
       </Popover.Portal>
