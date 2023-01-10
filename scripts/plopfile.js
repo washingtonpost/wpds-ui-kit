@@ -23,8 +23,8 @@ module.exports = function (plop) {
         {
           type: "addMany",
           destination: `../ui/{{ dashCase componentName }}`,
-          base: "../plop-templates/component",
-          templateFiles: "../plop-templates/component/**/*",
+          base: "../templates/component",
+          templateFiles: "../templates/component/**/*",
           data: {
             packageName: "{{ dashCase componentName }}",
             componentName: "{{ componentName }}",

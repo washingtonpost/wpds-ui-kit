@@ -69,6 +69,10 @@
   </url>
 
   <url>
+    <loc>https://build.washingtonpost.com/components/popover</loc>
+  </url>
+
+  <url>
     <loc>https://build.washingtonpost.com/components/radio-group</loc>
   </url>
 

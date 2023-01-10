@@ -32,6 +32,10 @@
     "url": "https://github.com/washingtonpost/wpds-ui-kit/issues"
   },
   "dependencies": {
+    "@washingtonpost/wpds-popover": "0.21.0",
+    "@washingtonpost/wpds-popover": "0.21.0",
+    "@washingtonpost/wpds-popover": "0.21.0",
+    "@washingtonpost/wpds-popover": "0.21.0",
     "@washingtonpost/eslint-plugin-wpds": "0.22.0",
     "@washingtonpost/wpds-accordion": "0.22.0",
     "@washingtonpost/wpds-alert-banner": "0.22.0",
@@ -66,6 +70,10 @@
   },
   "peerDependencies": {
     "@washingtonpost/wpds-card": "*",
+    "@washingtonpost/wpds-popover": "*",
+    "@washingtonpost/wpds-popover": "*",
+    "@washingtonpost/wpds-popover": "*",
+    "@washingtonpost/wpds-popover": "*",
     "@washingtonpost/eslint-plugin-wpds": "*",
     "@washingtonpost/wpds-accordion": "*",
     "@washingtonpost/wpds-alert-banner": "*",
