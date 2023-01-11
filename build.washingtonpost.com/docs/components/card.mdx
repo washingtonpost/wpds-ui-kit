@@ -8,11 +8,7 @@ status: "Draft"
 ## Anatomy
 
 <Container caption="Note: Image is not  to scale" css={{ padding: "$200" }}>
-  <InlineSVG
-    path="/img/components/card/anatomy.svg"
-    width={16}
-    height={200}
-  />
+  <InlineSVG path="/img/components/card/anatomy.svg" width={16} height={200} />
 </Container>
 
 1. Border
@@ -27,6 +23,7 @@ Although a card defaults to the size of container it resides in, the dimensions 
 ---
 
 ## Guidance
+
 ### Group content
 
 Cards are a greate way to group related content together.
@@ -173,10 +170,17 @@ export default function Example() {
         alignItems: "center",
         gap: "$100",
         padding: "$100",
-        paddingTop: "$200"
+        paddingTop: "$200",
       }}
     >
-      <Card css={{ display: "flex", alignItems: "center", gap: "$100", padding: "0"}}>
+      <Card
+        css={{
+          display: "flex",
+          alignItems: "center",
+          gap: "$100",
+          padding: "0",
+        }}
+      >
         <img
           height="110"
           width="auto"
@@ -194,7 +198,7 @@ export default function Example() {
           alignItems: "center",
           gap: "$100",
           maxWidth: "200px",
-          padding: "0"
+          padding: "0",
         }}
       >
         <img
@@ -218,6 +222,7 @@ export default function Example() {
 ## Accessibility
 
 ### Use list
+
 Use unordered lists and list items for cards in a collection. This allows screen readers to parse the items as a list. The order of elements inside a card should be logical, and each interactive element should have an apparent hover state.
 
 ---
