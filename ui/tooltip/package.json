@@ -1,6 +1,6 @@
 {
   "name": "@washingtonpost/wpds-tooltip",
-  "version": "0.23.0",
+  "version": "0.23.1",
   "description": "WPDS Tooltip",
   "author": "WPDS Support <wpds@washpost.com>",
   "homepage": "https://github.com/washingtonpost/wpds-ui-kit#readme",
@@ -42,7 +42,7 @@
   },
   "dependencies": {
     "@radix-ui/react-tooltip": "^1.0.0",
-    "@washingtonpost/wpds-theme": "0.23.0"
+    "@washingtonpost/wpds-theme": "0.23.1"
   },
   "gitHead": "1beafc08321d99e39b87d98cccf0d74c8568bbb0"
 }

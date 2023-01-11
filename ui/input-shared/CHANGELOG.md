@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.23.1](https://github.com/WPMedia/wpds-ui-kit/compare/v0.23.0...v0.23.1) (2023-01-11)
+
+**Note:** Version bump only for package @washingtonpost/wpds-input-shared
+
+
+
+
+
 # [0.23.0](https://github.com/WPMedia/wpds-ui-kit/compare/v0.22.0...v0.23.0) (2023-01-11)
 
 **Note:** Version bump only for package @washingtonpost/wpds-input-shared
