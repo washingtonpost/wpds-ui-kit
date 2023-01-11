@@ -5,6 +5,19 @@ component: card
 status: "Draft"
 ---
 
+## Anatomy
+
+<Container caption="Note: Image is not  to scale" css={{ padding: "$200" }}>
+  <InlineSVG
+    path="/img/components/card/anatomy.svg"
+    width={16}
+    height={200}
+  />
+</Container>
+
+1. Border
+2. Content
+
 ---
 
 ## Options
@@ -14,33 +27,11 @@ Although a card defaults to the size of container it resides in, the dimensions 
 ---
 
 ## Guidance
+### Group content
 
-Make the card actionable.
+Cards are a greate way to group related content together.
 
-```jsx withPreview
-export default function Example() {
-  return (
-    <Box
-      css={{
-        display: "flex",
-        justifyContent: "center",
-        width: "100%",
-        flexWrap: "wrap",
-        gap: "$100",
-      }}
-    >
-      <Card css={{ display: "flex", alignItems: "center", gap: "$075" }}>
-        <p>Some text for a card</p>
-        <Button variant="primary">Click me!</Button>
-      </Card>
-    </Box>
-  );
-}
-```
-
-Use cards in an unordered list to display a collection of related content.
-
-```jsx withPreview
+```jsx withPreview isGuide="success"
 export default function Example() {
   const styledText = styled("p", {
     overflow: "wrap",
@@ -116,9 +107,11 @@ export default function Example() {
 }
 ```
 
-Cards can hold virtually any combination of elements/components. See how it behaves with a nested accordion.
+### An empty box with infinite possibilities
 
-```jsx withPreview
+Cards can hold virtually any combination of elements/components. Mix and match to create a contained experience.
+
+```jsx withPreview isGuide="information"
 export default function Example() {
   return (
     <Box
@@ -163,9 +156,11 @@ export default function Example() {
 }
 ```
 
-Test on various screen sizes. Because card format is dependent on its contents, it is the client's responsibilty to test resizing accordingly.
+### Test how it scales
 
-```jsx withPreview
+Cards can hold so many elements/components, but with that freedom comes the responsibility of testing the responsiveness of the card.
+
+```jsx withPreview isGuide="warning"
 export default function Example() {
   return (
     <Box
@@ -173,13 +168,17 @@ export default function Example() {
         display: "flex",
         justifyContent: "center",
         width: "100%",
+        flexDirection: "column",
         flexWrap: "wrap",
+        alignItems: "center",
         gap: "$100",
+        padding: "$100",
+        paddingTop: "$200"
       }}
     >
-      <Card css={{ display: "flex", alignItems: "center", gap: "$100" }}>
+      <Card css={{ display: "flex", alignItems: "center", gap: "$100", padding: "0"}}>
         <img
-          height="140"
+          height="110"
           width="auto"
           layout="fixed"
           alt="Vibrant quinoa bowl with carrots, tomatoes, and cucumbers"
@@ -194,11 +193,12 @@ export default function Example() {
           display: "flex",
           alignItems: "center",
           gap: "$100",
-          maxWidth: "300px",
+          maxWidth: "200px",
+          padding: "0"
         }}
       >
         <img
-          height="140"
+          height="110"
           width="auto"
           layout="fixed"
           alt="Vibrant quinoa bowl with carrots, tomatoes, and cucumbers"
@@ -217,9 +217,8 @@ export default function Example() {
 
 ## Accessibility
 
-Use unordered lists and list items for cards in a collection. This allows screen readers to parse the items as a list.
-
-The order of elements inside a card should be logical, and each interactive element should have an apparent hover state.
+### Use list
+Use unordered lists and list items for cards in a collection. This allows screen readers to parse the items as a list. The order of elements inside a card should be logical, and each interactive element should have an apparent hover state.
 
 ---
 
