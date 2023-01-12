@@ -626,6 +626,14 @@
       "documentation": {
         "urlPath": "/components/drawer"
       }
+    },
+    {
+      "name": "Card example",
+      "path": "build.washingtonpost.com/snippets/card/card.jsx",
+      "zeplinIds": ["63bc715e0e83ff953986ad57"],
+      "documentation": {
+        "urlPath": "/components/card"
+      }
     }
   ],
   "links": [
