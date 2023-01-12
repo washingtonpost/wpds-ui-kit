@@ -54,11 +54,11 @@ const slideLeftAndFade = keyframes({
 });
 
 const StyledContent = styled(PopoverPrimitive.Content, {
-  backgroundColor: theme.colors.onPrimary,
+  backgroundColor: theme.colors.secondary,
   border: `1px solid ${theme.colors.gray300}`,
   boxShadow: theme.shadows["200"],
   color: theme.colors.primary,
-  animationDuration: "400ms",
+  animationDuration: theme.transitions.normal,
   animationTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
   willChange: "transform, opacity",
   "&[data-state='open'][data-side='top']": {
@@ -108,21 +108,21 @@ export const PopoverContent = React.forwardRef<
     },
     ref
   ) => {
-    let so;
+    let _sideOffset;
     if (typeof sideOffset !== "number") {
       const baseFontSize = parseFloat(
         window
           .getComputedStyle(document.documentElement)
           .getPropertyValue("font-size")
       );
-      so = parseFloat(sideOffset.value.split("rem")[0]) * baseFontSize;
+      _sideOffset = parseFloat(sideOffset.value.split("rem")[0]) * baseFontSize;
     } else {
-      so = sideOffset;
+      _sideOffset = sideOffset;
     }
     return (
       <StyledContent
         density={density}
-        sideOffset={so}
+        sideOffset={_sideOffset}
         css={{ width: `${width}px`, ...css }}
         {...props}
         ref={ref}
