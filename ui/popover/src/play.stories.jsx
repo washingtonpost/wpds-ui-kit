@@ -26,7 +26,7 @@ const Template = (args) => {
     setParentElement(triggerRef.current.parentElement);
   }, [setParentElement]);
   return (
-    <Popover.Root>
+    <Popover.Root defaultOpen={true}>
       <Popover.Trigger ref={triggerRef}>Trigger</Popover.Trigger>
       <Popover.Portal container={parentElement}>
         <Popover.Content {...args}></Popover.Content>
@@ -58,9 +58,11 @@ Default.argTypes = {
   },
 };
 
+/*
 Default.parameters = {
   chromatic: { disableSnapshot: true },
 };
+*/
 
 const AnchorTemplate = (args) => {
   const triggerRef = React.useRef(null);
