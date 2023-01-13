@@ -285,55 +285,68 @@ const FullPopover = ({ side, align }) => {
 const ChromaticTemplate = () => {
   const side = ["bottom", "top", "right", "left"];
   const align = ["start", "center", "end"];
+
+  const [passed, setPassed] = React.useState(false);
+  React.useEffect(() => {
+    setTimeout(() => {
+      setPassed(true);
+    }, 1000);
+  }, [setPassed]);
+
   return (
-    <div
-      style={{
-        display: "grid",
-        gridTemplateRows: "auto auto auto",
-        gridTemplateColumns: "auto auto",
-        gridTemplateAreas: "'bottom bottom' 'top top' 'right left'",
-        width: "100%",
-      }}
-    >
-      {side.map((s) => {
-        let direction = "row";
-        if (s === "right" || s === "left") {
-          direction = "column";
-        }
-        let alignItems = "flex-start";
-        if (s === "left") {
-          alignItems = "flex-end";
-        }
-        return (
-          <div
-            key={s}
-            style={{
-              display: "flex",
-              flexDirection: direction,
-              gridArea: s,
-              justifyContent: "space-between",
-              alignItems: alignItems,
-            }}
-          >
-            {align.map((a) => {
-              let p = 0;
-              if (s === "bottom") {
-                p = "0 0 54px 0";
-              } else if (s === "top") {
-                p = "54px 0 0 0";
-              } else {
-                p = "20px 0 20px 0";
-              }
-              return (
-                <div key={s + a} style={{ padding: p }}>
-                  <FullPopover side={s} align={a} />
-                </div>
-              );
-            })}
-          </div>
-        );
-      })}
-    </div>
+    <>
+      {passed && (
+        <div style={{ fontWeight: "bold", color: "#990000" }}>TEST</div>
+      )}
+      <div
+        style={{
+          display: "grid",
+          gridTemplateRows: "auto auto auto",
+          gridTemplateColumns: "auto auto",
+          gridTemplateAreas: "'bottom bottom' 'top top' 'right left'",
+          width: "100%",
+        }}
+      >
+        {side.map((s) => {
+          let direction = "row";
+          if (s === "right" || s === "left") {
+            direction = "column";
+          }
+          let alignItems = "flex-start";
+          if (s === "left") {
+            alignItems = "flex-end";
+          }
+          return (
+            <div
+              key={s}
+              style={{
+                display: "flex",
+                flexDirection: direction,
+                gridArea: s,
+                justifyContent: "space-between",
+                alignItems: alignItems,
+              }}
+            >
+              {align.map((a) => {
+                let p = 0;
+                if (s === "bottom") {
+                  p = "0 0 54px 0";
+                } else if (s === "top") {
+                  p = "54px 0 0 0";
+                } else {
+                  p = "20px 0 20px 0";
+                }
+                return (
+                  <div key={s + a} style={{ padding: p }}>
+                    <FullPopover side={s} align={a} />
+                  </div>
+                );
+              })}
+            </div>
+          );
+        })}
+      </div>
+    </>
   );
 };
 
