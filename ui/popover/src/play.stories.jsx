@@ -26,7 +26,7 @@ const Template = (args) => {
     setParentElement(triggerRef.current.parentElement);
   }, [setParentElement]);
   return (
-    <Popover.Root defaultOpen={true}>
+    <Popover.Root>
       <Popover.Trigger ref={triggerRef}>Trigger</Popover.Trigger>
       <Popover.Portal container={parentElement}>
         <Popover.Content {...args}></Popover.Content>
@@ -58,11 +58,9 @@ Default.argTypes = {
   },
 };
 
-/*
 Default.parameters = {
   chromatic: { disableSnapshot: true },
 };
-*/
 
 const AnchorTemplate = (args) => {
   const triggerRef = React.useRef(null);
@@ -342,7 +340,7 @@ const ChromaticTemplate = () => {
 export const Chromatic = ChromaticTemplate.bind({});
 Chromatic.parameters = {
   docs: { disable: true },
-  chromatic: { delay: 500 },
+  chromatic: { delay: 3000 },
 };
 
 const ecGlobalCss = globalCss({
@@ -400,7 +398,7 @@ const EdgeAndCornerCasesTemplate = () => {
 export const EdgeAndCornerCases = EdgeAndCornerCasesTemplate.bind({});
 EdgeAndCornerCases.parameters = {
   docs: { disable: true },
-  chromatic: { delay: 500 },
+  chromatic: { delay: 3000 },
 };
 
 const InteractionsTemplate = () => (
