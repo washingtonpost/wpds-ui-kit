@@ -253,107 +253,86 @@ const MenuTemplate = () => {
 export const Menu = MenuTemplate.bind({});
 Menu.parameters = { chromatic: { disableSnapshot: true } };
 
-const FullPopover = ({ side, align }) => {
-  const triggerRef = React.useRef(null);
-  const [parentElement, setParentElement] = React.useState();
-  React.useEffect(() => {
-    setParentElement(triggerRef.current.parentElement);
-  }, [setParentElement]);
-  return (
-    <Popover.Root open={true}>
-      <Popover.Trigger ref={triggerRef} asChild>
-        <u
-          style={{
-            border: `1px solid ${theme.colors.gray300}`,
-            color: theme.colors.gray100,
-            paddingInline: theme.space["025"],
-          }}
-          tabIndex={0}
-        >
-          Trigger
-        </u>
-      </Popover.Trigger>
-      <Popover.Portal container={parentElement}>
-        <Popover.Content side={side} align={align} width={114}>
-          {side} {align}
-        </Popover.Content>
-      </Popover.Portal>
-    </Popover.Root>
-  );
-};
+const FullPopover = ({ side, align }) => (
+  <Popover.Root open={true}>
+    <Popover.Trigger asChild>
+      <u
+        style={{
+          border: `1px solid ${theme.colors.gray300}`,
+          color: theme.colors.gray100,
+          paddingInline: theme.space["025"],
+        }}
+        tabIndex={0}
+      >
+        Trigger
+      </u>
+    </Popover.Trigger>
+    <Popover.Content side={side} align={align} width={114}>
+      {side} {align}
+    </Popover.Content>
+  </Popover.Root>
+);
 
 const ChromaticTemplate = () => {
   const side = ["bottom", "top", "right", "left"];
   const align = ["start", "center", "end"];
 
-  const [passed, setPassed] = React.useState(false);
-  React.useEffect(() => {
-    setTimeout(() => {
-      setPassed(true);
-    }, 1000);
-  }, [setPassed]);
-
   return (
-    <>
-      {passed && (
-        <div style={{ fontWeight: "bold", color: "#990000" }}>TEST</div>
-      )}
-      <div
-        style={{
-          display: "grid",
-          gridTemplateRows: "auto auto auto",
-          gridTemplateColumns: "auto auto",
-          gridTemplateAreas: "'bottom bottom' 'top top' 'right left'",
-          width: "100%",
-        }}
-      >
-        {side.map((s) => {
-          let direction = "row";
-          if (s === "right" || s === "left") {
-            direction = "column";
-          }
-          let alignItems = "flex-start";
-          if (s === "left") {
-            alignItems = "flex-end";
-          }
-          return (
-            <div
-              key={s}
-              style={{
-                display: "flex",
-                flexDirection: direction,
-                gridArea: s,
-                justifyContent: "space-between",
-                alignItems: alignItems,
-              }}
-            >
-              {align.map((a) => {
-                let p = 0;
-                if (s === "bottom") {
-                  p = "0 0 54px 0";
-                } else if (s === "top") {
-                  p = "54px 0 0 0";
-                } else {
-                  p = "20px 0 20px 0";
-                }
-                return (
-                  <div key={s + a} style={{ padding: p }}>
-                    <FullPopover side={s} align={a} />
-                  </div>
-                );
-              })}
-            </div>
-          );
-        })}
-      </div>
-    </>
+    <div
+      style={{
+        display: "grid",
+        gridTemplateRows: "auto auto auto",
+        gridTemplateColumns: "auto auto",
+        gridTemplateAreas: "'bottom bottom' 'top top' 'right left'",
+        width: "100%",
+      }}
+    >
+      {side.map((s) => {
+        let direction = "row";
+        if (s === "right" || s === "left") {
+          direction = "column";
+        }
+        let alignItems = "flex-start";
+        if (s === "left") {
+          alignItems = "flex-end";
+        }
+        return (
+          <div
+            key={s}
+            style={{
+              display: "flex",
+              flexDirection: direction,
+              gridArea: s,
+              justifyContent: "space-between",
+              alignItems: alignItems,
+            }}
+          >
+            {align.map((a) => {
+              let p = 0;
+              if (s === "bottom") {
+                p = "0 0 54px 0";
+              } else if (s === "top") {
+                p = "54px 0 0 0";
+              } else {
+                p = "20px 0 20px 0";
+              }
+              return (
+                <div key={s + a} style={{ padding: p }}>
+                  <FullPopover side={s} align={a} />
+                </div>
+              );
+            })}
+          </div>
+        );
+      })}
+    </div>
   );
 };
 
 export const Chromatic = ChromaticTemplate.bind({});
 Chromatic.parameters = {
   docs: { disable: true },
-  chromatic: { delay: 3000 },
+  chromatic: { delay: 1000 },
 };
 
 const ecGlobalCss = globalCss({
