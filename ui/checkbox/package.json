@@ -1,6 +1,6 @@
 {
   "name": "@washingtonpost/wpds-checkbox",
-  "version": "0.22.0",
+  "version": "0.23.1",
   "description": "WPDS Checkbox",
   "author": "WPDS Support <wpds@washpost.com>",
   "homepage": "https://github.com/washingtonpost/wpds-ui-kit#readme",
@@ -47,11 +47,11 @@
   "dependencies": {
     "@radix-ui/react-checkbox": "latest",
     "@washingtonpost/wpds-assets": "^1.15.0",
-    "@washingtonpost/wpds-icon": "0.22.0",
-    "@washingtonpost/wpds-input-shared": "0.22.0",
-    "@washingtonpost/wpds-theme": "0.22.0",
-    "@washingtonpost/wpds-visually-hidden": "0.22.0",
+    "@washingtonpost/wpds-icon": "0.23.1",
+    "@washingtonpost/wpds-input-shared": "0.23.1",
+    "@washingtonpost/wpds-theme": "0.23.1",
+    "@washingtonpost/wpds-visually-hidden": "0.23.1",
     "react": "^16.8.6 || ^17.0.2"
   },
-  "gitHead": "1beafc08321d99e39b87d98cccf0d74c8568bbb0"
+  "gitHead": "693b69c537e30128c73f4ae1b9a005bddff7eb81"
 }

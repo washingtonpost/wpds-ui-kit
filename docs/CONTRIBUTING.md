@@ -72,4 +72,5 @@ You can create an experimental release for testing by following the [release doc
 - https://build.washingtonpost.com/resources/guides/contribute-a-component
 
 ## Release a component
+
 - https://github.com/washingtonpost/wpds-ui-kit/blob/main/docs/RELEASING.md

@@ -1,6 +1,6 @@
 {
   "name": "@washingtonpost/eslint-plugin-wpds",
-  "version": "0.22.0",
+  "version": "0.23.1",
   "description": "WPDS lint rules",
   "author": "WPDS Support <wpds@washpost.com>",
   "homepage": "https://github.com/washingtonpost/wpds-ui-kit#readme",
@@ -28,10 +28,10 @@
     "@washingtonpost/wpds-theme": "*"
   },
   "dependencies": {
-    "@washingtonpost/wpds-theme": "0.22.0"
+    "@washingtonpost/wpds-theme": "0.23.1"
   },
   "devDependencies": {
     "jest": "^28.1.0"
   },
-  "gitHead": "1beafc08321d99e39b87d98cccf0d74c8568bbb0"
+  "gitHead": "693b69c537e30128c73f4ae1b9a005bddff7eb81"
 }
