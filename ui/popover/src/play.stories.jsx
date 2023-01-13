@@ -267,7 +267,14 @@ const FullPopover = ({ side, align }) => (
         Trigger
       </u>
     </Popover.Trigger>
-    <Popover.Content side={side} align={align} width={114}>
+    <Popover.Content
+      side={side}
+      align={align}
+      width={114}
+      css={{
+        animation: "unset",
+      }}
+    >
       {side} {align}
     </Popover.Content>
   </Popover.Root>
