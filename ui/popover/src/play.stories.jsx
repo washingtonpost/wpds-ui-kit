@@ -340,7 +340,7 @@ const ChromaticTemplate = () => {
 export const Chromatic = ChromaticTemplate.bind({});
 Chromatic.parameters = {
   docs: { disable: true },
-  chromatic: { delay: 310 },
+  chromatic: { delay: 500 },
 };
 
 const ecGlobalCss = globalCss({
@@ -398,7 +398,7 @@ const EdgeAndCornerCasesTemplate = () => {
 export const EdgeAndCornerCases = EdgeAndCornerCasesTemplate.bind({});
 EdgeAndCornerCases.parameters = {
   docs: { disable: true },
-  chromatic: { delay: 310 },
+  chromatic: { delay: 500 },
 };
 
 const InteractionsTemplate = () => (
