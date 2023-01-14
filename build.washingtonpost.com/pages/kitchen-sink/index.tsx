@@ -21,9 +21,11 @@ import {
   Drawer,
   Tooltip,
   Card,
+  Popover,
 } from "@washingtonpost/wpds-ui-kit";
 import Chart from "@washingtonpost/wpds-assets/asset/chart";
 import Settings from "@washingtonpost/wpds-assets/asset/settings";
+import Info from "@washingtonpost/wpds-assets/asset/info";
 import Image from "next/image";
 
 const ImageLoader = ({ src }) => {
@@ -403,6 +405,23 @@ function HomePage() {
         <p>Brand new digital content free with subscription!</p>
         <Button variant="primary">Subscribe</Button>
       </Card>
+      <h2>Popover</h2>
+      <Popover.Root>
+        The Button with Icon triggers a Popover{" "}
+        <Popover.Trigger asChild>
+          <Button icon="center" css={{ display: "inline" }}>
+            <Icon label="info">
+              <Info />
+            </Icon>
+          </Button>
+        </Popover.Trigger>
+        <Popover.Portal>
+          <Popover.Content side="top">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam non
+            eget consequat pretium.
+          </Popover.Content>
+        </Popover.Portal>
+      </Popover.Root>
     </>
   );
 }
