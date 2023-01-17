@@ -1,13 +1,14 @@
 import * as React from "react";
-import { Story } from "@storybook/react";
 import { Box as Component } from "./box";
+
+import type { ComponentMeta, ComponentStory } from "@storybook/react";
 
 export default {
   title: "Box",
   component: Component,
-};
+} as ComponentMeta<typeof Component>;
 
-const Template: Story = (args) => (
+const Template: ComponentStory<typeof Component> = (args) => (
   <Component
     as="h1"
     css={{
