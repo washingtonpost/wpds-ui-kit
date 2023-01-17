@@ -1,6 +1,6 @@
 {
   "name": "@washingtonpost/wpds-error-message",
-  "version": "0.23.1",
+  "version": "0.23.2",
   "description": "WPDS ErrorMessage",
   "author": "WPDS Support <wpds@washpost.com>",
   "homepage": "https://github.com/WPMedia/wpds-ui-kit#readme",
@@ -40,7 +40,7 @@
     "react": "^16.8.6 || ^17.0.2"
   },
   "dependencies": {
-    "@washingtonpost/wpds-theme": "0.23.1"
+    "@washingtonpost/wpds-theme": "0.23.2"
   },
   "gitHead": "693b69c537e30128c73f4ae1b9a005bddff7eb81"
 }
