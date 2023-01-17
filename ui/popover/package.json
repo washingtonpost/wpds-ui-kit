@@ -45,5 +45,6 @@
     "@washingtonpost/wpds-button": "0.23.2",
     "@washingtonpost/wpds-icon": "0.23.2",
     "@washingtonpost/wpds-theme": "0.23.2"
-  }
+  },
+  "gitHead": "cbb17c0ecae1b2c8ceae96a98d73cee3796acbe6"
 }
