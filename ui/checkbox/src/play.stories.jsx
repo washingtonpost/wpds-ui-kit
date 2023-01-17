@@ -96,9 +96,13 @@ const ChromaticTemplate = () => {
           checked
           variant="primary"
           data-testid="test-checkbox-primary"
-          label="this checkbox is required"
           required={isRequired}
-        />
+        >
+          this checkbox is required this checkbox is required this checkbox is
+          required this checkbox is required this checkbox is required this
+          checkbox is required this checkbox is required this checkbox is
+          required
+        </Component>
       </HStack>
       <HStack>
         <Component
