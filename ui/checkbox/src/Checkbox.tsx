@@ -8,8 +8,6 @@ import * as PrimitiveCheckbox from "@radix-ui/react-checkbox";
 
 import { InputLabel } from "@washingtonpost/wpds-input-label";
 
-import { RequiredIndicatorCSS } from "@washingtonpost/wpds-input-shared";
-
 const StyledCheckbox = styled(PrimitiveCheckbox.Root, {
   transition: `background ${theme.transitions.fast} ${theme.transitions.inOut}`,
   appearance: "none",
@@ -265,10 +263,14 @@ const StyledInputLabel = styled(InputLabel, {
   lineHeight: theme.lineHeights["050"],
 });
 
+const StyledLabel = styled("span", {
+  alignSelf: "flex-end",
+});
+
 export const Checkbox = React.forwardRef<HTMLButtonElement, CheckboxInterface>(
   (props, ref) => {
     return (
-      <StyledInputLabel htmlFor={props.id}>
+      <StyledInputLabel htmlFor={props.id} required={props.required}>
         <StyledCheckbox ref={ref} {...props}>
           <StyledIndicator
             size={props.size}
@@ -300,8 +302,7 @@ export const Checkbox = React.forwardRef<HTMLButtonElement, CheckboxInterface>(
             </StyledCheck>
           </StyledIndicator>
         </StyledCheckbox>
-        {props.label || props.children}
-        {props.required && <span className={RequiredIndicatorCSS()}>*</span>}
+        <StyledLabel>{props.label || props.children}</StyledLabel>
       </StyledInputLabel>
     );
   }
