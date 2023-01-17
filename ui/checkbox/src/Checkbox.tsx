@@ -260,7 +260,7 @@ const StyledInputLabel = styled(InputLabel, {
   cursor: "default",
   gap: "$025",
   flexDirection: "row",
-  alignItems: "flex-end",
+  alignItems: "flex-start",
   justifyContent: "center",
   lineHeight: theme.lineHeights["050"],
 });
