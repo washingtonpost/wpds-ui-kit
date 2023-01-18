@@ -21,13 +21,13 @@
     "@radix-ui/react-collapsible": "^1.0.0",
     "@radix-ui/react-toggle-group": "^1.0.1",
     "@react-aria/ssr": "^3.1.0",
-    "@stitches/react": "^1.2.8",
+    "@stitches/react": "1.2.8",
     "@washingtonpost/site-components": "7.14.3",
     "@washingtonpost/site-footer": "0.11.3",
     "@washingtonpost/site-third-party-scripts": "latest",
-    "@washingtonpost/wpds-accordion": "^0.17.0",
+    "@washingtonpost/wpds-accordion": "*",
     "@washingtonpost/wpds-assets": "^1.16.0",
-    "@washingtonpost/wpds-ui-kit": "0.23.2",
+    "@washingtonpost/wpds-ui-kit": "*",
     "fuse.js": "^6.6.2",
     "gray-matter": "^4.0.2",
     "lz-string": "^1.4.4",
@@ -49,7 +49,7 @@
     "remark-gfm": "^3.0.1",
     "remark-mdx-code-meta": "^1.0.0",
     "stringify-object": "^4.0.1",
-    "typescript": "^4.7.4"
+    "typescript": "4.7.4"
   },
   "devDependencies": {
     "@next/bundle-analyzer": "^12.1.0",

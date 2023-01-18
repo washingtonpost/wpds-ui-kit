@@ -95,7 +95,7 @@ export const getResourcesCategories = async (input) => {
       if (!kickers.includes(data.kicker)) {
         kickers.push(data.kicker);
 
-        const slug = `/${input}/${data.kicker.toLowerCase()}`;
+        const slug = `/${input}/${data.kicker?.toLowerCase()}`;
         return {
           content,
           data,
