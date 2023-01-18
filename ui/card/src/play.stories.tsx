@@ -1,13 +1,15 @@
 import * as React from "react";
-import { Card as Component } from "./";
+import { Card as Component } from ".";
 import { theme, styled } from "@washingtonpost/wpds-theme";
 import { Button } from "@washingtonpost/wpds-button";
 import { Accordion, ACCORDION_TYPE } from "@washingtonpost/wpds-accordion";
 
+import type { ComponentStory, ComponentMeta } from "@storybook/react";
+
 export default {
   title: "Card",
   component: Component,
-};
+} as ComponentMeta<typeof Component>;
 
 const Stack = styled("section", {
   display: "flex",
@@ -23,7 +25,7 @@ const Label = styled("h3", {
   textAlign: "center",
 });
 
-const DefaultTemplate = (args) => (
+const DefaultTemplate: ComponentStory<typeof Component> = (args) => (
   <Stack>
     <Label>Card</Label>
     <Component {...args} css={{ display: "flex" }}>
@@ -37,7 +39,6 @@ const DefaultTemplate = (args) => (
       <img
         height="140"
         width="auto"
-        layout="fixed"
         alt="Lava pooling from a volcano"
         src="https://images.pexels.com/photos/235807/pexels-photo-235807.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
       />
@@ -47,11 +48,11 @@ const DefaultTemplate = (args) => (
 
 export const Card = DefaultTemplate.bind({});
 
-const styledText = styled("p", {
+const StyledText = styled("p", {
   overflow: "wrap",
   width: "100px",
 });
-const Container = styled({
+const Container = styled("div", {
   padding: theme.space["100"],
 });
 
@@ -59,7 +60,7 @@ const OptionsT = (args) => (
   <Stack>
     <Label>Card with button</Label>
     <Component css={{ display: "flex", alignItems: "center", gap: "$075" }}>
-      <styledText>Brand new digital content free with subscription!</styledText>
+      <StyledText>Brand new digital content free with subscription!</StyledText>
       <Button variant="primary">Subscribe</Button>
     </Component>
 
@@ -76,15 +77,14 @@ const OptionsT = (args) => (
       <img
         height="140"
         width="210"
-        layout="fixed"
         alt="Vibrant quinoa bowl with carrots, tomatoes, and cucumbers"
         src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg"
       />
       <Container>
-        <styledText>
+        <StyledText>
           How Saria makes ready-to-eat <a href="">quinoa bowls</a> with lots of
           veggies.
-        </styledText>
+        </StyledText>
       </Container>
     </Component>
 
