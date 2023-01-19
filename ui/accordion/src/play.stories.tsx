@@ -1,12 +1,14 @@
+// /* eslint-disable @next/next/no-img-element */
 import * as React from "react";
 import { Accordion, ACCORDION_DENSITY, ACCORDION_TYPE } from ".";
+import type { ComponentMeta, ComponentStory } from "@storybook/react";
 
 export default {
   title: "Accordion",
   component: Accordion.Root,
   subcomponents: {
     Item: Accordion.Item,
-    Header: Accordion.Header,
+    Trigger: Accordion.Trigger,
     Content: Accordion.Content,
   },
   argTypes: {
@@ -27,33 +29,34 @@ export default {
       control: "boolean",
     },
   },
-};
+} as ComponentMeta<typeof Accordion.Root>;
 
-const Template = (args) => {
-  const myHeaderRef = React.createRef();
-  const myContentRef = React.createRef();
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const Template: ComponentStory<any> = (args) => {
+  const myTriggerRef = React.useRef<HTMLButtonElement>(null);
+  const myContentRef = React.useRef<HTMLDivElement>(null);
 
   return (
     <Accordion.Root {...args}>
       <Accordion.Item value={"item-1"}>
-        <Accordion.Trigger density={args.density} ref={myHeaderRef} {...args}>
+        <Accordion.Trigger {...args} ref={myTriggerRef}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in
           augue in felis pharetra finibus. In sagittis aliquam augue. Lorem
           ipsum dolor sit amet, consectetur adipiscing elit.
         </Accordion.Trigger>
         <Accordion.Content ref={myContentRef}>
           <div>
-            No! You don't even believe that! Gus has cameras everywhere, please.
-            Listen to yourself! No, he has known everything, all along. Where
-            were you today? In the lab? And you don't think it's possible that
-            Tyrus lifted the cigarette out of your locker? Come on! Don't you
-            see? You are the last piece of the puzzle. You are everything that
-            he's wanted.
+            No! You don&apos;t even believe that! Gus has cameras everywhere,
+            please. Listen to yourself! No, he has known everything, all along.
+            Where were you today? In the lab? And you don&apos;t think it&apos;s
+            possible that Tyrus lifted the cigarette out of your locker? Come
+            on! Don&apos;t you see? You are the last piece of the puzzle. You
+            are everything that he&apos;s wanted.
           </div>
         </Accordion.Content>
       </Accordion.Item>
       <Accordion.Item value={"item-2"}>
-        <Accordion.Trigger density={args.density} ref={myHeaderRef} {...args}>
+        <Accordion.Trigger {...args} ref={myTriggerRef}>
           How long will I have to social distance?
         </Accordion.Trigger>
         <Accordion.Content {...args} ref={myContentRef}>
