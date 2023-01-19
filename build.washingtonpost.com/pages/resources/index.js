@@ -158,6 +158,8 @@ async function getWrapper(collections, recents) {
       "Watch or read through our tutorials to understand key techniques and concepts.",
     Workshops:
       "Sharpen your design and development skills with our in-depth recorded workshops.",
+    Tools:
+      "Sharpen your design and development skills with our in-depth recorded workshops.",
   };
 
   // 2. populate the content array with objects for each category (main data for page)
