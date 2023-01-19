@@ -1,0 +1,369 @@
+---
+title: Popover
+description: A popup element that displays rich and actionable content. Unlike a tooltip, the popover is persistent and remains on the screen until dismissed.
+component: popover
+status: "Draft"
+---
+
+---
+
+## Anatomy
+
+<Container caption="Note: Image is not to scale" css={{ padding: "$150" }}>
+  <InlineSVG
+    path="/img/components/popover/anatomy.svg"
+    width={213}
+    height={119}
+  />
+</Container>
+
+1. Content Container
+
+---
+
+## Options
+
+### Positioning
+
+The Popover can be positioned top, left, right, and bottom with each having ability to be positioned at the start, center, or end of the trigger.
+
+<AlertBanner.Root css={{ marginBottom: "$200" }} variant="information">
+  <AlertBanner.Content
+    children={
+      <>
+        <b>Note:</b> This option sets the preferred position of the popover to
+        render against when open. Will be reversed when collisions occur with
+        other elements.
+      </>
+    }
+  />
+</AlertBanner.Root>
+
+```jsx withPreview
+export default function Example() {
+  const triggerCss = {
+    border: "none",
+    color: "$gray80",
+    padding: 0,
+    backgroundColor: "transparent",
+    fontWeight: "normal",
+    textDecoration: "underline",
+    "&:hover": {
+      backgroundColor: "transparent",
+    },
+  };
+  const Grid = styled("div", {
+    display: "grid",
+    gridTemplateRows: "auto auto auto",
+    gridTemplateColumns: "auto auto auto auto auto",
+    gridTemplateAreas:
+      "'leftstart topstart topcenter topend rightstart' 'leftcenter blank blank blank rightcenter' 'leftend bottomstart bottomcenter bottomend rightend'",
+    gap: "40px 105px",
+  });
+
+  return (
+    <Grid>
+      <Box css={{ gridArea: "leftstart" }}>
+        <Popover.Root open={true}>
+          <Popover.Trigger css={triggerCss}>Trigger</Popover.Trigger>
+          <Popover.Portal>
+            <Popover.Content side="left" align="start" width={116}>
+              Left Start
+            </Popover.Content>
+          </Popover.Portal>
+        </Popover.Root>
+      </Box>
+      <Box css={{ gridArea: "leftcenter" }}>
+        <Popover.Root open={true}>
+          <Popover.Trigger css={triggerCss}>Trigger</Popover.Trigger>
+          <Popover.Portal>
+            <Popover.Content side="left" align="center" width={116}>
+              Left Center
+            </Popover.Content>
+          </Popover.Portal>
+        </Popover.Root>
+      </Box>
+      <Box css={{ gridArea: "leftend" }}>
+        <Popover.Root open={true}>
+          <Popover.Trigger css={triggerCss}>Trigger</Popover.Trigger>
+          <Popover.Portal>
+            <Popover.Content side="left" align="end" width={116}>
+              Left End
+            </Popover.Content>
+          </Popover.Portal>
+        </Popover.Root>
+      </Box>
+      <Box css={{ gridArea: "topstart" }}>
+        <Popover.Root open={true}>
+          <Popover.Trigger css={triggerCss}>Trigger</Popover.Trigger>
+          <Popover.Portal>
+            <Popover.Content side="top" align="start" width={116}>
+              Top Start
+            </Popover.Content>
+          </Popover.Portal>
+        </Popover.Root>
+      </Box>
+      <Box css={{ gridArea: "topcenter" }}>
+        <Popover.Root open={true}>
+          <Popover.Trigger css={triggerCss}>Trigger</Popover.Trigger>
+          <Popover.Portal>
+            <Popover.Content side="top" align="center" width={116}>
+              Top Center
+            </Popover.Content>
+          </Popover.Portal>
+        </Popover.Root>
+      </Box>
+      <Box css={{ gridArea: "topend" }}>
+        <Popover.Root open={true}>
+          <Popover.Trigger css={triggerCss}>Trigger</Popover.Trigger>
+          <Popover.Portal>
+            <Popover.Content side="top" align="end" width={116}>
+              Top End
+            </Popover.Content>
+          </Popover.Portal>
+        </Popover.Root>
+      </Box>
+      <Box css={{ gridArea: "bottomstart" }}>
+        <Popover.Root open={true}>
+          <Popover.Trigger css={triggerCss}>Trigger</Popover.Trigger>
+          <Popover.Portal>
+            <Popover.Content side="bottom" align="start" width={116}>
+              Bottom Start
+            </Popover.Content>
+          </Popover.Portal>
+        </Popover.Root>
+      </Box>
+      <Box css={{ gridArea: "bottomcenter" }}>
+        <Popover.Root open={true}>
+          <Popover.Trigger css={triggerCss}>Trigger</Popover.Trigger>
+          <Popover.Portal>
+            <Popover.Content side="bottom" align="center" width={116}>
+              Bottom Center
+            </Popover.Content>
+          </Popover.Portal>
+        </Popover.Root>
+      </Box>
+      <Box css={{ gridArea: "bottomend" }}>
+        <Popover.Root open={true}>
+          <Popover.Trigger css={triggerCss}>Trigger</Popover.Trigger>
+          <Popover.Portal>
+            <Popover.Content side="bottom" align="end" width={116}>
+              Bottom End
+            </Popover.Content>
+          </Popover.Portal>
+        </Popover.Root>
+      </Box>
+      <Box css={{ gridArea: "rightstart" }}>
+        <Popover.Root open={true}>
+          <Popover.Trigger css={triggerCss}>Trigger</Popover.Trigger>
+          <Popover.Portal>
+            <Popover.Content side="right" align="start" width={116}>
+              Right Start
+            </Popover.Content>
+          </Popover.Portal>
+        </Popover.Root>
+      </Box>
+      <Box css={{ gridArea: "rightcenter" }}>
+        <Popover.Root open={true}>
+          <Popover.Trigger css={triggerCss}>Trigger</Popover.Trigger>
+          <Popover.Portal>
+            <Popover.Content side="right" align="center" width={116}>
+              Right Center
+            </Popover.Content>
+          </Popover.Portal>
+        </Popover.Root>
+      </Box>
+      <Box css={{ gridArea: "rightend" }}>
+        <Popover.Root open={true}>
+          <Popover.Trigger css={triggerCss}>Trigger</Popover.Trigger>
+          <Popover.Portal>
+            <Popover.Content side="right" align="end" width={116}>
+              Right End
+            </Popover.Content>
+          </Popover.Portal>
+        </Popover.Root>
+      </Box>
+    </Grid>
+  );
+}
+```
+
+### Density
+
+There are two options for the property density compact and default.
+
+```jsx withPreview
+export default function Example() {
+  const triggerCss = {
+    border: "none",
+    color: "$gray80",
+    padding: 0,
+    backgroundColor: "transparent",
+    fontWeight: "normal",
+    textDecoration: "underline",
+    "&:hover": {
+      backgroundColor: "transparent",
+    },
+  };
+  return (
+    <Box
+      css={{
+        display: "flex",
+        gap: theme.space["500"],
+      }}
+    >
+      <Popover.Root open={true}>
+        <Popover.Trigger css={triggerCss}>Trigger</Popover.Trigger>
+        <Popover.Portal>
+          <Popover.Content width={96}>
+            <Box
+              css={{
+                backgroundColor: theme.colors.gray500,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                height: theme.space["500"],
+              }}
+            >
+              Default
+            </Box>
+          </Popover.Content>
+        </Popover.Portal>
+      </Popover.Root>
+      <Popover.Root open={true}>
+        <Popover.Trigger css={triggerCss}>Trigger</Popover.Trigger>
+        <Popover.Portal>
+          <Popover.Content density="compact" width={88}>
+            <Box
+              css={{
+                backgroundColor: theme.colors.gray500,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                height: theme.space["500"],
+              }}
+            >
+              Compact
+            </Box>
+          </Popover.Content>
+        </Popover.Portal>
+      </Popover.Root>
+    </Box>
+  );
+}
+```
+
+### Offset
+
+The property `sideOffset` can use any spacing token to offset its position from the origin point of the tooltip. The default offset is the spacing token 025.
+
+<Container css={{ padding: "$225" }}>
+  <InlineSVG
+    width="474"
+    height="163"
+    path="/img/components/popover/offset.svg"
+    alt="Image shows two popovers with purple callout line to point out default and custom offsets"
+  />
+</Container>
+
+---
+
+## Behavior
+
+### Avoids collisions
+
+When close to the edge of the viewable area the side will be reversed to be visible.
+
+<Container css={{ padding: "$225" }}>
+  <InlineSVG
+    width="573"
+    height="212"
+    path="/img/components/popover/collisions.svg"
+    alt="Image shows two popovers and the screen edge. The popover closest to the flips the side it is displayed on."
+  />
+</Container>
+
+---
+
+## Guidance
+
+### Avoid using popover for non-actionable ui
+
+Popovers should not be used to display non-actionable ui that could otherwise live in something less persistent like a tooltip.
+
+```jsx withPreview isGuide="error"
+export default function Example() {
+  return (
+    <Popover.Root defaultOpen={true}>
+      <Popover.Trigger icon="center" css={{ marginBlockStart: "100px" }}>
+        <Icon>
+          <Info />
+        </Icon>
+      </Popover.Trigger>
+      <Popover.Portal>
+        <Popover.Content side="top">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam non eget
+          consequat pretium.
+        </Popover.Content>
+      </Popover.Portal>
+    </Popover.Root>
+  );
+}
+```
+
+### Do not nest Popovers or Tooltips
+
+Popovers should not have additional tooltips or popovers within the same content container.
+
+```jsx withPreview isGuide="error"
+export default function Example() {
+  const triggerCss = {
+    border: "none",
+    color: "$gray80",
+    padding: 0,
+    backgroundColor: "transparent",
+    fontWeight: "normal",
+    textDecoration: "underline",
+    "&:hover": {
+      backgroundColor: "transparent",
+    },
+  };
+
+  return (
+    <Popover.Root defaultOpen={true}>
+      <Popover.Trigger css={triggerCss}>Trigger</Popover.Trigger>
+      <Popover.Portal>
+        <Popover.Content>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.{" "}
+          <Tooltip.Provider>
+            <Tooltip.Root>
+              <Tooltip.Trigger>
+                <u>Hover over me</u>
+              </Tooltip.Trigger>
+              <Tooltip.Content>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </Tooltip.Content>
+            </Tooltip.Root>
+          </Tooltip.Provider>
+          non eget consequat pretium.
+        </Popover.Content>
+      </Popover.Portal>
+    </Popover.Root>
+  );
+}
+```
+
+---
+
+## Accessibility
+
+### Keyboard controls
+
+A Popover will show/hide without delay when the trigger is in focus and space/enter is selected on the keyboard. If the Popover is open and either shift+tab, or tab, is selected on the keyboard it will move focus to the next focusable element. When Esc is selected on the keyboard it will close the popover and move the focus to the trigger.
+
+---
+
+## API Reference
+
+<PropsTable props={propsTable} />
+````

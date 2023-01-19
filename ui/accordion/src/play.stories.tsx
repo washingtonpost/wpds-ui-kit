@@ -61,7 +61,7 @@ const Template: ComponentStory<any> = (args) => {
         </Accordion.Trigger>
         <Accordion.Content {...args} ref={myContentRef}>
           <img
-            src="https://i.pravatar.cc/300"
+            src="https://i.pravatar.cc/300/300"
             alt="An avatar is an atomic component that represents an individual’s identity through a circular photo."
           />
         </Accordion.Content>

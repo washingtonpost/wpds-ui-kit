@@ -21,9 +21,11 @@ import {
   Drawer,
   Tooltip,
   Card,
+  Popover,
 } from "@washingtonpost/wpds-ui-kit";
 import Chart from "@washingtonpost/wpds-assets/asset/chart";
 import Settings from "@washingtonpost/wpds-assets/asset/settings";
+import Info from "@washingtonpost/wpds-assets/asset/info";
 import Image from "next/image";
 
 const ImageLoader = ({ src }) => {
@@ -338,14 +340,14 @@ function HomePage() {
         <h2>Avatar</h2>
         <Avatar size="200">
           <img
-            src="https://i.pravatar.cc/300"
+            src="https://i.pravatar.cc/300/300"
             alt="An avatar is an atomic component that represents an individual’s identity through a circular photo."
           />
         </Avatar>
         <Avatar>
           <Image
             loader={ImageLoader}
-            src="https://i.pravatar.cc/300"
+            src="https://i.pravatar.cc/300/300"
             width="32"
             height="32"
             layout="fixed"
@@ -403,6 +405,23 @@ function HomePage() {
         <p>Brand new digital content free with subscription!</p>
         <Button variant="primary">Subscribe</Button>
       </Card>
+      <h2>Popover</h2>
+      <Popover.Root>
+        The Button with Icon triggers a Popover{" "}
+        <Popover.Trigger asChild>
+          <Button icon="center" css={{ display: "inline" }}>
+            <Icon label="info">
+              <Info />
+            </Icon>
+          </Button>
+        </Popover.Trigger>
+        <Popover.Portal>
+          <Popover.Content side="top">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam non
+            eget consequat pretium.
+          </Popover.Content>
+        </Popover.Portal>
+      </Popover.Root>
     </>
   );
 }

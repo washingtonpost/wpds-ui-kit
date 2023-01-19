@@ -26,5 +26,3 @@ main-release:
 # create command for plop templates
 new-component:
 	npx plop --plopfile ./scripts/plopfile.js
-	npx lerna link --force-local
-	npm run bootstrap
