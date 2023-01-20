@@ -212,6 +212,12 @@
 
   <url>
     <loc
+      >https://build.washingtonpost.com/resources/tools/tachyons-to-stitches</loc
+    >
+  </url>
+
+  <url>
+    <loc
       >https://build.washingtonpost.com/resources/tutorials/how-to-use-our-theme</loc
     >
   </url>
@@ -268,9 +274,5 @@
 
   <url>
     <loc>https://build.washingtonpost.com/zzz/color-codes</loc>
-  </url>
-
-  <url>
-    <loc>https://build.washingtonpost.com/zzz/tachyons-to-stitches</loc>
   </url>
 </urlset>
