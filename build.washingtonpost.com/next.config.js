@@ -89,6 +89,11 @@ module.exports = withBundleAnalyzer({
         destination: "/support",
         permanent: false,
       },
+      {
+        source: "/zzz/tachyons-to-stitches",
+        destination: "/resources/tools/tachyons-to-stitches",
+        permanent: false,
+      }
     ];
   },
 });
