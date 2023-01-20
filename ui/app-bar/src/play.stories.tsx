@@ -9,6 +9,8 @@ import Profile from "@washingtonpost/wpds-assets/asset/profile";
 import { useDarkMode } from "storybook-dark-mode";
 import WashingtonPost from "@washingtonpost/wpds-assets/asset/washington-post";
 
+import type { ComponentMeta, ComponentStory } from "@storybook/react";
+
 import { AppBar as Component } from ".";
 
 export default {
@@ -28,7 +30,7 @@ export default {
   parameters: {
     layout: "fullscreen",
   },
-};
+} as ComponentMeta<typeof Component>;
 
 const PrimaryNavigationExample = () => {
   const darkModeActive = useDarkMode();
@@ -46,7 +48,7 @@ const PrimaryNavigationExample = () => {
         px: "$100",
       }}
     >
-      <Icon size="$200" label="Open Section Navigation Menu">
+      <Icon size="200" label="Open Section Navigation Menu">
         <Menu />
       </Icon>
       <Box>
@@ -65,14 +67,16 @@ const PrimaryNavigationExample = () => {
           Democracy Dies in Darkness (This is an example using the new system)
         </Box>
       </Box>
-      <Icon size="$200" label="Open Account Menu">
+      <Icon size="200" label="Open Account Menu">
         <Profile />
       </Icon>
     </Container>
   );
 };
 
-const Template = (args) => <Component {...args} />;
+const Template: ComponentStory<typeof Component> = (args) => (
+  <Component {...args} />
+);
 
 export const Play = Template.bind({});
 

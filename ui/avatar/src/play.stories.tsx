@@ -2,6 +2,7 @@
 import * as React from "react";
 import { Avatar as Component } from "./";
 import { styled, theme } from "@washingtonpost/wpds-theme";
+import type { ComponentMeta, ComponentStory } from "@storybook/react";
 
 export default {
   title: "Avatar",
@@ -30,10 +31,10 @@ export default {
       control: { type: "select" },
     },
   },
-};
+} as ComponentMeta<typeof Component>;
 
-const DefaultArgs = {
-  size: "200",
+const defaultArgs = {
+  size: 200,
   css: {
     backgroundColor: theme.colors.subtle,
   },
@@ -48,7 +49,7 @@ const Label = styled("h3", {
   textAlign: "center",
 });
 
-export const Avatar = (args) => (
+export const Avatar: ComponentStory<typeof Component> = (args) => (
   <Container>
     <Label>Avatar with Element using &lt;img /&gt; tag</Label>
     <Component {...args}>
@@ -60,7 +61,7 @@ export const Avatar = (args) => (
   </Container>
 );
 
-Avatar.args = { ...DefaultArgs };
+Avatar.args = { ...defaultArgs };
 
 export const Responsive = (args) => {
   return (
@@ -85,7 +86,7 @@ const Row = styled("div", {
   gap: theme.space["100"],
 });
 
-export const StyledOverride = (args) => {
+export const StyledOverride: ComponentStory<typeof Component> = (args) => {
   const StyledComponent = styled(Component, {
     boxShadow: theme.shadows["300"],
     "&.override": {
@@ -112,22 +113,22 @@ export const StyledOverride = (args) => {
   );
 };
 
-export const TokenForSize = () => {
+export const TokenForSize: ComponentStory<typeof Component> = (args) => {
   return (
     <Row>
-      <Component size={theme.sizes["100"]}>
+      <Component size={theme.sizes["100"]} {...args}>
         <img
           src="https://i.pravatar.cc/300?u=test-user@wapo.com"
           alt="An avatar is an atomic component that represents an individual’s identity through a circular photo."
         />
       </Component>
-      <Component size={theme.sizes["200"]}>
+      <Component size={theme.sizes["200"]} {...args}>
         <img
           src="https://i.pravatar.cc/300?u=test-user@wapo.com"
           alt="An avatar is an atomic component that represents an individual’s identity through a circular photo."
         />
       </Component>
-      <Component size={theme.sizes["300"]}>
+      <Component size={theme.sizes["300"]} {...args}>
         <img
           src="https://i.pravatar.cc/300?u=test-user@wapo.com"
           alt="An avatar is an atomic component that represents an individual’s identity through a circular photo."
