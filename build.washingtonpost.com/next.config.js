@@ -93,7 +93,7 @@ module.exports = withBundleAnalyzer({
         source: "/zzz/tachyons-to-stitches",
         destination: "/resources/tools/tachyons-to-stitches",
         permanent: false,
-      }
+      },
     ];
   },
 });
