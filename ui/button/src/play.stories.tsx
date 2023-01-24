@@ -9,6 +9,8 @@ import { styled, theme } from "@washingtonpost/wpds-theme";
 import { expect } from "@storybook/jest";
 import { within, userEvent } from "@storybook/testing-library";
 
+import type { ComponentStory, ComponentMeta } from "@storybook/react";
+
 export default {
   title: "Button",
   component: Component,
@@ -31,7 +33,7 @@ export default {
       defaultValue: "none",
     },
   },
-};
+} as ComponentMeta<typeof Component>;
 
 const Column = styled("div", {
   display: "flex",
@@ -51,7 +53,10 @@ const Stack = styled("div", {
   borderRadius: "$075",
 });
 
-const Template = ({ children, ...args }, context) => {
+const Template: ComponentStory<typeof Component> = (
+  { children, ...args },
+  context
+) => {
   return (
     <>
       <Column>

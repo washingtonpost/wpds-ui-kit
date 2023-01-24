@@ -2,6 +2,8 @@ import * as React from "react";
 import { styled, theme } from "@washingtonpost/wpds-theme";
 import { Checkbox as Component } from ".";
 
+import type { ComponentStory, ComponentMeta } from "@storybook/react";
+
 const variants = ["primary", "secondary", "cta"];
 const size = ["087", "125"];
 const isOutline = [true, false];
@@ -68,7 +70,7 @@ export default {
       control: "text",
     },
   },
-};
+} as ComponentMeta<typeof Component>;
 
 export const Play = (args) => {
   const [checked, setChecked] = React.useState(false);
@@ -86,7 +88,7 @@ Play.args = {};
 
 Play.storyName = "Checkbox";
 
-const ChromaticTemplate = () => {
+const ChromaticTemplate: ComponentStory<typeof Component> = () => {
   const isRequired = true;
   return (
     <>
