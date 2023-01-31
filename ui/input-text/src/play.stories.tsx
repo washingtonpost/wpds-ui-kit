@@ -1,12 +1,16 @@
 import * as React from "react";
+
 import { screen, userEvent } from "@storybook/testing-library";
 import { expect, jest } from "@storybook/jest";
-import { InputText as Component } from "./";
+import type { ComponentMeta, ComponentStory } from "@storybook/react";
+
 import { Icon } from "@washingtonpost/wpds-icon";
 import { Button } from "@washingtonpost/wpds-button";
 import Asset from "@washingtonpost/wpds-assets/asset/settings";
 import { VisuallyHidden } from "@washingtonpost/wpds-visually-hidden";
 import { styled, theme } from "@washingtonpost/wpds-theme";
+
+import { InputText as Component } from "./";
 
 export default {
   title: "InputText",
@@ -34,9 +38,11 @@ export default {
       },
     },
   },
-};
+} as ComponentMeta<typeof Component>;
 
-const Template = (args) => <Component {...args} />;
+const Template: ComponentStory<typeof Component> = (args) => (
+  <Component {...args} />
+);
 
 export const InputText = Template.bind({});
 InputText.parameters = {
@@ -98,16 +104,18 @@ const Heading = styled("h2", {
 const ChromaticTemplate = () => (
   <Column>
     <Heading>Standard input</Heading>
-    <Component label="Label" />
-    <Component label="Label" defaultValue="With value" />
+    <Component label="Label" name={""} id={""} />
+    <Component label="Label" defaultValue="With value" name={""} id={""} />
     <Component
       label="Label"
       defaultValue="With value and"
       helperText="Helper text"
+      name={""}
+      id={""}
     />
 
     <Heading>Icon Placements</Heading>
-    <Component label="Icon" defaultValue="Left" icon="left">
+    <Component label="Icon" defaultValue="Left" icon="left" name={""} id={""}>
       <Icon label="">
         <Asset />
       </Icon>
@@ -117,6 +125,8 @@ const ChromaticTemplate = () => (
       defaultValue="Right"
       icon="right"
       buttonIconText="Settings"
+      name={""}
+      id={""}
     >
       <Icon label="">
         <Asset />
@@ -124,32 +134,71 @@ const ChromaticTemplate = () => (
     </Component>
 
     <Heading>Types</Heading>
-    <Component label="Type" defaultValue="Search" type="search" />
-    <Component label="Type" defaultValue="Url" type="url" />
-    <Component label="Type" defaultValue="Tel" type="tel" />
-    <Component label="Type" defaultValue="Email" type="email" />
+    <Component
+      label="Type"
+      defaultValue="Search"
+      type="search"
+      name={""}
+      id={""}
+    />
+    <Component label="Type" defaultValue="Url" type="url" name={""} id={""} />
+    <Component label="Type" defaultValue="Tel" type="tel" name={""} id={""} />
+    <Component
+      label="Type"
+      defaultValue="Email"
+      type="email"
+      name={""}
+      id={""}
+    />
 
     <Heading>Behaviors</Heading>
-    <Component label="Behavior" defaultValue="Disabled" disabled />
+    <Component
+      label="Behavior"
+      defaultValue="Disabled"
+      disabled
+      name={""}
+      id={""}
+    />
     <Component
       label="Behavior"
       defaultValue="Error"
       error
       errorMessage="Error Message"
+      name={""}
+      id={""}
     />
-    <Component label="Behavior" defaultValue="Success" success />
-    <Component label="Behavior" defaultValue="Required" required />
+    <Component
+      label="Behavior"
+      defaultValue="Success"
+      success
+      name={""}
+      id={""}
+    />
+    <Component
+      label="Behavior"
+      defaultValue="Required"
+      required
+      name={""}
+      id={""}
+    />
     <Component
       label="Behavior"
       defaultValue="Overflow - Four score and seven years ago"
+      name={""}
+      id={""}
     />
-    <Component label="Placeholder" placeholder="Example input" />
+    <Component
+      label="Placeholder"
+      placeholder="Example input"
+      name={""}
+      id={""}
+    />
   </Column>
 );
 
 export const Chromatic = ChromaticTemplate.bind({});
 
-const InteractionsTemplate = (args) => (
+const InteractionsTemplate: ComponentStory<typeof Component> = (args) => (
   <Column>
     <Component label="Field 1" name="field-1" id="field-1" />
     <Component label="Field 2" name="field-2" id="field-2" />
@@ -162,7 +211,7 @@ const InteractionsTemplate = (args) => (
     >
       <>
         <VisuallyHidden>Settings</VisuallyHidden>
-        <Icon>
+        <Icon label={""}>
           <Asset />
         </Icon>
       </>

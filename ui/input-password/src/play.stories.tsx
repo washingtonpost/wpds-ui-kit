@@ -3,13 +3,16 @@ import { screen, userEvent } from "@storybook/testing-library";
 import { expect } from "@storybook/jest";
 import { InputPassword as Component } from "./";
 import { styled, theme } from "@washingtonpost/wpds-theme";
+import type { ComponentMeta, ComponentStory } from "@storybook/react";
 
 export default {
   title: "InputPassword",
   component: Component,
-};
+} as ComponentMeta<typeof Component>;
 
-const Template = (args) => <Component {...args} />;
+const Template: ComponentStory<typeof Component> = (args) => (
+  <Component {...args} />
+);
 
 export const InputPassword = Template.bind({});
 
@@ -32,24 +35,52 @@ const Heading = styled("h2", {
 const ChromaticTemplate = () => (
   <Column>
     <Heading>Standard password</Heading>
-    <Component />
-    <Component defaultValue="With value" />
+    <Component name={""} id={""} />
+    <Component defaultValue="With value" name={""} id={""} />
 
     <Heading>Behaviors</Heading>
-    <Component defaultValue="Disabled" disabled helperText="Disabled" />
-    <Component defaultValue="Error" error errorMessage="Error Message" />
-    <Component defaultValue="Success" success helperText="Success" />
-    <Component defaultValue="Required" required helperText="Required" />
+    <Component
+      defaultValue="Disabled"
+      disabled
+      helperText="Disabled"
+      name={""}
+      id={""}
+    />
+    <Component
+      defaultValue="Error"
+      error
+      errorMessage="Error Message"
+      name={""}
+      id={""}
+    />
+    <Component
+      defaultValue="Success"
+      success
+      helperText="Success"
+      name={""}
+      id={""}
+    />
+    <Component
+      defaultValue="Required"
+      required
+      helperText="Required"
+      name={""}
+      id={""}
+    />
     <Component
       defaultValue="Overflow - Four score and seven years ago"
       helperText="Overflow"
+      name={""}
+      id={""}
     />
   </Column>
 );
 
 export const Chromatic = ChromaticTemplate.bind({});
 
-const InteractionsTemplate = () => <Component id="test-id" />;
+const InteractionsTemplate: ComponentStory<typeof Component> = () => (
+  <Component id="test-id" name={""} />
+);
 
 export const Interactions = InteractionsTemplate.bind({});
 Interactions.parameters = {
