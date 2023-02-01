@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Fuse from "fuse.js";
-import * as AllAssets from "@washingtonpost/wpds-assets/asset";
+// disable eslint for this line because we want to import all assets
+/*eslint import/namespace: ['error', { allowComputed: true }]*/
+import * as AllAssets from "@washingtonpost/wpds-assets";
 import { toast } from "react-toastify";
 import MDXStyling from "~/components/Markdown/Styling";
 import { Grid } from "../Components/Grid";
