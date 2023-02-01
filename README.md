@@ -4,6 +4,17 @@ This WPDS UI Kit repo is now a mono-repo that contains not only our UI Kit, but 
 
 ![npm (tag)](https://img.shields.io/npm/v/@washingtonpost/wpds-ui-kit/latest) [![Chromatic Production](https://github.com/WPMedia/wpds-ui-kit/actions/workflows/chromatic-prod.yml/badge.svg)](https://github.com/WPMedia/wpds-ui-kit/actions/workflows/chromatic-prod.yml) [![Validate](https://github.com/WPMedia/wpds-ui-kit/actions/workflows/validation.yml/badge.svg)](https://github.com/WPMedia/wpds-ui-kit/actions/workflows/validation.yml) [![Release to Latest NPM Channel](https://github.com/WPMedia/wpds-ui-kit/actions/workflows/latest-release.yml/badge.svg)](https://github.com/WPMedia/wpds-ui-kit/actions/workflows/latest-release.yml) ![Playwright Tests](https://github.com/WPMedia/wpds-ui-kit/actions/workflows/playwright.yml/badge.svg)
 
+
+### React frameworks
+
+We are open to adding more React frameworks here. Contact us through our support channels.
+
+- Next.js 9.3.3
+- Next.js 10+
+- Next.js 11+
+- Next.js 12+
+
+
 ## Dependency Graph
 
 An example of the dependency graph for importing Button from Kit.
