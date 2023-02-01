@@ -2,7 +2,7 @@ import * as React from "react";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from "next-mdx-remote";
 import * as Kit from "@washingtonpost/wpds-ui-kit";
-import * as Assets from "@washingtonpost/wpds-assets/asset";
+import * as Assets from "@washingtonpost/wpds-assets";
 import {
   SandpackProvider,
   SandpackLayout,

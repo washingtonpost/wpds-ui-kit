@@ -200,12 +200,10 @@ const components = {
   ),
   Cell: ({ children }) => <Cell>{children}</Cell>,
   CopyClipboard: dynamic(() => import("./Components/CopyToClipBoard")),
-  IconSamples: dynamic(() => import("../Markdown/Examples/IconSamples")),
-  LogoSamples: dynamic(() => import("../Markdown/Examples/LogoSamples")),
-  ColorSamples: dynamic(() => import("../Markdown/Examples/ColorSamples")),
-  HexRGBAColorSamples: dynamic(() =>
-    import("../Markdown/Examples/HexRGBAColorSamples")
-  ),
+  IconSamples: dynamic(() => import("./Examples/IconSamples")),
+  LogoSamples: dynamic(() => import("./Examples/LogoSamples")),
+  ColorSamples: dynamic(() => import("./Examples/ColorSamples")),
+  HexRGBAColorSamples: dynamic(() => import("./Examples/HexRGBAColorSamples")),
   Table: dynamic(() => import("./Components/table")),
   Img: dynamic(() => import("./Components/InlineImage")),
   TableOfContents: dynamic(() => import("./Components/tableofcontents")),
