@@ -31,9 +31,8 @@
     "fuse.js": "^6.6.2",
     "gray-matter": "^4.0.2",
     "lz-string": "^1.4.4",
-    "next": "^13.1.6",
+    "next": "^12.3.4",
     "next-mdx-remote": "^4.1.0",
-    "next-remote-watch": "^2.0.0",
     "next-seo": "5.15.0",
     "next-themes": "0.2.1",
     "param-case": "^3.0.4",
@@ -62,6 +61,7 @@
     "extract-react-types": "^0.30.2",
     "glob": "^7.2.0",
     "husky": "^7.0.0",
+    "next-remote-watch": "^2.0.0",
     "prettier": "^2.5.1",
     "react-docgen-typescript": "^2.2.2"
   },
