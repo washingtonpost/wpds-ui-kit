@@ -5,14 +5,41 @@ This WPDS UI Kit repo is now a mono-repo that contains not only our UI Kit, but 
 ![npm (tag)](https://img.shields.io/npm/v/@washingtonpost/wpds-ui-kit/latest) [![Chromatic Production](https://github.com/WPMedia/wpds-ui-kit/actions/workflows/chromatic-prod.yml/badge.svg)](https://github.com/WPMedia/wpds-ui-kit/actions/workflows/chromatic-prod.yml) [![Validate](https://github.com/WPMedia/wpds-ui-kit/actions/workflows/validation.yml/badge.svg)](https://github.com/WPMedia/wpds-ui-kit/actions/workflows/validation.yml) [![Release to Latest NPM Channel](https://github.com/WPMedia/wpds-ui-kit/actions/workflows/latest-release.yml/badge.svg)](https://github.com/WPMedia/wpds-ui-kit/actions/workflows/latest-release.yml) ![Playwright Tests](https://github.com/WPMedia/wpds-ui-kit/actions/workflows/playwright.yml/badge.svg)
 
 
-### React frameworks
+# Support
 
-We are open to adding more React frameworks here. Contact us through our support channels.
+
+## Browsers
+
+We support the following browsers (up to the latest 2 stable versions):
+
+- Google Chrome
+- Apple Safari
+- Mozilla Firefox
+- Microsoft Edge
+
+## Server environments
+
+We support Node.js 14 and as far back as Node.js 12.
+
+## React
+
+We are researching support for React 18.
+
+- 16
+- 17
+
+## React frameworks
+
+We are open to adding more React frameworks here. Contact us through our [support](/support) channels.
 
 - Next.js 9.3.3
 - Next.js 10+
 - Next.js 11+
 - Next.js 12+
+
+## Typescript
+
+Ui Kit requires a minimum version of TypeScript 3.8. This aims to match the policy of DefinitelyTyped, with the support of the versions of TypeScript that are less than two years old.
 
 
 ## Dependency Graph
