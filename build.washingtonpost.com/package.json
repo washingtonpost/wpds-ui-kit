@@ -3,7 +3,7 @@
   "version": "0.23.2",
   "private": true,
   "scripts": {
-    "dev": "next-remote-watch ./docs && next",
+    "dev": "next-remote-watch ./docs",
     "build": "node -v && node scripts/sitemap.js;next build",
     "start": "next start",
     "lint": "next lint",
