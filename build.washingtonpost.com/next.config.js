@@ -54,7 +54,7 @@ module.exports = withBundleAnalyzer({
       ],
     };
   },
-  swcMinify: true,
+  swcMinify: false,
   images: {
     domains: [
       "img.youtube.com",

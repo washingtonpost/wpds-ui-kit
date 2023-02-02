@@ -115,6 +115,7 @@ Interactions.play = async ({ canvasElement }) => {
   // check incrementing index changes ariaValueNow
   userEvent.click(canvas.getByTestId("light-inc-btn"));
   let ariaValueNow = paginationDots.getAttribute("aria-valuenow");
+  await sleep(500);
   expect(ariaValueNow).toBe("2");
   await sleep(500);
 
