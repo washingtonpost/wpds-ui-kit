@@ -28,9 +28,9 @@
       "source": "/support",
       "destination": "/resources/process/support"
     },
-     {
-       "source": "/zzz/tachyons-to-stitches",
-       "destination": "/resources/tools/tachyons-to-stitches"
-     }
+    {
+      "source": "/zzz/tachyons-to-stitches",
+      "destination": "/resources/tools/tachyons-to-stitches"
+    }
   ]
 }

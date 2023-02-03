@@ -94,6 +94,11 @@ module.exports = withBundleAnalyzer({
         destination: "/resources/tools/tachyons-to-stitches",
         permanent: false,
       },
+      {
+        source: "/storybook",
+        destination: "https://wpds-ui-kit-storybook.preview.now.washingtonpost.com",
+        permanent: false,
+      },
     ];
   },
 });
