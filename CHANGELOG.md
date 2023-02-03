@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.24.1](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.24.0...v0.24.1) (2023-02-03)
+
+
+### Bug Fixes
+
+* update prettier to fix build ([#325](https://github.com/washingtonpost/wpds-ui-kit/issues/325)) ([3306453](https://github.com/washingtonpost/wpds-ui-kit/commit/3306453e3d3245219c9a6439bd612e51501c64cc))
+
+
+
+
+
 # [0.24.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.23.2...v0.24.0) (2023-02-03)
 
 
