@@ -96,7 +96,8 @@ module.exports = withBundleAnalyzer({
       },
       {
         source: "/storybook",
-        destination: "https://wpds-ui-kit-storybook.preview.now.washingtonpost.com",
+        destination:
+          "https://wpds-ui-kit-storybook.preview.now.washingtonpost.com",
         permanent: false,
       },
     ];
