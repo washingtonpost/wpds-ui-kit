@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.24.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.23.2...v0.24.0) (2023-02-03)
+
+
+### Bug Fixes
+
+* add redirect for storybook for our build site ([#323](https://github.com/washingtonpost/wpds-ui-kit/issues/323)) ([cdbe5ee](https://github.com/washingtonpost/wpds-ui-kit/commit/cdbe5eec4765417fae7c6418281c1b3f90e1b315))
+* build issue with embeds ([#320](https://github.com/washingtonpost/wpds-ui-kit/issues/320)) ([8b1344f](https://github.com/washingtonpost/wpds-ui-kit/commit/8b1344fa978e94ace5dec695480d3f8cf64ac4ed))
+* update build and dev scripts in Popover to use legacy output flag ([b777c38](https://github.com/washingtonpost/wpds-ui-kit/commit/b777c3866490c03f3cd0875fe072a9789a04c8f0))
+
+
+### Features
+
+* bump assets package to add new icons ([f126a14](https://github.com/washingtonpost/wpds-ui-kit/commit/f126a147353afccb3754c44142c29e2998df5532))
+* convert "b" and "c" component stories to typescript ([#309](https://github.com/washingtonpost/wpds-ui-kit/issues/309)) ([bbcd126](https://github.com/washingtonpost/wpds-ui-kit/commit/bbcd12632d5cc58cdeb75e60c4f5da1d15063988))
+
+
+
+
+
 ## [0.23.2](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.24.0...v0.23.2) (2023-01-17)
 
 **Note:** Version bump only for package root

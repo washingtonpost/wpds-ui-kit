@@ -1,6 +1,6 @@
 {
   "name": "@washingtonpost/wpds-helper-text",
-  "version": "0.23.2",
+  "version": "0.24.0",
   "description": "WPDS HelperText",
   "author": "WPDS Support <wpds@washpost.com>",
   "homepage": "https://github.com/WPMedia/wpds-ui-kit#readme",
@@ -40,7 +40,7 @@
     "react": "^16.8.6 || ^17.0.2"
   },
   "dependencies": {
-    "@washingtonpost/wpds-theme": "0.23.2"
+    "@washingtonpost/wpds-theme": "0.24.0"
   },
   "gitHead": "cbb17c0ecae1b2c8ceae96a98d73cee3796acbe6"
 }

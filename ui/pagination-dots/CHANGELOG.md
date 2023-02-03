@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.24.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.23.2...v0.24.0) (2023-02-03)
+
+
+### Bug Fixes
+
+* build issue with embeds ([#320](https://github.com/washingtonpost/wpds-ui-kit/issues/320)) ([8b1344f](https://github.com/washingtonpost/wpds-ui-kit/commit/8b1344fa978e94ace5dec695480d3f8cf64ac4ed))
+
+
+
+
+
 ## [0.23.2](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.24.0...v0.23.2) (2023-01-17)
 
 **Note:** Version bump only for package @washingtonpost/wpds-pagination-dots
