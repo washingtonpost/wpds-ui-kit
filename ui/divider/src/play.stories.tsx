@@ -2,10 +2,12 @@ import * as React from "react";
 import { styled } from "@washingtonpost/wpds-theme";
 import { Divider as Component } from "./";
 
+import type { ComponentMeta, ComponentStory } from "@storybook/react";
+
 export default {
   title: "Divider",
   component: Component,
-};
+} as ComponentMeta<typeof Component>;
 
 const Container = styled("div", {
   display: "flex",
@@ -15,7 +17,7 @@ const Container = styled("div", {
   height: "100px",
 });
 
-const Template = (args) => (
+const Template: ComponentStory<typeof Component> = (args) => (
   <Container>
     <Component {...args} />
   </Container>
@@ -50,7 +52,7 @@ const HStack = styled("section", {
   gap: "$200",
 });
 
-const ChromaticTemplate = () => (
+const ChromaticTemplate: ComponentStory<typeof Component> = () => (
   <Grid>
     <Column>
       <Component />
