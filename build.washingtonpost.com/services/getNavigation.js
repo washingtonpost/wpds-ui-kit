@@ -10,6 +10,7 @@ export const getNavigation = async () => {
   } else {
     const foundationDocs = await getDocsListBySection("foundations");
     const componentDocs = await getDocsListBySection("components");
+    const accessibilityDocs = await getDocsListBySection("accessibility");
     const resourceCategories = await getResourcesCategories("resources");
 
     // filter out content from docs
@@ -29,6 +30,20 @@ export const getNavigation = async () => {
     });
 
     const componentDocsList = componentDocs.map((doc) => {
+      const { data, content, slug, filePath } = doc;
+
+      return {
+        data: {
+          title: data?.title || "",
+          order: data?.order || null,
+          status: data?.status || "",
+        },
+        slug,
+        filePath,
+      };
+    });
+
+    const accessibilityDocsList = accessibilityDocs.map((doc) => {
       const { data, content, slug, filePath } = doc;
 
       return {
@@ -69,6 +84,10 @@ export const getNavigation = async () => {
       {
         category: "Components",
         docs: componentDocsList,
+      },
+      {
+        category: "Accessibility",
+        docs: accessibilityDocsList,
       },
       {
         category: "Resources",

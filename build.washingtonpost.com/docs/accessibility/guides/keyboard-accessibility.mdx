@@ -1,0 +1,80 @@
+---
+title: Keyboard accessibility
+description: A step-by-step guide to making a page using Next.js and UI Kit.
+kicker: Guides
+publishDate: June 17, 2022
+---
+
+---
+
+<br />
+## Keyboard focus
+
+Some people use the keyboard instead of the mouse in order to navigate page content.
+
+For a user to know that they can "click" an element with their keyboard (including elements that would exhibit some behavior when hovered over with a mouse), that element must be focusable.
+
+To be focusable means the element can be selected individually via a press of the tab key. Try tabbing through one of our pages. You will notice that certain elements are highlighted as you keep pressing tab, but not every element. The only elements that should be highlighted are the ones that can be interacted with via the keyboard. For instance, all links should be focusable, but a paragraph of plaintext without any links in it would generally not be focusable.
+
+We have a `className="focus-highlight"` [Site Components Tachyon](https://react.wpds.preview.now.washingtonpost.com/?path=/story/tachyons-search--page) (and some other design-approved variants) so that tab-key users can see a visual cue that a clickable/hover-able element (whether it is a button, div, link or something else entirely) is in focus as they navigate the page.
+
+If the CSS or component logic specifies that something should happen when an element is hovered or clicked with the mouse, _that same functionality (or an accessible version) should be achievable via keyDown._
+
+```jsx
+<div
+  role="button"
+  onClick={someFunction} // allows user to achieve function by clicking div
+  onKeyDown={someFunction} // allows user to achieve same function via keypress
+  tabIndex={0} // makes the div keyboard focus-able (divs by default are not)
+  className="focus-highlight" // applies highlight to div when it is focused
+>
+  Functional div
+</div>
+```
+
+You may be in a hurry to implement some function on a div and only add the `onClick` event. This makes the element impossible to use with the keyboard. So don't forget `onKeyDown`. `onKeyPress` may seem like an acceptable substitute, but use `onKeyDown` instead for the reasons described in [this blog post](https://www.mutuallyhuman.com/blog/keydown-is-the-only-keyboard-event-we-need/).
+
+_Note also that if you are working with an element that is non-focusable by default (like a div), then you will need to make sure the element is focusable by adding two things:_
+
+(a) `tabIndex={0}` to make the element tab-focusable
+
+(c) `role="button"` so that screen readers let users know that it can be clicked
+
+Elements like links and buttons should be focusable by default, but make sure to always verify since people may accidentally disable this functionality without even knowing it.
+
+<br />
+## Keyboard controls
+
+* Tab – next focusable element
+* Shift+Tab – previous focusable element
+* Enter – "click" currently focused link or button
+* Space – "click" currently focused button or toggle a checkbox or radio button
+* Up/Down arrow keys – move between radio buttons or, in some cases, menu links
+* Right/Left arrow keys – adjust sliders in audio and video plugins or, in some cases, move between menu links 
+* Escape – Close an element that has appeared dynamically, such as a popup menu or dialog. After the element closes, focus should return to the element that spawned it.
+
+<br />
+## Skip to main content
+
+It is The Post's practice to include a "skip to main content" link in the header nav of all pages on our website.
+
+This is a widely used standard to help keyboard users more efficiently navigate page content. Who wants to have to tab through the same links over and over on each page of a website?
+
+The skip link gets around this by jumping the user to the unique page content, which we mark with the dom id `main-content` in our code.
+
+You have to start navigating the page with your keyboard to discover this link. Open washingtonpost.com and try hitting the `tab` key on your keyboard. You will get something like the following:
+
+<Container caption='Example of what "skip to main content" link looks like on washingtonpost.com'>
+  <Box css={{ display: "flex", justifyContent: "center", margin: "auto" }}>
+    <InlineImage width={418} height={224} src="/images/skip-link.png" />
+  </Box>
+</Container>
+<br />
+
+When you click this link (using enter on your keyboard), you should expect to be jumped to the first clickable element in the unique page content.
+
+If nothing happens, it means that your page does not have a dom element with the id `main-content`.
+
+If forgotten when creating a new page, there will be a bug where the skip link is present in the header nav but doesn't do anything.
+
+So remember to always confirm one and only one dom element in your code has the id `main-content`.

@@ -1,0 +1,77 @@
+---
+title: Screen readers
+description: A step-by-step guide to making a page using Next.js and UI Kit.
+kicker: Guides
+publishDate: June 17, 2022
+---
+
+---
+
+## Intro
+
+Some people who are blind or low-vision use assistive technology known as a screen reader to hear the content on a page read aloud to them. They use controls to move between elements on a page, and the associated text and/or function is read aloud.
+
+This is one purpose of alt text; it is read by a screen reader to describe an image for those who cannot see it clearly. Similarly, interactive elements should often be labeled in code using aria-labels.
+
+It is important to navigate a page manually with a screen reader while testing for accessibility. There are a number of different screen readers with their own quirks. We strive to test with at least two of them, VoiceOver and NVDA.
+
+<br />
+## VoiceOver (MacOC and iOS)
+
+### Basics
+
+VoiceOver is a screen reader built into Apple operating systems MacOS and iOS. There is no need to do an installation. You can turn VoiceOver on via fn + cmd + F5 on a Mac, or in your accessibility settings on iOS devices.
+
+After turning on VoiceOver, click "Learn More" to explore the controls via the quick start guide. There is also documentation written by Apple.
+
+<Container>
+  <Box css={{ display: "flex", justifyContent: "center", margin: "auto" }}>
+    <InlineImage width={836} height={448} src="/images/voice-over.png" />
+  </Box>
+</Container>
+<br />
+
+### Debugging with VoiceOver
+
+Play around with the commands to navigate a page. Make sure all text on the page is readable in a sensible order and that images have alt text. Buttons and elements that are mouse-hoverable should be labeled with aria-labels, and you should hear those labels read when navigating to such an element using VoiceOver.
+
+As a sighted user, you may find it useful to click on the page with your mouse to position VoiceOver on an element. You can then test normally from there. This is only advisable when debugging one specific part of a page. You will also see info about the currently selected element in a little box on your screen. This is the same text that is being read to a user, so make sure the text is appropriate. This goes for alt text, labels and anything else that VoiceOver can access on the page.
+
+Make sure to also attempt navigating the entire page with VoiceOver from start to finish. You may run into keyboard accessibility issues that are also VoiceOver issues. For instance, does the page have a skip to main content link that works? Is every clickable element on the page selectable with VoiceOver?
+
+<Container>
+  <Box css={{ display: "flex", justifyContent: "center", margin: "auto" }}>
+    <InlineImage width={836} height={448} src="/images/voice-over-example.png" />
+  </Box>
+</Container>
+<br />
+
+### Using the VoiceOver rotor
+
+From Apple's VoiceOver documentation, you will notice that there are multiple ways to navigate a page with VoiceOver. Users do not have to listen to each element on the page from top to bottom. They can jump around to different links, headings and other page elements using something called the rotor. Open the rotor using `VO + U`. (The default `VO` key is `caps lock`, but it varies per user preference.)
+
+<Container>
+  <Box css={{ display: "flex", justifyContent: "center", margin: "auto" }}>
+    <InlineImage width={836} height={448} src="/images/voice-over-example.png" />
+  </Box>
+</Container>
+<br />
+
+<br />
+## NVDA (Windows)
+
+VoiceOver is only available on Apple devices. Users on Windows have access to different screen readers, though. One of the most common (and free-to-use) screen readers is NVDA. It is also open source.
+
+Testing with NVDA on a Mac is tricky. Deque University offers [guidance on possible configurations](https://dequeuniversity.com/mac/windows-screen-readers).
+
+<br />
+## Talkback (Android)
+
+Talkback is built into Android devices. Our mobile apps team develops an Android version of The Washington Post mobile app and can help with testing.
+
+<br />
+## Other screen readers
+
+There are other screen readers like [JAWS](https://www.freedomscientific.com/products/software/jaws/) — a paid-only screen reade for Windows and MacOS — and [Narrator](https://support.microsoft.com/en-us/windows/complete-guide-to-narrator-e4397a0d-ef4f-b386-d8ae-c172f109bdb1), a free screen reader that comes built-in with Windows.
+
+Testing with these screen readers is encouraged, when possible, but we focus on testing with VoiceOver, NVDA and Talkback.

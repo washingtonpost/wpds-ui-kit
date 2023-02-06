@@ -1,0 +1,49 @@
+---
+title: Automated testing tools
+description: A step-by-step guide to making a page using Next.js and UI Kit.
+kicker: Guides
+publishDate: June 17, 2022
+---
+
+---
+
+## Intro
+
+Automated testing is generally believed to catch around 30-50 percent of accessibility issues on a page. They are a useful tool in achieving accessibility, but they are not sufficient for full testing. Below are the automated testing tools that we use at The Post.
+
+## axe DevTools (Google Chrome extension)
+
+Install the [axe DevTools extension](https://chrome.google.com/webstore/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd?hl=en-US).
+
+To test a page with the axe DevTools, open the developer tools in Chrome and select axe DevTools in the console dropdown, as shown below.
+
+<Container>
+  <Box css={{ display: "flex", justifyContent: "center", margin: "auto" }}>
+    <InlineImage width={836} height={448} src="/images/axe-dev-tools-step-one.png" />
+  </Box>
+</Container>
+<br />
+
+Once in the axe DevTools menu, you can select "scan ALL of my page."
+
+<Container>
+  <Box css={{ display: "flex", justifyContent: "center", margin: "auto" }}>
+    <InlineImage width={836} height={448} src="/images/axe-dev-tools-step-two.png" />
+  </Box>
+</Container>
+<br />
+
+Finally, you will receive a list of errors on the page that you can expand to view. You can even see where in the page HTML the error occurs. This is very useful for catching and fixing issues. Please use the tool!
+
+<Container>
+  <Box css={{ display: "flex", justifyContent: "center", margin: "auto" }}>
+    <InlineImage width={836} height={448} src="/images/axe-dev-tools-step-three.png" />
+  </Box>
+</Container>
+<br />
+
+## axe-core testing library
+
+In addition to the Chrome extension, the axe testing suite is available in [a set of npm packages](https://github.com/dequelabs/axe-core-npm).
+
+Each package has more details in its README on how the packages are used.
