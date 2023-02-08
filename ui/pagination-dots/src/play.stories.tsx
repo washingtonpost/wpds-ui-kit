@@ -1,10 +1,12 @@
 import * as React from "react";
 import { PaginationDots as Component } from "./";
-import { theme, styled, darkTheme } from "@washingtonpost/wpds-theme";
+import { theme, styled } from "@washingtonpost/wpds-theme";
 import { Button } from "@washingtonpost/wpds-button";
 import { InputText } from "@washingtonpost/wpds-ui-kit";
 import { within, userEvent } from "@storybook/testing-library";
 import { expect } from "@storybook/jest";
+
+import type { ComponentMeta, ComponentStory } from "@storybook/react";
 
 const Stack = styled("section", {
   display: "flex",
@@ -20,11 +22,16 @@ const HStack = styled("section", {
   gap: "$100",
   borderRadius: "$075",
 });
+const Label = styled("h3", {
+  color: theme.colors.primary,
+  margin: 0,
+  textAlign: "center",
+});
 
 export default {
   title: "PaginationDots",
   component: Component,
-};
+} as ComponentMeta<typeof Component>;
 
 const DefaultArgs = {
   amount: 6,
@@ -32,13 +39,7 @@ const DefaultArgs = {
   label: "Pagination Dots",
 };
 
-const Label = styled("h3", {
-  color: theme.colors.primary,
-  margin: 0,
-  textAlign: "center",
-});
-
-export const PaginationDots = (args) => (
+export const PaginationDots: ComponentStory<typeof Component> = (args) => (
   <Stack css={{ position: "relative" }}>
     <Label>Pagination Dots</Label>
     <Component {...args} />
@@ -47,7 +48,7 @@ export const PaginationDots = (args) => (
 
 PaginationDots.args = { ...DefaultArgs };
 
-const Template = (args, context) => {
+const Template: ComponentStory<typeof Component> = (args, context) => {
   const id = React.useMemo(() => `${Math.random()}-amount`.slice(2), []);
   const [amount, setAmount] = React.useState(5);
   const [index, setIndex] = React.useState(1);
@@ -60,11 +61,12 @@ const Template = (args, context) => {
       <InputText
         data-testid={`${context.theme}-input-text`}
         id={id}
-        type="number"
+        type="text"
         min="0"
-        value={amount}
-        onChange={(e) => setAmount(e.target.value)}
+        value={amount.toString()}
+        onChange={(e) => setAmount(+e.target.value)}
         label="Total dots"
+        name="pagination dots"
       />
       <HStack css={{ alignItems: "center" }}>
         <Button
