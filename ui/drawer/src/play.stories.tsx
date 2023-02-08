@@ -4,6 +4,8 @@ import { expect } from "@storybook/jest";
 import { Drawer as Component } from "./";
 import { theme } from "@washingtonpost/wpds-theme";
 
+import type { ComponentMeta, ComponentStory } from "@storybook/react";
+
 export default {
   title: "Drawer",
   component: Component.Root,
@@ -17,9 +19,10 @@ export default {
   args: {
     id: "drawer-id",
   },
-};
+} as ComponentMeta<typeof Component.Root>;
 
-const Template = (args) => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const Template: ComponentStory<any> = (args) => {
   const [open, setOpen] = React.useState(false);
 
   const handleChange = (val) => {
@@ -46,7 +49,8 @@ Drawer.parameters = {
   chromatic: { disableSnapshot: true },
 };
 
-const FocusTemplate = ({ loopFocus, ...args }) => (
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const FocusTemplate: ComponentStory<any> = ({ loopFocus, ...args }) => (
   <Component.Root {...args}>
     <Component.Trigger>Trigger Drawer</Component.Trigger>
     <Component.Content position={"left"} width={200} loopFocus={loopFocus}>
@@ -54,7 +58,7 @@ const FocusTemplate = ({ loopFocus, ...args }) => (
       Menu
       <ul
         style={{
-          marginBlock: theme.space["100"],
+          marginBlock: theme.space["100"].value,
           paddingInlineStart: 0,
           listStyle: "none",
         }}
@@ -82,7 +86,8 @@ Focus.parameters = {
   chromatic: { disableSnapshot: true },
 };
 
-const PositionTemplate = () => (
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const PositionTemplate: ComponentStory<any> = () => (
   <>
     <Component.Root id="top-id">
       <Component.Trigger>Top</Component.Trigger>
@@ -94,8 +99,8 @@ const PositionTemplate = () => (
     <div
       style={{
         display: "flex",
-        gap: theme.space["050"],
-        marginBlock: theme.space["050"],
+        gap: theme.space["050"].value,
+        marginBlock: theme.space["050"].value,
       }}
     >
       <Component.Root id="left-id">
@@ -128,28 +133,25 @@ Position.parameters = {
   chromatic: { disableSnapshot: true },
 };
 
-const ChromaticTemplate = () => (
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const ChromaticTemplate: ComponentStory<any> = () => (
   <>
     <Component.Root id="top-id" defaultOpen={true}>
-      <Component.Content position="top" height="200px" css={{ opacity: "0.5" }}>
+      <Component.Content position="top" height={200} css={{ opacity: "0.5" }}>
         <Component.Close />
         Drawer
       </Component.Content>
     </Component.Root>
 
     <Component.Root id="left-id" defaultOpen={true}>
-      <Component.Content position="left" width="200px" css={{ opacity: "0.5" }}>
+      <Component.Content position="left" width={200} css={{ opacity: "0.5" }}>
         <Component.Close />
         Drawer
       </Component.Content>
     </Component.Root>
 
     <Component.Root id="right-id" defaultOpen={true}>
-      <Component.Content
-        position="right"
-        width="200px"
-        css={{ opacity: "0.5" }}
-      >
+      <Component.Content position="right" width={200} css={{ opacity: "0.5" }}>
         <Component.Close />
         Drawer
       </Component.Content>
@@ -158,7 +160,7 @@ const ChromaticTemplate = () => (
     <Component.Root id="bottom-id" defaultOpen={true}>
       <Component.Content
         position="bottom"
-        height="200px"
+        height={200}
         css={{ opacity: "0.5" }}
       >
         <Component.Close />
@@ -173,8 +175,9 @@ Chromatic.parameters = {
   docs: { disable: true },
 };
 
-const InteractionsTemplate = () => (
-  <Component.Root>
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const InteractionsTemplate: ComponentStory<any> = () => (
+  <Component.Root id="interaction-drawer">
     <Component.Trigger>Trigger</Component.Trigger>
     <Component.Content>
       <Component.Close />
