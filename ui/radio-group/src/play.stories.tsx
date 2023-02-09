@@ -4,13 +4,15 @@ import { expect } from "@storybook/jest";
 import { RadioGroup as Component, RadioButton } from "./";
 import { styled, css, theme } from "@washingtonpost/wpds-theme";
 
+import type { ComponentMeta, ComponentStory } from "@storybook/react";
+
 export default {
   title: "RadioGroup",
   component: Component,
   subcomponents: { RadioButton },
-};
+} as ComponentMeta<typeof Component>;
 
-const Template = (args) => (
+const Template: ComponentStory<typeof Component> = (args) => (
   <Component {...args}>
     <RadioButton label="Option 1" value="opt1" id="opt1" />
     <RadioButton label="Option 2" value="opt2" id="opt2" />
@@ -36,7 +38,7 @@ RadioGroup.parameters = {
   chromatic: { disableSnapshot: true },
 };
 
-const OverflowTemplate = () => (
+const OverflowTemplate: ComponentStory<typeof Component> = () => (
   <Component legend="RadioGroup" name="test" css={{ maxWidth: "170px" }}>
     <RadioButton
       label="Option 1 demonstrates how this text wraps to multiple lines"
@@ -52,7 +54,7 @@ Overflow.parameters = {
   chromatic: { disableSnapshot: true },
 };
 
-const ControlledTemplate = () => {
+const ControlledTemplate: ComponentStory<typeof Component> = () => {
   const [value, setValue] = React.useState("opt1");
   function handleValueChange(val) {
     setValue(val);
@@ -62,6 +64,7 @@ const ControlledTemplate = () => {
       legend="Select option"
       onValueChange={handleValueChange}
       value={value}
+      name="controlled template"
     >
       <RadioButton label="Option 1" value="opt1" id="opt1" />
       <RadioButton label="Option 2" value="opt2" id="opt2" />
@@ -97,7 +100,7 @@ const Heading = styled("h2", {
   marginBlock: 0,
 });
 
-const ChromaticTemplate = () => (
+const ChromaticTemplate: ComponentStory<typeof Component> = () => (
   <Column>
     <Heading>Variants</Heading>
     <HStack>
@@ -174,7 +177,7 @@ const ChromaticTemplate = () => (
 export const Chromatic = ChromaticTemplate.bind({});
 Chromatic.args = {};
 
-const InteractionsTemplate = () => (
+const InteractionsTemplate: ComponentStory<typeof Component> = () => (
   <Component legend="RadioGroup" name="test">
     <RadioButton label="Option 1" value="opt1" id="p-opt1" />
     <RadioButton label="Option 2" value="opt2" id="p-opt2" />

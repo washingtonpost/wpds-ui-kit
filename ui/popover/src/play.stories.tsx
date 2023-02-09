@@ -8,6 +8,8 @@ import { Popover } from "./";
 import { styled, theme, globalCss } from "@washingtonpost/wpds-theme";
 import { ChevronRight } from "@washingtonpost/wpds-assets";
 
+import type { ComponentMeta, ComponentStory } from "@storybook/react";
+
 export default {
   title: "Popover",
   component: Popover.Content,
@@ -17,14 +19,18 @@ export default {
     Trigger: Popover.Trigger,
     Anchor: Popover.Anchor,
   },
-};
+} as ComponentMeta<typeof Popover.Content>;
 
-const Template = (args) => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const Template: ComponentStory<any> = (args) => {
   const triggerRef = React.useRef(null);
   const [parentElement, setParentElement] = React.useState();
+
   React.useEffect(() => {
-    setParentElement(triggerRef.current.parentElement);
+    triggerRef?.current &&
+      setParentElement(triggerRef.current["parentElement"]);
   }, [setParentElement]);
+
   return (
     <Popover.Root>
       <Popover.Trigger ref={triggerRef}>Trigger</Popover.Trigger>
@@ -62,11 +68,13 @@ Default.parameters = {
   chromatic: { disableSnapshot: true },
 };
 
-const AnchorTemplate = (args) => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const AnchorTemplate: ComponentStory<any> = (args) => {
   const triggerRef = React.useRef(null);
   const [parentElement, setParentElement] = React.useState();
   React.useEffect(() => {
-    setParentElement(triggerRef.current.parentElement);
+    triggerRef?.current &&
+      setParentElement(triggerRef.current["parentElement"]);
   }, [setParentElement]);
   return (
     <Popover.Root>
@@ -79,7 +87,7 @@ const AnchorTemplate = (args) => {
           style={{
             position: "absolute",
             bottom: 0,
-            color: theme.colors.primary,
+            color: theme.colors.primary.value,
           }}
         >
           Anchor
@@ -96,11 +104,13 @@ Anchor.args = {
 };
 Anchor.parameters = { chromatic: { disableSnapshot: true } };
 
-const CloseButtonTemplate = (args) => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const CloseButtonTemplate: ComponentStory<any> = (args) => {
   const triggerRef = React.useRef(null);
   const [parentElement, setParentElement] = React.useState();
   React.useEffect(() => {
-    setParentElement(triggerRef.current.parentElement);
+    triggerRef?.current &&
+      setParentElement(triggerRef.current["parentElement"]);
   }, [setParentElement]);
   return (
     <Popover.Root>
@@ -112,7 +122,7 @@ const CloseButtonTemplate = (args) => {
             e.preventDefault();
           }}
         >
-          <div style={{ marginInlineEnd: theme.sizes["175"] }}>
+          <div style={{ marginInlineEnd: theme.sizes["175"].value }}>
             {args.children}
           </div>
           <Popover.Close />
@@ -183,16 +193,17 @@ const Arrow = () => {
       fill="none"
       viewBox="0 0 12 7"
     >
-      <path fill={theme.colors.gray300} d="M0 1h12L6 7 0 1z"></path>
+      <path fill={theme.colors.gray300.value} d="M0 1h12L6 7 0 1z"></path>
       <path
-        fill={theme.colors.onPrimary}
+        fill={theme.colors.onPrimary.value}
         d="M1 1h10L6 6 1 1zM0 0h12v1H0V0z"
       ></path>
     </svg>
   );
 };
 
-const MenuTemplate = () => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const MenuTemplate: ComponentStory<any> = () => {
   const [menuOpen, setMenuOpen] = React.useState(false);
   return (
     <div style={{ width: "calc(100% + 4rem)", marginBlock: "-2rem" }}>
@@ -253,14 +264,15 @@ const MenuTemplate = () => {
 export const Menu = MenuTemplate.bind({});
 Menu.parameters = { chromatic: { disableSnapshot: true } };
 
-const FullPopover = ({ side, align }) => (
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const FullPopover: ComponentStory<any> = ({ side, align }) => (
   <Popover.Root open={true}>
     <Popover.Trigger asChild>
       <u
         style={{
           border: `1px solid ${theme.colors.gray300}`,
-          color: theme.colors.gray100,
-          paddingInline: theme.space["025"],
+          color: theme.colors.gray100.value,
+          paddingInline: theme.space["025"].value,
         }}
         tabIndex={0}
       >
@@ -280,7 +292,8 @@ const FullPopover = ({ side, align }) => (
   </Popover.Root>
 );
 
-const ChromaticTemplate = () => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const ChromaticTemplate: ComponentStory<any> = () => {
   const side = ["bottom", "top", "right", "left"];
   const align = ["start", "center", "end"];
 
@@ -306,16 +319,18 @@ const ChromaticTemplate = () => {
         return (
           <div
             key={s}
-            style={{
-              display: "flex",
-              flexDirection: direction,
-              gridArea: s,
-              justifyContent: "space-between",
-              alignItems: alignItems,
-            }}
+            style={
+              {
+                display: "flex",
+                flexDirection: direction,
+                gridArea: s,
+                justifyContent: "space-between",
+                alignItems: alignItems,
+              } as React.CSSProperties
+            }
           >
             {align.map((a) => {
-              let p = 0;
+              let p = "0";
               if (s === "bottom") {
                 p = "0 0 54px 0";
               } else if (s === "top") {
@@ -351,7 +366,8 @@ const ecGlobalCss = globalCss({
   },
 });
 
-const EdgeAndCornerCasesTemplate = () => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const EdgeAndCornerCasesTemplate: ComponentStory<any> = () => {
   ecGlobalCss();
   return (
     <div
@@ -400,7 +416,8 @@ EdgeAndCornerCases.parameters = {
   chromatic: { delay: 3000 },
 };
 
-const InteractionsTemplate = () => (
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const InteractionsTemplate: ComponentStory<any> = () => (
   <Popover.Root>
     <Popover.Trigger>Trigger</Popover.Trigger>
     <Popover.Content>Popover Content</Popover.Content>
