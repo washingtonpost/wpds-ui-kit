@@ -1,14 +1,16 @@
 import * as React from "react";
-import { Box } from "../../box";
-import { theme } from "../../theme";
+import { Box } from "@washingtonpost/wpds-box";
+import { theme } from "@washingtonpost/wpds-theme";
 import { Scrim as Component } from "./";
+
+import type { ComponentMeta, ComponentStory } from "@storybook/react";
 
 export default {
   title: "Scrim",
   component: Component,
-};
+} as ComponentMeta<typeof Component>;
 
-const Template = (args) => {
+const Template: ComponentStory<typeof Component> = (args) => {
   const [open, setOpen] = React.useState(false);
   function handleOpenChange(val) {
     setOpen(() => val);
@@ -17,7 +19,7 @@ const Template = (args) => {
     <Box css={{ color: theme.colors.primary, maxWidth: "30rem" }}>
       <Component
         {...args}
-        onOpenChange={handleOpenChange}
+        onChange={handleOpenChange}
         open={open}
         onClick={() => {
           handleOpenChange(false);
@@ -81,7 +83,7 @@ Scrim.parameters = {
   chromatic: { disableSnapshot: true },
 };
 
-const ChromaticTemplate = () => {
+const ChromaticTemplate: ComponentStory<typeof Component> = () => {
   return (
     <>
       <Box
