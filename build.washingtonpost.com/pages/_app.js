@@ -34,10 +34,9 @@ const pageview = (pathname) => {
     userAgentHit: window.navigator.userAgent,
     platformType: "wpds",
     meterType: "free",
-    pageViewType: "load"
+    pageViewType: "load",
   });
 };
-
 
 function App({ Component, pageProps }) {
   globalStyles();
@@ -59,11 +58,11 @@ function App({ Component, pageProps }) {
             event: "site-onpage-click-event",
             action: "onpage-click",
             category: "onpage",
-            label: // format the textContent into a - separated string
-              textContent
-                .replace(/[^a-zA-Z0-9 ]/g, "-")
-                .replace(/\s+/g, "-")
-                .toLowerCase(),
+            // format the textContent into a - separated string
+            label: textContent
+              .replace(/[^a-zA-Z0-9 ]/g, "-")
+              .replace(/\s+/g, "-")
+              .toLowerCase(),
           });
         });
       });
