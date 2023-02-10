@@ -8,6 +8,7 @@ import {
   darkTheme,
   globalCss,
 } from "@washingtonpost/wpds-ui-kit";
+import { useRouter } from "next/router";
 import { darkModeStyles } from "~/components/DarkModeStyles";
 import { PageLayout } from "~/components/Layout";
 import { SSRProvider } from "@react-aria/ssr";
@@ -20,10 +21,61 @@ const globalTextStyles = globalCss({
   },
 });
 
+const pageview = (pathname) => {
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: "classicPageView",
+    arcId: "(not set)",
+    pageName: pathname,
+    section: "build.washingtonpost.com",
+    subsection: "build.washingtonpost.com",
+    contentType: "build.washingtonpost.com",
+    itid: "",
+    userAgentHit: window.navigator.userAgent,
+    platformType: "wpds",
+    meterType: "free",
+    pageViewType: "load"
+  });
+};
+
+
 function App({ Component, pageProps }) {
   globalStyles();
   globalTextStyles();
   darkModeStyles();
+  const router = useRouter();
+
+  React.useEffect(() => {
+    if (typeof window !== "undefined") {
+      pageview(window.location.pathname);
+      const elements = document.querySelectorAll("a, button");
+      elements.forEach((element) => {
+        element.addEventListener("click", (event) => {
+          const { target } = event;
+          const { textContent } = target;
+
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            event: "site-onpage-click-event",
+            action: "onpage-click",
+            category: "onpage",
+            label: // format the textContent into a - separated string
+              textContent
+                .replace(/[^a-zA-Z0-9 ]/g, "-")
+                .replace(/\s+/g, "-")
+                .toLowerCase(),
+          });
+        });
+      });
+    }
+  }, []);
+
+  React.useEffect(() => {
+    router.events.on("routeChangeComplete", pageview);
+    return () => {
+      router.events.off("routeChangeComplete", pageview);
+    };
+  }, [router.events]);
 
   const getLayout = Component.getLayout;
 
