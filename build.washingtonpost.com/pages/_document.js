@@ -103,11 +103,19 @@ export default class Document extends NextDocument {
           />
         </Head>
         <body>
-          {/** only render on prod */}
-          {process.env.NODE_ENV === "production" && (
-            <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHRH42S"
-              height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-          )}
+          <noscript>
+            <iframe
+              src="https://www.googletagmanager.com/ns.html?id=GTM-KHRH42S"
+              height="0"
+              width="0"
+              style={
+                {
+                  display: "none",
+                  visibility: "hidden"
+                }
+              }
+            ></iframe>
+          </noscript>
           <Main />
           <NextScript />
         </body>
