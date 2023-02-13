@@ -2,7 +2,7 @@ import React from "react";
 import { MDXRemote } from "next-mdx-remote";
 import { NextSeo } from "next-seo";
 
-import { AlertBanner, styled, theme } from "@washingtonpost/wpds-ui-kit";
+import { styled, theme } from "@washingtonpost/wpds-ui-kit";
 
 import MDXStyling from "~/components/Markdown/Styling";
 import Header from "~/components/Typography/Headers";
@@ -18,6 +18,7 @@ import {
 
 import { PropsTable } from "~/components/PropsTable";
 import { ComponentDetails } from "~/components/ComponentPage/ComponentDetails";
+import { ComponentStatus } from "~/components/ComponentPage/ComponentStatus";
 
 const components = {
   ...MDXStyling,
@@ -79,14 +80,10 @@ export default function Page({
           {source.scope.title}
         </Header>
 
-        {source.scope.status == "Draft" && (
-          <AlertBanner.Root css={{ marginBottom: "$200" }} variant="warning">
-            <AlertBanner.Content>
-              <b>Note:{` `}</b>This component status is in draft and indicates
-              the component is actively being worked on.
-            </AlertBanner.Content>
-          </AlertBanner.Root>
+        {(source.scope.status == "Draft" || source.scope.status == "Beta") && (
+          <ComponentStatus type={source.scope.status} />
         )}
+
         {source.scope.description && (
           <P className="description">{source.scope.description}</P>
         )}
