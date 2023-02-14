@@ -95,8 +95,7 @@ export const getStaticProps = async ({ params }) => {
       "Sharpen your design and development skills with our in-depth recorded workshops.";
     size = THUMBNAIL_WIDE;
   } else if (params.category === "accessibility") {
-    description =
-      "YEET";
+    description = "Explore our accessibility checklist, testing strategies and considerations.";
     size = THUMBNAIL_SQUARE;
   } else if (params.category === "guides") {
     description =

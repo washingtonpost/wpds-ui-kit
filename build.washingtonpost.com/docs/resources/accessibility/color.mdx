@@ -17,7 +17,7 @@ Low color contrast can make text and other page elements harder to see for every
 The Post's [accessibility statement](https://www.washingtonpost.com/accessibility/) notes that we are guided by the World Wide Web Consortium’s Web Content Accessibility Guidelines (WCAG) 2.1 Level AA. However, we strongly encourage meeting AAA color contrast requirements.
 
 <br />
-## WebAim Color Contrast Checker
+### WebAim Color Contrast Checker
 
 The [WebAim Color Contrast Checker](https://webaim.org/resources/contrastchecker/) evaluates colors for WCAG compliance. You enter the hex values for the foreground and background colors, and the site calculates the contrast ratio. It rates the colors with a “Pass” or “Fail” rating. You can use the slider under each color to lighten or darken it until a “Pass” rating is attained. The hex code will update accordingly.
 
@@ -39,7 +39,7 @@ There are many forms of color blindness, and they have different affects on perc
 When working with graphics and data visualizations, it is especially important to ensure users can easily distinguish between different elements.
 
 <br />
-## Tools
+### Tools
 
 [David Nichols' coloring for colorblindness tool](https://davidmathlogic.com/colorblind/#%23D81B60-%231E88E5-%23FFC107-%23004D40) allows you to input a color palette and see how that palette appears to users with different forms of colorblindness.
 
@@ -55,3 +55,22 @@ You can inspect the resulting colors in your browser to collect their hex codes 
   </Box>
 </Container>
 <br />
+
+## Dark mode considerations
+
+### Light or dark, or both?
+
+It is best practice to support both light and dark mode on all content. This includes conducting the contrast tests described above in both modes. All links, buttons, fonts, etc. on the page should be visible in both modes.
+
+### Respecting browser settings
+
+Many users will have dark mode configured in their browser and/or system settings. When possible, we should build responsively and default to light or dark mode based on user settings without them having to manually click a toggle on our page.
+
+A good way to respond to user settings is [the prefers-color-scheme CSS media feature](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme), as documented by MDN.
+
+<br />
+## Avoid white text on black backgrounds
+
+Confirm white text is never on a black background (in either mode, but be especially weary of this in dark mode). This causes [a fuzziness effect known as halation](https://jessicaotis.com/academia/never-use-white-text-on-a-black-background-astygmatism-and-conference-slides/) for many readers with astigmatism, and it makes reading difficult.
+
+Many dark modes use a dark gray background, instead of black, to avoid this issue.

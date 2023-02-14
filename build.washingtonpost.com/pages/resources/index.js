@@ -156,8 +156,7 @@ async function getWrapper(collections, recents) {
       "Explore the processes and tools we use in our step-by-step written guides.",
     Tutorials:
       "Watch or read through our tutorials to understand key techniques and concepts.",
-    Accessibility:
-      "YEETER",
+    Accessibility: "Explore our accessibility checklist, testing strategies and considerations.",
     Workshops:
       "Sharpen your design and development skills with our in-depth recorded workshops.",
   };
