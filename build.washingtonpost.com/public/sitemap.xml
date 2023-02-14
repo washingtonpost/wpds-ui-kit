@@ -5,56 +5,6 @@
   </url>
 
   <url>
-    <loc>https://build.washingtonpost.com/accessibility</loc>
-  </url>
-
-  <url>
-    <loc
-      >https://build.washingtonpost.com/accessibility/guides/accessibility-checklist</loc
-    >
-  </url>
-
-  <url>
-    <loc>https://build.washingtonpost.com/accessibility/guides/alt-text</loc>
-  </url>
-
-  <url>
-    <loc
-      >https://build.washingtonpost.com/accessibility/guides/automated-testing</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://build.washingtonpost.com/accessibility/guides/color-blindness</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://build.washingtonpost.com/accessibility/guides/color-contrast</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://build.washingtonpost.com/accessibility/guides/keyboard-accessibility</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://build.washingtonpost.com/accessibility/guides/screen-readers</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://build.washingtonpost.com/accessibility/guides/text-size-and-zoom</loc
-    >
-  </url>
-
-  <url>
     <loc>https://build.washingtonpost.com/components/accordion</loc>
   </url>
 
@@ -204,6 +154,56 @@
 
   <url>
     <loc>https://build.washingtonpost.com/resources</loc>
+  </url>
+
+  <url>
+    <loc
+      >https://build.washingtonpost.com/resources/accessibility/accessibility-checklist</loc
+    >
+  </url>
+
+  <url>
+    <loc>https://build.washingtonpost.com/resources/accessibility/alt-text</loc>
+  </url>
+
+  <url>
+    <loc
+      >https://build.washingtonpost.com/resources/accessibility/audio-and-video</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://build.washingtonpost.com/resources/accessibility/automated-testing</loc
+    >
+  </url>
+
+  <url>
+    <loc>https://build.washingtonpost.com/resources/accessibility/color</loc>
+  </url>
+
+  <url>
+    <loc
+      >https://build.washingtonpost.com/resources/accessibility/heading-order</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://build.washingtonpost.com/resources/accessibility/keyboard-accessibility</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://build.washingtonpost.com/resources/accessibility/screen-readers</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://build.washingtonpost.com/resources/accessibility/text-size-and-zoom</loc
+    >
   </url>
 
   <url>

@@ -1,0 +1,36 @@
+---
+title: Alt text
+description: Describing images for blind and low-vision users
+kicker: Accessibility
+publishDate: June 17, 2022
+thumbnail: /img/resources/thumbnails/a11y_alt-text.png
+imageTag: /img/resources/guides/a11y_alt-text.png
+rank: 3
+---
+
+---
+
+## Semantics
+
+Alt text is also commonly called alternative text or an image description. It is supplied with the `alt` property on `<img/>` tags.
+
+Every `<img/>` tag should have the `alt` attribute. Failure to explicitly set this value may lead to the image file name being read out loud to screen reader users, which is often an unhelpful nuisance. If the alt value is set to "", then the image will be skipped by screen readers. Thus, if an image is purely decorative, then you should use alt="".
+
+Using alt text like "Image without alt text" as a fallback is bad practice because this will cause a screen reader to read this unhelpful text aloud instead of just skipping the image entirely (as it would with alt text of ""). We have an engineering blog post with [more context on fallbacks for alt text](https://washpost.engineering/we-cant-automate-alt-text-here-are-some-mistakes-lessons-and-what-we-can-do-for-accessibility-4e8631c2b3).
+
+<br/>
+## How to write alt text
+
+Alt text is NOT the same as a caption.
+
+A caption is generally adding context to an image, whereas alt text is describing what the image contains for those who can’t see it.
+
+### Images of text
+
+All of the text from an image that you want your users to see should also be included in the alt text for that image so that blind and low-vision users can hear it.
+
+For instance, an image of a headline should have the headline also added in the alt text field. You may add additional context, such as "Screenshot of a Washington Post headline that says, 'Eagles lose Super Bowl 38-35'" where "Eagles lose Super Bowl 38-35" is the exact headline from the screenshot.
+
+### Other images
+
+TBD, defer to third-party guidance?

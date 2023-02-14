@@ -1,0 +1,51 @@
+---
+title: Heading order
+description: Important part of semantic HTML
+kicker: Accessibility
+publishDate: June 17, 2022
+thumbnail: /img/resources/thumbnails/a11y_heading-order.png
+imageTag: /img/resources/guides/a11y_heading-order.png
+rank: 9
+---
+
+---
+
+## Why it's important
+
+Someone who is using a screen reader may jump around the headings on a page to quickly access content. If headings are used our of order, such as an h2 being placed below an h3 despite being a subtopic, then the user may be confused.
+
+Skipping heading levels entirely, such as going from an h2 to an h4, can cause similar issues.
+
+## Approach and example
+
+It may be tempting to use headings out of order based on their styles, but this should not be done. You can add a `className` to a heading to provide extra styles, or rework your heading styles entirely because they may not make sense in the first place if you are being tempted to use headings out of order.
+
+Generally, there should only be a single h1 on any given page, as this corresponds to the page title.
+
+After that, the heading level represents the "scope" of the subsection. For instance, if you are working with an election results page showing the results of Democratic and Republican primaries in the state of Missouri, it would make sense to have the title of an individual office seat (such as governor) be an h2, while the Democratic and Republican primaries for that seat are each headed with an h3.
+
+```jsx withPreview
+export default function Example() {
+  return (
+    <Box
+      css={{
+        width: "100%",
+        gap: "$100",
+      }}
+    >
+      <h1>Missouri 2020 primaries (h1)</h1>
+
+      <h2>Governor (h2)</h2>
+
+      <h3>Democratic primary (h3)</h3>
+
+      <h3>Republican primary (h3)</h3>
+
+      <h2>Attorney General (h2)</h2>
+
+      <h3>Democratic primary (h3)</h3>
+
+      <h3>Republican primary (h3)</h3>
+    </Box>
+  );
+}

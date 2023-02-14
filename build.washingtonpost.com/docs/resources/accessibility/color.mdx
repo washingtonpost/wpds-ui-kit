@@ -1,0 +1,57 @@
+---
+title: Color
+description: Contrast, color blindness and light/dark mode
+kicker: Accessibility
+publishDate: June 17, 2022
+thumbnail: /img/resources/thumbnails/a11y_color.png
+imageTag: /img/resources/guides/a11y_color.png
+rank: 4
+---
+
+---
+
+## Color Contrast
+
+Low color contrast can make text and other page elements harder to see for everyone, especially some users.
+
+The Post's [accessibility statement](https://www.washingtonpost.com/accessibility/) notes that we are guided by the World Wide Web Consortium’s Web Content Accessibility Guidelines (WCAG) 2.1 Level AA. However, we strongly encourage meeting AAA color contrast requirements.
+
+<br />
+## WebAim Color Contrast Checker
+
+The [WebAim Color Contrast Checker](https://webaim.org/resources/contrastchecker/) evaluates colors for WCAG compliance. You enter the hex values for the foreground and background colors, and the site calculates the contrast ratio. It rates the colors with a “Pass” or “Fail” rating. You can use the slider under each color to lighten or darken it until a “Pass” rating is attained. The hex code will update accordingly.
+
+<Container>
+  <Box css={{ display: "flex", justifyContent: "center", margin: "auto" }}>
+    <InlineImage
+      width={836}
+      height={448}
+      src="/images/webaim-contrast-checker.png"
+    />
+  </Box>
+</Container>
+<br />
+
+## Color Blindness
+
+There are many forms of color blindness, and they have different affects on perception of color.
+
+When working with graphics and data visualizations, it is especially important to ensure users can easily distinguish between different elements.
+
+<br />
+## Tools
+
+[David Nichols' coloring for colorblindness tool](https://davidmathlogic.com/colorblind/#%23D81B60-%231E88E5-%23FFC107-%23004D40) allows you to input a color palette and see how that palette appears to users with different forms of colorblindness.
+
+You can inspect the resulting colors in your browser to collect their hex codes and independently verify they have [enough contrast with each other](/accessibility/guides/color-contrast).
+
+<Container>
+  <Box css={{ display: "flex", justifyContent: "center", margin: "auto" }}>
+    <InlineImage
+      width={836}
+      height={448}
+      src="/images/coloring-for-colorblindness.png"
+    />
+  </Box>
+</Container>
+<br />
