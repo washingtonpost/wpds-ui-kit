@@ -30,7 +30,7 @@ const pageview = (pathname) => {
     section: "build.washingtonpost.com",
     subsection: "build.washingtonpost.com",
     contentType: "build.washingtonpost.com",
-    itid: "",
+    itid: "wpds",
     userAgentHit: window.navigator.userAgent,
     platformType: "wpds",
     meterType: "free",
