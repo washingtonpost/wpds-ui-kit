@@ -193,7 +193,7 @@ const Arrow = () => {
       fill="none"
       viewBox="0 0 12 7"
     >
-      <path fill={theme.colors.gray300.value} d="M0 1h12L6 7 0 1z"></path>
+      <path fill={theme.colors.gray300.value} d="m12.62 9.32-.71-.72-3.41 3.46V2h-1v10.06L4.09 8.6l-.71.72L8 14Z"></path>
       <path
         fill={theme.colors.onPrimary.value}
         d="M1 1h10L6 6 1 1zM0 0h12v1H0V0z"

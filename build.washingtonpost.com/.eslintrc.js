@@ -37,6 +37,7 @@ module.exports = {
       rules: {
         "react/prop-types": "off",
         "@washingtonpost/wpds/theme-colors": "warn",
+        "@washingtonpost/wpds/use-wpds-assets": "warn",
       },
     },
   ],

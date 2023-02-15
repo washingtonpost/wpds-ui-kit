@@ -25,10 +25,12 @@
     "test": "jest"
   },
   "peerDependencies": {
-    "@washingtonpost/wpds-theme": "*"
+    "@washingtonpost/wpds-theme": "*",
+    "@washingtonpost/wpds-assets": "^1.17.0"
   },
   "dependencies": {
-    "@washingtonpost/wpds-theme": "0.24.0"
+    "@washingtonpost/wpds-theme": "0.24.0",
+    "@washingtonpost/wpds-assets": "^1.17.0"
   },
   "devDependencies": {
     "jest": "^28.1.0"

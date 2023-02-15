@@ -15,7 +15,6 @@ module.exports = {
     "@washingtonpost/wpds",
   ],
   extends: [
-    "next/core-web-vitals",
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "prettier",
@@ -37,6 +36,7 @@ module.exports = {
       rules: {
         "react/prop-types": "off",
         "@washingtonpost/wpds/theme-colors": "warn",
+        "@washingtonpost/wpds/use-wpds-assets": "warn",
         "no-restricted-syntax": [
           "error",
           {
