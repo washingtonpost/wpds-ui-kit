@@ -10,6 +10,7 @@ import { List, ListItem } from "~/components/Markdown/Components/list";
 import dynamic from "next/dynamic";
 import { Grid, Cell } from "./Components/Grid";
 import { AlertBanner } from "@washingtonpost/wpds-alert-banner";
+import { ComponentStatus } from "../ComponentPage/ComponentStatus";
 import CollapsibleContainer from "./Components/collapsible";
 const InputCheckbox = dynamic(() =>
   import("./Components/Checkbox").then((mod) => mod.InputCheckbox)
@@ -98,35 +99,23 @@ export const Change = styled("div", {
 
   variants: {
     type: {
-      Draft: {
-        fontSize: "$075",
-        color: "$primary",
-        backgroundColor: "$orange300",
-        borderColor: "$warning",
-      },
       ComingSoon: {
         fontSize: "$075",
         color: "$accessible",
         backgroundColor: "$gray400",
         borderColor: "$gray400",
       },
-      New: {
+      Draft: {
         fontSize: "$075",
         color: "$primary",
-        backgroundColor: "$green300",
-        borderColor: "$success",
+        backgroundColor: "$orange300",
+        borderColor: "$warning",
       },
-      Updates: {
+      Beta: {
         fontSize: "$075",
         color: "$primary",
         backgroundColor: "$blue300",
         borderColor: "$signal",
-      },
-      Fixes: {
-        fontSize: "$075",
-        color: "$primary",
-        backgroundColor: "$red300",
-        borderColor: "$error",
       },
     },
   },
@@ -193,6 +182,7 @@ const components = {
     </AlertBanner.Root>
   ),
   AlertBanner: AlertBanner,
+  ComponentStatus: ComponentStatus,
   Grid: ({ maxSize, css, children }) => (
     <Grid css={css} maxSize={maxSize}>
       {children}

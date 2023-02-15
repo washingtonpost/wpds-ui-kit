@@ -265,23 +265,7 @@ export default function Sidebar({ navigation, setMobileMenu }) {
                                 }
                                 disabled={item.data.status === "Coming soon"}
                               >
-                                {item.data.status === "Coming soon" ? (
-                                  <CustomLink
-                                    as="div"
-                                    css={{
-                                      display: "flex",
-                                      justifyContent: "space-between",
-                                      alignContent: "center",
-                                      alignItems: "center",
-                                    }}
-                                    disabled
-                                  >
-                                    <div>{item.data.title}</div>
-                                    <Change type="ComingSoon">
-                                      Coming soon
-                                    </Change>
-                                  </CustomLink>
-                                ) : item.data.status == "Draft" ? (
+                                {item.data.status !== "" ? (
                                   <Link href={item.slug} passHref>
                                     <CustomLink
                                       css={{
@@ -292,7 +276,15 @@ export default function Sidebar({ navigation, setMobileMenu }) {
                                       }}
                                     >
                                       <div>{item.data.title}</div>
-                                      <Change type="Draft">Draft</Change>
+                                      <Change
+                                        type={
+                                          item.data.status === "Coming soon"
+                                            ? "ComingSoon"
+                                            : item.data.status
+                                        }
+                                      >
+                                        {item.data.status}
+                                      </Change>
                                     </CustomLink>
                                   </Link>
                                 ) : (
