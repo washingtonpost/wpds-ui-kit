@@ -10,7 +10,7 @@ rank: 3
 
 ---
 
-## Semantics
+## Syntax
 
 Alt text is also commonly called alternative text or an image description. It is supplied with the `alt` property on `<img/>` tags.
 
@@ -19,18 +19,97 @@ Every `<img/>` tag should have the `alt` attribute. Failure to explicitly set th
 Using alt text like "Image without alt text" as a fallback is bad practice because this will cause a screen reader to read this unhelpful text aloud instead of just skipping the image entirely (as it would with alt text of ""). We have an engineering blog post with [more context on fallbacks for alt text](https://washpost.engineering/we-cant-automate-alt-text-here-are-some-mistakes-lessons-and-what-we-can-do-for-accessibility-4e8631c2b3).
 
 <br />
-## How to write alt text
+## Captions vs. alt text
 
 Alt text is NOT the same as a caption.
 
 A caption is generally adding context to an image, whereas alt text is describing what the image contains for those who can’t see it.
 
-### Images of text
+<br />
+## Alt text for images of text
 
-All of the text from an image that you want your users to see should also be included in the alt text for that image so that blind and low-vision users can hear it.
+All of the text from an image you want your users to see should also be included in the alt text for that image so blind and low-vision users can hear it.
 
 For instance, an image of a headline should have the headline also added in the alt text field. You may add additional context, such as "Screenshot of a Washington Post headline that says, 'Eagles lose Super Bowl 38-35'" where "Eagles lose Super Bowl 38-35" is the exact headline from the screenshot.
 
-### Other images
+Below is an example from The Washington Post Twitter account.
 
-TBD, defer to third-party guidance?
+<Container>
+  <Box css={{ display: "flex", justifyContent: "center", margin: "auto" }}>
+    <InlineImage
+      width={836}
+      height={448}
+      src="/images/text-alt-text.png"
+    />
+  </Box>
+</Container>
+<br />
+<br />
+
+<br />
+## Alt text for data visualizations
+
+Data visualization alt text should focus on the visualization type, the type of data shown and the reason for including the visualization.
+
+Read [more detailed guidance on alt text for data visualizations](https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81) from Amy Ceval, co-founder of the Data Visualization Society.
+
+Below is an example from The Washington Post Twitter account.
+
+<Container>
+  <Box css={{ display: "flex", justifyContent: "center", margin: "auto" }}>
+    <InlineImage
+      width={836}
+      height={448}
+      src="/images/data-viz-alt-text.png"
+    />
+  </Box>
+</Container>
+<br />
+<br />
+
+<br />
+## Alt text for other images
+
+1. Describe the type of image, if relevant. Don't use generic phrases like "Photo of" or "Image of" because screen reader users already know when they are hearing alt text for an image. If the image has a specific type (illustration, graphic, headshot, etc.), then it is probably relevant to note that, as done in the example below.
+2. Be concise. Alt text doesn't need to describe every tiny detail in an image, just the relevant parts for the overall meaning. Typical alt text is no more than a few sentences. If the image is complex, this may be longer, but try to keep it as short as possible while including all necesary details.
+3. Never assume race, gender, etc. If known, use these and other identifiers when relevant to the image or context in which the image is used. Note that the subject of the image may have their own preferences on how they are identified for the purposes of a story or other content.
+4. Avoid including your opinion on the image. Alt text should be an objective description. Words like "pretty" or "scary" are generally not useful.
+5. Write in plain language so that the alt text's meaning is clear. Avoid complicated words and sentence structures. Avoid jargon and idioms. We have [more guidance on plain language](/accessibility/guides/plain-language-and-labeling).
+
+<br />
+Below is an example from The Washington Post Twitter account.
+
+<Container>
+  <Box css={{ display: "flex", justifyContent: "center", margin: "auto" }}>
+    <InlineImage
+      width={836}
+      height={448}
+      src="/images/graphic-alt-text.png"
+    />
+  </Box>
+</Container>
+<br />
+<br />
+
+<br />
+## Don't use links in alt text
+
+Links are not clickable when used in alt text. A screen reader user will hear each character in the link read out, one by one, and will be unable to interact with it. Include links in the text surrounding the image instead of in the alt text.
+
+<br />
+## Don't use emojis or symbols
+
+Alt text is for people who cannot see the image. Emojis and symbols often have confusing or unintended text when read by a screen reader, so they should be avoided entirely.
+
+<br />
+## Hashtags and CamelCase
+
+Social media hashtags are a form of link and thus won't be clickable in alt text.
+
+If a hashtag is essential to the alt text because it is the name of a movement or effort, for instance, then it should be included in the alt text with CamelCase formatting. CamelCase involves capitalizing the first letter of each word in a multiple-word hashtag. This allows screen readers to distinguish words in a hashtag and increases legibility for everyone.
+
+**For example, use #TheWashingtonPost instead of #thewashingtonpost.**
+
+Capitalize the letters in acronyms and initials as well. 
+
+**For example, use #WPMedia instead of #Wpmedia.**

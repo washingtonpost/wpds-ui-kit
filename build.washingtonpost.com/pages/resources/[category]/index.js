@@ -96,7 +96,7 @@ export const getStaticProps = async ({ params }) => {
     size = THUMBNAIL_WIDE;
   } else if (params.category === "accessibility") {
     description =
-      "Explore our accessibility checklist, testing strategies and considerations.";
+      "Explore our accessibility checklist, testing strategies and considerations. Contact accessibility@washpost.com with any questions, ideas or feedback.";
     size = THUMBNAIL_SQUARE;
   } else if (params.category === "guides") {
     description =
