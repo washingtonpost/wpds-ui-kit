@@ -30,7 +30,12 @@ const pageview = (pathname) => {
     section: "build.washingtonpost.com",
     subsection: "build.washingtonpost.com",
     contentType: "build.washingtonpost.com",
-    itid: "wpds",
+    itid:
+      // if we have a page view event set the itid to wpds else set it to ""
+      // so that we track on site traffic as wpds
+      window.dataLayer.find((event) => event.event === "classicPageView")
+        ? "wpds"
+        : "",
     userAgentHit: window.navigator.userAgent,
     platformType: "wpds",
     meterType: "free",
