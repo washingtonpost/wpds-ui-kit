@@ -1,0 +1,60 @@
+---
+title: Box
+description: This component is used to create a box element with a set of default styles. It's best used in protoyping and playing with components. For production code, we recommend using "styled" or "css" functions intead.
+---
+
+## Anatomy
+
+## Options
+
+### `as`
+
+The `as` prop allows you to change the underlying HTML element that is rendered. This is useful for when you want to use a component that is not a `div` by default.
+
+```jsx withPreview
+<Box as="span">I am a span</Box>
+```
+
+### `css`
+
+The `css` props allows you to pass in a style object that will be applied to the underlying HTML element.
+
+```jsx withPreview
+<Box css={{ padding: "$100" }}>I am a regular ol' box.</Box>
+```
+
+---
+
+## Guidance
+
+### Protoyping
+
+This component is used to create a box element with a set of default styles. It's best used in protoyping and playing with components. For production code, we recommend using "styled" or "css" functions intead.
+
+```jsx withPreview isGuide="success"
+<Box css={{ padding: "$100" }}>I am a regular ol' box.</Box>
+```
+
+### Production
+
+For production code, we recommend using "styled" or "css" functions intead.
+
+```jsx withPreview isGuide="error"
+<Box css={{ padding: "$100" }}>I am a regular ol' box.</Box>
+```
+
+---
+
+## Accessibility
+
+This component is not accessible by default. You should always use the `as` prop to change the underlying HTML element to something more semantic.
+
+```jsx withPreview isGuide="error"
+<Box as="span">I am a span</Box>
+```
+
+---
+
+## API Reference
+
+<PropsTable props={propsTable} />
