@@ -55,7 +55,7 @@ export default function Example() {
 <br />
 ## Labeling interactive elements
 
-Our docs address the need for alt text when a reader cannot see an image. 
+Our docs address the need for alt text when a reader cannot see an image.
 
 The `aria-label` and `aria-labelledby` conventions are for interactive elements that are not images. See [the ARIA guide](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA) for more context.
 
@@ -65,15 +65,15 @@ You might use aria-label on a clickable div on a page to clarify for the user it
 
 ```jsx
 <div
-	aria-label="Submit form" // text that will be read aloud by screen reader
-	role="button" // also read by screen reader to say div behaves like a button
-	onClick={someFunction} // allows user to achieve function by clicking div
-	onKeyDown={someFunction} // allows user to achieve same function via keyboard
-	tabIndex={0} // makes the div keyboard focus-able (divs by default are not)
-	className="focus-highlight" // applies highlight to div when it is focused
+  aria-label="Submit form" // text that will be read aloud by screen reader
+  role="button" // also read by screen reader to say div behaves like a button
+  onClick={someFunction} // allows user to achieve function by clicking div
+  onKeyDown={someFunction} // allows user to achieve same function via keyboard
+  tabIndex={0} // makes the div keyboard focus-able (divs by default are not)
+  className="focus-highlight" // applies highlight to div when it is focused
 />
 ```
- 
+
 Notice that the `aria-label` attribute is passed a string value to be read by a screen reader.
 
 <br />
@@ -86,7 +86,7 @@ We can use `aria-label` to write text that is only seen by screen readers, while
 // Full word read by screen reader, but abbreviation seen on the visible page
 <span aria-label="Uncontested">Unc.</span>
 ```
- 
+
 ### aria-labelledby
 
 You might use `aria-labelledby` to clarify for a screen reader the connection between an input field and its purpose:
@@ -104,7 +104,7 @@ You might use `aria-labelledby` to clarify for a screen reader the connection be
     <input type="text" aria-labelledby="myBillingId myAddressId"/>
 </div>
 ```
- 
+
 Note that the `aria-labelledby` is passed a string containing element ids. The text content of the elements with these ids is what will be read by the screen reader so that the user understands what each input field is for (i.e. "Billing Name" and "Billing Address."
 
 There is also an `aria-describedby` property meant to connect elements with relevant (but not essential information). This is not used as commonly, and `aria-labelledby` should be used regardless of whether a value for `aria-describedby` is also present on a given element.
@@ -137,7 +137,7 @@ Try searching "sr-only" on [our Tachyons search page](https://build.washingtonpo
   width: 1px;
 }
 ```
- 
+
 This is a best practice for adding elements to a page that we want available only to screen reader users. For instance, we might have a table on a page and want a caption describing that table for screen readers without taking up space on the visible page layout.
 
 You can add that caption to the table in the HTML and apply the sr-only class to ensure the text is available to screen readers but not visible.
@@ -227,6 +227,7 @@ On the contrary, if we have:
 
 Then the screen-reader user will hear "Votes for Warren - 3,000" when they get to the last cell in the table. This makes for a much more user-friendly experience, and this is why we should always make sure to use the th tag in our thead elements.
 
+<br />
 <br />
 ## Alerting screen readers of live updates
 

@@ -84,9 +84,9 @@ The checkboxes on this page are clickable, if you want to check each box as you 
     <label for="3" style={{ display: "inline-block" }}>
       {" "}
       Just as you would put alt="" for purely decorative images to hide them from
-      screen readers, you should add aria-hidden="true" for content on the page that
+      screen readers, you should add [aria-hidden="true"](/resources/accessibility/heading-order#Hiding%20content%20from%20screen%20readers) for content on the page that
       is not screen reader friendly. An example of this might be an election map
-      full of svgs and labels, etc. Ideally, you’d include a table version of the
+      full of svgs and labels, etc. Ideally, you’d include [a table version](/resources/accessibility/heading-order#Tables) of the
       data for accessibility and just hide the map with aria-hidden.
     </label>
   </div>
@@ -237,7 +237,7 @@ The checkboxes on this page are clickable, if you want to check each box as you 
       {" "}
       Meaning of icons, buttons and other elements should be explicitly conveyed
       via text whenever possible. In all cases, interactive elements should have
-      appropriate `aria-labels` for screen reader users.
+      appropriate aria-labels. See our [guidance on labeling for screen reader users](/resources/accessibility/heading-order#Labeling%20interactive%20elements).
     </label>
   </div>
   <br />
@@ -251,7 +251,7 @@ The checkboxes on this page are clickable, if you want to check each box as you 
     <label for="12" style={{ display: "inline-block" }}>
       {" "}
       Avoid user prompts or notices that disappear automatically. If the content
-      includes a form, make sure that clear error messages are provided.
+      includes a form, make sure that clear error messages are provided. See our [guidance on forms](/resources/accessibility/plain-language-and-labeling#Forms).
     </label>
   </div>
   <br />
@@ -320,7 +320,7 @@ The checkboxes on this page are clickable, if you want to check each box as you 
       Check the heading order on the page using [inspect element in the Chrome dev
       tools](https://developer.chrome.com/docs/devtools/open/). Does the order make
       sense? There should be only one `h1`, the page title. From there, headings
-      should be ordered strictly by page heirarchy (don't jump from `h2` to `h4`,
+      should be [ordered strictly by page heirarchy](/resources/accessibility/heading-order#Heading%20order) (don't jump from `h2` to `h4`,
       don't use `h2` as a subhead of an `h3`, etc.).
     </label>
   </div>
