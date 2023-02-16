@@ -8,21 +8,12 @@ import {
   darkTheme,
   globalCss,
 } from "@washingtonpost/wpds-ui-kit";
+import { useRouter } from "next/router";
 import { darkModeStyles } from "~/components/DarkModeStyles";
 import { PageLayout } from "~/components/Layout";
 import { SSRProvider } from "@react-aria/ssr";
-import { useRouter } from "next/router";
-import { GoogleTagManager } from "@washingtonpost/site-third-party-scripts";
 import SEO from "../next-seo.config";
 import "../public/global.css";
-
-const pageview = (url) => {
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    event: "pageview",
-    page: url,
-  });
-};
 
 const globalTextStyles = globalCss({
   body: {
@@ -30,20 +21,67 @@ const globalTextStyles = globalCss({
   },
 });
 
+const pageview = (pathname) => {
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: "classicPageView",
+    arcId: "(not set)",
+    pageName: pathname,
+    section: "build.washingtonpost.com",
+    subsection: "build.washingtonpost.com",
+    contentType: "build.washingtonpost.com",
+    itid:
+      // if we have a page view event set the itid to wpds else set it to ""
+      // so that we track on site traffic as wpds
+      window.dataLayer.find((event) => event.event === "classicPageView")
+        ? "wpds"
+        : "",
+    userAgentHit: window.navigator.userAgent,
+    platformType: "wpds",
+    meterType: "free",
+    pageViewType: "load",
+  });
+};
+
 function App({ Component, pageProps }) {
   globalStyles();
   globalTextStyles();
   darkModeStyles();
-
-  const getLayout = Component.getLayout;
-
   const router = useRouter();
+
+  React.useEffect(() => {
+    if (typeof window !== "undefined") {
+      pageview(window.location.pathname);
+      const elements = document.querySelectorAll("a, button");
+      elements.forEach((element) => {
+        element.addEventListener("click", (event) => {
+          const { target } = event;
+          const { textContent } = target;
+
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            event: "site-onpage-click-event",
+            action: "onpage-click",
+            category: "onpage",
+            // format the textContent into a - separated string
+            label: textContent
+              .replace(/[^a-zA-Z0-9 ]/g, "-")
+              .replace(/\s+/g, "-")
+              .toLowerCase(),
+          });
+        });
+      });
+    }
+  }, []);
+
   React.useEffect(() => {
     router.events.on("routeChangeComplete", pageview);
     return () => {
       router.events.off("routeChangeComplete", pageview);
     };
   }, [router.events]);
+
+  const getLayout = Component.getLayout;
 
   return (
     <SSRProvider>
@@ -58,12 +96,15 @@ function App({ Component, pageProps }) {
         disableTransitionOnChange={false}
         enableColorScheme={false}
       >
-        {/** only render on prod */}
-        {process.env.NODE_ENV === "production" && (
-          <Script id="gtm-script" strategy="afterInteractive">
-            {`window.dataLayer = window.dataLayer || [];${GoogleTagManager()}`}
-          </Script>
-        )}
+        <Script id="gtm-script" strategy="afterInteractive">
+          {`
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KHRH42S');
+            `}
+        </Script>
         {getLayout ? (
           getLayout(
             <>
