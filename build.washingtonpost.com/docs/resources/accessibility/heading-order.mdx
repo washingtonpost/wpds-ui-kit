@@ -1,6 +1,6 @@
 ---
-title: Heading order
-description: Important part of semantic HTML
+title: Semantic HTML and ARIA
+description: Heading order, labels for screen readers and more
 kicker: Accessibility
 publishDate: June 17, 2022
 thumbnail: /img/resources/thumbnails/a11y_heading-order.png
@@ -10,15 +10,15 @@ rank: 9
 
 ---
 
-## Why it's important
+## Heading order
 
-Someone who is using a screen reader may jump around the headings on a page to quickly access content. If headings are used our of order, such as an h2 being placed below an h3 despite being a subtopic, then the user may be confused.
+### Motivation
 
-Skipping heading levels entirely, such as going from an h2 to an h4, can cause similar issues.
+Someone who is using a screen reader may jump around the headings on a page to quickly access content. If headings are used our of order, such as an h2 being placed below an h3 despite being a subtopic, then the user may be confused. Skipping heading levels entirely, such as going from an h2 to an h4, can cause similar issues.
 
-## Approach and example
+It may be tempting to use headings out of order based on their styles, but this should not be done. You can add a class to a heading to provide extra styles, or rework your heading styles entirely because they may not make sense in the first place if you are being tempted to use headings out of order.
 
-It may be tempting to use headings out of order based on their styles, but this should not be done. You can add a `className` to a heading to provide extra styles, or rework your heading styles entirely because they may not make sense in the first place if you are being tempted to use headings out of order.
+### Solution
 
 Generally, there should only be a single h1 on any given page, as this corresponds to the page title.
 
@@ -50,3 +50,190 @@ export default function Example() {
   );
 }
 ```
+
+<br />
+<br />
+## Labeling interactive elements
+
+Our docs address the need for alt text when a reader cannot see an image. 
+
+The `aria-label` and `aria-labelledby` conventions are for interactive elements that are not images. See [the ARIA guide](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA) for more context.
+
+### aria-label
+
+You might use aria-label on a clickable div on a page to clarify for the user its purpose:
+
+```jsx
+<div
+	aria-label="Submit form" // text that will be read aloud by screen reader
+	role="button" // also read by screen reader to say div behaves like a button
+	onClick={someFunction} // allows user to achieve function by clicking div
+	onKeyDown={someFunction} // allows user to achieve same function via keyboard
+	tabIndex={0} // makes the div keyboard focus-able (divs by default are not)
+	className="focus-highlight" // applies highlight to div when it is focused
+/>
+```
+ 
+Notice that the `aria-label` attribute is passed a string value to be read by a screen reader.
+
+<br />
+
+An `aria-label` can also be useful when you want to have two versions of the same text shown. For instance, in many tables on our live elections results pages we include abbreviations of certain words, such as "Unc." for "Uncontested," "Pct." for "Percent," etc.
+
+We can use `aria-label` to write text that is only seen by screen readers, while the standard component text remains seen by non-screen-reader users.
+
+```jsx
+// Full word read by screen reader, but abbreviation seen on the visible page
+<span aria-label="Uncontested">Unc.</span>
+```
+ 
+### aria-labelledby
+
+You might use `aria-labelledby` to clarify for a screen reader the connection between an input field and its purpose:
+
+```jsx
+// copied from https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute
+<div id="myBillingId">Billing</div>
+
+<div>
+    <div id="myNameId">Name</div>
+    <input type="text" aria-labelledby="myBillingId myNameId"/>
+</div>
+<div>
+    <div id="myAddressId">Address</div>
+    <input type="text" aria-labelledby="myBillingId myAddressId"/>
+</div>
+```
+ 
+Note that the `aria-labelledby` is passed a string containing element ids. The text content of the elements with these ids is what will be read by the screen reader so that the user understands what each input field is for (i.e. "Billing Name" and "Billing Address."
+
+There is also an `aria-describedby` property meant to connect elements with relevant (but not essential information). This is not used as commonly, and `aria-labelledby` should be used regardless of whether a value for `aria-describedby` is also present on a given element.
+
+<br />
+<br />
+## Hiding content from screen readers
+
+There are often ads on our products. When third-party ads are used, we don't have full control over their accesibility. For screen reader users, inaccessible ads hinder page navigation.
+
+Our practice is to apply `aria-hidden="true"` on our ad wrapper elements so that they are ignored by screen readers and thus do not clutter the page. The [guide to ARIA attributes](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA) has more context.
+
+We use `aria-hidden="true"` on non-ad content **if and only if it is useless to screen readers** (e.g. it is purely decorative or it is innaccessible content that already has a screen reader accessible alternative elsewhere on the page).
+
+<br />
+<br />
+## Content for screen readers only
+
+Try searching "sr-only" on [our Tachyons search page](https://build.washingtonpost.com/tachyons/search). You should find the following class:
+
+```jsx
+.sr-only {/* all screens */
+  clip: rect(0,0,0,0);
+  border: 0;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+```
+ 
+This is a best practice for adding elements to a page that we want available only to screen reader users. For instance, we might have a table on a page and want a caption describing that table for screen readers without taking up space on the visible page layout.
+
+You can add that caption to the table in the HTML and apply the sr-only class to ensure the text is available to screen readers but not visible.
+
+<br />
+<br />
+## Tables
+
+W3C Web Accessibility Initiative guide: https://www.w3.org/WAI/tutorials/tables/
+
+The guide linked above has some excellent guidance for working with tables in a way that ensures they are accessible to screen readers.
+
+In this section we focus on a couple common issues observed in the elex-render-engine repo.
+
+### The caption tag
+
+The caption tag is an important component of tables that is used by screen readers to provide an overview of a table when it is first reached. If we don't want the caption to be shown on the visible page (in some cases, maybe we do!), then we can hide it using the sr-only className discussed previously in this guide.
+
+```jsx
+<table>
+   <caption className="sr-only">Total votes for Biden, Sanders and Warren in Super Tuesday states</caption>
+   <thead>
+   ...
+```
+
+### The thead tag
+
+For a table with only column headers, the thead tag contains the headers for each column. Even though the tag is called thead, the header elements must still be th tags, not td tags, in order for the screen reader to read the contents of the table correctly.
+
+This is because screen readers read the header of the column for every cell within that column as a reminder to the reader of what is being read aloud. For instance, if our table contains vote totals and we have:
+
+```jsx
+<thead>
+    <tr>
+        <td>State</td>
+        <td>Votes for Biden</td>
+        <td>Votes for Sanders</td>
+        <td>Votes for Warren</td>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <td>Alabama</td>
+        <td>15,000</td>
+        <td>7,000</td>
+    <td>2,000</td>
+    </tr>
+    ... // table rows and data for a bunch of other states
+    <tr>
+        <td>Virginia</td>
+        <td>13,000</td>
+        <td>8,000</td>
+    <td>3,000</td>
+    </tr>
+<tbody>
+```
+
+Then the screen reader will only read the headings once, at the top of the table, and the listener has to remember the order of (1) Biden, (2) Sanders and (3) Warren for the rest of their time reading the table, as they will only be read a bunch of state names and numbers sequentially.
+
+On the contrary, if we have:
+
+```jsx
+<thead>
+    <tr>
+        <th>State</th>
+        <th>Votes for Biden</th>
+        <th>Votes for Sanders</th>
+        <th>Votes for Warren</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <td>Alabama</td>
+        <td>15,000</td>
+        <td>7,000</td>
+    <td>2,000</td>
+    </tr>
+    ... // table rows and data for a bunch of other states
+    <tr>
+        <td>Virginia</td>
+        <td>13,000</td>
+        <td>8,000</td>
+    <td>3,000</td>
+    </tr>
+<tbody>
+```
+
+Then the screen-reader user will hear "Votes for Warren - 3,000" when they get to the last cell in the table. This makes for a much more user-friendly experience, and this is why we should always make sure to use the th tag in our thead elements.
+
+<br />
+## Alerting screen readers of live updates
+
+`aria-live` is an attribute used to notify people using screen readers of dynamic changes in the content of a live region of a page. See [the ARIA documentation on aria-live](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions) for more details.
+
+<br />
+
+**While this attribute can serve a purpose in terms of accessibility, it should be used extremely cautiously.** For instance, a screen reader user may be bothered repeatedly if `aria-live` is applied for something like new comments on an article.
+
+We would almost always want to use `aria-live="polite"` when we do use `aria-live`. This makes it so that updates do not interrupt the screen reader user and instead waits til they idle.
