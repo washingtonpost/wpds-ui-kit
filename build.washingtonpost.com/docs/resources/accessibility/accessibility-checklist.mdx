@@ -37,7 +37,6 @@ The checkboxes on this page are clickable, if you want to check each box as you 
     </label>
   </div>
   <br />
-  <br />
   <div style={{ display: "flex", alignItems: "flex-start" }}>
     <input
       type="checkbox"
@@ -68,12 +67,11 @@ The checkboxes on this page are clickable, if you want to check each box as you 
     />
     <label for="2" style={{ display: "inline-block" }}>
       {" "}
-      Ensure all images have alt text. If an image is purely decorative, make sure
+      Ensure all images have [alt text](/resources/accessibility/alt-text). If an image is purely decorative, make sure
       it still has `alt` or `alt=""` present in the HTML. Similarly, videos and gifs
       should have text descriptions for screen reader users.
     </label>
   </div>
-  <br />
   <br />
   <div style={{ display: "flex", alignItems: "flex-start" }}>
     <input
@@ -92,7 +90,6 @@ The checkboxes on this page are clickable, if you want to check each box as you 
     </label>
   </div>
   <br />
-  <br />
   <div style={{ display: "flex", alignItems: "flex-start" }}>
     <input
       type="checkbox"
@@ -109,7 +106,6 @@ The checkboxes on this page are clickable, if you want to check each box as you 
       Auto-playing media of all forms is strongly discouraged.
     </label>
   </div>
-  <br />
   <br />
   <div style={{ display: "flex", alignItems: "flex-start" }}>
     <input
@@ -142,12 +138,24 @@ The checkboxes on this page are clickable, if you want to check each box as you 
     />
     <label for="6" style={{ display: "inline-block" }}>
       {" "}
-      Confirm white text is never on a black background. This causes a [fuzziness
-      effect known as halation](https://jessicaotis.com/academia/never-use-white-text-on-a-black-background-astygmatism-and-conference-slides/)
+      Confirm white text is never on a pure black background. This causes a [fuzziness
+      effect known as halation](https://medium.com/@h_locke/why-dark-mode-causes-more-accessibility-issues-than-it-solves-d2f8359bb46a)
       for many readers with astygmitism.
     </label>
   </div>
   <br />
+  <div style={{ display: "flex", alignItems: "flex-start" }}>
+    <input
+      type="checkbox"
+      id="6"
+      name="checkbox 6"
+      style={{ marginRight: "12px" }}
+    />
+    <label for="6" style={{ display: "inline-block" }}>
+      {" "}
+      Confirm pure black text is never on a white background. This is [known to cause eye strain among many users](https://uxmovement.com/content/why-you-should-never-use-pure-black-for-text-or-backgrounds/).
+    </label>
+  </div>
   <br />
   <div style={{ display: "flex", alignItems: "flex-start" }}>
     <input
@@ -159,11 +167,10 @@ The checkboxes on this page are clickable, if you want to check each box as you 
     <label for="7" style={{ display: "inline-block" }}>
       {" "}
       Ensure all color combos, especially text and interactive elements, meet at
-      least AA (preferably AAA) [color contrast](/accessibility/guides/color-contrast)
-      standard [using the WebAIM tool](/accessibility/guides/color-contrast).
+      least AA (preferably AAA) [color contrast](/resources/accessibility/color)
+      standard [using the WebAIM tool](https://webaim.org/resources/contrastchecker/).
     </label>
   </div>
-  <br />
   <br />
   <div style={{ display: "flex", alignItems: "flex-start" }}>
     <input
@@ -174,12 +181,10 @@ The checkboxes on this page are clickable, if you want to check each box as you 
     />
     <label for="8" style={{ display: "inline-block" }}>
       {" "}
-      Ensure the color combinations meet the color contrast threshhold for [colorblind
-      users](/accessibility/guides/color-blindness), as covered by [David Nichols'
-      palette checker](/accessibility/guides/color-blindness).
+      Ensure all color combos also meet the color contrast threshhold for [colorblind
+      users](/resources/accessibility/color#Color%20Blindness).
     </label>
   </div>
-  <br />
   <br />
   <div style={{ display: "flex", alignItems: "flex-start" }}>
     <input
@@ -190,7 +195,7 @@ The checkboxes on this page are clickable, if you want to check each box as you 
     />
     <label for="9" style={{ display: "inline-block" }}>
       {" "}
-      View the page in dark mode and light mode, if possible. (If not possible, that
+      View the page in [dark mode and light mode](/resources/accessibility/color#Dark%20mode%20considerations), if possible. (If not possible, that
       itself is an accessibility issue to report.) Does the page change to light
       or dark mode automatically per browser settings? Does the page pass color contrast
       thresholds in both modes? And does everything change color correctly upon toggling
@@ -213,11 +218,10 @@ The checkboxes on this page are clickable, if you want to check each box as you 
     />
     <label for="10" style={{ display: "inline-block" }}>
       {" "}
-      Text should be written in [plain language](https://www.plainlanguage.gov/resources/checklists/checklist/)
+      Text should be written in [plain language](/resources/accessibility/plain-language-and-labeling)
       wherever possible. Is there any jargon or use of idioms? These should be avoided.
     </label>
   </div>
-  <br />
   <br />
   <div style={{ display: "flex", alignItems: "flex-start" }}>
     <input
@@ -234,7 +238,6 @@ The checkboxes on this page are clickable, if you want to check each box as you 
     </label>
   </div>
   <br />
-  <br />
   <div style={{ display: "flex", alignItems: "flex-start" }}>
     <input
       type="checkbox"
@@ -249,7 +252,6 @@ The checkboxes on this page are clickable, if you want to check each box as you 
     </label>
   </div>
   <br />
-  <br />
   <div style={{ display: "flex", alignItems: "flex-start" }}>
     <input
       type="checkbox"
@@ -263,7 +265,6 @@ The checkboxes on this page are clickable, if you want to check each box as you 
       correctly? Is it still readable (no overflow, overlap, etc.)?
     </label>
   </div>
-  <br />
   <br />
   <div style={{ display: "flex", alignItems: "flex-start" }}>
     <input
@@ -304,7 +305,6 @@ The checkboxes on this page are clickable, if you want to check each box as you 
     </label>
   </div>
   <br />
-  <br />
   <div style={{ display: "flex", alignItems: "flex-start" }}>
     <input
       type="checkbox"
@@ -322,7 +322,6 @@ The checkboxes on this page are clickable, if you want to check each box as you 
     </label>
   </div>
   <br />
-  <br />
   <div style={{ display: "flex", alignItems: "flex-start" }}>
     <input
       type="checkbox"
@@ -337,7 +336,6 @@ The checkboxes on this page are clickable, if you want to check each box as you 
       order
     </label>
   </div>
-  <br />
   <br />
   <div style={{ display: "flex", alignItems: "flex-start" }}>
     <input

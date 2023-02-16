@@ -12,8 +12,7 @@ export default function CustomLink({
 }) {
   const A = styled("a", {
     cursor: "pointer",
-    textDecoration: "none",
-    color: "$primary",
+    color: "$accessible",
     "&:hover": {
       opacity: ".75",
     },
@@ -26,7 +25,7 @@ export default function CustomLink({
     variants: {
       signal: {
         showColor: {
-          color: "$signal",
+          color: "$accessible",
         },
       },
     },

@@ -25,6 +25,30 @@ Alt text is NOT the same as a caption.
 
 A caption is generally adding context to an image, whereas alt text is describing what the image contains for those who can’t see it.
 
+For example, consider The Post's caption for the below image.
+
+<Container>
+  <Box css={{ display: "flex", justifyContent: "center", margin: "auto" }}>
+    <InlineImage width={672} height={448} src="/images/caption-example.png" />
+  </Box>
+</Container>
+<br />
+<br />
+
+The caption is effective. It adds useful context for readers: when the image was released, who released it and how it was taken. The caption also credits AP (The Associated Press) for providing the image.
+
+<br />
+**NASA wrote the following alt text for the image above:**
+
+"The image is divided horizontally by an undulating line between a cloudscape forming a nebula along the bottom portion and a comparatively clear upper portion. Speckled across both portions is a starfield, showing innumerable stars of many sizes. The smallest of these are small, distant, and faint points of light. The largest of these appear larger, closer, brighter, and more fully resolved with 8-point diffraction spikes. The upper portion of the image is blueish, and has wispy translucent cloud-like streaks rising from the nebula below. The orangish cloudy formation in the bottom half varies in density and ranges from translucent to opaque. The stars vary in color, the majority of which have a blue or orange hue. The cloud-like structure of the nebula contains ridges, peaks, and valleys — an appearance very similar to a mountain range. Three long diffraction spikes from the top right edge of the image suggest the presence of a large star just out of view."
+
+<br />
+**Most images should not have alt text as long or complex as the example above. However, this example shows the purpose of alt text.**
+
+When we use visuals in our work, it is our job to convey the meaning of the visuals in text for blind and low-vision users. In this case, NASA wanted to capture the detail of the image because that was its relevance to the story being told: the power of the new telescope and the level of detail it unlocked.
+
+Below is guidance on how to approach alt text in different scenarios that are common in media.
+
 <br />
 ## Alt text for images of text
 
@@ -36,11 +60,7 @@ Below is an example from The Washington Post Twitter account.
 
 <Container>
   <Box css={{ display: "flex", justifyContent: "center", margin: "auto" }}>
-    <InlineImage
-      width={836}
-      height={448}
-      src="/images/text-alt-text.png"
-    />
+    <InlineImage width={672} height={448} src="/images/text-alt-text.png" />
   </Box>
 </Container>
 <br />
@@ -57,11 +77,7 @@ Below is an example from The Washington Post Twitter account.
 
 <Container>
   <Box css={{ display: "flex", justifyContent: "center", margin: "auto" }}>
-    <InlineImage
-      width={836}
-      height={448}
-      src="/images/data-viz-alt-text.png"
-    />
+    <InlineImage width={672} height={448} src="/images/data-viz-alt-text.png" />
   </Box>
 </Container>
 <br />
@@ -81,11 +97,7 @@ Below is an example from The Washington Post Twitter account.
 
 <Container>
   <Box css={{ display: "flex", justifyContent: "center", margin: "auto" }}>
-    <InlineImage
-      width={836}
-      height={448}
-      src="/images/graphic-alt-text.png"
-    />
+    <InlineImage width={672} height={448} src="/images/graphic-alt-text.png" />
   </Box>
 </Container>
 <br />
@@ -110,6 +122,6 @@ If a hashtag is essential to the alt text because it is the name of a movement o
 
 **For example, use #TheWashingtonPost instead of #thewashingtonpost.**
 
-Capitalize the letters in acronyms and initials as well. 
+Capitalize the letters in acronyms and initials as well.
 
 **For example, use #WPMedia instead of #Wpmedia.**

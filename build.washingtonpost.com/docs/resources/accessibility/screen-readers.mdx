@@ -16,7 +16,7 @@ Some people who are blind or low-vision use assistive technology known as a scre
 
 This is one purpose of alt text; it is read by a screen reader to describe an image for those who cannot see it clearly. Similarly, interactive elements should often be labeled in code using aria-labels.
 
-It is important to navigate a page manually with a screen reader while testing for accessibility. There are a number of different screen readers with their own quirks. We strive to test with at least two of them, VoiceOver and NVDA.
+It is important to navigate a page manually with a screen reader while testing for accessibility. There are a number of different screen readers with their own quirks. We strive to test with at least two of them: VoiceOver and NVDA.
 
 <br />
 ## VoiceOver (MacOC and iOS)
@@ -40,7 +40,7 @@ Play around with the commands to navigate a page. Make sure all text on the page
 
 As a sighted user, you may find it useful to click on the page with your mouse to position VoiceOver on an element. You can then test normally from there. This is only advisable when debugging one specific part of a page. You will also see info about the currently selected element in a little box on your screen. This is the same text that is being read to a user, so make sure the text is appropriate. This goes for alt text, labels and anything else that VoiceOver can access on the page.
 
-Make sure to also attempt navigating the entire page with VoiceOver from start to finish. You may run into keyboard accessibility issues that are also VoiceOver issues. For instance, does the page have a skip to main content link that works? Is every clickable element on the page selectable with VoiceOver?
+Make sure to also attempt navigating the entire page with VoiceOver from start to finish. You may run into keyboard accessibility issues that are also VoiceOver issues. For instance, does the page have a skip to main content link? Is every clickable element on the page selectable with VoiceOver?
 
 <Container>
   <Box css={{ display: "flex", justifyContent: "center", margin: "auto" }}>
@@ -57,12 +57,14 @@ Make sure to also attempt navigating the entire page with VoiceOver from start t
 
 From Apple's VoiceOver documentation, you will notice that there are multiple ways to navigate a page with VoiceOver. Users do not have to listen to each element on the page from top to bottom. They can jump around to different links, headings and other page elements using something called the rotor. Open the rotor using `VO + U`. (The default `VO` key is `caps lock`, but it varies per user preference.)
 
+You can use the left and right arrow keys to filter by different types of elements. Use the up and down arrows to select a specific element, and press enter to jump to it.
+
 <Container>
   <Box css={{ display: "flex", justifyContent: "center", margin: "auto" }}>
     <InlineImage
       width={836}
       height={448}
-      src="/images/voice-over-example.png"
+      src="/images/voice-over-rotor.png"
     />
   </Box>
 </Container>

@@ -16,9 +16,9 @@ Low color contrast can make text and other page elements harder to see for every
 
 The Post's [accessibility statement](https://www.washingtonpost.com/accessibility/) notes that we are guided by the World Wide Web Consortium’s Web Content Accessibility Guidelines (WCAG) 2.1 Level AA. However, we strongly encourage meeting AAA color contrast requirements.
 
-### WebAim Color Contrast Checker
+### WebAIM Color Contrast Checker
 
-The [WebAim Color Contrast Checker](https://webaim.org/resources/contrastchecker/) evaluates colors for WCAG compliance. You enter the hex values for the foreground and background colors, and the site calculates the contrast ratio. It rates the colors with a “Pass” or “Fail” rating. You can use the slider under each color to lighten or darken it until a “Pass” rating is attained. The hex code will update accordingly.
+The [WebAIM Color Contrast Checker](https://webaim.org/resources/contrastchecker/) evaluates colors for WCAG compliance. You enter the hex values for the foreground and background colors, and the site calculates the contrast ratio. It rates the colors with a “Pass” or “Fail” rating. You can use the slider under each color to lighten or darken it until a “Pass” rating is attained. The hex code will update accordingly.
 
 <Container>
   <Box css={{ display: "flex", justifyContent: "center", margin: "auto" }}>
@@ -34,7 +34,7 @@ The [WebAim Color Contrast Checker](https://webaim.org/resources/contrastchecker
 
 ### Adobe Color Contrast Checker
 
-The [Adobe Color Contrast Checker](https://color.adobe.com/create/color-contrast-analyzer) has a different UI than the WebAim version, so try both to see which better fits your needs.
+The [Adobe Color Contrast Checker](https://color.adobe.com/create/color-contrast-analyzer) has a different UI than the WebAIM tool, so try both to see which better fits your needs.
 
 <br />
 <br />
@@ -96,6 +96,17 @@ A good way to respond to user settings is [the prefers-color-scheme CSS media fe
 <br />
 ## Avoid white text on black backgrounds
 
-Confirm white text is never on a black background (in either mode, but be especially weary of this in dark mode). This causes [a fuzziness effect known as halation](https://jessicaotis.com/academia/never-use-white-text-on-a-black-background-astygmatism-and-conference-slides/) for many readers with astigmatism, and it makes reading difficult.
+Never use white text on a pure black background (in either mode, but be especially weary of this in dark mode). This causes [a fuzziness effect known as halation](https://medium.com/@h_locke/why-dark-mode-causes-more-accessibility-issues-than-it-solves-d2f8359bb46a) for many readers with astigmatism, and it makes reading difficult.
 
-Many dark modes use a dark gray background, instead of black, to avoid this issue.
+You can use a dark gray background, instead of black, to avoid this issue.
+
+View [our color tokens](/foundations/color) for more info.
+
+<br />
+## Avoid black text on white backgrounds
+
+Never use pure black text on a white background (in either mode, but be especially weary of this in light mode). Pure black text on a white background is [known to cause eye strain among many users](https://uxmovement.com/content/why-you-should-never-use-pure-black-for-text-or-backgrounds/).
+
+You can use dark gray text, instead of black, to avoid this issue.
+
+View [our color tokens](/foundations/color) for more info.
