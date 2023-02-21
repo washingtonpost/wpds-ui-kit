@@ -52,7 +52,9 @@ export default function Example() {
 ```
 
 <br />
-<br />
+
+---
+
 ## Labeling interactive elements
 
 Our docs address the need for alt text when a reader cannot see an image.
@@ -109,8 +111,8 @@ Note that the `aria-labelledby` is passed a string containing element ids. The t
 
 There is also an `aria-describedby` property meant to connect elements with relevant (but not essential information). This is not used as commonly, and `aria-labelledby` should be used regardless of whether a value for `aria-describedby` is also present on a given element.
 
-<br />
-<br />
+---
+
 ## Hiding content from screen readers
 
 There are often ads on our products. When third-party ads are used, we don't have full control over their accesibility. For screen reader users, inaccessible ads hinder page navigation.
@@ -119,8 +121,8 @@ Our practice is to apply `aria-hidden="true"` on our ad wrapper elements so that
 
 We use `aria-hidden="true"` on non-ad content **if and only if it is useless to screen readers** (e.g. it is purely decorative or it is innaccessible content that already has a screen reader accessible alternative elsewhere on the page).
 
-<br />
-<br />
+---
+
 ## Content for screen readers only
 
 Try searching "sr-only" on [our Tachyons search page](https://build.washingtonpost.com/tachyons/search). You should find the following class:
@@ -142,8 +144,8 @@ This is a best practice for adding elements to a page that we want available onl
 
 You can add that caption to the table in the HTML and apply the sr-only class to ensure the text is available to screen readers but not visible.
 
-<br />
-<br />
+---
+
 ## Tables
 
 W3C Web Accessibility Initiative guide: https://www.w3.org/WAI/tutorials/tables/
@@ -227,8 +229,8 @@ On the contrary, if we have:
 
 Then the screen-reader user will hear "Votes for Warren - 3,000" when they get to the last cell in the table. This makes for a much more user-friendly experience, and this is why we should always make sure to use the th tag in our thead elements.
 
-<br />
-<br />
+---
+
 ## Alerting screen readers of live updates
 
 `aria-live` is an attribute used to notify people using screen readers of dynamic changes in the content of a live region of a page. See [the ARIA documentation on aria-live](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions) for more details.

@@ -4,13 +4,11 @@ description: Overview of considerations, not comprehensive
 kicker: Accessibility
 publishDate: June 17, 2022
 thumbnail: /img/resources/thumbnails/a11y_logo.png
-imageTag: /img/resources/thumbnails/a11y_logo.png
+imageTag: /img/resources/guides/a11y_logo.png
 rank: 1
 ---
 
 ---
-
-## Intro
 
 The following checklist is derived from the much more detailed WCAG guidelines. This does not cover every possible accessibility issue but aims to cover the most prominent varieties. It’s meant to be an entry-level guide. For help with any part of the guide, or to request an addition to any of our docs, contact accessibility@washpost.com.
 
@@ -31,9 +29,9 @@ The checkboxes on this page are clickable, if you want to check each box as you 
     />
     <label for="1" style={{ display: "inline-block" }}>
       {" "}
-      Run the [axe DevTools Chrome Extension](https://chrome.google.com/webstore/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd?hl=en-US)
-      on the page ([guide to use](https://www.youtube.com/watch?v=iRGB40c_YJc&t=36s)).
-      Fix (or ask an engineer to help fix) any issues that are flagged.
+      <b>Run the axe DevTools tests</b><br />
+      You can install the [axe DevTools Chrome Extension](https://chrome.google.com/webstore/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd?hl=en-US) and then use it on the page ([guide to using axe DevTools](https://www.youtube.com/watch?v=iRGB40c_YJc&t=36s)).
+      Fix any issues that are flagged.
     </label>
   </div>
   <br />
@@ -46,14 +44,13 @@ The checkboxes on this page are clickable, if you want to check each box as you 
     />
     <label for="1" style={{ display: "inline-block" }}>
       {" "}
-      Then, use the [WAVE Chrome extension](https://chrome.google.com/webstore/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh?hl=en-US)
-      ([guide to use](https://www.youtube.com/watch?v=ITUDiTgAZY0)) to check for
-      any other auto-detectable issues.
+      <b>Run the WAVE tests</b><br />
+      You can install the [WAVE Chrome extension](https://chrome.google.com/webstore/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh?hl=en-US) and then use it on the page ([guide to using WAVE](https://www.youtube.com/watch?v=ITUDiTgAZY0)) to check for any other auto-detectable issues.
     </label>
   </div>
-  <br />
-  <br />
 </form>
+
+---
 
 ## Multimedia
 
@@ -67,8 +64,8 @@ The checkboxes on this page are clickable, if you want to check each box as you 
     />
     <label for="2" style={{ display: "inline-block" }}>
       {" "}
-      Ensure all images have [alt text](/resources/accessibility/alt-text). If an
-      image is purely decorative, make sure it still has `alt` or `alt=""` present
+      <b>Ensure all images have alt text</b><br />
+      Follow the [guidance for writing alt text](/resources/accessibility/alt-text). If an image is purely decorative, make sure it still has `alt` or `alt=""` present
       in the HTML. Similarly, videos and gifs should have text descriptions for screen
       reader users.
     </label>
@@ -83,11 +80,13 @@ The checkboxes on this page are clickable, if you want to check each box as you 
     />
     <label for="3" style={{ display: "inline-block" }}>
       {" "}
+      <b>Hide certain content from screen readers</b><br />
       Just as you would put alt="" for purely decorative images to hide them from
-      screen readers, you should add [aria-hidden="true"](/resources/accessibility/heading-order#Hiding%20content%20from%20screen%20readers) for content on the page that
-      is not screen reader friendly. An example of this might be an election map
-      full of svgs and labels, etc. Ideally, you’d include [a table version](/resources/accessibility/heading-order#Tables) of the
-      data for accessibility and just hide the map with aria-hidden.
+      screen readers, you should add [aria-hidden="true"](/resources/accessibility/heading-order#Hiding%20content%20from%20screen%20readers)
+      for content on the page that is not screen reader friendly. An example of this
+      might be an election map full of svgs and labels, etc. Ideally, you’d include
+      [a table version](/resources/accessibility/heading-order#Tables) of the data
+      for accessibility and just hide the map with aria-hidden.
     </label>
   </div>
   <br />
@@ -100,11 +99,23 @@ The checkboxes on this page are clickable, if you want to check each box as you 
     />
     <label for="4" style={{ display: "inline-block" }}>
       {" "}
-      Are there any videos/gifs/animations on the page? They must (a) not include
-      any instances of flashing or blinking more than 3 times within any one second
-      (this is a seizure risk), and they should (b) have an accessible [pause, stop
+      <b>Avoid auto-playing audio and video</b><br />
+      Never auto-play audio. Auto-playing video is strongly discouraged. Ensure all audio and video instances have an accessible [pause, stop
       or hide button](https://www.w3.org/WAI/WCAG21/Understanding/pause-stop-hide.html).
-      Auto-playing media of all forms is strongly discouraged.
+    </label>
+  </div>
+  <br />
+  <div style={{ display: "flex", alignItems: "flex-start" }}>
+    <input
+      type="checkbox"
+      id="4"
+      name="checkbox 4"
+      style={{ marginRight: "12px" }}
+    />
+    <label for="4" style={{ display: "inline-block" }}>
+      {" "}
+      <b>Eliminate rapidly flashing content</b><br />
+      Videos, gifs and animations must not include any instances of flashing or blinking more than 3 times within any one second, as this is a seizure risk.
     </label>
   </div>
   <br />
@@ -117,15 +128,16 @@ The checkboxes on this page are clickable, if you want to check each box as you 
     />
     <label for="5" style={{ display: "inline-block" }}>
       {" "}
-      Never auto-play audio. Anywhere there is audio, there should also be captions
+      <b>Provide captions and transcripts</b><br />
+      Anywhere there is audio, there should also be captions
       and a transcript provided. These should include words spoken AND any other
       meaningful sounds from the audio (such as a sigh or laugh in conversation,
       or the chopping of a knife in cooking) as well.
     </label>
   </div>
-  <br />
-  <br />
 </form>
+
+---
 
 ## Color
 
@@ -139,7 +151,8 @@ The checkboxes on this page are clickable, if you want to check each box as you 
     />
     <label for="6" style={{ display: "inline-block" }}>
       {" "}
-      Confirm white text is never on a pure black background. This causes a [fuzziness
+      <b>Confirm white text is never on a pure black background</b><br />
+      Pure white text on a pure black background causes a [fuzziness
       effect known as halation](https://medium.com/@h_locke/why-dark-mode-causes-more-accessibility-issues-than-it-solves-d2f8359bb46a)
       for many readers with astygmitism.
     </label>
@@ -154,7 +167,8 @@ The checkboxes on this page are clickable, if you want to check each box as you 
     />
     <label for="6" style={{ display: "inline-block" }}>
       {" "}
-      Confirm pure black text is never on a white background. This is [known to cause
+       <b>Confirm black text is never on a pure white background</b><br />
+      Pure black text on a pure white background is [known to cause
       eye strain among many users](https://uxmovement.com/content/why-you-should-never-use-pure-black-for-text-or-backgrounds/).
     </label>
   </div>
@@ -168,8 +182,9 @@ The checkboxes on this page are clickable, if you want to check each box as you 
     />
     <label for="7" style={{ display: "inline-block" }}>
       {" "}
-      Ensure all color combos, especially text and interactive elements, meet at
-      least AA (preferably AAA) [color contrast](/resources/accessibility/color)
+      <b>Ensure color contrast meets the WCAG AA standard</b><br />
+      All color combinations, especially for text and interactive elements, must meet at
+      least the AA (preferably AAA) [color contrast](/resources/accessibility/color)
       standard [using the WebAIM tool](https://webaim.org/resources/contrastchecker/).
     </label>
   </div>
@@ -183,8 +198,9 @@ The checkboxes on this page are clickable, if you want to check each box as you 
     />
     <label for="8" style={{ display: "inline-block" }}>
       {" "}
-      Ensure all color combos also meet the color contrast threshhold for [colorblind
-      users](/resources/accessibility/color#Color%20Blindness).
+      <b>Check contrast for common forms of colorblindness</b><br />
+      Ensure color combinations meet the AA color contrast standard for [colorblind
+      users](/resources/accessibility/color#Color%20Blindness) among at least the three most common forms of colorblindness.
     </label>
   </div>
   <br />
@@ -197,17 +213,17 @@ The checkboxes on this page are clickable, if you want to check each box as you 
     />
     <label for="9" style={{ display: "inline-block" }}>
       {" "}
-      View the page in [dark mode and light mode](/resources/accessibility/color#Dark%20mode%20considerations),
-      if possible. (If not possible, that itself is an accessibility issue to report.)
+      <b>View the page in dark and light mode</b><br />
+      [Dark mode and light mode](/resources/accessibility/color#Dark%20mode%20considerations) should both be supported.
       Does the page change to light or dark mode automatically per browser settings?
       Does the page pass color contrast thresholds in both modes? And does everything
       change color correctly upon toggling to light or dark? Are all links, buttons,
       fonts, etc. on the page still visible?
     </label>
   </div>
-  <br />
-  <br />
 </form>
+
+---
 
 ## Text, labels & zoom
 
@@ -221,8 +237,23 @@ The checkboxes on this page are clickable, if you want to check each box as you 
     />
     <label for="10" style={{ display: "inline-block" }}>
       {" "}
+      <b>Text should be written in plain language</b><br />
       Text should be written in [plain language](/resources/accessibility/plain-language-and-labeling)
       wherever possible. Is there any jargon or use of idioms? These should be avoided.
+    </label>
+  </div>
+  <br />
+  <div style={{ display: "flex", alignItems: "flex-start" }}>
+    <input
+      type="checkbox"
+      id="10"
+      name="checkbox 10"
+      style={{ marginRight: "12px" }}
+    />
+    <label for="10" style={{ display: "inline-block" }}>
+      {" "}
+      <b>Ensure non-English content is labeled as such</b><br />
+      Content in non-English languages, such as Arabic or Spanish, must have the lang="CODE" attribute set, where CODE is the language code e.g. “ar” for Arabic or “es” for Spanish. There’s a [list of language codes](https://www.w3schools.com/tags/ref_language_codes.asp). This is essential for non-English text to be read correctly by screen readers. Additionally, Arabic and some other languages are read right-to-left. This means we need to set an additional attribute in the HTML, `dir="rtl`. 
     </label>
   </div>
   <br />
@@ -235,6 +266,7 @@ The checkboxes on this page are clickable, if you want to check each box as you 
     />
     <label for="11" style={{ display: "inline-block" }}>
       {" "}
+      <b>Clearly label interactive content</b><br />
       Meaning of icons, buttons and other elements should be explicitly conveyed
       via text whenever possible. In all cases, interactive elements should have
       appropriate aria-labels. See our [guidance on labeling for screen reader users](/resources/accessibility/heading-order#Labeling%20interactive%20elements).
@@ -250,8 +282,10 @@ The checkboxes on this page are clickable, if you want to check each box as you 
     />
     <label for="12" style={{ display: "inline-block" }}>
       {" "}
+      <b>Ensure users have safeguards</b><br />
       Avoid user prompts or notices that disappear automatically. If the content
-      includes a form, make sure that clear error messages are provided. See our [guidance on forms](/resources/accessibility/plain-language-and-labeling#Forms).
+      includes a form, make sure that clear error messages are provided. See our
+      [guidance on forms](/resources/accessibility/plain-language-and-labeling#Forms).
     </label>
   </div>
   <br />
@@ -264,6 +298,7 @@ The checkboxes on this page are clickable, if you want to check each box as you 
     />
     <label for="13" style={{ display: "inline-block" }}>
       {" "}
+      <b>Change page zoom level</b><br />
       Set page zoom to 200% (on a Mac, press `command +` to zoom in). Does text scale
       correctly? Is it still readable (no overflow, overlap, etc.)?
     </label>
@@ -278,13 +313,14 @@ The checkboxes on this page are clickable, if you want to check each box as you 
     />
     <label for="14" style={{ display: "inline-block" }}>
       {" "}
+      <b>Change browser zoom level</b><br />
       Restore page zoom to 100%, but increase the font size in your browser settings
       to 200%. Does the text scale correctly on our page? Is it still readable?
     </label>
   </div>
-  <br />
-  <br />
 </form>
+
+---
 
 ## Screen reader & keyboard controls
 
@@ -298,6 +334,7 @@ The checkboxes on this page are clickable, if you want to check each box as you 
     />
     <label for="15" style={{ display: "inline-block" }}>
       {" "}
+      <b>Navigate content with keyboard only</b><br />
       Using [your keyboard only](/accessibility/guides/keyboard-accessibility), `tab`
       through the buttons, links, hoverable elements and any others the user should
       be able to interact with, ensuring that (a) they each receive appropriate focus
@@ -317,11 +354,12 @@ The checkboxes on this page are clickable, if you want to check each box as you 
     />
     <label for="16" style={{ display: "inline-block" }}>
       {" "}
+      <b>Confirm heading order is correct</b><br />
       Check the heading order on the page using [inspect element in the Chrome dev
       tools](https://developer.chrome.com/docs/devtools/open/). Does the order make
       sense? There should be only one `h1`, the page title. From there, headings
-      should be [ordered strictly by page heirarchy](/resources/accessibility/heading-order#Heading%20order) (don't jump from `h2` to `h4`,
-      don't use `h2` as a subhead of an `h3`, etc.).
+      should be [ordered strictly by page heirarchy](/resources/accessibility/heading-order#Heading%20order)
+      (don't jump from `h2` to `h4`, don't use `h2` as a subhead of an `h3`, etc.).
     </label>
   </div>
   <br />
@@ -334,6 +372,7 @@ The checkboxes on this page are clickable, if you want to check each box as you 
     />
     <label for="17" style={{ display: "inline-block" }}>
       {" "}
+      <b>Test with screen reader linearly</b><br />
       Using [a screen reader](/accessibility/guides/screen-readers), navigate the
       page from top to bottom. Ensure all visible text is read aloud in a sensible
       order
@@ -349,6 +388,7 @@ The checkboxes on this page are clickable, if you want to check each box as you 
     />
     <label for="18">
       {" "}
+      <b>Test with screen reader rotor</b><br />
       Using [a screen reader](/accessibility/guides/screen-readers), open the rotor
       and ensure all links, buttons and other elements have appropriate names. Interactive
       elements should not have generic names like "click here." You should be able

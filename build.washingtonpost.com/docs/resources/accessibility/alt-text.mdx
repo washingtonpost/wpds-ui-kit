@@ -18,8 +18,8 @@ Every `<img/>` tag should have the `alt` attribute. Failure to explicitly set th
 
 Using alt text like "Image without alt text" as a fallback is bad practice because this will cause a screen reader to read this unhelpful text aloud instead of just skipping the image entirely (as it would with alt text of ""). We have an engineering blog post with [more context on fallbacks for alt text](https://washpost.engineering/we-cant-automate-alt-text-here-are-some-mistakes-lessons-and-what-we-can-do-for-accessibility-4e8631c2b3).
 
-<br />
-<br />
+---
+
 ## Captions vs. alt text
 
 Alt text is NOT the same as a caption.
@@ -33,7 +33,6 @@ For example, consider The Post's caption for the below image.
     <InlineImage width={672} height={448} src="/images/caption-example.png" />
   </Box>
 </Container>
-<br />
 <br />
 
 The caption is effective. It adds useful context for readers: when the image was released, who released it and how it was taken. The caption also credits AP (The Associated Press) for providing the image.
@@ -51,8 +50,8 @@ When we use visuals in our work, it is our job to convey the meaning of the visu
 
 Below is guidance on how to approach alt text in different scenarios that are common in media.
 
-<br />
-<br />
+---
+
 ## Alt text for images of text
 
 All of the text from an image you want your users to see should also be included in the alt text for that image so blind and low-vision users can hear it.
@@ -67,10 +66,9 @@ Below is an example from The Washington Post Twitter account.
   </Box>
 </Container>
 <br />
-<br />
 
-<br />
-<br />
+---
+
 ## Alt text for data visualizations
 
 Data visualization alt text should focus on the visualization type, the type of data shown and the reason for including the visualization.
@@ -85,10 +83,9 @@ Below is an example from The Washington Post Twitter account.
   </Box>
 </Container>
 <br />
-<br />
 
-<br />
-<br />
+---
+
 ## Alt text for other images
 
 1. Describe the type of image, if relevant. Don't use generic phrases like "Photo of" or "Image of" because screen reader users already know when they are hearing alt text for an image. If the image has a specific type (illustration, graphic, headshot, etc.), then it is probably relevant to note that, as done in the example below.
@@ -106,22 +103,21 @@ Below is an example from The Washington Post Twitter account.
   </Box>
 </Container>
 <br />
-<br />
 
-<br />
-<br />
+---
+
 ## Don't use links in alt text
 
 Links are not clickable when used in alt text. A screen reader user will hear each character in the link read out, one by one, and will be unable to interact with it. Include links in the text surrounding the image instead of in the alt text.
 
-<br />
-<br />
+---
+
 ## Don't use emojis or symbols
 
 Alt text is for people who cannot see the image. Emojis and symbols often have confusing or unintended text when read by a screen reader, so they should be avoided entirely.
 
-<br />
-<br />
+---
+
 ## Hashtags and CamelCase
 
 Social media hashtags are a form of link and thus won't be clickable in alt text.
