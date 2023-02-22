@@ -113,6 +113,24 @@ There is also an `aria-describedby` property meant to connect elements with rele
 
 ---
 
+## Hyperlink text guidelines
+
+It is important that hyperlink text is meaningful even out of context. This is because many screen reader users jump between links on a page without hearing the text surrounding each one. Read [our screen reader guide](/resources/accessibility/screen-readers) for more info.
+
+There are some key things to watch for when writing link text:
+
+- Avoid using the URL as the link text.
+  - URLs are often read by screen readers in a disjointed manner, and they can also be confusing and less meaningful for sighted users.
+- Keep link text concise, but don't sacrifice meaning. This speeds up the process of scanning links as a user, especially as a screen reader user.
+  - e.g. "Subscribe" is better than "Subscribe for more content from us in the future."
+- Don't include words like "link" or "click here" in your link text.
+  - This is redundant. Links should be evident in their styling and structure. If you feel the need to specify "click here," then your link probably isn't styled correctly for [keyboard accessibility](/resources/accessibility/keyboard-accessibility).
+- Ensure each unique link has unique link text.
+  - If multiple links have different text but the same value, then users may waste their time clicking them all. This is a frustrating user experience.
+  - Similarly, if multiple links have the same text but go to different sites, then users may miss out because they assumed the links were the same.
+
+---
+
 ## Hiding content from screen readers
 
 There are often ads on our products. When third-party ads are used, we don't have full control over their accesibility. For screen reader users, inaccessible ads hinder page navigation.
