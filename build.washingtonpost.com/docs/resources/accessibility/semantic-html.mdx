@@ -125,6 +125,8 @@ We use `aria-hidden="true"` on non-ad content **if and only if it is useless to 
 
 ## Content for screen readers only
 
+### sr-only class
+
 Try searching "sr-only" on [our Tachyons search page](https://build.washingtonpost.com/tachyons/search). You should find the following class:
 
 ```jsx
@@ -143,6 +145,39 @@ Try searching "sr-only" on [our Tachyons search page](https://build.washingtonpo
 This is a best practice for adding elements to a page that we want available only to screen reader users. For instance, we might have a table on a page and want a caption describing that table for screen readers without taking up space on the visible page layout.
 
 You can add that caption to the table in the HTML and apply the sr-only class to ensure the text is available to screen readers but not visible.
+
+A link with the `sr-only` class applied will stay hidden to sighted users at all times, evem when it receives keyboard focus. This can cause confusion when sighted users navigate a page with keyboard controls. <b>For this reason, `sr-only` is generally not appropriate when working with interactive elements like links, buttons, etc.</b> Use Visually Hidden (below) instead.
+
+### Visually Hidden component
+
+See [our Visually Hidden component docs](/components/visually-hidden) for more information. It functions similarly to `sr-only`, but they are not quite the same. For example, a Visually Hidden link will appear to sighted users when in focus. On the other hand, a link with the `sr-only` class applied will stay hidden to sighted users at all times. <b>For this reason, `sr-only` is generally not appropriate when working with interactive elements like links, buttons, etc.</b> Use Visually Hidden instead.
+
+---
+
+## Non-English language support
+
+Content in non-English languages, such as Arabic or Spanish, must have the lang="CODE" attribute set, where CODE is the language code e.g. “ar” for Arabic or “es” for Spanish. There’s a [list of language codes](https://www.w3schools.com/tags/ref_language_codes.asp).
+
+Additionally, Arabic and some other languages are read right-to-left. This means we need to set an additional attribute in the HTML for Arabic text. Add dir="rtl to the DOM elements with lang="ar".
+
+Below is an example of how this looks:
+
+```jsx
+<p dir="rtl" lang="ar">
+  نجم هذا القرار عن دعوى قضائية في محكمة جزئية فدرالية في واشنطن ضد ابن سلمان
+  وحوالي 20 متهمًا آخر رفعتها خطيبة جمال خاشقجي، كاتب الأعمدة المساهم في صحيفة
+  البوست الذي قُتِل على يد عملاء سعوديين في إسطنبول يوم 2 أكتوبر/تشرين الأول
+  2018. وتزعم الدعوى أنّ ولي العهد والمتهمين الآخرين مسؤولون عن جريمة القتل تلك.
+</p>
+```
+
+<b>It is very important that this is done correctly.</b> A screen reader user may
+not hear content in non-English languages correctly if it is not tagged correctly.
+For example, if Arabic is not tagged correctly, then it is not read by the built-in
+MacOS & iOS screen reader VoiceOver. Instead, each character is read individually:
+“Arabic character X, Arabic Character Y,” etc. VoiceOver also includes different
+voices that pronounce the words from different languages. If `lang` is not set on
+non-English text, then VoiceOver will not use the correct voice.
 
 ---
 
