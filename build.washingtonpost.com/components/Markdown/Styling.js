@@ -6,7 +6,11 @@ import React from "react";
 import { Header } from "./Components/headers";
 import CustomLink from "./Components/link";
 import { styled, theme, Box, Button } from "@washingtonpost/wpds-ui-kit";
-import { List, ListItem, CheckboxListItem } from "~/components/Markdown/Components/list";
+import {
+  List,
+  ListItem,
+  CheckboxListItem,
+} from "~/components/Markdown/Components/list";
 import dynamic from "next/dynamic";
 import { Grid, Cell } from "./Components/Grid";
 import { AlertBanner } from "@washingtonpost/wpds-alert-banner";
@@ -141,7 +145,11 @@ const components = {
   ul: List,
   ol: ({ children }) => <List as="ol">{children}</List>,
   li: ({ children }) => {
-    return children[1].props.children[0].props.type === "checkbox" ? <CheckboxListItem>{children}</CheckboxListItem> : <ListItem>{children}</ListItem>;
+    return children[1]?.props?.children[0]?.props?.type === "checkbox" ? (
+      <CheckboxListItem>{children}</CheckboxListItem>
+    ) : (
+      <ListItem>{children}</ListItem>
+    );
   },
   p: P,
   Change: Change,
