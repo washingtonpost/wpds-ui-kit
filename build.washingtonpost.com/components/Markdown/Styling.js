@@ -216,12 +216,12 @@ const components = {
   Box: Box,
   code: dynamic(() => import("./Components/Code")),
   pre: dynamic(() => import("./Components/Pre")),
-  input: ({ type, ...props }) => {
-    if (type === "checkbox") {
-      return <InputCheckbox {...props} />;
+  input: (data) => {
+    if (data.type === "checkbox") {
+      return <InputCheckbox {...data.props} checked={data.checked} />;
     }
 
-    return <input {...props} />;
+    return <input {...data.props} />;
   },
   blockquote: ({ children }) => (
     <Box
