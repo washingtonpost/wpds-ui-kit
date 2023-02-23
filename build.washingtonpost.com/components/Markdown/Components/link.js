@@ -26,7 +26,7 @@ export default function CustomLink({
     variants: {
       signal: {
         showColor: {
-          color: "$signal",
+          color: "$accessible",
         },
       },
       underline: {

@@ -19,7 +19,7 @@ export default function CustomLink({ useSignal, as, href, ...otherProps }) {
     variants: {
       signal: {
         showColor: {
-          color: "$signal",
+          color: "$accessible",
         },
       },
     },
