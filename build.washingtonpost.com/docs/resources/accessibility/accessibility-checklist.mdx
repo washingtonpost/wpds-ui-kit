@@ -19,414 +19,138 @@ The checkboxes on this page are clickable, if you want to check each box as you 
 <br />
 ## Automated testing
 
-<form action="/action_page.php">
-  <div style={{ display: "flex", alignItems: "flex-start" }}>
-    <input
-      type="checkbox"
-      id="1"
-      name="checkbox 1"
-      style={{ marginRight: "12px" }}
-    />
-    <label for="1" style={{ display: "inline-block" }}>
-      {" "}
-      <b>Run the axe DevTools tests</b>
-      <br />
-      You can install the [axe DevTools Chrome Extension](https://chrome.google.com/webstore/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd?hl=en-US)
-      and then use it on the page ([guide to using axe DevTools](https://www.youtube.com/watch?v=iRGB40c_YJc&t=36s)).
-      Fix any issues that are flagged.
-    </label>
-  </div>
-  <br />
-  <div style={{ display: "flex", alignItems: "flex-start" }}>
-    <input
-      type="checkbox"
-      id="1"
-      name="checkbox 1"
-      style={{ marginRight: "12px" }}
-    />
-    <label for="1" style={{ display: "inline-block" }}>
-      {" "}
-      <b>Run the WAVE tests</b>
-      <br />
+- [ ] <label>**Run the axe DevTools tests**<br />
+      You can install the [axe DevTools Chrome Extension](https://chrome.google.com/webstore/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd?hl=en-US) and then use it on the page ([guide to using axe DevTools](https://www.youtube.com/watch?v=iRGB40c_YJc&t=36s)). Fix any issues that are flagged.</label>
+<br />
+- [ ] <label>**Run the WAVE tests**<br />
       You can install the [WAVE Chrome extension](https://chrome.google.com/webstore/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh?hl=en-US)
       and then use it on the page ([guide to using WAVE](https://www.youtube.com/watch?v=ITUDiTgAZY0))
-      to check for any other auto-detectable issues.
-    </label>
-  </div>
-</form>
+      to check for any other auto-detectable issues.</label>
 
 ---
 
 ## Multimedia
 
-<form action="/action_page.php">
-  <div style={{ display: "flex", alignItems: "flex-start" }}>
-    <input
-      type="checkbox"
-      id="2"
-      name="checkbox 2"
-      style={{ marginRight: "12px" }}
-    />
-    <label for="2" style={{ display: "inline-block" }}>
-      {" "}
-      <b>Ensure all images have alt text</b>
-      <br />
+- [ ] <label>**Ensure all images have alt text**<br />
       Follow the [guidance for writing alt text](/resources/accessibility/alt-text).
       If an image is purely decorative, make sure it still has `alt` or `alt=""`
       present in the HTML. Similarly, videos and gifs should have text descriptions
-      for screen reader users.
-    </label>
-  </div>
-  <br />
-  <div style={{ display: "flex", alignItems: "flex-start" }}>
-    <input
-      type="checkbox"
-      id="3"
-      name="checkbox 3"
-      style={{ marginRight: "12px" }}
-    />
-    <label for="3" style={{ display: "inline-block" }}>
-      {" "}
-      <b>Hide certain content from screen readers</b>
-      <br />
+      for screen reader users.</label>
+<br />
+- [ ] <label>**Hide certain content from screen readers**<br />
       Just as you would put alt="" for purely decorative images to hide them from
       screen readers, you should add [aria-hidden="true"](/resources/accessibility/heading-order#Hiding%20content%20from%20screen%20readers)
       for content on the page that is not screen reader friendly. An example of this
       might be an election map full of svgs and labels, etc. Ideally, you’d include
       [a table version](/resources/accessibility/heading-order#Tables) of the data
-      for accessibility and just hide the map with aria-hidden.
-    </label>
-  </div>
-  <br />
-  <div style={{ display: "flex", alignItems: "flex-start" }}>
-    <input
-      type="checkbox"
-      id="4"
-      name="checkbox 4"
-      style={{ marginRight: "12px" }}
-    />
-    <label for="4" style={{ display: "inline-block" }}>
-      {" "}
-      <b>Avoid auto-playing audio and video</b>
-      <br />
+      for accessibility and just hide the map with aria-hidden.</label>
+<br />
+- [ ] <label>**Avoid auto-playing audio and video**<br />
       Never auto-play audio. Auto-playing video is strongly discouraged. Ensure all
-      audio and video instances have an accessible [pause, stop or hide button](https://www.w3.org/WAI/WCAG21/Understanding/pause-stop-hide.html).
-    </label>
-  </div>
-  <br />
-  <div style={{ display: "flex", alignItems: "flex-start" }}>
-    <input
-      type="checkbox"
-      id="4"
-      name="checkbox 4"
-      style={{ marginRight: "12px" }}
-    />
-    <label for="4" style={{ display: "inline-block" }}>
-      {" "}
-      <b>Eliminate rapidly flashing content</b>
-      <br />
+      audio and video instances have an accessible [pause, stop or hide button](https://www.w3.org/WAI/WCAG21/Understanding/pause-stop-hide.html).</label>
+<br />
+- [ ] <label>**Eliminate rapidly flashing content**<br />
       Videos, gifs and animations must not include any instances of flashing or blinking
-      more than 3 times within any one second, as this is a seizure risk.
-    </label>
-  </div>
-  <br />
-  <div style={{ display: "flex", alignItems: "flex-start" }}>
-    <input
-      type="checkbox"
-      id="5"
-      name="checkbox 5"
-      style={{ marginRight: "12px" }}
-    />
-    <label for="5" style={{ display: "inline-block" }}>
-      {" "}
-      <b>Provide captions and transcripts</b>
-      <br />
+      more than 3 times within any one second, as this is a seizure risk.</label>
+<br />
+- [ ] <label>**Provide captions and transcripts**<br />
       Anywhere there is audio, there should also be captions and a transcript provided.
       These should include words spoken AND any other meaningful sounds from the
       audio (such as a sigh or laugh in conversation, or the chopping of a knife
-      in cooking) as well.
-    </label>
-  </div>
-</form>
+      in cooking) as well.</label>
 
 ---
 
 ## Color
 
-<form action="/action_page.php">
-  <div style={{ display: "flex", alignItems: "flex-start" }}>
-    <input
-      type="checkbox"
-      id="6"
-      name="checkbox 6"
-      style={{ marginRight: "12px" }}
-    />
-    <label for="6" style={{ display: "inline-block" }}>
-      {" "}
-      <b>Confirm white text is never on a pure black background</b>
-      <br />
+- [ ] <label>**Confirm white text is never on a pure black background**<br />
       Pure white text on a pure black background causes a [fuzziness effect known
       as halation](https://medium.com/@h_locke/why-dark-mode-causes-more-accessibility-issues-than-it-solves-d2f8359bb46a)
-      for many readers with astygmitism.
-    </label>
-  </div>
-  <br />
-  <div style={{ display: "flex", alignItems: "flex-start" }}>
-    <input
-      type="checkbox"
-      id="6"
-      name="checkbox 6"
-      style={{ marginRight: "12px" }}
-    />
-    <label for="6" style={{ display: "inline-block" }}>
-      {" "}
-      <b>Confirm black text is never on a pure white background</b>
-      <br />
+      for many readers with astygmitism.</label>
+<br />
+- [ ] <label>**Confirm black text is never on a pure white background**<br />
       Pure black text on a pure white background is [known to cause eye strain among
-      many users](https://uxmovement.com/content/why-you-should-never-use-pure-black-for-text-or-backgrounds/).
-    </label>
-  </div>
-  <br />
-  <div style={{ display: "flex", alignItems: "flex-start" }}>
-    <input
-      type="checkbox"
-      id="7"
-      name="checkbox 7"
-      style={{ marginRight: "12px" }}
-    />
-    <label for="7" style={{ display: "inline-block" }}>
-      {" "}
-      <b>Ensure color contrast meets the WCAG AA standard</b>
-      <br />
+      many users](https://uxmovement.com/content/why-you-should-never-use-pure-black-for-text-or-backgrounds/).</label>
+<br />
+- [ ] <label>**Ensure color contrast meets the WCAG AA standard**<br />
       All color combinations, especially for text and interactive elements, must
       meet at least the AA (preferably AAA) [color contrast](/resources/accessibility/color)
-      standard [using the WebAIM tool](https://webaim.org/resources/contrastchecker/).
-    </label>
-  </div>
-  <br />
-  <div style={{ display: "flex", alignItems: "flex-start" }}>
-    <input
-      type="checkbox"
-      id="8"
-      name="checkbox 8"
-      style={{ marginRight: "12px" }}
-    />
-    <label for="8" style={{ display: "inline-block" }}>
-      {" "}
-      <b>Check contrast for common forms of colorblindness</b>
-      <br />
+      standard [using the WebAIM tool](https://webaim.org/resources/contrastchecker/).</label>
+<br />
+- [ ] <label>**Check contrast for common forms of colorblindness**<br />
       Ensure color combinations meet the AA color contrast standard for [colorblind
       users](/resources/accessibility/color#Color%20Blindness) among at least the
-      three most common forms of colorblindness.
-    </label>
-  </div>
-  <br />
-  <div style={{ display: "flex", alignItems: "flex-start" }}>
-    <input
-      type="checkbox"
-      id="9"
-      name="checkbox 9"
-      style={{ marginRight: "12px" }}
-    />
-    <label for="9" style={{ display: "inline-block" }}>
-      {" "}
-      <b>View the page in dark and light mode</b>
-      <br />
+      three most common forms of colorblindness.</label>
+<br />
+- [ ] <label>**View the page in dark and light mode**<br />
       [Dark mode and light mode](/resources/accessibility/color#Dark%20mode%20considerations)
       should both be supported. Does the page change to light or dark mode automatically
       per browser settings? Does the page pass color contrast thresholds in both
       modes? And does everything change color correctly upon toggling to light or
-      dark? Are all links, buttons, fonts, etc. on the page still visible?
-    </label>
-  </div>
-</form>
+      dark? Are all links, buttons, fonts, etc. on the page still visible?</label>
 
 ---
 
 ## Text, labels & zoom
 
-<form action="/action_page.php">
-  <div style={{ display: "flex", alignItems: "flex-start" }}>
-    <input
-      type="checkbox"
-      id="10"
-      name="checkbox 10"
-      style={{ marginRight: "12px" }}
-    />
-    <label for="10" style={{ display: "inline-block" }}>
-      {" "}
-      <b>Text should be written in plain language</b>
-      <br />
+- [ ] <label>**Text should be written in plain language**<br />
       Text should be written in [plain language](/resources/accessibility/plain-language-and-labeling)
-      wherever possible. Is there any jargon or use of idioms? These should be avoided.
-    </label>
-  </div>
-  <br />
-  <div style={{ display: "flex", alignItems: "flex-start" }}>
-    <input
-      type="checkbox"
-      id="10"
-      name="checkbox 10"
-      style={{ marginRight: "12px" }}
-    />
-    <label for="10" style={{ display: "inline-block" }}>
-      {" "}
-      <b>Ensure non-English content is labeled as such</b>
-      <br />
+      wherever possible. Is there any jargon or use of idioms? These should be avoided.</label>
+<br />
+- [ ] <label>**Ensure non-English content is labeled as such**<br />
       Content in non-English languages, such as Arabic or Spanish, must have the
       lang="CODE" attribute set, where CODE is the language code e.g. “ar” for Arabic
       or “es” for Spanish. There’s a [list of language codes](https://www.w3schools.com/tags/ref_language_codes.asp).
       This is essential for non-English text to be read correctly by screen readers.
       Additionally, Arabic and some other languages are read right-to-left. This
-      means we need to set an additional attribute in the HTML, `dir="rtl`.
-    </label>
-  </div>
-  <br />
-  <div style={{ display: "flex", alignItems: "flex-start" }}>
-    <input
-      type="checkbox"
-      id="11"
-      name="checkbox 11"
-      style={{ marginRight: "12px" }}
-    />
-    <label for="11" style={{ display: "inline-block" }}>
-      {" "}
-      <b>Clearly label interactive content</b>
-      <br />
+      means we need to set an additional attribute in the HTML, `dir="rtl`.</label>
+<br />
+- [ ] <label>**Clearly label interactive content**<br />
       Meaning of icons, buttons and other elements should be explicitly conveyed
       via text whenever possible. In all cases, interactive elements should have
-      appropriate aria-labels. See our [guidance on labeling for screen reader users](/resources/accessibility/heading-order#Labeling%20interactive%20elements).
-    </label>
-  </div>
-  <br />
-  <div style={{ display: "flex", alignItems: "flex-start" }}>
-    <input
-      type="checkbox"
-      id="12"
-      name="checkbox 12"
-      style={{ marginRight: "12px" }}
-    />
-    <label for="12" style={{ display: "inline-block" }}>
-      {" "}
-      <b>Ensure users have safeguards</b>
-      <br />
+      appropriate aria-labels. See our [guidance on labeling for screen reader users](/resources/accessibility/heading-order#Labeling%20interactive%20elements).</label>
+<br />
+- [ ] <label>**Ensure users have safeguards**<br />
       Avoid user prompts or notices that disappear automatically. If the content
       includes a form, make sure that clear error messages are provided. See our
-      [guidance on forms](/resources/accessibility/plain-language-and-labeling#Forms).
-    </label>
-  </div>
-  <br />
-  <div style={{ display: "flex", alignItems: "flex-start" }}>
-    <input
-      type="checkbox"
-      id="13"
-      name="checkbox 13"
-      style={{ marginRight: "12px" }}
-    />
-    <label for="13" style={{ display: "inline-block" }}>
-      {" "}
-      <b>Change page zoom level</b>
-      <br />
+      [guidance on forms](/resources/accessibility/plain-language-and-labeling#Forms).</label>
+<br />
+- [ ] <label>**Change page zoom level**<br />
       Set page zoom to 200% (on a Mac, press `command +` to zoom in). Does text scale
-      correctly? Is it still readable (no overflow, overlap, etc.)?
-    </label>
-  </div>
-  <br />
-  <div style={{ display: "flex", alignItems: "flex-start" }}>
-    <input
-      type="checkbox"
-      id="14"
-      name="checkbox 14"
-      style={{ marginRight: "12px" }}
-    />
-    <label for="14" style={{ display: "inline-block" }}>
-      {" "}
-      <b>Change browser zoom level</b>
-      <br />
+      correctly? Is it still readable (no overflow, overlap, etc.)?</label>
+<br />
+- [ ] <label>**Change browser zoom level**<br />
       Restore page zoom to 100%, but increase the font size in your browser settings
-      to 200%. Does the text scale correctly on our page? Is it still readable?
-    </label>
-  </div>
-</form>
+      to 200%. Does the text scale correctly on our page? Is it still readable?</label>
 
 ---
 
 ## Screen reader & keyboard controls
 
-<form action="/action_page.php">
-  <div style={{ display: "flex", alignItems: "flex-start" }}>
-    <input
-      type="checkbox"
-      id="15"
-      name="checkbox 15"
-      style={{ marginRight: "12px" }}
-    />
-    <label for="15" style={{ display: "inline-block" }}>
-      {" "}
-      <b>Navigate content with keyboard only</b>
-      <br />
+- [ ] <label>**Navigate content with keyboard only**<br />
       Using [your keyboard only](/accessibility/guides/keyboard-accessibility), `tab`
       through the buttons, links, hoverable elements and any others the user should
       be able to interact with, ensuring that (a) they each receive appropriate focus
       styles and (b) that they are clickable with the enter key (links and buttons)
       and/or space key (buttons). Each time you press the tab key, you should see
       something change on the page. If not, there is a missing focus style or tab
-      index issue.
-    </label>
-  </div>
-  <br />
-  <div style={{ display: "flex", alignItems: "flex-start" }}>
-    <input
-      type="checkbox"
-      id="16"
-      name="checkbox 16"
-      style={{ marginRight: "12px" }}
-    />
-    <label for="16" style={{ display: "inline-block" }}>
-      {" "}
-      <b>Confirm heading order is correct</b>
-      <br />
+      index issue.</label>
+<br />
+- [ ] <label>**Confirm heading order is correct**<br />
       Check the heading order on the page using [inspect element in the Chrome dev
       tools](https://developer.chrome.com/docs/devtools/open/). Does the order make
       sense? There should be only one `h1`, the page title. From there, headings
       should be [ordered strictly by page heirarchy](/resources/accessibility/heading-order#Heading%20order)
-      (don't jump from `h2` to `h4`, don't use `h2` as a subhead of an `h3`, etc.).
-    </label>
-  </div>
-  <br />
-  <div style={{ display: "flex", alignItems: "flex-start" }}>
-    <input
-      type="checkbox"
-      id="17"
-      name="checkbox 17"
-      style={{ marginRight: "12px" }}
-    />
-    <label for="17" style={{ display: "inline-block" }}>
-      {" "}
-      <b>Test with screen reader linearly</b>
-      <br />
+      (don't jump from `h2` to `h4`, don't use `h2` as a subhead of an `h3`, etc.).</label>
+<br />
+- [ ] <label>**Test with screen reader linearly**<br />
       Using [a screen reader](/accessibility/guides/screen-readers), navigate the
       page from top to bottom. Ensure all visible text is read aloud in a sensible
-      order
-    </label>
-  </div>
-  <br />
-  <div style={{ display: "flex", alignItems: "flex-start" }}>
-    <input
-      type="checkbox"
-      id="18"
-      name="checkbox 18"
-      style={{ marginRight: "12px" }}
-    />
-    <label for="18">
-      {" "}
-      <b>Test with screen reader rotor</b>
-      <br />
+      order.</label>
+<br />
+- [ ] <label>**Test with screen reader rotor**<br />
       Using [a screen reader](/accessibility/guides/screen-readers), open the rotor
       and ensure all links, buttons and other elements have appropriate names. Interactive
       elements should not have generic names like "click here." You should be able
       to understand what the link or button does from the rotor menu without other
-      context from the page.
-    </label>
-  </div>
-</form>
+      context from the page.</label>
