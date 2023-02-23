@@ -43,6 +43,7 @@ const Page = ({ wrapper }) => (
             <NewCustomLink
               type={type === "New" ? type : "imageOnly"}
               href={`/resources/${name.toLowerCase()}`}
+              noUnderline
             >
               <Header
                 as="h2"
@@ -74,7 +75,7 @@ const Page = ({ wrapper }) => (
                   },
                 }}
               >
-                <NewCustomLink href={doc.slug} type="imageOnly">
+                <NewCustomLink href={doc.slug} type="imageOnly" noUnderline>
                   <Thumbnail
                     name={doc.data.title}
                     description={doc.data.description.split(".")[0]}

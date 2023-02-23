@@ -36,7 +36,7 @@ const ChevronForLink = styled(ChevronRight, {
 export const SeeAllLink = (props) => {
   const name = props?.name?.toLowerCase() || "";
   return (
-    <CustomLink href={props.href}>
+    <CustomLink href={props.href} noUnderline>
       <SeeAll as="h4" type={props.type}>
         <Box css={{ borderBottom: "1px solid $accessible" }}>
           See all {name}

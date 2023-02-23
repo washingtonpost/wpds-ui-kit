@@ -25,7 +25,7 @@ export const ListItem = styled("li", {
 
   ".markdown-input-checkbox": {
     float: "left",
-  }
+  },
 });
 
 export const LinkText = styled("span", {
