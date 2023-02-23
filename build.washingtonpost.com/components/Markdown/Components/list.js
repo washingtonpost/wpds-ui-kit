@@ -25,7 +25,7 @@ export const ListItem = styled("li", {
     color: theme.colors.accessible,
     textDecoration: "underline",
   },
-  "&.task-list-item p": {
+  "&.task-list-item": {
     display: "flex",
     alignItems: "flex-start",
 
