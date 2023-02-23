@@ -218,7 +218,12 @@ const components = {
   pre: dynamic(() => import("./Components/Pre")),
   input: (data) => {
     if (data.type === "checkbox") {
-      return <InputCheckbox {...data.props} checked={data.checked} />;
+      return (
+        <span className="markdown-input-checkbox">
+          {" "}
+          <InputCheckbox {...data.props} checked={data.checked} />
+        </span>
+      );
     }
 
     return <input {...data.props} />;
