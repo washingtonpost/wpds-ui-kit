@@ -1,6 +1,6 @@
 // credit to radix-ui
 // https://github.com/radix-ui/website/blob/main/lib/bundlephobia.ts
-const { getPackageStats } = require("package-build-stats");
+import fetch from "node-fetch";
 
 export function formatBytes(bytes, decimals = 2) {
   if (bytes === 0) return "0 Bytes";
@@ -21,7 +21,11 @@ export async function getPackageData(name) {
 
       return size;
     } else {
-      const data = await getPackageStats(`@washingtonpost/wpds-${name}@latest`);
+      const bundlephobiaResponse = await fetch(
+        `https://bundlephobia.com/api/size?package=@washingtonpost/wpds-${name}@latest`
+      );
+
+      const data = await bundlephobiaResponse.json();
 
       if (data.error) {
         throw new Error(data.error);

@@ -1,0 +1,20 @@
+---
+order: 200
+title: Convert Tachyons to Stitches
+description: A simple online tool to convert Tachyons classes to Stitches style objects.
+kicker: Tools
+publishDate: Oct 25, 2022
+---
+
+<br />
+This utility converts Tachyon classes to a style object that can be used by Stitches
+`styled` or `css` functions. Many colors are not an exact match between the two systems.
+Tachonys colors are converted to the closest token value.
+
+Theme tokens are referenced from the theme object that is imported from the `wpds-ui-kit` package.
+
+```javascript
+import { theme } from "@washingtonpost/wpds-ui-kit";
+```
+
+<StyleConverter />

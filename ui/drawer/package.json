@@ -1,6 +1,6 @@
 {
   "name": "@washingtonpost/wpds-drawer",
-  "version": "0.20.1",
+  "version": "0.24.0",
   "description": "WPDS Drawer",
   "author": "WPDS Support <wpds@washpost.com>",
   "homepage": "https://github.com/washingtonpost/wpds-ui-kit#readme",
@@ -36,7 +36,7 @@
     "typescript": "4.5.5"
   },
   "peerDependencies": {
-    "@washingtonpost/wpds-assets": "^1.13.0",
+    "@washingtonpost/wpds-assets": "^1.16.0",
     "@washingtonpost/wpds-button": "*",
     "@washingtonpost/wpds-icon": "*",
     "@washingtonpost/wpds-scrim": "*",
@@ -45,12 +45,12 @@
   },
   "dependencies": {
     "@radix-ui/react-focus-scope": "^1.0.0",
-    "@washingtonpost/wpds-assets": "^1.13.0",
-    "@washingtonpost/wpds-button": "0.20.1",
-    "@washingtonpost/wpds-icon": "0.20.1",
-    "@washingtonpost/wpds-scrim": "0.20.1",
-    "@washingtonpost/wpds-theme": "0.20.1",
+    "@washingtonpost/wpds-assets": "^1.16.0",
+    "@washingtonpost/wpds-button": "0.24.0",
+    "@washingtonpost/wpds-icon": "0.24.0",
+    "@washingtonpost/wpds-scrim": "0.24.0",
+    "@washingtonpost/wpds-theme": "0.24.0",
     "react-transition-group": "^4.4.5"
   },
-  "gitHead": "fb44cba9b71bb3e526d167a942b79fab9b752ca3"
+  "gitHead": "cbb17c0ecae1b2c8ceae96a98d73cee3796acbe6"
 }

@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { theme, styled } from "@washingtonpost/wpds-theme";
+import { styled, theme } from "@washingtonpost/wpds-theme";
 
 import { Check, Indeterminate } from "@washingtonpost/wpds-assets";
 
@@ -258,15 +258,19 @@ const StyledInputLabel = styled(InputLabel, {
   cursor: "default",
   gap: "$025",
   flexDirection: "row",
-  alignItems: "flex-end",
+  alignItems: "flex-start",
   justifyContent: "center",
   lineHeight: theme.lineHeights["050"],
+});
+
+const StyledLabel = styled("span", {
+  alignSelf: "flex-end",
 });
 
 export const Checkbox = React.forwardRef<HTMLButtonElement, CheckboxInterface>(
   (props, ref) => {
     return (
-      <StyledInputLabel htmlFor={props.id}>
+      <StyledInputLabel htmlFor={props.id} required={props.required}>
         <StyledCheckbox ref={ref} {...props}>
           <StyledIndicator
             size={props.size}
@@ -298,7 +302,7 @@ export const Checkbox = React.forwardRef<HTMLButtonElement, CheckboxInterface>(
             </StyledCheck>
           </StyledIndicator>
         </StyledCheckbox>
-        {props.label}
+        <StyledLabel>{props.label || props.children}</StyledLabel>
       </StyledInputLabel>
     );
   }

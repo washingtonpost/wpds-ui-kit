@@ -1,8 +1,9 @@
 import * as React from "react";
-import { styled, css, theme } from "@washingtonpost/wpds-theme";
+import { styled, theme } from "@washingtonpost/wpds-theme";
 import type * as WPDS from "@washingtonpost/wpds-theme";
 import * as Label from "@radix-ui/react-label";
 import type { LabelProps } from "@radix-ui/react-label";
+import { RequiredIndicatorCSS } from "@washingtonpost/wpds-input-shared";
 
 const NAME = "InputLabel";
 
@@ -20,10 +21,6 @@ const StyledLabel = styled(Label.Root, {
       },
     },
   },
-});
-
-const RequiredIndicatorCSS = css({
-  color: theme.colors.error,
 });
 
 interface InputLabelProps extends LabelProps {

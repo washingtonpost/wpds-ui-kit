@@ -1,11 +1,10 @@
 {
-  "rewrites": [
-    { "source": "/storybook", "destination": "/storybook/index.html" },
-    { "source": "/stories.json", "destination": "/storybook/stories.json" },
+  "regions": ["sfo1", "iad1"],
+  "redirects": [
     {
-      "source": "/storybook/:slug",
-      "destination": "/storybook/:slug"
+      "source": "/storybook",
+      "destination": "https://wpds-ui-kit-storybook.preview.now.washingtonpost.com",
+      "permanent": false
     }
-  ],
-  "regions": ["sfo1", "iad1"]
+  ]
 }
