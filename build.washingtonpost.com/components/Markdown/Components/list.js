@@ -16,6 +16,12 @@ export const List = styled("ul", {
 });
 
 export const ListItem = styled("li", {
+  padding: "$025 0",
+});
+
+export const CheckboxListItem = styled("li", {
+  padding: "$025 0",
+  marginRight: "$050",
   listStyle: "none",
 
   "[role='checkbox']": {

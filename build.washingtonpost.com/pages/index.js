@@ -185,7 +185,11 @@ const Index = ({ recentPosts, rankedArticles, contributors }) => {
             },
           }}
         >
-          <NewCustomLink href="/components/alert-banner" type="imageOnly" noUnderline>
+          <NewCustomLink
+            href="/components/alert-banner"
+            type="imageOnly"
+            noUnderline
+          >
             <Image
               height="160"
               width="320"
