@@ -243,6 +243,7 @@ const components = {
   ),
   YoutubeEmbed: dynamic(() => import("./Components/YouTubeEmbed")),
   StyleConverter: dynamic(() => import("./Components/StyleConverter")),
+  Anatomy: dynamic(() => import("./Components/Anatomy")),
 };
 
 export default components;

@@ -26,6 +26,15 @@ module.exports = function (plop) {
           base: "../templates/component",
           templateFiles: "../templates/component/**/*",
           data: {
+            componentName: "{{ dashCase componentName }}",
+          },
+        },
+        {
+          type: "addMany",
+          destination: `../build.washingtonpost.com/docs/components`,
+          base: "../templates/component-doc",
+          templateFiles: "../templates/component-doc/**/*",
+          data: {
             packageName: "{{ dashCase componentName }}",
             componentName: "{{ componentName }}",
             version: lerna.version,
