@@ -196,12 +196,6 @@
 
   <url>
     <loc
-      >https://build.washingtonpost.com/resources/accessibility/heading-order</loc
-    >
-  </url>
-
-  <url>
-    <loc
       >https://build.washingtonpost.com/resources/accessibility/keyboard-accessibility</loc
     >
   </url>
@@ -215,6 +209,12 @@
   <url>
     <loc
       >https://build.washingtonpost.com/resources/accessibility/screen-readers</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://build.washingtonpost.com/resources/accessibility/semantic-html</loc
     >
   </url>
 

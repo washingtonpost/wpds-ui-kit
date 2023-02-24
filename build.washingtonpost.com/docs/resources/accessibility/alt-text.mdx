@@ -128,21 +128,45 @@ Below is an example from The Washington Post Twitter account.
 
 ---
 
-## Don't use links in alt text
+## SEO considerations
 
-Links are not clickable when used in alt text. A screen reader user will hear each character in the link read out, one by one, and will be unable to interact with it. Include links in the text surrounding the image instead of in the alt text.
+SEO is not the purpose of alt text. We write our alt text to make content more accessible to real users.
+
+[Google warns us not to stuff keywords into alt text](https://developers.google.com/search/docs/appearance/google-images#descriptive-alt-text): "Avoid filling alt attributes with keywords (also known as [keyword stuffing](https://developers.google.com/search/docs/essentials/spam-policies#keyword-stuffing)) as it results in a negative user experience and may cause your site to be seen as spam." So, trying to abuse the alt text field for SEO benefits can actually hurt SEO performance.
+
+Consider the potential SEO benefits of alt text to be a positive externality of making our content more accessible.
 
 ---
 
-## Don't use emojis or symbols
+## Punctuation, emojis and other symbols
+
+### Punctuation
+
+Listen to your alt text using a screen reader to understand how punctuation affects the way it is read aloud.
+
+Deque provides [a guide to special characters for screen readers](https://www.deque.com/blog/dont-screen-readers-read-whats-screen-part-1-punctuation-typographic-symbols/), which gives context on how some punctuation is read by screen readers.
+
+**But online guides are not a substitute for manual testing. Guides become outdated quickly as screen readers evolve and change.**
+
+### Emojis, emoticons and other symbols
 
 Alt text is for people who cannot see the image. Emojis and symbols often have confusing or unintended text when read by a screen reader, so they should be avoided entirely.
+
+Similarly, avoid emoticons like :) in your alt text and elsewhere. Screen readers may not recognize them and may instead read them as punctuation.
+
+---
+
+## Don't use hyperlinks in alt text
+
+Links are not clickable when used in alt text. A screen reader user may hear each character in the link read out one by one and will be unable to click the link anyway. Include links in the text surrounding the image instead of in the alt text, and make sure to follow [our hyperlink text guidelines](http://localhost:3000/resources/accessibility/semantic-html#Hyperlink%20text%20guidelines) for that.
+
+Don't just take our word for it; try it yourself. Use a screen reader to listen to a hyperlink in alt text. You will probably hear something like "h-t-t-p-colon-slash-slash" and so on. It is a bad user experience.
 
 ---
 
 ## Hashtags and CamelCase
 
-Social media hashtags are a form of link and thus won't be clickable in alt text.
+Social media hashtags are a form of hyperlink and thus won't be clickable in alt text.
 
 If a hashtag is essential to the alt text because it is the name of a movement or effort, for instance, then it should be included in the alt text with CamelCase formatting. CamelCase involves capitalizing the first letter of each word in a multiple-word hashtag. This allows screen readers to distinguish words in a hashtag and increases legibility for everyone.
 

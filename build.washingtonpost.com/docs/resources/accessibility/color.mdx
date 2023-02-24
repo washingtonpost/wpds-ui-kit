@@ -1,6 +1,6 @@
 ---
 title: Color
-description: Contrast, color blindness and light/dark mode
+description: Contrast, colorblindness, light and dark mode standards
 kicker: Accessibility
 publishDate: February 24, 2023
 thumbnail: /img/resources/thumbnails/a11y_color.png
@@ -36,8 +36,8 @@ The [WebAIM Color Contrast Checker](https://webaim.org/resources/contrastchecker
 
 The [Adobe Color Contrast Checker](https://color.adobe.com/create/color-contrast-analyzer) has a different UI than the WebAIM tool, so try both to see which better fits your needs.
 
-<br />
-<br />
+---
+
 ## Color Blindness
 
 There are many forms of color blindness, and they have different affects on perception of color.
@@ -79,7 +79,8 @@ One advantage of the Adobe tool is that it has a built-in warning when colors ar
   </Box>
 </Container>
 <br />
-<br />
+
+---
 
 ## Dark mode considerations
 
@@ -108,3 +109,13 @@ Never use pure black text on a white background (in any circumstance, but be esp
 You can use dark gray text, instead of black, to avoid this issue.
 
 View [our color tokens](/foundations/color) for more info.
+
+---
+
+## Never rely on color coding
+
+Even if you have fully accounted for contrast, colorblindness and compatability with various user settings like dark mode, you should never rely purely on color coding to convey information to users.
+
+Screen reader users will always need text explanations of content. Others have their devices set to grayscale, so colors are mostly indistinguishable. Furthermore, colors may also have different cultural meanings across users, leading to confusion over the selection of colors and what it all means.
+
+Save yourself and your users the trouble by using text to convey the meaning of anything that you're tempted to convey via color.
