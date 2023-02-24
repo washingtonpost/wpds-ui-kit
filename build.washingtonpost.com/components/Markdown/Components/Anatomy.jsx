@@ -7,7 +7,7 @@ const Anatomy = ({ src, caption }) => {
   return (
     <Container
       css={{
-        height: 260,
+        minHeight: 260,
       }}
       caption={caption}
     >
