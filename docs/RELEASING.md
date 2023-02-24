@@ -3,10 +3,10 @@
 - We are using [Lerna](https://github.com/lerna/lerna)
 - The [commit message format](https://semantic-release.gitbook.io/semantic-release/#commit-message-format) informs the system which release type to create
 
-| Commit message | Release type |
-| --- | --- |
-| fix(pencil): stop graphite breaking when too much pressure applied | Fix Release (0.0.1) |
-| feat(pencil): add 'graphiteWidth' option | Feature Release (0.2.0) |
+| Commit message                                                     | Release type            |
+| ------------------------------------------------------------------ | ----------------------- |
+| fix(pencil): stop graphite breaking when too much pressure applied | Fix Release (0.0.1)     |
+| feat(pencil): add 'graphiteWidth' option                           | Feature Release (0.2.0) |
 
 ## Upload Bundled Code to Latest channel
 

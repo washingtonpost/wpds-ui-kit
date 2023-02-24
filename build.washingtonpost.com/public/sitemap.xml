@@ -5,6 +5,10 @@
   </url>
 
   <url>
+    <loc>https://build.washingtonpost.com/404</loc>
+  </url>
+
+  <url>
     <loc>https://build.washingtonpost.com/components/accordion</loc>
   </url>
 
@@ -22,6 +26,10 @@
 
   <url>
     <loc>https://build.washingtonpost.com/components/button</loc>
+  </url>
+
+  <url>
+    <loc>https://build.washingtonpost.com/components/card</loc>
   </url>
 
   <url>
@@ -58,6 +66,10 @@
 
   <url>
     <loc>https://build.washingtonpost.com/components/pagination-dots</loc>
+  </url>
+
+  <url>
+    <loc>https://build.washingtonpost.com/components/popover</loc>
   </url>
 
   <url>
@@ -256,6 +268,12 @@
 
   <url>
     <loc
+      >https://build.washingtonpost.com/resources/tools/tachyons-to-stitches</loc
+    >
+  </url>
+
+  <url>
+    <loc
       >https://build.washingtonpost.com/resources/tutorials/how-to-use-our-theme</loc
     >
   </url>
@@ -295,6 +313,10 @@
   </url>
 
   <url>
+    <loc>https://build.washingtonpost.com/support/component-status</loc>
+  </url>
+
+  <url>
     <loc>https://build.washingtonpost.com/support/get-help</loc>
   </url>
 
@@ -312,9 +334,5 @@
 
   <url>
     <loc>https://build.washingtonpost.com/zzz/color-codes</loc>
-  </url>
-
-  <url>
-    <loc>https://build.washingtonpost.com/zzz/tachyons-to-stitches</loc>
   </url>
 </urlset>

@@ -18,14 +18,14 @@ const myLoader = ({ src }) => {
 function Component() {
   	<Avatar size="200">
       <img
-        src="https://i.pravatar.cc/300"
+        src="https://i.pravatar.cc/300/300"
         alt="An avatar is an atomic component that represents an individual’s identity through a circular photo."
       />
     </Avatar>
     <Avatar>
       <Image
         loader={myLoader}
-        src="https://i.pravatar.cc/300"
+        src="https://i.pravatar.cc/300/300"
         width="32" //pixel equivalent of 200 token
         height="32" //pixel equivalent of 200 token
         layout="fixed"

@@ -1,23 +1,23 @@
 import * as React from "react";
 import { DrawerContext } from "./DrawerRoot";
 import { Scrim } from "@washingtonpost/wpds-scrim";
-import type * as WPDS from "@washingtonpost/wpds-theme";
 
 const NAME = "DrawerScrim";
 
-type DrawerScrimProps = {
-  /** Override CSS */
-  css?: WPDS.CSS;
-};
+type DrawerScrimProps = Omit<
+  React.ComponentPropsWithRef<typeof Scrim>,
+  "open" | "zIndex"
+>;
 
 export const DrawerScrim = React.forwardRef<HTMLDivElement, DrawerScrimProps>(
-  ({ children, ...props }, ref) => {
+  ({ children, onClick, ...props }, ref) => {
     const { onOpenChange, zIndex, open, defaultOpen } =
       React.useContext(DrawerContext);
     return (
       <Scrim
-        onClick={() => {
+        onClick={(event) => {
           onOpenChange(false);
+          onClick && onClick(event);
         }}
         ref={ref}
         zIndex={`calc(${zIndex} - 1)`}

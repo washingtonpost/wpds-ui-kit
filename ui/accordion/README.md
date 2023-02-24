@@ -37,7 +37,7 @@ const Component = () => {
         <Accordion.Content {...args} ref={myContentRef}>
           <Image
             loader={myLoader}
-            src="https://i.pravatar.cc/300"
+            src="https://i.pravatar.cc/300/300"
             width="100"
             height="100"
             layout="fixed"

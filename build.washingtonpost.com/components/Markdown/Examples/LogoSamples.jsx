@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
-import * as AllAssets from "@washingtonpost/wpds-assets/asset";
+// disable eslint for this line because we want to import all assets
+/*eslint import/namespace: ['error', { allowComputed: true }]*/
+import * as AllAssets from "@washingtonpost/wpds-assets";
 import MDXStyling from "~/components/Markdown/Styling";
 import { toast } from "react-toastify";
 import { Box, Icon, theme, AlertBanner } from "@washingtonpost/wpds-ui-kit";
@@ -87,13 +89,7 @@ const Logos = () => {
       const Sample = AllAssets[Asset];
       const componentName = paramCase(Asset);
 
-      const importExample = `import ${Asset.replace(
-        "Svg",
-        ""
-      )} from "@washingtonpost/wpds-assets/asset/${componentName.replace(
-        "svg",
-        ""
-      )}";`;
+      const importExample = `import { ${Asset} } from "@washingtonpost/wpds-assets";`;
 
       if (!logoList.includes(componentName)) return;
       return (

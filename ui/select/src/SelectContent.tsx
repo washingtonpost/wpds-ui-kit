@@ -16,7 +16,8 @@ const StyledContent = styled(SelectPrimitive.Content, {
   fontSize: theme.fontSizes["100"],
   fontWeight: theme.fontWeights.light,
   lineHeight: theme.lineHeights["125"],
-  transform: "translate(22px, 9px)",
+  paddingBlock: "11px",
+  transform: "translateX(22px)",
   overflowWrap: "anywhere",
 });
 
@@ -29,6 +30,18 @@ const scrollButtonStyles = {
   height: 25,
   backgroundColor: theme.colors["secondary"],
   cursor: "default",
+  variants: {
+    top: {
+      true: {
+        marginBlockStart: "-11px",
+      },
+    },
+    bottom: {
+      true: {
+        marginBlockEnd: "-11px",
+      },
+    },
+  },
 };
 
 const StyledScrollUpButton = styled(
@@ -65,13 +78,13 @@ export const SelectContent = React.forwardRef<
         {...props}
         ref={ref}
       >
-        <StyledScrollUpButton>
+        <StyledScrollUpButton top>
           <Icon label="">
             <ChevronUp />
           </Icon>
         </StyledScrollUpButton>
         <StyledViewport>{children}</StyledViewport>
-        <StyledScrollDownButton>
+        <StyledScrollDownButton bottom>
           <Icon label="">
             <ChevronDown />
           </Icon>

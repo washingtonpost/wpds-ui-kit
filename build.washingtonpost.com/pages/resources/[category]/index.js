@@ -40,7 +40,7 @@ export default function Page({ docs, category, description, size }) {
         <header>
           <Header css={{ padding: "$100 0 $050" }}>{category}</Header>
         </header>
-        <p>{description}</p>
+        {description && <p>{description}</p>}
       </HeadDiv>
       <ContentGrid size={size}>
         {docs.map((doc) => {
@@ -58,7 +58,7 @@ export default function Page({ docs, category, description, size }) {
             >
               <Thumbnail
                 name={doc.data.title}
-                description={doc.data.description.split(".")[0]}
+                description={doc.data?.description.split(".")[0]}
                 publishDate={doc.data.publishDate}
                 kicker={doc.data.kicker}
                 imageTag={doc.data.imageTag}
@@ -84,7 +84,7 @@ export const getStaticProps = async ({ params }) => {
   const navigation = await getNavigation();
 
   // populate props
-  let description,
+  let description = "",
     size = "";
   if (params.category === "tutorials") {
     description =

@@ -54,7 +54,7 @@ module.exports = withBundleAnalyzer({
       ],
     };
   },
-  swcMinify: true,
+  swcMinify: false,
   images: {
     domains: [
       "img.youtube.com",
@@ -87,6 +87,17 @@ module.exports = withBundleAnalyzer({
       {
         source: "/resources/process",
         destination: "/support",
+        permanent: false,
+      },
+      {
+        source: "/zzz/tachyons-to-stitches",
+        destination: "/resources/tools/tachyons-to-stitches",
+        permanent: false,
+      },
+      {
+        source: "/storybook",
+        destination:
+          "https://wpds-ui-kit-storybook.preview.now.washingtonpost.com",
         permanent: false,
       },
     ];
