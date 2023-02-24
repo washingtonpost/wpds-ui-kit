@@ -11,7 +11,7 @@ status: Coming soon
 
 <Anatomy
   src="/img/components/switch/anatomy.svg"
-  caption="Note: Image not to scale"
+  caption={"Note: Image not to scale"}
 />
 
 1. Unchecked background fill
@@ -23,9 +23,9 @@ status: Coming soon
 
 ## Options
 
-### Option One
+### Variant
 
-Description of option one
+Two variants are supported `primary` and `cta`
 
 ```jsx withPreview
 
@@ -35,9 +35,41 @@ Description of option one
 
 ## Behavior
 
-### Behavior one
+### Checked
 
-Description of behavior one
+When the switch is checked it will transition to the on position.
+
+```jsx withPreview
+
+```
+
+### Error
+
+When the switch is a requirement it will show an error border color.
+
+```jsx withPreview
+
+```
+
+### Required
+
+No visual indication when required. See guidance on required switches
+
+```jsx withPreview
+
+```
+
+### Disabled
+
+Disable the switch when it is not editable. Disabled switches cannot be clicked.
+
+```jsx withPreview
+
+```
+
+### Focus
+
+When the switch is in focus a outline with the color `signal` will appear around the switch.
 
 ```jsx withPreview
 
@@ -47,11 +79,27 @@ Description of behavior one
 
 ## Guidance
 
-### Guidance one
+### Required Switches
 
-Description of guidance one
+When making switches required always pair it with a label that has the required indicator.
 
-```jsx withPreview isGuide="error"
+```jsx withPreview isGuide="success"
+
+```
+
+### Switches control binary options
+
+Don’t use switches to control options that do not control a single state that can clearly be categorized as `on` or `off`
+
+```jsx withPreview isGuide="success"
+
+```
+
+### Label Pairing
+
+Switches should always be paired with a contextual label. It is also good practice for accessibility to have a text equivalent of the state (on or off) is displayed adjacent to the graphical state indicator
+
+```jsx withPreview isGuide="success"
 
 ```
 
@@ -59,9 +107,31 @@ Description of guidance one
 
 ## Accessibility
 
-### Keyboard controls
+### Space / Enter toggles switch
 
-Description of keyboard controls
+When the switch is in focus and the user presses space or enter it will toggle the switch from its current check state to the opposite state.
+
+### Pairing label
+
+To make understanding the state of the switch easier for users with visual or cognitive disabilities, a text equivalent of the state (on or off) is displayed adjacent to the graphical state indicator. CSS attribute selectors ensure the label displayed is synchronized with the value of the aria-checked attribute.
+
+NOTE: To prevent redundant announcement of the state by screen readers, the text indicators of state are hidden from assistive technologies with aria-hidden.
+
+### Cursor
+
+Switches should have the cursor switch to pointer when the cursor is hovering over the switch.
+
+### Non-Text Contrast
+
+> For active controls any visual information provided that is necessary for a user to identify that a control is present and how to operate it must have a minimum 3:1 contrast ratio with the adjacent colors. Also, any visual information necessary to indicate state, such as whether a component is selected or focused must also ensure that the information used to identify the control in that state has a minimum 3:1 contrast ratio. - W3.org
+
+```jsx withPreview
+
+```
+
+### Reduce motion
+
+If user has indicated that they prefer reduced motion the switch thumb should not animate and instantly position to its enabled/disabled position.
 
 ---
 
