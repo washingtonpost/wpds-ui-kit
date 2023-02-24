@@ -2,7 +2,7 @@
 title: Keyboard accessibility
 description: Ensuring content is navigable without a mouse
 kicker: Accessibility
-publishDate: June 17, 2022
+publishDate: February 24, 2023
 thumbnail: /img/resources/thumbnails/a11y_keyboard.png
 imageTag: /img/resources/guides/a11y_keyboard.png
 rank: 6
@@ -129,15 +129,20 @@ This is a widely used standard to help keyboard users more efficiently navigate 
 
 The skip link gets around this by jumping the user to the unique page content, which we mark with the dom id `main-content` in our code.
 
-You have to start navigating the page with your keyboard to discover this link. Open washingtonpost.com and try hitting the `tab` key on your keyboard. You will get something like the following:
+You have to start navigating the page with your keyboard to discover this link, which is hidden to sighted users when not in keyboard focus. Open washingtonpost.com and try hitting the `tab` key on your keyboard. You will get something like the following:
 
 <Container caption='Example of what "skip to main content" link looks like on washingtonpost.com'>
   <Box css={{ display: "flex", justifyContent: "center", margin: "auto" }}>
-    <InlineImage width={418} height={224} src="/images/skip-link.png" />
+    <InlineImage
+      width={418}
+      height={224}
+      src="/images/skip-link.png"
+      alt="Screenshot of the top left corner of The Washington Post website shows a white underlined hyperlink called 'Skip to main content.' The link has a blue ring around it as it is currently in keyboard focus."
+    />
   </Box>
 </Container>
 <br />
 
-When you click this link (using enter on your keyboard), you should expect to be jumped to the first clickable element in the unique page content.
+When you click this link using enter on your keyboard, you should expect to be jumped to the first clickable element in the unique page content (excluding ads, nav menus and other boilerplate that is consistent across pages).
 
 If nothing happens, it means your page does not have a dom element with the id `main-content`. This is a bug, so remember to always confirm that one and only one dom element in your code has the `id="main-content"`.

@@ -2,7 +2,7 @@
 title: Alt text
 description: Describing images for blind and low-vision users
 kicker: Accessibility
-publishDate: June 17, 2022
+publishDate: February 24, 2023
 thumbnail: /img/resources/thumbnails/a11y_alt-text.png
 imageTag: /img/resources/guides/a11y_alt-text.png
 rank: 3
@@ -28,9 +28,16 @@ A caption is generally adding context to an image, whereas alt text is describin
 
 For example, consider The Post's caption for the below image.
 
+"This image released by NASA on July 12 was captured by the James Webb Space Telescope. (AP)"
+
 <Container>
   <Box css={{ display: "flex", justifyContent: "center", margin: "auto" }}>
-    <InlineImage width={672} height={448} src="/images/caption-example.png" />
+    <InlineImage
+      width={672}
+      height={448}
+      src="/images/caption-example.png"
+      alt="Screenshot shows a Washington Post article zoomed in on just an image and caption. The caption says, 'This image released by NASA on July 12 was captured by the James Webb Space Telescope. (AP)' NASA's alt text for the image is below."
+    />
   </Box>
 </Container>
 <br />
@@ -62,7 +69,12 @@ Below is an example from The Washington Post Twitter account.
 
 <Container>
   <Box css={{ display: "flex", justifyContent: "center", margin: "auto" }}>
-    <InlineImage width={672} height={448} src="/images/text-alt-text.png" />
+    <InlineImage
+      width={672}
+      height={448}
+      src="/images/text-alt-text.png"
+      alt="Screenshot shows a Washington Post tweet from October 26, 2021. The tweet says, 'Haugen has made headlines for her decision to blow the whistle on Facebook, testifying in front of Congress, appearing on 60 Minutes and on the cover of Time Magazine. Her revelations have created a firestorm. Here's what you need to know:.' The tweet includes two images. The alt text has been expanded for sighted users on one of the images and says, 'FAQ: Who is Frances Haugen? How did Haugen take the documents? Why would she want to take the documents in the first place? Why did Facebook allow such easy access to its document? What about Google?' The images contains that same text in bulleted format with a blue label reading 'Facebook under fire.'"
+    />
   </Box>
 </Container>
 <br />
@@ -79,7 +91,12 @@ Below is an example from The Washington Post Twitter account.
 
 <Container>
   <Box css={{ display: "flex", justifyContent: "center", margin: "auto" }}>
-    <InlineImage width={672} height={448} src="/images/data-viz-alt-text.png" />
+    <InlineImage
+      width={672}
+      height={448}
+      src="/images/data-viz-alt-text.png"
+      alt="Screenshot shows a Washington Post tweet. The tweet says, 'In between Republicans who remain firmly committed or opposed to the former president, there’s now a broad range of Trump supporters who, however much they still like him, aren’t sure they want him as the party’s next nominee.' The tweet includes an image. Its alt text has been expanded for sighted users and says, 'Line graph showing that Trump's favorability among Republicans has fallen from around 90 percent to around 75 percent since 2020.'"
+    />
   </Box>
 </Container>
 <br />
@@ -99,7 +116,12 @@ Below is an example from The Washington Post Twitter account.
 
 <Container>
   <Box css={{ display: "flex", justifyContent: "center", margin: "auto" }}>
-    <InlineImage width={672} height={448} src="/images/graphic-alt-text.png" />
+    <InlineImage
+      width={672}
+      height={448}
+      src="/images/graphic-alt-text.png"
+      alt="Screenshot shows a Washington Post tweet. The tweet says, Here's a look at some of the cards that you can share for Valentine's Day:. The alt text from one of the card images has been expanded for sighted users and says, Valentine's Day card with illustration of House Speaker Kevin McCarthy and text that reads, Florida's red, Vermont is blue, I'd wait 15 rounds of voting for you."
+    />
   </Box>
 </Container>
 <br />
