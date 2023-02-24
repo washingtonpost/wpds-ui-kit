@@ -2,7 +2,7 @@ import React from "react";
 import { ReactSVG } from "react-svg";
 import Tokens from "@washingtonpost/wpds-theme/src/wpds.tokens.json";
 import Image from "next/image";
-import { css, globalCss, styled } from "@washingtonpost/wpds-ui-kit";
+import { css, styled } from "@washingtonpost/wpds-ui-kit";
 
 const SVGContainer = styled("div", {
   padding: "$100 $100",
