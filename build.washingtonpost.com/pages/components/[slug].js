@@ -19,6 +19,7 @@ import {
 import { PropsTable } from "~/components/PropsTable";
 import { ComponentDetails } from "~/components/ComponentPage/ComponentDetails";
 import { ComponentStatus } from "~/components/ComponentPage/ComponentStatus";
+import { ComingSoon } from "~/components/ComponentPage/ComingSoon";
 
 const components = {
   ...MDXStyling,
@@ -49,29 +50,7 @@ export default function Page({
         description={source.scope.description}
       />
       {source.scope.status == "Coming soon" && (
-        <>
-          <P css={{ width: "100%", display: "flex" }}>
-            <P
-              as="img"
-              css={{ margin: "auto" }}
-              src="https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif"
-              height="auto"
-              width="50%"
-            />
-          </P>
-          <P
-            css={{
-              fontSize: "$150",
-              paddingTop: "$100",
-              width: "90%",
-              margin: "auto",
-              textAlign: "center",
-            }}
-          >
-            This component status is coming soon and indicates a component is in
-            a queue for future work.
-          </P>
-        </>
+        <ComingSoon />
       )}
       <header className="post-header">
         <Header
