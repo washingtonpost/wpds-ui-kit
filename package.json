@@ -116,7 +116,8 @@
     "new-component": "make new-component",
     "lint": "eslint --ext .ts,.tsx ui/",
     "clean": "turbo run clean && rm -rf node_modules",
-    "dev": "turbo run dev --no-cache --continue"
+    "dev": "turbo run dev --no-cache --continue",
+    "start": "turbo run start"
   },
   "prettier": {},
   "jest": {

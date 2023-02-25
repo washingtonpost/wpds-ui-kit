@@ -49,9 +49,7 @@ export default function Page({
         title={`WPDS - ${source.scope.title} | Components`}
         description={source.scope.description}
       />
-      {source.scope.status == "Coming soon" && (
-        <ComingSoon />
-      )}
+      {source.scope.status == "Coming soon" && <ComingSoon />}
       <header className="post-header">
         <Header
           css={{ opacity: source.scope.status == "Coming soon" ? 0.5 : 1 }}
@@ -139,6 +137,8 @@ export const getStaticProps = async ({ params }) => {
       componentName,
     },
   };
+
+
 };
 
 export const getStaticPaths = async () => {
