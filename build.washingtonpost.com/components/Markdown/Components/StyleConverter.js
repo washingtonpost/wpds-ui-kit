@@ -251,8 +251,8 @@ const StyleConverter = () => {
 
     return Math.sqrt(
       Math.pow(a[0] - b[0], 2) +
-      Math.pow(a[1] - b[1], 2) +
-      Math.pow(a[2] - b[2], 2)
+        Math.pow(a[1] - b[1], 2) +
+        Math.pow(a[2] - b[2], 2)
     );
   }
 
@@ -311,10 +311,7 @@ const StyleConverter = () => {
           aria-label="Copy code to clipboard"
         >
           <Icon size="100" label="Copy code to clipboard">
-            <InlineSVG
-              cushion="none"
-              path="/img/doc-icons/clipboard.svg"
-            />
+            <InlineSVG cushion="none" path="/img/doc-icons/clipboard.svg" />
           </Icon>
           Copy
         </Button>

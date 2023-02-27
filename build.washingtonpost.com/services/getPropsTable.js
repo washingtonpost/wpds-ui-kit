@@ -59,10 +59,10 @@ export const getPropsTable = async (component = "icon") => {
               value.defaultValue === null
                 ? "----"
                 : JSON.stringify(value.defaultValue, null, 2)
-                  .replace(/\\/g, "")
-                  .replace(/"/g, "")
-                  .replace(/({)|(})|(:)/g, "")
-                  .replace(/(value)/g, ""),
+                    .replace(/\\/g, "")
+                    .replace(/"/g, "")
+                    .replace(/({)|(})|(:)/g, "")
+                    .replace(/(value)/g, ""),
           };
         }
       );
