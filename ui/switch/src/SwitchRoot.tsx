@@ -40,8 +40,8 @@ export const SwitchRoot = styled(SwitchPrimitive.Root, {
   },
 });
 
-type SwitchProps = React.ComponentProps<typeof SwitchRoot>;
+type SwitchRootProps = React.ComponentProps<typeof SwitchRoot>;
 
 SwitchRoot.displayName = "SwitchRoot";
 
-export type { SwitchProps };
+export type { SwitchRootProps };

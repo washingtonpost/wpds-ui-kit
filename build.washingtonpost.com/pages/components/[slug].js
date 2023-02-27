@@ -12,7 +12,7 @@ import {
   getDocByPathName,
   getHeadings,
   getNavigation,
-  getPackageData,
+  getBundleSize,
   getPropsTable,
 } from "~/services";
 
@@ -65,15 +65,13 @@ export default function Page({
           <P className="description">{source.scope.description}</P>
         )}
 
-        {source.scope.status !== "Coming soon" && (
-          <ComponentDetails
-            {...{
-              bundleSize,
-              componentName,
-              current,
-            }}
-          />
-        )}
+        <ComponentDetails
+          {...{
+            bundleSize,
+            componentName,
+            current,
+          }}
+        />
 
         <TableofContents
           css={{ opacity: source.scope.status == "Coming soon" ? 0.5 : 1 }}
@@ -117,13 +115,11 @@ export const getStaticProps = async ({ params }) => {
     getNavigation(),
   ]);
 
-  if (source.scope.status !== "Coming soon") {
-    try {
-      propsTable = await getPropsTable(params.slug);
-      bundleSize = await getPackageData(params.slug);
-    } catch (e) {
-      console.warn({ e });
-    }
+  try {
+    propsTable = await getPropsTable(params.slug);
+    bundleSize = await getBundleSize(params.slug);
+  } catch (e) {
+    console.warn({ e });
   }
 
   return {
@@ -137,8 +133,6 @@ export const getStaticProps = async ({ params }) => {
       componentName,
     },
   };
-
-
 };
 
 export const getStaticPaths = async () => {

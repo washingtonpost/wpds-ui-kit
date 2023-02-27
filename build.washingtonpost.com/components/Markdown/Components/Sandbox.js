@@ -113,7 +113,7 @@ const Preview = ({ isGuide }) => {
     <Box
       ref={iframeRef}
       as="iframe"
-      sandbox="allow-scripts allow-same-origin"
+      // sandbox="allow-scripts allow-same-origin"
       src={`/playroom?code=${LZString.compressToEncodedURIComponent(
         firstRenderCode
       )}&isGuide=${isGuide}`}

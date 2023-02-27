@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import * as React from "react";
 import {
   Icon,
@@ -22,6 +23,7 @@ import {
   Tooltip,
   Card,
   Popover,
+  Switch,
 } from "@washingtonpost/wpds-ui-kit";
 import Chart from "@washingtonpost/wpds-assets/asset/chart";
 import Settings from "@washingtonpost/wpds-assets/asset/settings";
@@ -422,6 +424,10 @@ function HomePage() {
           </Popover.Content>
         </Popover.Portal>
       </Popover.Root>
+      <h2>Switch</h2>
+      <Switch.Root>
+        <Switch.Thumb />
+      </Switch.Root>
     </>
   );
 }

@@ -3,7 +3,7 @@ import * as Radix from "@radix-ui/react-switch";
 import type { SwitchThumbProps as RadixSwitchThumbProps } from "@radix-ui/react-switch";
 import { styled, theme } from "@washingtonpost/wpds-theme";
 
-const StyledSwitchThumb = styled(Radix.Thumb, {
+export const SwitchThumb = styled(Radix.Thumb, {
   display: "block",
   size: "$100",
   backgroundColor: "$$switchThumbVariant", // this is not a text color token but we gotta do what we gotta do
@@ -18,7 +18,3 @@ const StyledSwitchThumb = styled(Radix.Thumb, {
 });
 
 export type SwitchThumbProps = RadixSwitchThumbProps;
-
-export const SwitchThumb = ({ children, ...props }: SwitchThumbProps) => (
-  <StyledSwitchThumb {...props}>{children}</StyledSwitchThumb>
-);
