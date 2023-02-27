@@ -28,8 +28,6 @@ export const getPropsTable = async (component = "icon") => {
       options
     );
 
-    console.log("componentsData", componentsData);
-
     const generatedData = componentsData.map((component) => {
       const generatedProps = Object.entries(component?.props).map(
         ([key, value]) => {

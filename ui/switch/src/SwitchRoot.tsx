@@ -5,6 +5,7 @@ import { styled, theme } from "@washingtonpost/wpds-theme";
 
 export const SwitchRoot = styled(SwitchPrimitive.Root, {
   // reset button styles
+  fontSize: "$100",
   boxSizing: "border-box",
   display: "flex",
   flexDirection: "row",
@@ -13,13 +14,25 @@ export const SwitchRoot = styled(SwitchPrimitive.Root, {
   borderRadius: "$round",
   cursor: "pointer",
   appearance: "none",
-  transition: `background ${theme.transitions.fast} ${theme.transitions.inOut}`,
+  transition: `all ${theme.transitions.fast} ${theme.transitions.inOut}`,
   // end reset button styles
   height: theme.sizes[100],
   width: theme.sizes[200],
   border: "1px solid $$switchRootVariant",
   '&[data-state="unchecked"]': {
     $$switchRootVariant: "$colors$alpha50",
+  },
+  "&:focus": {
+    outline: "1px solid $colors$signal",
+    outlineOffset: "1px",
+  },
+  "&:disabled": {
+    $$switchRootVariant: "$colors$disabled",
+    $$switchThumbVariant: "$colors$disabled",
+    backgroundColor: "$$switchRootVariant",
+    '&[data-state="unchecked"]': {
+      $$switchRootVariant: "$colors$disabled",
+    },
   },
   variants: {
     /**
@@ -37,10 +50,35 @@ export const SwitchRoot = styled(SwitchPrimitive.Root, {
         backgroundColor: "$$switchRootVariant",
       },
     },
+    error: {
+      true: {
+        // $$switchRootVariant: "$colors$error",
+        // $$switchThumbVariant: "$colors$secondary",
+        // backgroundColor: "$$switchRootVariant",
+      },
+      false: {},
+    },
   },
   defaultVariants: {
     variant: "primary",
   },
+  compoundVariants: [
+    {
+      variant: "primary",
+      error: true,
+      css: {
+        outline: "1px solid $colors$error",
+        outlineOffset: "1px",
+      },
+    },
+    {
+      variant: "cta",
+      error: true,
+      css: {
+        outline: "1px solid $colors$error",
+      },
+    },
+  ],
 });
 
 type SwitchRootProps = React.ComponentProps<typeof SwitchRoot>;

@@ -201,15 +201,23 @@ export default function Playroom({
           <GetIcon variant={isGuide} />
           <Rule variant={isGuide}></Rule>
         </Guide>
-        <MDXRemote
-          compiledSource={receivedSource.compiledSource}
-          scope={{
-            ...Kit,
-            useState: React.useState,
-            useEffect: React.useEffect,
+        <Kit.Box
+          css={{
+            display: "flex",
+            gap: "$100",
+            flexDirection: "row",
           }}
-          components={components}
-        />
+        >
+          <MDXRemote
+            compiledSource={receivedSource.compiledSource}
+            scope={{
+              ...Kit,
+              useState: React.useState,
+              useEffect: React.useEffect,
+            }}
+            components={components}
+          />
+        </Kit.Box>
       </ErrorBoundary>
     );
   };

@@ -33,6 +33,27 @@ CTA.args = {
   variant: "cta",
 };
 
+export const Error = Template.bind({});
+
+Error.args = {
+  error: true,
+};
+
+export const Disabled = Template.bind({});
+
+Disabled.args = {
+  disabled: true,
+};
+
+export const Mobile = Template.bind({});
+
+Mobile.args = {};
+Mobile.parameters = {
+  viewport: {
+    defaultViewport: "iphonex",
+  },
+};
+
 const Stack = styled("div", {
   display: "flex",
   flexDirection: "column",

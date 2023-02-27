@@ -4,16 +4,15 @@ import type { SwitchThumbProps as RadixSwitchThumbProps } from "@radix-ui/react-
 import { styled, theme } from "@washingtonpost/wpds-theme";
 
 export const SwitchThumb = styled(Radix.Thumb, {
-  display: "block",
-  size: "$100",
-  backgroundColor: "$$switchThumbVariant", // this is not a text color token but we gotta do what we gotta do
+  display: "flex",
+  padding: "calc($sizes$050 - 1px)",
+  backgroundColor: "$$switchThumbVariant",
   borderRadius: "$round",
-  border: "1px solid $$switchRootVariant", // this is not a text color token but we gotta do what we gotta do
   transition: theme.transitions.allFast,
-  transform: `translateX(-8px)`,
+  transform: `translateX(-$sizes$050)`,
   willChange: "transform",
   '&[data-state="checked"]': {
-    transform: `translateX(8px)`,
+    transform: `translateX($sizes$050)`,
   },
 });
 
