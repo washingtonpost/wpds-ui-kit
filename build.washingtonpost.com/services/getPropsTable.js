@@ -29,19 +29,30 @@ export const getPropsTable = async (component = "icon") => {
     );
 
     const generatedData = componentsData.map((component) => {
-      const generatedProps = Object.entries(component?.props)
-        .map(([key, value]) => {
+      const generatedProps = Object.entries(component?.props).map(
+        ([key, value]) => {
           let rawType =
             value.type.name === "enum"
               ? value.type.raw.replace(/"/g, "").split("| ({")[0]
               : "";
+
+          let description = value.description || "";
+          if (key === "as") {
+            description =
+              "WPDS provides an as prop for changing which tag a component outputs.";
+          }
+
+          if (key === "css") {
+            description =
+              "WPDS provides a css prop for overriding styles easily. It’s like the style attribute, but it supports tokens, media queries, nesting and token-aware values. All WPDS Components include a css prop. Use it to pass in overrides.";
+          }
 
           return {
             name: key,
             type: value.type.name,
             rawType,
             required: `${value.required}`,
-            description: value.description,
+            description,
             defaultValue:
               value.defaultValue === null
                 ? "----"
@@ -51,13 +62,8 @@ export const getPropsTable = async (component = "icon") => {
                     .replace(/({)|(})|(:)/g, "")
                     .replace(/(value)/g, ""),
           };
-        })
-        .filter((prop) => {
-          return prop.name !== "css";
-        })
-        .filter((prop) => {
-          return prop.name !== "as";
-        });
+        }
+      );
       return {
         displayName: component.displayName,
         description: component.description,
