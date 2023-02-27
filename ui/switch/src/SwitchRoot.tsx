@@ -22,6 +22,9 @@ export const SwitchRoot = styled(SwitchPrimitive.Root, {
     $$switchRootVariant: "$colors$alpha50",
   },
   variants: {
+    /**
+     * The `variant` prop is used to set the color of the switch. The `primary` variant is the default. The `cta` variant is used for the call to action switch. The `primary` and `cta` variants are set in the `theme.colors` object. Switch.Thumb inherits the color of the `primary` and `cta` variants from Switch.Root using the `$$switchRootVariant` variable and the `$$switchThumbVariant` variable.
+     */
     variant: {
       primary: {
         $$switchRootVariant: "$colors$primary",
