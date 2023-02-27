@@ -50,6 +50,20 @@ Closed captions are preferable so that users can turn them on or off per their p
 
 Ensure captions have appropriate color contrast with the video (rendering captions as white text on a dark gray background is common), and keep the captions in sentence case. Avoid kinetic captions, which are captions with "fun" effects like changing text size and location, which make them harder to read and thus less accessible.
 
+Below is an example of how captions should look on a video.
+
+<Container>
+  <Box css={{ display: "flex", justifyContent: "center", margin: "auto" }}>
+    <InlineImage
+      width={836}
+      height={448}
+      src="/images/closed-captions-example.png"
+      alt="Screenshot of a Washington Post video shows captions typed in white text on a dark gray background at the bottom center of the screen."
+    />
+  </Box>
+</Container>
+<br />
+
 ### Transcripts
 
 See [our transcripts section](#Transcriptions).
@@ -66,8 +80,46 @@ Anytime there is audio or a video including audio, there should also a transcrip
 
 Transcripts should be prominently placed near the audio or video they transcribe. Don't hide transcripts behind other menus.
 
+Below is a good example of prominent transcript placement.
+
+<Container>
+  <Box css={{ display: "flex", justifyContent: "center", margin: "auto" }}>
+    <InlineImage
+      width={836}
+      height={448}
+      src="/images/transcript-placement-example.png"
+      alt="Screenshot of a Washington Post podcast page shows 'See the transcript' button listed right below the audio player."
+    />
+  </Box>
+</Container>
+<br />
+
 Timestamps are usually not necessary and can make transcripts uneccessarily cluttered.
 
-Speaker names should be provided whenever there is more than one speaker in a video or audio.
+Speaker names should be provided whenever there is more than one speaker in a video or audio. See the example below.
 
 **Always confirm transcript accuracy manually when using automated transcribers.**
+
+<Container>
+  <Box css={{ display: "flex", justifyContent: "center", margin: "auto" }}>
+    <InlineImage
+      width={836}
+      height={448}
+      src="/images/transcript-example.png"
+      alt="Screenshot of a Washington Post podcast transcript shows the text from the podcast along with laebls of who is speaking and other context."
+    />
+  </Box>
+</Container>
+<br />
+
+---
+
+## Animations and reduced motion
+
+Some users, including those with vestibular motion disorders, may have system settings to reduce motion in the web content.
+
+We have to write code that recognizes these system settings in order to adjust motion accordingly.
+
+To do this, we use the [prefers-reduced-motion CSS media feature](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion) A good way to respond to user settings is [the prefers-color-scheme CSS media feature], as documented by MDN.
+
+Our [Tooltip component](/components/tooltip) uses `prefers-reduced-motion` to decide whether to include an animation when tooltip content is opened. If the user does not have reduced motion settings turned on, then the animation is used.

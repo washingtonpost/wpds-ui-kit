@@ -10,13 +10,113 @@ rank: 3
 
 ---
 
-## Syntax
+Alt text is also commonly called alternative text or an image description. This is the text that is read aloud to users of assistive technology known as a [screen reader](/resources/accessibility/screen-readers.mdx). These users are often people who are blind or have low vision. Alt text may also be shown in place of an image that is unable to load.
 
-Alt text is also commonly called alternative text or an image description. It is supplied with the `alt` property on `<img/>` tags.
+<br />
+## Syntax (img vs. svg)
 
-Every `<img/>` tag should have the `alt` attribute. Failure to explicitly set this value may lead to the image file name being read out loud to screen reader users, which is often an unhelpful nuisance. If the alt value is set to "", then the image will be skipped by screen readers. Thus, if an image is purely decorative, then you should use alt="".
+### For img tags
 
-Using alt text like "Image without alt text" as a fallback is bad practice because this will cause a screen reader to read this unhelpful text aloud instead of just skipping the image entirely (as it would with alt text of ""). We have an engineering blog post with [more context on fallbacks for alt text](https://washpost.engineering/we-cant-automate-alt-text-here-are-some-mistakes-lessons-and-what-we-can-do-for-accessibility-4e8631c2b3).
+Alt text is supplied via the `alt` attribute on img tags. An example of this is `<img alt="alt text goes here" src="example.png" />`.
+
+Every img tag should have the `alt` attribute. Failure to explicitly set this value may lead to the image file name being read out loud to screen reader users, which is often an unhelpful nuisance. If we explicitly set `alt=""`, then the image will be skipped by screen readers. Thus, if an image is purely decorative, then you should have something like `<img alt="" src="purely-decorative.png" />`.
+
+**Note:** If your img tag's `src` is the path to an SVG, then you should add `role="img"` to the img tag. It may seem redundant, but this helps screen readers treat the SVG correctly when reading alt text. So we should have `<img alt="alt text goes here" src="example.svg" role="img" />`.
+
+### For svg tags
+
+svg tags do not have the `alt` attribute, but we can still provide alt text for SVGs.
+
+We recommend using whichever of the following two methods is most appropriate for your use case.
+
+#### Method 1: Set aria-hidden="true" on svg and add alt text elsewhere
+
+For our [WPDS Icon component](/components/icon#Options), we use the following steps:
+
+1. Add `aria-hidden="true"` to the svg tag so that it is [skipped by screen readers](/resources/accessibility/semantic-html#Hiding%20content%20from%20screen%20readers).
+2. Add a span next to the svg (as an immediate sibiling element) and apply [the sr-only class or Visually Hidden wrapper](http://localhost:3000/resources/accessibility/semantic-html#Content%20for%20screen%20readers%20only) so the span is readable only by screen readers.
+3. Add the alt text for the svg into the newly added span element. Since the alt text is not in an img element, screen readers will not be told
+that the text is describing an image unless you explicitly mention that in the text.
+
+<br />
+Below is an example of how this works. Inspect the icon with the Chrome developer tools to view the HTML and CSS. Or, better yet, [test it out with the screen reader](/resources/accessibility/screen-readers) of your choice.
+
+```jsx withPreview
+export default function Example() {
+  return (
+    <>
+      <Icon label="Warning icon" size="200" fill={theme.colors.primary}>
+        <Warning />
+      </Icon>
+    </>
+  );
+}
+```
+
+<br />
+
+**Note:** We used a `span` in the example above, but you may find another element type, such as a `table`, is better suited to describe certain svg contents. In the past, The Post has used [an sr-only table as an alternative to a map svg](https://washpost.engineering/accessibility-case-study-pairing-election-data-visualizations-with-tables-6bd5db221a1c?source=collection_home---4------7-----------------------) to share county-level election results with screen reader users.
+
+There is another method for providing SVG alt text that is often better for graphics and other visuals.
+
+#### Method 2: Use aria-labelledby with title tag and aria-describedby with desc tag
+
+1. Add a [title tag](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/title) **as the first child of the svg tag** (as shown in the example below) to provide a short name for the image. The title may also be viewable to sighted users who hover over the svg with a mouse.
+2. If the image cannot be described with a brief (approxiately one sentence) title, then add a [desc tag](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/desc) below the title tag to provide more details. As an example, the desc for an SVG graphic may list out specific details from the graphic whereas the title briefly summarizes the graphic's appearance. Individual [rects](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/rect), [circles](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/circle) and other visual elements within an svg tag can have their own descs, but we recommend just one root-level desc as alt text.
+3. Give the title and desc tags unique [id attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id) values. Then, in the svg tag, set `aria-labelledby="id of title tag goes here"` and `aria-describedby="id of desc tag goes here"`.
+4. Since we do not apply `aria-hidden="true"` to the svg tag in this method, we must apply `aria-hidden="true"` to each [text tag](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/text) within the svg. Otherwise the title and desc tags may not be read correctly. Note that the "visible text" element in the example below is not read by a screen reader but is mentioned as part of the alt text in the desc tag.
+
+<br />
+Select "Show code" below to view our implementation. This is a model you can follow for your own SVGs.
+
+```jsx withPreview
+export default function Example() {
+  return (
+    <svg
+      viewBox="0 0 100 100"
+      xmlns="http://www.w3.org/2000/svg"
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-miterlimit="1.5"
+      style={{ maxWidth: "90px" }}
+      aria-labelledby="heart-title"
+      aria-describedby="heart-description"
+    >
+      <title id="heart-title">Heart shape</title>
+      <desc id="heart-description">
+        Not an actual heart, but a red heart-shaped polygon with the words
+        "example text" placed in small black text in the top right corner
+      </desc>
+      <path
+        d="M50 22.7703c-9.428-17.171-28.284-17.171-37.712-8.585-9.429 8.585-9.429 25.756 0 42.927 6.6 12.878 23.57 25.757 37.712 34.342 14.143-8.585 31.113-21.464 37.713-34.342 9.428-17.171 9.428-34.342 0-42.927-9.428-8.586-28.285-8.586-37.713 8.585z"
+        fill="#dc0000"
+        stroke="#dc0000"
+      ></path>
+      <text aria-hidden="true" x="20" y="35">
+        Visible text
+      </text>
+    </svg>
+  );
+}
+```
+
+[a11y-101.com](https://a11y-101.com/development/svg) demonstrates other ways to label the heart svg above, including their shortcomings. Carie Fisher, a Senior Accessibility Consultant and Trainer at Deque Systems, also performed [a study comparing different alt text placements for SVGs](https://www.smashingmagazine.com/2021/05/accessible-svg-patterns-comparison/).
+
+In summary, there is not a perfect solution to alt text for SVGs, but we recommend the methods above.
+
+---
+
+## Alt text fallbacks
+
+Do not use something like "Image" or "Image without alt text" as fallback alt text when a value is not provided. This text is useless to screen reader users.
+
+Use `alt=""` as the fallback anywhere an unknown image may be missing alt text (e.g. old content with many non-essential images is being ported to a new platform).
+
+If an image is important to understanding the content, then a non-empty alt text value should be required. Fallbacks should never be used.
+
+We have an engineering blog post with [more context on fallbacks for alt text](https://washpost.engineering/we-cant-automate-alt-text-here-are-some-mistakes-lessons-and-what-we-can-do-for-accessibility-4e8631c2b3).
 
 ---
 
@@ -26,9 +126,7 @@ Alt text is NOT the same as a caption.
 
 A caption is generally adding context to an image, whereas alt text is describing what the image contains for those who can’t see it.
 
-For example, consider The Post's caption for the below image.
-
-"This image released by NASA on July 12 was captured by the James Webb Space Telescope. (AP)"
+Consider The Post's caption for the below image: "This image released by NASA on July 12 was captured by the James Webb Space Telescope. (AP)"
 
 <Container>
   <Box css={{ display: "flex", justifyContent: "center", margin: "auto" }}>
@@ -105,7 +203,7 @@ Below is an example from The Washington Post Twitter account.
 
 ## Alt text for other images
 
-1. Describe the type of image, if relevant. Don't use generic phrases like "Photo of" or "Image of" because screen reader users already know when they are hearing alt text for an image. If the image has a specific type (illustration, graphic, headshot, etc.), then it is probably relevant to note that, as done in the example below.
+1. Describe the type of image, if relevant. Don't use generic phrases like "Picture of" or "Image of" because screen reader users already know when they are hearing alt text for an image. If the image has a specific type (illustration, graphic, headshot, etc.), then it is probably relevant to note that, as done in the example below.
 2. Be concise. Alt text doesn't need to describe every tiny detail in an image, just the relevant parts for the overall meaning. Typical alt text is no more than a few sentences. If the image is complex, this may be longer, but try to keep it as short as possible while including all necesary details.
 3. Never assume race, gender, etc. If known, use these and other identifiers when relevant to the image or context in which the image is used. Note that the subject of the image may have their own preferences on how they are identified for the purposes of a story or other content.
 4. Avoid including your opinion on the image. Alt text should be an objective description. Words like "pretty" or "scary" are generally not useful.
@@ -130,11 +228,11 @@ Below is an example from The Washington Post Twitter account.
 
 ## SEO considerations
 
-SEO is not the purpose of alt text. We write our alt text to make content more accessible to real users.
+**SEO is not the purpose of alt text.** We write our alt text to make content more accessible to real users.
 
-[Google warns us not to stuff keywords into alt text](https://developers.google.com/search/docs/appearance/google-images#descriptive-alt-text): "Avoid filling alt attributes with keywords (also known as [keyword stuffing](https://developers.google.com/search/docs/essentials/spam-policies#keyword-stuffing)) as it results in a negative user experience and may cause your site to be seen as spam." So, trying to abuse the alt text field for SEO benefits can actually hurt SEO performance.
+[Google warns us not to stuff keywords into alt text](https://developers.google.com/search/docs/appearance/google-images#descriptive-alt-text): "Avoid filling alt attributes with keywords (also known as [keyword stuffing](https://developers.google.com/search/docs/essentials/spam-policies#keyword-stuffing)) as it results in a negative user experience and may cause your site to be seen as spam." So, **trying to abuse the alt text field for SEO can actually end up hurting your SEO.**
 
-Consider the potential SEO benefits of alt text to be a positive externality of making our content more accessible.
+Consider the potential SEO benefits of alt text to be a positive side effect of making our content more accessible.
 
 ---
 

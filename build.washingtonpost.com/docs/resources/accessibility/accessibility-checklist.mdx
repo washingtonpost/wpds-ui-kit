@@ -10,11 +10,11 @@ rank: 1
 
 ---
 
-The following checklist is derived from the much more detailed WCAG guidelines. This does not cover every possible accessibility issue but aims to cover the most prominent varieties. It’s meant to be an entry-level guide. For help with any part of the guide, or to request an addition to any of our docs, contact accessibility@washpost.com.
+The following checklist is derived from the much more detailed [WCAG guidelines](https://www.w3.org/WAI/WCAG21/quickref/). This does not cover every possible accessibility issue but aims to cover the most prominent varieties. It’s meant to be an entry-level guide. For help with any part of the guide, or to request an addition to any of our docs, contact accessibility@washpost.com. We can also share copies of this checklist as .md files upon request.
 
 **Important: Repeat all steps below on all screen sizes (mobile, tablet, desktop) to better evaluate accessibility across devices.**
 
-The checkboxes on this page are clickable, if you want to check each box as you go. Thanks for incorporating accessibility considerations into your work!
+Thanks for incorporating accessibility considerations into your work!
 
 <br />
 ## Automated testing
@@ -39,10 +39,10 @@ The checkboxes on this page are clickable, if you want to check each box as you 
 
 - **Hide certain content from screen readers**<br />
   Just as you would put alt="" for purely decorative images to hide them from
-  screen readers, you should add [aria-hidden="true"](/resources/accessibility/heading-order#Hiding%20content%20from%20screen%20readers)
+  screen readers, you should add [aria-hidden="true"](/resources/accessibility/semantic-html#Hiding%20content%20from%20screen%20readers)
   for content on the page that is not screen reader friendly. An example of this
   might be an election map full of svgs and labels, etc. Ideally, you’d include
-  [a table version](/resources/accessibility/heading-order#Tables) of the data
+  [a table version](/resources/accessibility/semantic-html#Tables) of the data
   for accessibility and just hide the map with aria-hidden.
 
 - **Avoid auto-playing audio and video**<br />
@@ -54,8 +54,8 @@ The checkboxes on this page are clickable, if you want to check each box as you 
   more than 3 times within any one second, as this is a seizure risk.
 
 - **Provide captions and transcripts**<br />
-  Anywhere there is audio, there should also be captions and a transcript provided.
-  These should include words spoken AND any other meaningful sounds from the
+  Anywhere there is audio, there should be a [transcript](http://localhost:3000/resources/accessibility/audio-and-video#Transcripts) provided. Videos with audio should include [captions](</resources/accessibility/audio-and-video#Video%20(including%20gifs%20and%20animations)>) in addition to transcripts.
+  Both should include words spoken AND any other meaningful sounds from the
   audio (such as a sigh or laugh in conversation, or the chopping of a knife
   in cooking) as well.
 
@@ -94,7 +94,7 @@ The checkboxes on this page are clickable, if you want to check each box as you 
 ## Text, labels & zoom settings
 
 - **Ensure text is readable and in plain language**<br />
-  Text should be no smaller than 12px and written in [plain language](/resources/accessibility/plain-language-and-labeling)
+  Text should be [no smaller than 12px](/resources/accessibility/text-size-and-zoom#Text%20size) and written in [plain language](/resources/accessibility/plain-language-and-labeling)
   wherever possible. Is there any jargon or use of idioms? These should be avoided.
 
 - **Ensure non-English content is labeled as such**<br />
@@ -102,23 +102,22 @@ The checkboxes on this page are clickable, if you want to check each box as you 
   lang="CODE" attribute set, where CODE is the language code e.g. “ar” for Arabic
   or “es” for Spanish. There’s a [list of language codes](https://www.w3schools.com/tags/ref_language_codes.asp).
   This is essential for non-English text to be read correctly by screen readers.
-  Additionally, Arabic and some other languages are read right-to-left. This
-  means we need to set an additional attribute in the HTML, `dir="rtl`.
+  Additionally, Arabic and some other languages are read right-to-left. In those cases, we need to set an additional attribute in the HTML, `dir="rtl`.
 
 - **Clearly label interactive content**<br />
   Meaning of icons, buttons and other elements should be explicitly conveyed
   via text whenever possible. In all cases, interactive elements should have
-  appropriate aria-labels. See our [guidance on labeling for screen reader users](/resources/accessibility/heading-order#Labeling%20interactive%20elements). Avoid user prompts or notices that disappear automatically. If the content
+  appropriate aria-labels. See our [guidance on labeling for screen reader users](/resources/accessibility/semantic-html#Labeling%20interactive%20elements). Avoid user prompts or notices that disappear automatically. If the content
   includes a form, make sure that clear prompts and error messages are provided. See our
-  [guidance on forms](/resources/accessibility/plain-language-and-labeling#Forms).
+  [guidance on forms](/resources/accessibility/plain-language-and-labeling#Forms%20and%20user%20input).
 
 - **Change page zoom level**<br />
-  Set page zoom to 200% (on a Mac, press `command +` to zoom in). Does text scale
+  Set [page zoom](http://localhost:3000/resources/accessibility/text-size-and-zoom#Page%20zoom) to 200% (on a Mac, press `command +` to zoom in). Does text scale
   correctly? Is it still readable (no overflow, overlap, etc.)?
 
 - **Change browser zoom level**<br />
-  Restore page zoom to 100%, but increase the font size in your browser settings
-  to 200%. Does the text scale correctly on our page? Is it still readable?
+  Restore page zoom to 100%, but [increase the font size in your browser settings](http://localhost:3000/resources/accessibility/text-size-and-zoom#Text%20size)
+  to 200%. Does text scale correctly? Is it still readable?
 
 ---
 
@@ -137,7 +136,7 @@ The checkboxes on this page are clickable, if you want to check each box as you 
   Check the heading order on the page using [inspect element in the Chrome dev
   tools](https://developer.chrome.com/docs/devtools/open/). Does the order make
   sense? There should be only one `h1`, the page title. From there, headings
-  should be [ordered strictly by page heirarchy](/resources/accessibility/heading-order#Heading%20order)
+  should be [ordered strictly by page heirarchy](/resources/accessibility/semantic-html#Heading%20order)
   (don't jump from `h2` to `h4`, don't use `h2` as a subhead of an `h3`, etc.).
 
 - **Test with screen reader linearly**<br />
