@@ -32,6 +32,7 @@ export default function Page() {
           href="https://github.com/washingtonpost/wpds-ui-kit/releases"
           target="_blank"
           rel="noopener"
+          noUnderline
         >
           <Card>
             <Header as="h2">
@@ -51,6 +52,7 @@ export default function Page() {
           href="https://github.com/washingtonpost/wpds-assets-manager/releases"
           target="_blank"
           rel="noopener"
+          noUnderline
         >
           <Card>
             <Header as="h2">
@@ -70,6 +72,7 @@ export default function Page() {
           href="https://github.com/washingtonpost/wpds-plugins/releases"
           target="_blank"
           rel="noopener"
+          noUnderline
         >
           <Card>
             <Header as="h2">

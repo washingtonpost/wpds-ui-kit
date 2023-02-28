@@ -1,0 +1,125 @@
+---
+title: Audio and Video
+description: Captions, transcripts, controls, avoiding auto-play
+kicker: Accessibility
+publishDate: February 24, 2023
+thumbnail: /img/resources/thumbnails/a11y_audio-and-video.png
+imageTag: /img/resources/guides/a11y_audio-and-video.png
+rank: 5
+---
+
+---
+
+## Audio
+
+### Auto-play
+
+Never auto-play audio.
+
+### Pause, stop or hide button
+
+All audio should have an accessible [pause, stop or hide button](https://www.w3.org/WAI/WCAG21/Understanding/pause-stop-hide.html) so that users can turn the audio off as needed.
+
+### Transcripts
+
+See [our transcripts section](#Transcripts).
+
+---
+
+## Video (including gifs and animations)
+
+### Avoid flashing content
+
+Content that flashes can trigger seizures or other adverse effects for some users.
+
+Nothing should flash on the screen more than 3 times within a single second. In general, flashing content should be avoided entirely.
+
+### Avoid auto-play
+
+Auto-playing video content in any situation is strongly discouraged.
+
+### Pause, stop or hide button
+
+All videos, gifs or animations should have an accessible [pause, stop or hide button](https://www.w3.org/WAI/WCAG21/Understanding/pause-stop-hide.html).
+
+### Captions
+
+Any time a video includes audio, there should also be captions provided. These should include words spoken AND any other meaningful sounds from the audio (such as a sigh or laugh in conversation, or the chopping of a knife in cooking) as well.
+
+Closed captions are preferable so that users can turn them on or off per their preferences.
+
+Ensure captions have appropriate color contrast with the video (rendering captions as white text on a dark gray background is common), and keep the captions in sentence case. Avoid kinetic captions, which are captions with "fun" effects like changing text size and location, which make them harder to read and thus less accessible.
+
+Below is an example of how captions should look on a video.
+
+<Container>
+  <Box css={{ display: "flex", justifyContent: "center", margin: "auto" }}>
+    <InlineImage
+      width={836}
+      height={448}
+      src="/images/closed-captions-example.png"
+      alt="Screenshot of a Washington Post video shows captions typed in white text on a dark gray background at the bottom center of the screen."
+    />
+  </Box>
+</Container>
+<br />
+
+### Transcripts
+
+See [our transcripts section](#Transcripts).
+
+### Video descriptions
+
+Don't rely on video alone to convey important information. Video descriptions should be provided in text so that blind and low-vision users understand what the video shows.
+
+---
+
+## Transcripts
+
+Anytime there is audio or a video including audio, there should also a transcript provided. These should include words spoken AND any other meaningful sounds from the audio (such as a sigh or laugh in conversation, or the chopping of a knife in cooking) as well.
+
+Transcripts should be prominently placed near the audio or video they transcribe. Don't hide transcripts behind other menus.
+
+Below is a good example of prominent transcript placement.
+
+<Container>
+  <Box css={{ display: "flex", justifyContent: "center", margin: "auto" }}>
+    <InlineImage
+      width={836}
+      height={448}
+      src="/images/transcript-placement-example.png"
+      alt="Screenshot of a Washington Post podcast page shows 'See the transcript' button listed right below the audio player."
+    />
+  </Box>
+</Container>
+<br />
+
+Timestamps are usually not necessary and can make transcripts uneccessarily cluttered.
+
+Speaker names should be provided whenever there is more than one speaker in a video or audio. See the example below.
+
+**Always confirm transcript accuracy manually when using automated transcribers.**
+
+<Container>
+  <Box css={{ display: "flex", justifyContent: "center", margin: "auto" }}>
+    <InlineImage
+      width={836}
+      height={448}
+      src="/images/transcript-example.png"
+      alt="Screenshot of a Washington Post podcast transcript shows the text from the podcast along with laebls of who is speaking and other context."
+    />
+  </Box>
+</Container>
+<br />
+
+---
+
+## Animations and reduced motion
+
+Some users, including those with vestibular motion disorders, may have system settings to reduce motion in the web content.
+
+We have to write code that recognizes these system settings in order to adjust motion accordingly.
+
+To do this, we use the [prefers-reduced-motion CSS media feature](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion) A good way to respond to user settings is [the prefers-color-scheme CSS media feature], as documented by MDN.
+
+Our [Tooltip component](/components/tooltip) uses `prefers-reduced-motion` to decide whether to include an animation when tooltip content is opened. If the user does not have reduced motion settings turned on, then the animation is used.

@@ -145,7 +145,7 @@ const Index = ({ recentPosts, rankedArticles, contributors }) => {
             },
           }}
         >
-          <NewCustomLink href="/foundations" type="imageOnly">
+          <NewCustomLink href="/foundations" type="imageOnly" noUnderline>
             <Image
               height="160"
               width="320"
@@ -185,7 +185,11 @@ const Index = ({ recentPosts, rankedArticles, contributors }) => {
             },
           }}
         >
-          <NewCustomLink href="/components/alert-banner" type="imageOnly">
+          <NewCustomLink
+            href="/components/alert-banner"
+            type="imageOnly"
+            noUnderline
+          >
             <Image
               height="160"
               width="320"
@@ -226,7 +230,7 @@ const Index = ({ recentPosts, rankedArticles, contributors }) => {
             },
           }}
         >
-          <NewCustomLink href="/resources" type="imageOnly">
+          <NewCustomLink href="/resources" type="imageOnly" noUnderline>
             <Image
               height="160"
               width="320"
@@ -283,6 +287,7 @@ const Index = ({ recentPosts, rankedArticles, contributors }) => {
                 href={article.slug}
                 key={article.data.title}
                 type="imageOnly"
+                noUnderline
               >
                 <ContentGrid size="singleWide">
                   <Box>

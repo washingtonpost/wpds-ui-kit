@@ -1,0 +1,137 @@
+---
+title: Color
+description: Contrast, colorblindness, light and dark mode standards
+kicker: Accessibility
+publishDate: February 24, 2023
+thumbnail: /img/resources/thumbnails/a11y_color.png
+imageTag: /img/resources/guides/a11y_color.png
+rank: 4
+---
+
+---
+
+## Motivations
+
+Low color contrast can make text and other page elements harder to see for everyone, especially users with disabilities and many older users. One common form of disability is colorblindness, but there are many forms of color blindness with different effects on perception of color.
+
+When working with meaningful content such as text, visuals and user inputs, it is important to ensure users can easily distinguish between elements.
+
+There are additional considerations we must make to avoid eye strain and a blurred effect known as halation for some users.
+
+---
+
+## Color contrast standards
+
+The Post's [accessibility statement](https://www.washingtonpost.com/accessibility/) notes that we are guided by the [WCAG 2.1 Level AA standard](https://www.w3.org/WAI/WCAG21/quickref/?showtechniques=143). However, we strongly encourage meeting the [level AAA standard](https://www.w3.org/WAI/WCAG21/quickref/?showtechniques=143%2C146) whenever possible.
+
+Since 2021, WPDS has provided [a library of grayscale and color tokens](/foundations/color) designed with adherence to WCAG's AA standard in mind. Within our token library, there is a theme token labeled `accessible`, which maps to hex value `#666666` in light mode and `#858585` in dark mode. The contrast ratio is 5.7 when the `accessible` color is used in light mode on a pure white (`#FFFFFF`) background and in dark mode on a pure black (`#000000`) background.
+
+To ensure acceptable color contrast when using other color tokens, you will need to test manually.
+
+---
+
+## Testing color contrast, including for colorblind users
+
+Use the below tools in conjunction with each other to ensure colors meet contrast standards for both colorblind and non-colorblind users. You should also use the tools to test your selected colors in both light mode and dark mode whenever both are offered.
+
+### WebAIM Color Contrast Checker
+
+The [WebAIM Color Contrast Checker](https://webaim.org/resources/contrastchecker/) evaluates colors for WCAG compliance. You enter the hex values for the foreground and background colors, and the site calculates the contrast ratio. It rates the colors with a “Pass” or “Fail” rating. You can use the slider under each color to lighten or darken it until a “Pass” rating is attained. The hex code will update accordingly.
+
+<Container>
+  <Box css={{ display: "flex", justifyContent: "center", margin: "auto" }}>
+    <InlineImage
+      width={836}
+      height={448}
+      src="/images/webaim-contrast-checker.png"
+      alt="Screenshot of the WebAIM Color Contrast Checker shows #AE726A — a shade of brown — selected as the foreground color, and #FFFFFF — pure white — selected as the background color. The contrast ratio is listed below as 3.87:1. Below that, examples of the color combo are shown for normal text, large text and graphical objects and user interface components, along with notes on whether the selected color combo passes WCAG AA and/or AAA standards in each scenario."
+    />
+  </Box>
+</Container>
+<br />
+
+### Adobe Color Contrast Checker
+
+The [Adobe Color Contrast Checker](https://color.adobe.com/create/color-contrast-analyzer) has a different UI than the WebAIM tool, so try both to see which better fits your needs.
+
+### David Nichols' coloring for colorblindness tool
+
+The [coloring for colorblindness tool](https://davidmathlogic.com/colorblind/#%23D81B60-%231E88E5-%23FFC107-%23004D40) allows you to input a color palette and see how that palette appears to users with different forms of colorblindness.
+
+You can inspect the resulting colors in your browser to collect their hex codes and independently [verify they have enough contrast with each other](#WebAIM%20Color%20Contrast%20Checker).
+
+<Container>
+  <Box css={{ display: "flex", justifyContent: "center", margin: "auto" }}>
+    <InlineImage
+      width={836}
+      height={448}
+      src="/images/coloring-for-colorblindness.png"
+      alt="Screenshot of the coloring for colorblindness tool shows a color palette of red, light blue, mustard yellow and dark green squares stacked. Three stacks of squares to the right of it show the colors' different appearances to people with three forms of colorblindness: protanopia, deuteranopia and tritanopia."
+    />
+  </Box>
+</Container>
+<br />
+
+### Adobe Color Blind Safe tool
+
+The [Adobe Color Blind Safe tool](https://color.adobe.com/create/color-accessibility) has a different UI than David Nichols' tool, so try both to see which better fits your needs.
+
+One advantage of the Adobe tool is that it has a built-in warning when colors are deemed to conflict for at at least one form of color blindness. Learn more on [Adobe's webpage about its tools](https://helpx.adobe.com/creative-cloud/adobe-color-accessibility-tools.html).
+
+<Container>
+  <Box css={{ display: "flex", justifyContent: "center", margin: "auto" }}>
+    <InlineImage
+      width={836}
+      height={448}
+      src="/images/adobe-color-blind-safe.png"
+      alt="Screenshot of the Adobe Color Blind Safe tool shows that two of the colors the user selected are in conflict for the color blindness known as Protanopia. The Adobe tool looks similar to the WebAIM one, but the palette is oriented sideways, and the colorblindness versions are stacked below it. There is also a color wheel with markers on it for each color in the palette."
+    />
+  </Box>
+</Container>
+<br />
+
+---
+
+## Avoiding eye strain and halation
+
+While you may be tempted to use black text on a white baground — and vice versa — for maximum color contrast, these combinations raise other issues.
+
+### Avoid white text on black backgrounds
+
+Never use white (`#FFFFFF`) text on a black (`#000000`) background (in any circumstance, but be especially weary of this in dark mode). This causes [a fuzziness effect known as halation](https://medium.com/@h_locke/why-dark-mode-causes-more-accessibility-issues-than-it-solves-d2f8359bb46a) for many readers with astigmatism, and it makes reading difficult.
+
+You can use a dark gray background, instead of black, to avoid this issue.
+
+View [our color tokens](/foundations/color) for more info.
+
+### Avoid black text on white backgrounds
+
+Never use black (`#000000`) text on a white (`#FFFFFF`) background (in any circumstance, but be especially weary of this in light mode). Pure black text on a white background is [known to cause eye strain among many users](https://uxmovement.com/content/why-you-should-never-use-pure-black-for-text-or-backgrounds/).
+
+You can use dark gray text, instead of black, to avoid this issue.
+
+View [our color tokens](/foundations/color) for more info.
+
+---
+
+## Dark mode vs. light mode settings
+
+### Light or dark, or both?
+
+It is best practice to support both light and dark mode on all content. This includes conducting the contrast tests described above in both modes. All links, buttons, fonts, etc. on the page should be visible in both modes.
+
+### Respecting browser settings
+
+Many users will have dark mode configured in their browser and/or system settings. When possible, we should build responsively and default to light or dark mode based on user settings without them having to manually click a toggle on our page.
+
+A good way to respond to user settings is [the prefers-color-scheme CSS media feature](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme), as documented by MDN.
+
+---
+
+## Avoiding color coding
+
+Even if you have fully accounted for contrast, colorblindness and compatibility with various user settings like dark mode, you should never rely purely on color coding to convey information to users.
+
+Screen reader users will always need text explanations of content. Others have their devices set to grayscale, so colors are mostly indistinguishable. Furthermore, colors may also have different cultural meanings across users, leading to confusion over the selection of colors and what it all means.
+
+Save yourself and your users the trouble by using text to convey the meaning of anything that you're tempted to convey via color.

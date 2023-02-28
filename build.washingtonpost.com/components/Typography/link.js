@@ -18,7 +18,7 @@ export const A = styled("a", {
   variants: {
     signal: {
       showColor: {
-        color: "$signal",
+        color: "$accessible",
       },
     },
   },

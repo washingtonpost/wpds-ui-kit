@@ -5,10 +5,6 @@ export const List = styled("ul", {
   marginLeft: "$100",
   paddingInlineStart: 0,
 
-  "&.contains-task-list": {
-    listStyle: "none",
-  },
-
   variants: {
     as: {
       ol: {
@@ -18,24 +14,26 @@ export const List = styled("ul", {
     },
   },
 });
+
 export const ListItem = styled("li", {
   padding: "$025 0",
-  color: theme.colors.accessible,
-  "a:nth-child(n)": {
-    color: theme.colors.accessible,
-    textDecoration: "underline",
-  },
-  "&.task-list-item p": {
-    display: "flex",
-    alignItems: "flex-start",
+});
 
-    "[role='checkbox']": {
-      marginBottom: "$025",
-      alignSelf: "flex-start",
-      marginRight: "$050",
-    },
+export const CheckboxListItem = styled("li", {
+  padding: "$025 0",
+  marginRight: "$050",
+  listStyle: "none",
+
+  "[role='checkbox']": {
+    marginBottom: "$025",
+    marginRight: "$050",
+  },
+
+  ".markdown-input-checkbox": {
+    float: "left",
   },
 });
+
 export const LinkText = styled("span", {
   color: theme.colors.accessible,
   textDecoration: "underline",

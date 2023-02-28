@@ -6,7 +6,11 @@ import React from "react";
 import { Header } from "./Components/headers";
 import CustomLink from "./Components/link";
 import { styled, theme, Box, Button } from "@washingtonpost/wpds-ui-kit";
-import { List, ListItem } from "~/components/Markdown/Components/list";
+import {
+  List,
+  ListItem,
+  CheckboxListItem,
+} from "~/components/Markdown/Components/list";
 import dynamic from "next/dynamic";
 import { Grid, Cell } from "./Components/Grid";
 import { AlertBanner } from "@washingtonpost/wpds-alert-banner";
@@ -129,7 +133,13 @@ const components = {
   ),
   ul: List,
   ol: ({ children }) => <List as="ol">{children}</List>,
-  li: ListItem,
+  li: ({ children }) => {
+    return children[1]?.props?.children[0]?.props?.type === "checkbox" ? (
+      <CheckboxListItem>{children}</CheckboxListItem>
+    ) : (
+      <ListItem>{children}</ListItem>
+    );
+  },
   p: P,
   Change: Change,
   h1: ({ children }) => <Header as="h1">{children}</Header>,
@@ -204,12 +214,17 @@ const components = {
   Box: Box,
   code: dynamic(() => import("./Components/Code")),
   pre: dynamic(() => import("./Components/Pre")),
-  input: ({ type, ...props }) => {
-    if (type === "checkbox") {
-      return <InputCheckbox {...props} />;
+  input: (data) => {
+    if (data.type === "checkbox") {
+      return (
+        <span className="markdown-input-checkbox">
+          {" "}
+          <InputCheckbox {...data.props} checked={data.checked} />
+        </span>
+      );
     }
 
-    return <input {...props} />;
+    return <input {...data.props} />;
   },
   blockquote: ({ children }) => (
     <Box

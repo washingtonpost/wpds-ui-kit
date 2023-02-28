@@ -94,6 +94,10 @@ export const getStaticProps = async ({ params }) => {
     description =
       "Sharpen your design and development skills with our in-depth recorded workshops.";
     size = THUMBNAIL_WIDE;
+  } else if (params.category === "accessibility") {
+    description =
+      "Explore our accessibility checklist, testing strategies and considerations. Contact accessibility@washpost.com with any questions, ideas or feedback.";
+    size = THUMBNAIL_SQUARE;
   } else if (params.category === "guides") {
     description =
       "Explore the processes and tools we use in our step-by-step written guides.";

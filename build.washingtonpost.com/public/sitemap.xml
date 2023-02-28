@@ -173,6 +173,62 @@
   </url>
 
   <url>
+    <loc
+      >https://build.washingtonpost.com/resources/accessibility/accessibility-checklist</loc
+    >
+  </url>
+
+  <url>
+    <loc>https://build.washingtonpost.com/resources/accessibility/alt-text</loc>
+  </url>
+
+  <url>
+    <loc
+      >https://build.washingtonpost.com/resources/accessibility/audio-and-video</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://build.washingtonpost.com/resources/accessibility/automated-testing</loc
+    >
+  </url>
+
+  <url>
+    <loc>https://build.washingtonpost.com/resources/accessibility/color</loc>
+  </url>
+
+  <url>
+    <loc
+      >https://build.washingtonpost.com/resources/accessibility/keyboard-accessibility</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://build.washingtonpost.com/resources/accessibility/plain-language-and-labeling</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://build.washingtonpost.com/resources/accessibility/screen-readers</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://build.washingtonpost.com/resources/accessibility/semantic-html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://build.washingtonpost.com/resources/accessibility/text-size-and-zoom</loc
+    >
+  </url>
+
+  <url>
     <loc>https://build.washingtonpost.com/resources/guides/coding-a-page</loc>
   </url>
 

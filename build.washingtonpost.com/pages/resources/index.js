@@ -43,6 +43,7 @@ const Page = ({ wrapper }) => (
             <NewCustomLink
               type={type === "New" ? type : "imageOnly"}
               href={`/resources/${name.toLowerCase()}`}
+              noUnderline
             >
               <Header
                 as="h2"
@@ -74,7 +75,7 @@ const Page = ({ wrapper }) => (
                   },
                 }}
               >
-                <NewCustomLink href={doc.slug} type="imageOnly">
+                <NewCustomLink href={doc.slug} type="imageOnly" noUnderline>
                   <Thumbnail
                     name={doc.data.title}
                     description={doc.data.description.split(".")[0]}
@@ -156,6 +157,8 @@ async function getWrapper(collections, recents) {
       "Explore the processes and tools we use in our step-by-step written guides.",
     Tutorials:
       "Watch or read through our tutorials to understand key techniques and concepts.",
+    Accessibility:
+      "Explore our accessibility checklist, testing strategies and considerations.",
     Workshops:
       "Sharpen your design and development skills with our in-depth recorded workshops.",
     Tools:

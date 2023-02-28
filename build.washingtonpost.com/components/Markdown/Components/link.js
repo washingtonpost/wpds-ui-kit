@@ -5,6 +5,7 @@ import { styled } from "@washingtonpost/wpds-ui-kit";
 export default function CustomLink({
   children,
   useSignal,
+  noUnderline,
   as,
   href,
   id,
@@ -12,7 +13,6 @@ export default function CustomLink({
 }) {
   const A = styled("a", {
     cursor: "pointer",
-    textDecoration: "none",
     color: "$primary",
     "&:hover": {
       opacity: ".75",
@@ -26,7 +26,12 @@ export default function CustomLink({
     variants: {
       signal: {
         showColor: {
-          color: "$signal",
+          color: "$accessible",
+        },
+      },
+      underline: {
+        none: {
+          textDecoration: "none",
         },
       },
     },
@@ -34,7 +39,12 @@ export default function CustomLink({
 
   return (
     <Link as={as} href={href} forceHref passHref>
-      <A id={id} signal={useSignal ? "showColor" : ""} {...otherProps}>
+      <A
+        id={id}
+        signal={useSignal ? "showColor" : ""}
+        underline={noUnderline ? "none" : ""}
+        {...otherProps}
+      >
         {children}
       </A>
     </Link>
