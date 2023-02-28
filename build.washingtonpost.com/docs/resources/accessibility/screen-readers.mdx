@@ -14,7 +14,7 @@ rank: 7
 
 Some people who are blind or low-vision use assistive technology known as a screen reader to hear the content on a page read aloud to them. They use controls to move between elements on a page, and the associated text and/or function is read aloud.
 
-This is one purpose of [alt text](/resources/accessibility/alt-text); it is read by a screen reader to describe an image for those who cannot see it clearly. Similarly, interactive elements should often be labeled in code using aria-labels.
+This is one purpose of [alt text](/resources/accessibility/alt-text); it is read by a screen reader to describe an image for those who cannot see it clearly. Similarly, interactive elements should often be labeled in code using [aria-labels](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-label).
 
 It is important to navigate a page manually with a screen reader while testing for accessibility. There are a number of different screen readers with their own quirks. On desktop, we strive to test with both VoiceOver and NVDA. On mobile devices, we strive to test with both VoiceOver and Talkback.
 
@@ -40,7 +40,7 @@ Apple has [detailed documentation on how to use VoiceOver](https://support.apple
 - **VO + shift + Up arrow:** Move out of a child element and into [the parent area/group](https://support.apple.com/guide/voiceover/interact-with-areas-and-groups-vo24851/mac), if applicable (for example, while reading this list I can press `VO` + `shift` + `Up arrow` to exit the list entirely and return to the parent `article`, instead of having to finish the list and other article content first)
 - **VO + shift + Down arrow:** Move into a child element (for example, while reading a list element like this one I can press `VO` + `shift` + `Down arrow` to interact with the individual words and characters in the text one at a time)
 - **VO + A:** Begin reading all remaining page content in order from the current position
-- **VO + U:** Open [the VoceOver rotor](#Using%20the%20VoiceOver%20rotor), covered in more detail below
+- **VO + U:** Open [the VoiceOver rotor](#Using%20the%20VoiceOver%20rotor), covered in more detail below
 - **Escape:** Close the rotor or another VoiceOver menu that has been opened
 <br />
 
@@ -63,7 +63,7 @@ Again, these are not all the available commands. This is a beginner's guide.
 
 #### Debugging with VoiceOver on a Mac
 
-Use the commands outlined above to navigate a page. Make sure all text on the page is readable in a sensible order and that images have alt text. Buttons and elements that are mouse-hoverable should be labeled with aria-labels, and you should hear those labels read by VoiceOver.
+Use the commands outlined above to navigate a page. Make sure all text on the page is readable in a sensible order and that images have alt text. Buttons and elements that are mouse-hoverable should be labeled with [aria-labels](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-label), and you should hear those labels read by VoiceOver.
 
 **As a sighted user, you may find it useful to click on the page with your mouse to position VoiceOver on an element.** You can then test normally from there. This is only advisable when debugging one specific part of a page. You will also see info about the currently selected element in a little box on your screen. This is the same text that is being read to a user, so make sure the text is appropriate. This goes for alt text, labels and anything else that VoiceOver can access on the page.
 
