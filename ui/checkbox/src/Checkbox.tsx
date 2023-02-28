@@ -233,6 +233,8 @@ interface CheckboxInterface extends CheckboxVariants {
   value?: string;
   id?: string;
   label?: string;
+  /** The correspoding label to the checkbox. Allows you to pass in more than just text */
+  children?: React.ReactNode;
 }
 
 const StyledCheck = styled("span", {

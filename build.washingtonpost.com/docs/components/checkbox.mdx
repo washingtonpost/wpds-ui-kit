@@ -198,12 +198,9 @@ export default function Example() {
         gap: "$100",
       }}
     >
-      <Checkbox
-        checked
-        variant="primary"
-        size="125"
-        label="Click checkbox to see focus"
-      />
+      <Checkbox checked variant="primary" size="125">
+        Click checkbox to see focus
+      </Checkbox>
     </Box>
   );
 }
@@ -222,13 +219,9 @@ export default function Example() {
         gap: "$100",
       }}
     >
-      <Checkbox
-        checked
-        variant="primary"
-        size="125"
-        label="This is a required checkbox"
-        required
-      />
+      <Checkbox checked variant="primary" size="125" required>
+        This is a required checkbox
+      </Checkbox>
     </Box>
   );
 }
@@ -290,9 +283,10 @@ export default function Example() {
           variant="primary"
           isOutline
           size="125"
-          label="Category"
           id="cb1"
-        />
+        >
+          Category
+        </Checkbox>
       </Box>
       <Box css={{ paddingLeft: "$100" }}>
         <Box
@@ -304,9 +298,10 @@ export default function Example() {
             variant="primary"
             isOutline
             size="125"
-            label="Option 1"
             id="cb2"
-          />
+          >
+            Option 1
+          </Checkbox>
         </Box>
         <Box
           onClick={() => setCheck3(!Check3)}
@@ -322,9 +317,10 @@ export default function Example() {
             variant="primary"
             isOutline
             size="125"
-            label="Option 2"
             id="cb3"
-          />
+          >
+            Option 2
+          </Checkbox>
         </Box>
       </Box>
     </Box>
@@ -363,9 +359,76 @@ export default function Example() {
           variant="primary"
           isOutline
           size="125"
-          label="Checkbox"
           id="cb4"
-        />
+        >
+          Checkbox
+        </Checkbox>
+      </Box>
+    </Box>
+  );
+}
+```
+
+### Custom labels
+
+You may want different styles applied to your labels.
+
+```jsx withPreview isGuide="success"
+export default function Example() {
+  const [Check1, setCheck1] = useState(false);
+  const [Check2, setCheck2] = useState(false);
+
+  const StyledLabel = styled("div", {
+    textDecoration: "line-through",
+  });
+
+  return (
+    <Box
+      css={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        gap: "$100",
+      }}
+    >
+      <Box
+        onClick={() => setCheck1(!Check1)}
+        css={{
+          cursor: "pointer",
+          display: "flex",
+          marginTop: "$100",
+          gap: "$025",
+        }}
+      >
+        <Checkbox
+          checked={Check1}
+          variant="primary"
+          isOutline
+          size="125"
+          id="cb4"
+        >
+          <StyledLabel>This label is struck through</StyledLabel>
+        </Checkbox>
+      </Box>
+      <Box
+        onClick={() => setCheck2(!Check2)}
+        css={{
+          cursor: "pointer",
+          display: "flex",
+          marginTop: "$100",
+          gap: "$025",
+        }}
+      >
+        <Checkbox
+          checked={Check2}
+          variant="primary"
+          isOutline
+          size="125"
+          id="cb5"
+        >
+          This label has{" "}
+          <a href="https://www.washingtonpost.com"> a link to the homepage</a>
+        </Checkbox>
       </Box>
     </Box>
   );
