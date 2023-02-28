@@ -3,6 +3,7 @@ title: Switch
 description: A visual control that allows the user to toggle between a binary state of “on” and “off”.
 component: switch
 status: Coming soon
+openSourceLink: https://www.radix-ui.com/docs/primitives/components/switch
 ---
 
 ---
@@ -28,10 +29,10 @@ status: Coming soon
 Two variants are supported `primary` and `cta`
 
 ```jsx withPreview
-<Switch.Root checked>
+<Switch.Root checked htmlFor="airplane-mode-one">
   <Switch.Thumb />
 </Switch.Root>
-<Switch.Root variant="cta" checked>
+<Switch.Root variant="cta" checked id="airplane-mode-one">
   <Switch.Thumb />
 </Switch.Root>
 ```
@@ -45,18 +46,20 @@ Two variants are supported `primary` and `cta`
 When the switch is checked it will transition to the on position.
 
 ```jsx withPreview
-<div>
-  <InputLabel>Off</InputLabel>
-<Switch.Root>
-  <Switch.Thumb />
-</Switch.Root>
-</div>
-<div>
-  <InputLabel>On</InputLabel>
-<Switch.Root checked>
-  <Switch.Thumb />
-</Switch.Root>
-</div>
+<FlexColumn>
+  <FlexRow>
+    <InputLabel htmlFor="airplane-mode-one">Off</InputLabel>
+    <Switch.Root id="airplane-mode-one">
+      <Switch.Thumb />
+    </Switch.Root>
+  </FlexRow>
+  <FlexRow>
+    <Switch.Root checked id="airplane-mode-one">
+      <Switch.Thumb />
+    </Switch.Root>
+    <InputLabel htmlFor="airplane-mode-two">On</InputLabel>
+  </FlexRow>
+</FlexColumn>
 ```
 
 ### Error
@@ -67,10 +70,10 @@ When the switch is a requirement it will show an error border color.
 <Switch.Root error>
   <Switch.Thumb />
 </Switch.Root>
-<Switch.Root error variant="cta">
+<Switch.Root error variant="cta" checked>
   <Switch.Thumb />
 </Switch.Root>
-<Switch.Root error variant="cta" checked>
+<Switch.Root error variant="primary" checked>
   <Switch.Thumb />
 </Switch.Root>
 ```
@@ -119,8 +122,8 @@ When the switch is in focus a outline with the color `signal` will appear around
 When making switches required always pair it with a label that has the required indicator.
 
 ```jsx withPreview isGuide="success"
-<InputLabel required>Sign up</InputLabel>
-<Switch.Root>
+<InputLabel required htmlFor="sign-up-switch">Sign up</InputLabel>
+<Switch.Root id="sign-up-switch">
   <Switch.Thumb />
 </Switch.Root>
 ```
@@ -130,23 +133,68 @@ When making switches required always pair it with a label that has the required 
 Don’t use switches to control options that do not control a single state that can clearly be categorized as `on` or `off`
 
 ```jsx withPreview isGuide="success"
-Change view
-<InputLabel>Compact</InputLabel>
-<Switch.Root>
-  <Switch.Thumb />
-</Switch.Root>
-<InputLabel>Loose</InputLabel>
+<FlexColumn gap="050">
+  <Header as="h4" htmlFor="change-view-switch">
+    Change view
+  </Header>
+  <FlexRow>
+    <InputLabel>Compact</InputLabel>
+    <Switch.Root id="change-view-switch">
+      <Switch.Thumb value="compact" name="view-mode" />
+    </Switch.Root>
+    <InputLabel>Loose</InputLabel>
+  </FlexRow>
+</FlexColumn>
 ```
 
 ### Label Pairing
 
-Switches should always be paired with a contextual label. It is also good practice for accessibility to have a text equivalent of the state (on or off) is displayed adjacent to the graphical state indicator
+Switches should always be paired with a contextual label. It is also good practice for accessibility to have a text equivalent of the state (on or off) is displayed adjacent to the graphical state indicator.
 
 ```jsx withPreview isGuide="success"
-<Switch.Root>
-  <Switch.Thumb />
-</Switch.Root>
-<InputLabel>Disabled</InputLabel>
+<FlexColumn>
+  <Card
+    css={{
+      padding: "$100",
+      maxWidth: "450px",
+    }}
+  >
+    <FlexRow spaceBetween>
+      <div>
+        **Dark theme**
+        <span />
+        Enabling this setting will override your system theme setting.
+      </div>
+      <FlexRow>
+        <Switch.Root id="prefers-color-scheme">
+          <Switch.Thumb value="dark" name="prefers-color-scheme" />
+        </Switch.Root>
+        <InputLabel>Disabled</InputLabel>
+      </FlexRow>
+    </FlexRow>
+  </Card>
+  <Card
+    css={{
+      padding: "$100",
+      maxWidth: "450px",
+    }}
+  >
+    <FlexRow spaceBetween>
+      <div>
+        **Reduced motion**
+        <span />
+        Enabling this setting will minimize the amount of non-essential motion
+        our website uses.
+      </div>
+      <FlexRow>
+        <Switch.Root id="prefers-reduced-motion">
+          <Switch.Thumb value="reduce" name="prefers-reduced-motion" />
+        </Switch.Root>
+        <InputLabel>Enabled</InputLabel>
+      </FlexRow>
+    </FlexRow>
+  </Card>
+</FlexColumn>
 ```
 
 ---

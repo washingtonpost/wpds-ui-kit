@@ -70,6 +70,7 @@ export default function Page({
             bundleSize,
             componentName,
             current,
+            openSourceLink: source?.scope?.openSourceLink,
           }}
         />
 

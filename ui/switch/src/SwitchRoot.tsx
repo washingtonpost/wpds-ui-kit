@@ -7,7 +7,8 @@ export const SwitchRoot = styled(SwitchPrimitive.Root, {
   // reset button styles
   fontSize: "$100",
   boxSizing: "border-box",
-  display: "flex",
+  display: "inline-flex",
+  overflow: "hidden",
   flexDirection: "row",
   alignItems: "center",
   justifyContent: "center",
@@ -15,6 +16,8 @@ export const SwitchRoot = styled(SwitchPrimitive.Root, {
   cursor: "pointer",
   appearance: "none",
   transition: `all ${theme.transitions.fast} ${theme.transitions.inOut}`,
+  padding: 0,
+  margin: 0,
   // end reset button styles
   height: theme.sizes[100],
   width: theme.sizes[200],
@@ -76,6 +79,7 @@ export const SwitchRoot = styled(SwitchPrimitive.Root, {
       error: true,
       css: {
         outline: "1px solid $colors$error",
+        outlineOffset: "1px",
       },
     },
   ],

@@ -3,7 +3,12 @@ import { Box, theme } from "@washingtonpost/wpds-ui-kit";
 import CustomLink from "~/components/Typography/link";
 import CopyCodeButton from "~/components/Markdown/Components/CopyToClipBoard";
 
-export const ComponentDetails = ({ current, bundleSize, componentName }) => {
+export const ComponentDetails = ({
+  current,
+  bundleSize,
+  componentName,
+  openSourceLink,
+}) => {
   return (
     <Box
       css={{
@@ -101,7 +106,7 @@ export const ComponentDetails = ({ current, bundleSize, componentName }) => {
           color: "inherit",
         }}
       >
-        Source:&nbsp;
+        Source: &nbsp;
         <CustomLink
           css={{
             color: theme.colors.accessible,
@@ -120,6 +125,35 @@ export const ComponentDetails = ({ current, bundleSize, componentName }) => {
           View on Github
         </CustomLink>
       </Box>
+      {openSourceLink && (
+        <Box
+          css={{
+            display: "flex",
+            fontWeight: "$bold",
+            textDecoration: "none",
+            color: "inherit",
+          }}
+        >
+          Primitive: &nbsp;
+          <CustomLink
+            css={{
+              color: theme.colors.accessible,
+              textDecoration: "underline",
+              fontWeight: theme.fontWeights.regular,
+              "&:focus": {
+                outlineColor: "$signal",
+                outlineStyle: "solid",
+                outlineOffset: "2px",
+                outlineWidth: "2px",
+              },
+            }}
+            href={openSourceLink}
+            title={"View their docs"}
+          >
+            View their docs
+          </CustomLink>
+        </Box>
+      )}
     </Box>
   );
 };

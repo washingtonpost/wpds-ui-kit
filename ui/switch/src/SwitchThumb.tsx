@@ -4,7 +4,7 @@ import type { SwitchThumbProps as RadixSwitchThumbProps } from "@radix-ui/react-
 import { styled, theme } from "@washingtonpost/wpds-theme";
 
 export const SwitchThumb = styled(Radix.Thumb, {
-  display: "flex",
+  display: "inline-block",
   padding: "calc($sizes$050 - 1px)",
   backgroundColor: "$$switchThumbVariant",
   borderRadius: "$round",
