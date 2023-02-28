@@ -58,15 +58,22 @@ When a screenshot is not an option, you can provide a text alternative of the AS
 
 ---
 
-## Forms and user input
+## Text decoration
 
-Clear error messages should be provided so that users know when and how to correct their input.
+Underlines (<u>example</u>), strikethroughs (~~example~~) and other text decorations are often not recognized by screen readers and can confuse other users, too, so they are not recommended.
 
-Similarly, avoid user prompts or notices that disappear automatically, as this creates a frustrating user experience when the user cannot access something they need in time. Label all fields clearly, and don't rely on placeholder text that disappears when a user begins filling out the field.
+If you must use text decoration to convey meaning, then you must also provide other ways for users to understand the meaning of the decorated text.
 
-Don't require users to drag things around to fill out a form or complete some other task. Remember that not everyone uses a computer mouse.
+For example, when using a strikethrough to visually label something as "completed" or "done," you should also include a label next to the struck-through text that explicitly says "completed" or "done."
 
-WebAIM provides [more guidance on accessible forms](https://webaim.org/techniques/forms/#:~:text=Accessible%20forms%20are%20easy%20to,must%20be%20intuitive%20and%20descriptive.).
+- ~~Buy ingredients~~ (completed)
+- ~~Travel home~~ (completed)
+- Cook dinner
+
+<br />
+You can follow a similar approach when using underlines and strikethroughs to denote added and removed content in an updated version of a document, perhaps one being shown to readers as part of a news article:
+
+The <u>new content</u> (added) in the document can thus be differentiated from the ~~old content~~ (removed) more easily.
 
 ---
 
@@ -79,3 +86,15 @@ CamelCase involves capitalizing the first letter of each word in a multiple-word
 Capitalize the letters in acronyms and initials as well.
 
 **For example, use #WPMedia instead of #Wpmedia.**
+
+---
+
+## Forms and user input
+
+Clear error messages should be provided so that users know when and how to correct their input.
+
+Similarly, avoid user prompts or notices that disappear automatically, as this creates a frustrating user experience when the user cannot access something they need in time. Label all fields clearly, and don't rely on placeholder text that disappears when a user begins filling out the field.
+
+Don't require users to drag things around to fill out a form or complete some other task. Remember that not everyone uses a computer mouse.
+
+WebAIM provides [more guidance on accessible forms](https://webaim.org/techniques/forms/#:~:text=Accessible%20forms%20are%20easy%20to,must%20be%20intuitive%20and%20descriptive.).

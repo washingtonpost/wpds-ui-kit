@@ -79,11 +79,11 @@ Thanks for incorporating accessibility considerations into your work!
 
 - **Check contrast for common forms of colorblindness**<br />
   Ensure color combinations meet the AA color contrast standard for [colorblind
-  users](/resources/accessibility/color#Color%20Blindness) among at least the
+  users](/resources/accessibility/color#David%20Nichols'%20coloring%20for%20colorblindness%20tool) among at least the
   three most common forms of colorblindness.
 
 - **View the page in dark and light mode**<br />
-  [Dark mode and light mode](/resources/accessibility/color#Dark%20mode%20considerations)
+  [Dark mode and light mode](/resources/accessibility/color#Dark%20mode%20vs.%20light%20mode%20settings)
   should both be supported. Does the page change to light or dark mode automatically
   per browser settings? Does the page pass color contrast thresholds in both
   modes? And does everything change color correctly upon toggling to light or
@@ -96,6 +96,9 @@ Thanks for incorporating accessibility considerations into your work!
 - **Ensure text is readable and in plain language**<br />
   Text should be [no smaller than 12px](/resources/accessibility/text-size-and-zoom#Text%20size) and written in [plain language](/resources/accessibility/plain-language-and-labeling)
   wherever possible. Is there any jargon or use of idioms? These should be avoided.
+
+- **Ensure text decoration is not needed to understand meaning**<br />
+  Do you use underlined text (<u>example</u>) or struck-through text (~~example~~)? Text decorations like these are often not recognized by screen readers and are often confusing to other users, too, so they are generally not recommended. If you do use text decoration to convey meaning, then you must also provide [other ways for users to understand the meaning of decorated text](/resources/accessibility/plain-language-and-labeling#Text%20decoration).
 
 - **Ensure non-English content is labeled as such**<br />
   Content in non-English languages, such as Arabic or Spanish, must have the
@@ -111,12 +114,9 @@ Thanks for incorporating accessibility considerations into your work!
   includes a form, make sure that clear prompts and error messages are provided. See our
   [guidance on forms](/resources/accessibility/plain-language-and-labeling#Forms%20and%20user%20input).
 
-- **Change page zoom level**<br />
+- **Change page zoom level and browser zoom settings**<br />
   Set [page zoom](/resources/accessibility/text-size-and-zoom#Page%20zoom) to 200% (on a Mac, press `command +` to zoom in). Does text scale
-  correctly? Is it still readable (no overflow, overlap, etc.)?
-
-- **Change browser zoom level**<br />
-  Restore page zoom to 100%, but [increase the font size in your browser settings](/resources/accessibility/text-size-and-zoom#Text%20size)
+  correctly? Is it still readable (no overflow, overlap, etc.)? Then, Restore the page zoom to 100% and [increase the font size in your browser settings](/resources/accessibility/text-size-and-zoom#Scaling)
   to 200%. Does text scale correctly? Is it still readable?
 
 ---
@@ -138,7 +138,7 @@ Thanks for incorporating accessibility considerations into your work!
   order.
 
 - **Test with screen reader rotor**<br />
-  Using [a screen reader](/resources/accessibility/screen-readers), open the rotor
+  Using [a screen reader](/resources/accessibility/screen-readers#Using%20the%20VoiceOver%20rotor), open the rotor
   and ensure all links, buttons and other elements have appropriate names. Interactive
   elements should not have generic names like "click here." You should be able
   to understand what the link or button does from the rotor menu without other

@@ -60,12 +60,7 @@ export const Thumbnail = (props) => {
         <ThumbnailGrid size={THUMBNAIL_SQUARE}>
           <div>
             {thumbnail && (
-              <Image
-                width="70"
-                height="70"
-                src={thumbnail}
-                alt=""
-              />
+              <Image width="70" height="70" src={thumbnail} alt="" />
             )}
           </div>
           <div>
