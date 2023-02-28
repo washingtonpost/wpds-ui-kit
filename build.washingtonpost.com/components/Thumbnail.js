@@ -64,7 +64,7 @@ export const Thumbnail = (props) => {
                 width="70"
                 height="70"
                 src={thumbnail}
-                alt={`${name} thumbnail image`}
+                alt=""
               />
             )}
           </div>

@@ -40,10 +40,12 @@ For our [WPDS Icon component](/components/icon#Options), we use the following st
 1. Add `aria-hidden="true"` to the svg tag so that it is [skipped by screen readers](/resources/accessibility/semantic-html#Hiding%20content%20from%20screen%20readers).
 2. Add a span next to the svg (as an immediate sibiling element) and apply [the sr-only class or Visually Hidden wrapper](/resources/accessibility/semantic-html#Content%20for%20screen%20readers%20only) so the span is readable only by screen readers.
 3. Add the alt text for the svg into the newly added span element. Since this alt text is not in an img element, screen readers will not be told
-that the text is describing an image by default. **This is a case where you should explicitly add "image" (or in the example below, "icon") to the alt text.**
+   that the text is describing an image by default. **This is a case where you should explicitly add "image" (or in the example below, "icon") to the alt text.**
 
 <br />
-Below is an example of how this works. Inspect the icon with the Chrome developer tools to view the HTML and CSS. Or, better yet, [test it out with the screen reader](/resources/accessibility/screen-readers) of your choice.
+Below is an example of how this works. Inspect the icon with the Chrome developer
+tools to view the HTML and CSS. Or, better yet, [test it out with the screen reader](/resources/accessibility/screen-readers)
+of your choice.
 
 ```jsx withPreview
 export default function Example() {
@@ -67,7 +69,8 @@ export default function Example() {
 4. Since we do not apply `aria-hidden="true"` to the svg tag in this method, we must apply `aria-hidden="true"` to each [text tag](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/text) within the svg. Otherwise the title and desc tags may not be read correctly. Note that the "visible text" element in the example below is not read by a screen reader but is mentioned as part of the alt text in the desc tag.
 
 <br />
-Select "Show code" below to view our implementation. This is a model you can follow for your own SVGs.
+Select "Show code" below to view our implementation. This is a model you can follow
+for your own SVGs.
 
 ```jsx withPreview
 export default function Example() {

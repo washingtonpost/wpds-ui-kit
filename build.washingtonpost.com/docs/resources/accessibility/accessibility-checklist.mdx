@@ -112,11 +112,11 @@ Thanks for incorporating accessibility considerations into your work!
   [guidance on forms](/resources/accessibility/plain-language-and-labeling#Forms%20and%20user%20input).
 
 - **Change page zoom level**<br />
-  Set [page zoom](http://localhost:3000/resources/accessibility/text-size-and-zoom#Page%20zoom) to 200% (on a Mac, press `command +` to zoom in). Does text scale
+  Set [page zoom](/resources/accessibility/text-size-and-zoom#Page%20zoom) to 200% (on a Mac, press `command +` to zoom in). Does text scale
   correctly? Is it still readable (no overflow, overlap, etc.)?
 
 - **Change browser zoom level**<br />
-  Restore page zoom to 100%, but [increase the font size in your browser settings](http://localhost:3000/resources/accessibility/text-size-and-zoom#Text%20size)
+  Restore page zoom to 100%, but [increase the font size in your browser settings](/resources/accessibility/text-size-and-zoom#Text%20size)
   to 200%. Does text scale correctly? Is it still readable?
 
 ---
@@ -124,7 +124,7 @@ Thanks for incorporating accessibility considerations into your work!
 ## Screen reader & keyboard controls
 
 - **Navigate content with keyboard only**<br />
-  Using [your keyboard only](/accessibility/guides/keyboard-accessibility), `tab`
+  Using [your keyboard only](/resources/accessibility/keyboard-accessibility), `tab`
   through the buttons, links, hoverable elements and any others the user should
   be able to interact with, ensuring that (a) they each receive appropriate focus
   styles and (b) that they are clickable with the enter key (links and buttons)
@@ -132,21 +132,23 @@ Thanks for incorporating accessibility considerations into your work!
   something change on the page. If not, there is a missing focus style or tab
   index issue.
 
-- **Confirm heading order is correct**<br />
-  Check the heading order on the page using [inspect element in the Chrome dev
-  tools](https://developer.chrome.com/docs/devtools/open/). Does the order make
-  sense? There should be only one `h1`, the page title. From there, headings
-  should be [ordered strictly by page heirarchy](/resources/accessibility/semantic-html#Heading%20order)
-  (don't jump from `h2` to `h4`, don't use `h2` as a subhead of an `h3`, etc.).
-
 - **Test with screen reader linearly**<br />
-  Using [a screen reader](/accessibility/guides/screen-readers), navigate the
+  Using [a screen reader](/resources/accessibility/screen-readers), navigate the
   page from top to bottom. Ensure all visible text is read aloud in a sensible
   order.
 
 - **Test with screen reader rotor**<br />
-  Using [a screen reader](/accessibility/guides/screen-readers), open the rotor
+  Using [a screen reader](/resources/accessibility/screen-readers), open the rotor
   and ensure all links, buttons and other elements have appropriate names. Interactive
   elements should not have generic names like "click here." You should be able
   to understand what the link or button does from the rotor menu without other
   context from the page.
+
+- **Confirm heading order is correct**<br />
+  Check the page headers using a screen reader. Does the heading order make
+  sense? There should be only one `h1`, the page title. From there, headings
+  should be [ordered strictly by page heirarchy](/resources/accessibility/semantic-html#Heading%20order%20and%20page%20landmarks)
+  (don't jump from `h2` to `h4`, don't use `h2` as a subhead of an `h3`, etc.).
+
+- **Confirm page landmarks are present and have correct content**<br />
+  Are the [base page landmarks](/resources/accessibility/semantic-html#Page%20landmarks) (`main`, `nav`, `heading`, `footer`) present? If there is complementary page content like a sidebar or right rail, is it in an `aside` tag? Are the landmarks accessible with a screen reader? They should contain the right content to help screen readers scan the page quickly.
