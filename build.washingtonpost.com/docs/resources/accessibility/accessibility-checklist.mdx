@@ -20,11 +20,11 @@ Thanks for incorporating accessibility considerations into your work!
 ## Automated testing
 
 - **Run the axe DevTools tests**<br />
-  You can install the [axe DevTools Chrome Extension](https://chrome.google.com/webstore/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd?hl=en-US) and then use it on the page ([guide to using axe DevTools](https://www.youtube.com/watch?v=iRGB40c_YJc&t=36s)). Fix any issues that are flagged.
+  You can install the [axe DevTools Chrome Extension](https://chrome.google.com/webstore/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd?hl=en-US) and then use it on the page ([guide to using axe DevTools](/resources/accessibility/automated-testing#axe%20DevTools%20(Google%20Chrome%20extension))). Fix any issues that are flagged.
 
 - **Run the WAVE tests**<br />
   You can install the [WAVE Chrome extension](https://chrome.google.com/webstore/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh?hl=en-US)
-  and then use it on the page ([guide to using WAVE](https://www.youtube.com/watch?v=ITUDiTgAZY0))
+  and then use it on the page ([guide to using WAVE](/resources/accessibility/automated-testing#WAVE%20Evaluation%20Tool%20(Google%20Chrome%20extension)))
   to check for any other auto-detectable issues.
 
 ---
@@ -65,12 +65,12 @@ Thanks for incorporating accessibility considerations into your work!
 
 - **Confirm white text is never on a pure black background**<br />
   Pure white text on a pure black background causes a [fuzziness effect known
-  as halation](https://medium.com/@h_locke/why-dark-mode-causes-more-accessibility-issues-than-it-solves-d2f8359bb46a)
+  as halation](/resources/accessibility/color#Avoid%20white%20text%20on%20black%20backgrounds)
   for many readers with astygmitism.
 
 - **Confirm black text is never on a pure white background**<br />
   Pure black text on a pure white background is [known to cause eye strain among
-  many users](https://uxmovement.com/content/why-you-should-never-use-pure-black-for-text-or-backgrounds/).
+  many users](/resources/accessibility/color#Avoid%20black%20text%20on%20white%20backgrounds).
 
 - **Ensure color contrast meets the WCAG AA standard**<br />
   All color combinations, especially for text and interactive elements, must
@@ -104,12 +104,12 @@ Thanks for incorporating accessibility considerations into your work!
   Content in non-English languages, such as Arabic or Spanish, must have the
   lang="CODE" attribute set, where CODE is the language code e.g. “ar” for Arabic
   or “es” for Spanish. There’s a [list of language codes](https://www.w3schools.com/tags/ref_language_codes.asp).
-  This is essential for non-English text to be read correctly by screen readers.
+  This is essential [for non-English text to be read correctly by screen readers](/resources/accessibility/semantic-html#Non-English%20language%20support).
   Additionally, Arabic and some other languages are read right-to-left. In those cases, we need to set an additional attribute in the HTML, `dir="rtl`.
 
 - **Clearly label interactive content**<br />
-  Meaning of icons, buttons and other elements should be explicitly conveyed
-  via text whenever possible. In all cases, interactive elements should have
+  Meaning of icons, buttons and other elements should be [explicitly conveyed
+  via text](/resources/accessibility/plain-language-and-labeling#Icons,%20emojis%20and%20ASCII%20art) whenever possible. In all cases, interactive elements should have
   appropriate [aria-labels](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-label). See our [guidance on labeling for screen reader users](/resources/accessibility/semantic-html#Labeling%20interactive%20elements). Avoid user prompts or notices that disappear automatically. If the content
   includes a form, make sure that clear prompts and error messages are provided. See our
   [guidance on forms](/resources/accessibility/plain-language-and-labeling#Forms%20and%20user%20input).
