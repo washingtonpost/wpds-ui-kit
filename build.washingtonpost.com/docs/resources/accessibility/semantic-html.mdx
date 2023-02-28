@@ -10,9 +10,9 @@ rank: 9
 
 ---
 
-## Heading order
+## Heading order and page landmarks
 
-### Motivation
+### Heading order motivation
 
 Someone who is using a screen reader may jump around the headings on a page to quickly scan content. Headings have a heirarchy: A page should have only one h1 corresponding to its title, and h2s are used for major subsections, h3s are for subsections of h2s and so on.
 
@@ -20,7 +20,7 @@ If headings are used our of order, such as an h2 being placed below an h3 despit
 
 It may be tempting to use headings out of order based on their styles, but this should not be done. You can add a class to a heading to provide extra styles, or rework your heading styles entirely because they may not make sense in the first place if you are being tempted to use headings out of order.
 
-### Solution
+### Heading order solution
 
 There must be only one h1 on any given page, as this corresponds to the page title or headline.
 
@@ -53,9 +53,7 @@ export default function Example() {
 }
 ```
 
----
-
-## Page landmarks
+### Page landmarks
 
 Our Washington Post article pages contain landmarks that screen reader users can quickly access via the rotor to jump around a page and hear different types of content.
 
@@ -65,7 +63,7 @@ In addition to the above, we can use `form` and `section` tags to define other k
 
 Similarly, if the same type of landmark is used on a page multiple times (for example, two `nav`s or two `aside`s), then we should add an `aria-label` to each duplicate landmark to differentiate them.
 
-Inspect one of our articles with the Chrome developer tools to find the landmarks. You can also open a [screen reader rotor](http://localhost:3000/resources/accessibility/screen-readers#VoiceOver%20(MacOC%20and%20iOS)) to view a list of landmarks.
+Inspect one of our articles with the Chrome developer tools to find the landmarks. You can also open a [screen reader rotor](/resources/accessibility/screen-readers#VoiceOver%20(MacOC%20and%20iOS)) to view a list of landmarks.
 
 The example code below demonstrates one way we can arrange landmarks on article pages. There are other possible arrangements. **Your main focus in using the landmarks should be that they contain appropriate content.** Otherwise screen reader users may be confused.
 
@@ -143,7 +141,7 @@ You might use `aria-labelledby` to clarify for a screen reader the connection be
 </div>
 ```
 
-Note that the `aria-labelledby` is passed a string containing element ids. The text content of the elements with these ids is what will be read by the screen reader so that the user understands what each input field is for (i.e. "Billing Name" and "Billing Address."
+Note that the `aria-labelledby` is passed a string containing an element id or multiple ids separated by spaces. The text content of the elements with these ids is what will be read by the screen reader so that the user understands what each input field is for (i.e. "Billing Name" and "Billing Address."
 
 There is also an `aria-describedby` property meant to connect elements with relevant (but not essential information). This is not used as commonly, and `aria-labelledby` should be used regardless of whether a value for `aria-describedby` is also present on a given element.
 

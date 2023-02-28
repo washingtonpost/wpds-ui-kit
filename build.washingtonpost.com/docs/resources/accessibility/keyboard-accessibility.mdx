@@ -12,25 +12,13 @@ rank: 6
 
 ## Keyboard focus
 
-Some people use the keyboard (or other controller mapped to keyboard keys) instead of a mouse in order to navigate page content.
+Some people use the keyboard (or another controller mapped to keyboard keys) instead of a mouse in order to navigate page content.
 
 For a user to know that they can "click" an element with their keyboard (including elements that would exhibit some behavior upon mouse hover), that element must be focusable.
 
-To be focusable means the element can be selected individually via keyboard controls. Try opening one of our pages in Google Chrome, and repeatedly press the tab key on your keyboard. You will notice that certain elements are highlighted or have a ring around them as you keep pressing tab, but not every element.
+To be focusable means the element can be selected individually via keyboard controls. Try opening one of our pages in Google Chrome, and repeatedly press the `tab` key on your keyboard. You will notice that certain elements (but not every element) become highlighted or get a ring around them as you keep pressing `tab`. The `tab` key is just one of many [keyboard controls](#How%20to%20navigate%20with%20a%20keyboard%20only) available to users.
 
----
-
-## Keyboard controls
-
-Try out the following to get a better sense for how people navigate web content without a mouse. Note the differences between interactive elements. Buttons are clickable via either space or enter, whereas links are only clickable via enter.
-
-- Tab – next focusable element
-- Shift + Tab – previous focusable element
-- Enter – "click" currently focused link or button
-- Space – "click" currently focused button or toggle a checkbox or radio button
-- Up/Down arrow keys – move between radio buttons or, in some cases, menu links
-- Right/Left arrow keys – adjust sliders in audio and video plugins or, in some cases, move between menu links
-- Escape – Close an element that has appeared dynamically, such as a popup menu or dialog. After the element closes, focus should return to the element that spawned it.
+**Note:** In Safari, the `tab` key does not exhibit the above behavior by default. You can press `option` and `tab` at the same time instead, or go into your Safari preferences and turn on “Press Tab to highlight each item on a webpage” in the "Advanced" pane of the preferences menu. Other browsers may also require setup for keyboard navigation to work as expected.
 
 ---
 
@@ -58,7 +46,7 @@ If the CSS or component logic specifies that something should happen when an ele
 
 You may be in a hurry to implement some function on a div and only add the `onClick` event. This makes the element impossible to use with the keyboard. So don't forget `onKeyDown`. Note that `onKeyPress` is deprecated. There is a [blog post describing why onKeyDown is best](https://www.mutuallyhuman.com/blog/keydown-is-the-only-keyboard-event-we-need/).
 
-Note that if you are working with an element that is non-focusable by default (like a div), then you will need to make sure the element is focusable by adding two things:
+If you are working with an element that is non-focusable by default (like a div), then you will need to make sure the element is focusable by adding two things:
 
 (a) `tabIndex={0}` to make the element tab-focusable
 
@@ -68,11 +56,28 @@ Elements like links and buttons should be focusable by default, but make sure to
 
 ---
 
+## How to navigate with a keyboard only
+
+Try out the following to get a better sense for how people navigate web content without a mouse. Note the different controls for different types of interactive elements. Buttons are clickable via either space or enter, whereas links are only clickable via enter.
+
+- **Tab:** Next focusable element
+- **Shift Tab:** Previous focusable element
+- **Enter:** "Click" currently focused link or button
+- **Space:** Scroll down the page or — if applicable — "click" currently focused button (includes toggling a checkbox or radio button)
+- **Up/Down arrows:** Scroll up/down the page or — if applicable — move between radio buttons and, in some cases, menu links
+- **Right/Left arrows:** Adjust sliders in audio and video players or, in some cases, move between menu links
+- **Escape:** Close an element that has appeared dynamically, such as a popup menu or dialog. After the dynamic element closes, focus should return to where it was before the element was opened.
+
+<br />
+**Note:** In Safari, the `tab` key does not exhibit the above behavior by default. You can press `option` and `tab` at the same time instead, or go into your Safari preferences and turn on “Press Tab to highlight each item on a webpage” in the "Advanced" pane of the preferences menu. Other browsers may also require setup for keyboard navigation to work as expected.
+
+---
+
 ## Limiting keyboard events to specific keys
 
 In almost all cases, you don't want just any key on the keyboard triggering the event you added via `onKeyDown`.
 
-At The Post, we have gotten around this by using onKeyDown wrapper functions like the examples below:
+At The Post, we have gotten around this by using `onKeyDown` wrapper functions like the examples below:
 
 ```jsx
 /**
@@ -134,8 +139,8 @@ You have to start navigating the page with your keyboard to discover this link, 
 <Container caption='Example of what "skip to main content" link looks like on washingtonpost.com'>
   <Box css={{ display: "flex", justifyContent: "center", margin: "auto" }}>
     <InlineImage
-      width={418}
-      height={224}
+      width={335}
+      height={216}
       src="/images/skip-link.png"
       alt="Screenshot of the top left corner of The Washington Post website shows a white underlined hyperlink called 'Skip to main content.' The link has a blue ring around it as it is currently in keyboard focus."
     />
@@ -145,4 +150,4 @@ You have to start navigating the page with your keyboard to discover this link, 
 
 When you click this link using enter on your keyboard, you should expect to be jumped to the first clickable element in the unique page content (excluding ads, nav menus and other boilerplate that is consistent across pages).
 
-If nothing happens, it means your page does not have a dom element with the id `main-content`. This is a bug, so remember to always confirm that one and only one dom element in your code has the `id="main-content"`.
+If nothing happens, it means your page does not have a dom element with the id `main-content`. This is a bug, so remember to always confirm that one and only one dom element in your code has `id="main-content"`.
