@@ -53,6 +53,7 @@ export const Icon = React.forwardRef<React.ReactSVGElement, IconInterface>(
           ref,
           className: `${IconSizeStyle({
             css: cssProp,
+            color: fill,
           })} ${className}`,
           ...props,
         })}
