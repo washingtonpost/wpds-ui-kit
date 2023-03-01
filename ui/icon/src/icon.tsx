@@ -16,12 +16,14 @@ interface IconInterface extends Omit<React.SVGProps<HTMLOrSVGElement>, "fill"> {
   /**
    * The name of the icon to display.
    */
-  size?: "100" | "150" | "200" | number;
   label: string;
+  size?: "100" | "150" | "200" | number;
   children?: React.ReactNode;
   className?: string;
   css?: WPDS.CSS;
   fill?: string | WPDSThemeColorObject;
+  id?: string;
+  alt?: string;
 }
 
 export const Icon = React.forwardRef<React.ReactSVGElement, IconInterface>(
@@ -51,9 +53,9 @@ export const Icon = React.forwardRef<React.ReactSVGElement, IconInterface>(
           focusable: false,
           role: "img",
           ref,
+          fill: fill,
           className: `${IconSizeStyle({
             css: cssProp,
-            color: fill,
           })} ${className}`,
           ...props,
         })}
