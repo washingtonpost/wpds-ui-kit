@@ -54,9 +54,6 @@ export const SwitchRoot = styled(SwitchPrimitive.Root, {
     },
     error: {
       true: {
-        // $$switchRootVariant: "$colors$error",
-        // $$switchThumbVariant: "$colors$secondary",
-        // backgroundColor: "$$switchRootVariant",
       },
       false: {},
     },
