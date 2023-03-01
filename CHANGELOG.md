@@ -3,6 +3,34 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.25.1](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.25.0...v0.25.1) (2023-03-01)
+
+**Note:** Version bump only for package root
+
+
+
+
+
+# [0.25.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.24.0...v0.25.0) (2023-03-01)
+
+
+### Bug Fixes
+
+* address various typos, formatting, hyperlink and date issues ([#335](https://github.com/washingtonpost/wpds-ui-kit/issues/335)) ([9c36c26](https://github.com/washingtonpost/wpds-ui-kit/commit/9c36c260222ebd65a7db7b829457d231a9cd33cc))
+* fix icon fill ([#334](https://github.com/washingtonpost/wpds-ui-kit/issues/334)) ([e542231](https://github.com/washingtonpost/wpds-ui-kit/commit/e5422314d62400294962c312626dca8fb7660e1a))
+* update prettier to fix build ([#325](https://github.com/washingtonpost/wpds-ui-kit/issues/325)) ([3306453](https://github.com/washingtonpost/wpds-ui-kit/commit/3306453e3d3245219c9a6439bd612e51501c64cc))
+
+
+### Features
+
+* accessibility docs for build.washingtonpost.com ([#326](https://github.com/washingtonpost/wpds-ui-kit/issues/326)) ([f71cdda](https://github.com/washingtonpost/wpds-ui-kit/commit/f71cdda521b9ef960a1c4c93b494042c36174aab))
+* add new status and remove all Draft status indicators ([#329](https://github.com/washingtonpost/wpds-ui-kit/issues/329)) ([972b203](https://github.com/washingtonpost/wpds-ui-kit/commit/972b203bb28dfad3a15c5b8f9b2100ac6aa1baee))
+* update gtm implementation ([#328](https://github.com/washingtonpost/wpds-ui-kit/issues/328)) ([f810286](https://github.com/washingtonpost/wpds-ui-kit/commit/f810286978cfe09bad5961af732da99d52d823ad))
+
+
+
+
+
 ## [0.24.1](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.24.0...v0.24.1) (2023-02-03)
 
 
