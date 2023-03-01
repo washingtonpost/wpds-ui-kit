@@ -123,7 +123,6 @@ export default function Playroom({
         <Kit.Box
           ref={iframeRef}
           as="iframe"
-          // sandbox="allow-scripts allow-same-origin"
           src={`/playroom?code=${LZString.compressToEncodedURIComponent(
             firstRenderCode
           )}`}

@@ -2,7 +2,6 @@ import React from "react";
 import Container from "./container";
 import InlineSVG from "./inlineSVG";
 
-// <Anatomy src="/img/components/switch/anatomy.svg"></Anatomy>
 const Anatomy = ({ src, caption }) => {
   return (
     <Container

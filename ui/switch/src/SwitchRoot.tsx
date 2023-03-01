@@ -1,6 +1,5 @@
 import * as React from "react";
 import * as SwitchPrimitive from "@radix-ui/react-switch";
-// import type { SwitchProps as RadixSwitchRootProps } from "@radix-ui/react-switch";
 import { styled, theme } from "@washingtonpost/wpds-theme";
 
 export const SwitchRoot = styled(SwitchPrimitive.Root, {

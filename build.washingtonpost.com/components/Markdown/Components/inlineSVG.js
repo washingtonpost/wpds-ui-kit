@@ -68,7 +68,6 @@ export default function inlineSVG({
   width,
   height,
 }) {
-  // const Size = { height: height ? height : 150, width: width ? width : 300 };
   const inlineSvgCss = css({
     aspectRatio: `${width}/${height}`,
   });
@@ -96,7 +95,6 @@ export default function inlineSVG({
           );
           titleTag.innerHTML = title; //require title to be passed
           svg.prepend(title);
-          // svg.setAttribute("style", `max-height:${Size.height}px;display:flex`);
           // svg.setAttribute("width", "100%");
           // svg.setAttribute("height", `${Size.height}`);
           const paths = svg.querySelectorAll("path");
