@@ -1,6 +1,8 @@
 import { Switch } from ".";
 import type { ComponentMeta, ComponentStory } from "@storybook/react";
 import { styled } from "@washingtonpost/wpds-theme";
+import { userEvent, within } from "@storybook/testing-library";
+import { expect } from "@storybook/jest";
 
 export default {
   title: "Switch",
@@ -27,6 +29,26 @@ export const Default = Template.bind({});
 
 Default.args = {};
 
+export const Interactions = Template.bind({});
+
+Interactions.args = {};
+Interactions.parameters = {
+  chromatic: { disableSnapshot: true },
+};
+
+Interactions.play = async ({ canvasElement }) => {
+  const canvas = within(canvasElement);
+  const root = canvas.getByRole("switch");
+
+  userEvent.click(root);
+
+  expect(root).toHaveAttribute("aria-checked", "true");
+
+  userEvent.click(root);
+
+  expect(root).toHaveAttribute("aria-checked", "false");
+};
+
 export const CTA = Template.bind({});
 
 CTA.args = {
@@ -43,6 +65,7 @@ export const Disabled = Template.bind({});
 
 Disabled.args = {
   disabled: true,
+  name: "disabled-switch",
 };
 
 export const Mobile = Template.bind({});
