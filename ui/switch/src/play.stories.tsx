@@ -32,9 +32,6 @@ Default.args = {};
 export const Interactions = Template.bind({});
 
 Interactions.args = {};
-Interactions.parameters = {
-  chromatic: { disableSnapshot: true },
-};
 
 Interactions.play = async ({ canvasElement }) => {
   const canvas = within(canvasElement);
