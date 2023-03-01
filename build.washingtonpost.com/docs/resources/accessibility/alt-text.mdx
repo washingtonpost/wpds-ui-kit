@@ -2,7 +2,7 @@
 title: Alt text
 description: Describing images for blind and low-vision users
 kicker: Accessibility
-publishDate: February 24, 2023
+publishDate: February 28, 2023
 thumbnail: /img/resources/thumbnails/a11y_alt-text.png
 imageTag: /img/resources/guides/a11y_alt-text.png
 rank: 3
@@ -38,7 +38,7 @@ We recommend using whichever of the following two methods is most appropriate fo
 For our [WPDS Icon component](/components/icon#Options), we use the following steps:
 
 1. Add `aria-hidden="true"` to the svg tag so that it is [skipped by screen readers](/resources/accessibility/semantic-html#Hiding%20content%20from%20screen%20readers).
-2. Add a span next to the svg (as an immediate sibiling element) and apply [the sr-only class or Visually Hidden wrapper](/resources/accessibility/semantic-html#Content%20for%20screen%20readers%20only) so the span is readable only by screen readers.
+2. Add a span next to the svg (as an immediate sibling element) and apply [the sr-only class or Visually Hidden wrapper](/resources/accessibility/semantic-html#Content%20for%20screen%20readers%20only) so the span is readable only by screen readers.
 3. Add the alt text for the svg into the newly added span element. Since this alt text is not in an img element, screen readers will not be told
    that the text is describing an image by default. **This is a case where you should explicitly add "image" (or in the example below, "icon") to the alt text.**
 
@@ -64,7 +64,7 @@ export default function Example() {
 #### Method 2: Use aria-labelledby with title tag and aria-describedby with desc tag (a lightweight solution for when Method 1 isn't doable)
 
 1. Add a [title tag](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/title) **as the first child of the svg tag** (as shown in the example below) to provide a brief description of the image. The title may also be viewable to sighted users who hover over the svg with a mouse.
-2. If the image cannot be described with a brief (approxiately one sentence) title, then add a [desc tag](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/desc) below the title tag to provide more details. As an example, the desc for an SVG graphic may list out specific details from the graphic whereas the title briefly summarizes the graphic's appearance and purpose. Individual [rects](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/rect), [circles](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/circle) and other visual elements within an svg tag can have their own titles and descs, but we recommend just one title and one desc at the root level — as described above — for a more straightforward user experience.
+2. If the image cannot be described with a brief (approximately one sentence) title, then add a [desc tag](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/desc) below the title tag to provide more details. As an example, the desc for an SVG graphic may list out specific details from the graphic whereas the title briefly summarizes the graphic's appearance and purpose. Individual [rects](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/rect), [circles](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/circle) and other visual elements within an svg tag can have their own titles and descs, but we recommend just one title and one desc at the root level — as described above — for a more straightforward user experience.
 3. Give the title and desc tags unique [id attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id) values. Then, in the svg tag, set `aria-labelledby="id of title tag goes here"` and `aria-describedby="id of desc tag goes here"`.
 4. Since we do not apply `aria-hidden="true"` to the svg tag in this method, we must apply `aria-hidden="true"` to each [text tag](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/text) within the svg. Otherwise the title and desc tags may not be read correctly. Note that the "visible text" element in the example below is not read by a screen reader but is mentioned as part of the alt text in the desc tag.
 
@@ -220,7 +220,7 @@ Below is an example from The Washington Post Twitter account.
 2. Be concise. Alt text doesn't need to describe every tiny detail in an image, just the relevant parts for the overall meaning. Typical alt text is no more than a few sentences. If the image is complex, this may be longer, but try to keep it as short as possible while including all necessary details.
 3. Never assume race, gender, etc. If known, use these and other identifiers when relevant to the image or context in which the image is used. Note that the subject of the image may have their own preferences on how they are identified for the purposes of a story or other content.
 4. Avoid including your opinion on the image. Alt text should be an objective description. Words like "pretty" or "scary" are generally not useful. Focus on what is happening in the image.
-5. Write in plain language so that the alt text's meaning is clear. Avoid complicated words and sentence structures. Avoid jargon and idioms. We have [more guidance on plain language](/resources/accessibility/guides/plain-language-and-labeling).
+5. Write in plain language so that the alt text's meaning is clear. Avoid complicated words and sentence structures. Avoid jargon and idioms. We have [more guidance on plain language](/resources/accessibility/plain-language-and-labeling).
 
 <br />
 Below is an example from The Washington Post Twitter account.

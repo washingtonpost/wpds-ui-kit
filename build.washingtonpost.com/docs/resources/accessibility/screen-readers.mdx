@@ -2,7 +2,7 @@
 title: Screen readers
 description: How to use them and why you need to do so
 kicker: Accessibility
-publishDate: February 24, 2023
+publishDate: February 28, 2023
 thumbnail: /img/resources/thumbnails/a11y_screen-reader.png
 imageTag: /img/resources/guides/a11y_screen-readers.png
 rank: 7
@@ -14,7 +14,7 @@ rank: 7
 
 Some people who are blind or low-vision use assistive technology known as a screen reader to hear the content on a page read aloud to them. They use controls to move between elements on a page, and the associated text and/or function is read aloud.
 
-This is one purpose of [alt text](/resources/accessibility/alt-text); it is read by a screen reader to describe an image for those who cannot see it clearly. Similarly, interactive elements should often be labeled in code using aria-labels.
+This is one purpose of [alt text](/resources/accessibility/alt-text); it is read by a screen reader to describe an image for those who cannot see it clearly. Similarly, interactive elements should often be labeled in code using [aria-labels](/resources/accessibility/semantic-html#Labeling%20interactive%20elements).
 
 It is important to navigate a page manually with a screen reader while testing for accessibility. There are a number of different screen readers with their own quirks. On desktop, we strive to test with both VoiceOver and NVDA. On mobile devices, we strive to test with both VoiceOver and Talkback.
 
@@ -40,10 +40,10 @@ Apple has [detailed documentation on how to use VoiceOver](https://support.apple
 - **VO + shift + Up arrow:** Move out of a child element and into [the parent area/group](https://support.apple.com/guide/voiceover/interact-with-areas-and-groups-vo24851/mac), if applicable (for example, while reading this list I can press `VO` + `shift` + `Up arrow` to exit the list entirely and return to the parent `article`, instead of having to finish the list and other article content first)
 - **VO + shift + Down arrow:** Move into a child element (for example, while reading a list element like this one I can press `VO` + `shift` + `Down arrow` to interact with the individual words and characters in the text one at a time)
 - **VO + A:** Begin reading all remaining page content in order from the current position
-- **VO + U:** Open [the VoceOver rotor](#Using%20the%20VoiceOver%20rotor), covered in more detail below
+- **VO + U:** Open [the VoiceOver rotor](#Using%20the%20VoiceOver%20rotor), covered in more detail below
 - **Escape:** Close the rotor or another VoiceOver menu that has been opened
-<br />
 
+<br />
 All [other keyboard controls](/resources/accessibility/keyboard-accessibility#How%20to%20navigate%20with%20a%20keyboard%20only) also work while using VoiceOver.
 
 Again, these are not all the available commands. This is a beginner's guide.
@@ -63,7 +63,7 @@ Again, these are not all the available commands. This is a beginner's guide.
 
 #### Debugging with VoiceOver on a Mac
 
-Use the commands outlined above to navigate a page. Make sure all text on the page is readable in a sensible order and that images have alt text. Buttons and elements that are mouse-hoverable should be labeled with aria-labels, and you should hear those labels read by VoiceOver.
+Use the commands outlined above to navigate a page. Make sure all text on the page is readable in a sensible order and that images have alt text. Buttons and elements that are mouse-hoverable should be labeled with [aria-labels](/resources/accessibility/semantic-html#Labeling%20interactive%20elements), and you should hear those labels read by VoiceOver.
 
 **As a sighted user, you may find it useful to click on the page with your mouse to position VoiceOver on an element.** You can then test normally from there. This is only advisable when debugging one specific part of a page. You will also see info about the currently selected element in a little box on your screen. This is the same text that is being read to a user, so make sure the text is appropriate. This goes for alt text, labels and anything else that VoiceOver can access on the page.
 
@@ -90,8 +90,9 @@ After turning on VoiceOver in your [iOS device's accessibility settings](https:/
 **There are two things you should practice repeatedly when getting started with VoiceOver on iOS:**
 
 1. Tap on something once to select it, and then — after it is selected — double tap to use it. This is how you will open apps, click buttons and perform other interactions. Try this with the VoiceOver on/off toggle in your accessibility settings to get used to it.
-2. To go to your device's homescreen, slowly slide one finger up your phone screen — starting at the bottom — until you feel a vibration, and then immediately lift your finger off the screen.
+2. To go to your device's home screen, slowly slide one finger up your phone screen — starting at the bottom — until you feel a vibration, and then immediately lift your finger off the screen.
 
+<br />
 Test these two controls together. Turn VoiceOver on, navigate to your home screen, and then re-open the settings app. Navigate to the VoiceOver setting and turn VoiceOver off. Repeat the process for more practice, and then proceed to learn additional controls below.
 
 #### Basic iOS controls

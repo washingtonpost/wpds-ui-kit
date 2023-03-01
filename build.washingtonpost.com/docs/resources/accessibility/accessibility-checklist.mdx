@@ -2,7 +2,7 @@
 title: Accessibility Checklist
 description: Overview of considerations, not comprehensive
 kicker: Accessibility
-publishDate: February 24, 2023
+publishDate: February 28, 2023
 thumbnail: /img/resources/thumbnails/a11y_logo.png
 imageTag: /img/resources/guides/a11y_checklist.png
 rank: 1
@@ -20,11 +20,11 @@ Thanks for incorporating accessibility considerations into your work!
 ## Automated testing
 
 - **Run the axe DevTools tests**<br />
-  You can install the [axe DevTools Chrome Extension](https://chrome.google.com/webstore/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd?hl=en-US) and then use it on the page ([guide to using axe DevTools](https://www.youtube.com/watch?v=iRGB40c_YJc&t=36s)). Fix any issues that are flagged.
+  You can install the [axe DevTools Chrome Extension](https://chrome.google.com/webstore/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd?hl=en-US) and then use it on the page ([guide to using axe DevTools](/resources/accessibility/automated-testing#axe%20DevTools%20(Google%20Chrome%20extension))). Fix any issues that are flagged.
 
 - **Run the WAVE tests**<br />
   You can install the [WAVE Chrome extension](https://chrome.google.com/webstore/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh?hl=en-US)
-  and then use it on the page ([guide to using WAVE](https://www.youtube.com/watch?v=ITUDiTgAZY0))
+  and then use it on the page ([guide to using WAVE](/resources/accessibility/automated-testing#WAVE%20Evaluation%20Tool%20(Google%20Chrome%20extension)))
   to check for any other auto-detectable issues.
 
 ---
@@ -54,7 +54,7 @@ Thanks for incorporating accessibility considerations into your work!
   more than 3 times within any one second, as this is a seizure risk.
 
 - **Provide captions and transcripts**<br />
-  Anywhere there is audio, there should be a [transcript](/resources/accessibility/audio-and-video#Transcripts) provided. Videos with audio should include [captions](</resources/accessibility/audio-and-video#Video%20(including%20gifs%20and%20animations)>) in addition to transcripts.
+  Anywhere there is audio, there should be a [transcript](/resources/accessibility/audio-and-video#Transcripts%20guidance) provided. Videos with audio should include [captions](/resources/accessibility/audio-and-video#Captions) in addition to transcripts.
   Both should include words spoken AND any other meaningful sounds from the
   audio (such as a sigh or laugh in conversation, or the chopping of a knife
   in cooking) as well.
@@ -64,13 +64,12 @@ Thanks for incorporating accessibility considerations into your work!
 ## Color
 
 - **Confirm white text is never on a pure black background**<br />
-  Pure white text on a pure black background causes a [fuzziness effect known
-  as halation](https://medium.com/@h_locke/why-dark-mode-causes-more-accessibility-issues-than-it-solves-d2f8359bb46a)
-  for many readers with astygmitism.
+  White text on a pure black background causes a [fuzziness known as halation](https://medium.com/@h_locke/why-dark-mode-causes-more-accessibility-issues-than-it-solves-d2f8359bb46a)
+  for many users with astigmatism. See [our guidance for avoiding halation](/resources/accessibility/color#Avoid%20white%20text%20on%20black%20backgrounds).
 
 - **Confirm black text is never on a pure white background**<br />
-  Pure black text on a pure white background is [known to cause eye strain among
-  many users](https://uxmovement.com/content/why-you-should-never-use-pure-black-for-text-or-backgrounds/).
+  Black text on a pure white background causes [eye strain among
+  many users](https://uxmovement.com/content/why-you-should-never-use-pure-black-for-text-or-backgrounds/). See [our guidance for avoiding eye strain](/resources/accessibility/color#Avoid%20black%20text%20on%20white%20backgrounds).
 
 - **Ensure color contrast meets the WCAG AA standard**<br />
   All color combinations, especially for text and interactive elements, must
@@ -104,13 +103,13 @@ Thanks for incorporating accessibility considerations into your work!
   Content in non-English languages, such as Arabic or Spanish, must have the
   lang="CODE" attribute set, where CODE is the language code e.g. “ar” for Arabic
   or “es” for Spanish. There’s a [list of language codes](https://www.w3schools.com/tags/ref_language_codes.asp).
-  This is essential for non-English text to be read correctly by screen readers.
+  This is essential [for non-English text to be read correctly by screen readers](/resources/accessibility/semantic-html#Non-English%20language%20support).
   Additionally, Arabic and some other languages are read right-to-left. In those cases, we need to set an additional attribute in the HTML, `dir="rtl`.
 
 - **Clearly label interactive content**<br />
-  Meaning of icons, buttons and other elements should be explicitly conveyed
-  via text whenever possible. In all cases, interactive elements should have
-  appropriate aria-labels. See our [guidance on labeling for screen reader users](/resources/accessibility/semantic-html#Labeling%20interactive%20elements). Avoid user prompts or notices that disappear automatically. If the content
+  Meaning of icons, buttons and other elements should be [explicitly conveyed
+  via text](/resources/accessibility/plain-language-and-labeling#Icons,%20emojis%20and%20ASCII%20art) whenever possible. In all cases, interactive elements should have
+  appropriate [aria-labels](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-label). See our [guidance on labeling for screen reader users](/resources/accessibility/semantic-html#Labeling%20interactive%20elements). Avoid user prompts or notices that disappear automatically. If the content
   includes a form, make sure that clear prompts and error messages are provided. See our
   [guidance on forms](/resources/accessibility/plain-language-and-labeling#Forms%20and%20user%20input).
 
@@ -138,17 +137,17 @@ Thanks for incorporating accessibility considerations into your work!
   order.
 
 - **Test with screen reader rotor**<br />
-  Using [a screen reader](/resources/accessibility/screen-readers#Using%20the%20VoiceOver%20rotor), open the rotor
+  Open [the screen reader rotor](/resources/accessibility/screen-readers#Using%20the%20VoiceOver%20rotor)
   and ensure all links, buttons and other elements have appropriate names. Interactive
-  elements should not have generic names like "click here." You should be able
+  elements [should not have generic names like "click here."](/resources/accessibility/semantic-html#Hyperlink%20text%20guidelines) You should be able
   to understand what the link or button does from the rotor menu without other
   context from the page.
 
 - **Confirm heading order is correct**<br />
   Check the page headers using a screen reader. Does the heading order make
   sense? There should be only one `h1`, the page title. From there, headings
-  should be [ordered strictly by page heirarchy](/resources/accessibility/semantic-html#Heading%20order%20and%20page%20landmarks)
+  should be [ordered strictly by page hierarchy](/resources/accessibility/semantic-html#Heading%20order%20and%20page%20landmarks)
   (don't jump from `h2` to `h4`, don't use `h2` as a subhead of an `h3`, etc.).
 
 - **Confirm page landmarks are present and have correct content**<br />
-  Are the [base page landmarks](/resources/accessibility/semantic-html#Page%20landmarks) (`main`, `nav`, `heading`, `footer`) present? If there is complementary page content like a sidebar or right rail, is it in an `aside` tag? Are the landmarks accessible with a screen reader? They should contain the right content to help screen readers scan the page quickly.
+  Are the [base page landmarks](/resources/accessibility/semantic-html#Page%20landmarks) (`main`, `nav`, `header`, `footer`) present? If there is complementary page content like a sidebar or right rail, is it in an `aside` tag? Are the landmarks accessible with a screen reader? They should contain the right content to help screen readers scan the page quickly.
