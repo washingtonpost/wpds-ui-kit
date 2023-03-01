@@ -2,7 +2,7 @@
 title: Color
 description: Contrast, colorblindness, light and dark mode standards
 kicker: Accessibility
-publishDate: February 24, 2023
+publishDate: February 28, 2023
 thumbnail: /img/resources/thumbnails/a11y_color.png
 imageTag: /img/resources/guides/a11y_color.png
 rank: 4
@@ -96,21 +96,23 @@ One advantage of the Adobe tool is that it has a built-in warning when colors ar
 
 While you may be tempted to use black text on a white baground — and vice versa — for maximum color contrast, these combinations raise other issues.
 
+Within [our color tokens library](/foundations/color), there is a theme token labeled `accessible`, which maps to hex value `#666666` in light mode and `#858585` in dark mode. The contrast ratio is 5.7 when the `accessible` color is used in light mode on a pure white (`#FFFFFF`) background and in dark mode on a pure black (`#000000`) background.
+
 ### Avoid white text on black backgrounds
 
 Never use white (`#FFFFFF`) text on a black (`#000000`) background (in any circumstance, but be especially weary of this in dark mode). This causes [a fuzziness effect known as halation](https://medium.com/@h_locke/why-dark-mode-causes-more-accessibility-issues-than-it-solves-d2f8359bb46a) for many readers with astigmatism, and it makes reading difficult.
 
-You can use a dark gray background, instead of black, to avoid this issue.
+You can use light gray text instead of white, and/or a dark gray background instead of black, to avoid this issue.
 
-View [our color tokens](/foundations/color) for more info.
+View [our color tokens library](/foundations/color) — including the `accessible` token mentioned above — for more info.
 
 ### Avoid black text on white backgrounds
 
 Never use black (`#000000`) text on a white (`#FFFFFF`) background (in any circumstance, but be especially weary of this in light mode). Pure black text on a white background is [known to cause eye strain among many users](https://uxmovement.com/content/why-you-should-never-use-pure-black-for-text-or-backgrounds/).
 
-You can use dark gray text, instead of black, to avoid this issue.
+You can use dark gray text instead of black, and/or a light gray background instead of white, to avoid this issue.
 
-View [our color tokens](/foundations/color) for more info.
+View [our color tokens library](/foundations/color) — including the `accessible` token mentioned above — for more info.
 
 ---
 
