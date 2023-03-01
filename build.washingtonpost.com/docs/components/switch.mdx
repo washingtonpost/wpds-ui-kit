@@ -49,12 +49,17 @@ When the switch is checked it will transition to the on position.
 <FlexColumn>
   <FlexRow>
     <InputLabel htmlFor="airplane-mode-one">Off</InputLabel>
-    <Switch.Root id="airplane-mode-one">
+    <Switch.Root id="airplane-mode-one" value="off" name="airplane-mode-one">
       <Switch.Thumb />
     </Switch.Root>
   </FlexRow>
   <FlexRow>
-    <Switch.Root checked id="airplane-mode-one">
+    <Switch.Root
+      checked
+      id="airplane-mode-one"
+      value="on"
+      name="airplane-mode-two"
+    >
       <Switch.Thumb />
     </Switch.Root>
     <InputLabel htmlFor="airplane-mode-two">On</InputLabel>
@@ -132,7 +137,7 @@ When making switches required always pair it with a label that has the required 
 
 Don’t use switches to control options that do not control a single state that can clearly be categorized as `on` or `off`
 
-```jsx withPreview isGuide="success"
+```jsx withPreview isGuide="error"
 <FlexColumn gap="050">
   <Header as="h4" htmlFor="change-view-switch">
     Change view
@@ -152,49 +157,63 @@ Don’t use switches to control options that do not control a single state that 
 Switches should always be paired with a contextual label. It is also good practice for accessibility to have a text equivalent of the state (on or off) is displayed adjacent to the graphical state indicator.
 
 ```jsx withPreview isGuide="success"
-<FlexColumn>
-  <Card
-    css={{
-      padding: "$100",
-      maxWidth: "450px",
-    }}
-  >
-    <FlexRow spaceBetween>
-      <div>
-        **Dark theme**
-        <span />
-        Enabling this setting will override your system theme setting.
-      </div>
-      <FlexRow>
-        <Switch.Root id="prefers-color-scheme">
-          <Switch.Thumb value="dark" name="prefers-color-scheme" />
-        </Switch.Root>
-        <InputLabel>Disabled</InputLabel>
-      </FlexRow>
-    </FlexRow>
-  </Card>
-  <Card
-    css={{
-      padding: "$100",
-      maxWidth: "450px",
-    }}
-  >
-    <FlexRow spaceBetween>
-      <div>
-        **Reduced motion**
-        <span />
-        Enabling this setting will minimize the amount of non-essential motion
-        our website uses.
-      </div>
-      <FlexRow>
-        <Switch.Root id="prefers-reduced-motion">
-          <Switch.Thumb value="reduce" name="prefers-reduced-motion" />
-        </Switch.Root>
-        <InputLabel>Enabled</InputLabel>
-      </FlexRow>
-    </FlexRow>
-  </Card>
-</FlexColumn>
+export default function Example() {
+  const [checked, setChecked] = useState(false);
+  const [checkedTwo, setCheckedTwo] = useState(false);
+  return (
+    <FlexColumn>
+      <Card
+        css={{
+          padding: "$100",
+          maxWidth: "450px",
+        }}
+      >
+        <FlexRow spaceBetween>
+          <div>
+            <strong>Dark theme</strong>
+            <br />
+            Enabling this setting will override your system theme setting.
+          </div>
+          <FlexRow>
+            <Switch.Root
+              id="prefers-color-scheme"
+              checked={checked}
+              onCheckedChange={() => setChecked(!checked)}
+            >
+              <Switch.Thumb value="dark" name="prefers-color-scheme" />
+            </Switch.Root>
+            <InputLabel>{checked ? "Enabled" : "Disabled"}</InputLabel>
+          </FlexRow>
+        </FlexRow>
+      </Card>
+      <Card
+        css={{
+          padding: "$100",
+          maxWidth: "450px",
+        }}
+      >
+        <FlexRow spaceBetween>
+          <div>
+            <strong>Reduced motion</strong>
+            <br />
+            Enabling this setting will minimize the amount of non-essential
+            motion our website uses.
+          </div>
+          <FlexRow>
+            <Switch.Root
+              id="prefers-reduced-motion"
+              checked={checkedTwo}
+              onCheckedChange={() => setCheckedTwo(!checkedTwo)}
+            >
+              <Switch.Thumb value="reduce" name="prefers-reduced-motion" />
+            </Switch.Root>
+            <InputLabel>{checkedTwo ? "Enabled" : "Disabled"}</InputLabel>
+          </FlexRow>
+        </FlexRow>
+      </Card>
+    </FlexColumn>
+  );
+}
 ```
 
 ---
