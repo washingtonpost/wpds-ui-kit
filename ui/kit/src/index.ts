@@ -1,4 +1,5 @@
 // insert new component exports here
+export * from "@washingtonpost/wpds-tabs";
 export * from "@washingtonpost/wpds-card";
 export * from "@washingtonpost/wpds-popover";
 export * from "@washingtonpost/wpds-select";
