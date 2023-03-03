@@ -28,7 +28,7 @@
     "@washingtonpost/wpds-theme": "*"
   },
   "dependencies": {
-    "@washingtonpost/wpds-theme": "0.25.1"
+    "@washingtonpost/wpds-theme": "^0.25.0"
   },
   "devDependencies": {
     "jest": "^28.1.0"

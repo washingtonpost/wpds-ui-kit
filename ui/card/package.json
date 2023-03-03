@@ -40,7 +40,7 @@
     "react": "^16.8.6 || ^17.0.2"
   },
   "dependencies": {
-    "@washingtonpost/wpds-theme": "0.25.1"
+    "@washingtonpost/wpds-theme": "^0.25.0"
   },
   "gitHead": "cbb17c0ecae1b2c8ceae96a98d73cee3796acbe6"
 }
