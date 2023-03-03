@@ -1,6 +1,6 @@
 {
   "name": "@washingtonpost/wpds-input-label",
-  "version": "0.25.0",
+  "version": "0.25.1",
   "description": "WPDS InputLabel",
   "author": "WPDS Support <wpds@washpost.com>",
   "homepage": "https://github.com/WPMedia/wpds-ui-kit#readme",
@@ -32,7 +32,7 @@
     "url": "https://github.com/WPMedia/wpds-ui-kit/issues"
   },
   "devDependencies": {
-    "tsup": "^5.11.13",
+    "tsup": "5.11.13",
     "typescript": "4.5.5"
   },
   "peerDependencies": {
@@ -42,8 +42,8 @@
   },
   "dependencies": {
     "@radix-ui/react-label": "^1.0.0",
-    "@washingtonpost/wpds-input-shared": "0.25.0",
-    "@washingtonpost/wpds-theme": "0.25.0"
+    "@washingtonpost/wpds-input-shared": "^0.25.0",
+    "@washingtonpost/wpds-theme": "^0.25.0"
   },
   "gitHead": "cbb17c0ecae1b2c8ceae96a98d73cee3796acbe6"
 }

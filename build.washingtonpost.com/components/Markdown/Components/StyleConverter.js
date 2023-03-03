@@ -311,12 +311,7 @@ const StyleConverter = () => {
           aria-label="Copy code to clipboard"
         >
           <Icon size="100" label="Copy code to clipboard">
-            <InlineSVG
-              cushion="none"
-              path="/img/doc-icons/clipboard.svg"
-              height="16"
-              width="16"
-            />
+            <InlineSVG cushion="none" path="/img/doc-icons/clipboard.svg" />
           </Icon>
           Copy
         </Button>

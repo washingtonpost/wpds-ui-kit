@@ -32,7 +32,7 @@
     "url": "https://github.com/washingtonpost/wpds-ui-kit/issues"
   },
   "devDependencies": {
-    "tsup": "^5.11.13",
+    "tsup": "5.11.13",
     "typescript": "4.5.5"
   },
   "peerDependencies": {
@@ -48,9 +48,9 @@
     "@radix-ui/react-checkbox": "latest",
     "@washingtonpost/wpds-assets": "^1.16.0",
     "@washingtonpost/wpds-icon": "1.0.0",
-    "@washingtonpost/wpds-input-shared": "0.25.0",
-    "@washingtonpost/wpds-theme": "0.25.0",
-    "@washingtonpost/wpds-visually-hidden": "0.25.0",
+    "@washingtonpost/wpds-input-shared": "^0.25.0",
+    "@washingtonpost/wpds-theme": "^0.25.0",
+    "@washingtonpost/wpds-visually-hidden": "^0.25.0",
     "react": "^16.8.6 || ^17.0.2"
   },
   "gitHead": "deaf640ca7665e78bbe84c5e0aca618436e1a738"

@@ -85,6 +85,10 @@
   </url>
 
   <url>
+    <loc>https://build.washingtonpost.com/components/switch</loc>
+  </url>
+
+  <url>
     <loc>https://build.washingtonpost.com/components/tabs</loc>
   </url>
 

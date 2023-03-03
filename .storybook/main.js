@@ -10,13 +10,10 @@ module.exports = {
   ],
   previewBody: (body) => `${body}`,
   features: {
-    storyStoreV7: true,
     interactionsDebugger: true,
+    buildStoriesJson: true,
   },
   framework: "@storybook/react",
-  core: {
-    builder: "webpack5",
-  },
   typescript: {
     check: true,
     reactDocgen: "react-docgen-typescript",

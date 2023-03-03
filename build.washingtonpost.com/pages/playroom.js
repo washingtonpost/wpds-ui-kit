@@ -14,6 +14,8 @@ import Head from "next/head";
 import LZString from "lz-string";
 import { ErrorBoundary } from "react-error-boundary";
 import Link from "~/components/Typography/link";
+import { Header } from "~/components/Markdown/Components/headers";
+import MDXStyling from "~/components/Markdown/Styling";
 
 const Canvas = Kit.styled("div", {
   color: "$accessible",
@@ -40,11 +42,45 @@ const Canvas = Kit.styled("div", {
   },
 });
 
+const FlexRow = Kit.styled("div", {
+  display: "flex",
+  gap: "$050",
+  flexDirection: "row",
+  variants: {
+    spaceBetween: {
+      true: {
+        justifyContent: "space-between",
+      },
+    },
+  },
+});
+
+const FlexColumn = Kit.styled("div", {
+  display: "flex",
+  gap: "$100",
+  flexDirection: "column",
+
+  variants: {
+    gap: {
+      "050": {
+        gap: "$050",
+      },
+      100: {
+        gap: "$100",
+      },
+    },
+  },
+});
+
 const components = {
   Kit,
   Assets,
+  FlexRow,
+  FlexColumn,
+  Header,
+  ...MDXStyling,
   ...Kit,
-  ...Assets,
+  // ...Assets, // this is causing the issue.. we have an icon named Switch and it's conflicting with the Switch component from WPDS UI Kit
   Link,
 };
 
@@ -87,7 +123,6 @@ export default function Playroom({
         <Kit.Box
           ref={iframeRef}
           as="iframe"
-          sandbox="allow-scripts allow-same-origin"
           src={`/playroom?code=${LZString.compressToEncodedURIComponent(
             firstRenderCode
           )}`}
@@ -201,15 +236,17 @@ export default function Playroom({
           <GetIcon variant={isGuide} />
           <Rule variant={isGuide}></Rule>
         </Guide>
-        <MDXRemote
-          compiledSource={receivedSource.compiledSource}
-          scope={{
-            ...Kit,
-            useState: React.useState,
-            useEffect: React.useEffect,
-          }}
-          components={components}
-        />
+        <FlexRow>
+          <MDXRemote
+            compiledSource={receivedSource.compiledSource}
+            scope={{
+              ...Kit,
+              useState: React.useState,
+              useEffect: React.useEffect,
+            }}
+            components={components}
+          />
+        </FlexRow>
       </ErrorBoundary>
     );
   };

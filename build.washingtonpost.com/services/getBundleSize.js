@@ -13,8 +13,13 @@ export function formatBytes(bytes, decimals = 2) {
 
 const cache = new Map();
 
-export async function getPackageData(name) {
-  let size = null;
+export async function getBundleSize(name) {
+  let size = 0;
+  // return null if in dev mode
+  if (process.env.NODE_ENV === "development") {
+    return size;
+  }
+
   try {
     if (cache.has(name)) {
       size = cache.get(name);
