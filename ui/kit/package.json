@@ -32,6 +32,7 @@
     "url": "https://github.com/washingtonpost/wpds-ui-kit/issues"
   },
   "dependencies": {
+    "@washingtonpost/wpds-switch": "^1.0.0",
     "@washingtonpost/eslint-plugin-wpds": "^0.25.0",
     "@washingtonpost/wpds-accordion": "^1.0.0",
     "@washingtonpost/wpds-alert-banner": "^1.0.0",
