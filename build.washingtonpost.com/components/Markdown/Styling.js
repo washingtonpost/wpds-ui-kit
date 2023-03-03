@@ -58,7 +58,7 @@ const HR = styled("hr", {
 
 export const P = styled("p", {
   fontSize: "$100",
-  marginBlock: 0,
+  margin: 0,
   paddingBottom: "$050",
   fontFamily: "$meta",
   fontWeight: "$light",
@@ -243,6 +243,7 @@ const components = {
   ),
   YoutubeEmbed: dynamic(() => import("./Components/YouTubeEmbed")),
   StyleConverter: dynamic(() => import("./Components/StyleConverter")),
+  Anatomy: dynamic(() => import("./Components/Anatomy")),
 };
 
 export default components;

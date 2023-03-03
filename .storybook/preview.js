@@ -7,6 +7,7 @@ import {
   styled,
 } from "@washingtonpost/wpds-ui-kit";
 import React from "react";
+import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -28,6 +29,9 @@ export const parameters = {
         value: theme.colors.gray500,
       },
     ],
+  },
+  viewport: {
+    viewports: INITIAL_VIEWPORTS,
   },
 };
 

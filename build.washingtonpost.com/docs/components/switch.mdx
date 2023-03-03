@@ -1,0 +1,255 @@
+---
+title: Switch
+description: A visual control that allows the user to toggle between a binary state of “on” and “off”.
+component: switch
+status: Beta
+openSourceLink: https://www.radix-ui.com/docs/primitives/components/switch
+---
+
+---
+
+## Anatomy
+
+<Anatomy
+  src="/img/components/switch/anatomy.svg"
+  caption="Note: Image not to scale"
+/>
+
+1. Unchecked background fill
+1. Thumb (Indicator)
+1. Checked Background fill
+1. Border
+
+---
+
+## Options
+
+### Variant
+
+Two variants are supported `primary` and `cta`
+
+```jsx withPreview
+<Switch.Root checked htmlFor="airplane-mode-one">
+  <Switch.Thumb />
+</Switch.Root>
+<Switch.Root variant="cta" checked id="airplane-mode-one">
+  <Switch.Thumb />
+</Switch.Root>
+```
+
+---
+
+## Behavior
+
+### Checked
+
+When the switch is checked it will transition to the on position.
+
+```jsx withPreview
+<FlexColumn>
+  <FlexRow>
+    <InputLabel htmlFor="airplane-mode-one">Off</InputLabel>
+    <Switch.Root id="airplane-mode-one" value="off" name="airplane-mode-one">
+      <Switch.Thumb />
+    </Switch.Root>
+  </FlexRow>
+  <FlexRow>
+    <Switch.Root
+      checked
+      id="airplane-mode-one"
+      value="on"
+      name="airplane-mode-two"
+    >
+      <Switch.Thumb />
+    </Switch.Root>
+    <InputLabel htmlFor="airplane-mode-two">On</InputLabel>
+  </FlexRow>
+</FlexColumn>
+```
+
+### Error
+
+When the switch is a requirement it will show an error border color.
+
+```jsx withPreview
+<Switch.Root error>
+  <Switch.Thumb />
+</Switch.Root>
+<Switch.Root error variant="cta" checked>
+  <Switch.Thumb />
+</Switch.Root>
+<Switch.Root error variant="primary" checked>
+  <Switch.Thumb />
+</Switch.Root>
+```
+
+### Required
+
+No visual indication when required. See guidance on required switches
+
+```jsx withPreview
+<Switch.Root required>
+  <Switch.Thumb />
+</Switch.Root>
+```
+
+### Disabled
+
+Disable the switch when it is not editable. Disabled switches cannot be clicked.
+
+```jsx withPreview
+<>
+  <Switch.Root disabled>
+    <Switch.Thumb />
+  </Switch.Root>
+  <Switch.Root disabled checked>
+    <Switch.Thumb />
+  </Switch.Root>
+</>
+```
+
+### Focus
+
+When the switch is in focus a outline with the color `signal` will appear around the switch. _Tab into the switch to see the focus state._
+
+```jsx withPreview
+<Switch.Root>
+  <Switch.Thumb />
+</Switch.Root>
+```
+
+---
+
+## Guidance
+
+### Required Switches
+
+When making switches required always pair it with a label that has the required indicator.
+
+```jsx withPreview isGuide="success"
+<InputLabel required htmlFor="sign-up-switch">Sign up</InputLabel>
+<Switch.Root id="sign-up-switch">
+  <Switch.Thumb />
+</Switch.Root>
+```
+
+### Switches control binary options
+
+Don’t use switches to control options that do not control a single state that can clearly be categorized as `on` or `off`
+
+```jsx withPreview isGuide="error"
+<FlexColumn gap="050">
+  <Header as="h4" htmlFor="change-view-switch">
+    Change view
+  </Header>
+  <FlexRow>
+    <InputLabel>Compact</InputLabel>
+    <Switch.Root id="change-view-switch">
+      <Switch.Thumb value="compact" name="view-mode" />
+    </Switch.Root>
+    <InputLabel>Loose</InputLabel>
+  </FlexRow>
+</FlexColumn>
+```
+
+### Label Pairing
+
+Switches should always be paired with a contextual label. It is also good practice for accessibility to have a text equivalent of the state (on or off) is displayed adjacent to the graphical state indicator.
+
+```jsx withPreview isGuide="success"
+export default function Example() {
+  const [checked, setChecked] = useState(false);
+  const [checkedTwo, setCheckedTwo] = useState(false);
+  return (
+    <FlexColumn>
+      <Card
+        css={{
+          padding: "$100",
+          maxWidth: "450px",
+        }}
+      >
+        <FlexRow spaceBetween>
+          <div>
+            <strong>Dark theme</strong>
+            <br />
+            Enabling this setting will override your system theme setting.
+          </div>
+          <FlexRow>
+            <Switch.Root
+              id="prefers-color-scheme"
+              checked={checked}
+              onCheckedChange={() => setChecked(!checked)}
+            >
+              <Switch.Thumb value="dark" name="prefers-color-scheme" />
+            </Switch.Root>
+            <InputLabel>{checked ? "Enabled" : "Disabled"}</InputLabel>
+          </FlexRow>
+        </FlexRow>
+      </Card>
+      <Card
+        css={{
+          padding: "$100",
+          maxWidth: "450px",
+        }}
+      >
+        <FlexRow spaceBetween>
+          <div>
+            <strong>Reduced motion</strong>
+            <br />
+            Enabling this setting will minimize the amount of non-essential
+            motion our website uses.
+          </div>
+          <FlexRow>
+            <Switch.Root
+              id="prefers-reduced-motion"
+              checked={checkedTwo}
+              onCheckedChange={() => setCheckedTwo(!checkedTwo)}
+            >
+              <Switch.Thumb value="reduce" name="prefers-reduced-motion" />
+            </Switch.Root>
+            <InputLabel>{checkedTwo ? "Enabled" : "Disabled"}</InputLabel>
+          </FlexRow>
+        </FlexRow>
+      </Card>
+    </FlexColumn>
+  );
+}
+```
+
+---
+
+## Accessibility
+
+### Space / Enter toggles switch
+
+When the switch is in focus and the user presses space or enter it will toggle the switch from its current check state to the opposite state.
+
+### Pairing label
+
+To make understanding the state of the switch easier for users with visual or cognitive disabilities, a text equivalent of the state (on or off) is displayed adjacent to the graphical state indicator. CSS attribute selectors ensure the label displayed is synchronized with the value of the aria-checked attribute.
+
+NOTE: To prevent redundant announcement of the state by screen readers, the text indicators of state are hidden from assistive technologies with aria-hidden.
+
+### Cursor
+
+Switches should have the cursor switch to pointer when the cursor is hovering over the switch.
+
+### Non-Text Contrast
+
+> For active controls any visual information provided that is necessary for a user to identify that a control is present and how to operate it must have a minimum 3:1 contrast ratio with the adjacent colors. Also, any visual information necessary to indicate state, such as whether a component is selected or focused must also ensure that the information used to identify the control in that state has a minimum 3:1 contrast ratio. - W3.org
+
+<Anatomy
+  src="/img/components/switch/target-contrast.svg"
+  caption="Note: Image not to scale"
+/>
+
+### Reduce motion
+
+If user has indicated that they prefer reduced motion the switch thumb should not animate and instantly position to its enabled/disabled position.
+
+---
+
+## API Reference
+
+<PropsTable props={propsTable} />
+````

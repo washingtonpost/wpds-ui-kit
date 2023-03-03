@@ -12,13 +12,14 @@ import {
   getDocByPathName,
   getHeadings,
   getNavigation,
-  getPackageData,
+  getBundleSize,
   getPropsTable,
 } from "~/services";
 
 import { PropsTable } from "~/components/PropsTable";
 import { ComponentDetails } from "~/components/ComponentPage/ComponentDetails";
 import { ComponentStatus } from "~/components/ComponentPage/ComponentStatus";
+import { ComingSoon } from "~/components/ComponentPage/ComingSoon";
 
 const components = {
   ...MDXStyling,
@@ -48,31 +49,7 @@ export default function Page({
         title={`WPDS - ${source.scope.title} | Components`}
         description={source.scope.description}
       />
-      {source.scope.status == "Coming soon" && (
-        <>
-          <P css={{ width: "100%", display: "flex" }}>
-            <P
-              as="img"
-              css={{ margin: "auto" }}
-              src="https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif"
-              height="auto"
-              width="50%"
-            />
-          </P>
-          <P
-            css={{
-              fontSize: "$150",
-              paddingTop: "$100",
-              width: "90%",
-              margin: "auto",
-              textAlign: "center",
-            }}
-          >
-            This component status is coming soon and indicates a component is in
-            a queue for future work.
-          </P>
-        </>
-      )}
+      {source.scope.status == "Coming soon" && <ComingSoon />}
       <header className="post-header">
         <Header
           css={{ opacity: source.scope.status == "Coming soon" ? 0.5 : 1 }}
@@ -88,15 +65,14 @@ export default function Page({
           <P className="description">{source.scope.description}</P>
         )}
 
-        {source.scope.status !== "Coming soon" && (
-          <ComponentDetails
-            {...{
-              bundleSize,
-              componentName,
-              current,
-            }}
-          />
-        )}
+        <ComponentDetails
+          {...{
+            bundleSize,
+            componentName,
+            current,
+            openSourceLink: source?.scope?.openSourceLink,
+          }}
+        />
 
         <TableofContents
           css={{ opacity: source.scope.status == "Coming soon" ? 0.5 : 1 }}
@@ -140,13 +116,11 @@ export const getStaticProps = async ({ params }) => {
     getNavigation(),
   ]);
 
-  if (source.scope.status !== "Coming soon") {
-    try {
-      propsTable = await getPropsTable(params.slug);
-      bundleSize = await getPackageData(params.slug);
-    } catch (e) {
-      console.warn({ e });
-    }
+  try {
+    propsTable = await getPropsTable(params.slug);
+    bundleSize = await getBundleSize(params.slug);
+  } catch (e) {
+    console.warn({ e });
   }
 
   return {

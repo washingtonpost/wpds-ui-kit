@@ -1,7 +1,7 @@
 {
-  "name": "@washingtonpost/wpds-drawer",
+  "name": "@washingtonpost/wpds-switch",
   "version": "1.0.0",
-  "description": "WPDS Drawer",
+  "description": "WPDS Switch",
   "author": "WPDS Support <wpds@washpost.com>",
   "homepage": "https://github.com/washingtonpost/wpds-ui-kit#readme",
   "license": "MIT",
@@ -23,7 +23,7 @@
     "url": "git+https://github.com/washingtonpost/wpds-ui-kit.git"
   },
   "scripts": {
-    "test": "jest --coverage",
+    "test": "echo \"Error: run tests from root\" && exit 1",
     "build": "tsup src/index.ts --loader .ts=tsx --minify --format esm,cjs --dts --sourcemap --legacy-output --external react",
     "dev": "tsup src/index.ts --format esm,cjs --watch --dts --legacy-output --external react",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
@@ -36,21 +36,11 @@
     "typescript": "4.5.5"
   },
   "peerDependencies": {
-    "@washingtonpost/wpds-assets": "^1.16.0",
-    "@washingtonpost/wpds-button": "*",
-    "@washingtonpost/wpds-icon": "*",
-    "@washingtonpost/wpds-scrim": "*",
     "@washingtonpost/wpds-theme": "*",
     "react": "^16.8.6 || ^17.0.2"
   },
   "dependencies": {
-    "@radix-ui/react-focus-scope": "^1.0.0",
-    "@washingtonpost/wpds-assets": "^1.16.0",
-    "@washingtonpost/wpds-button": "^0.25.0",
-    "@washingtonpost/wpds-icon": "1.0.0",
-    "@washingtonpost/wpds-scrim": "^0.25.0",
-    "@washingtonpost/wpds-theme": "^0.25.0",
-    "react-transition-group": "^4.4.5"
-  },
-  "gitHead": "deaf640ca7665e78bbe84c5e0aca618436e1a738"
+    "@radix-ui/react-switch": "^1.0.1",
+    "@washingtonpost/wpds-theme": "^0.25.1"
+  }
 }

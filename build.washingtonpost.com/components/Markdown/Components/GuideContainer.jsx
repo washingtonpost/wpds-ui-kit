@@ -1,4 +1,4 @@
-import React from "@stitches/react";
+import React from "react";
 import { Icon, styled, theme } from "@washingtonpost/wpds-ui-kit";
 import Success from "@washingtonpost/wpds-assets/asset/success";
 import Warning from "@washingtonpost/wpds-assets/asset/warning";

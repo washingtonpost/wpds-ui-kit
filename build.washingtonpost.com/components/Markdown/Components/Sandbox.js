@@ -57,12 +57,7 @@ const CopyCodeButton = () => {
       aria-label="Copy code to clipboard"
     >
       <Icon size="100" label="Copy code to clipboard">
-        <InlineSVG
-          cushion="none"
-          path="/img/doc-icons/clipboard.svg"
-          height="16"
-          width="16"
-        />
+        <InlineSVG cushion="none" path="/img/doc-icons/clipboard.svg" />
       </Icon>
       {copied ? "Copied!" : "Copy"}
     </Button>
@@ -113,7 +108,6 @@ const Preview = ({ isGuide }) => {
     <Box
       ref={iframeRef}
       as="iframe"
-      sandbox="allow-scripts allow-same-origin"
       src={`/playroom?code=${LZString.compressToEncodedURIComponent(
         firstRenderCode
       )}&isGuide=${isGuide}`}
@@ -121,7 +115,7 @@ const Preview = ({ isGuide }) => {
         background: theme.colors.gray500,
         border: 0,
         width: "100%",
-        minHeight: 300,
+        minHeight: 325,
         overflow: "hidden",
       }}
     />

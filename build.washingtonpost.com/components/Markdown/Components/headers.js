@@ -12,6 +12,9 @@ export const Header = styled("h1", {
   "@sm": {
     fontSize: "$250",
   },
+  "& > p": {
+    marginBlock: 0,
+  },
   variants: {
     as: {
       h2: {
@@ -27,14 +30,14 @@ export const Header = styled("h1", {
         fontFamily: "$subhead",
         fontWeight: "$bold",
         marginBottom: "$025",
-        marginTop: "$100",
+        marginTop: "$100", // TODO: we should add margin bottom over margin top we should push content down not up
       },
       h4: {
         fontSize: "$100",
         fontWeight: "$bold",
         fontFamily: "$meta",
         paddingBottom: "$025",
-        marginTop: "$100",
+        marginTop: "$100", // TODO: we should add margin bottom over margin top we should push content down not up
       },
       h6: {
         fontSize: "$050",
