@@ -11,6 +11,7 @@ module.exports = {
   previewBody: (body) => `${body}`,
   features: {
     interactionsDebugger: true,
+    buildStoriesJson: true,
   },
   framework: "@storybook/react",
   typescript: {
