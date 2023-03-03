@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, css, Box } from "@washingtonpost/wpds-ui-kit";
+import { Card } from "@washingtonpost/wpds-ui-kit";
 import { P } from "../Markdown/Styling";
 import Header from "../Typography/Headers";
 import CustomLink from "../Markdown/Components/link";
