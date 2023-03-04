@@ -2,7 +2,8 @@
 require("dotenv").config();
 
 module.exports = {
-  stories: ["../ui/**/src/*.stories.@(ts|tsx|js|jsx)"],
+  stories: ["../ui/(**|!(node_modules))/src/*.stories.@(ts|tsx|js|jsx)"],
+  exclude: ["node_modules", "dist"],
   addons: [
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
