@@ -36,7 +36,11 @@
     "typescript": "4.5.5"
   },
   "peerDependencies": {
+<<<<<<< HEAD
     "@radix-ui/react-checkbox": "^1.0.0",
+=======
+    "@radix-ui/react-checkbox": "latest",
+>>>>>>> origin/main
     "@washingtonpost/wpds-assets": "^1.17.0",
     "@washingtonpost/wpds-icon": "*",
     "@washingtonpost/wpds-input-shared": "*",

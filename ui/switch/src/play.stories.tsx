@@ -1,3 +1,4 @@
+import * as React from "react";
 import { Switch } from ".";
 import type { ComponentMeta, ComponentStory } from "@storybook/react";
 import { styled } from "@washingtonpost/wpds-theme";
@@ -37,13 +38,13 @@ Interactions.play = async ({ canvasElement }) => {
   const canvas = within(canvasElement);
   const root = canvas.getByRole("switch");
 
-  userEvent.click(root);
+  await userEvent.click(root);
 
-  expect(root).toHaveAttribute("aria-checked", "true");
+  await expect(root).toBeChecked();
 
-  userEvent.click(root);
+  await userEvent.click(root);
 
-  expect(root).toHaveAttribute("aria-checked", "false");
+  await expect(root).not.toBeChecked();
 };
 
 export const CTA = Template.bind({});

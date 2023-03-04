@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import * as React from "react";
 import { Avatar as Component } from "./";
 import { styled, theme } from "@washingtonpost/wpds-theme";

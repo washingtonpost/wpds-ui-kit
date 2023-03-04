@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import { SelectContext } from "./Select";
 
 import { styled, theme } from "@washingtonpost/wpds-theme";

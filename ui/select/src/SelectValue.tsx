@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import * as React from "react";
 import { SelectContext } from "./Select";
 
 import { theme, styled } from "@washingtonpost/wpds-theme";
@@ -44,7 +44,7 @@ export const SelectValue = React.forwardRef<HTMLDivElement, SelectValueProps>(
     const { currentValue, disabled, setIsFloating } =
       React.useContext(SelectContext);
 
-    useEffect(() => {
+    React.useEffect(() => {
       if (children) {
         setIsFloating(true);
       }
