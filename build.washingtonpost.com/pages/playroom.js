@@ -341,6 +341,8 @@ export async function getServerSideProps({ req, res }) {
     "public, s-maxage=10, stale-while-revalidate=59"
   );
 
+  console.log(req.query);
+
   const {
     query: { code, edit, isGuide = "none" },
   } = req;
