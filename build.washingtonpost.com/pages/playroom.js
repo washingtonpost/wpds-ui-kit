@@ -335,23 +335,21 @@ export default function Playroom({
 
 Playroom.getLayout = (page) => page;
 
-export async function getServerSideProps({ req, res }) {
+export async function getServerSideProps({ query, res }) {
   res.setHeader(
     "Cache-Control",
     "public, s-maxage=10, stale-while-revalidate=59"
   );
 
-  console.log(req.query);
+  console.log(query);
 
-  const {
-    query: { code, edit, isGuide = "none" },
-  } = req;
+  const { code, edit, isGuide = "none" } = query;
 
   let source;
   let parsedCode = "";
 
   if (!code) {
-    console.log(req.query);
+    console.log(query);
     return {
       props: {
         source: {},
