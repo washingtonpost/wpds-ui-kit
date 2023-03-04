@@ -26,3 +26,8 @@ main-release:
 # create command for plop templates
 new-component:
 	npx plop --plopfile ./scripts/plopfile.js
+
+validate:
+	npm run lint
+	npm run format
+	npm run test

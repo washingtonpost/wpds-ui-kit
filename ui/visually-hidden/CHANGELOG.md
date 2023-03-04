@@ -7,33 +7,17 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 **Note:** Version bump only for package @washingtonpost/wpds-visually-hidden
 
-
-
-
-
 # [0.24.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.23.2...v0.24.0) (2023-02-03)
 
 **Note:** Version bump only for package @washingtonpost/wpds-visually-hidden
-
-
-
-
 
 ## [0.23.2](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.24.0...v0.23.2) (2023-01-17)
 
 **Note:** Version bump only for package @washingtonpost/wpds-visually-hidden
 
-
-
-
-
 ## [0.23.1](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.23.0...v0.23.1) (2023-01-11)
 
 **Note:** Version bump only for package @washingtonpost/wpds-visually-hidden
-
-
-
-
 
 # [0.23.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v0.22.0...v0.23.0) (2023-01-11)
 

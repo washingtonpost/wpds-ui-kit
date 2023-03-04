@@ -82,62 +82,68 @@ type SelectTriggerProps = RadixAccordionTriggerProps &
 export const SelectTrigger = React.forwardRef<
   HTMLButtonElement,
   SelectTriggerProps
->(({ children, ...props }: SelectTriggerProps, ref) => {
-  const [helperId, setHelperId] = React.useState<string | undefined>();
-  const [errorId, setErrorId] = React.useState<string | undefined>();
+>(
+  (
+    { children, ...props }: SelectTriggerProps,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    ref
+  ) => {
+    const [helperId, setHelperId] = React.useState<string | undefined>();
+    const [errorId, setErrorId] = React.useState<string | undefined>();
 
-  const {
-    success,
-    disabled,
-    error,
-    helperText,
-    errorMessage,
-    setContentWidth,
-  } = React.useContext(SelectContext);
+    const {
+      success,
+      disabled,
+      error,
+      helperText,
+      errorMessage,
+      setContentWidth,
+    } = React.useContext(SelectContext);
 
-  const refCallback = React.useCallback(
-    (el) => {
-      el && setContentWidth(el.getBoundingClientRect().width);
-    },
-    [setContentWidth]
-  );
+    const refCallback = React.useCallback(
+      (el) => {
+        el && setContentWidth(el.getBoundingClientRect().width);
+      },
+      [setContentWidth]
+    );
 
-  React.useEffect(() => {
-    setHelperId(`wpds-input-helper-${nanoid(6)}`);
-    setErrorId(`wpds-input-error-${nanoid(6)}`);
-  }, []);
+    React.useEffect(() => {
+      setHelperId(`wpds-input-helper-${nanoid(6)}`);
+      setErrorId(`wpds-input-error-${nanoid(6)}`);
+    }, []);
 
-  return (
-    <>
-      <StyledTrigger
-        success={success}
-        error={error}
-        disabled={disabled}
-        isDisabled={disabled} //for styling purposes only
-        ref={refCallback}
-        {...props}
-      >
-        {children}
-        <IconWrapper isDisabled={disabled}>
-          <Icon label="">
-            <ChevronDown />
-          </Icon>
-        </IconWrapper>
-      </StyledTrigger>
-      <SubTextWrapper>
-        {helperText && !errorMessage && (
-          <HelperText id={helperId} aria-live="polite">
-            {helperText}
-          </HelperText>
-        )}
-        {errorMessage && (
-          <ErrorMessage id={errorId} aria-live="assertive">
-            {errorMessage}
-          </ErrorMessage>
-        )}
-      </SubTextWrapper>
-    </>
-  );
-});
+    return (
+      <>
+        <StyledTrigger
+          success={success}
+          error={error}
+          disabled={disabled}
+          isDisabled={disabled} //for styling purposes only
+          ref={refCallback}
+          {...props}
+        >
+          {children}
+          <IconWrapper isDisabled={disabled}>
+            <Icon label="">
+              <ChevronDown />
+            </Icon>
+          </IconWrapper>
+        </StyledTrigger>
+        <SubTextWrapper>
+          {helperText && !errorMessage && (
+            <HelperText id={helperId} aria-live="polite">
+              {helperText}
+            </HelperText>
+          )}
+          {errorMessage && (
+            <ErrorMessage id={errorId} aria-live="assertive">
+              {errorMessage}
+            </ErrorMessage>
+          )}
+        </SubTextWrapper>
+      </>
+    );
+  }
+);
 
 SelectTrigger.displayName = "SelectTrigger";

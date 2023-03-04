@@ -1,5 +1,8 @@
-import { createStitches, type CSS as stitchesCss } from "@stitches/react";
-import type { PropertyValue } from "@stitches/react";
+import {
+  createStitches,
+  type CSS as stitchesCss,
+  PropertyValue,
+} from "@stitches/react";
 import * as tokens from "./tokens";
 export type { VariantProps } from "@stitches/react";
 

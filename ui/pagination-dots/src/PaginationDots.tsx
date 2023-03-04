@@ -111,8 +111,8 @@ export type { PaginationDotsProps };
 
 function configureDots(nPages: number, activeIndex: number, amount: number) {
   // creates and returns dots array with each dot's background color and scale
-  const dots: { background: string; scale: number }[] = new Array();
-  for (let i: number = 0; i < nPages; i++) {
+  const dots: { background: string; scale: number }[] = [];
+  for (let i = 0; i < nPages; i++) {
     const stepsFromActive = Math.abs(i - activeIndex);
     const isActive = stepsFromActive === 0;
     const background = isActive ? ACTIVECOLOR : INACTIVECOLOR;

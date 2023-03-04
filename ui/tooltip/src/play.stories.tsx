@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import * as React from "react";
 import { screen, userEvent } from "@storybook/testing-library";
 import { expect } from "@storybook/jest";
@@ -42,8 +41,8 @@ const Template: ComponentStory<any> = (args) => (
       <Tooltip.Content {...args}>
         i want lots of things to go here and for this to get super super long
         and for this to never stop and i want more fries and i want it to rain
-        but i also want the sun and i wasnt a vacataions and it doesn't matter
-        if this is misspelled or whatverer.
+        but i also want the sun and i wasnt a vacataions and it doesnt matter if
+        this is misspelled or whatverer.
       </Tooltip.Content>
     </Tooltip.Root>
   </Tooltip.Provider>
@@ -80,8 +79,8 @@ const TemplateLeft: ComponentStory<any> = (args) => (
       <Tooltip.Content side="left" {...args}>
         i want lots of things to go here and for this to get super super long
         and for this to never stop and i want more fries and i want it to rain
-        but i also want the sun and i wasnt a vacataions and it doesn't matter
-        if this is misspelled or whatverer.
+        but i also want the sun and i wasnt a vacataions and it doesnt matter if
+        this is misspelled or whatverer.
       </Tooltip.Content>
     </Tooltip.Root>
   </Tooltip.Provider>
@@ -97,8 +96,8 @@ const TemplateBottom: ComponentStory<any> = (args) => (
       <Tooltip.Content side="bottom" {...args}>
         i want lots of things to go here and for this to get super super long
         and for this to never stop and i want more fries and i want it to rain
-        but i also want the sun and i wasnt a vacataions and it doesn't matter
-        if this is misspelled or whatverer.
+        but i also want the sun and i wasnt a vacataions and it doesnt matter if
+        this is misspelled or whatverer.
       </Tooltip.Content>
     </Tooltip.Root>
   </Tooltip.Provider>
@@ -114,8 +113,8 @@ const TemplateDisabled: ComponentStory<any> = (args) => (
       <Tooltip.Content {...args} side="bottom">
         i want lots of things to go here and for this to get super super long
         and for this to never stop and i want more fries and i want it to rain
-        but i also want the sun and i wasnt a vacataions and it doesn't matter
-        if this is misspelled or whatverer.
+        but i also want the sun and i wasnt a vacataions and it doesnt matter if
+        this is misspelled or whatverer.
       </Tooltip.Content>
     </Tooltip.Root>
   </Tooltip.Provider>

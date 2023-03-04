@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import * as React from "react";
 import { css, theme, globalCss } from "@washingtonpost/wpds-theme";
 
 export const sharedInputStyles = {
@@ -104,7 +104,7 @@ export const useFloating = (
   const [isFocused, setIsFocused] = React.useState(false);
   const prevValue = React.useRef();
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (val && !isFloating) {
       setIsFloating(true);
       setIsTouched(true);

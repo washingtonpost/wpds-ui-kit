@@ -56,7 +56,10 @@ const Container = styled("div", {
   padding: theme.space["100"],
 });
 
-const OptionsT = (args) => (
+const OptionsT = (
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  args
+) => (
   <Stack>
     <Label>Card with button</Label>
     <Component css={{ display: "flex", alignItems: "center", gap: "$075" }}>
