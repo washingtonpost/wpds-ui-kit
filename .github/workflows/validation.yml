@@ -26,8 +26,12 @@ jobs:
           cache: npm
 
       - name: Install npm dependencies
-        run: |
-          npm ci
+        run: npm ci
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+
+      - name: Validate checks
+        run: npm validate
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
 

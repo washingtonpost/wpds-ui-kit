@@ -101,6 +101,7 @@
     "typescript": "4.5.5"
   },
   "scripts": {
+    "validate": "make validate",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "build": "npm run turbo:build;",
     "build:packages": "npm run turbo:build",
