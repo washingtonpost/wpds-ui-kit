@@ -15,7 +15,6 @@ module.exports = {
     "@washingtonpost/wpds",
   ],
   extends: [
-    "next/core-web-vitals",
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "prettier",

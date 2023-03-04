@@ -47,6 +47,7 @@ Interaction.storyName = "Icon interaction";
 Interaction.args = {
   size: 200,
   label: "Find out more information.",
+  // eslint-disable-next-line @washingtonpost/wpds/theme-colors
   fill: "#5784c5ff", // theme.colors.signal using hex to make sure tests pass correctly
   children: <Info />,
   id: "information icon",

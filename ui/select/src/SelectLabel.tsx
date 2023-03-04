@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import * as React from "react";
 import { SelectContext } from "./Select";
 
 import { theme, styled } from "@washingtonpost/wpds-theme";
@@ -54,7 +54,7 @@ export const SelectLabel = ({ children, ...props }: SelectLabelProps) => {
   const { currentValue, required, disabled, isFloating, setIsFloating } =
     React.useContext(SelectContext);
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (currentValue && currentValue.trim().length !== 0) {
       setIsFloating(true);
     }
