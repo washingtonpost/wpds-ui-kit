@@ -346,7 +346,19 @@ export async function getServerSideProps({ req, res }) {
   } = req;
 
   let source;
-  let parsedCode;
+  let parsedCode = "";
+
+  if (!code) {
+    console.log(req.query);
+    return {
+      props: {
+        source: {},
+        code: "",
+        hasEditor: false,
+        isGuide: "none",
+      },
+    };
+  }
 
   try {
     parsedCode = LZString.decompressFromEncodedURIComponent(code);
