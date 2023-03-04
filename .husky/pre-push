@@ -9,3 +9,6 @@ npm ci
 
 echo "--> Building the application..."
 npm run build
+
+echo "--> Validating..."
+npm run validate
