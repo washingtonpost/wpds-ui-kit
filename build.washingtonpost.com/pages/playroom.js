@@ -72,6 +72,9 @@ const FlexColumn = Kit.styled("div", {
   },
 });
 
+// exclude Switch from Assets module
+const { Switch, ...AssetsWithoutSwitch } = Assets;
+
 const components = {
   Kit,
   Assets,
@@ -80,7 +83,8 @@ const components = {
   Header,
   ...MDXStyling,
   ...Kit,
-  // ...Assets, // this is causing the issue.. we have an icon named Switch and it's conflicting with the Switch component from WPDS UI Kit
+  SwitchIcon: Switch,
+  ...AssetsWithoutSwitch, // this is causing the issue.. we have an icon named Switch and it's conflicting with the Switch component from WPDS UI Kit
   Link,
 };
 
