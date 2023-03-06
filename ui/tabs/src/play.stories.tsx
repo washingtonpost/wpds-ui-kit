@@ -22,10 +22,10 @@ export default {
     //   options: [ACCORDION_TYPE.single, ACCORDION_TYPE.multiple],
     //   control: "select",
     // },
-    // disabled: {
-    //   options: [true, false],
-    //   control: "boolean",
-    // },
+    disabled: {
+      options: [true, false],
+      control: "boolean",
+    },
   },
 } as ComponentMeta<typeof Tabs.Root>;
 
@@ -51,7 +51,9 @@ const Template: ComponentStory<typeof Tabs.Root> = (args) => {
         <Tabs.Root {...args}>
           <Tabs.List aria-label="Countries' information">
             <Tabs.Trigger value="option1">France</Tabs.Trigger>
-            <Tabs.Trigger value="option2">Brazil</Tabs.Trigger>
+            <Tabs.Trigger value="option2" disabled>
+              Brazil
+            </Tabs.Trigger>
             <Tabs.Trigger value="option3">
               The Democratic Republic of the Congo
             </Tabs.Trigger>
@@ -75,4 +77,4 @@ Play.args = {
   // defaultValue: "item-1",
 };
 
-Play.storyName = "Accordion";
+Play.storyName = "Default";

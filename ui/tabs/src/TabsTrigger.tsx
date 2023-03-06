@@ -25,6 +25,19 @@ const StyledTabsTrigger = styled(TabsPrimitive.Trigger, {
     boxShadow: `inset 0 -1px 0 0 ${theme.colors.gray300}, 0 1px 0 0 ${theme.colors.gray300}`,
   },
 
+  // adding back the default focus outline
+  "&:focus-visible": {
+    outline: "-webkit-focus-ring-color auto 1px",
+  },
+
+  // styling when the element is disabled
+  "&[disabled]": {
+    color: theme.colors.subtle,
+    "&:hover": {
+      boxShadow: `inset 0 -1px 0 0 ${theme.colors.faint}, 0 1px 0 0 ${theme.colors.faint}`,
+    },
+  },
+
   // when truncating and using the tooltip trigger, the data-state gets overwritten
   // so checking for aria-selected instead of data-state
   '&[aria-selected="true"]': {
@@ -57,6 +70,7 @@ export const TabsTrigger = React.forwardRef<
   TabsTriggerProps
 >(({ ...props }: TabsTriggerProps, ref) => {
   const internalRef = React.useRef<HTMLButtonElement>(null);
+
   const [truncated, setTruncated] = React.useState(false);
 
   useEffect(() => {
