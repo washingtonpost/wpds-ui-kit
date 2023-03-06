@@ -30,6 +30,7 @@ const AnimatedContent = styled(AccordionPrimitive.Content, {
 const ContentContainer = styled("div", {
   paddingBottom: theme.space[150],
   paddingRight: theme.space[150],
+  fontSize: theme.fontSizes[100],
 });
 
 type AccordionContentVariants = WPDS.VariantProps<typeof AnimatedContent>;
