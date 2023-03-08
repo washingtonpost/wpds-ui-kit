@@ -8,11 +8,21 @@ import { Tooltip } from "@washingtonpost/wpds-tooltip";
 
 import type * as WPDS from "@washingtonpost/wpds-theme";
 
+const afterConsts = {
+  content: "",
+  position: "absolute",
+  width: "100%",
+  bottom: "0",
+  left: "0",
+};
+
 const StyledTabsTrigger = styled(TabsPrimitive.Trigger, {
   all: "unset",
   fontFamily: "inherit",
   padding: "$075 0",
   color: theme.colors.primary,
+  position: "relative",
+  cursor: "pointer",
 
   flexShrink: 0,
   overflow: "hidden",
@@ -20,32 +30,41 @@ const StyledTabsTrigger = styled(TabsPrimitive.Trigger, {
   textOverflow: "ellipsis",
   whiteSpace: "nowrap",
 
-  "&:hover": {
-    cursor: "pointer",
-    boxShadow: `inset 0 -1px 0 0 ${theme.colors.gray300}, 0 1px 0 0 ${theme.colors.gray300}`,
+  // when truncating and using the tooltip trigger, the data-state gets overwritten
+  // so checking for aria-selected instead of data-state
+  '&[aria-selected="true"]': {
+    fontWeight: theme.fontWeights.bold,
+
+    "&::after": {
+      ...afterConsts,
+      borderBottom: `1px solid ${theme.colors.primary}`,
+    },
+
+    "&:hover::after": {
+      borderBottom: `1px solid ${theme.colors.primary}`,
+    },
+  },
+
+  "&:hover::after": {
+    ...afterConsts,
+    borderBottom: `1px solid ${theme.colors.gray300}`,
   },
 
   // adding back the default focus outline
   "&:focus-visible": {
     outline: "-webkit-focus-ring-color auto 1px",
+    "&::after": {
+      // remove border so that blue outline is visible below the element
+      borderBottom: "none",
+    },
   },
 
   // styling when the element is disabled
   "&[disabled]": {
     color: theme.colors.subtle,
-    "&:hover": {
-      boxShadow: `inset 0 -1px 0 0 ${theme.colors.faint}, 0 1px 0 0 ${theme.colors.faint}`,
-    },
-  },
-
-  // when truncating and using the tooltip trigger, the data-state gets overwritten
-  // so checking for aria-selected instead of data-state
-  '&[aria-selected="true"]': {
-    fontWeight: theme.fontWeights.bold,
-    boxShadow: `inset 0 -1px 0 0 ${theme.colors.primary}, 0 1px 0 0 ${theme.colors.primary}`,
-
-    "&:hover": {
-      boxShadow: `inset 0 -1px 0 0 ${theme.colors.primary}, 0 1px 0 0 ${theme.colors.primary}`,
+    "&:hover::after": {
+      ...afterConsts,
+      borderBottom: `1px solid ${theme.colors.faint}`,
     },
   },
 });
@@ -64,7 +83,7 @@ export type TabsTriggerProps = {
   css?: WPDS.CSS;
 } & React.ComponentPropsWithRef<typeof StyledTabsTrigger>;
 
-// TODO: implement disabled state, implement trigger animation, implement animation toggle
+// TODO: implement trigger animation, implement animation toggle
 export const TabsTrigger = React.forwardRef<
   HTMLButtonElement,
   TabsTriggerProps
@@ -90,7 +109,7 @@ export const TabsTrigger = React.forwardRef<
           </Tooltip.Root>
         </Tooltip.Provider>
       ) : (
-        <StyledTabsTrigger {...props} ref={internalRef} />
+        <StyledTabsTrigger css={{}} {...props} ref={internalRef} />
       )}
     </>
   );
