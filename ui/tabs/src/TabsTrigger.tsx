@@ -1,5 +1,6 @@
 import * as React from "react";
 import { useEffect } from "react";
+import { CSSTransition } from "react-transition-group";
 
 import * as TabsPrimitive from "@radix-ui/react-tabs";
 
@@ -12,8 +13,8 @@ const afterConsts = {
   content: "",
   position: "absolute",
   width: "100%",
-  bottom: "0",
-  left: "0",
+  insetBlockEnd: 0,
+  insetInline: 0,
 };
 
 const StyledTabsTrigger = styled(TabsPrimitive.Trigger, {
@@ -30,18 +31,28 @@ const StyledTabsTrigger = styled(TabsPrimitive.Trigger, {
   textOverflow: "ellipsis",
   whiteSpace: "nowrap",
 
-  // when truncating and using the tooltip trigger, the data-state gets overwritten
-  // so checking for aria-selected instead of data-state
-  '&[aria-selected="true"]': {
-    fontWeight: theme.fontWeights.bold,
+  variants: {
+    active: {
+      true: {
+        fontWeight: theme.fontWeights.bold,
 
-    "&::after": {
-      ...afterConsts,
-      borderBottom: `1px solid ${theme.colors.primary}`,
-    },
+        "&::after": {
+          ...afterConsts,
+          borderBottom: `1px solid ${theme.colors.primary}`,
+        },
 
-    "&:hover::after": {
-      borderBottom: `1px solid ${theme.colors.primary}`,
+        "&:hover::after": {
+          borderBottom: `1px solid ${theme.colors.primary}`,
+        },
+        "&.move-enter::after": {
+          transform: "translateX(var(--startx))",
+        },
+
+        "&.move-enter-active::after": {
+          transform: "translateX(0)",
+          transition: "transform 300ms",
+        },
+      },
     },
   },
 
@@ -59,7 +70,8 @@ const StyledTabsTrigger = styled(TabsPrimitive.Trigger, {
     },
   },
 
-  // styling when the element is disabled
+  // styling when the element is disabled. Radix updates the data-state
+  // and it's the only way to know if the element is disabled
   "&[disabled]": {
     color: theme.colors.subtle,
     "&:hover::after": {
@@ -81,38 +93,84 @@ export type TabsTriggerProps = {
   disabled?: boolean;
   /** Overrides for the input text styles. Padding overrides affect the input container and  */
   css?: WPDS.CSS;
+  /** Whether the current tabs trigger is currently active */
+  active: boolean;
+  /** Keeps track of the previously active tab location */
+  previousRect?: DOMRect;
+  /** setter for the previously active tab location */
+  setPreviousRect: React.Dispatch<React.SetStateAction<DOMRect>>;
 } & React.ComponentPropsWithRef<typeof StyledTabsTrigger>;
 
-// TODO: implement trigger animation, implement animation toggle
 export const TabsTrigger = React.forwardRef<
   HTMLButtonElement,
   TabsTriggerProps
->(({ ...props }: TabsTriggerProps, ref) => {
-  const internalRef = React.useRef<HTMLButtonElement>(null);
+>(
+  (
+    {
+      active,
 
-  const [truncated, setTruncated] = React.useState(false);
+      previousRect,
+      setPreviousRect,
+      ...props
+    }: TabsTriggerProps,
+    ref
+  ) => {
+    const internalRef = React.useRef<HTMLButtonElement | null>(null);
 
-  useEffect(() => {
-    const element = internalRef.current;
-    setTruncated(isTruncated(element));
-  }, []);
+    const [truncated, setTruncated] = React.useState(false);
 
-  return (
-    <>
-      {truncated ? (
-        <Tooltip.Provider>
-          <Tooltip.Root>
-            <Tooltip.Trigger>
-              <StyledTabsTrigger {...props} ref={internalRef} />
-            </Tooltip.Trigger>
-            <Tooltip.Content>{internalRef.current?.innerText}</Tooltip.Content>
-          </Tooltip.Root>
-        </Tooltip.Provider>
-      ) : (
-        <StyledTabsTrigger css={{}} {...props} ref={internalRef} />
-      )}
-    </>
-  );
-});
+    let startx = "0px";
+    if (previousRect && internalRef.current) {
+      startx = `${
+        previousRect.left - internalRef.current.getBoundingClientRect().left
+      }px`;
+    }
+
+    useEffect(() => {
+      const element = internalRef.current;
+      setTruncated(isTruncated(element));
+    }, []);
+
+    const TabsTriggerWithAnimation = () => (
+      <CSSTransition
+        nodeRef={internalRef}
+        in={active}
+        timeout={300}
+        classNames="move"
+        onEntered={() => {
+          if (internalRef.current) {
+            setPreviousRect(internalRef.current.getBoundingClientRect());
+          }
+        }}
+      >
+        <StyledTabsTrigger
+          {...props}
+          ref={internalRef}
+          active={active}
+          style={{ "--startx": startx } as React.CSSProperties}
+        />
+      </CSSTransition>
+    );
+
+    return (
+      <>
+        {truncated ? (
+          <Tooltip.Provider>
+            <Tooltip.Root>
+              <Tooltip.Trigger>
+                <TabsTriggerWithAnimation />
+              </Tooltip.Trigger>
+              <Tooltip.Content>
+                {internalRef.current?.innerText}
+              </Tooltip.Content>
+            </Tooltip.Root>
+          </Tooltip.Provider>
+        ) : (
+          <TabsTriggerWithAnimation />
+        )}
+      </>
+    );
+  }
+);
 
 TabsTrigger.displayName = "TabsTrigger";
