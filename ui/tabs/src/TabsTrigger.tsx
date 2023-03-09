@@ -56,21 +56,6 @@ const StyledTabsTrigger = styled(TabsPrimitive.Trigger, {
     },
   },
 
-  // when truncating and using the tooltip trigger, the data-state gets overwritten
-  // so checking for aria-selected instead of data-state
-  // '&[aria-selected="true"]': {
-  //   fontWeight: theme.fontWeights.bold,
-
-  //   "&::after": {
-  //     ...afterConsts,
-  //     borderBottom: `1px solid ${theme.colors.primary}`,
-  //   },
-
-  //   "&:hover::after": {
-  //     borderBottom: `1px solid ${theme.colors.primary}`,
-  //   },
-  // },
-
   "&:hover::after": {
     ...afterConsts,
     borderBottom: `1px solid ${theme.colors.gray300}`,
@@ -133,8 +118,8 @@ const TabsTriggerWithAnimation = React.forwardRef<any, any>(
         style={{ "--startx": startx } as React.CSSProperties}
         ref={ref}
         active={active}
-        onClick={() => {
-          onClick();
+        onClick={(e) => {
+          onClick && onClick(e);
         }}
         {...props}
       >
