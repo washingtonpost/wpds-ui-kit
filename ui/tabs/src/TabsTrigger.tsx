@@ -56,6 +56,21 @@ const StyledTabsTrigger = styled(TabsPrimitive.Trigger, {
     },
   },
 
+  // when truncating and using the tooltip trigger, the data-state gets overwritten
+  // so checking for aria-selected instead of data-state
+  // '&[aria-selected="true"]': {
+  //   fontWeight: theme.fontWeights.bold,
+
+  //   "&::after": {
+  //     ...afterConsts,
+  //     borderBottom: `1px solid ${theme.colors.primary}`,
+  //   },
+
+  //   "&:hover::after": {
+  //     borderBottom: `1px solid ${theme.colors.primary}`,
+  //   },
+  // },
+
   "&:hover::after": {
     ...afterConsts,
     borderBottom: `1px solid ${theme.colors.gray300}`,
@@ -70,8 +85,7 @@ const StyledTabsTrigger = styled(TabsPrimitive.Trigger, {
     },
   },
 
-  // styling when the element is disabled. Radix updates the data-state
-  // and it's the only way to know if the element is disabled
+  // styling when the element is disabled
   "&[disabled]": {
     color: theme.colors.subtle,
     "&:hover::after": {
@@ -98,26 +112,55 @@ export type TabsTriggerProps = {
   /** Keeps track of the previously active tab location */
   previousRect?: DOMRect;
   /** setter for the previously active tab location */
-  setPreviousRect: React.Dispatch<React.SetStateAction<DOMRect>>;
+  setPreviousRect?: React.Dispatch<React.SetStateAction<DOMRect>>;
 } & React.ComponentPropsWithRef<typeof StyledTabsTrigger>;
+
+const TabsTriggerWithAnimation = React.forwardRef<any, any>(
+  ({ active, startx, setPreviousRect, onClick, children, ...props }, ref) => {
+    return (
+      // <CSSTransition
+      //   nodeRef={ref}
+      //   in={active}
+      //   timeout={300}
+      //   classNames="move"
+      //   onEntered={() => {
+      //     if (ref?.current) {
+      //       setPreviousRect(ref?.current.getBoundingClientRect());
+      //     }
+      //   }}
+      // >
+      <StyledTabsTrigger
+        style={{ "--startx": startx } as React.CSSProperties}
+        ref={ref}
+        active={active}
+        onClick={() => {
+          onClick();
+        }}
+        {...props}
+      >
+        {children}
+      </StyledTabsTrigger>
+      // </CSSTransition>
+    );
+  }
+);
 
 export const TabsTrigger = React.forwardRef<
   HTMLButtonElement,
   TabsTriggerProps
 >(
   (
-    {
-      active,
-
-      previousRect,
-      setPreviousRect,
-      ...props
-    }: TabsTriggerProps,
+    { active, previousRect, setPreviousRect, ...props }: TabsTriggerProps,
     ref
   ) => {
-    const internalRef = React.useRef<HTMLButtonElement | null>(null);
+    const internalRef = React.useRef<HTMLButtonElement>(null);
 
     const [truncated, setTruncated] = React.useState(false);
+
+    useEffect(() => {
+      const element = internalRef.current;
+      setTruncated(isTruncated(element));
+    }, []);
 
     let startx = "0px";
     if (previousRect && internalRef.current) {
@@ -126,39 +169,18 @@ export const TabsTrigger = React.forwardRef<
       }px`;
     }
 
-    useEffect(() => {
-      const element = internalRef.current;
-      setTruncated(isTruncated(element));
-    }, []);
-
-    const TabsTriggerWithAnimation = () => (
-      <CSSTransition
-        nodeRef={internalRef}
-        in={active}
-        timeout={300}
-        classNames="move"
-        onEntered={() => {
-          if (internalRef.current) {
-            setPreviousRect(internalRef.current.getBoundingClientRect());
-          }
-        }}
-      >
-        <StyledTabsTrigger
-          {...props}
-          ref={internalRef}
-          active={active}
-          style={{ "--startx": startx } as React.CSSProperties}
-        />
-      </CSSTransition>
-    );
-
     return (
       <>
         {truncated ? (
           <Tooltip.Provider>
             <Tooltip.Root>
               <Tooltip.Trigger>
-                <TabsTriggerWithAnimation />
+                <TabsTriggerWithAnimation
+                  startx={startx}
+                  ref={internalRef}
+                  active={active}
+                  {...props}
+                />
               </Tooltip.Trigger>
               <Tooltip.Content>
                 {internalRef.current?.innerText}
@@ -166,7 +188,12 @@ export const TabsTrigger = React.forwardRef<
             </Tooltip.Root>
           </Tooltip.Provider>
         ) : (
-          <TabsTriggerWithAnimation />
+          <TabsTriggerWithAnimation
+            startx={startx}
+            ref={internalRef}
+            active={active}
+            {...props}
+          />
         )}
       </>
     );

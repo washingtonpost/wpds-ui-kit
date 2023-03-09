@@ -48,14 +48,15 @@ export const TabsList = React.forwardRef<HTMLDivElement, TabsListProps>(
       <StyledTabsList {...props} ref={ref} align={align}>
         {React.Children.map(children, (child, index: number) => {
           if (React.isValidElement(child)) {
-            // console.log({ active });
             return React.cloneElement(child, {
               active: activeIndex === index ? true : false,
+              value: `tab${index}`,
               onClick: () => {
                 setActiveIndex(index);
               },
               previousRect,
               setPreviousRect,
+              ...props,
             });
           }
         })}
@@ -65,10 +66,3 @@ export const TabsList = React.forwardRef<HTMLDivElement, TabsListProps>(
 );
 
 TabsList.displayName = "TabsList";
-
-// active={activeIndex === i ? true : false}
-// onClick={(event) => {
-//   setActiveIndex(i);
-// }}
-// previousRect={previousRect}
-// setPreviousRect={setPreviousRect}

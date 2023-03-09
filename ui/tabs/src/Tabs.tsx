@@ -32,7 +32,14 @@ export type TabsProps = {
 
 export const TabsRoot = React.forwardRef<HTMLDivElement, TabsProps>(
   ({ activationMode = "automatic", ...props }, ref) => {
-    return <StyledTabs activationMode={activationMode} {...props} ref={ref} />;
+    return (
+      <StyledTabs
+        activationMode={activationMode}
+        defaultValue={"tab0"}
+        {...props}
+        ref={ref}
+      />
+    );
   }
 );
 

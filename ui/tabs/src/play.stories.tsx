@@ -50,18 +50,14 @@ const Template: ComponentStory<typeof Tabs.Root> = (args) => {
       <StyledTabs>
         <Tabs.Root {...args}>
           <Tabs.List aria-label="Countries' information">
-            <Tabs.Trigger value="option1">France</Tabs.Trigger>
-            <Tabs.Trigger value="option2" disabled>
-              Brazil
-            </Tabs.Trigger>
-            <Tabs.Trigger value="option3">
-              The Democratic Republic of the Congo
-            </Tabs.Trigger>
-            <Tabs.Trigger value="option4">Vietnam</Tabs.Trigger>
-            <Tabs.Trigger value="option5">Papau New Guinea</Tabs.Trigger>
-            <Tabs.Trigger value="option6">Venezuela</Tabs.Trigger>
-            <Tabs.Trigger value="option7">Kenya</Tabs.Trigger>
-            <Tabs.Trigger value="option8">Austria</Tabs.Trigger>
+            <Tabs.Trigger>France</Tabs.Trigger>
+            <Tabs.Trigger disabled>Brazil</Tabs.Trigger>
+            <Tabs.Trigger>The Democratic Republic of the Congo</Tabs.Trigger>
+            <Tabs.Trigger>Vietnam</Tabs.Trigger>
+            <Tabs.Trigger>Papau New Guinea</Tabs.Trigger>
+            <Tabs.Trigger>Venezuela</Tabs.Trigger>
+            <Tabs.Trigger>Kenya</Tabs.Trigger>
+            <Tabs.Trigger>Austria</Tabs.Trigger>
           </Tabs.List>
         </Tabs.Root>
       </StyledTabs>
