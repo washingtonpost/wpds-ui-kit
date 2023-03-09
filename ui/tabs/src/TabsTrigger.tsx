@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useEffect } from "react";
-import { CSSTransition } from "react-transition-group";
+// import { CSSTransition } from "react-transition-group";
 
 import * as TabsPrimitive from "@radix-ui/react-tabs";
 
