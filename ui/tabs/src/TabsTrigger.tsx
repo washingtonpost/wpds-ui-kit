@@ -19,11 +19,14 @@ const afterConsts = {
 
 const StyledTabsTrigger = styled(TabsPrimitive.Trigger, {
   all: "unset",
-  fontFamily: "inherit",
+  fontFamily: "$subhead",
   padding: "$075 0",
   color: theme.colors.primary,
   position: "relative",
   cursor: "pointer",
+  display: "flex",
+  alignItems: "center",
+  gap: "$025",
 
   flexShrink: 0,
   overflow: "hidden",
@@ -87,13 +90,13 @@ const isTruncated = (el) => {
 export type TabsTriggerProps = {
   children?: React.ReactNode;
   /** The value for the selected tab, if controlled */
-  value: string;
+  value?: string;
   /** The value whether the trigger should be disabled */
   disabled?: boolean;
   /** Overrides for the input text styles. Padding overrides affect the input container and  */
   css?: WPDS.CSS;
   /** Whether the current tabs trigger is currently active */
-  active: boolean;
+  active?: boolean;
   /** Keeps track of the previously active tab location */
   previousRect?: DOMRect;
   /** setter for the previously active tab location */
@@ -101,7 +104,10 @@ export type TabsTriggerProps = {
 } & React.ComponentPropsWithRef<typeof StyledTabsTrigger>;
 
 const TabsTriggerWithAnimation = React.forwardRef<any, any>(
-  ({ active, startx, setPreviousRect, onClick, children, ...props }, ref) => {
+  (
+    { active, startx, setPreviousRect, onClick, children, value, ...props },
+    ref
+  ) => {
     return (
       // <CSSTransition
       //   nodeRef={ref}
@@ -130,7 +136,8 @@ const TabsTriggerWithAnimation = React.forwardRef<any, any>(
   }
 );
 
-export const TabsTrigger = React.forwardRef<
+//TODO: Remove <any> type and figure out why typing issue is happening
+export const TabsTrigger: React.FC<any> = React.forwardRef<
   HTMLButtonElement,
   TabsTriggerProps
 >(
