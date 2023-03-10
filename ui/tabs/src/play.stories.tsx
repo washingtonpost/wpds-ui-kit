@@ -6,7 +6,7 @@ import { expect } from "@storybook/jest";
 import { Tabs } from ".";
 import { styled, theme } from "@washingtonpost/wpds-theme";
 
-import { BookmarkSolid } from "@washingtonpost/wpds-assets";
+import { Info } from "@washingtonpost/wpds-assets";
 import { Icon } from "@washingtonpost/wpds-icon";
 
 import type { ComponentMeta, ComponentStory } from "@storybook/react";
@@ -17,17 +17,16 @@ export default {
   subcomponents: {
     List: Tabs.List,
     Trigger: Tabs.Trigger,
-    // Content: Accordion.Content,
   },
   argTypes: {
     align: {
       options: ["center", "left"],
       control: "select",
     },
-    // type: {
-    //   options: [ACCORDION_TYPE.single, ACCORDION_TYPE.multiple],
-    //   control: "select",
-    // },
+    density: {
+      options: ["compact", "default", "loose"],
+      control: "select",
+    },
     disabled: {
       options: [true, false],
       control: "boolean",
@@ -54,13 +53,18 @@ const Template: ComponentStory<typeof Tabs.Root> = (args) => {
         <Tabs.Root {...args}>
           <Tabs.List aria-label="Countries' information">
             <Tabs.Trigger>
-              <Icon label="trigger icon">
-                <BookmarkSolid />
+              <Icon label="trigger icon" size="100">
+                <Info />
               </Icon>
               France
             </Tabs.Trigger>
             <Tabs.Trigger disabled>Brazil</Tabs.Trigger>
-            <Tabs.Trigger>The Democratic Republic of the Congo</Tabs.Trigger>
+            <Tabs.Trigger>
+              <Icon label="trigger icon" size="100">
+                <Info />
+              </Icon>
+              The Democratic Republic of the Congo
+            </Tabs.Trigger>
             <Tabs.Trigger>Vietnam</Tabs.Trigger>
             <Tabs.Trigger>Papau New Guinea</Tabs.Trigger>
             <Tabs.Trigger>Venezuela</Tabs.Trigger>
@@ -76,12 +80,39 @@ const Template: ComponentStory<typeof Tabs.Root> = (args) => {
 export const Play = Template.bind({});
 
 Play.args = {
-  // density: ACCORDION_DENSITY.compact,
-  // type: ACCORDION_TYPE.single,
-  // defaultValue: "item-1",
+  density: "default",
 };
 
 Play.storyName = "Default";
+
+const TemplateShort: ComponentStory<typeof Tabs.Root> = (args) => {
+  return (
+    <>
+      <StyledLabel>Outline for viewing alignment purposes only</StyledLabel>
+      <StyledTabs>
+        <Tabs.Root {...args}>
+          <Tabs.List aria-label="Countries' information">
+            <Tabs.Trigger>
+              <Icon label="trigger icon">
+                <Info />
+              </Icon>
+              France
+            </Tabs.Trigger>
+            <Tabs.Trigger>Kenya</Tabs.Trigger>
+            <Tabs.Trigger>Austria</Tabs.Trigger>
+          </Tabs.List>
+        </Tabs.Root>
+      </StyledTabs>
+    </>
+  );
+};
+
+export const Center = TemplateShort.bind({});
+Center.args = {
+  density: "compact",
+  align: "center",
+};
+Center.storyName = "Center";
 
 const InteractionsTemplate: ComponentStory<any> = () => (
   <Tabs.Root>
