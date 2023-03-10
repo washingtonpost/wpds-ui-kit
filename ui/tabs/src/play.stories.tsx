@@ -117,7 +117,12 @@ Center.storyName = "Center";
 const InteractionsTemplate: ComponentStory<any> = () => (
   <Tabs.Root>
     <Tabs.List aria-label="Countries' information">
-      <Tabs.Trigger>France</Tabs.Trigger>
+      <Tabs.Trigger>
+        <Icon label="trigger icon">
+          <Info />
+        </Icon>
+        France
+      </Tabs.Trigger>
       <Tabs.Trigger disabled>Brazil</Tabs.Trigger>
       <Tabs.Trigger>The Democratic Republic of the Congo</Tabs.Trigger>
       <Tabs.Trigger>Vietnam</Tabs.Trigger>
@@ -130,12 +135,20 @@ const InteractionsTemplate: ComponentStory<any> = () => (
 );
 
 export const Interactions = InteractionsTemplate.bind({});
+
+// Function to emulate pausing between interactions
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
 Interactions.parameters = {
   chromatic: { disableSnapshot: true },
 };
 
 Interactions.play = async () => {
   const trigger = screen.getAllByRole("tab");
+  const icon = trigger[0].getElementsByTagName("svg")[0];
+  await expect(icon).toBeVisible();
   await expect(trigger[0]).toHaveAttribute("aria-selected", "true");
   await expect(trigger[4]).not.toHaveAttribute("aria-selected", "true");
   await expect(trigger).toHaveLength(8);
@@ -146,13 +159,11 @@ Interactions.play = async () => {
   await expect(trigger[0]).not.toHaveAttribute("aria-selected", "true");
   await expect(trigger[4]).toHaveAttribute("aria-selected", "true");
 
-  // await expect("The Democratic Republic of the Congo").not.toBeVisible();
-  // await userEvent.hover(trigger[2]);
-  // console.log(trigger);
-  // await sleep(300);
-  // const content = screen.getAllByText("Drawer Content")[0];
-  // await expect(content).toBeVisible();
-  // const close = screen.getByLabelText("Close Drawer");
-  // await sleep(300);
-  // await expect(content).not.toBeInTheDocument();
+  //Test that trigger shows up for truncated item
+  const tooltipTrigger = screen.getAllByTestId("tabs-tooltip-trigger");
+  await userEvent.hover(tooltipTrigger[0]);
+  await sleep(300);
+  const tooltipContent = await screen.findAllByTestId("tabs-tooltip-content");
+  await sleep(300);
+  await expect(tooltipContent[0]).toBeInTheDocument();
 };

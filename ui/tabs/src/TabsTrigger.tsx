@@ -152,11 +152,17 @@ const TabContent = React.forwardRef<any, any>(({ children }, ref) => {
     <>
       {truncated ? (
         <Tooltip.Provider>
-          <Tooltip.Root data-testid="tabs-trigger-tooltip">
+          <Tooltip.Root>
             <Tooltip.Trigger>
-              <StyledContainer>{content}</StyledContainer>
+              <StyledContainer data-testid="tabs-tooltip-trigger">
+                {content}
+              </StyledContainer>
             </Tooltip.Trigger>
-            <Tooltip.Content>{internalRef?.current?.innerText}</Tooltip.Content>
+            <Tooltip.Content>
+              <span data-testid="tabs-tooltip-content">
+                {internalRef?.current?.innerText}
+              </span>
+            </Tooltip.Content>
           </Tooltip.Root>
         </Tooltip.Provider>
       ) : (
