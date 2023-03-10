@@ -34,11 +34,6 @@ const StyledTabsTrigger = styled(TabsPrimitive.Trigger, {
   gap: "$075",
   flexShrink: 0,
 
-  // overflow: "hidden",
-  // maxWidth: "24ch", // ch value is based on the width of the font 0. This is a rough approximation
-  // textOverflow: "ellipsis",
-  // whiteSpace: "nowrap",
-
   variants: {
     active: {
       true: {
@@ -122,53 +117,52 @@ const StyledContainer = styled("div", {
 });
 
 const StyledTabText = styled("div", {
-  // display: "flex",
   flex: "1 0 auto",
   maxWidth: "24ch", // ch value is based on the width of the font 0. This is a rough approximation
   overflow: "hidden",
   textOverflow: "ellipsis",
   whiteSpace: "nowrap",
-  // minWidth: 0,
-  // maxWidth: "fit-content",
 });
 
-const TabContent = React.forwardRef<any, any>(
-  ({ children, innerText, ...props }, ref) => {
-    const [truncated, setTruncated] = React.useState(false);
-    // const truncated = false;
-    const childrenArray = React.Children.toArray(children);
-    const hasMoreThanOneChild = childrenArray.length > 1;
+const TabContent = React.forwardRef<any, any>(({ children }, ref) => {
+  const internalRef = React.useRef<HTMLDivElement | null>(null);
 
-    useEffect(() => {
-      const element = ref?.current;
-      setTruncated(isTruncated(element));
-    }, []);
+  const [truncated, setTruncated] = React.useState(false);
 
-    // return truncated ? (
-    //   <Tooltip.Provider>
-    //     <Tooltip.Root data-testid="tabs-trigger-tooltip">
-    //       <Tooltip.Trigger>
-    //         <StyledTabText>{children}</StyledTabText>
-    //       </Tooltip.Trigger>
-    //       <Tooltip.Content>{innerText}</Tooltip.Content>
-    //     </Tooltip.Root>
-    //   </Tooltip.Provider>
-    // ) : (
-    // );
-    return (
-      <StyledContainer>
-        {hasMoreThanOneChild ? (
-          <>
-            {childrenArray[0]}
-            <StyledTabText>{childrenArray[1]}</StyledTabText>{" "}
-          </>
-        ) : (
-          <StyledTabText>{children}</StyledTabText>
-        )}
-      </StyledContainer>
-    );
-  }
-);
+  const childrenArray = React.Children.toArray(children);
+  const hasMoreThanOneChild = childrenArray.length > 1;
+
+  useEffect(() => {
+    const element = internalRef?.current;
+    setTruncated(isTruncated(element));
+  }, []);
+
+  const content = hasMoreThanOneChild ? (
+    <>
+      {childrenArray[0]}
+      <StyledTabText ref={internalRef}>{childrenArray[1]}</StyledTabText>
+    </>
+  ) : (
+    <StyledTabText ref={internalRef}>{children}</StyledTabText>
+  );
+
+  return (
+    <>
+      {truncated ? (
+        <Tooltip.Provider>
+          <Tooltip.Root data-testid="tabs-trigger-tooltip">
+            <Tooltip.Trigger>
+              <StyledContainer>{content}</StyledContainer>
+            </Tooltip.Trigger>
+            <Tooltip.Content>{internalRef?.current?.innerText}</Tooltip.Content>
+          </Tooltip.Root>
+        </Tooltip.Provider>
+      ) : (
+        <StyledContainer>{content}</StyledContainer>
+      )}
+    </>
+  );
+});
 
 //TODO: Remove <any> type and figure out why typing issue is happening
 export const TabsTrigger: React.FC<any> = React.forwardRef<
@@ -186,16 +180,7 @@ export const TabsTrigger: React.FC<any> = React.forwardRef<
     }: TabsTriggerProps,
     ref
   ) => {
-    const internalRef = React.useRef<HTMLButtonElement>(null);
-
-    // const [truncated, setTruncated] = React.useState(false);
-
-    // console.log({ props });
-
-    // useEffect(() => {
-    //   const element = internalRef.current;
-    //   // setTruncated(isTruncated(element));
-    // }, []);
+    const internalRef = React.useRef<HTMLButtonElement | null>(null);
 
     let startx = "0px";
     if (previousRect && internalRef.current) {
@@ -207,7 +192,7 @@ export const TabsTrigger: React.FC<any> = React.forwardRef<
     return (
       // <>
       <CSSTransition
-        nodeRef={ref}
+        nodeRef={internalRef}
         in={active}
         timeout={300}
         classNames="move"
@@ -220,7 +205,7 @@ export const TabsTrigger: React.FC<any> = React.forwardRef<
       >
         <StyledTabsTrigger
           style={{ "--startx": startx } as React.CSSProperties}
-          ref={ref}
+          ref={internalRef}
           active={active}
           onClick={(e) => {
             onClick && onClick(e);
@@ -236,30 +221,3 @@ export const TabsTrigger: React.FC<any> = React.forwardRef<
 );
 
 TabsTrigger.displayName = "TabsTrigger";
-
-{
-  /* {truncated ? (
-    <Tooltip.Provider>
-      <Tooltip.Root data-testid="tabs-trigger-tooltip">
-        <Tooltip.Trigger>
-          <TabsTriggerWithAnimation
-            startx={startx}
-            ref={internalRef}
-            active={active}
-            {...props}
-          />
-        </Tooltip.Trigger>
-        <Tooltip.Content>
-          {internalRef.current?.innerText}
-        </Tooltip.Content>
-      </Tooltip.Root>
-    </Tooltip.Provider>
-  ) : (
-    <TabsTriggerWithAnimation
-      startx={startx}
-      ref={internalRef}
-      active={active}
-      {...props}
-    />
-  )} */
-}
