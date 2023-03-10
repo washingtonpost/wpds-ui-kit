@@ -28,9 +28,9 @@ export type TabsTriggerProps = {
   children?: React.ReactNode;
   /** Overrides for the input text styles. Padding overrides affect the input container and  */
   css?: WPDS.CSS;
-} & React.ComponentPropsWithRef<typeof StyledContainer>;
+} & React.ComponentPropsWithoutRef<typeof StyledContainer>;
 
-export const TabsContent = ({ children }) => {
+export const TabsTriggerContent = ({ children }: TabsTriggerProps) => {
   const internalRef = React.useRef<HTMLDivElement | null>(null);
 
   const [truncated, setTruncated] = React.useState(false);
@@ -78,3 +78,5 @@ export const TabsContent = ({ children }) => {
     </>
   );
 };
+
+TabsTriggerContent.displayName = "TabsTriggerContent";

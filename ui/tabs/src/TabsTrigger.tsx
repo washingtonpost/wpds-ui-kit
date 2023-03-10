@@ -1,11 +1,10 @@
 import * as React from "react";
-import { useEffect } from "react";
 import { CSSTransition } from "react-transition-group";
 
 import * as TabsPrimitive from "@radix-ui/react-tabs";
 
 import { styled, theme } from "@washingtonpost/wpds-theme";
-import { Tooltip } from "@washingtonpost/wpds-tooltip";
+import { TabsTriggerContent } from "./TabsTriggerContent";
 
 import type * as WPDS from "@washingtonpost/wpds-theme";
 
@@ -88,14 +87,16 @@ const StyledTabsTrigger = styled(TabsPrimitive.Trigger, {
   },
 });
 
-const isTruncated = (el) => {
-  return el && el.scrollWidth > el.clientWidth;
-};
+type TabsTriggerVariants = WPDS.VariantProps<typeof StyledTabsTrigger>;
+type TriggerCombinedProps = React.ComponentPropsWithoutRef<
+  typeof StyledTabsTrigger
+> &
+  TabsTriggerVariants;
 
 export type TabsTriggerProps = {
   children?: React.ReactNode;
   /** The value for the selected tab, if controlled */
-  value?: string;
+  value: string;
   /** The value whether the trigger should be disabled */
   disabled?: boolean;
   /** Overrides for the input text styles. Padding overrides affect the input container and  */
@@ -106,124 +107,53 @@ export type TabsTriggerProps = {
   previousRect?: DOMRect;
   /** setter for the previously active tab location */
   setPreviousRect?: React.Dispatch<React.SetStateAction<DOMRect>>;
-} & React.ComponentPropsWithRef<typeof StyledTabsTrigger>;
+} & TriggerCombinedProps;
 
-const StyledContainer = styled("div", {
-  display: "flex",
-  flexDirection: "row",
-  alignItems: "center",
-  gap: "$025",
-});
+export const TabsTrigger = ({
+  active,
+  previousRect,
+  setPreviousRect,
+  onClick,
+  children,
+  value,
+  ...props
+}: TabsTriggerProps) => {
+  const internalRef = React.useRef<HTMLButtonElement | null>(null);
 
-const StyledTabText = styled("div", {
-  flex: "1 0 auto",
-  maxWidth: "24ch", // ch value is based on the width of the font 0. This is a rough approximation
-  overflow: "hidden",
-  textOverflow: "ellipsis",
-  whiteSpace: "nowrap",
-});
-
-const TabContent = React.forwardRef<any, any>(({ children }, ref) => {
-  const internalRef = React.useRef<HTMLDivElement | null>(null);
-
-  const [truncated, setTruncated] = React.useState(false);
-
-  const childrenArray = React.Children.toArray(children);
-  const hasMoreThanOneChild = childrenArray.length > 1;
-
-  useEffect(() => {
-    const element = internalRef?.current;
-    setTruncated(isTruncated(element));
-  }, []);
-
-  // the parent container is flex, but the StyledTabText component cannot be set to
-  // flex since we want to show the ellipsis. For this reason, we need to split the
-  // children components
-  const content = hasMoreThanOneChild ? (
-    <>
-      {childrenArray[0]}
-      <StyledTabText ref={internalRef}>{childrenArray[1]}</StyledTabText>
-    </>
-  ) : (
-    <StyledTabText ref={internalRef}>{children}</StyledTabText>
-  );
+  let startx = "0px";
+  if (previousRect && internalRef.current) {
+    startx = `${
+      previousRect.left - internalRef.current.getBoundingClientRect().left
+    }px`;
+  }
 
   return (
-    <>
-      {truncated ? (
-        <Tooltip.Provider>
-          <Tooltip.Root>
-            <Tooltip.Trigger>
-              <StyledContainer data-testid="tabs-tooltip-trigger">
-                {content}
-              </StyledContainer>
-            </Tooltip.Trigger>
-            <Tooltip.Content>
-              <span data-testid="tabs-tooltip-content">
-                {internalRef?.current?.innerText}
-              </span>
-            </Tooltip.Content>
-          </Tooltip.Root>
-        </Tooltip.Provider>
-      ) : (
-        <StyledContainer>{content}</StyledContainer>
-      )}
-    </>
-  );
-});
-
-//TODO: Remove <any> type and figure out why typing issue is happening
-export const TabsTrigger: React.FC<any> = React.forwardRef<
-  HTMLButtonElement,
-  TabsTriggerProps
->(
-  (
-    {
-      active,
-      previousRect,
-      setPreviousRect,
-      onClick,
-      children,
-      ...props
-    }: TabsTriggerProps,
-    ref
-  ) => {
-    const internalRef = React.useRef<HTMLButtonElement | null>(null);
-
-    let startx = "0px";
-    if (previousRect && internalRef.current) {
-      startx = `${
-        previousRect.left - internalRef.current.getBoundingClientRect().left
-      }px`;
-    }
-
-    return (
-      <CSSTransition
-        nodeRef={internalRef}
-        in={active}
-        timeout={300}
-        classNames="move"
-        onEntered={() => {
-          if (internalRef.current) {
-            setPreviousRect &&
-              setPreviousRect(internalRef.current.getBoundingClientRect());
-          }
+    <CSSTransition
+      nodeRef={internalRef}
+      in={active}
+      timeout={300}
+      classNames="move"
+      onEntered={() => {
+        if (internalRef.current) {
+          setPreviousRect &&
+            setPreviousRect(internalRef.current.getBoundingClientRect());
+        }
+      }}
+    >
+      <StyledTabsTrigger
+        style={{ "--startx": startx } as React.CSSProperties}
+        ref={internalRef}
+        active={active}
+        value={value}
+        onClick={(e) => {
+          onClick && onClick(e);
         }}
+        {...props}
       >
-        <StyledTabsTrigger
-          style={{ "--startx": startx } as React.CSSProperties}
-          ref={internalRef}
-          active={active}
-          onClick={(e) => {
-            onClick && onClick(e);
-          }}
-          {...props}
-        >
-          <TabContent ref={internalRef}>{children}</TabContent>
-        </StyledTabsTrigger>
-      </CSSTransition>
-    );
-  }
-);
+        <TabsTriggerContent>{children}</TabsTriggerContent>
+      </StyledTabsTrigger>
+    </CSSTransition>
+  );
+};
 
 TabsTrigger.displayName = "TabsTrigger";

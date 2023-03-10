@@ -31,17 +31,18 @@ export type TabsProps = {
 } & TabsRootVariants;
 
 export const TabsRoot = React.forwardRef<HTMLDivElement, TabsProps>(
-  ({ activationMode = "automatic", ...props }, ref) => {
+  ({ activationMode = "automatic", children, ...props }, ref) => {
     return (
-      <StyledTabs
-        activationMode={activationMode}
-        defaultValue={"tab0"}
-        {...props}
-        ref={ref}
-      />
+      <TabsPrimitive.Root activationMode={activationMode} {...props}>
+        {children}
+      </TabsPrimitive.Root>
     );
   }
 );
+
+// export const TabsRoot = (props) => (
+//   <TabsPrimitive.Root {...props}></TabsPrimitive.Root>
+// );
 
 TabsRoot.displayName = "TabsRoot";
 

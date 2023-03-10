@@ -53,7 +53,6 @@ export const TabsList = React.forwardRef<HTMLDivElement, TabsListProps>(
           if (React.isValidElement(child)) {
             return React.cloneElement(child, {
               active: activeIndex === index ? true : false,
-              value: `tab${index}`,
               onClick: () => {
                 setActiveIndex(index);
               },

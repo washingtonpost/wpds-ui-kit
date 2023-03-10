@@ -5,6 +5,7 @@ import { expect } from "@storybook/jest";
 
 import { Tabs } from ".";
 import { styled, theme } from "@washingtonpost/wpds-theme";
+import * as TabsPrimitive from "@radix-ui/react-tabs";
 
 import { Info } from "@washingtonpost/wpds-assets";
 import { Icon } from "@washingtonpost/wpds-icon";
@@ -45,32 +46,46 @@ const StyledLabel = styled("div", {
   color: theme.colors.primary,
 });
 
-const Template: ComponentStory<typeof Tabs.Root> = (args) => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const Template: ComponentStory<any> = (args) => {
+  const { density, align, ...rest } = args;
   return (
     <>
       <StyledLabel>Outline for viewing alignment purposes only</StyledLabel>
       <StyledTabs>
-        <Tabs.Root {...args}>
-          <Tabs.List aria-label="Countries' information">
-            <Tabs.Trigger>
+        <Tabs.Root {...rest} defaultValue="tab1">
+          <Tabs.List
+            aria-label="Countries' information"
+            density={density}
+            align={align}
+          >
+            <Tabs.Trigger value="tab1">
               <Icon label="trigger icon" size="100">
                 <Info />
               </Icon>
               France
             </Tabs.Trigger>
-            <Tabs.Trigger disabled>Brazil</Tabs.Trigger>
-            <Tabs.Trigger>
+            <Tabs.Trigger disabled value="tab2">
+              Brazil
+            </Tabs.Trigger>
+            <Tabs.Trigger value="tab3">
               <Icon label="trigger icon" size="100">
                 <Info />
               </Icon>
               The Democratic Republic of the Congo
             </Tabs.Trigger>
-            <Tabs.Trigger>Vietnam</Tabs.Trigger>
-            <Tabs.Trigger>Papau New Guinea</Tabs.Trigger>
-            <Tabs.Trigger>Venezuela</Tabs.Trigger>
-            <Tabs.Trigger>Kenya</Tabs.Trigger>
-            <Tabs.Trigger>Austria</Tabs.Trigger>
+            <Tabs.Trigger value="tab4">Vietnam</Tabs.Trigger>
+            <Tabs.Trigger value="tab5">Papau New Guinea</Tabs.Trigger>
+            <Tabs.Trigger value="tab6">Venezuela</Tabs.Trigger>
+            <Tabs.Trigger value="tab7">Kenya</Tabs.Trigger>
+            <Tabs.Trigger value="tab8">Austria</Tabs.Trigger>
           </Tabs.List>
+          <TabsPrimitive.Content value="tab1">
+            Something is here
+          </TabsPrimitive.Content>
+          <TabsPrimitive.Content value="tab2">
+            Tab 2 is here
+          </TabsPrimitive.Content>
         </Tabs.Root>
       </StyledTabs>
     </>
@@ -85,21 +100,27 @@ Play.args = {
 
 Play.storyName = "Default";
 
-const TemplateShort: ComponentStory<typeof Tabs.Root> = (args) => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const TemplateShort: ComponentStory<any> = (args) => {
+  const { density, align, ...rest } = args;
   return (
     <>
       <StyledLabel>Outline for viewing alignment purposes only</StyledLabel>
       <StyledTabs>
-        <Tabs.Root {...args}>
-          <Tabs.List aria-label="Countries' information" {...args}>
-            <Tabs.Trigger>
+        <Tabs.Root {...rest}>
+          <Tabs.List
+            aria-label="Countries' information"
+            density={density}
+            align={align}
+          >
+            <Tabs.Trigger value="tab1">
               <Icon label="trigger icon">
                 <Info />
               </Icon>
               France
             </Tabs.Trigger>
-            <Tabs.Trigger>Kenya</Tabs.Trigger>
-            <Tabs.Trigger>Austria</Tabs.Trigger>
+            <Tabs.Trigger value="tab2">Kenya</Tabs.Trigger>
+            <Tabs.Trigger value="tab3">Austria</Tabs.Trigger>
           </Tabs.List>
         </Tabs.Root>
       </StyledTabs>
@@ -117,19 +138,23 @@ Center.storyName = "Center";
 const InteractionsTemplate: ComponentStory<any> = () => (
   <Tabs.Root>
     <Tabs.List aria-label="Countries' information">
-      <Tabs.Trigger>
+      <Tabs.Trigger value="tab1">
         <Icon label="trigger icon">
           <Info />
         </Icon>
         France
       </Tabs.Trigger>
-      <Tabs.Trigger disabled>Brazil</Tabs.Trigger>
-      <Tabs.Trigger>The Democratic Republic of the Congo</Tabs.Trigger>
-      <Tabs.Trigger>Vietnam</Tabs.Trigger>
-      <Tabs.Trigger>Papau New Guinea</Tabs.Trigger>
-      <Tabs.Trigger>Venezuela</Tabs.Trigger>
-      <Tabs.Trigger>Kenya</Tabs.Trigger>
-      <Tabs.Trigger>Austria</Tabs.Trigger>
+      <Tabs.Trigger value="tab2" disabled>
+        Brazil
+      </Tabs.Trigger>
+      <Tabs.Trigger value="tab3">
+        The Democratic Republic of the Congo
+      </Tabs.Trigger>
+      <Tabs.Trigger value="tab4">Vietnam</Tabs.Trigger>
+      <Tabs.Trigger value="tab5">Papau New Guinea</Tabs.Trigger>
+      <Tabs.Trigger value="tab6">Venezuela</Tabs.Trigger>
+      <Tabs.Trigger value="tab7">Kenya</Tabs.Trigger>
+      <Tabs.Trigger value="tab8">Austria</Tabs.Trigger>
     </Tabs.List>
   </Tabs.Root>
 );
@@ -147,6 +172,7 @@ Interactions.parameters = {
 
 Interactions.play = async () => {
   const trigger = screen.getAllByRole("tab");
+  // eslint-disable-next-line testing-library/no-node-access
   const icon = trigger[0].getElementsByTagName("svg")[0];
   await expect(icon).toBeVisible();
   await expect(trigger[0]).toHaveAttribute("aria-selected", "true");
