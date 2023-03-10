@@ -2,7 +2,8 @@
 require("dotenv").config();
 
 module.exports = {
-  stories: ["../ui/**/src/*.stories.@(ts|tsx|js|jsx)"],
+  stories: ["../ui/(**|!(node_modules))/src/*.stories.@(ts|tsx|js|jsx)"],
+  exclude: ["node_modules", "dist"],
   addons: [
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
@@ -10,10 +11,13 @@ module.exports = {
   ],
   previewBody: (body) => `${body}`,
   features: {
+    storyStoreV7: true,
     interactionsDebugger: true,
-    buildStoriesJson: true,
   },
   framework: "@storybook/react",
+  core: {
+    builder: "webpack5",
+  },
   typescript: {
     check: true,
     reactDocgen: "react-docgen-typescript",

@@ -3,10 +3,8 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "*": ["node_modules/*"],
       "~/*": ["./build.washingtonpost.com/*"],
-      "@/*": ["./build.washingtonpost.com/*"],
-      "@emotion/core": ["./types/emotion.d.ts"]
+      "@/*": ["./build.washingtonpost.com/*"]
     }
   }
 }

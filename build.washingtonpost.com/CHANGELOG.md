@@ -3,84 +3,61 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/washingtonpost/wpds-docs/compare/v1.0.0...v1.1.0) (2023-03-06)
+
+### Bug Fixes
+
+- add named icons back to site ([9cf8500](https://github.com/washingtonpost/wpds-docs/commit/9cf8500088c02f95b8a6b1fca95caf9ed32119b1))
+
+### Features
+
+- Switch component ([#332](https://github.com/washingtonpost/wpds-docs/issues/332)) ([4f2bd48](https://github.com/washingtonpost/wpds-docs/commit/4f2bd482f61a06f0cee3b20ced80cedbde52f01f))
+
 # [1.0.0](https://github.com/washingtonpost/wpds-docs/compare/v0.25.1...v1.0.0) (2023-03-02)
 
 **Note:** Version bump only for package @washingtonpost/wpds-docs
-
-
-
-
 
 ## [0.25.1](https://github.com/washingtonpost/wpds-docs/compare/v0.25.0...v0.25.1) (2023-03-01)
 
 **Note:** Version bump only for package @washingtonpost/wpds-docs
 
-
-
-
-
 # [0.25.0](https://github.com/washingtonpost/wpds-docs/compare/v0.24.0...v0.25.0) (2023-03-01)
-
 
 ### Bug Fixes
 
-* address various typos, formatting, hyperlink and date issues ([#335](https://github.com/washingtonpost/wpds-docs/issues/335)) ([9c36c26](https://github.com/washingtonpost/wpds-docs/commit/9c36c260222ebd65a7db7b829457d231a9cd33cc))
-* update prettier to fix build ([#325](https://github.com/washingtonpost/wpds-docs/issues/325)) ([3306453](https://github.com/washingtonpost/wpds-docs/commit/3306453e3d3245219c9a6439bd612e51501c64cc))
-
+- address various typos, formatting, hyperlink and date issues ([#335](https://github.com/washingtonpost/wpds-docs/issues/335)) ([9c36c26](https://github.com/washingtonpost/wpds-docs/commit/9c36c260222ebd65a7db7b829457d231a9cd33cc))
+- update prettier to fix build ([#325](https://github.com/washingtonpost/wpds-docs/issues/325)) ([3306453](https://github.com/washingtonpost/wpds-docs/commit/3306453e3d3245219c9a6439bd612e51501c64cc))
 
 ### Features
 
-* accessibility docs for build.washingtonpost.com ([#326](https://github.com/washingtonpost/wpds-docs/issues/326)) ([f71cdda](https://github.com/washingtonpost/wpds-docs/commit/f71cdda521b9ef960a1c4c93b494042c36174aab))
-* add new status and remove all Draft status indicators ([#329](https://github.com/washingtonpost/wpds-docs/issues/329)) ([972b203](https://github.com/washingtonpost/wpds-docs/commit/972b203bb28dfad3a15c5b8f9b2100ac6aa1baee))
-* update gtm implementation ([#328](https://github.com/washingtonpost/wpds-docs/issues/328)) ([f810286](https://github.com/washingtonpost/wpds-docs/commit/f810286978cfe09bad5961af732da99d52d823ad))
-
-
-
-
+- accessibility docs for build.washingtonpost.com ([#326](https://github.com/washingtonpost/wpds-docs/issues/326)) ([f71cdda](https://github.com/washingtonpost/wpds-docs/commit/f71cdda521b9ef960a1c4c93b494042c36174aab))
+- add new status and remove all Draft status indicators ([#329](https://github.com/washingtonpost/wpds-docs/issues/329)) ([972b203](https://github.com/washingtonpost/wpds-docs/commit/972b203bb28dfad3a15c5b8f9b2100ac6aa1baee))
+- update gtm implementation ([#328](https://github.com/washingtonpost/wpds-docs/issues/328)) ([f810286](https://github.com/washingtonpost/wpds-docs/commit/f810286978cfe09bad5961af732da99d52d823ad))
 
 ## [0.24.1](https://github.com/washingtonpost/wpds-docs/compare/v0.24.0...v0.24.1) (2023-02-03)
 
-
 ### Bug Fixes
 
-* update prettier to fix build ([#325](https://github.com/washingtonpost/wpds-docs/issues/325)) ([3306453](https://github.com/washingtonpost/wpds-docs/commit/3306453e3d3245219c9a6439bd612e51501c64cc))
-
-
-
-
+- update prettier to fix build ([#325](https://github.com/washingtonpost/wpds-docs/issues/325)) ([3306453](https://github.com/washingtonpost/wpds-docs/commit/3306453e3d3245219c9a6439bd612e51501c64cc))
 
 # [0.24.0](https://github.com/washingtonpost/wpds-docs/compare/v0.23.2...v0.24.0) (2023-02-03)
 
-
 ### Bug Fixes
 
-* add redirect for storybook for our build site ([#323](https://github.com/washingtonpost/wpds-docs/issues/323)) ([cdbe5ee](https://github.com/washingtonpost/wpds-docs/commit/cdbe5eec4765417fae7c6418281c1b3f90e1b315))
-* build issue with embeds ([#320](https://github.com/washingtonpost/wpds-docs/issues/320)) ([8b1344f](https://github.com/washingtonpost/wpds-docs/commit/8b1344fa978e94ace5dec695480d3f8cf64ac4ed))
-
+- add redirect for storybook for our build site ([#323](https://github.com/washingtonpost/wpds-docs/issues/323)) ([cdbe5ee](https://github.com/washingtonpost/wpds-docs/commit/cdbe5eec4765417fae7c6418281c1b3f90e1b315))
+- build issue with embeds ([#320](https://github.com/washingtonpost/wpds-docs/issues/320)) ([8b1344f](https://github.com/washingtonpost/wpds-docs/commit/8b1344fa978e94ace5dec695480d3f8cf64ac4ed))
 
 ### Features
 
-* bump assets package to add new icons ([f126a14](https://github.com/washingtonpost/wpds-docs/commit/f126a147353afccb3754c44142c29e2998df5532))
-
-
-
-
+- bump assets package to add new icons ([f126a14](https://github.com/washingtonpost/wpds-docs/commit/f126a147353afccb3754c44142c29e2998df5532))
 
 ## [0.23.2](https://github.com/washingtonpost/wpds-docs/compare/v0.24.0...v0.23.2) (2023-01-17)
 
 **Note:** Version bump only for package @washingtonpost/wpds-docs
 
-
-
-
-
 ## [0.23.1](https://github.com/washingtonpost/wpds-docs/compare/v0.23.0...v0.23.1) (2023-01-11)
 
 **Note:** Version bump only for package @washingtonpost/wpds-docs
-
-
-
-
 
 # [0.23.0](https://github.com/washingtonpost/wpds-docs/compare/v0.22.0...v0.23.0) (2023-01-11)
 

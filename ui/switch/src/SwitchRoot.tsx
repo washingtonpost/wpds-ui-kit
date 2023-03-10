@@ -53,8 +53,7 @@ export const SwitchRoot = styled(SwitchPrimitive.Root, {
       },
     },
     error: {
-      true: {
-      },
+      true: {},
       false: {},
     },
   },

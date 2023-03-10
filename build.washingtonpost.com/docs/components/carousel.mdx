@@ -1,0 +1,67 @@
+---
+title: Carousel
+description: A component for cycling through elements.
+component: carousel
+status: "Draft"
+---
+
+## Options
+
+### Basic
+
+```jsx withPreview
+export default function Example() {
+  const items = [
+    "Card 1 content",
+    "Card 2 content",
+    "Card 3 content",
+    "Card 4 content",
+    "Card 5 content",
+    "Card 6 content",
+  ];
+  return (
+    <Box
+      css={{
+        paddingInline: "$100",
+        width: "100vw",
+      }}
+    >
+      <Carousel.Root itemsPerPage={1}>
+        <Carousel.Header>
+          <Carousel.HeaderContent>
+            <Carousel.Title>Carousel Title</Carousel.Title>
+          </Carousel.HeaderContent>
+          <Carousel.HeaderActions>
+            <Carousel.PreviousButton />
+            <Carousel.NextButton />
+          </Carousel.HeaderActions>
+        </Carousel.Header>
+        <Carousel.Content>
+          {items.map((item) => (
+            <Carousel.Item key={item}>
+              <Card
+                css={{
+                  width: "200px",
+                  height: "175px",
+                  marginInlineEnd: "$025",
+                }}
+              >
+                {item}
+              </Card>
+            </Carousel.Item>
+          ))}
+        </Carousel.Content>
+        <Carousel.Footer>
+          <Carousel.Dots />
+        </Carousel.Footer>
+      </Carousel.Root>
+    </Box>
+  );
+}
+```
+
+---
+
+## API Reference
+
+<PropsTable props={propsTable} />

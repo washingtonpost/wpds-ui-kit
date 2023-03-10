@@ -129,7 +129,7 @@ Interactions.play = async ({ canvasElement }) => {
 
   // traverse all dots
   for (let i = 0; i < 9; i++) {
-    var btn = i < 4 ? "light-inc-btn" : "light-dec-btn";
+    const btn = i < 4 ? "light-inc-btn" : "light-dec-btn";
     userEvent.click(canvas.getByTestId(btn));
     await sleep(500);
   }
