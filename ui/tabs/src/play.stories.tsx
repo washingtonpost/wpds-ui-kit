@@ -91,7 +91,7 @@ const TemplateShort: ComponentStory<typeof Tabs.Root> = (args) => {
       <StyledLabel>Outline for viewing alignment purposes only</StyledLabel>
       <StyledTabs>
         <Tabs.Root {...args}>
-          <Tabs.List aria-label="Countries' information">
+          <Tabs.List aria-label="Countries' information" {...args}>
             <Tabs.Trigger>
               <Icon label="trigger icon">
                 <Info />
@@ -109,8 +109,8 @@ const TemplateShort: ComponentStory<typeof Tabs.Root> = (args) => {
 
 export const Center = TemplateShort.bind({});
 Center.args = {
-  density: "compact",
   align: "center",
+  density: "compact",
 };
 Center.storyName = "Center";
 

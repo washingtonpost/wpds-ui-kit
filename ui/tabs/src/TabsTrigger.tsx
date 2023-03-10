@@ -27,7 +27,7 @@ const StyledTabsTrigger = styled(TabsPrimitive.Trigger, {
   background: "transparent",
   appearance: "none",
   fontFamily: "$subhead",
-  fontSize: "$100",
+  fontSize: theme.fontSizes[100],
   padding: "$075 0",
   color: theme.colors.primary,
   position: "relative",
@@ -57,11 +57,10 @@ const StyledTabsTrigger = styled(TabsPrimitive.Trigger, {
         },
       },
     },
-    icon: {
-      true: {
-        alignItems: "center",
-        gap: "$025",
-      },
+    density: {
+      compact: { fontSize: theme.fontSizes["087"] },
+      default: {},
+      loose: { fontSize: theme.fontSizes[112] },
     },
   },
 
@@ -96,7 +95,7 @@ const isTruncated = (el) => {
 export type TabsTriggerProps = {
   children?: React.ReactNode;
   /** The value for the selected tab, if controlled */
-  // value?: string;
+  value?: string;
   /** The value whether the trigger should be disabled */
   disabled?: boolean;
   /** Overrides for the input text styles. Padding overrides affect the input container and  */
@@ -137,6 +136,9 @@ const TabContent = React.forwardRef<any, any>(({ children }, ref) => {
     setTruncated(isTruncated(element));
   }, []);
 
+  // the parent container is flex, but the StyledTabText component cannot be set to
+  // flex since we want to show the ellipsis. For this reason, we need to split the
+  // children components
   const content = hasMoreThanOneChild ? (
     <>
       {childrenArray[0]}
@@ -190,7 +192,6 @@ export const TabsTrigger: React.FC<any> = React.forwardRef<
     }
 
     return (
-      // <>
       <CSSTransition
         nodeRef={internalRef}
         in={active}
@@ -215,7 +216,6 @@ export const TabsTrigger: React.FC<any> = React.forwardRef<
           <TabContent ref={internalRef}>{children}</TabContent>
         </StyledTabsTrigger>
       </CSSTransition>
-      // </>
     );
   }
 );

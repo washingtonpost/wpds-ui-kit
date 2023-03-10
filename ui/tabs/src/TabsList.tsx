@@ -34,7 +34,10 @@ const StyledTabsList = styled(TabsPrimitive.List, {
 
 export type TabsListProps = {
   children?: React.ReactNode;
+  /** the alignment of the list content along the tab bar. Default is left aligned */
   align?: "center" | "left" | undefined;
+  /** the overall size of the component. Default is default (theme.fontSizes[100]) */
+  density?: "default" | "compact" | "loose" | undefined;
 };
 
 export const TabsList = React.forwardRef<HTMLDivElement, TabsListProps>(
