@@ -3,6 +3,7 @@ export * from "@washingtonpost/wpds-switch";
 export * from "@washingtonpost/wpds-card";
 export * from "@washingtonpost/wpds-popover";
 export * from "@washingtonpost/wpds-select";
+export * from "@washingtonpost/wpds-carousel";
 export * from "@washingtonpost/wpds-tooltip";
 export * from "@washingtonpost/wpds-scrim";
 export * from "@washingtonpost/wpds-drawer";
