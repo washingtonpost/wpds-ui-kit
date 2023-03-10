@@ -5,7 +5,6 @@ import { expect } from "@storybook/jest";
 
 import { Tabs } from ".";
 import { styled, theme } from "@washingtonpost/wpds-theme";
-import * as TabsPrimitive from "@radix-ui/react-tabs";
 
 import { Info } from "@washingtonpost/wpds-assets";
 import { Icon } from "@washingtonpost/wpds-icon";
@@ -46,6 +45,12 @@ const StyledLabel = styled("div", {
   color: theme.colors.primary,
 });
 
+const StyledContent = styled(Tabs.Content, {
+  minHeight: "50px",
+  paddingTop: "20px",
+  color: theme.colors.primary,
+});
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const Template: ComponentStory<any> = (args) => {
   const { density, align, ...rest } = args;
@@ -75,17 +80,25 @@ const Template: ComponentStory<any> = (args) => {
               The Democratic Republic of the Congo
             </Tabs.Trigger>
             <Tabs.Trigger value="tab4">Vietnam</Tabs.Trigger>
-            <Tabs.Trigger value="tab5">Papau New Guinea</Tabs.Trigger>
+            <Tabs.Trigger value="tab5">Papua New Guinea</Tabs.Trigger>
             <Tabs.Trigger value="tab6">Venezuela</Tabs.Trigger>
             <Tabs.Trigger value="tab7">Kenya</Tabs.Trigger>
             <Tabs.Trigger value="tab8">Austria</Tabs.Trigger>
           </Tabs.List>
-          <TabsPrimitive.Content value="tab1">
-            Something is here
-          </TabsPrimitive.Content>
-          <TabsPrimitive.Content value="tab2">
-            Tab 2 is here
-          </TabsPrimitive.Content>
+          <StyledContent value="tab1">France is here 🇫🇷</StyledContent>
+          <StyledContent value="tab2">
+            Brazil is here 🇧🇷 This is disabled and should not show
+          </StyledContent>
+          <StyledContent value="tab3">
+            The Democratic Republic of the Congo is here 🇨🇩
+          </StyledContent>
+          <StyledContent value="tab4">Vietnam is here 🇻🇳</StyledContent>
+          <StyledContent value="tab5">
+            Papua New Guinea is here 🇵🇬
+          </StyledContent>
+          <StyledContent value="tab6">Venezuela is here 🇻🇪</StyledContent>
+          <StyledContent value="tab7">Kenya is here 🇰🇪</StyledContent>
+          <StyledContent value="tab8">Austira is here 🇦🇹</StyledContent>
         </Tabs.Root>
       </StyledTabs>
     </>
@@ -121,6 +134,9 @@ const TemplateShort: ComponentStory<any> = (args) => {
             </Tabs.Trigger>
             <Tabs.Trigger value="tab2">Kenya</Tabs.Trigger>
             <Tabs.Trigger value="tab3">Austria</Tabs.Trigger>
+            <StyledContent value="tab1">France is here 🇫🇷</StyledContent>
+            <StyledContent value="tab2">Kenya is here 🇰🇪</StyledContent>
+            <StyledContent value="tab3">Austira is here 🇦🇹</StyledContent>
           </Tabs.List>
         </Tabs.Root>
       </StyledTabs>
@@ -133,8 +149,8 @@ Center.args = {
   align: "center",
   density: "compact",
 };
-Center.storyName = "Center";
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const InteractionsTemplate: ComponentStory<any> = () => (
   <Tabs.Root>
     <Tabs.List aria-label="Countries' information">
@@ -151,10 +167,22 @@ const InteractionsTemplate: ComponentStory<any> = () => (
         The Democratic Republic of the Congo
       </Tabs.Trigger>
       <Tabs.Trigger value="tab4">Vietnam</Tabs.Trigger>
-      <Tabs.Trigger value="tab5">Papau New Guinea</Tabs.Trigger>
+      <Tabs.Trigger value="tab5">Papua New Guinea</Tabs.Trigger>
       <Tabs.Trigger value="tab6">Venezuela</Tabs.Trigger>
       <Tabs.Trigger value="tab7">Kenya</Tabs.Trigger>
       <Tabs.Trigger value="tab8">Austria</Tabs.Trigger>
+      <StyledContent value="tab1">France is here 🇫🇷</StyledContent>
+      <StyledContent value="tab2">
+        Brazil is here 🇧🇷 This is disabled and should not show
+      </StyledContent>
+      <StyledContent value="tab3">
+        The Democratic Republic of the Congo is here 🇨🇩
+      </StyledContent>
+      <StyledContent value="tab4">Vietnam is here 🇻🇳</StyledContent>
+      <StyledContent value="tab5">Papua New Guinea is here 🇵🇬</StyledContent>
+      <StyledContent value="tab6">Venezuela is here 🇻🇪</StyledContent>
+      <StyledContent value="tab7">Kenya is here 🇰🇪</StyledContent>
+      <StyledContent value="tab8">Austira is here 🇦🇹</StyledContent>
     </Tabs.List>
   </Tabs.Root>
 );

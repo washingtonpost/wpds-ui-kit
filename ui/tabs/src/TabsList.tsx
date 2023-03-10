@@ -12,6 +12,7 @@ const StyledTabsList = styled(TabsPrimitive.List, {
   overflow: "auto",
   width: "fit-content",
   maxWidth: "100%",
+  flex: 1,
 
   // hide scroll bar while allowing scroll
   scrollbarWidth: "none",
@@ -23,10 +24,11 @@ const StyledTabsList = styled(TabsPrimitive.List, {
   variants: {
     align: {
       center: {
-        justifyContent: "center",
+        margin: "0 auto",
       },
       left: {
         justifyContent: "left",
+        margin: "0",
       },
     },
   },

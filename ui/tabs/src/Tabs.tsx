@@ -33,25 +33,23 @@ export type TabsProps = {
 export const TabsRoot = React.forwardRef<HTMLDivElement, TabsProps>(
   ({ activationMode = "automatic", children, ...props }, ref) => {
     return (
-      <TabsPrimitive.Root activationMode={activationMode} {...props}>
+      <TabsPrimitive.Root activationMode={activationMode} {...props} ref={ref}>
         {children}
       </TabsPrimitive.Root>
     );
   }
 );
 
-// export const TabsRoot = (props) => (
-//   <TabsPrimitive.Root {...props}></TabsPrimitive.Root>
-// );
-
 TabsRoot.displayName = "TabsRoot";
 
 const Root = TabsRoot;
 const List = TabsList;
 const Trigger = TabsTrigger;
+const Content = TabsPrimitive.Content;
 
 export const Tabs = {
   Root,
   List,
   Trigger,
+  Content,
 };
