@@ -93,7 +93,8 @@
   },
   "workspaces": [
     "./ui/*",
-    "./build.washingtonpost.com"
+    "./build.washingtonpost.com",
+    "./apps/*"
   ],
   "dependencies": {
     "@babel/standalone": "^7.17.11",
