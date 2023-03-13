@@ -14,11 +14,7 @@
 - Make sure your commit (any of them) follow the commit message format
 - Ask your team for a review
 - Use rebase or squash merge whichever will retain the commit message
-- Visit [https://github.com/WPMedia/wpds-ui-kit/actions](https://github.com/WPMedia/wpds-ui-kit/actions)
-- Pick the Latest release workflow
-- Select from dropdown the main branch and click submit
-- The workflow will run the release actions for you
-- When completed, manually sync/update the release notes in code > releases and publish the release
+- Our automated release workflow will run and publish the code to the latest channel on NPM
 
 ## Upload Bundled Code to Experimental channel
 
