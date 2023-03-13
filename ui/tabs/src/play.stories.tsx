@@ -17,6 +17,7 @@ export default {
   subcomponents: {
     List: Tabs.List,
     Trigger: Tabs.Trigger,
+    Content: Tabs.Content,
   },
   argTypes: {
     align: {
@@ -134,10 +135,10 @@ const TemplateShort: ComponentStory<any> = (args) => {
             </Tabs.Trigger>
             <Tabs.Trigger value="tab2">Kenya</Tabs.Trigger>
             <Tabs.Trigger value="tab3">Austria</Tabs.Trigger>
-            <StyledContent value="tab1">France is here 🇫🇷</StyledContent>
-            <StyledContent value="tab2">Kenya is here 🇰🇪</StyledContent>
-            <StyledContent value="tab3">Austira is here 🇦🇹</StyledContent>
           </Tabs.List>
+          <StyledContent value="tab1">France is here 🇫🇷</StyledContent>
+          <StyledContent value="tab2">Kenya is here 🇰🇪</StyledContent>
+          <StyledContent value="tab3">Austira is here 🇦🇹</StyledContent>
         </Tabs.Root>
       </StyledTabs>
     </>
@@ -151,26 +152,28 @@ Center.args = {
 };
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const InteractionsTemplate: ComponentStory<any> = () => (
-  <Tabs.Root>
-    <Tabs.List aria-label="Countries' information">
-      <Tabs.Trigger value="tab1">
-        <Icon label="trigger icon">
-          <Info />
-        </Icon>
-        France
-      </Tabs.Trigger>
-      <Tabs.Trigger value="tab2" disabled>
-        Brazil
-      </Tabs.Trigger>
-      <Tabs.Trigger value="tab3">
-        The Democratic Republic of the Congo
-      </Tabs.Trigger>
-      <Tabs.Trigger value="tab4">Vietnam</Tabs.Trigger>
-      <Tabs.Trigger value="tab5">Papua New Guinea</Tabs.Trigger>
-      <Tabs.Trigger value="tab6">Venezuela</Tabs.Trigger>
-      <Tabs.Trigger value="tab7">Kenya</Tabs.Trigger>
-      <Tabs.Trigger value="tab8">Austria</Tabs.Trigger>
+const InteractionsTemplate: ComponentStory<any> = (args) => (
+  <StyledTabs>
+    <Tabs.Root defaultValue="tab1" {...args}>
+      <Tabs.List aria-label="Countries' information">
+        <Tabs.Trigger value="tab1">
+          <Icon label="trigger icon">
+            <Info />
+          </Icon>
+          France
+        </Tabs.Trigger>
+        <Tabs.Trigger value="tab2" disabled>
+          Brazil
+        </Tabs.Trigger>
+        <Tabs.Trigger value="tab3">
+          The Democratic Republic of the Congo
+        </Tabs.Trigger>
+        <Tabs.Trigger value="tab4">Vietnam</Tabs.Trigger>
+        <Tabs.Trigger value="tab5">Papua New Guinea</Tabs.Trigger>
+        <Tabs.Trigger value="tab6">Venezuela</Tabs.Trigger>
+        <Tabs.Trigger value="tab7">Kenya</Tabs.Trigger>
+        <Tabs.Trigger value="tab8">Austria</Tabs.Trigger>
+      </Tabs.List>
       <StyledContent value="tab1">France is here 🇫🇷</StyledContent>
       <StyledContent value="tab2">
         Brazil is here 🇧🇷 This is disabled and should not show
@@ -182,12 +185,17 @@ const InteractionsTemplate: ComponentStory<any> = () => (
       <StyledContent value="tab5">Papua New Guinea is here 🇵🇬</StyledContent>
       <StyledContent value="tab6">Venezuela is here 🇻🇪</StyledContent>
       <StyledContent value="tab7">Kenya is here 🇰🇪</StyledContent>
-      <StyledContent value="tab8">Austira is here 🇦🇹</StyledContent>
-    </Tabs.List>
-  </Tabs.Root>
+      <StyledContent value="tab8">Austria is here 🇦🇹</StyledContent>
+    </Tabs.Root>
+  </StyledTabs>
 );
 
 export const Interactions = InteractionsTemplate.bind({});
+
+Interactions.args = {
+  align: "center",
+  density: "compact",
+};
 
 // Function to emulate pausing between interactions
 function sleep(ms) {

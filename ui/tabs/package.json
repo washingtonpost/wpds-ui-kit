@@ -39,7 +39,8 @@
     "@radix-ui/react-tabs": "latest",
     "@washingtonpost/wpds-theme": "*",
     "@washingtonpost/wpds-tooltip": "*",
-    "react": "^16.8.6 || ^17.0.2"
+    "react": "^16.8.6 || ^17.0.2",
+    "react-transition-group": "^4.4.5"
   },
   "dependencies": {
     "@radix-ui/react-tabs": "latest",

@@ -9,11 +9,7 @@ component: tabs
 ## Anatomy
 
 <Container caption="Note: Image is not to scale" css={{ padding: "$150" }}>
-  <InlineSVG
-    path="/img/components/popover/anatomy.svg"
-    width={213}
-    height={119}
-  />
+  <InlineSVG path="/img/components/tabs/anatomy.svg" />
 </Container>
 
 1. Tab
@@ -32,15 +28,26 @@ This option indicates whether a tab is selected (and thereby showing content) or
 ```jsx withPreview
 export default function Example() {
   return (
-    <Box
-      css={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        width: "100%",
-        gap: "$100",
-      }}
-    ></Box>
+    <>
+      <Box
+        css={{
+          display: "flex",
+          width: 500,
+          rowGap: "$100",
+          flexDirection: "column",
+        }}
+      >
+        <Tabs.Root>
+          <Tabs.List aria-label="Countries' information">
+            <Tabs.Trigger value="tab4">Vietnam</Tabs.Trigger>
+            <Tabs.Trigger value="tab5">Papua New Guinea</Tabs.Trigger>
+            <Tabs.Trigger value="tab6">Venezuela</Tabs.Trigger>
+            <Tabs.Trigger value="tab7">Kenya</Tabs.Trigger>
+            <Tabs.Trigger value="tab8">Austria</Tabs.Trigger>
+          </Tabs.List>
+        </Tabs.Root>
+      </Box>
+    </>
   );
 }
 ```
@@ -49,61 +56,13 @@ export default function Example() {
 
 This option determines whether an icon is included or not.
 
-```jsx withPreview
-export default function Example() {
-  return (
-    <Box
-      css={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        width: "100%",
-        gap: "$100",
-      }}
-    ></Box>
-  );
-}
-```
-
 ### Alignment
 
 This option determines whether the tabs are left or center aligned along the tab bar.
 
-```jsx withPreview
-export default function Example() {
-  return (
-    <Box
-      css={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        width: "100%",
-        gap: "$100",
-      }}
-    ></Box>
-  );
-}
-```
-
 ### Density
 
 This option determines the overall size of the component: compact, default, or loose.
-
-```jsx withPreview
-export default function Example() {
-  return (
-    <Box
-      css={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        width: "100%",
-        gap: "$100",
-      }}
-    ></Box>
-  );
-}
-```
 
 ---
 
@@ -113,58 +72,13 @@ export default function Example() {
 
 Hovering over an unselected tab causes a lighter selection bar to appear below.
 
-````jsx withPreview
-export default function Example() {
-  return (
-    <Box
-      css={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        width: "100%",
-        gap: "$100",
-      }}
-    ></Box>
-  );
-}
-
 ### Active
 
 An active tab (thereby showing the tab's content) has bolded copy and the black selection bar underneath.
 
-```jsx withPreview
-export default function Example() {
-  return (
-    <Box
-      css={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        width: "100%",
-        gap: "$100",
-      }}
-    ></Box>
-  );
-}
-
 ### Disabled
 
 A disabled tab changes to color 'subtle'.
-
-```jsx withPreview
-export default function Example() {
-  return (
-    <Box
-      css={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        width: "100%",
-        gap: "$100",
-      }}
-    ></Box>
-  );
-}
 
 ### Animation
 
@@ -172,39 +86,9 @@ When a new tab is activated, the bolded text instantly transitions while the bla
 
 There is an option to reduce animation motion. In this case, both the selection bar and title instantly change when a new tab is activated.
 
-```jsx withPreview
-export default function Example() {
-  return (
-    <Box
-      css={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        width: "100%",
-        gap: "$100",
-      }}
-    ></Box>
-  );
-}
-
 ### Tab overflow
 
 When there are more tabs than can be displayed, the behavior will match our secondary navigation. The tabs will be cut off and hidden on the far right and accessible via scrolling.
-
-```jsx withPreview
-export default function Example() {
-  return (
-    <Box
-      css={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        width: "100%",
-        gap: "$100",
-      }}
-    ></Box>
-  );
-}
 
 ---
 
@@ -214,78 +98,17 @@ export default function Example() {
 
 Use at least 2 tabs or more.
 
-```jsx withPreview
-export default function Example() {
-  return (
-    <Box
-      css={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        width: "100%",
-        gap: "$100",
-      }}
-    ></Box>
-  );
-}
-
 ### Text overflow
 
 Avoid using long titles for tab copy. Thirty characters or less is our recommendation. If text does overflow, it is truncated with an ellipsis and the full text is shown in a tooltip on hover.
-
-```jsx withPreview
-export default function Example() {
-  return (
-    <Box
-      css={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        width: "100%",
-        gap: "$100",
-      }}
-    ></Box>
-  );
-}
-````
 
 ### Icon placement
 
 Don't put icons on the right.
 
-````jsx withPreview
-export default function Example() {
-  return (
-    <Box
-      css={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        width: "100%",
-        gap: "$100",
-      }}
-    ></Box>
-  );
-}
-
 ### Linking
 
 Tabs should not link to another page.
-
-```jsx withPreview
-export default function Example() {
-  return (
-    <Box
-      css={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        width: "100%",
-        gap: "$100",
-      }}
-    ></Box>
-  );
-}
 
 ---
 
@@ -300,4 +123,3 @@ Using the left and right arrow keys will move focus between tabs. You can press 
 ## API Reference
 
 <PropsTable props={propsTable} />
-````
