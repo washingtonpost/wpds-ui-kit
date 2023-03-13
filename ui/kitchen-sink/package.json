@@ -36,12 +36,13 @@
     "typescript": "4.5.5"
   },
   "peerDependencies": {
-    "@washingtonpost/wpds-ui-kit": "*",
+    "@washingtonpost/wpds-ui-kit": "1.2.0",
     "@washingtonpost/wpds-assets": "latest",
     "react": "^16.8.6 || ^17.0.2"
   },
   "dependencies": {
-    "@washingtonpost/wpds-ui-kit": "1.1.0",
-    "@washingtonpost/wpds-assets": "latest"
+    "@washingtonpost/wpds-ui-kit": "1.2.0",
+    "@washingtonpost/wpds-assets": "latest",
+    "nanoid": "^3.3.4"
   }
 }
