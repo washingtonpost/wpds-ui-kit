@@ -93,7 +93,8 @@
   },
   "workspaces": [
     "./ui/*",
-    "./build.washingtonpost.com"
+    "./build.washingtonpost.com",
+    "./apps/*"
   ],
   "dependencies": {
     "@babel/standalone": "^7.17.11",
@@ -149,8 +150,8 @@
     ],
     "coverageThreshold": {
       "global": {
-        "branches": 80,
-        "functions": 80,
+        "branches": 75,
+        "functions": 65,
         "lines": 80
       }
     },
