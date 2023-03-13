@@ -1,11 +1,9 @@
 name: Release to Latest NPM Channel
+
 on:
-  workflow_dispatch:
-    inputs:
-      comments:
-        required: false
-        description: "Comments?"
-        default: "No comment"
+  push:
+    branches:
+      - main
 
 jobs:
   release:
