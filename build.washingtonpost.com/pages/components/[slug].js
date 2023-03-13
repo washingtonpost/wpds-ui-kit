@@ -123,6 +123,16 @@ export const getStaticProps = async ({ params }) => {
     console.warn({ e });
   }
 
+  // check if package exists on npm
+  // if not, set status to coming soon
+  const packageExists = await fetch(
+    `https://registry.npmjs.org/@washingtonpost/wpds-${params.slug}`
+  ).then((res) => res.status === 200 || res.status === 304);
+
+  if (!packageExists) {
+    source.scope.status = "Coming soon";
+  }
+
   return {
     props: {
       current: params.slug,
