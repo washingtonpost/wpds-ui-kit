@@ -341,15 +341,12 @@ export async function getServerSideProps({ query, res }) {
     "public, s-maxage=10, stale-while-revalidate=59"
   );
 
-  console.log(query);
-
   const { code, edit, isGuide = "none" } = query;
 
   let source;
   let parsedCode = "";
 
   if (!code) {
-    console.log(query);
     return {
       props: {
         source: {},
