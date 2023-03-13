@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/washingtonpost/wpds-docs/compare/v1.1.0...v1.2.0) (2023-03-13)
+
+### Bug Fixes
+
+- address a couple typos in the a11y build site docs ([#348](https://github.com/washingtonpost/wpds-docs/issues/348)) ([d53740d](https://github.com/washingtonpost/wpds-docs/commit/d53740d2c2ccd87bfbcfea23ee0f9423b279a14a))
+- replace accordion anatomy svg with correct version per designs ([#343](https://github.com/washingtonpost/wpds-docs/issues/343)) ([892920f](https://github.com/washingtonpost/wpds-docs/commit/892920fc4854d6033b02c22f604d44c7e4f1ddd6))
+
+### Features
+
+- add Carousel component ([#347](https://github.com/washingtonpost/wpds-docs/issues/347)) ([df0c3fc](https://github.com/washingtonpost/wpds-docs/commit/df0c3fcc8feb42457f2992d921277f3e885c6f97))
+
 # [1.1.0](https://github.com/washingtonpost/wpds-docs/compare/v1.0.0...v1.1.0) (2023-03-06)
 
 ### Bug Fixes

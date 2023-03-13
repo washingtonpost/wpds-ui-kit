@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.1.0...v1.2.0) (2023-03-13)
+
+### Bug Fixes
+
+- set accordion content font size to token size 100 to match designs ([#342](https://github.com/washingtonpost/wpds-ui-kit/issues/342)) ([cf673ba](https://github.com/washingtonpost/wpds-ui-kit/commit/cf673baac3253b2de5bd90a208e77aea05be8bdd))
+
 # [1.1.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.0.0...v1.1.0) (2023-03-06)
 
 ### Features
