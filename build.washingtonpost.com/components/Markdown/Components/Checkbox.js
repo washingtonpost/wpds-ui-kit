@@ -1,9 +1,9 @@
 import React from "react";
 import { Checkbox } from "@washingtonpost/wpds-ui-kit";
-import { useId } from "@react-aria/utils";
+import { nanoid } from "nanoid";
 
 export const InputCheckbox = (props) => {
-  const elementId = useId();
+  const elementId = nanoid();
 
   return <Checkbox {...props} id={elementId} />;
 };
