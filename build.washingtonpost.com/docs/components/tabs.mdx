@@ -28,6 +28,12 @@ This option indicates whether a tab is selected (and thereby showing content) or
 
 ```jsx withPreview
 export default function Example() {
+  const StyledContent = styled(Tabs.Content, {
+    minHeight: "50px",
+    paddingTop: "20px",
+    color: theme.colors.primary,
+  });
+
   return (
     <>
       <Box
@@ -44,6 +50,9 @@ export default function Example() {
             <Tabs.Trigger value="tab2">Brazil</Tabs.Trigger>
             <Tabs.Trigger value="tab3">Vietnam</Tabs.Trigger>
           </Tabs.List>
+          <StyledContent value="tab1">France is here 🇫🇷</StyledContent>
+          <StyledContent value="tab2">Kenya is here 🇰🇪</StyledContent>
+          <StyledContent value="tab3">Austira is here 🇦🇹</StyledContent>
         </Tabs.Root>
       </Box>
     </>
@@ -193,23 +202,95 @@ export default function Example() {
 
 Hovering over an unselected tab causes a lighter selection bar to appear below.
 
-### Active
-
-An active tab (thereby showing the tab's content) has bolded copy and the black selection bar underneath.
-
-### Disabled
-
-A disabled tab changes to color 'subtle'.
-
-### Animation
-
-When a new tab is activated, the bolded text instantly transitions while the black selection line leaves the previous selected tab and 'slides' to the clicked tab.
-
-There is an option to reduce animation motion. In this case, both the selection bar and title instantly change when a new tab is activated.
+```jsx withPreview
+export default function Example() {
+  return (
+    <>
+      <Box
+        css={{
+          display: "flex",
+          width: 500,
+          rowGap: "$100",
+          flexDirection: "column",
+        }}
+      >
+        <Tabs.Root defaultValue="tab1" align="center">
+          <Tabs.List aria-label="Countries' information">
+            <Tabs.Trigger value="tab1">France</Tabs.Trigger>
+            <Tabs.Trigger value="tab2">Brazil</Tabs.Trigger>
+            <Tabs.Trigger value="tab3">Vietnam</Tabs.Trigger>
+          </Tabs.List>
+        </Tabs.Root>
+      </Box>
+    </>
+  );
+}
+```
 
 ### Tab overflow
 
 When there are more tabs than can be displayed, the behavior will match our secondary navigation. The tabs will be cut off and hidden on the far right and accessible via scrolling.
+
+```jsx withPreview
+export default function Example() {
+  const StyledContent = styled(Tabs.Content, {
+    minHeight: "50px",
+    paddingTop: "20px",
+    color: theme.colors.primary,
+  });
+  return (
+    <>
+      <Box
+        css={{
+          display: "flex",
+          width: 500,
+          rowGap: "$100",
+          flexDirection: "column",
+        }}
+      >
+        <Tabs.Root defaultValue="tab1">
+          <Tabs.List aria-label="Countries' information">
+            <Tabs.Trigger value="tab1">
+              <Icon label="trigger icon" size="100">
+                <Info />
+              </Icon>
+              France
+            </Tabs.Trigger>
+            <Tabs.Trigger disabled value="tab2">
+              Brazil
+            </Tabs.Trigger>
+            <Tabs.Trigger value="tab3">
+              <Icon label="trigger icon" size="100">
+                <Info />
+              </Icon>
+              The Democratic Republic of the Congo
+            </Tabs.Trigger>
+            <Tabs.Trigger value="tab4">Vietnam</Tabs.Trigger>
+            <Tabs.Trigger value="tab5">Papua New Guinea</Tabs.Trigger>
+            <Tabs.Trigger value="tab6">Venezuela</Tabs.Trigger>
+            <Tabs.Trigger value="tab7">Kenya</Tabs.Trigger>
+            <Tabs.Trigger value="tab8">Austria</Tabs.Trigger>
+          </Tabs.List>
+          <StyledContent value="tab1">France is here 🇫🇷</StyledContent>
+          <StyledContent value="tab2">
+            Brazil is here 🇧🇷 This is disabled and should not show
+          </StyledContent>
+          <StyledContent value="tab3">
+            The Democratic Republic of the Congo is here 🇨🇩
+          </StyledContent>
+          <StyledContent value="tab4">Vietnam is here 🇻🇳</StyledContent>
+          <StyledContent value="tab5">
+            Papua New Guinea is here 🇵🇬
+          </StyledContent>
+          <StyledContent value="tab6">Venezuela is here 🇻🇪</StyledContent>
+          <StyledContent value="tab7">Kenya is here 🇰🇪</StyledContent>
+          <StyledContent value="tab8">Austira is here 🇦🇹</StyledContent>
+        </Tabs.Root>
+      </Box>
+    </>
+  );
+}
+```
 
 ---
 
@@ -219,17 +300,269 @@ When there are more tabs than can be displayed, the behavior will match our seco
 
 Use at least 2 tabs or more.
 
+```jsx withPreview isGuide="warning"
+export default function Example() {
+  const StyledContent = styled(Tabs.Content, {
+    minHeight: "50px",
+    paddingTop: "20px",
+    color: theme.colors.primary,
+  });
+
+  return (
+    <>
+      <Box
+        css={{
+          display: "flex",
+          width: 500,
+          rowGap: "$100",
+          flexDirection: "column",
+        }}
+      >
+        <Box
+          css={{
+            display: "flex",
+            width: 500,
+            rowGap: "$100",
+            flexDirection: "column",
+            padding: "10px",
+            border: "1px dashed black",
+          }}
+        >
+          <Tabs.Root defaultValue="tab1">
+            <Tabs.List aria-label="Countries' information">
+              <Tabs.Trigger value="tab1"> France </Tabs.Trigger>
+              <Tabs.Trigger value="tab2">Brazil</Tabs.Trigger>
+            </Tabs.List>
+            <StyledContent value="tab1">France is here 🇫🇷</StyledContent>
+            <StyledContent value="tab2">Kenya is here 🇰🇪</StyledContent>
+          </Tabs.Root>
+        </Box>
+      </Box>
+    </>
+  );
+}
+```
+
 ### Text overflow
 
 Avoid using long titles for tab copy. Thirty characters or less is our recommendation. If text does overflow, it is truncated with an ellipsis and the full text is shown in a tooltip on hover.
+
+```jsx withPreview isGuide="warning"
+export default function Example() {
+  const StyledContent = styled(Tabs.Content, {
+    minHeight: "50px",
+    paddingTop: "20px",
+    color: theme.colors.primary,
+  });
+
+  return (
+    <>
+      <Box
+        css={{
+          display: "flex",
+          width: 500,
+          rowGap: "$100",
+          flexDirection: "column",
+        }}
+      >
+        <Box
+          css={{
+            display: "flex",
+            width: 500,
+            rowGap: "$100",
+            flexDirection: "column",
+            padding: "10px",
+            border: "1px dashed black",
+          }}
+        >
+          <Tabs.Root defaultValue="tab1">
+            <Tabs.List aria-label="Countries' information">
+              <Tabs.Trigger value="tab1">
+                <Icon label="trigger icon" size="100">
+                  <Info />
+                </Icon>
+                France
+              </Tabs.Trigger>
+              <Tabs.Trigger disabled value="tab2">
+                Brazil
+              </Tabs.Trigger>
+              <Tabs.Trigger value="tab3">
+                <Icon label="trigger icon" size="100">
+                  <Info />
+                </Icon>
+                The Democratic Republic of the Congo
+              </Tabs.Trigger>
+              <Tabs.Trigger value="tab4">Vietnam</Tabs.Trigger>
+            </Tabs.List>
+            <StyledContent value="tab1">France is here 🇫🇷</StyledContent>
+            <StyledContent value="tab2">
+              Brazil is here 🇧🇷 This is disabled and should not show
+            </StyledContent>
+            <StyledContent value="tab3">
+              The Democratic Republic of the Congo is here 🇨🇩
+            </StyledContent>
+            <StyledContent value="tab4">Vietnam is here 🇻🇳</StyledContent>
+          </Tabs.Root>
+        </Box>
+      </Box>
+    </>
+  );
+}
+```
 
 ### Icon placement
 
 Don't put icons on the right.
 
+```jsx withPreview isGuide="error"
+export default function Example() {
+  const StyledContent = styled(Tabs.Content, {
+    minHeight: "50px",
+    paddingTop: "20px",
+    color: theme.colors.primary,
+  });
+
+  return (
+    <>
+      <Box
+        css={{
+          display: "flex",
+          width: 500,
+          rowGap: "$100",
+          flexDirection: "column",
+        }}
+      >
+        <Box
+          css={{
+            display: "flex",
+            width: 500,
+            rowGap: "$100",
+            flexDirection: "column",
+            padding: "10px",
+            border: "1px dashed black",
+          }}
+        >
+          <Tabs.Root defaultValue="tab1">
+            <Tabs.List aria-label="Countries' information">
+              <Tabs.Trigger value="tab1">
+                France
+                <Icon label="trigger icon" size="100">
+                  <Info />
+                </Icon>
+              </Tabs.Trigger>
+              <Tabs.Trigger value="tab2">Brazil</Tabs.Trigger>
+            </Tabs.List>
+            <StyledContent value="tab1">France is here 🇫🇷</StyledContent>
+            <StyledContent value="tab2">Brazil is here 🇧🇷</StyledContent>
+          </Tabs.Root>
+        </Box>
+      </Box>
+    </>
+  );
+}
+```
+
 ### Linking
 
 Tabs should not link to another page.
+
+```jsx withPreview isGuide="error"
+export default function Example() {
+  const StyledContent = styled(Tabs.Content, {
+    minHeight: "50px",
+    paddingTop: "20px",
+    color: theme.colors.primary,
+  });
+
+  return (
+    <>
+      <Box
+        css={{
+          display: "flex",
+          width: 500,
+          rowGap: "$100",
+          flexDirection: "column",
+        }}
+      >
+        <Box
+          css={{
+            display: "flex",
+            width: 500,
+            rowGap: "$100",
+            flexDirection: "column",
+            padding: "10px",
+            border: "1px dashed black",
+          }}
+        >
+          <Tabs.Root defaultValue="tab1">
+            <Tabs.List aria-label="Countries' information">
+              <Tabs.Trigger value="tab1">
+                <Icon label="trigger icon" size="100">
+                  <External />
+                </Icon>
+                France
+              </Tabs.Trigger>
+              <Tabs.Trigger value="tab2">Brazil</Tabs.Trigger>
+            </Tabs.List>
+          </Tabs.Root>
+        </Box>
+      </Box>
+    </>
+  );
+}
+```
+
+### Icons
+
+When using icons, it is best to use them as a prefix to the label, rather than following the label. This ensures that the icon is properly associated with the label and is more easily recognizable by users. For example, use a 'search' icon before the label 'Search" rathern than after it.
+
+```jsx withPreview isGuide="success"
+export default function Example() {
+  const StyledContent = styled(Tabs.Content, {
+    minHeight: "50px",
+    paddingTop: "20px",
+    color: theme.colors.primary,
+  });
+
+  return (
+    <>
+      <Box
+        css={{
+          display: "flex",
+          width: 500,
+          rowGap: "$100",
+          flexDirection: "column",
+        }}
+      >
+        <Box
+          css={{
+            display: "flex",
+            width: 500,
+            rowGap: "$100",
+            flexDirection: "column",
+            padding: "10px",
+            border: "1px dashed black",
+          }}
+        >
+          <Tabs.Root defaultValue="tab1">
+            <Tabs.List aria-label="Countries' information">
+              <Tabs.Trigger value="tab1">
+                <Icon label="trigger icon" size="100">
+                  <Info />
+                </Icon>
+                France
+              </Tabs.Trigger>
+              <Tabs.Trigger value="tab2">Brazil</Tabs.Trigger>
+            </Tabs.List>
+            <StyledContent value="tab1">France is here 🇫🇷</StyledContent>
+            <StyledContent value="tab2">Brazil is here 🇧🇷</StyledContent>
+          </Tabs.Root>
+        </Box>
+      </Box>
+    </>
+  );
+}
+```
 
 ---
 

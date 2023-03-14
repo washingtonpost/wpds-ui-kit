@@ -57,8 +57,6 @@ export const TabsList = React.forwardRef<HTMLDivElement, TabsListProps>(
       null
     );
 
-    console.log(props.density);
-
     React.useEffect(() => {
       // only instantiate the DOMRect if you're on the dom
       hasWindow() && setPreviousRect(new DOMRect(0, 0));
