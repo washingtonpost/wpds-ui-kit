@@ -43,11 +43,12 @@
     "react-transition-group": "^4.4.5"
   },
   "dependencies": {
+    "@radix-ui/react-primitive": "^1.0.2",
     "@radix-ui/react-tabs": "latest",
     "@washingtonpost/wpds-assets": "^1.16.0",
     "@washingtonpost/wpds-icon": "1.1.0",
     "@washingtonpost/wpds-theme": "*",
-    "@washingtonpost/wpds-tooltip": "^1.1.0",
+    "@washingtonpost/wpds-tooltip": "*",
     "react-transition-group": "^4.4.5"
   }
 }

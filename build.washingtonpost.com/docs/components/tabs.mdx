@@ -2,6 +2,7 @@
 title: Tabs
 description: Tabs are used to navigate between sections of content in the same area without reloading the page.
 component: tabs
+status: "Draft"
 ---
 
 ---
@@ -37,13 +38,11 @@ export default function Example() {
           flexDirection: "column",
         }}
       >
-        <Tabs.Root>
+        <Tabs.Root defaultValue="tab1" align="center">
           <Tabs.List aria-label="Countries' information">
-            <Tabs.Trigger value="tab4">Vietnam</Tabs.Trigger>
-            <Tabs.Trigger value="tab5">Papua New Guinea</Tabs.Trigger>
-            <Tabs.Trigger value="tab6">Venezuela</Tabs.Trigger>
-            <Tabs.Trigger value="tab7">Kenya</Tabs.Trigger>
-            <Tabs.Trigger value="tab8">Austria</Tabs.Trigger>
+            <Tabs.Trigger value="tab1"> France </Tabs.Trigger>
+            <Tabs.Trigger value="tab2">Brazil</Tabs.Trigger>
+            <Tabs.Trigger value="tab3">Vietnam</Tabs.Trigger>
           </Tabs.List>
         </Tabs.Root>
       </Box>
@@ -52,17 +51,139 @@ export default function Example() {
 }
 ```
 
-### Icon
-
-This option determines whether an icon is included or not.
-
 ### Alignment
 
 This option determines whether the tabs are left or center aligned along the tab bar.
 
+```jsx withPreview
+export default function Example() {
+  return (
+    <>
+      <Box
+        css={{
+          display: "flex",
+          width: 500,
+          rowGap: "$100",
+          flexDirection: "column",
+        }}
+      >
+        <Box
+          css={{
+            display: "flex",
+            width: 500,
+            rowGap: "$100",
+            flexDirection: "column",
+            padding: "10px",
+            border: "1px dashed black",
+          }}
+        >
+          <Tabs.Root defaultValue="tab1" align="center">
+            <Tabs.List aria-label="Countries' information">
+              <Tabs.Trigger value="tab1"> France </Tabs.Trigger>
+              <Tabs.Trigger value="tab2">Brazil</Tabs.Trigger>
+              <Tabs.Trigger value="tab3">Vietnam</Tabs.Trigger>
+            </Tabs.List>
+          </Tabs.Root>
+        </Box>
+        <Box
+          css={{
+            display: "flex",
+            width: 500,
+            rowGap: "$100",
+            flexDirection: "column",
+            padding: "10px",
+            border: "1px dashed black",
+          }}
+        >
+          <Tabs.Root defaultValue="tab1" align="left">
+            <Tabs.List aria-label="Countries' information">
+              <Tabs.Trigger value="tab1"> France </Tabs.Trigger>
+              <Tabs.Trigger value="tab2">Brazil</Tabs.Trigger>
+              <Tabs.Trigger value="tab3">Vietnam</Tabs.Trigger>
+            </Tabs.List>
+          </Tabs.Root>
+        </Box>
+      </Box>
+    </>
+  );
+}
+```
+
 ### Density
 
 This option determines the overall size of the component: compact, default, or loose.
+
+```jsx withPreview
+export default function Example() {
+  return (
+    <>
+      <Box
+        css={{
+          display: "flex",
+          width: 500,
+          rowGap: "$100",
+          flexDirection: "column",
+        }}
+      >
+        <Box
+          css={{
+            display: "flex",
+            width: 500,
+            rowGap: "$100",
+            flexDirection: "column",
+            padding: "10px",
+            border: "1px dashed black",
+          }}
+        >
+          <Tabs.Root defaultValue="tab1">
+            <Tabs.List aria-label="Countries' information" density="compact">
+              <Tabs.Trigger value="tab1"> France </Tabs.Trigger>
+              <Tabs.Trigger value="tab2">Brazil</Tabs.Trigger>
+              <Tabs.Trigger value="tab3">Vietnam</Tabs.Trigger>
+            </Tabs.List>
+          </Tabs.Root>
+        </Box>
+        <Box
+          css={{
+            display: "flex",
+            width: 500,
+            rowGap: "$100",
+            flexDirection: "column",
+            padding: "10px",
+            border: "1px dashed black",
+          }}
+        >
+          <Tabs.Root defaultValue="tab1">
+            <Tabs.List aria-label="Countries' information" density="default">
+              <Tabs.Trigger value="tab1"> France </Tabs.Trigger>
+              <Tabs.Trigger value="tab2">Brazil</Tabs.Trigger>
+              <Tabs.Trigger value="tab3">Vietnam</Tabs.Trigger>
+            </Tabs.List>
+          </Tabs.Root>
+        </Box>
+        <Box
+          css={{
+            display: "flex",
+            width: 500,
+            rowGap: "$100",
+            flexDirection: "column",
+            padding: "10px",
+            border: "1px dashed black",
+          }}
+        >
+          <Tabs.Root defaultValue="tab1">
+            <Tabs.List aria-label="Countries' information" density="loose">
+              <Tabs.Trigger value="tab1"> France </Tabs.Trigger>
+              <Tabs.Trigger value="tab2">Brazil</Tabs.Trigger>
+              <Tabs.Trigger value="tab3">Vietnam</Tabs.Trigger>
+            </Tabs.List>
+          </Tabs.Root>
+        </Box>
+      </Box>
+    </>
+  );
+}
+```
 
 ---
 

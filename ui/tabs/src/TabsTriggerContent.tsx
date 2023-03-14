@@ -1,5 +1,4 @@
 import * as React from "react";
-import { useEffect } from "react";
 
 import { styled } from "@washingtonpost/wpds-theme";
 import type * as WPDS from "@washingtonpost/wpds-theme";
@@ -24,13 +23,13 @@ const isTruncated = (el) => {
   return el && el.scrollWidth > el.clientWidth;
 };
 
-export type TabsTriggerProps = {
+export type TabsTriggerContentProps = {
   children?: React.ReactNode;
   /** Overrides for the input text styles. Padding overrides affect the input container and  */
   css?: WPDS.CSS;
 } & React.ComponentPropsWithoutRef<typeof StyledContainer>;
 
-export const TabsTriggerContent = ({ children }: TabsTriggerProps) => {
+export const TabsTriggerContent = ({ children }: TabsTriggerContentProps) => {
   const internalRef = React.useRef<HTMLDivElement | null>(null);
 
   const [truncated, setTruncated] = React.useState(false);
@@ -38,7 +37,7 @@ export const TabsTriggerContent = ({ children }: TabsTriggerProps) => {
   const childrenArray = React.Children.toArray(children);
   const hasMoreThanOneChild = childrenArray.length > 1;
 
-  useEffect(() => {
+  React.useEffect(() => {
     const element = internalRef?.current;
     setTruncated(isTruncated(element));
   }, []);

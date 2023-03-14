@@ -1,18 +1,18 @@
 import { TabsRoot } from "./TabsRoot";
 import { TabsList } from "./TabsList";
 import { TabsTrigger } from "./TabsTrigger";
-import * as TabsPrimitive from "@radix-ui/react-tabs";
+import { TabsContent } from "./TabsContent";
 
 export type TabsProps = {
   Root: typeof TabsRoot;
   List: typeof TabsList;
   Trigger: typeof TabsTrigger;
-  Content: typeof TabsPrimitive.Content;
+  Content: typeof TabsContent;
 };
 
 export const Tabs: TabsProps = {
   Root: TabsRoot,
   List: TabsList,
   Trigger: TabsTrigger,
-  Content: TabsPrimitive.Content,
+  Content: TabsContent,
 };

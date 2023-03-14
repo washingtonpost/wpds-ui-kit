@@ -134,9 +134,8 @@ export const TabsTrigger = ({
       timeout={300}
       classNames="move"
       onEntered={() => {
-        if (internalRef.current) {
-          setPreviousRect &&
-            setPreviousRect(internalRef.current.getBoundingClientRect());
+        if (internalRef.current && setPreviousRect) {
+          setPreviousRect(internalRef.current.getBoundingClientRect());
         }
       }}
     >
@@ -145,9 +144,7 @@ export const TabsTrigger = ({
         ref={internalRef}
         active={active}
         value={value}
-        onClick={(e) => {
-          onClick && onClick(e);
-        }}
+        onClick={onClick}
         {...props}
       >
         <TabsTriggerContent>{children}</TabsTriggerContent>
