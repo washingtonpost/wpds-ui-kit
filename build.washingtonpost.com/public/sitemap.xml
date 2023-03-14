@@ -21,6 +21,10 @@
   </url>
 
   <url>
+    <loc>https://build.washingtonpost.com/components/auto-suggest</loc>
+  </url>
+
+  <url>
     <loc>https://build.washingtonpost.com/components/avatar</loc>
   </url>
 

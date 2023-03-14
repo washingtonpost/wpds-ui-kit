@@ -11,7 +11,6 @@ import {
 import { useRouter } from "next/router";
 import { darkModeStyles } from "~/components/DarkModeStyles";
 import { PageLayout } from "~/components/Layout";
-import { SSRProvider } from "@react-aria/ssr";
 import SEO from "../next-seo.config";
 import "../public/global.css";
 
@@ -84,7 +83,7 @@ function App({ Component, pageProps }) {
   const getLayout = Component.getLayout;
 
   return (
-    <SSRProvider>
+    <>
       <DefaultSeo {...SEO} />
       <ThemeProvider
         attribute="class"
@@ -117,7 +116,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           </PageLayout>
         )}
       </ThemeProvider>
-    </SSRProvider>
+    </>
   );
 }
 
