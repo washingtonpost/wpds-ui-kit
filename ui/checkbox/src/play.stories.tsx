@@ -99,6 +99,7 @@ const ChromaticTemplate: ComponentStory<typeof Component> = () => {
           variant="primary"
           data-testid="test-checkbox-primary"
           required={isRequired}
+          id="checkbox1"
         >
           this checkbox is required this checkbox is required this checkbox is
           required this checkbox is required this checkbox is required this
@@ -112,6 +113,7 @@ const ChromaticTemplate: ComponentStory<typeof Component> = () => {
           variant="cta"
           label="this checkbox is required"
           required={isRequired}
+          id="checkbox2"
         />
       </HStack>
       <HStack>
@@ -120,6 +122,7 @@ const ChromaticTemplate: ComponentStory<typeof Component> = () => {
           variant="secondary"
           label="this checkbox is required"
           required={isRequired}
+          id="checkbox3"
         />
       </HStack>
       <Heading>Regular old checked states</Heading>
@@ -128,64 +131,92 @@ const ChromaticTemplate: ComponentStory<typeof Component> = () => {
           checked
           variant="primary"
           data-testid="test-checkbox-primary"
+          id="checkbox4"
         />
-        <Component checked variant="secondary" />
-        <Component checked variant="cta" />
+        <Component checked variant="secondary" id="checkbox5" />
+        <Component checked variant="cta" id="checkbox6" />
       </HStack>
       <Heading>Regular old indeterminate states</Heading>
       <HStack>
-        <Component checked="indeterminate" variant="primary" />
-        <Component checked="indeterminate" variant="secondary" />
-        <Component checked="indeterminate" variant="cta" />
+        <Component checked="indeterminate" variant="primary" id="checkbox7" />
+        <Component checked="indeterminate" variant="secondary" id="checkbox8" />
+        <Component checked="indeterminate" variant="cta" id="checkbox9" />
       </HStack>
       <Heading>Regular old false states</Heading>
       <HStack>
-        <Component variant="primary" />
-        <Component variant="secondary" />
-        <Component variant="cta" />
+        <Component variant="primary" id="checkbox10" />
+        <Component variant="secondary" id="checkbox11" />
+        <Component variant="cta" id="checkbox12" />
       </HStack>
       <Heading>isOutline states</Heading>
       <HStack>
-        <Component checked variant="primary" isOutline />
-        <Component checked variant="secondary" isOutline />
-        <Component checked variant="cta" isOutline />
+        <Component checked variant="primary" isOutline id="checkbox13" />
+        <Component checked variant="secondary" isOutline id="checkbox14" />
+        <Component checked variant="cta" isOutline id="checkbox15" />
       </HStack>
       <HStack>
-        <Component checked="indeterminate" variant="primary" isOutline />
-        <Component checked="indeterminate" variant="secondary" isOutline />
-        <Component checked="indeterminate" variant="cta" isOutline />
+        <Component
+          checked="indeterminate"
+          variant="primary"
+          isOutline
+          id="checkbox16"
+        />
+        <Component
+          checked="indeterminate"
+          variant="secondary"
+          isOutline
+          id="checkbox17"
+        />
+        <Component
+          checked="indeterminate"
+          variant="cta"
+          isOutline
+          id="checkbox18"
+        />
       </HStack>
       <HStack>
-        <Component variant="primary" isOutline />
-        <Component variant="secondary" isOutline />
-        <Component variant="cta" isOutline />
+        <Component variant="primary" isOutline id="checkbox19" />
+        <Component variant="secondary" isOutline id="checkbox20" />
+        <Component variant="cta" isOutline id="checkbox21" />
       </HStack>
       <Heading>087 states</Heading>
       <HStack>
-        <Component checked size="087" variant="primary" />
-        <Component checked size="087" variant="secondary" />
-        <Component checked size="087" variant="cta" />
+        <Component checked size="087" variant="primary" id="checkbox22" />
+        <Component checked size="087" variant="secondary" id="checkbox23" />
+        <Component checked size="087" variant="cta" id="checkbox24" />
       </HStack>
       <HStack>
-        <Component checked size="087" variant="primary" isOutline />
-        <Component checked size="087" variant="secondary" isOutline />
-        <Component checked size="087" variant="cta" isOutline />
+        <Component
+          checked
+          size="087"
+          variant="primary"
+          isOutline
+          id="checkbox25"
+        />
+        <Component
+          checked
+          size="087"
+          variant="secondary"
+          isOutline
+          id="checkbox26"
+        />
+        <Component checked size="087" variant="cta" isOutline id="checkbox27" />
       </HStack>
       <HStack>
-        <Component size="087" variant="primary" isOutline />
-        <Component size="087" variant="secondary" isOutline />
-        <Component size="087" variant="cta" isOutline />
+        <Component size="087" variant="primary" isOutline id="checkbox28" />
+        <Component size="087" variant="secondary" isOutline id="checkbox29" />
+        <Component size="087" variant="cta" isOutline id="checkbox30" />
       </HStack>
       <Heading>Disabled states</Heading>
       <HStack>
-        <Component disabled />
-        <Component disabled checked />
-        <Component disabled checked="indeterminate" />
+        <Component disabled id="checkbox31" />
+        <Component disabled checked id="checkbox32" />
+        <Component disabled checked="indeterminate" id="checkbox33" />
       </HStack>
       <HStack>
-        <Component disabled isOutline />
-        <Component disabled checked isOutline />
-        <Component disabled checked="indeterminate" isOutline />
+        <Component disabled isOutline id="checkbox34" />
+        <Component disabled checked isOutline id="checkbox35" />
+        <Component disabled checked="indeterminate" isOutline id="checkbox36" />
       </HStack>
       <Heading>Boxes with labels!</Heading>
       <HStack>
