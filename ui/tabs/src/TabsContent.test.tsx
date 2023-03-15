@@ -1,15 +1,15 @@
 import * as React from "react";
 import { render, screen } from "@testing-library/react";
 import { TabsRoot } from "./TabsRoot";
-import { TabsList } from "./TabsList";
+import { TabsContent } from "./TabsContent";
 
-describe("TabsList", () => {
+describe("TabsRoot Container", () => {
   test("renders visibly into the document", () => {
     render(
-      <TabsRoot>
-        <TabsList>Test</TabsList>
+      <TabsRoot defaultValue="tab1">
+        <TabsContent value="tab1">Test</TabsContent>
       </TabsRoot>
     );
-    expect(screen.getByRole("tablist")).toBeVisible();
+    expect(screen.getByText("Test")).toBeVisible();
   });
 });

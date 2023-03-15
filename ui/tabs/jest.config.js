@@ -1,7 +1,8 @@
 /** @type {import('ts-jest/dist/types').InitialOptionsTsJest} */
 module.exports = {
   preset: "ts-jest",
-  testEnvironment: "custom-env.ts",
-  setupFilesAfterEnv: ["<rootDir>/jest-setup.ts"],
+  testEnvironment: "jsdom",
+  setupFilesAfterEnv: ["<rootDir>/jest-setup.ts", "<rootDir>/setup-mock.js"],
   coverageReporters: ["text"],
+  resetMocks: false,
 };

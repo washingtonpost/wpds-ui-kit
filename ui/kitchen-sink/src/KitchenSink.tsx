@@ -51,6 +51,12 @@ const HStack = styled("section", {
   borderRadius: "$075",
 });
 
+const StyledTabsContent = styled(Tabs.Content, {
+  minHeight: "50px",
+  paddingTop: "20px",
+  color: "$primary",
+});
+
 export const KitchenSink = () => {
   return (
     <>

@@ -129,7 +129,7 @@
       "./ui"
     ],
     "preset": "ts-jest",
-    "testEnvironment": "jsdom",
+    "testEnvironment": "./custom-env.ts",
     "globals": {
       "ts-jest": {
         "tsconfig": "tsconfig.test.json"
