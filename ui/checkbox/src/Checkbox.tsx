@@ -231,7 +231,7 @@ interface CheckboxInterface extends CheckboxVariants {
   required?: boolean;
   name?: string;
   value?: string;
-  id?: string;
+  id: string;
   label?: string;
   /** The correspoding label to the checkbox. Allows you to pass in more than just text */
   children?: React.ReactNode;

@@ -104,25 +104,25 @@ export const KitchenSink = () => {
         <HStack>
           <>
             <HStack>
-              <Checkbox checked variant="primary" size="125" />
-              <Checkbox checked variant="secondary" />
-              <Checkbox checked variant="cta" />
+              <Checkbox checked variant="primary" size="125" id="checkbox1" />
+              <Checkbox checked variant="secondary" id="checkbox2" />
+              <Checkbox checked variant="cta" id="checkbox3" />
             </HStack>
             <HStack>
-              <Checkbox checked size="087" />
-              <Checkbox checked size="125" />
+              <Checkbox checked size="087" id="checkbox4" />
+              <Checkbox checked size="125" id="checkbox5" />
             </HStack>
             <HStack>
-              <Checkbox checked />
-              <Checkbox checked isOutline />
+              <Checkbox checked id="checkbox6" />
+              <Checkbox checked isOutline id="checkbox7" />
             </HStack>
             <HStack>
-              <Checkbox checked />
-              <Checkbox checked={false} />
-              <Checkbox checked="indeterminate" />
+              <Checkbox checked id="checkbox8" />
+              <Checkbox checked={false} id="checkbox9" />
+              <Checkbox checked="indeterminate" id="checkbox10" />
             </HStack>
             <HStack>
-              <Checkbox disabled />
+              <Checkbox disabled id="checkbox11" />
             </HStack>
             <HStack>
               <Checkbox

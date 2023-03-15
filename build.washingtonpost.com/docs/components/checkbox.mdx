@@ -37,8 +37,8 @@ export default function Example() {
         gap: "$100",
       }}
     >
-      <Checkbox checked variant="primary" size="125" />
-      <Checkbox checked variant="primary" size="087" />
+      <Checkbox checked variant="primary" size="125" id="checkbox1" />
+      <Checkbox checked variant="primary" size="087" id="checkbox2" />
     </Box>
   );
 }
@@ -67,18 +67,21 @@ export default function Example() {
         checked={Check1}
         variant="primary"
         size="125"
+        id="checkbox3"
       />
       <Checkbox
         onClick={() => setCheck2(!Check2)}
         checked={Check2}
         variant="secondary"
         size="125"
+        id="checkbox4"
       />
       <Checkbox
         onClick={() => setCheck3(!Check3)}
         checked={Check3}
         variant="cta"
         size="125"
+        id="checkbox5"
       />
     </Box>
   );
@@ -110,6 +113,7 @@ export default function Example() {
         variant="primary"
         isOutline
         size="125"
+        id="checkbox6"
       />
       <Box css={{ padding: "$100", backgroundColor: "$gray0" }}>
         <Checkbox
@@ -118,6 +122,7 @@ export default function Example() {
           variant="secondary"
           isOutline
           size="125"
+          id="checkbox7"
         />
       </Box>
       <Checkbox
@@ -126,6 +131,7 @@ export default function Example() {
         variant="cta"
         isOutline
         size="125"
+        id="checkbox8"
       />
     </Box>
   );
@@ -147,9 +153,14 @@ export default function Example() {
         gap: "$100",
       }}
     >
-      <Checkbox checked variant="primary" size="125" />
-      <Checkbox variant="primary" size="125" />
-      <Checkbox checked={"indeterminate"} variant="primary" size="125" />
+      <Checkbox checked variant="primary" size="125" id="checkbox9" />
+      <Checkbox variant="primary" size="125" id="checkbox10" />
+      <Checkbox
+        checked={"indeterminate"}
+        variant="primary"
+        size="125"
+        id="checkbox11"
+      />
     </Box>
   );
 }
@@ -172,13 +183,14 @@ export default function Example() {
         gap: "$100",
       }}
     >
-      <Checkbox disabled checked variant="primary" size="125" />
-      <Checkbox disabled variant="primary" size="125" />
+      <Checkbox disabled checked variant="primary" size="125" id="checkbox12" />
+      <Checkbox disabled variant="primary" size="125" id="checkbox13" />
       <Checkbox
         disabled
         checked={"indeterminate"}
         variant="primary"
         size="125"
+        id="checkbox14"
       />
     </Box>
   );
@@ -198,7 +210,7 @@ export default function Example() {
         gap: "$100",
       }}
     >
-      <Checkbox checked variant="primary" size="125">
+      <Checkbox checked variant="primary" size="125" id="checkbox15">
         Click checkbox to see focus
       </Checkbox>
     </Box>
@@ -219,7 +231,7 @@ export default function Example() {
         gap: "$100",
       }}
     >
-      <Checkbox checked variant="primary" size="125" required>
+      <Checkbox checked variant="primary" size="125" id="checkbox16" required>
         This is a required checkbox
       </Checkbox>
     </Box>
@@ -405,7 +417,7 @@ export default function Example() {
           variant="primary"
           isOutline
           size="125"
-          id="cb4"
+          id="cb5"
         >
           <StyledLabel>This label is struck through</StyledLabel>
         </Checkbox>
@@ -424,7 +436,7 @@ export default function Example() {
           variant="primary"
           isOutline
           size="125"
-          id="cb5"
+          id="cb6"
         >
           This label has{" "}
           <a href="https://www.washingtonpost.com"> a link to the homepage</a>
