@@ -47,12 +47,12 @@ export default function Example() {
         <Tabs.Root defaultValue="tab1" align="center">
           <Tabs.List aria-label="Countries' information">
             <Tabs.Trigger value="tab1"> France </Tabs.Trigger>
-            <Tabs.Trigger value="tab2">Brazil</Tabs.Trigger>
-            <Tabs.Trigger value="tab3">Vietnam</Tabs.Trigger>
+            <Tabs.Trigger value="tab2">Kenya</Tabs.Trigger>
+            <Tabs.Trigger value="tab3">Austria</Tabs.Trigger>
           </Tabs.List>
           <StyledContent value="tab1">France is here 🇫🇷</StyledContent>
           <StyledContent value="tab2">Kenya is here 🇰🇪</StyledContent>
-          <StyledContent value="tab3">Austira is here 🇦🇹</StyledContent>
+          <StyledContent value="tab3">Austria is here 🇦🇹</StyledContent>
         </Tabs.Root>
       </Box>
     </>
@@ -227,6 +227,37 @@ export default function Example() {
 }
 ```
 
+### Disabled
+
+A disabled tab changes to color subtle.
+
+```jsx withPreview
+export default function Example() {
+  return (
+    <>
+      <Box
+        css={{
+          display: "flex",
+          width: 500,
+          rowGap: "$100",
+          flexDirection: "column",
+        }}
+      >
+        <Tabs.Root defaultValue="tab1" align="center">
+          <Tabs.List aria-label="Countries' information">
+            <Tabs.Trigger value="tab1">France</Tabs.Trigger>
+            <Tabs.Trigger value="tab2" disabled>
+              Brazil
+            </Tabs.Trigger>
+            <Tabs.Trigger value="tab3">Vietnam</Tabs.Trigger>
+          </Tabs.List>
+        </Tabs.Root>
+      </Box>
+    </>
+  );
+}
+```
+
 ### Tab overflow
 
 When there are more tabs than can be displayed, the behavior will match our secondary navigation. The tabs will be cut off and hidden on the far right and accessible via scrolling.
@@ -256,9 +287,7 @@ export default function Example() {
               </Icon>
               France
             </Tabs.Trigger>
-            <Tabs.Trigger disabled value="tab2">
-              Brazil
-            </Tabs.Trigger>
+            <Tabs.Trigger value="tab2">Brazil</Tabs.Trigger>
             <Tabs.Trigger value="tab3">
               <Icon label="trigger icon" size="100">
                 <Info />
@@ -284,7 +313,7 @@ export default function Example() {
           </StyledContent>
           <StyledContent value="tab6">Venezuela is here 🇻🇪</StyledContent>
           <StyledContent value="tab7">Kenya is here 🇰🇪</StyledContent>
-          <StyledContent value="tab8">Austira is here 🇦🇹</StyledContent>
+          <StyledContent value="tab8">Austria is here 🇦🇹</StyledContent>
         </Tabs.Root>
       </Box>
     </>
@@ -383,9 +412,7 @@ export default function Example() {
                 </Icon>
                 France
               </Tabs.Trigger>
-              <Tabs.Trigger disabled value="tab2">
-                Brazil
-              </Tabs.Trigger>
+              <Tabs.Trigger value="tab2">Brazil</Tabs.Trigger>
               <Tabs.Trigger value="tab3">
                 <Icon label="trigger icon" size="100">
                   <Info />
