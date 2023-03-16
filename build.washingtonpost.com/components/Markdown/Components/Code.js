@@ -4,7 +4,6 @@ import dynamic from "next/dynamic";
 const Sandbox = dynamic(() => import("./Sandbox"));
 
 const Code = (props) => {
-  console.log(props);
   if (
     props.className === "language-jsx" ||
     props.className === "language-mdx"
