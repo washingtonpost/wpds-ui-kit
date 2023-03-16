@@ -1,0 +1,17 @@
+{
+  "name": "@washingtonpost/wpds-tailwind-theme",
+  "version": "1.2.0",
+  "description": "WPDS Tailwind Theme",
+  "author": "WPDS Support <wpds@washpost.com>",
+  "license": "MIT",
+  "main": "dist/wpds-theme.js",
+  "scripts": {
+    "build": "node script/create-theme.js"
+  },
+  "peerDependencies": {
+    "@washingtonpost/wpds-theme": "*"
+  },
+  "dependencies": {
+    "@washingtonpost/wpds-theme": "1.2.0"
+  }
+}

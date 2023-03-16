@@ -161,8 +161,7 @@ async function getWrapper(collections, recents) {
       "Explore our accessibility checklist, testing strategies and considerations.",
     Workshops:
       "Sharpen your design and development skills with our in-depth recorded workshops.",
-    Tools:
-      "Sharpen your design and development skills with our in-depth recorded workshops.",
+    Tools: "Help for adopting and using WPDS.",
   };
 
   // 2. populate the content array with objects for each category (main data for page)
@@ -171,7 +170,7 @@ async function getWrapper(collections, recents) {
     name = id = type = collection.kicker;
     let [posts, description, size] = [[], descriptions[name], ""];
 
-    if (name === "Guides") {
+    if (name === "Guides" || name === "Tools") {
       // sorting guides by Rank -> if none, sort by title
       posts = sortByRank(collection.docs, 4);
       size = THUMBNAIL_SQUARE;
