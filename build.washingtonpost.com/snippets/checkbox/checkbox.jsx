@@ -8,7 +8,7 @@ import { Checkbox } from "@washingtonpost/wpds-ui-kit";
 
 export default function Example() {
   return (
-      <Checkbox checked variant="primary" size="125" />
+      <Checkbox checked variant="primary" size="125" id="checkbox1" />
   );
 }
 ```

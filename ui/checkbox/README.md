@@ -24,7 +24,7 @@ function Component() {
   });
 
   return (
-    <Checkbox variant="primary">
+    <Checkbox variant="primary" id="checkbox1">
       <StyledLabel>This is the label</StyledLabel>
     </Checkbox>
   );
@@ -36,7 +36,7 @@ import { Checkbox } from "@washingtonpost/wpds-ui-kit";
 
 function Component() {
   return (
-    <Checkbox variant="primary">
+    <Checkbox variant="primary" id="checkbox2">
       You can pass in links.{" "}
       <a href="build.washingtonpost.com">Like this link to our docs site</a>
     </Checkbox>
