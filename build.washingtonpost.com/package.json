@@ -1,6 +1,6 @@
 {
   "name": "@washingtonpost/wpds-docs",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "private": true,
   "scripts": {
     "dev": "next-remote-watch ./docs",
@@ -27,8 +27,8 @@
     "@washingtonpost/tachyons-css": "latest",
     "@washingtonpost/wpds-accordion": "1.2.0",
     "@washingtonpost/wpds-assets": "^1.17.0",
-    "@washingtonpost/wpds-kitchen-sink": "1.2.0",
-    "@washingtonpost/wpds-ui-kit": "1.2.0",
+    "@washingtonpost/wpds-kitchen-sink": "1.2.1",
+    "@washingtonpost/wpds-ui-kit": "1.2.1",
     "fuse.js": "^6.6.2",
     "gray-matter": "^4.0.2",
     "lz-string": "^1.4.4",
