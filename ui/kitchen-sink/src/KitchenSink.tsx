@@ -24,6 +24,7 @@ import {
   Card,
   Popover,
   Switch,
+  Tabs,
 } from "@washingtonpost/wpds-ui-kit";
 import { Chart, Settings, Info } from "@washingtonpost/wpds-assets";
 
@@ -48,6 +49,12 @@ const HStack = styled("section", {
   flexDirection: "row",
   gap: "$100",
   borderRadius: "$075",
+});
+
+const StyledTabsContent = styled(Tabs.Content, {
+  minHeight: "50px",
+  paddingTop: "20px",
+  color: "$primary",
 });
 
 export const KitchenSink = () => {
@@ -420,6 +427,17 @@ export const KitchenSink = () => {
       <Switch.Root>
         <Switch.Thumb />
       </Switch.Root>
+      <h2>Tabs</h2>
+      <Tabs.Root defaultValue="tab1">
+        <Tabs.List aria-label="Countries' information">
+          <Tabs.Trigger value="tab1">France</Tabs.Trigger>
+          <Tabs.Trigger value="tab2">Kenya</Tabs.Trigger>
+          <Tabs.Trigger value="tab3">Austria</Tabs.Trigger>
+        </Tabs.List>
+        <StyledTabsContent value="tab1">France is here 🇫🇷</StyledTabsContent>
+        <StyledTabsContent value="tab2">Kenya is here 🇰🇪</StyledTabsContent>
+        <StyledTabsContent value="tab3">Austira is here 🇦🇹</StyledTabsContent>
+      </Tabs.Root>
     </>
   );
 };

@@ -97,6 +97,10 @@
   </url>
 
   <url>
+    <loc>https://build.washingtonpost.com/components/tabs</loc>
+  </url>
+
+  <url>
     <loc>https://build.washingtonpost.com/components/tooltip</loc>
   </url>
 

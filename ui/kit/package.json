@@ -60,6 +60,7 @@
     "@washingtonpost/wpds-scrim": "1.2.0",
     "@washingtonpost/wpds-select": "1.2.0",
     "@washingtonpost/wpds-switch": "1.2.0",
+    "@washingtonpost/wpds-tabs": "1.2.0",
     "@washingtonpost/wpds-theme": "1.2.0",
     "@washingtonpost/wpds-tooltip": "1.2.0",
     "@washingtonpost/wpds-visually-hidden": "1.2.0"
@@ -98,6 +99,7 @@
     "@washingtonpost/wpds-select": "*",
     "@washingtonpost/wpds-switch": "*",
     "@washingtonpost/wpds-theme": "*",
+    "@washingtonpost/wpds-tabs": "*",
     "@washingtonpost/wpds-tooltip": "*",
     "@washingtonpost/wpds-visually-hidden": "*"
   },
