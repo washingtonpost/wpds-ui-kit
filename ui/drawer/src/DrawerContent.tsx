@@ -14,6 +14,9 @@ const StyledContainer = styled("div", {
   maxHeight: "100%",
   overflow: "auto",
   position: "fixed",
+  "@motion": {
+    transition: "none",
+  },
   variants: {
     /** controls which side of the screen the drawer comes from @default bottom */
     position: {

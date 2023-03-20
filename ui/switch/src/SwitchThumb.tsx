@@ -9,6 +9,9 @@ export const SwitchThumb = styled(Radix.Thumb, {
   backgroundColor: "$$switchThumbVariant",
   borderRadius: "$round",
   transition: theme.transitions.allFast,
+  "@motion": {
+    transition: "none",
+  },
   transform: `translateX(-$sizes$050)`,
   willChange: "transform",
   '&[data-state="checked"]': {

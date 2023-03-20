@@ -86,6 +86,10 @@ export const unstyledInputStyles = {
     // used to trigger JS so that we can stop the label shrinking
     animation: "jsTriggerAutoFillCancel 200ms",
   },
+
+  "@motion": {
+    animation: "none",
+  },
 };
 
 export const useFloating = (

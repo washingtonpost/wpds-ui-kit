@@ -25,6 +25,9 @@ const AnimatedContent = styled(AccordionPrimitive.Content, {
   '&[data-state="closed"]': {
     animation: `${slideUp} ${theme.transitions.normal} ${easeInOutExpo}`,
   },
+  "@motion": {
+    animation: "none",
+  },
 });
 
 const ContentContainer = styled("div", {

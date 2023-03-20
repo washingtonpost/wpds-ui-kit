@@ -12,6 +12,9 @@ const scrimTransition = `opacity ${theme.transitions.normal} ${theme.transitions
 const StyledContainer = styled("div", {
   backgroundColor: theme.colors.alpha50,
   position: "fixed",
+  "@motion": {
+    transition: "none",
+  },
   inset: 0,
   "&.wpds-scrim-enter": {
     opacity: 0,
