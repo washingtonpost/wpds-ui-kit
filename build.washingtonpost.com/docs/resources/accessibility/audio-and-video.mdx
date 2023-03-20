@@ -118,8 +118,36 @@ Speaker names should be provided whenever there is more than one speaker in a vi
 
 Some users, including those with vestibular motion disorders, may have system settings to reduce motion in the web content.
 
+For instance, on a Mac, there is a "Reduce motion" toggle in the System Settings under Accessibility/Display:
+
+<Container>
+  <Box css={{ display: "flex", justifyContent: "center", margin: "auto" }}>
+    <InlineImage
+      width={706}
+      height={616}
+      src="/images/reduce-motion-example.png"
+      alt="Screenshot of Mac System Settings menu showing the reduce motion toggle is turned on."
+    />
+  </Box>
+</Container>
+<br />
+
 We have to write code that recognizes these system settings in order to adjust motion accordingly.
 
 To do this, we use the [prefers-reduced-motion CSS media feature](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion), as documented by MDN.
 
 Our [Tooltip component](/components/tooltip) uses `prefers-reduced-motion` to decide whether to include an animation when tooltip content is opened. If the user does not have reduced motion settings turned on, then the animation is used.
+
+We built a shortcut media query `"@motion"` for use in our WPDS components. It does the same thing as `@media (prefers-reduced-motion)`.
+
+Below is an example of how this looks in practice. The code is from our Carousel component. Note the animation is eliminated when the user prefers reduced motion:
+
+```jsx
+const Slider = styled("div", {
+  display: "flex",
+  transition: `transform 0.5s ${theme.transitions.inOut}`,
+  "@motion": {
+    transition: "none", // animation eliminated when user prefers reduced motion
+  },
+});
+```

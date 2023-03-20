@@ -37,13 +37,16 @@ Thanks for incorporating accessibility considerations into your work!
   present in the HTML. Similarly, videos and gifs should have text descriptions
   for screen reader users.
 
-- **Hide certain content from screen readers**<br />
+- **Test with reduced motion settings turned on**<br />
+  Turn on [reduced motion](/resources/accessibility/audio-and-video#Animations%20and%20reduced%20motion), and ensure all non-essential animation and other moving content is eliminated upon page refresh. If not, then you should use [the prefers-reduced-motion media query](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion) to modify behavior accordingly.
+
+- **Hide useless content from screen readers**<br />
   Just as you would put alt="" for purely decorative images to hide them from
   screen readers, you should add [aria-hidden="true"](/resources/accessibility/semantic-html#Hiding%20content%20from%20screen%20readers)
   for content on the page that is not screen reader friendly. An example of this
-  might be an election map full of svgs and labels, etc. Ideally, you’d include
-  [a table version](/resources/accessibility/semantic-html#Tables) of the data
-  for accessibility and just hide the map with aria-hidden.
+  might be an election map full of svgs and labels, etc. You would want to include 
+  [a table version](/resources/accessibility/semantic-html#Tables) of the data or some
+  other alternative for accessibility, and then hide the map with aria-hidden.
 
 - **Avoid auto-playing audio and video**<br />
   Never auto-play audio. Auto-playing video, animations and other graphics (including gifs) are strongly discouraged. Ensure all
