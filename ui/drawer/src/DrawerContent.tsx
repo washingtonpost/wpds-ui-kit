@@ -14,9 +14,6 @@ const StyledContainer = styled("div", {
   maxHeight: "100%",
   overflow: "auto",
   position: "fixed",
-  "@motion": {
-    transition: "none",
-  },
   variants: {
     /** controls which side of the screen the drawer comes from @default bottom */
     position: {
@@ -32,6 +29,9 @@ const StyledContainer = styled("div", {
           opacity: 1,
           transform: "translateY(0%)",
           transition: drawerTransition,
+          "@motion": {
+            transition: "none",
+          },
         },
         "&.wpds-drawer-exit": {
           opacity: 1,
@@ -41,6 +41,9 @@ const StyledContainer = styled("div", {
           opacity: 0,
           transform: "translateY(-100%)",
           transition: drawerTransition,
+          "@motion": {
+            transition: "none",
+          },
         },
       },
       right: {
@@ -55,6 +58,9 @@ const StyledContainer = styled("div", {
           opacity: 1,
           transform: "translateX(0%)",
           transition: drawerTransition,
+          "@motion": {
+            transition: "none",
+          },
         },
         "&.wpds-drawer-exit": {
           opacity: 1,
@@ -64,6 +70,9 @@ const StyledContainer = styled("div", {
           opacity: 0,
           transform: "translateX(100%)",
           transition: drawerTransition,
+          "@motion": {
+            transition: "none",
+          },
         },
       },
       bottom: {
@@ -78,6 +87,9 @@ const StyledContainer = styled("div", {
           opacity: 1,
           transform: "translateY(0%)",
           transition: drawerTransition,
+          "@motion": {
+            transition: "none",
+          },
         },
         "&.wpds-drawer-exit": {
           opacity: 1,
@@ -87,6 +99,9 @@ const StyledContainer = styled("div", {
           opacity: 0,
           transform: "translateY(100%)",
           transition: drawerTransition,
+          "@motion": {
+            transition: "none",
+          },
         },
       },
       left: {
@@ -101,6 +116,9 @@ const StyledContainer = styled("div", {
           opacity: 1,
           transform: "translateX(0%)",
           transition: drawerTransition,
+          "@motion": {
+            transition: "none",
+          },
         },
         "&.wpds-drawer-exit": {
           opacity: 1,
@@ -110,6 +128,9 @@ const StyledContainer = styled("div", {
           opacity: 0,
           transform: "translateX(-100%)",
           transition: drawerTransition,
+          "@motion": {
+            transition: "none",
+          },
         },
       },
     },

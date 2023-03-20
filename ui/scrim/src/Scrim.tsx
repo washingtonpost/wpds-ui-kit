@@ -12,9 +12,6 @@ const scrimTransition = `opacity ${theme.transitions.normal} ${theme.transitions
 const StyledContainer = styled("div", {
   backgroundColor: theme.colors.alpha50,
   position: "fixed",
-  "@motion": {
-    transition: "none",
-  },
   inset: 0,
   "&.wpds-scrim-enter": {
     opacity: 0,
@@ -22,6 +19,9 @@ const StyledContainer = styled("div", {
   "&.wpds-scrim-enter-active": {
     opacity: 1,
     transition: scrimTransition,
+    "@motion": {
+      transition: "none",
+    },
   },
   "&.wpds-scrim-exit": {
     opacity: 1,
@@ -29,6 +29,9 @@ const StyledContainer = styled("div", {
   "&.wpds-scrim-exit-active": {
     opacity: 0,
     transition: scrimTransition,
+    "@motion": {
+      transition: "none",
+    },
   },
 });
 
