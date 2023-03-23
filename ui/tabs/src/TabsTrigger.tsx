@@ -50,7 +50,7 @@ const StyledTabsTrigger = styled(TabsPrimitive.Trigger, {
           transform: "translateX(var(--startx))",
 
           "@reducedMotion": {
-            transform: "none",
+            transition: "none",
           },
         },
 
@@ -59,7 +59,6 @@ const StyledTabsTrigger = styled(TabsPrimitive.Trigger, {
           transition: "transform 300ms",
 
           "@reducedMotion": {
-            transform: "none",
             transition: "none",
           },
         },
