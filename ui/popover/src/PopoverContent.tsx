@@ -59,6 +59,10 @@ const StyledContent = styled(PopoverPrimitive.Content, {
   boxShadow: theme.shadows["200"],
   color: theme.colors.primary,
   animationDuration: theme.transitions.normal,
+  "@reducedMotion": {
+    animationDuration: "0s",
+    animationFillMode: "none",
+  },
   animationTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
   willChange: "transform, opacity",
   "&[data-state='open'][data-side='top']": {
