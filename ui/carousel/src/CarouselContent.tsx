@@ -22,7 +22,7 @@ const Container = styled("div", {
 const Slider = styled("div", {
   display: "flex",
   transition: `transform 0.5s ${theme.transitions.inOut}`,
-  "@motion": {
+  "@reducedMotion": {
     transition: "none",
   },
 });

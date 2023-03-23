@@ -21,13 +21,13 @@ const AnimatedContent = styled(AccordionPrimitive.Content, {
   color: theme.colors.primary,
   '&[data-state="open"]': {
     animation: `${slideDown} ${theme.transitions.normal} ${easeInOutExpo}`,
-    "@motion": {
+    "@reducedMotion": {
       animation: "none",
     },
   },
   '&[data-state="closed"]': {
     animation: `${slideUp} ${theme.transitions.normal} ${easeInOutExpo}`,
-    "@motion": {
+    "@reducedMotion": {
       animation: "none",
     },
   },

@@ -84,7 +84,7 @@ const Anchor = styled("a", {
 const HamburgerMenu = styled(Menu, {
   fill: "$primary",
   transition: "all .2s",
-  "@motion": {
+  "@reducedMotion": {
     transition: "none",
   },
   variants: {
@@ -105,7 +105,7 @@ const CloseMenu = styled(Close, {
   position: "absolute",
   transition: "all .2s",
   transitionDelay: 0.5,
-  "@motion": {
+  "@reducedMotion": {
     transition: "none",
   },
   variants: {

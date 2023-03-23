@@ -64,7 +64,7 @@ export const unstyledInputStyles = {
     animation: "jsTriggerAutoFillCancel 200ms",
   },
 
-  "@motion": {
+  "@reducedMotion": {
     animation: "none",
   },
 };

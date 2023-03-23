@@ -15,7 +15,7 @@ export const SwitchRoot = styled(SwitchPrimitive.Root, {
   cursor: "pointer",
   appearance: "none",
   transition: `all ${theme.transitions.fast} ${theme.transitions.inOut}`,
-  "@motion": {
+  "@reducedMotion": {
     transition: "none",
   },
   padding: 0,

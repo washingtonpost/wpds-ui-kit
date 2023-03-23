@@ -18,7 +18,7 @@ export const Button = styled("button", {
   lineHeight: "$100",
   gap: "$050",
   transition: `background ${theme.transitions.fast} ${theme.transitions.inOut}`,
-  "@motion": {
+  "@reducedMotion": {
     transition: "none",
   },
 

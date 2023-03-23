@@ -20,7 +20,7 @@ const StyledRadioButton = Theme.styled(RadioGroupPrimitive.Item, {
   cursor: "pointer",
   padding: 0,
   transition: Theme.theme.transitions.allFast,
-  "@motion": {
+  "@reducedMotion": {
     transition: "none",
   },
   width: Theme.theme.sizes["125"],

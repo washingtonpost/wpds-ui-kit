@@ -41,7 +41,7 @@ const TextAreaLabel = styled(InputLabel, {
   pointerEvents: "none",
   position: "absolute",
   transition: theme.transitions.allFast,
-  "@motion": {
+  "@reducedMotion": {
     transition: "none",
   },
   variants: {

@@ -18,7 +18,7 @@ const TextInputLabel = styled(InputLabel, {
   cursor: "pointer",
   transform: `translateY(${theme.space["100"]})`,
   transition: theme.transitions.allFast,
-  "@motion": {
+  "@reducedMotion": {
     transition: "none",
   },
 

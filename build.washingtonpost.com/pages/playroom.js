@@ -24,7 +24,7 @@ const Canvas = Kit.styled("div", {
   overflow: "hidden",
   position: "relative",
   transition: "all 0.5s ease-in-out",
-  "@motion": {
+  "@reducedMotion": {
     transition: "none",
   },
   display: "flex",

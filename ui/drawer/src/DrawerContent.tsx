@@ -29,7 +29,7 @@ const StyledContainer = styled("div", {
           opacity: 1,
           transform: "translateY(0%)",
           transition: drawerTransition,
-          "@motion": {
+          "@reducedMotion": {
             transition: "none",
           },
         },
@@ -41,7 +41,7 @@ const StyledContainer = styled("div", {
           opacity: 0,
           transform: "translateY(-100%)",
           transition: drawerTransition,
-          "@motion": {
+          "@reducedMotion": {
             transition: "none",
           },
         },
@@ -58,7 +58,7 @@ const StyledContainer = styled("div", {
           opacity: 1,
           transform: "translateX(0%)",
           transition: drawerTransition,
-          "@motion": {
+          "@reducedMotion": {
             transition: "none",
           },
         },
@@ -70,7 +70,7 @@ const StyledContainer = styled("div", {
           opacity: 0,
           transform: "translateX(100%)",
           transition: drawerTransition,
-          "@motion": {
+          "@reducedMotion": {
             transition: "none",
           },
         },
@@ -87,7 +87,7 @@ const StyledContainer = styled("div", {
           opacity: 1,
           transform: "translateY(0%)",
           transition: drawerTransition,
-          "@motion": {
+          "@reducedMotion": {
             transition: "none",
           },
         },
@@ -99,7 +99,7 @@ const StyledContainer = styled("div", {
           opacity: 0,
           transform: "translateY(100%)",
           transition: drawerTransition,
-          "@motion": {
+          "@reducedMotion": {
             transition: "none",
           },
         },
@@ -116,7 +116,7 @@ const StyledContainer = styled("div", {
           opacity: 1,
           transform: "translateX(0%)",
           transition: drawerTransition,
-          "@motion": {
+          "@reducedMotion": {
             transition: "none",
           },
         },
@@ -128,7 +128,7 @@ const StyledContainer = styled("div", {
           opacity: 0,
           transform: "translateX(-100%)",
           transition: drawerTransition,
-          "@motion": {
+          "@reducedMotion": {
             transition: "none",
           },
         },

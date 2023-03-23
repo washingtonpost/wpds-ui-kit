@@ -10,7 +10,7 @@ export default function CollapsibleContainer({ children, maxHeight }) {
   const Content = styled("div", {
     position: "relative",
     transition: "max-height .25s",
-    "@motion": {
+    "@reducedMotion": {
       transition: "none",
     },
     overflow: "hidden",
@@ -31,7 +31,7 @@ export default function CollapsibleContainer({ children, maxHeight }) {
     "&[data-state='open']": {
       transform: "rotate(180deg)",
     },
-    "@motion": {
+    "@reducedMotion": {
       transition: "none",
     },
   });

@@ -34,7 +34,7 @@ const Dot = styled("div", {
   flexShrink: 0,
   minHeight: "$050",
   transition: `transform ${theme.transitions.fast} ${theme.transitions.inOut}`,
-  "@motion": {
+  "@reducedMotion": {
     transition: "none",
   }
 });
@@ -49,7 +49,7 @@ const PaginationSlider = styled("div", {
   flexWrap: "nowrap",
   transition: "transform .4s",
   transitionTimingFunction: "ease-out",
-  "@motion": {
+  "@reducedMotion": {
     transition: "none",
   },
 });
