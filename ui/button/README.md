@@ -4,6 +4,6 @@
 import { Button } from "@washingtonpost/wpds-ui-kit";
 
 function Component() {
-  return <Button>Click me</Button>;
+  return <Button>Click me!</Button>;
 }
 ```
