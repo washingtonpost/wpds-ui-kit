@@ -36,12 +36,12 @@
     "typescript": "4.5.5"
   },
   "peerDependencies": {
-    "@washingtonpost/wpds-theme": "^1.17.0",
+    "@washingtonpost/wpds-theme": "^1.18.0",
     "react": "^16.8.6 || ^17.0.2"
   },
   "dependencies": {
     "@radix-ui/react-popover": "^1.0.2",
-    "@washingtonpost/wpds-assets": "^1.17.0",
+    "@washingtonpost/wpds-assets": "^1.18.0",
     "@washingtonpost/wpds-button": "1.2.0",
     "@washingtonpost/wpds-icon": "1.2.0",
     "@washingtonpost/wpds-theme": "1.2.0"
