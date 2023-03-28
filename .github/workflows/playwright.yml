@@ -5,6 +5,9 @@ jobs:
     if: github.event.deployment_status.state == 'success' && !contains(github.event.deployment_status.target_url, 'storybook')
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    env:
+      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+      TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
     steps:
       - uses: actions/checkout@v2.4.0
         with:
