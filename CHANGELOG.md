@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.3.0...v1.4.0) (2023-03-28)
+
+
+### Bug Fixes
+
+* remove animations when user has reduced motion settings turned on [SRED-136] ([#357](https://github.com/washingtonpost/wpds-ui-kit/issues/357)) ([3c08bec](https://github.com/washingtonpost/wpds-ui-kit/commit/3c08bec85394fca28bdad816a67cd83956821df4))
+
+
+### Features
+
+* remove conventional graduate flag from main version script ([3691bd2](https://github.com/washingtonpost/wpds-ui-kit/commit/3691bd2a063704626abfc2b7508a5690968b8b38))
+* upgrade wpds-assets to v1.18.0 in root and build.washingtonpost.com [SRED-100] ([#361](https://github.com/washingtonpost/wpds-ui-kit/issues/361)) ([80f6414](https://github.com/washingtonpost/wpds-ui-kit/commit/80f64144c0476c0d7a726ed3cf4720b788e036aa))
+
+
+
+
+
 # [1.3.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.2.1...v1.3.0) (2023-03-17)
 
 
