@@ -50,5 +50,6 @@
     "@washingtonpost/wpds-theme": "1.4.0",
     "@washingtonpost/wpds-tooltip": "1.4.0",
     "react-transition-group": "^4.4.5"
-  }
+  },
+  "gitHead": "df8fa1d8c01e00507b34910fb703ca03226d2704"
 }
