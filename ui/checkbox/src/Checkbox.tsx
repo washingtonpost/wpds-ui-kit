@@ -10,6 +10,9 @@ import { InputLabel } from "@washingtonpost/wpds-input-label";
 
 const StyledCheckbox = styled(PrimitiveCheckbox.Root, {
   transition: `background ${theme.transitions.fast} ${theme.transitions.inOut}`,
+  "@reducedMotion": {
+    transition: "none",
+  },
   appearance: "none",
   borderRadius: "$012",
   border: "1px solid",

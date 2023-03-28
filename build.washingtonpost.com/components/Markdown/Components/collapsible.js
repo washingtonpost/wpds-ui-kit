@@ -10,6 +10,9 @@ export default function CollapsibleContainer({ children, maxHeight }) {
   const Content = styled("div", {
     position: "relative",
     transition: "max-height .25s",
+    "@reducedMotion": {
+      transition: "none",
+    },
     overflow: "hidden",
     variants: {
       expand: {
@@ -27,6 +30,9 @@ export default function CollapsibleContainer({ children, maxHeight }) {
     transition: "transform 300ms cubic-bezier(0.87, 0, 0.13, 1)",
     "&[data-state='open']": {
       transform: "rotate(180deg)",
+    },
+    "@reducedMotion": {
+      transition: "none",
     },
   });
   const ShowMoreButton = styled(Button, {

@@ -47,7 +47,7 @@
     "@radix-ui/react-tabs": "latest",
     "@washingtonpost/wpds-assets": "^1.16.0",
     "@washingtonpost/wpds-icon": "1.1.0",
-    "@washingtonpost/wpds-theme": "*",
+    "@washingtonpost/wpds-theme": "1.2.0",
     "@washingtonpost/wpds-tooltip": "1.3.0",
     "react-transition-group": "^4.4.5"
   }
