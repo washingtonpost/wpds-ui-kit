@@ -46,25 +46,25 @@ This guide assumes that you are working with ReactJS and are using the WPDS Icon
 
 2. **Pass SVG into the Icon component**: Once you have your SVGs available to you as React Components, you can now pass them into the WPDS Icon component like you would a WPDS icon. They will behave the same.
 
-   ```
+   ```jsx
    import * as React from "react";
 
    import { Icon } from "@washingtonpost/wpds-ui-kit";
    import { Bell } from "@washingtonpost/wpds-assets";
 
-    // Casting our Crop SVG as a ReactComponent
+   // Casting our Crop SVG as a ReactComponent
    import { ReactComponent as Crop } from "./crop.svg";
 
    export default function App() {
-      return (
-        <>
-          <Icon label="icon" size="200">
-            <Bell /> //Our WPDS icon
-          </Icon>
-          <Icon label="icon" size="200">
-            <Crop /> //Our custom icon
-          </Icon>
-        </>
-      );
+     return (
+       <>
+         <Icon label="icon" size="200">
+           <Bell /> //Our WPDS icon
+         </Icon>
+         <Icon label="icon" size="200">
+           <Crop /> //Our custom icon
+         </Icon>
+       </>
+     );
    }
    ```
