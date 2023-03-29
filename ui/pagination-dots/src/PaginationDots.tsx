@@ -34,6 +34,9 @@ const Dot = styled("div", {
   flexShrink: 0,
   minHeight: "$050",
   transition: `transform ${theme.transitions.fast} ${theme.transitions.inOut}`,
+  "@reducedMotion": {
+    transition: "none",
+  }
 });
 
 const PaginationContainer = styled("div", {
@@ -46,6 +49,9 @@ const PaginationSlider = styled("div", {
   flexWrap: "nowrap",
   transition: "transform .4s",
   transitionTimingFunction: "ease-out",
+  "@reducedMotion": {
+    transition: "none",
+  },
 });
 
 export const PaginationDots = React.forwardRef<

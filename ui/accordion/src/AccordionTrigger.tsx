@@ -60,6 +60,9 @@ const easeInOutExpo = `cubic-bezier(0.87, 0, 0.13, 1)`;
 const StyledChevron = styled(ChevronDown, {
   transition: `transform ${theme.transitions.normal} ${easeInOutExpo}`,
   "[data-state=open] &": { transform: "rotate(180deg)" },
+  "@reducedMotion": {
+    transition: "none",
+  },
 });
 
 type AccordionTriggerVariants = WPDS.VariantProps<typeof StyledTrigger>;

@@ -29,6 +29,9 @@ const StyledContainer = styled("div", {
           opacity: 1,
           transform: "translateY(0%)",
           transition: drawerTransition,
+          "@reducedMotion": {
+            transition: "none",
+          },
         },
         "&.wpds-drawer-exit": {
           opacity: 1,
@@ -38,6 +41,9 @@ const StyledContainer = styled("div", {
           opacity: 0,
           transform: "translateY(-100%)",
           transition: drawerTransition,
+          "@reducedMotion": {
+            transition: "none",
+          },
         },
       },
       right: {
@@ -52,6 +58,9 @@ const StyledContainer = styled("div", {
           opacity: 1,
           transform: "translateX(0%)",
           transition: drawerTransition,
+          "@reducedMotion": {
+            transition: "none",
+          },
         },
         "&.wpds-drawer-exit": {
           opacity: 1,
@@ -61,6 +70,9 @@ const StyledContainer = styled("div", {
           opacity: 0,
           transform: "translateX(100%)",
           transition: drawerTransition,
+          "@reducedMotion": {
+            transition: "none",
+          },
         },
       },
       bottom: {
@@ -75,6 +87,9 @@ const StyledContainer = styled("div", {
           opacity: 1,
           transform: "translateY(0%)",
           transition: drawerTransition,
+          "@reducedMotion": {
+            transition: "none",
+          },
         },
         "&.wpds-drawer-exit": {
           opacity: 1,
@@ -84,6 +99,9 @@ const StyledContainer = styled("div", {
           opacity: 0,
           transform: "translateY(100%)",
           transition: drawerTransition,
+          "@reducedMotion": {
+            transition: "none",
+          },
         },
       },
       left: {
@@ -98,6 +116,9 @@ const StyledContainer = styled("div", {
           opacity: 1,
           transform: "translateX(0%)",
           transition: drawerTransition,
+          "@reducedMotion": {
+            transition: "none",
+          },
         },
         "&.wpds-drawer-exit": {
           opacity: 1,
@@ -107,6 +128,9 @@ const StyledContainer = styled("div", {
           opacity: 0,
           transform: "translateX(-100%)",
           transition: drawerTransition,
+          "@reducedMotion": {
+            transition: "none",
+          },
         },
       },
     },

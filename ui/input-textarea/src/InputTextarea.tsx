@@ -41,6 +41,9 @@ const TextAreaLabel = styled(InputLabel, {
   pointerEvents: "none",
   position: "absolute",
   transition: theme.transitions.allFast,
+  "@reducedMotion": {
+    transition: "none",
+  },
   variants: {
     isFloating: {
       true: {
