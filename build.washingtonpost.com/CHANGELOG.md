@@ -5,14 +5,9 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 # [1.3.0](https://github.com/washingtonpost/wpds-docs/compare/v1.2.1...v1.3.0) (2023-03-17)
 
-
 ### Features
 
-* tabs component [SRED-67] ([#340](https://github.com/washingtonpost/wpds-docs/issues/340)) ([93bdc36](https://github.com/washingtonpost/wpds-docs/commit/93bdc36da85e8fb27db07d5846a14ab15ad9fddf))
-
-
-
-
+- tabs component [SRED-67] ([#340](https://github.com/washingtonpost/wpds-docs/issues/340)) ([93bdc36](https://github.com/washingtonpost/wpds-docs/commit/93bdc36da85e8fb27db07d5846a14ab15ad9fddf))
 
 ## [1.2.1](https://github.com/washingtonpost/wpds-docs/compare/v1.2.0...v1.2.1) (2023-03-16)
 
