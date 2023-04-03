@@ -98,13 +98,13 @@ function App({ Component, pageProps }) {
         enableColorScheme={false}
       >
         <link rel="preconnect" href="https://www.googletagmanager.com" />
-        <script
+        <Script
           id="pwapiConfig"
           src="https://www.washingtonpost.com/subscribe/static/tetro-client/fusion/tetro.min.js"
           async=""
         />
-        <script id="displayConfig">
-          {() => {
+        <Script id="displayConfig">
+          {`() => {
             window.dQ = window.dQ || {};
             window.dQ.hold = window.dQ.hold || [];
             var otCookie = document.cookie.match("wp_ak_ot=(1)[^;]*(;|$)")
@@ -127,10 +127,10 @@ function App({ Component, pageProps }) {
                 window.dQ.hold.push(args[0]);
               };
             }
-          }}
-        </script>
-        <script id="tcfString">
-          {() => {
+          }`}
+        </Script>
+        <Script id="tcfString">
+          {`() => {
             var OneTrustTCFStub;
             var otCookie = document.cookie.match("wp_ak_ot=(1)[^;]*(;|$)")
               ? RegExp.$1
@@ -263,9 +263,9 @@ function App({ Component, pageProps }) {
             } else {
               // do nothing
             }
-          }}
-        </script>
-        <script
+          }`}
+        </Script>
+        <Script
           async
           src="https://www.googletagmanager.com/gtm.js?id=GTM-WHNNX8B"
         />
