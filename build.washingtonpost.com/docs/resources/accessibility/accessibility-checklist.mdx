@@ -14,22 +14,60 @@ The following checklist is derived from the much more detailed [WCAG guidelines]
 
 **Important: Repeat all steps below on all screen sizes (mobile, tablet, desktop) to better evaluate accessibility across devices.**
 
+**Many of the checklist items link out to more detailed instructions from [our accessibility docs](/resources/accessibility/) on how to test.**
+
+We provide a [5-minute video tutorial](/resources/tutorials/five-minute-accessibility-audit) going through a portion of the checklist.
+
 Thanks for incorporating accessibility considerations into your work!
 
 <br />
-## Automated testing
-
-- **Run the axe DevTools tests**<br />
-  You can install the [axe DevTools Chrome Extension](https://chrome.google.com/webstore/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd?hl=en-US) and then use it on the page ([guide to using axe DevTools](</resources/accessibility/automated-testing#axe%20DevTools%20(Google%20Chrome%20extension)>)). Fix any issues that are flagged.
+## 1. Automated testing (will not catch most issues)
 
 - **Run the WAVE tests**<br />
-  You can install the [WAVE Chrome extension](https://chrome.google.com/webstore/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh?hl=en-US)
-  and then use it on the page ([guide to using WAVE](</resources/accessibility/automated-testing#WAVE%20Evaluation%20Tool%20(Google%20Chrome%20extension)>))
-  to check for any other auto-detectable issues.
+  Install the [WAVE Chrome extension](https://chrome.google.com/webstore/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh?hl=en-US)
+  and then use it on the page ([guide to using WAVE](</resources/accessibility/automated-testing#WAVE%20Evaluation%20Tool%20(Google%20Chrome%20extension)>)). The tool is great for beginners, as it allows you to learn about different types of issues by clicking interactive labels that appear on the page.
+  Fix any issues that are flagged.
+
+- **Run the axe DevTools tests**<br />
+  Install the [axe DevTools Chrome Extension](https://chrome.google.com/webstore/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd?hl=en-US) and then use it on the page ([guide to using axe DevTools](</resources/accessibility/automated-testing#axe%20DevTools%20(Google%20Chrome%20extension)>)). Fix any issues that are flagged.
 
 ---
 
-## Multimedia
+## 2. Screen reader & keyboard controls
+
+- **Navigate content with keyboard only**<br />
+  Using [your keyboard only](/resources/accessibility/keyboard-accessibility), `tab`
+  through the buttons, links, hoverable elements and any others the user should
+  be able to interact with, ensuring that (a) they each receive [appropriate focus
+  styles](/resources/accessibility/keyboard-accessibility#Focus%20rings) and (b) that they are clickable with the enter key (links and buttons)
+  and/or space key (buttons). Each time you press the tab key, you should see
+  something change on the page. If not, there is a missing focus style or tab
+  index issue.
+
+- **Test with screen reader linearly**<br />
+  Using a screen reader ([guidance on using screen readers](/resources/accessibility/screen-readers)), navigate the
+  page from top to bottom. Ensure all visible text is read aloud with correct pronunciation and in a sensible
+  order.
+
+- **Test with screen reader rotor**<br />
+  Open [the screen reader rotor](/resources/accessibility/screen-readers#Using%20the%20VoiceOver%20rotor)
+  and ensure all links, buttons and other elements have appropriate names. Interactive
+  elements [should not have generic names like "click here."](/resources/accessibility/semantic-html#Hyperlink%20text%20guidelines) You should be able
+  to understand what the link or button does from the rotor menu without other
+  context from the page.
+
+- **Confirm heading order is correct**<br />
+  Check the page headers using a screen reader. Does the heading order make
+  sense? There should be only one `h1`, the page title. From there, headings
+  should be [ordered strictly by page hierarchy](/resources/accessibility/semantic-html#Heading%20order%20and%20page%20landmarks)
+  (don't jump from `h2` to `h4`, don't use `h2` as a subhead of an `h3`, etc.).
+
+- **Confirm page landmarks are present and have correct content**<br />
+  Are the [base page landmarks](/resources/accessibility/semantic-html#Page%20landmarks) (`main`, `nav`, `header`, `footer`) present? If there is complementary page content like a sidebar or right rail, is it in an `aside` tag? Are the landmarks accessible with a screen reader? They should contain the right content to help screen readers scan the page quickly.
+
+---
+
+## 3. Multimedia
 
 - **Ensure all images have alt text**<br />
   Follow the [guidance for writing alt text](/resources/accessibility/alt-text).
@@ -43,8 +81,7 @@ Thanks for incorporating accessibility considerations into your work!
 - **Hide useless content from screen readers**<br />
   Just as you would put alt="" for purely decorative images to hide them from
   screen readers, you should add [aria-hidden="true"](/resources/accessibility/semantic-html#Hiding%20content%20from%20screen%20readers)
-  for content on the page that is not screen reader friendly. An example of this
-  might be an election map full of svgs and labels, etc. You would want to include
+  for content on the page that is not screen reader friendly. An example might be an election map full of svgs and labels, etc. You can include
   [a table version](/resources/accessibility/semantic-html#Tables) of the data or some
   other alternative for accessibility, and then hide the map with aria-hidden.
 
@@ -64,36 +101,7 @@ Thanks for incorporating accessibility considerations into your work!
 
 ---
 
-## Color
-
-- **Confirm white text is never on a pure black background**<br />
-  White text on a pure black background causes a [fuzziness known as halation](https://medium.com/@h_locke/why-dark-mode-causes-more-accessibility-issues-than-it-solves-d2f8359bb46a)
-  for many users with astigmatism. See [our guidance for avoiding halation](/resources/accessibility/color#Avoid%20white%20text%20on%20black%20backgrounds).
-
-- **Confirm black text is never on a pure white background**<br />
-  Black text on a pure white background causes [eye strain among
-  many users](https://uxmovement.com/content/why-you-should-never-use-pure-black-for-text-or-backgrounds/). See [our guidance for avoiding eye strain](/resources/accessibility/color#Avoid%20black%20text%20on%20white%20backgrounds).
-
-- **Ensure color contrast meets the WCAG AA standard**<br />
-  All color combinations, especially for text and interactive elements, must
-  meet at least the AA (preferably AAA) [color contrast](/resources/accessibility/color)
-  standard [using the WebAIM tool](https://webaim.org/resources/contrastchecker/).
-
-- **Check contrast for common forms of colorblindness**<br />
-  Ensure color combinations meet the AA color contrast standard for [colorblind
-  users](/resources/accessibility/color#David%20Nichols'%20coloring%20for%20colorblindness%20tool) among at least the
-  three most common forms of colorblindness.
-
-- **View the page in dark and light mode**<br />
-  [Dark mode and light mode](/resources/accessibility/color#Dark%20mode%20vs.%20light%20mode%20settings)
-  should both be supported. Does the page change to light or dark mode automatically
-  per browser settings? Does the page pass color contrast thresholds in both
-  modes? And does everything change color correctly upon toggling to light or
-  dark? Are all links, buttons, fonts, etc. on the page still visible?
-
----
-
-## Text, labels & zoom settings
+## 4. Text, labels & zoom settings
 
 - **Ensure text is readable and in plain language**<br />
   Text should be [no smaller than 12px](/resources/accessibility/text-size-and-zoom#Text%20size) and written in [plain language](/resources/accessibility/plain-language-and-labeling)
@@ -123,34 +131,29 @@ Thanks for incorporating accessibility considerations into your work!
 
 ---
 
-## Screen reader & keyboard controls
+## 5. Color
 
-- **Navigate content with keyboard only**<br />
-  Using [your keyboard only](/resources/accessibility/keyboard-accessibility), `tab`
-  through the buttons, links, hoverable elements and any others the user should
-  be able to interact with, ensuring that (a) they each receive appropriate focus
-  styles and (b) that they are clickable with the enter key (links and buttons)
-  and/or space key (buttons). Each time you press the tab key, you should see
-  something change on the page. If not, there is a missing focus style or tab
-  index issue.
+- **Confirm white text is never on a pure black background**<br />
+  White text on a pure black background causes a [fuzziness known as halation](https://medium.com/@h_locke/why-dark-mode-causes-more-accessibility-issues-than-it-solves-d2f8359bb46a)
+  for many users with astigmatism. See [our guidance for avoiding halation](/resources/accessibility/color#Avoid%20white%20text%20on%20black%20backgrounds).
 
-- **Test with screen reader linearly**<br />
-  Using [a screen reader](/resources/accessibility/screen-readers), navigate the
-  page from top to bottom. Ensure all visible text is read aloud in a sensible
-  order.
+- **Confirm black text is never on a pure white background**<br />
+  Black text on a pure white background causes [eye strain among
+  many users](https://uxmovement.com/content/why-you-should-never-use-pure-black-for-text-or-backgrounds/). See [our guidance for avoiding eye strain](/resources/accessibility/color#Avoid%20black%20text%20on%20white%20backgrounds).
 
-- **Test with screen reader rotor**<br />
-  Open [the screen reader rotor](/resources/accessibility/screen-readers#Using%20the%20VoiceOver%20rotor)
-  and ensure all links, buttons and other elements have appropriate names. Interactive
-  elements [should not have generic names like "click here."](/resources/accessibility/semantic-html#Hyperlink%20text%20guidelines) You should be able
-  to understand what the link or button does from the rotor menu without other
-  context from the page.
+- **Ensure color contrast meets the WCAG AA standard**<br />
+  All color combinations, especially for text and interactive elements, must
+  meet at least the AA (preferably AAA) [color contrast](/resources/accessibility/color)
+  standard [using the WebAIM tool](https://webaim.org/resources/contrastchecker/).
 
-- **Confirm heading order is correct**<br />
-  Check the page headers using a screen reader. Does the heading order make
-  sense? There should be only one `h1`, the page title. From there, headings
-  should be [ordered strictly by page hierarchy](/resources/accessibility/semantic-html#Heading%20order%20and%20page%20landmarks)
-  (don't jump from `h2` to `h4`, don't use `h2` as a subhead of an `h3`, etc.).
+- **Check contrast for common forms of colorblindness**<br />
+  Ensure color combinations meet the AA color contrast standard for [colorblind
+  users](/resources/accessibility/color#David%20Nichols'%20coloring%20for%20colorblindness%20tool) among at least the
+  three most common forms of colorblindness.
 
-- **Confirm page landmarks are present and have correct content**<br />
-  Are the [base page landmarks](/resources/accessibility/semantic-html#Page%20landmarks) (`main`, `nav`, `header`, `footer`) present? If there is complementary page content like a sidebar or right rail, is it in an `aside` tag? Are the landmarks accessible with a screen reader? They should contain the right content to help screen readers scan the page quickly.
+- **View the page in dark and light mode**<br />
+  [Dark mode and light mode](/resources/accessibility/color#Dark%20mode%20vs.%20light%20mode%20settings)
+  should both be supported. Does the page change to light or dark mode automatically
+  per browser settings? Does the page pass color contrast thresholds in both
+  modes? And does everything change color correctly upon toggling to light or
+  dark? Are all links, buttons, fonts, etc. on the page still visible?
