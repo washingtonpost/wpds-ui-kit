@@ -22,6 +22,7 @@ Thanks for incorporating accessibility considerations into your work!
 
 <br />
 ## 1. Automated testing (will not catch most issues)
+If you are a developer, read [our documentation on automated testing](/resources/accessibility/automated-testing) for info about adding automated checks to your code.
 
 - **Run the WAVE tests**<br />
   Install the [WAVE Chrome extension](https://chrome.google.com/webstore/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh?hl=en-US)
@@ -34,26 +35,27 @@ Thanks for incorporating accessibility considerations into your work!
 ---
 
 ## 2. Screen reader & keyboard controls
+It might seem complicated, but this testing often takes only a minute or two! Use the links below and reach out with any questions.
 
 - **Navigate content with keyboard only**<br />
-  Using [your keyboard only](/resources/accessibility/keyboard-accessibility), `tab`
-  through the buttons, links, hoverable elements and any others the user should
-  be able to interact with, ensuring that (a) they each receive [appropriate focus
-  styles](/resources/accessibility/keyboard-accessibility#Focus%20rings) and (b) that they are clickable with the enter key (links and buttons)
-  and/or space key (buttons). Each time you press the tab key, you should see
+  Press the `tab` key ([setup needed if using Firefox and Safari](/resources/accessibility/keyboard-accessibility#Setup)) and `shift` + `tab` to cycle forward and backward through
+  the buttons, links, hoverable elements and any others the user should
+  be able to interact with, ensuring (a) they each receive [appropriate focus
+  styles](/resources/accessibility/keyboard-accessibility#Focus%20rings) and (b) they are clickable with the enter key (links and buttons)
+  and/or space key (buttons). Each time you press `tab`, you should see
   something change on the page. If not, there is a missing focus style or tab
-  index issue.
+  index issue. See the [full list of keyboard controls](/resources/accessibility/keyboard-accessibility#How%20to%20navigate%20with%20a%20keyboard%20only) for details on other behavior, like what arrow keys and escape should do.
 
 - **Test with screen reader linearly**<br />
   Using a screen reader ([guidance on using screen readers](/resources/accessibility/screen-readers)), navigate the
-  page from top to bottom. Ensure all visible text is read aloud with correct pronunciation and in a sensible
+  page from top to bottom. You can click with your mouse to position the screen reader, which is helpful for testing specific parts of a page. Ensure all visible text is read aloud with correct pronunciation and in a sensible
   order.
 
 - **Test with screen reader rotor**<br />
-  Open [the screen reader rotor](/resources/accessibility/screen-readers#Using%20the%20VoiceOver%20rotor)
+  Open [the screen reader rotor](/resources/accessibility/screen-readers#Using%20the%20VoiceOver%20rotor) (`caps lock` + `U` with VoiceOver)
   and ensure all links, buttons and other elements have appropriate names. Interactive
   elements [should not have generic names like "click here."](/resources/accessibility/semantic-html#Hyperlink%20text%20guidelines) You should be able
-  to understand what the link or button does from the rotor menu without other
+  to understand what each link or button does from the rotor menu without other
   context from the page.
 
 - **Confirm heading order is correct**<br />
