@@ -10,6 +10,15 @@ rank: 6
 
 ---
 
+## Setup
+
+Some browsers require setup for keyboard navigation to work as expected.
+
+- In Safari, the `tab` key does not exhibit the behavior described below by default. You can press `option` and `tab` at the same time instead, or go into your Safari preferences and turn on “Press Tab to highlight each item on a webpage” in the "Advanced" pane of the preferences menu.
+- In Firefox for MacOS, you may need to toggle the following setting on before using keyboard navigation: Apple > System Settings > Keyboard > Keyboard navigation.
+
+---
+
 ## Keyboard focus
 
 Some people use the keyboard (or another controller mapped to keyboard keys) instead of a mouse in order to navigate page content.
@@ -17,11 +26,6 @@ Some people use the keyboard (or another controller mapped to keyboard keys) ins
 For a user to know that they can "click" an element with their keyboard (including elements that would exhibit some behavior upon mouse hover), that element must be focusable.
 
 To be focusable means the element can be selected individually via keyboard controls. Try opening one of our pages in Google Chrome, and repeatedly press the `tab` key on your keyboard. You will notice that certain elements (but not every element) become highlighted or get a ring around them as you keep pressing `tab`. The `tab` key is just one of many [keyboard controls](#How%20to%20navigate%20with%20a%20keyboard%20only) available to users.
-
-**Note:** Other browsers may require setup for keyboard navigation to work as expected.
-
-- In Safari, the `tab` key does not exhibit the above behavior by default. You can press `option` and `tab` at the same time instead, or go into your Safari preferences and turn on “Press Tab to highlight each item on a webpage” in the "Advanced" pane of the preferences menu.
-- In Firefox for MacOS, you may need to toggle the following setting on before using keyboard navigation: Apple > System Settings > Keyboard > Keyboard navigation.
 
 ---
 
@@ -61,7 +65,7 @@ Elements like links and buttons should be focusable by default, but make sure to
 
 ## How to navigate with a keyboard only
 
-Try out the following to get a better sense for how people navigate web content without a mouse. Note the different controls for different types of interactive elements. Buttons are clickable via either space or enter, whereas links are only clickable via enter.
+Try out the following to get a better sense for how people navigate web content without a mouse. Make sure to follow [the setup instructions](#Setup) first if using Firefox or Safari. Note the different controls for different types of interactive elements. Buttons are clickable via either space or enter, whereas links are only clickable via enter.
 
 - **Tab:** Next focusable element
 - **Shift Tab:** Previous focusable element
@@ -70,13 +74,6 @@ Try out the following to get a better sense for how people navigate web content 
 - **Up/Down arrows:** Scroll up/down the page or — if applicable — move between radio buttons and, in some cases, menu links
 - **Right/Left arrows:** Adjust sliders in audio and video players or, in some cases, move between menu links
 - **Escape:** Close an element that has appeared dynamically, such as a popup menu or dialog. After the dynamic element closes, focus should return to where it was before the element was opened.
-
-<br />
-**Note:** In Safari, the `tab` key does not exhibit the above behavior by default.
-You can press `option` and `tab` at the same time instead, or go into your Safari
-preferences and turn on “Press Tab to highlight each item on a webpage” in the "Advanced"
-pane of the preferences menu. Other browsers may also require setup for keyboard
-navigation to work as expected.
 
 ---
 
