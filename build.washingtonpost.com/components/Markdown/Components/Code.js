@@ -18,6 +18,7 @@ const Code = (props) => {
           width: "100%",
           display: "grid",
           backgroundColor: theme.colors.gray500,
+          overflow: "scroll"
         }}
       >
         <Sandbox
