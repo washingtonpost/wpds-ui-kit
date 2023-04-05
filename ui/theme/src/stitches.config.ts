@@ -70,7 +70,7 @@ const WPDS = createStitches({
     maxLg: `(max-width: calc(${breakpoints.lg} - 1px))`,
     maxXl: `(max-width: calc(${breakpoints.xl} - 1px))`,
     maxXxl: `(max-width: ${breakpoints.xxl})`,
-    motion: "(prefers-reduced-motion)",
+    reducedMotion: "(prefers-reduced-motion)",
     hover: "(any-hover: hover)",
     dark: "(prefers-color-scheme: dark)",
     light: "(prefers-color-scheme: light)",

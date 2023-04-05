@@ -19,6 +19,9 @@ const StyledContainer = styled("div", {
   "&.wpds-scrim-enter-active": {
     opacity: 1,
     transition: scrimTransition,
+    "@reducedMotion": {
+      transition: "none",
+    },
   },
   "&.wpds-scrim-exit": {
     opacity: 1,
@@ -26,6 +29,9 @@ const StyledContainer = styled("div", {
   "&.wpds-scrim-exit-active": {
     opacity: 0,
     transition: scrimTransition,
+    "@reducedMotion": {
+      transition: "none",
+    },
   },
 });
 

@@ -15,6 +15,9 @@ export const SwitchRoot = styled(SwitchPrimitive.Root, {
   cursor: "pointer",
   appearance: "none",
   transition: `all ${theme.transitions.fast} ${theme.transitions.inOut}`,
+  "@reducedMotion": {
+    transition: "none",
+  },
   padding: 0,
   margin: 0,
   // end reset button styles

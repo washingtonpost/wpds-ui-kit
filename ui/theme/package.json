@@ -1,6 +1,6 @@
 {
   "name": "@washingtonpost/wpds-theme",
-  "version": "1.2.0",
+  "version": "1.4.0",
   "description": "WPDS Theme and System",
   "author": "WPDS Support <wpds@washpost.com>",
   "homepage": "https://github.com/washingtonpost/wpds-ui-kit#readme",
@@ -41,5 +41,5 @@
     "tsup": "5.11.13",
     "typescript": "4.5.5"
   },
-  "gitHead": "58083e38964b30ac28daa2c61b16679bb9ba3b7a"
+  "gitHead": "df8fa1d8c01e00507b34910fb703ca03226d2704"
 }

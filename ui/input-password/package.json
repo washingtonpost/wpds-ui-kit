@@ -1,6 +1,6 @@
 {
   "name": "@washingtonpost/wpds-input-password",
-  "version": "1.2.0",
+  "version": "1.4.0",
   "description": "WPDS InputPassword",
   "author": "WPDS Support <wpds@washpost.com>",
   "homepage": "https://github.com/WPMedia/wpds-ui-kit#readme",
@@ -43,8 +43,8 @@
   },
   "dependencies": {
     "@washingtonpost/wpds-assets": "^1.18.0",
-    "@washingtonpost/wpds-icon": "1.2.0",
-    "@washingtonpost/wpds-input-text": "1.2.0"
+    "@washingtonpost/wpds-icon": "1.4.0",
+    "@washingtonpost/wpds-input-text": "1.4.0"
   },
-  "gitHead": "58083e38964b30ac28daa2c61b16679bb9ba3b7a"
+  "gitHead": "df8fa1d8c01e00507b34910fb703ca03226d2704"
 }

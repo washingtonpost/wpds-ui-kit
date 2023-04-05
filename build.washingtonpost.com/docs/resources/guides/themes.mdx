@@ -89,6 +89,9 @@ const fadeOut = keyframes({
 const fadingInButton = styled("button", {
 	'&hover': {
 		animation: `${fadeOut} 200ms ease-out`,
+    "@reducedMotion": {
+      animation: "none",
+    },
 	}
 )};
 ```
