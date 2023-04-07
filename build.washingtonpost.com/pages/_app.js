@@ -114,9 +114,9 @@ function App({ Component, pageProps }) {
             // Removed iab_banner to support gradual rollout. Will remove upon completion.
             if (
               (geoCookie.indexOf("|EEA") === -1 &&
-                (window && window.location.href.indexOf("otr=eea") === -1)) &&
-              window &&
-              window.location.href.indexOf("gtml=true") <= 0
+                (window && window.location.href.indexOf("otr=eea") === -1)) ||
+              (window &&
+              window.location.href.indexOf("gtml=true") <= 0)
             ) {
               window.dQ.participants = window.dQ.participants.filter(
                 (element) => element !== "iab_banner"
