@@ -54,6 +54,7 @@ module.exports = function (plop) {
         pattern: `"dependencies": {`,
         template: `"@washingtonpost/wpds-{{ dashCase componentName }}": "${lerna.version}",`,
       });
+
       actions.push({
         type: "append",
         path: "../ui/kit/package.json",
