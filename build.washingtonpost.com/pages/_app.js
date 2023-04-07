@@ -107,13 +107,14 @@ function App({ Component, pageProps }) {
           {`() => {
             window.dQ = window.dQ || {};
             window.dQ.hold = window.dQ.hold || [];
-            var otCookie = document.cookie.match("wp_ak_ot=(1)[^;]*(;|$)")
-              ? RegExp.$1
+            var geoCookie = document.cookie.match("(^|;) ?wp_geo=([^;]*)(;|$)")
+              ? RegExp.$2
               : "";
             window.dQ.participants = ["iab_banner", "softwall"];
             // Removed iab_banner to support gradual rollout. Will remove upon completion.
             if (
-              otCookie !== "1" &&
+              (geoCookie.indexOf("|EEA") >= 0 ||
+                (window && window.location.href.indexOf("otr=eea") >= 0)) &&
               window &&
               window.location.href.indexOf("gtml=true") <= 0
             ) {
@@ -132,15 +133,10 @@ function App({ Component, pageProps }) {
         <Script id="tcfString">
           {`() => {
             var OneTrustTCFStub;
-            var otCookie = document.cookie.match("wp_ak_ot=(1)[^;]*(;|$)")
-              ? RegExp.$1
-              : "";
             var geoCookie = document.cookie.match("(^|;) ?wp_geo=([^;]*)(;|$)")
               ? RegExp.$2
               : "";
             if (
-              (otCookie === "1" ||
-                (window && window.location.href.indexOf("gtml=true") >= 0)) &&
               (geoCookie.indexOf("|EEA") >= 0 ||
                 (window && window.location.href.indexOf("otr=eea") >= 0))
             ) {
