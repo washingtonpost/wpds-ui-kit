@@ -104,7 +104,7 @@ function App({ Component, pageProps }) {
           async=""
         />
         <Script id="displayConfig">
-          {`() => {
+          {`(() => {
             window.dQ = window.dQ || {};
             window.dQ.hold = window.dQ.hold || [];
             var geoCookie = document.cookie.match("(^|;) ?wp_geo=([^;]*)(;|$)")
@@ -126,10 +126,10 @@ function App({ Component, pageProps }) {
                 window.dQ.hold.push(args[0]);
               };
             }
-          }`}
+          })()`}
         </Script>
         <Script id="tcfString">
-          {`() => {
+          {`(() => {
             var OneTrustTCFStub;
             var geoCookie = document.cookie.match("(^|;) ?wp_geo=([^;]*)(;|$)")
               ? RegExp.$2
@@ -257,7 +257,7 @@ function App({ Component, pageProps }) {
             } else {
               // do nothing
             }
-          }`}
+          })()`}
         </Script>
         <Script
           async
