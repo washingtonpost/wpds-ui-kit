@@ -113,15 +113,13 @@ function App({ Component, pageProps }) {
             window.dQ.participants = ["iab_banner", "softwall"];
             // Removed iab_banner to support gradual rollout. Will remove upon completion.
             if (
-              (geoCookie.indexOf("|EEA") === -1 &&
-                (window && window.location.href.indexOf("otr=eea") === -1)) ||
-              (window &&
-              window.location.href.indexOf("gtml=true") <= 0)
+              (geoCookie.indexOf("|EEA") === -1
             ) {
               window.dQ.participants = window.dQ.participants.filter(
                 (element) => element !== "iab_banner"
               );
-            }
+            };
+            console.log(JSON.stringify(window.dQ.participants));
             // Define placeholder function early. Will be replaced by Tetro client.
             if (typeof window.registerDisplay !== "function") {
               window.registerDisplay = (...args) => {
