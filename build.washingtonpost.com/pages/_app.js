@@ -113,7 +113,7 @@ function App({ Component, pageProps }) {
             window.dQ.participants = ["iab_banner", "softwall"];
             // Removed iab_banner to support gradual rollout. Will remove upon completion.
             if (
-              (geoCookie.indexOf("|EEA") === -1
+              geoCookie.indexOf("|EEA") === -1
             ) {
               window.dQ.participants = window.dQ.participants.filter(
                 (element) => element !== "iab_banner"
