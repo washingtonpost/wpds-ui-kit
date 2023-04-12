@@ -47,7 +47,7 @@
     "eslint-plugin-use-encapsulation": "^1.0.0",
     "husky": "^7.0.0",
     "jest": "27",
-    "jest-environment-jsdom": "27",
+    "jest-environment-jsdom": "29",
     "lerna": "^5.1.2",
     "next": "^12.3.4",
     "nx": "^14.3.2",
