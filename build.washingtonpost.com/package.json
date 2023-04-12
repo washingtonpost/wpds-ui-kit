@@ -24,7 +24,7 @@
     "@washingtonpost/site-favicons": "^0.1.0",
     "@washingtonpost/site-footer": "0.16.0",
     "@washingtonpost/site-third-party-scripts": "latest",
-    "@washingtonpost/tachyons-css": "latest",
+    "@washingtonpost/tachyons-css": "^1.7.0",
     "@washingtonpost/wpds-accordion": "1.4.0",
     "@washingtonpost/wpds-assets": "^1.18.0",
     "@washingtonpost/wpds-kitchen-sink": "1.4.0",
