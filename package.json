@@ -33,7 +33,7 @@
     "@washingtonpost/eslint-plugin-wpds": "*",
     "babel-loader": "^8.2.2",
     "chromatic": "^6.0.6",
-    "dotenv": "^14.2.0",
+    "dotenv": "^16.0.3",
     "enzyme": "^3.11.0",
     "esbuild": "0.14.25",
     "eslint": "^8.9.0",
