@@ -12,6 +12,9 @@ const Pre = ({ children, withPreview, isGuide = "none", hideNavBar }) => {
         marginBottom: "$050",
         marginTop: "$050",
         display: "block",
+        "@sm": {
+          width: "100vw",
+        },
       }}
     >
       {React.cloneElement(children, {

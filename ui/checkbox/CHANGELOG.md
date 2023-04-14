@@ -23,10 +23,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 **Note:** Version bump only for package @washingtonpost/wpds-checkbox
 
-
-
-
-
 ## [1.2.1](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.2.0...v1.2.1) (2023-03-16)
 
 ### Bug Fixes

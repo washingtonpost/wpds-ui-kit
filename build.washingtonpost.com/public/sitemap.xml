@@ -255,6 +255,12 @@
   </url>
 
   <url>
+    <loc
+      >https://build.washingtonpost.com/resources/guides/creating-custom-icons</loc
+    >
+  </url>
+
+  <url>
     <loc>https://build.washingtonpost.com/resources/guides/figma-guide</loc>
   </url>
 
@@ -289,6 +295,12 @@
   <url>
     <loc
       >https://build.washingtonpost.com/resources/tools/tachyons-to-stitches</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://build.washingtonpost.com/resources/tutorials/five-minute-accessibility-audit</loc
     >
   </url>
 

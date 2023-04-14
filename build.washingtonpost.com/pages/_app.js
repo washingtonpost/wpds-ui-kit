@@ -119,7 +119,6 @@ function App({ Component, pageProps }) {
                 (element) => element !== "iab_banner"
               );
             }
-            console.log("Substack Notes", JSON.stringify(window.dQ.participants));
             // Define placeholder function early. Will be replaced by Tetro client.
             if (typeof window.registerDisplay !== "function") {
               window.registerDisplay = (...args) => {
