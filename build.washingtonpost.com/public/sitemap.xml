@@ -21,10 +21,6 @@
   </url>
 
   <url>
-    <loc>https://build.washingtonpost.com/components/auto-suggest</loc>
-  </url>
-
-  <url>
     <loc>https://build.washingtonpost.com/components/avatar</loc>
   </url>
 
@@ -77,6 +73,10 @@
   </url>
 
   <url>
+    <loc>https://build.washingtonpost.com/components/menu</loc>
+  </url>
+
+  <url>
     <loc>https://build.washingtonpost.com/components/pagination-dots</loc>
   </url>
 
@@ -89,11 +89,19 @@
   </url>
 
   <url>
+    <loc>https://build.washingtonpost.com/components/search</loc>
+  </url>
+
+  <url>
     <loc>https://build.washingtonpost.com/components/select</loc>
   </url>
 
   <url>
     <loc>https://build.washingtonpost.com/components/switch</loc>
+  </url>
+
+  <url>
+    <loc>https://build.washingtonpost.com/components/table</loc>
   </url>
 
   <url>
