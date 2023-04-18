@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.5.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.4.0...v1.5.0) (2023-04-18)
+
+
+### Bug Fixes
+
+* eliminate overflow issue on build.washingtonpost.com code examples [SRED-173] ([#368](https://github.com/washingtonpost/wpds-ui-kit/issues/368)) ([8406ade](https://github.com/washingtonpost/wpds-ui-kit/commit/8406ade9acc7937576e2da61d3f8ae9458e231af))
+* update keyboard accessibility docs to correct keyDownButtonWrapper and add Firefox guidance [SRED-164] ([#366](https://github.com/washingtonpost/wpds-ui-kit/issues/366)) ([1b55621](https://github.com/washingtonpost/wpds-ui-kit/commit/1b55621cd9e124478d8c1700954e8def316fd74b))
+
+
+### Features
+
+* add privacy features required scripts to all build.washingtonpost.com pages [SRED-2] ([#367](https://github.com/washingtonpost/wpds-ui-kit/issues/367)) ([bf67fa1](https://github.com/washingtonpost/wpds-ui-kit/commit/bf67fa19abfcbbbb5c93f11e47957c4b97b505c5))
+* updates to accessibility docs, including re-org of checklist and addition of 5-minute audit tutorial video [SRED-172] ([#369](https://github.com/washingtonpost/wpds-ui-kit/issues/369)) ([132929e](https://github.com/washingtonpost/wpds-ui-kit/commit/132929eafaf555d78cf3d84c093cc6f85f1fbeab))
+
+
+
+
+
 # [1.4.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.3.0...v1.4.0) (2023-03-28)
 
 
