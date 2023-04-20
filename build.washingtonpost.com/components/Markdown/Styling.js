@@ -105,7 +105,7 @@ export const Change = styled("div", {
     type: {
       ComingSoon: {
         fontSize: "$075",
-        color: "$accessible",
+        color: "$primary",
         backgroundColor: "$gray400",
         borderColor: "$gray400",
       },

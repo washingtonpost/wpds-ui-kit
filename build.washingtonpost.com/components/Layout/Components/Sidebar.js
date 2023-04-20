@@ -96,7 +96,7 @@ const SideBarList = styled("ul", {
 });
 
 const ListItem = styled("li", {
-  color: "$accessible",
+  color: "$primary",
   cursor: "pointer",
   borderLeft: "4px solid",
   borderColor: "transparent",
