@@ -18,7 +18,7 @@ const Container = styled("div", {
 });
 const Span = styled("span", {
   fontSize: "$125",
-  color: "$accessible",
+  color: "$primary",
   textDecoration: "none",
   width: "100%",
 });
