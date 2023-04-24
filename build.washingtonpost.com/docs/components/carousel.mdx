@@ -294,20 +294,13 @@ export default function Example() {
 }
 ```
 
-Controls: Center
+### Controls: Center
 
 Controls can be positioned to overlap the content items, fixed to the far left and far right of the carousel container. This layout is suitable for use-cases in which it is preferable to maintain white space above and below the content area.
 
-```jsx withPreview
+```jsx withPreview demoHeight="700"
 export default function Example() {
-  const items = [
-    "Card 1 content",
-    "Card 2 content",
-    "Card 3 content",
-    "Card 4 content",
-    "Card 5 content",
-    "Card 6 content",
-  ];
+  const items = new Array(10).fill(" ");
   return (
     <Box
       css={{
@@ -318,28 +311,105 @@ export default function Example() {
       <Carousel.Root itemsPerPage={1}>
         <Carousel.Header>
           <Carousel.HeaderContent>
-            <Carousel.Title>Carousel Title</Carousel.Title>
+            <Carousel.Title css={{ fontFamily: "$meta" }}>
+              Carousel Title
+            </Carousel.Title>
           </Carousel.HeaderContent>
-          <Carousel.HeaderActions>
-            <Carousel.PreviousButton />
-            <Carousel.NextButton />
-          </Carousel.HeaderActions>
         </Carousel.Header>
-        <Carousel.Content>
-          {items.map((item) => (
-            <Carousel.Item key={item}>
-              <Card
-                css={{
-                  width: "200px",
-                  height: "175px",
-                  marginInlineEnd: "$025",
-                }}
-              >
-                {item}
-              </Card>
-            </Carousel.Item>
-          ))}
-        </Carousel.Content>
+        <div style={{ position: "relative" }}>
+          <Carousel.PreviousButton
+            variant="secondary"
+            css={{
+              position: "absolute",
+              insetBlockStart: "50%",
+              insetInlineStart: "0",
+              transform: "translate(-50%, -50%)",
+              zIndex: 1,
+              "&:disabled": {
+                display: "none",
+              },
+            }}
+          />
+          <Carousel.NextButton
+            variant="secondary"
+            css={{
+              position: "absolute",
+              insetBlockStart: "50%",
+              insetInlineStart: "100%",
+              transform: "translate(-50%, -50%)",
+              zIndex: 1,
+              "&:disabled": {
+                display: "none",
+              },
+            }}
+          />
+          <Carousel.Content>
+            {items.map((item, i) => (
+              <Carousel.Item key={item}>
+                <Card
+                  key={"item" + i}
+                  css={{
+                    width: "300px",
+                    marginInlineEnd: "$100",
+                    padding: "0",
+                    borderRadius: "8px",
+                  }}
+                >
+                  <Box
+                    as="img"
+                    src="/img/components/carousel/iphone-demo-img.png"
+                    css={{
+                      backgroundSize: "contain",
+                      filter: "brightness(.4)",
+                      display: "flex",
+                      alignItems: "flex-start",
+                      justifyContent: "end",
+                      width: "100%",
+                      height: "530px",
+                      flexDirection: "column",
+                      position: "relative",
+                      borderRadius: "8px",
+                    }}
+                    alt="a man holding an iphone with other phones on the table in front of him"
+                  />
+                  <Box
+                    css={{
+                      position: "absolute",
+                      paddingLeft: "10px",
+                      bottom: "25px",
+                      height: "80px",
+                    }}
+                  >
+                    <Box
+                      as="h2"
+                      css={{
+                        color: "$secondary",
+                        fontSize: "$150",
+                        fontFamily: "$headline",
+                        marginBlockStart: 0,
+                        marginBlockEnd: "$050",
+                        width: "300px",
+                      }}
+                    >
+                      Here's a headline wrapping two lines
+                    </Box>
+                    <Button
+                      isOutline
+                      css={{ border: "none", paddingLeft: "0" }}
+                    >
+                      <Icon size="100">
+                        <Play />
+                      </Icon>
+                      <Box as="span" css={{ fontWeight: "normal" }}>
+                        1:23
+                      </Box>
+                    </Button>
+                  </Box>
+                </Card>
+              </Carousel.Item>
+            ))}
+          </Carousel.Content>
+        </div>
         <Carousel.Footer>
           <Carousel.Dots />
         </Carousel.Footer>
