@@ -8,7 +8,7 @@ status: Beta
 ## Anatomy
 
 <Anatomy
-  src="/img/components/switch/anatomy.svg"
+  src="/img/components/carousel/anatomy.svg"
   caption="Note: Image not to scale"
 />
 
@@ -23,18 +23,11 @@ status: Beta
 
 ### Paging
 
-The carousel component uses "pages" to display nested content in a linear sequence. A continuous group of visible items contstitutes a page. By default, the starting page is "1". The carousel can be configured to start on a page other than "1".
+The carousel component uses "pages" to display nested content in a linear sequence. A continuous group of visible items constitutes a page. By default, the starting page is "1". The carousel can be configured to start on a page other than "1".
 
-```jsx withPreview
+```jsx withPreview demoHeight="445"
 export default function Example() {
-  const items = [
-    "Card 1 content",
-    "Card 2 content",
-    "Card 3 content",
-    "Card 4 content",
-    "Card 5 content",
-    "Card 6 content",
-  ];
+  const items = new Array(10).fill(" ");
   return (
     <Box
       css={{
@@ -42,10 +35,12 @@ export default function Example() {
         width: "100vw",
       }}
     >
-      <Carousel.Root itemsPerPage={1}>
+      <Carousel.Root>
         <Carousel.Header>
           <Carousel.HeaderContent>
-            <Carousel.Title>Carousel Title</Carousel.Title>
+            <Carousel.Title css={{ fontFamily: "$meta" }}>
+              Carousel Title
+            </Carousel.Title>
           </Carousel.HeaderContent>
           <Carousel.HeaderActions>
             <Carousel.PreviousButton />
@@ -53,16 +48,72 @@ export default function Example() {
           </Carousel.HeaderActions>
         </Carousel.Header>
         <Carousel.Content>
-          {items.map((item) => (
+          {items.map((item, i) => (
             <Carousel.Item key={item}>
               <Card
+                key={"item" + i}
                 css={{
-                  width: "200px",
-                  height: "175px",
-                  marginInlineEnd: "$025",
+                  width: "300px",
+                  height: "289px",
+                  marginBlockEnd: "$025",
+                  marginInlineEnd: "$100",
+                  padding: "$100",
+                  boxShadow: "$200",
                 }}
               >
-                {item}
+                <Box
+                  css={{
+                    backgroundImage:
+                      "url('/img/components/carousel/video-story-card.png')",
+                    display: "flex",
+                    alignItems: "flex-end",
+                    height: "151px",
+                    marginBlockEnd: "$050",
+                    padding: "$100",
+                  }}
+                >
+                  <Button variant="primary">
+                    <Icon size="100">
+                      <Play />
+                    </Icon>
+                    Play video <Box as="span" css={{ fontWeight: "normal" }}>
+                      1:23
+                    </Box>
+                  </Button>
+                </Box>
+                <Box
+                  as="p"
+                  css={{
+                    fontWeight: "bold",
+                    fontSize: "$075",
+                    marginBlockStart: 0,
+                    marginBlockEnd: "$025",
+                  }}
+                >
+                  Kicker
+                </Box>
+                <Box
+                  as="h2"
+                  css={{
+                    fontSize: "$150",
+                    fontFamily: "$headline",
+                    marginBlockStart: 0,
+                    marginBlockEnd: "$050",
+                  }}
+                >
+                  Key takeaways from Biden's 2024 budget plan
+                </Box>
+                <Box
+                  as="a"
+                  href="#"
+                  css={{
+                    color: "$accessible",
+                    fontSize: "$087",
+                    textDecoration: "none",
+                  }}
+                >
+                  By The Washington Post
+                </Box>
               </Card>
             </Carousel.Item>
           ))}

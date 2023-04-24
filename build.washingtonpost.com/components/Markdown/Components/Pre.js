@@ -1,7 +1,13 @@
 import React from "react";
 import { theme, Box } from "@washingtonpost/wpds-ui-kit";
 
-const Pre = ({ children, withPreview, isGuide = "none", hideNavBar }) => {
+const Pre = ({
+  children,
+  withPreview,
+  isGuide = "none",
+  hideNavBar,
+  demoHeight,
+}) => {
   return (
     <Box
       as="pre"
@@ -21,6 +27,7 @@ const Pre = ({ children, withPreview, isGuide = "none", hideNavBar }) => {
         withPreview,
         isGuide,
         hideNavBar,
+        demoHeight,
       })}
     </Box>
   );

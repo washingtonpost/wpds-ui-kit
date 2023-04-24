@@ -156,6 +156,7 @@ const CustomSandpack = ({
   isGuide,
   withPreview = false,
   hideNavBar = false,
+  demoHeight,
   children,
 }) => {
   const [showCode, setShowCode] = useState(!withPreview);
@@ -188,6 +189,7 @@ const CustomSandpack = ({
         style={{
           border: "1px solid var(--wpds-colors-subtle)",
           borderRadius: 0,
+          height: demoHeight ? `${demoHeight}px` : "auto",
         }}
       >
         {withPreview && <Preview isGuide={isGuide} />}

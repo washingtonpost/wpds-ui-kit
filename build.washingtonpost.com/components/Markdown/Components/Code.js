@@ -25,6 +25,7 @@ const Code = (props) => {
           isGuide={props.isGuide}
           withPreview={props.withPreview}
           hideNavBar={props.hideNavBar}
+          demoHeight={props.demoHeight}
         >
           {props.children.trim()}
         </Sandbox>

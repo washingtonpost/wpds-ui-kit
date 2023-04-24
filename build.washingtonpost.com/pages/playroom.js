@@ -343,7 +343,6 @@ export async function getServerSideProps({ query, res }) {
     "Cache-Control",
     "public, s-maxage=10, stale-while-revalidate=59"
   );
-
   const { code, edit, isGuide = "none" } = query;
 
   let source;
