@@ -43,3 +43,7 @@ npm i @washingtonpost/wpds-ui-kit
   transition: `background ${theme.transitions.fast} ${theme.transitions.inOut`
   ```
 - Previous to v0.15 `globalStyles` contained a global removal of margin and padding for all elements. After upgrading any component element that relied on having that spacing removed will need to add spacing rules with styles local to the component.
+
+## License
+
+This project is developed under a [MIT License](https://github.com/washingtonpost/wpds-ui-kit/blob/main/LICENSE).
