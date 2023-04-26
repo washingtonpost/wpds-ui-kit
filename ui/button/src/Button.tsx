@@ -99,7 +99,7 @@ export const Button = styled("button", {
   },
   defaultVariants: {
     variant: "secondary",
-    density: "compact",
+    density: "default",
     isOutline: false,
     icon: "left",
   },
