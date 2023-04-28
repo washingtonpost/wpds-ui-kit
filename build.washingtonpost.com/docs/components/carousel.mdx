@@ -454,7 +454,7 @@ export default function Example() {
 
 Controls can be positioned to overlap the content items, fixed to the far left and far right of the carousel container. This layout is suitable for use-cases in which it is preferable to maintain white space above and below the content area.
 
-```jsx withPreview demoHeight="700"
+```jsx withPreview isGuide="success" demoHeight="716"
 export default function Example() {
   const items = new Array(10).fill(" ");
   return (
@@ -575,20 +575,15 @@ export default function Example() {
 }
 ```
 
-### Controls: Hidden
+### Controls on mobile devices
 
-Controls can be hidden to permit navigation by swipe only. This appearance is optimal for layouts where screen real-estate is limited, such as mobile devices.
+On mobile devices, controls are hidden by default to permit navigation by swipe only. This behavior is optimal for compact layouts such as smartphones where screen real-estate is limited.
 
-```jsx withPreview
+(You may view any of the live demo examples on this page on your mobile device to see this behavior in action).
+
+```jsx withPreview isGuide="success" demoHeight="716"
 export default function Example() {
-  const items = [
-    "Card 1 content",
-    "Card 2 content",
-    "Card 3 content",
-    "Card 4 content",
-    "Card 5 content",
-    "Card 6 content",
-  ];
+  const items = new Array(6).fill("");
   return (
     <Box
       css={{
@@ -601,22 +596,120 @@ export default function Example() {
           <Carousel.HeaderContent>
             <Carousel.Title>Carousel Title</Carousel.Title>
           </Carousel.HeaderContent>
-          <Carousel.HeaderActions>
-            <Carousel.PreviousButton />
-            <Carousel.NextButton />
-          </Carousel.HeaderActions>
         </Carousel.Header>
         <Carousel.Content>
-          {items.map((item) => (
+          {items.map((item, i) => (
             <Carousel.Item key={item}>
               <Card
+                key={"item" + i}
                 css={{
-                  width: "200px",
-                  height: "175px",
-                  marginInlineEnd: "$025",
+                  width: "300px",
+                  marginInlineEnd: "$100",
+                  padding: "$100",
+                  backgroundImage:
+                    "url('/img/components/carousel/background-blur.png')",
+                  backgroundSize: "cover",
+                  borderRadius: "$050",
                 }}
               >
-                {item}
+                <img
+                  src="/img/components/carousel/the-7.png"
+                  width="268"
+                  height="268"
+                />
+                <Box
+                  as="p"
+                  css={{
+                    color: "$secondary",
+                    fontWeight: "bold",
+                    fontSize: "$075",
+                    marginBlockStart: "$075",
+                    marginBlockEnd: "$025",
+                  }}
+                >
+                  Podcast
+                </Box>
+                <Box
+                  as="h2"
+                  css={{
+                    color: "$secondary",
+                    fontSize: "$150",
+                    fontFamily: "$headline",
+                    marginBlockStart: 0,
+                    marginBlockEnd: "$050",
+                  }}
+                >
+                  Raphael Warnock wins in Georgia despite efforts to
+                </Box>
+                <Box
+                  as="p"
+                  css={{
+                    color: "$subtle",
+                    fontSize: "$087",
+                    overflow: "hidden",
+                    display: "-webkit-box",
+                    "-webkit-line-clamp": 4,
+                    "-webkit-box-orient": "vertical",
+                  }}
+                >
+                  Every minute of your morning counts. Host Jeff Pierre takes
+                  you through the seven most important and interesting stories
+                  of the day, with the reporting and insight of The Washington
+                  Post. Get caught up in just a few minutes every weekday at 7
+                  a.m.
+                </Box>
+                <Box
+                  css={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                  }}
+                >
+                  <Button
+                    variant="secondary"
+                    isOutline
+                    css={{
+                      border: "none",
+                      padding: 0,
+                      paddingInlineEnd: "$025",
+                    }}
+                  >
+                    <Icon
+                      size="150"
+                      css={{
+                        border: "1px solid white",
+                        borderRadius: "50%",
+                        padding: "$050",
+                        width: "40px",
+                        height: "40px",
+                      }}
+                    >
+                      <Play />
+                    </Icon>
+                    Play video <Box
+                      as="span"
+                      css={{ fontSize: "$087", fontWeight: "normal" }}
+                    >
+                      1:23
+                    </Box>
+                  </Button>
+                  <Button
+                    variant="secondary"
+                    isOutline
+                    icon="right"
+                    css={{ border: "none", padding: 0 }}
+                  >
+                    <Icon size="100">
+                      <ChevronDown />
+                    </Icon>
+                    <Box
+                      as="span"
+                      css={{ fontSize: "$087", fontWeight: "normal" }}
+                    >
+                      Follow On
+                    </Box>
+                  </Button>
+                </Box>
               </Card>
             </Carousel.Item>
           ))}
@@ -805,10 +898,6 @@ export default function Example() {
 
 ## Accessibility
 
-### Animation / Motion
-
-The carousel honors user preference for reduced motion by disabling animation.
-
 ### Handling of current item
 
 To optimize the carousel for interoperability with assistive technologies (e.g. screen -readers), make sure to refer to WAI-ARIA.
@@ -965,105 +1054,9 @@ If carousel is set to page automatically, pause the animation when carousel rece
 
 Pause the animation when cursor enters hover area of carousel.
 
-```jsx withPreview demoHeight="550"
-export default function Example() {
-  const items = new Array(6).fill("");
-  return (
-    <Box
-      css={{
-        paddingBlockStart: "$150",
-        paddingInline: "$100",
-        width: "100vw",
-      }}
-    >
-      <Carousel.Root itemsPerPage={1}>
-        <Carousel.Header>
-          <Carousel.HeaderContent>
-            <Carousel.Title css={{ fontFamily: "$meta" }}>
-              Carousel Title
-            </Carousel.Title>
-          </Carousel.HeaderContent>
-          <Carousel.HeaderActions>
-            <Carousel.PreviousButton />
-            <Carousel.NextButton />
-          </Carousel.HeaderActions>
-        </Carousel.Header>
-        <Carousel.Content>
-          {items.map((item, i) => (
-            <Carousel.Item key={item}>
-              <Card
-                key={"item" + i}
-                css={{
-                  width: "300px",
-                  marginBlockEnd: "$025",
-                  marginInlineEnd: "$100",
-                  outline: i === 0 ? "2px solid $cta" : "",
-                  outlineOffset: i === 0 ? "-2px" : "",
-                  padding: "$100",
-                  boxShadow: "$200",
-                }}
-              >
-                <Box
-                  css={{
-                    backgroundImage:
-                      "url('/img/components/carousel/image-story-card.png')",
-                    display: "flex",
-                    alignItems: "flex-end",
-                    height: "179px",
-                    marginBlockEnd: "$050",
-                    padding: "$100",
-                  }}
-                />
-                <Box
-                  as="p"
-                  css={{
-                    fontWeight: "bold",
-                    fontSize: "$075",
-                    marginBlockStart: 0,
-                    marginBlockEnd: "$025",
-                  }}
-                >
-                  Kicker
-                </Box>
-                <Box
-                  as="h2"
-                  css={{
-                    fontSize: "$150",
-                    fontFamily: "$headline",
-                    marginBlockStart: 0,
-                    marginBlockEnd: "$050",
-                  }}
-                >
-                  Here&rsquo;s a headline wrapping to two lines
-                </Box>
-                <Box as="p" css={{ color: "$accessible", fontSize: "$087" }}>
-                  Here&rsquo;s some text for the blurb of this piece,
-                  summarizing in a few words what the article is about to
-                  provide more context for the reader.
-                </Box>
-                <Box
-                  as="a"
-                  href="#"
-                  css={{
-                    color: "$accessible",
-                    fontSize: "$087",
-                    textDecoration: "none",
-                  }}
-                >
-                  By The Washington Post
-                </Box>
-              </Card>
-            </Carousel.Item>
-          ))}
-        </Carousel.Content>
-        <Carousel.Footer>
-          <Carousel.Dots />
-        </Carousel.Footer>
-      </Carousel.Root>
-    </Box>
-  );
-}
-```
+### Animation / Motion
+
+The carousel honors user preference for reduced motion by disabling animation.
 
 ---
 
