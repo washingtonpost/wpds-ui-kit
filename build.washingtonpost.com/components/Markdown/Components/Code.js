@@ -16,7 +16,6 @@ const Code = (props) => {
           minHeight: "$500",
           maxWidth: "100%",
           width: "100%",
-          display: "grid",
           backgroundColor: theme.colors.gray500,
           overflow: "scroll",
         }}

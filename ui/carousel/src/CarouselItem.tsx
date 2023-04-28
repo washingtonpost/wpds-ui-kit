@@ -6,7 +6,7 @@ import { isItemShown } from "./utils";
 
 const NAME = "CarouselItem";
 
-const Container = styled("div", {
+const Container = styled("li", {
   flexShrink: "0",
   variants: {
     focused: {

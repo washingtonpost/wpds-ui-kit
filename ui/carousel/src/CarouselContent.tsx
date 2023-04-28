@@ -19,8 +19,11 @@ const Container = styled("div", {
   },
 });
 
-const Slider = styled("div", {
+const Slider = styled("ul", {
   display: "flex",
+  listStyle: "none",
+  paddingInlineStart: 0,
+  marginBlock: 0,
   transition: `transform 0.5s ${theme.transitions.inOut}`,
   "@reducedMotion": {
     transition: "none",
@@ -49,7 +52,7 @@ export const CarouselContent = React.forwardRef<
 
   const [totalItems, setTotalItems] = React.useState(0);
   const idRef = React.useRef<string | null>(null);
-  const childRefs = React.useRef<HTMLDivElement[]>([]);
+  const childRefs = React.useRef<HTMLLIElement[]>([]);
   const internalRef = React.useRef<HTMLDivElement>(null);
   const [xPos, setXpos] = React.useState(0);
   const pagePositions = React.useRef([]);
@@ -243,8 +246,7 @@ export const CarouselContent = React.forwardRef<
                 {
                   "aria-label": `${index + 1} of ${totalItems}`,
                   id: `${idRef.current}-item${index}`,
-                  ref: (ref: HTMLDivElement) =>
-                    (childRefs.current[index] = ref),
+                  ref: (ref: HTMLLIElement) => (childRefs.current[index] = ref),
                 }
               );
             }

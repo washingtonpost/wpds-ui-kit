@@ -634,16 +634,30 @@ export default function Example() {
 
 The carousel can accept custom "previous"/"next" buttons. However, be mindful of visual contrast and accessibility contraints when evaluating design and technical implementation.
 
-```jsx withPreview
+```jsx withPreview isGuide="warning" demoHeight="410"
 export default function Example() {
-  const items = [
-    "Card 1 content",
-    "Card 2 content",
-    "Card 3 content",
-    "Card 4 content",
-    "Card 5 content",
-    "Card 6 content",
-  ];
+  const items = new Array(6).fill("");
+  const buttonStyle = {
+    backgroundColor: "$purple500",
+    fontSize: "$075",
+    border: "none",
+    borderRadius: 0,
+    height: "auto",
+    paddingInline: "$075",
+    position: "absolute",
+    top: "$050",
+    bottom: "$050",
+    zIndex: 1,
+    "&:hover": {
+      backgroundColor: "$purple400",
+    },
+    "&:disabled": {
+      cursor: "default",
+      backgroundColor: "$purple600",
+      "&:hover": { backgroundColor: "$purple600" },
+    },
+  };
+
   return (
     <Box
       css={{
@@ -654,28 +668,40 @@ export default function Example() {
       <Carousel.Root itemsPerPage={1}>
         <Carousel.Header>
           <Carousel.HeaderContent>
-            <Carousel.Title>Carousel Title</Carousel.Title>
+            <Carousel.Title css={{ textAlign: "center" }}>
+              Carousel Title
+            </Carousel.Title>
           </Carousel.HeaderContent>
-          <Carousel.HeaderActions>
-            <Carousel.PreviousButton />
-            <Carousel.NextButton />
-          </Carousel.HeaderActions>
         </Carousel.Header>
-        <Carousel.Content>
-          {items.map((item) => (
-            <Carousel.Item key={item}>
-              <Card
-                css={{
-                  width: "200px",
-                  height: "175px",
-                  marginInlineEnd: "$025",
-                }}
-              >
-                {item}
-              </Card>
-            </Carousel.Item>
-          ))}
-        </Carousel.Content>
+        <Box css={{ position: "relative" }}>
+          <Carousel.PreviousButton asChild>
+            <Button css={{ ...buttonStyle, left: 0 }}>Prev</Button>
+          </Carousel.PreviousButton>
+          <Carousel.NextButton asChild>
+            <Button css={{ ...buttonStyle, right: 0 }}>Next</Button>
+          </Carousel.NextButton>
+          <Carousel.Content>
+            {items.map((item, i) => (
+              <Carousel.Item key={"item" + i}>
+                <Card
+                  css={{
+                    fontSize: "$112",
+                    width: "300px",
+                    marginInlineEnd: "$100",
+                  }}
+                >
+                  <strong>
+                    Griner will be on U.S. soil "within 24 hours,"
+                  </strong>{" "}
+                  Biden said Thursday morning. He thanked administration
+                  officials and the United Arab Emirates for helping to
+                  facilitate Griner's return. "This is a day we've worked toward
+                  for a long time," he said.
+                </Card>
+              </Carousel.Item>
+            ))}
+          </Carousel.Content>
+        </Box>
         <Carousel.Footer>
           <Carousel.Dots />
         </Carousel.Footer>
@@ -689,16 +715,33 @@ export default function Example() {
 
 The carousel component can be configured as a slideshow. The slideshow option displays one content item at a time and features automatic paging that can be toggled using the "play" / "pause" button.
 
-```jsx withPreview
+```jsx withPreview isGuide="success" demoHeight="800"
 export default function Example() {
-  const items = [
-    "Card 1 content",
-    "Card 2 content",
-    "Card 3 content",
-    "Card 4 content",
-    "Card 5 content",
-    "Card 6 content",
-  ];
+  const items = new Array(4).fill("");
+  const [page, setPage] = useState(0);
+  const [intervalId, setIntervalId] = useState();
+
+  function handlePlayPauseClick() {
+    const wrapPages = (currentPage) => {
+      if (currentPage < items.length - 1) {
+        return currentPage + 1;
+      } else {
+        return 0;
+      }
+    };
+
+    if (intervalId) {
+      clearInterval(intervalId);
+      setIntervalId(undefined);
+    } else {
+      const id = setInterval(() => {
+        setPage(wrapPages);
+      }, 2000);
+      setPage(wrapPages);
+      setIntervalId(id);
+    }
+  }
+
   return (
     <Box
       css={{
@@ -706,28 +749,46 @@ export default function Example() {
         width: "100vw",
       }}
     >
-      <Carousel.Root itemsPerPage={1}>
-        <Carousel.Header>
-          <Carousel.HeaderContent>
-            <Carousel.Title>Carousel Title</Carousel.Title>
-          </Carousel.HeaderContent>
-          <Carousel.HeaderActions>
-            <Carousel.PreviousButton />
-            <Carousel.NextButton />
-          </Carousel.HeaderActions>
-        </Carousel.Header>
-        <Carousel.Content>
-          {items.map((item) => (
-            <Carousel.Item key={item}>
-              <Card
-                css={{
-                  width: "200px",
-                  height: "175px",
-                  marginInlineEnd: "$025",
-                }}
-              >
-                {item}
-              </Card>
+      <Carousel.Root
+        itemsPerPage={1}
+        css={{ position: "relative", maxWidth: "928px", marginInline: "auto" }}
+        aria-label="Slideshow"
+        page={page}
+        onPageChange={(p) => {
+          setPage(p);
+        }}
+      >
+        <Box
+          css={{
+            display: "flex",
+            gap: "$025",
+            position: "absolute",
+            insetInlineEnd: "$025",
+            insetBlockEnd: "$300",
+            zIndex: 1,
+          }}
+        >
+          <Carousel.PreviousButton />
+          <Button
+            variant="primary"
+            icon={"center"}
+            aria-label="Start slide rotation"
+            onClick={handlePlayPauseClick}
+          >
+            <Icon>{intervalId ? <Pause /> : <Play />}</Icon>
+          </Button>
+          <Carousel.NextButton />
+        </Box>
+        <Carousel.Content aria-live={intervalId ? "off" : "polite"}>
+          {items.map((_, i) => (
+            <Carousel.Item key={`item${i}`} css={{}}>
+              <Box as="figure" css={{ margin: 0 }}>
+                <img
+                  src="/img/components/carousel/slideshow.png"
+                  alt="The U.S. capital building at night"
+                />
+                <Box as="figcaption">(Tom Pennington/Getty Images)</Box>
+              </Box>
             </Carousel.Item>
           ))}
         </Carousel.Content>
@@ -750,11 +811,11 @@ The carousel honors user preference for reduced motion by disabling animation.
 
 ### Handling of current item
 
-To optimize the carousel for interoperability with assistive technologies (e.g. screen0readers), make sure to refer to WAI-ARIA.
+To optimize the carousel for interoperability with assistive technologies (e.g. screen -readers), make sure to refer to WAI-ARIA.
 
-Use WAI-ARIA 'live-region' to inform the screen-reader which item is currently displayed - this enables the item to be announced by the screen-reader. During carousel transitions, set the live-region from the preceeding item to the current one, corresponding with the page index.
+Use WAI-ARIA `live-region` to inform the screen-reader which item is being scrolled into view when using the previous and next buttons - this enables the content of the item to be announced by the screen-reader.
 
-Hide transitioning elements from screen-readers by setting 'aria-hidden' attribute to 'true'.
+Add `aria-labelledby` to Carousel Items to allow the screen-reader to read the content items label when moving between them using the arrow keys
 
 ```jsx withPreview demoHeight="550"
 export default function Example() {
@@ -817,7 +878,7 @@ export default function Example() {
           {items.map((item, i) => (
             <Carousel.Item
               key={item.headline}
-              aria-labeledby={`article-heading-${i}`}
+              aria-labelledby={`article-heading-${i}`}
             >
               <Card
                 key={"item" + i}
