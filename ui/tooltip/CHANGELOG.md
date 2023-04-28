@@ -7,17 +7,9 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 **Note:** Version bump only for package @washingtonpost/wpds-tooltip
 
-
-
-
-
 # [1.4.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.3.0...v1.4.0) (2023-03-28)
 
 **Note:** Version bump only for package @washingtonpost/wpds-tooltip
-
-
-
-
 
 # [1.3.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.2.1...v1.3.0) (2023-03-17)
 
