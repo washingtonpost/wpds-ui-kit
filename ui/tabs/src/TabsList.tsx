@@ -54,15 +54,11 @@ export const TabsList = React.forwardRef<HTMLDivElement, TabsListProps>(
       null
     );
 
-    const { defaultValue, value } = React.useContext(TabsContext);
+    const { initialValue } = React.useContext(TabsContext);
 
     React.useEffect(() => {
       React.Children.map(children, (child: React.ReactNode, index: number) => {
-        if (React.isValidElement(child) && defaultValue === child.props.value) {
-          setActiveIndex(index);
-        }
-
-        if (React.isValidElement(child) && value === child.props.value) {
+        if (React.isValidElement(child) && initialValue === child.props.value) {
           setActiveIndex(index);
         }
       });

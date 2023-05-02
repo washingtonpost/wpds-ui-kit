@@ -18,15 +18,14 @@ export type TabsRootProps = {
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const TabsRoot = React.forwardRef<HTMLDivElement, TabsRootProps>(
-  ({ children, defaultValue = "", ...props }: TabsRootProps, ref) => {
+  ({ children, ...props }: TabsRootProps, ref) => {
     return (
       <TabsContext.Provider
         value={{
-          defaultValue: defaultValue,
-          value: props.value,
+          initialValue: props.defaultValue || props.value,
         }}
       >
-        <StyledTabsRoot defaultValue={defaultValue} {...props} ref={ref}>
+        <StyledTabsRoot {...props} ref={ref}>
           {children}
         </StyledTabsRoot>
       </TabsContext.Provider>

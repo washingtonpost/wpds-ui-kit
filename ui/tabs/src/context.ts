@@ -1,13 +1,11 @@
 import * as React from "react";
 
 interface TabsContextInterface {
-  defaultValue?: string;
-  value?: string;
+  initialValue?: string;
 }
 
 const defaultState = {
-  defaultValue: "",
-  value: "",
+  initialValue: "",
 };
 
 export const TabsContext =
