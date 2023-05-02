@@ -85,30 +85,34 @@ export const getStaticProps = async ({ params }) => {
   const navigation = await getNavigation();
 
   const lookupTable = {
-    "workshops": {
-      description: "Sharpen your design and development skills with our in-depth recorded workshops.",
-      size: THUMBNAIL_WIDE
+    workshops: {
+      description:
+        "Sharpen your design and development skills with our in-depth recorded workshops.",
+      size: THUMBNAIL_WIDE,
     },
-    "guides": {
-      description: "Explore the processes and tools we use in our step-by-step written guides.",
-      size: THUMBNAIL_SQUARE
+    guides: {
+      description:
+        "Explore the processes and tools we use in our step-by-step written guides.",
+      size: THUMBNAIL_SQUARE,
     },
-    "tutorials": {
-      description: "Watch or read through our tutorials to understand key techniques and concepts.",
-      size: THUMBNAIL_WIDE
+    tutorials: {
+      description:
+        "Watch or read through our tutorials to understand key techniques and concepts.",
+      size: THUMBNAIL_WIDE,
     },
-    "accessibility": {
-      description: "Explore our accessibility checklist, testing strategies and considerations. Contact accessibility@washpost.com with any questions, ideas or feedback.",
-      size: THUMBNAIL_SQUARE
+    accessibility: {
+      description:
+        "Explore our accessibility checklist, testing strategies and considerations. Contact accessibility@washpost.com with any questions, ideas or feedback.",
+      size: THUMBNAIL_SQUARE,
     },
     tools: {
       description: "",
-      size: THUMBNAIL_WIDE
-    }
-  }
+      size: THUMBNAIL_WIDE,
+    },
+  };
 
   // populate props
-  const { description, size } = lookupTable[params.category]
+  const { description, size } = lookupTable[params.category];
 
   return {
     props: {
