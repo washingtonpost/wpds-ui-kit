@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.2](https://github.com/washingtonpost/wpds-docs/compare/v1.5.1...v1.5.2) (2023-05-02)
+
+
+### Bug Fixes
+
+* lint errors ([#384](https://github.com/washingtonpost/wpds-docs/issues/384)) ([af652a9](https://github.com/washingtonpost/wpds-docs/commit/af652a9deb628b7b447d08a1b6c60424330b62d5))
+
+
+
+
+
 ## [1.5.1](https://github.com/washingtonpost/wpds-docs/compare/v1.5.0...v1.5.1) (2023-05-02)
 
 
