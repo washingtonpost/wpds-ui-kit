@@ -99,7 +99,7 @@ const Template: ComponentStory<any> = (args) => {
           </StyledContent>
           <StyledContent value="tab6">Venezuela is here 🇻🇪</StyledContent>
           <StyledContent value="tab7">Kenya is here 🇰🇪</StyledContent>
-          <StyledContent value="tab8">Austira is here 🇦🇹</StyledContent>
+          <StyledContent value="tab8">Austria is here 🇦🇹</StyledContent>
         </Tabs.Root>
       </StyledTabs>
     </>
@@ -138,7 +138,7 @@ const TemplateShort: ComponentStory<any> = (args) => {
           </Tabs.List>
           <StyledContent value="tab1">France is here 🇫🇷</StyledContent>
           <StyledContent value="tab2">Kenya is here 🇰🇪</StyledContent>
-          <StyledContent value="tab3">Austira is here 🇦🇹</StyledContent>
+          <StyledContent value="tab3">Austria is here 🇦🇹</StyledContent>
         </Tabs.Root>
       </StyledTabs>
     </>
@@ -182,7 +182,7 @@ const TemplateControlled: ComponentStory<any> = (args) => {
           </Tabs.List>
           <StyledContent value="tab1">France is here 🇫🇷</StyledContent>
           <StyledContent value="tab2">Kenya is here 🇰🇪</StyledContent>
-          <StyledContent value="tab3">Austira is here 🇦🇹</StyledContent>
+          <StyledContent value="tab3">Austria is here 🇦🇹</StyledContent>
         </Tabs.Root>
       </StyledTabs>
     </>
