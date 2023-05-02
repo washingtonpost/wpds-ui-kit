@@ -4,6 +4,7 @@ import * as TabsPrimitive from "@radix-ui/react-tabs";
 import type * as WPDS from "@washingtonpost/wpds-theme";
 
 import { styled, theme } from "@washingtonpost/wpds-theme";
+import { TabsContext } from "./context";
 
 const StyledTabsList = styled(TabsPrimitive.List, {
   flexShrink: 0,
@@ -57,9 +58,23 @@ export const TabsList = React.forwardRef<HTMLDivElement, TabsListProps>(
       null
     );
 
+    const { defaultValue, value } = React.useContext(TabsContext);
+
     React.useEffect(() => {
       // only instantiate the DOMRect if you're on the dom
       hasWindow() && setPreviousRect(new DOMRect(0, 0));
+    }, []);
+
+    React.useEffect(() => {
+      React.Children.map(children, (child: React.ReactNode, index: number) => {
+        if (React.isValidElement(child) && defaultValue === child.props.value) {
+          setActiveIndex(index);
+        }
+
+        if (React.isValidElement(child) && value === child.props.value) {
+          setActiveIndex(index);
+        }
+      });
     }, []);
 
     return (

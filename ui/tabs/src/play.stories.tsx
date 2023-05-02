@@ -59,7 +59,7 @@ const Template: ComponentStory<any> = (args) => {
     <>
       <StyledLabel>Outline for viewing alignment purposes only</StyledLabel>
       <StyledTabs>
-        <Tabs.Root {...rest} defaultValue="tab1">
+        <Tabs.Root defaultValue="tab1" {...rest}>
           <Tabs.List
             aria-label="Countries' information"
             density={density}
@@ -121,7 +121,7 @@ const TemplateShort: ComponentStory<any> = (args) => {
     <>
       <StyledLabel>Outline for viewing alignment purposes only</StyledLabel>
       <StyledTabs>
-        <Tabs.Root {...rest}>
+        <Tabs.Root {...rest} defaultValue="tab2">
           <Tabs.List
             aria-label="Countries' information"
             density={density}
@@ -150,6 +150,46 @@ Center.args = {
   align: "center",
   density: "compact",
 };
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const TemplateControlled: ComponentStory<any> = (args) => {
+  const { density, align, ...rest } = args;
+  const [value, setValue] = React.useState("tab3");
+  return (
+    <>
+      <StyledLabel>Outline for viewing alignment purposes only</StyledLabel>
+      <StyledTabs>
+        <Tabs.Root
+          {...rest}
+          value={value}
+          onValueChange={(val) => {
+            setValue(val);
+          }}
+        >
+          <Tabs.List
+            aria-label="Countries' information"
+            density={density}
+            align={align}
+          >
+            <Tabs.Trigger value="tab1">
+              <Icon label="trigger icon">
+                <Info />
+              </Icon>
+              France
+            </Tabs.Trigger>
+            <Tabs.Trigger value="tab2">Kenya</Tabs.Trigger>
+            <Tabs.Trigger value="tab3">Austria</Tabs.Trigger>
+          </Tabs.List>
+          <StyledContent value="tab1">France is here 🇫🇷</StyledContent>
+          <StyledContent value="tab2">Kenya is here 🇰🇪</StyledContent>
+          <StyledContent value="tab3">Austira is here 🇦🇹</StyledContent>
+        </Tabs.Root>
+      </StyledTabs>
+    </>
+  );
+};
+
+export const ControlledExample = TemplateControlled.bind({});
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const InteractionsTemplate: ComponentStory<any> = (args) => (

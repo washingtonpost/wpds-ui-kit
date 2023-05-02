@@ -3,6 +3,7 @@ import * as TabsPrimitive from "@radix-ui/react-tabs";
 import { styled } from "@washingtonpost/wpds-theme";
 
 import type * as WPDS from "@washingtonpost/wpds-theme";
+import { TabsContext } from "./context";
 
 const StyledTabsRoot = styled(TabsPrimitive.Root, {});
 
@@ -19,9 +20,16 @@ export type TabsRootProps = {
 export const TabsRoot = React.forwardRef<HTMLDivElement, TabsRootProps>(
   ({ children, defaultValue = "", ...props }: TabsRootProps, ref) => {
     return (
-      <StyledTabsRoot defaultValue={defaultValue} {...props} ref={ref}>
-        {children}
-      </StyledTabsRoot>
+      <TabsContext.Provider
+        value={{
+          defaultValue: defaultValue,
+          value: props.value,
+        }}
+      >
+        <StyledTabsRoot defaultValue={defaultValue} {...props} ref={ref}>
+          {children}
+        </StyledTabsRoot>
+      </TabsContext.Provider>
     );
   }
 );
