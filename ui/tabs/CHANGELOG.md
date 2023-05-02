@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.1](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.5.0...v1.5.1) (2023-05-02)
+
+
+### Bug Fixes
+
+* set active index correctly when default value is passed in ([#383](https://github.com/washingtonpost/wpds-ui-kit/issues/383)) ([848972a](https://github.com/washingtonpost/wpds-ui-kit/commit/848972a83fdf1550e170da24578904f794704a5e))
+
+
+
+
+
 # [1.5.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.4.0...v1.5.0) (2023-04-18)
 
 **Note:** Version bump only for package @washingtonpost/wpds-tabs

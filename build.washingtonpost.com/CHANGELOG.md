@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.1](https://github.com/washingtonpost/wpds-docs/compare/v1.5.0...v1.5.1) (2023-05-02)
+
+
+### Bug Fixes
+
+* improve color contrast on build.washingtonpost.com Sidebar for better accessibility [SRED-198] ([#376](https://github.com/washingtonpost/wpds-docs/issues/376)) ([3bd473c](https://github.com/washingtonpost/wpds-docs/commit/3bd473c828af93e509a53fab2576a196babd3fac))
+* update code to get the tools link working ([#377](https://github.com/washingtonpost/wpds-docs/issues/377)) ([12c9eab](https://github.com/washingtonpost/wpds-docs/commit/12c9eabe403fb911c2bc4a12117c53b36dd9cdc1))
+
+
+
+
+
 # [1.5.0](https://github.com/washingtonpost/wpds-docs/compare/v1.4.0...v1.5.0) (2023-04-18)
 
 

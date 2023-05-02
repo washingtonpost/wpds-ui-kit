@@ -1,6 +1,6 @@
 {
   "name": "@washingtonpost/wpds-app-bar",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "WPDS App Bar",
   "author": "WPDS Support <wpds@washpost.com>",
   "homepage": "https://github.com/washingtonpost/wpds-ui-kit#readme",
@@ -40,7 +40,7 @@
     "react": "^16.8.6 || ^17.0.2"
   },
   "dependencies": {
-    "@washingtonpost/wpds-theme": "1.5.0",
+    "@washingtonpost/wpds-theme": "1.5.1",
     "react": "^16.8.6 || ^17.0.2"
   },
   "gitHead": "c7c21c834742277d2e6da1d903b7463b4ac2fc8a"
