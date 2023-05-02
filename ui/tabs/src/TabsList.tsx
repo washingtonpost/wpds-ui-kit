@@ -47,10 +47,6 @@ type TabsListProps = {
 } & TabsListVariants &
   React.ComponentProps<typeof StyledTabsList>;
 
-const hasWindow = () => {
-  return typeof window !== "undefined";
-};
-
 export const TabsList = React.forwardRef<HTMLDivElement, TabsListProps>(
   ({ align = "left", children, ...props }: TabsListProps, ref) => {
     const [activeIndex, setActiveIndex] = React.useState(0);
@@ -59,11 +55,6 @@ export const TabsList = React.forwardRef<HTMLDivElement, TabsListProps>(
     );
 
     const { defaultValue, value } = React.useContext(TabsContext);
-
-    React.useEffect(() => {
-      // only instantiate the DOMRect if you're on the dom
-      hasWindow() && setPreviousRect(new DOMRect(0, 0));
-    }, []);
 
     React.useEffect(() => {
       React.Children.map(children, (child: React.ReactNode, index: number) => {
