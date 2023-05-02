@@ -128,14 +128,6 @@ export const TabsTrigger = ({
 }: TabsTriggerProps) => {
   const internalRef = React.useRef<HTMLButtonElement | null>(null);
 
-  React.useEffect(() => {
-    if (active && !previousRect) {
-      if (typeof setPreviousRect === "function" && internalRef.current) {
-        setPreviousRect(internalRef.current.getBoundingClientRect());
-      }
-    }
-  }, []);
-
   let startx = "0px";
   if (previousRect && internalRef.current) {
     startx = `${
