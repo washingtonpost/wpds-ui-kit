@@ -3,6 +3,30 @@ import { useTheme } from "next-themes";
 
 import { css, styled, VisuallyHidden } from "@washingtonpost/wpds-ui-kit";
 
+const Button = styled("button", {
+  appearance: "none",
+  background: "none",
+  cursor: "pointer",
+  padding: 0,
+  margin: 0,
+  border: 0,
+  fontSize: "$150",
+});
+
+const showOnDarkTheme = css({
+  display: "none",
+  "@dark": {
+    display: "block",
+  },
+});
+
+const showOnLightTheme = css({
+  display: "none",
+  "@light": {
+    display: "block",
+  },
+});
+
 const hasWindow = () => {
   return typeof window !== "undefined";
 };
@@ -20,30 +44,6 @@ export const ThemeToggle = (props) => {
 
     setTheme(targetTheme);
   };
-
-  const Button = styled("button", {
-    appearance: "none",
-    background: "none",
-    cursor: "pointer",
-    padding: 0,
-    margin: 0,
-    border: 0,
-    fontSize: "$150",
-  });
-
-  const showOnDarkTheme = css({
-    display: "none",
-    "@dark": {
-      display: "block",
-    },
-  });
-
-  const showOnLightTheme = css({
-    display: "none",
-    "@light": {
-      display: "block",
-    },
-  });
 
   return (
     <Button css={props.css} onClick={toggleTheme} aria-label="Switch theme">

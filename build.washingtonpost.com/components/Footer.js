@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, styled } from "@washingtonpost/wpds-ui-kit";
+import { styled } from "@washingtonpost/wpds-ui-kit";
 import { Footer as SiteFooter } from "@washingtonpost/site-footer";
 import { useRouter } from "next/router";
 
@@ -93,28 +93,28 @@ const EditInGithub = styled("a", {
   },
 });
 
+const FooterContainer = styled("div", {
+  gridArea: "footer",
+  paddingTop: "$050",
+  marginBottom: "$100",
+  marginTop: "$500",
+  marginLeft: "auto",
+  marginRight: "auto",
+  maxWidth: "1028px",
+  width: "100%",
+
+  "@sm": {
+    marginTop: "$200",
+    "footer.site-footer": {
+      display: "none",
+    },
+  },
+});
+
 export const Footer = () => {
   const router = useRouter();
   return (
-    <Box
-      css={{
-        gridArea: "footer",
-        paddingTop: "$050",
-        marginBottom: "$100",
-        marginTop: "$500",
-        marginLeft: "auto",
-        marginRight: "auto",
-        maxWidth: "1028px",
-        width: "100%",
-
-        "@sm": {
-          marginTop: "$200",
-          "footer.site-footer": {
-            display: "none",
-          },
-        },
-      }}
-    >
+    <FooterContainer>
       {/* // slug aka a mdx file */}
       {router?.route?.includes("slug") && (
         <EditInGithub
@@ -129,6 +129,18 @@ export const Footer = () => {
         </EditInGithub>
       )}
       <StyledFooter className="site-footer" />
-    </Box>
+      <EditInGithub
+        css={{
+          marginTop: "$200",
+          justifyContent: "center",
+        }}
+        href="https://github.com/washingtonpost/wpds-ui-kit"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Star us on GitHub."
+      >
+        🐱‍💻
+      </EditInGithub>
+    </FooterContainer>
   );
 };

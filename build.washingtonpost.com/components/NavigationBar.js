@@ -220,6 +220,17 @@ export const NavigationBar = ({ setMobileMenu, mobileMenuState, isClosed }) => {
         </ListItem>
         <ListItem>{hideFromSmallScreen && <SearchForm />}</ListItem>
         <ListItem>
+          <a
+            href="https://github.com/washingtonpost/wpds-ui-kit"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Star on Github"
+          >
+            <span>🐱‍💻</span>
+            <VisuallyHidden>Star on Github</VisuallyHidden>
+          </a>
+        </ListItem>
+        <ListItem>
           <ThemeToggle
             css={{ position: "fixed", marginTop: "-$100", zIndex: "$page" }}
           />
