@@ -1,79 +1,7 @@
 import React from "react";
 import { Box, styled } from "@washingtonpost/wpds-ui-kit";
-import { Footer as SiteFooter } from "@washingtonpost/site-footer";
 import { useRouter } from "next/router";
-
-const StyledFooter = styled(SiteFooter, {
-  ".gray-darkest": {
-    color: "$colors$onSecondary",
-  },
-
-  display: "flex",
-  width: "100%",
-  flexDirection: "column",
-  justifyContent: "space-between",
-  alignItems: "center",
-
-  "& > div.flex": {
-    display: "grid",
-    width: "100%",
-    maxWidth: "1028px",
-    py: "$200",
-    marginBottom: "$150",
-    gridTemplateColumns: "repeat(4, 1fr)",
-    gap: "$100",
-    borderTop: "1px solid $colors$subtle",
-    borderBottom: "1px solid $colors$subtle",
-  },
-
-  ul: {
-    listStyle: "none",
-  },
-
-  a: {
-    textDecoration: "none",
-    lineHeight: "$175",
-  },
-
-  ".font-xxxxs": {
-    fontSize: "$087",
-  },
-
-  ".font-bold": {
-    fontWeight: "$bold",
-  },
-
-  "div + ul": {
-    marginBlockStart: "$050",
-    marginBlockEnd: 0,
-    paddingInlineStart: 0,
-  },
-
-  "@notSm": {
-    "&.site-footer > footer": {
-      display: "none",
-    },
-  },
-
-  "@sm": {
-    alignItems: "flex-start",
-    px: "$150",
-    paddingTop: "$200",
-    borderTop: "1px solid $colors$subtle",
-
-    ".mb-sm": {
-      marginBottom: "$100",
-    },
-
-    ".lh-default": {
-      lineHeight: "$175",
-    },
-
-    ".font-xxxs": {
-      fontSize: "$087",
-    },
-  },
-});
+import Script from "next/script";
 
 const EditInGithub = styled("a", {
   display: "flex",
@@ -128,7 +56,8 @@ export const Footer = () => {
           Edit this page on GitHub.
         </EditInGithub>
       )}
-      <StyledFooter className="site-footer" />
+      <Script src="https://wpds-site-furniture-external-header-footer.preview.now.washingtonpost.com/twp-internal.js" />
+      <div id="footer-v3"></div>
     </Box>
   );
 };
