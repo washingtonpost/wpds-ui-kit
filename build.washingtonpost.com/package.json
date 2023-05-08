@@ -25,7 +25,7 @@
     "@washingtonpost/site-third-party-scripts": "latest",
     "@washingtonpost/tachyons-css": "^1.7.0",
     "@washingtonpost/wpds-accordion": "1.5.2",
-    "@washingtonpost/wpds-assets": "^1.18.0",
+    "@washingtonpost/wpds-assets": "^1.19.0",
     "@washingtonpost/wpds-kitchen-sink": "1.5.2",
     "@washingtonpost/wpds-ui-kit": "1.5.2",
     "fuse.js": "^6.6.2",
