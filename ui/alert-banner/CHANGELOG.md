@@ -7,36 +7,19 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 **Note:** Version bump only for package @washingtonpost/wpds-alert-banner
 
-
-
-
-
 ## [1.5.1](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.5.0...v1.5.1) (2023-05-02)
 
 **Note:** Version bump only for package @washingtonpost/wpds-alert-banner
-
-
-
-
 
 # [1.5.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.4.0...v1.5.0) (2023-04-18)
 
 **Note:** Version bump only for package @washingtonpost/wpds-alert-banner
 
-
-
-
-
 # [1.4.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.3.0...v1.4.0) (2023-03-28)
-
 
 ### Features
 
-* upgrade wpds-assets to v1.18.0 in root and build.washingtonpost.com [SRED-100] ([#361](https://github.com/washingtonpost/wpds-ui-kit/issues/361)) ([80f6414](https://github.com/washingtonpost/wpds-ui-kit/commit/80f64144c0476c0d7a726ed3cf4720b788e036aa))
-
-
-
-
+- upgrade wpds-assets to v1.18.0 in root and build.washingtonpost.com [SRED-100] ([#361](https://github.com/washingtonpost/wpds-ui-kit/issues/361)) ([80f6414](https://github.com/washingtonpost/wpds-ui-kit/commit/80f64144c0476c0d7a726ed3cf4720b788e036aa))
 
 # [1.2.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.1.0...v1.2.0) (2023-03-13)
 
