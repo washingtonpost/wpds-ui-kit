@@ -36,7 +36,7 @@ const Dot = styled("div", {
   transition: `transform ${theme.transitions.fast} ${theme.transitions.inOut}`,
   "@reducedMotion": {
     transition: "none",
-  }
+  },
 });
 
 const PaginationContainer = styled("div", {
