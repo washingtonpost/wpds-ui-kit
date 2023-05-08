@@ -1,6 +1,6 @@
 # WPDS's UI Kit
 
-This WPDS UI Kit repo is now a mono-repo that contains not only our UI Kit, but also our build.washingtonpost.com docs site.
+The Washington Post Design System (WPDS) UI Kit is now a mono-repo that contains not only our UI Kit, but also our [documentation site](https://build.washingtonpost.com).
 
 ![npm (tag)](https://img.shields.io/npm/v/@washingtonpost/wpds-ui-kit/latest) [![Chromatic Production](https://github.com/WPMedia/wpds-ui-kit/actions/workflows/chromatic-prod.yml/badge.svg)](https://github.com/WPMedia/wpds-ui-kit/actions/workflows/chromatic-prod.yml) [![Validate](https://github.com/WPMedia/wpds-ui-kit/actions/workflows/validation.yml/badge.svg)](https://github.com/WPMedia/wpds-ui-kit/actions/workflows/validation.yml) [![Release to Latest NPM Channel](https://github.com/WPMedia/wpds-ui-kit/actions/workflows/latest-release.yml/badge.svg)](https://github.com/WPMedia/wpds-ui-kit/actions/workflows/latest-release.yml) ![Playwright Tests](https://github.com/WPMedia/wpds-ui-kit/actions/workflows/playwright.yml/badge.svg)
 
@@ -43,3 +43,7 @@ npm i @washingtonpost/wpds-ui-kit
   transition: `background ${theme.transitions.fast} ${theme.transitions.inOut`
   ```
 - Previous to v0.15 `globalStyles` contained a global removal of margin and padding for all elements. After upgrading any component element that relied on having that spacing removed will need to add spacing rules with styles local to the component.
+
+## License
+
+This project is developed under a [MIT License](https://github.com/washingtonpost/wpds-ui-kit/blob/main/LICENSE).

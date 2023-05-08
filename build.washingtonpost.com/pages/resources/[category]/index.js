@@ -57,13 +57,13 @@ export default function Page({ docs, category, description, size }) {
               }}
             >
               <Thumbnail
-                name={doc.data.title}
                 description={doc.data?.description.split(".")[0]}
-                publishDate={doc.data.publishDate}
-                kicker={doc.data.kicker}
                 imageTag={doc.data.imageTag}
-                thumbnail={doc.data.thumbnail}
+                kicker={doc.data.kicker}
+                name={doc.data.title}
+                publishDate={doc.data.publishDate}
                 size={size}
+                thumbnail={doc.data.thumbnail}
               />
             </CustomLink>
           );
@@ -75,6 +75,7 @@ export default function Page({ docs, category, description, size }) {
 
 export const getStaticProps = async ({ params }) => {
   const docs = await getResources(`resources/${params.category}`);
+
   const todaysDate = new Date();
   // exclude future posts using collection.publishDate
   const publishedDocs = docs.filter(
@@ -83,26 +84,35 @@ export const getStaticProps = async ({ params }) => {
 
   const navigation = await getNavigation();
 
+  const lookupTable = {
+    workshops: {
+      description:
+        "Sharpen your design and development skills with our in-depth recorded workshops.",
+      size: THUMBNAIL_WIDE,
+    },
+    guides: {
+      description:
+        "Explore the processes and tools we use in our step-by-step written guides.",
+      size: THUMBNAIL_SQUARE,
+    },
+    tutorials: {
+      description:
+        "Watch or read through our tutorials to understand key techniques and concepts.",
+      size: THUMBNAIL_WIDE,
+    },
+    accessibility: {
+      description:
+        "Explore our accessibility checklist, testing strategies and considerations. Contact accessibility@washpost.com with any questions, ideas or feedback.",
+      size: THUMBNAIL_SQUARE,
+    },
+    tools: {
+      description: "",
+      size: THUMBNAIL_WIDE,
+    },
+  };
+
   // populate props
-  let description = "",
-    size = "";
-  if (params.category === "tutorials") {
-    description =
-      "Watch or read through our tutorials to understand key techniques and concepts.";
-    size = THUMBNAIL_WIDE;
-  } else if (params.category === "workshops") {
-    description =
-      "Sharpen your design and development skills with our in-depth recorded workshops.";
-    size = THUMBNAIL_WIDE;
-  } else if (params.category === "accessibility") {
-    description =
-      "Explore our accessibility checklist, testing strategies and considerations. Contact accessibility@washpost.com with any questions, ideas or feedback.";
-    size = THUMBNAIL_SQUARE;
-  } else if (params.category === "guides") {
-    description =
-      "Explore the processes and tools we use in our step-by-step written guides.";
-    size = THUMBNAIL_SQUARE;
-  }
+  const { description, size } = lookupTable[params.category];
 
   return {
     props: {

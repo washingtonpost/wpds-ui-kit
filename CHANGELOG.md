@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.2](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.5.1...v1.5.2) (2023-05-02)
+
+### Bug Fixes
+
+- lint errors ([#384](https://github.com/washingtonpost/wpds-ui-kit/issues/384)) ([af652a9](https://github.com/washingtonpost/wpds-ui-kit/commit/af652a9deb628b7b447d08a1b6c60424330b62d5))
+
+## [1.5.1](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.5.0...v1.5.1) (2023-05-02)
+
+### Bug Fixes
+
+- button density set to default value ([#381](https://github.com/washingtonpost/wpds-ui-kit/issues/381)) ([3ac5761](https://github.com/washingtonpost/wpds-ui-kit/commit/3ac57611e1573fcd5f5eeb4d5b2f48928492cb88))
+- improve color contrast on build.washingtonpost.com Sidebar for better accessibility [SRED-198] ([#376](https://github.com/washingtonpost/wpds-ui-kit/issues/376)) ([3bd473c](https://github.com/washingtonpost/wpds-ui-kit/commit/3bd473c828af93e509a53fab2576a196babd3fac))
+- set active index correctly when default value is passed in ([#383](https://github.com/washingtonpost/wpds-ui-kit/issues/383)) ([848972a](https://github.com/washingtonpost/wpds-ui-kit/commit/848972a83fdf1550e170da24578904f794704a5e))
+- update code to get the tools link working ([#377](https://github.com/washingtonpost/wpds-ui-kit/issues/377)) ([12c9eab](https://github.com/washingtonpost/wpds-ui-kit/commit/12c9eabe403fb911c2bc4a12117c53b36dd9cdc1))
+
 # [1.5.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.4.0...v1.5.0) (2023-04-18)
 
 ### Bug Fixes
