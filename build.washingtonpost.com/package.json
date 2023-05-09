@@ -21,7 +21,7 @@
     "@radix-ui/react-collapsible": "^1.0.0",
     "@radix-ui/react-toggle-group": "^1.0.1",
     "@stitches/react": "1.2.8",
-    "@washingtonpost/site-favicons": "^0.1.0",
+    "@washingtonpost/site-favicons": "^0.1.1",
     "@washingtonpost/site-third-party-scripts": "latest",
     "@washingtonpost/tachyons-css": "^1.7.0",
     "@washingtonpost/wpds-accordion": "1.5.2",
