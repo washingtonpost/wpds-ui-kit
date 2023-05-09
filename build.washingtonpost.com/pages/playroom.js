@@ -137,6 +137,7 @@ export default function Playroom({
             background: Kit.theme.colors.gray500,
             border: 0,
             width: "100%",
+            height: "100%",
             minHeight: 300,
             overflow: "hidden",
           }}
@@ -311,7 +312,7 @@ export default function Playroom({
         style={{ display: "flex", height: "100vh", width: "100%" }}
       >
         <Canvas hasEditor={hasEditor}>
-          <Preview />
+          <Preview style={{ outline: "10px solid red" }} />
         </Canvas>
         {hasEditor && (
           <SandpackLayout
@@ -343,7 +344,6 @@ export async function getServerSideProps({ query, res }) {
     "Cache-Control",
     "public, s-maxage=10, stale-while-revalidate=59"
   );
-
   const { code, edit, isGuide = "none" } = query;
 
   let source;

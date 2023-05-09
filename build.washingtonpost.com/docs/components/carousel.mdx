@@ -1,23 +1,950 @@
 ---
 title: Carousel
-description: A component for cycling through elements.
+description: A carousel is a type of UI pattern that displays several content items in a linear sequence. Carousels can accommodate various kinds of content including text, images, and media. A carousel often includes visual navigation (such as buttons, arrows, or chevrons) to indicate the component is interactive adn can be controlled directly by the user. The minimum number of items in a carousel is 4. Carousels are designed to contain a greater number of items than the width available -- items in the sequence that fall outside of the carousel container are hidden from view. Users can control which items are visible by clicking the "previous"/"next" buttons to navigate from left to right, or  by manually swiping through the carousel.
 component: carousel
-status: "Draft"
+status: Beta
+---
+
+## Anatomy
+
+<Anatomy
+  src="/img/components/carousel/anatomy.svg"
+  caption="Note: Image not to scale"
+/>
+
+1. Title
+1. Controls
+1. Content items
+1. Pagination Dots (index)
+
 ---
 
 ## Options
 
-### Basic
+### Paging
 
-```jsx withPreview
+The carousel component uses "pages" to display nested content in a linear sequence. A continuous group of visible items constitutes a page. By default, the starting page is "1". The carousel can be configured to start on a page other than "1".
+
+```jsx withPreview demoHeight="445"
+export default function Example() {
+  const items = new Array(10).fill(" ");
+  return (
+    <Box
+      css={{
+        paddingInline: "$100",
+        width: "100vw",
+      }}
+    >
+      <Carousel.Root>
+        <Carousel.Header>
+          <Carousel.HeaderContent>
+            <Carousel.Title css={{ fontFamily: "$meta" }}>
+              Carousel Title
+            </Carousel.Title>
+          </Carousel.HeaderContent>
+          <Carousel.HeaderActions>
+            <Carousel.PreviousButton />
+            <Carousel.NextButton />
+          </Carousel.HeaderActions>
+        </Carousel.Header>
+        <Carousel.Content>
+          {items.map((item, i) => (
+            <Carousel.Item key={item}>
+              <Card
+                key={"item" + i}
+                css={{
+                  width: "300px",
+                  marginBlockEnd: "$025",
+                  marginInlineEnd: "$100",
+                  padding: "$100",
+                  boxShadow: "$200",
+                }}
+              >
+                <Box
+                  css={{
+                    backgroundImage:
+                      "url('/img/components/carousel/video-story-card.png')",
+                    display: "flex",
+                    alignItems: "flex-end",
+                    height: "151px",
+                    marginBlockEnd: "$050",
+                    padding: "$100",
+                  }}
+                >
+                  <Button variant="primary">
+                    <Icon size="100">
+                      <Play />
+                    </Icon>
+                    Play video <Box
+                      as="span"
+                      css={{ fontSize: "$087", fontWeight: "normal" }}
+                    >
+                      1:23
+                    </Box>
+                  </Button>
+                </Box>
+                <Box
+                  as="p"
+                  css={{
+                    fontWeight: "bold",
+                    fontSize: "$075",
+                    marginBlockStart: 0,
+                    marginBlockEnd: "$025",
+                  }}
+                >
+                  Kicker
+                </Box>
+                <Box
+                  as="h2"
+                  css={{
+                    fontSize: "$150",
+                    fontFamily: "$headline",
+                    marginBlockStart: 0,
+                    marginBlockEnd: "$050",
+                  }}
+                >
+                  Key takeaways from Biden's 2024 budget plan
+                </Box>
+                <Box
+                  as="a"
+                  href="#"
+                  css={{
+                    color: "$accessible",
+                    fontSize: "$087",
+                    textDecoration: "none",
+                  }}
+                >
+                  By The Washington Post
+                </Box>
+              </Card>
+            </Carousel.Item>
+          ))}
+        </Carousel.Content>
+        <Carousel.Footer>
+          <Carousel.Dots />
+        </Carousel.Footer>
+      </Carousel.Root>
+    </Box>
+  );
+}
+```
+
+### Items per page
+
+The carousel can be configured to page automatically (vased on the available width), or by a set number of items.
+
+```jsx withPreview demoHeight="445"
+export default function Example() {
+  const items = new Array(6).fill("");
+  return (
+    <Box
+      css={{
+        paddingInline: "$100",
+        width: "100vw",
+      }}
+    >
+      <Carousel.Root itemsPerPage={1}>
+        <Carousel.Header>
+          <Carousel.HeaderContent>
+            <Carousel.Title css={{ fontFamily: "$meta" }}>
+              Carousel Title
+            </Carousel.Title>
+          </Carousel.HeaderContent>
+          <Carousel.HeaderActions>
+            <Carousel.PreviousButton />
+            <Carousel.NextButton />
+          </Carousel.HeaderActions>
+        </Carousel.Header>
+        <Carousel.Content>
+          {items.map((item, i) => (
+            <Carousel.Item key={item}>
+              <Card
+                key={"item" + i}
+                css={{
+                  width: "300px",
+                  marginBlockEnd: "$025",
+                  marginInlineEnd: "$100",
+                  padding: "$100",
+                  boxShadow: "$200",
+                }}
+              >
+                <Box
+                  css={{
+                    backgroundImage:
+                      "url('/img/components/carousel/video-story-card.png')",
+                    display: "flex",
+                    alignItems: "flex-end",
+                    height: "151px",
+                    marginBlockEnd: "$050",
+                    padding: "$100",
+                  }}
+                >
+                  <Button variant="primary">
+                    <Icon size="100">
+                      <Play />
+                    </Icon>
+                    Play video <Box
+                      as="span"
+                      css={{ fontSize: "$087", fontWeight: "normal" }}
+                    >
+                      1:23
+                    </Box>
+                  </Button>
+                </Box>
+                <Box
+                  as="p"
+                  css={{
+                    fontWeight: "bold",
+                    fontSize: "$075",
+                    marginBlockStart: 0,
+                    marginBlockEnd: "$025",
+                  }}
+                >
+                  Kicker
+                </Box>
+                <Box
+                  as="h2"
+                  css={{
+                    fontSize: "$150",
+                    fontFamily: "$headline",
+                    marginBlockStart: 0,
+                    marginBlockEnd: "$050",
+                  }}
+                >
+                  Key takeaways from Biden's 2024 budget plan
+                </Box>
+                <Box
+                  as="a"
+                  href="#"
+                  css={{
+                    color: "$accessible",
+                    fontSize: "$087",
+                    textDecoration: "none",
+                  }}
+                >
+                  By The Washington Post
+                </Box>
+              </Card>
+            </Carousel.Item>
+          ))}
+        </Carousel.Content>
+        <Carousel.Footer>
+          <Carousel.Dots />
+        </Carousel.Footer>
+      </Carousel.Root>
+    </Box>
+  );
+}
+```
+
+## Guidance
+
+### Controls: Top (default)
+
+Carousel controls are placed in the far right top corner of the component by default. This is the preferred option for most use-cases as it offers a predictable layout for users familiar with the carousel UI pattern.
+
+```jsx withPreview demoHeight="590" isGuide="success"
+export default function Example() {
+  const items = new Array(6).fill("");
+  return (
+    <Box
+      css={{
+        paddingBlockStart: "$150",
+        paddingInline: "$100",
+        width: "100vw",
+      }}
+    >
+      <Carousel.Root itemsPerPage={1}>
+        <Carousel.Header>
+          <Carousel.HeaderContent>
+            <Carousel.Title css={{ fontFamily: "$meta" }}>
+              Carousel Title
+            </Carousel.Title>
+          </Carousel.HeaderContent>
+          <Carousel.HeaderActions>
+            <Carousel.PreviousButton />
+            <Carousel.NextButton />
+          </Carousel.HeaderActions>
+        </Carousel.Header>
+        <Carousel.Content>
+          {items.map((item, i) => (
+            <Carousel.Item key={item}>
+              <Card
+                key={"item" + i}
+                css={{
+                  width: "300px",
+                  marginBlockEnd: "$025",
+                  marginInlineEnd: "$100",
+                  padding: "$100",
+                  boxShadow: "$200",
+                }}
+              >
+                <Box
+                  css={{
+                    backgroundImage:
+                      "url('/img/components/carousel/image-story-card.png')",
+                    display: "flex",
+                    alignItems: "flex-end",
+                    height: "179px",
+                    marginBlockEnd: "$050",
+                    padding: "$100",
+                  }}
+                />
+                <Box
+                  as="p"
+                  css={{
+                    fontWeight: "bold",
+                    fontSize: "$075",
+                    marginBlockStart: 0,
+                    marginBlockEnd: "$025",
+                  }}
+                >
+                  Kicker
+                </Box>
+                <Box
+                  as="h2"
+                  css={{
+                    fontSize: "$150",
+                    fontFamily: "$headline",
+                    marginBlockStart: 0,
+                    marginBlockEnd: "$050",
+                  }}
+                >
+                  Here&rsquo;s a headline wrapping to two lines
+                </Box>
+                <Box as="p" css={{ color: "$accessible", fontSize: "$087" }}>
+                  Here&rsquo;s some text for the blurb of this piece,
+                  summarizing in a few words what the article is about to
+                  provide more context for the reader.
+                </Box>
+                <Box
+                  as="a"
+                  href="#"
+                  css={{
+                    color: "$accessible",
+                    fontSize: "$087",
+                    textDecoration: "none",
+                  }}
+                >
+                  By The Washington Post
+                </Box>
+              </Card>
+            </Carousel.Item>
+          ))}
+        </Carousel.Content>
+        <Carousel.Footer>
+          <Carousel.Dots />
+        </Carousel.Footer>
+      </Carousel.Root>
+    </Box>
+  );
+}
+```
+
+### Controls: Bottom
+
+Controls can also be placed below content items, in the far right bottom corner.
+
+```jsx withPreview demoHeight="590" isGuide="success"
+export default function Example() {
+  const items = new Array(6).fill("");
+  return (
+    <Box
+      css={{
+        paddingBlockStart: "$150",
+        paddingInline: "$100",
+        width: "100vw",
+      }}
+    >
+      <Carousel.Root itemsPerPage={1}>
+        <Carousel.Header>
+          <Carousel.HeaderContent>
+            <Carousel.Title css={{ fontFamily: "$meta" }}>
+              Carousel Title
+            </Carousel.Title>
+          </Carousel.HeaderContent>
+        </Carousel.Header>
+        <Carousel.Content>
+          {items.map((item, i) => (
+            <Carousel.Item key={item}>
+              <Card
+                key={"item" + i}
+                css={{
+                  width: "300px",
+                  marginBlockEnd: "$025",
+                  marginInlineEnd: "$100",
+                  padding: "$100",
+                  boxShadow: "$200",
+                }}
+              >
+                <Box
+                  css={{
+                    backgroundImage:
+                      "url('/img/components/carousel/image-story-card.png')",
+                    display: "flex",
+                    alignItems: "flex-end",
+                    height: "179px",
+                    marginBlockEnd: "$050",
+                    padding: "$100",
+                  }}
+                />
+                <Box
+                  as="p"
+                  css={{
+                    fontWeight: "bold",
+                    fontSize: "$075",
+                    marginBlockStart: 0,
+                    marginBlockEnd: "$025",
+                  }}
+                >
+                  Kicker
+                </Box>
+                <Box
+                  as="h2"
+                  css={{
+                    fontSize: "$150",
+                    fontFamily: "$headline",
+                    marginBlockStart: 0,
+                    marginBlockEnd: "$050",
+                  }}
+                >
+                  Here&rsquo;s a headline wrapping to two lines
+                </Box>
+                <Box as="p" css={{ color: "$accessible", fontSize: "$087" }}>
+                  Here&rsquo;s some text for the blurb of this piece,
+                  summarizing in a few words what the article is about to
+                  provide more context for the reader.
+                </Box>
+                <Box
+                  as="a"
+                  href="#"
+                  css={{
+                    color: "$accessible",
+                    fontSize: "$087",
+                    textDecoration: "none",
+                  }}
+                >
+                  By The Washington Post
+                </Box>
+              </Card>
+            </Carousel.Item>
+          ))}
+        </Carousel.Content>
+        <Carousel.Footer css={{ position: "relative" }}>
+          <Carousel.Dots />
+          <Box
+            css={{
+              display: "flex",
+              gap: "$025",
+              position: "absolute",
+              right: 0,
+            }}
+          >
+            <Carousel.PreviousButton />
+            <Carousel.NextButton />
+          </Box>
+        </Carousel.Footer>
+      </Carousel.Root>
+    </Box>
+  );
+}
+```
+
+### Controls: Center
+
+Controls can be positioned to overlap the content items, fixed to the far left and far right of the carousel container. This layout is suitable for use-cases in which it is preferable to maintain white space above and below the content area.
+
+```jsx withPreview isGuide="success" demoHeight="716"
+export default function Example() {
+  const items = new Array(10).fill(" ");
+  return (
+    <Box
+      css={{
+        paddingInline: "$100",
+        width: "100vw",
+      }}
+    >
+      <Carousel.Root itemsPerPage={1}>
+        <Carousel.Header>
+          <Carousel.HeaderContent>
+            <Carousel.Title css={{ fontFamily: "$meta" }}>
+              Carousel Title
+            </Carousel.Title>
+          </Carousel.HeaderContent>
+        </Carousel.Header>
+        <div style={{ position: "relative" }}>
+          <Carousel.PreviousButton
+            variant="secondary"
+            css={{
+              position: "absolute",
+              insetBlockStart: "50%",
+              insetInlineStart: "0",
+              transform: "translate(-50%, -50%)",
+              zIndex: 1,
+              "&:disabled": {
+                display: "none",
+              },
+            }}
+          />
+          <Carousel.NextButton
+            variant="secondary"
+            css={{
+              position: "absolute",
+              insetBlockStart: "50%",
+              insetInlineStart: "100%",
+              transform: "translate(-50%, -50%)",
+              zIndex: 1,
+              "&:disabled": {
+                display: "none",
+              },
+            }}
+          />
+          <Carousel.Content>
+            {items.map((item, i) => (
+              <Carousel.Item key={item}>
+                <Card
+                  key={"item" + i}
+                  css={{
+                    width: "300px",
+                    marginInlineEnd: "$100",
+                    padding: "0",
+                    borderRadius: "8px",
+                  }}
+                >
+                  <Box
+                    as="img"
+                    src="/img/components/carousel/iphone-demo-img.png"
+                    css={{
+                      backgroundSize: "contain",
+                      filter: "brightness(.4)",
+                      display: "flex",
+                      alignItems: "flex-start",
+                      justifyContent: "end",
+                      width: "100%",
+                      height: "530px",
+                      flexDirection: "column",
+                      position: "relative",
+                      borderRadius: "8px",
+                    }}
+                    alt="a man holding an iphone with other phones on the table in front of him"
+                  />
+                  <Box
+                    css={{
+                      position: "absolute",
+                      paddingLeft: "10px",
+                      bottom: "25px",
+                      height: "80px",
+                    }}
+                  >
+                    <Box
+                      as="h2"
+                      css={{
+                        color: "$secondary",
+                        fontSize: "$150",
+                        fontFamily: "$headline",
+                        marginBlockStart: 0,
+                        marginBlockEnd: "$050",
+                        width: "300px",
+                      }}
+                    >
+                      Here's a headline wrapping two lines
+                    </Box>
+                    <Button
+                      isOutline
+                      css={{ border: "none", paddingLeft: "0" }}
+                    >
+                      <Icon size="100">
+                        <Play />
+                      </Icon>
+                      <Box as="span" css={{ fontWeight: "normal" }}>
+                        1:23
+                      </Box>
+                    </Button>
+                  </Box>
+                </Card>
+              </Carousel.Item>
+            ))}
+          </Carousel.Content>
+        </div>
+        <Carousel.Footer>
+          <Carousel.Dots />
+        </Carousel.Footer>
+      </Carousel.Root>
+    </Box>
+  );
+}
+```
+
+### Controls on mobile devices
+
+On mobile devices, controls are hidden by default to permit navigation by swipe only. This behavior is optimal for compact layouts such as smartphones where screen real-estate is limited.
+
+(You may view any of the live demo examples on this page on your mobile device to see this behavior in action).
+
+```jsx withPreview isGuide="success" demoHeight="716"
+export default function Example() {
+  const items = new Array(6).fill("");
+  return (
+    <Box
+      css={{
+        paddingInline: "$100",
+        width: "100vw",
+      }}
+    >
+      <Carousel.Root itemsPerPage={1}>
+        <Carousel.Header>
+          <Carousel.HeaderContent>
+            <Carousel.Title>Carousel Title</Carousel.Title>
+          </Carousel.HeaderContent>
+        </Carousel.Header>
+        <Carousel.Content>
+          {items.map((item, i) => (
+            <Carousel.Item key={item}>
+              <Card
+                key={"item" + i}
+                css={{
+                  width: "300px",
+                  marginInlineEnd: "$100",
+                  padding: "$100",
+                  backgroundImage:
+                    "url('/img/components/carousel/background-blur.png')",
+                  backgroundSize: "cover",
+                  borderRadius: "$050",
+                }}
+              >
+                <img
+                  src="/img/components/carousel/the-7.png"
+                  width="268"
+                  height="268"
+                />
+                <Box
+                  as="p"
+                  css={{
+                    color: "$secondary",
+                    fontWeight: "bold",
+                    fontSize: "$075",
+                    marginBlockStart: "$075",
+                    marginBlockEnd: "$025",
+                  }}
+                >
+                  Podcast
+                </Box>
+                <Box
+                  as="h2"
+                  css={{
+                    color: "$secondary",
+                    fontSize: "$150",
+                    fontFamily: "$headline",
+                    marginBlockStart: 0,
+                    marginBlockEnd: "$050",
+                  }}
+                >
+                  Raphael Warnock wins in Georgia despite efforts to
+                </Box>
+                <Box
+                  as="p"
+                  css={{
+                    color: "$subtle",
+                    fontSize: "$087",
+                    overflow: "hidden",
+                    display: "-webkit-box",
+                    "-webkit-line-clamp": 4,
+                    "-webkit-box-orient": "vertical",
+                  }}
+                >
+                  Every minute of your morning counts. Host Jeff Pierre takes
+                  you through the seven most important and interesting stories
+                  of the day, with the reporting and insight of The Washington
+                  Post. Get caught up in just a few minutes every weekday at 7
+                  a.m.
+                </Box>
+                <Box
+                  css={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                  }}
+                >
+                  <Button
+                    variant="secondary"
+                    isOutline
+                    css={{
+                      border: "none",
+                      padding: 0,
+                      paddingInlineEnd: "$025",
+                    }}
+                  >
+                    <Icon
+                      size="150"
+                      css={{
+                        border: "1px solid white",
+                        borderRadius: "50%",
+                        padding: "$050",
+                        width: "40px",
+                        height: "40px",
+                      }}
+                    >
+                      <Play />
+                    </Icon>
+                    Play video <Box
+                      as="span"
+                      css={{ fontSize: "$087", fontWeight: "normal" }}
+                    >
+                      1:23
+                    </Box>
+                  </Button>
+                  <Button
+                    variant="secondary"
+                    isOutline
+                    icon="right"
+                    css={{ border: "none", padding: 0 }}
+                  >
+                    <Icon size="100">
+                      <ChevronDown />
+                    </Icon>
+                    <Box
+                      as="span"
+                      css={{ fontSize: "$087", fontWeight: "normal" }}
+                    >
+                      Follow On
+                    </Box>
+                  </Button>
+                </Box>
+              </Card>
+            </Carousel.Item>
+          ))}
+        </Carousel.Content>
+        <Carousel.Footer>
+          <Carousel.Dots />
+        </Carousel.Footer>
+      </Carousel.Root>
+    </Box>
+  );
+}
+```
+
+### Custom controls
+
+The carousel can accept custom "previous"/"next" buttons. However, be mindful of visual contrast and accessibility contraints when evaluating design and technical implementation.
+
+```jsx withPreview isGuide="warning" demoHeight="410"
+export default function Example() {
+  const items = new Array(6).fill("");
+  const buttonStyle = {
+    backgroundColor: "$purple500",
+    fontSize: "$075",
+    border: "none",
+    borderRadius: 0,
+    height: "auto",
+    paddingInline: "$075",
+    position: "absolute",
+    top: "$050",
+    bottom: "$050",
+    zIndex: 1,
+    "&:hover": {
+      backgroundColor: "$purple400",
+    },
+    "&:disabled": {
+      cursor: "default",
+      backgroundColor: "$purple600",
+      "&:hover": { backgroundColor: "$purple600" },
+    },
+  };
+
+  return (
+    <Box
+      css={{
+        paddingInline: "$100",
+        width: "100vw",
+      }}
+    >
+      <Carousel.Root itemsPerPage={1}>
+        <Carousel.Header>
+          <Carousel.HeaderContent>
+            <Carousel.Title css={{ textAlign: "center" }}>
+              Carousel Title
+            </Carousel.Title>
+          </Carousel.HeaderContent>
+        </Carousel.Header>
+        <Box css={{ position: "relative" }}>
+          <Carousel.PreviousButton asChild>
+            <Button css={{ ...buttonStyle, left: 0 }}>Prev</Button>
+          </Carousel.PreviousButton>
+          <Carousel.NextButton asChild>
+            <Button css={{ ...buttonStyle, right: 0 }}>Next</Button>
+          </Carousel.NextButton>
+          <Carousel.Content>
+            {items.map((item, i) => (
+              <Carousel.Item key={"item" + i}>
+                <Card
+                  css={{
+                    fontSize: "$112",
+                    width: "300px",
+                    marginInlineEnd: "$100",
+                  }}
+                >
+                  <strong>
+                    Griner will be on U.S. soil "within 24 hours,"
+                  </strong>{" "}
+                  Biden said Thursday morning. He thanked administration
+                  officials and the United Arab Emirates for helping to
+                  facilitate Griner's return. "This is a day we've worked toward
+                  for a long time," he said.
+                </Card>
+              </Carousel.Item>
+            ))}
+          </Carousel.Content>
+        </Box>
+        <Carousel.Footer>
+          <Carousel.Dots />
+        </Carousel.Footer>
+      </Carousel.Root>
+    </Box>
+  );
+}
+```
+
+### Slideshow
+
+The carousel component can be configured as a slideshow. The slideshow option displays one content item at a time and features automatic paging that can be toggled using the "play" / "pause" button.
+
+```jsx withPreview isGuide="success" demoHeight="800"
+export default function Example() {
+  const items = new Array(4).fill("");
+  const [page, setPage] = useState(0);
+  const [intervalId, setIntervalId] = useState();
+
+  function handlePlayPauseClick() {
+    const wrapPages = (currentPage) => {
+      if (currentPage < items.length - 1) {
+        return currentPage + 1;
+      } else {
+        return 0;
+      }
+    };
+
+    if (intervalId) {
+      clearInterval(intervalId);
+      setIntervalId(undefined);
+    } else {
+      const id = setInterval(() => {
+        setPage(wrapPages);
+      }, 2000);
+      setPage(wrapPages);
+      setIntervalId(id);
+    }
+  }
+
+  return (
+    <Box
+      css={{
+        paddingInline: "$100",
+        width: "100vw",
+      }}
+    >
+      <Carousel.Root
+        itemsPerPage={1}
+        css={{ position: "relative", maxWidth: "928px", marginInline: "auto" }}
+        aria-label="Slideshow"
+        page={page}
+        onPageChange={(p) => {
+          setPage(p);
+        }}
+      >
+        <Box
+          css={{
+            display: "flex",
+            gap: "$025",
+            position: "absolute",
+            insetInlineEnd: "$025",
+            insetBlockEnd: "$300",
+            zIndex: 1,
+          }}
+        >
+          <Carousel.PreviousButton />
+          <Button
+            variant="primary"
+            icon={"center"}
+            aria-label="Start slide rotation"
+            onClick={handlePlayPauseClick}
+          >
+            <Icon>{intervalId ? <Pause /> : <Play />}</Icon>
+          </Button>
+          <Carousel.NextButton />
+        </Box>
+        <Carousel.Content aria-live={intervalId ? "off" : "polite"}>
+          {items.map((_, i) => (
+            <Carousel.Item key={`item${i}`} css={{}}>
+              <Box as="figure" css={{ margin: 0 }}>
+                <img
+                  src="/img/components/carousel/slideshow.png"
+                  alt="The U.S. capital building at night"
+                />
+                <Box as="figcaption">(Tom Pennington/Getty Images)</Box>
+              </Box>
+            </Carousel.Item>
+          ))}
+        </Carousel.Content>
+        <Carousel.Footer>
+          <Carousel.Dots />
+        </Carousel.Footer>
+      </Carousel.Root>
+    </Box>
+  );
+}
+```
+
+---
+
+## Accessibility
+
+### Handling of current item
+
+To optimize the carousel for interoperability with assistive technologies (e.g. screen -readers), make sure to refer to WAI-ARIA.
+
+Use WAI-ARIA `live-region` to inform the screen-reader which item is being scrolled into view when using the previous and next buttons - this enables the content of the item to be announced by the screen-reader.
+
+Add `aria-labelledby` to Carousel Items to allow the screen-reader to read the content items label when moving between them using the arrow keys
+
+```jsx withPreview demoHeight="550"
 export default function Example() {
   const items = [
-    "Card 1 content",
-    "Card 2 content",
-    "Card 3 content",
-    "Card 4 content",
-    "Card 5 content",
-    "Card 6 content",
+    {
+      kicker: " ",
+      headline: "Politics stops at the water’s edge?",
+      blurb:
+        "Traveling abroad ahead of a likely run for president, Ron DeSantis took shots at his domestic political foes.",
+    },
+    {
+      kicker: "ELECTIONS",
+      headline: "5 facts about Julie Chavez Rodriguez",
+      blurb:
+        "Julie Chavez Rodriguez, who will run the Biden-Harris 2024 reelection bid, is the granddaughter of legendary labor leader Cesar Chavez.",
+    },
+    {
+      kicker: "JUSTICE",
+      headline: "What to know about E. Jean Carroll civil case",
+      blurb:
+        "In addition to facing criminal charges in Manhattan, Donald Trump is a defendant in a civil lawsuit over an alleged rape decades ago.",
+    },
+    {
+      kicker: " ",
+      headline: "Biden threatens to veto House GOP bill",
+      blurb:
+        'In a statement opposing the GOP\'s debt ceiling bill, the White House said House Republicans are pursuing "a reckless attempt to extract extreme concessions."',
+    },
+    {
+      kicker: " ",
+      headline: "Republicans counter Biden announcement",
+      blurb:
+        "Republicans used a dystopian video created with artificial intelligence technology to counter Biden’s announcement of his reelection campaign.",
+    },
+    {
+      kicker: "THE FIX",
+      headline: "Alito’s remarkable reasoning",
+      blurb:
+        "Alito suggested the Biden administration might simply disregard an unfavorable ruling on mifepristone. Here's what he appears to be talking about.",
+    },
   ];
   return (
     <Box
@@ -36,17 +963,76 @@ export default function Example() {
             <Carousel.NextButton />
           </Carousel.HeaderActions>
         </Carousel.Header>
-        <Carousel.Content>
-          {items.map((item) => (
-            <Carousel.Item key={item}>
+        <Carousel.Content aria-live="polite">
+          {items.map((item, i) => (
+            <Carousel.Item
+              key={item.headline}
+              aria-labelledby={`article-heading-${i}`}
+            >
               <Card
+                key={"item" + i}
                 css={{
-                  width: "200px",
-                  height: "175px",
-                  marginInlineEnd: "$025",
+                  width: "300px",
+                  marginBlockEnd: "$025",
+                  marginInlineEnd: "$100",
+                  padding: "$100",
+                  boxShadow: "$200",
+                  height: `calc(100% - $025)`,
                 }}
               >
-                {item}
+                <Box
+                  css={{
+                    backgroundImage:
+                      "url('/img/components/carousel/image-story-card.png')",
+                    display: "flex",
+                    alignItems: "flex-end",
+                    height: "179px",
+                    marginBlockEnd: "$050",
+                    padding: "$100",
+                  }}
+                />
+                <Box
+                  as="p"
+                  css={{
+                    fontWeight: "bold",
+                    fontSize: "$075",
+                    marginBlockStart: 0,
+                    marginBlockEnd: "$025",
+                    minHeight: "0.75rem",
+                  }}
+                >
+                  {item.kicker}
+                </Box>
+                <Box
+                  as="h2"
+                  css={{
+                    fontSize: "$150",
+                    fontFamily: "$headline",
+                    marginBlockStart: 0,
+                    marginBlockEnd: "$050",
+                  }}
+                  id={`article-heading-${i}`}
+                >
+                  {item.headline}
+                </Box>
+                <Box
+                  as="p"
+                  css={{ color: "$accessible", fontSize: "$087" }}
+                  id={`article-blurb-${i}`}
+                >
+                  {item.blurb}
+                </Box>
+                <Box
+                  as="a"
+                  href="#"
+                  css={{
+                    color: "$accessible",
+                    fontSize: "$087",
+                    textDecoration: "none",
+                  }}
+                >
+                  By The Washington Post
+                </Box>
               </Card>
             </Carousel.Item>
           ))}
@@ -59,6 +1045,18 @@ export default function Example() {
   );
 }
 ```
+
+### Focus
+
+Set keyboard focus on the currently displayed item, upon user interaction with the item.
+
+If carousel is set to page automatically, pause the animation when carousel receives keyboard focus.
+
+Pause the animation when cursor enters hover area of carousel.
+
+### Animation / Motion
+
+The carousel honors user preference for reduced motion by disabling animation.
 
 ---
 

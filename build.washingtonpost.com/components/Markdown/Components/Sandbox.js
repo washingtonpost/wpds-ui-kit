@@ -80,7 +80,7 @@ const useDebounce = (value, delay) => {
   return debouncedValue;
 };
 
-const Preview = ({ isGuide }) => {
+const Preview = ({ isGuide, demoHeight }) => {
   const { code } = useActiveCode();
   const [firstRenderCode, setFirstRenderCode] = useState(null);
   const iframeRef = React.useRef(null);
@@ -115,6 +115,7 @@ const Preview = ({ isGuide }) => {
         background: theme.colors.gray500,
         border: 0,
         width: "100%",
+        height: demoHeight ? `${demoHeight}px` : "auto",
         minHeight: 325,
         overflow: "hidden",
       }}
@@ -156,6 +157,7 @@ const CustomSandpack = ({
   isGuide,
   withPreview = false,
   hideNavBar = false,
+  demoHeight,
   children,
 }) => {
   const [showCode, setShowCode] = useState(!withPreview);
@@ -190,7 +192,7 @@ const CustomSandpack = ({
           borderRadius: 0,
         }}
       >
-        {withPreview && <Preview isGuide={isGuide} />}
+        {withPreview && <Preview isGuide={isGuide} demoHeight={demoHeight} />}
         {showCode && (
           <SandpackCodeEditor
             style={{
