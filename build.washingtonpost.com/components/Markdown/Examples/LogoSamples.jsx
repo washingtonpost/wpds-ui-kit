@@ -35,6 +35,9 @@ export const logoList = [
   "qatar-world-cup",
   "qatar-world-cup-reverse",
   "qatar-world-cup-bw",
+  "helpdesk-bw",
+  "helpdesk-primary",
+  "helpdesk-secondary",
 ];
 
 export const darkLogos = [

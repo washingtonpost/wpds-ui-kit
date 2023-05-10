@@ -24,6 +24,7 @@ import { ComingSoon } from "~/components/ComponentPage/ComingSoon";
 const components = {
   ...MDXStyling,
   PropsTable,
+  useRef: React.useRef,
 };
 
 const P = styled("p", {

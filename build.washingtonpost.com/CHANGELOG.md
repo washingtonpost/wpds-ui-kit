@@ -5,60 +5,38 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## [1.5.2](https://github.com/washingtonpost/wpds-docs/compare/v1.5.1...v1.5.2) (2023-05-02)
 
-
 ### Bug Fixes
 
-* lint errors ([#384](https://github.com/washingtonpost/wpds-docs/issues/384)) ([af652a9](https://github.com/washingtonpost/wpds-docs/commit/af652a9deb628b7b447d08a1b6c60424330b62d5))
-
-
-
-
+- lint errors ([#384](https://github.com/washingtonpost/wpds-docs/issues/384)) ([af652a9](https://github.com/washingtonpost/wpds-docs/commit/af652a9deb628b7b447d08a1b6c60424330b62d5))
 
 ## [1.5.1](https://github.com/washingtonpost/wpds-docs/compare/v1.5.0...v1.5.1) (2023-05-02)
 
-
 ### Bug Fixes
 
-* improve color contrast on build.washingtonpost.com Sidebar for better accessibility [SRED-198] ([#376](https://github.com/washingtonpost/wpds-docs/issues/376)) ([3bd473c](https://github.com/washingtonpost/wpds-docs/commit/3bd473c828af93e509a53fab2576a196babd3fac))
-* update code to get the tools link working ([#377](https://github.com/washingtonpost/wpds-docs/issues/377)) ([12c9eab](https://github.com/washingtonpost/wpds-docs/commit/12c9eabe403fb911c2bc4a12117c53b36dd9cdc1))
-
-
-
-
+- improve color contrast on build.washingtonpost.com Sidebar for better accessibility [SRED-198] ([#376](https://github.com/washingtonpost/wpds-docs/issues/376)) ([3bd473c](https://github.com/washingtonpost/wpds-docs/commit/3bd473c828af93e509a53fab2576a196babd3fac))
+- update code to get the tools link working ([#377](https://github.com/washingtonpost/wpds-docs/issues/377)) ([12c9eab](https://github.com/washingtonpost/wpds-docs/commit/12c9eabe403fb911c2bc4a12117c53b36dd9cdc1))
 
 # [1.5.0](https://github.com/washingtonpost/wpds-docs/compare/v1.4.0...v1.5.0) (2023-04-18)
 
-
 ### Bug Fixes
 
-* eliminate overflow issue on build.washingtonpost.com code examples [SRED-173] ([#368](https://github.com/washingtonpost/wpds-docs/issues/368)) ([8406ade](https://github.com/washingtonpost/wpds-docs/commit/8406ade9acc7937576e2da61d3f8ae9458e231af))
-* update keyboard accessibility docs to correct keyDownButtonWrapper and add Firefox guidance [SRED-164] ([#366](https://github.com/washingtonpost/wpds-docs/issues/366)) ([1b55621](https://github.com/washingtonpost/wpds-docs/commit/1b55621cd9e124478d8c1700954e8def316fd74b))
-
+- eliminate overflow issue on build.washingtonpost.com code examples [SRED-173] ([#368](https://github.com/washingtonpost/wpds-docs/issues/368)) ([8406ade](https://github.com/washingtonpost/wpds-docs/commit/8406ade9acc7937576e2da61d3f8ae9458e231af))
+- update keyboard accessibility docs to correct keyDownButtonWrapper and add Firefox guidance [SRED-164] ([#366](https://github.com/washingtonpost/wpds-docs/issues/366)) ([1b55621](https://github.com/washingtonpost/wpds-docs/commit/1b55621cd9e124478d8c1700954e8def316fd74b))
 
 ### Features
 
-* add privacy features required scripts to all build.washingtonpost.com pages [SRED-2] ([#367](https://github.com/washingtonpost/wpds-docs/issues/367)) ([bf67fa1](https://github.com/washingtonpost/wpds-docs/commit/bf67fa19abfcbbbb5c93f11e47957c4b97b505c5))
-* updates to accessibility docs, including re-org of checklist and addition of 5-minute audit tutorial video [SRED-172] ([#369](https://github.com/washingtonpost/wpds-docs/issues/369)) ([132929e](https://github.com/washingtonpost/wpds-docs/commit/132929eafaf555d78cf3d84c093cc6f85f1fbeab))
-
-
-
-
+- add privacy features required scripts to all build.washingtonpost.com pages [SRED-2] ([#367](https://github.com/washingtonpost/wpds-docs/issues/367)) ([bf67fa1](https://github.com/washingtonpost/wpds-docs/commit/bf67fa19abfcbbbb5c93f11e47957c4b97b505c5))
+- updates to accessibility docs, including re-org of checklist and addition of 5-minute audit tutorial video [SRED-172] ([#369](https://github.com/washingtonpost/wpds-docs/issues/369)) ([132929e](https://github.com/washingtonpost/wpds-docs/commit/132929eafaf555d78cf3d84c093cc6f85f1fbeab))
 
 # [1.4.0](https://github.com/washingtonpost/wpds-docs/compare/v1.3.0...v1.4.0) (2023-03-28)
 
-
 ### Bug Fixes
 
-* remove animations when user has reduced motion settings turned on [SRED-136] ([#357](https://github.com/washingtonpost/wpds-docs/issues/357)) ([3c08bec](https://github.com/washingtonpost/wpds-docs/commit/3c08bec85394fca28bdad816a67cd83956821df4))
-
+- remove animations when user has reduced motion settings turned on [SRED-136] ([#357](https://github.com/washingtonpost/wpds-docs/issues/357)) ([3c08bec](https://github.com/washingtonpost/wpds-docs/commit/3c08bec85394fca28bdad816a67cd83956821df4))
 
 ### Features
 
-* upgrade wpds-assets to v1.18.0 in root and build.washingtonpost.com [SRED-100] ([#361](https://github.com/washingtonpost/wpds-docs/issues/361)) ([80f6414](https://github.com/washingtonpost/wpds-docs/commit/80f64144c0476c0d7a726ed3cf4720b788e036aa))
-
-
-
-
+- upgrade wpds-assets to v1.18.0 in root and build.washingtonpost.com [SRED-100] ([#361](https://github.com/washingtonpost/wpds-docs/issues/361)) ([80f6414](https://github.com/washingtonpost/wpds-docs/commit/80f64144c0476c0d7a726ed3cf4720b788e036aa))
 
 # [1.3.0](https://github.com/washingtonpost/wpds-docs/compare/v1.2.1...v1.3.0) (2023-03-17)
 
