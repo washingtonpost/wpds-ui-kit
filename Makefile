@@ -23,9 +23,12 @@ main-release:
 	make main-publish
 	npm install
 
-# create command for plop templates
+# create commands for plop templates
 new-component:
-	npx plop --plopfile ./scripts/plopfile.js
+	npx plop --plopfile ./scripts/componentPlopfile.js
+
+new-component-with-subcomponents:
+	npx plop --plopfile ./scripts/componentWithSubcomponentsPlopfile.js
 
 validate:
 	npm run lint

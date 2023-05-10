@@ -118,6 +118,7 @@
     "experimental-version": "make experimental-version",
     "experimental-publish": "make experimental-publish",
     "new-component": "make new-component",
+    "new-component-with-subcomponents": "make new-component-with-subcomponents",
     "lint": "eslint --fix --ext .ts,.tsx ui/",
     "clean": "turbo run clean && rm -rf node_modules",
     "dev": "turbo run dev --no-cache --continue",
