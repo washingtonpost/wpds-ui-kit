@@ -12,8 +12,8 @@ export default {
     Item: Select.Item,
     Group: Select.Group,
     Label: Select.Label,
-    Content: Select.Content
-  }
+    Content: Select.Content,
+  },
 };
 
 const Template: ComponentStory<typeof Select.Root> = (args) => {
@@ -50,13 +50,13 @@ Play.args = {
   disabled: false,
   error: false,
   errorMessage: "",
-  helperText: ""
+  helperText: "",
 };
 
 Play.storyName = "Select";
 
 Play.parameters = {
-  chromatic: { disableSnapshot: true }
+  chromatic: { disableSnapshot: true },
 };
 
 const ControlledTemplate: ComponentStory<typeof Select.Root> = (args) => {
@@ -85,7 +85,7 @@ const ControlledTemplate: ComponentStory<typeof Select.Root> = (args) => {
 export const Controlled = ControlledTemplate.bind({});
 
 Controlled.parameters = {
-  chromatic: { disableSnapshot: true }
+  chromatic: { disableSnapshot: true },
 };
 
 export const SelectsInARow = () => {
@@ -93,7 +93,7 @@ export const SelectsInARow = () => {
     <div
       style={{
         display: "flex",
-        flexDirection: "row"
+        flexDirection: "row",
       }}
     >
       <Select.Root>

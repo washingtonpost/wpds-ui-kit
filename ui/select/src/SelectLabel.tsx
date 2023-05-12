@@ -8,7 +8,7 @@ import type * as WPDS from "@washingtonpost/wpds-theme";
 
 const LabelInputWrapper = styled("div", {
   flex: 1,
-  position: "relative"
+  position: "relative",
 });
 
 const TextInputLabel = styled(InputLabel, {
@@ -19,7 +19,7 @@ const TextInputLabel = styled(InputLabel, {
   transform: `translateY(${theme.space["100"]})`,
   transition: theme.transitions.allFast,
   "@reducedMotion": {
-    transition: "none"
+    transition: "none",
   },
 
   variants: {
@@ -27,27 +27,27 @@ const TextInputLabel = styled(InputLabel, {
       true: {
         fontSize: theme.fontSizes["075"],
         lineHeight: theme.lineHeights["100"],
-        transform: `translateY(${theme.space["050"]})`
-      }
+        transform: `translateY(${theme.space["050"]})`,
+      },
     },
 
     isDisabled: {
       true: {
         cursor: "not-allowed",
-        color: theme.colors.onDisabled
-      }
-    }
-  }
+        color: theme.colors.onDisabled,
+      },
+    },
+  },
 });
 
 // occupy space in the DOM so that the container
 // knows to take up the same space as the absolutely positioned label
 const HiddenSpanToOccupySpace = styled("span", {
-  visibility: "hidden"
+  visibility: "hidden",
 });
 
 const RequiredTag = styled("span", {
-  color: theme.colors.red100
+  color: theme.colors.red100,
 });
 
 type SelectLabelVariants = WPDS.VariantProps<typeof TextInputLabel>;
