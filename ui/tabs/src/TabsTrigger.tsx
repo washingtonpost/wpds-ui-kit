@@ -5,6 +5,7 @@ import * as TabsPrimitive from "@radix-ui/react-tabs";
 
 import { styled, theme } from "@washingtonpost/wpds-theme";
 import { TabsTriggerContent } from "./TabsTriggerContent";
+import { TabsContext } from "./context";
 
 import type * as WPDS from "@washingtonpost/wpds-theme";
 
@@ -17,22 +18,16 @@ const afterConsts = {
 };
 
 const StyledTabsTrigger = styled(TabsPrimitive.Trigger, {
-  display: "flex",
-  flexDirection: "row",
-  alignItems: "center",
-  height: "fit-content",
   cursor: "pointer",
   border: "none",
   background: "transparent",
   appearance: "none",
   fontFamily: "$subhead",
   fontSize: theme.fontSizes[100],
-  padding: "$075 0",
   color: theme.colors.primary,
   position: "relative",
-  gap: "$075",
-  flexShrink: 0,
-
+  paddingBlock: theme.space["075"],
+  paddingInline: 0,
   variants: {
     active: {
       true: {
@@ -41,13 +36,15 @@ const StyledTabsTrigger = styled(TabsPrimitive.Trigger, {
         "&::after": {
           ...afterConsts,
           borderBottom: `1px solid ${theme.colors.primary}`,
+          transformOrigin: "top left",
         },
 
         "&:hover::after": {
           borderBottom: `1px solid ${theme.colors.primary}`,
         },
+
         "&.move-enter::after": {
-          transform: "translateX(var(--startx))",
+          transform: "translateX(var(--startx)) scaleX(var(--startscale))",
 
           "@reducedMotion": {
             transition: "none",
@@ -55,8 +52,8 @@ const StyledTabsTrigger = styled(TabsPrimitive.Trigger, {
         },
 
         "&.move-enter-active::after": {
-          transform: "translateX(0)",
-          transition: "transform 300ms",
+          transform: "translateX(0) scaleX(1)",
+          transition: `transform ${theme.transitions.normal} ${theme.transitions.inOut}`,
 
           "@reducedMotion": {
             transition: "none",
@@ -103,37 +100,37 @@ type TriggerCombinedProps = React.ComponentPropsWithoutRef<
 
 export type TabsTriggerProps = {
   children?: React.ReactNode;
-  /** The value for the selected tab, if controlled */
+  /** A unique value that associates the trigger with a content. */
   value: string;
   /** The value whether the trigger should be disabled */
   disabled?: boolean;
   /** Overrides for the input text styles. Padding overrides affect the input container and  */
   css?: WPDS.CSS;
-  /** Whether the current tabs trigger is currently active */
-  active?: boolean;
-  /** Keeps track of the previously active tab location */
-  previousRect?: DOMRect;
-  /** setter for the previously active tab location */
-  setPreviousRect?: React.Dispatch<React.SetStateAction<DOMRect>>;
 } & TriggerCombinedProps;
 
 export const TabsTrigger = ({
-  active,
-  previousRect,
-  setPreviousRect,
-  onClick,
   children,
   value,
   ...props
 }: TabsTriggerProps) => {
   const internalRef = React.useRef<HTMLButtonElement | null>(null);
+  const { currentValue, previousRect, setPreviousRect } =
+    React.useContext(TabsContext);
+  const active = value === currentValue;
 
+  let startscale = "100%";
   let startx = "0px";
-  if (previousRect && internalRef.current) {
-    startx = `${
-      previousRect.left - internalRef.current.getBoundingClientRect().left
-    }px`;
+  if (internalRef.current && previousRect) {
+    const rectangle = internalRef.current.getBoundingClientRect();
+    startscale = `${(previousRect.width / rectangle.width) * 100}%`;
+    startx = `${previousRect.left - rectangle.left}px`;
   }
+
+  React.useEffect(() => {
+    if (active && !previousRect && internalRef.current) {
+      setPreviousRect(internalRef.current.getBoundingClientRect());
+    }
+  }, []);
 
   return (
     <CSSTransition
@@ -148,11 +145,15 @@ export const TabsTrigger = ({
       }}
     >
       <StyledTabsTrigger
-        style={{ "--startx": startx } as React.CSSProperties}
+        style={
+          {
+            "--startx": startx,
+            "--startscale": startscale,
+          } as React.CSSProperties
+        }
         ref={internalRef}
         active={active}
         value={value}
-        onClick={onClick}
         {...props}
       >
         <TabsTriggerContent>{children}</TabsTriggerContent>

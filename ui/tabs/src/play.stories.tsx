@@ -36,6 +36,7 @@ export default {
 } as ComponentMeta<typeof Tabs.Root>;
 
 const StyledTabs = styled("div", {
+  backgroundColor: theme.colors.secondary,
   width: "500px",
   border: `1px dashed ${theme.colors.primary}`,
   padding: "10px",
@@ -172,10 +173,10 @@ const TemplateControlled: ComponentStory<any> = (args) => {
             align={align}
           >
             <Tabs.Trigger value="tab1">
+              France
               <Icon label="trigger icon">
                 <Info />
               </Icon>
-              France
             </Tabs.Trigger>
             <Tabs.Trigger value="tab2">Kenya</Tabs.Trigger>
             <Tabs.Trigger value="tab3">Austria</Tabs.Trigger>
@@ -185,6 +186,19 @@ const TemplateControlled: ComponentStory<any> = (args) => {
           <StyledContent value="tab3">Austria is here 🇦🇹</StyledContent>
         </Tabs.Root>
       </StyledTabs>
+      <div style={{ padding: "1rem" }}>
+        <label style={{ display: "block" }}>Change selected tab</label>
+        <select
+          onChange={(e) => {
+            setValue(e.target.value);
+          }}
+          value={value}
+        >
+          <option value="tab1">Tab1</option>
+          <option value="tab2">Tab2</option>
+          <option value="tab3">Tab3</option>
+        </select>
+      </div>
     </>
   );
 };
