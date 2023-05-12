@@ -1,11 +1,11 @@
 import * as React from "react";
-import { TooltipContent, TooltipContentInterface } from "./TooltipContent";
-import { TooltipTrigger, TooltipTriggerInterface } from "./TooltipTrigger";
+import { TooltipContent } from "./TooltipContent";
+import { TooltipTrigger } from "./TooltipTrigger";
 import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 import {
   TooltipProps as RadixTooltipRootProps,
   TooltipPortalProps as RadixTooltipPortalProps,
-  TooltipProviderProps as RadixTooltipProviderProps,
+  TooltipProviderProps as RadixTooltipProviderProps
 } from "@radix-ui/react-tooltip";
 
 export const TooltipRoot = ({ children, ...props }: RadixTooltipRootProps) => (
@@ -34,18 +34,21 @@ const Portal = TooltipPortal;
 const Trigger = TooltipTrigger;
 const Content = TooltipContent;
 
-export const Tooltip = {
+type TooltipProps = {
+  Root: typeof Root;
+  Portal: typeof Portal;
+  Provider: typeof Provider;
+  Content: typeof Content;
+  Trigger: typeof Trigger;
+};
+
+/**
+ * Tooltip
+ */
+export const Tooltip: TooltipProps = {
   Provider,
   Root,
   Content,
   Trigger,
-  Portal,
-};
-
-export type {
-  RadixTooltipRootProps as TooltipRootProps,
-  RadixTooltipPortalProps as TooltipPortalProps,
-  RadixTooltipProviderProps as TooltipProviderProps,
-  TooltipContentInterface as TooltipContentProps,
-  TooltipTriggerInterface as TooltipTriggerProps,
+  Portal
 };
