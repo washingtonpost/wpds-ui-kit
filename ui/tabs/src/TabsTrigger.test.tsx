@@ -42,10 +42,10 @@ describe("TabsTrigger", () => {
   });
 
   test("sets previous rect", () => {
-    const Em = () => {
+    const Note = () => {
       const { previousRect } = React.useContext(TabsContext);
       if (previousRect) {
-        return <em role="note">{previousRect?.width}</em>;
+        return <span role="note">{previousRect.width}</span>;
       }
       return null;
     };
@@ -56,7 +56,7 @@ describe("TabsTrigger", () => {
           <TabsTrigger value="val1">Test</TabsTrigger>
           <TabsTrigger value="val2">Test2</TabsTrigger>
         </TabsList>
-        <Em />
+        <Note />
       </TabsRoot>
     );
     userEvent.click(screen.getByRole("tab", { selected: false }));
