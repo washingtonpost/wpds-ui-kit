@@ -38,5 +38,5 @@ export const Carousel: CarouselProps = {
   Content: CarouselContent,
   Item: CarouselItem,
   Footer: CarouselFooter,
-  Dots: CarouselDots
+  Dots: CarouselDots,
 };

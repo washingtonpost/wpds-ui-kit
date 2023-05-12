@@ -7,26 +7,26 @@ import { getPixelsFromRem } from "./utils";
 
 const slideUpAndFade = keyframes({
   "0%": { opacity: 0, transform: "translateY(2px)" },
-  "100%": { opacity: 1, transform: "translateY(0)" }
+  "100%": { opacity: 1, transform: "translateY(0)" },
 });
 
 const slideRightAndFade = keyframes({
   "0%": { opacity: 0, transform: "translateX(-2px)" },
-  "100%": { opacity: 1, transform: "translateX(0)" }
+  "100%": { opacity: 1, transform: "translateX(0)" },
 });
 
 const slideDownAndFade = keyframes({
   "0%": { opacity: 0, transform: "translateY(-2px)" },
-  "100%": { opacity: 1, transform: "translateY(0)" }
+  "100%": { opacity: 1, transform: "translateY(0)" },
 });
 
 const slideLeftAndFade = keyframes({
   "0%": { opacity: 0, transform: "translateX(2px)" },
-  "100%": { opacity: 1, transform: "translateX(0)" }
+  "100%": { opacity: 1, transform: "translateX(0)" },
 });
 
 const StyledArrow = styled(TooltipPrimitive.Arrow, {
-  fill: theme.colors.secondary
+  fill: theme.colors.secondary,
 });
 
 export type WPDSThemeSpaceObject = {
@@ -52,18 +52,18 @@ const StyledContentWrapper = styled(TooltipPrimitive.Content, {
       '&[data-side="top"]': { animationName: slideDownAndFade },
       '&[data-side="right"]': { animationName: slideLeftAndFade },
       '&[data-side="bottom"]': { animationName: slideUpAndFade },
-      '&[data-side="left"]': { animationName: slideRightAndFade }
-    }
+      '&[data-side="left"]': { animationName: slideRightAndFade },
+    },
   },
   variants: {
     /** Specify the amount of padding for the inner components. */
     density: {
       compact: {
-        padding: theme.space["025"]
+        padding: theme.space["025"],
       },
-      default: {}
-    }
-  }
+      default: {},
+    },
+  },
 });
 
 type TooltipContentVariants = WPDS.VariantProps<typeof StyledContentWrapper>;

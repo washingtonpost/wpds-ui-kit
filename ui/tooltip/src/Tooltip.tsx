@@ -5,7 +5,7 @@ import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 import {
   TooltipProps as RadixTooltipRootProps,
   TooltipPortalProps as RadixTooltipPortalProps,
-  TooltipProviderProps as RadixTooltipProviderProps
+  TooltipProviderProps as RadixTooltipProviderProps,
 } from "@radix-ui/react-tooltip";
 
 export const TooltipRoot = ({ children, ...props }: RadixTooltipRootProps) => (
@@ -50,5 +50,5 @@ export const Tooltip: TooltipProps = {
   Root,
   Content,
   Trigger,
-  Portal
+  Portal,
 };
