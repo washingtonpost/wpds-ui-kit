@@ -12,8 +12,8 @@ export default {
     Item: Select.Item,
     Group: Select.Group,
     Label: Select.Label,
-    Content: Select.Content,
-  },
+    Content: Select.Content
+  }
 };
 
 const Template: ComponentStory<typeof Select.Root> = (args) => {
@@ -50,13 +50,13 @@ Play.args = {
   disabled: false,
   error: false,
   errorMessage: "",
-  helperText: "",
+  helperText: ""
 };
 
 Play.storyName = "Select";
 
 Play.parameters = {
-  chromatic: { disableSnapshot: true },
+  chromatic: { disableSnapshot: true }
 };
 
 const ControlledTemplate: ComponentStory<typeof Select.Root> = (args) => {
@@ -85,5 +85,73 @@ const ControlledTemplate: ComponentStory<typeof Select.Root> = (args) => {
 export const Controlled = ControlledTemplate.bind({});
 
 Controlled.parameters = {
-  chromatic: { disableSnapshot: true },
+  chromatic: { disableSnapshot: true }
+};
+
+export const SelectsInARow = () => {
+  return (
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "row"
+      }}
+    >
+      <Select.Root>
+        <Select.Trigger aria-label="example-1">
+          <Select.Label>Label/Placeholder</Select.Label>
+          <Select.Value />
+        </Select.Trigger>
+        <Select.Content>
+          <Select.Item value="1">Option 1 value</Select.Item>
+          <Select.Item value="2">Option 2 value</Select.Item>
+          <Select.Item value="3">Option 3 value</Select.Item>
+          <Select.Item value="4">Option 4 value</Select.Item>
+          <Select.Item value="5">Option 5 value</Select.Item>
+          <Select.Item value="6">Option 6 value</Select.Item>
+        </Select.Content>
+      </Select.Root>
+      <Select.Root>
+        <Select.Trigger aria-label="example-1">
+          <Select.Label>Label/Placeholder</Select.Label>
+          <Select.Value />
+        </Select.Trigger>
+        <Select.Content>
+          <Select.Item value="1">Option 1 value</Select.Item>
+          <Select.Item value="2">Option 2 value</Select.Item>
+          <Select.Item value="3">Option 3 value</Select.Item>
+          <Select.Item value="4">Option 4 value</Select.Item>
+          <Select.Item value="5">Option 5 value</Select.Item>
+          <Select.Item value="6">Option 6 value</Select.Item>
+        </Select.Content>
+      </Select.Root>
+      <Select.Root>
+        <Select.Trigger aria-label="example-1">
+          <Select.Label>Label/Placeholder</Select.Label>
+          <Select.Value />
+        </Select.Trigger>
+        <Select.Content>
+          <Select.Item value="1">Option 1 value</Select.Item>
+          <Select.Item value="2">Option 2 value</Select.Item>
+          <Select.Item value="3">Option 3 value</Select.Item>
+          <Select.Item value="4">Option 4 value</Select.Item>
+          <Select.Item value="5">Option 5 value</Select.Item>
+          <Select.Item value="6">Option 6 value</Select.Item>
+        </Select.Content>
+      </Select.Root>
+      <Select.Root>
+        <Select.Trigger aria-label="example-1">
+          <Select.Label>Label/Placeholder</Select.Label>
+          <Select.Value />
+        </Select.Trigger>
+        <Select.Content>
+          <Select.Item value="1">Option 1 value</Select.Item>
+          <Select.Item value="2">Option 2 value</Select.Item>
+          <Select.Item value="3">Option 3 value</Select.Item>
+          <Select.Item value="4">Option 4 value</Select.Item>
+          <Select.Item value="5">Option 5 value</Select.Item>
+          <Select.Item value="6">Option 6 value</Select.Item>
+        </Select.Content>
+      </Select.Root>
+    </div>
+  );
 };
