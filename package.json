@@ -91,7 +91,7 @@
     "turbo-darwin-arm64": "1.7.2",
     "turbo-linux-64": "1.7.2",
     "turbo-linux-arm64": "1.7.2",
-    "turbo-windows-64": "1.7.2",
+    "turbo-windows-64": "1.9.5",
     "turbo-windows-arm64": "1.7.2"
   },
   "workspaces": [
