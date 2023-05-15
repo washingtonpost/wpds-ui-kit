@@ -47,6 +47,12 @@ const StyledLabel = styled("div", {
   color: theme.colors.primary,
 });
 
+const StyledStack = styled("div", {
+  display: "flex",
+  flexDirection: "column",
+  gap: theme.space["100"],
+});
+
 const StyledContent = styled(Tabs.Content, {
   minHeight: "50px",
   paddingTop: "20px",
@@ -151,6 +157,44 @@ Center.args = {
   align: "center",
   density: "compact",
 };
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const TemplateDensity: ComponentStory<any> = () => {
+  return (
+    <StyledStack>
+      <StyledLabel>Outline for viewing alignment purposes only</StyledLabel>
+      <StyledTabs>
+        <Tabs.Root defaultValue="tab1">
+          <Tabs.List aria-label="Countries' information" density="compact">
+            <Tabs.Trigger value="tab1"> France </Tabs.Trigger>
+            <Tabs.Trigger value="tab2">Brazil</Tabs.Trigger>
+            <Tabs.Trigger value="tab3">Vietnam</Tabs.Trigger>
+          </Tabs.List>
+        </Tabs.Root>
+      </StyledTabs>
+      <StyledTabs>
+        <Tabs.Root defaultValue="tab1">
+          <Tabs.List aria-label="Countries' information" density="default">
+            <Tabs.Trigger value="tab1">France</Tabs.Trigger>
+            <Tabs.Trigger value="tab2">Brazil</Tabs.Trigger>
+            <Tabs.Trigger value="tab3">Vietnam</Tabs.Trigger>
+          </Tabs.List>
+        </Tabs.Root>
+      </StyledTabs>
+      <StyledTabs>
+        <Tabs.Root defaultValue="tab1">
+          <Tabs.List aria-label="Countries' information" density="loose">
+            <Tabs.Trigger value="tab1"> France </Tabs.Trigger>
+            <Tabs.Trigger value="tab2">Brazil</Tabs.Trigger>
+            <Tabs.Trigger value="tab3">Vietnam</Tabs.Trigger>
+          </Tabs.List>
+        </Tabs.Root>
+      </StyledTabs>
+    </StyledStack>
+  );
+};
+
+export const Density = TemplateDensity.bind({});
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const TemplateControlled: ComponentStory<any> = (args) => {

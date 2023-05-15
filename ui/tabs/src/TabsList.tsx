@@ -47,10 +47,19 @@ type TabsListProps = {
   React.ComponentProps<typeof StyledTabsList>;
 
 export const TabsList = React.forwardRef<HTMLDivElement, TabsListProps>(
-  ({ align = "left", children, ...props }: TabsListProps, ref) => {
+  (
+    { align = "left", density = "default", children, ...props }: TabsListProps,
+    ref
+  ) => {
     return (
       <StyledTabsList ref={ref} align={align} {...props}>
-        {children}
+        {React.Children.map(children, (child: React.ReactNode) => {
+          if (React.isValidElement(child)) {
+            return React.cloneElement(child, {
+              density: density,
+            });
+          }
+        })}
       </StyledTabsList>
     );
   }
