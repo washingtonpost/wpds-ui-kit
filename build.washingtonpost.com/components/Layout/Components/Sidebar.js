@@ -228,7 +228,7 @@ export default function Sidebar({ navigation, setMobileMenu }) {
   };
   return (
     <Panel id="open-nav">
-      <Container id="sidebar-container" as="nav" aria-label="Sections" >
+      <Container id="sidebar-container" as="nav" aria-label="Sections">
         {navigation &&
           navigation.map((nav, index) => {
             return (
