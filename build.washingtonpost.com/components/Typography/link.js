@@ -11,7 +11,9 @@ export const A = styled("a", {
   },
   "&:focus-visible": {
     outline: "1px auto Highlight",
-    outline: "1px auto -webkit-focus-ring-color"
+    "@media screen and (-webkit-min-device-pixel-ratio: 0)": {
+      outline: "1px auto -webkit-focus-ring-color",
+    },
   },
   variants: {
     signal: {

@@ -148,7 +148,9 @@ const Index = ({ recentPosts, rankedArticles, contributors }) => {
           css={{
             "&:focus-within": {
               outline: "1px auto Highlight",
-              outline: "1px auto -webkit-focus-ring-color"
+              "@media screen and (-webkit-min-device-pixel-ratio: 0)": {
+                outline: "1px auto -webkit-focus-ring-color",
+              },
             },
             position: "relative",
             "@md": {
@@ -192,7 +194,9 @@ const Index = ({ recentPosts, rankedArticles, contributors }) => {
           css={{
             "&:focus-within": {
               outline: "1px auto Highlight",
-              outline: "1px auto -webkit-focus-ring-color"
+              "@media screen and (-webkit-min-device-pixel-ratio: 0)": {
+                outline: "1px auto -webkit-focus-ring-color",
+              },
             },
             position: "relative",
             "@md": {
@@ -240,7 +244,9 @@ const Index = ({ recentPosts, rankedArticles, contributors }) => {
           css={{
             "&:focus-within": {
               outline: "1px auto Highlight",
-              outline: "1px auto -webkit-focus-ring-color"
+              "@media screen and (-webkit-min-device-pixel-ratio: 0)": {
+                outline: "1px auto -webkit-focus-ring-color",
+              },
             },
             height: "100%",
             position: "relative",
