@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { styled } from "@washingtonpost/wpds-theme";
+import { styled, theme } from "@washingtonpost/wpds-theme";
 import type * as WPDS from "@washingtonpost/wpds-theme";
 import { Tooltip } from "@washingtonpost/wpds-tooltip";
 
@@ -12,8 +12,19 @@ const StyledContainer = styled("div", {
 });
 
 const StyledTabText = styled("div", {
-  flex: "1 0 auto",
-  maxWidth: "24ch", // ch value is based on the width of the font 0. This is a rough approximation
+  display: "inline-flex",
+  flexDirection: "column",
+  maxWidth: "14rem", // use rems, as ch value shifts when text is active bold
+  "&::after": {
+    content: "attr(data-text)",
+    fontWeight: theme.fontWeights.bold,
+    height: 0,
+    visibility: "hidden",
+  },
+});
+
+const Truncate = styled("span", {
+  maxWidth: "100%",
   overflow: "hidden",
   textOverflow: "ellipsis",
   whiteSpace: "nowrap",
@@ -30,29 +41,29 @@ export type TabsTriggerContentProps = {
 } & React.ComponentPropsWithoutRef<typeof StyledContainer>;
 
 export const TabsTriggerContent = ({ children }: TabsTriggerContentProps) => {
-  const internalRef = React.useRef<HTMLDivElement | null>(null);
+  const internalRef = React.useRef<HTMLSpanElement | null>(null);
 
   const [truncated, setTruncated] = React.useState(false);
-
-  const childrenArray = React.Children.toArray(children);
-  const hasMoreThanOneChild = childrenArray.length > 1;
-
   React.useEffect(() => {
     const element = internalRef?.current;
     setTruncated(isTruncated(element));
   }, []);
 
-  // the parent container is flex, but the StyledTabText component cannot be set to
-  // flex since we want to show the ellipsis. For this reason, we need to split the
-  // children components
-  const content = hasMoreThanOneChild ? (
-    <>
-      {childrenArray[0]}
-      <StyledTabText ref={internalRef}>{childrenArray[1]}</StyledTabText>
-    </>
-  ) : (
-    <StyledTabText ref={internalRef}>{children}</StyledTabText>
-  );
+  const childrenArray = React.Children.toArray(children);
+
+  // the StyledTabText component is set to inline flex to include bolded spacer text
+  // that prevents shifting. Additional Truncate is needed to show the ellipsis. Other
+  // components like icons are simply returned
+  const content = childrenArray.map((child) => {
+    if (typeof child === "string") {
+      return (
+        <StyledTabText data-text={child} key={child}>
+          <Truncate ref={internalRef}>{child}</Truncate>
+        </StyledTabText>
+      );
+    }
+    return child;
+  });
 
   return (
     <>

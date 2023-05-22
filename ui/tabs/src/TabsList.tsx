@@ -4,7 +4,6 @@ import * as TabsPrimitive from "@radix-ui/react-tabs";
 import type * as WPDS from "@washingtonpost/wpds-theme";
 
 import { styled, theme } from "@washingtonpost/wpds-theme";
-import { TabsContext } from "./context";
 
 const StyledTabsList = styled(TabsPrimitive.List, {
   flexShrink: 0,
@@ -48,40 +47,19 @@ type TabsListProps = {
   React.ComponentProps<typeof StyledTabsList>;
 
 export const TabsList = React.forwardRef<HTMLDivElement, TabsListProps>(
-  ({ align = "left", children, ...props }: TabsListProps, ref) => {
-    const [activeIndex, setActiveIndex] = React.useState(0);
-    const [previousRect, setPreviousRect] = React.useState<DOMRect | null>(
-      null
-    );
-
-    const { initialValue } = React.useContext(TabsContext);
-
-    React.useEffect(() => {
-      React.Children.map(children, (child: React.ReactNode, index: number) => {
-        if (React.isValidElement(child) && initialValue === child.props.value) {
-          setActiveIndex(index);
-        }
-      });
-    }, []);
-
+  (
+    { align = "left", density = "default", children, ...props }: TabsListProps,
+    ref
+  ) => {
     return (
-      <StyledTabsList ref={ref} align={align}>
-        {React.Children.map(
-          children,
-          (child: React.ReactNode, index: number) => {
-            if (React.isValidElement(child)) {
-              return React.cloneElement(child, {
-                active: activeIndex === index ? true : false,
-                onClick: () => {
-                  setActiveIndex(index);
-                },
-                previousRect,
-                setPreviousRect,
-                ...props,
-              });
-            }
+      <StyledTabsList ref={ref} align={align} {...props}>
+        {React.Children.map(children, (child: React.ReactNode) => {
+          if (React.isValidElement(child)) {
+            return React.cloneElement(child, {
+              density: density,
+            });
           }
-        )}
+        })}
       </StyledTabsList>
     );
   }

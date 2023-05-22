@@ -16,16 +16,37 @@ export type TabsRootProps = {
   css?: WPDS.CSS;
 } & React.ComponentPropsWithRef<typeof StyledTabsRoot>;
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const TabsRoot = React.forwardRef<HTMLDivElement, TabsRootProps>(
   ({ children, ...props }: TabsRootProps, ref) => {
+    const [currentValue, setCurrentValue] = React.useState<string | undefined>(
+      props.defaultValue || props.value
+    );
+    const [previousRect, setPreviousRect] = React.useState<
+      DOMRect | undefined
+    >();
+    React.useEffect(() => {
+      if (props.value) {
+        setCurrentValue(props.value);
+      }
+    }, [props.value]);
     return (
       <TabsContext.Provider
         value={{
-          initialValue: props.defaultValue || props.value,
+          currentValue: currentValue,
+          previousRect: previousRect,
+          setPreviousRect: setPreviousRect,
         }}
       >
-        <StyledTabsRoot {...props} ref={ref}>
+        <StyledTabsRoot
+          {...props}
+          ref={ref}
+          onValueChange={(newValue) => {
+            setCurrentValue(newValue);
+            if (props.onValueChange) {
+              props.onValueChange(newValue);
+            }
+          }}
+        >
           {children}
         </StyledTabsRoot>
       </TabsContext.Provider>
