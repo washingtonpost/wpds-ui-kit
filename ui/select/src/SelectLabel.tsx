@@ -40,6 +40,12 @@ const TextInputLabel = styled(InputLabel, {
   },
 });
 
+// occupy space in the DOM so that the container
+// knows to take up the same space as the absolutely positioned label
+const HiddenSpanToOccupySpace = styled("span", {
+  visibility: "hidden",
+});
+
 const RequiredTag = styled("span", {
   color: theme.colors.red100,
 });
@@ -69,6 +75,11 @@ export const SelectLabel = ({ children, ...props }: SelectLabelProps) => {
         {children}
         {required && <RequiredTag>*</RequiredTag>}
       </TextInputLabel>
+      {!isFloating && (
+        <HiddenSpanToOccupySpace aria-hidden={true}>
+          {children}
+        </HiddenSpanToOccupySpace>
+      )}
     </LabelInputWrapper>
   );
 };

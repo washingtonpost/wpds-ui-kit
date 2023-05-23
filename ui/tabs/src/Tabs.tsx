@@ -10,6 +10,9 @@ export type TabsProps = {
   Content: typeof TabsContent;
 };
 
+/**
+ * Tabs
+ */
 export const Tabs: TabsProps = {
   Root: TabsRoot,
   List: TabsList,

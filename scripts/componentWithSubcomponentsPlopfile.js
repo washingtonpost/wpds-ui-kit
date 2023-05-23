@@ -1,9 +1,9 @@
 const prettier = require("prettier");
-const lerna = require("./../lerna.json");
+const lerna = require("../lerna.json");
 
 module.exports = function (plop) {
   plop.setGenerator("component", {
-    description: "Create a new WPDS UI kit component",
+    description: "Create a new WPDS UI kit component with subcomponents",
     prompts: [
       {
         type: "input",
@@ -23,8 +23,8 @@ module.exports = function (plop) {
         {
           type: "addMany",
           destination: `../ui/{{ dashCase componentName }}`,
-          base: "../templates/component",
-          templateFiles: "../templates/component/**/*",
+          base: "../templates/component-with-subcomponents",
+          templateFiles: "../templates/component-with-subcomponents/**/*",
           data: {
             componentName: "{{ dashCase componentName }}",
           },

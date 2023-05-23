@@ -149,7 +149,7 @@ export const NavigationBar = ({ setMobileMenu, mobileMenuState, isClosed }) => {
 
   return (
     <>
-      <Container>
+      <Container as="header">
         <SkipToMainContent as="a" href="#main">
           Skip to main content
         </SkipToMainContent>
@@ -193,7 +193,7 @@ export const NavigationBar = ({ setMobileMenu, mobileMenuState, isClosed }) => {
           </Button>
         </Box>
       </Container>
-      <List>
+      <List role="navigation" aria-label="Support and search">
         <ListItem>
           <Link href="/release-notes" passHref>
             <Anchor

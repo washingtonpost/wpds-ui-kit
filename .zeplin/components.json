@@ -1,7 +1,10 @@
 {
   "plugins": [
     {
-      "name": "@zeplin/cli-connect-react-plugin"
+      "name": "@zeplin/cli-connect-react-plugin",
+      "config": {
+        "tsDocgen": "react-docgen-typescript"
+      }
     }
   ],
   "projects": [],
@@ -634,6 +637,63 @@
       "documentation": {
         "urlPath": "/components/card"
       }
+    },
+    {
+      "path": "ui/tooltip/src/Tooltip.tsx",
+      "zeplinIds": [
+        "6307d44cc68bb563401f9f52",
+        "6307d457c25c95838b7a45bd",
+        "6307d45938b937686349e20b",
+        "6307d44ebe5f8963a77e85fe",
+        "6307d45cb6fb69637fe1f2ae",
+        "6307d45b6874548290febde9",
+        "6307d44db6fb69637fe1f277",
+        "6307d45c8ffa6565235f8021",
+        "6307d455cd440d670fa63eb8",
+        "6307d451b319a264013537b3",
+        "6307d458590eaf63abffc9fc",
+        "6307d458b6fb69637fe1f294",
+        "6307d450500512841eb99228",
+        "6307d454a7170763cbf43b74",
+        "6307d45afab68e64b58cacca",
+        "6307d452dc66e2683ea2ae55",
+        "6307d45ac25c95838b7a45d6",
+        "6307d456386891624d9a928a",
+        "6307d453e2267666ac585cd4",
+        "6307d451e2267666ac585cbb",
+        "6307d44fba1a9567b8439aaa",
+        "6307d4541b6f9f65986ec178",
+        "6307d4538bfb866494b49924",
+        "6307d44fe85f1c8483cee740"
+      ]
+    },
+    {
+      "path": "ui/carousel/src/Carousel.tsx",
+      "zeplinIds": [
+        "64308ff576de7d6cb6d72790",
+        "64308ff5e8030468601b03dd",
+        "64308ff6aaffde6c9988c021",
+        "64308ff5311dfc67c19c8ba8",
+        "64308ff6d690a16cd8b50571",
+        "64308ff6eddc4c687675da00",
+        "6435ed00a1cbe925f9fa6f17",
+        "6435ed01f986df25d4e9c570",
+        "6435ed051b2ea925e3be99b8",
+        "6435ed026c250425cd838b76",
+        "6435ed01e5709125a52aa15c",
+        "6435ed04cc44a525ee801ae9"
+      ]
+    },
+    {
+      "path": "ui/tabs/src/Tabs.tsx",
+      "zeplinIds": [
+        "6419bd1c021c6c22517ac54c",
+        "6419bd25b967b521bd54a48f",
+        "6419bd235cc5ca21eafd1307",
+        "6419bd24324d6c2195f9f135",
+        "6419bd265cc5ca21eafd1330",
+        "6419bd228ddcf322d34181cd"
+      ]
     }
   ],
   "links": [

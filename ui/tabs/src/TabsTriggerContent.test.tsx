@@ -41,4 +41,17 @@ describe("TabsTriggerContent", () => {
 
     expect(screen.getByTestId("tabs-tooltip-trigger")).toBeVisible();
   });
+
+  test("renders non text nodes", () => {
+    render(
+      <TabsRoot>
+        <TabsList>
+          <TabsTriggerContent>
+            <div>Test</div>
+          </TabsTriggerContent>
+        </TabsList>
+      </TabsRoot>
+    );
+    expect(screen.getByText("Test")).toBeVisible();
+  });
 });

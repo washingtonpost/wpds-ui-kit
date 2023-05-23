@@ -24,6 +24,9 @@ type CarouselProps = {
   Dots: typeof CarouselDots;
 };
 
+/**
+ * Carousel
+ */
 export const Carousel: CarouselProps = {
   Root: CarouselRoot,
   Header: CarouselHeader,

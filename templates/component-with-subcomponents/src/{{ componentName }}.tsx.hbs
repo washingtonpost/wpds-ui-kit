@@ -1,0 +1,9 @@
+import { {{ componentName }}Root } from "./{{ componentName }}Root";
+
+export type {{ componentName }}Props = {
+  Root: typeof {{ componentName }}Root;
+};
+
+export const {{ componentName }}: {{ componentName }}Props = {
+  Root: {{ componentName }}Root,
+};
