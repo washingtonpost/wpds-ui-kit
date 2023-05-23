@@ -7,7 +7,7 @@ import {
   sharedInputStyles,
   sharedInputVariants,
   useFloating,
-  globalInputAutoFillTriggerAnimations,
+  globalInputAutoFillTriggerAnimations
 } from "@washingtonpost/wpds-input-shared";
 import { InputLabel } from "@washingtonpost/wpds-input-label";
 import { ErrorMessage } from "@washingtonpost/wpds-error-message";
@@ -29,10 +29,10 @@ const InputTextareaCSS = css({
      */
     canResize: {
       false: {
-        resize: "none",
-      },
-    },
-  },
+        resize: "none"
+      }
+    }
+  }
 });
 
 const TextAreaLabel = styled(InputLabel, {
@@ -42,22 +42,22 @@ const TextAreaLabel = styled(InputLabel, {
   position: "absolute",
   transition: theme.transitions.allFast,
   "@reducedMotion": {
-    transition: "none",
+    transition: "none"
   },
   variants: {
     isFloating: {
       true: {
         fontSize: theme.fontSizes["075"],
-        lineHeight: theme.lineHeights["100"],
-      },
-    },
-  },
+        lineHeight: theme.lineHeights["100"]
+      }
+    }
+  }
 });
 
 const ControlCSS = css({
   display: "flex",
   flexDirection: "column",
-  position: "relative",
+  position: "relative"
 });
 
 export interface InputTextareaProps
@@ -167,10 +167,11 @@ export const InputTextarea = React.forwardRef<
     }, []);
 
     const [isFloating, handleFocus, handleBlur, handleChange] = useFloating(
-      value || defaultValue || placeholder || isAutofilled,
+      value || defaultValue || placeholder,
       onFocus,
       onBlur,
-      onChange
+      onChange,
+      isAutofilled
     );
 
     return (
@@ -184,7 +185,7 @@ export const InputTextarea = React.forwardRef<
             css: css,
             canResize: canResize,
             isInvalid: error,
-            isDisabled: disabled,
+            isDisabled: disabled
           })}
           required={required}
           disabled={disabled}
