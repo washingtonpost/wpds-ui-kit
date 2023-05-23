@@ -129,6 +129,12 @@ export const globalStyles = globalCss({
   },
   "*": {
     boxSizing: "border-box",
+    "&:focus-visible": {
+      outline: "1px auto Highlight",
+      "@media screen and (-webkit-min-device-pixel-ratio: 0)": {
+        outline: "1px auto -webkit-focus-ring-color",
+      },
+    },
   },
   html: {
     overflowX: "hidden",
