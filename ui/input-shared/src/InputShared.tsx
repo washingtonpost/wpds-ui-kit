@@ -113,36 +113,19 @@ export const useFloating = (
   const [isTouched, setIsTouched] = React.useState(val ? true : false);
   const [isFocused, setIsFocused] = React.useState(false);
   const prevValue = React.useRef();
-  // count how many times this use effect has run
-  const count = React.useRef(0);
-
-  console.log(isTouched);
 
   React.useEffect(() => {
-    count.current++;
-    console.log({
-      val,
-      prevValueCurrent: prevValue.current
-    });
-    // if (val && !isFloating) {
-    if (val) {
+    if (val || isAutofilled) {
       setIsFloating(true);
       setIsTouched(true);
-      // } else if (prevValue.current && !isFocused && !isAutofilled) {
     } else {
       if (!isFocused) {
         setIsFloating(false);
         setIsTouched(false);
       }
-      console.log("val", val);
-      console.log("isFloating", isFloating);
-      console.log("prevValue.current", prevValue.current);
-      console.log("isFocused", isFocused);
-      console.log("isAutofilled", isAutofilled);
     }
 
     prevValue.current = val;
-    console.log("count", count.current);
   }, [val, prevValue, isFloating, isFocused, setIsFloating, setIsTouched]);
 
   function handleFocus(
@@ -157,10 +140,9 @@ export const useFloating = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) {
     setIsFocused(false);
-    // console.log(isTouched);
-    // if (!isTouched) {
-    setIsFloating(false);
-    // }
+    if (!isTouched) {
+      setIsFloating(false);
+    }
     onBlur && onBlur(event);
   }
 

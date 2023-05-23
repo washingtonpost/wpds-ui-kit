@@ -252,8 +252,18 @@ Interactions.play = async ({ args }) => {
 export const TypeSearch = Template.bind({});
 TypeSearch.args = {
   type: "search"
-  // placeholder: "Search"
 };
 TypeSearch.parameters = {
+  chromatic: { disableSnapshot: true }
+};
+
+export const AutoFilledTypeText = Template.bind({});
+AutoFilledTypeText.args = {
+  type: "text",
+  name: "my-name",
+  autoComplete: "given-name",
+  id: "my-name"
+};
+AutoFilledTypeText.parameters = {
   chromatic: { disableSnapshot: true }
 };
