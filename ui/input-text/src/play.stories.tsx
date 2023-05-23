@@ -17,13 +17,13 @@ export default {
   component: Component,
   argTypes: {
     label: {
-      defaultValue: "Label"
+      defaultValue: "Label",
     },
     type: {
-      defaultValue: "text"
+      defaultValue: "text",
     },
     icon: {
-      defaultValue: "left"
+      defaultValue: "left",
     },
     onButtonIconClick: jest.fn(),
     children: {
@@ -34,10 +34,10 @@ export default {
           <Icon label="">
             <Asset />
           </Icon>
-        )
-      }
-    }
-  }
+        ),
+      },
+    },
+  },
 } as ComponentMeta<typeof Component>;
 
 const Template: ComponentStory<typeof Component> = (args) => (
@@ -46,13 +46,13 @@ const Template: ComponentStory<typeof Component> = (args) => (
 
 export const InputText = Template.bind({});
 InputText.parameters = {
-  chromatic: { disableSnapshot: true }
+  chromatic: { disableSnapshot: true },
 };
 
 const SynchContainer = styled("div", {
   display: "flex",
   alignItems: "center",
-  gap: theme.space["050"]
+  gap: theme.space["050"],
 });
 
 const SynchTemplate = () => {
@@ -85,20 +85,20 @@ const SynchTemplate = () => {
 
 export const InputSynch = SynchTemplate.bind({});
 InputText.parameters = {
-  chromatic: { disableSnapshot: true }
+  chromatic: { disableSnapshot: true },
 };
 
 const Column = styled("div", {
   display: "flex",
   flexDirection: "column",
   width: "100%",
-  gap: "$100"
+  gap: "$100",
 });
 
 const Heading = styled("h2", {
   color: theme.colors.primary,
   fontSize: theme.fontSizes["100"],
-  marginBlock: 0
+  marginBlock: 0,
 });
 
 const ChromaticTemplate = () => (
@@ -221,7 +221,7 @@ const InteractionsTemplate: ComponentStory<typeof Component> = (args) => (
 
 export const Interactions = InteractionsTemplate.bind({});
 Interactions.parameters = {
-  chromatic: { disableSnapshot: true }
+  chromatic: { disableSnapshot: true },
 };
 
 // Function to emulate pausing between interactions
@@ -235,7 +235,7 @@ Interactions.play = async ({ args }) => {
   const label1 = screen.getAllByText("Field 1")[0];
   await expect(label1).toHaveStyle("font-size: 16px");
   await userEvent.type(screen.getByLabelText("Field 1"), "user text", {
-    delay: 100
+    delay: 100,
   });
   await expect(label1).toHaveStyle("font-size: 12px");
   await userEvent.tab();
@@ -251,10 +251,10 @@ Interactions.play = async ({ args }) => {
 
 export const TypeSearch = Template.bind({});
 TypeSearch.args = {
-  type: "search"
+  type: "search",
 };
 TypeSearch.parameters = {
-  chromatic: { disableSnapshot: true }
+  chromatic: { disableSnapshot: true },
 };
 
 export const AutoFilledTypeText = Template.bind({});
@@ -262,8 +262,8 @@ AutoFilledTypeText.args = {
   type: "text",
   name: "my-name",
   autoComplete: "given-name",
-  id: "my-name"
+  id: "my-name",
 };
 AutoFilledTypeText.parameters = {
-  chromatic: { disableSnapshot: true }
+  chromatic: { disableSnapshot: true },
 };

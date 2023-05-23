@@ -15,8 +15,8 @@ export const sharedInputStyles = {
 
   "&:focus": {
     borderColor: theme.colors.signal,
-    outline: "none"
-  }
+    outline: "none",
+  },
 };
 
 export const sharedInputVariants = {
@@ -24,34 +24,34 @@ export const sharedInputVariants = {
     true: {
       borderColor: theme.colors.error,
       "&:focus": {
-        borderColor: theme.colors.error
-      }
-    }
+        borderColor: theme.colors.error,
+      },
+    },
   },
   isDisabled: {
     true: {
       backgroundColor: theme.colors.disabled,
       borderColor: theme.colors.disabled,
-      color: theme.colors.onDisabled
-    }
-  }
+      color: theme.colors.onDisabled,
+    },
+  },
 };
 
 export const RequiredIndicatorCSS = css({
-  color: theme.colors.error
+  color: theme.colors.error,
 });
 
 export const globalInputAutoFillTriggerAnimations = globalCss({
   "@keyframes jsTriggerAutoFillStart": {
     from: {
-      alpha: 1
-    }
+      alpha: 1,
+    },
   },
   "@keyframes jsTriggerAutoFillCancel": {
     from: {
-      alpha: 1
-    }
-  }
+      alpha: 1,
+    },
+  },
 });
 
 export const unstyledInputStyles = {
@@ -68,33 +68,33 @@ export const unstyledInputStyles = {
   width: "100%",
 
   "&:focus": {
-    outline: "none"
+    outline: "none",
   },
 
   "&:disabled": {
-    color: "inherit"
+    color: "inherit",
   },
 
   "&:-webkit-autofill": {
     "-webkit-box-shadow": `0 0 0 100px ${theme.colors.secondary} inset`,
     "-webkit-text-fill-color": `${theme.colors.primary}`,
     // used to trigger JS so that we can do the label shrinking
-    animation: "jsTriggerAutoFillStart 200ms"
+    animation: "jsTriggerAutoFillStart 200ms",
   },
 
   "&:not(:-webkit-autofill)": {
     // used to trigger JS so that we can stop the label shrinking
-    animation: "jsTriggerAutoFillCancel 200ms"
+    animation: "jsTriggerAutoFillCancel 200ms",
   },
 
   // hide webkit-cancel-button on search type inputs
   "&::-webkit-search-cancel-button": {
-    "-webkit-appearance": "none"
+    "-webkit-appearance": "none",
   },
 
   "@reducedMotion": {
-    animation: "none"
-  }
+    animation: "none",
+  },
 };
 
 export const useFloating = (

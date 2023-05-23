@@ -20,10 +20,10 @@ const StyledLabel = styled(Label.Root, {
   variants: {
     isDisabled: {
       true: {
-        color: theme.colors.onDisabled
-      }
-    }
-  }
+        color: theme.colors.onDisabled,
+      },
+    },
+  },
 });
 
 interface InputLabelProps extends LabelProps {
