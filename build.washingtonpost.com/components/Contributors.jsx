@@ -28,7 +28,7 @@ const StyledContributorHeader = styled(Header, {
 });
 
 const ContributorBlock = ({ contributor }) => (
-  <StyledContributor >
+  <StyledContributor>
     <CustomLink aria-hidden="true" tabIndex="-1" href={contributor.url}>
       <Avatar size="600">
         <Image

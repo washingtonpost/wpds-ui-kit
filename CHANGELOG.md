@@ -5,26 +5,20 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 # [1.6.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.5.2...v1.6.0) (2023-05-24)
 
-
 ### Bug Fixes
 
-* a11y improvements to welcome page and broader page landmarks on build site [SRED-243] ([#403](https://github.com/washingtonpost/wpds-ui-kit/issues/403)) ([f819435](https://github.com/washingtonpost/wpds-ui-kit/commit/f8194351a0a53e1a8ba01502ee5999072822d641))
-* add underline to hyperlinks in build site markdown [SRED-242] ([#402](https://github.com/washingtonpost/wpds-ui-kit/issues/402)) ([0aa9748](https://github.com/washingtonpost/wpds-ui-kit/commit/0aa97488065c8ee190f1d16c2d0627e60c461850))
-* alignment and space issue with select label ([#393](https://github.com/washingtonpost/wpds-ui-kit/issues/393)) ([0abe7de](https://github.com/washingtonpost/wpds-ui-kit/commit/0abe7de73f6929c23329bfe539b2b8215ca668a1))
-* correct heading order throughout build site docs [SRED-243] ([#404](https://github.com/washingtonpost/wpds-ui-kit/issues/404)) ([cc5af05](https://github.com/washingtonpost/wpds-ui-kit/commit/cc5af05f9666a671a40dc10254e24b217fd0f2a8))
-* refactor tabs to prevent horizontal shift when active tab text bolds ([9038fff](https://github.com/washingtonpost/wpds-ui-kit/commit/9038fff428f2de8cfd4ab2595521587a524d0acb))
-
+- a11y improvements to welcome page and broader page landmarks on build site [SRED-243] ([#403](https://github.com/washingtonpost/wpds-ui-kit/issues/403)) ([f819435](https://github.com/washingtonpost/wpds-ui-kit/commit/f8194351a0a53e1a8ba01502ee5999072822d641))
+- add underline to hyperlinks in build site markdown [SRED-242] ([#402](https://github.com/washingtonpost/wpds-ui-kit/issues/402)) ([0aa9748](https://github.com/washingtonpost/wpds-ui-kit/commit/0aa97488065c8ee190f1d16c2d0627e60c461850))
+- alignment and space issue with select label ([#393](https://github.com/washingtonpost/wpds-ui-kit/issues/393)) ([0abe7de](https://github.com/washingtonpost/wpds-ui-kit/commit/0abe7de73f6929c23329bfe539b2b8215ca668a1))
+- correct heading order throughout build site docs [SRED-243] ([#404](https://github.com/washingtonpost/wpds-ui-kit/issues/404)) ([cc5af05](https://github.com/washingtonpost/wpds-ui-kit/commit/cc5af05f9666a671a40dc10254e24b217fd0f2a8))
+- refactor tabs to prevent horizontal shift when active tab text bolds ([9038fff](https://github.com/washingtonpost/wpds-ui-kit/commit/9038fff428f2de8cfd4ab2595521587a524d0acb))
 
 ### Features
 
-* add focus visible outlines with browser default colors as a global style in stitches config ts  [SRED-163] ([#391](https://github.com/washingtonpost/wpds-ui-kit/issues/391)) ([6c8252b](https://github.com/washingtonpost/wpds-ui-kit/commit/6c8252b54cfbfffcb23f2988a8bdd53e2cfad869))
-* add new plop template and script for a component that has subcomponents, with 'Root' as a starting point [SRED-131] ([#375](https://github.com/washingtonpost/wpds-ui-kit/issues/375)) ([20b31fa](https://github.com/washingtonpost/wpds-ui-kit/commit/20b31fae33afd4bca9faf0ef9206d71d44ff51e0))
-* expanded documentation for Carousel ([6911bd4](https://github.com/washingtonpost/wpds-ui-kit/commit/6911bd43432743a0cffdd9b7dceb3aea5f9453d0))
-* use external footer on docs site ([#387](https://github.com/washingtonpost/wpds-ui-kit/issues/387)) ([b1dad16](https://github.com/washingtonpost/wpds-ui-kit/commit/b1dad167a07cb75938a9fc3d22f4e69b4f0e4697))
-
-
-
-
+- add focus visible outlines with browser default colors as a global style in stitches config ts [SRED-163] ([#391](https://github.com/washingtonpost/wpds-ui-kit/issues/391)) ([6c8252b](https://github.com/washingtonpost/wpds-ui-kit/commit/6c8252b54cfbfffcb23f2988a8bdd53e2cfad869))
+- add new plop template and script for a component that has subcomponents, with 'Root' as a starting point [SRED-131] ([#375](https://github.com/washingtonpost/wpds-ui-kit/issues/375)) ([20b31fa](https://github.com/washingtonpost/wpds-ui-kit/commit/20b31fae33afd4bca9faf0ef9206d71d44ff51e0))
+- expanded documentation for Carousel ([6911bd4](https://github.com/washingtonpost/wpds-ui-kit/commit/6911bd43432743a0cffdd9b7dceb3aea5f9453d0))
+- use external footer on docs site ([#387](https://github.com/washingtonpost/wpds-ui-kit/issues/387)) ([b1dad16](https://github.com/washingtonpost/wpds-ui-kit/commit/b1dad167a07cb75938a9fc3d22f4e69b4f0e4697))
 
 ## [1.5.2](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.5.1...v1.5.2) (2023-05-02)
 
