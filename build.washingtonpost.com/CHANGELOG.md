@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.6.0](https://github.com/washingtonpost/wpds-docs/compare/v1.5.2...v1.6.0) (2023-05-24)
+
+
+### Bug Fixes
+
+* a11y improvements to welcome page and broader page landmarks on build site [SRED-243] ([#403](https://github.com/washingtonpost/wpds-docs/issues/403)) ([f819435](https://github.com/washingtonpost/wpds-docs/commit/f8194351a0a53e1a8ba01502ee5999072822d641))
+* add underline to hyperlinks in build site markdown [SRED-242] ([#402](https://github.com/washingtonpost/wpds-docs/issues/402)) ([0aa9748](https://github.com/washingtonpost/wpds-docs/commit/0aa97488065c8ee190f1d16c2d0627e60c461850))
+* correct heading order throughout build site docs [SRED-243] ([#404](https://github.com/washingtonpost/wpds-docs/issues/404)) ([cc5af05](https://github.com/washingtonpost/wpds-docs/commit/cc5af05f9666a671a40dc10254e24b217fd0f2a8))
+
+
+### Features
+
+* add focus visible outlines with browser default colors as a global style in stitches config ts  [SRED-163] ([#391](https://github.com/washingtonpost/wpds-docs/issues/391)) ([6c8252b](https://github.com/washingtonpost/wpds-docs/commit/6c8252b54cfbfffcb23f2988a8bdd53e2cfad869))
+* expanded documentation for Carousel ([6911bd4](https://github.com/washingtonpost/wpds-docs/commit/6911bd43432743a0cffdd9b7dceb3aea5f9453d0))
+* use external footer on docs site ([#387](https://github.com/washingtonpost/wpds-docs/issues/387)) ([b1dad16](https://github.com/washingtonpost/wpds-docs/commit/b1dad167a07cb75938a9fc3d22f4e69b4f0e4697))
+
+
+
+
+
 ## [1.5.2](https://github.com/washingtonpost/wpds-docs/compare/v1.5.1...v1.5.2) (2023-05-02)
 
 ### Bug Fixes

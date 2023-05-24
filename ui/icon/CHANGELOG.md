@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.6.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.5.2...v1.6.0) (2023-05-24)
+
+
+### Features
+
+* use external footer on docs site ([#387](https://github.com/washingtonpost/wpds-ui-kit/issues/387)) ([b1dad16](https://github.com/washingtonpost/wpds-ui-kit/commit/b1dad167a07cb75938a9fc3d22f4e69b4f0e4697))
+
+
+
+
+
 ## [1.5.2](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.5.1...v1.5.2) (2023-05-02)
 
 **Note:** Version bump only for package @washingtonpost/wpds-icon
