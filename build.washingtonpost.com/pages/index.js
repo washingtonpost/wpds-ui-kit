@@ -66,7 +66,17 @@ const Index = ({ recentPosts, rankedArticles, contributors }) => {
             "@sm": { display: "none" },
           }}
         >
-          <Header href="/resources" as="h3">
+          <Header
+            href="/resources"
+            as="h2"
+            css={{
+              fontSize: "$125",
+              fontFamily: "$subhead",
+              fontWeight: "$bold",
+              marginBottom: "$025",
+              marginTop: "$100",
+            }}
+          >
             What&apos;s new
           </Header>
         </Box>
@@ -136,6 +146,12 @@ const Index = ({ recentPosts, rankedArticles, contributors }) => {
       <LandingContentGrid size="wide">
         <Box
           css={{
+            "&:focus-within": {
+              outline: "1px auto Highlight",
+              "@media screen and (-webkit-min-device-pixel-ratio: 0)": {
+                outline: "1px auto -webkit-focus-ring-color",
+              },
+            },
             position: "relative",
             "@md": {
               gridColumn: "1/-1",
@@ -151,7 +167,7 @@ const Index = ({ recentPosts, rankedArticles, contributors }) => {
               width="320"
               layout="responsive"
               src="/img/sections/foundations.png"
-              alt="Image shows the word 'Foundations' in large bold letters in front of two squiggly cirles. The words 'WP Design System' in small letters above the bold letters."
+              alt=""
             />
             <Header as="h3">Foundations</Header>
             <P
@@ -176,6 +192,12 @@ const Index = ({ recentPosts, rankedArticles, contributors }) => {
         </Box>
         <Box
           css={{
+            "&:focus-within": {
+              outline: "1px auto Highlight",
+              "@media screen and (-webkit-min-device-pixel-ratio: 0)": {
+                outline: "1px auto -webkit-focus-ring-color",
+              },
+            },
             position: "relative",
             "@md": {
               gridColumn: "1/-1",
@@ -195,7 +217,7 @@ const Index = ({ recentPosts, rankedArticles, contributors }) => {
               width="320"
               layout="responsive"
               src="/img/sections/components.png"
-              alt="Image shows the word 'Components' in large bold letters in front of two squiggly cirles. The words 'WP Design System' in small letters above the bold letters."
+              alt=""
             />
             <Header as="h3">Components</Header>
             <P
@@ -220,6 +242,12 @@ const Index = ({ recentPosts, rankedArticles, contributors }) => {
         </Box>
         <Box
           css={{
+            "&:focus-within": {
+              outline: "1px auto Highlight",
+              "@media screen and (-webkit-min-device-pixel-ratio: 0)": {
+                outline: "1px auto -webkit-focus-ring-color",
+              },
+            },
             height: "100%",
             position: "relative",
             "@md": {
@@ -236,7 +264,7 @@ const Index = ({ recentPosts, rankedArticles, contributors }) => {
               width="320"
               layout="responsive"
               src="/img/sections/resources.png"
-              alt="Image shows the word 'Resources' in large bold letters in front of two squiggly cirles. The words 'WP Design System' in small letters above the bold letters."
+              alt=""
             />
             <Header as="h3">Resources</Header>
             <P
@@ -296,7 +324,7 @@ const Index = ({ recentPosts, rankedArticles, contributors }) => {
                       width="500"
                       layout="responsive"
                       src={article.data.imageTag}
-                      alt={article.data.imageAltText}
+                      alt=""
                     />
                   </Box>
                   <Box

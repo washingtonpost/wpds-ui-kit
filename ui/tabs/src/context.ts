@@ -1,12 +1,16 @@
 import * as React from "react";
 
 interface TabsContextInterface {
-  initialValue?: string;
+  currentValue: string | undefined;
+  previousRect: DOMRect | undefined;
+  setPreviousRect: (rect: DOMRect) => void;
 }
 
 const defaultState = {
-  initialValue: "",
+  currentValue: undefined,
+  previousRect: undefined,
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  setPreviousRect: () => {},
 };
-
 export const TabsContext =
   React.createContext<TabsContextInterface>(defaultState);

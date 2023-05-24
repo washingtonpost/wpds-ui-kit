@@ -36,6 +36,7 @@ export default {
 } as ComponentMeta<typeof Tabs.Root>;
 
 const StyledTabs = styled("div", {
+  backgroundColor: theme.colors.secondary,
   width: "500px",
   border: `1px dashed ${theme.colors.primary}`,
   padding: "10px",
@@ -44,6 +45,12 @@ const StyledTabs = styled("div", {
 const StyledLabel = styled("div", {
   marginBottom: "10px",
   color: theme.colors.primary,
+});
+
+const StyledStack = styled("div", {
+  display: "flex",
+  flexDirection: "column",
+  gap: theme.space["100"],
 });
 
 const StyledContent = styled(Tabs.Content, {
@@ -152,6 +159,44 @@ Center.args = {
 };
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
+const TemplateDensity: ComponentStory<any> = () => {
+  return (
+    <StyledStack>
+      <StyledLabel>Outline for viewing alignment purposes only</StyledLabel>
+      <StyledTabs>
+        <Tabs.Root defaultValue="tab1">
+          <Tabs.List aria-label="Countries' information" density="compact">
+            <Tabs.Trigger value="tab1"> France </Tabs.Trigger>
+            <Tabs.Trigger value="tab2">Brazil</Tabs.Trigger>
+            <Tabs.Trigger value="tab3">Vietnam</Tabs.Trigger>
+          </Tabs.List>
+        </Tabs.Root>
+      </StyledTabs>
+      <StyledTabs>
+        <Tabs.Root defaultValue="tab1">
+          <Tabs.List aria-label="Countries' information" density="default">
+            <Tabs.Trigger value="tab1">France</Tabs.Trigger>
+            <Tabs.Trigger value="tab2">Brazil</Tabs.Trigger>
+            <Tabs.Trigger value="tab3">Vietnam</Tabs.Trigger>
+          </Tabs.List>
+        </Tabs.Root>
+      </StyledTabs>
+      <StyledTabs>
+        <Tabs.Root defaultValue="tab1">
+          <Tabs.List aria-label="Countries' information" density="loose">
+            <Tabs.Trigger value="tab1"> France </Tabs.Trigger>
+            <Tabs.Trigger value="tab2">Brazil</Tabs.Trigger>
+            <Tabs.Trigger value="tab3">Vietnam</Tabs.Trigger>
+          </Tabs.List>
+        </Tabs.Root>
+      </StyledTabs>
+    </StyledStack>
+  );
+};
+
+export const Density = TemplateDensity.bind({});
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const TemplateControlled: ComponentStory<any> = (args) => {
   const { density, align, ...rest } = args;
   const [value, setValue] = React.useState("tab3");
@@ -172,10 +217,10 @@ const TemplateControlled: ComponentStory<any> = (args) => {
             align={align}
           >
             <Tabs.Trigger value="tab1">
+              France
               <Icon label="trigger icon">
                 <Info />
               </Icon>
-              France
             </Tabs.Trigger>
             <Tabs.Trigger value="tab2">Kenya</Tabs.Trigger>
             <Tabs.Trigger value="tab3">Austria</Tabs.Trigger>
@@ -185,6 +230,19 @@ const TemplateControlled: ComponentStory<any> = (args) => {
           <StyledContent value="tab3">Austria is here 🇦🇹</StyledContent>
         </Tabs.Root>
       </StyledTabs>
+      <div style={{ padding: "1rem" }}>
+        <label style={{ display: "block" }}>Change selected tab</label>
+        <select
+          onChange={(e) => {
+            setValue(e.target.value);
+          }}
+          value={value}
+        >
+          <option value="tab1">Tab1</option>
+          <option value="tab2">Tab2</option>
+          <option value="tab3">Tab3</option>
+        </select>
+      </div>
     </>
   );
 };

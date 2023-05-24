@@ -13,6 +13,7 @@ export default function CustomLink({
 }) {
   const A = styled("a", {
     cursor: "pointer",
+    textDecoration: "underline",
     color: "$primary",
     "&:hover": {
       opacity: ".75",

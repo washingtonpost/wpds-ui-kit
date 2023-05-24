@@ -29,20 +29,20 @@ const StyledContributorHeader = styled(Header, {
 
 const ContributorBlock = ({ contributor }) => (
   <StyledContributor>
-    <CustomLink href={contributor.url}>
+    <CustomLink aria-hidden="true" tabIndex="-1" href={contributor.url}>
       <Avatar size="600">
         <Image
           height="100"
           width="100"
           layout="fixed"
           src={contributor.avatar}
-          alt={contributor.name}
+          alt=""
         />
       </Avatar>
     </CustomLink>
     <div>
       <CustomLink href={contributor.url}>
-        <Header as="h4">{contributor.name}</Header>
+        <Header as="h3">{contributor.name}</Header>
       </CustomLink>
     </div>
   </StyledContributor>

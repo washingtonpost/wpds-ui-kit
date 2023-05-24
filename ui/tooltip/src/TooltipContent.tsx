@@ -86,6 +86,12 @@ export interface TooltipContentInterface extends ContentCombinedProps {
   offsetAlign?: number | string | WPDSThemeSpaceObject;
 }
 
+/**
+ * Tooltip.Content
+ * @see Docs https://build.washingtonpost.com/components/tooltip
+ * @see Source https://github.com/washingtonpost/wpds-ui-kit/tree/main/ui/tooltip
+ */
+
 export const TooltipContent = React.forwardRef<
   HTMLDivElement,
   TooltipContentInterface

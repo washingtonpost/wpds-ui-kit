@@ -9,11 +9,11 @@ export const A = styled("a", {
   "&:hover": {
     opacity: ".75",
   },
-  "&:focus": {
-    outlineColor: "$signal",
-    outlineStyle: "solid",
-    outlineOffset: "2px",
-    outlineWidth: "2px",
+  "&:focus-visible": {
+    outline: "1px auto Highlight",
+    "@media screen and (-webkit-min-device-pixel-ratio: 0)": {
+      outline: "1px auto -webkit-focus-ring-color",
+    },
   },
   variants: {
     signal: {
