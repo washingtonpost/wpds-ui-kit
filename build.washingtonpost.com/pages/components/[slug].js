@@ -51,6 +51,7 @@ export default function Page({
         description={source.scope.description}
       />
       {source.scope.status == "Coming soon" && <ComingSoon />}
+      {console.log(source.scope.status)}
       <header className="post-header">
         <Header
           css={{ opacity: source.scope.status == "Coming soon" ? 0.5 : 1 }}
@@ -130,7 +131,7 @@ export const getStaticProps = async ({ params }) => {
     `https://registry.npmjs.org/@washingtonpost/wpds-${params.slug}`
   ).then((res) => res.status === 200 || res.status === 304);
 
-  if (!packageExists) {
+  if (!packageExists && process.env.NODE_ENV !== "development") {
     source.scope.status = "Coming soon";
   }
 

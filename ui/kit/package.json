@@ -9,11 +9,7 @@
   "main": "dist/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/index.d.ts",
-  "files": [
-    "dist",
-    "README.md",
-    "src"
-  ],
+  "files": ["dist", "README.md", "src"],
   "sideEffects": false,
   "repository": {
     "type": "git",
@@ -32,6 +28,7 @@
     "url": "https://github.com/washingtonpost/wpds-ui-kit/issues"
   },
   "dependencies": {
+    "@washingtonpost/wpds-navigation-menu": "1.6.2",
     "@washingtonpost/eslint-plugin-wpds": "1.6.2",
     "@washingtonpost/wpds-accordion": "1.6.2",
     "@washingtonpost/wpds-alert-banner": "1.6.2",
@@ -70,6 +67,7 @@
     "typescript": "4.5.5"
   },
   "peerDependencies": {
+    "@washingtonpost/wpds-navigation-menu": "*",
     "@washingtonpost/eslint-plugin-wpds": "*",
     "@washingtonpost/wpds-accordion": "*",
     "@washingtonpost/wpds-alert-banner": "*",
