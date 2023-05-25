@@ -39,7 +39,7 @@ describe("NavigationMenuContent", () => {
   });
 
   test("accepts a ref", () => {
-    const testRef = { current: undefined };
+    const testRef = { current: null };
     render(
       <NavigationMenuRoot>
         <NavigationMenuList>

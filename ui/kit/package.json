@@ -9,7 +9,11 @@
   "main": "dist/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/index.d.ts",
-  "files": ["dist", "README.md", "src"],
+  "files": [
+    "dist",
+    "README.md",
+    "src"
+  ],
   "sideEffects": false,
   "repository": {
     "type": "git",
