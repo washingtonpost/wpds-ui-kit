@@ -214,7 +214,11 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
     let child: React.ReactNode;
     switch (type) {
       case "search":
-        child = <Icon label="">{isFloating ? <Close /> : <Search />}</Icon>;
+        child = (
+          <Icon label={isFloating ? "Cancel input" : ""}>
+            {isFloating ? <Close /> : <Search />}
+          </Icon>
+        );
         icon = "right";
         if (!buttonIconText) {
           buttonIconText = "Search";
