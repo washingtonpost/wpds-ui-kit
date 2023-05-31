@@ -7,13 +7,19 @@ import { Icon } from "@washingtonpost/wpds-icon";
 import {
   useFloating,
   unstyledInputStyles,
-  globalInputAutoFillTriggerAnimations,
+  globalInputAutoFillTriggerAnimations
 } from "@washingtonpost/wpds-input-shared";
 import { InputLabel } from "@washingtonpost/wpds-input-label";
 import { ErrorMessage } from "@washingtonpost/wpds-error-message";
 import { HelperText } from "@washingtonpost/wpds-helper-text";
 import { VisuallyHidden } from "@washingtonpost/wpds-visually-hidden";
-import { Search, Globe, Phone, Email } from "@washingtonpost/wpds-assets";
+import {
+  Search,
+  Globe,
+  Phone,
+  Email,
+  Close
+} from "@washingtonpost/wpds-assets";
 import { StyledContainer } from "./StyledContainer";
 import type * as WPDS from "@washingtonpost/wpds-theme";
 
@@ -21,11 +27,11 @@ const NAME = "InputText";
 
 const LabelInputWrapper = styled("div", {
   flex: 1,
-  position: "relative",
+  position: "relative"
 });
 
 const UnstyledInput = styled("input", {
-  ...unstyledInputStyles,
+  ...unstyledInputStyles
 });
 
 const TextInputLabel = styled(InputLabel, {
@@ -36,17 +42,17 @@ const TextInputLabel = styled(InputLabel, {
   transform: `translateY(${theme.space["100"]})`,
   transition: theme.transitions.allFast,
   "@reducedMotion": {
-    transition: "none",
+    transition: "none"
   },
   variants: {
     isFloating: {
       true: {
         fontSize: theme.fontSizes["075"],
         lineHeight: theme.lineHeights["100"],
-        transform: `translateY(${theme.space["050"]})`,
-      },
-    },
-  },
+        transform: `translateY(${theme.space["050"]})`
+      }
+    }
+  }
 });
 
 const IconContainer = styled("div", {
@@ -57,15 +63,15 @@ const IconContainer = styled("div", {
   variants: {
     isDisabled: {
       true: {
-        color: "inherit",
-      },
-    },
-  },
+        color: "inherit"
+      }
+    }
+  }
 });
 
 const ButtonIcon = styled(Button, {
   borderRadius: theme.radii["012"],
-  marginInlineEnd: theme.space["050"],
+  marginInlineEnd: theme.space["050"]
 });
 
 export interface InputTextProps
@@ -186,22 +192,31 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
 
     const [isFloating, handleOnFocus, handleOnBlur, handleOnChange] =
       useFloating(
-        value || defaultValue || placeholder || isAutofilled,
+        (internalRef.current ? internalRef.current.value : "") ||
+          value ||
+          defaultValue ||
+          placeholder,
         onFocus,
         onBlur,
-        onChange
+        onChange,
+        isAutofilled
       );
 
     function handleButtonIconClick(event) {
       onButtonIconClick && onButtonIconClick(event);
+
+      if (type === "search" && internalRef && internalRef.current) {
+        internalRef.current.focus();
+        internalRef.current.value = "";
+      }
     }
 
-    let child;
+    let child: React.ReactNode;
     switch (type) {
       case "search":
         child = (
-          <Icon label="">
-            <Search />
+          <Icon label={isFloating ? "Cancel input" : ""}>
+            {isFloating ? <Close /> : <Search />}
           </Icon>
         );
         icon = "right";
@@ -306,7 +321,7 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
                 border: "none",
                 color: disabled
                   ? theme.colors.onDisabled
-                  : theme.colors.accessible,
+                  : theme.colors.accessible
               }}
               onClick={handleButtonIconClick}
             >

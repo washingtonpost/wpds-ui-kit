@@ -248,3 +248,22 @@ Interactions.play = async ({ args }) => {
   await userEvent.click(screen.getAllByRole("button")[0]);
   await expect(args.onButtonIconClick).toHaveBeenCalled();
 };
+
+export const TypeSearch = Template.bind({});
+TypeSearch.args = {
+  type: "search",
+};
+TypeSearch.parameters = {
+  chromatic: { disableSnapshot: true },
+};
+
+export const AutoFilledTypeText = Template.bind({});
+AutoFilledTypeText.args = {
+  type: "text",
+  name: "my-name",
+  autoComplete: "given-name",
+  id: "my-name",
+};
+AutoFilledTypeText.parameters = {
+  chromatic: { disableSnapshot: true },
+};

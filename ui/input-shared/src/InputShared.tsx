@@ -87,6 +87,11 @@ export const unstyledInputStyles = {
     animation: "jsTriggerAutoFillCancel 200ms",
   },
 
+  // hide webkit-cancel-button on search type inputs
+  "&::-webkit-search-cancel-button": {
+    "-webkit-appearance": "none",
+  },
+
   "@reducedMotion": {
     animation: "none",
   },
@@ -96,7 +101,8 @@ export const useFloating = (
   val,
   onFocus,
   onBlur,
-  onChange
+  onChange,
+  isAutofilled
 ): [
   boolean,
   React.FocusEventHandler<HTMLInputElement | HTMLTextAreaElement>,
@@ -109,13 +115,16 @@ export const useFloating = (
   const prevValue = React.useRef();
 
   React.useEffect(() => {
-    if (val && !isFloating) {
+    if (val || isAutofilled) {
       setIsFloating(true);
       setIsTouched(true);
-    } else if (!val && prevValue.current && !isFocused && isFloating) {
-      setIsFloating(false);
-      setIsTouched(false);
+    } else {
+      if (!isFocused) {
+        setIsFloating(false);
+        setIsTouched(false);
+      }
     }
+
     prevValue.current = val;
   }, [val, prevValue, isFloating, isFocused, setIsFloating, setIsTouched]);
 
