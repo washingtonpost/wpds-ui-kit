@@ -51,7 +51,6 @@ export default function Page({
         description={source.scope.description}
       />
       {source.scope.status == "Coming soon" && <ComingSoon />}
-      {console.log(source.scope.status)}
       <header className="post-header">
         <Header
           css={{ opacity: source.scope.status == "Coming soon" ? 0.5 : 1 }}

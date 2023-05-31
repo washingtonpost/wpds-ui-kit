@@ -670,7 +670,7 @@ The display position can be defined directionally based on the location of the t
 
 ### Hover
 
-A hover action changes the link color to $accessible.
+A hover action changes the link color to `$accessible`.
 
 ```jsx withPreview
 <Box css={{ height: "210px" }}>
@@ -745,7 +745,7 @@ A hover action changes the link color to $accessible.
 
 ### Active
 
-Active state changes the link color to $accessible, with a bold font weight.
+Active state changes the link color to `$accessible`, with a bold font weight.
 
 ```jsx withPreview
 <Box css={{ height: "210px" }}>
@@ -822,7 +822,7 @@ Active state changes the link color to $accessible, with a bold font weight.
 
 ### Disabled
 
-A disabled link appears as $light/disabled.
+A disabled link appears as `$disabled`.
 
 ```jsx withPreview
 <Box css={{ height: "210px" }}>
@@ -912,7 +912,7 @@ overflow should be set to `scroll`
           {`Menu`}
         </Button>
       </NavigationMenu.Trigger>
-      <NavigationMenu.Content>
+      <NavigationMenu.Content css={{ maxHeight: "130px" }}>
         <NavigationMenu.Sub orientation="vertical">
           <NavigationMenu.List>
             <NavigationMenu.Item>
@@ -985,8 +985,12 @@ A navigation menu is primarily reserved for links. It is not meant to communicat
             been bred to be bigger than cells in other apples, making the fruit
             feel juicier and crunchier than its competitors. These cells explode
             as your teeth tear into them. Then there's its distinct flavor — a
-            clean, clarified sweetness that's almost frosty.{" "}
-            <a href="#">Learn more</a>
+            clean, clarified sweetness that's almost frosty.
+            <Box
+              as="a"
+              href="#"
+              css={{ color: "$accessible" }}
+            >{`Learn more`}</Box>
           </p>
         </NavigationMenu.Content>
       </NavigationMenu.Item>

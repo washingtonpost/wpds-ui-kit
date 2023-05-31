@@ -1,5 +1,5 @@
 import * as React from "react";
-import { userEvent, within, waitFor, screen } from "@storybook/testing-library";
+import { userEvent, within, screen } from "@storybook/testing-library";
 import { expect } from "@storybook/jest";
 import { NavigationMenu } from "./";
 import { Button } from "@washingtonpost/wpds-button";
@@ -82,7 +82,7 @@ const SideAlignTemplate: ComponentStory<any> = (args) => {
           <NavigationMenu.Content side={args.side} align={args.align}>
             <NavigationMenu.Sub orientation="vertical">
               <NavigationMenu.List>
-                <NavigationMenu.Item>
+                <NavigationMenu.Item >
                   <NavigationMenu.Link href="#">Apples</NavigationMenu.Link>
                 </NavigationMenu.Item>
                 <NavigationMenu.Item>
