@@ -67,7 +67,7 @@
     "typescript": "4.5.5"
   },
   "optionalDependencies": {
-    "esbuild-android-64": "0.14.25",
+    "esbuild-android-64": "0.15.18",
     "esbuild-android-arm64": "0.15.5",
     "esbuild-darwin-64": "0.14.25",
     "esbuild-darwin-arm64": "0.14.25",
