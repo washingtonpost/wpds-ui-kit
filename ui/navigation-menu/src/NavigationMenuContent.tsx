@@ -155,7 +155,7 @@ export const NavigationMenuContent = React.forwardRef<
       ? createPortal(
           <div
             ref={setPopperElement}
-            style={styles.popper}
+            style={{ zIndex: theme.zIndices.page.value, ...styles.popper }}
             {...attributes.popper}
             data-testid="wpds-nav-menu-content-popper"
           >

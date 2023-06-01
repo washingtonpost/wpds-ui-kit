@@ -6,6 +6,7 @@ import { Button } from "@washingtonpost/wpds-button";
 import { Icon } from "@washingtonpost/wpds-icon";
 import { theme } from "@washingtonpost/wpds-theme";
 import { ChevronRight, ChevronDown, Menu } from "@washingtonpost/wpds-assets";
+import NextLink from "next/link";
 
 import type { ComponentMeta, ComponentStory } from "@storybook/react";
 
@@ -64,6 +65,25 @@ const Template: ComponentStory<typeof NavigationMenu.Root> = (args) => {
 
 export const Default = Template.bind({});
 
+const UseNextLinkTemplate: ComponentStory<typeof NavigationMenu.Root> = (
+  args
+) => {
+  console.log(args);
+  return (
+    <NavigationMenu.Root {...args}>
+      <NavigationMenu.List>
+        <NavigationMenu.Item>
+          <NextLink href="#" passHref>
+            <NavigationMenu.Link>Next Link</NavigationMenu.Link>
+          </NextLink>
+        </NavigationMenu.Item>
+      </NavigationMenu.List>
+    </NavigationMenu.Root>
+  );
+};
+
+export const UseNextLink = UseNextLinkTemplate.bind({});
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const SideAlignTemplate: ComponentStory<any> = (args) => {
   console.log("args", args);
@@ -82,7 +102,7 @@ const SideAlignTemplate: ComponentStory<any> = (args) => {
           <NavigationMenu.Content side={args.side} align={args.align}>
             <NavigationMenu.Sub orientation="vertical">
               <NavigationMenu.List>
-                <NavigationMenu.Item >
+                <NavigationMenu.Item>
                   <NavigationMenu.Link href="#">Apples</NavigationMenu.Link>
                 </NavigationMenu.Item>
                 <NavigationMenu.Item>
