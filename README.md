@@ -36,13 +36,19 @@ npm i @washingtonpost/wpds-ui-kit
 
 ### Upgrading
 
-- Previous to v0.12 `globalStyles` contained a globally applied transition to all CSS properties on all elements. After upgrading any component element that relied on that transition will need to apply one locally using wpds theme variables.
+- Previous to v1.5.1, the `Button` component had a default `density: "compact"`. After upgrading, the default will be `density: "default"`, so you will want to check any Buttons used in your code for regressions and manually apply the `density: "compact"` as needed.
+  ```javascript
+  <Button
+    density="compact"
+    ...
+  ```
+- Previous to v0.12, `globalStyles` contained a globally applied transition to all CSS properties on all elements. After upgrading any component element that relied on that transition will need to apply one locally using wpds theme variables.
   ```javascript
   transition: theme.transitions.allFast,
   // or
   transition: `background ${theme.transitions.fast} ${theme.transitions.inOut`
   ```
-- Previous to v0.15 `globalStyles` contained a global removal of margin and padding for all elements. After upgrading any component element that relied on having that spacing removed will need to add spacing rules with styles local to the component.
+- Previous to v0.15, `globalStyles` contained a global removal of margin and padding for all elements. After upgrading any component element that relied on having that spacing removed will need to add spacing rules with styles local to the component.
 
 ## License
 
