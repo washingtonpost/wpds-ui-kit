@@ -1,5 +1,5 @@
 import * as React from "react";
-import { userEvent, within, screen } from "@storybook/testing-library";
+import { userEvent, screen } from "@storybook/testing-library";
 import { expect } from "@storybook/jest";
 import { NavigationMenu } from "./";
 import { Button } from "@washingtonpost/wpds-button";
@@ -310,16 +310,13 @@ function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-Interactions.play = async ({ canvasElement, ...props }) => {
-  const canvas = within(canvasElement);
-  console.log(props);
-
-  const trigger = canvas.getByRole("button");
-  await userEvent.click(trigger);
-  await sleep(500);
+Interactions.play = async () => {
+  userEvent.tab();
+  userEvent.keyboard("{Enter}");
+  await sleep(350);
   const content = screen.getByText("Apples");
   await expect(content).toBeVisible();
-  await userEvent.click(document.body);
-  await sleep(500);
+  userEvent.keyboard("{Escape}");
+  await sleep(350);
   await expect(content).not.toBeVisible();
 };
