@@ -9,10 +9,6 @@ export const ComingSoon = () => (
     css={{
       marginBlockEnd: "$100",
       position: "relative",
-      backgroundImage:
-        "url(https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif)",
-      backgroundSize: "cover",
-      backgroundPosition: "center",
       minHeight: 280,
       paddingTop: 140,
     }}
