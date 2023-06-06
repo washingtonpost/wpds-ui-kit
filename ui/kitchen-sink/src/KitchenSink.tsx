@@ -25,8 +25,9 @@ import {
   Popover,
   Switch,
   Tabs,
+  NavigationMenu,
 } from "@washingtonpost/wpds-ui-kit";
-import { Chart, Settings, Info } from "@washingtonpost/wpds-assets";
+import { Chart, Settings, Info, Menu } from "@washingtonpost/wpds-assets";
 
 const Headline = styled("h1", {
   paddingTop: "$200",
@@ -438,6 +439,39 @@ export const KitchenSink = () => {
         <StyledTabsContent value="tab2">Kenya is here 🇰🇪</StyledTabsContent>
         <StyledTabsContent value="tab3">Austira is here 🇦🇹</StyledTabsContent>
       </Tabs.Root>
+      <h2>NavigationMenu</h2>
+      <NavigationMenu.Root>
+        <NavigationMenu.List>
+          <NavigationMenu.Item>
+            <NavigationMenu.Trigger asChild>
+              <Button icon="left">
+                <Icon label="">
+                  <Menu />
+                </Icon>
+                Menu
+              </Button>
+            </NavigationMenu.Trigger>
+            <NavigationMenu.Content>
+              <NavigationMenu.Sub orientation="vertical">
+                <NavigationMenu.List>
+                  <NavigationMenu.Item>
+                    <NavigationMenu.Link href="#">Apples</NavigationMenu.Link>
+                  </NavigationMenu.Item>
+                  <NavigationMenu.Item>
+                    <NavigationMenu.Link href="#">Bananas</NavigationMenu.Link>
+                  </NavigationMenu.Item>
+                  <NavigationMenu.Item>
+                    <NavigationMenu.Link href="#">Oranges</NavigationMenu.Link>
+                  </NavigationMenu.Item>
+                  <NavigationMenu.Item>
+                    <NavigationMenu.Link href="#">Pears</NavigationMenu.Link>
+                  </NavigationMenu.Item>
+                </NavigationMenu.List>
+              </NavigationMenu.Sub>
+            </NavigationMenu.Content>
+          </NavigationMenu.Item>
+        </NavigationMenu.List>
+      </NavigationMenu.Root>
     </>
   );
 };

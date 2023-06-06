@@ -5,22 +5,13 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## [1.6.2](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.6.1...v1.6.2) (2023-05-24)
 
-
 ### Bug Fixes
 
-* remove root font-size from stitches.config.ts so browser font size changes work [SRED-125] ([#390](https://github.com/washingtonpost/wpds-ui-kit/issues/390)) ([c432767](https://github.com/washingtonpost/wpds-ui-kit/commit/c4327677cdd7b7337191729cbee5ecb241d294ba))
-
-
-
-
+- remove root font-size from stitches.config.ts so browser font size changes work [SRED-125] ([#390](https://github.com/washingtonpost/wpds-ui-kit/issues/390)) ([c432767](https://github.com/washingtonpost/wpds-ui-kit/commit/c4327677cdd7b7337191729cbee5ecb241d294ba))
 
 ## [1.6.1](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.6.0...v1.6.1) (2023-05-24)
 
 **Note:** Version bump only for package root
-
-
-
-
 
 # [1.6.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.5.2...v1.6.0) (2023-05-24)
 

@@ -130,7 +130,7 @@ export const getStaticProps = async ({ params }) => {
     `https://registry.npmjs.org/@washingtonpost/wpds-${params.slug}`
   ).then((res) => res.status === 200 || res.status === 304);
 
-  if (!packageExists) {
+  if (!packageExists && process.env.NODE_ENV !== "development") {
     source.scope.status = "Coming soon";
   }
 
