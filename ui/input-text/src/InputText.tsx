@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { nanoid } from "nanoid";
 import { theme, styled } from "@washingtonpost/wpds-theme";
 import { Button } from "@washingtonpost/wpds-button";
+import { Divider } from "@washingtonpost/wpds-divider";
 import { Icon } from "@washingtonpost/wpds-icon";
 import {
   useFloating,
@@ -202,27 +203,42 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
         isAutofilled
       );
 
-    function handleButtonIconClick(event) {
+    const handleButtonIconClick = (event) => {
       onButtonIconClick && onButtonIconClick(event);
+    };
 
-      if (type === "search" && internalRef && internalRef.current) {
-        internalRef.current.focus();
+    //TODO: external ref not getting updated correctly with these changed.
+    // Not getting picked up in the useEffect?
+    const onClear = () => {
+      if (internalRef.current) {
         internalRef.current.value = "";
       }
-    }
+    };
 
-    let child: React.ReactNode;
+    let child;
+    let inputStyles = {};
     switch (type) {
       case "search":
         child = (
-          <Icon label={isFloating ? "Cancel input" : ""}>
-            {isFloating ? <Close /> : <Search />}
+          <Icon label={""}>
+            <Search />
           </Icon>
         );
         icon = "right";
         if (!buttonIconText) {
           buttonIconText = "Search";
         }
+        //These styles hide the default search clear button
+        inputStyles = {
+          // for webkit
+          "&::-webkit-search-cancel-button": {
+            all: "unset",
+          },
+          // for edge
+          "&::-ms-clear": {
+            all: "unset",
+          },
+        };
         break;
       case "url":
         child = (
@@ -258,7 +274,6 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
     // This code block because we want to filter out the padding elements and pass those
     // only to the input element. All other styles should go into the StyledContainer.
     // If we ever need to check for more attributes, then we should pull this out into a function.
-    let inputStyles = {};
     let containerStyles = {};
 
     css &&
@@ -312,6 +327,36 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
               {...rest}
             />
           </LabelInputWrapper>
+          {isFloating && type === "search" && (
+            <>
+              <ButtonIcon
+                variant="primary"
+                isOutline
+                icon="center"
+                density="compact"
+                css={{
+                  border: "none",
+                  color: disabled
+                    ? theme.colors.onDisabled
+                    : theme.colors.accessible,
+                  ...css,
+                  margin: 0,
+                }}
+                onClick={onClear}
+              >
+                <VisuallyHidden>{buttonIconText}</VisuallyHidden>
+                <Icon label={""}>
+                  <Close />
+                </Icon>
+              </ButtonIcon>
+              <Divider
+                orientation="vertical"
+                css={{
+                  "&[data-orientation=vertical]": { height: theme.sizes[150] },
+                }}
+              />
+            </>
+          )}
           {child && icon === "right" && (
             <ButtonIcon
               variant="primary"

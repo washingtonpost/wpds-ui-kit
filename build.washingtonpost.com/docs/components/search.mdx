@@ -1,6 +1,180 @@
 ---
 title: Search
-description: A component that provides suggestions for a given input.
-component: search
-status: Coming soon
+description: Search is a component that allows users to enter keywords and receive matching search results.
+component: Search
 ---
+
+---
+
+## Anatomy
+
+<Anatomy
+  src="/img/components/search/anatomy.svg"
+  caption="Note: Image not to scale"
+/>
+
+1. Label/Placeholder
+2. Input
+3. Clear button
+4. Search button
+5. Value
+6. Divider
+7. Result
+8. Result container
+
+---
+
+## Options
+
+### Portal
+
+Determine whether the result container should be rendered as poart of the search component and occupy space, or act more like a popover with a positional relationship.
+
+```jsx withPreview
+
+```
+
+### Grouping
+
+The search component supports a default group label that includes an optional icon. This feature can be utilized to help organize content and support multiple result groups. By default, the component returns results as a single list of items. The order in which they are returned depends on how the data is sorted prior to being passed.
+
+```jsx withPreview
+
+```
+
+### Open on focus
+
+Setting 'open on focus' to false will prevent the result container from appearing when there is no value in the input.
+
+```jsx withPreview
+
+```
+
+---
+
+## Behavior
+
+### Autocomplete
+
+Determines if the value is the input changes or not as the user navigates with the keyboard. If true, the value changes. If false, the value doesn't change.
+
+```jsx withPreview
+
+```
+
+### Disabled
+
+```jsx withPreview
+
+```
+
+### Selected
+
+When a user has made a selection, the results container will collapse when the portal is set to false or disappear when the portal is set to true.
+
+```jsx withPreview
+
+```
+
+### Overflow
+
+The results container has a default max-height of 300px and when there are more results it will overflow with a default scrollbar.
+
+```jsx withPreview
+
+```
+
+### Input with value
+
+When the input has a text value, a clear button will appear to allow the user to easily clear the input value and set it to an empty value.
+
+```jsx withPreview
+
+```
+
+### Loading results
+
+When results are being loaded a default behavior of a loading state will be shown.
+
+```jsx withPreview
+
+```
+
+### Empty: No Results
+
+When there are no matching results the default behavior is to show them empty no result state.
+
+```jsx withPreview
+
+```
+
+### Matching results
+
+When a result is matched to the keyword the font weight will be light to the matching keys and the rest of the characters as bold.
+
+```jsx withPreview
+
+```
+
+### Results :Hover
+
+When a result is hovered with a mouse it will change background color $faint.
+
+```jsx withPreview
+
+```
+
+---
+
+## Guidance
+
+### Results can be more than text
+
+Results can be more than just a list of text. Depending on how you handle matching results, there could be space for recirculation, a different hierarchy in how results are displayed, and a more intuitive and visual discovery process.
+
+```jsx withPreview isGuide="error"
+
+```
+
+### When to use icons
+
+Results can be overwhelming depending on the query. To differentiate between different types of results, use icons to help users wayfind and scan the results.
+
+```jsx withPreview isGuide="error"
+
+```
+
+### Helpful filtering
+
+Helpful filtering can help folks get to their results faster without having to type in the correct keywords. Some ideas can include inputs like swithces, and tabs.
+
+```jsx withPreview isGuide="error"
+
+```
+
+### Mobile best practices
+
+There might be instances where a dedicated search view might be more appropriate. Utilizing the pattern of our drawer can be an effective way to do this.
+
+```jsx withPreview isGuide="error"
+
+```
+
+---
+
+## Accessibility
+
+### Color contrast
+
+All colors in the default combobox have been reviewed to ensure they meet the AA WCAG contrast requirement of at least 4.5:1 for normal text and 3:1 for large text.
+
+### Keyboard controls
+
+Users can navigate search results using arrow keys on their keyboard and select a result by pressing the return key. This feature streamlines the search experience, reduces search time, and improves accessibility.
+
+---
+
+## API Reference
+
+<PropsTable props={propsTable} />
+````

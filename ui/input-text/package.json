@@ -39,6 +39,7 @@
     "@washingtonpost/wpds-assets": "^1.18.0",
     "@washingtonpost/wpds-box": "*",
     "@washingtonpost/wpds-button": "*",
+    "@washingtonpost/wpds-divider": "*",
     "@washingtonpost/wpds-error-message": "*",
     "@washingtonpost/wpds-helper-text": "*",
     "@washingtonpost/wpds-icon": "*",
