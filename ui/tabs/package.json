@@ -45,7 +45,7 @@
   "dependencies": {
     "@radix-ui/react-primitive": "^1.0.2",
     "@radix-ui/react-tabs": "latest",
-    "@washingtonpost/wpds-assets": "^1.16.0",
+    "@washingtonpost/wpds-assets": "latest",
     "@washingtonpost/wpds-icon": "1.1.0",
     "@washingtonpost/wpds-theme": "1.7.0",
     "@washingtonpost/wpds-tooltip": "1.7.0",

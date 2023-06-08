@@ -41,7 +41,7 @@
   },
   "dependencies": {
     "@radix-ui/react-popover": "^1.0.2",
-    "@washingtonpost/wpds-assets": "^1.18.0",
+    "@washingtonpost/wpds-assets": "latest",
     "@washingtonpost/wpds-button": "1.7.0",
     "@washingtonpost/wpds-icon": "1.7.0",
     "@washingtonpost/wpds-theme": "1.7.0"
