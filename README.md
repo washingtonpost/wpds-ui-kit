@@ -29,7 +29,7 @@ npm i @washingtonpost/wpds-ui-kit
 ## Additional Information
 
 - Read about how to build a feature for your React site using our UI Kit on our [React Guide](https://build.washingtonpost.com/resources/guides/react-guide).
-- If you would like to contribute to you our WPDS UI Kit please refer to the [contribution docs](docs/CONTRIBUTING.md).
+- If you would like to contribute to our WPDS UI Kit please refer to the [contribution docs](docs/CONTRIBUTING.md).
 - Feel free to reach out to [#wpds on Slack](https://washpost.slack.com/archives/C01FWHF12BG) if you have any questions or run into any problems.
 - [Explore the Docs Site](https://build.washingtonpost.com) for usage examples and additional documentation on each component. You can also find additional resources under the [resources](https://build.washingtonpost.com/resources), [guides](https://build.washingtonpost.com/resources/guides), and [support](https://build.washingtonpost.com/support) pages.
 - There is also a storybook site that is used for component development only. If you're looking for code examples or information on how to use a specific component, please refer to build.washingtonpost.com.

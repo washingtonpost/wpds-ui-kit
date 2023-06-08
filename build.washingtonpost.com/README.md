@@ -24,7 +24,7 @@ npm ci
 npm run build
 ```
 
-5. Open http://localhost:3000
+5. To open http://localhost:3000
 
 ```
 npm run dev --workspace=build.washingtonpost.com
