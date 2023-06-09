@@ -7,9 +7,7 @@
     "build": "node -v && node scripts/sitemap.js;next build",
     "start": "next start",
     "lint": "next lint",
-    "postinstall": "npx prettier --write '**/*.{js,mdx}'",
-    "prepare": "cd .. && husky install",
-    "alex": "npx alex docs/**/*.mdx --mdx"
+    "postinstall": "npx prettier --write '**/*.{js,mdx}'"
   },
   "dependencies": {
     "@babel/standalone": "^7.17.11",
@@ -23,8 +21,7 @@
     "@stitches/react": "1.2.8",
     "@washingtonpost/site-favicons": "^0.1.3",
     "@washingtonpost/tachyons-css": "^1.8.0",
-    "@washingtonpost/wpds-accordion": "1.7.0",
-    "@washingtonpost/wpds-assets": "^1.20.0",
+    "@washingtonpost/wpds-assets": "1.20.0",
     "@washingtonpost/wpds-kitchen-sink": "1.7.0",
     "@washingtonpost/wpds-ui-kit": "1.7.0",
     "fuse.js": "^6.6.2",
@@ -59,7 +56,6 @@
     "eslint-config-next": "^12.2.4",
     "extract-react-types": "^0.30.2",
     "glob": "^7.2.0",
-    "husky": "^7.0.0",
     "next-remote-watch": "^2.0.0",
     "prettier": "^2.5.1",
     "react-docgen-typescript": "^2.2.2"

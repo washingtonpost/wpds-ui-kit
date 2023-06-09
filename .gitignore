@@ -124,7 +124,7 @@ yalc.lock
 .vscode/*
 
 # ignore the storybook build 
-build.washingtonpost.com/public/storybook/**/*
+apps/build.washingtonpost.com/public/storybook/**/*
 
 .env
 .env.*
