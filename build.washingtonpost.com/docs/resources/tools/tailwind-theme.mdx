@@ -20,7 +20,7 @@ npm install -D @washingtonpost/wpds-tailwind-theme;
 
 <br />
 
-Add the theme to your tailwind.config.js. It's strongly recommended to override the default theme to prevent the accidental use of Tailwind's variables and scales.
+Add the theme to your tailwind.config.js. It's strongly recommended to override the default theme to prevent the accidental use of Tailwind's variables and scales. Tailwind's [preflight](https://tailwindcss.com/docs/preflight) base styles should be disabled.
 
 ```jsx demoHeight="200"
 const WPDSTheme = require("@washingtonpost/wpds-tailwind-theme");
@@ -29,6 +29,9 @@ module.exports = {
   content: [
    ...
   ],
+  corePlugins: {
+    preflight: false,
+  },
   theme: WPDSTheme,
 };
 ```
