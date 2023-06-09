@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@babel/standalone": "^7.17.11",
-    "@codesandbox/sandpack-react": "^2.0.27",
+    "@codesandbox/sandpack-react": "2.0.27",
     "@docsearch/react": "^3.0.0",
     "@octokit/core": "^4.0.5",
     "@radix-ui/react-accordion": "^1.0.0",
