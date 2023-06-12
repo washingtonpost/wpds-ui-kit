@@ -12,6 +12,8 @@ publishDate: June 9, 2023
 
 ## Installation
 
+Add tailwind to your project by following their specific [framework guides](https://tailwindcss.com/docs/installation/framework-guides).
+
 Install the theme package from npm
 
 ```js
@@ -20,7 +22,7 @@ npm install -D @washingtonpost/wpds-tailwind-theme;
 
 <br />
 
-Add the theme to your tailwind.config.js. It's strongly recommended to override the default theme to prevent the accidental use of Tailwind's variables and scales. Tailwind's [preflight](https://tailwindcss.com/docs/preflight) base styles should be disabled.
+Add the theme to your tailwind.config.js. It's strongly recommended to override the default theme to prevent the accidental use of Tailwind's color variables and scale values. Tailwind's [preflight](https://tailwindcss.com/docs/preflight) base styles should be disabled.
 
 ```jsx demoHeight="200"
 const WPDSTheme = require("@washingtonpost/wpds-tailwind-theme");
@@ -47,9 +49,11 @@ Ensure that the WPDS fonts and css variables are available on the page if they a
 import { getCssText, globalStyles } from "@washingtonpost/wpds-theme";
 
 const style = document.createElement("style");
+// cssText contains the wpds css variables
 style.innerHTML = getCssText();
 document.head.appendChild(style);
 
+// global styles adds wpds fonts
 globalStyles();
 ```
 
@@ -71,7 +75,7 @@ The following tokens are used from the WPDS.
 
 The wpds token names and scales for each value replace the Tailwind name and scale.
 
-For example when using lineHeight `<p class="leading-normal">` becomes `<p class="leading-150">`
+For example when setting lineHeight `<p class="leading-normal">` becomes `<p class="leading-150">`
 
 ---
 
