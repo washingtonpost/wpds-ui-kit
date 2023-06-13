@@ -1,12 +1,12 @@
-import { DropdownMenu as ComponentRoot, _RadixDropdownMenu as Component } from "./DropdownMenu";
+import { DropdownMenu as Component, _RadixDropdownMenu as ComponentPieces } from "./DropdownMenu";
 import type { ComponentMeta, ComponentStory } from "@storybook/react";
 
 export default {
     title: "DropdownMenu",
-    component: ComponentRoot,
-} as ComponentMeta<typeof ComponentRoot>
+    component: Component,
+} as ComponentMeta<typeof Component>
 
-const Template: ComponentStory<typeof ComponentRoot> = (
+const Template: ComponentStory<typeof Component> = (
     { children, ...args },
     context
 ) => {
@@ -24,93 +24,93 @@ const Template: ComponentStory<typeof ComponentRoot> = (
     // const [person, setPerson] = React.useState('pedro');
 
     return (
-        <ComponentRoot>
-            <Component.Trigger asChild>
+        <Component>
+            <ComponentPieces.Trigger asChild>
                 <button className="IconButton" aria-label="Customise options">
                     {/* <Menu /> */}
                 </button>
-            </Component.Trigger>
+            </ComponentPieces.Trigger>
 
-            <Component.Portal>
-                <Component.Content className="DropdownMenuContent" sideOffset={5}>
-                    <Component.Item className="DropdownMenuItem">
+            <ComponentPieces.Portal>
+                <ComponentPieces.Content className="DropdownMenuContent" sideOffset={5}>
+                    <ComponentPieces.Item className="DropdownMenuItem">
                         New Tab <div className="RightSlot">⌘+T</div>
-                    </Component.Item>
-                    <Component.Item className="DropdownMenuItem">
+                    </ComponentPieces.Item>
+                    <ComponentPieces.Item className="DropdownMenuItem">
                         New Window <div className="RightSlot">⌘+N</div>
-                    </Component.Item>
-                    <Component.Item className="DropdownMenuItem" disabled>
+                    </ComponentPieces.Item>
+                    <ComponentPieces.Item className="DropdownMenuItem" disabled>
                         New Private Window <div className="RightSlot">⇧+⌘+N</div>
-                    </Component.Item>
-                    <Component.Sub>
-                        <Component.SubTrigger className="DropdownMenuSubTrigger">
+                    </ComponentPieces.Item>
+                    <ComponentPieces.Sub>
+                        <ComponentPieces.SubTrigger className="DropdownMenuSubTrigger">
                             More Tools
                             <div className="RightSlot">
                                 <div />
                             </div>
-                        </Component.SubTrigger>
-                        <Component.Portal>
-                            <Component.SubContent
+                        </ComponentPieces.SubTrigger>
+                        <ComponentPieces.Portal>
+                            <ComponentPieces.SubContent
                                 className="DropdownMenuSubContent"
                                 sideOffset={2}
                                 alignOffset={-5}
                             >
-                                <Component.Item className="DropdownMenuItem">
+                                <ComponentPieces.Item className="DropdownMenuItem">
                                     Save Page As… <div className="RightSlot">⌘+S</div>
-                                </Component.Item>
-                                <Component.Item className="DropdownMenuItem">Create Shortcut…</Component.Item>
-                                <Component.Item className="DropdownMenuItem">Name Window…</Component.Item>
-                                <Component.Separator className="DropdownMenu.Separator" />
-                                <Component.Item className="DropdownMenuItem">Developer Tools</Component.Item>
-                            </Component.SubContent>
-                        </Component.Portal>
-                    </Component.Sub>
+                                </ComponentPieces.Item>
+                                <ComponentPieces.Item className="DropdownMenuItem">Create Shortcut…</ComponentPieces.Item>
+                                <ComponentPieces.Item className="DropdownMenuItem">Name Window…</ComponentPieces.Item>
+                                <ComponentPieces.Separator className="DropdownMenu.Separator" />
+                                <ComponentPieces.Item className="DropdownMenuItem">Developer Tools</ComponentPieces.Item>
+                            </ComponentPieces.SubContent>
+                        </ComponentPieces.Portal>
+                    </ComponentPieces.Sub>
 
-                    <Component.Separator className="DropdownMenuSeparator" />
+                    <ComponentPieces.Separator className="DropdownMenuSeparator" />
 
-                    <Component.CheckboxItem
+                    <ComponentPieces.CheckboxItem
                         className="DropdownMenuCheckboxItem"
                         checked={true}
                         onCheckedChange={() => { }}
                     >
-                        <Component.ItemIndicator className="DropdownMenuItemIndicator">
+                        <ComponentPieces.ItemIndicator className="DropdownMenuItemIndicator">
                             <div />
-                        </Component.ItemIndicator>
+                        </ComponentPieces.ItemIndicator>
                         Show Bookmarks <div className="RightSlot">⌘+B</div>
-                    </Component.CheckboxItem>
-                    <Component.CheckboxItem
+                    </ComponentPieces.CheckboxItem>
+                    <ComponentPieces.CheckboxItem
                         className="DropdownMenuCheckboxItem"
                         checked={true}
                         onCheckedChange={() => { }}
                     >
-                        <Component.ItemIndicator className="DropdownMenuItemIndicator">
+                        <ComponentPieces.ItemIndicator className="DropdownMenuItemIndicator">
                             <div />
-                        </Component.ItemIndicator>
+                        </ComponentPieces.ItemIndicator>
                         Show Full URLs
-                    </Component.CheckboxItem>
+                    </ComponentPieces.CheckboxItem>
 
-                    <Component.Separator className="DropdownMenuSeparator" />
+                    <ComponentPieces.Separator className="DropdownMenuSeparator" />
 
-                    <Component.Label className="DropdownMenuLabel">People</Component.Label>
-                    <Component.RadioGroup value={""} onValueChange={() => { }}>
-                        <Component.RadioItem className="DropdownMenuRadioItem" value="pedro">
-                            <Component.ItemIndicator className="DropdownMenuItemIndicator">
+                    <ComponentPieces.Label className="DropdownMenuLabel">People</ComponentPieces.Label>
+                    <ComponentPieces.RadioGroup value={""} onValueChange={() => { }}>
+                        <ComponentPieces.RadioItem className="DropdownMenuRadioItem" value="pedro">
+                            <ComponentPieces.ItemIndicator className="DropdownMenuItemIndicator">
                                 {/* <StarFull /> */}
-                            </Component.ItemIndicator>
+                            </ComponentPieces.ItemIndicator>
                             Pedro Duarte
-                        </Component.RadioItem>
-                        <Component.RadioItem className="DropdownMenuRadioItem" value="colm">
-                            <Component.ItemIndicator className="DropdownMenuItemIndicator">
+                        </ComponentPieces.RadioItem>
+                        <ComponentPieces.RadioItem className="DropdownMenuRadioItem" value="colm">
+                            <ComponentPieces.ItemIndicator className="DropdownMenuItemIndicator">
                                 {/* <StarFull /> */}
-                            </Component.ItemIndicator>
+                            </ComponentPieces.ItemIndicator>
                             Colm Tuite
-                        </Component.RadioItem>
-                    </Component.RadioGroup>
+                        </ComponentPieces.RadioItem>
+                    </ComponentPieces.RadioGroup>
 
-                    <Component.Arrow className="DropdownMenuArrow" />
-                </Component.Content>
-            </Component.Portal>
-        </ComponentRoot>
+                    <ComponentPieces.Arrow className="DropdownMenuArrow" />
+                </ComponentPieces.Content>
+            </ComponentPieces.Portal>
+        </Component>
     );
 
 
