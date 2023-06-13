@@ -1,0 +1,103 @@
+---
+order: 200
+title: Tailwind WPDS Theme
+description: A Tailwind CSS theme using WPDS tokens.
+kicker: Tools
+thumbnail: /img/resources/thumbnails/tools_tailwind.png
+imageTag: /img/resources/tools/tailwind.png
+publishDate: June 9, 2023
+---
+
+<br />
+
+## Installation
+
+Add tailwind to your project by following their specific [framework guides](https://tailwindcss.com/docs/installation/framework-guides).
+
+Install the theme package from npm
+
+```js
+npm install -D @washingtonpost/wpds-tailwind-theme;
+```
+
+<br />
+
+Add the theme to your tailwind.config.js. It's strongly recommended to override the default theme to prevent the accidental use of Tailwind's color variables and scale values. Tailwind's [preflight](https://tailwindcss.com/docs/preflight) base styles should be disabled.
+
+```jsx demoHeight="200"
+const WPDSTheme = require("@washingtonpost/wpds-tailwind-theme");
+
+module.exports = {
+  content: [
+   ...
+  ],
+  corePlugins: {
+    preflight: false,
+  },
+  theme: WPDSTheme,
+};
+```
+
+<br />
+
+Ensure that the WPDS fonts and css variables are available on the page if they are not already installed.
+
+```jsx
+// _app.js or other main script file
+
+//                     also available from @washingtonpost/wpds-ui-kit
+import { getCssText, globalStyles } from "@washingtonpost/wpds-theme";
+
+const style = document.createElement("style");
+// cssText contains the wpds css variables
+style.innerHTML = getCssText();
+document.head.appendChild(style);
+
+// global styles adds wpds fonts
+globalStyles();
+```
+
+---
+
+## Token Naming
+
+The following tokens are used from the WPDS.
+
+- color
+- size
+- fonts
+- fontSize
+- fontWeights
+- lineHeight
+- radii
+- shadow
+- z-index
+
+The wpds token names and scales for each value replace the Tailwind name and scale.
+
+For example when setting lineHeight `<p class="leading-normal">` becomes `<p class="leading-150">`
+
+---
+
+## Example
+
+<Box css={{ display: "flex", justifyContent: "center" }}>
+  <div>
+    <h1 className="font-headline text-200 text-primary mt-0 mb-025">
+      {`Headline`}
+    </h1>
+    <h2 className="font-subhead font-light text-150 mt-0 mb-025">
+      {`Subheadline`}
+    </h2>
+    <p className="font-body text-100 mt-0 mb-025">Body text</p>
+    <div className="font-meta text-075 text-accessible mb-100">Meta text</div>
+  </div>
+</Box>
+```jsx
+<h1 className="font-headline text-200 text-primary mt-0 mb-025">Headline</h1>
+<h2 className="font-subhead font-light text-150 leading-200 mt-0 mb-025">
+  Subheadline
+</h2>
+<p className="font-body text-100 mt-0 mb-025">Body text</p>
+<div className="font-meta text-075 text-accessible mb-100">Meta text</div>
+```

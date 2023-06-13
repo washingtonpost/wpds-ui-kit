@@ -10,6 +10,7 @@ export * from "@washingtonpost/wpds-tooltip";
 export * from "@washingtonpost/wpds-scrim";
 export * from "@washingtonpost/wpds-drawer";
 export * from "@washingtonpost/wpds-accordion";
+export * from "@washingtonpost/wpds-dropdown-menu";
 export * from "@washingtonpost/wpds-pagination-dots";
 export * from "@washingtonpost/wpds-avatar";
 export * from "@washingtonpost/wpds-divider";

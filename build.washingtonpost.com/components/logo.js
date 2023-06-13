@@ -1,6 +1,6 @@
 import React from "react";
 import { styled, Icon } from "@washingtonpost/wpds-ui-kit";
-import WPMark from "@washingtonpost/wpds-assets/asset/wp-mark";
+import { Wp } from "@washingtonpost/wpds-assets";
 import Link from "next/link";
 
 const Container = styled("div", {
@@ -32,7 +32,7 @@ export default function Logo() {
     >
       <Container>
         <Icon size={"$200"}>
-          <WPMark />
+          <Wp />
         </Icon>
         <Span>Design system</Span>
       </Container>

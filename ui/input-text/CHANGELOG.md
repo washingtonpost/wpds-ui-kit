@@ -5,15 +5,10 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 # [1.7.0](https://github.com/WPMedia/wpds-ui-kit/compare/v1.6.2...v1.7.0) (2023-06-06)
 
-
 ### Features
 
-* add cancel button to input type search ([#405](https://github.com/WPMedia/wpds-ui-kit/issues/405)) ([e20e9ec](https://github.com/WPMedia/wpds-ui-kit/commit/e20e9ecc64f98e7761486d2d55845e2cefac7834))
-* add NavigationMenu component ([#408](https://github.com/WPMedia/wpds-ui-kit/issues/408)) ([1a2873f](https://github.com/WPMedia/wpds-ui-kit/commit/1a2873f674d3695dca0d9de96a4ca12caf8bb1c0))
-
-
-
-
+- add cancel button to input type search ([#405](https://github.com/WPMedia/wpds-ui-kit/issues/405)) ([e20e9ec](https://github.com/WPMedia/wpds-ui-kit/commit/e20e9ecc64f98e7761486d2d55845e2cefac7834))
+- add NavigationMenu component ([#408](https://github.com/WPMedia/wpds-ui-kit/issues/408)) ([1a2873f](https://github.com/WPMedia/wpds-ui-kit/commit/1a2873f674d3695dca0d9de96a4ca12caf8bb1c0))
 
 ## [1.6.2](https://github.com/WPMedia/wpds-ui-kit/compare/v1.6.1...v1.6.2) (2023-05-24)
 
