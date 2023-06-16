@@ -1,7 +1,7 @@
 import * as React from "react";
 
 // import type * as WPDS from "@washingtonpost/wpds-theme";
-import { styled } from "@washingtonpost/wpds-theme";
+import { theme, styled } from "@washingtonpost/wpds-theme";
 
 import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu';
 
@@ -18,7 +18,18 @@ import {
 // };
 
 export const StyledTrigger = styled(DropdownMenuPrimitive.Trigger, {
-
+  appearance: "none",
+  background: "transparent",
+  border: "none",
+  color: theme.colors.primary,
+  cursor: "pointer",
+  display: "inline-flex",
+  alignItems: "center",
+  gap: theme.space["025"],
+  fontFamily: theme.fonts.meta,
+  fontSize: theme.fontSizes["100"],
+  lineHeight: theme.lineHeights.meta,
+  padding: theme.space["050"],
 });
 
 
