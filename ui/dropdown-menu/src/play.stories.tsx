@@ -45,4 +45,5 @@ const ContentTemplate = (args) => (
 		<Component.Content />
 	</Component.Root>
 );
+
 export const DropdownMenuContent = ContentTemplate.bind({});
