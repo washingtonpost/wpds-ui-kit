@@ -20,7 +20,19 @@ export const StyledContent = styled(DropdownMenuPrimitive.Content, {
     padding: theme.space["050"],
 });
 
+const StyledArrow = styled(DropdownMenuPrimitive.Arrow, {
+  fill: theme.colors.secondary,
+});
 
-export const DropdownMenuContent = React.forwardRef<HTMLDivElement, RadixDropdownMenuContentProps>((props: RadixDropdownMenuContentProps, ref) => {
-  return <StyledContent {...props} ref={ref} />;
+export const DropdownMenuContent = React.forwardRef<HTMLDivElement, RadixDropdownMenuContentProps>(({children, ...props}: RadixDropdownMenuContentProps, ref) => {
+  return <DropdownMenuPrimitive.Portal>
+    <StyledContent {...props} ref={ref}>
+          <StyledArrow
+            stroke={theme.colors.subtle.value}
+            strokeWidth="2"
+            strokeDasharray="0 30 28.284"
+          />
+          {children}
+      </StyledContent>
+    </DropdownMenuPrimitive.Portal>
 });

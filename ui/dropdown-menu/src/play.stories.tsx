@@ -1,6 +1,8 @@
 import * as React from "react";
 import { DropdownMenu as Component } from "./";
 import { Button } from "@washingtonpost/wpds-button";
+import { Diamond, ChevronRight } from "@washingtonpost/wpds-assets";
+import  { theme } from "@washingtonpost/wpds-theme";
 
 export default {
 	title: "DropdownMenu",
@@ -8,7 +10,7 @@ export default {
 	subcomponents: {
 		DropdownMenuTrigger: Component.Trigger,
 		DropdownMenuContent: Component.Content,
-		DropdownMenuArrow: Component.Arrow,
+		DropdownMenuItem: Component.Item,
 	}
 };
 
@@ -18,16 +20,25 @@ const Template = (parameters) => (
 			<Button>Actions</Button>
 		</Component.Trigger>
 		<Component.Content>
-			<Component.Arrow />
-			<p>Action 1</p>
-			<p>Action 2</p>
-			<p>Action 3</p>
+			<Component.Item leftIcon={<Diamond />} rightIcon={<ChevronRight />}>
+				Action 1
+			</Component.Item>
+			<Component.Item>
+				Action 2
+			</Component.Item>
+			<Component.Item leftIcon={<Diamond />}>
+				Action 3
+			</Component.Item>
+			<Component.Item rightIcon={<ChevronRight />}>
+				Action 3
+			</Component.Item>
 		</Component.Content>
 	</Component.Root>
 );
 
 export const DropdownMenuRoot = Template.bind({});
 
+/*
 // DropdownMenuRoot.parameters = {};
 
 const TriggerTemplate = (args) => (
@@ -47,3 +58,4 @@ const ContentTemplate = (args) => (
 );
 
 export const DropdownMenuContent = ContentTemplate.bind({});
+*/
