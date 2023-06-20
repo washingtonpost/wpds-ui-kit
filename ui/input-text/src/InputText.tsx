@@ -207,11 +207,21 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
       onButtonIconClick && onButtonIconClick(event);
     };
 
-    //TODO: external ref not getting updated correctly with these changed.
-    // Not getting picked up in the useEffect?
     const onClear = () => {
       if (internalRef.current) {
-        internalRef.current.value = "";
+        const input = internalRef.current;
+        // requires a native value setter to have the correct value in the dispatched
+        // event and handle both controlled and uncontrolled cases
+        // https://stackoverflow.com/questions/23892547/what-is-the-best-way-to-trigger-change-or-input-event-in-react-js
+        const nativeInputValueSetter = Object.getOwnPropertyDescriptor(
+          window.HTMLInputElement.prototype,
+          "value"
+        )?.set;
+
+        nativeInputValueSetter?.call(input, "");
+        // manually dispatch event to trigger onChange handler
+        input.dispatchEvent(new Event("input", { bubbles: true }));
+        input.focus();
       }
     };
 
@@ -327,7 +337,7 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
               {...rest}
             />
           </LabelInputWrapper>
-          {isFloating && type === "search" && (
+          {isFloating && type === "search" && internalRef.current?.value && (
             <>
               <ButtonIcon
                 variant="primary"
@@ -342,9 +352,12 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
                   ...css,
                   margin: 0,
                 }}
+                onMouseDown={(event) => {
+                  event.preventDefault();
+                }}
                 onClick={onClear}
               >
-                <VisuallyHidden>{buttonIconText}</VisuallyHidden>
+                <VisuallyHidden>clear</VisuallyHidden>
                 <Icon label={""}>
                   <Close />
                 </Icon>

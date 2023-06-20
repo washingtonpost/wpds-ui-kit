@@ -6,7 +6,7 @@ import { InputText } from "@washingtonpost/wpds-input-text";
 import { InputLabel } from "@washingtonpost/wpds-input-label";
 import type * as WPDS from "@washingtonpost/wpds-theme";
 
-import { SearchContext } from "./Search";
+import { SearchContext } from "./SearchRoot";
 
 type SearchLabelVariants = WPDS.VariantProps<typeof InputLabel>;
 
@@ -19,6 +19,10 @@ export type SearchInputProps = SearchLabelVariants & {
    * @default Search
    */
   label?: string;
+  /** The id for the underlying input element. Required for accessibility */
+  id: string;
+  /** The name for the underlying input element */
+  name: string;
   disabled?: boolean;
   onChange?: (event) => void;
 };
@@ -26,18 +30,28 @@ export type SearchInputProps = SearchLabelVariants & {
 //TODO: when you press the search button things should search
 
 export const SearchInput = React.forwardRef<HTMLInputElement, SearchInputProps>(
-  ({ label = "Search", ...rest }: SearchInputProps, ref) => {
+  ({ label = "Search", name, id, ...rest }: SearchInputProps, ref) => {
     const { disabled } = React.useContext(SearchContext);
     return (
-      <ComboboxInput
-        as={InputText}
-        label={label}
-        type="search"
-        disabled={disabled}
-        ref={ref}
-        // onButtonIconClick={() => ()} //what happens when you click the search button
-        {...rest}
-      />
+      <div
+        style={
+          {
+            "--wpds-colors-signal": "var(--wpds-colors-subtle)",
+          } as React.CSSProperties
+        }
+      >
+        <ComboboxInput
+          as={InputText}
+          label={label}
+          type="search"
+          name={name}
+          id={id}
+          disabled={disabled}
+          ref={ref}
+          // onButtonIconClick={() => ()} //what happens when you click the search button
+          {...rest}
+        />
+      </div>
     );
   }
 );

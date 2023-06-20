@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Box } from "@washingtonpost/wpds-box";
 import { Search } from "./";
 
 import type { ComponentStory } from "@storybook/react";
@@ -33,29 +34,38 @@ const useCityMatch = (term: string) => {
 const Template: ComponentStory<typeof Search.Root> = (args) => {
   const [term, setTerm] = React.useState("");
   //TODO: results not clearing out when we set term
-  const results: any = useCityMatch(term);
+  const results: { city: string; state: string }[] | null = useCityMatch(term);
 
   return (
-    <Search.Root {...args} aria-label="Example-Search" openOnFocus>
-      <Search.Input onChange={(event) => setTerm(event.target.value)} />
-      {results && (
-        <Search.Popover>
-          {results.length > 0 ? (
-            <Search.List>
-              {results.slice(0, 10).map((result, index) => (
-                <Search.ListItem
-                  key={result.city}
-                  value={`${result.city}, ${result.state}`}
-                />
-              ))}
-            </Search.List>
-          ) : (
-            // <Search.LoadingState />
-            <Search.EmptyState />
-          )}
-        </Search.Popover>
-      )}
-    </Search.Root>
+    <Box css={{ width: "270px", height: "340px" }}>
+      <Search.Root {...args} aria-label="Example-Search" openOnFocus>
+        <Search.Input
+          name="city"
+          id="city"
+          onChange={(event) => {
+            console.log("|", event.target.value, "|");
+            setTerm(event.target.value);
+          }}
+        />
+        {results && (
+          <Search.Popover>
+            {results.length > 0 ? (
+              <Search.List>
+                {results.slice(0, 20).map((result) => (
+                  <Search.ListItem
+                    key={`${result.city.toLowerCase()}_${result.state.toLowerCase()}`}
+                    value={`${result.city}, ${result.state}`}
+                  />
+                ))}
+              </Search.List>
+            ) : (
+              // <Search.LoadingState />
+              <Search.EmptyState />
+            )}
+          </Search.Popover>
+        )}
+      </Search.Root>
+    </Box>
   );
 };
 

@@ -4,7 +4,7 @@ import type * as WPDS from "@washingtonpost/wpds-theme";
 
 import { styled, theme } from "@washingtonpost/wpds-theme";
 import { Search } from "@washingtonpost/wpds-assets";
-import { Icon } from "@washingtonpost/wpds-ui-kit";
+import { Icon } from "@washingtonpost/wpds-icon";
 
 import { SearchOtherState } from "./SearchOtherState";
 
@@ -26,7 +26,9 @@ const SearchIcon = (
 );
 
 //TODO: remove any return type from here
-export const SearchEmptyState = ({ ...rest }: SearchEmptyStateProps): any => {
+export const SearchEmptyState = ({
+  ...rest
+}: SearchEmptyStateProps): JSX.Element => {
   return (
     <SearchOtherState icon={SearchIcon} {...rest}>
       <StyledSpan css={{ color: theme.colors.gray80, marginTop: "$100" }}>

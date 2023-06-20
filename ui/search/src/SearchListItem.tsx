@@ -10,15 +10,17 @@ export type SearchListItemProps = {
   children?: React.ReactNode;
   /** Override CSS */
   css?: WPDS.CSS;
-  key: any;
-  value: any;
+  value: string;
 };
 
 const StyledListItem = styled(ComboboxOption, {
   listStyle: "none",
-  height: "$200",
-  paddingTop: "$025",
+  paddingBlock: "$050",
+  paddingInline: "$075",
   "&:hover": {
+    backgroundColor: theme.colors.gray400,
+  },
+  "&[aria-selected='true']": {
     backgroundColor: theme.colors.gray400,
   },
   "[data-user-value='true']": {
@@ -28,12 +30,11 @@ const StyledListItem = styled(ComboboxOption, {
 
 export const SearchListItem = ({
   children,
-  key,
   value,
   ...rest
 }: SearchListItemProps) => {
   return (
-    <StyledListItem key={key} value={value} {...rest}>
+    <StyledListItem value={value} {...rest}>
       {children}
     </StyledListItem>
   );
