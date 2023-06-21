@@ -10,6 +10,7 @@ export default {
 		ActionMenuTrigger: Component.Trigger,
 		ActionMenuContent: Component.Content,
 		ActionMenuItem: Component.Item,
+		ActionMenuPortal: Component.Portal,
 	}
 };
 
@@ -55,7 +56,7 @@ const Template = (parameters) => (
 						Action 9
 					</Component.Item>
 					<Component.Item>
-						Action 10 
+						Action 10
 					</Component.Item>
 					<Component.Sub>
 						<Component.SubTrigger>
@@ -63,10 +64,10 @@ const Template = (parameters) => (
 						</Component.SubTrigger>
 						<Component.SubContent>
 							<Component.Item>
-								Action 11 
+								Action 11
 							</Component.Item>
 							<Component.Item>
-								Action 12 
+								Action 12
 							</Component.Item>
 						</Component.SubContent>
 					</Component.Sub>
@@ -77,6 +78,32 @@ const Template = (parameters) => (
 );
 
 export const ActionMenuRoot = Template.bind({});
+
+const PortalTemplate = (parameters) => (
+	<Component.Root {...parameters}>
+		<Component.Trigger asChild>
+			<Button>Actions</Button>
+		</Component.Trigger>
+		<Component.Portal>
+			<Component.Content>
+				<Component.Item leftIcon={<Diamond />} rightIcon={<ChevronRight />}>
+					Action 1
+				</Component.Item>
+				<Component.Item>
+					Action 2
+				</Component.Item>
+				<Component.Item leftIcon={<Diamond />}>
+					Action 3
+				</Component.Item>
+				<Component.Item rightIcon={<ChevronRight />}>
+					Action 3
+				</Component.Item>
+			</Component.Content>
+		</Component.Portal>
+	</Component.Root>
+);
+
+export const ActionMenuPortal = PortalTemplate.bind({});
 
 /*
 // ActionMenuRoot.parameters = {};
