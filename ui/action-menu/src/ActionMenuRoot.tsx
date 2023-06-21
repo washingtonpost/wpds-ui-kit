@@ -13,7 +13,7 @@ import {
 
 const NAME = "ActionMenuRoot";
 
-const StyledDropdown = styled(ActionMenuPrimitive.Root, {
+const StyledActionMenu = styled(ActionMenuPrimitive.Root, {
   color: "blue"
 })
 
@@ -35,7 +35,7 @@ export type ActionMenuRootProps = {
 } & RadixDropdownMenuProps;
 
 export const ActionMenuRoot = ({ ...props }: ActionMenuRootProps) => {
-  return <StyledDropdown {...props} />;
+  return <StyledActionMenu {...props} />;
 }
 
 ActionMenuRoot.displayName = NAME;

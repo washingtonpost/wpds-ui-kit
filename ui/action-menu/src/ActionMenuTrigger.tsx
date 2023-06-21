@@ -29,7 +29,6 @@ export const StyledTrigger = styled(ActionMenuPrimitive.Trigger, {
   fontFamily: theme.fonts.meta,
   fontSize: theme.fontSizes["100"],
   lineHeight: theme.lineHeights.meta,
-  padding: theme.space["050"],
 });
 
 

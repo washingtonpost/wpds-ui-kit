@@ -5,7 +5,7 @@ import { theme, styled } from "@washingtonpost/wpds-theme";
 import * as ActionMenuPrimitive from '@radix-ui/react-dropdown-menu';
 
 import {
-  ActionMenuContentProps as RadixDropdownMenuContentProps,
+  DropdownMenuContentProps as RadixDropdownMenuContentProps,
 } from "@radix-ui/react-dropdown-menu";
 
 export const StyledContent = styled(ActionMenuPrimitive.Content, {
@@ -15,6 +15,7 @@ export const StyledContent = styled(ActionMenuPrimitive.Content, {
     boxShadow: theme.shadows["200"],
     color: theme.colors.primary,
     minWidth: "150px",
+    width: "fit-content",
     maxHeight: "inherit",
     overflow: "auto",
     padding: theme.space["050"],
