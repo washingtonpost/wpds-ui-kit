@@ -41,6 +41,7 @@
   },
   "dependencies": {
     "@radix-ui/react-dropdown-menu": "^2.0.5",
+    "@washingtonpost/wpds-divider": "^1.7.0",
     "@washingtonpost/wpds-theme": "*"
   }
 }
