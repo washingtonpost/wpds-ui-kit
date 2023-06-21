@@ -3,7 +3,7 @@ import * as React from "react";
 import type * as WPDS from "@washingtonpost/wpds-theme";
 import { styled } from "@washingtonpost/wpds-theme";
 
-import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu';
+import * as ActionMenuPrimitive from '@radix-ui/react-dropdown-menu';
 
 import {
   DropdownMenuProps as RadixDropdownMenuProps,
@@ -11,9 +11,9 @@ import {
 
 // import type * as RadixDropdownTypes from "@radix-ui/react-dropdown-menu";
 
-const NAME = "DropdownMenuRoot";
+const NAME = "ActionMenuRoot";
 
-const StyledDropdown = styled(DropdownMenuPrimitive.Root, {
+const StyledDropdown = styled(ActionMenuPrimitive.Root, {
   color: "blue"
 })
 
@@ -27,15 +27,15 @@ const StyledDropdown = styled(DropdownMenuPrimitive.Root, {
 //   DropdownRootVariants;
 
 
-export type DropdownMenuRootProps = {
+export type ActionMenuRootProps = {
   /** Any React node may be used as a child to allow for formatting */
   children?: React.ReactNode;
   /** Override CSS */
   css?: WPDS.CSS;
 } & RadixDropdownMenuProps;
 
-export const DropdownMenuRoot = ({ ...props }: DropdownMenuRootProps) => {
+export const ActionMenuRoot = ({ ...props }: ActionMenuRootProps) => {
   return <StyledDropdown {...props} />;
 }
 
-DropdownMenuRoot.displayName = NAME;
+ActionMenuRoot.displayName = NAME;

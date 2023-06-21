@@ -1,16 +1,16 @@
 import * as React from "react";
-import { DropdownMenu as Component } from "./";
+import { ActionMenu as Component } from ".";
 import { Button } from "@washingtonpost/wpds-button";
 import { Diamond, ChevronRight } from "@washingtonpost/wpds-assets";
 import  { theme } from "@washingtonpost/wpds-theme";
 
 export default {
-	title: "DropdownMenu",
+	title: "ActionMenu",
 	component: Component.Root,
 	subcomponents: {
-		DropdownMenuTrigger: Component.Trigger,
-		DropdownMenuContent: Component.Content,
-		DropdownMenuItem: Component.Item,
+		ActionMenuTrigger: Component.Trigger,
+		ActionMenuContent: Component.Content,
+		ActionMenuItem: Component.Item,
 	}
 };
 
@@ -36,10 +36,10 @@ const Template = (parameters) => (
 	</Component.Root>
 );
 
-export const DropdownMenuRoot = Template.bind({});
+export const ActionMenuRoot = Template.bind({});
 
 /*
-// DropdownMenuRoot.parameters = {};
+// ActionMenuRoot.parameters = {};
 
 const TriggerTemplate = (args) => (
 	<Component.Root {...args}>
@@ -47,9 +47,9 @@ const TriggerTemplate = (args) => (
 	</Component.Root>
 );
 
-export const DropdownMenuTrigger = TriggerTemplate.bind({});
+export const ActionMenuTrigger = TriggerTemplate.bind({});
 
-// DropdownMenuRoot.parameters = {};
+// ActionMenuRoot.parameters = {};
 
 const ContentTemplate = (args) => (
 	<Component.Root {...args}>
@@ -57,5 +57,5 @@ const ContentTemplate = (args) => (
 	</Component.Root>
 );
 
-export const DropdownMenuContent = ContentTemplate.bind({});
+export const ActionMenuContent = ContentTemplate.bind({});
 */

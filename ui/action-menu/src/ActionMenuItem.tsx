@@ -2,16 +2,16 @@ import * as React from "react";
 
 import WPDS, { theme, styled } from "@washingtonpost/wpds-theme";
 
-import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu';
+import * as ActionMenuPrimitive from '@radix-ui/react-dropdown-menu';
 
 import { DropdownMenuProps as RadixDropdownMenuProps } from "@radix-ui/react-dropdown-menu";
 
-import { DropdownMenuItemProps as RadixDropdownMenuItemProps } from "@radix-ui/react-dropdown-menu";
+import { DropdownMenuProps as RadixDropdownMenuItemProps } from "@radix-ui/react-dropdown-menu";
 
 import { Icon } from "@washingtonpost/wpds-icon";
 import { Divider } from "@washingtonpost/wpds-divider";
 
-export const StyledItem = styled(DropdownMenuPrimitive.Item, {
+export const StyledItem = styled(ActionMenuPrimitive.Item, {
   display: "flex",
   flexDirection: "row",
   flexBasis: "auto",
@@ -63,7 +63,7 @@ const RightIconPlaceholder = styled("div", {
 });
 
 
-export type DropdownMenuItemProps = {
+export type ActionMenuItemProps = {
   /** Any React node may be used as a child to allow for formatting */
   children?: React.ReactNode;
   leftIcon?: Icon;
@@ -71,7 +71,7 @@ export type DropdownMenuItemProps = {
 } & RadixDropdownMenuProps;
 
 
-export const DropdownMenuItem = React.forwardRef<HTMLDivElement, DropdownMenuItemProps>(({children, leftIcon, rightIcon, ...props}: DropdownMenuItemProps, ref) => {
+export const ActionMenuItem = React.forwardRef<HTMLDivElement, ActionMenuItemProps>(({children, leftIcon, rightIcon, ...props}: ActionMenuItemProps, ref) => {
   return <div>
   <StyledItem {...props} ref={ref} >
     {leftIcon ? <LeftIcon>{leftIcon}</LeftIcon> : <LeftIconPlaceholder />}

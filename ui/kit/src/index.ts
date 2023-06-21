@@ -1,5 +1,5 @@
 // insert new component exports here
-export * from "@washingtonpost/wpds-dropdown-menu";
+export * from "@washingtonpost/wpds-action-menu";
 export * from "@washingtonpost/wpds-navigation-menu";
 export * from "@washingtonpost/wpds-tabs";
 export * from "@washingtonpost/wpds-switch";
