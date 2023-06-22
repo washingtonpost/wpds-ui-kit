@@ -8,8 +8,7 @@ import {
   DropdownMenuSubProps as RadixDropdownMenuSubProps,
 } from "@radix-ui/react-dropdown-menu";
 
-export const StyledSub = styled(ActionMenuPrimitive.Sub, {
-});
+export const StyledSub = styled(ActionMenuPrimitive.Sub, {});
 
 export type ActionMenuSubProps = {
   /** Any React node may be used as a child to allow for formatting */

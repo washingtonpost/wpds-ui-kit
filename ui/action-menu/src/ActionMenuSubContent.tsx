@@ -1,21 +1,68 @@
 import * as React from "react";
 
-import { theme, styled } from "@washingtonpost/wpds-theme";
+import { styled } from "@washingtonpost/wpds-theme";
 
 import * as ActionMenuPrimitive from '@radix-ui/react-dropdown-menu';
 
 import {
-  DropdownMenuSubContentProps as RadixDropdownMenuContentProps,
+  DropdownMenuSubContentProps as RadixDropdownMenuSubContentProps,
 } from "@radix-ui/react-dropdown-menu";
 import { ActionMenuPortal } from "./ActionMenuPortal";
 import { ContentStyles } from "./ActionMenuContent";
 
-export const StyledSubContent = styled(ActionMenuPrimitive.Content, ContentStyles);
+const StyledSubContent = styled(ActionMenuPrimitive.SubContent, {
+  variants: {
+    hidden: {
+      true: {
+        display: "none"
+      },
+      false: {
+        display: "content"
+      }
+    }
+  },
+  scrollbarWidth: "none",
+  ...ContentStyles
+});
 
-export const ActionMenuSubContent = React.forwardRef<HTMLDivElement, RadixDropdownMenuContentProps>(({children, ...props}: RadixDropdownMenuContentProps, ref) => {
-  return <ActionMenuPortal>
-    <StyledSubContent {...props} ref={ref} side="right" align="start">
+const ResponsiveSubItems = styled("div", {
+  padding: 0,
+  margin: 0,
+  variants: {
+    hidden: {
+      true: {
+        display: "none"
+      },
+      false: {
+        display: "content"
+      }
+    }
+  },
+  scrollbarWidth: "none",
+})
+
+const StyledPortal = styled(ActionMenuPortal, {
+  variants: {
+    hidden: {
+      true: {
+        display: "none"
+      },
+      false: {
+        display: "initial"
+      }
+    }
+  },
+})
+
+export const ActionMenuSubContent = React.forwardRef<HTMLDivElement, RadixDropdownMenuSubContentProps>(({children, ...props}: RadixDropdownMenuSubContentProps, ref) => {
+  return <div>
+    <StyledPortal hidden={{ "@maxMd" : true, "@minMd" : false}}>
+    <StyledSubContent {...props} ref={ref} side="right" align="start" hidden={{ "@maxMd" : true, "minMd" : false }}>
           {children}
       </StyledSubContent>
-    </ActionMenuPortal>
+    </StyledPortal>
+    <ResponsiveSubItems hidden={{ "@maxMd" : false, "@minMd" : true}}>
+          {children}
+    </ResponsiveSubItems>
+    </div>
 });

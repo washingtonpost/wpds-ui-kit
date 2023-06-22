@@ -17,7 +17,7 @@ export const ContentStyles = {
     color: theme.colors.primary,
     minWidth: "150px",
     width: "fit-content",
-    maxHeight: "inherit",
+    height: "fit-content",
     overflow: "auto",
 }
 
@@ -29,7 +29,7 @@ const StyledArrow = styled(ActionMenuPrimitive.Arrow, {
 
 export const ActionMenuContent = React.forwardRef<HTMLDivElement, RadixDropdownMenuContentProps>(({children, ...props}: RadixDropdownMenuContentProps, ref) => {
   return <ActionMenuPortal>
-    <StyledContent {...props} ref={ref}>
+    <StyledContent {...props} ref={ref} >
           <StyledArrow
             stroke={theme.colors.subtle.value}
             strokeWidth="2"

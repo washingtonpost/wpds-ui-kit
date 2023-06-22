@@ -66,6 +66,14 @@ export const RightIcon = styled(Icon, {
         color: "inherit",
       },
     },
+    hidden: {
+      true: {
+        display: "none",
+      },
+      false: {
+        display: "flex"
+      }
+    }
   },
   marginLeft: "auto",
 });
