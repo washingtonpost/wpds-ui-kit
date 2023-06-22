@@ -11,6 +11,9 @@ export default {
 		ActionMenuContent: Component.Content,
 		ActionMenuItem: Component.Item,
 		ActionMenuPortal: Component.Portal,
+		ActionMenuSub: Component.Sub,
+		ActionMenuSubContent: Component.SubContent,
+		ActionMenuSubTrigger: Component.SubTrigger,
 	}
 };
 
@@ -26,15 +29,12 @@ const Template = (parameters) => (
 			<Component.Item leftIcon={<Diamond aria-label="Diamond" />}>
 				Action 2
 			</Component.Item>
-			<Component.Item>
-				Super suuuuuupppppper looooonggggggg acttionnnnnnnnnn
-			</Component.Item>
 			<Component.Sub>
 				<Component.SubTrigger>
 					More actions
 				</Component.SubTrigger>
 				<Component.SubContent>
-					<Component.Item>
+					<Component.Item leftIcon={<Diamond aria-label="Diamond" />} disabled>
 						Action 3
 					</Component.Item>
 					<Component.Item>
@@ -43,31 +43,16 @@ const Template = (parameters) => (
 					<Component.Item>
 						Action 5
 					</Component.Item>
-					<Component.Item>
-						Action 6
-					</Component.Item>
-					<Component.Item>
-						Action 7
-					</Component.Item>
-					<Component.Item>
-						Action 8
-					</Component.Item>
-					<Component.Item>
-						Action 9
-					</Component.Item>
-					<Component.Item>
-						Action 10
-					</Component.Item>
 					<Component.Sub>
 						<Component.SubTrigger>
 							Even more actions
 						</Component.SubTrigger>
 						<Component.SubContent>
 							<Component.Item>
-								Action 11
+								Action 6
 							</Component.Item>
 							<Component.Item>
-								Action 12
+								Action 7
 							</Component.Item>
 						</Component.SubContent>
 					</Component.Sub>

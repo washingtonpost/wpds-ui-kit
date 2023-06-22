@@ -21,7 +21,23 @@ export const ItemStyles = {
     width: '25%',
     height: "auto",
   },
-  margin: theme.sizes["050"],
+  padding: theme.sizes["075"],
+  transition: `background ${theme.transitions.fast} ${theme.transitions.inOut}`,
+
+  "&:hover": {
+    backgroundColor: theme.colors.alpha25,
+    cursor: "pointer",
+  },
+
+  "&[data-disabled]": {
+    color: theme.colors.disabled,
+    pointerEvents: "none",
+  },
+
+  "&[data-disabled] svg": {
+    fill: theme.colors.disabled,
+  },
+
 }
 
 const StyledItem = styled(ActionMenuPrimitive.Item, ItemStyles);
@@ -52,7 +68,6 @@ export const RightIcon = styled(Icon, {
     },
   },
   marginLeft: "auto",
-  marginRight: theme.sizes["050"],
 });
 
 export const LeftIconPlaceholder = styled("div", {
