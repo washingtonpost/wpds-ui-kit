@@ -15,9 +15,10 @@ export const ContentStyles = {
     borderRadius: theme.radii["012"],
     boxShadow: theme.shadows["200"],
     color: theme.colors.primary,
-    minWidth: "150px",
     width: "fit-content",
-    height: "fit-content",
+    minWidth: "150px",
+    maxHeight: "var(--radix-dropdown-menu-content-available-height)",
+    maxWidth: "var(--radix-dropdown-menu-content-available-width)",
     overflow: "auto",
 }
 

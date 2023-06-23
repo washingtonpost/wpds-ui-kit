@@ -1,7 +1,7 @@
 import * as React from "react";
 import { ActionMenu as Component } from ".";
 import { Button } from "@washingtonpost/wpds-button";
-import { Diamond, ChevronRight } from "@washingtonpost/wpds-assets";
+import { Diamond, ChevronRight, Bookmark, Print } from "@washingtonpost/wpds-assets";
 
 export default {
 	title: "ActionMenu",
@@ -37,10 +37,10 @@ const Template = (parameters) => (
 					<Component.Item leftIcon={<Diamond aria-label="Diamond" />} disabled>
 						Action 3
 					</Component.Item>
-					<Component.Item>
+					<Component.Item leftIcon={<Bookmark aria-label="Bookmark" />}>
 						Action 4
 					</Component.Item>
-					<Component.Item>
+					<Component.Item leftIcon={<Print aria-label="Print"/>}>
 						Action 5
 					</Component.Item>
 					<Component.Sub>

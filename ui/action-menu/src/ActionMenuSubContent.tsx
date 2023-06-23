@@ -57,7 +57,7 @@ const StyledPortal = styled(ActionMenuPortal, {
 export const ActionMenuSubContent = React.forwardRef<HTMLDivElement, RadixDropdownMenuSubContentProps>(({children, ...props}: RadixDropdownMenuSubContentProps, ref) => {
   return <div>
     <StyledPortal hidden={{ "@maxMd" : true, "@minMd" : false}}>
-    <StyledSubContent {...props} ref={ref} side="right" align="start" hidden={{ "@maxMd" : true, "minMd" : false }}>
+    <StyledSubContent {...props} ref={ref} hidden={{ "@maxMd" : true, "minMd" : false }}>
           {children}
       </StyledSubContent>
     </StyledPortal>
