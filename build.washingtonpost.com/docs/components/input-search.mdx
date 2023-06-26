@@ -55,6 +55,7 @@ export default function Example() {
     { name: "San Diego", state: "California" },
     { name: "San Francisco", state: "California" },
     { name: "Seattle", state: "Washington" },
+    { name: "Washington", state: "D.C." },
   ];
 
   function searchCities(term) {
@@ -164,6 +165,7 @@ export default function Example() {
     { name: "San Diego", state: "California" },
     { name: "San Francisco", state: "California" },
     { name: "Seattle", state: "Washington" },
+    { name: "Washington", state: "D.C." },
   ];
 
   function searchCities(term) {
@@ -284,6 +286,7 @@ export default function Example() {
     { name: "San Diego", state: "California" },
     { name: "San Francisco", state: "California" },
     { name: "Seattle", state: "Washington" },
+    { name: "Washington", state: "D.C." },
   ];
 
   function searchCities(term) {
@@ -393,6 +396,7 @@ export default function Example() {
     { name: "San Diego", state: "California" },
     { name: "San Francisco", state: "California" },
     { name: "Seattle", state: "Washington" },
+    { name: "Washington", state: "D.C." },
   ];
 
   function searchCities(term) {
@@ -467,6 +471,7 @@ export default function Example() {
     { name: "San Diego", state: "California" },
     { name: "San Francisco", state: "California" },
     { name: "Seattle", state: "Washington" },
+    { name: "Washington", state: "D.C." },
   ];
 
   function searchCities(term) {
@@ -542,6 +547,7 @@ export default function Example() {
     { name: "San Diego", state: "California" },
     { name: "San Francisco", state: "California" },
     { name: "Seattle", state: "Washington" },
+    { name: "Washington", state: "D.C." },
   ];
 
   function searchCities(term) {
@@ -617,6 +623,7 @@ export default function Example() {
     { name: "San Diego", state: "California" },
     { name: "San Francisco", state: "California" },
     { name: "Seattle", state: "Washington" },
+    { name: "Washington", state: "D.C." },
   ];
 
   function searchCities(term) {
@@ -726,6 +733,7 @@ export default function Example() {
     { name: "San Diego", state: "California" },
     { name: "San Francisco", state: "California" },
     { name: "Seattle", state: "Washington" },
+    { name: "Washington", state: "D.C." },
   ];
 
   function searchCities(term) {
@@ -741,7 +749,7 @@ export default function Example() {
     );
   }
 
-  const [term, setTerm] = useState("New York, New York");
+  const [term, setTerm] = useState("Washington, D.C.");
   const [selection, setSelection] = useState();
   const results = searchCities(term);
 
@@ -787,16 +795,152 @@ export default function Example() {
 
 When results are being loaded a default behavior of a loading state will be shown.
 
-```jsx withPreview
+```jsx withPreview demoHeight="436"
+export default function Example() {
+  const cities = [
+    { name: "Atlanta", state: "Georgia" },
+    { name: "Austin", state: "Texas" },
+    { name: "Boston", state: "Massachusetts" },
+    { name: "Charlotte", state: "North Carolina" },
+    { name: "Chicago", state: "Illinois" },
+    { name: "Dallas", state: "Texas" },
+    { name: "Denver", state: "Colorado" },
+    { name: "Detroit", state: "Michigan" },
+    { name: "Houston", state: "Texas" },
+    { name: "Las Vegas", state: "Nevada" },
+    { name: "Miami", state: "Florida" },
+    { name: "Nashville", state: "Tennessee" },
+    { name: "New Orleans", state: "Louisiana" },
+    { name: "New York", state: "New York" },
+    { name: "Philadelphia", state: "Pennsylvania" },
+    { name: "Phoenix", state: "Arizona" },
+    { name: "Portland", state: "Oregon" },
+    { name: "San Diego", state: "California" },
+    { name: "San Francisco", state: "California" },
+    { name: "Seattle", state: "Washington" },
+    { name: "Washington", state: "D.C." },
+  ];
 
+  function searchCities(term) {
+    if (term === "") {
+      return;
+    }
+    return cities.filter(
+      (city) =>
+        city.name.toLowerCase().includes(term.toLowerCase()) ||
+        city.state.toLowerCase().includes(term.toLowerCase())
+    );
+  }
+
+  function fetchCities(value) {
+    if (value == "") {
+      return [];
+    }
+    return new Promise((resolve) =>
+      setTimeout(resolve, 3000, searchCities(value))
+    );
+  }
+
+  const [term, setTerm] = useState("");
+  const [results, setResults] = useState();
+
+  useEffect(() => {
+    if (term === "") {
+      setResults(undefined);
+    } else {
+      setResults([]);
+      const fetch = async () => {
+        const response = await fetchCities(term);
+        setResults(response);
+      };
+      fetch();
+    }
+  }, [term, setResults]);
+
+  return (
+    <Box css={{ width: "300px", height: "340px" }}>
+      <InputSearch.Root aria-label="Example-Search" openOnFocus>
+        <InputSearch.Input
+          name="city"
+          id="city"
+          onChange={(event) => {
+            setTerm(event.target.value);
+          }}
+        />
+        {results && (
+          <InputSearch.Popover>
+            {results.length > 0 ? (
+              <InputSearch.List>
+                {results.map((city) => (
+                  <InputSearch.ListItem
+                    key={`${city.name.toLowerCase()}, ${city.state.toLowerCase()}`}
+                    value={`${city.name}, ${city.state}`}
+                  />
+                ))}
+              </InputSearch.List>
+            ) : (
+              <InputSearch.LoadingState />
+            )}
+          </InputSearch.Popover>
+        )}
+      </InputSearch.Root>
+    </Box>
+  );
+}
 ```
 
 ### Empty: No Results
 
 When there are no matching results the default behavior is to show them empty no result state.
 
-```jsx withPreview
+```jsx withPreview demoHeight="436"
+export default function Example() {
+  const cities = [];
 
+  function searchCities(term) {
+    if (term === "") {
+      return;
+    }
+    return cities.filter(
+      (city) =>
+        city.name.toLowerCase().includes(term.toLowerCase()) ||
+        city.state.toLowerCase().includes(term.toLowerCase())
+    );
+  }
+
+  const [term, setTerm] = useState("");
+  const results = searchCities(term);
+
+  return (
+    <Box css={{ width: "300px", height: "340px" }}>
+      <InputSearch.Root aria-label="Example-Search" openOnFocus>
+        <InputSearch.Input
+          name="city"
+          id="city"
+          onChange={(event) => {
+            setTerm(event.target.value);
+          }}
+        />
+        {results && (
+          <InputSearch.Popover>
+            {results.length > 0 ? (
+              <InputSearch.List>
+                {results.map((city) => (
+                  <InputSearch.ListItem
+                    key={`${city.name.toLowerCase()}, ${city.state.toLowerCase()}`}
+                    value={`${city.name}, ${city.state}`}
+                  />
+                ))}
+              </InputSearch.List>
+            ) : (
+              <InputSearch.EmptyState />
+            )}
+          </InputSearch.Popover>
+        )}
+      </InputSearch.Root>
+    </Box>
+  );
+}
 ```
 
 ### Matching results
@@ -826,6 +970,7 @@ export default function Example() {
     { name: "San Diego", state: "California" },
     { name: "San Francisco", state: "California" },
     { name: "Seattle", state: "Washington" },
+    { name: "Washington", state: "D.C." },
   ];
 
   function searchCities(term) {
@@ -901,6 +1046,7 @@ export default function Example() {
     { name: "San Diego", state: "California" },
     { name: "San Francisco", state: "California" },
     { name: "Seattle", state: "Washington" },
+    { name: "Washington", state: "D.C." },
   ];
 
   function searchCities(term) {
@@ -947,42 +1093,6 @@ export default function Example() {
     </Box>
   );
 }
-```
-
----
-
-## Guidance
-
-### Results can be more than text
-
-Results can be more than just a list of text. Depending on how you handle matching results, there could be space for recirculation, a different hierarchy in how results are displayed, and a more intuitive and visual discovery process.
-
-```jsx withPreview isGuide="error"
-
-```
-
-### When to use icons
-
-Results can be overwhelming depending on the query. To differentiate between different types of results, use icons to help users wayfind and scan the results.
-
-```jsx withPreview isGuide="error"
-
-```
-
-### Helpful filtering
-
-Helpful filtering can help folks get to their results faster without having to type in the correct keywords. Some ideas can include inputs like swithces, and tabs.
-
-```jsx withPreview isGuide="error"
-
-```
-
-### Mobile best practices
-
-There might be instances where a dedicated search view might be more appropriate. Utilizing the pattern of our drawer can be an effective way to do this.
-
-```jsx withPreview isGuide="error"
-
 ```
 
 ---
