@@ -36,7 +36,6 @@
     "typescript": "4.5.5"
   },
   "peerDependencies": {
-    "@reach/combobox": "0.18.0",
     "@washingtonpost/wpds-assets": "^1.18.0",
     "@washingtonpost/wpds-icon": "*",
     "@washingtonpost/wpds-input-label": "*",
@@ -45,12 +44,12 @@
     "react": "^16.8.6 || ^17.0.2"
   },
   "dependencies": {
-    "@reach/combobox": "0.18.0",
+    "@reach/combobox": "^0.18.0",
     "@washingtonpost/wpds-assets": "^1.18.0",
-    "@washingtonpost/wpds-icon": "1.6.2",
-    "@washingtonpost/wpds-input-label": "1.6.2",
-    "@washingtonpost/wpds-input-text": "1.6.2",
-    "@washingtonpost/wpds-theme": "1.6.2",
+    "@washingtonpost/wpds-icon": "*",
+    "@washingtonpost/wpds-input-label": "*",
+    "@washingtonpost/wpds-input-text": "*",
+    "@washingtonpost/wpds-theme": "*",
     "match-sorter": "6.3.1"
   }
 }
