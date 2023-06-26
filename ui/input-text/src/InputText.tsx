@@ -75,6 +75,11 @@ const ButtonIcon = styled(Button, {
   marginInlineEnd: theme.space["050"],
 });
 
+const ButtonDivider = styled(Divider, {
+  "&[data-orientation=vertical]": { height: theme.sizes["150"] },
+  marginInline: theme.sizes["025"],
+});
+
 export interface InputTextProps
   extends React.ComponentPropsWithRef<typeof UnstyledInput> {
   /** Accessible text for button icon, required for right icons */
@@ -343,7 +348,6 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
                 variant="primary"
                 isOutline
                 icon="center"
-                density="compact"
                 css={{
                   border: "none",
                   color: disabled
@@ -357,17 +361,12 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
                 }}
                 onClick={onClear}
               >
-                <VisuallyHidden>clear</VisuallyHidden>
+                <VisuallyHidden>Clear</VisuallyHidden>
                 <Icon label={""}>
                   <Close />
                 </Icon>
               </ButtonIcon>
-              <Divider
-                orientation="vertical"
-                css={{
-                  "&[data-orientation=vertical]": { height: theme.sizes[150] },
-                }}
-              />
+              <ButtonDivider orientation="vertical" />
             </>
           )}
           {child && icon === "right" && (

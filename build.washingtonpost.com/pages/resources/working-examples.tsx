@@ -13,6 +13,7 @@ import {
   RadioButton,
   RadioGroup,
   Select,
+  InputSearch,
   styled,
 } from "@washingtonpost/wpds-ui-kit";
 
@@ -146,6 +147,21 @@ const Form = () => {
       </p>
       <FormContainer>
         <form onSubmit={handleSubmit(onSubmit)} noValidate>
+          <Row>
+            <InputWrapper>
+              <InputSearch.Root aria-label="search cities">
+                <InputSearch.Input name="city" id="city" />
+                <InputSearch.Popover>
+                  <InputSearch.List>
+                    <InputSearch.ListItem value="Boston" />
+                    <InputSearch.ListItem value="New York" />
+                    <InputSearch.ListItem value="Philadelphia" />
+                    <InputSearch.ListItem value="Washington D.C." />
+                  </InputSearch.List>
+                </InputSearch.Popover>
+              </InputSearch.Root>
+            </InputWrapper>
+          </Row>
           <Row>
             <InputWrapper>
               <InputText

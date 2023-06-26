@@ -1,10 +1,10 @@
 # Search
 
 ```jsx
-import { Search } from "@washingtonpost/wpds-ui-kit";
+import { InputSearch } from "@washingtonpost/wpds-ui-kit";
 
 function Component() {
-  return <Search />;
+  return <InputSearch />;
 }
 ```
 
@@ -22,16 +22,11 @@ This is where the input part of the component lives. I'm using/extending the WPD
 
 TODO: when you press the search button the search should be run
 TODO: when you focus on the input (before typing anything) the popover should open with some preloaded content
-TODO: the `ComboInput` component keeps complaining about something regarding type. Haven't gotten around to addressing it yet
 TODO: when you press the clear button, it clear out the text but then when you focus back in it brings back the old content. I think the ref is not getting cleared out correctly.
 
 #### InputText/InputText.tsx
 
 This is the main input component. Trying to keep all other functionality the same, we now do several things for the search input alone. First, we now override/hide the default search clear button for both wekit and edge (will need to test on edge too).
-
-TODO: There's a weird type thing with the onlick on line 340. We want the input content to be cleared instantly when the close button is pressed. But it doesn't seem to match what we're passing in to the other onClicks on the page? Unsure why this one is being weird right now.
-TODO: Just do a quick double check that everything in the regular inputs is working as it was before.
-TODO: I think when the `ref` is cleared out/updated (compared to the internalRef - like in the SearchInput), it's not clearing out correctly
 
 #### SearchList.tsx
 
@@ -44,7 +39,6 @@ TODO: haven't taken into account overflowX yet. Something to think about
 This is the component that holds each result. This component unsets the listItem styles inherited from default list itmes and sets the set height per item as specified by the specs. Also, it seems that the only way to style the parts of the results that match what's already been typed by the user is by targeting `[data-user-value="true"]`. It's the cleanest way I could find, but perhaps you can find another?
 
 TODO: design doesn't take into account result items that are wider than the container. Should it wrap? Should it ellipse? Nobody knows.
-TODO: Remove `any` types.
 
 #### SearchPopover.tsx
 
@@ -54,19 +48,13 @@ This component is the main container that holds all the things and that opens wh
 
 Most everything else should be finished and look according to spec
 
-TODO: Remove `any` type.
-
 #### SearchLoadingState.tsx
 
 Most everything else should be finished and look according to spec
 
-TODO: Remove `any` type.
-
 #### SearchOtherState.tsx
 
 Since both the empty state and the loading state have the same formatting and the only things that differ are the specific icon used and the text that goes with it, I create this abstraction to try and remove some code duplication. The main thing left to do in this file is to remove the `any` types. You can also rename this file? I was trying to communicate that it's a wrapper for the different type of states the component can have outside of the main one...
-
-TODO: Remove `any` type.
 
 #### README.md
 

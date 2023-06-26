@@ -1,11 +1,11 @@
 import * as React from "react";
 
-import { styled, theme } from "@washingtonpost/wpds-theme";
+import { styled } from "@washingtonpost/wpds-theme";
 import type * as WPDS from "@washingtonpost/wpds-theme";
 
 import { ComboboxList, useComboboxContext } from "@reach/combobox";
 
-export type SearchListProps = {
+export type InputSearchListProps = {
   /** Any React node may be used as a child to allow for formatting */
   children?: React.ReactNode;
   /** Override CSS */
@@ -13,15 +13,18 @@ export type SearchListProps = {
 };
 
 const StyledList = styled(ComboboxList, {
-  background: theme.colors.secondary,
   marginBlock: 0,
   maxHeight: "300px",
-  overflowY: "scroll",
+  overflowY: "auto",
   paddingInlineStart: 0,
   position: "relative",
 });
 
-export const SearchList = ({ children, css, ...rest }: SearchListProps) => {
+export const InputSearchList = ({
+  children,
+  css,
+  ...rest
+}: InputSearchListProps) => {
   const { navigationValue, state } = useComboboxContext();
 
   const listRef = React.useRef<HTMLUListElement>(null);
@@ -57,4 +60,4 @@ export const SearchList = ({ children, css, ...rest }: SearchListProps) => {
   );
 };
 
-SearchList.displayName = "SearchList";
+InputSearchList.displayName = "InputSearchList";

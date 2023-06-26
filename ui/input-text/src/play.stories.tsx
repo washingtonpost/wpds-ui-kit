@@ -41,21 +41,7 @@ export default {
 } as ComponentMeta<typeof Component>;
 
 const Template: ComponentStory<typeof Component> = (args) => (
-  <>
-    <Component {...args} />
-    <input
-      type="search"
-      onBlur={() => {
-        console.log("onBlur");
-      }}
-      onFocus={() => {
-        console.log("onFocus");
-      }}
-      onChange={() => {
-        console.log("onChange");
-      }}
-    />
-  </>
+  <Component {...args} />
 );
 
 export const InputText = Template.bind({});

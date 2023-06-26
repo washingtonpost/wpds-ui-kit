@@ -5,7 +5,7 @@ import { styled, theme } from "@washingtonpost/wpds-theme";
 
 import { ComboboxOption } from "@reach/combobox";
 
-export type SearchListItemProps = {
+export type InputSearchListItemProps = {
   /** Any React node may be used as a child to allow for formatting */
   children?: React.ReactNode;
   /** Override CSS */
@@ -14,6 +14,9 @@ export type SearchListItemProps = {
 };
 
 const StyledListItem = styled(ComboboxOption, {
+  color: theme.colors.primary,
+  fontSize: theme.fontSizes["087"],
+  fontWeight: theme.fontWeights.light,
   listStyle: "none",
   paddingBlock: "$050",
   paddingInline: "$075",
@@ -24,15 +27,15 @@ const StyledListItem = styled(ComboboxOption, {
     backgroundColor: theme.colors.gray400,
   },
   "[data-user-value='true']": {
-    fontWeight: "$bold",
+    fontWeight: theme.fontWeights.bold,
   },
 });
 
-export const SearchListItem = ({
+export const InputSearchListItem = ({
   children,
   value,
   ...rest
-}: SearchListItemProps) => {
+}: InputSearchListItemProps) => {
   return (
     <StyledListItem value={value} {...rest}>
       {children}
@@ -40,4 +43,4 @@ export const SearchListItem = ({
   );
 };
 
-SearchListItem.displayName = "SearchListItem";
+InputSearchListItem.displayName = "InputSearchListItem";

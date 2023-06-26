@@ -1,0 +1,1005 @@
+---
+title: Input Search
+description: Input Search is a component that allows users to enter keywords and receive matching search results.
+component: InputSearch
+status: Draft
+openSourceLink: https://reach.tech/combobox/
+---
+
+---
+
+## Anatomy
+
+<Anatomy
+  src="/img/components/input-search/anatomy.svg"
+  caption="Note: Image not to scale"
+/>
+
+1. Label/Placeholder
+2. Input
+3. Clear button
+4. Search button
+5. Value
+6. Divider
+7. Result
+8. Result container
+
+---
+
+## Options
+
+### Portal
+
+Determine whether the result container should be rendered as part of the search component and occupy space, or act more like a popover with a positional relationship.
+
+```jsx withPreview demoHeight="436"
+export default function Example() {
+  const cities = [
+    { name: "Atlanta", state: "Georgia" },
+    { name: "Austin", state: "Texas" },
+    { name: "Boston", state: "Massachusetts" },
+    { name: "Charlotte", state: "North Carolina" },
+    { name: "Chicago", state: "Illinois" },
+    { name: "Dallas", state: "Texas" },
+    { name: "Denver", state: "Colorado" },
+    { name: "Detroit", state: "Michigan" },
+    { name: "Houston", state: "Texas" },
+    { name: "Las Vegas", state: "Nevada" },
+    { name: "Miami", state: "Florida" },
+    { name: "Nashville", state: "Tennessee" },
+    { name: "New Orleans", state: "Louisiana" },
+    { name: "New York", state: "New York" },
+    { name: "Philadelphia", state: "Pennsylvania" },
+    { name: "Phoenix", state: "Arizona" },
+    { name: "Portland", state: "Oregon" },
+    { name: "San Diego", state: "California" },
+    { name: "San Francisco", state: "California" },
+    { name: "Seattle", state: "Washington" },
+  ];
+
+  function searchCities(term) {
+    if (term === "") {
+      return;
+    }
+    return cities.filter(
+      (city) =>
+        city.name.toLowerCase().includes(term.toLowerCase()) ||
+        city.state.toLowerCase().includes(term.toLowerCase())
+    );
+  }
+
+  const [term1, setTerm1] = useState("");
+  const results1 = searchCities(term1);
+
+  const [term2, setTerm2] = useState("");
+  const results2 = searchCities(term2);
+
+  return (
+    <Box
+      css={{ width: "580px", height: "340px", display: "flex", gap: "$100" }}
+    >
+      <Box css={{ flex: 1 }}>
+        <InputSearch.Root aria-label="Example-Search" openOnFocus>
+          <InputSearch.Input
+            name="city"
+            id="city"
+            onChange={(event) => {
+              setTerm1(event.target.value);
+            }}
+          />
+          {results1 && (
+            <InputSearch.Popover>
+              {results1.length > 0 ? (
+                <InputSearch.List>
+                  {results1.map((city) => (
+                    <InputSearch.ListItem
+                      key={`${city.name.toLowerCase()}, ${city.state.toLowerCase()}`}
+                      value={`${city.name}, ${city.state}`}
+                    />
+                  ))}
+                </InputSearch.List>
+              ) : (
+                <InputSearch.EmptyState />
+              )}
+            </InputSearch.Popover>
+          )}
+        </InputSearch.Root>
+      </Box>
+      <Box css={{ flex: 1 }}>
+        <InputSearch.Root aria-label="Example-Search" openOnFocus>
+          <InputSearch.Input
+            name="city"
+            id="city"
+            onChange={(event) => {
+              setTerm2(event.target.value);
+            }}
+          />
+          {results2 && (
+            <InputSearch.Popover portal={false}>
+              {results2.length > 0 ? (
+                <InputSearch.List>
+                  {results2.map((city) => (
+                    <InputSearch.ListItem
+                      key={`${city.name.toLowerCase()}, ${city.state.toLowerCase()}`}
+                      value={`${city.name}, ${city.state}`}
+                    />
+                  ))}
+                </InputSearch.List>
+              ) : (
+                <InputSearch.EmptyState />
+              )}
+            </InputSearch.Popover>
+          )}
+        </InputSearch.Root>
+      </Box>
+    </Box>
+  );
+}
+```
+
+### Grouping
+
+The search component supports a default group label that includes an optional icon. This feature can be utilized to help organize content and support multiple result groups. By default, the component returns results as a single list of items. The order in which they are returned depends on how the data is sorted prior to being passed.
+
+```jsx withPreview demoHeight="436"
+export default function Example() {
+  const cities = [
+    { name: "Atlanta", state: "Georgia" },
+    { name: "Austin", state: "Texas" },
+    { name: "Boston", state: "Massachusetts" },
+    { name: "Charlotte", state: "North Carolina" },
+    { name: "Chicago", state: "Illinois" },
+    { name: "Dallas", state: "Texas" },
+    { name: "Denver", state: "Colorado" },
+    { name: "Detroit", state: "Michigan" },
+    { name: "Houston", state: "Texas" },
+    { name: "Las Vegas", state: "Nevada" },
+    { name: "Miami", state: "Florida" },
+    { name: "Nashville", state: "Tennessee" },
+    { name: "New Orleans", state: "Louisiana" },
+    { name: "New York", state: "New York" },
+    { name: "Philadelphia", state: "Pennsylvania" },
+    { name: "Phoenix", state: "Arizona" },
+    { name: "Portland", state: "Oregon" },
+    { name: "San Diego", state: "California" },
+    { name: "San Francisco", state: "California" },
+    { name: "Seattle", state: "Washington" },
+  ];
+
+  function searchCities(term) {
+    if (term === "") {
+      return;
+    }
+    return cities.filter(
+      (city) =>
+        city.name.toLowerCase().includes(term.toLowerCase()) ||
+        city.state.toLowerCase().includes(term.toLowerCase())
+    );
+  }
+
+  const [term1, setTerm1] = useState("");
+  const results1 = searchCities(term1);
+
+  const [term2, setTerm2] = useState("");
+  const results2 = searchCities(term2);
+
+  return (
+    <Box
+      css={{ width: "580px", height: "340px", display: "flex", gap: "$100" }}
+    >
+      <Box css={{ flex: 1 }}>
+        <InputSearch.Root aria-label="Example-Search" openOnFocus>
+          <InputSearch.Input
+            name="city"
+            id="city"
+            onChange={(event) => {
+              setTerm1(event.target.value);
+            }}
+          />
+          {results1 && (
+            <InputSearch.Popover>
+              {results1.length > 0 ? (
+                <InputSearch.List>
+                  {results1.map((city) => (
+                    <InputSearch.ListItem
+                      key={`${city.name.toLowerCase()}, ${city.state.toLowerCase()}`}
+                      value={`${city.name}, ${city.state}`}
+                    />
+                  ))}
+                </InputSearch.List>
+              ) : (
+                <InputSearch.EmptyState />
+              )}
+            </InputSearch.Popover>
+          )}
+        </InputSearch.Root>
+      </Box>
+      <Box css={{ flex: 1 }}>
+        <InputSearch.Root aria-label="Example-Search" openOnFocus>
+          <InputSearch.Input
+            name="city"
+            id="city"
+            onChange={(event) => {
+              setTerm2(event.target.value);
+            }}
+          />
+          {results2 && (
+            <InputSearch.Popover>
+              {results2.length > 0 ? (
+                <InputSearch.List>
+                  {results2.slice(0, 3).map((city) => (
+                    <InputSearch.ListItem
+                      key={`${city.name.toLowerCase()}, ${city.state.toLowerCase()}`}
+                      value={`${city.name}, ${city.state}`}
+                    />
+                  ))}
+                  {results2.length > 3 && (
+                    <>
+                      <InputSearch.ListHeading>Group</InputSearch.ListHeading>
+                      {results2.slice(3).map((city) => (
+                        <InputSearch.ListItem
+                          key={`${city.name.toLowerCase()}, ${city.state.toLowerCase()}`}
+                          value={`${city.name}, ${city.state}`}
+                        />
+                      ))}
+                    </>
+                  )}
+                </InputSearch.List>
+              ) : (
+                <InputSearch.EmptyState />
+              )}
+            </InputSearch.Popover>
+          )}
+        </InputSearch.Root>
+      </Box>
+    </Box>
+  );
+}
+```
+
+### Open on focus
+
+Setting 'open on focus' to false will prevent the result container from appearing when there is no value in the input, or the value has not changed.
+
+```jsx withPreview demoHeight="436"
+export default function Example() {
+  const cities = [
+    { name: "Atlanta", state: "Georgia" },
+    { name: "Austin", state: "Texas" },
+    { name: "Boston", state: "Massachusetts" },
+    { name: "Charlotte", state: "North Carolina" },
+    { name: "Chicago", state: "Illinois" },
+    { name: "Dallas", state: "Texas" },
+    { name: "Denver", state: "Colorado" },
+    { name: "Detroit", state: "Michigan" },
+    { name: "Houston", state: "Texas" },
+    { name: "Las Vegas", state: "Nevada" },
+    { name: "Miami", state: "Florida" },
+    { name: "Nashville", state: "Tennessee" },
+    { name: "New Orleans", state: "Louisiana" },
+    { name: "New York", state: "New York" },
+    { name: "Philadelphia", state: "Pennsylvania" },
+    { name: "Phoenix", state: "Arizona" },
+    { name: "Portland", state: "Oregon" },
+    { name: "San Diego", state: "California" },
+    { name: "San Francisco", state: "California" },
+    { name: "Seattle", state: "Washington" },
+  ];
+
+  function searchCities(term) {
+    if (term === "") {
+      return;
+    }
+    return cities.filter(
+      (city) =>
+        city.name.toLowerCase().includes(term.toLowerCase()) ||
+        city.state.toLowerCase().includes(term.toLowerCase())
+    );
+  }
+
+  const [term1, setTerm1] = useState("");
+  const results1 = searchCities(term1);
+
+  const [term2, setTerm2] = useState("");
+  const results2 = searchCities(term2);
+
+  return (
+    <Box
+      css={{ width: "580px", height: "340px", display: "flex", gap: "$100" }}
+    >
+      <Box css={{ flex: 1 }}>
+        <InputSearch.Root aria-label="Example-Search" openOnFocus>
+          <InputSearch.Input
+            name="city"
+            id="city"
+            onChange={(event) => {
+              setTerm1(event.target.value);
+            }}
+          />
+          <InputSearch.Popover>
+            {results1 && results1.length > 0 ? (
+              <InputSearch.List>
+                {results1.map((city) => (
+                  <InputSearch.ListItem
+                    key={`${city.name.toLowerCase()}, ${city.state.toLowerCase()}`}
+                    value={`${city.name}, ${city.state}`}
+                  />
+                ))}
+              </InputSearch.List>
+            ) : (
+              <InputSearch.EmptyState />
+            )}
+          </InputSearch.Popover>
+        </InputSearch.Root>
+      </Box>
+      <Box css={{ flex: 1 }}>
+        <InputSearch.Root aria-label="Example-Search">
+          <InputSearch.Input
+            name="city"
+            id="city"
+            onChange={(event) => {
+              setTerm2(event.target.value);
+            }}
+          />
+          <InputSearch.Popover>
+            {results2 && results2.length > 0 ? (
+              <InputSearch.List>
+                {results2.map((city) => (
+                  <InputSearch.ListItem
+                    key={`${city.name.toLowerCase()}, ${city.state.toLowerCase()}`}
+                    value={`${city.name}, ${city.state}`}
+                  />
+                ))}
+              </InputSearch.List>
+            ) : (
+              <InputSearch.EmptyState />
+            )}
+          </InputSearch.Popover>
+        </InputSearch.Root>
+      </Box>
+    </Box>
+  );
+}
+```
+
+---
+
+## Behavior
+
+### Autocomplete
+
+Determines if the value is the input changes or not as the user navigates with the keyboard. If true, the value changes. If false, the value doesn't change.
+
+```jsx withPreview demoHeight="436"
+export default function Example() {
+  const cities = [
+    { name: "Atlanta", state: "Georgia" },
+    { name: "Austin", state: "Texas" },
+    { name: "Boston", state: "Massachusetts" },
+    { name: "Charlotte", state: "North Carolina" },
+    { name: "Chicago", state: "Illinois" },
+    { name: "Dallas", state: "Texas" },
+    { name: "Denver", state: "Colorado" },
+    { name: "Detroit", state: "Michigan" },
+    { name: "Houston", state: "Texas" },
+    { name: "Las Vegas", state: "Nevada" },
+    { name: "Miami", state: "Florida" },
+    { name: "Nashville", state: "Tennessee" },
+    { name: "New Orleans", state: "Louisiana" },
+    { name: "New York", state: "New York" },
+    { name: "Philadelphia", state: "Pennsylvania" },
+    { name: "Phoenix", state: "Arizona" },
+    { name: "Portland", state: "Oregon" },
+    { name: "San Diego", state: "California" },
+    { name: "San Francisco", state: "California" },
+    { name: "Seattle", state: "Washington" },
+  ];
+
+  function searchCities(term) {
+    if (term === "") {
+      return;
+    }
+    return cities.filter(
+      (city) =>
+        city.name.toLowerCase().includes(term.toLowerCase()) ||
+        city.state.toLowerCase().includes(term.toLowerCase())
+    );
+  }
+
+  const [term, setTerm] = useState("");
+  const results = searchCities(term);
+
+  return (
+    <Box css={{ width: "300px", height: "340px" }}>
+      <InputSearch.Root aria-label="Example-Search" openOnFocus>
+        <InputSearch.Input
+          name="city"
+          id="city"
+          onChange={(event) => {
+            setTerm(event.target.value);
+          }}
+          autocomplete={false}
+        />
+        {results && (
+          <InputSearch.Popover>
+            {results.length > 0 ? (
+              <InputSearch.List>
+                {results.map((city) => (
+                  <InputSearch.ListItem
+                    key={`${city.name.toLowerCase()}, ${city.state.toLowerCase()}`}
+                    value={`${city.name}, ${city.state}`}
+                  />
+                ))}
+              </InputSearch.List>
+            ) : (
+              <InputSearch.EmptyState />
+            )}
+          </InputSearch.Popover>
+        )}
+      </InputSearch.Root>
+    </Box>
+  );
+}
+```
+
+### Disabled
+
+```jsx withPreview
+export default function Example() {
+  const cities = [
+    { name: "Atlanta", state: "Georgia" },
+    { name: "Austin", state: "Texas" },
+    { name: "Boston", state: "Massachusetts" },
+    { name: "Charlotte", state: "North Carolina" },
+    { name: "Chicago", state: "Illinois" },
+    { name: "Dallas", state: "Texas" },
+    { name: "Denver", state: "Colorado" },
+    { name: "Detroit", state: "Michigan" },
+    { name: "Houston", state: "Texas" },
+    { name: "Las Vegas", state: "Nevada" },
+    { name: "Miami", state: "Florida" },
+    { name: "Nashville", state: "Tennessee" },
+    { name: "New Orleans", state: "Louisiana" },
+    { name: "New York", state: "New York" },
+    { name: "Philadelphia", state: "Pennsylvania" },
+    { name: "Phoenix", state: "Arizona" },
+    { name: "Portland", state: "Oregon" },
+    { name: "San Diego", state: "California" },
+    { name: "San Francisco", state: "California" },
+    { name: "Seattle", state: "Washington" },
+  ];
+
+  function searchCities(term) {
+    if (term === "") {
+      return;
+    }
+    return cities.filter(
+      (city) =>
+        city.name.toLowerCase().includes(term.toLowerCase()) ||
+        city.state.toLowerCase().includes(term.toLowerCase())
+    );
+  }
+
+  const [term, setTerm] = useState("");
+  const results = searchCities(term);
+
+  return (
+    <Box css={{ width: "300px" }}>
+      <InputSearch.Root aria-label="Example-Search" openOnFocus disabled>
+        <InputSearch.Input
+          name="city"
+          id="city"
+          onChange={(event) => {
+            setTerm(event.target.value);
+          }}
+        />
+        {results && (
+          <InputSearch.Popover>
+            {results.length > 0 ? (
+              <InputSearch.List>
+                {results.map((city) => (
+                  <InputSearch.ListItem
+                    key={`${city.name.toLowerCase()}, ${city.state.toLowerCase()}`}
+                    value={`${city.name}, ${city.state}`}
+                  />
+                ))}
+              </InputSearch.List>
+            ) : (
+              <InputSearch.EmptyState />
+            )}
+          </InputSearch.Popover>
+        )}
+      </InputSearch.Root>
+    </Box>
+  );
+}
+```
+
+### Selected
+
+When a user has made a selection, the results container will collapse when the portal is set to false or disappear when the portal is set to true.
+
+```jsx withPreview demoHeight="436"
+export default function Example() {
+  const cities = [
+    { name: "Atlanta", state: "Georgia" },
+    { name: "Austin", state: "Texas" },
+    { name: "Boston", state: "Massachusetts" },
+    { name: "Charlotte", state: "North Carolina" },
+    { name: "Chicago", state: "Illinois" },
+    { name: "Dallas", state: "Texas" },
+    { name: "Denver", state: "Colorado" },
+    { name: "Detroit", state: "Michigan" },
+    { name: "Houston", state: "Texas" },
+    { name: "Las Vegas", state: "Nevada" },
+    { name: "Miami", state: "Florida" },
+    { name: "Nashville", state: "Tennessee" },
+    { name: "New Orleans", state: "Louisiana" },
+    { name: "New York", state: "New York" },
+    { name: "Philadelphia", state: "Pennsylvania" },
+    { name: "Phoenix", state: "Arizona" },
+    { name: "Portland", state: "Oregon" },
+    { name: "San Diego", state: "California" },
+    { name: "San Francisco", state: "California" },
+    { name: "Seattle", state: "Washington" },
+  ];
+
+  function searchCities(term) {
+    if (term === "") {
+      return;
+    }
+    return cities.filter(
+      (city) =>
+        city.name.toLowerCase().includes(term.toLowerCase()) ||
+        city.state.toLowerCase().includes(term.toLowerCase())
+    );
+  }
+
+  const [term, setTerm] = useState("");
+  const results = searchCities(term);
+
+  return (
+    <Box css={{ width: "300px", height: "340px" }}>
+      <InputSearch.Root aria-label="Example-Search" openOnFocus>
+        <InputSearch.Input
+          name="city"
+          id="city"
+          onChange={(event) => {
+            setTerm(event.target.value);
+          }}
+        />
+        {results && (
+          <InputSearch.Popover>
+            {results.length > 0 ? (
+              <InputSearch.List>
+                {results.map((city) => (
+                  <InputSearch.ListItem
+                    key={`${city.name.toLowerCase()}, ${city.state.toLowerCase()}`}
+                    value={`${city.name}, ${city.state}`}
+                  />
+                ))}
+              </InputSearch.List>
+            ) : (
+              <InputSearch.EmptyState />
+            )}
+          </InputSearch.Popover>
+        )}
+      </InputSearch.Root>
+    </Box>
+  );
+}
+```
+
+### Overflow
+
+The results container has a default max-height of 300px and when there are more results it will overflow with a default scrollbar.
+
+```jsx withPreview demoHeight="436"
+export default function Example() {
+  const cities = [
+    { name: "Atlanta", state: "Georgia" },
+    { name: "Austin", state: "Texas" },
+    { name: "Boston", state: "Massachusetts" },
+    { name: "Charlotte", state: "North Carolina" },
+    { name: "Chicago", state: "Illinois" },
+    { name: "Dallas", state: "Texas" },
+    { name: "Denver", state: "Colorado" },
+    { name: "Detroit", state: "Michigan" },
+    { name: "Houston", state: "Texas" },
+    { name: "Las Vegas", state: "Nevada" },
+    { name: "Miami", state: "Florida" },
+    { name: "Nashville", state: "Tennessee" },
+    { name: "New Orleans", state: "Louisiana" },
+    { name: "New York", state: "New York" },
+    { name: "Philadelphia", state: "Pennsylvania" },
+    { name: "Phoenix", state: "Arizona" },
+    { name: "Portland", state: "Oregon" },
+    { name: "San Diego", state: "California" },
+    { name: "San Francisco", state: "California" },
+    { name: "Seattle", state: "Washington" },
+  ];
+
+  function searchCities(term) {
+    if (term === "") {
+      return;
+    }
+    return cities.filter(
+      (city) =>
+        city.name.toLowerCase().includes(term.toLowerCase()) ||
+        city.state.toLowerCase().includes(term.toLowerCase())
+    );
+  }
+
+  const [term1, setTerm1] = useState("");
+  const results1 = searchCities(term1);
+
+  const [term2, setTerm2] = useState("");
+  const results2 = searchCities(term2);
+
+  return (
+    <Box
+      css={{ width: "580px", height: "340px", display: "flex", gap: "$100" }}
+    >
+      <Box css={{ flex: 1 }}>
+        <InputSearch.Root aria-label="Example-Search" openOnFocus>
+          <InputSearch.Input
+            name="city"
+            id="city"
+            onChange={(event) => {
+              setTerm1(event.target.value);
+            }}
+          />
+          {results1 && (
+            <InputSearch.Popover>
+              {results1.length > 0 ? (
+                <InputSearch.List>
+                  {results1.map((city) => (
+                    <InputSearch.ListItem
+                      key={`${city.name.toLowerCase()}, ${city.state.toLowerCase()}`}
+                      value={`${city.name}, ${city.state}`}
+                    />
+                  ))}
+                </InputSearch.List>
+              ) : (
+                <InputSearch.EmptyState />
+              )}
+            </InputSearch.Popover>
+          )}
+        </InputSearch.Root>
+      </Box>
+      <Box css={{ flex: 1 }}>
+        <InputSearch.Root aria-label="Example-Search" openOnFocus>
+          <InputSearch.Input
+            name="city"
+            id="city"
+            onChange={(event) => {
+              setTerm2(event.target.value);
+            }}
+          />
+          {results2 && (
+            <InputSearch.Popover portal={false}>
+              {results2.length > 0 ? (
+                <InputSearch.List>
+                  {results2.map((city) => (
+                    <InputSearch.ListItem
+                      key={`${city.name.toLowerCase()}, ${city.state.toLowerCase()}`}
+                      value={`${city.name}, ${city.state}`}
+                    />
+                  ))}
+                </InputSearch.List>
+              ) : (
+                <InputSearch.EmptyState />
+              )}
+            </InputSearch.Popover>
+          )}
+        </InputSearch.Root>
+      </Box>
+    </Box>
+  );
+}
+```
+
+### Input with value
+
+When the input has a text value, a clear button will appear to allow the user to easily clear the input value and set it to an empty value.
+
+```jsx withPreview demoHeight="436"
+export default function Example() {
+  const cities = [
+    { name: "Atlanta", state: "Georgia" },
+    { name: "Austin", state: "Texas" },
+    { name: "Boston", state: "Massachusetts" },
+    { name: "Charlotte", state: "North Carolina" },
+    { name: "Chicago", state: "Illinois" },
+    { name: "Dallas", state: "Texas" },
+    { name: "Denver", state: "Colorado" },
+    { name: "Detroit", state: "Michigan" },
+    { name: "Houston", state: "Texas" },
+    { name: "Las Vegas", state: "Nevada" },
+    { name: "Miami", state: "Florida" },
+    { name: "Nashville", state: "Tennessee" },
+    { name: "New Orleans", state: "Louisiana" },
+    { name: "New York", state: "New York" },
+    { name: "Philadelphia", state: "Pennsylvania" },
+    { name: "Phoenix", state: "Arizona" },
+    { name: "Portland", state: "Oregon" },
+    { name: "San Diego", state: "California" },
+    { name: "San Francisco", state: "California" },
+    { name: "Seattle", state: "Washington" },
+  ];
+
+  function searchCities(term) {
+    if (term === "") {
+      return;
+    }
+    return cities.filter(
+      (city) =>
+        city.name.toLowerCase().includes(term.toLowerCase()) ||
+        city.state.toLowerCase().includes(term.toLowerCase()) ||
+        term.toLowerCase().includes(city.name.toLowerCase()) ||
+        term.toLowerCase().includes(city.state.toLowerCase())
+    );
+  }
+
+  const [term, setTerm] = useState("New York, New York");
+  const [selection, setSelection] = useState();
+  const results = searchCities(term);
+
+  return (
+    <Box css={{ width: "300px", height: "340px" }}>
+      <InputSearch.Root
+        aria-label="Example-Search"
+        onSelect={(val) => {
+          setTerm(val);
+        }}
+      >
+        <InputSearch.Input
+          name="city"
+          id="city"
+          onChange={(event) => {
+            setTerm(event.target.value);
+          }}
+          value={term}
+        />
+        {results && (
+          <InputSearch.Popover>
+            {results.length > 0 ? (
+              <InputSearch.List>
+                {results.map((city) => (
+                  <InputSearch.ListItem
+                    key={`${city.name.toLowerCase()}, ${city.state.toLowerCase()}`}
+                    value={`${city.name}, ${city.state}`}
+                  />
+                ))}
+              </InputSearch.List>
+            ) : (
+              <InputSearch.EmptyState />
+            )}
+          </InputSearch.Popover>
+        )}
+      </InputSearch.Root>
+    </Box>
+  );
+}
+```
+
+### Loading results
+
+When results are being loaded a default behavior of a loading state will be shown.
+
+```jsx withPreview
+
+```
+
+### Empty: No Results
+
+When there are no matching results the default behavior is to show them empty no result state.
+
+```jsx withPreview
+
+```
+
+### Matching results
+
+When a result is matched to the keyword the font weight will be light to the matching keys and the rest of the characters as bold.
+
+```jsx withPreview demoHeight="436"
+export default function Example() {
+  const cities = [
+    { name: "Atlanta", state: "Georgia" },
+    { name: "Austin", state: "Texas" },
+    { name: "Boston", state: "Massachusetts" },
+    { name: "Charlotte", state: "North Carolina" },
+    { name: "Chicago", state: "Illinois" },
+    { name: "Dallas", state: "Texas" },
+    { name: "Denver", state: "Colorado" },
+    { name: "Detroit", state: "Michigan" },
+    { name: "Houston", state: "Texas" },
+    { name: "Las Vegas", state: "Nevada" },
+    { name: "Miami", state: "Florida" },
+    { name: "Nashville", state: "Tennessee" },
+    { name: "New Orleans", state: "Louisiana" },
+    { name: "New York", state: "New York" },
+    { name: "Philadelphia", state: "Pennsylvania" },
+    { name: "Phoenix", state: "Arizona" },
+    { name: "Portland", state: "Oregon" },
+    { name: "San Diego", state: "California" },
+    { name: "San Francisco", state: "California" },
+    { name: "Seattle", state: "Washington" },
+  ];
+
+  function searchCities(term) {
+    if (term === "") {
+      return;
+    }
+    return cities.filter(
+      (city) =>
+        city.name.toLowerCase().includes(term.toLowerCase()) ||
+        city.state.toLowerCase().includes(term.toLowerCase())
+    );
+  }
+
+  const [term, setTerm] = useState("");
+  const results = searchCities(term);
+
+  return (
+    <Box css={{ width: "300px", height: "340px" }}>
+      <InputSearch.Root aria-label="Example-Search" openOnFocus>
+        <InputSearch.Input
+          name="city"
+          id="city"
+          onChange={(event) => {
+            setTerm(event.target.value);
+          }}
+        />
+        {results && (
+          <InputSearch.Popover>
+            {results.length > 0 ? (
+              <InputSearch.List>
+                {results.map((city) => (
+                  <InputSearch.ListItem
+                    key={`${city.name.toLowerCase()}, ${city.state.toLowerCase()}`}
+                    value={`${city.name}, ${city.state}`}
+                  />
+                ))}
+              </InputSearch.List>
+            ) : (
+              <InputSearch.EmptyState />
+            )}
+          </InputSearch.Popover>
+        )}
+      </InputSearch.Root>
+    </Box>
+  );
+}
+```
+
+### Results :Hover
+
+When a result is hovered with a mouse it will change background color $faint.
+
+```jsx withPreview demoHeight="436"
+export default function Example() {
+  const cities = [
+    { name: "Atlanta", state: "Georgia" },
+    { name: "Austin", state: "Texas" },
+    { name: "Boston", state: "Massachusetts" },
+    { name: "Charlotte", state: "North Carolina" },
+    { name: "Chicago", state: "Illinois" },
+    { name: "Dallas", state: "Texas" },
+    { name: "Denver", state: "Colorado" },
+    { name: "Detroit", state: "Michigan" },
+    { name: "Houston", state: "Texas" },
+    { name: "Las Vegas", state: "Nevada" },
+    { name: "Miami", state: "Florida" },
+    { name: "Nashville", state: "Tennessee" },
+    { name: "New Orleans", state: "Louisiana" },
+    { name: "New York", state: "New York" },
+    { name: "Philadelphia", state: "Pennsylvania" },
+    { name: "Phoenix", state: "Arizona" },
+    { name: "Portland", state: "Oregon" },
+    { name: "San Diego", state: "California" },
+    { name: "San Francisco", state: "California" },
+    { name: "Seattle", state: "Washington" },
+  ];
+
+  function searchCities(term) {
+    if (term === "") {
+      return;
+    }
+    return cities.filter(
+      (city) =>
+        city.name.toLowerCase().includes(term.toLowerCase()) ||
+        city.state.toLowerCase().includes(term.toLowerCase())
+    );
+  }
+
+  const [term, setTerm] = useState("");
+  const results = searchCities(term);
+
+  return (
+    <Box css={{ width: "300px", height: "340px" }}>
+      <InputSearch.Root aria-label="Example-Search" openOnFocus>
+        <InputSearch.Input
+          name="city"
+          id="city"
+          onChange={(event) => {
+            setTerm(event.target.value);
+          }}
+        />
+        {results && (
+          <InputSearch.Popover>
+            {results.length > 0 ? (
+              <InputSearch.List>
+                {results.map((city) => (
+                  <InputSearch.ListItem
+                    key={`${city.name.toLowerCase()}, ${city.state.toLowerCase()}`}
+                    value={`${city.name}, ${city.state}`}
+                  />
+                ))}
+              </InputSearch.List>
+            ) : (
+              <InputSearch.EmptyState />
+            )}
+          </InputSearch.Popover>
+        )}
+      </InputSearch.Root>
+    </Box>
+  );
+}
+```
+
+---
+
+## Guidance
+
+### Results can be more than text
+
+Results can be more than just a list of text. Depending on how you handle matching results, there could be space for recirculation, a different hierarchy in how results are displayed, and a more intuitive and visual discovery process.
+
+```jsx withPreview isGuide="error"
+
+```
+
+### When to use icons
+
+Results can be overwhelming depending on the query. To differentiate between different types of results, use icons to help users wayfind and scan the results.
+
+```jsx withPreview isGuide="error"
+
+```
+
+### Helpful filtering
+
+Helpful filtering can help folks get to their results faster without having to type in the correct keywords. Some ideas can include inputs like swithces, and tabs.
+
+```jsx withPreview isGuide="error"
+
+```
+
+### Mobile best practices
+
+There might be instances where a dedicated search view might be more appropriate. Utilizing the pattern of our drawer can be an effective way to do this.
+
+```jsx withPreview isGuide="error"
+
+```
+
+---
+
+## Accessibility
+
+### Color contrast
+
+All colors in the default combobox have been reviewed to ensure they meet the AA WCAG contrast requirement of at least 4.5:1 for normal text and 3:1 for large text.
+
+### Keyboard controls
+
+Users can navigate search results using arrow keys on their keyboard and select a result by pressing the return key. This feature streamlines the search experience, reduces search time, and improves accessibility.
+
+---
+
+## API Reference
+
+<PropsTable props={propsTable} />
+````

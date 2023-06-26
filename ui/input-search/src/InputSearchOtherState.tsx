@@ -4,7 +4,7 @@ import { styled, theme } from "@washingtonpost/wpds-theme";
 
 import type * as WPDS from "@washingtonpost/wpds-theme";
 
-export type SearchOtherStateProps = {
+export type InputSearchOtherStateProps = {
   /** Any React node may be used as a child to allow for formatting */
   children?: React.ReactNode;
   /** Override CSS */
@@ -12,15 +12,13 @@ export type SearchOtherStateProps = {
   /**The input's label text, required for accessibility
    * @default Search
    */
-  //TODO: remove the any type
-  icon: any;
+  icon: React.ReactNode;
 };
 
 const StyledStateContainer = styled("div", {
   display: "flex",
   height: "200px",
   width: "100%",
-  background: theme.colors.secondary,
   justifyContent: "center",
   alignItems: "center",
 });
@@ -44,11 +42,11 @@ const StyledIconContainer = styled("div", {
 });
 
 //TODO: remove any return type from here
-export const SearchOtherState = ({
+export const InputSearchOtherState = ({
   icon,
   children,
   ...rest
-}: SearchOtherStateProps): any => {
+}: InputSearchOtherStateProps): JSX.Element => {
   return (
     <StyledStateContainer {...rest}>
       <StyledContentContainer>
@@ -59,4 +57,4 @@ export const SearchOtherState = ({
   );
 };
 
-SearchOtherState.displayName = "SearchEmptyState";
+InputSearchOtherState.displayName = "InputSearchEmptyState";

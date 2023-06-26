@@ -6,15 +6,11 @@ import { styled, theme } from "@washingtonpost/wpds-theme";
 import { Search } from "@washingtonpost/wpds-assets";
 import { Icon } from "@washingtonpost/wpds-icon";
 
-import { SearchOtherState } from "./SearchOtherState";
+import { InputSearchOtherState } from "./InputSearchOtherState";
 
-export type SearchEmptyStateProps = {
+export type InputSearchEmptyStateProps = {
   /** Override CSS */
   css?: WPDS.CSS;
-  /**The input's label text, required for accessibility
-   * @default Search
-   */
-  label?: string;
 };
 
 const StyledSpan = styled("span", {});
@@ -25,20 +21,19 @@ const SearchIcon = (
   </Icon>
 );
 
-//TODO: remove any return type from here
-export const SearchEmptyState = ({
+export const InputSearchEmptyState = ({
   ...rest
-}: SearchEmptyStateProps): JSX.Element => {
+}: InputSearchEmptyStateProps): JSX.Element => {
   return (
-    <SearchOtherState icon={SearchIcon} {...rest}>
+    <InputSearchOtherState icon={SearchIcon} {...rest}>
       <StyledSpan css={{ color: theme.colors.gray80, marginTop: "$100" }}>
         No results found
       </StyledSpan>
       <StyledSpan css={{ marginTop: "$025" }}>
         Try a different key word
       </StyledSpan>
-    </SearchOtherState>
+    </InputSearchOtherState>
   );
 };
 
-SearchEmptyState.displayName = "SearchEmptyState";
+InputSearchEmptyState.displayName = "InputSearchEmptyState";
