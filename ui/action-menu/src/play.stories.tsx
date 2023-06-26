@@ -2,6 +2,10 @@ import * as React from "react";
 import { ActionMenu as Component } from ".";
 import { Button } from "@washingtonpost/wpds-button";
 import { Diamond, ChevronRight, Bookmark, Print } from "@washingtonpost/wpds-assets";
+import type { ComponentMeta, ComponentStory } from "@storybook/react";
+
+// import { expect } from "@storybook/jest";
+// import { within, userEvent } from "@storybook/testing-library";
 
 export default {
 	title: "ActionMenu",
@@ -15,9 +19,9 @@ export default {
 		ActionMenuSubContent: Component.SubContent,
 		ActionMenuSubTrigger: Component.SubTrigger,
 	}
-};
+} as ComponentMeta<typeof Component.Root>;
 
-const Template = (parameters) => (
+const Template: ComponentStory<typeof Component.Root> = (parameters) => (
 	<Component.Root {...parameters}>
 		<Component.Trigger>
 			<Button>Actions</Button>
@@ -40,7 +44,7 @@ const Template = (parameters) => (
 					<Component.Item leftIcon={<Bookmark aria-label="Bookmark" />}>
 						Action 4
 					</Component.Item>
-					<Component.Item leftIcon={<Print aria-label="Print"/>}>
+					<Component.Item leftIcon={<Print aria-label="Print" />}>
 						Action 5
 					</Component.Item>
 					<Component.Sub>
@@ -89,6 +93,17 @@ const PortalTemplate = (parameters) => (
 );
 
 export const ActionMenuPortal = PortalTemplate.bind({});
+
+ActionMenuRoot.args = {
+
+}
+
+ActionMenuRoot.play = async ({ args, canvasElement }) => {
+	// const canvas = within(canvasElement);
+	// await userEvent.click(canvas.getByTestId("light-skip-link"));
+	// await expect(args.onClick).toHaveBeenCalled();
+};
+
 
 /*
 // ActionMenuRoot.parameters = {};

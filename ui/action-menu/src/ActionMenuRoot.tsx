@@ -17,22 +17,12 @@ const StyledActionMenu = styled(ActionMenuPrimitive.Root, {
   color: "blue"
 })
 
-
-// type DropdownRootVariants = WPDS.VariantProps<typeof StyledDropdown>;
-
-// export type DropdownRootCombined = (
-//   | RadixDropdownSingleProps
-//   | RadixDropdownMultipleProps
-// ) &
-//   DropdownRootVariants;
-
-
 export type ActionMenuRootProps = {
   /** Any React node may be used as a child to allow for formatting */
   children?: React.ReactNode;
   /** Override CSS */
   css?: WPDS.CSS;
-} & RadixDropdownMenuProps;
+} & RadixDropdownMenuProps & React.ComponentProps<typeof ActionMenuPrimitive.Root>;
 
 export const ActionMenuRoot = ({ ...props }: ActionMenuRootProps) => {
   return <StyledActionMenu {...props} />;

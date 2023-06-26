@@ -50,7 +50,9 @@ const AlertBannerTrigger = React.forwardRef<
     </StyledAlertBannerTrigger>
   );
 });
+
 type AlertBannerTriggerProps = React.ComponentProps<typeof AlertBannerTrigger>;
+
 AlertBannerTrigger.displayName = "AlertBannerTrigger";
 
 const StyledAlertBannerContent = styled("p", {
