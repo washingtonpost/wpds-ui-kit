@@ -15,7 +15,7 @@ export type InputSearchListItemProps = {
 
 const StyledListItem = styled(ComboboxOption, {
   color: theme.colors.primary,
-  fontSize: theme.fontSizes["087"],
+  fontSize: theme.fontSizes["100"],
   fontWeight: theme.fontWeights.light,
   listStyle: "none",
   paddingBlock: "$050",
