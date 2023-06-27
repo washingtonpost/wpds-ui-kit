@@ -14,10 +14,9 @@ export type InputSearchListProps = {
 
 const StyledList = styled(ComboboxList, {
   marginBlock: 0,
-  maxHeight: "300px",
-  overflowY: "auto",
   paddingInlineStart: 0,
   position: "relative",
+  listStyleType: "none",
 });
 
 export const InputSearchList = ({

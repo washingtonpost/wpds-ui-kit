@@ -38,7 +38,11 @@ const Template: ComponentStory<typeof InputSearch.Root> = (args) => {
 
   return (
     <Box css={{ width: "275px", height: "340px" }}>
-      <InputSearch.Root {...args} aria-label="Example-Search" openOnFocus>
+      <InputSearch.Root
+        {...args}
+        aria-label="Example-Search"
+        openOnFocus={args.openOnFocus}
+      >
         <InputSearch.Input
           name="city"
           id="city"

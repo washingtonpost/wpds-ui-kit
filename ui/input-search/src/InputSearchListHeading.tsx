@@ -14,7 +14,6 @@ const StyledListItem = styled("li", {
   borderBlockStart: `1px solid ${theme.colors.faint}`,
   color: theme.colors.accessible,
   fontSize: theme.fontSizes["087"],
-  listStyle: "none",
   marginBlockStart: "$050",
   marginInline: "$075",
   paddingBlock: "$050",

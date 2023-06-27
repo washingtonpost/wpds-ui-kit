@@ -11,6 +11,8 @@ import { InputSearchOtherState } from "./InputSearchOtherState";
 export type InputSearchEmptyStateProps = {
   /** Override CSS */
   css?: WPDS.CSS;
+  /** Text Displayed */
+  text?: React.ReactNode;
 };
 
 const StyledSpan = styled("span", {});
@@ -22,15 +24,13 @@ const SearchIcon = (
 );
 
 export const InputSearchEmptyState = ({
+  text = "No results found",
   ...rest
 }: InputSearchEmptyStateProps): JSX.Element => {
   return (
     <InputSearchOtherState icon={SearchIcon} {...rest}>
       <StyledSpan css={{ color: theme.colors.gray80, marginTop: "$100" }}>
-        No results found
-      </StyledSpan>
-      <StyledSpan css={{ marginTop: "$025" }}>
-        Try a different key word
+        {text}
       </StyledSpan>
     </InputSearchOtherState>
   );

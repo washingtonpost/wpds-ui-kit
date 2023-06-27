@@ -7,6 +7,8 @@ import type * as WPDS from "@washingtonpost/wpds-theme";
 
 const StyledPopover = styled(ComboboxPopover, {
   backgroundColor: theme.colors.secondary,
+  maxHeight: "300px",
+  overflowY: "auto",
   variants: {
     floating: {
       true: {

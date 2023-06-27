@@ -12,10 +12,6 @@ export type InputSearchLoadingStateProps = {
   /** Override CSS */
   css?: WPDS.CSS;
 };
-const StyledSpan = styled("span", {
-  color: theme.colors.gray80,
-  marginTop: theme.space["100"],
-});
 
 const rotate = keyframes({
   "0%": { transform: "rotate(0deg)" },
@@ -35,11 +31,7 @@ const LoadingIcon = (
 export const InputSearchLoadingState = ({
   ...rest
 }: InputSearchLoadingStateProps): JSX.Element => {
-  return (
-    <InputSearchOtherState icon={LoadingIcon} {...rest}>
-      <StyledSpan>Loading results</StyledSpan>
-    </InputSearchOtherState>
-  );
+  return <InputSearchOtherState icon={LoadingIcon} {...rest} />;
 };
 
 InputSearchLoadingState.displayName = "InputSearchLoadingState";
