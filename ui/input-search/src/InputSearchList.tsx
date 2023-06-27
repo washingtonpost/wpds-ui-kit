@@ -38,16 +38,19 @@ export const InputSearchList = ({
       ) as HTMLElement;
       if (!selectedEl) return;
 
-      const lTop = listEl.scrollTop;
-      const lBottom = lTop + listEl.clientHeight;
+      const parentEl = listEl.parentElement;
+      if (!parentEl) return;
 
-      const eTop = selectedEl.offsetTop;
-      const eBottom = eTop + selectedEl.clientHeight;
+      const listTop = parentEl.scrollTop;
+      const listBottom = listTop + parentEl.clientHeight;
 
-      if (eTop < lTop) {
-        listEl.scrollTop -= lTop - eTop;
-      } else if (eBottom > lBottom) {
-        listEl.scrollTop += eBottom - lBottom;
+      const selectedTop = selectedEl.offsetTop;
+      const selectedBottom = selectedTop + selectedEl.clientHeight;
+
+      if (selectedTop < listTop) {
+        parentEl.scrollTop -= listTop - selectedTop;
+      } else if (selectedBottom > listBottom) {
+        parentEl.scrollTop += selectedBottom - listBottom;
       }
     }
   }, [navigationValue, state]);
