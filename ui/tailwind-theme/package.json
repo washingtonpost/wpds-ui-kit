@@ -5,6 +5,13 @@
   "author": "WPDS Support <wpds@washpost.com>",
   "license": "MIT",
   "main": "dist/wpds-theme.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/washingtonpost/wpds-ui-kit.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "dev": "vite",
     "build": "node script/create-theme.js"
