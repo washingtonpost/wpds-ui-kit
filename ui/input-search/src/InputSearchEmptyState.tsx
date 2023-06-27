@@ -15,7 +15,10 @@ export type InputSearchEmptyStateProps = {
   text?: React.ReactNode;
 };
 
-const StyledSpan = styled("span", {});
+const StyledSpan = styled("span", {
+  color: theme.colors.gray80,
+  marginTop: theme.space["100"],
+});
 
 const SearchIcon = (
   <Icon label="Search" size="200" fill={theme.colors.primary}>
@@ -29,9 +32,7 @@ export const InputSearchEmptyState = ({
 }: InputSearchEmptyStateProps): JSX.Element => {
   return (
     <InputSearchOtherState icon={SearchIcon} {...rest}>
-      <StyledSpan css={{ color: theme.colors.gray80, marginTop: "$100" }}>
-        {text}
-      </StyledSpan>
+      <StyledSpan>{text}</StyledSpan>
     </InputSearchOtherState>
   );
 };
