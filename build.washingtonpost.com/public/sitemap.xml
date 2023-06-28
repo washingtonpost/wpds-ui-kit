@@ -69,6 +69,10 @@
   </url>
 
   <url>
+    <loc>https://build.washingtonpost.com/components/input-search</loc>
+  </url>
+
+  <url>
     <loc>https://build.washingtonpost.com/components/input-text</loc>
   </url>
 
@@ -90,10 +94,6 @@
 
   <url>
     <loc>https://build.washingtonpost.com/components/radio-group</loc>
-  </url>
-
-  <url>
-    <loc>https://build.washingtonpost.com/components/search</loc>
   </url>
 
   <url>
@@ -279,6 +279,12 @@
   <url>
     <loc
       >https://build.washingtonpost.com/resources/guides/migrating-to-our-new-palette</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://build.washingtonpost.com/resources/guides/performance-and-seo</loc
     >
   </url>
 

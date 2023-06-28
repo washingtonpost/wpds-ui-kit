@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { nanoid } from "nanoid";
 import { theme, styled } from "@washingtonpost/wpds-theme";
 import { Button } from "@washingtonpost/wpds-button";
+import { Divider } from "@washingtonpost/wpds-divider";
 import { Icon } from "@washingtonpost/wpds-icon";
 import {
   useFloating,
@@ -72,6 +73,11 @@ const IconContainer = styled("div", {
 const ButtonIcon = styled(Button, {
   borderRadius: theme.radii["012"],
   marginInlineEnd: theme.space["050"],
+});
+
+const ButtonDivider = styled(Divider, {
+  "&[data-orientation=vertical]": { height: theme.sizes["150"] },
+  marginInline: theme.sizes["025"],
 });
 
 export interface InputTextProps
@@ -202,27 +208,52 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
         isAutofilled
       );
 
-    function handleButtonIconClick(event) {
+    const handleButtonIconClick = (event) => {
       onButtonIconClick && onButtonIconClick(event);
+    };
 
-      if (type === "search" && internalRef && internalRef.current) {
-        internalRef.current.focus();
-        internalRef.current.value = "";
+    const onClear = () => {
+      if (internalRef.current) {
+        const input = internalRef.current;
+        // requires a native value setter to have the correct value in the dispatched
+        // event and handle both controlled and uncontrolled cases
+        // https://stackoverflow.com/questions/23892547/what-is-the-best-way-to-trigger-change-or-input-event-in-react-js
+        const nativeInputValueSetter = Object.getOwnPropertyDescriptor(
+          window.HTMLInputElement.prototype,
+          "value"
+        )?.set;
+
+        nativeInputValueSetter?.call(input, "");
+        // manually dispatch event to trigger onChange handler
+        input.dispatchEvent(new Event("input", { bubbles: true }));
+        input.focus();
       }
-    }
+    };
 
-    let child: React.ReactNode;
+    let child;
+    let inputStyles = {};
     switch (type) {
       case "search":
         child = (
-          <Icon label={isFloating ? "Cancel input" : ""}>
-            {isFloating ? <Close /> : <Search />}
+          <Icon label={""}>
+            <Search />
           </Icon>
         );
         icon = "right";
         if (!buttonIconText) {
           buttonIconText = "Search";
         }
+        //These styles hide the default search clear button
+        inputStyles = {
+          // for webkit
+          "&::-webkit-search-cancel-button": {
+            all: "unset",
+          },
+          // for edge
+          "&::-ms-clear": {
+            all: "unset",
+          },
+        };
         break;
       case "url":
         child = (
@@ -258,7 +289,6 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
     // This code block because we want to filter out the padding elements and pass those
     // only to the input element. All other styles should go into the StyledContainer.
     // If we ever need to check for more attributes, then we should pull this out into a function.
-    let inputStyles = {};
     let containerStyles = {};
 
     css &&
@@ -312,6 +342,33 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
               {...rest}
             />
           </LabelInputWrapper>
+          {isFloating && type === "search" && internalRef.current?.value && (
+            <>
+              <ButtonIcon
+                variant="primary"
+                isOutline
+                icon="center"
+                css={{
+                  border: "none",
+                  color: disabled
+                    ? theme.colors.onDisabled
+                    : theme.colors.accessible,
+                  ...css,
+                  margin: 0,
+                }}
+                onMouseDown={(event) => {
+                  event.preventDefault();
+                }}
+                onClick={onClear}
+              >
+                <VisuallyHidden>Clear</VisuallyHidden>
+                <Icon label={""}>
+                  <Close />
+                </Icon>
+              </ButtonIcon>
+              <ButtonDivider orientation="vertical" />
+            </>
+          )}
           {child && icon === "right" && (
             <ButtonIcon
               variant="primary"
