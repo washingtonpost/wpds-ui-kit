@@ -1,9 +1,9 @@
 {
-  "name": "@washingtonpost/wpds-input-text",
+  "name": "@washingtonpost/wpds-input-search",
   "version": "1.7.1",
-  "description": "WPDS InputText",
+  "description": "WPDS Input Search",
   "author": "WPDS Support <wpds@washpost.com>",
-  "homepage": "https://github.com/WPMedia/wpds-ui-kit#readme",
+  "homepage": "https://github.com/washingtonpost/wpds-ui-kit#readme",
   "license": "MIT",
   "source": "src/index.ts",
   "main": "dist/index.js",
@@ -20,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/WPMedia/wpds-ui-kit.git"
+    "url": "git+https://github.com/washingtonpost/wpds-ui-kit.git"
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
@@ -29,7 +29,7 @@
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
   "bugs": {
-    "url": "https://github.com/WPMedia/wpds-ui-kit/issues"
+    "url": "https://github.com/washingtonpost/wpds-ui-kit/issues"
   },
   "devDependencies": {
     "tsup": "5.11.13",
@@ -37,31 +37,19 @@
   },
   "peerDependencies": {
     "@washingtonpost/wpds-assets": "^1.18.0",
-    "@washingtonpost/wpds-box": "*",
-    "@washingtonpost/wpds-button": "*",
-    "@washingtonpost/wpds-divider": "*",
-    "@washingtonpost/wpds-error-message": "*",
-    "@washingtonpost/wpds-helper-text": "*",
     "@washingtonpost/wpds-icon": "*",
     "@washingtonpost/wpds-input-label": "*",
-    "@washingtonpost/wpds-input-shared": "*",
+    "@washingtonpost/wpds-input-text": "*",
     "@washingtonpost/wpds-theme": "*",
-    "@washingtonpost/wpds-visually-hidden": "*",
     "react": "^16.8.6 || ^17.0.2"
   },
   "dependencies": {
-    "@radix-ui/react-label": "^1.0.0",
+    "@reach/combobox": "^0.18.0",
     "@washingtonpost/wpds-assets": "^1.18.0",
-    "@washingtonpost/wpds-box": "1.7.1",
-    "@washingtonpost/wpds-button": "1.7.1",
-    "@washingtonpost/wpds-error-message": "1.7.1",
-    "@washingtonpost/wpds-helper-text": "1.7.1",
     "@washingtonpost/wpds-icon": "1.7.1",
     "@washingtonpost/wpds-input-label": "1.7.1",
-    "@washingtonpost/wpds-input-shared": "1.7.1",
+    "@washingtonpost/wpds-input-text": "1.7.1",
     "@washingtonpost/wpds-theme": "1.7.1",
-    "@washingtonpost/wpds-visually-hidden": "1.7.1",
-    "nanoid": "^3.3.4"
-  },
-  "gitHead": "c7c21c834742277d2e6da1d903b7463b4ac2fc8a"
+    "match-sorter": "6.3.1"
+  }
 }

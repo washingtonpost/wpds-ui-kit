@@ -7,10 +7,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 **Note:** Version bump only for package @washingtonpost/wpds-helper-text
 
-
-
-
-
 # [1.7.0](https://github.com/WPMedia/wpds-ui-kit/compare/v1.6.2...v1.7.0) (2023-06-06)
 
 ### Features

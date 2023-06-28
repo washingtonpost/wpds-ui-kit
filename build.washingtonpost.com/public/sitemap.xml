@@ -65,6 +65,10 @@
   </url>
 
   <url>
+    <loc>https://build.washingtonpost.com/components/input-search</loc>
+  </url>
+
+  <url>
     <loc>https://build.washingtonpost.com/components/input-text</loc>
   </url>
 
@@ -86,10 +90,6 @@
 
   <url>
     <loc>https://build.washingtonpost.com/components/radio-group</loc>
-  </url>
-
-  <url>
-    <loc>https://build.washingtonpost.com/components/search</loc>
   </url>
 
   <url>
