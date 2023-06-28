@@ -11,7 +11,7 @@ jobs:
   release:
     runs-on: ubuntu-latest
     name: Release
-    timeout-minutes: 15
+    timeout-minutes: 30
     env:
       TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
       TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
