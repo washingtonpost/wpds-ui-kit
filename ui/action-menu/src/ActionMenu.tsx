@@ -8,11 +8,11 @@ import { ActionMenuSubTrigger } from "./ActionMenuSubTrigger";
 import { ActionMenuPortal } from "./ActionMenuPortal";
 import { ActionMenuGroup } from "./ActionMenuGroup";
 import { ActionMenuLabel } from "./ActionMenuLabel"
-import { ActionMenuRootCheckboxItem } from "./ActionMenuRootCheckboxItem"
-import { ActionMenuRootRadioGroup } from "./ActionMenuRootRadioGroup"
-import { ActionMenuRootRadioItem } from "./ActionMenuRootRadioItem"
-import { ActionMenuRootItemIndicator } from "./ActionMenuRootItemIndicator"
-import { ActionMenuRootSeparator } from "./ActionMenuRootSeparator"
+import { ActionMenuRootCheckboxItem } from "./ActionMenuCheckboxItem"
+import { ActionMenuRootRadioGroup } from "./ActionMenuRadioGroup"
+import { ActionMenuRootRadioItem } from "./ActionMenuRadioItem"
+import { ActionMenuRootItemIndicator } from "./ActionMenuItemIndicator"
+import { ActionMenuRootSeparator } from "./ActionMenuSeparator"
 
 
 type ActionMenuProps = {
