@@ -6,6 +6,14 @@ import { ActionMenuSub } from "./ActionMenuSub";
 import { ActionMenuSubContent } from "./ActionMenuSubContent";
 import { ActionMenuSubTrigger } from "./ActionMenuSubTrigger";
 import { ActionMenuPortal } from "./ActionMenuPortal";
+import { ActionMenuGroup } from "./ActionMenuGroup";
+import { ActionMenuLabel } from "./ActionMenuLabel"
+import { ActionMenuRootCheckboxItem } from "./ActionMenuRootCheckboxItem"
+import { ActionMenuRootRadioGroup } from "./ActionMenuRootRadioGroup"
+import { ActionMenuRootRadioItem } from "./ActionMenuRootRadioItem"
+import { ActionMenuRootItemIndicator } from "./ActionMenuRootItemIndicator"
+import { ActionMenuRootSeparator } from "./ActionMenuRootSeparator"
+
 
 type ActionMenuProps = {
   Root: typeof ActionMenuRoot;
@@ -16,6 +24,13 @@ type ActionMenuProps = {
   SubContent: typeof ActionMenuSubContent;
   SubTrigger: typeof ActionMenuSubTrigger;
   Portal: typeof ActionMenuPortal;
+  Group: typeof ActionMenuGroup;
+  Label: typeof ActionMenuLabel;
+  CheckboxItem: typeof ActionMenuRootCheckboxItem;
+  RadioGroup: typeof ActionMenuRootRadioGroup;
+  RadioItem: typeof ActionMenuRootRadioItem;
+  ItemIndicator: typeof ActionMenuRootItemIndicator;
+  Separator: typeof ActionMenuRootSeparator;
 };
 
 /**
@@ -30,4 +45,12 @@ export const ActionMenu: ActionMenuProps = {
   SubContent: ActionMenuSubContent,
   SubTrigger: ActionMenuSubTrigger,
   Portal: ActionMenuPortal,
+  Group: ActionMenuGroup,
+  Label: ActionMenuLabel,
+  CheckboxItem: ActionMenuRootCheckboxItem,
+  RadioGroup: ActionMenuRootRadioGroup,
+  RadioItem: ActionMenuRootRadioItem,
+  ItemIndicator: ActionMenuRootItemIndicator,
+  Separator: ActionMenuRootSeparator
+
 };

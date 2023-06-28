@@ -4,8 +4,8 @@ import { Button } from "@washingtonpost/wpds-button";
 import { Diamond, ChevronRight, Bookmark, Print } from "@washingtonpost/wpds-assets";
 import type { ComponentMeta, ComponentStory } from "@storybook/react";
 
-// import { expect } from "@storybook/jest";
-// import { within, userEvent } from "@storybook/testing-library";
+import { expect } from "@storybook/jest";
+import { within, userEvent } from "@storybook/testing-library";
 
 export default {
 	title: "ActionMenu",
@@ -21,10 +21,10 @@ export default {
 	}
 } as ComponentMeta<typeof Component.Root>;
 
-const Template: ComponentStory<typeof Component.Root> = (parameters) => (
+const Template: ComponentStory<typeof Component.Root> = (parameters, context) => (
 	<Component.Root {...parameters}>
-		<Component.Trigger>
-			<Button>Actions</Button>
+		<Component.Trigger asChild>
+			<Button>{`${context.theme} trigger`}</Button>
 		</Component.Trigger>
 		<Component.Content>
 			<Component.Item>
@@ -94,14 +94,18 @@ const PortalTemplate = (parameters) => (
 
 export const ActionMenuPortal = PortalTemplate.bind({});
 
-ActionMenuRoot.args = {
+export const ActionMenuInteractions = Template.bind({});
 
+ActionMenuInteractions.args = {
+	// open: false,
 }
 
-ActionMenuRoot.play = async ({ args, canvasElement }) => {
-	// const canvas = within(canvasElement);
-	// await userEvent.click(canvas.getByTestId("light-skip-link"));
-	// await expect(args.onClick).toHaveBeenCalled();
+ActionMenuInteractions.play = async ({ args, canvasElement }) => {
+	const canvas = within(canvasElement);
+	await userEvent.click(canvas.getByText("light trigger"));
+	await expect(args.onOpenChange).toHaveBeenCalled();
+	// await userEvent.click(canvasElement);
+
 };
 
 
