@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.8.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.7.1...v1.8.0) (2023-06-28)
+
+
+### Features
+
+* make tailwind theme package public ([2b291a2](https://github.com/washingtonpost/wpds-ui-kit/commit/2b291a2539b6ddd3a43f8cc5888ab7acefb1302f))
+
+
+
+
+
 ## [1.7.1](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.7.0...v1.7.1) (2023-06-20)
 
 **Note:** Version bump only for package @washingtonpost/wpds-tailwind-theme
