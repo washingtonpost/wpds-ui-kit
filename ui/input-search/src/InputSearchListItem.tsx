@@ -1,17 +1,6 @@
 import * as React from "react";
-
-import type * as WPDS from "@washingtonpost/wpds-theme";
-import { styled, theme } from "@washingtonpost/wpds-theme";
-
 import { ComboboxOption } from "@reach/combobox";
-
-export type InputSearchListItemProps = {
-  /** Any React node may be used as a child to allow for formatting */
-  children?: React.ReactNode;
-  /** Override CSS */
-  css?: WPDS.CSS;
-  value: string;
-};
+import { styled, theme } from "@washingtonpost/wpds-theme";
 
 const StyledListItem = styled(ComboboxOption, {
   color: theme.colors.primary,
@@ -29,6 +18,10 @@ const StyledListItem = styled(ComboboxOption, {
     fontWeight: theme.fontWeights.bold,
   },
 });
+
+export type InputSearchListItemProps = React.ComponentPropsWithRef<
+  typeof StyledListItem
+>;
 
 export const InputSearchListItem = ({
   children,
