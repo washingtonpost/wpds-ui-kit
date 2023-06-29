@@ -21,6 +21,7 @@ describe("CarouselPreviousButton", () => {
 
   test("triggers context callback on click", () => {
     const pageChangeHandler = jest.fn();
+
     renderWithContext(<CarouselPreviousButton />, {
       page: 1,
       totalPages: 2,
@@ -28,6 +29,7 @@ describe("CarouselPreviousButton", () => {
     });
 
     userEvent.click(screen.getByRole("button"));
+
     expect(pageChangeHandler).toHaveBeenCalledWith(0);
   });
 
@@ -40,6 +42,7 @@ describe("CarouselPreviousButton", () => {
     });
 
     userEvent.click(screen.getByRole("button"));
+
     expect(clickHandler).toHaveBeenCalled();
   });
 

@@ -8,11 +8,11 @@ import { ActionMenuSubTrigger } from "./ActionMenuSubTrigger";
 import { ActionMenuPortal } from "./ActionMenuPortal";
 import { ActionMenuGroup } from "./ActionMenuGroup";
 import { ActionMenuLabel } from "./ActionMenuLabel"
-import { ActionMenuRootCheckboxItem } from "./ActionMenuCheckboxItem"
-import { ActionMenuRootRadioGroup } from "./ActionMenuRadioGroup"
-import { ActionMenuRootRadioItem } from "./ActionMenuRadioItem"
-import { ActionMenuRootItemIndicator } from "./ActionMenuItemIndicator"
-import { ActionMenuRootSeparator } from "./ActionMenuSeparator"
+import { ActionMenuCheckboxItem } from "./ActionMenuCheckboxItem"
+import { ActionMenuRadioGroup } from "./ActionMenuRadioGroup"
+import { ActionMenuRadioItem } from "./ActionMenuRadioItem"
+import { ActionMenuItemIndicator } from "./ActionMenuItemIndicator"
+import { ActionMenuSeparator } from "./ActionMenuSeparator"
 
 
 type ActionMenuProps = {
@@ -26,11 +26,11 @@ type ActionMenuProps = {
   Portal: typeof ActionMenuPortal;
   Group: typeof ActionMenuGroup;
   Label: typeof ActionMenuLabel;
-  CheckboxItem: typeof ActionMenuRootCheckboxItem;
-  RadioGroup: typeof ActionMenuRootRadioGroup;
-  RadioItem: typeof ActionMenuRootRadioItem;
-  ItemIndicator: typeof ActionMenuRootItemIndicator;
-  Separator: typeof ActionMenuRootSeparator;
+  CheckboxItem: typeof ActionMenuCheckboxItem;
+  RadioGroup: typeof ActionMenuRadioGroup;
+  RadioItem: typeof ActionMenuRadioItem;
+  ItemIndicator: typeof ActionMenuItemIndicator;
+  Separator: typeof ActionMenuSeparator;
 };
 
 /**
@@ -47,10 +47,9 @@ export const ActionMenu: ActionMenuProps = {
   Portal: ActionMenuPortal,
   Group: ActionMenuGroup,
   Label: ActionMenuLabel,
-  CheckboxItem: ActionMenuRootCheckboxItem,
-  RadioGroup: ActionMenuRootRadioGroup,
-  RadioItem: ActionMenuRootRadioItem,
-  ItemIndicator: ActionMenuRootItemIndicator,
-  Separator: ActionMenuRootSeparator
-
+  CheckboxItem: ActionMenuCheckboxItem,
+  RadioGroup: ActionMenuRadioGroup,
+  RadioItem: ActionMenuRadioItem,
+  ItemIndicator: ActionMenuItemIndicator,
+  Separator: ActionMenuSeparator
 };

@@ -13,4 +13,5 @@ describe("NavigationMenuList", () => {
     );
     expect(screen.getByText(testText)).toBeVisible();
   });
+
 });

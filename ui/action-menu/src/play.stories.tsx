@@ -102,10 +102,12 @@ ActionMenuInteractions.args = {
 
 ActionMenuInteractions.play = async ({ args, canvasElement }) => {
 	const canvas = within(canvasElement);
-	await userEvent.click(canvas.getByText("light trigger"));
-	await expect(args.onOpenChange).toHaveBeenCalled();
-	// await userEvent.click(canvasElement);
 
+	await userEvent.click(canvas.getByText("light trigger"));
+
+	await expect(args.onOpenChange).toHaveBeenCalled();
+
+	// await userEvent.click(canvasElement);
 };
 
 
