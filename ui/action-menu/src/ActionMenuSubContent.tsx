@@ -8,10 +8,12 @@ import {
   DropdownMenuSubContentProps as RadixDropdownMenuSubContentProps,
 } from "@radix-ui/react-dropdown-menu";
 import { ActionMenuPortal } from "./ActionMenuPortal";
-import { ContentStyles } from "./ActionMenuContent";
+import { ContentStyles, ContentDensityVariants } from "./ActionMenuContent";
 
 const StyledSubContent = styled(ActionMenuPrimitive.SubContent, {
+  ...ContentStyles,
   variants: {
+    ...ContentDensityVariants,
     hidden: {
       true: {
         display: "none"
@@ -21,8 +23,10 @@ const StyledSubContent = styled(ActionMenuPrimitive.SubContent, {
       }
     }
   },
-  scrollbarWidth: "none",
-  ...ContentStyles
+  defaultVariants: {
+    hidden: false,
+    density: "default",
+  }
 });
 
 const ResponsiveSubItems = styled("div", {

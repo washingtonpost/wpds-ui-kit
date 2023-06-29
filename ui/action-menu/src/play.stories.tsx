@@ -22,7 +22,7 @@ const Template = (parameters) => (
 		<Component.Trigger>
 			<Button>Actions</Button>
 		</Component.Trigger>
-		<Component.Content>
+		<Component.Content density="compact">
 			<Component.Item>
 				Action 1
 			</Component.Item>
@@ -34,7 +34,7 @@ const Template = (parameters) => (
 					More actions
 				</Component.SubTrigger>
 				<Component.SubContent>
-					<Component.Item leftIcon={<Diamond aria-label="Diamond" />} disabled>
+					<Component.Item leftIcon={<Diamond aria-label="Diamond"/>} disabled>
 						Action 3
 					</Component.Item>
 					<Component.Item leftIcon={<Bookmark aria-label="Bookmark" />}>

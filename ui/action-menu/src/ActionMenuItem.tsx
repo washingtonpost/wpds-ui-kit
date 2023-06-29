@@ -11,7 +11,7 @@ import { Divider } from "@washingtonpost/wpds-divider";
 
 export const ItemStyles = {
   width: "100%",
-  backgroundColor: theme.colors.secondary,
+  background: theme.colors.secondary,
   display: "flex",
   flexDirection: "row",
   flexBasis: "auto",
@@ -21,7 +21,6 @@ export const ItemStyles = {
     width: '25%',
     height: "auto",
   },
-  padding: theme.sizes["075"],
   transition: `background ${theme.transitions.fast} ${theme.transitions.inOut}`,
 
   "&:hover": {
@@ -37,6 +36,7 @@ export const ItemStyles = {
   "&[data-disabled] svg": {
     fill: theme.colors.disabled,
   },
+
 
 }
 
@@ -99,12 +99,13 @@ export type ActionMenuItemProps = {
   children?: React.ReactNode;
   leftIcon?: React.ReactNode;
   rightIcon?: React.ReactNode;
+  density?: "loose" | "default" | "compact";
 } & RadixDropdownMenuItemProps;
 
 
-export const ActionMenuItem = React.forwardRef<HTMLDivElement, ActionMenuItemProps>(({children, leftIcon, rightIcon, ...props}: ActionMenuItemProps, ref) => {
+export const ActionMenuItem = React.forwardRef<HTMLDivElement, ActionMenuItemProps>(({children, leftIcon, rightIcon, density,  ...props}: ActionMenuItemProps, ref) => {
   return <div>
-  <StyledItem {...props} ref={ref} >
+  <StyledItem {...props} ref={ref} density={density} className="action-menu-item">
     {leftIcon ? <LeftIcon label="">{leftIcon}</LeftIcon> : <LeftIconPlaceholder />}
     <ItemContent>
       {children}

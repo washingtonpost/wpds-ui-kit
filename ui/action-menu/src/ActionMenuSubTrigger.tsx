@@ -15,12 +15,15 @@ const SubTriggerStyles = {
       },
       true: {
         fontWeight: theme.fontWeights.bold,
-        padding: theme.sizes["075"],
         margin: 0,
         pointerEvents: "none",
       }
     }
   },
+  defaultVariants: {
+    isHeading: false,
+    density: "default",
+  }
 }
 
 const StyledSubTrigger = styled(ActionMenuPrimitive.SubTrigger, SubTriggerStyles);
@@ -34,12 +37,12 @@ export type ActionMenuSubTriggerProps = {
 
 export const ActionMenuSubTrigger = React.forwardRef<HTMLDivElement, ActionMenuSubTriggerProps>(({children, leftIcon,  ...props}: ActionMenuSubTriggerProps, ref) => {
   return <div>
-  <StyledSubTrigger {...props} ref={ref} isHeading={{ "@maxMd" : true, "@minMd" : false}}>
+  <StyledSubTrigger {...props} ref={ref} isHeading={{ "@initial": false, "@maxMd" : true, "@minMd" : false}} className="action-menu-item">
     {leftIcon ? <LeftIcon label="">{leftIcon}</LeftIcon> : <LeftIconPlaceholder />}
     <ItemContent>
       {children}
     </ItemContent>
-    <RightIcon label="Expand submenu" hidden={{ "@maxMd" : true, "@minMd" : false}}>
+    <RightIcon label="Expand submenu" hidden={{ "@initial": false, "@maxMd" : true, "@minMd" : false}}>
       <ChevronRight />
     </RightIcon>
   </StyledSubTrigger>
