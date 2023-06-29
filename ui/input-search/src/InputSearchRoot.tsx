@@ -2,8 +2,6 @@ import * as React from "react";
 import { Combobox } from "@reach/combobox";
 import { styled, theme } from "@washingtonpost/wpds-theme";
 
-import type * as WPDS from "@washingtonpost/wpds-theme";
-
 type InputSearchContextProps = {
   term: string;
   setTerm: (string: string) => void;
@@ -16,17 +14,6 @@ type InputSearchContextProps = {
 export const InputSearchContext = React.createContext(
   {} as InputSearchContextProps
 );
-
-export type InputSearchRootProps = {
-  /** Any React node may be used as a child to allow for formatting */
-  children?: React.ReactNode;
-  "aria-label": string;
-  /** Override CSS */
-  css?: WPDS.CSS;
-  /** Whether the input field should be disabled or not */
-  disabled?: boolean;
-  openOnFocus?: boolean;
-};
 
 const StyledComboBox = styled(Combobox, {
   width: "100%",
@@ -47,6 +34,11 @@ const StyledComboBox = styled(Combobox, {
     },
   },
 });
+
+export type InputSearchRootProps = {
+  /** Whether the input field should be disabled or not */
+  disabled?: boolean;
+} & React.ComponentPropsWithRef<typeof StyledComboBox>;
 
 export const InputSearchRoot = ({
   children,
