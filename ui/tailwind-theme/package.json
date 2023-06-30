@@ -27,5 +27,6 @@
     "postcss": "^8.4.24",
     "tailwindcss": "^3.3.2",
     "vite": "^4.3.9"
-  }
+  },
+  "gitHead": "bd9633759dc649a0dd99a8c304d62d23ad0dfecf"
 }
