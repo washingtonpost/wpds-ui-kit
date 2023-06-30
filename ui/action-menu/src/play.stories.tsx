@@ -3,7 +3,10 @@ import { ActionMenu as Component } from ".";
 import { Button } from "@washingtonpost/wpds-button";
 import { theme, styled } from "@washingtonpost/wpds-theme";
 import { Icon } from "@washingtonpost/wpds-icon";
-import { Diamond, ChevronRight, Bookmark, Print } from "@washingtonpost/wpds-assets";
+import { Diamond, Bookmark, Print } from "@washingtonpost/wpds-assets";
+import type { ComponentMeta, ComponentStory } from "@storybook/react";
+import { screen, userEvent } from "@storybook/testing-library";
+import { expect } from "@storybook/jest";
 
 export default {
 	title: "ActionMenu",
@@ -54,6 +57,7 @@ const Template = (parameters) => (
 			</Component.Item>
 			<Component.Sub>
 				<Component.SubTrigger>
+					<LeftIconPlaceholder />
 					More actions
 				</Component.SubTrigger>
 				<Component.SubContent>
@@ -71,6 +75,7 @@ const Template = (parameters) => (
 					</Component.Item>
 					<Component.Sub>
 						<Component.SubTrigger>
+							<LeftIconPlaceholder />
 							Even more actions
 						</Component.SubTrigger>
 						<Component.SubContent>
@@ -97,17 +102,17 @@ const PortalTemplate = (parameters) => (
 		</Component.Trigger>
 		<Component.Portal>
 			<Component.Content>
-				<Component.Item leftIcon={<Diamond />} rightIcon={<ChevronRight />}>
+				<Component.Item>
 					Action 1
 				</Component.Item>
 				<Component.Item>
 					Action 2
 				</Component.Item>
-				<Component.Item leftIcon={<Diamond />}>
+				<Component.Item>
 					Action 3
 				</Component.Item>
-				<Component.Item rightIcon={<ChevronRight />}>
-					Action 3
+				<Component.Item>
+					Action 4
 				</Component.Item>
 			</Component.Content>
 		</Component.Portal>
@@ -115,6 +120,95 @@ const PortalTemplate = (parameters) => (
 );
 
 export const ActionMenuPortal = PortalTemplate.bind({});
+
+const InteractionsTemplate: ComponentStory<any> = () => (
+	<Component.Root>
+		<Component.Trigger>
+			<Button>Trigger</Button>
+		</Component.Trigger>
+		<Component.Content density="loose">
+			<Component.Item>
+				<LeftIconPlaceholder />
+				Level 1 Action
+			</Component.Item>
+			<Component.Item>
+				<LeftIcon label="Diamond"><Diamond /></LeftIcon>
+				Level 1 Action
+			</Component.Item>
+			<Component.Sub>
+				<Component.SubTrigger>
+					<LeftIconPlaceholder />
+					More actions
+				</Component.SubTrigger>
+				<Component.SubContent>
+					<Component.Item disabled>
+						<LeftIcon label="Diamond"><Diamond /></LeftIcon>
+						Level 2 Action
+					</Component.Item>
+					<Component.Item >
+						<LeftIcon label="Bookmark"><Bookmark /></LeftIcon>
+						Level 2 Action
+					</Component.Item>
+					<Component.Item>
+						<LeftIcon label="Print"><Print /></LeftIcon>
+						Level 2 Action
+					</Component.Item>
+					<Component.Sub>
+						<Component.SubTrigger>
+							<LeftIconPlaceholder />
+							Even more actions
+						</Component.SubTrigger>
+						<Component.SubContent>
+							<Component.Item>
+								Level 3 Action
+							</Component.Item>
+							<Component.Item>
+								Level 3 Action
+							</Component.Item>
+						</Component.SubContent>
+					</Component.Sub>
+				</Component.SubContent>
+			</Component.Sub>
+		</Component.Content>
+	</Component.Root>
+);
+
+export const Interactions = InteractionsTemplate.bind({})
+Interactions.parameters = {
+  chromatic: { disableSnapshot: true },
+};
+
+// Function to emulate pausing between interactions
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+Interactions.play = async () => {
+	const trigger = screen.getAllByText("Trigger")[0];
+	await sleep(500);
+	await userEvent.click(trigger);
+	const content = screen.getAllByText("Level 1 Action");
+
+	const checkVisible = async function(item) {
+		await expect(item).toBeVisible();
+	};
+
+	await expect(content.length).toEqual(2);
+	content.forEach(item => {
+		checkVisible(item);
+	})
+
+	await sleep(500);
+	const subTrigger1 = screen.getAllByText("More actions")[0];
+	await userEvent.click(subTrigger1);
+	const subContent1 = screen.getAllByText("Level 2 Action");
+
+	await expect(subContent1.length).toEqual(3);
+	subContent1.forEach(item => {
+		checkVisible(item);
+	})
+
+}
 
 /*
 // ActionMenuRoot.parameters = {};
