@@ -4,7 +4,6 @@ import { Button } from "@washingtonpost/wpds-button";
 import { theme, styled } from "@washingtonpost/wpds-theme";
 import { Icon } from "@washingtonpost/wpds-icon";
 import { Diamond, Bookmark, Print } from "@washingtonpost/wpds-assets";
-import type { ComponentMeta, ComponentStory } from "@storybook/react";
 import { screen, userEvent } from "@storybook/testing-library";
 import { expect } from "@storybook/jest";
 
@@ -121,8 +120,8 @@ const PortalTemplate = (parameters) => (
 
 export const ActionMenuPortal = PortalTemplate.bind({});
 
-const InteractionsTemplate: ComponentStory<any> = () => (
-	<Component.Root>
+const InteractionsTemplate = (parameters) => (
+	<Component.Root {...parameters}>
 		<Component.Trigger>
 			<Button>Trigger</Button>
 		</Component.Trigger>
@@ -174,16 +173,13 @@ const InteractionsTemplate: ComponentStory<any> = () => (
 );
 
 export const Interactions = InteractionsTemplate.bind({})
-Interactions.parameters = {
-  chromatic: { disableSnapshot: true },
-};
 
 // Function to emulate pausing between interactions
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-Interactions.play = async () => {
+Interactions.play = async ( {parameters} ) => {
 	const trigger = screen.getAllByText("Trigger")[0];
 	await sleep(500);
 	await userEvent.click(trigger);
@@ -207,6 +203,13 @@ Interactions.play = async () => {
 	subContent1.forEach(item => {
 		checkVisible(item);
 	});
+
+	await sleep(500);
+	const subTrigger2 = screen.getAllByText("Open Level 3")[0];
+	await userEvent.click(subTrigger2);
+	const subContent2 = screen.getAllByText("Level 3 Action");
+
+	await expect(subContent2.length).toEqual(2);
 
 }
 
