@@ -2,7 +2,6 @@ import * as React from "react";
 import { ActionMenu as Component } from ".";
 import { Button } from "@washingtonpost/wpds-button";
 import { Icon } from "@washingtonpost/wpds-icon";
-import { styled } from "@washingtonpost/wpds-ui-kit";
 
 // import { Diamond, ChevronRight, Bookmark, Print } from "@washingtonpost/wpds-assets";
 import { Check } from "@washingtonpost/wpds-assets";
@@ -10,6 +9,8 @@ import type { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { expect } from "@storybook/jest";
 import { within, userEvent } from "@storybook/testing-library";
+import { theme, styled } from "@washingtonpost/wpds-theme";
+import { Diamond, ChevronRight, Bookmark, Print } from "@washingtonpost/wpds-assets";
 
 export default {
 	title: "ActionMenu",
@@ -25,30 +26,54 @@ export default {
 	}
 } as ComponentMeta<typeof Component.Root>;
 
-const Template: ComponentStory<typeof Component.Root> = (parameters, context) => (
+const LeftIcon = styled(Icon, {
+	color: theme.colors.accessible,
+	fill: theme.colors.primary,
+	display: "flex",
+	variants: {
+		isDisabled: {
+			true: {
+				color: "inherit",
+			},
+		},
+	},
+	marginRight: theme.sizes["050"]
+});
+
+const LeftIconPlaceholder = styled("div", {
+	width: theme.sizes["100"],
+	marginRight: theme.sizes["050"],
+});
+
+const Template = (parameters) => (
 	<Component.Root {...parameters}>
 		<Component.Trigger asChild>
 			<Button>{`${context.theme} trigger`}</Button>
 		</Component.Trigger>
-		<Component.Content>
+		<Component.Content density="loose">
 			<Component.Item>
+				<LeftIconPlaceholder />
 				Action 1
 			</Component.Item>
 			<Component.Item>
+				<LeftIcon label="Diamond"><Diamond /></LeftIcon>
 				Action 2
-			</Component.Item>
+			</Component.Item >
 			<Component.Sub>
 				<Component.SubTrigger>
 					More actions
 				</Component.SubTrigger>
 				<Component.SubContent>
 					<Component.Item disabled>
+						<LeftIcon label="Diamond"><Diamond /></LeftIcon>
 						Action 3
 					</Component.Item>
-					<Component.Item>
+					<Component.Item >
+						<LeftIcon label="Bookmark"><Bookmark /></LeftIcon>
 						Action 4
 					</Component.Item>
 					<Component.Item>
+						<LeftIcon label="Print"><Print /></LeftIcon>
 						Action 5
 					</Component.Item>
 					<Component.Sub>
@@ -64,10 +89,10 @@ const Template: ComponentStory<typeof Component.Root> = (parameters, context) =>
 							</Component.Item>
 						</Component.SubContent>
 					</Component.Sub>
-				</Component.SubContent>
-			</Component.Sub>
-		</Component.Content>
-	</Component.Root>
+				</Component.SubContent >
+			</Component.Sub >
+		</Component.Content >
+	</Component.Root >
 );
 
 export const ActionMenuRoot = Template.bind({});

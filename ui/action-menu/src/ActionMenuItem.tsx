@@ -6,12 +6,11 @@ import * as ActionMenuPrimitive from '@radix-ui/react-dropdown-menu';
 
 import { DropdownMenuItemProps as RadixDropdownMenuItemProps } from "@radix-ui/react-dropdown-menu";
 
-// import { Icon } from "@washingtonpost/wpds-icon";
 import { Divider } from "@washingtonpost/wpds-divider";
 
 export const ItemStyles = {
   width: "100%",
-  backgroundColor: theme.colors.secondary,
+  background: theme.colors.secondary,
   display: "flex",
   flexDirection: "row",
   flexBasis: "auto",
@@ -21,7 +20,6 @@ export const ItemStyles = {
     width: '25%',
     height: "auto",
   },
-  padding: theme.sizes["075"],
   transition: `background ${theme.transitions.fast} ${theme.transitions.inOut}`,
 
   "&:hover": {
@@ -38,6 +36,7 @@ export const ItemStyles = {
     fill: theme.colors.disabled,
   },
 
+
 }
 
 const StyledItem = styled(ActionMenuPrimitive.Item, ItemStyles);
@@ -50,7 +49,7 @@ export type ActionMenuItemProps = {
 
 export const ActionMenuItem = React.forwardRef<HTMLDivElement, ActionMenuItemProps>(({ children, ...props }: ActionMenuItemProps, ref) => {
   return <div>
-    <StyledItem {...props} ref={ref} >
+    <StyledItem {...props} ref={ref} className="action-menu-item">
       {children}
     </StyledItem>
     <Divider />

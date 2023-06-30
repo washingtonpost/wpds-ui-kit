@@ -15,13 +15,38 @@ const SubTriggerStyles = {
       },
       true: {
         fontWeight: theme.fontWeights.bold,
-        padding: theme.sizes["075"],
         margin: 0,
         pointerEvents: "none",
       }
     }
   },
+  defaultVariants: {
+    isHeading: false,
+    density: "default",
+  }
 }
+
+const RightIcon = styled(Icon, {
+  color: theme.colors.accessible,
+  fill: theme.colors.primary,
+  display: "flex",
+  variants: {
+    isDisabled: {
+      true: {
+        color: "inherit",
+      },
+    },
+    hidden: {
+      true: {
+        display: "none",
+      },
+      false: {
+        display: "flex"
+      }
+    }
+  },
+  marginLeft: "auto",
+});
 
 const StyledSubTrigger = styled(ActionMenuPrimitive.SubTrigger, SubTriggerStyles);
 
@@ -33,9 +58,9 @@ export type ActionMenuSubTriggerProps = {
 
 export const ActionMenuSubTrigger = React.forwardRef<HTMLDivElement, ActionMenuSubTriggerProps>(({ children, ...props }: ActionMenuSubTriggerProps, ref) => {
   return <div>
-    <StyledSubTrigger {...props} ref={ref} isHeading={{ "@maxMd": true, "@minMd": false }}>
+    <StyledSubTrigger {...props} ref={ref} isHeading={{ "@maxMd": true, "@minMd": false }} className="action-menu-item">
       {children}
     </StyledSubTrigger>
     <Divider />
-  </div>
+  </div >
 });
