@@ -1,7 +1,11 @@
 import * as React from "react";
 import { ActionMenu as Component } from ".";
 import { Button } from "@washingtonpost/wpds-button";
-import { Diamond, ChevronRight, Bookmark, Print } from "@washingtonpost/wpds-assets";
+import { Icon } from "@washingtonpost/wpds-icon";
+import { styled } from "@washingtonpost/wpds-ui-kit";
+
+// import { Diamond, ChevronRight, Bookmark, Print } from "@washingtonpost/wpds-assets";
+import { Check } from "@washingtonpost/wpds-assets";
 import type { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { expect } from "@storybook/jest";
@@ -30,7 +34,7 @@ const Template: ComponentStory<typeof Component.Root> = (parameters, context) =>
 			<Component.Item>
 				Action 1
 			</Component.Item>
-			<Component.Item leftIcon={<Diamond aria-label="Diamond" />}>
+			<Component.Item>
 				Action 2
 			</Component.Item>
 			<Component.Sub>
@@ -38,13 +42,13 @@ const Template: ComponentStory<typeof Component.Root> = (parameters, context) =>
 					More actions
 				</Component.SubTrigger>
 				<Component.SubContent>
-					<Component.Item leftIcon={<Diamond aria-label="Diamond" />} disabled>
+					<Component.Item disabled>
 						Action 3
 					</Component.Item>
-					<Component.Item leftIcon={<Bookmark aria-label="Bookmark" />}>
+					<Component.Item>
 						Action 4
 					</Component.Item>
-					<Component.Item leftIcon={<Print aria-label="Print" />}>
+					<Component.Item>
 						Action 5
 					</Component.Item>
 					<Component.Sub>
@@ -68,6 +72,113 @@ const Template: ComponentStory<typeof Component.Root> = (parameters, context) =>
 
 export const ActionMenuRoot = Template.bind({});
 
+const EverythingTemplateStyledItem = styled("span", {})
+
+const EverythingTemplate: ComponentStory<typeof Component.Root> = (parameters, context) => {
+	const [bookmarksChecked, setBookmarksChecked] = React.useState(true);
+	const [urlsChecked, setUrlsChecked] = React.useState(false);
+	const [person, setPerson] = React.useState('pedro');
+
+	return (
+		<Component.Root>
+			<Component.Trigger asChild>
+				<Button aria-label="Customise options">
+					Hello <div>boop</div>
+				</Button>
+			</Component.Trigger>
+
+			<Component.Portal>
+				<Component.Content sideOffset={5}>
+					<Component.Item>
+						<span>
+							New Tab <div>⌘+T</div>
+						</span>
+
+					</Component.Item>
+					<Component.Item>
+						New Window <div>⌘+N</div>
+					</Component.Item>
+					<Component.Item disabled>
+						New Private Window <div>⇧+⌘+N</div>
+					</Component.Item>
+					<Component.Sub>
+						<Component.SubTrigger>
+							More Tools
+							<div>
+								<div>boop</div>
+							</div>
+						</Component.SubTrigger>
+						<Component.Portal>
+							<Component.SubContent
+								sideOffset={2}
+								alignOffset={-5}
+							>
+								<Component.Item>
+									Save Page As… <div>⌘+S</div>
+								</Component.Item>
+								<Component.Item>Create Shortcut…</Component.Item>
+								<Component.Item>Name Window…</Component.Item>
+								<Component.Separator />
+								<Component.Item>Developer Tools</Component.Item>
+							</Component.SubContent>
+						</Component.Portal>
+					</Component.Sub>
+
+					<Component.Separator />
+
+					<Component.CheckboxItem
+
+						checked={bookmarksChecked}
+						onCheckedChange={setBookmarksChecked}
+					>
+						<Component.ItemIndicator>
+							<Icon label="checked"><Check /></Icon>
+						</Component.ItemIndicator>
+						Show Bookmarks <div>⌘+B</div>
+					</Component.CheckboxItem>
+					<Component.CheckboxItem
+						checked={urlsChecked}
+						onCheckedChange={setUrlsChecked}
+					>
+						<Component.ItemIndicator>
+							<Component.ItemIndicator>
+								<Icon label="checked"><Check /></Icon>
+							</Component.ItemIndicator>
+						</Component.ItemIndicator>
+						Show Full URLs
+					</Component.CheckboxItem>
+
+					<Component.Separator />
+
+					<Component.Label>People</Component.Label>
+					<Component.RadioGroup value={person} onValueChange={setPerson}>
+						<Component.RadioItem value="pedro">
+							<Component.ItemIndicator>
+								<Component.ItemIndicator>
+									<Icon label="checked"><Check /></Icon>
+								</Component.ItemIndicator>
+							</Component.ItemIndicator>
+							Pedro Duarte
+						</Component.RadioItem>
+						<Component.RadioItem value="colm">
+							<Component.ItemIndicator>
+								<Component.ItemIndicator>
+									<Icon label="checked"><Check /></Icon>
+								</Component.ItemIndicator>
+							</Component.ItemIndicator>
+							Colm Tuite
+						</Component.RadioItem>
+					</Component.RadioGroup>
+
+					{/* <Component.Arrow className="ComponentArrow" /> */}
+				</Component.Content>
+			</Component.Portal>
+		</Component.Root>
+	);
+}
+
+export const ActionMenuEverything = EverythingTemplate.bind({});
+
 const PortalTemplate = (parameters) => (
 	<Component.Root {...parameters}>
 		<Component.Trigger asChild>
@@ -75,16 +186,16 @@ const PortalTemplate = (parameters) => (
 		</Component.Trigger>
 		<Component.Portal>
 			<Component.Content>
-				<Component.Item leftIcon={<Diamond />} rightIcon={<ChevronRight />}>
+				<Component.Item>
 					Action 1
 				</Component.Item>
 				<Component.Item>
 					Action 2
 				</Component.Item>
-				<Component.Item leftIcon={<Diamond />}>
+				<Component.Item>
 					Action 3
 				</Component.Item>
-				<Component.Item rightIcon={<ChevronRight />}>
+				<Component.Item>
 					Action 3
 				</Component.Item>
 			</Component.Content>
