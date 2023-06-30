@@ -3,8 +3,9 @@ import { theme, styled } from "@washingtonpost/wpds-theme";
 import * as ActionMenuPrimitive from '@radix-ui/react-dropdown-menu';
 import { DropdownMenuSubTriggerProps as RadixDropdownMenuSubTriggerProps } from "@radix-ui/react-dropdown-menu";
 import { Divider } from "@washingtonpost/wpds-divider";
+import { Icon } from "@washingtonpost/wpds-icon";
 import { ChevronRight } from "@washingtonpost/wpds-assets";
-import { ItemStyles, LeftIcon, RightIcon, LeftIconPlaceholder, ItemContent } from "./ActionMenuItem";
+import { ItemStyles } from "./ActionMenuItem";
 
 
 const SubTriggerStyles = {
@@ -26,6 +27,28 @@ const SubTriggerStyles = {
   }
 }
 
+const RightIcon = styled(Icon, {
+  color: theme.colors.accessible,
+  fill: theme.colors.primary,
+  display: "flex",
+  variants: {
+    isDisabled: {
+      true: {
+        color: "inherit",
+      },
+    },
+    hidden: {
+      true: {
+        display: "none",
+      },
+      false: {
+        display: "flex"
+      }
+    }
+  },
+  marginLeft: "auto",
+});
+
 const StyledSubTrigger = styled(ActionMenuPrimitive.SubTrigger, SubTriggerStyles);
 
 export type ActionMenuSubTriggerProps = {
@@ -38,13 +61,10 @@ export type ActionMenuSubTriggerProps = {
 export const ActionMenuSubTrigger = React.forwardRef<HTMLDivElement, ActionMenuSubTriggerProps>(({children, leftIcon,  ...props}: ActionMenuSubTriggerProps, ref) => {
   return <div>
   <StyledSubTrigger {...props} ref={ref} isHeading={{ "@initial": false, "@maxMd" : true, "@minMd" : false}} className="action-menu-item">
-    {leftIcon ? <LeftIcon label="">{leftIcon}</LeftIcon> : <LeftIconPlaceholder />}
-    <ItemContent>
       {children}
-    </ItemContent>
-    <RightIcon label="Expand submenu" hidden={{ "@initial": false, "@maxMd" : true, "@minMd" : false}}>
-      <ChevronRight />
-    </RightIcon>
+      <RightIcon label="Expand submenu" hidden={{ "@initial": false, "@maxMd" : true, "@minMd" : false}}>
+        <ChevronRight />
+      </RightIcon>
   </StyledSubTrigger>
   <Divider />
   </div>

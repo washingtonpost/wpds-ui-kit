@@ -1,6 +1,8 @@
 import * as React from "react";
 import { ActionMenu as Component } from ".";
 import { Button } from "@washingtonpost/wpds-button";
+import { theme, styled } from "@washingtonpost/wpds-theme";
+import { Icon } from "@washingtonpost/wpds-icon";
 import { Diamond, ChevronRight, Bookmark, Print } from "@washingtonpost/wpds-assets";
 
 export default {
@@ -17,6 +19,25 @@ export default {
 	}
 };
 
+const LeftIcon = styled(Icon, {
+  color: theme.colors.accessible,
+  fill: theme.colors.primary,
+  display: "flex",
+  variants: {
+    isDisabled: {
+      true: {
+        color: "inherit",
+      },
+    },
+  },
+  marginRight: theme.sizes["050"]
+});
+
+const LeftIconPlaceholder = styled("div", {
+  width: theme.sizes["100"],
+  marginRight: theme.sizes["050"],
+});
+
 const Template = (parameters) => (
 	<Component.Root {...parameters}>
 		<Component.Trigger>
@@ -24,9 +45,11 @@ const Template = (parameters) => (
 		</Component.Trigger>
 		<Component.Content density="loose">
 			<Component.Item>
+				<LeftIconPlaceholder />
 				Action 1
 			</Component.Item>
-			<Component.Item leftIcon={<Diamond aria-label="Diamond" />}>
+			<Component.Item>
+				<LeftIcon label="Diamond"><Diamond /></LeftIcon>
 				Action 2
 			</Component.Item>
 			<Component.Sub>
@@ -34,13 +57,16 @@ const Template = (parameters) => (
 					More actions
 				</Component.SubTrigger>
 				<Component.SubContent>
-					<Component.Item leftIcon={<Diamond aria-label="Diamond"/>} disabled>
+					<Component.Item disabled>
+						<LeftIcon label="Diamond"><Diamond /></LeftIcon>
 						Action 3
 					</Component.Item>
-					<Component.Item leftIcon={<Bookmark aria-label="Bookmark" />}>
+					<Component.Item >
+						<LeftIcon label="Bookmark"><Bookmark /></LeftIcon>
 						Action 4
 					</Component.Item>
-					<Component.Item leftIcon={<Print aria-label="Print"/>}>
+					<Component.Item>
+						<LeftIcon label="Print"><Print /></LeftIcon>
 						Action 5
 					</Component.Item>
 					<Component.Sub>
