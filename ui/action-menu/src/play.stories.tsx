@@ -138,7 +138,7 @@ const InteractionsTemplate: ComponentStory<any> = () => (
 			<Component.Sub>
 				<Component.SubTrigger>
 					<LeftIconPlaceholder />
-					More actions
+					Open Level 2
 				</Component.SubTrigger>
 				<Component.SubContent>
 					<Component.Item disabled>
@@ -156,7 +156,7 @@ const InteractionsTemplate: ComponentStory<any> = () => (
 					<Component.Sub>
 						<Component.SubTrigger>
 							<LeftIconPlaceholder />
-							Even more actions
+							Open Level 3
 						</Component.SubTrigger>
 						<Component.SubContent>
 							<Component.Item>
@@ -196,17 +196,17 @@ Interactions.play = async () => {
 	await expect(content.length).toEqual(2);
 	content.forEach(item => {
 		checkVisible(item);
-	})
+	});
 
 	await sleep(500);
-	const subTrigger1 = screen.getAllByText("More actions")[0];
+	const subTrigger1 = screen.getAllByText("Open Level 2")[0];
 	await userEvent.click(subTrigger1);
 	const subContent1 = screen.getAllByText("Level 2 Action");
 
 	await expect(subContent1.length).toEqual(3);
 	subContent1.forEach(item => {
 		checkVisible(item);
-	})
+	});
 
 }
 

@@ -5,7 +5,7 @@ import { DropdownMenuSubTriggerProps as RadixDropdownMenuSubTriggerProps } from 
 import { Divider } from "@washingtonpost/wpds-divider";
 import { Icon } from "@washingtonpost/wpds-icon";
 import { ChevronRight } from "@washingtonpost/wpds-assets";
-import { ItemStyles } from "./ActionMenuItem";
+import { ItemStyles, ItemContent } from "./ActionMenuItem";
 
 
 const SubTriggerStyles = {
@@ -26,6 +26,7 @@ const SubTriggerStyles = {
     density: "default",
   }
 }
+
 
 const RightIcon = styled(Icon, {
   color: theme.colors.accessible,
@@ -61,7 +62,9 @@ export type ActionMenuSubTriggerProps = {
 export const ActionMenuSubTrigger = React.forwardRef<HTMLDivElement, ActionMenuSubTriggerProps>(({children, leftIcon,  ...props}: ActionMenuSubTriggerProps, ref) => {
   return <div>
   <StyledSubTrigger {...props} ref={ref} isHeading={{ "@initial": false, "@maxMd" : true, "@minMd" : false}} className="action-menu-item">
+      <ItemContent>
       {children}
+      </ItemContent>
       <RightIcon label="Expand submenu" hidden={{ "@initial": false, "@maxMd" : true, "@minMd" : false}}>
         <ChevronRight />
       </RightIcon>
