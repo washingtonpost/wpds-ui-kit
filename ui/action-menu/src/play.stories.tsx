@@ -22,7 +22,7 @@ const Template = (parameters) => (
 		<Component.Trigger>
 			<Button>Actions</Button>
 		</Component.Trigger>
-		<Component.Content density="compact">
+		<Component.Content density="loose">
 			<Component.Item>
 				Action 1
 			</Component.Item>

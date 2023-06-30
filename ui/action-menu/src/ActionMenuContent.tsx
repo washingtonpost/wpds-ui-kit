@@ -3,6 +3,7 @@ import * as React from "react";
 import { theme, styled } from "@washingtonpost/wpds-theme";
 
 import * as ActionMenuPrimitive from '@radix-ui/react-dropdown-menu';
+import { DensityContext } from "./Contexts";
 
 import {
   DropdownMenuContentProps as RadixDropdownMenuContentProps,
@@ -61,7 +62,7 @@ const StyledArrow = styled(ActionMenuPrimitive.Arrow, {
   fill: theme.colors.secondary,
 });
 
-export const ActionMenuContent = React.forwardRef<HTMLDivElement, ActionMenuContentProps>(({children, density, ...props}: ActionMenuContentProps, ref) => {
+export const ActionMenuContent = React.forwardRef<HTMLDivElement, ActionMenuContentProps>(({children, density = "default", ...props}: ActionMenuContentProps, ref) => {
   return <ActionMenuPortal>
     <StyledContent {...props} ref={ref} density={density}>
           <StyledArrow
@@ -69,7 +70,9 @@ export const ActionMenuContent = React.forwardRef<HTMLDivElement, ActionMenuCont
             strokeWidth="2"
             strokeDasharray="0 30 28.284"
           />
-          {children}
+          <DensityContext.Provider value={density}>
+            {children}
+          </DensityContext.Provider>
       </StyledContent>
       </ActionMenuPortal>
 });
