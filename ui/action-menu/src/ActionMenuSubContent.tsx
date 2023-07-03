@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { theme, styled } from "@washingtonpost/wpds-theme";
+import { styled } from "@washingtonpost/wpds-theme";
 
 import * as ActionMenuPrimitive from '@radix-ui/react-dropdown-menu';
 
@@ -33,21 +33,21 @@ const StyledSubContent = styled(ActionMenuPrimitive.SubContent, {
   }
 });
 
-const ResponsiveSubItems = styled("div", {
-  padding: 0,
-  margin: 0,
-  variants: {
-    hidden: {
-      true: {
-        display: "none"
-      },
-      false: {
-        display: "content"
-      }
-    }
-  },
-  scrollbarWidth: "none",
-})
+// const ResponsiveSubItems = styled("div", {
+//   padding: 0,
+//   margin: 0,
+//   variants: {
+//     hidden: {
+//       true: {
+//         display: "none"
+//       },
+//       false: {
+//         display: "content"
+//       }
+//     }
+//   },
+//   scrollbarWidth: "none",
+// })
 
 const StyledPortal = styled(ActionMenuPortal, {
   variants: {
@@ -62,16 +62,32 @@ const StyledPortal = styled(ActionMenuPortal, {
   },
 })
 
-export const ActionMenuSubContent = React.forwardRef<HTMLDivElement, RadixDropdownMenuSubContentProps>(({children, ...props}: RadixDropdownMenuSubContentProps, ref) => {
+export const ActionMenuSubContent = React.forwardRef<HTMLDivElement, RadixDropdownMenuSubContentProps>(({ children, ...props }: RadixDropdownMenuSubContentProps, ref) => {
   const density = useContext(DensityContext);
-  return <div>
-    <StyledPortal hidden={{ "@maxMd" : true, "@minMd" : false}}>
-    <StyledSubContent {...props} ref={ref} density={density} hidden={{ "@maxMd" : true, "minMd" : false }} /*sideOffset={-5} alignOffset={5} */>
+
+  // have some way to get screen size
+  // set screen size in a useeffect
+  // isMediumAndabove screenWidth > 900px
+  // could be a bool like isSmallScreen 
+
+  return (
+    <div>
+      <StyledPortal
+      // hidden={{ "@maxMd": true, "@minMd": false }}
+      >
+        <StyledSubContent
+          {...props}
+          ref={ref}
+          density={density}
+        // hidden={{ "@maxMd": true, "minMd": false }}
+        // sideOffset={-5} alignOffset={5}
+        >
           {children}
-      </StyledSubContent>
-    </StyledPortal>
-    <ResponsiveSubItems hidden={{ "@maxMd" : false, "@minMd" : true}}>
-          {children}
-    </ResponsiveSubItems>
+        </StyledSubContent>
+      </StyledPortal>
+      {/* <ResponsiveSubItems hidden={{ "@maxMd": false, "@minMd": true }}>
+        {children}
+      </ResponsiveSubItems> */}
     </div>
+  )
 });

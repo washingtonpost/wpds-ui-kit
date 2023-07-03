@@ -22,22 +22,22 @@ export default {
 };
 
 const LeftIcon = styled(Icon, {
-  color: theme.colors.accessible,
-  fill: theme.colors.primary,
-  display: "flex",
-  variants: {
-    isDisabled: {
-      true: {
-        color: "inherit",
-      },
-    },
-  },
-  marginRight: theme.sizes["050"]
+	color: theme.colors.accessible,
+	fill: theme.colors.primary,
+	display: "flex",
+	variants: {
+		isDisabled: {
+			true: {
+				color: "inherit",
+			},
+		},
+	},
+	marginRight: theme.sizes["050"]
 });
 
 const LeftIconPlaceholder = styled("div", {
-  width: theme.sizes["100"],
-  marginRight: theme.sizes["050"],
+	width: theme.sizes["100"],
+	marginRight: theme.sizes["050"],
 });
 
 const Template = (parameters) => (
@@ -122,7 +122,7 @@ export const ActionMenuPortal = PortalTemplate.bind({});
 
 const InteractionsTemplate = (parameters) => (
 	<Component.Root {...parameters}>
-		<Component.Trigger>
+		<Component.Trigger asChild>
 			<Button>Trigger</Button>
 		</Component.Trigger>
 		<Component.Content density="loose">
@@ -176,41 +176,46 @@ export const Interactions = InteractionsTemplate.bind({})
 
 // Function to emulate pausing between interactions
 function sleep(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
+	return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-Interactions.play = async ( {parameters} ) => {
+Interactions.play = async ({ parameters }) => {
 	const trigger = screen.getAllByText("Trigger")[0];
 	await sleep(500);
 	await userEvent.click(trigger);
 	const content = screen.getAllByText("Level 1 Action");
 
-	const checkVisible = async function(item) {
+	const checkVisible = async function (item) {
 		await expect(item).toBeVisible();
 	};
 
 	await expect(content.length).toEqual(2);
+
 	content.forEach(item => {
 		checkVisible(item);
 	});
 
-	await sleep(500);
-	const subTrigger1 = screen.getAllByText("Open Level 2")[0];
+	const subTrigger1 = screen.getAllByText("Open Level 1")[0];
+
 	await userEvent.click(subTrigger1);
+
+	await sleep(500);
+
 	const subContent1 = screen.getAllByText("Level 2 Action");
 
 	await expect(subContent1.length).toEqual(3);
+
 	subContent1.forEach(item => {
 		checkVisible(item);
 	});
 
 	await sleep(500);
+
 	const subTrigger2 = screen.getAllByText("Open Level 3")[0];
 	await userEvent.click(subTrigger2);
 	const subContent2 = screen.getAllByText("Level 3 Action");
 
 	await expect(subContent2.length).toEqual(2);
-
 }
 
 /*
