@@ -46,7 +46,7 @@ const SubMenusTemplate = (parameters) => (
 		<Component.Trigger asChild>
 			<Button>Actions</Button>
 		</Component.Trigger>
-		<Component.Content density="loose">
+		<Component.Content>
 			<Component.Item>
 				<LeftIconPlaceholder />
 				Action 1
@@ -247,13 +247,14 @@ Interactions.play = async ( {parameters} ) => {
 
 	const trigger = screen.getAllByText("Trigger")[0];
 	await sleep(500);
-	await userEvent.click(trigger);
-	const content = screen.getAllByText("Level 1 Action");
 
+	await userEvent.click(trigger);
+	await sleep(500);
+
+	const content = screen.getAllByText("Level 1 Action");
 	const checkVisible = async function (item) {
 		await expect(item).toBeVisible();
 	};
-
 	await expect(content.length).toEqual(2);
 
 	content.forEach(item => {
@@ -268,14 +269,11 @@ Interactions.play = async ( {parameters} ) => {
 
 	const subContent1 = screen.getAllByText("Level 2 Action");
 
-	console.log(subContent1);
-	//await expect(subContent1.length).toEqual(3);
+	await expect(subContent1.length).toEqual(3);
 
 	subContent1.forEach(item => {
 		checkVisible(item);
 	});
-
-	await sleep(500);
 
 	const subTrigger2 = screen.getAllByText("Open Level 3")[0];
 	await userEvent.click(subTrigger2);

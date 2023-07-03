@@ -14,20 +14,20 @@ export const ContentDensityVariants = {
   density: {
     loose: {
       "& .action-menu-item" : {
-        paddingTop: theme.sizes["075"],
-        paddingBottom: theme.sizes["075"],
+        paddingTop: theme.sizes["100"],
+        paddingBottom: theme.sizes["100"],
       }
     },
     default: {
       "& .action-menu-item" : {
-        paddingTop: theme.sizes["050"],
-        paddingBottom: theme.sizes["050"],
+        paddingTop: theme.sizes["075"],
+        paddingBottom: theme.sizes["075"],
       }
     },
     compact: {
       "& .action-menu-item" : {
-        paddingTop: theme.sizes["025"],
-        paddingBottom: theme.sizes["025"],
+        paddingTop: theme.sizes["050"],
+        paddingBottom: theme.sizes["050"],
       }
     }
   }
@@ -35,7 +35,7 @@ export const ContentDensityVariants = {
 export const ContentStyles = {
     background: theme.colors.secondary,
     border: `solid 1px ${theme.colors.subtle}`,
-    borderRadius: theme.radii["100"],
+    borderRadius: theme.radii["075"],
     boxShadow: theme.shadows["300"],
     color: theme.colors.primary,
     width: "fit-content",
