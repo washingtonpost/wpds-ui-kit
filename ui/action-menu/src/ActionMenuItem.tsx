@@ -15,14 +15,7 @@ export const ItemStyles = {
   flexBasis: "auto",
   flexDirection: "row",
   justifyContent: "flex-start",
-  paddingLeft: theme.space["100"],
-  width: "100%",
-
-  '&.left-icon': {
-    width: '25%',
-    height: "auto",
-  },
-
+  alignItems: "center",
   transition: `background ${theme.transitions.fast} ${theme.transitions.inOut}`,
 
   "&:hover": {
@@ -40,6 +33,13 @@ export const ItemStyles = {
   },
 }
 
+export const ItemContent = styled("div", {
+  display: "flex",
+  flexDirection: "row",
+  marginRight: theme.sizes["075"],
+  alignItems: "center",
+});
+
 const StyledItem = styled(ActionMenuPrimitive.Item, ItemStyles);
 
 export type ActionMenuItemProps = {
@@ -51,8 +51,10 @@ export type ActionMenuItemProps = {
 export const ActionMenuItem = React.forwardRef<HTMLDivElement, ActionMenuItemProps>(({ children, ...props }: ActionMenuItemProps, ref) => {
   return <div>
     <StyledItem {...props} ref={ref} className="action-menu-item">
-      {children}
+      <ItemContent>
+        {children}
+      </ItemContent>
     </StyledItem>
     <Divider />
-  </div>
+  </div >
 });

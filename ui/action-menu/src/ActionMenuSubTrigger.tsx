@@ -3,8 +3,9 @@ import { theme, styled } from "@washingtonpost/wpds-theme";
 import * as ActionMenuPrimitive from '@radix-ui/react-dropdown-menu';
 import { DropdownMenuSubTriggerProps as RadixDropdownMenuSubTriggerProps } from "@radix-ui/react-dropdown-menu";
 import { Divider } from "@washingtonpost/wpds-divider";
+import { Icon } from "@washingtonpost/wpds-icon";
 // import { ChevronRight } from "@washingtonpost/wpds-assets";
-import { ItemStyles } from "./ActionMenuItem";
+import { ItemStyles, ItemContent } from "./ActionMenuItem";
 
 
 const SubTriggerStyles = {
@@ -25,6 +26,29 @@ const SubTriggerStyles = {
     density: "default",
   }
 }
+
+
+// const RightIcon = styled(Icon, {
+//   color: theme.colors.accessible,
+//   fill: theme.colors.primary,
+//   display: "flex",
+//   variants: {
+//     isDisabled: {
+//       true: {
+//         color: "inherit",
+//       },
+//     },
+//     hidden: {
+//       true: {
+//         display: "none",
+//       },
+//       false: {
+//         display: "flex"
+//       }
+//     }
+//   },
+//   marginLeft: "auto",
+// });
 
 const StyledSubTrigger = styled(ActionMenuPrimitive.SubTrigger, SubTriggerStyles);
 

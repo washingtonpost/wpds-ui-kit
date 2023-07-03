@@ -4,13 +4,12 @@ import { Button } from "@washingtonpost/wpds-button";
 import { Icon } from "@washingtonpost/wpds-icon";
 
 // import { Diamond, ChevronRight, Bookmark, Print } from "@washingtonpost/wpds-assets";
-import { Check } from "@washingtonpost/wpds-assets";
 import type { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { expect } from "@storybook/jest";
-import { within, userEvent } from "@storybook/testing-library";
+import { within, screen, userEvent } from "@storybook/testing-library";
 import { theme, styled } from "@washingtonpost/wpds-theme";
-import { Diamond, ChevronRight, Bookmark, Print } from "@washingtonpost/wpds-assets";
+import { Check, Diamond, ChevronRight, Bookmark, Print } from "@washingtonpost/wpds-assets";
 
 export default {
 	title: "ActionMenu",
@@ -61,6 +60,7 @@ const Template = (parameters, context) => (
 			</Component.Item >
 			<Component.Sub>
 				<Component.SubTrigger>
+					<LeftIconPlaceholder />
 					More actions
 				</Component.SubTrigger>
 				<Component.SubContent>
@@ -78,6 +78,7 @@ const Template = (parameters, context) => (
 					</Component.Item>
 					<Component.Sub>
 						<Component.SubTrigger>
+							<LeftIconPlaceholder />
 							Even more actions
 						</Component.SubTrigger>
 						<Component.SubContent>
@@ -232,11 +233,11 @@ const PortalTemplate = (parameters) => (
 					Action 3
 				</Component.Item>
 				<Component.Item>
-					Action 3
-				</Component.Item>
-			</Component.Content>
-		</Component.Portal>
-	</Component.Root>
+					Action 4
+				</Component.Item >
+			</Component.Content >
+		</Component.Portal >
+	</Component.Root >
 );
 
 export const ActionMenuPortal = PortalTemplate.bind({});
@@ -257,6 +258,103 @@ ActionMenuInteractions.play = async ({ args, canvasElement }) => {
 	// await userEvent.click(canvasElement);
 };
 
+const InteractionsTemplate = (parameters) => (
+	<Component.Root {...parameters}>
+		<Component.Trigger asChild>
+			<Button>Trigger</Button>
+		</Component.Trigger>
+		<Component.Content density="loose">
+			<Component.Item>
+				<LeftIconPlaceholder />
+				Level 1 Action
+			</Component.Item>
+			<Component.Item>
+				<LeftIcon label="Diamond"><Diamond /></LeftIcon>
+				Level 1 Action
+			</Component.Item>
+			<Component.Sub>
+				<Component.SubTrigger>
+					<LeftIconPlaceholder />
+					Open Level 2
+				</Component.SubTrigger>
+				<Component.SubContent>
+					<Component.Item disabled>
+						<LeftIcon label="Diamond"><Diamond /></LeftIcon>
+						Level 2 Action
+					</Component.Item>
+					<Component.Item >
+						<LeftIcon label="Bookmark"><Bookmark /></LeftIcon>
+						Level 2 Action
+					</Component.Item>
+					<Component.Item>
+						<LeftIcon label="Print"><Print /></LeftIcon>
+						Level 2 Action
+					</Component.Item>
+					<Component.Sub>
+						<Component.SubTrigger>
+							<LeftIconPlaceholder />
+							Open Level 3
+						</Component.SubTrigger>
+						<Component.SubContent>
+							<Component.Item>
+								Level 3 Action
+							</Component.Item>
+							<Component.Item>
+								Level 3 Action
+							</Component.Item>
+						</Component.SubContent>
+					</Component.Sub>
+				</Component.SubContent>
+			</Component.Sub>
+		</Component.Content>
+	</Component.Root>
+);
+
+export const Interactions = InteractionsTemplate.bind({})
+
+// Function to emulate pausing between interactions
+function sleep(ms) {
+	return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+Interactions.play = async ({ parameters }) => {
+	const trigger = screen.getAllByText("Trigger")[0];
+	await sleep(500);
+	await userEvent.click(trigger);
+	const content = screen.getAllByText("Level 1 Action");
+
+	const checkVisible = async function (item) {
+		await expect(item).toBeVisible();
+	};
+
+	await expect(content.length).toEqual(2);
+
+	content.forEach(item => {
+		checkVisible(item);
+	});
+
+	const subTrigger1 = screen.getAllByText("Open Level 2")[0];
+
+	await userEvent.click(subTrigger1);
+
+	await sleep(500);
+
+	const subContent1 = screen.getAllByText("Level 2 Action");
+
+	await expect(subContent1.length).toEqual(3);
+
+	subContent1.forEach(item => {
+		checkVisible(item);
+	});
+
+	await sleep(500);
+
+	const subTrigger2 = screen.getAllByText("Open Level 3")[0];
+	await userEvent.click(subTrigger2);
+	const subContent2 = screen.getAllByText("Level 3 Action");
+
+	await expect(subContent2.length).toEqual(2);
+}
 
 /*
 // ActionMenuRoot.parameters = {};
