@@ -195,7 +195,7 @@ Interactions.play = async ({ parameters }) => {
 		checkVisible(item);
 	});
 
-	const subTrigger1 = screen.getAllByText("Open Level 1")[0];
+	const subTrigger1 = screen.getAllByText("Open Level 2")[0];
 
 	await userEvent.click(subTrigger1);
 
