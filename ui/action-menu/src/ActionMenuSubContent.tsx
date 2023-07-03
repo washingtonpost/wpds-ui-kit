@@ -3,15 +3,17 @@ import * as React from "react";
 import { styled } from "@washingtonpost/wpds-theme";
 
 import * as ActionMenuPrimitive from '@radix-ui/react-dropdown-menu';
-
 import { useContext } from 'react';
 import { DensityContext } from './Contexts';
 
 import {
   DropdownMenuSubContentProps as RadixDropdownMenuSubContentProps,
 } from "@radix-ui/react-dropdown-menu";
+
 import { ActionMenuPortal } from "./ActionMenuPortal";
-import { ContentStyles, ContentDensityVariants } from "./ActionMenuContent";
+
+import { ContentStyles, ContentDensityVariants, ActionMenuContent } from "./ActionMenuContent";
+import type { ActionMenuContentProps, DensityProp } from "./ActionMenuContent";
 
 const StyledSubContent = styled(ActionMenuPrimitive.SubContent, {
   ...ContentStyles,
@@ -62,8 +64,10 @@ const StyledPortal = styled(ActionMenuPortal, {
   },
 })
 
-export const ActionMenuSubContent = React.forwardRef<HTMLDivElement, RadixDropdownMenuSubContentProps>(({ children, ...props }: RadixDropdownMenuSubContentProps, ref) => {
-  const density = useContext(DensityContext);
+type ActionMenuSubContentProps = React.ComponentPropsWithRef<typeof ActionMenuContent> & RadixDropdownMenuSubContentProps & ActionMenuContentProps;
+
+export const ActionMenuSubContent = React.forwardRef<HTMLDivElement, ActionMenuSubContentProps>(({ children, ...props }: ActionMenuSubContentProps, ref) => {
+  const density: DensityProp = useContext(DensityContext) as DensityProp;
 
   // have some way to get screen size
   // set screen size in a useeffect

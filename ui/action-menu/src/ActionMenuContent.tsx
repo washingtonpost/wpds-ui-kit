@@ -13,33 +13,33 @@ import { ActionMenuPortal } from "./ActionMenuPortal";
 export const ContentDensityVariants = {
   density: {
     loose: {
-      "& .action-menu-item" : {
+      "& .action-menu-item": {
         padding: theme.sizes["075"],
       }
     },
     default: {
-      "& .action-menu-item" : {
+      "& .action-menu-item": {
         padding: theme.sizes["050"],
       }
     },
     compact: {
-      "& .action-menu-item" : {
+      "& .action-menu-item": {
         padding: theme.sizes["025"],
       }
-    } 
+    }
   }
 }
 export const ContentStyles = {
-    background: theme.colors.secondary,
-    border: `solid 1px ${theme.colors.subtle}`,
-    borderRadius: theme.radii["012"],
-    boxShadow: theme.shadows["200"],
-    color: theme.colors.primary,
-    width: "fit-content",
-    minWidth: "150px",
-    maxHeight: "var(--radix-dropdown-menu-content-available-height)",
-    maxWidth: "var(--radix-dropdown-menu-content-available-width)",
-    overflow: "auto",
+  background: theme.colors.secondary,
+  border: `solid 1px ${theme.colors.subtle}`,
+  borderRadius: theme.radii["012"],
+  boxShadow: theme.shadows["200"],
+  color: theme.colors.primary,
+  width: "fit-content",
+  minWidth: "150px",
+  maxHeight: "var(--radix-dropdown-menu-content-available-height)",
+  maxWidth: "var(--radix-dropdown-menu-content-available-width)",
+  overflow: "auto",
 }
 
 export const StyledContent = styled(ActionMenuPrimitive.Content, {
@@ -52,27 +52,28 @@ export const StyledContent = styled(ActionMenuPrimitive.Content, {
   }
 });
 
+export type DensityProp = "loose" | "default" | "compact"
 export type ActionMenuContentProps = {
   /** Any React node may be used as a child to allow for formatting */
   children?: React.ReactNode;
-  density?: "loose" | "default" | "compact";
+  density?: DensityProp;
 } & RadixDropdownMenuContentProps;
 
 const StyledArrow = styled(ActionMenuPrimitive.Arrow, {
   fill: theme.colors.secondary,
 });
 
-export const ActionMenuContent = React.forwardRef<HTMLDivElement, ActionMenuContentProps>(({children, density = "default", ...props}: ActionMenuContentProps, ref) => {
+export const ActionMenuContent = React.forwardRef<HTMLDivElement, ActionMenuContentProps>(({ children, density = "default", ...props }: ActionMenuContentProps, ref) => {
   return <ActionMenuPortal>
     <StyledContent {...props} ref={ref} density={density}>
-          <StyledArrow
-            stroke={theme.colors.subtle.value}
-            strokeWidth="2"
-            strokeDasharray="0 30 28.284"
-          />
-          <DensityContext.Provider value={density}>
-            {children}
-          </DensityContext.Provider>
-      </StyledContent>
-      </ActionMenuPortal>
+      <StyledArrow
+        stroke={theme.colors.subtle.value}
+        strokeWidth="2"
+        strokeDasharray="0 30 28.284"
+      />
+      <DensityContext.Provider value={density}>
+        {children}
+      </DensityContext.Provider>
+    </StyledContent>
+  </ActionMenuPortal>
 });
