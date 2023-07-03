@@ -1,9 +1,10 @@
 import * as React from "react";
 import { ActionMenu as Component } from ".";
 import { Button } from "@washingtonpost/wpds-button";
+import { Box } from "@washingtonpost/wpds-box";
 import { theme, styled } from "@washingtonpost/wpds-theme";
 import { Icon } from "@washingtonpost/wpds-icon";
-import { Diamond, Bookmark, Print, DotsVertical } from "@washingtonpost/wpds-assets";
+import { Diamond, Bookmark, Print, DotsVertical, MixerVertical } from "@washingtonpost/wpds-assets";
 import { screen, userEvent } from "@storybook/testing-library";
 import { expect } from "@storybook/jest";
 
@@ -138,11 +139,11 @@ const SimpleContent = (
 );
 
 const TriggersTemplate = (parameters) => (
-	<div style={{
-		width: "100%",
+	<Box css={{
+		width: "80%",
 		display: "flex",
 		flexDirection: "row",
-		justifyContent: "center",
+		justifyContent: "space-evenly",
 	}}>
 		<Component.Root {...parameters}>
 			<Component.Trigger asChild>
@@ -154,7 +155,15 @@ const TriggersTemplate = (parameters) => (
 		</Component.Root>
 		<Component.Root {...parameters}>
 			<Component.Trigger asChild>
-				<Button><Icon label="Expand"><DotsVertical /></Icon></Button>
+				<Button icon="center"><Icon label="Expand"><DotsVertical /></Icon></Button>
+			</Component.Trigger>
+			<Component.Portal>
+				{SimpleContent}
+			</Component.Portal>
+		</Component.Root>
+		<Component.Root {...parameters}>
+			<Component.Trigger css={{ fontWeight : "bold", textDecoration: "underline" }} asChild>
+				<a>Action Link</a>
 			</Component.Trigger>
 			<Component.Portal>
 				{SimpleContent}
@@ -162,12 +171,13 @@ const TriggersTemplate = (parameters) => (
 		</Component.Root>
 		<Component.Root {...parameters}>
 			<Component.Trigger asChild>
+				<Icon label="Actions"><MixerVertical /></Icon>
 			</Component.Trigger>
 			<Component.Portal>
 				{SimpleContent}
 			</Component.Portal>
 		</Component.Root>
-	</div>
+	</Box>
 );
 
 export const Triggers = TriggersTemplate.bind({});

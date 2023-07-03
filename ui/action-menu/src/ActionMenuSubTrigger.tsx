@@ -1,5 +1,5 @@
 import * as React from "react";
-import { theme, styled } from "@washingtonpost/wpds-theme";
+import WPDS, { theme, styled } from "@washingtonpost/wpds-theme";
 import * as ActionMenuPrimitive from '@radix-ui/react-dropdown-menu';
 import { DropdownMenuSubTriggerProps as RadixDropdownMenuSubTriggerProps } from "@radix-ui/react-dropdown-menu";
 import { Divider } from "@washingtonpost/wpds-divider";
@@ -55,11 +55,12 @@ const StyledSubTrigger = styled(ActionMenuPrimitive.SubTrigger, SubTriggerStyles
 export type ActionMenuSubTriggerProps = {
   /** Any React node may be used as a child to allow for formatting */
   children?: React.ReactNode;
-  leftIcon?: React.ReactNode;
+  /** Override CSS */
+  css?: WPDS.CSS;
 } & RadixDropdownMenuSubTriggerProps;
 
 
-export const ActionMenuSubTrigger = React.forwardRef<HTMLDivElement, ActionMenuSubTriggerProps>(({children, leftIcon,  ...props}: ActionMenuSubTriggerProps, ref) => {
+export const ActionMenuSubTrigger = React.forwardRef<HTMLDivElement, ActionMenuSubTriggerProps>(({children, ...props}: ActionMenuSubTriggerProps, ref) => {
   return <div>
   <StyledSubTrigger {...props} ref={ref} /* isHeading={{ "@initial": false, "@maxMd" : true, "@minMd" : false}} */ className="action-menu-item">
       <ItemContent>

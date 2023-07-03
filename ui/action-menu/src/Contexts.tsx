@@ -11,6 +11,6 @@ type ContextType = {
 
 export const ActionMenuContext = createContext<ContextType>({
     density: "default",
-    level: 0,
+    level: 1,
     currActiveGroup: <ActionMenuContent />,
 })

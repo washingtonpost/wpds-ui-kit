@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { theme, styled } from "@washingtonpost/wpds-theme";
+import WPDS, { theme, styled } from "@washingtonpost/wpds-theme";
 
 import * as ActionMenuPrimitive from '@radix-ui/react-dropdown-menu';
 
@@ -46,10 +46,11 @@ export const ItemContent = styled("div", {
 
 const StyledItem = styled(ActionMenuPrimitive.Item, ItemStyles);
 
-
 export type ActionMenuItemProps = {
   /** Any React node may be used as a child to allow for formatting */
   children?: React.ReactNode;
+  /** Override CSS */
+  css?: WPDS.CSS;
 } & RadixDropdownMenuItemProps;
 
 

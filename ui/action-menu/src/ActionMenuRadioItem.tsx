@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { styled } from "@washingtonpost/wpds-theme";
+import WPDS, { styled } from "@washingtonpost/wpds-theme";
 
 import * as ActionMenuPrimitive from '@radix-ui/react-dropdown-menu';
 
@@ -10,7 +10,14 @@ import {
 
 export const StyledRadioItem = styled(ActionMenuPrimitive.RadioItem, {});
 
-export const ActionMenuRadioItem = React.forwardRef<HTMLDivElement, RadixDropdownMenuRadioItemProps>(({ children, ...props }: RadixDropdownMenuRadioItemProps, ref) => {
+export type ActionMenuRadioItemProps = {
+  /** Any React node may be used as a child to allow for formatting */
+  children?: React.ReactNode;
+  /** Override CSS */
+  css?: WPDS.CSS;
+} & RadixDropdownMenuRadioItemProps;
+
+export const ActionMenuRadioItem = React.forwardRef<HTMLDivElement, ActionMenuRadioItemProps>(({ children, ...props }: ActionMenuRadioItemProps, ref) => {
   return (
     <StyledRadioItem {...props} ref={ref} >
       {children}

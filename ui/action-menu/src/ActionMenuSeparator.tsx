@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { styled } from "@washingtonpost/wpds-theme";
+import WPDS, { styled } from "@washingtonpost/wpds-theme";
 
 import * as ActionMenuPrimitive from '@radix-ui/react-dropdown-menu';
 
@@ -10,7 +10,15 @@ import {
 
 export const StyledSeparator = styled(ActionMenuPrimitive.Separator, {});
 
-export const ActionMenuSeparator = React.forwardRef<HTMLDivElement, RadixDropdownMenuSeparatorProps>(({ children, ...props }: RadixDropdownMenuSeparatorProps, ref) => {
+export type ActionMenuSeparatorProps = {
+  /** Any React node may be used as a child to allow for formatting */
+  children?: React.ReactNode;
+  /** Override CSS */
+  css?: WPDS.CSS;
+} & RadixDropdownMenuSeparatorProps;
+
+
+export const ActionMenuSeparator = React.forwardRef<HTMLDivElement, ActionMenuSeparatorProps>(({ children, ...props }: ActionMenuSeparatorProps, ref) => {
   return (
     <StyledSeparator {...props} ref={ref} >
       {children}
