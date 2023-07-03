@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { theme, styled } from "@washingtonpost/wpds-theme";
+import { styled } from "@washingtonpost/wpds-theme";
 
 import * as ActionMenuPrimitive from '@radix-ui/react-dropdown-menu';
 
