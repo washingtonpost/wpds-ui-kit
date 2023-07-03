@@ -1,16 +1,6 @@
 import * as React from "react";
-
-import { styled } from "@washingtonpost/wpds-theme";
-import type * as WPDS from "@washingtonpost/wpds-theme";
-
 import { ComboboxList, useComboboxContext } from "@reach/combobox";
-
-export type InputSearchListProps = {
-  /** Any React node may be used as a child to allow for formatting */
-  children?: React.ReactNode;
-  /** Override CSS */
-  css?: WPDS.CSS;
-};
+import { styled } from "@washingtonpost/wpds-theme";
 
 const StyledList = styled(ComboboxList, {
   marginBlock: 0,
@@ -18,6 +8,10 @@ const StyledList = styled(ComboboxList, {
   position: "relative",
   listStyleType: "none",
 });
+
+export type InputSearchListProps = React.ComponentPropsWithRef<
+  typeof StyledList
+>;
 
 export const InputSearchList = ({
   children,

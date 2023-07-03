@@ -14,6 +14,7 @@ export default {
     Popover: InputSearch.Popover,
     List: InputSearch.List,
     ListItem: InputSearch.ListItem,
+    ListHeading: InputSearch.ListHeading,
     EmptyState: InputSearch.EmptyState,
     LoadingState: InputSearch.LoadingState,
   },

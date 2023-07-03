@@ -3,8 +3,6 @@ import { ComboboxPopover } from "@reach/combobox";
 import { styled, theme } from "@washingtonpost/wpds-theme";
 import { InputSearchContext } from "./InputSearchRoot";
 
-import type * as WPDS from "@washingtonpost/wpds-theme";
-
 const StyledPopover = styled(ComboboxPopover, {
   backgroundColor: theme.colors.secondary,
   maxHeight: "300px",
@@ -20,13 +18,9 @@ const StyledPopover = styled(ComboboxPopover, {
   },
 });
 
-export type InputSearchPopoverProps = {
-  /** Any React node may be used as a child to allow for formatting */
-  children?: React.ReactNode;
-  portal?: boolean;
-  /** Override CSS */
-  css?: WPDS.CSS;
-};
+export type InputSearchPopoverProps = React.ComponentPropsWithRef<
+  typeof StyledPopover
+>;
 
 export const InputSearchPopover = ({
   children,
