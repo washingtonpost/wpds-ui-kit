@@ -17,6 +17,8 @@ export const ItemStyles = {
   justifyContent: "flex-start",
   alignItems: "center",
   transition: `background ${theme.transitions.fast} ${theme.transitions.inOut}`,
+  paddingLeft: theme.sizes["100"],
+  paddingRight: theme.sizes["100"],
 
   "&:hover": {
     backgroundColor: theme.colors.alpha25,

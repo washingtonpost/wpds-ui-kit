@@ -5,7 +5,7 @@ import { styled } from "@washingtonpost/wpds-theme";
 import * as ActionMenuPrimitive from '@radix-ui/react-dropdown-menu';
 
 import { useContext } from 'react';
-import { DensityContext } from './Contexts';
+import { ActionMenuContext } from './Contexts';
 
 import {
   DropdownMenuSubContentProps as RadixDropdownMenuSubContentProps,
@@ -63,7 +63,7 @@ const StyledPortal = styled(ActionMenuPortal, {
 })
 
 export const ActionMenuSubContent = React.forwardRef<HTMLDivElement, RadixDropdownMenuSubContentProps>(({ children, ...props }: RadixDropdownMenuSubContentProps, ref) => {
-  const density = useContext(DensityContext);
+  const context = useContext(ActionMenuContext);
 
   // have some way to get screen size
   // set screen size in a useeffect
@@ -78,9 +78,9 @@ export const ActionMenuSubContent = React.forwardRef<HTMLDivElement, RadixDropdo
         <StyledSubContent
           {...props}
           ref={ref}
-          density={density}
+          density={context.density}
         // hidden={{ "@maxMd": true, "minMd": false }}
-        // sideOffset={-5} alignOffset={5}
+          sideOffset={-10} alignOffset={5}
         >
           {children}
         </StyledSubContent>

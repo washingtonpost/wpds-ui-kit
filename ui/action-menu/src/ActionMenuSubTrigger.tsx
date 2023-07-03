@@ -61,11 +61,12 @@ export type ActionMenuSubTriggerProps = {
 
 export const ActionMenuSubTrigger = React.forwardRef<HTMLDivElement, ActionMenuSubTriggerProps>(({children, leftIcon,  ...props}: ActionMenuSubTriggerProps, ref) => {
   return <div>
-  <StyledSubTrigger {...props} ref={ref} isHeading={{ "@initial": false, "@maxMd" : true, "@minMd" : false}} className="action-menu-item">
+  <StyledSubTrigger {...props} ref={ref} /* isHeading={{ "@initial": false, "@maxMd" : true, "@minMd" : false}} */ className="action-menu-item">
       <ItemContent>
       {children}
       </ItemContent>
-      <RightIcon label="Expand submenu" hidden={{ "@initial": false, "@maxMd" : true, "@minMd" : false}}>
+      <RightIcon label="Expand submenu" 
+      /*hidden={{ "@initial": false, "@maxMd" : true, "@minMd" : false}} */>
         <ChevronRight />
       </RightIcon>
   </StyledSubTrigger>
