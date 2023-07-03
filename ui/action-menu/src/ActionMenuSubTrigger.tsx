@@ -26,28 +26,6 @@ const SubTriggerStyles = {
   }
 }
 
-const RightIcon = styled(Icon, {
-  color: theme.colors.accessible,
-  fill: theme.colors.primary,
-  display: "flex",
-  variants: {
-    isDisabled: {
-      true: {
-        color: "inherit",
-      },
-    },
-    hidden: {
-      true: {
-        display: "none",
-      },
-      false: {
-        display: "flex"
-      }
-    }
-  },
-  marginLeft: "auto",
-});
-
 const StyledSubTrigger = styled(ActionMenuPrimitive.SubTrigger, SubTriggerStyles);
 
 export type ActionMenuSubTriggerProps = {

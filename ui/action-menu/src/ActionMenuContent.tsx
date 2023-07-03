@@ -29,9 +29,11 @@ export const ContentDensityVariants = {
     }
   }
 }
+
 export const ContentStyles = {
   background: theme.colors.secondary,
   // border: `solid 1px ${theme.colors.subtle}`,
+  padding: theme.space["050"],
   borderRadius: theme.radii["012"],
   boxShadow: theme.shadows["200"],
   color: theme.colors.primary,

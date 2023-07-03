@@ -9,17 +9,20 @@ import { DropdownMenuItemProps as RadixDropdownMenuItemProps } from "@radix-ui/r
 import { Divider } from "@washingtonpost/wpds-divider";
 
 export const ItemStyles = {
-  width: "100%",
+  alignItems: "center",
   background: theme.colors.secondary,
   display: "flex",
-  flexDirection: "row",
   flexBasis: "auto",
+  flexDirection: "row",
   justifyContent: "flex-start",
-  alignItems: "center",
+  paddingLeft: theme.space["100"],
+  width: "100%",
+
   '&.left-icon': {
     width: '25%',
     height: "auto",
   },
+
   transition: `background ${theme.transitions.fast} ${theme.transitions.inOut}`,
 
   "&:hover": {
@@ -35,8 +38,6 @@ export const ItemStyles = {
   "&[data-disabled] svg": {
     fill: theme.colors.disabled,
   },
-
-
 }
 
 const StyledItem = styled(ActionMenuPrimitive.Item, ItemStyles);

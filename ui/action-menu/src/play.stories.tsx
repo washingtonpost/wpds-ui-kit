@@ -45,7 +45,7 @@ const LeftIconPlaceholder = styled("div", {
 	marginRight: theme.sizes["050"],
 });
 
-const Template = (parameters) => (
+const Template = (parameters, context) => (
 	<Component.Root {...parameters}>
 		<Component.Trigger asChild>
 			<Button>{`${context.theme} trigger`}</Button>
@@ -97,7 +97,12 @@ const Template = (parameters) => (
 
 export const ActionMenuRoot = Template.bind({});
 
-const EverythingTemplateStyledItem = styled("span", {})
+const StyledActionMenuItem = styled("span", {
+	display: "flex",
+	flexDirection: "row",
+	justifyContent: "flex-start",
+	width: "100%",
+})
 
 const EverythingTemplate: ComponentStory<typeof Component.Root> = (parameters, context) => {
 	const [bookmarksChecked, setBookmarksChecked] = React.useState(true);
@@ -108,23 +113,20 @@ const EverythingTemplate: ComponentStory<typeof Component.Root> = (parameters, c
 		<Component.Root>
 			<Component.Trigger asChild>
 				<Button aria-label="Customise options">
-					Hello <div>boop</div>
+					<StyledActionMenuItem>Hello <div>boop</div></StyledActionMenuItem>
 				</Button>
 			</Component.Trigger>
-
 			<Component.Portal>
 				<Component.Content sideOffset={5}>
+					<Component.Label>Initial Label</Component.Label>
 					<Component.Item>
-						<span>
-							New Tab <div>⌘+T</div>
-						</span>
-
+						<StyledActionMenuItem>New Tab <div>⌘+T</div></StyledActionMenuItem>
 					</Component.Item>
 					<Component.Item>
-						New Window <div>⌘+N</div>
+						<StyledActionMenuItem>New Window <div>⌘+N</div></StyledActionMenuItem>
 					</Component.Item>
 					<Component.Item disabled>
-						New Private Window <div>⇧+⌘+N</div>
+						<StyledActionMenuItem>New Private Window <div>⇧+⌘+N</div></StyledActionMenuItem>
 					</Component.Item>
 					<Component.Sub>
 						<Component.SubTrigger>
@@ -139,62 +141,71 @@ const EverythingTemplate: ComponentStory<typeof Component.Root> = (parameters, c
 								alignOffset={-5}
 							>
 								<Component.Item>
-									Save Page As… <div>⌘+S</div>
+									<StyledActionMenuItem>Save Page As… <div>⌘+S</div></StyledActionMenuItem>
 								</Component.Item>
-								<Component.Item>Create Shortcut…</Component.Item>
-								<Component.Item>Name Window…</Component.Item>
+								<Component.Item>
+									<StyledActionMenuItem>Create Shortcut…</StyledActionMenuItem>
+								</Component.Item>
+								<Component.Item>
+									<StyledActionMenuItem>Create Shortcut…</StyledActionMenuItem>
+									Name Window…</Component.Item>
 								<Component.Separator />
-								<Component.Item>Developer Tools</Component.Item>
+								<Component.Item>
+									<StyledActionMenuItem>Developer Tools</StyledActionMenuItem>
+								</Component.Item>
 							</Component.SubContent>
 						</Component.Portal>
 					</Component.Sub>
-
 					<Component.Separator />
-
 					<Component.CheckboxItem
-
 						checked={bookmarksChecked}
 						onCheckedChange={setBookmarksChecked}
 					>
-						<Component.ItemIndicator>
-							<Icon label="checked"><Check /></Icon>
-						</Component.ItemIndicator>
-						Show Bookmarks <div>⌘+B</div>
+						<StyledActionMenuItem>
+							<Component.ItemIndicator>
+								<Icon label="checked"><Check /></Icon>
+							</Component.ItemIndicator>
+							Show Bookmarks <div>⌘+B</div>
+						</StyledActionMenuItem>
+
 					</Component.CheckboxItem>
 					<Component.CheckboxItem
 						checked={urlsChecked}
 						onCheckedChange={setUrlsChecked}
 					>
-						<Component.ItemIndicator>
+						<StyledActionMenuItem>
 							<Component.ItemIndicator>
-								<Icon label="checked"><Check /></Icon>
+								<Component.ItemIndicator>
+									<Icon label="checked"><Check /></Icon>
+								</Component.ItemIndicator>
 							</Component.ItemIndicator>
-						</Component.ItemIndicator>
-						Show Full URLs
+							Show Full URLs
+						</StyledActionMenuItem>
 					</Component.CheckboxItem>
-
 					<Component.Separator />
-
 					<Component.Label>People</Component.Label>
 					<Component.RadioGroup value={person} onValueChange={setPerson}>
 						<Component.RadioItem value="pedro">
-							<Component.ItemIndicator>
+							<StyledActionMenuItem>
 								<Component.ItemIndicator>
-									<Icon label="checked"><Check /></Icon>
+									<Component.ItemIndicator>
+										<Icon label="checked"><Check /></Icon>
+									</Component.ItemIndicator>
 								</Component.ItemIndicator>
-							</Component.ItemIndicator>
-							Pedro Duarte
+								Pedro Duarte
+							</StyledActionMenuItem>
 						</Component.RadioItem>
 						<Component.RadioItem value="colm">
-							<Component.ItemIndicator>
+							<StyledActionMenuItem>
 								<Component.ItemIndicator>
-									<Icon label="checked"><Check /></Icon>
+									<Component.ItemIndicator>
+										<Icon label="checked"><Check /></Icon>
+									</Component.ItemIndicator>
 								</Component.ItemIndicator>
-							</Component.ItemIndicator>
-							Colm Tuite
+								Colm Tuite
+							</StyledActionMenuItem>
 						</Component.RadioItem>
 					</Component.RadioGroup>
-
 					{/* <Component.Arrow className="ComponentArrow" /> */}
 				</Component.Content>
 			</Component.Portal>
