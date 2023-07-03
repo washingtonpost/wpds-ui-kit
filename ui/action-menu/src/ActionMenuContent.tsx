@@ -65,10 +65,6 @@ export type ActionMenuContentProps = {
   css?: WPDS.CSS;
 } & RadixDropdownMenuContentProps;
 
-const StyledArrow = styled(ActionMenuPrimitive.Arrow, {
-  fill: theme.colors.secondary,
-});
-
 export const ActionMenuContent = React.forwardRef<HTMLDivElement, ActionMenuContentProps>(({ children, density = "default", ...props }: ActionMenuContentProps, ref) => {
   return <ActionMenuPortal>
     <StyledContent {...props} ref={ref} density={density}>
