@@ -18,30 +18,23 @@ export const ItemStyles = {
   alignItems: "center",
   transition: `background ${theme.transitions.fast} ${theme.transitions.inOut}`,
   paddingLeft: theme.sizes["100"],
-  paddingRight: theme.sizes["100"],
-
   "&:hover": {
     backgroundColor: theme.colors.alpha25,
     cursor: "pointer",
   },
-
   "&[data-disabled]": {
     color: theme.colors.disabled,
     pointerEvents: "none",
   },
-
   "&[data-disabled] svg": {
     fill: theme.colors.disabled,
   },
-
-
 }
 
 export const ItemContent = styled("div", {
   display: "flex",
   flexDirection: "row",
-  marginRight: theme.sizes["075"],
-  alignItems: "center",
+  flexWrap: "none",
 });
 
 const StyledItem = styled(ActionMenuPrimitive.Item, ItemStyles);
@@ -54,13 +47,13 @@ export type ActionMenuItemProps = {
 } & RadixDropdownMenuItemProps;
 
 
-export const ActionMenuItem = React.forwardRef<HTMLDivElement, ActionMenuItemProps>(({children,  ...props}: ActionMenuItemProps, ref) => {
+export const ActionMenuItem = React.forwardRef<HTMLDivElement, ActionMenuItemProps>(({ children, ...props }: ActionMenuItemProps, ref) => {
   return <div>
-  <StyledItem {...props} ref={ref} className="action-menu-item">
-    <ItemContent>
-      {children}
-    </ItemContent>
-  </StyledItem>
-  <Divider />
+    <StyledItem {...props} ref={ref} className="action-menu-item">
+      <ItemContent>
+        {children}
+      </ItemContent>
+    </StyledItem>
+    <Divider />
   </div>
 });

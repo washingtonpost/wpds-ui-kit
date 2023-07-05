@@ -4,7 +4,15 @@ import { Button } from "@washingtonpost/wpds-button";
 import { Box } from "@washingtonpost/wpds-box";
 import { theme, styled } from "@washingtonpost/wpds-theme";
 import { Icon } from "@washingtonpost/wpds-icon";
-import { Check, Diamond, Bookmark, Print, DotsVertical, MixerVertical } from "@washingtonpost/wpds-assets";
+import {
+	Bell,
+	Bookmark,
+	Check,
+	Diamond,
+	DotsVertical,
+	MixerVertical,
+	Print
+} from "@washingtonpost/wpds-assets";
 import { screen, userEvent } from "@storybook/testing-library";
 import { expect } from "@storybook/jest";
 
@@ -197,30 +205,63 @@ export const Triggers = TriggersTemplate.bind({});
 // Trailing icons
 // Trailing shortcuts
 
-const ItemVariationsTemplate = (parameters) => (
-	<Box css={{
-		width: "80%",
-		display: "flex",
-		flexDirection: "row",
-		justifyContent: "space-evenly",
-	}}>
+const ItemContent = styled("div", {
+	display: "flex",
+	flexDirection: "row",
+	flexGrow: 1
+});
+
+const StyledChild = styled("div", {
+	"&:nth-child(n+1):last-child": {
+		marginLeft: "auto"
+	}
+})
+
+const ItemVariationsTemplate = (parameters) => {
+	const [checkedA, setCheckedA] = React.useState(false);
+	const [checkedB, setCheckedB] = React.useState(true);
+	const [checkedC, setCheckedC] = React.useState(false);
+
+	return (
 		<Component.Root {...parameters}>
 			<Component.Trigger asChild>
 				<Button>Action button</Button>
 			</Component.Trigger>
 			<Component.Portal>
 				<Component.Content>
-					<Component.CheckboxItem>
+					<Component.Label>Items</Component.Label>
+					<Component.CheckboxItem
+						checked={checkedA}
+						onCheckedChange={setCheckedA}
+					>
 						<Component.ItemIndicator>
-							<Check />
+							<Icon label="check"><Check /></Icon>
 						</Component.ItemIndicator>
-						Show Bookmarks <div className="RightSlot">⌘+B</div>
+						<ItemContent>
+							<StyledChild>Show Bookmarks</StyledChild><StyledChild>⌘+B</StyledChild>
+						</ItemContent>
 					</Component.CheckboxItem>
-					<Component.CheckboxItem>
+					<Component.CheckboxItem
+						checked={checkedB}
+						onCheckedChange={setCheckedB}
+					>
 						<Component.ItemIndicator>
-							<Check />
+							<Icon label="check" size="100"><Check /></Icon>
 						</Component.ItemIndicator>
-						Checkbox Action
+						<ItemContent>
+							Checkbox Action
+						</ItemContent>
+					</Component.CheckboxItem>
+					<Component.CheckboxItem
+						checked={checkedC}
+						onCheckedChange={setCheckedC}
+					>
+						<Component.ItemIndicator>
+							<StyledChild><Icon label="check"><Check /></Icon></StyledChild>
+						</Component.ItemIndicator>
+						<ItemContent>
+							<StyledChild>Show Bookmarks</StyledChild><StyledChild><Icon label="bell" size="100"><Bell /></Icon></StyledChild>
+						</ItemContent>
 					</Component.CheckboxItem>
 					<Component.Item>
 						Action 3
@@ -230,10 +271,9 @@ const ItemVariationsTemplate = (parameters) => (
 					</Component.Item>
 				</Component.Content>
 			</Component.Portal>
-		</Component.Root>
-	</Box>
-);
-
+		</Component.Root >
+	);
+}
 export const ItemVariations = ItemVariationsTemplate.bind({});
 
 const InteractionsTemplate: ComponentStory<any> = (parameters) => (
