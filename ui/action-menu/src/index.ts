@@ -10,6 +10,7 @@ export * from "./ActionMenuRadioItem"
 export * from "./ActionMenuRoot";
 export * from "./ActionMenuSeparator"
 export * from "./ActionMenuSub";
+export * from "./ActionMenu";
 export * from "./ActionMenuSubContent";
 export * from "./ActionMenuSubTrigger";
 export * from "./ActionMenuTrigger";

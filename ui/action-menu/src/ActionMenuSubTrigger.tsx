@@ -3,10 +3,7 @@ import WPDS, { theme, styled } from "@washingtonpost/wpds-theme";
 import * as ActionMenuPrimitive from '@radix-ui/react-dropdown-menu';
 import { DropdownMenuSubTriggerProps as RadixDropdownMenuSubTriggerProps } from "@radix-ui/react-dropdown-menu";
 import { Divider } from "@washingtonpost/wpds-divider";
-import { Icon } from "@washingtonpost/wpds-icon";
-// import { ChevronRight } from "@washingtonpost/wpds-assets";
 import { ItemStyles, ItemContent } from "./ActionMenuItem";
-
 
 const SubTriggerStyles = {
   variants: {

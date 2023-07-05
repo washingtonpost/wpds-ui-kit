@@ -15,7 +15,6 @@ export const ItemStyles = {
   flexBasis: "auto",
   flexDirection: "row",
   justifyContent: "flex-start",
-  alignItems: "center",
   transition: `background ${theme.transitions.fast} ${theme.transitions.inOut}`,
   paddingLeft: theme.sizes["100"],
   paddingRight: theme.sizes["100"],

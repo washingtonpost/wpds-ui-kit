@@ -7,11 +7,9 @@ import type { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { Box } from "@washingtonpost/wpds-box";
 import { theme, styled } from "@washingtonpost/wpds-theme";
-import { Diamond, ChevronRight, Bookmark, Print, DotsVertical, MixerVertical } from "@washingtonpost/wpds-assets";
+import { Check, Diamond, Bookmark, Print, DotsVertical, MixerVertical } from "@washingtonpost/wpds-assets";
 import { expect } from "@storybook/jest";
-import { within, screen, userEvent } from "@storybook/testing-library";
-
-import type { ComponentStory } from "@storybook/react";
+import { screen, userEvent } from "@storybook/testing-library";
 
 export default {
 	title: "Action Menu",
@@ -46,7 +44,7 @@ const LeftIconPlaceholder = styled("div", {
 	marginRight: theme.sizes["050"],
 });
 
-const Template = (parameters, context) => (
+const SubMenusTemplate = (parameters, context) => (
 	<Component.Root {...parameters}>
 		<Component.Trigger asChild>
 			<Button>{`${context.theme} trigger`}</Button>
