@@ -34,13 +34,162 @@ component: ActionMenu
 
 ## Options
 
+### Trigger
+Description of Trigger
+
+```jsx withPreview
+<Box css={{
+  paddingTop: "5%",
+  width: "100%",
+  height: "100vh",
+}}>
+  <ActionMenu.Root>
+    <ActionMenu.Trigger asChild>
+      <Button css={{ marginLeft: "25px", marginRight: "25px"}}>Action button</Button>
+    </ActionMenu.Trigger>
+    <ActionMenu.Portal>
+      <ActionMenu.Content>
+        <ActionMenu.Item>
+          Action 1
+        </ActionMenu.Item>
+        <ActionMenu.Item>
+          Action 2
+        </ActionMenu.Item>
+        <ActionMenu.Item>
+          Action 3
+        </ActionMenu.Item>
+        <ActionMenu.Item>
+          Action 4
+        </ActionMenu.Item>
+      </ActionMenu.Content>
+    </ActionMenu.Portal>
+  </ActionMenu.Root>
+  <ActionMenu.Root>
+    <ActionMenu.Trigger asChild>
+      <Button icon="center" css={{ marginLeft: "25px", marginRight: "25px"}}>
+        <Icon label="Expand">
+          <DotsVertical />
+        </Icon>
+      </Button>
+    </ActionMenu.Trigger>
+    <ActionMenu.Portal>
+      <ActionMenu.Content>
+        <ActionMenu.Item>
+          Action 1
+        </ActionMenu.Item>
+        <ActionMenu.Item>
+          Action 2
+        </ActionMenu.Item>
+        <ActionMenu.Item>
+          Action 3
+        </ActionMenu.Item>
+        <ActionMenu.Item>
+          Action 4
+        </ActionMenu.Item>
+      </ActionMenu.Content>
+    </ActionMenu.Portal>
+  </ActionMenu.Root>
+  <ActionMenu.Root>
+    <ActionMenu.Trigger css={{ fontWeight : "bold", textDecoration: "underline" }} asChild>
+      <a style={{ marginLeft: "35px", marginRight: "35px"}}>Action Link</a>
+    </ActionMenu.Trigger>
+    <ActionMenu.Portal>
+      <ActionMenu.Content>
+        <ActionMenu.Item>
+          Action 1
+        </ActionMenu.Item>
+        <ActionMenu.Item>
+          Action 2
+        </ActionMenu.Item>
+        <ActionMenu.Item>
+          Action 3
+        </ActionMenu.Item>
+        <ActionMenu.Item>
+          Action 4
+        </ActionMenu.Item>
+      </ActionMenu.Content>
+    </ActionMenu.Portal>
+  </ActionMenu.Root>
+  <ActionMenu.Root>
+    <ActionMenu.Trigger asChild>
+      <Icon css={{ marginLeft: "45px", marginRight: "45px"}} label="Actions"><MixerVertical /></Icon>
+    </ActionMenu.Trigger>
+    <ActionMenu.Portal>
+    </ActionMenu.Portal>
+  </ActionMenu.Root>
+</Box>
+```
+
+### Density
+There are three options for density of the items: `default`, `loose`, and `compact`.
+
+```jsx withPreview
+<Box css={{
+  paddingTop: "5%",
+  width: "100%",
+  height: "100vh",
+}}>
+  <ActionMenu.Root>
+      <ActionMenu.Trigger asChild>
+        <Button css={{marginLeft: "15px", marginRight: "15px"}}>Default</Button>
+      </ActionMenu.Trigger>
+      <ActionMenu.Portal>
+        <ActionMenu.Content density="default" align="end">
+          <ActionMenu.Item>
+            Action 1
+          </ActionMenu.Item>
+          <ActionMenu.Item>
+            Action 2
+          </ActionMenu.Item>
+          <ActionMenu.Item>
+            Action 3
+          </ActionMenu.Item>
+        </ActionMenu.Content>
+      </ActionMenu.Portal>
+    </ActionMenu.Root>
+  <ActionMenu.Root>
+      <ActionMenu.Trigger asChild>
+        <Button css={{marginLeft: "15px", marginRight: "15px"}}>Loose</Button>
+      </ActionMenu.Trigger>
+      <ActionMenu.Portal>
+        <ActionMenu.Content density="loose">
+          <ActionMenu.Item>
+            Action 1
+          </ActionMenu.Item>
+          <ActionMenu.Item>
+            Action 2
+          </ActionMenu.Item>
+          <ActionMenu.Item>
+            Action 3
+          </ActionMenu.Item>
+        </ActionMenu.Content>
+      </ActionMenu.Portal>
+    </ActionMenu.Root>
+  <ActionMenu.Root>
+      <ActionMenu.Trigger asChild>
+        <Button css={{marginLeft: "15px", marginRight: "15px"}}>Compact</Button>
+      </ActionMenu.Trigger>
+      <ActionMenu.Portal>
+        <ActionMenu.Content density="compact" align="start">
+          <ActionMenu.Item>
+            Action 1
+          </ActionMenu.Item>
+          <ActionMenu.Item>
+            Action 2
+          </ActionMenu.Item>
+          <ActionMenu.Item>
+            Action 3
+          </ActionMenu.Item>
+        </ActionMenu.Content>
+      </ActionMenu.Portal>
+    </ActionMenu.Root>
+</Box>
+```
+
 ### Portal
 
 Description of portal
 
-```jsx withPreview
-<p>test</p>
-```
 
 ### Sub Menu
 
