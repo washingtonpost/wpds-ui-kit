@@ -8,6 +8,8 @@ import { Diamond, Bookmark, Print, DotsVertical, MixerVertical } from "@washingt
 import { screen, userEvent } from "@storybook/testing-library";
 import { expect } from "@storybook/jest";
 
+import type { ComponentStory } from "@storybook/react";
+
 export default {
 	title: "Action Menu",
 	component: Component.Root,
@@ -162,7 +164,7 @@ const TriggersTemplate = (parameters) => (
 			</Component.Portal>
 		</Component.Root>
 		<Component.Root {...parameters}>
-			<Component.Trigger css={{ fontWeight : "bold", textDecoration: "underline" }} asChild>
+			<Component.Trigger css={{ fontWeight: "bold", textDecoration: "underline" }} asChild>
 				<a>Action Link</a>
 			</Component.Trigger>
 			<Component.Portal>
@@ -182,7 +184,7 @@ const TriggersTemplate = (parameters) => (
 
 export const Triggers = TriggersTemplate.bind({});
 
-const InteractionsTemplate = (parameters) => (
+const InteractionsTemplate: ComponentStory<any> = (parameters) => (
 	<Component.Root {...parameters}>
 		<Component.Trigger asChild>
 			<Button>Trigger</Button>
@@ -241,7 +243,7 @@ function sleep(ms) {
 	return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-Interactions.play = async ( {parameters} ) => {
+Interactions.play = async ({ parameters }) => {
 
 	console.log("Start Interaction");
 
