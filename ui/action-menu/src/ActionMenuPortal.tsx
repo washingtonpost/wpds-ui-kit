@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import type * as WPDS from "@washingtonpost/wpds-theme";
+import WPDS from "@washingtonpost/wpds-theme";
 import * as ActionMenuPrimitive from '@radix-ui/react-dropdown-menu';
 
 import {
@@ -12,7 +12,7 @@ export type ActionMenuPortalProps = {
   children?: React.ReactNode;
   /** Override CSS */
   css?: WPDS.CSS;
-} & RadixDropdownMenuPortalProps & React.ComponentProps<typeof ActionMenuPrimitive.Portal>;
+} & RadixDropdownMenuPortalProps;
 
 export const ActionMenuPortal = (({ children, ...props }: ActionMenuPortalProps) => {
   return <ActionMenuPrimitive.Portal {...props}>

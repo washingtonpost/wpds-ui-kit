@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { theme, styled } from "@washingtonpost/wpds-theme";
+import WPDS, { theme, styled } from "@washingtonpost/wpds-theme";
 
 import * as ActionMenuPrimitive from '@radix-ui/react-dropdown-menu';
 
@@ -17,6 +17,8 @@ export const ItemStyles = {
   justifyContent: "flex-start",
   alignItems: "center",
   transition: `background ${theme.transitions.fast} ${theme.transitions.inOut}`,
+  paddingLeft: theme.sizes["100"],
+  paddingRight: theme.sizes["100"],
 
   "&:hover": {
     backgroundColor: theme.colors.alpha25,
@@ -45,6 +47,8 @@ const StyledItem = styled(ActionMenuPrimitive.Item, ItemStyles);
 export type ActionMenuItemProps = {
   /** Any React node may be used as a child to allow for formatting */
   children?: React.ReactNode;
+  /** Override CSS */
+  css?: WPDS.CSS;
 } & RadixDropdownMenuItemProps;
 
 

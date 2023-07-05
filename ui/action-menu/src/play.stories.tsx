@@ -3,16 +3,16 @@ import { ActionMenu as Component } from ".";
 import { Button } from "@washingtonpost/wpds-button";
 import { Icon } from "@washingtonpost/wpds-icon";
 
-// import { Diamond, ChevronRight, Bookmark, Print } from "@washingtonpost/wpds-assets";
 import type { ComponentMeta, ComponentStory } from "@storybook/react";
 
+import { Box } from "@washingtonpost/wpds-box";
+import { theme, styled } from "@washingtonpost/wpds-theme";
+import { Diamond, ChevronRight, Bookmark, Print, DotsVertical, MixerVertical } from "@washingtonpost/wpds-assets";
 import { expect } from "@storybook/jest";
 import { within, screen, userEvent } from "@storybook/testing-library";
-import { theme, styled } from "@washingtonpost/wpds-theme";
-import { Check, Diamond, ChevronRight, Bookmark, Print } from "@washingtonpost/wpds-assets";
 
 export default {
-	title: "ActionMenu",
+	title: "Action Menu",
 	component: Component.Root,
 	subcomponents: {
 		ActionMenuTrigger: Component.Trigger,
@@ -49,7 +49,7 @@ const Template = (parameters, context) => (
 		<Component.Trigger asChild>
 			<Button>{`${context.theme} trigger`}</Button>
 		</Component.Trigger>
-		<Component.Content density="loose">
+		<Component.Content>
 			<Component.Item>
 				<LeftIconPlaceholder />
 				Action 1
@@ -68,7 +68,7 @@ const Template = (parameters, context) => (
 						<LeftIcon label="Diamond"><Diamond /></LeftIcon>
 						Action 3
 					</Component.Item>
-					<Component.Item >
+					<Component.Item>
 						<LeftIcon label="Bookmark"><Bookmark /></LeftIcon>
 						Action 4
 					</Component.Item>
@@ -96,7 +96,7 @@ const Template = (parameters, context) => (
 	</Component.Root >
 );
 
-export const ActionMenuRoot = Template.bind({});
+export const SubMenus = SubMenusTemplate.bind({});
 
 const StyledActionMenuItem = styled("span", {
 	display: "flex",
@@ -242,21 +242,66 @@ const PortalTemplate = (parameters) => (
 
 export const ActionMenuPortal = PortalTemplate.bind({});
 
-export const ActionMenuInteractions = Template.bind({});
+const SimpleContent = (
+	<Component.Content>
+		<Component.Item>
+			Action 1
+		</Component.Item>
+		<Component.Item>
+			Action 2
+		</Component.Item>
+		<Component.Item>
+			Action 3
+		</Component.Item>
+		<Component.Item>
+			Action 4
+		</Component.Item>
+	</Component.Content>
+);
 
-ActionMenuInteractions.args = {
-	// open: false,
-}
+const TriggersTemplate = (parameters) => (
+	<Box css={{
+		width: "80%",
+		display: "flex",
+		flexDirection: "row",
+		justifyContent: "space-evenly",
+	}}>
+		<Component.Root {...parameters}>
+			<Component.Trigger asChild>
+				<Button>Action button</Button>
+			</Component.Trigger>
+			<Component.Portal>
+				{SimpleContent}
+			</Component.Portal>
+		</Component.Root>
+		<Component.Root {...parameters}>
+			<Component.Trigger asChild>
+				<Button icon="center"><Icon label="Expand"><DotsVertical /></Icon></Button>
+			</Component.Trigger>
+			<Component.Portal>
+				{SimpleContent}
+			</Component.Portal>
+		</Component.Root>
+		<Component.Root {...parameters}>
+			<Component.Trigger css={{ fontWeight: "bold", textDecoration: "underline" }} asChild>
+				<a>Action Link</a>
+			</Component.Trigger>
+			<Component.Portal>
+				{SimpleContent}
+			</Component.Portal>
+		</Component.Root>
+		<Component.Root {...parameters}>
+			<Component.Trigger asChild>
+				<Icon label="Actions"><MixerVertical /></Icon>
+			</Component.Trigger>
+			<Component.Portal>
+				{SimpleContent}
+			</Component.Portal>
+		</Component.Root>
+	</Box>
+);
 
-ActionMenuInteractions.play = async ({ args, canvasElement }) => {
-	const canvas = within(canvasElement);
-
-	await userEvent.click(canvas.getByText("light trigger"));
-
-	await expect(args.onOpenChange).toHaveBeenCalled();
-
-	// await userEvent.click(canvasElement);
-};
+export const Triggers = TriggersTemplate.bind({});
 
 const InteractionsTemplate = (parameters) => (
 	<Component.Root {...parameters}>
@@ -318,15 +363,19 @@ function sleep(ms) {
 }
 
 Interactions.play = async ({ parameters }) => {
+
+	console.log("Start Interaction");
+
 	const trigger = screen.getAllByText("Trigger")[0];
 	await sleep(500);
-	await userEvent.click(trigger);
-	const content = screen.getAllByText("Level 1 Action");
 
+	await userEvent.click(trigger);
+	await sleep(500);
+
+	const content = screen.getAllByText("Level 1 Action");
 	const checkVisible = async function (item) {
 		await expect(item).toBeVisible();
 	};
-
 	await expect(content.length).toEqual(2);
 
 	content.forEach(item => {
@@ -346,8 +395,6 @@ Interactions.play = async ({ parameters }) => {
 	subContent1.forEach(item => {
 		checkVisible(item);
 	});
-
-	await sleep(500);
 
 	const subTrigger2 = screen.getAllByText("Open Level 3")[0];
 	await userEvent.click(subTrigger2);

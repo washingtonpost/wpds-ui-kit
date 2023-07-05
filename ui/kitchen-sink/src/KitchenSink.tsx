@@ -1,7 +1,7 @@
 // /* eslint-disable @next/next/no-img-element */
 import * as React from "react";
 import {
-  // Icon,
+  Icon,
   styled,
   AlertBanner,
   Checkbox,
@@ -26,11 +26,8 @@ import {
   Switch,
   Tabs,
   NavigationMenu,
-
 } from "@washingtonpost/wpds-ui-kit";
 import { Chart, Settings, Info, Menu } from "@washingtonpost/wpds-assets";
-
-const Icon = (args) => <p {...args} />
 
 const Headline = styled("h1", {
   paddingTop: "$200",

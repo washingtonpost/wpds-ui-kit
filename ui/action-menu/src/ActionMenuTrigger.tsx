@@ -1,7 +1,7 @@
 import * as React from "react";
 
 // import type * as WPDS from "@washingtonpost/wpds-theme";
-import { theme, styled } from "@washingtonpost/wpds-theme";
+import WPDS, { theme, styled } from "@washingtonpost/wpds-theme";
 
 import * as ActionMenuPrimitive from '@radix-ui/react-dropdown-menu';
 
@@ -29,10 +29,17 @@ export const StyledTrigger = styled(ActionMenuPrimitive.Trigger, {
   fontFamily: theme.fonts.meta,
   fontSize: theme.fontSizes["100"],
   lineHeight: theme.lineHeights.meta,
+  margin: "auto",
 });
 
+export type ActionMenuTriggerProps = {
+  /** Any React node may be used as a child to allow for formatting */
+  children?: React.ReactNode;
+  /** Override CSS */
+  css?: WPDS.CSS;
+} & RadixDropdownMenuTriggerProps;
 
-export const ActionMenuTrigger = React.forwardRef<HTMLButtonElement, RadixDropdownMenuTriggerProps>((props: RadixDropdownMenuTriggerProps, ref) => {
+export const ActionMenuTrigger = React.forwardRef<HTMLButtonElement, ActionMenuTriggerProps>((props: ActionMenuTriggerProps, ref) => {
   return <StyledTrigger {...props} ref={ref} />;
 });
 

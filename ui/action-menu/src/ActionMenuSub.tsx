@@ -19,16 +19,6 @@ export type ActionMenuSubProps = {
   css?: WPDS.CSS;
 } & RadixDropdownMenuSubProps;
 
-/*
-export const ActionMenuContent = React.forwardRef<HTMLDivElement, RadixDropdownMenuSubProps>(({children, ...props}: RadixDropdownMenuSubProps, ref) => {
-  return <ActionMenuPrimitive.Portal>
-    <StyledContent {...props} ref={ref}>
-          {children}
-      </StyledContent>
-    </ActionMenuPrimitive.Portal>
-});
-*/
-
 export const ActionMenuSub = ({ ...props }: ActionMenuSubProps) => {
   return <StyledSub {...props} />;
 }

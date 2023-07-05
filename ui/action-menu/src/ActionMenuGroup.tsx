@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { styled } from "@washingtonpost/wpds-theme";
+import WPDS, { styled } from "@washingtonpost/wpds-theme";
 
 import * as ActionMenuPrimitive from '@radix-ui/react-dropdown-menu';
 
@@ -10,7 +10,14 @@ import {
 
 export const StyledGroup = styled(ActionMenuPrimitive.Group, {});
 
-export const ActionMenuGroup = React.forwardRef<HTMLDivElement, RadixDropdownMenuGroupProps>(({ children, ...props }: RadixDropdownMenuGroupProps, ref) => {
+export type ActionMenuGroupProps = {
+  /** Any React node may be used as a child to allow for formatting */
+  children?: React.ReactNode;
+  /** Override CSS */
+  css?: WPDS.CSS;
+} & RadixDropdownMenuGroupProps;
+
+export const ActionMenuGroup = React.forwardRef<HTMLDivElement, ActionMenuGroupProps>(({ children, ...props }: ActionMenuGroupProps, ref) => {
   return (
     <StyledGroup {...props} ref={ref} >
       {children}
