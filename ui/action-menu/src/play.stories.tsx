@@ -11,6 +11,8 @@ import { Diamond, ChevronRight, Bookmark, Print, DotsVertical, MixerVertical } f
 import { expect } from "@storybook/jest";
 import { within, screen, userEvent } from "@storybook/testing-library";
 
+import type { ComponentStory } from "@storybook/react";
+
 export default {
 	title: "Action Menu",
 	component: Component.Root,
@@ -303,7 +305,7 @@ const TriggersTemplate = (parameters) => (
 
 export const Triggers = TriggersTemplate.bind({});
 
-const InteractionsTemplate = (parameters) => (
+const InteractionsTemplate: ComponentStory<any> = (parameters) => (
 	<Component.Root {...parameters}>
 		<Component.Trigger asChild>
 			<Button>Trigger</Button>

@@ -15,7 +15,7 @@ import { ActionMenuSubTrigger } from "./ActionMenuSubTrigger";
 import { ActionMenuTrigger } from "./ActionMenuTrigger";
 
 
-type ActionMenuProps = {
+export type ActionMenuProps = {
   CheckboxItem: typeof ActionMenuCheckboxItem;
   Content: typeof ActionMenuContent;
   Group: typeof ActionMenuGroup;
