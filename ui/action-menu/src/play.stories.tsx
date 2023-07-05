@@ -4,7 +4,7 @@ import { Button } from "@washingtonpost/wpds-button";
 import { Box } from "@washingtonpost/wpds-box";
 import { theme, styled } from "@washingtonpost/wpds-theme";
 import { Icon } from "@washingtonpost/wpds-icon";
-import { Diamond, Bookmark, Print, DotsVertical, MixerVertical } from "@washingtonpost/wpds-assets";
+import { Check, Diamond, Bookmark, Print, DotsVertical, MixerVertical } from "@washingtonpost/wpds-assets";
 import { screen, userEvent } from "@storybook/testing-library";
 import { expect } from "@storybook/jest";
 
@@ -14,13 +14,21 @@ export default {
 	title: "Action Menu",
 	component: Component.Root,
 	subcomponents: {
-		ActionMenuTrigger: Component.Trigger,
+		ActionMenuCheckboxItem: Component.CheckboxItem,
 		ActionMenuContent: Component.Content,
+		ActionMenuGroup: Component.Group,
 		ActionMenuItem: Component.Item,
+		ActionMenuItemIndicator: Component.ItemIndicator,
+		ActionMenuLabel: Component.Label,
 		ActionMenuPortal: Component.Portal,
+		ActionMenuRadioGroup: Component.RadioGroup,
+		ActionMenuRadioItem: Component.RadioItem,
+		ActionMenuRoot: Component.Root,
+		ActionMenuSeparator: Component.Separator,
 		ActionMenuSub: Component.Sub,
 		ActionMenuSubContent: Component.SubContent,
 		ActionMenuSubTrigger: Component.SubTrigger,
+		ActionMenuTrigger: Component.Trigger
 	}
 };
 
@@ -184,6 +192,50 @@ const TriggersTemplate = (parameters) => (
 
 export const Triggers = TriggersTemplate.bind({});
 
+// Leading icon
+// Leading icon with a check
+// Trailing icons
+// Trailing shortcuts
+
+const ItemVariationsTemplate = (parameters) => (
+	<Box css={{
+		width: "80%",
+		display: "flex",
+		flexDirection: "row",
+		justifyContent: "space-evenly",
+	}}>
+		<Component.Root {...parameters}>
+			<Component.Trigger asChild>
+				<Button>Action button</Button>
+			</Component.Trigger>
+			<Component.Portal>
+				<Component.Content>
+					<Component.CheckboxItem>
+						<Component.ItemIndicator>
+							<Check />
+						</Component.ItemIndicator>
+						Show Bookmarks <div className="RightSlot">⌘+B</div>
+					</Component.CheckboxItem>
+					<Component.CheckboxItem>
+						<Component.ItemIndicator>
+							<Check />
+						</Component.ItemIndicator>
+						Checkbox Action
+					</Component.CheckboxItem>
+					<Component.Item>
+						Action 3
+					</Component.Item>
+					<Component.Item>
+						Action 4
+					</Component.Item>
+				</Component.Content>
+			</Component.Portal>
+		</Component.Root>
+	</Box>
+);
+
+export const ItemVariations = ItemVariationsTemplate.bind({});
+
 const InteractionsTemplate: ComponentStory<any> = (parameters) => (
 	<Component.Root {...parameters}>
 		<Component.Trigger asChild>
@@ -244,7 +296,6 @@ function sleep(ms) {
 }
 
 Interactions.play = async ({ parameters }) => {
-
 	console.log("Start Interaction");
 
 	const trigger = screen.getAllByText("Trigger")[0];
@@ -283,25 +334,3 @@ Interactions.play = async ({ parameters }) => {
 
 	await expect(subContent2.length).toEqual(2);
 }
-
-/*
-// ActionMenuRoot.parameters = {};
-
-const TriggerTemplate = (args) => (
-	<Component.Root {...args}>
-		<Component.Trigger />
-	</Component.Root>
-);
-
-export const ActionMenuTrigger = TriggerTemplate.bind({});
-
-// ActionMenuRoot.parameters = {};
-
-const ContentTemplate = (args) => (
-	<Component.Root {...args}>
-		<Component.Content />
-	</Component.Root>
-);
-
-export const ActionMenuContent = ContentTemplate.bind({});
-*/

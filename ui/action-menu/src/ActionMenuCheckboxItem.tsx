@@ -8,7 +8,9 @@ import {
   DropdownMenuCheckboxItemProps as RadixDropdownMenuCheckboxItemProps,
 } from "@radix-ui/react-dropdown-menu";
 
-export const StyledCheckboxItem = styled(ActionMenuPrimitive.CheckboxItem, {});
+export const StyledCheckboxItem = styled(ActionMenuPrimitive.CheckboxItem, {
+
+});
 
 export type ActionMenuCheckboxItemProps = {
   /** Any React node may be used as a child to allow for formatting */
