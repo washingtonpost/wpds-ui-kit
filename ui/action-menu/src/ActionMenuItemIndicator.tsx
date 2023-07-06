@@ -12,6 +12,7 @@ export const StyledItemIndicator = styled(ActionMenuPrimitive.ItemIndicator, {
   position: "absolute",
   left: 0,
   top: 0,
+  bottom: 0,
   width: theme.sizes["100"],
   display: "inline-flex",
   alignItems: "center",

@@ -60,17 +60,16 @@ export type ActionMenuSubTriggerProps = {
 } & RadixDropdownMenuSubTriggerProps;
 
 
-export const ActionMenuSubTrigger = React.forwardRef<HTMLDivElement, ActionMenuSubTriggerProps>(({children, ...props}: ActionMenuSubTriggerProps, ref) => {
+export const ActionMenuSubTrigger = React.forwardRef<HTMLDivElement, ActionMenuSubTriggerProps>(({ children, ...props }: ActionMenuSubTriggerProps, ref) => {
   return <div>
-  <StyledSubTrigger {...props} ref={ref} /* isHeading={{ "@initial": false, "@maxMd" : true, "@minMd" : false}} */ className="action-menu-item">
+    <StyledSubTrigger {...props} ref={ref} className="action-menu-item">
       <ItemContent>
-      {children}
+        {children}
       </ItemContent>
-      <RightIcon label="Expand submenu" 
-      /*hidden={{ "@initial": false, "@maxMd" : true, "@minMd" : false}} */>
+      <RightIcon label="Expand submenu">
         <ChevronRight />
       </RightIcon>
-  </StyledSubTrigger>
-  <Divider />
+    </StyledSubTrigger>
+    <Divider />
   </div>
 });

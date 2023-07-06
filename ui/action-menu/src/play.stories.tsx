@@ -208,7 +208,7 @@ export const Triggers = TriggersTemplate.bind({});
 const ItemContent = styled("div", {
 	display: "flex",
 	flexDirection: "row",
-	flexGrow: 1
+	flexGrow: 1,
 });
 
 const StyledChild = styled("div", {
@@ -264,10 +264,11 @@ const ItemVariationsTemplate = (parameters) => {
 						</ItemContent>
 					</Component.CheckboxItem>
 					<Component.Item>
-						Action 3
+						<ItemContent>Action 3</ItemContent>
+
 					</Component.Item>
 					<Component.Item>
-						Action 4
+						<ItemContent>Action 4</ItemContent>
 					</Component.Item>
 				</Component.Content>
 			</Component.Portal>

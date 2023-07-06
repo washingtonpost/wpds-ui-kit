@@ -8,12 +8,12 @@ import {
   DropdownMenuCheckboxItemProps as RadixDropdownMenuCheckboxItemProps,
 } from "@radix-ui/react-dropdown-menu";
 
-import { ItemContent, ItemStyles } from "./ActionMenuItem"
+import { ItemStyles } from "./ActionMenuItem"
 
 export const StyledCheckboxItem = styled(ActionMenuPrimitive.CheckboxItem, {
   ...ItemStyles,
   position: "relative",
-  paddingLeft: theme.space["100"]
+  paddingLeft: theme.space["125"]
 });
 
 export type ActionMenuCheckboxItemProps = {
@@ -25,7 +25,7 @@ export type ActionMenuCheckboxItemProps = {
 
 export const ActionMenuCheckboxItem = React.forwardRef<HTMLDivElement, ActionMenuCheckboxItemProps>(({ children, ...props }: ActionMenuCheckboxItemProps, ref) => {
   return (
-    <StyledCheckboxItem {...props} ref={ref}>
+    <StyledCheckboxItem {...props} ref={ref} className="action-menu-item">
       {children}
     </StyledCheckboxItem>
   );
