@@ -198,6 +198,65 @@ const ChromaticTemplate = () => (
 
 export const Chromatic = ChromaticTemplate.bind({});
 
+const FormTemplate: ComponentStory<typeof Component> = (args) => {
+  const [iconClicked, setIconClicked] = React.useState(false);
+  const [submitClicked, setSubmitClicked] = React.useState(false);
+
+  return (
+    <div>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          setSubmitClicked(true);
+        }}
+      >
+        <Component
+          label="Form test"
+          name="ft"
+          id="ft"
+          type="search"
+          onButtonIconClick={() => {
+            setIconClicked(true);
+          }}
+          buttonIconType={args.buttonIconType}
+        />
+      </form>
+      <div>icon clicked: {iconClicked.toString()}</div>
+      <div>submit clicked: {submitClicked.toString()}</div>
+    </div>
+  );
+};
+
+export const SearchTypeInForm = FormTemplate.bind({});
+
+SearchTypeInForm.args = {
+  buttonIconType: "button",
+};
+
+SearchTypeInForm.parameters = {
+  chromatic: { disableSnapshot: true },
+};
+
+SearchTypeInForm.argTypes = {
+  buttonIconText: { table: { disable: true } },
+  disabled: { table: { disable: true } },
+  error: { table: { disable: true } },
+  label: { table: { disable: true } },
+  icon: { table: { disable: true } },
+  name: { table: { disable: true } },
+  id: { table: { disable: true } },
+  placeholder: { table: { disable: true } },
+  required: { table: { disable: true } },
+  success: { table: { disable: true } },
+  value: { table: { disable: true } },
+  defaultValue: { table: { disable: true } },
+  type: { table: { disable: true } },
+  css: { table: { disable: true } },
+  errorMessage: { table: { disable: true } },
+  helperText: { table: { disable: true } },
+  children: { table: { disable: true } },
+};
+
 const InteractionsTemplate: ComponentStory<typeof Component> = (args) => (
   <Column>
     <Component label="Field 1" name="field-1" id="field-1" />
