@@ -49,12 +49,12 @@ export type ActionMenuItemProps = {
 
 
 export const ActionMenuItem = React.forwardRef<HTMLDivElement, ActionMenuItemProps>(({ children, ...props }: ActionMenuItemProps, ref) => {
-  return <div>
+  return <>
     <StyledItem {...props} ref={ref} className="action-menu-item">
       <ItemContent>
         {children}
       </ItemContent>
     </StyledItem>
     <Divider />
-  </div>
+  </>
 });
