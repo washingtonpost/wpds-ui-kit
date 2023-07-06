@@ -84,6 +84,8 @@ export interface InputTextProps
   extends React.ComponentPropsWithRef<typeof UnstyledInput> {
   /** Accessible text for button icon, required for right icons */
   buttonIconText?: string;
+  /** Explicit button icon typing for use in forms */
+  buttonIconType?: "submit" | "reset" | "button";
   /** Used to insert Icons in the input, only a single child is accepted*/
   children?: React.ReactNode;
   /** The initial input element value for uncontrolled components */
@@ -132,6 +134,7 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
   (
     {
       buttonIconText,
+      buttonIconType = "button",
       children,
       defaultValue,
       disabled,
@@ -212,7 +215,7 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
       onButtonIconClick && onButtonIconClick(event);
     };
 
-    const onClear = () => {
+    const onClear = (event) => {
       if (internalRef.current) {
         const input = internalRef.current;
         // requires a native value setter to have the correct value in the dispatched
@@ -360,6 +363,7 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
                   event.preventDefault();
                 }}
                 onClick={onClear}
+                type="button"
               >
                 <VisuallyHidden>Clear</VisuallyHidden>
                 <Icon label={""}>
@@ -381,6 +385,7 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
                   : theme.colors.accessible,
               }}
               onClick={handleButtonIconClick}
+              type={buttonIconType || undefined}
             >
               <VisuallyHidden>{buttonIconText}</VisuallyHidden>
               {child}
