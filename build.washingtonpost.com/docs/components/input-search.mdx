@@ -1097,6 +1097,636 @@ export default function Example() {
 
 ---
 
+## Guidance
+
+### Results can be more than text
+
+Results can be more than just a list of text. Depending on how you handle matching results, there could be space for recirculation, a different hierarchy in how results are displayed, and a more intuitive and visual discovery process.
+
+```jsx withPreview isGuide="information" demoHeight="590"
+export default function Example() {
+  const terms = [
+    "headache",
+    "headlight",
+    "headquarters",
+    "head start",
+    "healer",
+    "health",
+    "health education",
+    "healthy eating habits",
+    "healthy lifestyle",
+    "healing therapies",
+    "heart health",
+    "heartbeat",
+    "heaven",
+    "healthcare provider",
+    "mental health",
+  ];
+
+  function search(term) {
+    if (term === "") {
+      return;
+    }
+    return terms.filter((value) => value.includes(term.toLowerCase()));
+  }
+
+  const [term, setTerm] = useState("");
+  const results = search(term);
+
+  const items = [
+    {
+      image: "carousel1.png",
+      alttext: "turtle",
+      title: "Brain Matters",
+      body: "What SuperAgers show us about longevity, cognitive health as we age",
+    },
+    {
+      image: "carousel2.png",
+      alttext: "glucose monitor",
+      title: "Advice",
+      body: "Ask a Doctor: Is it possible to reverse my diabetes?",
+    },
+    {
+      image: "carousel3.png",
+      alttext: "leaves",
+      title: "Your Move",
+      body: "Why an outdoor workout is better for you than indoors",
+    },
+  ];
+
+  return (
+    <Box css={{ width: "450px", height: "492px" }}>
+      <InputSearch.Root aria-label="Example-Search" openOnFocus>
+        <InputSearch.Input
+          label="Well + Being Topic"
+          name="topic"
+          id="topic"
+          onChange={(event) => {
+            setTerm(event.target.value);
+          }}
+        />
+        {results && (
+          <InputSearch.Popover css={{ overflowX: "hidden", maxHeight: "none" }}>
+            {results.length > 0 ? (
+              <>
+                <InputSearch.List>
+                  {results.slice(0, 5).map((result) => (
+                    <InputSearch.ListItem key={result} value={result} />
+                  ))}
+                </InputSearch.List>
+                <Divider
+                  css={{ marginInline: "$025", marginBlockEnd: "$050" }}
+                />
+                <Box
+                  css={{
+                    width: "450px",
+                    paddingInline: "$025",
+                    marginBlockEnd: "$100",
+                  }}
+                >
+                  <Carousel.Root itemsPerPage={1}>
+                    <Carousel.Header>
+                      <Carousel.HeaderContent>
+                        <Carousel.Title
+                          css={{
+                            color: "$accessible",
+                            fontFamily: "$meta",
+                            fontSize: "$087",
+                            fontWeight: "$light",
+                            marginBlockEnd: "$050",
+                          }}
+                        >
+                          Recommended
+                        </Carousel.Title>
+                      </Carousel.HeaderContent>
+                    </Carousel.Header>
+                    <Box css={{ position: "relative" }}>
+                      <Carousel.PreviousButton
+                        variant="secondary"
+                        css={{
+                          position: "absolute",
+                          insetBlockStart: "50%",
+                          insetInlineStart: "17px",
+                          transform: "translate(-50%, -50%)",
+                          zIndex: 1,
+                          "&:disabled": {
+                            display: "none",
+                          },
+                        }}
+                      />
+                      <Carousel.NextButton
+                        variant="secondary"
+                        css={{
+                          position: "absolute",
+                          insetBlockStart: "50%",
+                          insetInlineStart: "calc(100% - 17px)",
+                          transform: "translate(-50%, -50%)",
+                          zIndex: 1,
+                          "&:disabled": {
+                            display: "none",
+                          },
+                        }}
+                      />
+                      <Carousel.Content>
+                        {items.map((item, i) => (
+                          <Carousel.Item key={item.title}>
+                            <Card
+                              css={{
+                                width: "174px",
+                                height: "182px",
+                                marginInlineEnd: "$100",
+                                padding: 0,
+                              }}
+                            >
+                              <Box
+                                as="img"
+                                src={`/img/components/input-search/${item.image}`}
+                                width="174"
+                                height="98"
+                                alt={item.alttext}
+                                css={{
+                                  display: "block",
+                                  marginBlockEnd: "$075",
+                                  marginInline: "$050",
+                                }}
+                              />
+                              <Box
+                                as="h3"
+                                css={{
+                                  fontSize: "$075",
+                                  marginBlockStart: 0,
+                                  marginBlockEnd: "$025",
+                                  marginInline: "$050",
+                                }}
+                              >
+                                {item.title}
+                              </Box>
+                              <Box
+                                as="p"
+                                css={{
+                                  fontSize: "$075",
+                                  marginBlockStart: 0,
+                                  marginBlockEnd: "$050",
+                                  marginInline: "$050",
+                                }}
+                              >
+                                {item.body}
+                              </Box>
+                            </Card>
+                          </Carousel.Item>
+                        ))}
+                      </Carousel.Content>
+                    </Box>
+                    <Carousel.Footer>
+                      <Carousel.Dots />
+                    </Carousel.Footer>
+                  </Carousel.Root>
+                </Box>
+              </>
+            ) : (
+              <InputSearch.EmptyState />
+            )}
+          </InputSearch.Popover>
+        )}
+      </InputSearch.Root>
+    </Box>
+  );
+}
+```
+
+### When to use icons
+
+Results can be overwhelming depending on the query. To differentiate between different types of results, use icons to help users wayfind and scan the results.
+
+```jsx withPreview demoHeight="488" isGuide="information"
+export default function Example() {
+  const books = [
+    {
+      title: "To Kill a Mockingbird",
+      author: "Harper Lee",
+      format: "paper",
+    },
+    {
+      title: "1984",
+      author: "George Orwell",
+      format: "paper",
+    },
+    {
+      title: "The Great Gatsby",
+      author: "F. Scott Fitzgerald",
+      format: "ebook",
+    },
+    {
+      title: "Pride and Prejudice",
+      author: "Jane Austen",
+      format: "paper",
+    },
+    {
+      title: "To the Lighthouse",
+      author: "Virginia Woolf",
+      format: "paper",
+    },
+    {
+      title: "The Catcher in the Rye",
+      author: "J.D. Salinger",
+      format: "paper",
+    },
+    {
+      title: "Brave New World",
+      author: "Aldous Huxley",
+      format: "paper",
+    },
+    {
+      title: "Moby-Dick",
+      author: "Herman Melville",
+      format: "paper",
+    },
+    {
+      title: "The Lord of the Rings",
+      author: "J.R.R. Tolkien",
+      format: "paper",
+    },
+    {
+      title: "Harry Potter and the Sorcerer's Stone",
+      author: "J.K. Rowling",
+      format: "paper",
+    },
+    {
+      title: "The Hobbit",
+      author: "J.R.R. Tolkien",
+      format: "ebook",
+    },
+    {
+      title: "Fahrenheit 451",
+      author: "Ray Bradbury",
+      format: "paper",
+    },
+    {
+      title: "The Odyssey",
+      author: "Homer",
+      format: "paper",
+    },
+    {
+      title: "Jane Eyre",
+      author: "Charlotte Brontë",
+      format: "paper",
+    },
+    {
+      title: "The Alchemist",
+      author: "Paulo Coelho",
+      format: "paper",
+    },
+    {
+      title: "The Picture of Dorian Gray",
+      author: "Oscar Wilde",
+      format: "paper",
+    },
+    {
+      title: "War and Peace",
+      author: "Leo Tolstoy",
+      format: "paper",
+    },
+    {
+      title: "Frankenstein",
+      author: "Mary Shelley",
+      format: "paper",
+    },
+    {
+      title: "The Adventures of Huckleberry Finn",
+      author: "Mark Twain",
+      format: "paper",
+    },
+    {
+      title: "Don Quixote",
+      author: "Miguel de Cervantes",
+      format: "paper",
+    },
+    {
+      title: "The Girl with the Dragon Tattoo",
+      author: "Stieg Larsson",
+      format: "ebook",
+    },
+    {
+      title: "The Fault in Our Stars",
+      author: "John Green",
+      format: "ebook",
+    },
+    {
+      title: "The Da Vinci Code",
+      author: "Dan Brown",
+      format: "paper",
+    },
+    {
+      title: "The Hunger Games",
+      author: "Suzanne Collins",
+      format: "paper",
+    },
+  ];
+
+  function searchBooks(term) {
+    if (term === "") {
+      return;
+    }
+    return books.filter(
+      (book) =>
+        book.title.toLowerCase().includes(term.toLowerCase()) ||
+        book.author.toLowerCase().includes(term.toLowerCase()) ||
+        term.toLowerCase().includes(book.title.toLowerCase()) ||
+        term.toLowerCase().includes(book.author.toLowerCase())
+    );
+  }
+
+  const [term, setTerm] = useState("");
+  const results = searchBooks(term);
+
+  return (
+    <Box css={{ width: "390px", height: "340px" }}>
+      <InputSearch.Root aria-label="Example-Search" openOnFocus>
+        <InputSearch.Input
+          name="catalog"
+          id="catalog"
+          onChange={(event) => {
+            setTerm(event.target.value);
+          }}
+          label="Search Library"
+        />
+        {results && (
+          <InputSearch.Popover>
+            {results.length > 0 ? (
+              <InputSearch.List>
+                {results.map((book) =>
+                  book.format === "paper" ? (
+                    <InputSearch.ListItem
+                      key={`${book.title.toLowerCase()} ${book.author.toLowerCase()}`}
+                      value={`${book.title} by ${book.author}`}
+                    />
+                  ) : (
+                    <InputSearch.ListItem
+                      key={`${book.title.toLowerCase()} ${book.author.toLowerCase()}`}
+                      value={`${book.title} by ${book.author}`}
+                    >
+                      <Icon
+                        size="100"
+                        css={{
+                          verticalAlign: "middle",
+                          display: "inline-block",
+                          marginBlockStart: "-0.125rem",
+                        }}
+                      >
+                        <Ebook />
+                      </Icon>{" "}
+                      <InputSearch.ItemText>{`${book.title} by ${book.author}`}</InputSearch.ItemText>
+                    </InputSearch.ListItem>
+                  )
+                )}
+              </InputSearch.List>
+            ) : (
+              <InputSearch.EmptyState />
+            )}
+          </InputSearch.Popover>
+        )}
+      </InputSearch.Root>
+    </Box>
+  );
+}
+```
+
+### Helpful filtering
+
+Helpful filtering can help folks get to their results faster without having to type in the correct keywords. Some ideas can include inputs like swithces, and tabs.
+
+```jsx withPreview demoHeight="488" isGuide="information"
+export default function Example() {
+  const books = [
+    {
+      title: "To Kill a Mockingbird",
+      author: "Harper Lee",
+      format: "paper",
+    },
+    {
+      title: "1984",
+      author: "George Orwell",
+      format: "paper",
+    },
+    {
+      title: "The Great Gatsby",
+      author: "F. Scott Fitzgerald",
+      format: "ebook",
+    },
+    {
+      title: "Pride and Prejudice",
+      author: "Jane Austen",
+      format: "paper",
+    },
+    {
+      title: "To the Lighthouse",
+      author: "Virginia Woolf",
+      format: "paper",
+    },
+    {
+      title: "The Catcher in the Rye",
+      author: "J.D. Salinger",
+      format: "paper",
+    },
+    {
+      title: "Brave New World",
+      author: "Aldous Huxley",
+      format: "paper",
+    },
+    {
+      title: "Moby-Dick",
+      author: "Herman Melville",
+      format: "paper",
+    },
+    {
+      title: "The Lord of the Rings",
+      author: "J.R.R. Tolkien",
+      format: "paper",
+    },
+    {
+      title: "Harry Potter and the Sorcerer's Stone",
+      author: "J.K. Rowling",
+      format: "paper",
+    },
+    {
+      title: "The Hobbit",
+      author: "J.R.R. Tolkien",
+      format: "ebook",
+    },
+    {
+      title: "Fahrenheit 451",
+      author: "Ray Bradbury",
+      format: "paper",
+    },
+    {
+      title: "The Odyssey",
+      author: "Homer",
+      format: "paper",
+    },
+    {
+      title: "Jane Eyre",
+      author: "Charlotte Brontë",
+      format: "paper",
+    },
+    {
+      title: "The Alchemist",
+      author: "Paulo Coelho",
+      format: "paper",
+    },
+    {
+      title: "The Picture of Dorian Gray",
+      author: "Oscar Wilde",
+      format: "paper",
+    },
+    {
+      title: "War and Peace",
+      author: "Leo Tolstoy",
+      format: "paper",
+    },
+    {
+      title: "Frankenstein",
+      author: "Mary Shelley",
+      format: "paper",
+    },
+    {
+      title: "The Adventures of Huckleberry Finn",
+      author: "Mark Twain",
+      format: "paper",
+    },
+    {
+      title: "Don Quixote",
+      author: "Miguel de Cervantes",
+      format: "paper",
+    },
+    {
+      title: "The Girl with the Dragon Tattoo",
+      author: "Stieg Larsson",
+      format: "ebook",
+    },
+    {
+      title: "The Fault in Our Stars",
+      author: "John Green",
+      format: "ebook",
+    },
+    {
+      title: "The Da Vinci Code",
+      author: "Dan Brown",
+      format: "paper",
+    },
+    {
+      title: "The Hunger Games",
+      author: "Suzanne Collins",
+      format: "paper",
+    },
+  ];
+
+  function searchBooks(term) {
+    if (term === "") {
+      return;
+    }
+    return books.filter(
+      (book) =>
+        book.title.toLowerCase().includes(term.toLowerCase()) ||
+        book.author.toLowerCase().includes(term.toLowerCase()) ||
+        term.toLowerCase().includes(book.title.toLowerCase()) ||
+        term.toLowerCase().includes(book.author.toLowerCase())
+    );
+  }
+
+  const [term, setTerm] = useState("");
+  const [ebooksChecked, setEbooksChecked] = useState("");
+  let results = searchBooks(term);
+  if (ebooksChecked) {
+    results = results.filter((book) =>
+      book.format === "ebook" ? true : false
+    );
+  }
+
+  return (
+    <Box css={{ width: "390px", height: "340px" }}>
+      <InputSearch.Root aria-label="Example-Search" openOnFocus>
+        <InputSearch.Input
+          name="catalog"
+          id="catalog"
+          onChange={(event) => {
+            setTerm(event.target.value);
+          }}
+          label="Search Library"
+        />
+        {results && (
+          <InputSearch.Popover>
+            {results.length > 0 ? (
+              <>
+                <Box
+                  css={{
+                    padding: "$075",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "$050",
+                  }}
+                >
+                  <Switch.Root
+                    id="change-view-switch"
+                    checked={ebooksChecked}
+                    onCheckedChange={() => setEbooksChecked(!ebooksChecked)}
+                  >
+                    <Switch.Thumb value="ebooks" name="view-mode" />
+                  </Switch.Root>
+
+                  <InputLabel for="change-view-switch">
+                    Show only ebooks
+                  </InputLabel>
+                </Box>
+                <Divider />
+                <InputSearch.List>
+                  {results.map((book) =>
+                    book.format === "paper" ? (
+                      <InputSearch.ListItem
+                        key={`${book.title.toLowerCase()} ${book.author.toLowerCase()}`}
+                        value={`${book.title} by ${book.author}`}
+                      />
+                    ) : (
+                      <InputSearch.ListItem
+                        key={`${book.title.toLowerCase()} ${book.author.toLowerCase()}`}
+                        value={`${book.title} by ${book.author}`}
+                      >
+                        <Icon
+                          size="100"
+                          css={{
+                            verticalAlign: "middle",
+                            display: "inline-block",
+                            marginBlockStart: "-0.125rem",
+                          }}
+                        >
+                          <Ebook />
+                        </Icon>{" "}
+                        <InputSearch.ItemText>{`${book.title} by ${book.author}`}</InputSearch.ItemText>
+                      </InputSearch.ListItem>
+                    )
+                  )}
+                </InputSearch.List>
+              </>
+            ) : (
+              <InputSearch.EmptyState />
+            )}
+          </InputSearch.Popover>
+        )}
+      </InputSearch.Root>
+    </Box>
+  );
+}
+```
+
+### Mobile best practices
+
+There might be instances where a dedicated search view might be more appropriate. Utilizing the pattern of our drawer can be an effective way to do this.
+
+```jsx withPreview isGuide="error"
+
+```
+
+---
+
 ## Accessibility
 
 ### Color contrast
