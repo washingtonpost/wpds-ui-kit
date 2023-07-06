@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import WPDS, { styled } from "@washingtonpost/wpds-theme";
+import WPDS, { styled, theme } from "@washingtonpost/wpds-theme";
 
 import * as ActionMenuPrimitive from '@radix-ui/react-dropdown-menu';
 
@@ -8,7 +8,13 @@ import {
   DropdownMenuCheckboxItemProps as RadixDropdownMenuCheckboxItemProps,
 } from "@radix-ui/react-dropdown-menu";
 
-export const StyledCheckboxItem = styled(ActionMenuPrimitive.CheckboxItem, {});
+import { ItemContent, ItemStyles } from "./ActionMenuItem"
+
+export const StyledCheckboxItem = styled(ActionMenuPrimitive.CheckboxItem, {
+  ...ItemStyles,
+  position: "relative",
+  paddingLeft: theme.space["100"]
+});
 
 export type ActionMenuCheckboxItemProps = {
   /** Any React node may be used as a child to allow for formatting */
@@ -19,7 +25,7 @@ export type ActionMenuCheckboxItemProps = {
 
 export const ActionMenuCheckboxItem = React.forwardRef<HTMLDivElement, ActionMenuCheckboxItemProps>(({ children, ...props }: ActionMenuCheckboxItemProps, ref) => {
   return (
-    <StyledCheckboxItem {...props} ref={ref} >
+    <StyledCheckboxItem {...props} ref={ref}>
       {children}
     </StyledCheckboxItem>
   );

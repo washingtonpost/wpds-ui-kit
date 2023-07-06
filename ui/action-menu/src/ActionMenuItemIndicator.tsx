@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import WPDS, { styled } from "@washingtonpost/wpds-theme";
+import WPDS, { styled, theme } from "@washingtonpost/wpds-theme";
 
 import * as ActionMenuPrimitive from '@radix-ui/react-dropdown-menu';
 
@@ -8,7 +8,15 @@ import {
   DropdownMenuItemIndicatorProps as RadixDropdownMenuItemIndicatorProps,
 } from "@radix-ui/react-dropdown-menu";
 
-export const StyledItemIndicator = styled(ActionMenuPrimitive.ItemIndicator, {});
+export const StyledItemIndicator = styled(ActionMenuPrimitive.ItemIndicator, {
+  position: "absolute",
+  left: 0,
+  top: 0,
+  width: theme.sizes["100"],
+  display: "inline-flex",
+  alignItems: "center",
+  justifyContent: "center"
+});
 
 export type ActionMenuItemIndicatorProps = {
   /** Any React node may be used as a child to allow for formatting */

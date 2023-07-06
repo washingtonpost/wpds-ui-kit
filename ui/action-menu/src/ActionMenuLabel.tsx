@@ -12,9 +12,8 @@ export const StyledLabel = styled(ActionMenuPrimitive.Label, {
   fontFamily: theme.fonts.meta, // font family example
   fontSize: theme.fontSizes["075"],
   color: theme.colors.accessible,
-  marginBlock: 0,
   fontWeight: "bold",
-  paddingLeft: theme.space["050"]
+  paddingLeft: theme.space["100"]
 });
 
 export type ActionMenuLabelProps = {
