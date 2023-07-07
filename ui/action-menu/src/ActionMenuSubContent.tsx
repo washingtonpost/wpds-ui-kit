@@ -85,7 +85,6 @@ export const ActionMenuSubContent = React.forwardRef<HTMLDivElement, ActionMenuS
 
   const [_shadowSize, setShadowSize] = React.useState("small")
 
-
   React.useEffect(() => {
     const sS = context?.stack.findIndex(item => item === context.currentId) >= 1 ? "large" : "small";
 
@@ -98,9 +97,9 @@ export const ActionMenuSubContent = React.forwardRef<HTMLDivElement, ActionMenuS
   // isMediumAndabove screenWidth > 900px
   // could be a bool like isSmallScreen 
 
-  console.log(`My depth level is ${context?.stack.length}`)
-  console.log(context.currentId);
-  console.log(context?.stack.findIndex(item => item === context.currentId))
+  // console.log(`My depth level is ${context?.stack.length}`)
+  // console.log(context.currentId);
+  // console.log(context?.stack.findIndex(item => item === context.currentId))
 
   return (
     <div>

@@ -22,7 +22,13 @@ export type ActionMenuSubProps = {
 
 export const ActionMenuSub = ({ ...props }: ActionMenuSubProps) => {
   const context = React.useContext(ActionMenuContext);
-  const id = window?.crypto.randomUUID()
+  const [id] = React.useState(window?.crypto.randomUUID());
+
+
+  React.useEffect(() => {
+    console.log(`I'm a sub at ${context?.stack.length}, my id is ${id}`)
+  }, [])
+
 
   // true or false tells us if we are going up or down
   const handleOpenChange = open => {
