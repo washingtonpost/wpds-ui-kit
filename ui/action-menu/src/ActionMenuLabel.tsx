@@ -13,7 +13,7 @@ export const StyledLabel = styled(ActionMenuPrimitive.Label, {
   fontSize: theme.fontSizes["075"],
   color: theme.colors.accessible,
   fontWeight: "bold",
-  paddingLeft: theme.space["100"]
+  paddingLeft: theme.space["125"]
 });
 
 export type ActionMenuLabelProps = {

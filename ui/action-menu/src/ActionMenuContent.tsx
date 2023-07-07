@@ -33,7 +33,6 @@ export const ContentDensityVariants = {
   }
 }
 export const ContentStyles = {
-  padding: theme.space["050"],
   background: theme.colors.secondary,
   border: `solid 1px ${theme.colors.subtle}`,
   borderRadius: theme.radii["075"],
@@ -44,6 +43,7 @@ export const ContentStyles = {
   maxWidth: "var(--radix-dropdown-menu-content-available-width)",
   minWidth: "150px",
   overflow: "auto",
+  padding: theme.space["050"],
   width: "fit-content",
 }
 
