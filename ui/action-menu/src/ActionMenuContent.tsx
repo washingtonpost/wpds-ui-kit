@@ -57,25 +57,29 @@ export const StyledContent = styled(ActionMenuPrimitive.Content, {
   }
 });
 
-export type DensityProp = "loose" | "default" | "compact"
 export type ActionMenuContentProps = {
   /** Any React node may be used as a child to allow for formatting */
   children?: React.ReactNode;
-  density?: DensityProp;
   /** Override CSS */
   css?: WPDS.CSS;
 } & RadixDropdownMenuContentProps;
 
-export const ActionMenuContent = React.forwardRef<HTMLDivElement, ActionMenuContentProps>(({ children, density = "default", ...props }: ActionMenuContentProps, ref) => {
+export const ActionMenuContent = React.forwardRef<HTMLDivElement, ActionMenuContentProps>(({ children, ...props }: ActionMenuContentProps, ref) => {
+  const context = React.useContext(ActionMenuContext)
+
+  const handleInteractOutside = () => {
+
+    console.log("handleInteractOutside")
+
+    const item = context?.stack.shift()
+
+    console.log(item)
+    context?.setStack([item]);
+  }
+
   return <ActionMenuPortal>
-    <StyledContent {...props} ref={ref} density={density}>
-      <ActionMenuContext.Provider value={{
-        density: density,
-        level: 1,
-        currActiveGroup: ActionMenuContent,
-      }}>
-        {children}
-      </ActionMenuContext.Provider>
+    <StyledContent {...props} ref={ref} onInteractOutside={handleInteractOutside}>
+      {children}
     </StyledContent>
-  </ActionMenuPortal>
+  </ActionMenuPortal >
 });

@@ -17,6 +17,8 @@ import { screen, userEvent } from "@storybook/testing-library";
 import { expect } from "@storybook/jest";
 
 import type { ComponentStory } from "@storybook/react";
+// import { ActionMenuContext } from "./Contexts";
+// import { ActionMenuSlideOutContent } from "./ActionMenuSlideOutContent";
 
 export default {
 	title: "Action Menu",
@@ -112,6 +114,92 @@ const SubMenusTemplate = (parameters) => (
 );
 
 export const SubMenus = SubMenusTemplate.bind({});
+
+const SlideOutTemplate = (parameters) => (
+	<Component.Root {...parameters} slider>
+		<Component.Trigger asChild>
+			<Button>Actions</Button>
+		</Component.Trigger>
+		<Component.Content>
+			<Component.Item>
+				<LeftIconPlaceholder />
+				Action 1
+			</Component.Item>
+			<Component.Sub>
+				<Component.SubTrigger>
+					<LeftIconPlaceholder />
+					Action 2a
+				</Component.SubTrigger>
+				<Component.SubContent>
+					<Component.Item disabled>
+						<LeftIcon label="Diamond"><Diamond /></LeftIcon>
+						Action 3
+					</Component.Item>
+					<Component.Item>
+						<LeftIcon label="Bookmark"><Bookmark /></LeftIcon>
+						Action 4
+					</Component.Item>
+					<Component.Item>
+						<LeftIcon label="Print"><Print /></LeftIcon>
+						Action 5
+					</Component.Item>
+					<Component.Sub>
+						<Component.SubTrigger>
+							<LeftIconPlaceholder />
+							Even more actions
+						</Component.SubTrigger>
+						<Component.SubContent>
+							<Component.Item>
+								Action 6
+							</Component.Item>
+							<Component.Item>
+								Action 7
+							</Component.Item>
+						</Component.SubContent>
+					</Component.Sub>
+				</Component.SubContent>
+			</Component.Sub>
+			<Component.Sub>
+				<Component.SubTrigger>
+					<LeftIconPlaceholder />
+					More actions
+				</Component.SubTrigger>
+				<Component.SubContent>
+					<Component.Item disabled>
+						<LeftIcon label="Diamond"><Diamond /></LeftIcon>
+						Action 3
+					</Component.Item>
+					<Component.Item>
+						<LeftIcon label="Bookmark"><Bookmark /></LeftIcon>
+						Action 4
+					</Component.Item>
+					<Component.Item>
+						<LeftIcon label="Print"><Print /></LeftIcon>
+						Action 5
+					</Component.Item>
+					<Component.Sub>
+						<Component.SubTrigger>
+							<LeftIconPlaceholder />
+							Even more actions
+						</Component.SubTrigger>
+						<Component.SubContent>
+							<Component.Item>
+								Action 6
+							</Component.Item>
+							<Component.Item>
+								Action 7
+							</Component.Item>
+						</Component.SubContent>
+					</Component.Sub>
+				</Component.SubContent>
+			</Component.Sub>
+		</Component.Content>
+	</Component.Root>
+);
+
+export const SlideOut = SlideOutTemplate.bind({});
+
+
 
 const PortalTemplate = (parameters) => (
 	<Component.Root {...parameters}>
@@ -278,11 +366,11 @@ const ItemVariationsTemplate = (parameters) => {
 export const ItemVariations = ItemVariationsTemplate.bind({});
 
 const InteractionsTemplate: ComponentStory<any> = (parameters) => (
-	<Component.Root {...parameters}>
+	<Component.Root {...parameters} density="loose">
 		<Component.Trigger asChild>
 			<Button>Trigger</Button>
 		</Component.Trigger>
-		<Component.Content density="loose">
+		<Component.Content>
 			<Component.Item>
 				<LeftIconPlaceholder />
 				Level 1 Action

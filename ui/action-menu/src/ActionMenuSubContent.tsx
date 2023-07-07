@@ -74,6 +74,7 @@ const StyledPortal = styled(ActionMenuPortal, {
 export type ActionMenuSubContentProps = {
   /** Any React node may be used as a child to allow for formatting */
   children?: React.ReactNode;
+  shadowSize?: "small" | "large";
   /** Override CSS */
   css?: WPDS.CSS;
 } & RadixDropdownMenuSubContentProps;
@@ -82,35 +83,42 @@ export type ActionMenuSubContentProps = {
 export const ActionMenuSubContent = React.forwardRef<HTMLDivElement, ActionMenuSubContentProps>(({ children, ...props }: ActionMenuSubContentProps, ref) => {
   const context = useContext(ActionMenuContext);
 
+  const [_shadowSize, setShadowSize] = React.useState("small")
+
+
+  React.useEffect(() => {
+    const sS = context?.stack.findIndex(item => item === context.currentId) >= 1 ? "large" : "small";
+
+    console.log(sS)
+    setShadowSize(sS)
+  }, [])
+
   // have some way to get screen size
   // set screen size in a useeffect
   // isMediumAndabove screenWidth > 900px
   // could be a bool like isSmallScreen 
 
+  console.log(`My depth level is ${context?.stack.length}`)
+  console.log(context.currentId);
+  console.log(context?.stack.findIndex(item => item === context.currentId))
+
   return (
     <div>
       <StyledPortal
-      // hidden={{ "@maxMd": true, "@minMd": false }}
       >
-        <ActionMenuContext.Provider value = {{
-          ...context,
-          level: context.level + 1,
-        }}>
-          <StyledSubContent
-            {...props}
-            ref={ref}
-            density={context.density}
-            shadowSize={context.level + 1 >= 3 ? "large" : "small"}
-          // hidden={{ "@maxMd": true, "minMd": false }}
-            sideOffset={-10} alignOffset={5}
-          >
-            {children}
-          </StyledSubContent>
-        </ActionMenuContext.Provider>
+        <StyledSubContent
+          {...props}
+          ref={ref}
+          shadowSize={_shadowSize}
+          sideOffset={-10}
+          alignOffset={5}
+        >
+          {children}
+        </StyledSubContent>
       </StyledPortal>
       {/* <ResponsiveSubItems hidden={{ "@maxMd": false, "@minMd": true }}>
         {children}
       </ResponsiveSubItems> */}
-    </div>
+    </div >
   )
 });
