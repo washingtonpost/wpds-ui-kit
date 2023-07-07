@@ -18,6 +18,7 @@ export const ItemStyles = {
   alignItems: "center",
   transition: `background ${theme.transitions.fast} ${theme.transitions.inOut}`,
   paddingLeft: theme.sizes["125"],
+  paddingRight: theme.sizes["025"],
   "&:hover": {
     backgroundColor: theme.colors.alpha25,
     cursor: "pointer",

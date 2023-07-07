@@ -35,38 +35,35 @@ component: ActionMenu
 ## Options
 
 ### Trigger
+
 The Action List can be triggered with a button, a link, an icon, or similar visual cue.
 
 ```jsx withPreview
-<Box css={{
-  paddingTop: "5%",
-  width: "100%",
-  height: "100vh",
-}}>
+<Box
+  css={{
+    paddingTop: "5%",
+    width: "100%",
+    height: "100vh",
+  }}
+>
   <ActionMenu.Root>
     <ActionMenu.Trigger asChild>
-      <Button css={{ marginLeft: "25px", marginRight: "25px"}}>Action button</Button>
+      <Button css={{ marginLeft: "25px", marginRight: "25px" }}>
+        Action button
+      </Button>
     </ActionMenu.Trigger>
     <ActionMenu.Portal>
       <ActionMenu.Content>
-        <ActionMenu.Item>
-          Action 1
-        </ActionMenu.Item>
-        <ActionMenu.Item>
-          Action 2
-        </ActionMenu.Item>
-        <ActionMenu.Item>
-          Action 3
-        </ActionMenu.Item>
-        <ActionMenu.Item>
-          Action 4
-        </ActionMenu.Item>
+        <ActionMenu.Item>Action 1</ActionMenu.Item>
+        <ActionMenu.Item>Action 2</ActionMenu.Item>
+        <ActionMenu.Item>Action 3</ActionMenu.Item>
+        <ActionMenu.Item>Action 4</ActionMenu.Item>
       </ActionMenu.Content>
     </ActionMenu.Portal>
   </ActionMenu.Root>
   <ActionMenu.Root>
     <ActionMenu.Trigger asChild>
-      <Button icon="center" css={{ marginLeft: "25px", marginRight: "25px"}}>
+      <Button icon="center" css={{ marginLeft: "25px", marginRight: "25px" }}>
         <Icon label="Expand">
           <DotsVertical />
         </Icon>
@@ -74,122 +71,94 @@ The Action List can be triggered with a button, a link, an icon, or similar visu
     </ActionMenu.Trigger>
     <ActionMenu.Portal>
       <ActionMenu.Content>
-        <ActionMenu.Item>
-          Action 1
-        </ActionMenu.Item>
-        <ActionMenu.Item>
-          Action 2
-        </ActionMenu.Item>
-        <ActionMenu.Item>
-          Action 3
-        </ActionMenu.Item>
-        <ActionMenu.Item>
-          Action 4
-        </ActionMenu.Item>
+        <ActionMenu.Item>Action 1</ActionMenu.Item>
+        <ActionMenu.Item>Action 2</ActionMenu.Item>
+        <ActionMenu.Item>Action 3</ActionMenu.Item>
+        <ActionMenu.Item>Action 4</ActionMenu.Item>
       </ActionMenu.Content>
     </ActionMenu.Portal>
   </ActionMenu.Root>
   <ActionMenu.Root>
-    <ActionMenu.Trigger css={{ fontWeight : "bold", textDecoration: "underline" }} asChild>
-      <a style={{ marginLeft: "35px", marginRight: "35px"}}>Action Link</a>
+    <ActionMenu.Trigger
+      css={{ fontWeight: "bold", textDecoration: "underline" }}
+      asChild
+    >
+      <a style={{ marginLeft: "35px", marginRight: "35px" }}>Action Link</a>
     </ActionMenu.Trigger>
     <ActionMenu.Portal>
       <ActionMenu.Content>
-        <ActionMenu.Item>
-          Action 1
-        </ActionMenu.Item>
-        <ActionMenu.Item>
-          Action 2
-        </ActionMenu.Item>
-        <ActionMenu.Item>
-          Action 3
-        </ActionMenu.Item>
-        <ActionMenu.Item>
-          Action 4
-        </ActionMenu.Item>
+        <ActionMenu.Item>Action 1</ActionMenu.Item>
+        <ActionMenu.Item>Action 2</ActionMenu.Item>
+        <ActionMenu.Item>Action 3</ActionMenu.Item>
+        <ActionMenu.Item>Action 4</ActionMenu.Item>
       </ActionMenu.Content>
     </ActionMenu.Portal>
   </ActionMenu.Root>
   <ActionMenu.Root>
     <ActionMenu.Trigger asChild>
-      <Icon css={{ marginLeft: "45px", marginRight: "45px"}} label="Actions"><MixerVertical /></Icon>
+      <Icon css={{ marginLeft: "45px", marginRight: "45px" }} label="Actions">
+        <MixerVertical />
+      </Icon>
     </ActionMenu.Trigger>
-    <ActionMenu.Portal>
-    </ActionMenu.Portal>
+    <ActionMenu.Portal></ActionMenu.Portal>
   </ActionMenu.Root>
 </Box>
 ```
 
 ### Density
+
 The following options can be applied to `ActionMenu.Content` to specify the density of the items: `default`, `loose`, and `compact`.
 
 ```jsx withPreview
-<Box css={{
-  paddingTop: "5%",
-  width: "100%",
-  height: "100vh",
-}}>
+<Box
+  css={{
+    paddingTop: "5%",
+    width: "100%",
+    height: "100vh",
+  }}
+>
   <ActionMenu.Root>
-      <ActionMenu.Trigger asChild>
-        <Button css={{marginLeft: "15px", marginRight: "15px"}}>Default</Button>
-      </ActionMenu.Trigger>
-      <ActionMenu.Portal>
-        <ActionMenu.Content density="default" align="end">
-          <ActionMenu.Item>
-            Action 1
-          </ActionMenu.Item>
-          <ActionMenu.Item>
-            Action 2
-          </ActionMenu.Item>
-          <ActionMenu.Item>
-            Action 3
-          </ActionMenu.Item>
-        </ActionMenu.Content>
-      </ActionMenu.Portal>
-    </ActionMenu.Root>
+    <ActionMenu.Trigger asChild>
+      <Button css={{ marginLeft: "15px", marginRight: "15px" }}>Default</Button>
+    </ActionMenu.Trigger>
+    <ActionMenu.Portal>
+      <ActionMenu.Content density="default" align="end">
+        <ActionMenu.Item>Action 1</ActionMenu.Item>
+        <ActionMenu.Item>Action 2</ActionMenu.Item>
+        <ActionMenu.Item>Action 3</ActionMenu.Item>
+      </ActionMenu.Content>
+    </ActionMenu.Portal>
+  </ActionMenu.Root>
   <ActionMenu.Root>
-      <ActionMenu.Trigger asChild>
-        <Button css={{marginLeft: "15px", marginRight: "15px"}}>Loose</Button>
-      </ActionMenu.Trigger>
-      <ActionMenu.Portal>
-        <ActionMenu.Content density="loose">
-          <ActionMenu.Item>
-            Action 1
-          </ActionMenu.Item>
-          <ActionMenu.Item>
-            Action 2
-          </ActionMenu.Item>
-          <ActionMenu.Item>
-            Action 3
-          </ActionMenu.Item>
-        </ActionMenu.Content>
-      </ActionMenu.Portal>
-    </ActionMenu.Root>
+    <ActionMenu.Trigger asChild>
+      <Button css={{ marginLeft: "15px", marginRight: "15px" }}>Loose</Button>
+    </ActionMenu.Trigger>
+    <ActionMenu.Portal>
+      <ActionMenu.Content density="loose">
+        <ActionMenu.Item>Action 1</ActionMenu.Item>
+        <ActionMenu.Item>Action 2</ActionMenu.Item>
+        <ActionMenu.Item>Action 3</ActionMenu.Item>
+      </ActionMenu.Content>
+    </ActionMenu.Portal>
+  </ActionMenu.Root>
   <ActionMenu.Root>
-      <ActionMenu.Trigger asChild>
-        <Button css={{marginLeft: "15px", marginRight: "15px"}}>Compact</Button>
-      </ActionMenu.Trigger>
-      <ActionMenu.Portal>
-        <ActionMenu.Content density="compact" align="start">
-          <ActionMenu.Item>
-            Action 1
-          </ActionMenu.Item>
-          <ActionMenu.Item>
-            Action 2
-          </ActionMenu.Item>
-          <ActionMenu.Item>
-            Action 3
-          </ActionMenu.Item>
-        </ActionMenu.Content>
-      </ActionMenu.Portal>
-    </ActionMenu.Root>
+    <ActionMenu.Trigger asChild>
+      <Button css={{ marginLeft: "15px", marginRight: "15px" }}>Compact</Button>
+    </ActionMenu.Trigger>
+    <ActionMenu.Portal>
+      <ActionMenu.Content density="compact" align="start">
+        <ActionMenu.Item>Action 1</ActionMenu.Item>
+        <ActionMenu.Item>Action 2</ActionMenu.Item>
+        <ActionMenu.Item>Action 3</ActionMenu.Item>
+      </ActionMenu.Content>
+    </ActionMenu.Portal>
+  </ActionMenu.Root>
 </Box>
 ```
 
 ### Portal
 
 Description of portal
-
 
 ### Sub Menu
 
@@ -239,12 +208,28 @@ Description of guidance one
 
 <Table
   headers={["Key", "Description"]}
-  data={[["Space", "When focus is on DropdownMenu.Trigger, opens the dropdown menu and focuses the first item. When focus is on an item, activates the focused item."],
-    ["Enter", "When focus is on DropdownMenu.Trigger, opens the dropdown menu and focuses the first item. When focus is on an item, activates the focused item."],
-    ["ArrowDown", "When focus is on DropdownMenu.Trigger, opens the dropdown menu. When focus is on an item, moves focus to the next item."],
+  data={[
+    [
+      "Space",
+      "When focus is on DropdownMenu.Trigger, opens the dropdown menu and focuses the first item. When focus is on an item, activates the focused item.",
+    ],
+    [
+      "Enter",
+      "When focus is on DropdownMenu.Trigger, opens the dropdown menu and focuses the first item. When focus is on an item, activates the focused item.",
+    ],
+    [
+      "ArrowDown",
+      "When focus is on DropdownMenu.Trigger, opens the dropdown menu. When focus is on an item, moves focus to the next item.",
+    ],
     ["ArrowUp", "When focus is on an item, moves focus to the previous item."],
-    ["ArrowRight, ArrowLeft", "When focus is on DropdownMenu.SubTrigger, opens or closes the submenu depending on reading direction."],
-    ["Esc", "Closes the dropdown menu and moves focus to DropdownMenu.Trigger."]
+    [
+      "ArrowRight, ArrowLeft",
+      "When focus is on DropdownMenu.SubTrigger, opens or closes the submenu depending on reading direction.",
+    ],
+    [
+      "Esc",
+      "Closes the dropdown menu and moves focus to DropdownMenu.Trigger.",
+    ],
   ]}
 />
 
