@@ -3,7 +3,7 @@ import * as React from "react";
 import WPDS, { theme, styled } from "@washingtonpost/wpds-theme";
 
 import * as ActionMenuPrimitive from '@radix-ui/react-dropdown-menu';
-import { ActionMenuContext } from "./Contexts";
+import { ActionMenuContext } from "./context";
 
 import {
   DropdownMenuContentProps as RadixDropdownMenuContentProps,
@@ -66,16 +66,21 @@ export type ActionMenuContentProps = {
   css?: WPDS.CSS;
 } & RadixDropdownMenuContentProps;
 
-export const ActionMenuContent = React.forwardRef<HTMLDivElement, ActionMenuContentProps>(({ children, density = "default", ...props }: ActionMenuContentProps, ref) => {
+export const ActionMenuContent = React.forwardRef<HTMLDivElement, ActionMenuContentProps>(({ children, ...props }: ActionMenuContentProps, ref) => {
+  const context = React.useContext(ActionMenuContext)
+
+  const handleInteractOutside = () => {
+
+    console.log("handleInteractOutside")
+
+    const item = context?.stack.shift()
+
+    console.log(item)
+    context?.setStack([]);
+  }
   return <ActionMenuPortal>
-    <StyledContent {...props} ref={ref} density={density}>
-      <ActionMenuContext.Provider value={{
-        density: density,
-        level: 1,
-        currActiveGroup: ActionMenuContent,
-      }}>
-        {children}
-      </ActionMenuContext.Provider>
+    <StyledContent {...props} ref={ref} onInteractOutside={handleInteractOutside}>
+      {children}
     </StyledContent>
   </ActionMenuPortal>
 });

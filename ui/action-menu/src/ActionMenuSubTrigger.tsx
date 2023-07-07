@@ -6,6 +6,8 @@ import { Divider } from "@washingtonpost/wpds-divider";
 import { Icon } from "@washingtonpost/wpds-icon";
 import { ChevronRight } from "@washingtonpost/wpds-assets";
 import { ItemStyles, ItemContent } from "./ActionMenuItem";
+import { ActionMenuContext } from "./context";
+import { useContext } from "react";
 
 
 const SubTriggerStyles = {
@@ -17,7 +19,7 @@ const SubTriggerStyles = {
       true: {
         fontWeight: theme.fontWeights.bold,
         margin: 0,
-        pointerEvents: "none",
+        //pointerEvents: "none",
       }
     }
   },
@@ -61,8 +63,14 @@ export type ActionMenuSubTriggerProps = {
 
 
 export const ActionMenuSubTrigger = React.forwardRef<HTMLDivElement, ActionMenuSubTriggerProps>(({ children, ...props }: ActionMenuSubTriggerProps, ref) => {
-  return <div>
-    <StyledSubTrigger {...props} ref={ref} className="action-menu-item">
+  const context = useContext(ActionMenuContext);
+  return <>
+    <StyledSubTrigger {...props} ref={ref} className="action-menu-item" isHeading={context.slider}
+      // onClick={() => {
+      //   context.stack.push(context.currentId);
+      //   console.log(context.stack);
+      //   }}
+      >
       <ItemContent>
         {children}
       </ItemContent>
@@ -71,5 +79,5 @@ export const ActionMenuSubTrigger = React.forwardRef<HTMLDivElement, ActionMenuS
       </RightIcon>
     </StyledSubTrigger>
     <Divider />
-  </div>
+  </>
 });
