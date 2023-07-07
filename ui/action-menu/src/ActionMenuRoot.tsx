@@ -14,7 +14,7 @@ import {
 const NAME = "ActionMenuRoot";
 
 const StyledActionMenu = styled(ActionMenuPrimitive.Root, {
-  color: "blue"
+  minWidth: "max-content"
 })
 
 
