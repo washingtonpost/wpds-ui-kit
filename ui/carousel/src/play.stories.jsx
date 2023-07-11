@@ -19,8 +19,8 @@ export default {
     CarouselContent: Component.Content,
     CarouselItem: Component.Item,
     CarouselFooter: Component.Footer,
-    CarouselDots: Component.Dots,
-  },
+    CarouselDots: Component.Dots
+  }
 };
 
 const Template = (args) => {
@@ -36,8 +36,9 @@ const Template = (args) => {
     theme.colors.mustard400,
     theme.colors.yellow600,
     theme.colors.pink80,
-    theme.colors.purple40,
+    theme.colors.purple40
   ];
+
   return (
     <Component.Root
       {...args}
@@ -67,7 +68,7 @@ const Template = (args) => {
                 alignItems: "center",
                 justifyContent: "center",
                 borderRadius: theme.radii["025"],
-                marginInlineEnd: theme.space["050"],
+                marginInlineEnd: theme.space["050"]
               }}
             >
               {i + 1}
@@ -83,12 +84,13 @@ const Template = (args) => {
 };
 
 export const Carousel = Template.bind({});
+
 Carousel.argTypes = {
   itemsPerPage: {
     control: { type: "select" },
     defaultValue: "auto",
-    options: ["auto", 1, 2, 3, 4],
-  },
+    options: ["auto", 1, 2, 3, 4]
+  }
 };
 
 const StoryLink = ({ href }) => (
@@ -123,7 +125,7 @@ const CustomButtonsTemplate = (args) => {
             insetBlock: 0,
             insetInlineStart: 0,
             insetInlineEnd: "75%",
-            zIndex: 1,
+            zIndex: 1
           }}
         >
           Prev
@@ -138,7 +140,7 @@ const CustomButtonsTemplate = (args) => {
             insetBlock: 0,
             insetInlineStart: "75%",
             insetInlineEnd: 0,
-            zIndex: 1,
+            zIndex: 1
           }}
         >
           Next
@@ -153,7 +155,7 @@ const CustomButtonsTemplate = (args) => {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                height: "200px",
+                height: "200px"
               }}
             >
               {i + 1}
@@ -168,7 +170,7 @@ const CustomButtonsTemplate = (args) => {
 export const CustomButtons = CustomButtonsTemplate.bind({});
 
 CustomButtons.parameters = {
-  chromatic: { disableSnapshot: true },
+  chromatic: { disableSnapshot: true }
 };
 
 const SlideshowTemplate = (args) => {
@@ -224,7 +226,7 @@ const SlideshowTemplate = (args) => {
           position: "absolute",
           insetInlineEnd: theme.space["025"],
           insetBlockEnd: theme.space["200"],
-          zIndex: 1,
+          zIndex: 1
         }}
       >
         <Component.PreviousButton />
@@ -250,7 +252,7 @@ const SlideshowTemplate = (args) => {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                height: "200px",
+                height: "200px"
               }}
             >
               {i + 1}
@@ -268,7 +270,7 @@ const SlideshowTemplate = (args) => {
 export const Slideshow = SlideshowTemplate.bind({});
 
 Slideshow.parameters = {
-  chromatic: { disableSnapshot: true },
+  chromatic: { disableSnapshot: true }
 };
 
 const Subtitle = styled("div", {
@@ -276,7 +278,7 @@ const Subtitle = styled("div", {
   fontFamily: theme.fonts.body,
   fontSize: theme.fontSizes["075"],
   fontStyle: "italic",
-  marginBlockStart: theme.sizes["025"],
+  marginBlockStart: theme.sizes["025"]
 });
 
 const BrightsCarouselTemplate = (args) => {
@@ -285,7 +287,7 @@ const BrightsCarouselTemplate = (args) => {
     "https://www.washingtonpost.com",
     "https://www.washingtonpost.com",
     "https://www.washingtonpost.com",
-    "https://www.washingtonpost.com",
+    "https://www.washingtonpost.com"
   ];
 
   const [focusedIndex, setFocusedIndex] = React.useState();
@@ -323,7 +325,7 @@ const BrightsCarouselTemplate = (args) => {
       <Component.Header
         css={{
           borderBlockStart: `1px solid ${theme.colors.primary}`,
-          paddingBlockStart: theme.space["050"],
+          paddingBlockStart: theme.space["050"]
         }}
       >
         <Component.HeaderContent>
@@ -343,8 +345,8 @@ const BrightsCarouselTemplate = (args) => {
             transform: "translate(-50%, -50%)",
             zIndex: 1,
             "&:disabled": {
-              display: "none",
-            },
+              display: "none"
+            }
           }}
         />
         <Component.NextButton
@@ -356,8 +358,8 @@ const BrightsCarouselTemplate = (args) => {
             transform: "translate(-50%, -50%)",
             zIndex: 1,
             "&:disabled": {
-              display: "none",
-            },
+              display: "none"
+            }
           }}
         />
         <Component.Content onKeyDown={handleOnKeyDown} onKeyUp={handleOnKeyUp}>
@@ -375,7 +377,7 @@ const BrightsCarouselTemplate = (args) => {
 export const BrightsCarousel = BrightsCarouselTemplate.bind({});
 
 BrightsCarousel.parameters = {
-  chromatic: { disableSnapshot: true },
+  chromatic: { disableSnapshot: true }
 };
 
 const VerticalVideoTemplate = () => {
@@ -384,7 +386,7 @@ const VerticalVideoTemplate = () => {
     { headline: "Title 2", byline: "Author 2" },
     { headline: "Title 3", byline: "Author 3" },
     { headline: "Title 4", byline: "Author 4" },
-    { headline: "Title 5", byline: "Author 5" },
+    { headline: "Title 5", byline: "Author 5" }
   ];
 
   const [activeIndex, setActiveIndex] = React.useState();
@@ -460,7 +462,7 @@ const VerticalVideoTemplate = () => {
   };
 
   const focused = css({
-    outline: `2px solid ${theme.colors.cta}`,
+    outline: `2px solid ${theme.colors.cta}`
   });
 
   const hasFocus = (root, type) => {
@@ -473,7 +475,7 @@ const VerticalVideoTemplate = () => {
       <Component.Header
         css={{
           borderBlockStart: `1px solid ${theme.colors.primary}`,
-          paddingBlockStart: theme.space["050"],
+          paddingBlockStart: theme.space["050"]
         }}
       >
         <Component.HeaderContent>
@@ -492,8 +494,8 @@ const VerticalVideoTemplate = () => {
             transform: "translate(-50%, -50%)",
             zIndex: 1,
             "&:disabled": {
-              display: "none",
-            },
+              display: "none"
+            }
           }}
         />
         <Component.NextButton
@@ -505,8 +507,8 @@ const VerticalVideoTemplate = () => {
             transform: "translate(-50%, -50%)",
             zIndex: 1,
             "&:disabled": {
-              display: "none",
-            },
+              display: "none"
+            }
           }}
         />
         <Component.Content
@@ -525,7 +527,7 @@ const VerticalVideoTemplate = () => {
                     margin: 0,
                     marginBlockEnd: theme.space["025"],
                     overflow: "hidden",
-                    position: "relative",
+                    position: "relative"
                   }}
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -536,7 +538,7 @@ const VerticalVideoTemplate = () => {
                       height: "100%",
                       filter: "grayscale(100%)",
                       display: "block",
-                      objectFit: "cover",
+                      objectFit: "cover"
                     }}
                   />
                   <Button
@@ -547,7 +549,7 @@ const VerticalVideoTemplate = () => {
                     css={{
                       position: "absolute",
                       insetInlineStart: theme.space["050"],
-                      insetBlockEnd: theme.space["050"],
+                      insetBlockEnd: theme.space["050"]
                     }}
                     ref={(ref) => (childRefs.current[index][0] = ref)}
                     className={
@@ -569,7 +571,7 @@ const VerticalVideoTemplate = () => {
                     href="https://www.washingtonpost.com/video/national/beagel-topper/2022/10/07/3166d0af-d3d3-45eb-abe8-7c1983f2eebb_video.html"
                     style={{
                       color: theme.colors.gray40,
-                      textDecoration: "none",
+                      textDecoration: "none"
                     }}
                     ref={(ref) => (childRefs.current[index][1] = ref)}
                     id={`${video.headline
@@ -589,7 +591,7 @@ const VerticalVideoTemplate = () => {
                     style={{
                       color: theme.colors.gray80,
                       fontSize: theme.fontSizes["075"],
-                      textDecoration: "none",
+                      textDecoration: "none"
                     }}
                     ref={(ref) => (childRefs.current[index][2] = ref)}
                     id={`${video.headline
