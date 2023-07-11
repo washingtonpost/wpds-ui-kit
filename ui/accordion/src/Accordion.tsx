@@ -44,7 +44,10 @@ export type AccordionRootCombined = (
 ) &
   AccordionRootVariants;
 
-export const AccordionRoot = React.forwardRef<HTMLDivElement, AccordionRootCombined>(({ ...props }: AccordionRootCombined, ref) => (
+export const AccordionRoot = React.forwardRef<
+  HTMLDivElement,
+  AccordionRootCombined
+>(({ ...props }: AccordionRootCombined, ref) => (
   <StyledAccordion {...props} ref={ref} />
 ));
 
