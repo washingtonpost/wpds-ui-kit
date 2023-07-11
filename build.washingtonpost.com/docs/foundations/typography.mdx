@@ -45,9 +45,16 @@ export default function Example() {
     color: theme.colors.accessible,
     marginBlock: 0,
   });
+  const Magazine = styled("p", {
+    fontFamily: theme.fonts.magazine, // font family example
+    fontSize: theme.fontSizes["200"],
+    color: theme.colors.primary,
+    marginBlock: 0,
+  });
   return (
     <div>
       <Headline>Headline</Headline>
+      <Magazine>Magazine</Magazine>
       <Subhead>Subheadline</Subhead>
       <Body>Body text</Body>
       <Meta>Meta text</Meta>

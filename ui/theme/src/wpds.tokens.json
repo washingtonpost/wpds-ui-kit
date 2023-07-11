@@ -1110,6 +1110,9 @@
     },
     "meta": {
       "value": "Franklin, arial, sans-serif"
+    },
+    "magazine": {
+      "value": "PostoniUltra, garamond, serif"
     }
   },
   "fontSize": {
