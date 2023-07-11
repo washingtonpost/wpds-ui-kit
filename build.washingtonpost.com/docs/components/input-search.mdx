@@ -1169,8 +1169,8 @@ export default function Example() {
           <InputSearch.Popover css={{ overflowX: "hidden", maxHeight: "none" }}>
             {results.length > 0 ? (
               <>
-                <InputSearch.List>
-                  {results.slice(0, 5).map((result) => (
+                <InputSearch.List css={{ maxHeight: "180px" }}>
+                  {results.map((result) => (
                     <InputSearch.ListItem key={result} value={result} />
                   ))}
                 </InputSearch.List>
@@ -1185,7 +1185,11 @@ export default function Example() {
                   }}
                 >
                   <Carousel.Root itemsPerPage={1}>
-                    <Carousel.Header>
+                    <Carousel.Header
+                      css={{
+                        marginBlockEnd: "$050",
+                      }}
+                    >
                       <Carousel.HeaderContent>
                         <Carousel.Title
                           css={{
@@ -1193,10 +1197,9 @@ export default function Example() {
                             fontFamily: "$meta",
                             fontSize: "$087",
                             fontWeight: "$light",
-                            marginBlockEnd: "$050",
                           }}
                         >
-                          Recommended
+                          Recommended?
                         </Carousel.Title>
                       </Carousel.HeaderContent>
                     </Carousel.Header>
@@ -1247,7 +1250,6 @@ export default function Example() {
                                 css={{
                                   display: "block",
                                   marginBlockEnd: "$075",
-                                  marginInline: "$050",
                                 }}
                               />
                               <Box
@@ -1493,9 +1495,9 @@ export default function Example() {
 
 ### Helpful filtering
 
-Helpful filtering can help folks get to their results faster without having to type in the correct keywords. Some ideas can include inputs like swithces, and tabs.
+Helpful filtering can help folks get to their results faster without having to type in the correct keywords. Some ideas can include inputs like switches, and tabs.
 
-```jsx withPreview demoHeight="488" isGuide="information"
+```jsx withPreview demoHeight="525" isGuide="information"
 export default function Example() {
   const books = [
     {
@@ -1633,85 +1635,181 @@ export default function Example() {
     );
   }
 
-  const [term, setTerm] = useState("");
+  const [term1, setTerm1] = useState("");
   const [ebooksChecked, setEbooksChecked] = useState("");
-  let results = searchBooks(term);
-  if (ebooksChecked) {
-    results = results.filter((book) =>
+  let results1 = searchBooks(term1);
+  if (results1 && ebooksChecked) {
+    results1 = results1.filter((book) =>
       book.format === "ebook" ? true : false
     );
   }
 
-  return (
-    <Box css={{ width: "390px", height: "340px" }}>
-      <InputSearch.Root aria-label="Example-Search" openOnFocus>
-        <InputSearch.Input
-          name="catalog"
-          id="catalog"
-          onChange={(event) => {
-            setTerm(event.target.value);
-          }}
-          label="Search Library"
-        />
-        {results && (
-          <InputSearch.Popover>
-            {results.length > 0 ? (
-              <>
-                <Box
-                  css={{
-                    padding: "$075",
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "$050",
-                  }}
-                >
-                  <Switch.Root
-                    id="change-view-switch"
-                    checked={ebooksChecked}
-                    onCheckedChange={() => setEbooksChecked(!ebooksChecked)}
-                  >
-                    <Switch.Thumb value="ebooks" name="view-mode" />
-                  </Switch.Root>
+  const [term2, setTerm2] = useState("");
+  const results2 = searchBooks(term2);
 
-                  <InputLabel for="change-view-switch">
-                    Show only ebooks
-                  </InputLabel>
-                </Box>
-                <Divider />
-                <InputSearch.List>
-                  {results.map((book) =>
-                    book.format === "paper" ? (
-                      <InputSearch.ListItem
-                        key={`${book.title.toLowerCase()} ${book.author.toLowerCase()}`}
-                        value={`${book.title} by ${book.author}`}
-                      />
-                    ) : (
-                      <InputSearch.ListItem
-                        key={`${book.title.toLowerCase()} ${book.author.toLowerCase()}`}
-                        value={`${book.title} by ${book.author}`}
-                      >
-                        <Icon
-                          size="100"
-                          css={{
-                            verticalAlign: "middle",
-                            display: "inline-block",
-                            marginBlockStart: "-0.125rem",
-                          }}
+  return (
+    <Box css={{ display: "flex", gap: "$100" }}>
+      <Box css={{ width: "390px", height: "340px" }}>
+        <InputSearch.Root aria-label="Example-Search" openOnFocus>
+          <InputSearch.Input
+            name="catalog"
+            id="catalog"
+            onChange={(event) => {
+              setTerm1(event.target.value);
+            }}
+            label="Search Library"
+          />
+          {results1 && (
+            <InputSearch.Popover>
+              {results1.length > 0 ? (
+                <>
+                  <Box
+                    css={{
+                      padding: "$075",
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "$050",
+                    }}
+                  >
+                    <Switch.Root
+                      id="change-view-switch"
+                      checked={ebooksChecked}
+                      onCheckedChange={() => setEbooksChecked(!ebooksChecked)}
+                    >
+                      <Switch.Thumb value="ebooks" name="view-mode" />
+                    </Switch.Root>
+
+                    <InputLabel for="change-view-switch">
+                      Show only ebooks
+                    </InputLabel>
+                  </Box>
+                  <Divider />
+                  <InputSearch.List>
+                    {results1.map((book) =>
+                      book.format === "paper" ? (
+                        <InputSearch.ListItem
+                          key={`${book.title.toLowerCase()} ${book.author.toLowerCase()}`}
+                          value={`${book.title} by ${book.author}`}
+                        />
+                      ) : (
+                        <InputSearch.ListItem
+                          key={`${book.title.toLowerCase()} ${book.author.toLowerCase()}`}
+                          value={`${book.title} by ${book.author}`}
                         >
-                          <Ebook />
-                        </Icon>{" "}
-                        <InputSearch.ItemText>{`${book.title} by ${book.author}`}</InputSearch.ItemText>
-                      </InputSearch.ListItem>
-                    )
-                  )}
-                </InputSearch.List>
-              </>
-            ) : (
-              <InputSearch.EmptyState />
-            )}
-          </InputSearch.Popover>
-        )}
-      </InputSearch.Root>
+                          <Icon
+                            size="100"
+                            css={{
+                              verticalAlign: "middle",
+                              display: "inline-block",
+                              marginBlockStart: "-0.125rem",
+                            }}
+                          >
+                            <Ebook />
+                          </Icon>{" "}
+                          <InputSearch.ItemText>{`${book.title} by ${book.author}`}</InputSearch.ItemText>
+                        </InputSearch.ListItem>
+                      )
+                    )}
+                  </InputSearch.List>
+                </>
+              ) : (
+                <InputSearch.EmptyState />
+              )}
+            </InputSearch.Popover>
+          )}
+        </InputSearch.Root>
+      </Box>
+      <Box css={{ width: "390px", height: "340px" }}>
+        <InputSearch.Root aria-label="Example-Search-2" openOnFocus>
+          <InputSearch.Input
+            name="catalog2"
+            id="catalog2"
+            onChange={(event) => {
+              setTerm2(event.target.value);
+            }}
+            label="Search Library"
+          />
+          {results2 && (
+            <InputSearch.Popover>
+              <Tabs.Root defaultValue="all" css={{ padding: "$050" }}>
+                <Tabs.List
+                  aria-label="Results by format"
+                  css={{ width: "100%" }}
+                >
+                  <Tabs.Trigger value="all">All Results</Tabs.Trigger>
+                  <Tabs.Trigger value="ebook">Ebooks</Tabs.Trigger>
+                  <Tabs.Trigger value="paper">Paperback</Tabs.Trigger>
+                </Tabs.List>
+                <Tabs.Content value="all">
+                  <InputSearch.List>
+                    {results2.map((book) =>
+                      book.format === "paper" ? (
+                        <InputSearch.ListItem
+                          key={`${book.title.toLowerCase()} ${book.author.toLowerCase()}`}
+                          value={`${book.title} by ${book.author}`}
+                        />
+                      ) : (
+                        <InputSearch.ListItem
+                          key={`${book.title.toLowerCase()} ${book.author.toLowerCase()}`}
+                          value={`${book.title} by ${book.author}`}
+                        >
+                          <Icon
+                            size="100"
+                            css={{
+                              verticalAlign: "middle",
+                              display: "inline-block",
+                              marginBlockStart: "-0.125rem",
+                            }}
+                          >
+                            <Ebook />
+                          </Icon>{" "}
+                          <InputSearch.ItemText>{`${book.title} by ${book.author}`}</InputSearch.ItemText>
+                        </InputSearch.ListItem>
+                      )
+                    )}
+                  </InputSearch.List>
+                </Tabs.Content>
+                <Tabs.Content value="ebook">
+                  <InputSearch.List>
+                    {results2.map((book) =>
+                      book.format === "ebook" ? (
+                        <InputSearch.ListItem
+                          key={`${book.title.toLowerCase()} ${book.author.toLowerCase()}`}
+                          value={`${book.title} by ${book.author}`}
+                        >
+                          <Icon
+                            size="100"
+                            css={{
+                              verticalAlign: "middle",
+                              display: "inline-block",
+                              marginBlockStart: "-0.125rem",
+                            }}
+                          >
+                            <Ebook />
+                          </Icon>{" "}
+                          <InputSearch.ItemText>{`${book.title} by ${book.author}`}</InputSearch.ItemText>
+                        </InputSearch.ListItem>
+                      ) : null
+                    )}
+                  </InputSearch.List>
+                </Tabs.Content>
+                <Tabs.Content value="paper">
+                  <InputSearch.List>
+                    {results2.map((book) =>
+                      book.format === "paper" ? (
+                        <InputSearch.ListItem
+                          key={`${book.title.toLowerCase()} ${book.author.toLowerCase()}`}
+                          value={`${book.title} by ${book.author}`}
+                        />
+                      ) : null
+                    )}
+                  </InputSearch.List>
+                </Tabs.Content>
+              </Tabs.Root>
+            </InputSearch.Popover>
+          )}
+        </InputSearch.Root>
+      </Box>
     </Box>
   );
 }
@@ -1721,8 +1819,111 @@ export default function Example() {
 
 There might be instances where a dedicated search view might be more appropriate. Utilizing the pattern of our drawer can be an effective way to do this.
 
-```jsx withPreview isGuide="error"
+```jsx withPreview demoHeight="430" isGuide="information"
+export default function Example() {
+  const cities = [
+    { name: "Atlanta", state: "Georgia" },
+    { name: "Austin", state: "Texas" },
+    { name: "Boston", state: "Massachusetts" },
+    { name: "Charlotte", state: "North Carolina" },
+    { name: "Chicago", state: "Illinois" },
+    { name: "Dallas", state: "Texas" },
+    { name: "Denver", state: "Colorado" },
+    { name: "Detroit", state: "Michigan" },
+    { name: "Houston", state: "Texas" },
+    { name: "Las Vegas", state: "Nevada" },
+    { name: "Miami", state: "Florida" },
+    { name: "Nashville", state: "Tennessee" },
+    { name: "New Orleans", state: "Louisiana" },
+    { name: "New York", state: "New York" },
+    { name: "Philadelphia", state: "Pennsylvania" },
+    { name: "Phoenix", state: "Arizona" },
+    { name: "Portland", state: "Oregon" },
+    { name: "San Diego", state: "California" },
+    { name: "San Francisco", state: "California" },
+    { name: "Seattle", state: "Washington" },
+    { name: "Washington", state: "D.C." },
+  ];
 
+  function searchCities(term) {
+    if (term === "") {
+      return;
+    }
+    return cities.filter(
+      (city) =>
+        city.name.toLowerCase().includes(term.toLowerCase()) ||
+        city.state.toLowerCase().includes(term.toLowerCase())
+    );
+  }
+
+  const [term, setTerm] = useState("");
+  const results = searchCities(term);
+
+  const [open, setOpen] = useState(false);
+
+  return (
+    <Drawer.Root
+      id="optional-close"
+      open={open}
+      onOpenChange={(open) => setOpen(open)}
+    >
+      <Drawer.Trigger icon="right">
+        <Icon size="100">
+          <Search />
+        </Icon>
+        {`Find your city`}
+      </Drawer.Trigger>
+      <Drawer.Content height="100vh">
+        <button
+          style={{
+            background: "transparent",
+            border: "none",
+            fontSize: "$075",
+          }}
+          onClick={() => {
+            setOpen(false);
+          }}
+        >
+          DONE
+        </button>
+        <Divider
+          css={{
+            marginBlockStart: "$100",
+            marginBlockEnd: "$050",
+            marginInlineStart: "-$100",
+            "&[data-orientation='horizontal']": { width: "calc(100% + $200)" },
+          }}
+        />
+        <InputSearch.Root aria-label="Example-Search" openOnFocus>
+          <InputSearch.Input
+            name="city"
+            id="city"
+            onChange={(event) => {
+              setTerm(event.target.value);
+            }}
+            autocomplete={false}
+          />
+          {results && (
+            <InputSearch.Popover portal={false}>
+              {results.length > 0 ? (
+                <InputSearch.List>
+                  {results.map((city) => (
+                    <InputSearch.ListItem
+                      key={`${city.name.toLowerCase()}, ${city.state.toLowerCase()}`}
+                      value={`${city.name}, ${city.state}`}
+                    />
+                  ))}
+                </InputSearch.List>
+              ) : (
+                <InputSearch.EmptyState />
+              )}
+            </InputSearch.Popover>
+          )}
+        </InputSearch.Root>
+      </Drawer.Content>
+    </Drawer.Root>
+  );
+}
 ```
 
 ---

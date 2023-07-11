@@ -2,6 +2,7 @@ import * as React from "react";
 import { useState } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { isPossiblePhoneNumber } from "react-phone-number-input";
+import { matchSorter } from "match-sorter";
 import {
   Box,
   Button,
@@ -16,6 +17,8 @@ import {
   InputSearch,
   styled,
 } from "@washingtonpost/wpds-ui-kit";
+
+import { cities } from "@washingtonpost/wpds-input-search/src/cities";
 
 const STATES = [
   "Alabama",
@@ -128,6 +131,7 @@ const Form = () => {
     handleSubmit,
     register,
     reset,
+    clearErrors,
     watch,
   } = useForm<FormInputType>({});
 
@@ -136,6 +140,22 @@ const Form = () => {
   };
 
   const [checked, setChecked] = useState(false);
+
+  const useCityMatch = (term: string) => {
+    return React.useMemo(
+      () =>
+        term.trim() === ""
+          ? null
+          : matchSorter(cities, term, {
+              keys: [(item) => `${item.city}, ${item.state}`],
+            }),
+      [term]
+    );
+  };
+
+  const [term, setTerm] = React.useState("");
+
+  const results: { city: string; state: string }[] | null = useCityMatch(term);
 
   return (
     <>
@@ -147,21 +167,6 @@ const Form = () => {
       </p>
       <FormContainer>
         <form onSubmit={handleSubmit(onSubmit)} noValidate>
-          <Row>
-            <InputWrapper>
-              <InputSearch.Root aria-label="search cities">
-                <InputSearch.Input name="city" id="city" />
-                <InputSearch.Popover>
-                  <InputSearch.List>
-                    <InputSearch.ListItem value="Boston" />
-                    <InputSearch.ListItem value="New York" />
-                    <InputSearch.ListItem value="Philadelphia" />
-                    <InputSearch.ListItem value="Washington D.C." />
-                  </InputSearch.List>
-                </InputSearch.Popover>
-              </InputSearch.Root>
-            </InputWrapper>
-          </Row>
           <Row>
             <InputWrapper>
               <InputText
@@ -272,23 +277,53 @@ const Form = () => {
           </Row>
           <Row>
             <InputWrapper>
-              <InputText
-                label="City"
-                id="city"
-                error={!!errors.city}
-                errorMessage={errors.city?.message}
-                required
-                {...register("city", {
-                  required: {
-                    value: true,
-                    message: "City is required",
-                  },
-                  minLength: {
-                    value: 5,
-                    message: "Please add a valid city",
-                  },
-                })}
-              />
+              <InputSearch.Root
+                aria-label="City"
+                openOnFocus
+                onSelect={(value) => {
+                  console.log("select?", value);
+                  if (value) {
+                    clearErrors("city");
+                  }
+                }}
+              >
+                <InputSearch.Input
+                  id="city"
+                  label="City"
+                  error={!!errors.city}
+                  errorMessage={errors.city?.message}
+                  required
+                  {...register("city", {
+                    required: {
+                      value: true,
+                      message: "City is required",
+                    },
+                    minLength: {
+                      value: 5,
+                      message: "Please add a valid city",
+                    },
+                    onChange: (event) => {
+                      setTerm(event.target.value);
+                    },
+                  })}
+                />
+                {results && (
+                  <InputSearch.Popover>
+                    {results.length > 0 ? (
+                      <InputSearch.List>
+                        {results.slice(0, 20).map((result) => (
+                          <InputSearch.ListItem
+                            key={`${result.city.toLowerCase()}, ${result.state.toLowerCase()}`}
+                            value={`${result.city}, ${result.state}`}
+                          />
+                        ))}
+                      </InputSearch.List>
+                    ) : (
+                      <InputSearch.EmptyState />
+                    )}
+                  </InputSearch.Popover>
+                )}
+              </InputSearch.Root>
             </InputWrapper>
           </Row>
           <Row>

@@ -4,6 +4,7 @@ import { styled, theme } from "@washingtonpost/wpds-theme";
 
 const StyledListItem = styled(ComboboxOption, {
   color: theme.colors.primary,
+  fontFamily: theme.fonts.meta,
   fontSize: theme.fontSizes["100"],
   fontWeight: theme.fontWeights.light,
   paddingBlock: "$050",
@@ -19,8 +20,9 @@ const StyledListItem = styled(ComboboxOption, {
   },
 });
 
-export type InputSearchListItemProps = React.ComponentPropsWithRef<
-  typeof StyledListItem
+export type InputSearchListItemProps = Omit<
+  React.ComponentPropsWithRef<typeof StyledListItem>,
+  "index"
 >;
 
 export const InputSearchListItem = ({

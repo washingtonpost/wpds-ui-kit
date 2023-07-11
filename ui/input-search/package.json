@@ -45,6 +45,7 @@
   },
   "dependencies": {
     "@reach/combobox": "^0.18.0",
+    "@reach/popover": "^0.18.0",
     "@washingtonpost/wpds-assets": "^1.18.0",
     "@washingtonpost/wpds-icon": "1.8.5",
     "@washingtonpost/wpds-input-label": "1.8.5",
