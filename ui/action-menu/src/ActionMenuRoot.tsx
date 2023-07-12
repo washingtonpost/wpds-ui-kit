@@ -15,7 +15,8 @@ import { ActionMenuContext } from "./context";
 const NAME = "ActionMenuRoot";
 
 const StyledActionMenu = styled(ActionMenuPrimitive.Root, {
-  minWidth: "max-content"
+  // minWidth: "max-content"
+  // width: "300px"
 })
 
 export type DensityProp = "loose" | "default" | "compact"
@@ -30,7 +31,7 @@ export type ActionMenuRootProps = {
 } & RadixDropdownMenuProps;
 
 export const ActionMenuRoot = ({ slider = false, density = "default", ...props }: ActionMenuRootProps) => {
-  const [stack, _setStack] = React.useState([window?.crypto.randomUUID()])
+  const [stack, setStack] = React.useState([window?.crypto.randomUUID()])
   const [currentId, setCurrentId] = React.useState("");
   const [previousId, setPreviousId] = React.useState("");
 
@@ -49,9 +50,7 @@ export const ActionMenuRoot = ({ slider = false, density = "default", ...props }
         previousId,
         slider,
         stack,
-        setStack: s => {
-          _setStack(s)
-        }
+        setStack
       }}>
       <StyledActionMenu {...props} />
     </ActionMenuContext.Provider >

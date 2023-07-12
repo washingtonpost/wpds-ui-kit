@@ -16,7 +16,6 @@ import { ContentStyles, ContentDensityVariants } from "./ActionMenuContent";
 
 const StyledSubContent = styled(ActionMenuPrimitive.SubContent, {
   ...ContentStyles,
-  //boxShadow: theme.shadows["500"],
   variants: {
     ...ContentDensityVariants,
     hidden: {
@@ -42,22 +41,6 @@ const StyledSubContent = styled(ActionMenuPrimitive.SubContent, {
   }
 });
 
-const ResponsiveSubItems = styled("div", {
-  padding: 0,
-  margin: 0,
-  variants: {
-    hidden: {
-      true: {
-        display: "none"
-      },
-      false: {
-        display: "content"
-      }
-    }
-  },
-  scrollbarWidth: "none",
-})
-
 const StyledPortal = styled(ActionMenuPortal, {
   variants: {
     hidden: {
@@ -71,19 +54,21 @@ const StyledPortal = styled(ActionMenuPortal, {
   },
 })
 
+type ShadowProp = "small" | "large"
+
 export type ActionMenuSubContentProps = {
   /** Any React node may be used as a child to allow for formatting */
   children?: React.ReactNode;
   /** Override CSS */
   css?: WPDS.CSS;
-  shadowSize?: "small" | "large";
+  shadowSize?: ShadowProp;
 } & RadixDropdownMenuSubContentProps;
 
 
 export const ActionMenuSubContent = React.forwardRef<HTMLDivElement, ActionMenuSubContentProps>(({ children, ...props }: ActionMenuSubContentProps, ref) => {
   const context = useContext(ActionMenuContext);
 
-  const [_shadowSize, setShadowSize] = React.useState("small")
+  const [shadowSize, setShadowSize] = React.useState("small" as ShadowProp)
 
   React.useEffect(() => {
     setShadowSize(
@@ -99,7 +84,7 @@ export const ActionMenuSubContent = React.forwardRef<HTMLDivElement, ActionMenuS
         <StyledSubContent
           {...props}
           ref={ref}
-          shadowSize={_shadowSize}
+          shadowSize={shadowSize}
           sideOffset={-10}
           alignOffset={5}
         >

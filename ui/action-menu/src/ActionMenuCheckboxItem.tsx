@@ -26,11 +26,11 @@ export type ActionMenuCheckboxItemProps = {
 
 export const ActionMenuCheckboxItem = React.forwardRef<HTMLDivElement, ActionMenuCheckboxItemProps>(({ children, ...props }: ActionMenuCheckboxItemProps, ref) => {
   return (
-    <div>
+    <>
       <StyledCheckboxItem {...props} ref={ref} className="action-menu-item">
         {children}
       </StyledCheckboxItem>
       <Divider />
-    </div>
+    </>
   );
 });

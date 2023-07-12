@@ -1,6 +1,6 @@
 import * as React from "react";
 import { within, userEvent } from "@storybook/testing-library";
-import { styled } from "@washingtonpost/wpds-ui-kit";
+import { styled } from "@washingtonpost/wpds-theme";
 import { VisuallyHidden as Component } from "./visually-hidden";
 
 import type { ComponentMeta, ComponentStory } from "@storybook/react";

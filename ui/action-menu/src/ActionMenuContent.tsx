@@ -8,7 +8,9 @@ import { ActionMenuContext } from "./context";
 import {
   DropdownMenuContentProps as RadixDropdownMenuContentProps,
 } from "@radix-ui/react-dropdown-menu";
+
 import { ActionMenuPortal } from "./ActionMenuPortal";
+import { DensityProp } from "./ActionMenuRoot";
 
 export const ContentDensityVariants = {
   density: {
@@ -57,7 +59,6 @@ export const StyledContent = styled(ActionMenuPrimitive.Content, {
   }
 });
 
-export type DensityProp = "loose" | "default" | "compact"
 export type ActionMenuContentProps = {
   /** Any React node may be used as a child to allow for formatting */
   children?: React.ReactNode;
@@ -70,13 +71,9 @@ export const ActionMenuContent = React.forwardRef<HTMLDivElement, ActionMenuCont
   const context = React.useContext(ActionMenuContext)
 
   const handleInteractOutside = () => {
-
-    console.log("handleInteractOutside")
-
     const item = context?.stack.shift()
 
-    console.log(item)
-    context?.setStack([]);
+    context?.setStack([item]);
   }
   return <ActionMenuPortal>
     <StyledContent {...props} ref={ref} onInteractOutside={handleInteractOutside}>

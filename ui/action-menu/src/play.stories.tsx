@@ -2,16 +2,16 @@ import * as React from "react";
 import { ActionMenu as Component } from ".";
 import { Button } from "@washingtonpost/wpds-button";
 import { Box } from "@washingtonpost/wpds-box";
-import { theme, styled } from "@washingtonpost/wpds-theme";
+import { styled, theme } from "@washingtonpost/wpds-theme";
 import { Icon } from "@washingtonpost/wpds-icon";
 import {
-	Bell,
 	Bookmark,
 	Check,
 	Diamond,
 	DotsVertical,
 	MixerVertical,
-	Print
+	Print,
+	Copy,
 } from "@washingtonpost/wpds-assets";
 import { screen, userEvent } from "@storybook/testing-library";
 import { expect } from "@storybook/jest";
@@ -40,104 +40,21 @@ export default {
 	}
 };
 
-const LeftIcon = styled(Icon, {
-	color: theme.colors.accessible,
-	fill: theme.colors.primary,
-	display: "flex",
-	variants: {
-		isDisabled: {
-			true: {
-				color: "inherit",
-			},
-		},
-	},
-	marginRight: theme.sizes["050"]
-});
+const RightIcon = styled("div", {
+	marginLeft: "auto",
+	display: "inline-flex",
+	alignItems: "center",
+	justifyContent: "center",
+	height: "100%",
+})
 
-const LeftIconPlaceholder = styled("div", {
-	width: theme.sizes["100"],
-	marginRight: theme.sizes["050"],
-});
-
-const SubMenusTemplate = (parameters) => (
-	<Component.Root {...parameters}>
-		<Component.Trigger asChild>
-			<Button>Actions</Button>
-		</Component.Trigger>
-		<Component.Content>
-			<Component.Item>
-				<LeftIconPlaceholder />
-				Action 1
-			</Component.Item>
-			<Component.Item>
-				<LeftIcon label="Diamond"><Diamond /></LeftIcon>
-				Action 2
-			</Component.Item>
-			<Component.Sub>
-				<Component.SubTrigger>
-					<LeftIconPlaceholder />
-					More actions
-				</Component.SubTrigger>
-				<Component.SubContent>
-					<Component.Item disabled>
-						<LeftIcon label="Diamond"><Diamond /></LeftIcon>
-						Action 3
-					</Component.Item>
-					<Component.Item>
-						<LeftIcon label="Bookmark"><Bookmark /></LeftIcon>
-						Action 4
-					</Component.Item>
-					<Component.Item>
-						<LeftIcon label="Print"><Print /></LeftIcon>
-						Action 5
-					</Component.Item>
-					<Component.Sub>
-						<Component.SubTrigger>
-							<LeftIconPlaceholder />
-							Even more actions
-						</Component.SubTrigger>
-						<Component.SubContent>
-							<Component.Item>
-								Action 6
-							</Component.Item>
-							<Component.Item>
-								Action 7
-							</Component.Item>
-						</Component.SubContent>
-					</Component.Sub>
-				</Component.SubContent>
-			</Component.Sub>
-		</Component.Content>
-	</Component.Root>
-);
-
-export const SubMenus = SubMenusTemplate.bind({});
-
-const PortalTemplate = (parameters) => (
-	<Component.Root {...parameters}>
-		<Component.Trigger asChild>
-			<Button>Actions</Button>
-		</Component.Trigger>
-		<Component.Portal>
-			<Component.Content>
-				<Component.Item>
-					Action 1
-				</Component.Item>
-				<Component.Item>
-					Action 2
-				</Component.Item>
-				<Component.Item>
-					Action 3
-				</Component.Item>
-				<Component.Item>
-					Action 4
-				</Component.Item>
-			</Component.Content>
-		</Component.Portal>
-	</Component.Root>
-);
-
-export const ActionMenuPortal = PortalTemplate.bind({});
+const LeftIcon = styled("div", {
+	paddingRight: theme.space["025"],
+	display: "inline-flex",
+	alignItems: "center",
+	justifyContent: "center",
+	height: "100%",
+})
 
 const SimpleContent = (
 	<Component.Content>
@@ -205,24 +122,17 @@ export const Triggers = TriggersTemplate.bind({});
 // Trailing icons
 // Trailing shortcuts
 
-const ItemContent = styled("div", {
-	display: "flex",
-	flexDirection: "row",
-	flexGrow: 1,
-});
-
-const StyledChild = styled("div", {
-	"&:nth-child(n+1):last-child": {
-		marginLeft: "auto"
-	}
-})
+const Circle = (props) => <svg {...props} viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+	<circle cx="50" cy="50" r="32" />
+</svg>
 
 const ItemVariationsTemplate = (parameters) => {
-	const [checkedA, setCheckedA] = React.useState(false);
+	const [checkedA, setCheckedA] = React.useState(true);
 	const [checkedB, setCheckedB] = React.useState(true);
-	const [checkedC, setCheckedC] = React.useState(false);
+	const [checkedC, setCheckedC] = React.useState(true);
+	const [checkedD, setCheckedD] = React.useState(true);
 
-	const [radioChecked, setRadioChecked] = React.useState("bonk");
+	const [radioChecked, setRadioChecked] = React.useState("radio2");
 
 	return (
 		<Component.Root {...parameters}>
@@ -231,126 +141,108 @@ const ItemVariationsTemplate = (parameters) => {
 			</Component.Trigger>
 			<Component.Portal>
 				<Component.Content>
-					<Component.Label>Items</Component.Label>
-					<Component.CheckboxItem
-						checked={checkedA}
-						onCheckedChange={setCheckedA}
-					>
-						<Component.ItemIndicator>
-							<Icon label="check"><Check /></Icon>
-						</Component.ItemIndicator>
-						<ItemContent>
-							<StyledChild>Show Bookmarks</StyledChild><StyledChild>⌘+B</StyledChild>
-						</ItemContent>
-					</Component.CheckboxItem>
-					<Component.CheckboxItem
-						checked={checkedB}
-						onCheckedChange={setCheckedB}
-					>
-						<Component.ItemIndicator>
-							<Icon label="check" size="100"><Check /></Icon>
-						</Component.ItemIndicator>
-						<ItemContent>
-							Checkbox Action
-						</ItemContent>
-					</Component.CheckboxItem>
-					<Component.CheckboxItem
-						checked={checkedC}
-						onCheckedChange={setCheckedC}
-					>
-						<Component.ItemIndicator>
-							<StyledChild><Icon label="check"><Check /></Icon></StyledChild>
-						</Component.ItemIndicator>
-						<ItemContent>
-							<StyledChild>Show Bookmarks</StyledChild><StyledChild><Icon label="bell" size="100"><Bell /></Icon></StyledChild>
-						</ItemContent>
-					</Component.CheckboxItem>
-					<Component.Sub>
-						<Component.SubTrigger>
-							More actions
-						</Component.SubTrigger>
-						<Component.SubContent>
-							<Component.Item disabled>
-								<LeftIcon label="Diamond"><Diamond /></LeftIcon>
-								Action 7
-							</Component.Item>
-							<Component.Item>
-								<LeftIcon label="Bookmark"><Bookmark /></LeftIcon>
-								Action 8
-							</Component.Item>
-							<Component.Item>
-								<LeftIcon label="Print"><Print /></LeftIcon>
-								Action 9
-							</Component.Item>
-							<Component.Sub>
-								<Component.SubTrigger>
-									Even more actions
-								</Component.SubTrigger>
-								<Component.SubContent>
-									<Component.Item>
-										Action X
-									</Component.Item>
-									<Component.Item>
-										Action Z
-									</Component.Item>
-								</Component.SubContent>
-							</Component.Sub>
-						</Component.SubContent>
-					</Component.Sub>
+					<Component.Label>Label</Component.Label>
 					<Component.Item>
-						<ItemContent>Action 3</ItemContent>
+						<LeftIcon>
+							<Icon label="check">
+								<Copy />
+							</Icon>
+						</LeftIcon>
+						Copy Items
 					</Component.Item>
-					<Component.Sub>
-						<Component.SubTrigger>
-							More actions
-						</Component.SubTrigger>
-						<Component.SubContent>
-							<Component.Item disabled>
-								<LeftIcon label="Diamond"><Diamond /></LeftIcon>
-								Action 7
-							</Component.Item>
-							<Component.Item>
-								<LeftIcon label="Bookmark"><Bookmark /></LeftIcon>
-								Action 8
-							</Component.Item>
-							<Component.Item>
-								<LeftIcon label="Print"><Print /></LeftIcon>
-								Action 9
-							</Component.Item>
-							<Component.Sub>
-								<Component.SubTrigger>
-									Even more actions
-								</Component.SubTrigger>
-								<Component.SubContent>
-									<Component.Item>
-										Action X
-									</Component.Item>
-									<Component.Item>
-										Action Z
-									</Component.Item>
-								</Component.SubContent>
-							</Component.Sub>
-						</Component.SubContent>
-					</Component.Sub>
-					<Component.Item>
-						<ItemContent>Action 4</ItemContent>
-					</Component.Item>
+					<Component.Group>
+						<Component.Label>Checkbox Item Examples</Component.Label>
+						<Component.CheckboxItem
+							checked={checkedA}
+							onCheckedChange={setCheckedA}
+						>
+							<Component.ItemIndicator>
+								<Icon label="check">
+									<Check />
+								</Icon>
+							</Component.ItemIndicator>
+							<LeftIcon>
+								<Icon label="bookmark" size="100">
+									<Bookmark />
+								</Icon>
+							</LeftIcon>
+							Left
+						</Component.CheckboxItem>
+						<Component.CheckboxItem
+							checked={checkedB}
+							onCheckedChange={setCheckedB}
+						>
+							<Component.ItemIndicator>
+								<Icon label="check" size="100">
+									<Check />
+								</Icon>
+							</Component.ItemIndicator>
+							Neither
+						</Component.CheckboxItem>
+						<Component.CheckboxItem
+							checked={checkedC}
+							onCheckedChange={setCheckedC}
+						>
+							<Component.ItemIndicator>
+								<Icon label="check">
+									<Check />
+								</Icon>
+							</Component.ItemIndicator>
+							Right
+							<RightIcon>
+								<Icon label="bell" size="100">
+									<Bookmark />
+								</Icon>
+							</RightIcon>
+						</Component.CheckboxItem>
+						<Component.CheckboxItem
+							checked={checkedD}
+							onCheckedChange={setCheckedD}
+						>
+							<Component.ItemIndicator>
+								<Icon label="check">
+									<Check />
+								</Icon>
+							</Component.ItemIndicator>
+							<LeftIcon>
+								<Icon label="bell" size="100">
+									<Bookmark />
+								</Icon>
+							</LeftIcon>
+							Both
+							<RightIcon>
+								<Icon label="bell" size="100">
+									<Bookmark />
+								</Icon>
+							</RightIcon>
+						</Component.CheckboxItem>
+					</Component.Group>
+					<Component.Label>Radio Group Example</Component.Label>
+
 					<Component.RadioGroup value={radioChecked} onValueChange={setRadioChecked}>
-						<Component.RadioItem className="DropdownMenuRadioItem" value="pedro">
-							<Component.ItemIndicator className="DropdownMenuItemIndicator">
+						<Component.RadioItem value="radio1">
+							<Component.ItemIndicator>
 								<Icon label="radio 1">
-									<Diamond />
+									<Circle />
 								</Icon>
 							</Component.ItemIndicator>
-							Pedro Duarte
+							Radio 1
 						</Component.RadioItem>
-						<Component.RadioItem className="DropdownMenuRadioItem" value="colm">
-							<Component.ItemIndicator className="DropdownMenuItemIndicator">
+						<Component.RadioItem value="radio2">
+							<Component.ItemIndicator>
 								<Icon label="radio 2">
-									<Diamond />
+									<Circle />
 								</Icon>
 							</Component.ItemIndicator>
-							Colm Tuite
+							Radio 2
+						</Component.RadioItem>
+						<Component.RadioItem value="radio3">
+							<Component.ItemIndicator>
+								<Icon label="radio 3">
+									<Circle />
+								</Icon>
+							</Component.ItemIndicator>
+							Radio 2
 						</Component.RadioItem>
 					</Component.RadioGroup>
 					<Component.Sub>
@@ -359,15 +251,115 @@ const ItemVariationsTemplate = (parameters) => {
 						</Component.SubTrigger>
 						<Component.SubContent>
 							<Component.Item disabled>
-								<LeftIcon label="Diamond"><Diamond /></LeftIcon>
+								<LeftIcon>
+									<Icon label="bookmark" size="100">
+										<Bookmark />
+									</Icon>
+								</LeftIcon>
+								Bookmarks
+							</Component.Item>
+							<Component.Item>
+								<LeftIcon>
+									<Icon label="bookmark" size="100">
+										<Bookmark />
+									</Icon>
+								</LeftIcon>
+								Bookmarks
+							</Component.Item>
+							<Component.Item>
+								Bookmarks
+							</Component.Item>
+							<Component.Sub>
+								<Component.SubTrigger>
+									Even more actions
+								</Component.SubTrigger>
+								<Component.SubContent>
+									<Component.Item>
+										Action X
+									</Component.Item>
+									<Component.Item>
+										Action Z
+									</Component.Item>
+								</Component.SubContent>
+							</Component.Sub>
+						</Component.SubContent>
+					</Component.Sub>
+
+					<Component.Sub>
+						<Component.SubTrigger>
+							More actions
+						</Component.SubTrigger>
+						<Component.SubContent>
+							<Component.Item disabled>
+								<LeftIcon>
+									<Icon label="Diamond">
+										<Circle />
+									</Icon>
+								</LeftIcon>
 								Action 7
 							</Component.Item>
 							<Component.Item>
-								<LeftIcon label="Bookmark"><Bookmark /></LeftIcon>
+								<LeftIcon>
+									<Icon label="Bookmark">
+										<Circle />
+									</Icon>
+								</LeftIcon>
 								Action 8
 							</Component.Item>
 							<Component.Item>
-								<LeftIcon label="Print"><Print /></LeftIcon>
+								<LeftIcon>
+									<Icon label="Print">
+										<Circle />
+									</Icon>
+								</LeftIcon>
+								Action 9
+							</Component.Item >
+							<Component.Sub>
+								<Component.SubTrigger>
+									Even more actions
+								</Component.SubTrigger>
+								<Component.SubContent>
+									<Component.Item>
+										Action X
+									</Component.Item>
+									<Component.Item>
+										Action Z
+									</Component.Item>
+								</Component.SubContent>
+							</Component.Sub>
+						</Component.SubContent >
+					</Component.Sub >
+					<Component.Item>
+						Action 4
+					</Component.Item>
+
+					<Component.Sub>
+						<Component.SubTrigger>
+							More actions
+						</Component.SubTrigger>
+						<Component.SubContent>
+							<Component.Item disabled>
+								<LeftIcon>
+									<Icon label="Diamond">
+										<Circle />
+									</Icon>
+								</LeftIcon>
+								Action 7
+							</Component.Item>
+							<Component.Item>
+								<LeftIcon>
+									<Icon label="Bookmark">
+										<Circle />
+									</Icon>
+								</LeftIcon>
+								Action 8
+							</Component.Item>
+							<Component.Item>
+								<LeftIcon>
+									<Icon label="Print">
+										<Circle />
+									</Icon>
+								</LeftIcon>
 								Action 9
 							</Component.Item>
 							<Component.Sub>
@@ -385,11 +377,12 @@ const ItemVariationsTemplate = (parameters) => {
 							</Component.Sub>
 						</Component.SubContent>
 					</Component.Sub>
-				</Component.Content>
-			</Component.Portal>
+				</Component.Content >
+			</Component.Portal >
 		</Component.Root >
 	);
 }
+
 export const ItemVariations = ItemVariationsTemplate.bind({});
 
 
@@ -400,34 +393,31 @@ const InteractionsTemplate: ComponentStory<any> = (parameters) => (
 		</Component.Trigger>
 		<Component.Content density="loose">
 			<Component.Item>
-				<LeftIconPlaceholder />
 				Level 1 Action
 			</Component.Item>
 			<Component.Item>
-				<LeftIcon label="Diamond"><Diamond /></LeftIcon>
+				<LeftIcon><Icon label="Diamond"><Diamond /></Icon></LeftIcon>
 				Level 1 Action
 			</Component.Item>
 			<Component.Sub>
 				<Component.SubTrigger>
-					<LeftIconPlaceholder />
 					Open Level 2
 				</Component.SubTrigger>
 				<Component.SubContent>
 					<Component.Item disabled>
-						<LeftIcon label="Diamond"><Diamond /></LeftIcon>
+						<LeftIcon><Icon label="Diamond"><Diamond /></Icon></LeftIcon>
 						Level 2 Action
 					</Component.Item>
 					<Component.Item >
-						<LeftIcon label="Bookmark"><Bookmark /></LeftIcon>
+						<LeftIcon><Icon label="Bookmark"><Bookmark /></Icon></LeftIcon>
 						Level 2 Action
 					</Component.Item>
 					<Component.Item>
-						<LeftIcon label="Print"><Print /></LeftIcon>
+						<LeftIcon><Icon label="Print"><Print /></Icon></LeftIcon>
 						Level 2 Action
 					</Component.Item>
 					<Component.Sub>
 						<Component.SubTrigger>
-							<LeftIconPlaceholder />
 							Open Level 3
 						</Component.SubTrigger>
 						<Component.SubContent>

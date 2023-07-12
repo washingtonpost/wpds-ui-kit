@@ -13,20 +13,22 @@ import {
 export const StyledSub = styled(ActionMenuPrimitive.Sub, {});
 
 export type ActionMenuSubProps = {
+  onOpenChange?: Function;
   /** Any React node may be used as a child to allow for formatting */
   children?: React.ReactNode;
   /** Override CSS */
   css?: WPDS.CSS;
 } & RadixDropdownMenuSubProps;
 
-export const ActionMenuSub = ({ ...props }: ActionMenuSubProps) => {
+export const ActionMenuSub = ({ onOpenChange = () => { }, ...props }: ActionMenuSubProps) => {
   const context = React.useContext(ActionMenuContext);
   const [id] = React.useState(window?.crypto.randomUUID());
 
   // true or false tells us if we are going up or down
-  const handleOpenChange = open => {
+  const trackSubMenuDepth = open => {
     if (open) {
       context.stack.push(id);
+
       const current = context.stack[context.stack.length - 1];
       const previous = context.stack[context.stack.length - 2];
 
@@ -41,7 +43,6 @@ export const ActionMenuSub = ({ ...props }: ActionMenuSubProps) => {
     }
 
     const previous = context.stack.pop();
-
     const current = context.stack[context.stack.length - 1];
 
     context.advance(
@@ -51,6 +52,11 @@ export const ActionMenuSub = ({ ...props }: ActionMenuSubProps) => {
       }
     );
   };
+
+  const handleOpenChange = open => {
+    trackSubMenuDepth(open);
+    onOpenChange(open);
+  }
 
   return (
     <ActionMenuContext.Provider
