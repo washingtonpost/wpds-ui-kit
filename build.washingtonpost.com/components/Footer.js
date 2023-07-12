@@ -56,7 +56,7 @@ export const Footer = () => {
           Edit this page on GitHub.
         </EditInGithub>
       )}
-      <Script src="https://wpds-site-furniture-external-header-footer-9votzlgtn.preview.now.washingtonpost.com/twp-internal.js" />
+      <Script src="https://wpds-site-furniture-external-header-footer-git-artmsilva-bd1f9f.preview.now.washingtonpost.com/twp-internal.js" />
       <div id="footer-v3"></div>
     </Box>
   );
