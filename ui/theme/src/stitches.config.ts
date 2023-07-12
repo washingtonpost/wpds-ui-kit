@@ -171,17 +171,17 @@ export const globalStyles = globalCss({
       src: "url(https://www.washingtonpost.com/wp-stat/assets/fonts/ITC_Franklin-Light.woff2)",
     },
     {
-      fontFamily: "PostoniUltra",
-      fontWeight: 700,
+      fontFamily: "PostoniDisplayMag",
+      fontWeight: 800,
       fontDisplay: "fallback",
       src: "url(https://www.washingtonpost.com/wp-stat/assets/fonts/PostoniDisplayMag-Ultra.woff2)",
     },
     {
-      fontFamily: "PostoniUltra",
-      fontWeight: 700,
+      fontFamily: "PostoniDisplayMag",
+      fontWeight: 800,
       fontDisplay: "fallback",
       fontStyle: "italic",
-      src: "url(https://www.washingtonpost.com/wp-stat/assets/fonts/PostoniDisplayMag-UltraItalic.woff2)",
+      src: "url(https://www.washingtonpost.com/wp-stat/assets/fonts/PostoniDisplayMag-Ultra_Italic.woff2)",
     },
   ],
 });
