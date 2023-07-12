@@ -2,8 +2,7 @@
 
 The Washington Post Design System (WPDS) UI Kit is now a mono-repo that contains not only our UI Kit, but also our [documentation site](https://build.washingtonpost.com).
 
-![npm (tag)](https://img.shields.io/npm/v/@washingtonpost/wpds-ui-kit/latest) [![Chromatic Production](https://github.com/WPMedia/wpds-ui-kit/actions/workflows/chromatic-prod.yml/badge.svg)](https://github.com/WPMedia/wpds-ui-kit/actions/workflows/chromatic-prod.yml) [![Validate](https://github.com/WPMedia/wpds-ui-kit/actions/workflows/validation.yml/badge.svg)](https://github.com/WPMedia/wpds-ui-kit/actions/workflows/validation.yml) [![Release to Latest NPM Channel](https://github.com/WPMedia/wpds-ui-kit/actions/workflows/latest-release.yml/badge.svg)](https://github.com/WPMedia/wpds-ui-kit/actions/workflows/latest-release.yml) ![Playwright Tests](https://github.com/WPMedia/wpds-ui-kit/actions/workflows/playwright.yml/badge.svg)
-
+![npm (tag)](https://img.shields.io/npm/v/@washingtonpost/wpds-ui-kit/latest) 
 ## Dependency Graph
 
 An example of the dependency graph for importing Button from Kit.
