@@ -20,11 +20,12 @@ const Container = styled("div", {
 });
 
 const Slider = styled("ul", {
+  position: "relative",
   display: "flex",
   listStyle: "none",
   paddingInlineStart: 0,
   marginBlock: 0,
-  transition: `transform 0.5s ${theme.transitions.inOut}`,
+  transition: `left 0.5s ${theme.transitions.inOut}`,
   "@reducedMotion": {
     transition: "none",
   },
@@ -238,7 +239,7 @@ export const CarouselContent = React.forwardRef<
         role="group"
         aria-activedescendant={props["aria-activedescendant"] || activeId}
       >
-        <Slider css={{ transform: `translateX(${xPos}px)` }}>
+        <Slider css={{ left: `${xPos}px` }}>
           {React.Children.map(children, (child, index) => {
             if (React.isValidElement(child)) {
               return React.cloneElement(

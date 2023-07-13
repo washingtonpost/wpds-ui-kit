@@ -126,6 +126,11 @@ yalc.lock
 # ignore the storybook build 
 build.washingtonpost.com/public/storybook/**/*
 
+# vim
+*.swp
+*.swo
+*.swn
+
 .env
 .env.*
 .vercel
