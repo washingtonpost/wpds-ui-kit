@@ -4,6 +4,8 @@ import { styled } from "@washingtonpost/wpds-theme";
 
 const StyledList = styled(ComboboxList, {
   marginBlock: 0,
+  maxHeight: "300px",
+  overflowY: "auto",
   paddingInlineStart: 0,
   position: "relative",
   listStyleType: "none",
@@ -32,19 +34,16 @@ export const InputSearchList = ({
       ) as HTMLElement;
       if (!selectedEl) return;
 
-      const parentEl = listEl.parentElement;
-      if (!parentEl) return;
-
-      const listTop = parentEl.scrollTop;
-      const listBottom = listTop + parentEl.clientHeight;
+      const listTop = listEl.scrollTop;
+      const listBottom = listTop + listEl.clientHeight;
 
       const selectedTop = selectedEl.offsetTop;
       const selectedBottom = selectedTop + selectedEl.clientHeight;
 
       if (selectedTop < listTop) {
-        parentEl.scrollTop -= listTop - selectedTop;
+        listEl.scrollTop -= listTop - selectedTop;
       } else if (selectedBottom > listBottom) {
-        parentEl.scrollTop += selectedBottom - listBottom;
+        listEl.scrollTop += selectedBottom - listBottom;
       }
     }
   }, [navigationValue, state]);

@@ -66,6 +66,7 @@ export const unstyledInputStyles = {
   paddingInline: theme.space["050"],
   textOverflow: "ellipsis",
   width: "100%",
+  "-webkit-appearance": "none",
 
   "&:focus": {
     outline: "none",

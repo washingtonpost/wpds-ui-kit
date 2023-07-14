@@ -1,10 +1,12 @@
 import * as React from "react";
+import { screen, userEvent } from "@storybook/testing-library";
+import { expect } from "@storybook/jest";
 import { Box } from "@washingtonpost/wpds-box";
+import { matchSorter } from "match-sorter";
 import { InputSearch } from "./";
+import { cities } from "./cities";
 
 import type { ComponentStory } from "@storybook/react";
-import { matchSorter } from "match-sorter";
-import { cities } from "./cities";
 
 export default {
   title: "InputSearch",
@@ -184,4 +186,66 @@ Grouping.args = {};
 
 Grouping.parameters = {
   chromatic: { disableSnapshot: true },
+};
+
+const ScrollTemplate: ComponentStory<typeof InputSearch.Root> = (args) => {
+  return (
+    <Box css={{ width: "275px", height: "340px", marginBlockStart: "700px" }}>
+      <InputSearch.Root {...args} aria-label="Example-Search" openOnFocus>
+        <InputSearch.Input name="city" id="city" />
+        <InputSearch.Popover>
+          <InputSearch.List>
+            <InputSearch.ListItem value="Apple" />
+            <InputSearch.ListItem value="Banana" />
+            <InputSearch.ListItem value="Orange" />
+            <InputSearch.ListItem value="Kiwi" />
+            <InputSearch.ListItem value="Pineapple" />
+          </InputSearch.List>
+        </InputSearch.Popover>
+      </InputSearch.Root>
+    </Box>
+  );
+};
+
+export const Scroll = ScrollTemplate.bind({});
+
+Scroll.args = {};
+
+Scroll.parameters = {
+  chromatic: { disableSnapshot: true },
+};
+
+const InteractionsTemplate: ComponentStory<typeof InputSearch.Root> = () => (
+  <Box css={{ width: "275px", height: "340px" }}>
+    <InputSearch.Root aria-label="Example-Search" openOnFocus>
+      <InputSearch.Input name="city" id="city" />
+      <InputSearch.Popover>
+        <InputSearch.List>
+          <InputSearch.ListItem value="Apple" />
+          <InputSearch.ListItem value="Banana" />
+          <InputSearch.ListItem value="Orange" />
+          <InputSearch.ListItem value="Kiwi" />
+          <InputSearch.ListItem value="Pineapple" />
+        </InputSearch.List>
+      </InputSearch.Popover>
+    </InputSearch.Root>
+  </Box>
+);
+
+export const Interactions = InteractionsTemplate.bind({});
+
+// Function to emulate pausing between interactions
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+Interactions.play = async () => {
+  // radix Label needs a tick to associate labels with inputs
+  await sleep(0);
+  const input = screen.getByLabelText("Search");
+  await userEvent.type(input, "app", {
+    delay: 100,
+  });
+  await userEvent.keyboard("[ArrowDown]");
+  await expect(input).toHaveDisplayValue("Apple");
 };
