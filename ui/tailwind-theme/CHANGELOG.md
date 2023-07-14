@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.9.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.8.5...v1.9.0) (2023-07-14)
+
+**Note:** Version bump only for package @washingtonpost/wpds-tailwind-theme
+
+
+
+
+
 ## [1.8.5](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.8.4...v1.8.5) (2023-07-06)
 
 **Note:** Version bump only for package @washingtonpost/wpds-tailwind-theme
