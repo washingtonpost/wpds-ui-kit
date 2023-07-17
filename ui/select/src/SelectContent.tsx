@@ -17,7 +17,6 @@ const StyledContent = styled(SelectPrimitive.Content, {
   fontWeight: theme.fontWeights.light,
   lineHeight: theme.lineHeights["125"],
   paddingBlock: "11px",
-  transform: "translateX(22px)",
   overflowWrap: "anywhere",
 });
 
@@ -76,6 +75,8 @@ export const SelectContent = React.forwardRef<
           ...css,
         }}
         {...props}
+        position="popper"
+        side="bottom"
         ref={ref}
       >
         <StyledScrollUpButton top>

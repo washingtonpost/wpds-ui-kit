@@ -47,8 +47,8 @@ export type SelectRootProps = {
   helperText?: React.ReactNode;
   /** Event handler called when the value changes. */
   onValueChange?:
-    | ((value: string) => void)
-    | (((state: string) => void) | undefined);
+  | ((value: string) => void)
+  | (((state: string) => void) | undefined);
   /** The select element's required attribute */
   required?: boolean;
   /** Indicates there is a success*/
