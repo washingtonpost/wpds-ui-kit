@@ -241,13 +241,16 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
           <Icon label={""} onClick={
             // submit the form when the search icon is clicked
             (event) => {
-              event.preventDefault();
-              event.stopPropagation();
-              // find parent form and submit it
-              const form = event.currentTarget.closest("form");
-              if (form) {
-                form.submit();
-              }
+              // fire enter key event
+              const enterKeyEvent = new KeyboardEvent("keydown", {
+                bubbles: true,
+                cancelable: true,
+                key: "Enter",
+                keyCode: 13,
+              });
+
+              // dispatch the event
+              internalRef.current?.dispatchEvent(enterKeyEvent);
             }
           }>
             <Search />
