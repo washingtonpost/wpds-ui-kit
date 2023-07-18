@@ -243,10 +243,10 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
             (event) => {
               event.preventDefault();
               event.stopPropagation();
-              if (internalRef.current) {
-                internalRef.current.form?.dispatchEvent(
-                  new Event("submit", { bubbles: true })
-                );
+              // find parent form and submit it
+              const form = event.currentTarget.closest("form");
+              if (form) {
+                form.submit();
               }
             }
           }>
