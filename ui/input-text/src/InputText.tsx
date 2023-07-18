@@ -238,7 +238,18 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
     switch (type) {
       case "search":
         child = (
-          <Icon label={""}>
+          <Icon label={""} onClick={
+            // submit the form when the search icon is clicked
+            (event) => {
+              event.preventDefault();
+              event.stopPropagation();
+              if (internalRef.current) {
+                internalRef.current.form?.dispatchEvent(
+                  new Event("submit", { bubbles: true })
+                );
+              }
+            }
+          }>
             <Search />
           </Icon>
         );
