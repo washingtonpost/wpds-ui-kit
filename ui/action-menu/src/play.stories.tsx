@@ -191,13 +191,11 @@ const ItemVariationsTemplate = (parameters) => {
 								</Icon>
 							</Component.ItemIndicator>
 							Right
-							{/*
 							<RightIcon>
 								<Icon label="bell" size="100">
 									<Bookmark />
 								</Icon>
 							</RightIcon>
-							*/}
 						</Component.CheckboxItem>
 						<Component.CheckboxItem
 							checked={checkedD}
@@ -216,13 +214,11 @@ const ItemVariationsTemplate = (parameters) => {
 							</LeftIcon>
 							*/}
 							Both
-							{/*
 							<RightIcon>
 								<Icon label="bell" size="100">
 									<Bookmark />
 								</Icon>
 							</RightIcon>
-							*/}
 						</Component.CheckboxItem>
 					</Component.Group>
 					<Component.Label>Radio Group Example</Component.Label>

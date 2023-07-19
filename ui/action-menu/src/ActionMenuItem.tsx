@@ -6,8 +6,6 @@ import * as ActionMenuPrimitive from '@radix-ui/react-dropdown-menu';
 
 import { DropdownMenuItemProps as RadixDropdownMenuItemProps } from "@radix-ui/react-dropdown-menu";
 
-import { Divider } from "@washingtonpost/wpds-divider";
-
 const NAME = "ActionMenuItem";
 
 export const ItemStyles = {

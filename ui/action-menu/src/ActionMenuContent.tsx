@@ -11,7 +11,6 @@ import {
 
 import { ActionMenuPortal } from "./ActionMenuPortal";
 import { DensityProp } from "./ActionMenuRoot";
-import { collapseTextChangeRangesAcrossMultipleVersions } from "typescript";
 
 const NAME = "ActionMenuContent";
 
@@ -114,7 +113,7 @@ export const ActionMenuContent = React.forwardRef<HTMLDivElement, ActionMenuCont
   const handleInteractOutside = () => {
     const item = context?.stack.shift()
 
-    context?.setStack([item]);
+    context?.setStack([ item ? item : ""]);
   }
   return <ActionMenuPortal>
     <StyledContent {...props} ref={ref} onInteractOutside={handleInteractOutside}>
