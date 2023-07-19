@@ -2,11 +2,9 @@ import * as React from "react";
 
 import WPDS, { styled, theme } from "@washingtonpost/wpds-theme";
 
-import * as ActionMenuPrimitive from '@radix-ui/react-dropdown-menu';
+import * as ActionMenuPrimitive from "@radix-ui/react-dropdown-menu";
 
-import {
-  DropdownMenuLabelProps as RadixDropdownMenuLabelProps,
-} from "@radix-ui/react-dropdown-menu";
+import { DropdownMenuLabelProps as RadixDropdownMenuLabelProps } from "@radix-ui/react-dropdown-menu";
 
 const NAME = "ActionMenuLabel";
 
@@ -25,7 +23,10 @@ export type ActionMenuLabelProps = {
   css?: WPDS.CSS;
 } & RadixDropdownMenuLabelProps;
 
-export const ActionMenuLabel = React.forwardRef<HTMLDivElement, ActionMenuLabelProps>(({ children, ...props }: ActionMenuLabelProps, ref) => {
+export const ActionMenuLabel = React.forwardRef<
+  HTMLDivElement,
+  ActionMenuLabelProps
+>(({ children, ...props }: ActionMenuLabelProps, ref) => {
   return (
     <StyledLabel {...props} ref={ref} className="action-menu-label">
       {children}

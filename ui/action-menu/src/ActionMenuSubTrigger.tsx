@@ -1,6 +1,6 @@
 import * as React from "react";
 import WPDS, { theme, styled } from "@washingtonpost/wpds-theme";
-import * as ActionMenuPrimitive from '@radix-ui/react-dropdown-menu';
+import * as ActionMenuPrimitive from "@radix-ui/react-dropdown-menu";
 import { DropdownMenuSubTriggerProps as RadixDropdownMenuSubTriggerProps } from "@radix-ui/react-dropdown-menu";
 import { Icon } from "@washingtonpost/wpds-icon";
 import { ChevronRight } from "@washingtonpost/wpds-assets";
@@ -20,13 +20,13 @@ const SubTriggerStyles = {
       false: {
         ...ItemStyles,
       },
-    }
+    },
   },
   defaultVariants: {
     isHeading: false,
     density: "default",
-  }
-}
+  },
+};
 
 const RightIcon = styled(Icon, {
   width: theme.sizes["100"],
@@ -44,14 +44,17 @@ const RightIcon = styled(Icon, {
         display: "none",
       },
       false: {
-        display: "flex"
-      }
-    }
+        display: "flex",
+      },
+    },
   },
   marginLeft: "auto",
 });
 
-const StyledSubTrigger = styled(ActionMenuPrimitive.SubTrigger, SubTriggerStyles);
+const StyledSubTrigger = styled(
+  ActionMenuPrimitive.SubTrigger,
+  SubTriggerStyles
+);
 
 export type ActionMenuSubTriggerProps = {
   /** Any React node may be used as a child to allow for formatting */
@@ -61,8 +64,10 @@ export type ActionMenuSubTriggerProps = {
   onClick?: () => void;
 } & RadixDropdownMenuSubTriggerProps;
 
-
-export const ActionMenuSubTrigger = React.forwardRef<HTMLDivElement, ActionMenuSubTriggerProps>(({ children, ...props }: ActionMenuSubTriggerProps, ref) => {
+export const ActionMenuSubTrigger = React.forwardRef<
+  HTMLDivElement,
+  ActionMenuSubTriggerProps
+>(({ children, ...props }: ActionMenuSubTriggerProps, ref) => {
   const context = useContext(ActionMenuContext);
 
   return (
@@ -76,8 +81,8 @@ export const ActionMenuSubTrigger = React.forwardRef<HTMLDivElement, ActionMenuS
       <RightIcon label="Expand submenu">
         <ChevronRight />
       </RightIcon>
-    </StyledSubTrigger >
-  )
+    </StyledSubTrigger>
+  );
 });
 
 ActionMenuSubTrigger.displayName = NAME;

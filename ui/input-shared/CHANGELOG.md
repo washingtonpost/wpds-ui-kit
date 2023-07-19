@@ -7,20 +7,11 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 **Note:** Version bump only for package @washingtonpost/wpds-input-shared
 
-
-
-
-
 # [1.9.0](https://github.com/WPMedia/wpds-ui-kit/compare/v1.8.5...v1.9.0) (2023-07-14)
-
 
 ### Features
 
-* add remaining examples to InputSearch docs and additional testing examples and validation ([e527dd9](https://github.com/WPMedia/wpds-ui-kit/commit/e527dd91940eb47df0c61a5aae31a01270652075))
-
-
-
-
+- add remaining examples to InputSearch docs and additional testing examples and validation ([e527dd9](https://github.com/WPMedia/wpds-ui-kit/commit/e527dd91940eb47df0c61a5aae31a01270652075))
 
 ## [1.8.5](https://github.com/WPMedia/wpds-ui-kit/compare/v1.8.4...v1.8.5) (2023-07-06)
 

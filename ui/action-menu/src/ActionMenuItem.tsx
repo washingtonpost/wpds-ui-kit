@@ -2,7 +2,7 @@ import * as React from "react";
 
 import WPDS, { theme, styled } from "@washingtonpost/wpds-theme";
 
-import * as ActionMenuPrimitive from '@radix-ui/react-dropdown-menu';
+import * as ActionMenuPrimitive from "@radix-ui/react-dropdown-menu";
 
 import { DropdownMenuItemProps as RadixDropdownMenuItemProps } from "@radix-ui/react-dropdown-menu";
 
@@ -29,7 +29,7 @@ export const ItemStyles = {
   "&[data-disabled] svg": {
     fill: theme.colors.disabled,
   },
-}
+};
 
 // export const ItemContent = styled("div", {
 //   display: "flex",
@@ -45,13 +45,15 @@ export type ActionMenuItemProps = {
   css?: WPDS.CSS;
 } & RadixDropdownMenuItemProps;
 
-
-export const ActionMenuItem = React.forwardRef<HTMLDivElement, ActionMenuItemProps>(({ children, ...props }: ActionMenuItemProps, ref) => {
+export const ActionMenuItem = React.forwardRef<
+  HTMLDivElement,
+  ActionMenuItemProps
+>(({ children, ...props }: ActionMenuItemProps, ref) => {
   return (
     <StyledItem {...props} ref={ref} className="action-menu-item">
       {children}
     </StyledItem>
-)});
+  );
+});
 
 ActionMenuItem.displayName = NAME;
-

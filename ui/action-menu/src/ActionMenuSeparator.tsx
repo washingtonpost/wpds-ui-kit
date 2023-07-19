@@ -2,11 +2,9 @@ import * as React from "react";
 
 import WPDS, { styled } from "@washingtonpost/wpds-theme";
 
-import * as ActionMenuPrimitive from '@radix-ui/react-dropdown-menu';
+import * as ActionMenuPrimitive from "@radix-ui/react-dropdown-menu";
 
-import {
-  DropdownMenuSeparatorProps as RadixDropdownMenuSeparatorProps,
-} from "@radix-ui/react-dropdown-menu";
+import { DropdownMenuSeparatorProps as RadixDropdownMenuSeparatorProps } from "@radix-ui/react-dropdown-menu";
 
 const NAME = "ActionMenuSeparator";
 
@@ -19,10 +17,12 @@ export type ActionMenuSeparatorProps = {
   css?: WPDS.CSS;
 } & RadixDropdownMenuSeparatorProps;
 
-
-export const ActionMenuSeparator = React.forwardRef<HTMLDivElement, ActionMenuSeparatorProps>(({ children, ...props }: ActionMenuSeparatorProps, ref) => {
+export const ActionMenuSeparator = React.forwardRef<
+  HTMLDivElement,
+  ActionMenuSeparatorProps
+>(({ children, ...props }: ActionMenuSeparatorProps, ref) => {
   return (
-    <StyledSeparator {...props} ref={ref} >
+    <StyledSeparator {...props} ref={ref}>
       {children}
     </StyledSeparator>
   );

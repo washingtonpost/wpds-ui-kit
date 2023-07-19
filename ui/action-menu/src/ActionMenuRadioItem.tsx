@@ -2,13 +2,11 @@ import * as React from "react";
 
 import WPDS, { styled, theme } from "@washingtonpost/wpds-theme";
 
-import * as ActionMenuPrimitive from '@radix-ui/react-dropdown-menu';
+import * as ActionMenuPrimitive from "@radix-ui/react-dropdown-menu";
 
-import {
-  DropdownMenuRadioItemProps as RadixDropdownMenuRadioItemProps,
-} from "@radix-ui/react-dropdown-menu";
+import { DropdownMenuRadioItemProps as RadixDropdownMenuRadioItemProps } from "@radix-ui/react-dropdown-menu";
 
-import { ItemStyles } from "./ActionMenuItem"
+import { ItemStyles } from "./ActionMenuItem";
 
 const NAME = "ActionMenuRadioItem";
 
@@ -17,7 +15,7 @@ export const StyledRadioItem = styled(ActionMenuPrimitive.RadioItem, {
   position: "relative",
   "&[aria-checked='true']": {
     fontWeight: theme.fontWeights.bold,
-  }
+  },
 });
 
 export type ActionMenuRadioItemProps = {
@@ -27,7 +25,10 @@ export type ActionMenuRadioItemProps = {
   css?: WPDS.CSS;
 } & RadixDropdownMenuRadioItemProps;
 
-export const ActionMenuRadioItem = React.forwardRef<HTMLDivElement, ActionMenuRadioItemProps>(({ children, ...props }: ActionMenuRadioItemProps, ref) => {
+export const ActionMenuRadioItem = React.forwardRef<
+  HTMLDivElement,
+  ActionMenuRadioItemProps
+>(({ children, ...props }: ActionMenuRadioItemProps, ref) => {
   return (
     <StyledRadioItem {...props} ref={ref} className="action-menu-checkbox-item">
       {children}

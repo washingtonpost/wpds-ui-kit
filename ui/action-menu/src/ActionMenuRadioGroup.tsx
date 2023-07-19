@@ -2,11 +2,9 @@ import * as React from "react";
 
 import WPDS, { styled } from "@washingtonpost/wpds-theme";
 
-import * as ActionMenuPrimitive from '@radix-ui/react-dropdown-menu';
+import * as ActionMenuPrimitive from "@radix-ui/react-dropdown-menu";
 
-import {
-  DropdownMenuRadioGroupProps as RadixDropdownMenuRadioGroupProps,
-} from "@radix-ui/react-dropdown-menu";
+import { DropdownMenuRadioGroupProps as RadixDropdownMenuRadioGroupProps } from "@radix-ui/react-dropdown-menu";
 
 const NAME = "ActionMenuRadioGroup";
 
@@ -19,10 +17,12 @@ export type ActionMenuRadioGroupProps = {
   css?: WPDS.CSS;
 } & RadixDropdownMenuRadioGroupProps;
 
-
-export const ActionMenuRadioGroup = React.forwardRef<HTMLDivElement, ActionMenuRadioGroupProps>(({ children, ...props }: ActionMenuRadioGroupProps, ref) => {
+export const ActionMenuRadioGroup = React.forwardRef<
+  HTMLDivElement,
+  ActionMenuRadioGroupProps
+>(({ children, ...props }: ActionMenuRadioGroupProps, ref) => {
   return (
-    <StyledRadioGroup {...props} ref={ref} >
+    <StyledRadioGroup {...props} ref={ref}>
       {children}
     </StyledRadioGroup>
   );

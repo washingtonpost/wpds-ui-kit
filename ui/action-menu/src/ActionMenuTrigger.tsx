@@ -3,11 +3,9 @@ import * as React from "react";
 // import type * as WPDS from "@washingtonpost/wpds-theme";
 import WPDS, { theme, styled } from "@washingtonpost/wpds-theme";
 
-import * as ActionMenuPrimitive from '@radix-ui/react-dropdown-menu';
+import * as ActionMenuPrimitive from "@radix-ui/react-dropdown-menu";
 
-import {
-  DropdownMenuTriggerProps as RadixDropdownMenuTriggerProps,
-} from "@radix-ui/react-dropdown-menu";
+import { DropdownMenuTriggerProps as RadixDropdownMenuTriggerProps } from "@radix-ui/react-dropdown-menu";
 
 const NAME = "ActionMenuTrigger";
 
@@ -33,7 +31,10 @@ export type ActionMenuTriggerProps = {
   css?: WPDS.CSS;
 } & RadixDropdownMenuTriggerProps;
 
-export const ActionMenuTrigger = React.forwardRef<HTMLButtonElement, ActionMenuTriggerProps>((props: ActionMenuTriggerProps, ref) => {
+export const ActionMenuTrigger = React.forwardRef<
+  HTMLButtonElement,
+  ActionMenuTriggerProps
+>((props: ActionMenuTriggerProps, ref) => {
   return <StyledTrigger {...props} ref={ref} />;
 });
 
