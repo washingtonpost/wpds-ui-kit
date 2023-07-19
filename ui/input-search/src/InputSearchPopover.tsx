@@ -1,28 +1,30 @@
 import * as React from "react";
 import { ComboboxPopover } from "@reach/combobox";
+import { positionMatchWidth } from "@reach/popover";
 import { styled, theme } from "@washingtonpost/wpds-theme";
 import { InputSearchContext } from "./InputSearchRoot";
 
-const StyledPopover = styled(ComboboxPopover, {
+const Background = styled("div", {
   backgroundColor: theme.colors.secondary,
-  maxHeight: "300px",
-  overflowY: "auto",
   variants: {
     floating: {
       true: {
         border: `1px solid ${theme.colors.subtle}`,
         boxShadow: theme.shadows["200"],
-        marginTop: theme.space["025"],
+        marginBlock: theme.space["025"],
       },
     },
   },
 });
 
-export type InputSearchPopoverProps = React.ComponentPropsWithRef<
-  typeof StyledPopover
->;
+export type InputSearchPopoverProps = Omit<
+  React.ComponentPropsWithRef<typeof ComboboxPopover>,
+  "unstable_observableRefs" | "unstable_skipInitialPortalRender"
+> &
+  React.ComponentProps<typeof Background>;
 
 export const InputSearchPopover = ({
+  css,
   children,
   portal = true,
   ...rest
@@ -34,18 +36,17 @@ export const InputSearchPopover = ({
   }, []);
 
   return (
-    <StyledPopover
-      floating={portal}
+    <ComboboxPopover
       portal={portal}
-      position={() => ({
-        top: `${rootRect?.bottom}px`,
-        left: `${rootRect?.left}px`,
-        width: `${rootRect?.width}px`,
-      })}
+      position={(targetRect, popoverRect) => {
+        return positionMatchWidth(rootRect, popoverRect);
+      }}
       {...rest}
     >
-      {children}
-    </StyledPopover>
+      <Background css={css} floating={portal}>
+        {children}
+      </Background>
+    </ComboboxPopover>
   );
 };
 

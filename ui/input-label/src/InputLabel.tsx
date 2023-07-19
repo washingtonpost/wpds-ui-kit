@@ -14,9 +14,6 @@ const StyledLabel = styled(Label.Root, {
   fontWeight: theme.fontWeights.light,
   lineHeight: theme.lineHeights["110"],
 
-  // allow click through to input
-  pointerEvents: "none",
-
   variants: {
     isDisabled: {
       true: {

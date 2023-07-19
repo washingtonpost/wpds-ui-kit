@@ -1110,6 +1110,9 @@
     },
     "meta": {
       "value": "Franklin, arial, sans-serif"
+    },
+    "magazine": {
+      "value": "PostoniDisplayMag, garamond, serif"
     }
   },
   "fontSize": {
@@ -1173,6 +1176,9 @@
     },
     "bold": {
       "value": 700
+    },
+    "ultra": {
+      "value": 800
     }
   },
   "lineHeight": {

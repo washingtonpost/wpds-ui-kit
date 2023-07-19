@@ -27,6 +27,7 @@ export const InputSearchInput = React.forwardRef<
   InputSearchInputProps
 >(({ label = "Search", name, id, ...rest }: InputSearchInputProps, ref) => {
   const { disabled, usePortal } = React.useContext(InputSearchContext);
+  console.log("usePortal", usePortal);
   return (
     <div
       style={
@@ -36,6 +37,7 @@ export const InputSearchInput = React.forwardRef<
               "--wpds-colors-signal": "var(--wpds-colors-subtle)",
             } as React.CSSProperties)
       }
+      data-testid="border-style-override"
     >
       <ComboboxInput
         as={InputText}

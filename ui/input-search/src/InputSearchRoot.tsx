@@ -49,7 +49,7 @@ export const InputSearchRoot = ({
   const comboboxRef = React.useRef<HTMLDivElement>(null);
   const [rootRect, setRootRect] = React.useState<DOMRect | undefined>();
   const [term, setTerm] = React.useState("");
-  const [usePortal, setUsePortal] = React.useState(false);
+  const [usePortal, setUsePortal] = React.useState(true);
 
   React.useEffect(() => {
     if (comboboxRef.current) {
