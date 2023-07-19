@@ -26,6 +26,7 @@ import {
   Switch,
   Tabs,
   NavigationMenu,
+  InputSearch,
 } from "@washingtonpost/wpds-ui-kit";
 import { Chart, Settings, Info, Menu } from "@washingtonpost/wpds-assets";
 
@@ -472,6 +473,19 @@ export const KitchenSink = () => {
           </NavigationMenu.Item>
         </NavigationMenu.List>
       </NavigationMenu.Root>
+      <h2>InputSearch</h2>
+      <InputSearch.Root aria-label="Example-Search" openOnFocus>
+        <InputSearch.Input name="input-search" id="input-search" />
+        <InputSearch.Popover>
+          <InputSearch.List>
+            <InputSearch.ListItem value="Apple" />
+            <InputSearch.ListItem value="Banana" />
+            <InputSearch.ListItem value="Orange" />
+            <InputSearch.ListItem value="Kiwi" />
+            <InputSearch.ListItem value="Pineapple" />
+          </InputSearch.List>
+        </InputSearch.Popover>
+      </InputSearch.Root>
     </>
   );
 };
