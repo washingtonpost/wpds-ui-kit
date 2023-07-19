@@ -8,6 +8,8 @@ import { DropdownMenuItemProps as RadixDropdownMenuItemProps } from "@radix-ui/r
 
 import { Divider } from "@washingtonpost/wpds-divider";
 
+const NAME = "ActionMenuItem";
+
 export const ItemStyles = {
   alignItems: "center",
   background: theme.colors.secondary,
@@ -56,3 +58,6 @@ export const ActionMenuItem = React.forwardRef<HTMLDivElement, ActionMenuItemPro
     <Divider />
   </>
 });
+
+ActionMenuItem.displayName = NAME;
+

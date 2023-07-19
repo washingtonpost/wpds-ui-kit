@@ -7,6 +7,8 @@ import {
   DropdownMenuPortalProps as RadixDropdownMenuPortalProps,
 } from "@radix-ui/react-dropdown-menu";
 
+const NAME = "ActionMenuPortal";
+
 export type ActionMenuPortalProps = {
   /** Any React node may be used as a child to allow for formatting */
   children?: React.ReactNode;
@@ -19,3 +21,5 @@ export const ActionMenuPortal = (({ children, ...props }: ActionMenuPortalProps)
     {children}
   </ActionMenuPrimitive.Portal>
 });
+
+ActionMenuPortal.displayName = NAME;

@@ -9,6 +9,8 @@ import {
   DropdownMenuTriggerProps as RadixDropdownMenuTriggerProps,
 } from "@radix-ui/react-dropdown-menu";
 
+const NAME = "ActionMenuTrigger";
+
 export const StyledTrigger = styled(ActionMenuPrimitive.Trigger, {
   appearance: "none",
   background: "transparent",
@@ -34,3 +36,5 @@ export type ActionMenuTriggerProps = {
 export const ActionMenuTrigger = React.forwardRef<HTMLButtonElement, ActionMenuTriggerProps>((props: ActionMenuTriggerProps, ref) => {
   return <StyledTrigger {...props} ref={ref} />;
 });
+
+ActionMenuTrigger.displayName = NAME;

@@ -10,17 +10,19 @@ import {
   DropdownMenuSubProps as RadixDropdownMenuSubProps,
 } from "@radix-ui/react-dropdown-menu";
 
+const NAME = "ActionMenuSub";
+
 export const StyledSub = styled(ActionMenuPrimitive.Sub, {});
 
 export type ActionMenuSubProps = {
-  onOpenChange?: Function;
+  onOpenChange?: () => void;
   /** Any React node may be used as a child to allow for formatting */
   children?: React.ReactNode;
   /** Override CSS */
   css?: WPDS.CSS;
 } & RadixDropdownMenuSubProps;
 
-export const ActionMenuSub = ({ onOpenChange = () => { }, ...props }: ActionMenuSubProps) => {
+export const ActionMenuSub = ({ onOpenChange = () => undefined, ...props }: ActionMenuSubProps) => {
   const context = React.useContext(ActionMenuContext);
   const [id] = React.useState(window?.crypto.randomUUID());
 
@@ -71,3 +73,5 @@ export const ActionMenuSub = ({ onOpenChange = () => { }, ...props }: ActionMenu
     </ActionMenuContext.Provider>
   );
 }
+
+ActionMenuSub.displayName = NAME;

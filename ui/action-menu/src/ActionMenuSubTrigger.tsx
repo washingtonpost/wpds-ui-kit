@@ -9,6 +9,7 @@ import { ItemStyles } from "./ActionMenuItem";
 import { ActionMenuContext } from "./context";
 import { useContext } from "react";
 
+const NAME = "ActionMenuSubTrigger";
 
 const SubTriggerStyles = {
   variants: {
@@ -57,7 +58,7 @@ export type ActionMenuSubTriggerProps = {
   children?: React.ReactNode;
   /** Override CSS */
   css?: WPDS.CSS;
-  onClick?: Function;
+  onClick?: () => void;
 } & RadixDropdownMenuSubTriggerProps;
 
 
@@ -67,7 +68,6 @@ export const ActionMenuSubTrigger = React.forwardRef<HTMLDivElement, ActionMenuS
   return <>
     <StyledSubTrigger
       {...props}
-      onPointerMove={() => { }}
       ref={ref}
       className="action-menu-item"
       isHeading={context.slider}
@@ -80,3 +80,5 @@ export const ActionMenuSubTrigger = React.forwardRef<HTMLDivElement, ActionMenuS
     <Divider />
   </>
 });
+
+ActionMenuSubTrigger.displayName = NAME;

@@ -11,6 +11,8 @@ import {
 
 import { ItemStyles } from "./ActionMenuItem"
 
+const NAME = "ActionMenuCheckboxItem";
+
 export const StyledCheckboxItem = styled(ActionMenuPrimitive.CheckboxItem, {
   ...ItemStyles,
   position: "relative",
@@ -24,6 +26,7 @@ export type ActionMenuCheckboxItemProps = {
   css?: WPDS.CSS;
 } & RadixDropdownMenuCheckboxItemProps;
 
+
 export const ActionMenuCheckboxItem = React.forwardRef<HTMLDivElement, ActionMenuCheckboxItemProps>(({ children, ...props }: ActionMenuCheckboxItemProps, ref) => {
   return (
     <>
@@ -34,3 +37,5 @@ export const ActionMenuCheckboxItem = React.forwardRef<HTMLDivElement, ActionMen
     </>
   );
 });
+
+ActionMenuCheckboxItem.displayName = NAME;

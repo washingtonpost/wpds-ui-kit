@@ -12,6 +12,8 @@ import {
 import { ActionMenuPortal } from "./ActionMenuPortal";
 import { DensityProp } from "./ActionMenuRoot";
 
+const NAME = "ActionMenuContent";
+
 export const ContentDensityVariants = {
   density: {
     loose: {
@@ -34,6 +36,7 @@ export const ContentDensityVariants = {
     }
   }
 }
+
 export const ContentStyles = {
   background: theme.colors.secondary,
   border: `solid 1px ${theme.colors.subtle}`,
@@ -81,3 +84,5 @@ export const ActionMenuContent = React.forwardRef<HTMLDivElement, ActionMenuCont
     </StyledContent>
   </ActionMenuPortal>
 });
+
+ActionMenuContent.displayName = NAME;

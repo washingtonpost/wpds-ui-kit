@@ -8,6 +8,8 @@ import {
   DropdownMenuRadioGroupProps as RadixDropdownMenuRadioGroupProps,
 } from "@radix-ui/react-dropdown-menu";
 
+const NAME = "ActionMenuRadioGroup";
+
 export const StyledRadioGroup = styled(ActionMenuPrimitive.RadioGroup, {});
 
 export type ActionMenuRadioGroupProps = {
@@ -25,3 +27,5 @@ export const ActionMenuRadioGroup = React.forwardRef<HTMLDivElement, ActionMenuR
     </StyledRadioGroup>
   );
 });
+
+ActionMenuRadioGroup.displayName = NAME;

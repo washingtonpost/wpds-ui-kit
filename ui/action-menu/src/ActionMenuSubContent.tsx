@@ -14,6 +14,8 @@ import { ActionMenuPortal } from "./ActionMenuPortal";
 
 import { ContentStyles, ContentDensityVariants } from "./ActionMenuContent";
 
+const NAME = "ActionMenuSubContent";
+
 const StyledSubContent = styled(ActionMenuPrimitive.SubContent, {
   ...ContentStyles,
   variants: {
@@ -95,3 +97,5 @@ export const ActionMenuSubContent = React.forwardRef<HTMLDivElement, ActionMenuS
     </div>
   )
 });
+
+ActionMenuSubContent.displayName = NAME;

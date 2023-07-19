@@ -10,6 +10,8 @@ import {
 
 import { ItemStyles } from "./ActionMenuItem"
 
+const NAME = "ActionMenuRadioItem";
+
 export const StyledRadioItem = styled(ActionMenuPrimitive.RadioItem, {
   ...ItemStyles,
   position: "relative",
@@ -30,3 +32,5 @@ export const ActionMenuRadioItem = React.forwardRef<HTMLDivElement, ActionMenuRa
     </StyledRadioItem>
   );
 });
+
+ActionMenuRadioItem.displayName = NAME;

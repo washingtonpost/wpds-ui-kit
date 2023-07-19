@@ -8,6 +8,8 @@ import {
   DropdownMenuItemIndicatorProps as RadixDropdownMenuItemIndicatorProps,
 } from "@radix-ui/react-dropdown-menu";
 
+const NAME = "ActionMenuItemIndicator";
+
 export const StyledItemIndicator = styled(ActionMenuPrimitive.ItemIndicator, {
   position: "absolute",
   left: 0,
@@ -33,3 +35,5 @@ export const ActionMenuItemIndicator = React.forwardRef<HTMLDivElement, ActionMe
     </StyledItemIndicator>
   );
 });
+
+ActionMenuItemIndicator.displayName = NAME;
