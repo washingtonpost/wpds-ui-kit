@@ -8,6 +8,8 @@ import {
   DropdownMenuSeparatorProps as RadixDropdownMenuSeparatorProps,
 } from "@radix-ui/react-dropdown-menu";
 
+const NAME = "ActionMenuSeparator";
+
 export const StyledSeparator = styled(ActionMenuPrimitive.Separator, {});
 
 export type ActionMenuSeparatorProps = {
@@ -25,3 +27,5 @@ export const ActionMenuSeparator = React.forwardRef<HTMLDivElement, ActionMenuSe
     </StyledSeparator>
   );
 });
+
+ActionMenuSeparator.displayName = NAME;

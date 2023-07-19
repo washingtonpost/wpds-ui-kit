@@ -8,6 +8,8 @@ import { DropdownMenuItemProps as RadixDropdownMenuItemProps } from "@radix-ui/r
 
 import { Divider } from "@washingtonpost/wpds-divider";
 
+const NAME = "ActionMenuItem";
+
 export const ItemStyles = {
   alignItems: "center",
   background: theme.colors.secondary,
@@ -15,8 +17,6 @@ export const ItemStyles = {
   flexBasis: "auto",
   flexDirection: "row",
   justifyContent: "flex-start",
-  paddingLeft: theme.sizes["125"],
-  paddingRight: theme.sizes["025"],
   flexWrap: "none",
   transition: `background ${theme.transitions.fast} ${theme.transitions.inOut}`,
   width: "100%",
@@ -49,10 +49,11 @@ export type ActionMenuItemProps = {
 
 
 export const ActionMenuItem = React.forwardRef<HTMLDivElement, ActionMenuItemProps>(({ children, ...props }: ActionMenuItemProps, ref) => {
-  return <>
+  return (
     <StyledItem {...props} ref={ref} className="action-menu-item">
       {children}
     </StyledItem>
-    <Divider />
-  </>
-});
+)});
+
+ActionMenuItem.displayName = NAME;
+

@@ -8,12 +8,14 @@ import {
   DropdownMenuLabelProps as RadixDropdownMenuLabelProps,
 } from "@radix-ui/react-dropdown-menu";
 
+const NAME = "ActionMenuLabel";
+
 export const StyledLabel = styled(ActionMenuPrimitive.Label, {
-  fontFamily: theme.fonts.meta, // font family example
+  fontFamily: theme.fonts.subhead, // font family example
   fontSize: theme.fontSizes["075"],
   color: theme.colors.accessible,
-  fontWeight: "bold",
-  paddingLeft: theme.space["125"]
+  fontWeight: theme.fontWeights.regular,
+  marginBottom: theme.space["025"],
 });
 
 export type ActionMenuLabelProps = {
@@ -25,8 +27,10 @@ export type ActionMenuLabelProps = {
 
 export const ActionMenuLabel = React.forwardRef<HTMLDivElement, ActionMenuLabelProps>(({ children, ...props }: ActionMenuLabelProps, ref) => {
   return (
-    <StyledLabel {...props} ref={ref} >
+    <StyledLabel {...props} ref={ref} className="action-menu-label">
       {children}
     </StyledLabel>
   );
 });
+
+ActionMenuLabel.displayName = NAME;

@@ -2,13 +2,13 @@ import * as React from "react";
 import WPDS, { theme, styled } from "@washingtonpost/wpds-theme";
 import * as ActionMenuPrimitive from '@radix-ui/react-dropdown-menu';
 import { DropdownMenuSubTriggerProps as RadixDropdownMenuSubTriggerProps } from "@radix-ui/react-dropdown-menu";
-import { Divider } from "@washingtonpost/wpds-divider";
 import { Icon } from "@washingtonpost/wpds-icon";
 import { ChevronRight } from "@washingtonpost/wpds-assets";
 import { ItemStyles } from "./ActionMenuItem";
 import { ActionMenuContext } from "./context";
 import { useContext } from "react";
 
+const NAME = "ActionMenuSubTrigger";
 
 const SubTriggerStyles = {
   variants: {
@@ -29,6 +29,7 @@ const SubTriggerStyles = {
 }
 
 const RightIcon = styled(Icon, {
+  width: theme.sizes["100"],
   color: theme.colors.accessible,
   fill: theme.colors.primary,
   display: "flex",
@@ -57,17 +58,16 @@ export type ActionMenuSubTriggerProps = {
   children?: React.ReactNode;
   /** Override CSS */
   css?: WPDS.CSS;
-  onClick?: Function;
+  onClick?: () => void;
 } & RadixDropdownMenuSubTriggerProps;
 
 
 export const ActionMenuSubTrigger = React.forwardRef<HTMLDivElement, ActionMenuSubTriggerProps>(({ children, ...props }: ActionMenuSubTriggerProps, ref) => {
   const context = useContext(ActionMenuContext);
 
-  return <>
+  return (
     <StyledSubTrigger
       {...props}
-      onPointerMove={() => { }}
       ref={ref}
       className="action-menu-item"
       isHeading={context.slider}
@@ -77,6 +77,7 @@ export const ActionMenuSubTrigger = React.forwardRef<HTMLDivElement, ActionMenuS
         <ChevronRight />
       </RightIcon>
     </StyledSubTrigger >
-    <Divider />
-  </>
+  )
 });
+
+ActionMenuSubTrigger.displayName = NAME;

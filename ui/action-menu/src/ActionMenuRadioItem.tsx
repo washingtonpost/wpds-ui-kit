@@ -10,10 +10,14 @@ import {
 
 import { ItemStyles } from "./ActionMenuItem"
 
+const NAME = "ActionMenuRadioItem";
+
 export const StyledRadioItem = styled(ActionMenuPrimitive.RadioItem, {
   ...ItemStyles,
   position: "relative",
-  paddingLeft: theme.space["125"]
+  "&[aria-checked='true']": {
+    fontWeight: theme.fontWeights.bold,
+  }
 });
 
 export type ActionMenuRadioItemProps = {
@@ -25,8 +29,10 @@ export type ActionMenuRadioItemProps = {
 
 export const ActionMenuRadioItem = React.forwardRef<HTMLDivElement, ActionMenuRadioItemProps>(({ children, ...props }: ActionMenuRadioItemProps, ref) => {
   return (
-    <StyledRadioItem {...props} ref={ref} className="action-menu-item">
+    <StyledRadioItem {...props} ref={ref} className="action-menu-checkbox-item">
       {children}
     </StyledRadioItem>
   );
 });
+
+ActionMenuRadioItem.displayName = NAME;

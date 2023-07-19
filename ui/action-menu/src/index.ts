@@ -1,5 +1,4 @@
 export * from "./ActionMenu";
-export * from "./ActionMenuRoot";
 export * from "./ActionMenuCheckboxItem";
 export * from "./ActionMenuContent";
 export * from "./ActionMenuGroup";

@@ -1,26 +1,26 @@
-import React, { createContext } from 'react';
+import * as React from "react";
 import { ActionMenuContent } from './ActionMenuContent';
 
 //export const DensityContext = createContext("default");
 
 type ContextType = {
-    advance: Function,
+    advance: () => void,
     currActiveGroup?: React.ReactNode;
     currentId: string;
     density: "default" | "loose" | "compact";
     previousId: string;
     slider: boolean;
     stack: string[];
-    setStack: Function;
+    setStack: () => void;
 }
 
-export const ActionMenuContext = createContext<ContextType>({
-    advance: () => { },
+export const ActionMenuContext = React.createContext<ContextType>({
+    advance: () => undefined,
     currActiveGroup: <ActionMenuContent />,
     currentId: "",
     density: "default",
     previousId: "",
     slider: false,
     stack: [""],
-    setStack: () => { }
+    setStack: () => undefined
 })

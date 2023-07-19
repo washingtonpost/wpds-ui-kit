@@ -49,7 +49,7 @@ const RightIcon = styled("div", {
 })
 
 const LeftIcon = styled("div", {
-	paddingRight: theme.space["025"],
+	paddingRight: theme.space["050"],
 	display: "inline-flex",
 	alignItems: "center",
 	justifyContent: "center",
@@ -140,7 +140,7 @@ const ItemVariationsTemplate = (parameters) => {
 				<Button>Action button</Button>
 			</Component.Trigger>
 			<Component.Portal>
-				<Component.Content>
+				<Component.Content density="compact">
 					<Component.Label>Label</Component.Label>
 					<Component.Item>
 						<LeftIcon>
@@ -161,11 +161,13 @@ const ItemVariationsTemplate = (parameters) => {
 									<Check />
 								</Icon>
 							</Component.ItemIndicator>
+							{/*
 							<LeftIcon>
 								<Icon label="bookmark" size="100">
 									<Bookmark />
 								</Icon>
 							</LeftIcon>
+							*/}
 							Left
 						</Component.CheckboxItem>
 						<Component.CheckboxItem
@@ -189,11 +191,13 @@ const ItemVariationsTemplate = (parameters) => {
 								</Icon>
 							</Component.ItemIndicator>
 							Right
+							{/*
 							<RightIcon>
 								<Icon label="bell" size="100">
 									<Bookmark />
 								</Icon>
 							</RightIcon>
+							*/}
 						</Component.CheckboxItem>
 						<Component.CheckboxItem
 							checked={checkedD}
@@ -204,21 +208,24 @@ const ItemVariationsTemplate = (parameters) => {
 									<Check />
 								</Icon>
 							</Component.ItemIndicator>
+							{/*
 							<LeftIcon>
 								<Icon label="bell" size="100">
 									<Bookmark />
 								</Icon>
 							</LeftIcon>
+							*/}
 							Both
+							{/*
 							<RightIcon>
 								<Icon label="bell" size="100">
 									<Bookmark />
 								</Icon>
 							</RightIcon>
+							*/}
 						</Component.CheckboxItem>
 					</Component.Group>
 					<Component.Label>Radio Group Example</Component.Label>
-
 					<Component.RadioGroup value={radioChecked} onValueChange={setRadioChecked}>
 						<Component.RadioItem value="radio1">
 							<Component.ItemIndicator>

@@ -11,41 +11,82 @@ import {
 
 import { ActionMenuPortal } from "./ActionMenuPortal";
 import { DensityProp } from "./ActionMenuRoot";
+import { collapseTextChangeRangesAcrossMultipleVersions } from "typescript";
+
+const NAME = "ActionMenuContent";
 
 export const ContentDensityVariants = {
   density: {
     loose: {
       "& .action-menu-item": {
-        paddingTop: theme.sizes["100"],
-        paddingBottom: theme.sizes["100"],
-      }
+        padding: theme.space["100"],
+      },
+      "& .action-menu-checkbox-item": {
+        padding: theme.space["100"],
+        paddingLeft: theme.space["250"],
+      },
+      "& .action-menu-label": {
+        paddingLeft: theme.space["100"],
+        paddingRight: theme.space["100"],
+        marginTop: theme.sizes["100"],
+      },
+      "& .action-menu-item-indicator": {
+        left: theme.space["100"],
+      },
     },
     default: {
       "& .action-menu-item": {
-        paddingTop: theme.sizes["075"],
-        paddingBottom: theme.sizes["075"],
-      }
+        padding: theme.space["075"],
+      },
+      "& .action-menu-checkbox-item": {
+        padding: theme.space["075"],
+        paddingLeft: theme.space["225"],
+      },
+      "& .action-menu-label": {
+        paddingLeft: theme.space["075"],
+        paddingRight: theme.space["075"],
+        marginTop: theme.sizes["075"],
+      },
+      "& .action-menu-item-indicator": {
+        left: theme.space["075"],
+      },
     },
     compact: {
+      padding: theme.space["050"],
       "& .action-menu-item": {
-        paddingTop: theme.sizes["050"],
-        paddingBottom: theme.sizes["050"],
-      }
+        padding: theme.space["050"],
+      },
+      "& .action-menu-checkbox-item": {
+        padding: theme.space["050"],
+        paddingLeft: theme.space["200"],
+      },
+      "& .action-menu-label": {
+        paddingLeft: theme.space["050"],
+        paddingRight: theme.space["050"],
+        marginTop: theme.sizes["050"],
+      },
+      "& .action-menu-item-indicator": {
+        left: theme.space["050"],
+      },
     }
   }
 }
+
 export const ContentStyles = {
   background: theme.colors.secondary,
   border: `solid 1px ${theme.colors.subtle}`,
-  borderRadius: theme.radii["075"],
+  borderRadius: theme.radii["050"],
   boxShadow: theme.shadows["300"],
   color: theme.colors.primary,
+  fontFamily: theme.fonts.subhead,
+  fontSize: theme.fontSizes["050"],
+  fontWeight: theme.fontWeights.regular,
+  lineHeight: theme.sizes["100"],
   marginTop: theme.sizes["025"],
   maxHeight: "var(--radix-dropdown-menu-content-available-height)",
   maxWidth: "var(--radix-dropdown-menu-content-available-width)",
-  minWidth: "150px",
+  minWidth: "200px",
   overflow: "auto",
-  padding: theme.space["050"],
   width: "fit-content",
 }
 
@@ -81,3 +122,5 @@ export const ActionMenuContent = React.forwardRef<HTMLDivElement, ActionMenuCont
     </StyledContent>
   </ActionMenuPortal>
 });
+
+ActionMenuContent.displayName = NAME;

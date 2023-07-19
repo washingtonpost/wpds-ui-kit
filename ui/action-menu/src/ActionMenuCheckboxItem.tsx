@@ -11,10 +11,15 @@ import {
 
 import { ItemStyles } from "./ActionMenuItem"
 
+const NAME = "ActionMenuCheckboxItem";
+
 export const StyledCheckboxItem = styled(ActionMenuPrimitive.CheckboxItem, {
   ...ItemStyles,
   position: "relative",
-  paddingLeft: theme.space["125"]
+  paddingLeft: theme.space["125"],
+  "&[aria-checked='true']": {
+    fontWeight: theme.fontWeights.bold,
+  }
 });
 
 export type ActionMenuCheckboxItemProps = {
@@ -24,13 +29,13 @@ export type ActionMenuCheckboxItemProps = {
   css?: WPDS.CSS;
 } & RadixDropdownMenuCheckboxItemProps;
 
+
 export const ActionMenuCheckboxItem = React.forwardRef<HTMLDivElement, ActionMenuCheckboxItemProps>(({ children, ...props }: ActionMenuCheckboxItemProps, ref) => {
   return (
-    <>
-      <StyledCheckboxItem {...props} ref={ref} className="action-menu-item">
+      <StyledCheckboxItem {...props} ref={ref} className="action-menu-checkbox-item">
         {children}
       </StyledCheckboxItem>
-      <Divider />
-    </>
   );
 });
+
+ActionMenuCheckboxItem.displayName = NAME;
