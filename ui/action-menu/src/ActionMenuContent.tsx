@@ -2,10 +2,12 @@ import * as React from "react";
 
 import WPDS, { theme, styled } from "@washingtonpost/wpds-theme";
 
-import * as ActionMenuPrimitive from "@radix-ui/react-dropdown-menu";
+import * as ActionMenuPrimitive from '@radix-ui/react-dropdown-menu';
 import { ActionMenuContext } from "./context";
 
-import { DropdownMenuContentProps as RadixDropdownMenuContentProps } from "@radix-ui/react-dropdown-menu";
+import {
+  DropdownMenuContentProps as RadixDropdownMenuContentProps,
+} from "@radix-ui/react-dropdown-menu";
 
 import { ActionMenuPortal } from "./ActionMenuPortal";
 import { DensityProp } from "./ActionMenuRoot";
@@ -65,9 +67,9 @@ export const ContentDensityVariants = {
       "& .action-menu-item-indicator": {
         left: theme.space["050"],
       },
-    },
-  },
-};
+    }
+  }
+}
 
 export const ContentStyles = {
   background: theme.colors.secondary,
@@ -85,7 +87,7 @@ export const ContentStyles = {
   minWidth: "200px",
   overflow: "auto",
   width: "fit-content",
-};
+}
 
 export const StyledContent = styled(ActionMenuPrimitive.Content, {
   ...ContentStyles,
@@ -94,7 +96,7 @@ export const StyledContent = styled(ActionMenuPrimitive.Content, {
   },
   defaultVariants: {
     density: "default",
-  },
+  }
 });
 
 export type ActionMenuContentProps = {
@@ -105,28 +107,19 @@ export type ActionMenuContentProps = {
   css?: WPDS.CSS;
 } & RadixDropdownMenuContentProps;
 
-export const ActionMenuContent = React.forwardRef<
-  HTMLDivElement,
-  ActionMenuContentProps
->(({ children, ...props }: ActionMenuContentProps, ref) => {
-  const context = React.useContext(ActionMenuContext);
+export const ActionMenuContent = React.forwardRef<HTMLDivElement, ActionMenuContentProps>(({ children, ...props }: ActionMenuContentProps, ref) => {
+  const context = React.useContext(ActionMenuContext)
 
   const handleInteractOutside = () => {
-    const item = context?.stack.shift();
+    const item = context?.stack.shift()
 
-    context?.setStack([item ? item : ""]);
-  };
-  return (
-    <ActionMenuPortal>
-      <StyledContent
-        {...props}
-        ref={ref}
-        onInteractOutside={handleInteractOutside}
-      >
-        {children}
-      </StyledContent>
-    </ActionMenuPortal>
-  );
+    context?.setStack([ item ? item : ""]);
+  }
+  return <ActionMenuPortal>
+    <StyledContent {...props} ref={ref} onInteractOutside={handleInteractOutside}>
+      {children}
+    </StyledContent>
+  </ActionMenuPortal>
 });
 
 ActionMenuContent.displayName = NAME;
