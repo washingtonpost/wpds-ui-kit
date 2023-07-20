@@ -20,7 +20,10 @@ export type ActionMenuSubProps = {
   css?: WPDS.CSS;
 } & RadixDropdownMenuSubProps;
 
-export const ActionMenuSub = ({ onOpenChange = () => undefined, ...props }: ActionMenuSubProps) => {
+export const ActionMenuSub = ({
+  onOpenChange = () => undefined,
+  ...props
+}: ActionMenuSubProps) => {
   const context = React.useContext(ActionMenuContext);
   const [id] = React.useState(window?.crypto.randomUUID());
 

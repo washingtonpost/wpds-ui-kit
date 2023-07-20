@@ -26,8 +26,10 @@ export type ActionMenuCheckboxItemProps = {
   css?: WPDS.CSS;
 } & RadixDropdownMenuCheckboxItemProps;
 
-
-export const ActionMenuCheckboxItem = React.forwardRef<HTMLDivElement, ActionMenuCheckboxItemProps>(({ children, ...props }: ActionMenuCheckboxItemProps, ref) => {
+export const ActionMenuCheckboxItem = React.forwardRef<
+  HTMLDivElement,
+  ActionMenuCheckboxItemProps
+>(({ children, ...props }: ActionMenuCheckboxItemProps, ref) => {
   return (
     <StyledCheckboxItem
       {...props}
