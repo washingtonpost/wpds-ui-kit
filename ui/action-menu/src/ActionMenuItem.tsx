@@ -2,11 +2,9 @@ import * as React from "react";
 
 import WPDS, { theme, styled } from "@washingtonpost/wpds-theme";
 
-import * as ActionMenuPrimitive from '@radix-ui/react-dropdown-menu';
+import * as ActionMenuPrimitive from "@radix-ui/react-dropdown-menu";
 
 import { DropdownMenuItemProps as RadixDropdownMenuItemProps } from "@radix-ui/react-dropdown-menu";
-
-import { Divider } from "@washingtonpost/wpds-divider";
 
 const NAME = "ActionMenuItem";
 
@@ -17,8 +15,6 @@ export const ItemStyles = {
   flexBasis: "auto",
   flexDirection: "row",
   justifyContent: "flex-start",
-  paddingLeft: theme.sizes["125"],
-  paddingRight: theme.sizes["025"],
   flexWrap: "none",
   transition: `background ${theme.transitions.fast} ${theme.transitions.inOut}`,
   width: "100%",
@@ -33,7 +29,7 @@ export const ItemStyles = {
   "&[data-disabled] svg": {
     fill: theme.colors.disabled,
   },
-}
+};
 
 // export const ItemContent = styled("div", {
 //   display: "flex",
@@ -49,15 +45,15 @@ export type ActionMenuItemProps = {
   css?: WPDS.CSS;
 } & RadixDropdownMenuItemProps;
 
-
-export const ActionMenuItem = React.forwardRef<HTMLDivElement, ActionMenuItemProps>(({ children, ...props }: ActionMenuItemProps, ref) => {
-  return <>
+export const ActionMenuItem = React.forwardRef<
+  HTMLDivElement,
+  ActionMenuItemProps
+>(({ children, ...props }: ActionMenuItemProps, ref) => {
+  return (
     <StyledItem {...props} ref={ref} className="action-menu-item">
       {children}
     </StyledItem>
-    <Divider />
-  </>
+  );
 });
 
 ActionMenuItem.displayName = NAME;
-

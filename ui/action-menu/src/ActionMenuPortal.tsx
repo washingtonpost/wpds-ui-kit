@@ -1,13 +1,11 @@
 import * as React from "react";
 
 import WPDS from "@washingtonpost/wpds-theme";
-import * as ActionMenuPrimitive from '@radix-ui/react-dropdown-menu';
+import * as ActionMenuPrimitive from "@radix-ui/react-dropdown-menu";
 
-import {
-  DropdownMenuPortalProps as RadixDropdownMenuPortalProps,
-} from "@radix-ui/react-dropdown-menu";
+import { DropdownMenuPortalProps as RadixDropdownMenuPortalProps } from "@radix-ui/react-dropdown-menu";
 
-const NAME = "ActionMenuPortal";
+//const NAME = "ActionMenuPortal";
 
 export type ActionMenuPortalProps = {
   /** Any React node may be used as a child to allow for formatting */
@@ -16,10 +14,15 @@ export type ActionMenuPortalProps = {
   css?: WPDS.CSS;
 } & RadixDropdownMenuPortalProps;
 
-export const ActionMenuPortal = (({ children, ...props }: ActionMenuPortalProps) => {
-  return <ActionMenuPrimitive.Portal {...props}>
-    {children}
-  </ActionMenuPrimitive.Portal>
-});
+export const ActionMenuPortal = ({
+  children,
+  ...props
+}: ActionMenuPortalProps) => {
+  return (
+    <ActionMenuPrimitive.Portal {...props}>
+      {children}
+    </ActionMenuPrimitive.Portal>
+  );
+};
 
-ActionMenuPortal.displayName = NAME;
+//ActionMenuPortal.displayName = NAME;

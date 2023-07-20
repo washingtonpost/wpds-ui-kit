@@ -2,13 +2,11 @@ import * as React from "react";
 
 import WPDS, { styled } from "@washingtonpost/wpds-theme";
 
-import * as ActionMenuPrimitive from '@radix-ui/react-dropdown-menu';
+import * as ActionMenuPrimitive from "@radix-ui/react-dropdown-menu";
 
 import { ActionMenuContext } from "./context";
 
-import {
-  DropdownMenuSubProps as RadixDropdownMenuSubProps,
-} from "@radix-ui/react-dropdown-menu";
+import { DropdownMenuSubProps as RadixDropdownMenuSubProps } from "@radix-ui/react-dropdown-menu";
 
 const NAME = "ActionMenuSub";
 
@@ -27,19 +25,17 @@ export const ActionMenuSub = ({ onOpenChange = () => undefined, ...props }: Acti
   const [id] = React.useState(window?.crypto.randomUUID());
 
   // true or false tells us if we are going up or down
-  const trackSubMenuDepth = open => {
+  const trackSubMenuDepth = (open) => {
     if (open) {
       context.stack.push(id);
 
       const current = context.stack[context.stack.length - 1];
       const previous = context.stack[context.stack.length - 2];
 
-      context.advance(
-        {
-          current,
-          previous
-        }
-      );
+      context.advance({
+        current,
+        previous,
+      });
 
       return;
     }
@@ -47,31 +43,26 @@ export const ActionMenuSub = ({ onOpenChange = () => undefined, ...props }: Acti
     const previous = context.stack.pop();
     const current = context.stack[context.stack.length - 1];
 
-    context.advance(
-      {
-        current,
-        previous
-      }
-    );
+    context.advance({
+      current,
+      previous,
+    });
   };
 
-  const handleOpenChange = open => {
+  const handleOpenChange = (open) => {
     trackSubMenuDepth(open);
     onOpenChange(open);
-  }
+  };
 
   return (
     <ActionMenuContext.Provider
       value={{
-        ...context
+        ...context,
       }}
     >
-      <StyledSub
-        {...props}
-        onOpenChange={handleOpenChange}
-      />
+      <StyledSub {...props} onOpenChange={handleOpenChange} />
     </ActionMenuContext.Provider>
   );
-}
+};
 
 ActionMenuSub.displayName = NAME;
