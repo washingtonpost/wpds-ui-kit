@@ -36,7 +36,7 @@
     "typescript": "4.5.5"
   },
   "peerDependencies": {
-    "@radix-ui/react-select": "^1.0.0",
+    "@radix-ui/react-select": "^1.2.2",
     "@radix-ui/react-use-controllable-state": "^1.0.0",
     "@washingtonpost/wpds-assets": "^1.18.0",
     "@washingtonpost/wpds-divider": "*",
@@ -47,14 +47,14 @@
     "react": "^16.8.6 || ^17.0.2"
   },
   "dependencies": {
-    "@radix-ui/react-select": "^1.0.0",
+    "@radix-ui/react-select": "^1.2.2",
     "@radix-ui/react-use-controllable-state": "^1.0.0",
     "@washingtonpost/wpds-assets": "^1.18.0",
-    "@washingtonpost/wpds-divider": "1.9.1",
-    "@washingtonpost/wpds-icon": "1.9.1",
-    "@washingtonpost/wpds-input-label": "1.9.1",
-    "@washingtonpost/wpds-input-shared": "1.9.1",
-    "@washingtonpost/wpds-theme": "1.9.1",
+    "@washingtonpost/wpds-divider": "*",
+    "@washingtonpost/wpds-icon": "*",
+    "@washingtonpost/wpds-input-label": "*",
+    "@washingtonpost/wpds-input-shared": "*",
+    "@washingtonpost/wpds-theme": "*",
     "nanoid": "^3.3.4"
   },
   "gitHead": "37dec684cc01ef4a87df682998c91ad97368ce8a"

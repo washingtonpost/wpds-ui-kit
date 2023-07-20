@@ -18,12 +18,12 @@ export default {
 
 const Template: ComponentStory<typeof Select.Root> = (args) => {
   return (
-    <Select.Root {...args} defaultValue="ecuador">
+    <Select.Root {...args}>
       <Select.Trigger aria-label="Countries">
         <Select.Label>Countries</Select.Label>
         <Select.Value />
       </Select.Trigger>
-      <Select.Content>
+      <Select.Content position="popper" side="bottom">
         <Select.Group label="Europe">
           <Select.Item value="france">France</Select.Item>
           <Select.Item value="united-kingdom">
