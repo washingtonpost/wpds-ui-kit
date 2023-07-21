@@ -17,7 +17,7 @@ export default {
 };
 
 const Template: ComponentStory<typeof Select.Root> = (args) => {
-  return (
+  return (<>
     <Select.Root {...args} defaultValue="ecuador">
       <Select.Trigger aria-label="Countries">
         <Select.Label>Countries</Select.Label>
@@ -39,6 +39,7 @@ const Template: ComponentStory<typeof Select.Root> = (args) => {
         </Select.Group>
       </Select.Content>
     </Select.Root>
+  </>
   );
 };
 
@@ -60,7 +61,7 @@ Play.parameters = {
 };
 
 const UnselectedTemplate: ComponentStory<typeof Select.Root> = (args) => {
-  return (
+  return (<>
     <Select.Root {...args}>
       <Select.Trigger aria-label="Countries">
         <Select.Label>Countries</Select.Label>
@@ -82,6 +83,7 @@ const UnselectedTemplate: ComponentStory<typeof Select.Root> = (args) => {
         </Select.Group>
       </Select.Content>
     </Select.Root>
+  </>
   );
 };
 
@@ -91,11 +93,14 @@ Unselected.parameters = {
   chromatic: { disableSnapshot: false },
 };
 
+
+
 const ControlledTemplate: ComponentStory<typeof Select.Root> = (args) => {
   const [country, setCountry] = React.useState("spain");
-  function handleValueChange(val) {
-    setCountry(val);
-  }
+  const handleValueChange = (value: string) => {
+    setCountry(value);
+  };
+
   return (
     <Select.Root {...args} value={country} onValueChange={handleValueChange}>
       <Select.Trigger aria-label="Countries">

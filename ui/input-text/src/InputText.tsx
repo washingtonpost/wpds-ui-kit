@@ -202,9 +202,9 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
     const [isFloating, handleOnFocus, handleOnBlur, handleOnChange] =
       useFloating(
         (internalRef.current ? internalRef.current.value : "") ||
-        value ||
-        defaultValue ||
-        placeholder,
+          value ||
+          defaultValue ||
+          placeholder,
         onFocus,
         onBlur,
         onChange,
@@ -215,7 +215,7 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
       onButtonIconClick && onButtonIconClick(event);
     };
 
-    const onClear = () => {
+    const onClear = (event) => {
       if (internalRef.current) {
         const input = internalRef.current;
         // requires a native value setter to have the correct value in the dispatched
