@@ -49,6 +49,12 @@ InputText.parameters = {
   chromatic: { disableSnapshot: true },
 };
 
+export const AutoFocus = Template.bind({});
+
+AutoFocus.args = {
+  autoFocus: true,
+};
+
 const SynchContainer = styled("div", {
   display: "flex",
   alignItems: "center",

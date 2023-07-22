@@ -1,20 +1,25 @@
 import * as React from "react";
 import { theme, styled } from "@washingtonpost/wpds-theme";
 import type * as WPDS from "@washingtonpost/wpds-theme";
-import { Box } from "@washingtonpost/wpds-box";
 
 import {
   sharedInputStyles,
   sharedInputVariants,
 } from "@washingtonpost/wpds-input-shared";
 
-const Container = styled(Box, {
+import { TextInputLabel, FloatingLabelStyles } from "./TextInputLabel";
+
+const Container = styled({
   ...sharedInputStyles,
   alignItems: "center",
   display: "flex",
 
   "&:focus-within": {
     borderColor: theme.colors.signal,
+
+    [`& ${TextInputLabel}`]: {
+      ...FloatingLabelStyles,
+    },
   },
 
   variants: {

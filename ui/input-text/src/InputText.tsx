@@ -10,7 +10,6 @@ import {
   unstyledInputStyles,
   globalInputAutoFillTriggerAnimations,
 } from "@washingtonpost/wpds-input-shared";
-import { InputLabel } from "@washingtonpost/wpds-input-label";
 import { ErrorMessage } from "@washingtonpost/wpds-error-message";
 import { HelperText } from "@washingtonpost/wpds-helper-text";
 import { VisuallyHidden } from "@washingtonpost/wpds-visually-hidden";
@@ -21,6 +20,7 @@ import {
   Email,
   Close,
 } from "@washingtonpost/wpds-assets";
+import { TextInputLabel } from "./TextInputLabel";
 import { StyledContainer } from "./StyledContainer";
 import type * as WPDS from "@washingtonpost/wpds-theme";
 
@@ -33,27 +33,6 @@ const LabelInputWrapper = styled("div", {
 
 const UnstyledInput = styled("input", {
   ...unstyledInputStyles,
-});
-
-const TextInputLabel = styled(InputLabel, {
-  insetBlockStart: "0",
-  insetInlineStart: "$050",
-  position: "absolute",
-  pointerEvents: "none",
-  transform: `translateY(${theme.space["100"]})`,
-  transition: theme.transitions.allFast,
-  "@reducedMotion": {
-    transition: "none",
-  },
-  variants: {
-    isFloating: {
-      true: {
-        fontSize: theme.fontSizes["075"],
-        lineHeight: theme.lineHeights["100"],
-        transform: `translateY(${theme.space["050"]})`,
-      },
-    },
-  },
 });
 
 const IconContainer = styled("div", {
@@ -318,6 +297,7 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
           )}
           <LabelInputWrapper>
             <TextInputLabel
+              className="wpds-input-label"
               isFloating={isFloating}
               disabled={disabled}
               htmlFor={id}
