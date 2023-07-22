@@ -297,7 +297,6 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
           )}
           <LabelInputWrapper>
             <TextInputLabel
-              className="wpds-input-label"
               isFloating={isFloating}
               disabled={disabled}
               htmlFor={id}
