@@ -9,7 +9,7 @@ import {
 
 import { TextInputLabel, FloatingLabelStyles } from "./TextInputLabel";
 
-const Container = styled({
+const Container = styled("div", {
   ...sharedInputStyles,
   alignItems: "center",
   display: "flex",
