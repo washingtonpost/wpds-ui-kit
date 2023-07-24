@@ -2,7 +2,6 @@ import * as React from "react";
 import { ActionMenu as Component } from ".";
 import { Button } from "@washingtonpost/wpds-button";
 import { Box } from "@washingtonpost/wpds-box";
-import { styled, theme } from "@washingtonpost/wpds-theme";
 import { Icon } from "@washingtonpost/wpds-icon";
 import {
   Bookmark,
