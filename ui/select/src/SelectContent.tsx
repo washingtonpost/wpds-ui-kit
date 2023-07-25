@@ -10,15 +10,18 @@ import type * as WPDS from "@washingtonpost/wpds-theme";
 
 const StyledContent = styled(SelectPrimitive.Content, {
   backgroundColor: theme.colors.secondary,
-  border: `1px solid ${theme.colors.gray300}`,
+  borderTop: `none`,
+  borderRight: `1px solid ${theme.colors.gray300}`,
+  borderBottom: `1px solid ${theme.colors.gray300}`,
+  borderLeft: `1px solid ${theme.colors.gray300}`,
   color: theme.colors.primary,
   fontFamily: theme.fonts.meta,
   fontSize: theme.fontSizes["100"],
   fontWeight: theme.fontWeights.light,
   lineHeight: theme.lineHeights["125"],
   paddingBlock: "11px",
-  transform: "translateX(22px)",
   overflowWrap: "anywhere",
+  maxHeight: "var(--radix-select-content-available-height)"
 });
 
 const StyledViewport = styled(SelectPrimitive.Viewport, {});
@@ -76,6 +79,8 @@ export const SelectContent = React.forwardRef<
           ...css,
         }}
         {...props}
+        position="popper"
+        side="bottom"
         ref={ref}
       >
         <StyledScrollUpButton top>
