@@ -20,9 +20,9 @@ const StyledNavigationMenuContent = styled(NavigationMenuPrimitive.Content, {
   maxHeight: "inherit",
   overflow: "auto",
   padding: theme.space["050"],
-  visibility: "hidden",
+  display: "none",
   "&.wpds-nav-menu-content-enter": {
-    visibility: "visible",
+    display: "block",
     opacity: 0,
     transform: "translate(var(--initialposition))",
   },
@@ -32,10 +32,10 @@ const StyledNavigationMenuContent = styled(NavigationMenuPrimitive.Content, {
     transition: `all ${theme.transitions.fast} ${theme.transitions.inOut}`,
   },
   "&.wpds-nav-menu-content-enter-done": {
-    visibility: "visible",
+    display: "block",
   },
   "&.wpds-nav-menu-content-exit": {
-    visibility: "visible",
+    display: "block",
     opacity: 1,
     transform: "translate(0)",
   },
@@ -45,7 +45,7 @@ const StyledNavigationMenuContent = styled(NavigationMenuPrimitive.Content, {
     transition: `all ${theme.transitions.fast} ${theme.transitions.inOut}`,
   },
   "&.wpds-nav-menu-content-exit-done": {
-    visibility: "hidden",
+    display: "none",
   },
 });
 
