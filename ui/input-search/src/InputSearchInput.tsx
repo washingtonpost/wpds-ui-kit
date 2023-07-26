@@ -27,7 +27,7 @@ export const InputSearchInput = React.forwardRef<
   InputSearchInputProps
 >(({ label = "Search", name, id, ...rest }: InputSearchInputProps, ref) => {
   const { disabled, usePortal } = React.useContext(InputSearchContext);
-  console.log("usePortal", usePortal);
+  // console.log("usePortal", usePortal);
   return (
     <div
       style={
