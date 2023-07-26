@@ -17,7 +17,7 @@ export default {
 };
 
 const Template: ComponentStory<typeof Select.Root> = (args) => {
-  return (
+  return (<>
     <Select.Root {...args} defaultValue="ecuador">
       <Select.Trigger aria-label="Countries">
         <Select.Label>Countries</Select.Label>
@@ -39,6 +39,7 @@ const Template: ComponentStory<typeof Select.Root> = (args) => {
         </Select.Group>
       </Select.Content>
     </Select.Root>
+  </>
   );
 };
 
@@ -59,11 +60,47 @@ Play.parameters = {
   chromatic: { disableSnapshot: true },
 };
 
+const UnselectedTemplate: ComponentStory<typeof Select.Root> = (args) => {
+  return (<>
+    <Select.Root {...args}>
+      <Select.Trigger aria-label="Countries">
+        <Select.Label>Countries</Select.Label>
+        <Select.Value />
+      </Select.Trigger>
+      <Select.Content>
+        <Select.Group label="Europe">
+          <Select.Item value="france">France</Select.Item>
+          <Select.Item value="united-kingdom">
+            United Kingdom - Scotland, Ireland, Wales, Great Britain, and the
+            commonwealth states of Canada, Australia, Turks and Caicos
+          </Select.Item>
+          <Select.Item value="spain">Spain</Select.Item>
+        </Select.Group>
+        <Select.Group label="South America">
+          <Select.Item value="peru">Peru</Select.Item>
+          <Select.Item value="chile">Chile</Select.Item>
+          <Select.Item value="ecuador">Ecuador</Select.Item>
+        </Select.Group>
+      </Select.Content>
+    </Select.Root>
+  </>
+  );
+};
+
+export const Unselected = UnselectedTemplate.bind({});
+
+Unselected.parameters = {
+  chromatic: { disableSnapshot: false },
+};
+
+
+
 const ControlledTemplate: ComponentStory<typeof Select.Root> = (args) => {
   const [country, setCountry] = React.useState("spain");
-  function handleValueChange(val) {
-    setCountry(val);
-  }
+  const handleValueChange = (value: string) => {
+    setCountry(value);
+  };
+
   return (
     <Select.Root {...args} value={country} onValueChange={handleValueChange}>
       <Select.Trigger aria-label="Countries">
