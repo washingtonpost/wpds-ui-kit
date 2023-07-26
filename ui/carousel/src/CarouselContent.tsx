@@ -163,7 +163,7 @@ export const CarouselContent = React.forwardRef<
         }
       }
     },
-    preventScrollOnSwipe: true,
+    preventScrollOnSwipe: false,
   });
 
   const handleOnFocus = () => {
