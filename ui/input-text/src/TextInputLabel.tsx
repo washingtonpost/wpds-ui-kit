@@ -1,11 +1,6 @@
 import { styled, theme } from "@washingtonpost/wpds-theme";
 import { InputLabel } from "@washingtonpost/wpds-input-label";
-
-export const FloatingLabelStyles = {
-  fontSize: theme.fontSizes["075"],
-  lineHeight: theme.lineHeights["100"],
-  transform: `translateY(${theme.space["050"]})`,
-};
+import { FloatingLabelStyles } from "@washingtonpost/wpds-input-shared";
 
 export const TextInputLabel = styled(InputLabel, {
   insetBlockStart: "0",

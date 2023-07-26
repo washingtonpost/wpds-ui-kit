@@ -5,9 +5,10 @@ import type * as WPDS from "@washingtonpost/wpds-theme";
 import {
   sharedInputStyles,
   sharedInputVariants,
+  FloatingLabelStyles
 } from "@washingtonpost/wpds-input-shared";
 
-import { TextInputLabel, FloatingLabelStyles } from "./TextInputLabel";
+import { TextInputLabel } from "./TextInputLabel";
 
 const Container = styled("div", {
   ...sharedInputStyles,
