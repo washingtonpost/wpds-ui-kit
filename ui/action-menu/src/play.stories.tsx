@@ -2,7 +2,6 @@ import * as React from "react";
 import { ActionMenu as Component } from ".";
 import { Button } from "@washingtonpost/wpds-button";
 import { Box } from "@washingtonpost/wpds-box";
-import { styled, theme } from "@washingtonpost/wpds-theme";
 import { Icon } from "@washingtonpost/wpds-icon";
 import {
   Bookmark,
@@ -39,22 +38,6 @@ export default {
     ActionMenuTrigger: Component.Trigger,
   },
 };
-
-const RightIcon = styled("div", {
-  marginLeft: "auto",
-  display: "inline-flex",
-  alignItems: "center",
-  justifyContent: "center",
-  height: "100%",
-});
-
-const LeftIcon = styled("div", {
-  paddingRight: theme.space["050"],
-  display: "inline-flex",
-  alignItems: "center",
-  justifyContent: "center",
-  height: "100%",
-});
 
 const SimpleContent = (
   <Component.Content>
@@ -140,11 +123,11 @@ const ItemVariationsTemplate = (parameters) => {
         <Component.Content density="compact">
           <Component.Label>Label</Component.Label>
           <Component.Item>
-            <LeftIcon>
+            <Component.Icon side="left">
               <Icon label="check">
                 <Copy />
               </Icon>
-            </LeftIcon>
+            </Component.Icon>
             Copy Items
           </Component.Item>
           <Component.Group>
@@ -159,11 +142,11 @@ const ItemVariationsTemplate = (parameters) => {
                 </Icon>
               </Component.ItemIndicator>
               {/*
-							<LeftIcon>
+							<Component.Icon side="left">
 								<Icon label="bookmark" size="100">
 									<Bookmark />
 								</Icon>
-							</LeftIcon>
+							</Component.Icon>
 							*/}
               Left
             </Component.CheckboxItem>
@@ -188,11 +171,11 @@ const ItemVariationsTemplate = (parameters) => {
                 </Icon>
               </Component.ItemIndicator>
               Right
-              <RightIcon>
+              <Component.Icon side="right">
                 <Icon label="bell" size="100">
                   <Bookmark />
                 </Icon>
-              </RightIcon>
+              </Component.Icon>
             </Component.CheckboxItem>
             <Component.CheckboxItem
               checked={checkedD}
@@ -204,18 +187,18 @@ const ItemVariationsTemplate = (parameters) => {
                 </Icon>
               </Component.ItemIndicator>
               {/*
-							<LeftIcon>
+							<Component.Icon side="left">
 								<Icon label="bell" size="100">
 									<Bookmark />
 								</Icon>
-							</LeftIcon>
+							</Component.Icon>
 							*/}
               Both
-              <RightIcon>
+              <Component.Icon side="right">
                 <Icon label="bell" size="100">
                   <Bookmark />
                 </Icon>
-              </RightIcon>
+              </Component.Icon>
             </Component.CheckboxItem>
           </Component.Group>
           <Component.Label>Radio Group Example</Component.Label>
@@ -252,19 +235,19 @@ const ItemVariationsTemplate = (parameters) => {
             <Component.SubTrigger>More actions</Component.SubTrigger>
             <Component.SubContent>
               <Component.Item disabled>
-                <LeftIcon>
+                <Component.Icon side="left">
                   <Icon label="bookmark" size="100">
                     <Bookmark />
                   </Icon>
-                </LeftIcon>
+                </Component.Icon>
                 Bookmarks
               </Component.Item>
               <Component.Item>
-                <LeftIcon>
+                <Component.Icon side="left">
                   <Icon label="bookmark" size="100">
                     <Bookmark />
                   </Icon>
-                </LeftIcon>
+                </Component.Icon>
                 Bookmarks
               </Component.Item>
               <Component.Item>Bookmarks</Component.Item>
@@ -282,27 +265,27 @@ const ItemVariationsTemplate = (parameters) => {
             <Component.SubTrigger>More actions</Component.SubTrigger>
             <Component.SubContent>
               <Component.Item disabled>
-                <LeftIcon>
+                <Component.Icon side="left">
                   <Icon label="Diamond">
                     <Circle />
                   </Icon>
-                </LeftIcon>
+                </Component.Icon>
                 Action 7
               </Component.Item>
               <Component.Item>
-                <LeftIcon>
+                <Component.Icon side="left">
                   <Icon label="Bookmark">
                     <Circle />
                   </Icon>
-                </LeftIcon>
+                </Component.Icon>
                 Action 8
               </Component.Item>
               <Component.Item>
-                <LeftIcon>
+                <Component.Icon side="left">
                   <Icon label="Print">
                     <Circle />
                   </Icon>
-                </LeftIcon>
+                </Component.Icon>
                 Action 9
               </Component.Item>
               <Component.Sub>
@@ -320,27 +303,27 @@ const ItemVariationsTemplate = (parameters) => {
             <Component.SubTrigger>More actions</Component.SubTrigger>
             <Component.SubContent>
               <Component.Item disabled>
-                <LeftIcon>
+                <Component.Icon side="left">
                   <Icon label="Diamond">
                     <Circle />
                   </Icon>
-                </LeftIcon>
+                </Component.Icon>
                 Action 7
               </Component.Item>
               <Component.Item>
-                <LeftIcon>
+                <Component.Icon side="left">
                   <Icon label="Bookmark">
                     <Circle />
                   </Icon>
-                </LeftIcon>
+                </Component.Icon>
                 Action 8
               </Component.Item>
               <Component.Item>
-                <LeftIcon>
+                <Component.Icon side="left">
                   <Icon label="Print">
                     <Circle />
                   </Icon>
-                </LeftIcon>
+                </Component.Icon>
                 Action 9
               </Component.Item>
               <Component.Sub>
@@ -368,38 +351,38 @@ const InteractionsTemplate: ComponentStory<any> = (parameters) => (
     <Component.Content density="loose">
       <Component.Item>Level 1 Action</Component.Item>
       <Component.Item>
-        <LeftIcon>
+        <Component.Icon side="left">
           <Icon label="Diamond">
             <Diamond />
           </Icon>
-        </LeftIcon>
+        </Component.Icon>
         Level 1 Action
       </Component.Item>
       <Component.Sub>
         <Component.SubTrigger>Open Level 2</Component.SubTrigger>
         <Component.SubContent>
           <Component.Item disabled>
-            <LeftIcon>
+            <Component.Icon side="left">
               <Icon label="Diamond">
                 <Diamond />
               </Icon>
-            </LeftIcon>
+            </Component.Icon>
             Level 2 Action
           </Component.Item>
           <Component.Item>
-            <LeftIcon>
+            <Component.Icon side="left">
               <Icon label="Bookmark">
                 <Bookmark />
               </Icon>
-            </LeftIcon>
+            </Component.Icon>
             Level 2 Action
           </Component.Item>
           <Component.Item>
-            <LeftIcon>
+            <Component.Icon side="left">
               <Icon label="Print">
                 <Print />
               </Icon>
-            </LeftIcon>
+            </Component.Icon>
             Level 2 Action
           </Component.Item>
           <Component.Sub>

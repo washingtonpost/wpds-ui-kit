@@ -1,6 +1,7 @@
 import { ActionMenuCheckboxItem } from "./ActionMenuCheckboxItem";
 import { ActionMenuContent } from "./ActionMenuContent";
 import { ActionMenuGroup } from "./ActionMenuGroup";
+import { ActionMenuIcon } from "./ActionMenuIcon";
 import { ActionMenuItem } from "./ActionMenuItem";
 import { ActionMenuItemIndicator } from "./ActionMenuItemIndicator";
 import { ActionMenuLabel } from "./ActionMenuLabel";
@@ -18,6 +19,7 @@ export type ActionMenuProps = {
   CheckboxItem: typeof ActionMenuCheckboxItem;
   Content: typeof ActionMenuContent;
   Group: typeof ActionMenuGroup;
+  Icon: typeof ActionMenuIcon;
   Item: typeof ActionMenuItem;
   ItemIndicator: typeof ActionMenuItemIndicator;
   Label: typeof ActionMenuLabel;
@@ -39,6 +41,7 @@ export const ActionMenu: ActionMenuProps = {
   CheckboxItem: ActionMenuCheckboxItem,
   Content: ActionMenuContent,
   Group: ActionMenuGroup,
+  Icon: ActionMenuIcon,
   Item: ActionMenuItem,
   ItemIndicator: ActionMenuItemIndicator,
   Label: ActionMenuLabel,
