@@ -5,6 +5,9 @@ import WPDS, { styled, theme } from "@washingtonpost/wpds-theme";
 import * as ActionMenuPrimitive from "@radix-ui/react-dropdown-menu";
 
 import { DropdownMenuItemIndicatorProps as RadixDropdownMenuItemIndicatorProps } from "@radix-ui/react-dropdown-menu";
+import { ActionMenuContext } from "./context";
+import { Icon } from "@washingtonpost/wpds-icon";
+import { Check } from "@washingtonpost/wpds-assets";
 
 const NAME = "ActionMenuItemIndicator";
 
@@ -16,6 +19,22 @@ export const StyledItemIndicator = styled(ActionMenuPrimitive.ItemIndicator, {
   display: "inline-flex",
   alignItems: "center",
   justifyContent: "center",
+  variants: {
+    density: {
+      loose: {
+        left: theme.space["100"],
+      },
+      default: {
+        left: theme.space["075"],
+      },
+      compact: {
+        left: theme.space["050"],
+      }
+    }
+  },
+  defaultVariants: {
+    density: "default",
+  },
 });
 
 export type ActionMenuItemIndicatorProps = {
@@ -29,13 +48,19 @@ export const ActionMenuItemIndicator = React.forwardRef<
   HTMLDivElement,
   ActionMenuItemIndicatorProps
 >(({ children, ...props }: ActionMenuItemIndicatorProps, ref) => {
+
+  const context = React.useContext(ActionMenuContext);
+
   return (
     <StyledItemIndicator
       {...props}
       ref={ref}
+      density={context.density}
       className="action-menu-item-indicator"
     >
-      {children}
+      <Icon label="check">
+        <Check />
+      </Icon>
     </StyledItemIndicator>
   );
 });

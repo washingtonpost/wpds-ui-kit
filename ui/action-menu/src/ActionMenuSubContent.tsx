@@ -10,22 +10,13 @@ import { DropdownMenuSubContentProps as RadixDropdownMenuSubContentProps } from 
 
 import { ActionMenuPortal } from "./ActionMenuPortal";
 
-import { ContentStyles, ContentDensityVariants } from "./ActionMenuContent";
+import { ContentStyles } from "./ActionMenuContent";
 
 const NAME = "ActionMenuSubContent";
 
 const StyledSubContent = styled(ActionMenuPrimitive.SubContent, {
   ...ContentStyles,
   variants: {
-    ...ContentDensityVariants,
-    hidden: {
-      true: {
-        display: "none",
-      },
-      false: {
-        display: "content",
-      },
-    },
     shadowSize: {
       small: {
         boxShadow: theme.shadows["400"],
@@ -36,8 +27,7 @@ const StyledSubContent = styled(ActionMenuPrimitive.SubContent, {
     },
   },
   defaultVariants: {
-    hidden: false,
-    density: "default",
+    shadowSize: "small",
   },
 });
 
@@ -69,7 +59,6 @@ export const ActionMenuSubContent = React.forwardRef<
   ActionMenuSubContentProps
 >(({ children, ...props }: ActionMenuSubContentProps, ref) => {
   const context = useContext(ActionMenuContext);
-
   const [shadowSize, setShadowSize] = React.useState("small" as ShadowProp);
 
   React.useEffect(() => {
@@ -81,20 +70,17 @@ export const ActionMenuSubContent = React.forwardRef<
   }, []);
 
   return (
-    <div>
-      <StyledPortal>
-        <StyledSubContent
-          {...props}
-          ref={ref}
-          shadowSize={shadowSize}
-          sideOffset={-10}
-          alignOffset={5}
-        >
-          {children}
-        </StyledSubContent>
-      </StyledPortal>
-    </div>
-  );
+    <StyledPortal>
+      <StyledSubContent
+        {...props}
+        ref={ref}
+        shadowSize={shadowSize}
+        alignOffset={-1} // Offset the ActionMenuContent border
+      >
+        {children}
+      </StyledSubContent>
+  </StyledPortal>
+);
 });
 
 ActionMenuSubContent.displayName = NAME;

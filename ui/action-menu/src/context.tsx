@@ -9,7 +9,7 @@ type ContextType = {
   currentId: string;
   density: "default" | "loose" | "compact";
   previousId: string;
-  slider: boolean;
+  slider?: boolean;
   stack: string[];
   setStack: React.Dispatch<React.SetStateAction<string[]>>;
 };

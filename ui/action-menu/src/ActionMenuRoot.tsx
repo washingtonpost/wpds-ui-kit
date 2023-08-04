@@ -24,12 +24,10 @@ export type ActionMenuRootProps = {
   children?: React.ReactNode;
   /** Override CSS */
   css?: WPDS.CSS;
-  slider?: boolean;
   density?: DensityProp;
 } & RadixDropdownMenuProps;
 
 export const ActionMenuRoot = ({
-  slider = false,
   density = "default",
   ...props
 }: ActionMenuRootProps) => {
@@ -49,7 +47,6 @@ export const ActionMenuRoot = ({
         currentId,
         density,
         previousId,
-        slider,
         stack,
         setStack,
       }}

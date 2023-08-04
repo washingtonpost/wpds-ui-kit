@@ -5,7 +5,6 @@ import { Box } from "@washingtonpost/wpds-box";
 import { Icon } from "@washingtonpost/wpds-icon";
 import {
   Bookmark,
-  Check,
   Diamond,
   DotsVertical,
   MixerVertical,
@@ -41,7 +40,23 @@ export default {
 
 const SimpleContent = (
   <Component.Content>
-    <Component.Item>Action 1</Component.Item>
+    <Component.Sub>
+      <Component.SubTrigger>Action 1</Component.SubTrigger>
+      <Component.SubContent>
+        <Component.Sub>
+          <Component.SubTrigger>Action 1.1</Component.SubTrigger>
+          <Component.SubContent>
+              <Component.Item>Action 1.1.1</Component.Item>
+              <Component.Item>Action 1.1.2</Component.Item>
+              <Component.Item>Action 1.1.3</Component.Item>
+              <Component.Item>Action 1.1.4</Component.Item>
+            </Component.SubContent>
+        </Component.Sub>
+        <Component.Item>Action 1.2</Component.Item>
+        <Component.Item>Action 1.3</Component.Item>
+        <Component.Item>Action 1.4</Component.Item>
+      </Component.SubContent>
+    </Component.Sub>
     <Component.Item>Action 2</Component.Item>
     <Component.Item>Action 3</Component.Item>
     <Component.Item>Action 4</Component.Item>
@@ -120,7 +135,7 @@ const ItemVariationsTemplate = (parameters) => {
         <Button>Action button</Button>
       </Component.Trigger>
       <Component.Portal>
-        <Component.Content density="compact">
+        <Component.Content>
           <Component.Label>Label</Component.Label>
           <Component.Item>
             <Component.Icon side="left">
@@ -136,11 +151,7 @@ const ItemVariationsTemplate = (parameters) => {
               checked={checkedA}
               onCheckedChange={setCheckedA}
             >
-              <Component.ItemIndicator>
-                <Icon label="check">
-                  <Check />
-                </Icon>
-              </Component.ItemIndicator>
+              <Component.ItemIndicator />
               {/*
 							<Component.Icon side="left">
 								<Icon label="bookmark" size="100">
@@ -154,22 +165,14 @@ const ItemVariationsTemplate = (parameters) => {
               checked={checkedB}
               onCheckedChange={setCheckedB}
             >
-              <Component.ItemIndicator>
-                <Icon label="check" size="100">
-                  <Check />
-                </Icon>
-              </Component.ItemIndicator>
+              <Component.ItemIndicator />
               Neither
             </Component.CheckboxItem>
             <Component.CheckboxItem
               checked={checkedC}
               onCheckedChange={setCheckedC}
             >
-              <Component.ItemIndicator>
-                <Icon label="check">
-                  <Check />
-                </Icon>
-              </Component.ItemIndicator>
+              <Component.ItemIndicator />
               Right
               <Component.Icon side="right">
                 <Icon label="bell" size="100">
@@ -181,18 +184,7 @@ const ItemVariationsTemplate = (parameters) => {
               checked={checkedD}
               onCheckedChange={setCheckedD}
             >
-              <Component.ItemIndicator>
-                <Icon label="check">
-                  <Check />
-                </Icon>
-              </Component.ItemIndicator>
-              {/*
-							<Component.Icon side="left">
-								<Icon label="bell" size="100">
-									<Bookmark />
-								</Icon>
-							</Component.Icon>
-							*/}
+              <Component.ItemIndicator />
               Both
               <Component.Icon side="right">
                 <Icon label="bell" size="100">
@@ -207,28 +199,16 @@ const ItemVariationsTemplate = (parameters) => {
             onValueChange={setRadioChecked}
           >
             <Component.RadioItem value="radio1">
-              <Component.ItemIndicator>
-                <Icon label="radio 1">
-                  <Circle />
-                </Icon>
-              </Component.ItemIndicator>
+              <Component.ItemIndicator />
               Radio 1
             </Component.RadioItem>
             <Component.RadioItem value="radio2">
-              <Component.ItemIndicator>
-                <Icon label="radio 2">
-                  <Circle />
-                </Icon>
-              </Component.ItemIndicator>
+              <Component.ItemIndicator />
               Radio 2
             </Component.RadioItem>
             <Component.RadioItem value="radio3">
-              <Component.ItemIndicator>
-                <Icon label="radio 3">
-                  <Circle />
-                </Icon>
-              </Component.ItemIndicator>
-              Radio 2
+              <Component.ItemIndicator />
+              Radio 3
             </Component.RadioItem>
           </Component.RadioGroup>
           <Component.Sub>
@@ -348,7 +328,7 @@ const InteractionsTemplate: ComponentStory<any> = (parameters) => (
     <Component.Trigger asChild>
       <Button>Trigger</Button>
     </Component.Trigger>
-    <Component.Content density="loose">
+    <Component.Content>
       <Component.Item>Level 1 Action</Component.Item>
       <Component.Item>
         <Component.Icon side="left">

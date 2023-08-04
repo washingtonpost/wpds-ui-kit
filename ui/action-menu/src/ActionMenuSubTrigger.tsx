@@ -4,26 +4,28 @@ import * as ActionMenuPrimitive from "@radix-ui/react-dropdown-menu";
 import { DropdownMenuSubTriggerProps as RadixDropdownMenuSubTriggerProps } from "@radix-ui/react-dropdown-menu";
 import { Icon } from "@washingtonpost/wpds-icon";
 import { ChevronRight } from "@washingtonpost/wpds-assets";
-import { ItemStyles } from "./ActionMenuItem";
 import { ActionMenuContext } from "./context";
 import { useContext } from "react";
+import { ItemStyles } from "./ActionMenuItem";
 
 const NAME = "ActionMenuSubTrigger";
 
 const SubTriggerStyles = {
+  ...ItemStyles,
   variants: {
-    isHeading: {
-      true: {
-        fontWeight: theme.fontWeights.bold,
-        margin: 0,
+    density: {
+      loose: {
+        padding: theme.space["100"],
       },
-      false: {
-        ...ItemStyles,
+      default: {
+        padding: theme.space["075"],
+      },
+      compact: {
+        padding: theme.space["050"],
       },
     },
   },
   defaultVariants: {
-    isHeading: false,
     density: "default",
   },
 };
@@ -33,21 +35,6 @@ const RightIcon = styled(Icon, {
   color: theme.colors.accessible,
   fill: theme.colors.primary,
   display: "flex",
-  variants: {
-    isDisabled: {
-      true: {
-        color: "inherit",
-      },
-    },
-    hidden: {
-      true: {
-        display: "none",
-      },
-      false: {
-        display: "flex",
-      },
-    },
-  },
   marginLeft: "auto",
 });
 
@@ -75,7 +62,7 @@ export const ActionMenuSubTrigger = React.forwardRef<
       {...props}
       ref={ref}
       className="action-menu-item"
-      isHeading={context.slider}
+      density={context.density}
     >
       {children}
       <RightIcon label="Expand submenu">

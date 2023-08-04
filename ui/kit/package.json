@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "@washingtonpost/wpds-accordion": "1.9.1",
-    "@washingtonpost/wpds-action-menu": "*",
+    "@washingtonpost/wpds-action-menu": "1.9.1",
     "@washingtonpost/wpds-alert-banner": "1.9.1",
     "@washingtonpost/wpds-app-bar": "1.9.1",
     "@washingtonpost/wpds-avatar": "1.9.1",
