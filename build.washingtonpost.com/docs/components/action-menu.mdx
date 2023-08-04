@@ -52,14 +52,12 @@ The Action List can be triggered with a button, a link, an icon, or similar visu
         {`Action Button`}
       </Button>
     </ActionMenu.Trigger>
-    <ActionMenu.Portal>
       <ActionMenu.Content>
         <ActionMenu.Item>Action 1</ActionMenu.Item>
         <ActionMenu.Item>Action 2</ActionMenu.Item>
         <ActionMenu.Item>Action 3</ActionMenu.Item>
         <ActionMenu.Item>Action 4</ActionMenu.Item>
       </ActionMenu.Content>
-    </ActionMenu.Portal>
   </ActionMenu.Root>
   <ActionMenu.Root>
     <ActionMenu.Trigger asChild>
@@ -69,14 +67,12 @@ The Action List can be triggered with a button, a link, an icon, or similar visu
         </Icon>
       </Button>
     </ActionMenu.Trigger>
-    <ActionMenu.Portal>
       <ActionMenu.Content>
         <ActionMenu.Item>Action 1</ActionMenu.Item>
         <ActionMenu.Item>Action 2</ActionMenu.Item>
         <ActionMenu.Item>Action 3</ActionMenu.Item>
         <ActionMenu.Item>Action 4</ActionMenu.Item>
       </ActionMenu.Content>
-    </ActionMenu.Portal>
   </ActionMenu.Root>
   <ActionMenu.Root>
     <ActionMenu.Trigger
@@ -85,14 +81,12 @@ The Action List can be triggered with a button, a link, an icon, or similar visu
     >
       <a style={{ marginLeft: "35px", marginRight: "35px" }}>Action Link</a>
     </ActionMenu.Trigger>
-    <ActionMenu.Portal>
       <ActionMenu.Content>
         <ActionMenu.Item>Action 1</ActionMenu.Item>
         <ActionMenu.Item>Action 2</ActionMenu.Item>
         <ActionMenu.Item>Action 3</ActionMenu.Item>
         <ActionMenu.Item>Action 4</ActionMenu.Item>
       </ActionMenu.Content>
-    </ActionMenu.Portal>
   </ActionMenu.Root>
   <ActionMenu.Root>
     <ActionMenu.Trigger asChild>
@@ -100,14 +94,19 @@ The Action List can be triggered with a button, a link, an icon, or similar visu
         <MixerVertical />
       </Icon>
     </ActionMenu.Trigger>
-    <ActionMenu.Portal></ActionMenu.Portal>
+    <ActionMenu.Content>
+      <ActionMenu.Item>Action 1</ActionMenu.Item>
+      <ActionMenu.Item>Action 2</ActionMenu.Item>
+      <ActionMenu.Item>Action 3</ActionMenu.Item>
+      <ActionMenu.Item>Action 4</ActionMenu.Item>
+    </ActionMenu.Content>
   </ActionMenu.Root>
 </Box>
 ```
 
 ### Density
 
-The following options can be applied to `ActionMenu.Content` to specify the density of the items: `default`, `loose`, and `compact`.
+The following options can be applied to specify the density of the items: `default`, `loose`, and `compact`.
 
 ```jsx withPreview
 <Box
@@ -117,45 +116,40 @@ The following options can be applied to `ActionMenu.Content` to specify the dens
     height: "100vh",
   }}
 >
-  <ActionMenu.Root>
+  <ActionMenu.Root density={"default"}>
     <ActionMenu.Trigger asChild>
       <Button css={{ marginLeft: "15px", marginRight: "15px" }}>Default</Button>
     </ActionMenu.Trigger>
-    <ActionMenu.Portal>
-      <ActionMenu.Content density="default" align="end">
-        <ActionMenu.Item>Action 1</ActionMenu.Item>
-        <ActionMenu.Item>Action 2</ActionMenu.Item>
-        <ActionMenu.Item>Action 3</ActionMenu.Item>
-      </ActionMenu.Content>
-    </ActionMenu.Portal>
+    <ActionMenu.Content align="end">
+      <ActionMenu.Item>Action 1</ActionMenu.Item>
+      <ActionMenu.Item>Action 2</ActionMenu.Item>
+      <ActionMenu.Item>Action 3</ActionMenu.Item>
+    </ActionMenu.Content>
   </ActionMenu.Root>
-  <ActionMenu.Root>
+  <ActionMenu.Root density={"loose"}>
     <ActionMenu.Trigger asChild>
       <Button css={{ marginLeft: "15px", marginRight: "15px" }}>Loose</Button>
     </ActionMenu.Trigger>
-    <ActionMenu.Portal>
-      <ActionMenu.Content density="loose">
+      <ActionMenu.Content>
         <ActionMenu.Item>Action 1</ActionMenu.Item>
         <ActionMenu.Item>Action 2</ActionMenu.Item>
         <ActionMenu.Item>Action 3</ActionMenu.Item>
       </ActionMenu.Content>
-    </ActionMenu.Portal>
   </ActionMenu.Root>
-  <ActionMenu.Root>
+  <ActionMenu.Root density={"compact"}>
     <ActionMenu.Trigger asChild>
       <Button css={{ marginLeft: "15px", marginRight: "15px" }}>Compact</Button>
     </ActionMenu.Trigger>
-    <ActionMenu.Portal>
-      <ActionMenu.Content density="compact" align="start">
+      <ActionMenu.Content>
         <ActionMenu.Item>Action 1</ActionMenu.Item>
         <ActionMenu.Item>Action 2</ActionMenu.Item>
         <ActionMenu.Item>Action 3</ActionMenu.Item>
       </ActionMenu.Content>
-    </ActionMenu.Portal>
   </ActionMenu.Root>
 </Box>
 ```
 
+{/*
 ### Portal
 
 Description of portal
@@ -199,6 +193,7 @@ Description of guidance one
 ```jsx withPreview isGuide="error"
 <p>test</p>
 ```
+*/}
 
 ---
 
