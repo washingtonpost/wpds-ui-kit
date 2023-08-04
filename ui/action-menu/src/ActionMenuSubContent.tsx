@@ -63,7 +63,7 @@ export const ActionMenuSubContent = React.forwardRef<
 
   React.useEffect(() => {
     setShadowSize(
-      context?.stack.findIndex((item) => item === context.currentId) >= 1
+      context?.level > 2
         ? "large"
         : "small"
     );
@@ -71,14 +71,21 @@ export const ActionMenuSubContent = React.forwardRef<
 
   return (
     <StyledPortal>
-      <StyledSubContent
-        {...props}
-        ref={ref}
-        shadowSize={shadowSize}
-        alignOffset={-1} // Offset the ActionMenuContent border
-      >
-        {children}
-      </StyledSubContent>
+      <ActionMenuContext.Provider
+          value={{
+            density: context.density,
+            level: context.level + 1,
+          }}
+        >
+        <StyledSubContent
+          {...props}
+          ref={ref}
+          shadowSize={shadowSize}
+          alignOffset={-2} // Offset the ActionMenuContent border and focus ring padding
+        >
+          {children}
+        </StyledSubContent>
+      </ActionMenuContext.Provider>
   </StyledPortal>
 );
 });

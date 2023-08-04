@@ -3,7 +3,6 @@ import * as React from "react";
 import WPDS, { theme, styled } from "@washingtonpost/wpds-theme";
 
 import * as ActionMenuPrimitive from "@radix-ui/react-dropdown-menu";
-import { ActionMenuContext } from "./context";
 
 import { DropdownMenuContentProps as RadixDropdownMenuContentProps } from "@radix-ui/react-dropdown-menu";
 
@@ -44,19 +43,12 @@ export const ActionMenuContent = React.forwardRef<
   HTMLDivElement,
   ActionMenuContentProps
 >(({ children, ...props }: ActionMenuContentProps, ref) => {
-  const context = React.useContext(ActionMenuContext);
 
-  const handleInteractOutside = () => {
-    const item = context?.stack.shift();
-
-    context?.setStack([item ? item : ""]);
-  };
   return (
     <ActionMenuPortal>
       <StyledContent
         {...props}
         ref={ref}
-        onInteractOutside={handleInteractOutside}
         sideOffset={4}
       >
         {children}

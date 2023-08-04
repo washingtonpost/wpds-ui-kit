@@ -25,37 +25,6 @@ export const ActionMenuSub = ({
   ...props
 }: ActionMenuSubProps) => {
   const context = React.useContext(ActionMenuContext);
-  const [id] = React.useState(window?.crypto.randomUUID());
-
-  // true or false tells us if we are going up or down
-  const trackSubMenuDepth = (open) => {
-    if (open) {
-      context.stack.push(id);
-
-      const current = context.stack[context.stack.length - 1];
-      const previous = context.stack[context.stack.length - 2];
-
-      context.advance({
-        current,
-        previous,
-      });
-
-      return;
-    }
-
-    const previous = context.stack.pop();
-    const current = context.stack[context.stack.length - 1];
-
-    context.advance({
-      current,
-      previous,
-    });
-  };
-
-  const handleOpenChange = (open) => {
-    trackSubMenuDepth(open);
-    onOpenChange(open);
-  };
 
   return (
     <ActionMenuContext.Provider
@@ -63,7 +32,7 @@ export const ActionMenuSub = ({
         ...context,
       }}
     >
-      <StyledSub {...props} onOpenChange={handleOpenChange} />
+      <StyledSub {...props} />
     </ActionMenuContext.Provider>
   );
 };
