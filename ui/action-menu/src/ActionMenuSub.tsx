@@ -13,7 +13,6 @@ const NAME = "ActionMenuSub";
 export const StyledSub = styled(ActionMenuPrimitive.Sub, {});
 
 export type ActionMenuSubProps = {
-  onOpenChange?: () => void;
   /** Any React node may be used as a child to allow for formatting */
   children?: React.ReactNode;
   /** Override CSS */
@@ -21,7 +20,6 @@ export type ActionMenuSubProps = {
 } & RadixDropdownMenuSubProps;
 
 export const ActionMenuSub = ({
-  onOpenChange = () => undefined,
   ...props
 }: ActionMenuSubProps) => {
   const context = React.useContext(ActionMenuContext);

@@ -323,7 +323,7 @@ const ItemVariationsTemplate = (parameters) => {
 
 export const ItemVariations = ItemVariationsTemplate.bind({});
 
-const InteractionsTemplate: ComponentStory<any> = (parameters) => (
+const InteractionsTemplate: ComponentStory<typeof Component.Root> = (parameters) => (
   <Component.Root {...parameters}>
     <Component.Trigger asChild>
       <Button>Trigger</Button>
@@ -385,7 +385,7 @@ function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-Interactions.play = async ({ parameters }) => {
+Interactions.play = async () => {
   console.log("Start Interaction");
 
   const trigger = screen.getAllByText("Trigger")[0];

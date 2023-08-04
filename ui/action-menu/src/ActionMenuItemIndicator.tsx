@@ -47,7 +47,7 @@ export type ActionMenuItemIndicatorProps = {
 export const ActionMenuItemIndicator = React.forwardRef<
   HTMLDivElement,
   ActionMenuItemIndicatorProps
->(({ children, ...props }: ActionMenuItemIndicatorProps, ref) => {
+>(({ ...props }: ActionMenuItemIndicatorProps, ref) => {
 
   const context = React.useContext(ActionMenuContext);
 

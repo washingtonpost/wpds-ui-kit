@@ -40,3 +40,5 @@ export const ActionMenuIcon = React.forwardRef<
 
     );
 });
+
+ActionMenuIcon.displayName = "ActionMenuIcon";
