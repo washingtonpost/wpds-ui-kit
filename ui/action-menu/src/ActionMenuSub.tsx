@@ -19,9 +19,7 @@ export type ActionMenuSubProps = {
   css?: WPDS.CSS;
 } & RadixDropdownMenuSubProps;
 
-export const ActionMenuSub = ({
-  ...props
-}: ActionMenuSubProps) => {
+export const ActionMenuSub = ({ ...props }: ActionMenuSubProps) => {
   const context = React.useContext(ActionMenuContext);
 
   return (

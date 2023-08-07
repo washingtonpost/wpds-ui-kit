@@ -47,17 +47,15 @@ export const ItemStyles = {
       },
       compact: {
         padding: theme.space["050"],
-      }
-    }
+      },
+    },
   },
   defaultVariants: {
     density: "default",
   },
 };
 
-export const ContentDensityVariants = {
-};
-
+export const ContentDensityVariants = {};
 
 // export const ItemContent = styled("div", {
 //   display: "flex",
@@ -77,11 +75,15 @@ export const ActionMenuItem = React.forwardRef<
   HTMLDivElement,
   ActionMenuItemProps
 >(({ children, ...props }: ActionMenuItemProps, ref) => {
-
   const context = React.useContext(ActionMenuContext);
 
   return (
-    <StyledItem {...props} ref={ref} density={context.density} className="action-menu-item">
+    <StyledItem
+      {...props}
+      ref={ref}
+      density={context.density}
+      className="action-menu-item"
+    >
       {children}
     </StyledItem>
   );

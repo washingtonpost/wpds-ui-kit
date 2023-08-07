@@ -30,8 +30,8 @@ export const StyledRadioItem = styled(ActionMenuPrimitive.RadioItem, {
       compact: {
         padding: theme.space["050"],
         paddingLeft: theme.space["200"],
-      }
-    }
+      },
+    },
   },
   defaultVariants: {
     density: "default",
@@ -51,7 +51,12 @@ export const ActionMenuRadioItem = React.forwardRef<
 >(({ children, ...props }: ActionMenuRadioItemProps, ref) => {
   const context = React.useContext(ActionMenuContext);
   return (
-    <StyledRadioItem {...props} ref={ref} density={context.density} className="action-menu-checkbox-item">
+    <StyledRadioItem
+      {...props}
+      ref={ref}
+      density={context.density}
+      className="action-menu-checkbox-item"
+    >
       {children}
     </StyledRadioItem>
   );

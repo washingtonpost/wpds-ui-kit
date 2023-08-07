@@ -62,21 +62,17 @@ export const ActionMenuSubContent = React.forwardRef<
   const [shadowSize, setShadowSize] = React.useState("small" as ShadowProp);
 
   React.useEffect(() => {
-    setShadowSize(
-      context?.level > 2
-        ? "large"
-        : "small"
-    );
+    setShadowSize(context?.level > 2 ? "large" : "small");
   }, []);
 
   return (
     <StyledPortal>
       <ActionMenuContext.Provider
-          value={{
-            density: context.density,
-            level: context.level + 1,
-          }}
-        >
+        value={{
+          density: context.density,
+          level: context.level + 1,
+        }}
+      >
         <StyledSubContent
           {...props}
           ref={ref}
@@ -86,8 +82,8 @@ export const ActionMenuSubContent = React.forwardRef<
           {children}
         </StyledSubContent>
       </ActionMenuContext.Provider>
-  </StyledPortal>
-);
+    </StyledPortal>
+  );
 });
 
 ActionMenuSubContent.displayName = NAME;

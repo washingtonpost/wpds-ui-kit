@@ -12,6 +12,9 @@ const NAME = "ActionMenuSubTrigger";
 
 const SubTriggerStyles = {
   ...ItemStyles,
+  "&[data-state=open]": {
+    outline: "none",
+  },
   variants: {
     density: {
       loose: {

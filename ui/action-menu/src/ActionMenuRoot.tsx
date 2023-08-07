@@ -10,8 +10,7 @@ import { ActionMenuContext } from "./context";
 
 const NAME = "ActionMenuRoot";
 
-const StyledActionMenu = styled(ActionMenuPrimitive.Root, {
-});
+const StyledActionMenu = styled(ActionMenuPrimitive.Root, {});
 
 export type DensityProp = "loose" | "default" | "compact";
 
@@ -27,12 +26,11 @@ export const ActionMenuRoot = ({
   density = "default",
   ...props
 }: ActionMenuRootProps) => {
-
   return (
     <ActionMenuContext.Provider
       value={{
         density,
-        level: 1
+        level: 1,
       }}
     >
       <StyledActionMenu {...props} />

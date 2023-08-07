@@ -44,14 +44,29 @@ export const ActionMenuContent = React.forwardRef<
   ActionMenuContentProps
 >(({ children, ...props }: ActionMenuContentProps, ref) => {
 
+  const [clicked, setClicked] = React.useState(false);
+
   return (
     <ActionMenuPortal>
-      <StyledContent
-        {...props}
-        ref={ref}
-        sideOffset={4}
-      >
-        {children}
+      <StyledContent 
+        {...props} 
+        ref={ref} 
+        sideOffset={4} 
+        onMouseDown={() => {
+          setClicked(true);
+        }}
+        onPointerDownOutside={() => {
+            setClicked(true);
+        }}
+        onCloseAutoFocus={(event) => {
+            if (clicked) {
+              setClicked(false);
+              event.preventDefault();
+            }
+          }
+        }
+        >
+          {children}
       </StyledContent>
     </ActionMenuPortal>
   );

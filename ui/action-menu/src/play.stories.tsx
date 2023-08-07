@@ -46,11 +46,11 @@ const SimpleContent = (
         <Component.Sub>
           <Component.SubTrigger>Action 1.1</Component.SubTrigger>
           <Component.SubContent>
-              <Component.Item>Action 1.1.1</Component.Item>
-              <Component.Item>Action 1.1.2</Component.Item>
-              <Component.Item>Action 1.1.3</Component.Item>
-              <Component.Item>Action 1.1.4</Component.Item>
-            </Component.SubContent>
+            <Component.Item>Action 1.1.1</Component.Item>
+            <Component.Item>Action 1.1.2</Component.Item>
+            <Component.Item>Action 1.1.3</Component.Item>
+            <Component.Item>Action 1.1.4</Component.Item>
+          </Component.SubContent>
         </Component.Sub>
         <Component.Item>Action 1.2</Component.Item>
         <Component.Item>Action 1.3</Component.Item>
@@ -322,7 +322,9 @@ const ItemVariationsTemplate = (parameters) => {
 
 export const ItemVariations = ItemVariationsTemplate.bind({});
 
-const InteractionsTemplate: ComponentStory<typeof Component.Root> = (parameters) => (
+const InteractionsTemplate: ComponentStory<typeof Component.Root> = (
+  parameters
+) => (
   <Component.Root {...parameters}>
     <Component.Trigger asChild>
       <Button>Trigger</Button>

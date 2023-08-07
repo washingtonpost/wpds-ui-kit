@@ -29,8 +29,8 @@ export const StyledItemIndicator = styled(ActionMenuPrimitive.ItemIndicator, {
       },
       compact: {
         left: theme.space["050"],
-      }
-    }
+      },
+    },
   },
   defaultVariants: {
     density: "default",
@@ -48,7 +48,6 @@ export const ActionMenuItemIndicator = React.forwardRef<
   HTMLDivElement,
   ActionMenuItemIndicatorProps
 >(({ ...props }: ActionMenuItemIndicatorProps, ref) => {
-
   const context = React.useContext(ActionMenuContext);
 
   return (

@@ -28,17 +28,16 @@ export type ActionMenuIconProps = {
 export const ActionMenuIcon = React.forwardRef<
   HTMLDivElement,
   ActionMenuIconProps
->(({ children,
-     side = "left",
-     ...props }: ActionMenuIconProps, ref) => {
-    return (
-
-        (side === "left") ? 
-            <LeftIcon {...props} ref={ref} className="action-menu-icon">{children}</LeftIcon> :
-        <RightIcon {...props} ref={ref} className="action-menu-icon">{children}</RightIcon>
-        
-
-    );
+>(({ children, side = "left", ...props }: ActionMenuIconProps, ref) => {
+  return side === "left" ? (
+    <LeftIcon {...props} ref={ref} className="action-menu-icon">
+      {children}
+    </LeftIcon>
+  ) : (
+    <RightIcon {...props} ref={ref} className="action-menu-icon">
+      {children}
+    </RightIcon>
+  );
 });
 
 ActionMenuIcon.displayName = "ActionMenuIcon";
