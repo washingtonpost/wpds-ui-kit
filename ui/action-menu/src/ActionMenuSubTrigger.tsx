@@ -14,6 +14,7 @@ const SubTriggerStyles = {
   ...ItemStyles,
   "&[data-state=open]": {
     outline: "none",
+    backgroundColor: theme.colors.alpha25,
   },
   variants: {
     density: {
