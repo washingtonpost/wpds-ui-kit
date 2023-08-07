@@ -4,7 +4,7 @@ module.exports = {
   roots: [
     "./ui"
   ],
-  preset: "ts-jest/presets/js-with-babel-legacy",
+  // preset: "ts-jest",
   testEnvironment: "./custom-env.ts",
   cacheDirectory: ".jest-cache",
   collectCoverage: true,
@@ -34,7 +34,7 @@ module.exports = {
     "/eslint-plugin/"
   ],
   // transform: {
-  //   '^.+\\.(js|jsx|ts|tsx|mjs)$': 'ts-jest',
+  //   "^.+\\.(j|t)sx?$": "babel-jest"
   // },
   transformIgnorePatterns: [`/node_modules/(?!(nanoid))`],
   testMatch: [

@@ -6,8 +6,9 @@ import { CarouselContext } from "./CarouselRoot";
 
 describe("CarouselPreviousButton", () => {
   const renderWithContext = (ui, contextProps) => {
+    const contextValue = { ...contextProps }
     return render(
-      <CarouselContext.Provider value={...contextProps}>
+      <CarouselContext.Provider value={contextValue}>
         {ui}
       </CarouselContext.Provider>
     );
