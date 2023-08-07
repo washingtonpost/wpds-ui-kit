@@ -81,7 +81,7 @@ export const ActionMenuSubContent = React.forwardRef<
           {...props}
           ref={ref}
           shadowSize={shadowSize}
-          alignOffset={-2} // Offset the ActionMenuContent border and focus ring padding
+          alignOffset={-2} // Offset the ActionMenuContent border
         >
           {children}
         </StyledSubContent>

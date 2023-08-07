@@ -23,9 +23,9 @@ export const ContentStyles = {
   maxHeight: "var(--radix-dropdown-menu-content-available-height)",
   maxWidth: "var(--radix-dropdown-menu-content-available-width)",
   minWidth: "200px",
-  overflow: "auto",
+  overflowX: "hidden",
+  overflowY: "auto",
   width: "fit-content",
-  padding: "1px",
 };
 
 const StyledContent = styled(ActionMenuPrimitive.Content, {

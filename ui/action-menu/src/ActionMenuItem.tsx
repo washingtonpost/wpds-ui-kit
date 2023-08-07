@@ -12,13 +12,17 @@ const NAME = "ActionMenuItem";
 export const ItemStyles = {
   alignItems: "center",
   background: theme.colors.secondary,
+  borderRadius: theme.radii["050"],
   display: "flex",
   flexBasis: "auto",
   flexDirection: "row",
   justifyContent: "flex-start",
   flexWrap: "none",
+  marginTop: "1px",
+  marginBottom: "1px",
+  marginLeft: "1px",
   transition: `background ${theme.transitions.fast} ${theme.transitions.inOut}`,
-  width: "100%",
+  width: "calc(100% - 2px)",
   "&:hover": {
     backgroundColor: theme.colors.alpha25,
     cursor: "pointer",
