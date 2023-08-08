@@ -1,6 +1,12 @@
 import * as React from "react";
 import { css, theme, globalCss } from "@washingtonpost/wpds-theme";
 
+export const FloatingLabelStyles = {
+  fontSize: theme.fontSizes["075"],
+  lineHeight: theme.lineHeights["100"],
+  transform: `translateY(${theme.space["050"]})`,
+};
+
 export const sharedInputStyles = {
   borderRadius: theme.radii["012"],
   borderColor: theme.colors.subtle,
@@ -105,11 +111,12 @@ export const useFloating = (
   onChange,
   isAutofilled
 ): [
-  boolean,
-  React.FocusEventHandler<HTMLInputElement | HTMLTextAreaElement>,
-  React.FocusEventHandler<HTMLInputElement | HTMLTextAreaElement>,
-  (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void
-] => {
+    boolean,
+    React.FocusEventHandler<HTMLInputElement | HTMLTextAreaElement>,
+    React.FocusEventHandler<HTMLInputElement | HTMLTextAreaElement>,
+    (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void
+  ] => {
+
   const [isFloating, setIsFloating] = React.useState(val ? true : false);
   const [isTouched, setIsTouched] = React.useState(val ? true : false);
   const [isFocused, setIsFocused] = React.useState(false);
