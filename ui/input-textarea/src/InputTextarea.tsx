@@ -8,6 +8,7 @@ import {
   sharedInputVariants,
   useFloating,
   globalInputAutoFillTriggerAnimations,
+  FloatingLabelStyles,
 } from "@washingtonpost/wpds-input-shared";
 import { InputLabel } from "@washingtonpost/wpds-input-label";
 import { ErrorMessage } from "@washingtonpost/wpds-error-message";
@@ -58,12 +59,19 @@ const ControlCSS = css({
   display: "flex",
   flexDirection: "column",
   position: "relative",
+
+  "&:focus-within": {
+
+    [`& ${TextAreaLabel}`]: {
+      ...FloatingLabelStyles,
+    },
+  },
 });
 
 export interface InputTextareaProps
   extends Omit<
-    WPDS.VariantProps<typeof InputTextareaCSS>,
-    "isInvalid" | "isDisabled"
+  WPDS.VariantProps<typeof InputTextareaCSS>,
+  "isInvalid" | "isDisabled"
   > {
   /** Override CSS */
   css?: WPDS.CSS;
