@@ -12,13 +12,17 @@ const NAME = "ActionMenuItem";
 export const ItemStyles = {
   alignItems: "center",
   background: theme.colors.secondary,
+  borderRadius: theme.radii["050"],
   display: "flex",
   flexBasis: "auto",
   flexDirection: "row",
   justifyContent: "flex-start",
   flexWrap: "none",
+  marginTop: "1px",
+  marginBottom: "1px",
+  marginLeft: "1px",
   transition: `background ${theme.transitions.fast} ${theme.transitions.inOut}`,
-  width: "100%",
+  width: "calc(100% - 2px)",
   "&:hover": {
     backgroundColor: theme.colors.alpha25,
     cursor: "pointer",
@@ -43,17 +47,15 @@ export const ItemStyles = {
       },
       compact: {
         padding: theme.space["050"],
-      }
-    }
+      },
+    },
   },
   defaultVariants: {
     density: "default",
   },
 };
 
-export const ContentDensityVariants = {
-};
-
+export const ContentDensityVariants = {};
 
 // export const ItemContent = styled("div", {
 //   display: "flex",
@@ -73,11 +75,15 @@ export const ActionMenuItem = React.forwardRef<
   HTMLDivElement,
   ActionMenuItemProps
 >(({ children, ...props }: ActionMenuItemProps, ref) => {
-
   const context = React.useContext(ActionMenuContext);
 
   return (
-    <StyledItem {...props} ref={ref} density={context.density} className="action-menu-item">
+    <StyledItem
+      {...props}
+      ref={ref}
+      density={context.density}
+      className="action-menu-item"
+    >
       {children}
     </StyledItem>
   );

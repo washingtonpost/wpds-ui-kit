@@ -31,13 +31,12 @@ const StyledCheckboxItem = styled(ActionMenuPrimitive.CheckboxItem, {
       compact: {
         padding: theme.space["050"],
         paddingLeft: theme.space["200"],
-      }
-    }
+      },
+    },
   },
   defaultVariants: {
     density: "default",
   },
-
 });
 
 export type ActionMenuCheckboxItemProps = {
@@ -51,7 +50,6 @@ export const ActionMenuCheckboxItem = React.forwardRef<
   HTMLDivElement,
   ActionMenuCheckboxItemProps
 >(({ children, ...props }: ActionMenuCheckboxItemProps, ref) => {
-
   const context = React.useContext(ActionMenuContext);
 
   return (

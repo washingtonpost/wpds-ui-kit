@@ -46,11 +46,11 @@ const SimpleContent = (
         <Component.Sub>
           <Component.SubTrigger>Action 1.1</Component.SubTrigger>
           <Component.SubContent>
-              <Component.Item>Action 1.1.1</Component.Item>
-              <Component.Item>Action 1.1.2</Component.Item>
-              <Component.Item>Action 1.1.3</Component.Item>
-              <Component.Item>Action 1.1.4</Component.Item>
-            </Component.SubContent>
+            <Component.Item>Action 1.1.1</Component.Item>
+            <Component.Item>Action 1.1.2</Component.Item>
+            <Component.Item>Action 1.1.3</Component.Item>
+            <Component.Item>Action 1.1.4</Component.Item>
+          </Component.SubContent>
         </Component.Sub>
         <Component.Item>Action 1.2</Component.Item>
         <Component.Item>Action 1.3</Component.Item>
@@ -278,7 +278,6 @@ const ItemVariationsTemplate = (parameters) => {
             </Component.SubContent>
           </Component.Sub>
           <Component.Item>Action 4</Component.Item>
-
           <Component.Sub>
             <Component.SubTrigger>More actions</Component.SubTrigger>
             <Component.SubContent>
@@ -323,7 +322,9 @@ const ItemVariationsTemplate = (parameters) => {
 
 export const ItemVariations = ItemVariationsTemplate.bind({});
 
-const InteractionsTemplate: ComponentStory<any> = (parameters) => (
+const InteractionsTemplate: ComponentStory<typeof Component.Root> = (
+  parameters
+) => (
   <Component.Root {...parameters}>
     <Component.Trigger asChild>
       <Button>Trigger</Button>
@@ -385,7 +386,7 @@ function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-Interactions.play = async ({ parameters }) => {
+Interactions.play = async () => {
   console.log("Start Interaction");
 
   const trigger = screen.getAllByText("Trigger")[0];

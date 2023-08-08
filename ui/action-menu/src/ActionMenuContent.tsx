@@ -3,7 +3,6 @@ import * as React from "react";
 import WPDS, { theme, styled } from "@washingtonpost/wpds-theme";
 
 import * as ActionMenuPrimitive from "@radix-ui/react-dropdown-menu";
-import { ActionMenuContext } from "./context";
 
 import { DropdownMenuContentProps as RadixDropdownMenuContentProps } from "@radix-ui/react-dropdown-menu";
 
@@ -24,9 +23,9 @@ export const ContentStyles = {
   maxHeight: "var(--radix-dropdown-menu-content-available-height)",
   maxWidth: "var(--radix-dropdown-menu-content-available-width)",
   minWidth: "200px",
-  overflow: "auto",
+  overflowX: "hidden",
+  overflowY: "auto",
   width: "fit-content",
-  padding: "1px",
 };
 
 const StyledContent = styled(ActionMenuPrimitive.Content, {
@@ -44,20 +43,26 @@ export const ActionMenuContent = React.forwardRef<
   HTMLDivElement,
   ActionMenuContentProps
 >(({ children, ...props }: ActionMenuContentProps, ref) => {
-  const context = React.useContext(ActionMenuContext);
+  const [clicked, setClicked] = React.useState(false);
 
-  const handleInteractOutside = () => {
-    const item = context?.stack.shift();
-
-    context?.setStack([item ? item : ""]);
-  };
   return (
     <ActionMenuPortal>
       <StyledContent
         {...props}
         ref={ref}
-        onInteractOutside={handleInteractOutside}
         sideOffset={4}
+        onMouseDown={() => {
+          setClicked(true);
+        }}
+        onPointerDownOutside={() => {
+          setClicked(true);
+        }}
+        onCloseAutoFocus={(event) => {
+          if (clicked) {
+            setClicked(false);
+            event.preventDefault();
+          }
+        }}
       >
         {children}
       </StyledContent>

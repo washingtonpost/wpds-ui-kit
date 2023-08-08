@@ -31,8 +31,8 @@ export const StyledLabel = styled(ActionMenuPrimitive.Label, {
         paddingLeft: theme.space["050"],
         paddingRight: theme.space["050"],
         marginTop: theme.sizes["050"],
-      }
-    }
+      },
+    },
   },
   defaultVariants: {
     density: "default",
@@ -50,10 +50,14 @@ export const ActionMenuLabel = React.forwardRef<
   HTMLDivElement,
   ActionMenuLabelProps
 >(({ children, ...props }: ActionMenuLabelProps, ref) => {
-
   const context = React.useContext(ActionMenuContext);
   return (
-    <StyledLabel {...props} ref={ref} density={context.density} className="action-menu-label">
+    <StyledLabel
+      {...props}
+      ref={ref}
+      density={context.density}
+      className="action-menu-label"
+    >
       {children}
     </StyledLabel>
   );
