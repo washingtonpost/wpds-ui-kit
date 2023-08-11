@@ -17,6 +17,10 @@ const LeftIcon = styled("div", {
   height: "100%",
 });
 
+const IconPlaceholder = styled("div", {
+  width: theme.space["100"],
+});
+
 export type ActionMenuIconProps = {
   /** Any React node may be used as a child to allow for formatting */
   children?: React.ReactNode;
@@ -31,11 +35,11 @@ export const ActionMenuIcon = React.forwardRef<
 >(({ children, side = "left", ...props }: ActionMenuIconProps, ref) => {
   return side === "left" ? (
     <LeftIcon {...props} ref={ref} className="action-menu-icon">
-      {children}
+      {children ? children : <IconPlaceholder />}
     </LeftIcon>
   ) : (
     <RightIcon {...props} ref={ref} className="action-menu-icon">
-      {children}
+      {children ? children : <IconPlaceholder />}
     </RightIcon>
   );
 });
