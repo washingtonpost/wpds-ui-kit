@@ -1,6 +1,6 @@
 ---
 title: Action Menu
-description: ActionMenu description
+description: A temporary overlay containing a list of items (commands or actions) relevant to the user’s current context. An item in the menu is immediately executed upon selection. Action menus must be paired with a trigger (button or text link) that reveals the menu on click or tap.
 component: ActionMenu
 ---
 
@@ -13,26 +13,63 @@ component: ActionMenu
   caption="Note: Image not to scale"
 />
 
-1. Trigger
-2. Root
-3. Arrow
-4. Content
-5. Item
-6. Portal
-7. Sub
-8. SubContent
-9. SubTrigger
-10. Group
-11. RadioGroup
-12. RadioItem
-13. CheckboxItem
-14. ItemIndicator
-15. Label
-16. Separator
+1.Trigger
+2. Item label
+3. Submenu indicator
+4. Group label
+5. Group divider
+6. Item icon (optional)
+7. Selected item
+8. Unselected item
 
 ---
 
 ## Options
+
+### Density
+
+The following options can be applied to specify the density of the items: `default`, `loose`, and `compact`.
+
+```jsx withPreview
+<Box
+  css={{
+    paddingTop: "5%",
+    width: "100%",
+    height: "100vh",
+  }}
+>
+  <ActionMenu.Root density={"default"}>
+    <ActionMenu.Trigger asChild>
+      <Button css={{ marginLeft: "15px", marginRight: "15px" }}>Default</Button>
+    </ActionMenu.Trigger>
+    <ActionMenu.Content align="end">
+      <ActionMenu.Item>Action 1</ActionMenu.Item>
+      <ActionMenu.Item>Action 2</ActionMenu.Item>
+      <ActionMenu.Item>Action 3</ActionMenu.Item>
+    </ActionMenu.Content>
+  </ActionMenu.Root>
+  <ActionMenu.Root density={"loose"}>
+    <ActionMenu.Trigger asChild>
+      <Button css={{ marginLeft: "15px", marginRight: "15px" }}>Loose</Button>
+    </ActionMenu.Trigger>
+    <ActionMenu.Content>
+      <ActionMenu.Item>Action 1</ActionMenu.Item>
+      <ActionMenu.Item>Action 2</ActionMenu.Item>
+      <ActionMenu.Item>Action 3</ActionMenu.Item>
+    </ActionMenu.Content>
+  </ActionMenu.Root>
+  <ActionMenu.Root density={"compact"}>
+    <ActionMenu.Trigger asChild>
+      <Button css={{ marginLeft: "15px", marginRight: "15px" }}>Compact</Button>
+    </ActionMenu.Trigger>
+    <ActionMenu.Content>
+      <ActionMenu.Item>Action 1</ActionMenu.Item>
+      <ActionMenu.Item>Action 2</ActionMenu.Item>
+      <ActionMenu.Item>Action 3</ActionMenu.Item>
+    </ActionMenu.Content>
+  </ActionMenu.Root>
+</Box>
+```
 
 ### Trigger
 
@@ -104,50 +141,22 @@ The Action List can be triggered with a button, a link, an icon, or similar visu
 </Box>
 ```
 
-### Density
+---
 
-The following options can be applied to specify the density of the items: `default`, `loose`, and `compact`.
+## Behavior 
 
-```jsx withPreview
-<Box
-  css={{
-    paddingTop: "5%",
-    width: "100%",
-    height: "100vh",
-  }}
->
-  <ActionMenu.Root density={"default"}>
-    <ActionMenu.Trigger asChild>
-      <Button css={{ marginLeft: "15px", marginRight: "15px" }}>Default</Button>
-    </ActionMenu.Trigger>
-    <ActionMenu.Content align="end">
-      <ActionMenu.Item>Action 1</ActionMenu.Item>
-      <ActionMenu.Item>Action 2</ActionMenu.Item>
-      <ActionMenu.Item>Action 3</ActionMenu.Item>
-    </ActionMenu.Content>
-  </ActionMenu.Root>
-  <ActionMenu.Root density={"loose"}>
-    <ActionMenu.Trigger asChild>
-      <Button css={{ marginLeft: "15px", marginRight: "15px" }}>Loose</Button>
-    </ActionMenu.Trigger>
-    <ActionMenu.Content>
-      <ActionMenu.Item>Action 1</ActionMenu.Item>
-      <ActionMenu.Item>Action 2</ActionMenu.Item>
-      <ActionMenu.Item>Action 3</ActionMenu.Item>
-    </ActionMenu.Content>
-  </ActionMenu.Root>
-  <ActionMenu.Root density={"compact"}>
-    <ActionMenu.Trigger asChild>
-      <Button css={{ marginLeft: "15px", marginRight: "15px" }}>Compact</Button>
-    </ActionMenu.Trigger>
-    <ActionMenu.Content>
-      <ActionMenu.Item>Action 1</ActionMenu.Item>
-      <ActionMenu.Item>Action 2</ActionMenu.Item>
-      <ActionMenu.Item>Action 3</ActionMenu.Item>
-    </ActionMenu.Content>
-  </ActionMenu.Root>
-</Box>
-```
+### Disabled
+
+Items display background color ‘$faint’ on mouse over
+
+### Hover 
+
+Items display background color ‘$faint’ on mouse over
+
+### Submenu
+
+Action menu supports submenus with up to three levels of nesting.  Access a submenu by hovering over a menu item with a submenu indicator (chevron), or by using keyboard navigation
+
 
 ---
 
