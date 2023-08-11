@@ -21,7 +21,7 @@ npm install @stitches/react
 npm install @washingtonpost/wpds-ui-kit
 ```
 
-Let's configure the project to support Server Side Rendering. This is a requirement for the React UI Kit in Next.js. We are following Stitches guide on how to do this. [Seen here.](https://stitches.dev/docs/server-side-rendering).
+Let's configure the project to support Server Side Rendering. This is a requirement for the React UI Kit in Next.js. We are following Stitches guide on how to do this. [Seen here.](https://stitches.dev/docs/server-side-rendering). You need to call ‘getCssText()’ in the document head to prevent FOUC during SSR.
 
 ```jsx
 import React from "react";
