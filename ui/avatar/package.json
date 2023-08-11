@@ -1,6 +1,6 @@
 {
   "name": "@washingtonpost/wpds-avatar",
-  "version": "1.9.1",
+  "version": "1.10.0",
   "description": "WPDS Avatar",
   "author": "WPDS Support <wpds@washpost.com>",
   "homepage": "https://github.com/washingtonpost/wpds-ui-kit#readme",
@@ -36,13 +36,13 @@
     "typescript": "4.5.5"
   },
   "peerDependencies": {
-    "@radix-ui/react-avatar": "latest",
+    "@radix-ui/react-avatar": "1.0.2",
     "@washingtonpost/wpds-theme": "*",
     "react": "^16.8.6 || ^17.0.2"
   },
   "dependencies": {
-    "@radix-ui/react-avatar": "latest",
-    "@washingtonpost/wpds-theme": "1.9.1"
+    "@radix-ui/react-avatar": "1.0.2",
+    "@washingtonpost/wpds-theme": "1.10.0"
   },
   "gitHead": "37dec684cc01ef4a87df682998c91ad97368ce8a"
 }

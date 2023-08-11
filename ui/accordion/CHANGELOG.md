@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.10.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.9.1...v1.10.0) (2023-08-10)
+
+
+### Features
+
+* upgrade to node 18 ([7c23fa0](https://github.com/washingtonpost/wpds-ui-kit/commit/7c23fa0f49f138489510f9e01f207a70282632a6))
+
+
+
+
+
 ## [1.9.1](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.9.0...v1.9.1) (2023-07-17)
 
 **Note:** Version bump only for package @washingtonpost/wpds-accordion

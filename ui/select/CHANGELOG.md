@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.10.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.9.1...v1.10.0) (2023-08-10)
+
+
+### Bug Fixes
+
+* constraining max height ([89e1f8d](https://github.com/washingtonpost/wpds-ui-kit/commit/89e1f8d4a5f7b1a8a963be5cccbaeadd5df596b9))
+* fixing select position ([7c00425](https://github.com/washingtonpost/wpds-ui-kit/commit/7c004257452b0561d8d3981ebd4a69f334ceec7b))
+* remove top border on select content ([53267f9](https://github.com/washingtonpost/wpds-ui-kit/commit/53267f97e8643f3c0a6b57f21781587135bde649))
+
+
+
+
+
 ## [1.9.1](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.9.0...v1.9.1) (2023-07-17)
 
 **Note:** Version bump only for package @washingtonpost/wpds-select
