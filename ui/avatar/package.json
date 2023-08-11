@@ -36,12 +36,12 @@
     "typescript": "4.5.5"
   },
   "peerDependencies": {
-    "@radix-ui/react-avatar": "1.0.2",
+    "@radix-ui/react-avatar": "latest",
     "@washingtonpost/wpds-theme": "*",
     "react": "^16.8.6 || ^17.0.2"
   },
   "dependencies": {
-    "@radix-ui/react-avatar": "1.0.2",
+    "@radix-ui/react-avatar": "latest",
     "@washingtonpost/wpds-theme": "1.10.0"
   },
   "gitHead": "37dec684cc01ef4a87df682998c91ad97368ce8a"
