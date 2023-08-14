@@ -20,12 +20,21 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 **Note:** Version bump only for package @washingtonpost/wpds-docs
 
+
+
+
+
 # [1.9.0](https://github.com/washingtonpost/wpds-docs/compare/v1.8.5...v1.9.0) (2023-07-14)
+
 
 ### Features
 
-- add Postoni Ultra ([#438](https://github.com/washingtonpost/wpds-docs/issues/438)) ([1124240](https://github.com/washingtonpost/wpds-docs/commit/11242406de14833f7d5d37fec9cfabd3c5a2ba05))
-- add remaining examples to InputSearch docs and additional testing examples and validation ([e527dd9](https://github.com/washingtonpost/wpds-docs/commit/e527dd91940eb47df0c61a5aae31a01270652075))
+* add Postoni Ultra ([#438](https://github.com/washingtonpost/wpds-docs/issues/438)) ([1124240](https://github.com/washingtonpost/wpds-docs/commit/11242406de14833f7d5d37fec9cfabd3c5a2ba05))
+* add remaining examples to InputSearch docs and additional testing examples and validation ([e527dd9](https://github.com/washingtonpost/wpds-docs/commit/e527dd91940eb47df0c61a5aae31a01270652075))
+
+
+
+
 
 ## [1.8.5](https://github.com/washingtonpost/wpds-docs/compare/v1.8.4...v1.8.5) (2023-07-06)
 
