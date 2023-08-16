@@ -5,30 +5,17 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 # [1.10.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.9.1...v1.10.0) (2023-08-10)
 
-
 ### Bug Fixes
 
-* allow clicking of interactive elements below NavigationMenu ([a3de5ad](https://github.com/washingtonpost/wpds-ui-kit/commit/a3de5ad35940498ac6d718a1e3e9aa3314d30490))
-
-
-
-
+- allow clicking of interactive elements below NavigationMenu ([a3de5ad](https://github.com/washingtonpost/wpds-ui-kit/commit/a3de5ad35940498ac6d718a1e3e9aa3314d30490))
 
 ## [1.9.1](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.9.0...v1.9.1) (2023-07-17)
 
 **Note:** Version bump only for package @washingtonpost/wpds-navigation-menu
 
-
-
-
-
 # [1.9.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.8.5...v1.9.0) (2023-07-14)
 
 **Note:** Version bump only for package @washingtonpost/wpds-navigation-menu
-
-
-
-
 
 ## [1.8.5](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.8.4...v1.8.5) (2023-07-06)
 

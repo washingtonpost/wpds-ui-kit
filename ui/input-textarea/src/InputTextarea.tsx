@@ -61,7 +61,6 @@ const ControlCSS = css({
   position: "relative",
 
   "&:focus-within": {
-
     [`& ${TextAreaLabel}`]: {
       ...FloatingLabelStyles,
     },
@@ -70,8 +69,8 @@ const ControlCSS = css({
 
 export interface InputTextareaProps
   extends Omit<
-  WPDS.VariantProps<typeof InputTextareaCSS>,
-  "isInvalid" | "isDisabled"
+    WPDS.VariantProps<typeof InputTextareaCSS>,
+    "isInvalid" | "isDisabled"
   > {
   /** Override CSS */
   css?: WPDS.CSS;

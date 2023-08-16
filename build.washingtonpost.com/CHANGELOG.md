@@ -5,36 +5,22 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 # [1.10.0](https://github.com/washingtonpost/wpds-docs/compare/v1.9.1...v1.10.0) (2023-08-10)
 
-
 ### Bug Fixes
 
-* add autofocus style to input ([#451](https://github.com/washingtonpost/wpds-docs/issues/451)) ([31ae39a](https://github.com/washingtonpost/wpds-docs/commit/31ae39af69b732549567a7adde0c6378f96b45d7))
-* constraining max height ([89e1f8d](https://github.com/washingtonpost/wpds-docs/commit/89e1f8d4a5f7b1a8a963be5cccbaeadd5df596b9))
-* **performance-and-seo:** formatting of responsiveness and google sections ([#458](https://github.com/washingtonpost/wpds-docs/issues/458)) ([992f643](https://github.com/washingtonpost/wpds-docs/commit/992f643aa383258a673326b4b3fc41f3008d2bae))
-
-
-
-
+- add autofocus style to input ([#451](https://github.com/washingtonpost/wpds-docs/issues/451)) ([31ae39a](https://github.com/washingtonpost/wpds-docs/commit/31ae39af69b732549567a7adde0c6378f96b45d7))
+- constraining max height ([89e1f8d](https://github.com/washingtonpost/wpds-docs/commit/89e1f8d4a5f7b1a8a963be5cccbaeadd5df596b9))
+- **performance-and-seo:** formatting of responsiveness and google sections ([#458](https://github.com/washingtonpost/wpds-docs/issues/458)) ([992f643](https://github.com/washingtonpost/wpds-docs/commit/992f643aa383258a673326b4b3fc41f3008d2bae))
 
 ## [1.9.1](https://github.com/washingtonpost/wpds-docs/compare/v1.9.0...v1.9.1) (2023-07-17)
 
 **Note:** Version bump only for package @washingtonpost/wpds-docs
 
-
-
-
-
 # [1.9.0](https://github.com/washingtonpost/wpds-docs/compare/v1.8.5...v1.9.0) (2023-07-14)
-
 
 ### Features
 
-* add Postoni Ultra ([#438](https://github.com/washingtonpost/wpds-docs/issues/438)) ([1124240](https://github.com/washingtonpost/wpds-docs/commit/11242406de14833f7d5d37fec9cfabd3c5a2ba05))
-* add remaining examples to InputSearch docs and additional testing examples and validation ([e527dd9](https://github.com/washingtonpost/wpds-docs/commit/e527dd91940eb47df0c61a5aae31a01270652075))
-
-
-
-
+- add Postoni Ultra ([#438](https://github.com/washingtonpost/wpds-docs/issues/438)) ([1124240](https://github.com/washingtonpost/wpds-docs/commit/11242406de14833f7d5d37fec9cfabd3c5a2ba05))
+- add remaining examples to InputSearch docs and additional testing examples and validation ([e527dd9](https://github.com/washingtonpost/wpds-docs/commit/e527dd91940eb47df0c61a5aae31a01270652075))
 
 ## [1.8.5](https://github.com/washingtonpost/wpds-docs/compare/v1.8.4...v1.8.5) (2023-07-06)
 

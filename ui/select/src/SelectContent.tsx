@@ -21,7 +21,7 @@ const StyledContent = styled(SelectPrimitive.Content, {
   lineHeight: theme.lineHeights["125"],
   paddingBlock: "11px",
   overflowWrap: "anywhere",
-  maxHeight: "var(--radix-select-content-available-height)"
+  maxHeight: "var(--radix-select-content-available-height)",
 });
 
 const StyledViewport = styled(SelectPrimitive.Viewport, {});

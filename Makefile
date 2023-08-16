@@ -8,7 +8,7 @@ main-publish:
 	npx lerna publish from-package --yes --no-git-reset --no-verify-access
 
 main-version:
-	npx lerna version --conventional-commits --yes --force-publish --create-release github
+	npx lerna version --conventional-commits --yes --force-publish --create-release github --no-push
 
 # create experimental release
 experimental-release:
@@ -19,7 +19,8 @@ experimental-release:
 # create main release
 main-release:
 	make main-version
-	npm run turbo:build:force
+	npm run turbo:build:ui:force
+	npm run format
 	make main-publish
 	npm install
 

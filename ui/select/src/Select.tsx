@@ -12,14 +12,13 @@ import { SelectTrigger } from "./SelectTrigger";
 import { SelectValue } from "./SelectValue";
 import { SelectLabel } from "./SelectLabel";
 
-
 const cancelDefaults = (event) => {
   event.preventDefault();
   event.stopPropagation();
-}
+};
 
 const preventEvents = (open) => {
-  const items = document.querySelectorAll('[data-radix-collection-item]');
+  const items = document.querySelectorAll("[data-radix-collection-item]");
 
   items.forEach((item) => {
     const fn = open ? "addEventListener" : "removeEventListener";
@@ -62,8 +61,8 @@ export type SelectRootProps = {
   helperText?: React.ReactNode;
   /** Event handler called when the value changes. */
   onValueChange?:
-  | ((value: string) => void)
-  | (((state: string) => void) | undefined);
+    | ((value: string) => void)
+    | (((state: string) => void) | undefined);
   /** The select element's required attribute */
   required?: boolean;
   /** Indicates there is a success*/
@@ -115,7 +114,12 @@ export const SelectRoot = ({
         setContentWidth,
       }}
     >
-      <SelectPrimitive.Root value={value} onOpenChange={preventEvents} onValueChange={setValue} {...props}>
+      <SelectPrimitive.Root
+        value={value}
+        onOpenChange={preventEvents}
+        onValueChange={setValue}
+        {...props}
+      >
         {children}
       </SelectPrimitive.Root>
     </SelectContext.Provider>

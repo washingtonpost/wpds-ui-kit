@@ -5,7 +5,7 @@ import type * as WPDS from "@washingtonpost/wpds-theme";
 import {
   sharedInputStyles,
   sharedInputVariants,
-  FloatingLabelStyles
+  FloatingLabelStyles,
 } from "@washingtonpost/wpds-input-shared";
 
 import { TextInputLabel } from "./TextInputLabel";

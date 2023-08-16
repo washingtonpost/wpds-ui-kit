@@ -1,0 +1,199 @@
+---
+title: Action Menu
+description: A temporary overlay containing a list of items (commands or actions) relevant to the user’s current context. An item in the menu is immediately executed upon selection. Action menus must be paired with a trigger (button or text link) that reveals the menu on click or tap.
+component: ActionMenu
+status: Draft
+---
+
+---
+
+## Anatomy
+
+<Anatomy
+  src="/img/components/ActionMenu/anatomy.svg"
+  caption="Note: Image not to scale"
+/>
+
+1. Trigger
+2. Item label
+3. Submenu indicator
+4. Group label
+5. Group divider
+6. Item icon (optional)
+7. Selected item
+8. Unselected item
+
+---
+
+## Options
+
+### Density
+
+The following options can be applied to specify the density of the items: `default`, `loose`, and `compact`.
+
+```jsx withPreview
+<Box
+  css={{
+    paddingTop: "5%",
+    width: "100%",
+    height: "100vh",
+  }}
+>
+  <ActionMenu.Root density={"default"}>
+    <ActionMenu.Trigger asChild>
+      <Button css={{ marginLeft: "15px", marginRight: "15px" }}>Default</Button>
+    </ActionMenu.Trigger>
+    <ActionMenu.Content align="end">
+      <ActionMenu.Item>Action 1</ActionMenu.Item>
+      <ActionMenu.Item>Action 2</ActionMenu.Item>
+      <ActionMenu.Item>Action 3</ActionMenu.Item>
+    </ActionMenu.Content>
+  </ActionMenu.Root>
+  <ActionMenu.Root density={"loose"}>
+    <ActionMenu.Trigger asChild>
+      <Button css={{ marginLeft: "15px", marginRight: "15px" }}>Loose</Button>
+    </ActionMenu.Trigger>
+    <ActionMenu.Content>
+      <ActionMenu.Item>Action 1</ActionMenu.Item>
+      <ActionMenu.Item>Action 2</ActionMenu.Item>
+      <ActionMenu.Item>Action 3</ActionMenu.Item>
+    </ActionMenu.Content>
+  </ActionMenu.Root>
+  <ActionMenu.Root density={"compact"}>
+    <ActionMenu.Trigger asChild>
+      <Button css={{ marginLeft: "15px", marginRight: "15px" }}>Compact</Button>
+    </ActionMenu.Trigger>
+    <ActionMenu.Content>
+      <ActionMenu.Item>Action 1</ActionMenu.Item>
+      <ActionMenu.Item>Action 2</ActionMenu.Item>
+      <ActionMenu.Item>Action 3</ActionMenu.Item>
+    </ActionMenu.Content>
+  </ActionMenu.Root>
+</Box>
+```
+
+### Trigger
+
+The Action List can be triggered with a button, a link, an icon, or similar visual cue.
+
+```jsx withPreview
+<Box
+  css={{
+    paddingTop: "5%",
+    width: "100%",
+    height: "100vh",
+  }}
+>
+  <ActionMenu.Root>
+    <ActionMenu.Trigger asChild>
+      <Button css={{ marginLeft: "25px", marginRight: "25px" }}>
+        {`Action Button`}
+      </Button>
+    </ActionMenu.Trigger>
+    <ActionMenu.Content>
+      <ActionMenu.Item>Action 1</ActionMenu.Item>
+      <ActionMenu.Item>Action 2</ActionMenu.Item>
+      <ActionMenu.Item>Action 3</ActionMenu.Item>
+      <ActionMenu.Item>Action 4</ActionMenu.Item>
+    </ActionMenu.Content>
+  </ActionMenu.Root>
+  <ActionMenu.Root>
+    <ActionMenu.Trigger asChild>
+      <Button icon="center" css={{ marginLeft: "25px", marginRight: "25px" }}>
+        <Icon label="Expand">
+          <DotsVertical />
+        </Icon>
+      </Button>
+    </ActionMenu.Trigger>
+    <ActionMenu.Content>
+      <ActionMenu.Item>Action 1</ActionMenu.Item>
+      <ActionMenu.Item>Action 2</ActionMenu.Item>
+      <ActionMenu.Item>Action 3</ActionMenu.Item>
+      <ActionMenu.Item>Action 4</ActionMenu.Item>
+    </ActionMenu.Content>
+  </ActionMenu.Root>
+  <ActionMenu.Root>
+    <ActionMenu.Trigger
+      css={{ fontWeight: "bold", textDecoration: "underline" }}
+      asChild
+    >
+      <a style={{ marginLeft: "35px", marginRight: "35px" }}>Action Link</a>
+    </ActionMenu.Trigger>
+    <ActionMenu.Content>
+      <ActionMenu.Item>Action 1</ActionMenu.Item>
+      <ActionMenu.Item>Action 2</ActionMenu.Item>
+      <ActionMenu.Item>Action 3</ActionMenu.Item>
+      <ActionMenu.Item>Action 4</ActionMenu.Item>
+    </ActionMenu.Content>
+  </ActionMenu.Root>
+  <ActionMenu.Root>
+    <ActionMenu.Trigger asChild>
+      <Icon css={{ marginLeft: "45px", marginRight: "45px" }} label="Actions">
+        <MixerVertical />
+      </Icon>
+    </ActionMenu.Trigger>
+    <ActionMenu.Content>
+      <ActionMenu.Item>Action 1</ActionMenu.Item>
+      <ActionMenu.Item>Action 2</ActionMenu.Item>
+      <ActionMenu.Item>Action 3</ActionMenu.Item>
+      <ActionMenu.Item>Action 4</ActionMenu.Item>
+    </ActionMenu.Content>
+  </ActionMenu.Root>
+</Box>
+```
+
+---
+
+## Behavior
+
+### Disabled
+
+Items display background color ‘$faint’ on mouse over
+
+### Hover
+
+Items display background color ‘$faint’ on mouse over
+
+### Submenu
+
+Action menu supports submenus with up to three levels of nesting. Access a submenu by hovering over a menu item with a submenu indicator (chevron), or by using keyboard navigation
+
+---
+
+## Accessibility
+
+### Keyboard controls
+
+<Table
+  headers={["Key", "Description"]}
+  data={[
+    [
+      "Space",
+      "When focus is on DropdownMenu.Trigger, opens the dropdown menu and focuses the first item. When focus is on an item, activates the focused item.",
+    ],
+    [
+      "Enter",
+      "When focus is on DropdownMenu.Trigger, opens the dropdown menu and focuses the first item. When focus is on an item, activates the focused item.",
+    ],
+    [
+      "ArrowDown",
+      "When focus is on DropdownMenu.Trigger, opens the dropdown menu. When focus is on an item, moves focus to the next item.",
+    ],
+    ["ArrowUp", "When focus is on an item, moves focus to the previous item."],
+    [
+      "ArrowRight, ArrowLeft",
+      "When focus is on DropdownMenu.SubTrigger, opens or closes the submenu depending on reading direction.",
+    ],
+    [
+      "Esc",
+      "Closes the dropdown menu and moves focus to DropdownMenu.Trigger.",
+    ],
+  ]}
+/>
+
+---
+
+## API Reference
+
+<PropsTable props={propsTable} />
+````
