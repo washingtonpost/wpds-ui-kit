@@ -3,26 +3,6 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-# [1.11.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.10.0...v1.11.0) (2023-08-16)
-
-
-### Bug Fixes
-
-* add no push flag on publish action ([b02c38a](https://github.com/washingtonpost/wpds-ui-kit/commit/b02c38a941b998b14e717fcd9b6e743ce47598a1))
-* remove no push flags from publish and version ([159264d](https://github.com/washingtonpost/wpds-ui-kit/commit/159264d1fbb13d6dffc25c8c9fce5c023368aef7))
-* streamline release process ([e4889df](https://github.com/washingtonpost/wpds-ui-kit/commit/e4889dfdcff170593ae70361b90d69513f7ffa97))
-
-
-### Features
-
-* action menu component ([#447](https://github.com/washingtonpost/wpds-ui-kit/issues/447)) ([912bb69](https://github.com/washingtonpost/wpds-ui-kit/commit/912bb69a805ef007d3e0f6c2882631a3fd429bf9))
-* add note about SSR ([#470](https://github.com/washingtonpost/wpds-ui-kit/issues/470)) ([dea9465](https://github.com/washingtonpost/wpds-ui-kit/commit/dea94653ba573e8e9f120e53555ab8bc16e11cef))
-* bump wam in packages ([#475](https://github.com/washingtonpost/wpds-ui-kit/issues/475)) ([9445877](https://github.com/washingtonpost/wpds-ui-kit/commit/9445877299f34d3bb3ed110badc66aa7b682687a))
-
-
-
-
-
 # [1.10.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.9.1...v1.10.0) (2023-08-10)
 
 ### Bug Fixes
