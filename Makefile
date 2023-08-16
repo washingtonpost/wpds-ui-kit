@@ -5,10 +5,10 @@ experimental-publish:
 	npx lerna publish from-package --dist-tag experimental --yes --no-verify-access
 
 main-publish: 
-	npx lerna publish from-package --yes --no-git-reset --no-verify-access --no-push
+	npx lerna publish from-package --yes --no-git-reset --no-verify-access
 
 main-version:
-	npx lerna version --conventional-commits --yes --force-publish --create-release github --no-push
+	npx lerna version --conventional-commits --yes --force-publish --create-release github
 
 # create experimental release
 experimental-release:
