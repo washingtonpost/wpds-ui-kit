@@ -5,14 +5,9 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 # [1.11.0](https://github.com/WPMedia/wpds-ui-kit/compare/v1.10.0...v1.11.0) (2023-08-16)
 
-
 ### Reverts
 
-* Revert "chore(release): publish" (#481) ([c25d111](https://github.com/WPMedia/wpds-ui-kit/commit/c25d11199534ab28a653d371edee4a6638d2fc7e)), closes [#481](https://github.com/WPMedia/wpds-ui-kit/issues/481)
-
-
-
-
+- Revert "chore(release): publish" (#481) ([c25d111](https://github.com/WPMedia/wpds-ui-kit/commit/c25d11199534ab28a653d371edee4a6638d2fc7e)), closes [#481](https://github.com/WPMedia/wpds-ui-kit/issues/481)
 
 # [1.10.0](https://github.com/WPMedia/wpds-ui-kit/compare/v1.9.1...v1.10.0) (2023-08-10)
 
