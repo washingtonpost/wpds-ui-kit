@@ -13,7 +13,7 @@ export const ComingSoon = () => (
     <Header>Coming Soon</Header>
     <P>
       This component status is{" "}
-      <CustomLink href="/docs/support/component-status" useSignal>
+      <CustomLink href="/support/component-status" useSignal>
         coming soon
       </CustomLink>{" "}
       and indicates a component is in a queue for future work.
