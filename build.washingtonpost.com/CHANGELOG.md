@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.11.0](https://github.com/washingtonpost/wpds-docs/compare/v1.10.0...v1.11.0) (2023-08-16)
+
+
+### Features
+
+* action menu component ([#447](https://github.com/washingtonpost/wpds-docs/issues/447)) ([912bb69](https://github.com/washingtonpost/wpds-docs/commit/912bb69a805ef007d3e0f6c2882631a3fd429bf9))
+* add note about SSR ([#470](https://github.com/washingtonpost/wpds-docs/issues/470)) ([dea9465](https://github.com/washingtonpost/wpds-docs/commit/dea94653ba573e8e9f120e53555ab8bc16e11cef))
+* bump wam in packages ([#475](https://github.com/washingtonpost/wpds-docs/issues/475)) ([9445877](https://github.com/washingtonpost/wpds-docs/commit/9445877299f34d3bb3ed110badc66aa7b682687a))
+
+
+### Reverts
+
+* Revert "chore(release): publish" (#481) ([c25d111](https://github.com/washingtonpost/wpds-docs/commit/c25d11199534ab28a653d371edee4a6638d2fc7e)), closes [#481](https://github.com/washingtonpost/wpds-docs/issues/481)
+
+
+
+
+
 # [1.10.0](https://github.com/washingtonpost/wpds-docs/compare/v1.9.1...v1.10.0) (2023-08-10)
 
 ### Bug Fixes
