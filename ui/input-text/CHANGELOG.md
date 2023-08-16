@@ -3,17 +3,6 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-# [1.11.0](https://github.com/WPMedia/wpds-ui-kit/compare/v1.10.0...v1.11.0) (2023-08-16)
-
-
-### Features
-
-* bump wam in packages ([#475](https://github.com/WPMedia/wpds-ui-kit/issues/475)) ([9445877](https://github.com/WPMedia/wpds-ui-kit/commit/9445877299f34d3bb3ed110badc66aa7b682687a))
-
-
-
-
-
 # [1.10.0](https://github.com/WPMedia/wpds-ui-kit/compare/v1.9.1...v1.10.0) (2023-08-10)
 
 ### Bug Fixes
