@@ -111,12 +111,11 @@ export const useFloating = (
   onChange,
   isAutofilled
 ): [
-    boolean,
-    React.FocusEventHandler<HTMLInputElement | HTMLTextAreaElement>,
-    React.FocusEventHandler<HTMLInputElement | HTMLTextAreaElement>,
-    (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void
-  ] => {
-
+  boolean,
+  React.FocusEventHandler<HTMLInputElement | HTMLTextAreaElement>,
+  React.FocusEventHandler<HTMLInputElement | HTMLTextAreaElement>,
+  (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void
+] => {
   const [isFloating, setIsFloating] = React.useState(val ? true : false);
   const [isTouched, setIsTouched] = React.useState(val ? true : false);
   const [isFocused, setIsFocused] = React.useState(false);

@@ -13,15 +13,13 @@ export const ComingSoon = () => (
       paddingTop: 140,
     }}
   >
-    <Card>
-      <Header>Coming Soon</Header>
-      <P>
-        This component status is{" "}
-        <CustomLink href="/docs/support/component-status" useSignal>
-          coming soon
-        </CustomLink>{" "}
-        and indicates a component is in a queue for future work.
-      </P>
-    </Card>
+    <Header>Coming Soon</Header>
+    <P>
+      This component status is{" "}
+      <CustomLink href="/docs/support/component-status" useSignal>
+        coming soon
+      </CustomLink>{" "}
+      and indicates a component is in a queue for future work.
+    </P>
   </Card>
 );

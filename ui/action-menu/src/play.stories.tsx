@@ -235,9 +235,7 @@ const ItemVariationsTemplate = (parameters) => {
                 Bookmarks
               </Component.Item>
               <Component.Sub>
-                <Component.SubTrigger>
-                  Even more actions
-                </Component.SubTrigger>
+                <Component.SubTrigger>Even more actions</Component.SubTrigger>
                 <Component.SubContent>
                   <Component.Item>Action X</Component.Item>
                   <Component.Item>Action Z</Component.Item>

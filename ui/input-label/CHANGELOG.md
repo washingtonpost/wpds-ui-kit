@@ -7,28 +7,15 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 **Note:** Version bump only for package @washingtonpost/wpds-input-label
 
-
-
-
-
 ## [1.9.1](https://github.com/WPMedia/wpds-ui-kit/compare/v1.9.0...v1.9.1) (2023-07-17)
-
 
 ### Bug Fixes
 
-* Label + Checkbox Bug ([#445](https://github.com/WPMedia/wpds-ui-kit/issues/445)) ([9749319](https://github.com/WPMedia/wpds-ui-kit/commit/974931905c57d6a19d3e9138d7d57bf98392935c))
-
-
-
-
+- Label + Checkbox Bug ([#445](https://github.com/WPMedia/wpds-ui-kit/issues/445)) ([9749319](https://github.com/WPMedia/wpds-ui-kit/commit/974931905c57d6a19d3e9138d7d57bf98392935c))
 
 # [1.9.0](https://github.com/WPMedia/wpds-ui-kit/compare/v1.8.5...v1.9.0) (2023-07-14)
 
 **Note:** Version bump only for package @washingtonpost/wpds-input-label
-
-
-
-
 
 ## [1.8.5](https://github.com/WPMedia/wpds-ui-kit/compare/v1.8.4...v1.8.5) (2023-07-06)
 
