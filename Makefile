@@ -20,9 +20,9 @@ experimental-release:
 main-release:
 	make main-version
 	npm run turbo:build:ui:force
-	npm run format
 	make main-publish
 	npm install
+	npm run format
 
 # create commands for plop templates
 new-component:
