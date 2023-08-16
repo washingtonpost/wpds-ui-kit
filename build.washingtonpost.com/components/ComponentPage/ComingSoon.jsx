@@ -8,9 +8,6 @@ export const ComingSoon = () => (
   <Card
     css={{
       marginBlockEnd: "$100",
-      position: "relative",
-      minHeight: 280,
-      paddingTop: 140,
     }}
   >
     <Header>Coming Soon</Header>
