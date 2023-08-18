@@ -9,9 +9,10 @@ import { ErrorMessage } from "@washingtonpost/wpds-error-message";
 
 const NAME = "RadioGroup";
 
-const RadioGroupInputsCSS = Theme.css({
+const RadioGroupInputs = Theme.styled("div", {
   display: "flex",
   flexDirection: "column",
+  flexWrap: "wrap",
   gap: Theme.theme.space["025"],
   "[data-orientation='horizontal'] > &": {
     alignItems: "center",
@@ -34,6 +35,8 @@ type CombinedProps = Pick<
   React.ComponentPropsWithRef<"fieldset">;
 
 interface RadioGroupProps extends CombinedProps {
+  /** CSS passed to RadioButtons parent element */
+  buttonsWrapperCss?: WPDS.CSS;
   /** Override CSS */
   css?: WPDS.CSS;
   /** Inputs are disabled, changing appearance and preventing input */
@@ -60,6 +63,7 @@ export const RadioGroup = React.forwardRef<
 >(
   (
     {
+      buttonsWrapperCss,
       children,
       css,
       defaultValue,
@@ -107,7 +111,7 @@ export const RadioGroup = React.forwardRef<
           aria-errormessage={error ? errorId : undefined}
           {...props}
         >
-          <div className={RadioGroupInputsCSS()}>
+          <RadioGroupInputs css={buttonsWrapperCss}>
             {React.Children.map(children, (child) => {
               if (React.isValidElement(child)) {
                 return React.cloneElement(child, {
@@ -118,7 +122,7 @@ export const RadioGroup = React.forwardRef<
                 });
               }
             })}
-          </div>
+          </RadioGroupInputs>
           {errorMessage && (
             <ErrorMessage id={errorId} aria-live="assertive">
               {errorMessage}
