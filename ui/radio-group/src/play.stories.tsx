@@ -3,6 +3,7 @@ import { screen, userEvent } from "@storybook/testing-library";
 import { expect } from "@storybook/jest";
 import { RadioGroup as Component, RadioButton } from "./";
 import { styled, css, theme } from "@washingtonpost/wpds-theme";
+import { Box } from "../../box";
 
 import type { ComponentMeta, ComponentStory } from "@storybook/react";
 
@@ -35,6 +36,37 @@ RadioGroup.argTypes = {
 };
 
 RadioGroup.parameters = {
+  chromatic: { disableSnapshot: true },
+};
+
+const WrapTemplate: ComponentStory<typeof Component> = (args) => (
+  <Box
+    css={{
+      border: "1px dashed gray",
+      maxWidth: "350px",
+      padding: theme.space["100"],
+    }}
+  >
+    <Component {...args} buttonsWrapperCss={{ border: "1px dashed gray" }}>
+      <RadioButton label="Option 1" value="opt1" id="opt1" />
+      <RadioButton label="Option 2" value="opt2" id="opt2" />
+      <RadioButton label="Option 3" value="opt3" id="opt3" />
+      <RadioButton label="Option 4" value="opt4" id="opt4" />
+      <RadioButton label="Option 5" value="opt5" id="opt5" />
+      <RadioButton label="Option 6" value="opt6" id="opt6" />
+    </Component>
+  </Box>
+);
+
+export const WrapOptions = WrapTemplate.bind({});
+
+WrapOptions.args = {
+  legend: "Select an option",
+  name: "my-value",
+  orientation: "horizontal",
+};
+
+WrapOptions.parameters = {
   chromatic: { disableSnapshot: true },
 };
 
