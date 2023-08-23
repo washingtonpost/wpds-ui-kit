@@ -5,17 +5,12 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## [1.11.1](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.11.0...v1.11.1) (2023-08-23)
 
-
 ### Bug Fixes
 
-* allow for RadioButtons in RadioGroup to wrap ([cbae96e](https://github.com/washingtonpost/wpds-ui-kit/commit/cbae96edc40c41aa4b664ef3f0dda1681261aa11))
-* rerun linting and formatting ([#483](https://github.com/washingtonpost/wpds-ui-kit/issues/483)) ([8de5f8a](https://github.com/washingtonpost/wpds-ui-kit/commit/8de5f8a7ddaf3b1b9cb3a8fb646d301cb003a081))
-* update Husky env variable name used in CI ([d4199c5](https://github.com/washingtonpost/wpds-ui-kit/commit/d4199c50f9870ba2205b8e12b6fe65f0d44f7974))
-* updating embed code SRED-369 ([#478](https://github.com/washingtonpost/wpds-ui-kit/issues/478)) ([71bdacc](https://github.com/washingtonpost/wpds-ui-kit/commit/71bdacc7d02ef4046d4e1760a4766d42f13799f6))
-
-
-
-
+- allow for RadioButtons in RadioGroup to wrap ([cbae96e](https://github.com/washingtonpost/wpds-ui-kit/commit/cbae96edc40c41aa4b664ef3f0dda1681261aa11))
+- rerun linting and formatting ([#483](https://github.com/washingtonpost/wpds-ui-kit/issues/483)) ([8de5f8a](https://github.com/washingtonpost/wpds-ui-kit/commit/8de5f8a7ddaf3b1b9cb3a8fb646d301cb003a081))
+- update Husky env variable name used in CI ([d4199c5](https://github.com/washingtonpost/wpds-ui-kit/commit/d4199c50f9870ba2205b8e12b6fe65f0d44f7974))
+- updating embed code SRED-369 ([#478](https://github.com/washingtonpost/wpds-ui-kit/issues/478)) ([71bdacc](https://github.com/washingtonpost/wpds-ui-kit/commit/71bdacc7d02ef4046d4e1760a4766d42f13799f6))
 
 # [1.11.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.10.0...v1.11.0) (2023-08-16)
 

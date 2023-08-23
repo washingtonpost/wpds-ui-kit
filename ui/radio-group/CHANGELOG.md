@@ -5,15 +5,10 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## [1.11.1](https://github.com/WPMedia/wpds-ui-kit/compare/v1.11.0...v1.11.1) (2023-08-23)
 
-
 ### Bug Fixes
 
-* allow for RadioButtons in RadioGroup to wrap ([cbae96e](https://github.com/WPMedia/wpds-ui-kit/commit/cbae96edc40c41aa4b664ef3f0dda1681261aa11))
-* rerun linting and formatting ([#483](https://github.com/WPMedia/wpds-ui-kit/issues/483)) ([8de5f8a](https://github.com/WPMedia/wpds-ui-kit/commit/8de5f8a7ddaf3b1b9cb3a8fb646d301cb003a081))
-
-
-
-
+- allow for RadioButtons in RadioGroup to wrap ([cbae96e](https://github.com/WPMedia/wpds-ui-kit/commit/cbae96edc40c41aa4b664ef3f0dda1681261aa11))
+- rerun linting and formatting ([#483](https://github.com/WPMedia/wpds-ui-kit/issues/483)) ([8de5f8a](https://github.com/WPMedia/wpds-ui-kit/commit/8de5f8a7ddaf3b1b9cb3a8fb646d301cb003a081))
 
 # [1.11.0](https://github.com/WPMedia/wpds-ui-kit/compare/v1.10.0...v1.11.0) (2023-08-16)
 

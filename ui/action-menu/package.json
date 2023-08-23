@@ -50,5 +50,6 @@
     "@washingtonpost/wpds-divider": "1.11.1",
     "@washingtonpost/wpds-icon": "1.11.1",
     "@washingtonpost/wpds-theme": "1.11.1"
-  }
+  },
+  "gitHead": "454fec4214e3ac76ec9570359eed0a0f22d9e577"
 }
