@@ -18,7 +18,6 @@
 - Pick the `Release to Latest NPM Channel` workflow
 - Select from dropdown the main branch and click submit
 - The workflow will run the release actions for you
-- When completed, manually sync/update the release notes in code > releases and publish the release
 
 ## Upload Bundled Code to Experimental channel
 
