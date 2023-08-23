@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.11.1](https://github.com/washingtonpost/wpds-docs/compare/v1.11.0...v1.11.1) (2023-08-23)
+
+
+### Bug Fixes
+
+* rerun linting and formatting ([#483](https://github.com/washingtonpost/wpds-docs/issues/483)) ([8de5f8a](https://github.com/washingtonpost/wpds-docs/commit/8de5f8a7ddaf3b1b9cb3a8fb646d301cb003a081))
+* updating embed code SRED-369 ([#478](https://github.com/washingtonpost/wpds-docs/issues/478)) ([71bdacc](https://github.com/washingtonpost/wpds-docs/commit/71bdacc7d02ef4046d4e1760a4766d42f13799f6))
+
+
+
+
+
 # [1.11.0](https://github.com/washingtonpost/wpds-docs/compare/v1.10.0...v1.11.0) (2023-08-16)
 
 ### Features
