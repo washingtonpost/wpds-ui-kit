@@ -234,7 +234,7 @@ export default function Sidebar({ navigation, setMobileMenu }) {
             return (
               <StyledAccordionRoot
                 key={index}
-                defaultValue={"Components"}
+                defaultValue={nav.category}
                 type="single"
                 collapsible
               >
