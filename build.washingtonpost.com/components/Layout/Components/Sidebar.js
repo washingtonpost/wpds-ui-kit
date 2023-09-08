@@ -303,8 +303,9 @@ export default function Sidebar({ navigation, setMobileMenu }) {
               </StyledAccordionRoot>
             );
           })}
-        <SideBarList css={{ "@notSm": { display: "none" } }}>
+        <SideBarList>
           <ListItem
+            css={{ "@notSm": { display: "none" } }}
             onClick={() => setMobileMenu(false)}
             isCurrent={router.asPath.includes("resources") ? "active" : ""}
           >
@@ -315,6 +316,7 @@ export default function Sidebar({ navigation, setMobileMenu }) {
             </Link>
           </ListItem>
           <ListItem
+            css={{ "@notSm": { display: "none" } }}
             onClick={() => setMobileMenu(false)}
             isCurrent={router.asPath.includes("release-notes") ? "active" : ""}
           >
@@ -322,6 +324,17 @@ export default function Sidebar({ navigation, setMobileMenu }) {
               <Header>
                 <CustomLink css={{ color: "$primary" }}>
                   Release Notes
+                </CustomLink>
+              </Header>
+            </Link>
+          </ListItem>
+          <ListItem
+            isCurrent={router.asPath.includes("support") ? "active" : ""}
+          >
+            <Link href="/support" passHref>
+              <Header>
+                <CustomLink css={{ color: "$primary" }}>
+                  Support
                 </CustomLink>
               </Header>
             </Link>
