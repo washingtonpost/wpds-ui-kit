@@ -109,7 +109,7 @@ export const Change = styled("div", {
         backgroundColor: "$gray400",
         borderColor: "$gray400",
       },
-      Draft: {
+      Alpha: {
         fontSize: "$075",
         color: "$primary",
         backgroundColor: "$orange300",

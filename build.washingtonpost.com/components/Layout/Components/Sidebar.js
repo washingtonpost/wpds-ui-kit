@@ -201,7 +201,7 @@ export default function Sidebar({ navigation, setMobileMenu }) {
                   <div>{item.frontMatter.data.title}</div>
                   <Change type="ComingSoon">Coming soon</Change>
                 </CustomLink>
-              ) : item.frontMatter.data.status == "Draft" ? (
+              ) : item.frontMatter.data.status == "Alpha" ? (
                 <Link href={item.frontMatter.slug} passHref>
                   <CustomLink
                     css={{
@@ -212,7 +212,7 @@ export default function Sidebar({ navigation, setMobileMenu }) {
                     }}
                   >
                     <div>{item.frontMatter.data.title}</div>
-                    <Change type="Draft">Draft</Change>
+                    <Change type="Alpha">Alpha</Change>
                   </CustomLink>
                 </Link>
               ) : (
