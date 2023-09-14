@@ -912,42 +912,52 @@ Add `aria-labelledby` to Carousel Items to allow the screen-reader to read the c
 export default function Example() {
   const items = [
     {
+      id: "story-1",
       kicker: " ",
       headline: "Politics stops at the water’s edge?",
       blurb:
         "Traveling abroad ahead of a likely run for president, Ron DeSantis took shots at his domestic political foes.",
     },
     {
+      id: "story-2",
       kicker: "ELECTIONS",
       headline: "5 facts about Julie Chavez Rodriguez",
       blurb:
         "Julie Chavez Rodriguez, who will run the Biden-Harris 2024 reelection bid, is the granddaughter of legendary labor leader Cesar Chavez.",
     },
     {
+      id: "story-3",
       kicker: "JUSTICE",
       headline: "What to know about E. Jean Carroll civil case",
       blurb:
         "In addition to facing criminal charges in Manhattan, Donald Trump is a defendant in a civil lawsuit over an alleged rape decades ago.",
     },
     {
+      id: "story-4",
       kicker: " ",
       headline: "Biden threatens to veto House GOP bill",
       blurb:
         'In a statement opposing the GOP\'s debt ceiling bill, the White House said House Republicans are pursuing "a reckless attempt to extract extreme concessions."',
     },
     {
+      id: "story-5",
       kicker: " ",
       headline: "Republicans counter Biden announcement",
       blurb:
         "Republicans used a dystopian video created with artificial intelligence technology to counter Biden’s announcement of his reelection campaign.",
     },
     {
+      id: "story-6",
       kicker: "THE FIX",
       headline: "Alito’s remarkable reasoning",
       blurb:
         "Alito suggested the Biden administration might simply disregard an unfavorable ruling on mifepristone. Here's what he appears to be talking about.",
     },
   ];
+
+  const { addDescendant, contentProps, handleDescendantFocus } =
+    useActiveDescendant();
+
   return (
     <Box
       css={{
@@ -955,7 +965,7 @@ export default function Example() {
         width: "100vw",
       }}
     >
-      <Carousel.Root itemsPerPage={1}>
+      <Carousel.Root itemsPerPage={1} onDescendantFocus={handleDescendantFocus}>
         <Carousel.Header>
           <Carousel.HeaderContent>
             <Carousel.Title>Carousel Title</Carousel.Title>
@@ -965,10 +975,11 @@ export default function Example() {
             <Carousel.NextButton />
           </Carousel.HeaderActions>
         </Carousel.Header>
-        <Carousel.Content aria-live="polite">
+        <Carousel.Content aria-live="polite" {...contentProps}>
           {items.map((item, i) => (
             <Carousel.Item
-              key={item.headline}
+              key={item.id}
+              id={item.id}
               aria-labelledby={`article-heading-${i}`}
             >
               <Card
@@ -1031,6 +1042,15 @@ export default function Example() {
                     color: "$accessible",
                     fontSize: "$087",
                     textDecoration: "none",
+                  }}
+                  tabIndex={-1}
+                  id={`${item.id}-link`}
+                  ref={(el) => {
+                    addDescendant({
+                      element: el,
+                      id: `${item.id}-link`,
+                      parentId: item.id,
+                    });
                   }}
                 >
                   By The Washington Post
