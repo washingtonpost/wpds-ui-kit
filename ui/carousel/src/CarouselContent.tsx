@@ -37,7 +37,7 @@ export type CarouselContentProps = {
 export const CarouselContent = React.forwardRef<
   HTMLDivElement,
   CarouselContentProps
->(({ children, onKeyDown, ...props }, ref) => {
+>(({ children, onFocus, onBlur, onMouseDown, onKeyDown, ...props }, ref) => {
   const {
     setTotalPages,
     itemsPerPage,
@@ -166,42 +166,47 @@ export const CarouselContent = React.forwardRef<
     preventScrollOnSwipe: true,
   });
 
-  const handleOnFocus = () => {
+  const handleOnFocus = (event) => {
     if (!activeId) {
       const firstVisible = findFirstVisibleItem(internalRef, childRefs);
       setActiveId(firstVisible.id);
     }
+    onFocus && onFocus(event);
   };
 
-  const handleOnBlur = () => {
+  const handleOnBlur = (event) => {
     setActiveId(``);
+    onBlur && onBlur(event);
   };
 
   const handleOnKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
     if (!activeId || isTransitioning) return;
 
-    const currentIndex = parseInt(activeId.split("item")[1], 10);
+    const currentIndex = childRefs.current.findIndex(
+      (el) => el.id === activeId
+    );
 
     if (event.key === "ArrowLeft") {
       const prevIndex = currentIndex - 1;
       if (prevIndex < 0) return;
-      setActiveId(`${idRef.current}-item${prevIndex}`);
+      setActiveId(childRefs.current[prevIndex].id);
     }
 
     if (event.key === "ArrowRight") {
       const nextIndex = currentIndex + 1;
       if (nextIndex > totalItems - 1) return;
-      setActiveId(`${idRef.current}-item${nextIndex}`);
+      setActiveId(childRefs.current[nextIndex].id);
     }
 
     onKeyDown && onKeyDown(event);
   };
 
-  const handleMouseDown = (event: React.MouseEvent<HTMLElement>) => {
+  const handleMouseDown = (event: React.MouseEvent<HTMLDivElement>) => {
     const el = event.target as HTMLElement;
-    const item = el.closest("[id*='item']");
+    const item = el.closest("[aria-roledescription='slide']");
     if (!item) return;
     setActiveId(item.id);
+    onMouseDown && onMouseDown(event);
   };
 
   React.useEffect(() => {
@@ -241,11 +246,12 @@ export const CarouselContent = React.forwardRef<
         <Slider css={{ transform: `translateX(${xPos}px)` }}>
           {React.Children.map(children, (child, index) => {
             if (React.isValidElement(child)) {
+              console.log();
               return React.cloneElement(
                 child as React.ReactElement<CarouselItemProps>,
                 {
                   "aria-label": `${index + 1} of ${totalItems}`,
-                  id: `${idRef.current}-item${index}`,
+                  id: child.props.id || `${idRef.current}-item${index}`,
                   ref: (ref: HTMLLIElement) => (childRefs.current[index] = ref),
                 }
               );

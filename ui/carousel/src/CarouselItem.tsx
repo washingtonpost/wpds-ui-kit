@@ -12,7 +12,7 @@ const Container = styled("li", {
     focused: {
       true: {
         "& > *": {
-          outline: `2px solid ${theme.colors.cta}`,
+          outline: `2px solid ${theme.colors.signal}`,
           outlineOffset: "-2px",
           position: "relative",
           zIndex: 1,

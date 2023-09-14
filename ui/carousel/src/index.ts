@@ -7,5 +7,7 @@ export * from "./CarouselTitle";
 export * from "./CarouselPreviousButton";
 export * from "./CarouselNextButton";
 export * from "./CarouselContent";
+export * from "./CarouselItem";
 export * from "./CarouselFooter";
 export * from "./CarouselDots";
+export * from "./useActiveDescendant";

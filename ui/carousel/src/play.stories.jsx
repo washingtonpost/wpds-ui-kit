@@ -1,10 +1,10 @@
 import * as React from "react";
-import { styled, theme, css } from "@washingtonpost/wpds-theme";
+import { styled, theme } from "@washingtonpost/wpds-theme";
 import { Carousel as Component } from "./";
 import { Button } from "@washingtonpost/wpds-button";
 import { Icon } from "@washingtonpost/wpds-icon";
 import { Play, Pause } from "@washingtonpost/wpds-assets";
-import { useEffect } from "react";
+import { useActiveDescendant } from "./useActiveDescendant";
 
 export default {
   title: "Carousel",
@@ -94,7 +94,6 @@ Carousel.argTypes = {
 const StoryLink = ({ href }) => (
   <div style={{ marginInlineEnd: theme.space["050"] }}>
     <a href={href} tabIndex={-1}>
-      {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src="https://fakeimg.pl/200x200/ddd/999/?text=Story+Headline&font=museo&font_size=24"
         width="200"
@@ -281,21 +280,36 @@ const Subtitle = styled("div", {
 
 const BrightsCarouselTemplate = (args) => {
   const stories = [
-    "https://www.washingtonpost.com",
-    "https://www.washingtonpost.com",
-    "https://www.washingtonpost.com",
-    "https://www.washingtonpost.com",
-    "https://www.washingtonpost.com",
+    {
+      id: "story-1",
+      url: "https://www.washingtonpost.com",
+    },
+    {
+      id: "story-2",
+      url: "https://www.washingtonpost.com",
+    },
+    {
+      id: "story-3",
+      url: "https://www.washingtonpost.com",
+    },
+    {
+      id: "story-4",
+      url: "https://www.washingtonpost.com",
+    },
+    {
+      id: "story-5",
+      url: "https://www.washingtonpost.com",
+    },
   ];
 
-  const [focusedIndex, setFocusedIndex] = React.useState();
+  const [focused, setFocused] = React.useState();
 
   const triggerActiveLink = () => {
-    window.open(stories[focusedIndex]);
+    window.open(focused.url);
   };
 
-  const handleDescendentFocus = (i) => {
-    setFocusedIndex(i);
+  const handleDescendantFocus = (id) => {
+    setFocused(stories.find((story) => story.id === id));
   };
 
   const handleOnKeyDown = (event) => {
@@ -318,7 +332,7 @@ const BrightsCarouselTemplate = (args) => {
     <Component.Root
       {...args}
       itemsPerPage={1}
-      onDescendentFocus={handleDescendentFocus}
+      onDescendantFocus={handleDescendantFocus}
     >
       <Component.Header
         css={{
@@ -361,9 +375,9 @@ const BrightsCarouselTemplate = (args) => {
           }}
         />
         <Component.Content onKeyDown={handleOnKeyDown} onKeyUp={handleOnKeyUp}>
-          {stories.map((url, i) => (
-            <Component.Item key={`item${i}`}>
-              <StoryLink href={url} />
+          {stories.map((story) => (
+            <Component.Item key={story.id} id={story.id}>
+              <StoryLink href={story.url} />
             </Component.Item>
           ))}
         </Component.Content>
@@ -380,96 +394,17 @@ BrightsCarousel.parameters = {
 
 const VerticalVideoTemplate = () => {
   const videos = [
-    { headline: "Title 1", byline: "Author 1" },
-    { headline: "Title 2", byline: "Author 2" },
-    { headline: "Title 3", byline: "Author 3" },
-    { headline: "Title 4", byline: "Author 4" },
-    { headline: "Title 5", byline: "Author 5" },
+    { id: "title-1", headline: "Title 1", byline: "Author 1" },
+    { id: "title-2", headline: "Title 2", byline: "Author 2" },
+    { id: "title-3", headline: "Title 3", byline: "Author 3" },
+    { id: "title-4", headline: "Title 4", byline: "Author 4" },
+    { id: "title-5", headline: "Title 5", byline: "Author 5" },
   ];
 
-  const [activeIndex, setActiveIndex] = React.useState();
-  const [activeChildIndex, setActiveChildIndex] = React.useState();
-  const [descendantId, setDescendantId] = React.useState();
-
-  const handleDescendentFocus = (index) => {
-    if (index === undefined) {
-      setActiveIndex(undefined);
-      setActiveChildIndex(undefined);
-      setDescendantId(undefined);
-    } else {
-      setActiveIndex(index);
-      setActiveChildIndex(-1);
-      setDescendantId(undefined);
-    }
-  };
-
-  useEffect(() => {
-    if (activeIndex === undefined || activeChildIndex === undefined) return;
-    const el = childRefs.current[activeIndex][activeChildIndex];
-    if (el) {
-      setDescendantId(el.id);
-    }
-  }, [activeIndex, activeChildIndex]);
-
-  const childRefs = React.useRef([[], [], [], [], []]);
-
-  const triggerActiveElement = () => {
-    const el = childRefs.current[activeIndex][activeChildIndex];
-    if (!el) return;
-    el.click();
-  };
-
-  const handleOnKeyDown = (event) => {
-    switch (event.key) {
-      case "Up":
-      case "ArrowUp":
-        setActiveChildIndex((prev) => {
-          if (prev - 1 >= 0) {
-            return prev - 1;
-          } else {
-            return prev;
-          }
-        });
-        break;
-
-      case "ArrowDown":
-      case "Down":
-        setActiveChildIndex((prev) => {
-          if (prev + 1 <= 2) {
-            return prev + 1;
-          } else {
-            return prev;
-          }
-        });
-        break;
-      case " ":
-        event.preventDefault();
-        break;
-      case "Enter":
-        event.preventDefault();
-        triggerActiveElement();
-        break;
-    }
-  };
-
-  const handleOnKeyUp = (event) => {
-    if (event.key === " ") {
-      event.preventDefault();
-      triggerActiveElement();
-    }
-  };
-
-  const focused = css({
-    outline: `2px solid ${theme.colors.cta}`,
-  });
-
-  const hasFocus = (root, type) => {
-    const id = `${root.toLowerCase().replace(/\s+/g, "")}-${type}`;
-    return id === descendantId;
-  };
-
+  const { addDescendant, handleDescendantFocus, contentProps } =
+    useActiveDescendant();
   return (
-    <Component.Root itemsPerPage={1} onDescendentFocus={handleDescendentFocus}>
+    <Component.Root itemsPerPage={1} onDescendantFocus={handleDescendantFocus}>
       <Component.Header
         css={{
           borderBlockStart: `1px solid ${theme.colors.primary}`,
@@ -509,12 +444,9 @@ const VerticalVideoTemplate = () => {
             },
           }}
         />
-        <Component.Content
-          onKeyDown={handleOnKeyDown}
-          aria-activedescendant={descendantId}
-        >
-          {videos.map((video, index) => (
-            <Component.Item key={video.headline}>
+        <Component.Content {...contentProps}>
+          {videos.map((video) => (
+            <Component.Item key={video.id} id={video.id}>
               <div
                 style={{ marginInlineEnd: theme.space["100"], padding: "2px" }}
               >
@@ -528,7 +460,6 @@ const VerticalVideoTemplate = () => {
                     position: "relative",
                   }}
                 >
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     alt="a very good boy"
                     src="https://www.washingtonpost.com/resizer/drBpb5wRPLd4rcxcAW71ZmwPYdQ=/376x658/filters:quality(80)/posttv-thumbnails-prod.s3.amazonaws.com/10-07-2022/t_927b58b469fe41c6a1f4a46e7e9ea96d_name_Screen_Shot_2022_10_07_at_1_05_42_PM.png"
@@ -541,18 +472,19 @@ const VerticalVideoTemplate = () => {
                   />
                   <Button
                     variant="primary"
-                    id={`${video.headline
-                      .toLowerCase()
-                      .replace(/\s+/g, "")}-btn`}
+                    id={`${video.id}-btn`}
                     css={{
                       position: "absolute",
                       insetInlineStart: theme.space["050"],
                       insetBlockEnd: theme.space["050"],
                     }}
-                    ref={(ref) => (childRefs.current[index][0] = ref)}
-                    className={
-                      hasFocus(video.headline, "btn") ? focused() : null
-                    }
+                    ref={(el) => {
+                      addDescendant({
+                        element: el,
+                        id: `${video.id}-btn`,
+                        parentId: video.id,
+                      });
+                    }}
                     tabIndex={-1}
                     onClick={() => {
                       console.log("button click");
@@ -571,13 +503,14 @@ const VerticalVideoTemplate = () => {
                       color: theme.colors.gray40,
                       textDecoration: "none",
                     }}
-                    ref={(ref) => (childRefs.current[index][1] = ref)}
-                    id={`${video.headline
-                      .toLowerCase()
-                      .replace(/\s+/g, "")}-link1`}
-                    className={
-                      hasFocus(video.headline, "link1") ? focused() : null
-                    }
+                    ref={(el) => {
+                      addDescendant({
+                        element: el,
+                        id: `${video.id}-link1`,
+                        parentId: video.id,
+                      });
+                    }}
+                    id={`${video.id}-link1`}
                     tabIndex={-1}
                   >
                     {video.headline}
@@ -591,13 +524,14 @@ const VerticalVideoTemplate = () => {
                       fontSize: theme.fontSizes["075"],
                       textDecoration: "none",
                     }}
-                    ref={(ref) => (childRefs.current[index][2] = ref)}
-                    id={`${video.headline
-                      .toLowerCase()
-                      .replace(/\s+/g, "")}-link2`}
-                    className={
-                      hasFocus(video.headline, "link2") ? focused() : null
-                    }
+                    ref={(el) => {
+                      addDescendant({
+                        element: el,
+                        id: `${video.id}-link2`,
+                        parentId: video.id,
+                      });
+                    }}
+                    id={`${video.id}-link2`}
                     tabIndex={-1}
                   >
                     By {video.byline}
