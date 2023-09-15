@@ -11,6 +11,16 @@ const LabelInputWrapper = styled("div", {
   position: "relative",
 });
 
+// occupy space in the DOM so that the container
+// knows to take up the same space as the absolutely positioned label
+const HiddenSpanToOccupySpace = styled("span", {
+  visibility: "hidden",
+});
+
+const RequiredTag = styled("span", {
+  color: theme.colors.red100,
+});
+
 const TextInputLabel = styled(InputLabel, {
   whiteSpace: "nowrap",
   insetBlockStart: "0",
@@ -20,6 +30,17 @@ const TextInputLabel = styled(InputLabel, {
   transition: theme.transitions.allFast,
   "@reducedMotion": {
     transition: "none",
+  },
+
+  // only float the label if the select value has a value
+  "&:not([data-value=''])": {
+    fontSize: theme.fontSizes["075"],
+    lineHeight: theme.lineHeights["100"],
+    transform: `translateY(${theme.space["050"]})`,
+
+    [`& + ${HiddenSpanToOccupySpace}`]: {
+      display: "none",
+    },
   },
 
   variants: {
@@ -40,16 +61,6 @@ const TextInputLabel = styled(InputLabel, {
   },
 });
 
-// occupy space in the DOM so that the container
-// knows to take up the same space as the absolutely positioned label
-const HiddenSpanToOccupySpace = styled("span", {
-  visibility: "hidden",
-});
-
-const RequiredTag = styled("span", {
-  color: theme.colors.red100,
-});
-
 type SelectLabelVariants = WPDS.VariantProps<typeof TextInputLabel>;
 
 type SelectLabelProps = SelectLabelVariants & {
@@ -60,26 +71,17 @@ type SelectLabelProps = SelectLabelVariants & {
 };
 
 export const SelectLabel = ({ children, ...props }: SelectLabelProps) => {
-  const { currentValue, required, disabled, isFloating, setIsFloating } =
-    React.useContext(SelectContext);
-
-  React.useEffect(() => {
-    if (currentValue && currentValue.trim().length !== 0) {
-      setIsFloating(true);
-    }
-  }, [currentValue, isFloating, setIsFloating]);
+  const { required, disabled, currentValue } = React.useContext(SelectContext);
 
   return (
     <LabelInputWrapper {...props}>
-      <TextInputLabel isFloating={isFloating} isDisabled={disabled}>
+      <TextInputLabel isDisabled={disabled} data-value={currentValue}>
         {children}
         {required && <RequiredTag>*</RequiredTag>}
       </TextInputLabel>
-      {!isFloating && (
-        <HiddenSpanToOccupySpace aria-hidden={true}>
-          {children}
-        </HiddenSpanToOccupySpace>
-      )}
+      <HiddenSpanToOccupySpace aria-hidden={true}>
+        {children}
+      </HiddenSpanToOccupySpace>
     </LabelInputWrapper>
   );
 };
