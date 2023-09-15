@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.12.0](https://github.com/washingtonpost/wpds-docs/compare/v1.11.1...v1.12.0) (2023-09-13)
+
+
+### Bug Fixes
+
+* set root to be category of each ([#488](https://github.com/washingtonpost/wpds-docs/issues/488)) ([c661f4b](https://github.com/washingtonpost/wpds-docs/commit/c661f4beaa65f750bd83f66a232c030e6ba61565))
+
+
+### Features
+
+* adding Support to sidebar nav ([#498](https://github.com/washingtonpost/wpds-docs/issues/498)) ([78a274b](https://github.com/washingtonpost/wpds-docs/commit/78a274b07290a939c252a4c02d6350e4e2096821))
+* move switch to stable ([#496](https://github.com/washingtonpost/wpds-docs/issues/496)) ([91188e7](https://github.com/washingtonpost/wpds-docs/commit/91188e7ea6fdd5be900cf0612516c9086a13a91b))
+
+
+
+
+
 ## [1.11.1](https://github.com/washingtonpost/wpds-docs/compare/v1.11.0...v1.11.1) (2023-08-23)
 
 ### Bug Fixes
