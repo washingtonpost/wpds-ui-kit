@@ -7,10 +7,10 @@ export const ComponentStatus = ({ type }) => {
 
   const alphaContent = (
     <>
-      <b>Alpha: </b> The component is available via code, but its documentation
-      is still in refinement. That would mean that guidance can change, code
-      examples might change, and content can be corrected, rephrased, and/or
-      removed.
+      <b>Alpha: </b>This status indicates that the component is available via code, but BREAKING CHANGES 
+can be expected and the documentation is still in refinement. That would mean that guidance 
+can change, code examples might change and content can be corrected, rephrased and/or removed.
+This status will appear as a banner on the component documentation page as the following:
     </>
   );
 
@@ -18,10 +18,10 @@ export const ComponentStatus = ({ type }) => {
 
   const betaContent = (
     <>
-      <b>Beta: </b>The component design + documentation is finalized and
-      available via code, but changes to the API of the component can still
-      occur. This may include but is not limited to component props, structure,
-      or implementation changes.
+      <b>Beta: </b>This status indicates that the component design + documentation is finalized and
+it is available via code. Additive changes may still occur but no breaking changes 
+will occur unless a security fix is needed. This status will appear as a banner on 
+the component documentation page as the following:
     </>
   );
 
