@@ -333,9 +333,7 @@ export default function Sidebar({ navigation, setMobileMenu }) {
           >
             <Link href="/support" passHref>
               <Header>
-                <CustomLink css={{ color: "$primary" }}>
-                  Support
-                </CustomLink>
+                <CustomLink css={{ color: "$primary" }}>Support</CustomLink>
               </Header>
             </Link>
           </ListItem>
