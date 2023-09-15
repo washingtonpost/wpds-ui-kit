@@ -27,6 +27,7 @@ import {
   Tabs,
   NavigationMenu,
   InputSearch,
+  Select
 } from "@washingtonpost/wpds-ui-kit";
 import { Chart, Settings, Info, Menu } from "@washingtonpost/wpds-assets";
 
@@ -67,6 +68,31 @@ export const KitchenSink = () => {
         All code in this app is meant for testing components that use objects
         that are only available in JavaScript in the browser.
       </p>
+
+      <Stack>
+        <h2>Select</h2>
+        <Select.Root defaultValue="ecuador">
+          <Select.Trigger aria-label="Countries">
+            <Select.Label>Countries</Select.Label>
+            <Select.Value />
+          </Select.Trigger>
+          <Select.Content>
+            <Select.Group label="Europe">
+              <Select.Item value="france">France</Select.Item>
+              <Select.Item value="united-kingdom">
+                United Kingdom - Scotland, Ireland, Wales, Great Britain, and
+                the commonwealth states of Canada, Australia, Turks and Caicos
+              </Select.Item>
+              <Select.Item value="spain">Spain</Select.Item>
+            </Select.Group>
+            <Select.Group label="South America">
+              <Select.Item value="peru">Peru</Select.Item>
+              <Select.Item value="chile">Chile</Select.Item>
+              <Select.Item value="ecuador">Ecuador</Select.Item>
+            </Select.Group>
+          </Select.Content>
+        </Select.Root>
+      </Stack>
 
       <Stack>
         <h2>Container</h2>
