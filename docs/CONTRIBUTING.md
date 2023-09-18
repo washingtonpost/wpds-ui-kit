@@ -74,3 +74,33 @@ You can create an experimental release for testing by following the [release doc
 ## Release a component
 
 - https://github.com/washingtonpost/wpds-ui-kit/blob/main/docs/RELEASING.md
+
+## Testing an PR in your project
+
+We will use the `npx git-publish` CLI from [git-publish](https://github.com/privatenumber/git-publish) to test a PR in your project. Along with [GitPkg](https://gitpkg.vercel.app). This will allow you to test a PR in your project without having to wait for a release. This method will unlock the ability to test in Preview and Staging environments. We're looking into automating this as part of our PR CI.
+
+```sh
+# cd into the package directory for the component you want to test
+cd ui/select
+# run the git-publish command. it will prompt you to install if its your first time
+npx git-publish
+# it will publish the package to our repo under `npm/<your-branch-name>`
+```
+
+Then in your project you can run the following command to install the package from the branch.
+
+```sh
+npm install 'https://gitpkg.now.sh/washingtonpost/wpds-ui-kit/<component-directory>?<your-branch-name'
+```
+
+### Troubleshooting
+
+You may need to override the version of the package in your package.json. You can do this by adding the following to your package.json.
+
+```json
+"overrides": {
+  "@washingtonpost/wpds-select": "https://gitpkg.now.sh/washingtonpost/wpds-ui-kit/select?main"
+}
+```
+
+Or running `npm dedupe` after installing the package.
