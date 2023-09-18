@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.13.0](https://github.com/washingtonpost/wpds-docs/compare/v1.12.0...v1.13.0) (2023-09-18)
+
+
+### Features
+
+* rewrite component status page [SRED-404] ([#497](https://github.com/washingtonpost/wpds-docs/issues/497)) ([920361b](https://github.com/washingtonpost/wpds-docs/commit/920361bd20a16cf543d036108aec516c800ffb67))
+
+
+
+
+
 # [1.12.0](https://github.com/washingtonpost/wpds-docs/compare/v1.11.1...v1.12.0) (2023-09-13)
 
 

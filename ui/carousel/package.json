@@ -1,6 +1,6 @@
 {
   "name": "@washingtonpost/wpds-carousel",
-  "version": "1.12.0",
+  "version": "1.13.0",
   "description": "WPDS Carousel",
   "author": "WPDS Support <wpds@washpost.com>",
   "homepage": "https://github.com/washingtonpost/wpds-ui-kit#readme",
@@ -47,10 +47,10 @@
     "@radix-ui/react-slot": "^1.0.0",
     "@radix-ui/react-use-controllable-state": "^1.0.0",
     "@washingtonpost/wpds-assets": "^1.22.0",
-    "@washingtonpost/wpds-button": "1.12.0",
-    "@washingtonpost/wpds-icon": "1.12.0",
-    "@washingtonpost/wpds-pagination-dots": "1.12.0",
-    "@washingtonpost/wpds-theme": "1.12.0",
+    "@washingtonpost/wpds-button": "1.13.0",
+    "@washingtonpost/wpds-icon": "1.13.0",
+    "@washingtonpost/wpds-pagination-dots": "1.13.0",
+    "@washingtonpost/wpds-theme": "1.13.0",
     "nanoid": "^3.3.4",
     "react-swipeable": "^7.0.0"
   },
