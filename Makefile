@@ -32,6 +32,6 @@ new-component-with-subcomponents:
 	npx plop --plopfile ./scripts/componentWithSubcomponentsPlopfile.js
 
 validate:
-	npm run lint
+	npm run lint:check
 	npm run format:check
 	npm run test
