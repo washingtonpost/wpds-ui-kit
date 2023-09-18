@@ -1,6 +1,9 @@
 import * as React from "react";
+import { screen, userEvent } from "@storybook/testing-library";
+import { expect } from "@storybook/jest";
 import { styled, theme } from "@washingtonpost/wpds-theme";
 import { Carousel as Component } from "./";
+import { Box } from "@washingtonpost/wpds-box";
 import { Button } from "@washingtonpost/wpds-button";
 import { Icon } from "@washingtonpost/wpds-icon";
 import { Play, Pause } from "@washingtonpost/wpds-assets";
@@ -547,3 +550,75 @@ const VerticalVideoTemplate = () => {
 };
 
 export const VerticalVideo = VerticalVideoTemplate.bind({});
+
+const InteractionsTemplate = () => {
+  const items = [{ id: "item-1" }, { id: "item-2" }, { id: "item-3" }];
+  const { handleDescendantFocus, contentProps, addDescendant } =
+    useActiveDescendant();
+  return (
+    <Box css={{ border: "1px dotted gray", width: "416px" }}>
+      <Component.Root
+        itemsPerPage={1}
+        onDescendantFocus={handleDescendantFocus}
+      >
+        <Component.Header>
+          <Component.HeaderContent>
+            <Component.Title>My Carousel</Component.Title>
+          </Component.HeaderContent>
+          <Component.HeaderActions>
+            <Component.PreviousButton />
+            <Component.NextButton />
+          </Component.HeaderActions>
+        </Component.Header>
+        <Component.Content {...contentProps}>
+          {items.map((item, i) => (
+            <Component.Item key={item.id} id={item.id}>
+              <div
+                style={{
+                  width: "200px",
+                  height: "200px",
+                  padding: theme.space["100"],
+                  marginInlineEnd: theme.space["050"],
+                }}
+              >
+                <p>{i + 1}</p>
+                <a
+                  href="#"
+                  tabIndex={-1}
+                  id={`${item.id}-link`}
+                  ref={(el) => {
+                    addDescendant({
+                      element: el,
+                      id: `${item.id}-link`,
+                      parentId: item.id,
+                    });
+                  }}
+                >
+                  Link
+                </a>
+              </div>
+            </Component.Item>
+          ))}
+        </Component.Content>
+        <Component.Footer>
+          <Component.Dots />
+        </Component.Footer>
+      </Component.Root>
+    </Box>
+  );
+};
+
+export const Interactions = InteractionsTemplate.bind({});
+Interactions.parameters = {
+  chromatic: { disableSnapshot: true },
+};
+
+Interactions.play = async () => {
+  const groups = screen.getAllByRole("group");
+  const content = groups[1];
+  await userEvent.tab();
+  await userEvent.tab();
+  await userEvent.tab();
+  await userEvent.keyboard("[ArrowDown]");
+  expect(content).toHaveAttribute("aria-activedescendant", "item-1-link");
+};
