@@ -47,6 +47,7 @@ export const useActiveDescendant = () => {
 
   function handleDescendantFocus(id) {
     setActiveParentId(id);
+    setDescendantId(id);
     if (activeChildId) {
       const activeParent = tree.current.get(activeParentId);
       const activeChild = activeParent.children.get(activeChildId);
