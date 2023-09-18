@@ -5,8 +5,6 @@ kicker: Support
 publishDate: February 15, 2023
 ---
 
-## Status
-
 <Box css={{ marginBlockEnd: "$050" }}>
   <Change type="ComingSoon">Coming soon</Change>
 </Box>
@@ -17,15 +15,14 @@ is currently under development. This status only appears on the sidebar of our n
 ---
 
 <Box css={{ marginBlockEnd: "$050" }}>
-  <Change type="Draft">Draft</Change>
+  <Change type="Alpha">Alpha</Change>
 </Box>
 
-This status indicates that the component is available via code, but the documentation
-for it is still in refinement. That would mean that guidance can change, code examples
-might change and content can be corrected, rephrased and/or removed. This status
-will appear as a banner on the component documentation page as the following:
+This status indicates that the component is available via code, but BREAKING CHANGES 
+can be expected and the documentation is still in refinement. That would mean that guidance 
+can change, code examples might change and content can be corrected, rephrased and/or removed.
 
-<ComponentStatus type="Draft" />
+This status will appear as a banner on the component documentation page.
 
 ---
 
@@ -34,15 +31,15 @@ will appear as a banner on the component documentation page as the following:
 </Box>
 
 This status indicates that the component design + documentation is finalized and
-it is available via code, but changes to the api of the component can still occur.
-This may include but is not limited to changes to component props, structure, or
-implementation. This status will appear as a banner on the component documentation
-page as the following:
+it is available via code. Additive changes may still occur but no breaking changes 
+will occur unless a security fix is needed. 
 
-<ComponentStatus type="Beta" />
+This status will appear as a banner on the component documentation page.
 
 ---
 
 #### Stable
 
-If no status is shown on the component it indicates the component has reached a stable state where any changes that occur to the component will be communicated prior to the changes taking place.
+If no status is shown on the component it indicates the component has reached a stable state.
+Any changes that occur to the component will be communicated far ahead of their implementation.
+

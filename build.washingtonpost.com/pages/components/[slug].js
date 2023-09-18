@@ -58,7 +58,7 @@ export default function Page({
           {source.scope.title}
         </Header>
 
-        {(source.scope.status == "Draft" || source.scope.status == "Beta") && (
+        {(source.scope.status == "Alpha" || source.scope.status == "Beta") && (
           <ComponentStatus type={source.scope.status} />
         )}
 

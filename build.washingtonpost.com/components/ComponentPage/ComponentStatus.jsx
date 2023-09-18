@@ -3,14 +3,13 @@ import { AlertBanner } from "@washingtonpost/wpds-ui-kit";
 import CustomLink from "../Markdown/Components/link";
 
 export const ComponentStatus = ({ type }) => {
-  const draftVariant = "warning";
+  const alphaVariant = "warning";
 
-  const draftContent = (
+  const alphaContent = (
     <>
-      <b>Draft: </b> The component is available via code, but its documentation
-      is still in refinement. That would mean that guidance can change, code
-      examples might change, and content can be corrected, rephrased, and/or
-      removed.
+      <b>Alpha: </b>This status indicates that the component is available via code, but BREAKING CHANGES 
+can be expected and the documentation is still in refinement. That would mean that guidance 
+can change, code examples might change and content can be corrected, rephrased and/or removed.
     </>
   );
 
@@ -18,17 +17,16 @@ export const ComponentStatus = ({ type }) => {
 
   const betaContent = (
     <>
-      <b>Beta: </b>The component design + documentation is finalized and
-      available via code, but changes to the API of the component can still
-      occur. This may include but is not limited to component props, structure,
-      or implementation changes.
+      <b>Beta: </b>This status indicates that the component design + documentation is finalized and
+it is available via code. Additive changes may still occur but no breaking changes 
+will occur unless a security fix is needed.
     </>
   );
 
   function getVariant(type) {
     switch (type) {
-      case "Draft":
-        return draftVariant;
+      case "Alpha":
+        return alphaVariant;
       case "Beta":
         return betaVariant;
     }
@@ -36,8 +34,8 @@ export const ComponentStatus = ({ type }) => {
 
   function getContent(type) {
     switch (type) {
-      case "Draft":
-        return draftContent;
+      case "Alpha":
+        return alphaContent;
       case "Beta":
         return betaContent;
     }
