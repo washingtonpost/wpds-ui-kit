@@ -10,7 +10,6 @@ export const ComponentStatus = ({ type }) => {
       <b>Alpha: </b>This status indicates that the component is available via code, but BREAKING CHANGES 
 can be expected and the documentation is still in refinement. That would mean that guidance 
 can change, code examples might change and content can be corrected, rephrased and/or removed.
-This status will appear as a banner on the component documentation page as the following:
     </>
   );
 
@@ -20,8 +19,7 @@ This status will appear as a banner on the component documentation page as the f
     <>
       <b>Beta: </b>This status indicates that the component design + documentation is finalized and
 it is available via code. Additive changes may still occur but no breaking changes 
-will occur unless a security fix is needed. This status will appear as a banner on 
-the component documentation page as the following:
+will occur unless a security fix is needed.
     </>
   );
 
