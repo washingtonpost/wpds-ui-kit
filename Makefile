@@ -4,7 +4,7 @@ experimental-version:
 experimental-publish:
 	npx lerna publish from-package --dist-tag experimental --yes --no-verify-access
 
-main-publish: 
+main-publish:
 	npx lerna publish from-package --yes --no-git-reset --no-verify-access
 
 main-version:
@@ -33,5 +33,5 @@ new-component-with-subcomponents:
 
 validate:
 	npm run lint
-	npm run format
+	npm run format:check
 	npm run test
