@@ -5,6 +5,7 @@ import { Box } from "@washingtonpost/wpds-box";
 import { matchSorter } from "match-sorter";
 import { InputSearch } from "./";
 import { cities } from "./cities";
+import { citiesDB } from "./cities-db";
 
 import type { ComponentStory } from "@storybook/react";
 
@@ -28,8 +29,8 @@ const useCityMatch = (term: string) => {
       term.trim() === ""
         ? null
         : matchSorter(cities, term, {
-            keys: [(item) => `${item.city}, ${item.state}`],
-          }),
+          keys: [(item) => `${item.city}, ${item.state}`],
+        }),
     [term]
   );
 };
@@ -81,6 +82,85 @@ Play.args = {};
 Play.storyName = "InputSearch";
 
 Play.parameters = {
+  chromatic: { disableSnapshot: true },
+};
+
+const useCityMatchDB = (term: string) => {
+  return React.useMemo(
+    () =>
+      term.trim() === ""
+        ? null
+        : matchSorter(citiesDB, term, {
+          keys: [(item) => `${item.city}, ${item.state}`],
+        }),
+    [term]
+  );
+};
+
+const LookupTableTemplate: ComponentStory<typeof InputSearch.Root> = (args) => {
+  const [term, setTerm] = React.useState("");
+
+  const results: { city: string; state: string }[] | null = useCityMatchDB(term);
+
+  const lookupTable = React.useRef({});
+
+  return (
+    <Box css={{ width: "275px", height: "340px" }}>
+      <InputSearch.Root
+        {...args}
+        aria-label="Example-Search"
+        openOnFocus={args.openOnFocus}
+        onSelect={value => {
+          console.log("onSelect value", value);
+          console.log("onSelect LookupTable.current", lookupTable.current);
+          const data = lookupTable.current[value];
+
+          // we have access to all the data's properties
+          console.log("data", data);
+        }}
+      >
+        <InputSearch.Input
+          name="city"
+          id="city"
+          onChange={(event) => {
+            setTerm(event.target.value);
+          }}
+        />
+        {results && (
+          <InputSearch.Popover>
+            {results.length > 0 ? (
+              <InputSearch.List>
+                {results.slice(0, 20).map((result) => {
+                  const value = `${result.city}, ${result.state}`
+
+                  // populate the lookup table 
+                  lookupTable.current[value] = result
+
+                  return (
+                    <InputSearch.ListItem
+                      key={value.toLowerCase()}
+                      value={value}
+                    />
+                  )
+                })}
+              </InputSearch.List>
+            ) : (
+              <InputSearch.EmptyState />
+            )}
+          </InputSearch.Popover>
+        )}
+      </InputSearch.Root>
+    </Box>
+  );
+};
+
+export const LookupTable = LookupTableTemplate.bind({});
+
+LookupTable.args = {};
+
+LookupTable.storyName = "LookupTableInputSearch";
+
+LookupTable.parameters = {
   chromatic: { disableSnapshot: true },
 };
 
