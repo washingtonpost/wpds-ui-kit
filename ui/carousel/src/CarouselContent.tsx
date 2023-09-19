@@ -246,7 +246,6 @@ export const CarouselContent = React.forwardRef<
         <Slider css={{ transform: `translateX(${xPos}px)` }}>
           {React.Children.map(children, (child, index) => {
             if (React.isValidElement(child)) {
-              console.log();
               return React.cloneElement(
                 child as React.ReactElement<CarouselItemProps>,
                 {

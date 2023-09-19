@@ -1,12 +1,14 @@
-
 # Current Structure
-This map represents our current token mapping structure. Should note that `context` represents the current system context (i.e. dark or light). 
+
+This map represents our current token mapping structure. Should note that `context` represents the current system context (i.e. dark or light).
 
 ### Current supported contexts
+
 - Light
 - Dark
 
 ### Note
+
 Should note that any base context token can be fixed to be the default value of the default context by adding a suffix of `-static`. The default context is light.
 
 ```mermaid
@@ -51,7 +53,7 @@ graph LR;
 
     context---->alpha25;
     context---->alpha50;
-    
+
     context---->gray0
     context---->gray20;
     context---->gray40;
@@ -64,13 +66,13 @@ graph LR;
     context---->gray500;
     context---->gray600;
     context---->gray700;
-   
-    
+
+
 
 
     context---->yellow100;
     context---->yellow600;
-   
+
 
     context---->gold60;
     context---->gold80;
@@ -80,7 +82,7 @@ graph LR;
     context---->gold400;
     context---->gold500;
     context---->gold600;
-   
+
 
     context---->mustard60;
     context---->mustard80;
@@ -90,7 +92,7 @@ graph LR;
     context---->mustard400;
     context---->mustard500;
     context---->mustard600;
-    
+
     context---->orange60;
     context---->orange80;
     context---->orange100;
@@ -99,7 +101,7 @@ graph LR;
     context---->orange400;
     context---->orange500;
     context---->orange600;
-   
+
 
     context---->red60;
     context---->red80;
@@ -109,7 +111,7 @@ graph LR;
     context---->red400;
     context---->red500;
     context---->red600;
-    
+
 
     context---->pink60;
     context---->pink80;
@@ -119,7 +121,7 @@ graph LR;
     context---->pink400;
     context---->pink500;
     context---->pink600;
-   
+
     context---->purple60;
     context---->purple80;
     context---->purple100;
@@ -128,8 +130,8 @@ graph LR;
     context---->purple400;
     context---->purple500;
     context---->purple600;
-   
-    
+
+
     context---->teal60;
     context---->teal80;
     context---->teal100;
@@ -138,7 +140,7 @@ graph LR;
     context---->teal400;
     context---->teal500;
     context---->teal600;
-   
+
 
     context---->green60;
     context---->green80;
@@ -148,7 +150,7 @@ graph LR;
     context---->green400;
     context---->green500;
     context---->green600;
-    
+
 
     context---->blue40;
     context---->blue60;
@@ -159,7 +161,7 @@ graph LR;
     context---->blue400;
     context---->blue500;
     context---->blue600;
-    
+
 
 
 ```
