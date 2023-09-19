@@ -1926,6 +1926,65 @@ export default function Example() {
 }
 ```
 
+### Pre populated results
+
+If you have a list of results that you want to show to users, you can pre-populate the results and allow users to search within the results.
+
+```jsx withPreview demoHeight="436" isGuide="information"
+export default function Example() {
+  const suggestions = [
+    "headache",
+    "headlight",
+    "headquarters",
+    "head start",
+    "healer",
+    "health",
+    "health education",
+    "healthy eating habits",
+    "healthy lifestyle",
+    "healing therapies",
+    "heart health",
+    "heartbeat",
+    "heaven",
+    "healthcare provider",
+    "mental health",
+  ];
+
+  const [term, setTerm] = useState("");
+
+  return (
+    <InputSearch.Root aria-label="Example-Search" openOnFocus>
+      <InputSearch.Input
+        name="search"
+        id="search"
+        onChange={(event) => {
+          setTerm(event.target.value);
+        }}
+        label="Search"
+      />
+      <InputSearch.Popover>
+        <InputSearch.List>
+          <InputSearch.ListHeading>
+            Suggestions based on your input
+          </InputSearch.ListHeading>
+          {suggestions
+            .filter((suggestion) =>
+              suggestion.toLowerCase().includes(term.toLowerCase())
+            )
+            .map((suggestion) => (
+              <InputSearch.ListItem
+                key={suggestion}
+                value={suggestion}
+                css={{ cursor: "pointer" }}
+              />
+            ))}
+        </InputSearch.List>
+      </InputSearch.Popover>
+    </InputSearch.Root>
+  );
+}
+```
+
 ---
 
 ## Accessibility
