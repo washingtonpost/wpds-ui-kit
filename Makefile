@@ -4,7 +4,7 @@ experimental-version:
 experimental-publish:
 	npx lerna publish from-package --dist-tag experimental --yes --no-verify-access
 
-main-publish: 
+main-publish:
 	npx lerna publish from-package --yes --no-git-reset --no-verify-access
 
 main-version:
@@ -32,6 +32,6 @@ new-component-with-subcomponents:
 	npx plop --plopfile ./scripts/componentWithSubcomponentsPlopfile.js
 
 validate:
-	npm run lint
-	npm run format
+	npm run lint:check
+	npm run format:check
 	npm run test

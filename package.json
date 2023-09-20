@@ -108,6 +108,7 @@
   "scripts": {
     "validate": "make validate",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "format:check": "prettier --check \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "build": "npm run turbo:build;",
     "build:packages": "npm run turbo:build",
     "storybook": "start-storybook -p 6006 --quiet --ci",
@@ -125,6 +126,7 @@
     "new-component": "make new-component",
     "new-component-with-subcomponents": "make new-component-with-subcomponents",
     "lint": "eslint --fix --ext .ts,.tsx ui/",
+    "lint:check": "eslint --ext .ts,.tsx ui/",
     "clean": "turbo run clean && rm -rf node_modules",
     "dev": "turbo run dev --no-cache --continue",
     "start": "turbo run start"
