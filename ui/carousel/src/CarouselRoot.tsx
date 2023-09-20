@@ -44,7 +44,7 @@ export type CarouselRootProps = {
   /** callback for page change */
   onPageChange?: () => void;
   /** callback for internal focus */
-  onDescendentFocus?: (index: number) => void;
+  onDescendantFocus?: (id: string) => void;
   /* TODO :: do we need these?
   onScroll={event => {}}        // default `undefined`
   onDragScroll={event => {}}    // default `undefined`
@@ -59,7 +59,7 @@ export const CarouselRoot = React.forwardRef<HTMLDivElement, CarouselRootProps>(
       defaultPage,
       onPageChange,
       itemsPerPage = "auto",
-      onDescendentFocus = () => undefined,
+      onDescendantFocus = () => undefined,
       children,
       ...props
     },
@@ -74,18 +74,14 @@ export const CarouselRoot = React.forwardRef<HTMLDivElement, CarouselRootProps>(
     const [titleId, setTitleId] = React.useState<string | undefined>();
     const [activeId, setActiveId] = React.useState<string | undefined>();
     const [isTransitioning, setIsTransitioning] = React.useState(false);
-    const prevIndex = React.useRef();
+    const prevId = React.useRef<string>();
 
     React.useEffect(() => {
-      let currentIndex;
-      if (activeId) {
-        currentIndex = parseInt(activeId.split("item")[1], 10);
+      if (activeId && prevId.current !== activeId) {
+        onDescendantFocus(activeId);
+        prevId.current = activeId;
       }
-      if (prevIndex.current !== currentIndex) {
-        onDescendentFocus(currentIndex);
-        prevIndex.current = currentIndex;
-      }
-    }, [activeId, onDescendentFocus]);
+    }, [activeId, onDescendantFocus]);
 
     return (
       <CarouselContext.Provider

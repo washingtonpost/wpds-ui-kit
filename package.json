@@ -21,7 +21,7 @@
     "@storybook/testing-library": "^0.0.13",
     "@testing-library/dom": "^8.9.1",
     "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^12.1.2",
+    "@testing-library/react": "^12.1.5",
     "@testing-library/react-hooks": "^8.0.1",
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^28.1.8",
