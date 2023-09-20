@@ -3,21 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.14.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.13.0...v1.14.0) (2023-09-20)
+
+### Features
+
+- add useActiveDescendant hook to simplify child element focus in Carousel ([38f84c5](https://github.com/washingtonpost/wpds-ui-kit/commit/38f84c55282149eb7d17413996b7ffe47112ea9a))
+
 # [1.13.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.12.0...v1.13.0) (2023-09-18)
 
 **Note:** Version bump only for package @washingtonpost/wpds-carousel
 
-
-
-
-
 # [1.12.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.11.1...v1.12.0) (2023-09-13)
 
 **Note:** Version bump only for package @washingtonpost/wpds-carousel
-
-
-
-
 
 ## [1.11.1](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.11.0...v1.11.1) (2023-08-23)
 
