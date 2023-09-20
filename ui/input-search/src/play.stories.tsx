@@ -158,7 +158,7 @@ export const LookupTable = LookupTableTemplate.bind({});
 
 LookupTable.args = {};
 
-LookupTable.storyName = "LookupTableInputSearch";
+LookupTable.storyName = "LookupTable";
 
 LookupTable.parameters = {
   chromatic: { disableSnapshot: true },
