@@ -27,7 +27,7 @@ import {
   Tabs,
   NavigationMenu,
   InputSearch,
-  Select
+  Select,
 } from "@washingtonpost/wpds-ui-kit";
 import { Chart, Settings, Info, Menu } from "@washingtonpost/wpds-assets";
 

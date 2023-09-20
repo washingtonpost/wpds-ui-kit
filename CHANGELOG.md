@@ -3,38 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-# [1.13.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.12.0...v1.13.0) (2023-09-18)
-
-
-### Bug Fixes
-
-* Floating select label SRED-446 ([#501](https://github.com/washingtonpost/wpds-ui-kit/issues/501)) ([c71efa2](https://github.com/washingtonpost/wpds-ui-kit/commit/c71efa29a1c32227251ad3bfa1dbddc6c450d9f4))
-
+# [1.14.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.13.0...v1.14.0) (2023-09-20)
 
 ### Features
 
-* rewrite component status page [SRED-404] ([#497](https://github.com/washingtonpost/wpds-ui-kit/issues/497)) ([920361b](https://github.com/washingtonpost/wpds-ui-kit/commit/920361bd20a16cf543d036108aec516c800ffb67))
+- add `auto` as valid value for Drawer height and width ([386b149](https://github.com/washingtonpost/wpds-ui-kit/commit/386b149047b00481a90ae9be6c726f2754cedaca))
+- add useActiveDescendant hook to simplify child element focus in Carousel ([38f84c5](https://github.com/washingtonpost/wpds-ui-kit/commit/38f84c55282149eb7d17413996b7ffe47112ea9a))
 
+# [1.13.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.12.0...v1.13.0) (2023-09-18)
 
+### Bug Fixes
 
+- Floating select label SRED-446 ([#501](https://github.com/washingtonpost/wpds-ui-kit/issues/501)) ([c71efa2](https://github.com/washingtonpost/wpds-ui-kit/commit/c71efa29a1c32227251ad3bfa1dbddc6c450d9f4))
 
+### Features
+
+- rewrite component status page [SRED-404] ([#497](https://github.com/washingtonpost/wpds-ui-kit/issues/497)) ([920361b](https://github.com/washingtonpost/wpds-ui-kit/commit/920361bd20a16cf543d036108aec516c800ffb67))
 
 # [1.12.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.11.1...v1.12.0) (2023-09-13)
 
-
 ### Bug Fixes
 
-* set root to be category of each ([#488](https://github.com/washingtonpost/wpds-ui-kit/issues/488)) ([c661f4b](https://github.com/washingtonpost/wpds-ui-kit/commit/c661f4beaa65f750bd83f66a232c030e6ba61565))
-
+- set root to be category of each ([#488](https://github.com/washingtonpost/wpds-ui-kit/issues/488)) ([c661f4b](https://github.com/washingtonpost/wpds-ui-kit/commit/c661f4beaa65f750bd83f66a232c030e6ba61565))
 
 ### Features
 
-* adding Support to sidebar nav ([#498](https://github.com/washingtonpost/wpds-ui-kit/issues/498)) ([78a274b](https://github.com/washingtonpost/wpds-ui-kit/commit/78a274b07290a939c252a4c02d6350e4e2096821))
-* move switch to stable ([#496](https://github.com/washingtonpost/wpds-ui-kit/issues/496)) ([91188e7](https://github.com/washingtonpost/wpds-ui-kit/commit/91188e7ea6fdd5be900cf0612516c9086a13a91b))
-
-
-
-
+- adding Support to sidebar nav ([#498](https://github.com/washingtonpost/wpds-ui-kit/issues/498)) ([78a274b](https://github.com/washingtonpost/wpds-ui-kit/commit/78a274b07290a939c252a4c02d6350e4e2096821))
+- move switch to stable ([#496](https://github.com/washingtonpost/wpds-ui-kit/issues/496)) ([91188e7](https://github.com/washingtonpost/wpds-ui-kit/commit/91188e7ea6fdd5be900cf0612516c9086a13a91b))
 
 ## [1.11.1](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.11.0...v1.11.1) (2023-08-23)
 

@@ -1,6 +1,6 @@
 {
   "name": "@washingtonpost/wpds-input-search",
-  "version": "1.13.0",
+  "version": "1.14.0",
   "description": "WPDS Input Search",
   "author": "WPDS Support <wpds@washpost.com>",
   "homepage": "https://github.com/washingtonpost/wpds-ui-kit#readme",
@@ -47,11 +47,11 @@
     "@reach/combobox": "^0.18.0",
     "@reach/popover": "^0.18.0",
     "@washingtonpost/wpds-assets": "^1.22.0",
-    "@washingtonpost/wpds-icon": "1.13.0",
-    "@washingtonpost/wpds-input-label": "1.13.0",
-    "@washingtonpost/wpds-input-text": "1.13.0",
-    "@washingtonpost/wpds-theme": "1.13.0",
+    "@washingtonpost/wpds-icon": "1.14.0",
+    "@washingtonpost/wpds-input-label": "1.14.0",
+    "@washingtonpost/wpds-input-text": "1.14.0",
+    "@washingtonpost/wpds-theme": "1.14.0",
     "match-sorter": "6.3.1"
   },
-  "gitHead": "3b2b9d55fcab298d897bba8f2408293bef4d15cf"
+  "gitHead": "2b425dc392f1a805d5925b2b81d37192ddcc50c0"
 }

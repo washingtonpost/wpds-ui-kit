@@ -146,7 +146,7 @@ interface DrawerContentProps
   /** Override CSS */
   css?: WPDS.CSS;
   /** Height for a top or bottom positioned drawer  @default 500 */
-  height?: number;
+  height?: number | "auto";
   /** Additional class names for inner drawer element */
   innerClassName?: string;
   /** When `true`, tabbing from last item will focus first tabbable and shift+tab from first item will focus last tababble. @defaultValue true */
@@ -154,7 +154,7 @@ interface DrawerContentProps
   /** When `true`, focus cannot escape the `Content` via keyboard, pointer, or a programmatic focus  @defaultValue false */
   trapFocus?: boolean;
   /** Width for a left or right positioned drawer  @default 400 */
-  width?: number;
+  width?: number | "auto";
 }
 
 export const DrawerContent = React.forwardRef<
