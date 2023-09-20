@@ -1,6 +1,6 @@
 {
   "name": "@washingtonpost/wpds-tailwind-theme",
-  "version": "1.13.0",
+  "version": "1.14.0",
   "description": "WPDS Tailwind Theme",
   "author": "WPDS Support <wpds@washpost.com>",
   "license": "MIT",
@@ -20,7 +20,7 @@
     "@washingtonpost/wpds-theme": "*"
   },
   "dependencies": {
-    "@washingtonpost/wpds-theme": "1.13.0"
+    "@washingtonpost/wpds-theme": "1.14.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",

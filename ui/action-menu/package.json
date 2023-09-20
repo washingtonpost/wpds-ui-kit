@@ -1,6 +1,6 @@
 {
   "name": "@washingtonpost/wpds-action-menu",
-  "version": "1.13.0",
+  "version": "1.14.0",
   "description": "WPDS Action Menu",
   "author": "WPDS Support <wpds@washpost.com>",
   "homepage": "https://github.com/washingtonpost/wpds-ui-kit#readme",
@@ -46,10 +46,10 @@
   "dependencies": {
     "@radix-ui/react-dropdown-menu": "2.0.3",
     "@washingtonpost/wpds-assets": "^1.20.0",
-    "@washingtonpost/wpds-button": "1.13.0",
-    "@washingtonpost/wpds-divider": "1.13.0",
-    "@washingtonpost/wpds-icon": "1.13.0",
-    "@washingtonpost/wpds-theme": "1.13.0"
+    "@washingtonpost/wpds-button": "1.14.0",
+    "@washingtonpost/wpds-divider": "1.14.0",
+    "@washingtonpost/wpds-icon": "1.14.0",
+    "@washingtonpost/wpds-theme": "1.14.0"
   },
   "gitHead": "3b2b9d55fcab298d897bba8f2408293bef4d15cf"
 }
