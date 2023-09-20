@@ -7,17 +7,9 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 **Note:** Version bump only for package @washingtonpost/wpds-avatar
 
-
-
-
-
 # [1.12.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.11.1...v1.12.0) (2023-09-13)
 
 **Note:** Version bump only for package @washingtonpost/wpds-avatar
-
-
-
-
 
 ## [1.11.1](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.11.0...v1.11.1) (2023-08-23)
 
