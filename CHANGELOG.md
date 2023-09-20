@@ -5,15 +5,10 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 # [1.14.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.13.0...v1.14.0) (2023-09-20)
 
-
 ### Features
 
-* add `auto` as valid value for Drawer height and width ([386b149](https://github.com/washingtonpost/wpds-ui-kit/commit/386b149047b00481a90ae9be6c726f2754cedaca))
-* add useActiveDescendant hook to simplify child element focus in Carousel ([38f84c5](https://github.com/washingtonpost/wpds-ui-kit/commit/38f84c55282149eb7d17413996b7ffe47112ea9a))
-
-
-
-
+- add `auto` as valid value for Drawer height and width ([386b149](https://github.com/washingtonpost/wpds-ui-kit/commit/386b149047b00481a90ae9be6c726f2754cedaca))
+- add useActiveDescendant hook to simplify child element focus in Carousel ([38f84c5](https://github.com/washingtonpost/wpds-ui-kit/commit/38f84c55282149eb7d17413996b7ffe47112ea9a))
 
 # [1.13.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.12.0...v1.13.0) (2023-09-18)
 
