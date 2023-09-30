@@ -26,7 +26,7 @@ const CodeIcon = (props) => (
   </svg>
 );
 
-const CopyCodeButton = () => {
+export const CopyCodeButton = () => {
   const [copied, setCopied] = useState(false);
   const { sandpack } = useSandpack();
   const { files, activeFile } = sandpack;
