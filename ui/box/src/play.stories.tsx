@@ -23,3 +23,8 @@ const Template: ComponentStory<typeof Component> = (args) => (
 export const Box = Template.bind({});
 
 Box.args = {};
+
+Box.parameters = {
+  // Sets the diffThreshold for 0.2 for a specific story.
+  chromatic: { diffThreshold: 0.2 },
+};
