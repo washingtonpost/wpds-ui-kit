@@ -19,8 +19,6 @@ const Container = styled("div", {
   },
 });
 
-// 
-
 const Slider = styled("ul", {
   display: "flex",
   listStyle: "none",
