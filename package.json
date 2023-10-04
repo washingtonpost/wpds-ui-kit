@@ -63,7 +63,7 @@
     "storybook-dark-mode": "^2.1.1",
     "ts-jest": "^28.0.8",
     "tsup": "5.11.13",
-    "turbo": "1.7.0",
+    "turbo": "^1.10.14",
     "typescript": "4.5.5",
     "webpack": "^5.88.2"
   },
@@ -88,12 +88,12 @@
     "esbuild-windows-32": "0.14.25",
     "esbuild-windows-64": "0.14.25",
     "esbuild-windows-arm64": "0.14.25",
-    "turbo-darwin-64": "1.7.2",
-    "turbo-darwin-arm64": "1.7.2",
-    "turbo-linux-64": "1.7.2",
-    "turbo-linux-arm64": "1.7.2",
-    "turbo-windows-64": "1.7.2",
-    "turbo-windows-arm64": "1.7.2"
+    "turbo-darwin-64": "1.10.14",
+    "turbo-darwin-arm64": "1.10.14",
+    "turbo-linux-64": "1.10.14",
+    "turbo-linux-arm64": "1.10.14",
+    "turbo-windows-64": "1.10.14",
+    "turbo-windows-arm64": "1.10.14"
   },
   "workspaces": [
     "./ui/*",
@@ -128,7 +128,7 @@
     "lint": "eslint --fix --ext .ts,.tsx ui/",
     "lint:check": "eslint --ext .ts,.tsx ui/",
     "clean": "turbo run clean && rm -rf node_modules",
-    "dev": "turbo run dev --no-cache --continue",
+    "dev": "turbo run dev --concurrency=42",
     "start": "turbo run start"
   },
   "prettier": {},
