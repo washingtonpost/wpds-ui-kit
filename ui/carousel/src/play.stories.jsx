@@ -4,6 +4,7 @@ import { expect } from "@storybook/jest";
 import { styled, theme } from "@washingtonpost/wpds-theme";
 import { Carousel as Component } from "./";
 import { Box } from "@washingtonpost/wpds-box";
+import { Card } from "@washingtonpost/wpds-card";
 import { Button } from "@washingtonpost/wpds-button";
 import { Icon } from "@washingtonpost/wpds-icon";
 import { Play, Pause } from "@washingtonpost/wpds-assets";
@@ -22,8 +23,8 @@ export default {
     CarouselContent: Component.Content,
     CarouselItem: Component.Item,
     CarouselFooter: Component.Footer,
-    CarouselDots: Component.Dots,
-  },
+    CarouselDots: Component.Dots
+  }
 };
 
 const Template = (args) => {
@@ -39,7 +40,7 @@ const Template = (args) => {
     theme.colors.mustard400,
     theme.colors.yellow600,
     theme.colors.pink80,
-    theme.colors.purple40,
+    theme.colors.purple40
   ];
   return (
     <Component.Root
@@ -70,7 +71,7 @@ const Template = (args) => {
                 alignItems: "center",
                 justifyContent: "center",
                 borderRadius: theme.radii["025"],
-                marginInlineEnd: theme.space["050"],
+                marginInlineEnd: theme.space["050"]
               }}
             >
               {i + 1}
@@ -90,8 +91,8 @@ Carousel.argTypes = {
   itemsPerPage: {
     control: { type: "select" },
     defaultValue: "auto",
-    options: ["auto", 1, 2, 3, 4],
-  },
+    options: ["auto", 1, 2, 3, 4]
+  }
 };
 
 const StoryLink = ({ href }) => (
@@ -125,7 +126,7 @@ const CustomButtonsTemplate = (args) => {
             insetBlock: 0,
             insetInlineStart: 0,
             insetInlineEnd: "75%",
-            zIndex: 1,
+            zIndex: 1
           }}
         >
           Prev
@@ -140,7 +141,7 @@ const CustomButtonsTemplate = (args) => {
             insetBlock: 0,
             insetInlineStart: "75%",
             insetInlineEnd: 0,
-            zIndex: 1,
+            zIndex: 1
           }}
         >
           Next
@@ -155,7 +156,7 @@ const CustomButtonsTemplate = (args) => {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                height: "200px",
+                height: "200px"
               }}
             >
               {i + 1}
@@ -170,8 +171,218 @@ const CustomButtonsTemplate = (args) => {
 export const CustomButtons = CustomButtonsTemplate.bind({});
 
 CustomButtons.parameters = {
-  chromatic: { disableSnapshot: true },
+  chromatic: { disableSnapshot: true }
 };
+
+//
+const InnerButtonsTemplate = (args) => {
+  const items = new Array(10).fill(" ");
+  return (
+    <Box
+      css={{
+        paddingInline: "$100",
+        width: "100vw"
+      }}
+    >
+      <Component.Root>
+        <Component.Header>
+          <Component.HeaderContent>
+            <Component.Title css={{ fontFamily: "$meta" }}>
+              Component Title
+            </Component.Title>
+          </Component.HeaderContent>
+          <Component.HeaderActions>
+            <Component.PreviousButton />
+            <Component.NextButton />
+          </Component.HeaderActions>
+        </Component.Header>
+        <Component.Content>
+          {items.map((item, i) => (
+            <Component.Item key={item}>
+              <Card
+                key={"item" + i}
+                css={{
+                  width: "300px",
+                  marginBlockEnd: "$025",
+                  marginInlineEnd: "$100",
+                  padding: "$100",
+                  boxShadow: "$200"
+                }}
+              >
+                <Box
+                  css={{
+                    backgroundImage: "url('https://placekitten.com/400/300')",
+                    display: "flex",
+                    alignItems: "flex-end",
+                    height: "151px",
+                    marginBlockEnd: "$050",
+                    padding: "$100"
+                  }}
+                >
+                  <Button variant="secondary">
+                    <Icon size="100">
+                      <Play />
+                    </Icon>
+                    Play video{" "}
+                    <Box
+                      as="span"
+                      css={{ fontSize: "$087", fontWeight: "normal" }}
+                    >
+                      1:23
+                    </Box>
+                  </Button>
+                </Box>
+                <Box
+                  as="p"
+                  css={{
+                    fontWeight: "bold",
+                    fontSize: "$075",
+                    marginBlockStart: 0,
+                    marginBlockEnd: "$025"
+                  }}
+                >
+                  Kicker
+                </Box>
+                <Box
+                  as="h2"
+                  css={{
+                    fontSize: "$150",
+                    fontFamily: "$headline",
+                    marginBlockStart: 0,
+                    marginBlockEnd: "$050"
+                  }}
+                >
+                  Key takeaways from Biden's 2024 budget plan
+                </Box>
+                <Box
+                  as="a"
+                  href="#"
+                  css={{
+                    color: "$accessible",
+                    fontSize: "$087",
+                    textDecoration: "none"
+                  }}
+                >
+                  By The Washington Post
+                </Box>
+              </Card>
+            </Component.Item>
+          ))}
+        </Component.Content>
+        <Component.Footer>
+          <Component.Dots />
+        </Component.Footer>
+      </Component.Root>
+    </Box>
+  );
+};
+
+export const InnerButtons = InnerButtonsTemplate.bind({});
+
+InnerButtons.parameters = {
+  chromatic: { disableSnapshot: true }
+};
+//
+
+//
+const LinkCardInnerButtonsTemplate = (args) => {
+  const items = new Array(10).fill(" ");
+  return (
+    <Box
+      css={{
+        paddingInline: "$100",
+        width: "100vw"
+      }}
+    >
+      <Component.Root>
+        <Component.Header>
+          <Component.HeaderContent>
+            <Component.Title css={{ fontFamily: "$meta" }}>
+              Component Title
+            </Component.Title>
+          </Component.HeaderContent>
+          <Component.HeaderActions>
+            <Component.PreviousButton />
+            <Component.NextButton />
+          </Component.HeaderActions>
+        </Component.Header>
+        <Component.Content>
+          {items.map((item, i) => (
+            <Component.Item
+              key={item}
+              css={{ width: "260px", minHeight: "300px" }}
+            >
+              <Card
+                as="a"
+                key={"item" + i}
+                css={{
+                  marginBlockEnd: "$025",
+                  marginInlineEnd: "$100",
+                  padding: "$100",
+                  boxShadow: "$200",
+                  display: "block",
+                  position: "relative",
+                  width: "auto"
+                }}
+              >
+                test content
+                <Box
+                  css={{
+                    display: "flex",
+                    flexDirection: "column",
+                    height: "120px"
+                  }}
+                >
+                  The quick brown fox jumps over the lazy dog.
+                </Box>
+              </Card>
+              <Box
+                css={{
+                  position: "relative"
+                }}
+              >
+                <Box
+                  css={{
+                    position: "absolute",
+                    bottom: 0,
+                    right: 0,
+                    paddingRight: "$025",
+                    paddingBottom: "$025",
+                    paddingTop: "$100"
+                  }}
+                >
+                  <Button
+                    css={{
+                      gap: "0px",
+                      fontSize: 0,
+                      lineHeight: 0,
+                      padding: "$075"
+                    }}
+                    variant="secondary"
+                  >
+                    <Icon size="100">
+                      <Play />
+                    </Icon>
+                  </Button>
+                </Box>
+              </Box>
+            </Component.Item>
+          ))}
+        </Component.Content>
+        <Component.Footer>
+          <Component.Dots />
+        </Component.Footer>
+      </Component.Root>
+    </Box>
+  );
+};
+
+export const LinkCardInnerButtons = LinkCardInnerButtonsTemplate.bind({});
+
+LinkCardInnerButtons.parameters = {
+  chromatic: { disableSnapshot: true }
+};
+//
 
 const SlideshowTemplate = (args) => {
   const items = new Array(4).fill("");
@@ -203,6 +414,7 @@ const SlideshowTemplate = (args) => {
       setIntervalId(id);
     }
   };
+
   return (
     <Component.Root
       {...args}
@@ -226,7 +438,7 @@ const SlideshowTemplate = (args) => {
           position: "absolute",
           insetInlineEnd: theme.space["025"],
           insetBlockEnd: theme.space["200"],
-          zIndex: 1,
+          zIndex: 1
         }}
       >
         <Component.PreviousButton />
@@ -252,7 +464,7 @@ const SlideshowTemplate = (args) => {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                height: "200px",
+                height: "200px"
               }}
             >
               {i + 1}
@@ -270,7 +482,7 @@ const SlideshowTemplate = (args) => {
 export const Slideshow = SlideshowTemplate.bind({});
 
 Slideshow.parameters = {
-  chromatic: { disableSnapshot: true },
+  chromatic: { disableSnapshot: true }
 };
 
 const Subtitle = styled("div", {
@@ -278,31 +490,31 @@ const Subtitle = styled("div", {
   fontFamily: theme.fonts.body,
   fontSize: theme.fontSizes["075"],
   fontStyle: "italic",
-  marginBlockStart: theme.sizes["025"],
+  marginBlockStart: theme.sizes["025"]
 });
 
 const BrightsCarouselTemplate = (args) => {
   const stories = [
     {
       id: "story-1",
-      url: "https://www.washingtonpost.com",
+      url: "https://www.washingtonpost.com"
     },
     {
       id: "story-2",
-      url: "https://www.washingtonpost.com",
+      url: "https://www.washingtonpost.com"
     },
     {
       id: "story-3",
-      url: "https://www.washingtonpost.com",
+      url: "https://www.washingtonpost.com"
     },
     {
       id: "story-4",
-      url: "https://www.washingtonpost.com",
+      url: "https://www.washingtonpost.com"
     },
     {
       id: "story-5",
-      url: "https://www.washingtonpost.com",
-    },
+      url: "https://www.washingtonpost.com"
+    }
   ];
 
   const [focused, setFocused] = React.useState();
@@ -340,7 +552,7 @@ const BrightsCarouselTemplate = (args) => {
       <Component.Header
         css={{
           borderBlockStart: `1px solid ${theme.colors.primary}`,
-          paddingBlockStart: theme.space["050"],
+          paddingBlockStart: theme.space["050"]
         }}
       >
         <Component.HeaderContent>
@@ -360,8 +572,8 @@ const BrightsCarouselTemplate = (args) => {
             transform: "translate(-50%, -50%)",
             zIndex: 1,
             "&:disabled": {
-              display: "none",
-            },
+              display: "none"
+            }
           }}
         />
         <Component.NextButton
@@ -373,8 +585,8 @@ const BrightsCarouselTemplate = (args) => {
             transform: "translate(-50%, -50%)",
             zIndex: 1,
             "&:disabled": {
-              display: "none",
-            },
+              display: "none"
+            }
           }}
         />
         <Component.Content onKeyDown={handleOnKeyDown} onKeyUp={handleOnKeyUp}>
@@ -392,7 +604,7 @@ const BrightsCarouselTemplate = (args) => {
 export const BrightsCarousel = BrightsCarouselTemplate.bind({});
 
 BrightsCarousel.parameters = {
-  chromatic: { disableSnapshot: true },
+  chromatic: { disableSnapshot: true }
 };
 
 const VerticalVideoTemplate = () => {
@@ -401,7 +613,7 @@ const VerticalVideoTemplate = () => {
     { id: "title-2", headline: "Title 2", byline: "Author 2" },
     { id: "title-3", headline: "Title 3", byline: "Author 3" },
     { id: "title-4", headline: "Title 4", byline: "Author 4" },
-    { id: "title-5", headline: "Title 5", byline: "Author 5" },
+    { id: "title-5", headline: "Title 5", byline: "Author 5" }
   ];
 
   const { addDescendant, handleDescendantFocus, contentProps } =
@@ -411,7 +623,7 @@ const VerticalVideoTemplate = () => {
       <Component.Header
         css={{
           borderBlockStart: `1px solid ${theme.colors.primary}`,
-          paddingBlockStart: theme.space["050"],
+          paddingBlockStart: theme.space["050"]
         }}
       >
         <Component.HeaderContent>
@@ -430,8 +642,8 @@ const VerticalVideoTemplate = () => {
             transform: "translate(-50%, -50%)",
             zIndex: 1,
             "&:disabled": {
-              display: "none",
-            },
+              display: "none"
+            }
           }}
         />
         <Component.NextButton
@@ -443,8 +655,8 @@ const VerticalVideoTemplate = () => {
             transform: "translate(-50%, -50%)",
             zIndex: 1,
             "&:disabled": {
-              display: "none",
-            },
+              display: "none"
+            }
           }}
         />
         <Component.Content {...contentProps}>
@@ -460,7 +672,7 @@ const VerticalVideoTemplate = () => {
                     margin: 0,
                     marginBlockEnd: theme.space["025"],
                     overflow: "hidden",
-                    position: "relative",
+                    position: "relative"
                   }}
                 >
                   <img
@@ -470,7 +682,7 @@ const VerticalVideoTemplate = () => {
                       height: "100%",
                       filter: "grayscale(100%)",
                       display: "block",
-                      objectFit: "cover",
+                      objectFit: "cover"
                     }}
                   />
                   <Button
@@ -479,13 +691,13 @@ const VerticalVideoTemplate = () => {
                     css={{
                       position: "absolute",
                       insetInlineStart: theme.space["050"],
-                      insetBlockEnd: theme.space["050"],
+                      insetBlockEnd: theme.space["050"]
                     }}
                     ref={(el) => {
                       addDescendant({
                         element: el,
                         id: `${video.id}-btn`,
-                        parentId: video.id,
+                        parentId: video.id
                       });
                     }}
                     tabIndex={-1}
@@ -504,13 +716,13 @@ const VerticalVideoTemplate = () => {
                     href="https://www.washingtonpost.com/video/national/beagel-topper/2022/10/07/3166d0af-d3d3-45eb-abe8-7c1983f2eebb_video.html"
                     style={{
                       color: theme.colors.gray40,
-                      textDecoration: "none",
+                      textDecoration: "none"
                     }}
                     ref={(el) => {
                       addDescendant({
                         element: el,
                         id: `${video.id}-link1`,
-                        parentId: video.id,
+                        parentId: video.id
                       });
                     }}
                     id={`${video.id}-link1`}
@@ -525,13 +737,13 @@ const VerticalVideoTemplate = () => {
                     style={{
                       color: theme.colors.gray80,
                       fontSize: theme.fontSizes["075"],
-                      textDecoration: "none",
+                      textDecoration: "none"
                     }}
                     ref={(el) => {
                       addDescendant({
                         element: el,
                         id: `${video.id}-link2`,
-                        parentId: video.id,
+                        parentId: video.id
                       });
                     }}
                     id={`${video.id}-link2`}
@@ -578,7 +790,7 @@ const InteractionsTemplate = () => {
                   width: "200px",
                   height: "200px",
                   padding: theme.space["100"],
-                  marginInlineEnd: theme.space["050"],
+                  marginInlineEnd: theme.space["050"]
                 }}
               >
                 <p>{i + 1}</p>
@@ -590,7 +802,7 @@ const InteractionsTemplate = () => {
                     addDescendant({
                       element: el,
                       id: `${item.id}-link`,
-                      parentId: item.id,
+                      parentId: item.id
                     });
                   }}
                 >
@@ -610,7 +822,7 @@ const InteractionsTemplate = () => {
 
 export const Interactions = InteractionsTemplate.bind({});
 Interactions.parameters = {
-  chromatic: { disableSnapshot: true },
+  chromatic: { disableSnapshot: true }
 };
 
 Interactions.play = async () => {

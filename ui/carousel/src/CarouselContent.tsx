@@ -50,6 +50,8 @@ export const CarouselContent = React.forwardRef<
     isTransitioning,
   } = React.useContext(CarouselContext);
 
+  console.log("CarouselContent", activeId)
+
   const [totalItems, setTotalItems] = React.useState(0);
   const idRef = React.useRef<string | null>(null);
   const childRefs = React.useRef<HTMLLIElement[]>([]);
@@ -167,24 +169,37 @@ export const CarouselContent = React.forwardRef<
   });
 
   const handleOnFocus = (event) => {
+    console.log("handleOnFocus", activeId)
+    //
+    //
+    //
     if (!activeId) {
       const firstVisible = findFirstVisibleItem(internalRef, childRefs);
+      console.log("firstVisible", firstVisible.id)
+
       setActiveId(firstVisible.id);
     }
     onFocus && onFocus(event);
   };
 
   const handleOnBlur = (event) => {
+    console.log("handleOnBlur", event.target)
     setActiveId(``);
     onBlur && onBlur(event);
   };
 
   const handleOnKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
-    if (!activeId || isTransitioning) return;
+    console.log("handleOnKeyDown", activeId)
+
+    if (!activeId || isTransitioning) {
+      return;
+    }
 
     const currentIndex = childRefs.current.findIndex(
       (el) => el.id === activeId
     );
+
+    console.log("test", event.key)
 
     if (event.key === "ArrowLeft") {
       const prevIndex = currentIndex - 1;
@@ -203,13 +218,24 @@ export const CarouselContent = React.forwardRef<
 
   const handleMouseDown = (event: React.MouseEvent<HTMLDivElement>) => {
     const el = event.target as HTMLElement;
+
+    console.log("<<<<<< handleMouseDown target", event.target)
+
     const item = el.closest("[aria-roledescription='slide']");
+
+    console.log("<<<<<< handleMouseDown", item)
+
     if (!item) return;
+
+    console.log("<<<<<< handleMouseDown setActiveId", item.id)
+
     setActiveId(item.id);
+
     onMouseDown && onMouseDown(event);
   };
 
   React.useEffect(() => {
+    console.log("does this fire?", activeId)
     const activeEl = childRefs.current.find((child) => child.id === activeId);
     const parentEl = internalRef.current;
 
@@ -252,6 +278,7 @@ export const CarouselContent = React.forwardRef<
                   "aria-label": `${index + 1} of ${totalItems}`,
                   id: child.props.id || `${idRef.current}-item${index}`,
                   ref: (ref: HTMLLIElement) => (childRefs.current[index] = ref),
+                  key: child.props.id || `${idRef.current}-item${index}`
                 }
               );
             }

@@ -77,6 +77,7 @@ export const CarouselRoot = React.forwardRef<HTMLDivElement, CarouselRootProps>(
     const prevId = React.useRef<string>();
 
     React.useEffect(() => {
+      console.log("CarouselRoot", activeId);
       if (activeId && prevId.current !== activeId) {
         onDescendantFocus(activeId);
         prevId.current = activeId;

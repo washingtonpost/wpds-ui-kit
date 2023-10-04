@@ -75,6 +75,14 @@ export const decorators = [
       return <Story theme="light" />;
     }
 
+    if (Context.story === "Link Card Inner Buttons") {
+      return <Story theme="light" />;
+    }
+
+    if (Context.story === "Inner Buttons") {
+      return <Story theme="light" />;
+    }
+
     return (
       <Box
         css={{
