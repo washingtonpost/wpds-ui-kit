@@ -5,12 +5,12 @@ component: ActionMenu
 status: Alpha
 ---
 
----
+---   
 
 ## Anatomy
 
 <Anatomy
-  src="/img/components/ActionMenu/anatomy.svg"
+  src="/img/components/action-menu/anatomy.svg"
   caption="Note: Image not to scale"
 />
 
@@ -39,7 +39,7 @@ The following options can be applied to specify the density of the items: `defau
     height: "100vh",
   }}
 >
-  <ActionMenu.Root density={"default"}>
+  <ActionMenu.Root open density={"default"}>
     <ActionMenu.Trigger asChild>
       <Button css={{ marginLeft: "15px", marginRight: "15px" }}>Default</Button>
     </ActionMenu.Trigger>
@@ -49,9 +49,9 @@ The following options can be applied to specify the density of the items: `defau
       <ActionMenu.Item>Action 3</ActionMenu.Item>
     </ActionMenu.Content>
   </ActionMenu.Root>
-  <ActionMenu.Root density={"loose"}>
+   <ActionMenu.Root open density={"compact"}>
     <ActionMenu.Trigger asChild>
-      <Button css={{ marginLeft: "15px", marginRight: "15px" }}>Loose</Button>
+      <Button css={{ marginLeft: "15px", marginRight: "15px" }}>Compact</Button>
     </ActionMenu.Trigger>
     <ActionMenu.Content>
       <ActionMenu.Item>Action 1</ActionMenu.Item>
@@ -59,9 +59,9 @@ The following options can be applied to specify the density of the items: `defau
       <ActionMenu.Item>Action 3</ActionMenu.Item>
     </ActionMenu.Content>
   </ActionMenu.Root>
-  <ActionMenu.Root density={"compact"}>
+  <ActionMenu.Root open density={"loose"}>
     <ActionMenu.Trigger asChild>
-      <Button css={{ marginLeft: "15px", marginRight: "15px" }}>Compact</Button>
+      <Button css={{ marginLeft: "15px", marginRight: "15px" }}>Loose</Button>
     </ActionMenu.Trigger>
     <ActionMenu.Content>
       <ActionMenu.Item>Action 1</ActionMenu.Item>
@@ -148,17 +148,180 @@ The Action List can be triggered with a button, a link, an icon, or similar visu
 
 ### Disabled
 
-Items display background color ‘$faint’ on mouse over
+A menu item can be set to ‘disabled’, according to the user’s current context and relevance of option(s).
+
+```jsx withPreview
+<Box
+  css={{
+    paddingTop: "5%",
+    width: "100%",
+    height: "100vh",
+  }}
+>
+  <ActionMenu.Root open density={"default"}>
+    <ActionMenu.Trigger asChild>
+      <Button css={{ marginLeft: "15px", marginRight: "15px" }}>Default</Button>
+    </ActionMenu.Trigger>
+    <ActionMenu.Content align="end">
+      <ActionMenu.Item disabled>Action 1</ActionMenu.Item>
+      <ActionMenu.Item>Action 2</ActionMenu.Item>
+      <ActionMenu.Item>Action 3</ActionMenu.Item>
+    </ActionMenu.Content>
+  </ActionMenu.Root>
+</Box>
+```
 
 ### Hover
 
 Items display background color ‘$faint’ on mouse over
 
+```jsx withPreview
+<Box
+  css={{
+    paddingTop: "5%",
+    width: "100%",
+    height: "100vh",
+  }}
+>
+  <ActionMenu.Root open density={"default"}>
+    <ActionMenu.Trigger asChild>
+      <Button css={{ marginLeft: "15px", marginRight: "15px" }}>Default</Button>
+    </ActionMenu.Trigger>
+    <ActionMenu.Content align="end">
+      <ActionMenu.Item disabled>Action 1</ActionMenu.Item>
+      <ActionMenu.Item>Action 2</ActionMenu.Item>
+      <ActionMenu.Item>Action 3</ActionMenu.Item>
+    </ActionMenu.Content>
+  </ActionMenu.Root>
+</Box>
+```
+
+### Select
+
+Action menu items can be made selectable using radio (I.E. only one option permitted) or multi-select functionality. Menu items are selected or deselected via user input. Selected items are visually indicated in bold along with the ([glyph: check]) icon.
+
+```jsx withPreview
+<Box
+  css={{
+    paddingTop: "5%",
+    width: "100%",
+    height: "100vh",
+  }}
+>
+  <ActionMenu.Root open density={"default"}>
+    <ActionMenu.Trigger asChild>
+      <Button css={{ marginLeft: "15px", marginRight: "15px" }}>Default</Button>
+    </ActionMenu.Trigger>
+    <ActionMenu.Content align="end">
+      <ActionMenu.Group>
+        <ActionMenu.Label>Checkbox Item Examples</ActionMenu.Label>
+        <ActionMenu.CheckboxItem checked>
+          <ActionMenu.ItemIndicator />
+          Left
+        </ActionMenu.CheckboxItem>
+        <ActionMenu.CheckboxItem checked>
+          <ActionMenu.ItemIndicator />
+          Neither
+        </ActionMenu.CheckboxItem>
+        <ActionMenu.CheckboxItem>
+          <ActionMenu.ItemIndicator />
+          Right
+          <ActionMenu.Icon side="right">
+            <Icon label="bell" size="100">
+              <Bookmark />
+            </Icon>
+          </ActionMenu.Icon>
+        </ActionMenu.CheckboxItem>
+        <ActionMenu.CheckboxItem>
+          <ActionMenu.ItemIndicator />
+          Both
+          <ActionMenu.Icon side="right">
+            <Icon label="bell" size="100">
+              <Bookmark />
+            </Icon>
+          </ActionMenu.Icon>
+        </ActionMenu.CheckboxItem>
+      </ActionMenu.Group>
+    </ActionMenu.Content>
+  </ActionMenu.Root>
+   <ActionMenu.Root open density={"default"}>
+    <ActionMenu.Trigger asChild>
+      <Button css={{ marginLeft: "15px", marginRight: "15px" }}>Default</Button>
+    </ActionMenu.Trigger>
+    <ActionMenu.Content align="end">
+      <ActionMenu.Label>Radio Group Example</ActionMenu.Label>
+      <ActionMenu.RadioGroup value="radio2">
+        <ActionMenu.RadioItem value="radio1">
+          <ActionMenu.ItemIndicator />
+          Radio 1
+        </ActionMenu.RadioItem>
+        <ActionMenu.RadioItem value="radio2">
+          <ActionMenu.ItemIndicator />
+          Radio 2
+        </ActionMenu.RadioItem>
+        <ActionMenu.RadioItem value="radio3">
+          <ActionMenu.ItemIndicator />
+          Radio 3
+        </ActionMenu.RadioItem>
+      </ActionMenu.RadioGroup>
+    </ActionMenu.Content>
+  </ActionMenu.Root>
+</Box>
+```
+
 ### Submenu
 
-Action menu supports submenus with up to three levels of nesting. Access a submenu by hovering over a menu item with a submenu indicator (chevron), or by using keyboard navigation
+The submenu indicator, ([glyph: chevron-right]) is used to identify items containing a submenu. Action menu supports up to three layers of submenu — level 1 (i.e., root), level 2 and level 3. 
+To access a submenu, hover over the menu item or use keyboard navigation. Each menu level has a specific elevation in the stacking order, corresponding to its place in the nesting hierarchy. Additionally, menu containers for levels 1, 2 and 3 possess individual shadow depths, corresponding to shadow tokens ‘$300, ‘$400’, and ‘$500’, respectively.
 
+```jsx withPreview
+<Box
+  css={{
+    paddingTop: "5%",
+    width: "100%",
+    height: "100vh",
+  }}
+>
+  <ActionMenu.Root open density={"default"}>
+    <ActionMenu.Trigger asChild>
+      <Button css={{ marginLeft: "15px", marginRight: "15px" }}>Default</Button>
+    </ActionMenu.Trigger>
+    <ActionMenu.Content>
+    <ActionMenu.Item>Action 1</ActionMenu.Item>
+     <ActionMenu.Sub open>
+      <ActionMenu.SubTrigger>Action 2</ActionMenu.SubTrigger>
+      <ActionMenu.SubContent>
+        <ActionMenu.Item>Action 2.1</ActionMenu.Item>
+        <ActionMenu.Item>Action 2.2</ActionMenu.Item>
+        <ActionMenu.Sub open>
+          <ActionMenu.SubTrigger>Action 2.3</ActionMenu.SubTrigger>
+          <ActionMenu.SubContent>
+            <ActionMenu.Item>Action 2.1.1</ActionMenu.Item>
+            <ActionMenu.Item>Action 2.1.2</ActionMenu.Item>
+            <ActionMenu.Item>Action 2.1.3</ActionMenu.Item>
+            <ActionMenu.Item>Action 2.1.4</ActionMenu.Item>
+          </ActionMenu.SubContent>
+        </ActionMenu.Sub>
+        <ActionMenu.Item>Action 2.4</ActionMenu.Item>
+      </ActionMenu.SubContent>
+    </ActionMenu.Sub>
+    <ActionMenu.Item>Action 3</ActionMenu.Item>
+    <ActionMenu.Item>Action 4</ActionMenu.Item>
+  </ActionMenu.Content>
+  </ActionMenu.Root>
+</Box>
+```
 ---
+
+## Guidance
+
+### Number of menu items
+
+It’s recommended to limit the number of items to no more than five (5) options in a given menu list. Reducing the number of options avoids overwhelming the user and aides in making an accurate selection. If your action menu requires more options, consider using group labels to provide additional visual clarity.
+
+### Order of menu items
+
+In general, it’s best to place the most frequently used or encouraged options towards the top of the menu list, for easier scannability.
 
 ## Accessibility
 
