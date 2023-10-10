@@ -3,24 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-# [1.13.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.12.0...v1.13.0) (2023-09-18)
+# [1.14.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.13.0...v1.14.0) (2023-09-20)
 
+**Note:** Version bump only for package @washingtonpost/wpds-select
+
+# [1.13.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.12.0...v1.13.0) (2023-09-18)
 
 ### Bug Fixes
 
-* Floating select label SRED-446 ([#501](https://github.com/washingtonpost/wpds-ui-kit/issues/501)) ([c71efa2](https://github.com/washingtonpost/wpds-ui-kit/commit/c71efa29a1c32227251ad3bfa1dbddc6c450d9f4))
-
-
-
-
+- Floating select label SRED-446 ([#501](https://github.com/washingtonpost/wpds-ui-kit/issues/501)) ([c71efa2](https://github.com/washingtonpost/wpds-ui-kit/commit/c71efa29a1c32227251ad3bfa1dbddc6c450d9f4))
 
 # [1.12.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.11.1...v1.12.0) (2023-09-13)
 
 **Note:** Version bump only for package @washingtonpost/wpds-select
-
-
-
-
 
 ## [1.11.1](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.11.0...v1.11.1) (2023-08-23)
 

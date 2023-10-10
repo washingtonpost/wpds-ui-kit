@@ -16,6 +16,8 @@ import { ErrorBoundary } from "react-error-boundary";
 import Link from "~/components/Typography/link";
 import { Header } from "~/components/Markdown/Components/headers";
 import MDXStyling from "~/components/Markdown/Styling";
+import { CopyCodeButton } from "~/components/Markdown/Components/Sandbox";
+import { Box } from "@washingtonpost/wpds-ui-kit";
 
 const Canvas = Kit.styled("div", {
   color: "$accessible",
@@ -122,6 +124,16 @@ export default function Playroom({
           },
           "*"
         );
+      }
+
+      // sync the url param with the code
+      if (hasEditor) {
+        const newUrl = new URL(window.location);
+        newUrl.searchParams.set(
+          "code",
+          LZString.compressToEncodedURIComponent(thatCode)
+        );
+        window.history.replaceState({}, "", newUrl);
       }
     }, [iframeRef, thatCode]);
 
@@ -302,9 +314,15 @@ export default function Playroom({
       </Head>
       <SandpackProvider
         template="react"
+        customSetup={{
+          dependencies: {
+            "@washingtonpost/wpds-ui-kit": "latest",
+            "@washingtonpost/wpds-assets": "latest",
+          },
+        }}
         files={{
           "/App.js": {
-            code,
+            code: code,
             active: true,
           },
         }}
@@ -323,6 +341,18 @@ export default function Playroom({
               flex: "100%",
             }}
           >
+            <Box
+              css={{
+                // absolutely position the copy button to the top right of the canvas
+                position: "absolute",
+                bottom: "$100",
+                right: "$100",
+                zIndex: 1,
+                display: "flex",
+              }}
+            >
+              <CopyCodeButton />
+            </Box>
             <SandpackCodeEditor
               showLineNumbers
               style={{

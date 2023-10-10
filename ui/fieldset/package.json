@@ -1,6 +1,6 @@
 {
   "name": "@washingtonpost/wpds-fieldset",
-  "version": "1.13.0",
+  "version": "1.14.0",
   "description": "WPDS Fieldset",
   "author": "WPDS Support <wpds@washpost.com>",
   "homepage": "https://github.com/WPMedia/wpds-ui-kit#readme",
@@ -40,7 +40,7 @@
     "react": "^16.8.6 || ^17.0.2"
   },
   "dependencies": {
-    "@washingtonpost/wpds-theme": "1.13.0"
+    "@washingtonpost/wpds-theme": "1.14.0"
   },
-  "gitHead": "3b2b9d55fcab298d897bba8f2408293bef4d15cf"
+  "gitHead": "2b425dc392f1a805d5925b2b81d37192ddcc50c0"
 }
