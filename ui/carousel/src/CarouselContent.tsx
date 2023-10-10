@@ -252,6 +252,7 @@ export const CarouselContent = React.forwardRef<
                   "aria-label": `${index + 1} of ${totalItems}`,
                   id: child.props.id || `${idRef.current}-item${index}`,
                   ref: (ref: HTMLLIElement) => (childRefs.current[index] = ref),
+                  key: child.props.id || `${idRef.current}-item${index}`
                 }
               );
             }
