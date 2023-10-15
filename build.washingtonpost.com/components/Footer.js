@@ -1,7 +1,8 @@
 import React from "react";
-import { Box, styled } from "@washingtonpost/wpds-ui-kit";
+import { Box, styled, Icon, theme } from "@washingtonpost/wpds-ui-kit";
 import { useRouter } from "next/router";
 import Script from "next/script";
+import { Github, Twitter, Youtube } from "@washingtonpost/wpds-assets";
 
 const EditInGithub = styled("a", {
   display: "flex",
@@ -56,8 +57,35 @@ export const Footer = () => {
           Edit this page on GitHub.
         </EditInGithub>
       )}
-      <Script src="https://wpds-site-furniture-external-header-footer.preview.now.washingtonpost.com/twp-internal.js" />
+      <Script src="https://www.washingtonpost.com/ehf/twp-internal.js" />
       <div id="footer-v3"></div>
+      <Box
+        css={{
+          display: "flex",
+          justifyContent: "center",
+          padding: "$050",
+          "& a": {
+            marginRight: "$100",
+          }
+        }}
+      >
+
+        <a href="https://github.com/washingtonpost/wpds-ui-kit">
+          <Icon label="github" size="$300" fill={theme.colors.primary}>
+            <Github />
+          </Icon>
+        </a>
+        <a href="https://www.youtube.com/@wpds9202">
+          <Icon label="youtube" size="$300" fill={theme.colors.primary}>
+            <Youtube />
+          </Icon>
+        </a>
+        <a href="https://twitter.com/wapodesign">
+          <Icon label="X" size="$300" fill={theme.colors.primary}>
+            <Twitter />
+          </Icon>
+        </a>
+      </Box>
     </Box>
   );
 };
