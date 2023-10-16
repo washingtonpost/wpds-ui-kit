@@ -2,7 +2,20 @@ import React from "react";
 import { Box, styled, Icon, theme } from "@washingtonpost/wpds-ui-kit";
 import { useRouter } from "next/router";
 import Script from "next/script";
+import Link from "next/link";
+
 import { Github, Twitter, Youtube } from "@washingtonpost/wpds-assets";
+
+const Anchor = styled("a", {
+  color: "$onSecondary",
+  textDecoration: "none",
+  display: "flex",
+  alignItems: "center",
+  "&:hover": {
+    opacity: "0.75",
+  },
+});
+
 
 const EditInGithub = styled("a", {
   display: "flex",
@@ -63,28 +76,40 @@ export const Footer = () => {
         css={{
           display: "flex",
           justifyContent: "center",
-          padding: "$050",
+          alignItems: "center",
+          padding: "$100",
+          borderTop: "1px solid $colors$gray300",
+          marginTop: "$100",
+          marginBottom: "$450",
           "& a": {
             marginRight: "$100",
           }
         }}
       >
-
-        <a href="https://github.com/washingtonpost/wpds-ui-kit">
-          <Icon label="github" size="$300" fill={theme.colors.primary}>
-            <Github />
-          </Icon>
-        </a>
-        <a href="https://www.youtube.com/@wpds9202">
-          <Icon label="youtube" size="$300" fill={theme.colors.primary}>
-            <Youtube />
-          </Icon>
-        </a>
-        <a href="https://twitter.com/wapodesign">
-          <Icon label="X" size="$300" fill={theme.colors.primary}>
-            <Twitter />
-          </Icon>
-        </a>
+        <Link passHref css={{ marginRight: "$150" }} href="https://twitter.com/wpdesignsystem">
+          <Anchor>
+            <Icon css={{ marginRight: "$025" }} label="X" size="$100" fill={theme.colors.primary}>
+              <Twitter />
+            </Icon>
+            Twitter
+          </Anchor>
+        </Link>
+        <Link passHref css={{ marginRight: "$150" }} href="https://github.com/washingtonpost/wpds-ui-kit">
+          <Anchor>
+            <Icon css={{ marginRight: "$025" }} label="github" size="$100" fill={theme.colors.primary}>
+              <Github />
+            </Icon>
+            Github
+          </Anchor>
+        </Link>
+        <Link passHref css={{ marginRight: "$150" }} href="https://www.youtube.com/@wpds9202">
+          <Anchor>
+            <Icon css={{ marginRight: "$025" }} label="youtube" size="$100" fill={theme.colors.primary}>
+              <Youtube />
+            </Icon>
+            Youtube
+          </Anchor>
+        </Link>
       </Box>
     </Box>
   );
