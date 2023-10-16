@@ -89,7 +89,7 @@ export const Footer = () => {
           justifyContent: "flex-start",
           alignItems: "center",
           padding: "$100",
-          borderTop: "1px solid $colors$gray300",
+          borderTop: "1px solid $primary",
           marginTop: "$100",
           marginBottom: "$450",
           "& a": {
