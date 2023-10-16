@@ -6,7 +6,18 @@ import Link from "next/link";
 
 import { Github, Twitter, Youtube } from "@washingtonpost/wpds-assets";
 
+const CommunityHeading = styled("span", {
+  fontFamily: "$meta",
+  fontWeight: "$bold",
+  fontSize: "$087",
+  color: "$gray40",
+  "@notSm": {
+    display: "none",
+  }
+});
+
 const Anchor = styled("a", {
+  marginTop: "$050",
   color: "$onSecondary",
   textDecoration: "none",
   display: "flex",
@@ -75,7 +86,7 @@ export const Footer = () => {
       <Box
         css={{
           display: "flex",
-          justifyContent: "center",
+          justifyContent: "flex-start",
           alignItems: "center",
           padding: "$100",
           borderTop: "1px solid $colors$gray300",
@@ -83,33 +94,45 @@ export const Footer = () => {
           marginBottom: "$450",
           "& a": {
             marginRight: "$100",
+          },
+          "@notSm": {
+            justifyContent: "center",
           }
         }}
       >
-        <Link passHref css={{ marginRight: "$150" }} href="https://twitter.com/wpdesignsystem">
-          <Anchor>
-            <Icon css={{ marginRight: "$025" }} label="X" size="$100" fill={theme.colors.primary}>
-              <Twitter />
-            </Icon>
-            Twitter
-          </Anchor>
-        </Link>
-        <Link passHref css={{ marginRight: "$150" }} href="https://github.com/washingtonpost/wpds-ui-kit">
-          <Anchor>
-            <Icon css={{ marginRight: "$025" }} label="github" size="$100" fill={theme.colors.primary}>
-              <Github />
-            </Icon>
-            Github
-          </Anchor>
-        </Link>
-        <Link passHref css={{ marginRight: "$150" }} href="https://www.youtube.com/@wpds9202">
-          <Anchor>
-            <Icon css={{ marginRight: "$025" }} label="youtube" size="$100" fill={theme.colors.primary}>
-              <Youtube />
-            </Icon>
-            Youtube
-          </Anchor>
-        </Link>
+        <Box css={{
+          display: "flex",
+          flexDirection: "column",
+          "@notSm": {
+            flexDirection: "row",
+          }
+        }}>
+          <CommunityHeading>Community</CommunityHeading>
+          <Link passHref href="https://twitter.com/wpdesignsystem">
+            <Anchor>
+              <Icon css={{ marginRight: "$025" }} label="X" size="$100" fill={theme.colors.primary}>
+                <Twitter />
+              </Icon>
+              Twitter
+            </Anchor>
+          </Link>
+          <Link passHref href="https://github.com/washingtonpost/wpds-ui-kit">
+            <Anchor>
+              <Icon css={{ marginRight: "$025" }} label="github" size="$100" fill={theme.colors.primary}>
+                <Github />
+              </Icon>
+              Github
+            </Anchor>
+          </Link>
+          <Link passHref href="https://www.youtube.com/@wpds9202">
+            <Anchor>
+              <Icon css={{ marginRight: "$025" }} label="youtube" size="$100" fill={theme.colors.primary}>
+                <Youtube />
+              </Icon>
+              Youtube
+            </Anchor>
+          </Link>
+        </Box>
       </Box>
     </Box>
   );
