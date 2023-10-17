@@ -18,10 +18,9 @@ export const ComponentStatus = ({ type }) => {
 
   const betaContent = (
     <>
-      <b>Beta: </b>This status indicates that the component design +
-      documentation is finalized and it is available via code. Additive changes
-      may still occur but no breaking changes will occur unless a security fix
-      is needed.
+      <b>Beta: </b>This status indicates that the component design + documentation is finalized and
+it is available via code. Additive changes may still occur but no breaking changes 
+will occur unless a security fix is needed.
     </>
   );
 
