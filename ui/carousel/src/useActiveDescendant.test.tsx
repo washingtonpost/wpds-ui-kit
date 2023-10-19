@@ -7,12 +7,13 @@ import { CarouselContent } from "./CarouselContent";
 import { CarouselItem } from "./CarouselItem";
 
 const ComponentWrapper = ({ onClick }: { onClick?: () => void }) => {
-  const { handleDescendantFocus, contentProps, addDescendant } =
-    useActiveDescendant();
+  const containerRef = React.useRef<HTMLDivElement>(null);
+  const { handleDescendantFocus, contentProps, addDescendant, focusClassName } =
+    useActiveDescendant(containerRef);
 
   return (
     <CarouselRoot onDescendantFocus={handleDescendantFocus}>
-      <CarouselContent {...contentProps}>
+      <CarouselContent {...contentProps} ref={containerRef}>
         <CarouselItem id="test-1">
           <a
             href="#"
@@ -25,6 +26,7 @@ const ComponentWrapper = ({ onClick }: { onClick?: () => void }) => {
                 parentId: "test-1",
               });
             }}
+            className={focusClassName(`test-1-link`)}
           >
             Test 1
           </a>
@@ -39,6 +41,7 @@ const ComponentWrapper = ({ onClick }: { onClick?: () => void }) => {
                 parentId: "test-1",
               });
             }}
+            className={focusClassName(`test-1-link-2`)}
           >
             Test 1.2
           </a>
@@ -50,11 +53,12 @@ const ComponentWrapper = ({ onClick }: { onClick?: () => void }) => {
             ref={(el) => {
               addDescendant({
                 element: el,
-                id: "test-2-link",
+                id: "test-2-button",
                 parentId: "test-2",
               });
             }}
             onClick={onClick}
+            className={focusClassName(`test-2-button`)}
           >
             Test 2
           </button>
