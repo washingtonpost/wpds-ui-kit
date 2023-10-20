@@ -1,7 +1,32 @@
 import React from "react";
-import { Box, styled } from "@washingtonpost/wpds-ui-kit";
+import { Box, styled, Icon, theme } from "@washingtonpost/wpds-ui-kit";
 import { useRouter } from "next/router";
 import Script from "next/script";
+import Link from "next/link";
+
+import { Github, Twitter, Youtube } from "@washingtonpost/wpds-assets";
+
+const CommunityHeading = styled("span", {
+  fontFamily: "$meta",
+  fontWeight: "$bold",
+  fontSize: "$087",
+  color: "$gray40",
+  "@notSm": {
+    display: "none",
+  }
+});
+
+const Anchor = styled("a", {
+  marginTop: "$050",
+  color: "$onSecondary",
+  textDecoration: "none",
+  display: "flex",
+  alignItems: "center",
+  "&:hover": {
+    opacity: "0.75",
+  },
+});
+
 
 const EditInGithub = styled("a", {
   display: "flex",
@@ -56,8 +81,59 @@ export const Footer = () => {
           Edit this page on GitHub.
         </EditInGithub>
       )}
-      <Script src="https://wpds-site-furniture-external-header-footer.preview.now.washingtonpost.com/twp-internal.js" />
+      <Script src="https://www.washingtonpost.com/ehf/twp-internal.js" />
       <div id="footer-v3"></div>
+      <Box
+        css={{
+          display: "flex",
+          justifyContent: "flex-start",
+          alignItems: "center",
+          padding: "$100",
+          borderTop: "1px solid $primary",
+          marginTop: "$100",
+          marginBottom: "$450",
+          "& a": {
+            marginRight: "$100",
+          },
+          "@notSm": {
+            justifyContent: "center",
+          }
+        }}
+      >
+        <Box css={{
+          display: "flex",
+          flexDirection: "column",
+          "@notSm": {
+            flexDirection: "row",
+          }
+        }}>
+          <CommunityHeading>Community</CommunityHeading>
+          <Link passHref href="https://twitter.com/wpdesignsystem">
+            <Anchor>
+              <Icon css={{ marginRight: "$025" }} label="X" size="$100" fill={theme.colors.primary}>
+                <Twitter />
+              </Icon>
+              Twitter
+            </Anchor>
+          </Link>
+          <Link passHref href="https://github.com/washingtonpost/wpds-ui-kit">
+            <Anchor>
+              <Icon css={{ marginRight: "$025" }} label="github" size="$100" fill={theme.colors.primary}>
+                <Github />
+              </Icon>
+              Github
+            </Anchor>
+          </Link>
+          <Link passHref href="https://www.youtube.com/@wpds9202">
+            <Anchor>
+              <Icon css={{ marginRight: "$025" }} label="youtube" size="$100" fill={theme.colors.primary}>
+                <Youtube />
+              </Icon>
+              Youtube
+            </Anchor>
+          </Link>
+        </Box>
+      </Box>
     </Box>
   );
 };
