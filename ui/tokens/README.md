@@ -1,4 +1,4 @@
-# @washingtonpost/wpds-css
+# @washingtonpost/wpds-tokens
 
 This package contains the tokens and font-faces CSS for the Washington Post Design System.
 
