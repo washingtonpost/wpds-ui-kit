@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.15.0](https://github.com/WPMedia/wpds-ui-kit/compare/v1.14.0...v1.15.0) (2023-10-23)
+
+
+### Bug Fixes
+
+* input text event issue ([#513](https://github.com/WPMedia/wpds-ui-kit/issues/513)) ([d5ee574](https://github.com/WPMedia/wpds-ui-kit/commit/d5ee574b80375706db04cd2b6b4c8b786b54727a))
+
+
+
+
+
 # [1.14.0](https://github.com/WPMedia/wpds-ui-kit/compare/v1.13.0...v1.14.0) (2023-09-20)
 
 **Note:** Version bump only for package @washingtonpost/wpds-input-text

@@ -5,7 +5,7 @@ component: ActionMenu
 status: Alpha
 ---
 
----   
+---
 
 ## Anatomy
 
@@ -49,7 +49,7 @@ The following options can be applied to specify the density of the items: `defau
       <ActionMenu.Item>Action 3</ActionMenu.Item>
     </ActionMenu.Content>
   </ActionMenu.Root>
-   <ActionMenu.Root open density={"compact"}>
+  <ActionMenu.Root open density={"compact"}>
     <ActionMenu.Trigger asChild>
       <Button css={{ marginLeft: "15px", marginRight: "15px" }}>Compact</Button>
     </ActionMenu.Trigger>
@@ -244,7 +244,7 @@ Action menu items can be made selectable using radio (I.E. only one option permi
       </ActionMenu.Group>
     </ActionMenu.Content>
   </ActionMenu.Root>
-   <ActionMenu.Root open density={"default"}>
+  <ActionMenu.Root open density={"default"}>
     <ActionMenu.Trigger asChild>
       <Button css={{ marginLeft: "15px", marginRight: "15px" }}>Default</Button>
     </ActionMenu.Trigger>
@@ -271,7 +271,7 @@ Action menu items can be made selectable using radio (I.E. only one option permi
 
 ### Submenu
 
-The submenu indicator, ([glyph: chevron-right]) is used to identify items containing a submenu. Action menu supports up to three layers of submenu — level 1 (i.e., root), level 2 and level 3. 
+The submenu indicator, ([glyph: chevron-right]) is used to identify items containing a submenu. Action menu supports up to three layers of submenu — level 1 (i.e., root), level 2 and level 3.
 To access a submenu, hover over the menu item or use keyboard navigation. Each menu level has a specific elevation in the stacking order, corresponding to its place in the nesting hierarchy. Additionally, menu containers for levels 1, 2 and 3 possess individual shadow depths, corresponding to shadow tokens ‘$300, ‘$400’, and ‘$500’, respectively.
 
 ```jsx withPreview
@@ -287,30 +287,31 @@ To access a submenu, hover over the menu item or use keyboard navigation. Each m
       <Button css={{ marginLeft: "15px", marginRight: "15px" }}>Default</Button>
     </ActionMenu.Trigger>
     <ActionMenu.Content>
-    <ActionMenu.Item>Action 1</ActionMenu.Item>
-     <ActionMenu.Sub open>
-      <ActionMenu.SubTrigger>Action 2</ActionMenu.SubTrigger>
-      <ActionMenu.SubContent>
-        <ActionMenu.Item>Action 2.1</ActionMenu.Item>
-        <ActionMenu.Item>Action 2.2</ActionMenu.Item>
-        <ActionMenu.Sub open>
-          <ActionMenu.SubTrigger>Action 2.3</ActionMenu.SubTrigger>
-          <ActionMenu.SubContent>
-            <ActionMenu.Item>Action 2.1.1</ActionMenu.Item>
-            <ActionMenu.Item>Action 2.1.2</ActionMenu.Item>
-            <ActionMenu.Item>Action 2.1.3</ActionMenu.Item>
-            <ActionMenu.Item>Action 2.1.4</ActionMenu.Item>
-          </ActionMenu.SubContent>
-        </ActionMenu.Sub>
-        <ActionMenu.Item>Action 2.4</ActionMenu.Item>
-      </ActionMenu.SubContent>
-    </ActionMenu.Sub>
-    <ActionMenu.Item>Action 3</ActionMenu.Item>
-    <ActionMenu.Item>Action 4</ActionMenu.Item>
-  </ActionMenu.Content>
+      <ActionMenu.Item>Action 1</ActionMenu.Item>
+      <ActionMenu.Sub open>
+        <ActionMenu.SubTrigger>Action 2</ActionMenu.SubTrigger>
+        <ActionMenu.SubContent>
+          <ActionMenu.Item>Action 2.1</ActionMenu.Item>
+          <ActionMenu.Item>Action 2.2</ActionMenu.Item>
+          <ActionMenu.Sub open>
+            <ActionMenu.SubTrigger>Action 2.3</ActionMenu.SubTrigger>
+            <ActionMenu.SubContent>
+              <ActionMenu.Item>Action 2.1.1</ActionMenu.Item>
+              <ActionMenu.Item>Action 2.1.2</ActionMenu.Item>
+              <ActionMenu.Item>Action 2.1.3</ActionMenu.Item>
+              <ActionMenu.Item>Action 2.1.4</ActionMenu.Item>
+            </ActionMenu.SubContent>
+          </ActionMenu.Sub>
+          <ActionMenu.Item>Action 2.4</ActionMenu.Item>
+        </ActionMenu.SubContent>
+      </ActionMenu.Sub>
+      <ActionMenu.Item>Action 3</ActionMenu.Item>
+      <ActionMenu.Item>Action 4</ActionMenu.Item>
+    </ActionMenu.Content>
   </ActionMenu.Root>
 </Box>
 ```
+
 ---
 
 ## Guidance

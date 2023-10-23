@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.15.0](https://github.com/washingtonpost/wpds-docs/compare/v1.14.0...v1.15.0) (2023-10-23)
+
+
+### Features
+
+* add links to build site [SRED-199] ([#514](https://github.com/washingtonpost/wpds-docs/issues/514)) ([0c06c8e](https://github.com/washingtonpost/wpds-docs/commit/0c06c8e359b84a185801f2ef17211d036588f155))
+* disallow playroom [SRED-451] ([#515](https://github.com/washingtonpost/wpds-docs/issues/515)) ([9172c84](https://github.com/washingtonpost/wpds-docs/commit/9172c84131fa447c8017066aa8ed422e3513af09))
+
+
+
+
+
 # [1.14.0](https://github.com/washingtonpost/wpds-docs/compare/v1.13.0...v1.14.0) (2023-09-20)
 
 **Note:** Version bump only for package @washingtonpost/wpds-docs
