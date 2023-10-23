@@ -5,14 +5,9 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 # [1.15.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.14.0...v1.15.0) (2023-10-23)
 
-
 ### Bug Fixes
 
-* adding key to cloned carousel items ([#511](https://github.com/washingtonpost/wpds-ui-kit/issues/511)) ([d5a76b3](https://github.com/washingtonpost/wpds-ui-kit/commit/d5a76b3c9b0915fe272b9995510a8c80a1a2fdff))
-
-
-
-
+- adding key to cloned carousel items ([#511](https://github.com/washingtonpost/wpds-ui-kit/issues/511)) ([d5a76b3](https://github.com/washingtonpost/wpds-ui-kit/commit/d5a76b3c9b0915fe272b9995510a8c80a1a2fdff))
 
 # [1.14.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.13.0...v1.14.0) (2023-09-20)
 

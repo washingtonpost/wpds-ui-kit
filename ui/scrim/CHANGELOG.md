@@ -7,10 +7,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 **Note:** Version bump only for package @washingtonpost/wpds-scrim
 
-
-
-
-
 # [1.14.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.13.0...v1.14.0) (2023-09-20)
 
 **Note:** Version bump only for package @washingtonpost/wpds-scrim

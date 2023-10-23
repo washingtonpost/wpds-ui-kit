@@ -181,9 +181,9 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
     const [isFloating, handleOnFocus, handleOnBlur, handleOnChange] =
       useFloating(
         (internalRef.current ? internalRef.current.value : "") ||
-        value ||
-        defaultValue ||
-        placeholder,
+          value ||
+          defaultValue ||
+          placeholder,
         onFocus,
         onBlur,
         onChange,
