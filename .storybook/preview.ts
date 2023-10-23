@@ -1,5 +1,6 @@
 import {
   globalStyles,
+  darkTheme,
   darkModeGlobalStyles,
   theme,
 } from "@washingtonpost/wpds-theme";
@@ -24,15 +25,23 @@ const preview: Preview = {
       values: [
         {
           name: "story",
-          value: theme.colors.gray500,
+          value: theme.colors.secondary.value,
         },
+        ...Object.keys(theme.colors).map((color) => ({
+          name: color,
+          value: theme.colors[color].value,
+        })),
       ],
     },
     viewport: {
       viewports: INITIAL_VIEWPORTS,
     },
+    darkMode: {
+      stylePreview: true,
+      darkClass: darkTheme.className,
+      current: "light",
+    },
   },
 };
 
 export default preview;
-
