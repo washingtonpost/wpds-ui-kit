@@ -61,7 +61,7 @@ const Template: ComponentStory<typeof Component> = (
     <>
       <Column>
         <Stack>
-          <Component {...args} data-testid={`${context.theme}-skip-link`}>
+          <Component {...args} data-testid={`skip-link`}>
             {children}
           </Component>
           <Component {...args}>
@@ -319,6 +319,6 @@ Button.args = {
 
 Button.play = async ({ args, canvasElement }) => {
   const canvas = within(canvasElement);
-  await userEvent.click(canvas.getByTestId("light-skip-link"));
+  await userEvent.click(canvas.getByTestId("skip-link"));
   await expect(args.onClick).toHaveBeenCalled();
 };

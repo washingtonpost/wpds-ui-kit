@@ -26,7 +26,7 @@ const Template: ComponentStory<any> = (args, context) => (
       css={{
         color: "$cta",
       }}
-      data-testid={`${context.theme}-skip-link`}
+      data-testid={`skip-link`}
       onClick={function onClickHandler(event) {
         event.preventDefault();
       }}
@@ -46,5 +46,5 @@ VisuallyHidden.play = async ({ canvasElement }) => {
 
   await userEvent.tab();
 
-  await userEvent.click(canvas.getByTestId("light-skip-link"));
+  await userEvent.click(canvas.getByTestId("skip-link"));
 };
