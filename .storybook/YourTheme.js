@@ -30,6 +30,6 @@ export default create({
 
   // brandTitle: 'My custom storybook',
   // brandUrl: 'https://example.com',
-  brandImage: "/brandImage.png"
+  // brandImage: "/brandImage.png"
   // brandTarget: '_self',
 });
