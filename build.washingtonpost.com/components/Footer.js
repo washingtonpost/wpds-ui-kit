@@ -13,7 +13,7 @@ const CommunityHeading = styled("span", {
   color: "$gray40",
   "@notSm": {
     display: "none",
-  }
+  },
 });
 
 const Anchor = styled("a", {
@@ -26,7 +26,6 @@ const Anchor = styled("a", {
     opacity: "0.75",
   },
 });
-
 
 const EditInGithub = styled("a", {
   display: "flex",
@@ -97,20 +96,27 @@ export const Footer = () => {
           },
           "@notSm": {
             justifyContent: "center",
-          }
+          },
         }}
       >
-        <Box css={{
-          display: "flex",
-          flexDirection: "column",
-          "@notSm": {
-            flexDirection: "row",
-          }
-        }}>
+        <Box
+          css={{
+            display: "flex",
+            flexDirection: "column",
+            "@notSm": {
+              flexDirection: "row",
+            },
+          }}
+        >
           <CommunityHeading>Community</CommunityHeading>
           <Link passHref href="https://twitter.com/wpdesignsystem">
             <Anchor>
-              <Icon css={{ marginRight: "$025" }} label="X" size="$100" fill={theme.colors.primary}>
+              <Icon
+                css={{ marginRight: "$025" }}
+                label="X"
+                size="$100"
+                fill={theme.colors.primary}
+              >
                 <Twitter />
               </Icon>
               Twitter
@@ -118,7 +124,12 @@ export const Footer = () => {
           </Link>
           <Link passHref href="https://github.com/washingtonpost/wpds-ui-kit">
             <Anchor>
-              <Icon css={{ marginRight: "$025" }} label="github" size="$100" fill={theme.colors.primary}>
+              <Icon
+                css={{ marginRight: "$025" }}
+                label="github"
+                size="$100"
+                fill={theme.colors.primary}
+              >
                 <Github />
               </Icon>
               Github
@@ -126,7 +137,12 @@ export const Footer = () => {
           </Link>
           <Link passHref href="https://www.youtube.com/@wpds9202">
             <Anchor>
-              <Icon css={{ marginRight: "$025" }} label="youtube" size="$100" fill={theme.colors.primary}>
+              <Icon
+                css={{ marginRight: "$025" }}
+                label="youtube"
+                size="$100"
+                fill={theme.colors.primary}
+              >
                 <Youtube />
               </Icon>
               Youtube
