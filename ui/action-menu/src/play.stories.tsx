@@ -243,7 +243,6 @@ const ItemVariationsTemplate = (parameters) => {
               </Component.Sub>
             </Component.SubContent>
           </Component.Sub>
-
           <Component.Sub>
             <Component.SubTrigger>More actions</Component.SubTrigger>
             <Component.SubContent>
