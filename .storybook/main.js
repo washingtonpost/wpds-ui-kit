@@ -21,7 +21,7 @@ module.exports = {
 
   framework: {
     name: getAbsolutePath("@storybook/nextjs"),
-    options: {}
+    options: {},
   },
 
   typescript: {
@@ -41,8 +41,8 @@ module.exports = {
   },
 
   docs: {
-    autodocs: true
-  }
+    autodocs: true,
+  },
 };
 
 function getAbsolutePath(value) {
