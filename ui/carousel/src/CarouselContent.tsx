@@ -19,7 +19,7 @@ const Container = styled("div", {
   },
 });
 
-const Slider = styled("ul", {
+const Slider = styled("div", {
   display: "flex",
   listStyle: "none",
   paddingInlineStart: 0,
@@ -52,11 +52,13 @@ export const CarouselContent = React.forwardRef<
 
   const [totalItems, setTotalItems] = React.useState(0);
   const idRef = React.useRef<string | null>(null);
-  const childRefs = React.useRef<HTMLLIElement[]>([]);
+  const childRefs = React.useRef<HTMLDivElement[]>([]);
   const internalRef = React.useRef<HTMLDivElement>(null);
   const [xPos, setXpos] = React.useState(0);
   const pagePositions = React.useRef([]);
   const xPosRef = React.useRef(0);
+  const previousActive = React.useRef<string | undefined>();
+  const focusFromClick = React.useRef(false);
 
   // make use of both external and internal ref
   React.useEffect(() => {
@@ -166,16 +168,35 @@ export const CarouselContent = React.forwardRef<
     preventScrollOnSwipe: true,
   });
 
+  const isVisible = (id) => {
+    const el = childRefs.current.find((child) => child.id === id);
+    if (el?.attributes?.getNamedItem("aria-hidden")?.value === "true") {
+      return false;
+    } else {
+      return true;
+    }
+  };
+
   const handleOnFocus = (event) => {
+    if (focusFromClick.current) {
+      focusFromClick.current = false;
+      return;
+    }
     if (!activeId) {
-      const firstVisible = findFirstVisibleItem(internalRef, childRefs);
-      setActiveId(firstVisible.id);
+      if (previousActive.current && isVisible(previousActive.current)) {
+        setActiveId(previousActive.current);
+      } else {
+        const firstVisible = findFirstVisibleItem(internalRef, childRefs);
+        setActiveId(firstVisible.id);
+      }
     }
     onFocus && onFocus(event);
   };
 
   const handleOnBlur = (event) => {
+    previousActive.current = activeId;
     setActiveId(``);
+    focusFromClick.current = false;
     onBlur && onBlur(event);
   };
 
@@ -205,6 +226,7 @@ export const CarouselContent = React.forwardRef<
     const el = event.target as HTMLElement;
     const item = el.closest("[aria-roledescription='slide']");
     if (!item) return;
+    focusFromClick.current = true;
     setActiveId(item.id);
     onMouseDown && onMouseDown(event);
   };
@@ -251,8 +273,9 @@ export const CarouselContent = React.forwardRef<
                 {
                   "aria-label": `${index + 1} of ${totalItems}`,
                   id: child.props.id || `${idRef.current}-item${index}`,
-                  ref: (ref: HTMLLIElement) => (childRefs.current[index] = ref),
-                  key: child.props.id || `${idRef.current}-item${index}`
+                  ref: (ref: HTMLDivElement) =>
+                    (childRefs.current[index] = ref),
+                  key: child.props.id || `${idRef.current}-item${index}`,
                 }
               );
             }

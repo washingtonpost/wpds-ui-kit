@@ -1,5 +1,5 @@
 import * as React from "react";
-import { screen, userEvent } from "@storybook/testing-library";
+import { userEvent, waitFor, within } from "@storybook/testing-library";
 import { expect } from "@storybook/jest";
 import { styled, theme } from "@washingtonpost/wpds-theme";
 import { Carousel as Component } from "./";
@@ -404,8 +404,10 @@ const VerticalVideoTemplate = () => {
     { id: "title-5", headline: "Title 5", byline: "Author 5" },
   ];
 
+  const containerRef = React.useRef(null);
   const { addDescendant, handleDescendantFocus, contentProps } =
-    useActiveDescendant();
+    useActiveDescendant(containerRef);
+
   return (
     <Component.Root itemsPerPage={1} onDescendantFocus={handleDescendantFocus}>
       <Component.Header
@@ -447,7 +449,7 @@ const VerticalVideoTemplate = () => {
             },
           }}
         />
-        <Component.Content {...contentProps}>
+        <Component.Content {...contentProps} ref={containerRef}>
           {videos.map((video) => (
             <Component.Item key={video.id} id={video.id}>
               <div
@@ -553,8 +555,9 @@ export const VerticalVideo = VerticalVideoTemplate.bind({});
 
 const InteractionsTemplate = () => {
   const items = [{ id: "item-1" }, { id: "item-2" }, { id: "item-3" }];
-  const { handleDescendantFocus, contentProps, addDescendant } =
-    useActiveDescendant();
+  const containerRef = React.useRef(null);
+  const { handleDescendantFocus, contentProps, addDescendant, focusClassName } =
+    useActiveDescendant(containerRef);
   return (
     <Box css={{ border: "1px dotted gray", width: "416px" }}>
       <Component.Root
@@ -570,7 +573,7 @@ const InteractionsTemplate = () => {
             <Component.NextButton />
           </Component.HeaderActions>
         </Component.Header>
-        <Component.Content {...contentProps}>
+        <Component.Content {...contentProps} ref={containerRef}>
           {items.map((item, i) => (
             <Component.Item key={item.id} id={item.id}>
               <div
@@ -593,6 +596,7 @@ const InteractionsTemplate = () => {
                       parentId: item.id,
                     });
                   }}
+                  className={focusClassName(`${item.id}-link`)}
                 >
                   Link
                 </a>
@@ -613,12 +617,109 @@ Interactions.parameters = {
   chromatic: { disableSnapshot: true },
 };
 
-Interactions.play = async () => {
-  const groups = screen.getAllByRole("group");
+Interactions.play = async ({ canvasElement }) => {
+  const canvas = within(canvasElement);
+  const groups = canvas.getAllByRole("group");
   const content = groups[1];
   await userEvent.tab();
   await userEvent.tab();
   await userEvent.tab();
   await userEvent.keyboard("[ArrowDown]");
   expect(content).toHaveAttribute("aria-activedescendant", "item-1-link");
+};
+
+const InternalFocusTemplate = () => {
+  const [asyncState, setAsyncState] = React.useState(false);
+  const containerRef = React.useRef();
+  const { handleDescendantFocus, contentProps, addDescendant, focusClassName } =
+    useActiveDescendant(containerRef);
+  return (
+    <div role="main">
+      <a
+        href="http://www.example.com/link"
+        style={{ display: "inline-block", marginBlockEnd: "16px" }}
+      >
+        Link
+      </a>
+      <Component.Root
+        onDescendantFocus={handleDescendantFocus}
+        css={{ backgroundColor: "rgba(0, 255, 255, 0.1)" }}
+      >
+        <Component.Header>
+          <Component.HeaderActions>
+            <Component.PreviousButton />
+            <Component.NextButton />
+          </Component.HeaderActions>
+        </Component.Header>
+        <Component.Content {...contentProps} ref={containerRef}>
+          {[...Array(10)].map((_, index) => (
+            <Component.Item id={`item-id-${index}`} key={`item-id-${index}`}>
+              <Box
+                css={{
+                  padding: theme.space["100"],
+                  border: `1px solid ${theme.colors.gray300}`,
+                }}
+              >
+                <Button
+                  onClick={async () => {
+                    await new Promise((resolve) => setTimeout(resolve, 500));
+                    setAsyncState(`button-id-${index}`);
+                  }}
+                  tabIndex={-1}
+                  id={`button-id-${index}`}
+                  ref={(el) => {
+                    addDescendant({
+                      element: el,
+                      id: `button-id-${index}`,
+                      parentId: `item-id-${index}`,
+                    });
+                  }}
+                  variant={
+                    asyncState === `button-id-${index}`
+                      ? "primary"
+                      : "secondary"
+                  }
+                  className={focusClassName(`button-id-${index}`)}
+                >
+                  Action {index}
+                </Button>
+              </Box>
+            </Component.Item>
+          ))}
+        </Component.Content>
+      </Component.Root>
+      <a
+        href="http://www.example.com/link"
+        style={{ display: "inline-block", marginBlockStart: "16px" }}
+      >
+        Link
+      </a>
+    </div>
+  );
+};
+
+export const InternalFocusInteractions = InternalFocusTemplate.bind({});
+
+InternalFocusInteractions.play = async ({ canvasElement }) => {
+  const canvas = within(canvasElement);
+  await userEvent.tab();
+  await userEvent.tab();
+  await userEvent.tab();
+  await userEvent.keyboard("[ArrowDown]");
+  const groups = canvas.getAllByRole("group");
+  const content = groups[1];
+  expect(content).toHaveAttribute("aria-activedescendant", "button-id-0");
+  const button1 = canvas.getByText("Action 1");
+  await userEvent.click(button1);
+  await waitFor(() =>
+    expect(button1).toHaveClass("wpds-c-kSOqLF-bywHgD-variant-primary")
+  );
+  const button2 = canvas.getByText("Action 2");
+  await userEvent.click(button2);
+  await waitFor(() =>
+    expect(button2).toHaveClass("wpds-c-kSOqLF-bywHgD-variant-primary")
+  );
+  await userEvent.click(canvas.getAllByRole("main")[0]);
+  const item2 = canvas.getByLabelText("3 of 10");
+  expect(item2).not.toHaveClass("wpds-c-lnwwct-jEMdsi-focused-true");
 };
