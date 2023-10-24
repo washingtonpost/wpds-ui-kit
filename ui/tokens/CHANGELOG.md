@@ -5,7 +5,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 # [1.16.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.15.0...v1.16.0) (2023-10-24)
 
-
 ### Features
 
-* tokens pkg for css variables ([#518](https://github.com/washingtonpost/wpds-ui-kit/issues/518)) ([7118e78](https://github.com/washingtonpost/wpds-ui-kit/commit/7118e784fdccd08d98f7ffab987a094644034450))
+- tokens pkg for css variables ([#518](https://github.com/washingtonpost/wpds-ui-kit/issues/518)) ([7118e78](https://github.com/washingtonpost/wpds-ui-kit/commit/7118e784fdccd08d98f7ffab987a094644034450))

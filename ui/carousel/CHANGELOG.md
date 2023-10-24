@@ -5,14 +5,9 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 # [1.16.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.15.0...v1.16.0) (2023-10-24)
 
-
 ### Bug Fixes
 
-* handle Carousel item focus corectly when child button is clicked ([29b9459](https://github.com/washingtonpost/wpds-ui-kit/commit/29b945934b7f596f76729d0243410330b867503e))
-
-
-
-
+- handle Carousel item focus corectly when child button is clicked ([29b9459](https://github.com/washingtonpost/wpds-ui-kit/commit/29b945934b7f596f76729d0243410330b867503e))
 
 # [1.15.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.14.0...v1.15.0) (2023-10-23)
 

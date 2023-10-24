@@ -7,10 +7,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 **Note:** Version bump only for package @washingtonpost/wpds-switch
 
-
-
-
-
 # [1.15.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.14.0...v1.15.0) (2023-10-23)
 
 **Note:** Version bump only for package @washingtonpost/wpds-switch
