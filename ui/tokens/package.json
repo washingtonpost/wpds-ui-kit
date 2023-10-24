@@ -1,6 +1,6 @@
 {
   "name": "@washingtonpost/wpds-tokens",
-  "version": "0.0.0",
+  "version": "1.16.0",
   "description": "WPDS Tokens",
   "author": "WPDS Support <wpds@washpost.com>",
   "homepage": "https://github.com/washingtonpost/wpds-ui-kit#readme",

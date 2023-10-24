@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.16.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.15.0...v1.16.0) (2023-10-24)
+
+
+### Bug Fixes
+
+* anchor link for getting started ([#521](https://github.com/washingtonpost/wpds-ui-kit/issues/521)) ([4acbb3f](https://github.com/washingtonpost/wpds-ui-kit/commit/4acbb3f7ddb47718e7d8b9efc08f37d34d9c8b9a))
+* handle Carousel item focus corectly when child button is clicked ([29b9459](https://github.com/washingtonpost/wpds-ui-kit/commit/29b945934b7f596f76729d0243410330b867503e))
+
+
+### Features
+
+* tokens pkg for css variables ([#518](https://github.com/washingtonpost/wpds-ui-kit/issues/518)) ([7118e78](https://github.com/washingtonpost/wpds-ui-kit/commit/7118e784fdccd08d98f7ffab987a094644034450))
+
+
+
+
+
 # [1.15.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.14.0...v1.15.0) (2023-10-23)
 
 ### Bug Fixes
