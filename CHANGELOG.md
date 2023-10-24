@@ -5,21 +5,15 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 # [1.15.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.14.0...v1.15.0) (2023-10-23)
 
-
 ### Bug Fixes
 
-* adding key to cloned carousel items ([#511](https://github.com/washingtonpost/wpds-ui-kit/issues/511)) ([d5a76b3](https://github.com/washingtonpost/wpds-ui-kit/commit/d5a76b3c9b0915fe272b9995510a8c80a1a2fdff))
-* input text event issue ([#513](https://github.com/washingtonpost/wpds-ui-kit/issues/513)) ([d5ee574](https://github.com/washingtonpost/wpds-ui-kit/commit/d5ee574b80375706db04cd2b6b4c8b786b54727a))
-
+- adding key to cloned carousel items ([#511](https://github.com/washingtonpost/wpds-ui-kit/issues/511)) ([d5a76b3](https://github.com/washingtonpost/wpds-ui-kit/commit/d5a76b3c9b0915fe272b9995510a8c80a1a2fdff))
+- input text event issue ([#513](https://github.com/washingtonpost/wpds-ui-kit/issues/513)) ([d5ee574](https://github.com/washingtonpost/wpds-ui-kit/commit/d5ee574b80375706db04cd2b6b4c8b786b54727a))
 
 ### Features
 
-* add links to build site [SRED-199] ([#514](https://github.com/washingtonpost/wpds-ui-kit/issues/514)) ([0c06c8e](https://github.com/washingtonpost/wpds-ui-kit/commit/0c06c8e359b84a185801f2ef17211d036588f155))
-* disallow playroom [SRED-451] ([#515](https://github.com/washingtonpost/wpds-ui-kit/issues/515)) ([9172c84](https://github.com/washingtonpost/wpds-ui-kit/commit/9172c84131fa447c8017066aa8ed422e3513af09))
-
-
-
-
+- add links to build site [SRED-199] ([#514](https://github.com/washingtonpost/wpds-ui-kit/issues/514)) ([0c06c8e](https://github.com/washingtonpost/wpds-ui-kit/commit/0c06c8e359b84a185801f2ef17211d036588f155))
+- disallow playroom [SRED-451] ([#515](https://github.com/washingtonpost/wpds-ui-kit/issues/515)) ([9172c84](https://github.com/washingtonpost/wpds-ui-kit/commit/9172c84131fa447c8017066aa8ed422e3513af09))
 
 # [1.14.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.13.0...v1.14.0) (2023-09-20)
 
