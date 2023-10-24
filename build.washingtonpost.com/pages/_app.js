@@ -14,6 +14,7 @@ import { useRouter } from "next/router";
 import { darkModeStyles } from "~/components/DarkModeStyles";
 import { PageLayout } from "~/components/Layout";
 import SEO from "../next-seo.config";
+import "@washingtonpost/wpds-tokens/dist/styles.css";
 import "../public/global.css";
 
 const globalTextStyles = globalCss({
