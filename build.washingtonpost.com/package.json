@@ -27,6 +27,7 @@
     "@washingtonpost/wpds-assets": "1.23.0",
     "@washingtonpost/wpds-kitchen-sink": "1.15.0",
     "@washingtonpost/wpds-tailwind-theme": "1.15.0",
+    "@washingtonpost/wpds-tokens": "^0.0.0",
     "@washingtonpost/wpds-ui-kit": "1.15.0",
     "fuse.js": "^6.6.2",
     "gray-matter": "^4.0.2",
