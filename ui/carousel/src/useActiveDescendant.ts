@@ -1,6 +1,6 @@
 /** manage aria-activedescendant */
 import { css, theme } from "@washingtonpost/wpds-theme";
-import { useState, useRef } from "react";
+import { useState, useRef, useCallback } from "react";
 
 const focused = css({
   outlineColor: theme.colors.signal,
@@ -13,12 +13,23 @@ type MapEntry = [
   { element: HTMLElement; children?: Map<string, { element: HTMLElement }> }
 ];
 
-export const useActiveDescendant = () => {
+export const useActiveDescendant = (containerRef) => {
   const [descendantId, setDescendantId] = useState<string>();
   const tree = useRef(new Map());
   const [activeParentId, setActiveParentId] = useState<string>();
   const [activeChildId, setActiveChildId] = useState<string>();
-  const focusClassName = focused();
+  const [hasFocus, setHasFocus] = useState(false);
+  const clickFocus = useRef();
+  const focusClassName = useCallback(
+    (id) => {
+      if (id === activeChildId && hasFocus) {
+        return focused();
+      } else {
+        return "";
+      }
+    },
+    [hasFocus, activeChildId]
+  );
 
   function addDescendant({
     element,
@@ -45,30 +56,49 @@ export const useActiveDescendant = () => {
     }
   }
 
+  function handleMouseDown(event) {
+    const data = tree.current;
+    const childId = event.target.id;
+    data.forEach((value) => {
+      if (value.children.has(childId)) {
+        clickFocus.current = childId;
+        event.preventDefault();
+        if (document.activeElement !== containerRef.current) {
+          containerRef.current.focus();
+          setHasFocus(true);
+        } else {
+          const data = tree.current;
+          data.forEach((value, key) => {
+            if (value.children.has(childId)) {
+              setActiveParentId(key);
+              setActiveChildId(clickFocus.current);
+              setDescendantId(clickFocus.current);
+              setHasFocus(true);
+            }
+          });
+        }
+      }
+    });
+  }
+
   function handleDescendantFocus(id) {
-    setActiveParentId(id);
-    setDescendantId(id);
-    if (activeChildId) {
-      const activeParent = tree.current.get(activeParentId);
-      const activeChild = activeParent.children.get(activeChildId);
-      activeChild.element.classList.remove(focusClassName);
-      setActiveChildId(undefined);
-    }
-  }
-
-  function handleFocus() {
-    if (activeChildId) {
-      const activeParent = tree.current.get(activeParentId);
-      const activeChild = activeParent.children.get(activeChildId);
-      activeChild.element.classList.add(focusClassName);
-    }
-  }
-
-  function handleBlur() {
-    if (activeChildId) {
-      const activeParent = tree.current.get(activeParentId);
-      const activeChild = activeParent.children.get(activeChildId);
-      activeChild.element.classList.remove(focusClassName);
+    if (clickFocus.current) {
+      const data = tree.current;
+      const childId = clickFocus.current;
+      data.forEach((value, key) => {
+        if (value.children.has(childId)) {
+          setActiveParentId(key);
+          setActiveChildId(clickFocus.current);
+          setDescendantId(clickFocus.current);
+        }
+      });
+      clickFocus.current = undefined;
+    } else {
+      setActiveParentId(id);
+      if (activeChildId) {
+        setActiveChildId(undefined);
+      }
+      setDescendantId(id);
     }
   }
 
@@ -174,11 +204,6 @@ export const useActiveDescendant = () => {
   }
 
   function focusChild(entry: MapEntry | undefined) {
-    if (activeChildId) {
-      const activeParent = tree.current.get(activeParentId);
-      const activeChild = activeParent.children.get(activeChildId);
-      activeChild.element.classList.remove(focusClassName);
-    }
     if (!entry) {
       // set focus to the parent
       setDescendantId(activeParentId);
@@ -186,7 +211,6 @@ export const useActiveDescendant = () => {
     } else {
       setDescendantId(entry[0]);
       setActiveChildId(entry[0]);
-      entry[1].element.classList.add(focusClassName);
     }
   }
 
@@ -196,9 +220,11 @@ export const useActiveDescendant = () => {
     contentProps: {
       onKeyDown: handleKeyDown,
       onKeyUp: handleKeyUp,
-      onFocus: handleFocus,
-      onBlur: handleBlur,
+      onMouseDown: handleMouseDown,
+      onFocus: () => setHasFocus(true),
+      onBlur: () => setHasFocus(false),
       "aria-activedescendant": descendantId,
     },
+    focusClassName: focusClassName,
   };
 };
