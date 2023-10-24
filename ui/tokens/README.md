@@ -15,5 +15,5 @@ npm install @washingtonpost/wpds-tokens
 Import the CSS into your project:
 
 ```css
-@import '@washingtonpost/wpds-tokens/dist/styles.css';
+@import "@washingtonpost/wpds-tokens/dist/styles.css";
 ```
