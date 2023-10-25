@@ -48,8 +48,9 @@ const TextAreaLabel = styled(InputLabel, {
   variants: {
     isFloating: {
       true: {
-        fontSize: theme.fontSizes["075"],
-        lineHeight: theme.lineHeights["100"],
+        fontSize: FloatingLabelStyles.fontSize,
+        lineHeight: FloatingLabelStyles.lineHeight,
+        transform: `translateY(0)`,
       },
     },
   },
@@ -59,12 +60,6 @@ const ControlCSS = css({
   display: "flex",
   flexDirection: "column",
   position: "relative",
-
-  "&:focus-within": {
-    [`& ${TextAreaLabel}`]: {
-      ...FloatingLabelStyles,
-    },
-  },
 });
 
 export interface InputTextareaProps
@@ -174,7 +169,10 @@ export const InputTextarea = React.forwardRef<
     }, []);
 
     const [isFloating, handleFocus, handleBlur, handleChange] = useFloating(
-      value || defaultValue || placeholder,
+      (internalRef.current ? internalRef.current.value : "") ||
+        value ||
+        defaultValue ||
+        placeholder,
       onFocus,
       onBlur,
       onChange,
