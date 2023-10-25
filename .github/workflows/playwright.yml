@@ -1,5 +1,10 @@
 name: Playwright Tests
 on: deployment_status
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref || github.run_id }}
+  cancel-in-progress: true
+
 jobs:
   test:
     if: github.event.deployment_status.state == 'success' && !contains(github.event.deployment_status.target_url, 'storybook')
@@ -22,6 +27,8 @@ jobs:
         run: npm ci
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+          TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+          TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
 
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
@@ -30,6 +37,8 @@ jobs:
         run: npx playwright test
         env:
           BASEURL: "${{ github.event.deployment_status.target_url }}"
+          TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+          TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
 
       # - uses: actions/upload-artifact@v3
       #   if: always()
