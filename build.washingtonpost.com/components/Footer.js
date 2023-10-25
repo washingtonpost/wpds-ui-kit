@@ -135,7 +135,7 @@ export const Footer = () => {
               Github
             </Anchor>
           </Link>
-          <Link passHref href="https://www.youtube.com/@wpds9202">
+          <Link passHref href="https://www.youtube.com/@wpdesignsystem">
             <Anchor>
               <Icon
                 css={{ marginRight: "$025" }}
