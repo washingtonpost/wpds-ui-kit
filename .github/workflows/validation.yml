@@ -82,7 +82,7 @@ jobs:
         with:
           path: |
             **/node_modules
-            no
+            node_modules
           key: node_modules-${{ hashFiles('package-lock.json') }}
           restore-keys: node_modules
 
@@ -127,7 +127,7 @@ jobs:
         with:
           path: |
             **/node_modules
-            no
+            node_modules
           key: node_modules-${{ hashFiles('package-lock.json') }}
           restore-keys: node_modules
 
