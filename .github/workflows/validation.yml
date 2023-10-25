@@ -7,8 +7,42 @@ on:
     paths:
       - "ui/**/*"
       - "package.json"
+      - ".github/workflows/validate.yml"
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref || github.run_id }}
+  cancel-in-progress: true
 
 jobs:
+  setup:
+    name: Setup
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+      TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+    steps:
+      - uses: actions/checkout@v4.1.1
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4.0.0
+        with:
+          node-version-file: ".nvmrc"
+          registry-url: "https://registry.npmjs.org"
+          always-auth: true
+          cache: npm
+
+      - name: Install npm dependencies
+        run: npm ci
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+
+      - name: Build the project
+        run: npm run build
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+
   validate:
     name: Validate
     runs-on: ubuntu-latest
@@ -16,12 +50,13 @@ jobs:
     env:
       TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
       TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+    needs: setup
     steps:
-      - uses: actions/checkout@v2.4.0
+      - uses: actions/checkout@v4.1.1
         with:
           fetch-depth: 0
 
-      - uses: actions/setup-node@v2.5.1
+      - uses: actions/setup-node@v4.0.0
         with:
           node-version-file: ".nvmrc"
           registry-url: "https://registry.npmjs.org"
@@ -40,6 +75,33 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
 
+  visual-regression-testing:
+    name: Visual Regression Testing
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    needs: setup
+    env:
+      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+      TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+    steps:
+      - uses: actions/checkout@v4.1.1
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4.0.0
+        with:
+          node-version-file: ".nvmrc"
+          registry-url: "https://registry.npmjs.org"
+          always-auth: true
+          cache: npm
+
+      - name: Install npm dependencies
+        run: |
+          npm ci
+          npm run build
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+
       - name: Run visual regression tests
         uses: chromaui/action@v1
         env:
@@ -47,5 +109,4 @@ jobs:
         with:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           token: ${{ secrets.GITHUB_TOKEN }}
-          onlyChanged: true
           exitOnceUploaded: true
