@@ -51,18 +51,6 @@ export default class Document extends NextDocument {
             property="twitter:image"
             content="https://wpds-ui-kit-git-unfurl-test.preview.now.washingtonpost.com/Twitterpng.png"
           />
-          <meta
-            property="twitter:image:src"
-            content="https://wpds-ui-kit-git-unfurl-test.preview.now.washingtonpost.com/Twitterpng.png"
-          />
-          <meta
-            property="twitter:image:src:id"
-            content="https://wpds-ui-kit-git-unfurl-test.preview.now.washingtonpost.com/Twitterpng.png"
-          />
-          <meta
-            property="twitter:image:id"
-            content="https://wpds-ui-kit-git-unfurl-test.preview.now.washingtonpost.com/Twitterpng.png"
-          />
           <meta property="twitter:card" content="summary_large_image" />
           <meta
             property="twitter:title"
