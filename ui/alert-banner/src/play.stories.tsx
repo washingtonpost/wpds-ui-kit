@@ -110,3 +110,25 @@ Play.decorators = [
 ];
 
 Play.storyName = "Alert banner";
+
+const SpacingTemplate: ComponentStory<typeof AlertBanner.Root> = ({
+  ...args
+}) => (
+  <Column>
+    <AlertBanner.Root {...args} shadow>
+      <AlertBanner.Content as="p">
+        This is a single line of text
+      </AlertBanner.Content>
+      <AlertBanner.Trigger />
+    </AlertBanner.Root>
+    <AlertBanner.Root {...args} shadow>
+      <AlertBanner.Content as="p">
+        This is multiple lines of text that should wrap. Lorem ipsum dolor sit
+        amet, consectetur adipiscing elit.
+      </AlertBanner.Content>
+      <AlertBanner.Trigger />
+    </AlertBanner.Root>
+  </Column>
+);
+
+export const Spacing = SpacingTemplate.bind({});
