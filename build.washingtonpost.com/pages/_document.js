@@ -34,6 +34,11 @@ export default class Document extends NextDocument {
             property="og:image"
             content="https://wpds-ui-kit-git-unfurl-test.preview.now.washingtonpost.com/OpenGraphpng.png"
           />
+            {/* For Twitter cards and Facebook Open Graph tags, whichever is first in the page’s HTML will be used.  */}
+          <meta
+            property="facebook:image"
+            content="https://wpds-ui-kit-git-unfurl-test.preview.now.washingtonpost.com/Facebookpng.png"
+          />
           <meta
             property="og:image:width"
             content="1200"
@@ -57,10 +62,6 @@ export default class Document extends NextDocument {
           <meta
             property="twitter:image:id"
             content="https://wpds-ui-kit-git-unfurl-test.preview.now.washingtonpost.com/Twitterpng.png"
-          />
-          <meta
-            property="facebook:image"
-            content="https://wpds-ui-kit-git-unfurl-test.preview.now.washingtonpost.com/Facebookpng.png"
           />
           <meta property="twitter:card" content="summary_large_image" />
           <meta
