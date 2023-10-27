@@ -30,14 +30,14 @@ export default class Document extends NextDocument {
       <Html lang="en" id="wpds">
         <Head>
           <title>Hello, World</title>
-          <meta
-            property="og:image"
-            content="https://wpds-ui-kit-git-unfurl-test.preview.now.washingtonpost.com/OpenGraphpng.png"
-          />
             {/* For Twitter cards and Facebook Open Graph tags, whichever is first in the page’s HTML will be used.  */}
           <meta
             property="facebook:image"
             content="https://wpds-ui-kit-git-unfurl-test.preview.now.washingtonpost.com/Facebookpng.png"
+          />
+          <meta
+            property="og:image"
+            content="https://wpds-ui-kit-git-unfurl-test.preview.now.washingtonpost.com/OpenGraphpng.png"
           />
           <meta
             property="og:image:width"
