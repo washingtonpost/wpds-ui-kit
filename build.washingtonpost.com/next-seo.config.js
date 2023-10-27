@@ -24,6 +24,7 @@ const config = {
     title: "WPDS - WaPo design system",
     description:
       "The Washington Post Design System (WPDS) is a growing library of design tokens and interactive components purpose-built for washingtonpost.com",
+    
   },
 };
 

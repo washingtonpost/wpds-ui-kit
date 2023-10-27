@@ -29,6 +29,60 @@ export default class Document extends NextDocument {
     return (
       <Html lang="en" id="wpds">
         <Head>
+          <title>Hello, World</title>
+          <meta
+            property="og:image"
+            content="https://wpds-ui-kit-git-unfurl-test.preview.now.washingtonpost.com/OpenGraphpng.png"
+          />
+          <meta
+            property="og:image:width"
+            content="1200"
+          />
+          <meta
+            property="og:image:height"
+            content="630"
+          />
+          <meta
+            property="twitter:image"
+            content="https://wpds-ui-kit-git-unfurl-test.preview.now.washingtonpost.com/Twitterpng.png"
+          />
+          <meta
+            property="twitter:image:src"
+            content="https://wpds-ui-kit-git-unfurl-test.preview.now.washingtonpost.com/Twitterpng.png"
+          />
+          <meta
+            property="twitter:image:src:id"
+            content="https://wpds-ui-kit-git-unfurl-test.preview.now.washingtonpost.com/Twitterpng.png"
+          />
+          <meta
+            property="twitter:image:id"
+            content="https://wpds-ui-kit-git-unfurl-test.preview.now.washingtonpost.com/Twitterpng.png"
+          />
+          <meta
+            property="facebook:image"
+            content="https://wpds-ui-kit-git-unfurl-test.preview.now.washingtonpost.com/Facebookpng.png"
+          />
+          <meta property="twitter:card" content="summary_large_image" />
+          <meta
+            property="twitter:title"
+            content="Unfurl test: Twitter link preview title"
+          />
+          <meta
+            property="twitter:description"
+            content="Unfurl test: Twitter link preview description"
+          />
+          <meta
+            property="description"
+            content="Unfurl test: Search engine description"
+          />
+          <meta property="og:title" content="Unfurl test: Link preview title" />
+          <meta
+            property="og:description"
+            content="Unfurl test: Link preview description"
+          />
+          <meta property="og:url" content="https://unfurl-testing.vercel.app" />
+          <meta property="og:type" content="website" />
+          <meta property="fb:app_id" content="123456789" />
           <Favicon />
           <style
             id="stitches"

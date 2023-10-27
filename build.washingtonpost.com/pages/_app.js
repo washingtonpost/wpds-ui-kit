@@ -3,7 +3,7 @@
 import React from "react";
 import { ThemeProvider } from "next-themes";
 import Script from "next/script";
-import { DefaultSeo } from "next-seo";
+// import { DefaultSeo } from "next-seo";
 import "react-toastify/dist/ReactToastify.css";
 import {
   globalStyles,
@@ -13,7 +13,7 @@ import {
 import { useRouter } from "next/router";
 import { darkModeStyles } from "~/components/DarkModeStyles";
 import { PageLayout } from "~/components/Layout";
-import SEO from "../next-seo.config";
+// import SEO from "../next-seo.config";
 import "../public/global.css";
 
 const globalTextStyles = globalCss({
@@ -86,7 +86,6 @@ function App({ Component, pageProps }) {
 
   return (
     <>
-      <DefaultSeo {...SEO} />
       <ThemeProvider
         attribute="class"
         defaultTheme="system"
