@@ -17,7 +17,6 @@ import {
 
 const StyledAlertBannerTrigger = styled(Button, {
   alignSelf: "flex-start",
-  marginTop: "$025",
 });
 
 type AlertBannerTriggerVariants = React.ComponentProps<
@@ -54,14 +53,8 @@ type AlertBannerTriggerProps = React.ComponentProps<typeof AlertBannerTrigger>;
 AlertBannerTrigger.displayName = "AlertBannerTrigger";
 
 const StyledAlertBannerContent = styled("p", {
-  width: "100%",
-  display: "inline-block",
-  justifyContent: "center",
-  alignItems: "flex-start",
-  margin: "0 auto",
-  flexDirection: "column",
-  py: "$050",
-  marginTop: "0",
+  marginBlock: "0.625rem",
+  flex: "1",
 });
 const AlertBannerContent = StyledAlertBannerContent;
 type AlertBannerContentProps = React.ComponentProps<typeof AlertBannerContent>;
@@ -183,7 +176,6 @@ const AlertBannerRoot = React.forwardRef<HTMLDivElement, AlertBannerVariants>(
           css={{
             alignSelf: "flex-start",
             border: "none",
-            marginTop: "$025",
             borderRadius: 0,
             cursor: "auto",
             "@hover": {
