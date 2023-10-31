@@ -5,14 +5,9 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## [1.16.1](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.16.0...v1.16.1) (2023-10-31)
 
-
 ### Bug Fixes
 
-* correct alignment of text and icons in AlertBanner ([cf41bb8](https://github.com/washingtonpost/wpds-ui-kit/commit/cf41bb8414867fcdadccd70e29f6cae633e4275f))
-
-
-
-
+- correct alignment of text and icons in AlertBanner ([cf41bb8](https://github.com/washingtonpost/wpds-ui-kit/commit/cf41bb8414867fcdadccd70e29f6cae633e4275f))
 
 # [1.16.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.15.0...v1.16.0) (2023-10-24)
 

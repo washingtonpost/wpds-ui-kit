@@ -5,14 +5,9 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## [1.16.1](https://github.com/WPMedia/wpds-ui-kit/compare/v1.16.0...v1.16.1) (2023-10-31)
 
-
 ### Bug Fixes
 
-* prevent content and label overlap in InputTextarea ([3221741](https://github.com/WPMedia/wpds-ui-kit/commit/322174186b61a723b9fcc6fc07c88d7abff624de))
-
-
-
-
+- prevent content and label overlap in InputTextarea ([3221741](https://github.com/WPMedia/wpds-ui-kit/commit/322174186b61a723b9fcc6fc07c88d7abff624de))
 
 # [1.16.0](https://github.com/WPMedia/wpds-ui-kit/compare/v1.15.0...v1.16.0) (2023-10-24)
 
