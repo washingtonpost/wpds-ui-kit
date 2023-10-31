@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.16.1](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.16.0...v1.16.1) (2023-10-31)
+
+
+### Bug Fixes
+
+* correct alignment of text and icons in AlertBanner ([cf41bb8](https://github.com/washingtonpost/wpds-ui-kit/commit/cf41bb8414867fcdadccd70e29f6cae633e4275f))
+
+
+
+
+
 # [1.16.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.15.0...v1.16.0) (2023-10-24)
 
 **Note:** Version bump only for package @washingtonpost/wpds-alert-banner

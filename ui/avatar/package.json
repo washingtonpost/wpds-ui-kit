@@ -1,6 +1,6 @@
 {
   "name": "@washingtonpost/wpds-avatar",
-  "version": "1.16.0",
+  "version": "1.16.1",
   "description": "WPDS Avatar",
   "author": "WPDS Support <wpds@washpost.com>",
   "homepage": "https://github.com/washingtonpost/wpds-ui-kit#readme",
@@ -42,7 +42,7 @@
   },
   "dependencies": {
     "@radix-ui/react-avatar": "latest",
-    "@washingtonpost/wpds-theme": "1.16.0"
+    "@washingtonpost/wpds-theme": "1.16.1"
   },
   "gitHead": "a87a64afb6b5750f400df7f4e83ffb88d6972333"
 }
