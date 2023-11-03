@@ -245,6 +245,24 @@ function sleep(ms) {
 const activeStyle = `background-color: ${theme.colors.green100.value}`;
 const inactiveStyle = `background-color: ${theme.colors.gray300.value}`;
 
+const allModes = {
+  sm: {
+    viewport: "small",
+  },
+  md: {
+    viewport: "medium",
+  },
+  lg: {
+    viewport: "large",
+  },
+  xl: {
+    viewport: "xlarge",
+  },
+  xxl: {
+    viewport: "xxlarge",
+  },
+};
+
 export const InteractionsResponsive = Template.bind({});
 
 export const InteractionsSmall = Template.bind({});
@@ -252,6 +270,11 @@ export const InteractionsSmall = Template.bind({});
 InteractionsSmall.parameters = {
   viewport: {
     defaultViewport: "small",
+  },
+  chromatic: {
+    modes: {
+      mobile: allModes["sm"],
+    },
   },
 };
 
@@ -268,6 +291,11 @@ export const InteractionsMedium = Template.bind({});
 InteractionsMedium.parameters = {
   viewport: {
     defaultViewport: "medium",
+  },
+  chromatic: {
+    modes: {
+      tablet: allModes["md"],
+    },
   },
 };
 
@@ -286,6 +314,11 @@ InteractionsLarge.parameters = {
   viewport: {
     defaultViewport: "large",
   },
+  chromatic: {
+    modes: {
+      tablet: allModes["lg"],
+    },
+  },
 };
 
 InteractionsLarge.play = async ({ canvasElement }) => {
@@ -303,6 +336,11 @@ InteractionsExtraLarge.parameters = {
   viewport: {
     defaultViewport: "xlarge",
   },
+  chromatic: {
+    modes: {
+      desktop: allModes["xl"],
+    },
+  },
 };
 
 InteractionsExtraLarge.play = async ({ canvasElement }) => {
@@ -319,6 +357,11 @@ export const InteractionsExtraExtraLarge = Template.bind({});
 InteractionsExtraExtraLarge.parameters = {
   viewport: {
     defaultViewport: "xxlarge",
+  },
+  chromatic: {
+    modes: {
+      desktop: allModes["xxl"],
+    },
   },
 };
 
