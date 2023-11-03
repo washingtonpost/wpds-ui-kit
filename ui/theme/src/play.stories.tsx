@@ -369,6 +369,6 @@ InteractionsExtraExtraLarge.play = async ({ canvasElement }) => {
   const canvas = within(canvasElement);
   await sleep(500);
   await expect(canvas.getByText("@xxl")).toHaveStyle(activeStyle);
-  await expect(canvas.getByText("@notXl")).toHaveStyle(inactiveStyle);
+  await expect(canvas.getByText("@notXxl")).toHaveStyle(inactiveStyle);
   await expect(canvas.getByText("@maxXxl")).toHaveStyle(activeStyle);
 };
