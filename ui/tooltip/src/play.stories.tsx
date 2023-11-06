@@ -136,6 +136,13 @@ PlacedOnLeft.args = {};
 PlacedOnBottom.args = {};
 Disabled.args = { disabled: true };
 
+Default.parameters = {
+  chromatic: { delay: 100 },
+};
+PlacedOnLeft.parameters = {
+  chromatic: { delay: 100 },
+};
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const InteractionsTemplate: ComponentStory<any> = () => (
   <Tooltip.Provider>
