@@ -307,17 +307,6 @@ export default function Sidebar({ navigation, setMobileMenu }) {
           <ListItem
             css={{ "@notSm": { display: "none" } }}
             onClick={() => setMobileMenu(false)}
-            isCurrent={router.asPath.includes("resources") ? "active" : ""}
-          >
-            <Link href="/resources" passHref>
-              <Header>
-                <CustomLink css={{ color: "$primary" }}>Resources</CustomLink>
-              </Header>
-            </Link>
-          </ListItem>
-          <ListItem
-            css={{ "@notSm": { display: "none" } }}
-            onClick={() => setMobileMenu(false)}
             isCurrent={router.asPath.includes("release-notes") ? "active" : ""}
           >
             <Link href="/release-notes" passHref>
