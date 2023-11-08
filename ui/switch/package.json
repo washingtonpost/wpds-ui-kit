@@ -1,6 +1,6 @@
 {
   "name": "@washingtonpost/wpds-switch",
-  "version": "1.16.1",
+  "version": "1.16.2",
   "description": "WPDS Switch",
   "author": "WPDS Support <wpds@washpost.com>",
   "homepage": "https://github.com/washingtonpost/wpds-ui-kit#readme",
@@ -41,7 +41,7 @@
   },
   "dependencies": {
     "@radix-ui/react-switch": "^1.0.1",
-    "@washingtonpost/wpds-theme": "1.16.1"
+    "@washingtonpost/wpds-theme": "1.16.2"
   },
   "gitHead": "7c4600feb163d7c625deeea3ceed564f861b0513"
 }

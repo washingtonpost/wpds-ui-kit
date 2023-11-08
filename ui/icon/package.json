@@ -1,6 +1,6 @@
 {
   "name": "@washingtonpost/wpds-icon",
-  "version": "1.16.1",
+  "version": "1.16.2",
   "description": "WPDS Icon Component",
   "author": "WPDS Support <wpds@washpost.com>",
   "homepage": "https://github.com/washingtonpost/wpds-ui-kit#readme",
@@ -41,8 +41,8 @@
     "react": "^16.8.6 || ^17.0.2"
   },
   "dependencies": {
-    "@washingtonpost/wpds-theme": "1.16.1",
-    "@washingtonpost/wpds-visually-hidden": "1.16.1",
+    "@washingtonpost/wpds-theme": "1.16.2",
+    "@washingtonpost/wpds-visually-hidden": "1.16.2",
     "react": "^16.8.6 || ^17.0.2"
   },
   "gitHead": "7c4600feb163d7c625deeea3ceed564f861b0513"

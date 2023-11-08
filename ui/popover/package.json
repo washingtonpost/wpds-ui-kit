@@ -1,6 +1,6 @@
 {
   "name": "@washingtonpost/wpds-popover",
-  "version": "1.16.1",
+  "version": "1.16.2",
   "description": "WPDS Popover",
   "author": "WPDS Support <wpds@washpost.com>",
   "homepage": "https://github.com/washingtonpost/wpds-ui-kit#readme",
@@ -42,9 +42,9 @@
   "dependencies": {
     "@radix-ui/react-popover": "^1.0.2",
     "@washingtonpost/wpds-assets": "^1.22.0",
-    "@washingtonpost/wpds-button": "1.16.1",
-    "@washingtonpost/wpds-icon": "1.16.1",
-    "@washingtonpost/wpds-theme": "1.16.1"
+    "@washingtonpost/wpds-button": "1.16.2",
+    "@washingtonpost/wpds-icon": "1.16.2",
+    "@washingtonpost/wpds-theme": "1.16.2"
   },
   "gitHead": "7c4600feb163d7c625deeea3ceed564f861b0513"
 }

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.16.2](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.16.1...v1.16.2) (2023-11-08)
+
+
+### Bug Fixes
+
+* correct off by one error and align all breakpoint values to work together ([#530](https://github.com/washingtonpost/wpds-ui-kit/issues/530)) ([7b3bc1c](https://github.com/washingtonpost/wpds-ui-kit/commit/7b3bc1c51081e90ba9228f2d90c30bc017f1ab4f))
+
+
+
+
+
 ## [1.16.1](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.16.0...v1.16.1) (2023-10-31)
 
 **Note:** Version bump only for package @washingtonpost/wpds-theme
