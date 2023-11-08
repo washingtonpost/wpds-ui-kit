@@ -7,10 +7,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 **Note:** Version bump only for package @washingtonpost/wpds-carousel
 
-
-
-
-
 ## [1.16.1](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.16.0...v1.16.1) (2023-10-31)
 
 **Note:** Version bump only for package @washingtonpost/wpds-carousel
