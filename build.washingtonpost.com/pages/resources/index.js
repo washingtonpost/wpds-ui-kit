@@ -4,6 +4,7 @@ import { styled, theme, Box } from "@washingtonpost/wpds-ui-kit";
 
 import { getDocsListBySection, getNavigation } from "~/services";
 import { Header } from "~/components/Markdown/Components/headers";
+import { Description } from "~/components/Typography/Description";
 import TableofContents from "~/components/Markdown/Components/tableofcontents";
 import {
   Thumbnail,
@@ -12,12 +13,6 @@ import {
 } from "~/components/Thumbnail";
 import { LandingContentGrid } from "~/components/Markdown/Components/ResourcesGrids";
 import { SeeAllLink, NewCustomLink, sortByRank } from "~/components/utils";
-
-const Description = styled("div", {
-  paddingBottom: "$100",
-  color: "$primary",
-  maxWidth: "600px",
-});
 
 const Page = ({ wrapper }) => (
   <>
