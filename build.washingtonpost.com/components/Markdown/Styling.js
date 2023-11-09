@@ -58,10 +58,12 @@ const HR = styled("hr", {
 
 export const P = styled("p", {
   fontSize: "$100",
+  lineHeight: "$150",
   margin: 0,
   paddingBottom: "$050",
   fontFamily: "$meta",
   fontWeight: "$light",
+  maxWidth: "767px",
   "& > code": {
     fontFamily: "monospace",
     backgroundColor: theme.colors.subtle,
