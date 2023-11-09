@@ -47,6 +47,7 @@ export const ComponentStatus = ({ type }) => {
     <AlertBanner.Root
       css={{
         marginBottom: "$200",
+        maxWidth: "767px",
         "& > div": {
           marginBlockStart: 0,
         },

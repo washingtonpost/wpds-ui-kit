@@ -3,6 +3,7 @@ import { NextSeo } from "next-seo";
 import { getDocsListBySection, getNavigation } from "~/services";
 import { Box, styled } from "@washingtonpost/wpds-ui-kit";
 import { Header } from "~/components/Markdown/Components/headers";
+import { Description } from "~/components/Typography/Description";
 import Link from "~/components/Markdown/Components/link";
 import { P } from "~/components/Markdown/Styling";
 
@@ -24,12 +25,6 @@ const Divider = styled("hr", {
   border: 0,
   height: "1px",
   backgroundColor: "$subtle",
-});
-
-const Description = styled("div", {
-  padding: "$100 0 $100 0",
-  color: "$primary",
-  maxWidth: "600px",
 });
 
 export default function Page({ docs }) {

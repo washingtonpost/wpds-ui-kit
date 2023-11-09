@@ -6,6 +6,7 @@ import { styled, theme } from "@washingtonpost/wpds-ui-kit";
 import MDXStyling from "~/components/Markdown/Styling";
 
 import Header from "~/components/Typography/Headers";
+import { Description } from "~/components/Typography/Description";
 
 import { getAllPathsBySection, getDocByPathName } from "~/services";
 import { getNavigation } from "~/services/getNavigation";
@@ -28,7 +29,7 @@ export default function Page({ source }) {
       <header className="post-header">
         <Header>{source.scope.title}</Header>
         {source.scope.description && (
-          <P className="description">{source.scope.description}</P>
+          <Description>{source.scope.description}</Description>
         )}
       </header>
       <article>
