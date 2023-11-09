@@ -2,10 +2,11 @@ import React from "react";
 import { MDXRemote } from "next-mdx-remote";
 import { NextSeo } from "next-seo";
 
-import { styled, theme } from "@washingtonpost/wpds-ui-kit";
+import { styled } from "@washingtonpost/wpds-ui-kit";
 
 import MDXStyling from "~/components/Markdown/Styling";
 import Header from "~/components/Typography/Headers";
+import { Description } from "~/components/Typography/Description";
 import TableofContents from "~/components/Markdown/Components/tableofcontents";
 import {
   getAllPathsBySection,
@@ -26,11 +27,6 @@ const components = {
   PropsTable,
   useRef: React.useRef,
 };
-
-const P = styled("p", {
-  color: theme.colors.accessible,
-  marginBlock: 0,
-});
 
 const Article = styled("article", {
   margin: "auto",
@@ -63,7 +59,7 @@ export default function Page({
         )}
 
         {source.scope.description && (
-          <P className="description">{source.scope.description}</P>
+          <Description>{source.scope.description}</Description>
         )}
 
         <ComponentDetails
