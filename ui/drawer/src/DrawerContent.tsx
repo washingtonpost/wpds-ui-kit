@@ -115,7 +115,7 @@ const StyledContainer = styled("div", {
         "&.wpds-drawer-enter-active": {
           opacity: 1,
           transform: "translateX(0%)",
-          transition: drawerTransition,
+          // transition: drawerTransition,
           "@reducedMotion": {
             transition: "none",
           },
@@ -127,7 +127,7 @@ const StyledContainer = styled("div", {
         "&.wpds-drawer-exit-active": {
           opacity: 0,
           transform: "translateX(-100%)",
-          transition: drawerTransition,
+          // transition: drawerTransition,
           "@reducedMotion": {
             transition: "none",
           },
