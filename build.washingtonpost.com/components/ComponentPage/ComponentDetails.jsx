@@ -106,6 +106,33 @@ export const ComponentDetails = ({
           color: "inherit",
         }}
       >
+        Storybook: &nbsp;
+        <CustomLink
+          css={{
+            color: theme.colors.accessible,
+            textDecoration: "underline",
+            fontWeight: theme.fontWeights.regular,
+            "&:focus": {
+              outlineColor: "$signal",
+              outlineStyle: "solid",
+              outlineOffset: "2px",
+              outlineWidth: "2px",
+            },
+          }}
+          href={`https://wpds-ui-kit-storybook.preview.now.washingtonpost.com/?path=/story/${current}`}
+          title={"View on Storybook"}
+        >
+          View on Storybook
+        </CustomLink>
+      </Box>
+      <Box
+        css={{
+          display: "flex",
+          fontWeight: "$bold",
+          textDecoration: "none",
+          color: "inherit",
+        }}
+      >
         Source: &nbsp;
         <CustomLink
           css={{
