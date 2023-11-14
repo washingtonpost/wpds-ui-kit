@@ -40,3 +40,4 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           exitOnceUploaded: true
           autoAcceptChanges: true
+          onlyChanged: true

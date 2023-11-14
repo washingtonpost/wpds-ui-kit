@@ -154,3 +154,4 @@ jobs:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           token: ${{ secrets.GITHUB_TOKEN }}
           exitOnceUploaded: true
+          onlyChanged: true
