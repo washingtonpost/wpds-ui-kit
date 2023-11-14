@@ -20,8 +20,10 @@ import { SelectContext } from "./Select";
 const StyledTrigger = styled(SelectPrimitive.Trigger, {
   ...sharedInputStyles,
 
-  display: "flex",
-  justifyContent: "space-between",
+  display: "grid",
+  gridTemplateAreas: "'label icon' 'value icon'",
+  gridTemplateColumns: "1fr auto",
+  gridTemplateRows: "0px auto",
   width: "100%",
 
   "&:focus-within": {
@@ -67,6 +69,7 @@ const IconWrapper = styled("div", {
       },
     },
   },
+  gridArea: "icon",
 });
 
 type SelectTriggerVariants = WPDS.VariantProps<typeof StyledTrigger>;

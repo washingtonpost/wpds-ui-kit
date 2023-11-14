@@ -17,6 +17,7 @@ const StyledValue = styled("div", {
   whiteSpace: "nowrap",
   overflow: "hidden",
   paddingInline: "none",
+  gridArea: "value",
 
   variants: {
     isDisabled: {

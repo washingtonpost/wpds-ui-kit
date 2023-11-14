@@ -7,14 +7,18 @@ import { InputLabel } from "@washingtonpost/wpds-input-label";
 import type * as WPDS from "@washingtonpost/wpds-theme";
 
 const LabelInputWrapper = styled("div", {
-  flex: 1,
   position: "relative",
+  gridArea: "label",
+  minWidth: 0,
 });
 
 // occupy space in the DOM so that the container
 // knows to take up the same space as the absolutely positioned label
 const HiddenSpanToOccupySpace = styled("span", {
+  maxWidth: "100%",
+  overflow: "hidden",
   visibility: "hidden",
+  whiteSpace: "nowrap",
 });
 
 const RequiredTag = styled("span", {
@@ -24,8 +28,12 @@ const RequiredTag = styled("span", {
 const TextInputLabel = styled(InputLabel, {
   whiteSpace: "nowrap",
   insetBlockStart: "0",
+  insetInlineStart: "0",
+  maxWidth: "100%",
+  overflow: "hidden",
   position: "absolute",
   cursor: "pointer",
+  textOverflow: "ellipsis",
   transform: `translateY(${theme.space["100"]})`,
   transition: theme.transitions.allFast,
   "@reducedMotion": {
@@ -39,7 +47,7 @@ const TextInputLabel = styled(InputLabel, {
     transform: `translateY(${theme.space["050"]})`,
 
     [`& + ${HiddenSpanToOccupySpace}`]: {
-      display: "none",
+      fontSize: theme.fontSizes["075"],
     },
   },
 
@@ -68,6 +76,8 @@ type SelectLabelProps = SelectLabelVariants & {
   children?: React.ReactNode;
   /** Overrides for the input text styles. Padding overrides affect the input container and  */
   css?: WPDS.CSS;
+  //** Used to provide tooltip for long labels that get truncated */
+  title?: string;
 };
 
 export const SelectLabel = ({ children, ...props }: SelectLabelProps) => {
