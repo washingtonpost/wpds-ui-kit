@@ -71,7 +71,10 @@ const WPDS = createStitches({
     maxXl: `(max-width: ${breakpoints.xl})`,
     maxXxl: `(max-width: ${breakpoints.xxl})`,
     reducedMotion: "(prefers-reduced-motion)",
-    hover: "(any-hover: hover)",
+    /**
+     * Only render hover styles on devices that support hover and fine pointers (mouse)
+     */
+    hover: "(hover: hover) and (pointer: fine)",
     dark: "(prefers-color-scheme: dark)",
     light: "(prefers-color-scheme: light)",
   },
