@@ -175,8 +175,10 @@ export const NavigationBar = ({ setMobileMenu, mobileMenuState, isClosed }) => {
                 marginTop: "-$100",
               },
               "@sm": {
-                top: "$100",
+                top: "18px",
                 right: "$400",
+                padding: "1px",
+                backgroundColor: theme.colors.secondary,
               },
             }}
           />
