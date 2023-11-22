@@ -123,6 +123,9 @@ yalc.lock
 .history/*
 .vscode/*
 
+# ignore build site vscode
+build.washingtonpost.com/.vscode/
+
 # ignore the storybook build 
 build.washingtonpost.com/public/storybook/**/*
 

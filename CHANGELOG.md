@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.17.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.16.2...v1.17.0) (2023-11-30)
+
+### Bug Fixes
+
+- prevent Input text from being highlighted when Input Text Area is the active page in guide ([70fdcd2](https://github.com/washingtonpost/wpds-ui-kit/commit/70fdcd278d9d8a6912aa0afb6fd4f3480df0abf2))
+- refactor select layout to deal with long label text and overflow ([d16e647](https://github.com/washingtonpost/wpds-ui-kit/commit/d16e647e5f52134ba24442d08b9b252005a1188d))
+- remove duplicate resources link in mobile nav ([b424332](https://github.com/washingtonpost/wpds-ui-kit/commit/b424332837dafd3ec9f46c4a94ef5e8a6ce4e275))
+- set max width on paragraphs ([6eca400](https://github.com/washingtonpost/wpds-ui-kit/commit/6eca4002a764e484188c33a4cacab7b03840003a))
+
+### Features
+
+- add link to storybook in component doc page ([#534](https://github.com/washingtonpost/wpds-ui-kit/issues/534)) ([bc97568](https://github.com/washingtonpost/wpds-ui-kit/commit/bc975682bb8a1b33ca598486702e931c596f11e4))
+- add onlyChanged to chromatic tests ([#535](https://github.com/washingtonpost/wpds-ui-kit/issues/535)) ([26a3764](https://github.com/washingtonpost/wpds-ui-kit/commit/26a37645fe7abb32776167d82674ebe8eabdd87b))
+
 ## [1.16.2](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.16.1...v1.16.2) (2023-11-08)
 
 ### Bug Fixes

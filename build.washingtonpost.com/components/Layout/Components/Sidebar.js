@@ -259,9 +259,7 @@ export default function Sidebar({ navigation, setMobileMenu }) {
                                 onClick={() => setMobileMenu(false)}
                                 key={index}
                                 isCurrent={
-                                  router.asPath.includes(item.slug)
-                                    ? "active"
-                                    : ""
+                                  router.asPath === item.slug ? "active" : ""
                                 }
                                 disabled={item.data.status === "Coming soon"}
                               >
