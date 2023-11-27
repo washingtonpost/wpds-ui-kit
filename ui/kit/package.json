@@ -85,6 +85,7 @@
     "@washingtonpost/wpds-carousel": "*",
     "@washingtonpost/wpds-checkbox": "*",
     "@washingtonpost/wpds-container": "*",
+    "@washingtonpost/wpds-dialog": "*",
     "@washingtonpost/wpds-divider": "*",
     "@washingtonpost/wpds-drawer": "*",
     "@washingtonpost/wpds-error-message": "*",
