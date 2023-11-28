@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 
-import { css, styled, VisuallyHidden } from "@washingtonpost/wpds-ui-kit";
+import { css, theme, Button, Icon } from "@washingtonpost/wpds-ui-kit";
+import { Sun, Moon } from "@washingtonpost/wpds-assets";
 
 const hasWindow = () => {
   return typeof window !== "undefined";
@@ -21,16 +22,6 @@ export const ThemeToggle = (props) => {
     setTheme(targetTheme);
   };
 
-  const Button = styled("button", {
-    appearance: "none",
-    background: "none",
-    cursor: "pointer",
-    padding: 0,
-    margin: 0,
-    border: 0,
-    fontSize: "$150",
-  });
-
   const showOnDarkTheme = css({
     display: "none",
     "@dark": {
@@ -46,16 +37,45 @@ export const ThemeToggle = (props) => {
   });
 
   return (
-    <Button css={props.css} onClick={toggleTheme} aria-label="Switch theme">
+    <Button
+      css={{
+        border: "none",
+        paddingBlock: theme.space["025"],
+        paddingInline: 0,
+        "&:hover": { backgroundColor: "transparent" },
+        ...props.css,
+      }}
+      onClick={toggleTheme}
+      aria-label="Switch theme"
+      variant="primary"
+      icon="center"
+      density="compact"
+      isOutline
+    >
       <span className={showOnDarkTheme()}>
-        {env === "browser" && resolvedTheme === "light" ? "🌞" : "🌕"}
-        {env === "server" && "🌕"}
+        {env === "browser" && (
+          <Icon label="" size="150">
+            {resolvedTheme === "light" ? <Moon /> : <Sun />}
+          </Icon>
+        )}
+        {env === "server" && (
+          <Icon label="" size="150">
+            <Sun />
+          </Icon>
+        )}
       </span>
       <span className={showOnLightTheme()}>
-        {env === "browser" && resolvedTheme === "light" ? "🌞" : "🌕"}
-        {env === "server" && "🌞"}
+        {env === "browser" && (
+          <Icon label="" size="150">
+            {resolvedTheme === "light" ? <Moon /> : <Sun />}
+          </Icon>
+        )}
+        {env === "server" && (
+          <Icon label="" size="150">
+            <Moon />
+          </Icon>
+        )}
       </span>
-      <VisuallyHidden>Switch theme</VisuallyHidden>
     </Button>
   );
 };
