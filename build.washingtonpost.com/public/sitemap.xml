@@ -9,10 +9,6 @@
   </url>
 
   <url>
-    <loc>https://build.washingtonpost.com/components/Dialog</loc>
-  </url>
-
-  <url>
     <loc>https://build.washingtonpost.com/components/accordion</loc>
   </url>
 
@@ -58,6 +54,10 @@
 
   <url>
     <loc>https://build.washingtonpost.com/components/container</loc>
+  </url>
+
+  <url>
+    <loc>https://build.washingtonpost.com/components/dialog</loc>
   </url>
 
   <url>
