@@ -20,6 +20,7 @@ export * from "@washingtonpost/wpds-radio-group";
 export * from "@washingtonpost/wpds-helper-text";
 export * from "@washingtonpost/wpds-error-message";
 export * from "@washingtonpost/wpds-input-label";
+export * from "@washingtonpost/wpds-input-search";
 export * from "@washingtonpost/wpds-input-shared";
 export * from "@washingtonpost/wpds-input-password";
 export * from "@washingtonpost/wpds-input-text";
