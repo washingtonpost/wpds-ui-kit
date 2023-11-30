@@ -7,10 +7,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 **Note:** Version bump only for package @washingtonpost/wpds-input-textarea
 
-
-
-
-
 ## [1.16.2](https://github.com/WPMedia/wpds-ui-kit/compare/v1.16.1...v1.16.2) (2023-11-08)
 
 **Note:** Version bump only for package @washingtonpost/wpds-input-textarea

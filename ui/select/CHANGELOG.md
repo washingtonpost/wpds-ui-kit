@@ -5,14 +5,9 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 # [1.17.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.16.2...v1.17.0) (2023-11-30)
 
-
 ### Bug Fixes
 
-* refactor select layout to deal with long label text and overflow ([d16e647](https://github.com/washingtonpost/wpds-ui-kit/commit/d16e647e5f52134ba24442d08b9b252005a1188d))
-
-
-
-
+- refactor select layout to deal with long label text and overflow ([d16e647](https://github.com/washingtonpost/wpds-ui-kit/commit/d16e647e5f52134ba24442d08b9b252005a1188d))
 
 ## [1.16.2](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.16.1...v1.16.2) (2023-11-08)
 
