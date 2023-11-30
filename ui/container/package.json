@@ -1,6 +1,6 @@
 {
   "name": "@washingtonpost/wpds-container",
-  "version": "1.16.2",
+  "version": "1.17.0",
   "description": "The container centers your content horizontally. It's the most basic layout element.",
   "author": "WPDS Support <wpds@washpost.com>",
   "homepage": "https://github.com/washingtonpost/wpds-ui-kit#readme",
@@ -40,7 +40,7 @@
     "react": "^16.8.6 || ^17.0.2"
   },
   "dependencies": {
-    "@washingtonpost/wpds-theme": "1.16.2",
+    "@washingtonpost/wpds-theme": "1.17.0",
     "react": "^16.8.6 || ^17.0.2"
   },
   "gitHead": "9f9f1c0f89c07204d43d3a73451eb46edb8840ec"

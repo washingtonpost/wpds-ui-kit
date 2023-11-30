@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.17.0](https://github.com/washingtonpost/wpds-docs/compare/v1.16.2...v1.17.0) (2023-11-30)
+
+
+### Bug Fixes
+
+* prevent Input text from being highlighted when Input Text Area is the active page in guide ([70fdcd2](https://github.com/washingtonpost/wpds-docs/commit/70fdcd278d9d8a6912aa0afb6fd4f3480df0abf2))
+* remove duplicate resources link in mobile nav ([b424332](https://github.com/washingtonpost/wpds-docs/commit/b424332837dafd3ec9f46c4a94ef5e8a6ce4e275))
+* set max width on paragraphs ([6eca400](https://github.com/washingtonpost/wpds-docs/commit/6eca4002a764e484188c33a4cacab7b03840003a))
+
+
+### Features
+
+* add link to storybook in component doc page ([#534](https://github.com/washingtonpost/wpds-docs/issues/534)) ([bc97568](https://github.com/washingtonpost/wpds-docs/commit/bc975682bb8a1b33ca598486702e931c596f11e4))
+
+
+
+
+
 ## [1.16.2](https://github.com/washingtonpost/wpds-docs/compare/v1.16.1...v1.16.2) (2023-11-08)
 
 **Note:** Version bump only for package @washingtonpost/wpds-docs
