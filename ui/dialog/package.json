@@ -41,9 +41,11 @@
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.0.5",
+    "@radix-ui/react-use-controllable-state": "^1.0.1",
     "@washingtonpost/wpds-assets": "^1.23.1",
     "@washingtonpost/wpds-button": "1.16.2",
     "@washingtonpost/wpds-icon": "1.16.2",
-    "@washingtonpost/wpds-theme": "*"
+    "@washingtonpost/wpds-theme": "1.16.2",
+    "react-transition-group": "^4.4.5"
   }
 }

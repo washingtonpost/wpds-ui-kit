@@ -1,17 +1,14 @@
 import * as React from "react";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
-import { theme, styled, keyframes } from "@washingtonpost/wpds-theme";
+import { theme, styled } from "@washingtonpost/wpds-theme";
+import { CSSTransition } from "react-transition-group";
+import { DialogContext } from "./DialogRoot";
 
 import type { DialogContentProps as RadixDialogContentProps } from "@radix-ui/react-dialog";
 import type { StandardLonghandProperties } from "@stitches/react/types/css";
 import type * as WPDS from "@washingtonpost/wpds-theme";
 
 const NAME = "DialogContent";
-
-const contentShow = keyframes({
-  "0%": { opacity: 0, transform: "translate(-50%, -47%)" },
-  "100%": { opacity: 1, transform: "translate(-50%, -50%)" },
-});
 
 const StyledContent = styled(DialogPrimitive.Content, {
   borderRadius: theme.radii["025"],
@@ -26,14 +23,40 @@ const StyledContent = styled(DialogPrimitive.Content, {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  animation: `${contentShow} ${theme.transitions.normal} ease-out`,
-  "@reducedMotion": {
-    animation: "none",
+  "&.wpds-dialog-content-enter, &.wpds-dialog-content-appear": {
+    transform: "translate(-50%, -47%)",
+    opacity: 0,
+  },
+  "&.wpds-dialog-content-enter-active, &.wpds-dialog-content-appear-active": {
+    transform: "translate(-50%, -50%)",
+    opacity: 1,
+    transition: `
+      transform ${theme.transitions.normal} ${theme.transitions.inOut}, 
+      opacity ${theme.transitions.normal} ${theme.transitions.inOut}
+     `,
+    "@reducedMotion": {
+      transition: "none",
+    },
+  },
+  "&.wpds-dialog-content-exit": {
+    transform: "translate(-50%, -50%)",
+    opacity: 1,
+  },
+  "&.wpds-dialog-content-exit-active": {
+    transform: "translate(-50%, -50%) scale(0.97)",
+    opacity: 0,
+    transition: `
+      transform ${theme.transitions.fast} ${theme.transitions.inOut}, 
+      opacity ${theme.transitions.fast} ${theme.transitions.inOut}
+    `,
+    "@reducedMotion": {
+      transition: "none",
+    },
   },
 });
 
 export type DialogContentProps = {
-  /** Css background color of overlay*/
+  /** Css background color of content*/
   backgroundColor?:
     | StandardLonghandProperties["backgroundColor"]
     | typeof theme.colors[keyof typeof theme.colors];
@@ -60,6 +83,7 @@ export const DialogContent = React.forwardRef<
       backgroundColor = theme.colors.secondary,
       children,
       css,
+      forceMount = true,
       width = "500px",
       height = "300px",
       zIndex = theme.zIndices.offer,
@@ -67,14 +91,38 @@ export const DialogContent = React.forwardRef<
     }: DialogContentProps,
     ref
   ) => {
+    const { open } = React.useContext(DialogContext);
+
+    const internalRef = React.useRef(null);
+    React.useEffect(() => {
+      if (!ref) return;
+      typeof ref === "function"
+        ? ref(internalRef.current)
+        : (ref.current = internalRef.current);
+    }, [ref, internalRef]);
+
     return (
-      <StyledContent
-        css={{ backgroundColor, width, height, zIndex, ...css }}
-        {...props}
-        ref={ref}
+      <CSSTransition
+        mountOnEnter
+        unmountOnExit
+        appear
+        nodeRef={internalRef}
+        in={open}
+        timeout={{
+          enter: 300,
+          exit: 200,
+        }}
+        classNames="wpds-dialog-content"
       >
-        {children}
-      </StyledContent>
+        <StyledContent
+          css={{ backgroundColor, width, height, zIndex, ...css }}
+          forceMount={forceMount}
+          {...props}
+          ref={internalRef}
+        >
+          {children}
+        </StyledContent>
+      </CSSTransition>
     );
   }
 );
