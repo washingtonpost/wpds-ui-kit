@@ -1,6 +1,6 @@
 ---
 title: Navigation Menu
-description: A list of navigation links opened from a trigger point.
+description: A group of text links used for navigating between related pages or individual sections within a page.
 component: NavigationMenu
 status: Alpha
 openSourceLink: https://www.radix-ui.com/docs/primitives/components/navigation-menu
@@ -15,88 +15,31 @@ openSourceLink: https://www.radix-ui.com/docs/primitives/components/navigation-m
   caption="Note: Image not to scale"
 />
 
-1. Trigger
-2. Container
-3. Links
+1. Menu link (text label / trigger)
+2. Submenu indicator
+3. Active state (bold)
 
 ---
 
 ## Options
 
-### Trigger
+### Orientation
 
-Trigger a navigation menu with a call to action, such as a button, link, icon, or other control.
+Navigation menu supports both `horizontal` and `vertical` layout orientations. In `horizontal` orientation, menu links are **baseline-aligned**, ordered from **left to right**. In `vertical` orientation, menu links are **left-aligned**, ordered from **top to bottom**.
 
 ```jsx withPreview
 <Box css={{ display: "flex", gap: "$100", height: "210px" }}>
-  <NavigationMenu.Root>
+  <NavigationMenu.Root orientation="horizontal">
     <NavigationMenu.List>
       <NavigationMenu.Item>
-        <NavigationMenu.Trigger asChild icon="left">
-          <Button>
-            <Icon label="">
-              <Menu />
-            </Icon>
-            {`Menu`}
-          </Button>
-        </NavigationMenu.Trigger>
-        <NavigationMenu.Content>
-          <NavigationMenu.Sub orientation="vertical">
-            <NavigationMenu.List>
-              <NavigationMenu.Item>
-                <NavigationMenu.Link href="#">Apples</NavigationMenu.Link>
-              </NavigationMenu.Item>
-              <NavigationMenu.Item>
-                <NavigationMenu.Link href="#">Bananas</NavigationMenu.Link>
-              </NavigationMenu.Item>
-              <NavigationMenu.Item>
-                <NavigationMenu.Link href="#">Oranges</NavigationMenu.Link>
-              </NavigationMenu.Item>
-              <NavigationMenu.Item>
-                <NavigationMenu.Link href="#">Pears</NavigationMenu.Link>
-              </NavigationMenu.Item>
-            </NavigationMenu.List>
-          </NavigationMenu.Sub>
-        </NavigationMenu.Content>
+        <NavigationMenu.Link href="#">Horizontal 1</NavigationMenu.Link>
       </NavigationMenu.Item>
-    </NavigationMenu.List>
-  </NavigationMenu.Root>
-  <NavigationMenu.Root>
-    <NavigationMenu.List>
       <NavigationMenu.Item>
-        <NavigationMenu.Trigger asChild icon="center">
-          <Button>
-            <Icon label="Menu">
-              <Menu />
-            </Icon>
-          </Button>
-        </NavigationMenu.Trigger>
-        <NavigationMenu.Content>
-          <NavigationMenu.Sub orientation="vertical">
-            <NavigationMenu.List>
-              <NavigationMenu.Item>
-                <NavigationMenu.Link href="#">Apples</NavigationMenu.Link>
-              </NavigationMenu.Item>
-              <NavigationMenu.Item>
-                <NavigationMenu.Link href="#">Bananas</NavigationMenu.Link>
-              </NavigationMenu.Item>
-              <NavigationMenu.Item>
-                <NavigationMenu.Link href="#">Oranges</NavigationMenu.Link>
-              </NavigationMenu.Item>
-              <NavigationMenu.Item>
-                <NavigationMenu.Link href="#">Pears</NavigationMenu.Link>
-              </NavigationMenu.Item>
-            </NavigationMenu.List>
-          </NavigationMenu.Sub>
-        </NavigationMenu.Content>
+        <NavigationMenu.Link href="#">Horizontal 2</NavigationMenu.Link>
       </NavigationMenu.Item>
-    </NavigationMenu.List>
-  </NavigationMenu.Root>
-  <NavigationMenu.Root>
-    <NavigationMenu.List>
       <NavigationMenu.Item>
-        <NavigationMenu.Trigger css={{ fontWeight: "$bold" }}>
-          {`Link`}
+        <NavigationMenu.Trigger>
+          {`Horizontal 3`}
           <Icon
             label=""
             css={{
@@ -111,16 +54,118 @@ Trigger a navigation menu with a call to action, such as a button, link, icon, o
           <NavigationMenu.Sub orientation="vertical">
             <NavigationMenu.List>
               <NavigationMenu.Item>
-                <NavigationMenu.Link href="#">Apples</NavigationMenu.Link>
+                <NavigationMenu.Link href="#">Option</NavigationMenu.Link>
+              </NavigationMenu.Item>
+            </NavigationMenu.List>
+          </NavigationMenu.Sub>
+        </NavigationMenu.Content>
+      </NavigationMenu.Item>
+      <NavigationMenu.Item>
+        <NavigationMenu.Link href="#">Horizontal 4</NavigationMenu.Link>
+      </NavigationMenu.Item>
+      <NavigationMenu.Item>
+        <NavigationMenu.Link href="#">Horizontal 5</NavigationMenu.Link>
+      </NavigationMenu.Item>
+    </NavigationMenu.List>
+  </NavigationMenu.Root>
+  <NavigationMenu.Root orientation="vertical">
+    <NavigationMenu.List>
+      <NavigationMenu.Item>
+        <NavigationMenu.Link href="#">Vertical 1</NavigationMenu.Link>
+      </NavigationMenu.Item>
+      <NavigationMenu.Item>
+        <NavigationMenu.Link href="#">Vertical 2</NavigationMenu.Link>
+      </NavigationMenu.Item>
+      <NavigationMenu.Item>
+        <NavigationMenu.Trigger>
+          {`Vertical 3`}
+          <Icon
+            label=""
+            css={{
+              transition: "transform $fast $inOut",
+              "[data-state=open] &": { transform: "rotate(-270deg)" },
+            }}
+          >
+            <ChevronRight />
+          </Icon>
+        </NavigationMenu.Trigger>
+        <NavigationMenu.Content>
+          <NavigationMenu.Sub orientation="vertical">
+            <NavigationMenu.List>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">Option</NavigationMenu.Link>
+              </NavigationMenu.Item>
+            </NavigationMenu.List>
+          </NavigationMenu.Sub>
+        </NavigationMenu.Content>
+      </NavigationMenu.Item>
+      <NavigationMenu.Item>
+        <NavigationMenu.Link href="#">Vertical 4</NavigationMenu.Link>
+      </NavigationMenu.Item>
+      <NavigationMenu.Item>
+        <NavigationMenu.Link href="#">Vertical 5</NavigationMenu.Link>
+      </NavigationMenu.Item>
+    </NavigationMenu.List>
+  </NavigationMenu.Root>
+</Box>
+```
+
+### Submenus
+
+Navigation menu supports one level of sub-navigation.
+
+```jsx withPreview
+<Box css={{ height: "210px", display: "flex" }}>
+  <NavigationMenu.Root>
+    <NavigationMenu.List>
+      <NavigationMenu.Item>
+        <NavigationMenu.Trigger>{`Ohio`}</NavigationMenu.Trigger>
+      </NavigationMenu.Item>
+    </NavigationMenu.List>
+  </NavigationMenu.Root>
+  <NavigationMenu.Root>
+    <NavigationMenu.List>
+      <NavigationMenu.Item>
+        <NavigationMenu.Trigger>{`Rhode Island`}</NavigationMenu.Trigger>
+      </NavigationMenu.Item>
+    </NavigationMenu.List>
+  </NavigationMenu.Root>
+  <NavigationMenu.Root>
+    <NavigationMenu.List>
+      <NavigationMenu.Item>
+        <NavigationMenu.Trigger>{`Wisconsin`}</NavigationMenu.Trigger>
+      </NavigationMenu.Item>
+    </NavigationMenu.List>
+  </NavigationMenu.Root>
+  <NavigationMenu.Root>
+    <NavigationMenu.List>
+      <NavigationMenu.Item>
+        <NavigationMenu.Trigger>
+          {`California`}
+          <Icon
+            label=""
+            css={{
+              transition: "transform $fast $inOut",
+              "[data-state=open] &": { transform: "rotate(-180deg)" },
+            }}
+          >
+            <ChevronDown />
+          </Icon>
+        </NavigationMenu.Trigger>
+        <NavigationMenu.Content>
+          <NavigationMenu.Sub orientation="vertical">
+            <NavigationMenu.List>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">Oakland</NavigationMenu.Link>
               </NavigationMenu.Item>
               <NavigationMenu.Item>
-                <NavigationMenu.Link href="#">Bananas</NavigationMenu.Link>
+                <NavigationMenu.Link href="#">{`San Francisco`}</NavigationMenu.Link>
               </NavigationMenu.Item>
               <NavigationMenu.Item>
-                <NavigationMenu.Link href="#">Oranges</NavigationMenu.Link>
+                <NavigationMenu.Link href="#">Los Angeles</NavigationMenu.Link>
               </NavigationMenu.Item>
               <NavigationMenu.Item>
-                <NavigationMenu.Link href="#">Pears</NavigationMenu.Link>
+                <NavigationMenu.Link href="#">San Diego</NavigationMenu.Link>
               </NavigationMenu.Item>
             </NavigationMenu.List>
           </NavigationMenu.Sub>
@@ -128,539 +173,42 @@ Trigger a navigation menu with a call to action, such as a button, link, icon, o
       </NavigationMenu.Item>
     </NavigationMenu.List>
   </NavigationMenu.Root>
-</Box>
-```
-
-### Position
-
-The display position can be defined directionally based on the location of the trigger.
-
-```jsx withPreview demoHeight="1235"
-<Box
-  css={{
-    width: "100vw",
-    maxWidth: "560px",
-    height: "100vh",
-    paddingBlock: "$150",
-  }}
->
-  <Box
-    as="h2"
-    css={{
-      fontSize: "$125",
-      fontWeight: "$regular",
-      fontStyle: "italic",
-      lineHeight: "$200",
-      marginBlockStart: "0",
-      marginBlockEnd: "$050",
-      color: "#94538c",
-    }}
-  >
-    {`Bottom`}
-  </Box>
-  <Box
-    css={{ display: "flex", justifyContent: "space-between", height: "225px" }}
-  >
-    <NavigationMenu.Root>
-      <NavigationMenu.List>
-        <NavigationMenu.Item>
-          <NavigationMenu.Trigger asChild icon="left">
-            <Button>
-              <Icon label="">
-                <Menu />
-              </Icon>
-              {`Menu`}
-            </Button>
-          </NavigationMenu.Trigger>
-          <NavigationMenu.Content>
-            <NavigationMenu.Sub orientation="vertical">
-              <NavigationMenu.List>
-                <NavigationMenu.Item>
-                  <NavigationMenu.Link href="#">Apples</NavigationMenu.Link>
-                </NavigationMenu.Item>
-                <NavigationMenu.Item>
-                  <NavigationMenu.Link href="#">Bananas</NavigationMenu.Link>
-                </NavigationMenu.Item>
-                <NavigationMenu.Item>
-                  <NavigationMenu.Link href="#">Oranges</NavigationMenu.Link>
-                </NavigationMenu.Item>
-                <NavigationMenu.Item>
-                  <NavigationMenu.Link href="#">Pears</NavigationMenu.Link>
-                </NavigationMenu.Item>
-              </NavigationMenu.List>
-            </NavigationMenu.Sub>
-          </NavigationMenu.Content>
-        </NavigationMenu.Item>
-      </NavigationMenu.List>
-    </NavigationMenu.Root>
-    <NavigationMenu.Root>
-      <NavigationMenu.List>
-        <NavigationMenu.Item>
-          <NavigationMenu.Trigger asChild icon="left">
-            <Button>
-              <Icon label="">
-                <Menu />
-              </Icon>
-              {`Menu`}
-            </Button>
-          </NavigationMenu.Trigger>
-          <NavigationMenu.Content align="center">
-            <NavigationMenu.Sub orientation="vertical">
-              <NavigationMenu.List>
-                <NavigationMenu.Item>
-                  <NavigationMenu.Link href="#">Apples</NavigationMenu.Link>
-                </NavigationMenu.Item>
-                <NavigationMenu.Item>
-                  <NavigationMenu.Link href="#">Bananas</NavigationMenu.Link>
-                </NavigationMenu.Item>
-                <NavigationMenu.Item>
-                  <NavigationMenu.Link href="#">Oranges</NavigationMenu.Link>
-                </NavigationMenu.Item>
-                <NavigationMenu.Item>
-                  <NavigationMenu.Link href="#">Pears</NavigationMenu.Link>
-                </NavigationMenu.Item>
-              </NavigationMenu.List>
-            </NavigationMenu.Sub>
-          </NavigationMenu.Content>
-        </NavigationMenu.Item>
-      </NavigationMenu.List>
-    </NavigationMenu.Root>
-    <NavigationMenu.Root>
-      <NavigationMenu.List>
-        <NavigationMenu.Item>
-          <NavigationMenu.Trigger asChild icon="left">
-            <Button>
-              <Icon label="">
-                <Menu />
-              </Icon>
-              {`Menu`}
-            </Button>
-          </NavigationMenu.Trigger>
-          <NavigationMenu.Content align="end">
-            <NavigationMenu.Sub orientation="vertical">
-              <NavigationMenu.List>
-                <NavigationMenu.Item>
-                  <NavigationMenu.Link href="#">Apples</NavigationMenu.Link>
-                </NavigationMenu.Item>
-                <NavigationMenu.Item>
-                  <NavigationMenu.Link href="#">Bananas</NavigationMenu.Link>
-                </NavigationMenu.Item>
-                <NavigationMenu.Item>
-                  <NavigationMenu.Link href="#">Oranges</NavigationMenu.Link>
-                </NavigationMenu.Item>
-                <NavigationMenu.Item>
-                  <NavigationMenu.Link href="#">Pears</NavigationMenu.Link>
-                </NavigationMenu.Item>
-              </NavigationMenu.List>
-            </NavigationMenu.Sub>
-          </NavigationMenu.Content>
-        </NavigationMenu.Item>
-      </NavigationMenu.List>
-    </NavigationMenu.Root>
-  </Box>
-  <Divider css={{ backgroundColor: "$subtle" }} />
-  <Box
-    as="h2"
-    css={{
-      fontSize: "$125",
-      fontWeight: "$regular",
-      fontStyle: "italic",
-      lineHeight: "$200",
-      marginBlockStart: "0",
-      marginBlockEnd: "0",
-      color: "#94538c",
-    }}
-  >
-    {`Top`}
-  </Box>
-  <Box
-    css={{
-      display: "flex",
-      justifyContent: "space-between",
-      alignItems: "flex-end",
-      height: "225px",
-      marginBlockEnd: "$100",
-    }}
-  >
-    <NavigationMenu.Root>
-      <NavigationMenu.List>
-        <NavigationMenu.Item>
-          <NavigationMenu.Trigger asChild icon="left">
-            <Button>
-              <Icon label="">
-                <Menu />
-              </Icon>
-              {`Menu`}
-            </Button>
-          </NavigationMenu.Trigger>
-          <NavigationMenu.Content side="top">
-            <NavigationMenu.Sub orientation="vertical">
-              <NavigationMenu.List>
-                <NavigationMenu.Item>
-                  <NavigationMenu.Link href="#">Apples</NavigationMenu.Link>
-                </NavigationMenu.Item>
-                <NavigationMenu.Item>
-                  <NavigationMenu.Link href="#">Bananas</NavigationMenu.Link>
-                </NavigationMenu.Item>
-                <NavigationMenu.Item>
-                  <NavigationMenu.Link href="#">Oranges</NavigationMenu.Link>
-                </NavigationMenu.Item>
-                <NavigationMenu.Item>
-                  <NavigationMenu.Link href="#">Pears</NavigationMenu.Link>
-                </NavigationMenu.Item>
-              </NavigationMenu.List>
-            </NavigationMenu.Sub>
-          </NavigationMenu.Content>
-        </NavigationMenu.Item>
-      </NavigationMenu.List>
-    </NavigationMenu.Root>
-    <NavigationMenu.Root>
-      <NavigationMenu.List>
-        <NavigationMenu.Item>
-          <NavigationMenu.Trigger asChild icon="left">
-            <Button>
-              <Icon label="">
-                <Menu />
-              </Icon>
-              {`Menu`}
-            </Button>
-          </NavigationMenu.Trigger>
-          <NavigationMenu.Content side="top" align="center">
-            <NavigationMenu.Sub orientation="vertical">
-              <NavigationMenu.List>
-                <NavigationMenu.Item>
-                  <NavigationMenu.Link href="#">Apples</NavigationMenu.Link>
-                </NavigationMenu.Item>
-                <NavigationMenu.Item>
-                  <NavigationMenu.Link href="#">Bananas</NavigationMenu.Link>
-                </NavigationMenu.Item>
-                <NavigationMenu.Item>
-                  <NavigationMenu.Link href="#">Oranges</NavigationMenu.Link>
-                </NavigationMenu.Item>
-                <NavigationMenu.Item>
-                  <NavigationMenu.Link href="#">Pears</NavigationMenu.Link>
-                </NavigationMenu.Item>
-              </NavigationMenu.List>
-            </NavigationMenu.Sub>
-          </NavigationMenu.Content>
-        </NavigationMenu.Item>
-      </NavigationMenu.List>
-    </NavigationMenu.Root>
-    <NavigationMenu.Root>
-      <NavigationMenu.List>
-        <NavigationMenu.Item>
-          <NavigationMenu.Trigger asChild icon="left">
-            <Button>
-              <Icon label="">
-                <Menu />
-              </Icon>
-              {`Menu`}
-            </Button>
-          </NavigationMenu.Trigger>
-          <NavigationMenu.Content side="top" align="end">
-            <NavigationMenu.Sub orientation="vertical">
-              <NavigationMenu.List>
-                <NavigationMenu.Item>
-                  <NavigationMenu.Link href="#">Apples</NavigationMenu.Link>
-                </NavigationMenu.Item>
-                <NavigationMenu.Item>
-                  <NavigationMenu.Link href="#">Bananas</NavigationMenu.Link>
-                </NavigationMenu.Item>
-                <NavigationMenu.Item>
-                  <NavigationMenu.Link href="#">Oranges</NavigationMenu.Link>
-                </NavigationMenu.Item>
-                <NavigationMenu.Item>
-                  <NavigationMenu.Link href="#">Pears</NavigationMenu.Link>
-                </NavigationMenu.Item>
-              </NavigationMenu.List>
-            </NavigationMenu.Sub>
-          </NavigationMenu.Content>
-        </NavigationMenu.Item>
-      </NavigationMenu.List>
-    </NavigationMenu.Root>
-  </Box>
-  <Divider css={{ backgroundColor: "$subtle" }} />
-  <Box css={{ display: "flex" }}>
-    <Box
-      css={{
-        flex: 1,
-        display: "flex",
-        flexDirection: "column",
-        paddingInlineEnd: "$100",
-      }}
-    >
-      <Box
-        as="h2"
-        css={{
-          fontSize: "$125",
-          fontWeight: "$regular",
-          fontStyle: "italic",
-          lineHeight: "$200",
-          marginBlockStart: "0",
-          marginBlockEnd: "$100",
-          color: "#94538c",
-        }}
-      >
-        {`Left`}
-      </Box>
-      <Box
-        css={{
-          flex: "0 0 320px",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
-          marginBlockStart: "120px",
-          marginInlineStart: "154px",
-        }}
-      >
-        <NavigationMenu.Root>
-          <NavigationMenu.List>
-            <NavigationMenu.Item>
-              <NavigationMenu.Trigger asChild icon="left">
-                <Button>
-                  <Icon label="">
-                    <Menu />
-                  </Icon>
-                  {`Menu`}
-                </Button>
-              </NavigationMenu.Trigger>
-              <NavigationMenu.Content side="left" align="end">
-                <NavigationMenu.Sub orientation="vertical">
-                  <NavigationMenu.List>
-                    <NavigationMenu.Item>
-                      <NavigationMenu.Link href="#">Apples</NavigationMenu.Link>
-                    </NavigationMenu.Item>
-                    <NavigationMenu.Item>
-                      <NavigationMenu.Link href="#">
-                        Bananas
-                      </NavigationMenu.Link>
-                    </NavigationMenu.Item>
-                    <NavigationMenu.Item>
-                      <NavigationMenu.Link href="#">
-                        Oranges
-                      </NavigationMenu.Link>
-                    </NavigationMenu.Item>
-                    <NavigationMenu.Item>
-                      <NavigationMenu.Link href="#">Pears</NavigationMenu.Link>
-                    </NavigationMenu.Item>
-                  </NavigationMenu.List>
-                </NavigationMenu.Sub>
-              </NavigationMenu.Content>
-            </NavigationMenu.Item>
-          </NavigationMenu.List>
-        </NavigationMenu.Root>
-        <NavigationMenu.Root>
-          <NavigationMenu.List>
-            <NavigationMenu.Item>
-              <NavigationMenu.Trigger asChild icon="left">
-                <Button>
-                  <Icon label="">
-                    <Menu />
-                  </Icon>
-                  {`Menu`}
-                </Button>
-              </NavigationMenu.Trigger>
-              <NavigationMenu.Content side="left" align="center">
-                <NavigationMenu.Sub orientation="vertical">
-                  <NavigationMenu.List>
-                    <NavigationMenu.Item>
-                      <NavigationMenu.Link href="#">Apples</NavigationMenu.Link>
-                    </NavigationMenu.Item>
-                    <NavigationMenu.Item>
-                      <NavigationMenu.Link href="#">
-                        Bananas
-                      </NavigationMenu.Link>
-                    </NavigationMenu.Item>
-                    <NavigationMenu.Item>
-                      <NavigationMenu.Link href="#">
-                        Oranges
-                      </NavigationMenu.Link>
-                    </NavigationMenu.Item>
-                    <NavigationMenu.Item>
-                      <NavigationMenu.Link href="#">Pears</NavigationMenu.Link>
-                    </NavigationMenu.Item>
-                  </NavigationMenu.List>
-                </NavigationMenu.Sub>
-              </NavigationMenu.Content>
-            </NavigationMenu.Item>
-          </NavigationMenu.List>
-        </NavigationMenu.Root>
-        <NavigationMenu.Root>
-          <NavigationMenu.List>
-            <NavigationMenu.Item>
-              <NavigationMenu.Trigger asChild icon="left">
-                <Button>
-                  <Icon label="">
-                    <Menu />
-                  </Icon>
-                  {`Menu`}
-                </Button>
-              </NavigationMenu.Trigger>
-              <NavigationMenu.Content side="left">
-                <NavigationMenu.Sub orientation="vertical">
-                  <NavigationMenu.List>
-                    <NavigationMenu.Item>
-                      <NavigationMenu.Link href="#">Apples</NavigationMenu.Link>
-                    </NavigationMenu.Item>
-                    <NavigationMenu.Item>
-                      <NavigationMenu.Link href="#">
-                        Bananas
-                      </NavigationMenu.Link>
-                    </NavigationMenu.Item>
-                    <NavigationMenu.Item>
-                      <NavigationMenu.Link href="#">
-                        Oranges
-                      </NavigationMenu.Link>
-                    </NavigationMenu.Item>
-                    <NavigationMenu.Item>
-                      <NavigationMenu.Link href="#">Pears</NavigationMenu.Link>
-                    </NavigationMenu.Item>
-                  </NavigationMenu.List>
-                </NavigationMenu.Sub>
-              </NavigationMenu.Content>
-            </NavigationMenu.Item>
-          </NavigationMenu.List>
-        </NavigationMenu.Root>
-      </Box>
-    </Box>
-    <Box css={{ flex: 1, display: "flex", flexDirection: "column" }}>
-      <Box
-        as="h2"
-        css={{
-          fontSize: "$125",
-          fontWeight: "$regular",
-          fontStyle: "italic",
-          lineHeight: "$200",
-          marginBlockStart: "0",
-          marginBlockEnd: "$100",
-          textAlign: "right",
-          color: "#94538c",
-        }}
-      >
-        {`Right`}
-      </Box>
-      <Box
-        css={{
-          flex: "0 0 320px",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
-          alignItems: "flex-end",
-          marginBlockStart: "120px",
-          marginInlineEnd: "154px",
-        }}
-      >
-        <NavigationMenu.Root>
-          <NavigationMenu.List>
-            <NavigationMenu.Item>
-              <NavigationMenu.Trigger asChild icon="left">
-                <Button>
-                  <Icon label="">
-                    <Menu />
-                  </Icon>
-                  {`Menu`}
-                </Button>
-              </NavigationMenu.Trigger>
-              <NavigationMenu.Content side="right" align="end">
-                <NavigationMenu.Sub orientation="vertical">
-                  <NavigationMenu.List>
-                    <NavigationMenu.Item>
-                      <NavigationMenu.Link href="#">Apples</NavigationMenu.Link>
-                    </NavigationMenu.Item>
-                    <NavigationMenu.Item>
-                      <NavigationMenu.Link href="#">
-                        Bananas
-                      </NavigationMenu.Link>
-                    </NavigationMenu.Item>
-                    <NavigationMenu.Item>
-                      <NavigationMenu.Link href="#">
-                        Oranges
-                      </NavigationMenu.Link>
-                    </NavigationMenu.Item>
-                    <NavigationMenu.Item>
-                      <NavigationMenu.Link href="#">Pears</NavigationMenu.Link>
-                    </NavigationMenu.Item>
-                  </NavigationMenu.List>
-                </NavigationMenu.Sub>
-              </NavigationMenu.Content>
-            </NavigationMenu.Item>
-          </NavigationMenu.List>
-        </NavigationMenu.Root>
-        <NavigationMenu.Root>
-          <NavigationMenu.List>
-            <NavigationMenu.Item>
-              <NavigationMenu.Trigger asChild icon="left">
-                <Button>
-                  <Icon label="">
-                    <Menu />
-                  </Icon>
-                  {`Menu`}
-                </Button>
-              </NavigationMenu.Trigger>
-              <NavigationMenu.Content side="right" align="center">
-                <NavigationMenu.Sub orientation="vertical">
-                  <NavigationMenu.List>
-                    <NavigationMenu.Item>
-                      <NavigationMenu.Link href="#">Apples</NavigationMenu.Link>
-                    </NavigationMenu.Item>
-                    <NavigationMenu.Item>
-                      <NavigationMenu.Link href="#">
-                        Bananas
-                      </NavigationMenu.Link>
-                    </NavigationMenu.Item>
-                    <NavigationMenu.Item>
-                      <NavigationMenu.Link href="#">
-                        Oranges
-                      </NavigationMenu.Link>
-                    </NavigationMenu.Item>
-                    <NavigationMenu.Item>
-                      <NavigationMenu.Link href="#">Pears</NavigationMenu.Link>
-                    </NavigationMenu.Item>
-                  </NavigationMenu.List>
-                </NavigationMenu.Sub>
-              </NavigationMenu.Content>
-            </NavigationMenu.Item>
-          </NavigationMenu.List>
-        </NavigationMenu.Root>
-        <NavigationMenu.Root>
-          <NavigationMenu.List>
-            <NavigationMenu.Item>
-              <NavigationMenu.Trigger asChild icon="left">
-                <Button>
-                  <Icon label="">
-                    <Menu />
-                  </Icon>
-                  {`Menu`}
-                </Button>
-              </NavigationMenu.Trigger>
-              <NavigationMenu.Content side="right">
-                <NavigationMenu.Sub orientation="vertical">
-                  <NavigationMenu.List>
-                    <NavigationMenu.Item>
-                      <NavigationMenu.Link href="#">Apples</NavigationMenu.Link>
-                    </NavigationMenu.Item>
-                    <NavigationMenu.Item>
-                      <NavigationMenu.Link href="#">
-                        Bananas
-                      </NavigationMenu.Link>
-                    </NavigationMenu.Item>
-                    <NavigationMenu.Item>
-                      <NavigationMenu.Link href="#">
-                        Oranges
-                      </NavigationMenu.Link>
-                    </NavigationMenu.Item>
-                    <NavigationMenu.Item>
-                      <NavigationMenu.Link href="#">Pears</NavigationMenu.Link>
-                    </NavigationMenu.Item>
-                  </NavigationMenu.List>
-                </NavigationMenu.Sub>
-              </NavigationMenu.Content>
-            </NavigationMenu.Item>
-          </NavigationMenu.List>
-        </NavigationMenu.Root>
-      </Box>
-    </Box>
-  </Box>
+  <NavigationMenu.Root>
+    <NavigationMenu.List>
+      <NavigationMenu.Item>
+        <NavigationMenu.Trigger>
+          {`Texas`}
+          <Icon
+            label=""
+            css={{
+              transition: "transform $fast $inOut",
+              "[data-state=open] &": { transform: "rotate(-180deg)" },
+            }}
+          >
+            <ChevronDown />
+          </Icon>
+        </NavigationMenu.Trigger>
+        <NavigationMenu.Content>
+          <NavigationMenu.Sub orientation="vertical">
+            <NavigationMenu.List>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">Austin</NavigationMenu.Link>
+              </NavigationMenu.Item>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">Houston</NavigationMenu.Link>
+              </NavigationMenu.Item>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">Dallas</NavigationMenu.Link>
+              </NavigationMenu.Item>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">El Paso</NavigationMenu.Link>
+              </NavigationMenu.Item>
+            </NavigationMenu.List>
+          </NavigationMenu.Sub>
+        </NavigationMenu.Content>
+      </NavigationMenu.Item>
+    </NavigationMenu.List>
+  </NavigationMenu.Root>
 </Box>
 ```
 
@@ -670,31 +218,18 @@ The display position can be defined directionally based on the location of the t
 
 ### Hover
 
-A hover action changes the link color to `$accessible`.
+Menu links change color to `$accessible` on hover. Submenu links display background color `$faint` on hover.
 
 ```jsx withPreview
-<Box css={{ height: "210px" }}>
+<Box css={{ height: "210px", display: "flex" }}>
   <NavigationMenu.Root>
-    <NavigationMenu.List
-      css={{ borderBlockEnd: "1px solid $faint", paddingBlockEnd: "$050" }}
-    >
-      <NavigationMenu.Item>
-        <NavigationMenu.Link href="#">Live updates</NavigationMenu.Link>
-      </NavigationMenu.Item>
-      <NavigationMenu.Item>
-        <NavigationMenu.Link href="#">Map</NavigationMenu.Link>
-      </NavigationMenu.Item>
-      <NavigationMenu.Item>
-        <NavigationMenu.Link href="#">FAQ</NavigationMenu.Link>
-      </NavigationMenu.Item>
+    <NavigationMenu.List>
       <NavigationMenu.Item>
         <NavigationMenu.Trigger>
-          {`How to prepare`}
+          {`Fruit`}
           <Icon
             label=""
-            size="150"
             css={{
-              marginBlock: "-2px",
               transition: "transform $fast $inOut",
               "[data-state=open] &": { transform: "rotate(-180deg)" },
             }}
@@ -702,41 +237,132 @@ A hover action changes the link color to `$accessible`.
             <ChevronDown />
           </Icon>
         </NavigationMenu.Trigger>
-        <NavigationMenu.Content
-          popperOptions={{
-            modifiers: [
-              {
-                name: "offset",
-                options: {
-                  offset: [0, 16],
-                },
-              },
-            ],
-          }}
-        >
+        <NavigationMenu.Content>
           <NavigationMenu.Sub orientation="vertical">
             <NavigationMenu.List>
               <NavigationMenu.Item>
-                <NavigationMenu.Link href="#">Apples</NavigationMenu.Link>
+                <NavigationMenu.Link href="#">Apple</NavigationMenu.Link>
               </NavigationMenu.Item>
               <NavigationMenu.Item>
-                <NavigationMenu.Link href="#">Bananas</NavigationMenu.Link>
+                <NavigationMenu.Link href="#">Orange</NavigationMenu.Link>
               </NavigationMenu.Item>
               <NavigationMenu.Item>
-                <NavigationMenu.Link href="#">Oranges</NavigationMenu.Link>
+                <NavigationMenu.Link href="#">Banana</NavigationMenu.Link>
               </NavigationMenu.Item>
               <NavigationMenu.Item>
-                <NavigationMenu.Link href="#">Pears</NavigationMenu.Link>
+                <NavigationMenu.Link href="#">Pineapple</NavigationMenu.Link>
               </NavigationMenu.Item>
             </NavigationMenu.List>
           </NavigationMenu.Sub>
         </NavigationMenu.Content>
       </NavigationMenu.Item>
+    </NavigationMenu.List>
+  </NavigationMenu.Root>
+  <NavigationMenu.Root>
+    <NavigationMenu.List>
       <NavigationMenu.Item>
-        <NavigationMenu.Link href="#">Flattening the curve</NavigationMenu.Link>
+        <NavigationMenu.Trigger>
+          {`Vegetable`}
+          <Icon
+            label=""
+            css={{
+              transition: "transform $fast $inOut",
+              "[data-state=open] &": { transform: "rotate(-180deg)" },
+            }}
+          >
+            <ChevronDown />
+          </Icon>
+        </NavigationMenu.Trigger>
+        <NavigationMenu.Content>
+          <NavigationMenu.Sub orientation="vertical">
+            <NavigationMenu.List>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">Broccoli</NavigationMenu.Link>
+              </NavigationMenu.Item>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">Carrot</NavigationMenu.Link>
+              </NavigationMenu.Item>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">Cucumber</NavigationMenu.Link>
+              </NavigationMenu.Item>
+            </NavigationMenu.List>
+          </NavigationMenu.Sub>
+        </NavigationMenu.Content>
       </NavigationMenu.Item>
+    </NavigationMenu.List>
+  </NavigationMenu.Root>
+  <NavigationMenu.Root>
+    <NavigationMenu.List>
       <NavigationMenu.Item>
-        <NavigationMenu.Link href="#">Newsletter</NavigationMenu.Link>
+        <NavigationMenu.Trigger>
+          {`Protein`}
+          <Icon
+            label=""
+            css={{
+              transition: "transform $fast $inOut",
+              "[data-state=open] &": { transform: "rotate(-180deg)" },
+            }}
+          >
+            <ChevronDown />
+          </Icon>
+        </NavigationMenu.Trigger>
+        <NavigationMenu.Content>
+          <NavigationMenu.Sub orientation="vertical">
+            <NavigationMenu.List>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">Fish</NavigationMenu.Link>
+              </NavigationMenu.Item>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">Chicken</NavigationMenu.Link>
+              </NavigationMenu.Item>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">Beef</NavigationMenu.Link>
+              </NavigationMenu.Item>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">Lamb</NavigationMenu.Link>
+              </NavigationMenu.Item>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">Pork</NavigationMenu.Link>
+              </NavigationMenu.Item>
+            </NavigationMenu.List>
+          </NavigationMenu.Sub>
+        </NavigationMenu.Content>
+      </NavigationMenu.Item>
+    </NavigationMenu.List>
+  </NavigationMenu.Root>
+  <NavigationMenu.Root>
+    <NavigationMenu.List>
+      <NavigationMenu.Item>
+        <NavigationMenu.Trigger>
+          {`Carbohydrate`}
+          <Icon
+            label=""
+            css={{
+              transition: "transform $fast $inOut",
+              "[data-state=open] &": { transform: "rotate(-180deg)" },
+            }}
+          >
+            <ChevronDown />
+          </Icon>
+        </NavigationMenu.Trigger>
+        <NavigationMenu.Content>
+          <NavigationMenu.Sub orientation="vertical">
+            <NavigationMenu.List>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">White Bread</NavigationMenu.Link>
+              </NavigationMenu.Item>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">Brown Rice</NavigationMenu.Link>
+              </NavigationMenu.Item>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">Oats</NavigationMenu.Link>
+              </NavigationMenu.Item>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">Quinoa</NavigationMenu.Link>
+              </NavigationMenu.Item>
+            </NavigationMenu.List>
+          </NavigationMenu.Sub>
+        </NavigationMenu.Content>
       </NavigationMenu.Item>
     </NavigationMenu.List>
   </NavigationMenu.Root>
@@ -745,31 +371,18 @@ A hover action changes the link color to `$accessible`.
 
 ### Active
 
-Active state changes the link color to `$accessible`, with a bold font weight.
+Any menu link can be set to active` to indicate the page or section currently in view. Active links are rendered in font-weight **bold**.
 
 ```jsx withPreview
-<Box css={{ height: "210px" }}>
+<Box css={{ height: "210px", display: "flex" }}>
   <NavigationMenu.Root>
-    <NavigationMenu.List
-      css={{ borderBlockEnd: "1px solid $faint", paddingBlockEnd: "$050" }}
-    >
-      <NavigationMenu.Item>
-        <NavigationMenu.Link href="#">Live updates</NavigationMenu.Link>
-      </NavigationMenu.Item>
-      <NavigationMenu.Item>
-        <NavigationMenu.Link href="#">Map</NavigationMenu.Link>
-      </NavigationMenu.Item>
-      <NavigationMenu.Item>
-        <NavigationMenu.Link href="#">FAQ</NavigationMenu.Link>
-      </NavigationMenu.Item>
+    <NavigationMenu.List>
       <NavigationMenu.Item>
         <NavigationMenu.Trigger>
-          {`How to prepare`}
+          {`Fruit`}
           <Icon
             label=""
-            size="150"
             css={{
-              marginBlock: "-2px",
               transition: "transform $fast $inOut",
               "[data-state=open] &": { transform: "rotate(-180deg)" },
             }}
@@ -777,43 +390,138 @@ Active state changes the link color to `$accessible`, with a bold font weight.
             <ChevronDown />
           </Icon>
         </NavigationMenu.Trigger>
-        <NavigationMenu.Content
-          popperOptions={{
-            modifiers: [
-              {
-                name: "offset",
-                options: {
-                  offset: [0, 16],
-                },
-              },
-            ],
-          }}
-        >
+        <NavigationMenu.Content>
           <NavigationMenu.Sub orientation="vertical">
             <NavigationMenu.List>
               <NavigationMenu.Item>
-                <NavigationMenu.Link href="#" active>
-                  {`Apples`}
-                </NavigationMenu.Link>
+                <NavigationMenu.Link href="#">Apple</NavigationMenu.Link>
               </NavigationMenu.Item>
               <NavigationMenu.Item>
-                <NavigationMenu.Link href="#">Bananas</NavigationMenu.Link>
+                <NavigationMenu.Link
+                  href="#"
+                  active
+                >{`Orange`}</NavigationMenu.Link>
               </NavigationMenu.Item>
               <NavigationMenu.Item>
-                <NavigationMenu.Link href="#">Oranges</NavigationMenu.Link>
+                <NavigationMenu.Link href="#">Banana</NavigationMenu.Link>
               </NavigationMenu.Item>
               <NavigationMenu.Item>
-                <NavigationMenu.Link href="#">Pears</NavigationMenu.Link>
+                <NavigationMenu.Link href="#">Pineapple</NavigationMenu.Link>
               </NavigationMenu.Item>
             </NavigationMenu.List>
           </NavigationMenu.Sub>
         </NavigationMenu.Content>
       </NavigationMenu.Item>
+    </NavigationMenu.List>
+  </NavigationMenu.Root>
+  <NavigationMenu.Root>
+    <NavigationMenu.List>
       <NavigationMenu.Item>
-        <NavigationMenu.Link href="#">Flattening the curve</NavigationMenu.Link>
+        <NavigationMenu.Trigger>
+          {`Vegetable`}
+          <Icon
+            label=""
+            css={{
+              transition: "transform $fast $inOut",
+              "[data-state=open] &": { transform: "rotate(-180deg)" },
+            }}
+          >
+            <ChevronDown />
+          </Icon>
+        </NavigationMenu.Trigger>
+        <NavigationMenu.Content>
+          <NavigationMenu.Sub orientation="vertical">
+            <NavigationMenu.List>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">Broccoli</NavigationMenu.Link>
+              </NavigationMenu.Item>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">Carrot</NavigationMenu.Link>
+              </NavigationMenu.Item>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">Cucumber</NavigationMenu.Link>
+              </NavigationMenu.Item>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">Submenu Link</NavigationMenu.Link>
+              </NavigationMenu.Item>
+            </NavigationMenu.List>
+          </NavigationMenu.Sub>
+        </NavigationMenu.Content>
       </NavigationMenu.Item>
+    </NavigationMenu.List>
+  </NavigationMenu.Root>
+  <NavigationMenu.Root>
+    <NavigationMenu.List>
       <NavigationMenu.Item>
-        <NavigationMenu.Link href="#">Newsletter</NavigationMenu.Link>
+        <NavigationMenu.Trigger>
+          {`Protein`}
+          <Icon
+            label=""
+            css={{
+              transition: "transform $fast $inOut",
+              "[data-state=open] &": { transform: "rotate(-180deg)" },
+            }}
+          >
+            <ChevronDown />
+          </Icon>
+        </NavigationMenu.Trigger>
+        <NavigationMenu.Content>
+          <NavigationMenu.Sub orientation="vertical">
+            <NavigationMenu.List>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">Fish</NavigationMenu.Link>
+              </NavigationMenu.Item>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">Chicken</NavigationMenu.Link>
+              </NavigationMenu.Item>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">Beef</NavigationMenu.Link>
+              </NavigationMenu.Item>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">Lamb</NavigationMenu.Link>
+              </NavigationMenu.Item>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">Pork</NavigationMenu.Link>
+              </NavigationMenu.Item>
+            </NavigationMenu.List>
+          </NavigationMenu.Sub>
+        </NavigationMenu.Content>
+      </NavigationMenu.Item>
+    </NavigationMenu.List>
+  </NavigationMenu.Root>
+  <NavigationMenu.Root>
+    <NavigationMenu.List>
+      <NavigationMenu.Item>
+        <NavigationMenu.Trigger>
+          {`Carbohydrate`}
+          <Icon
+            label=""
+            css={{
+              transition: "transform $fast $inOut",
+              "[data-state=open] &": { transform: "rotate(-180deg)" },
+            }}
+          >
+            <ChevronDown />
+          </Icon>
+        </NavigationMenu.Trigger>
+        <NavigationMenu.Content>
+          <NavigationMenu.Sub orientation="vertical">
+            <NavigationMenu.List>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">White Bread</NavigationMenu.Link>
+              </NavigationMenu.Item>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">Brown Rice</NavigationMenu.Link>
+              </NavigationMenu.Item>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">Oats</NavigationMenu.Link>
+              </NavigationMenu.Item>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">Quinoa</NavigationMenu.Link>
+              </NavigationMenu.Item>
+            </NavigationMenu.List>
+          </NavigationMenu.Sub>
+        </NavigationMenu.Content>
       </NavigationMenu.Item>
     </NavigationMenu.List>
   </NavigationMenu.Root>
@@ -822,31 +530,18 @@ Active state changes the link color to `$accessible`, with a bold font weight.
 
 ### Disabled
 
-A disabled link appears as `$disabled`.
+A menu (or submenu) link can be set to `disabled`, according to the user’s current context and relevance of options.
 
 ```jsx withPreview
-<Box css={{ height: "210px" }}>
+<Box css={{ height: "210px", display: "flex" }}>
   <NavigationMenu.Root>
-    <NavigationMenu.List
-      css={{ borderBlockEnd: "1px solid $faint", paddingBlockEnd: "$050" }}
-    >
+    <NavigationMenu.List>
       <NavigationMenu.Item>
-        <NavigationMenu.Link href="#">Live updates</NavigationMenu.Link>
-      </NavigationMenu.Item>
-      <NavigationMenu.Item>
-        <NavigationMenu.Link href="#">Map</NavigationMenu.Link>
-      </NavigationMenu.Item>
-      <NavigationMenu.Item>
-        <NavigationMenu.Link href="#">FAQ</NavigationMenu.Link>
-      </NavigationMenu.Item>
-      <NavigationMenu.Item>
-        <NavigationMenu.Trigger>
-          {`How to prepare`}
+        <NavigationMenu.Trigger disabled>
+          {`Fruit`}
           <Icon
             label=""
-            size="150"
             css={{
-              marginBlock: "-2px",
               transition: "transform $fast $inOut",
               "[data-state=open] &": { transform: "rotate(-180deg)" },
             }}
@@ -854,41 +549,135 @@ A disabled link appears as `$disabled`.
             <ChevronDown />
           </Icon>
         </NavigationMenu.Trigger>
-        <NavigationMenu.Content
-          popperOptions={{
-            modifiers: [
-              {
-                name: "offset",
-                options: {
-                  offset: [0, 16],
-                },
-              },
-            ],
-          }}
-        >
+        <NavigationMenu.Content>
           <NavigationMenu.Sub orientation="vertical">
             <NavigationMenu.List>
               <NavigationMenu.Item>
-                <NavigationMenu.Link>Apples</NavigationMenu.Link>
+                <NavigationMenu.Link href="#">Apple</NavigationMenu.Link>
               </NavigationMenu.Item>
               <NavigationMenu.Item>
-                <NavigationMenu.Link href="#">Bananas</NavigationMenu.Link>
+                <NavigationMenu.Link href="#">Orange</NavigationMenu.Link>
               </NavigationMenu.Item>
               <NavigationMenu.Item>
-                <NavigationMenu.Link href="#">Oranges</NavigationMenu.Link>
+                <NavigationMenu.Link href="#">Banana</NavigationMenu.Link>
               </NavigationMenu.Item>
               <NavigationMenu.Item>
-                <NavigationMenu.Link href="#">Pears</NavigationMenu.Link>
+                <NavigationMenu.Link href="#">Pineapple</NavigationMenu.Link>
               </NavigationMenu.Item>
             </NavigationMenu.List>
           </NavigationMenu.Sub>
         </NavigationMenu.Content>
       </NavigationMenu.Item>
+    </NavigationMenu.List>
+  </NavigationMenu.Root>
+  <NavigationMenu.Root>
+    <NavigationMenu.List>
       <NavigationMenu.Item>
-        <NavigationMenu.Link href="#">Flattening the curve</NavigationMenu.Link>
+        <NavigationMenu.Trigger>
+          {`Vegetable`}
+          <Icon
+            label=""
+            css={{
+              transition: "transform $fast $inOut",
+              "[data-state=open] &": { transform: "rotate(-180deg)" },
+            }}
+          >
+            <ChevronDown />
+          </Icon>
+        </NavigationMenu.Trigger>
+        <NavigationMenu.Content>
+          <NavigationMenu.Sub orientation="vertical">
+            <NavigationMenu.List>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">Broccoli</NavigationMenu.Link>
+              </NavigationMenu.Item>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">Carrot</NavigationMenu.Link>
+              </NavigationMenu.Item>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">Cucumber</NavigationMenu.Link>
+              </NavigationMenu.Item>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">Submenu Link</NavigationMenu.Link>
+              </NavigationMenu.Item>
+            </NavigationMenu.List>
+          </NavigationMenu.Sub>
+        </NavigationMenu.Content>
       </NavigationMenu.Item>
+    </NavigationMenu.List>
+  </NavigationMenu.Root>
+  <NavigationMenu.Root>
+    <NavigationMenu.List>
       <NavigationMenu.Item>
-        <NavigationMenu.Link href="#">Newsletter</NavigationMenu.Link>
+        <NavigationMenu.Trigger>
+          {`Protein`}
+          <Icon
+            label=""
+            css={{
+              transition: "transform $fast $inOut",
+              "[data-state=open] &": { transform: "rotate(-180deg)" },
+            }}
+          >
+            <ChevronDown />
+          </Icon>
+        </NavigationMenu.Trigger>
+        <NavigationMenu.Content>
+          <NavigationMenu.Sub orientation="vertical">
+            <NavigationMenu.List>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">Fish</NavigationMenu.Link>
+              </NavigationMenu.Item>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">Chicken</NavigationMenu.Link>
+              </NavigationMenu.Item>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">Beef</NavigationMenu.Link>
+              </NavigationMenu.Item>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">Lamb</NavigationMenu.Link>
+              </NavigationMenu.Item>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">Pork</NavigationMenu.Link>
+              </NavigationMenu.Item>
+            </NavigationMenu.List>
+          </NavigationMenu.Sub>
+        </NavigationMenu.Content>
+      </NavigationMenu.Item>
+    </NavigationMenu.List>
+  </NavigationMenu.Root>
+  <NavigationMenu.Root>
+    <NavigationMenu.List>
+      <NavigationMenu.Item>
+        <NavigationMenu.Trigger>
+          {`Carbohydrate`}
+          <Icon
+            label=""
+            css={{
+              transition: "transform $fast $inOut",
+              "[data-state=open] &": { transform: "rotate(-180deg)" },
+            }}
+          >
+            <ChevronDown />
+          </Icon>
+        </NavigationMenu.Trigger>
+        <NavigationMenu.Content>
+          <NavigationMenu.Sub orientation="vertical">
+            <NavigationMenu.List>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">White Bread</NavigationMenu.Link>
+              </NavigationMenu.Item>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">Brown Rice</NavigationMenu.Link>
+              </NavigationMenu.Item>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">Oats</NavigationMenu.Link>
+              </NavigationMenu.Item>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">Quinoa</NavigationMenu.Link>
+              </NavigationMenu.Item>
+            </NavigationMenu.List>
+          </NavigationMenu.Sub>
+        </NavigationMenu.Content>
       </NavigationMenu.Item>
     </NavigationMenu.List>
   </NavigationMenu.Root>
@@ -897,20 +686,25 @@ A disabled link appears as `$disabled`.
 
 ### Overflow
 
-If only some of the content can be displayed in view, a max height can be defined and
-overflow should be set to `scroll`
+For submenus containing a large number of links, define a **max-height** and set the container to `scroll` to allow users to access additional items.
 
 ```jsx withPreview
 <NavigationMenu.Root>
-  <NavigationMenu.List>
+  <NavigationMenu.List
+    css={{ display: "flex", marginRight: "100px", marginBottom: "100px" }}
+  >
     <NavigationMenu.Item>
-      <NavigationMenu.Trigger asChild icon="left">
-        <Button>
-          <Icon label="">
-            <Menu />
-          </Icon>
-          {`Menu`}
-        </Button>
+      <NavigationMenu.Trigger icon="left">
+        {`Fruit`}
+        <Icon
+          label=""
+          css={{
+            transition: "transform $fast $inOut",
+            "[data-state=open] &": { transform: "rotate(-180deg)" },
+          }}
+        >
+          <ChevronDown />
+        </Icon>
       </NavigationMenu.Trigger>
       <NavigationMenu.Content css={{ maxHeight: "130px" }}>
         <NavigationMenu.Sub orientation="vertical">
@@ -946,27 +740,54 @@ overflow should be set to `scroll`
 
 ---
 
-## Accessibility
-
-### Keyboard controls
-
-A Navigation Menu shows/hides without delay when the trigger is in focus and space/enter is selected on the keyboard. If the Navigation Menu is open and either shift+tab, or tab, is selected on the keyboard it will move focus to the next focusable element. When esc is selected on the keyboard, it will close the Navigation Menu and move the focus to the trigger.
-
----
-
 ## Guidance
 
-### Avoid non-wayfinding content
+### Number of menu items
 
-A navigation menu is primarily reserved for links. It is not meant to communicate significant amounts of freeform or non-wayfinding content; consider a [Popover](/components/popover) or [Tooltip](/components/tooltip) instead.
+For primary navigation, the maximum number of menu links recommended is **eight (8)**. If your use case requires more than 8 menu links, re-evaluate your navigation hierarchy to make use of submenus, or consider using a different component.
 
 ```jsx withPreview isGuide="error" demoHeight="350"
-<Box css={{ width: "304px", height: "300px", paddingTop: "25px" }}>
+<Box css={{ display: "flex" }}>
+  <NavigationMenu.Root>
+    <NavigationMenu.List>
+      <NavigationMenu.Item>
+        <NavigationMenu.Trigger>Election 2024</NavigationMenu.Trigger>
+      </NavigationMenu.Item>
+    </NavigationMenu.List>
+  </NavigationMenu.Root>
+  <NavigationMenu.Root>
+    <NavigationMenu.List>
+      <NavigationMenu.Item>
+        <NavigationMenu.Trigger>Midterms 2022</NavigationMenu.Trigger>
+      </NavigationMenu.Item>
+    </NavigationMenu.List>
+  </NavigationMenu.Root>
+  <NavigationMenu.Root>
+    <NavigationMenu.List>
+      <NavigationMenu.Item>
+        <NavigationMenu.Trigger>Senate</NavigationMenu.Trigger>
+      </NavigationMenu.Item>
+    </NavigationMenu.List>
+  </NavigationMenu.Root>
+  <NavigationMenu.Root>
+    <NavigationMenu.List>
+      <NavigationMenu.Item>
+        <NavigationMenu.Trigger>House</NavigationMenu.Trigger>
+      </NavigationMenu.Item>
+    </NavigationMenu.List>
+  </NavigationMenu.Root>
+  <NavigationMenu.Root>
+    <NavigationMenu.List>
+      <NavigationMenu.Item>
+        <NavigationMenu.Trigger>Governors</NavigationMenu.Trigger>
+      </NavigationMenu.Item>
+    </NavigationMenu.List>
+  </NavigationMenu.Root>
   <NavigationMenu.Root>
     <NavigationMenu.List>
       <NavigationMenu.Item>
         <NavigationMenu.Trigger>
-          {`See details`}
+          {`Results by state`}
           <Icon
             label=""
             css={{
@@ -977,27 +798,197 @@ A navigation menu is primarily reserved for links. It is not meant to communicat
             <ChevronDown />
           </Icon>
         </NavigationMenu.Trigger>
-        <NavigationMenu.Content
-          css={{ maxWidth: "304px", paddingInline: "$150" }}
-        >
-          <p>
-            The texture of a Honeycrisp Apple is no accident: Its cells have
-            been bred to be bigger than cells in other apples, making the fruit
-            feel juicier and crunchier than its competitors. These cells explode
-            as your teeth tear into them. Then there's its distinct flavor — a
-            clean, clarified sweetness that's almost frosty.
-            <Box
-              as="a"
-              href="#"
-              css={{ color: "$accessible" }}
-            >{`Learn more`}</Box>
-          </p>
+        <NavigationMenu.Content css={{ maxHeight: "130px" }}>
+          <NavigationMenu.Sub orientation="vertical">
+            <NavigationMenu.List>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">Alabama</NavigationMenu.Link>
+              </NavigationMenu.Item>
+            </NavigationMenu.List>
+            <NavigationMenu.List>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">Alaska</NavigationMenu.Link>
+              </NavigationMenu.Item>
+            </NavigationMenu.List>
+            <NavigationMenu.List>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">Arizona</NavigationMenu.Link>
+              </NavigationMenu.Item>
+            </NavigationMenu.List>
+            <NavigationMenu.List>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">Arkansas</NavigationMenu.Link>
+              </NavigationMenu.Item>
+            </NavigationMenu.List>
+            <NavigationMenu.List>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">California</NavigationMenu.Link>
+              </NavigationMenu.Item>
+            </NavigationMenu.List>
+            <NavigationMenu.List>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">Colorado</NavigationMenu.Link>
+              </NavigationMenu.Item>
+            </NavigationMenu.List>
+            <NavigationMenu.List>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">Connecticut</NavigationMenu.Link>
+              </NavigationMenu.Item>
+            </NavigationMenu.List>
+            <NavigationMenu.List>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">Florida</NavigationMenu.Link>
+              </NavigationMenu.Item>
+            </NavigationMenu.List>
+            <NavigationMenu.List>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">Georgia</NavigationMenu.Link>
+              </NavigationMenu.Item>
+            </NavigationMenu.List>
+            <NavigationMenu.List>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">Hawaii</NavigationMenu.Link>
+              </NavigationMenu.Item>
+            </NavigationMenu.List>
+            <NavigationMenu.List>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">Idaho</NavigationMenu.Link>
+              </NavigationMenu.Item>
+            </NavigationMenu.List>
+            <NavigationMenu.List>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">Illinois</NavigationMenu.Link>
+              </NavigationMenu.Item>
+            </NavigationMenu.List>
+            <NavigationMenu.List>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">Indiana</NavigationMenu.Link>
+              </NavigationMenu.Item>
+            </NavigationMenu.List>
+            <NavigationMenu.List>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">Iowa</NavigationMenu.Link>
+              </NavigationMenu.Item>
+            </NavigationMenu.List>
+            <NavigationMenu.List>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">Kansas</NavigationMenu.Link>
+              </NavigationMenu.Item>
+            </NavigationMenu.List>
+            <NavigationMenu.List>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">Kentucky</NavigationMenu.Link>
+              </NavigationMenu.Item>
+            </NavigationMenu.List>
+            <NavigationMenu.List>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">Maine</NavigationMenu.Link>
+              </NavigationMenu.Item>
+            </NavigationMenu.List>
+            <NavigationMenu.List>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">Maryland</NavigationMenu.Link>
+              </NavigationMenu.Item>
+            </NavigationMenu.List>
+            <NavigationMenu.List>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">Alabama</NavigationMenu.Link>
+              </NavigationMenu.Item>
+            </NavigationMenu.List>
+            <NavigationMenu.List>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">
+                  Massachusetts
+                </NavigationMenu.Link>
+              </NavigationMenu.Item>
+            </NavigationMenu.List>
+            <NavigationMenu.List>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">Michigan</NavigationMenu.Link>
+              </NavigationMenu.Item>
+            </NavigationMenu.List>
+            <NavigationMenu.List>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">Minnesota</NavigationMenu.Link>
+              </NavigationMenu.Item>
+            </NavigationMenu.List>
+            <NavigationMenu.List>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">Mississippi</NavigationMenu.Link>
+              </NavigationMenu.Item>
+            </NavigationMenu.List>
+            <NavigationMenu.List>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">Missouri</NavigationMenu.Link>
+              </NavigationMenu.Item>
+            </NavigationMenu.List>
+            <NavigationMenu.List>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">Nebraska</NavigationMenu.Link>
+              </NavigationMenu.Item>
+            </NavigationMenu.List>
+            <NavigationMenu.List>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">Nevada</NavigationMenu.Link>
+              </NavigationMenu.Item>
+            </NavigationMenu.List>
+            <NavigationMenu.List>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">
+                  New Hampshire
+                </NavigationMenu.Link>
+              </NavigationMenu.Item>
+            </NavigationMenu.List>
+            <NavigationMenu.List>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">New Jersey</NavigationMenu.Link>
+              </NavigationMenu.Item>
+            </NavigationMenu.List>
+            <NavigationMenu.List>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">New Mexico</NavigationMenu.Link>
+              </NavigationMenu.Item>
+            </NavigationMenu.List>
+            <NavigationMenu.List>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">New York</NavigationMenu.Link>
+              </NavigationMenu.Item>
+            </NavigationMenu.List>
+            <NavigationMenu.List>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">
+                  North Carolina
+                </NavigationMenu.Link>
+              </NavigationMenu.Item>
+            </NavigationMenu.List>
+            <NavigationMenu.List>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="#">North Dakota</NavigationMenu.Link>
+              </NavigationMenu.Item>
+            </NavigationMenu.List>
+          </NavigationMenu.Sub>
         </NavigationMenu.Content>
+      </NavigationMenu.Item>
+    </NavigationMenu.List>
+  </NavigationMenu.Root>
+  <NavigationMenu.Root>
+    <NavigationMenu.List>
+      <NavigationMenu.Item>
+        <NavigationMenu.Trigger>Democracy in America</NavigationMenu.Trigger>
       </NavigationMenu.Item>
     </NavigationMenu.List>
   </NavigationMenu.Root>
 </Box>
 ```
+
+---
+
+## Accessibility
+
+### Keyboard navigation
+
+When navigation menu is in focus, links can be traversed using **left**, **right**, **up** and **down** arrow keys, or **tab** / **shift+tab**. Pressing the **enter** key executes a click function, which will navigate the user to the selected link.
+Links containing a submenu can be accessed by focusing the link and pressing **space** bar to toggle display of the submenu. Pressing the **esc** key exits the submenu and moves focus back to the parent link / trigger.
 
 ---
 
