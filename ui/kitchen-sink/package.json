@@ -36,8 +36,8 @@
     "typescript": "4.5.5"
   },
   "peerDependencies": {
-    "@washingtonpost/wpds-assets": "latest",
-    "@washingtonpost/wpds-ui-kit": "latest",
+    "@washingtonpost/wpds-assets": "*",
+    "@washingtonpost/wpds-ui-kit": "*",
     "react": "^16.8.6 || ^17.0.2"
   },
   "dependencies": {
