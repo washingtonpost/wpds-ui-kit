@@ -6,6 +6,11 @@ import type * as WPDS from "@washingtonpost/wpds-theme";
 const NAME = "DialogBody";
 
 const StyledBody = styled("div", {
+  color: theme.colors.primary,
+  fontFamily: theme.fonts.meta,
+  fontSize: theme.fontSizes["100"],
+  fontWeight: theme.fontWeights.light,
+  lineHeight: theme.lineHeights["125"],
   gridArea: "body",
   maxHeight: "100%",
   overflowY: "auto",

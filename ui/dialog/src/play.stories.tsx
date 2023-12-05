@@ -202,8 +202,7 @@ const SmallTemplate: ComponentStory<typeof Dialog.Root> = (args) => {
 
 export const Small = SmallTemplate.bind({});
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const InteractionsTemplate: ComponentStory<any> = () => {
+const InteractionsTemplate: ComponentStory<typeof Dialog.Root> = () => {
   const [container, setContainer] = React.useState<HTMLDivElement | null>(null);
 
   return (
@@ -249,4 +248,68 @@ Interactions.play = async ({ canvasElement }) => {
   await waitFor(() => expect(canvas.getByTestId("overlay")).toBeVisible());
   await userEvent.click(canvas.getByTestId("overlay"));
   await waitFor(() => expect(open).toHaveFocus());
+};
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const ResponsiveInteractionsTemplate: any = () => {
+  const [container, setContainer] = React.useState<HTMLDivElement | null>(null);
+
+  return (
+    <DialogContainer ref={setContainer}>
+      <Dialog.Root defaultOpen>
+        <Dialog.Trigger>Open</Dialog.Trigger>
+        <Dialog.Portal container={container}>
+          <Dialog.Overlay data-testid="overlay" />
+          <Dialog.Content css={{ "@sm": { width: "300px" } }}>
+            <Dialog.Close data-testid="close-button" />
+            <Dialog.Header>
+              <Dialog.Title>Dialog Title</Dialog.Title>
+            </Dialog.Header>
+            <Dialog.Body>
+              <p>Lorem ipsum</p>
+            </Dialog.Body>
+            <Dialog.Footer>
+              <Dialog.Close asChild>
+                <Button>Cancel</Button>
+              </Dialog.Close>
+            </Dialog.Footer>
+          </Dialog.Content>
+        </Dialog.Portal>
+      </Dialog.Root>
+    </DialogContainer>
+  );
+};
+
+export const ResponsiveInteractions = ResponsiveInteractionsTemplate.bind({});
+
+ResponsiveInteractions.parameters = {
+  viewport: {
+    defaultViewport: "small",
+    viewports: {
+      small: {
+        name: "Small",
+        styles: {
+          height: "590px",
+          width: "767px",
+        },
+        type: "mobile",
+      },
+    },
+  },
+  chromatic: {
+    modes: {
+      mobile: { viewport: "small" },
+    },
+  },
+};
+
+// Function to emulate pausing between interactions
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+ResponsiveInteractions.play = async ({ canvasElement }) => {
+  const canvas = within(canvasElement);
+  await sleep(500);
+  await expect(canvas.getByRole("dialog")).toHaveStyle("width: 300px");
 };
