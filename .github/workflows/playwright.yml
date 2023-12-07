@@ -9,6 +9,8 @@ jobs:
   test:
     if: github.event.deployment_status.state == 'success' && !contains(github.event.deployment_status.target_url, 'storybook') && !contains(github.event.deployment_status.target_url, 'vitejs')
     runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/playwright:v1.40.1-jammy
     timeout-minutes: 20
     env:
       TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
