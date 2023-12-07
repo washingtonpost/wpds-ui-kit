@@ -32,15 +32,15 @@
     "fuse.js": "^6.6.2",
     "gray-matter": "^4.0.2",
     "lz-string": "^1.4.4",
-    "next": "^12.3.4",
+    "next": "^13.5.6",
     "next-mdx-remote": "4.1.0",
     "next-seo": "5.15.0",
     "next-themes": "0.2.1",
     "param-case": "^3.0.4",
     "pascal-case": "^3.1.2",
-    "react": "^17.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-docgen": "^5.4.0",
-    "react-dom": "^17.0.2",
     "react-error-boundary": "^3.1.4",
     "react-hook-form": "^7.41.0",
     "react-phone-number-input": "^3.2.13",
@@ -74,8 +74,9 @@
     "url": "https://github.com/washingtonpost/wpds-docs.git"
   },
   "overrides": {
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "@washingtonpost/wpds-assets": "1.23.0"
+    "@washingtonpost/wpds-assets": "1.23.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "next": "^13.5.6"
   }
 }

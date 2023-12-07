@@ -38,7 +38,7 @@
   "peerDependencies": {
     "@radix-ui/react-avatar": "latest",
     "@washingtonpost/wpds-theme": "*",
-    "react": "^16.8.6 || ^17.0.2"
+    "react": "^16.8.6 || ^17.0.2 || ^18"
   },
   "dependencies": {
     "@radix-ui/react-avatar": "latest",

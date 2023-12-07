@@ -25,6 +25,14 @@ jobs:
           always-auth: true
           cache: npm
 
+      - name: Cache playwright binaries
+        uses: actions/cache@v3
+        id: playwright-cache
+        with:
+          path: |
+            ~/.cache/ms-playwright
+          key: cache-playwright-linux-1.40.1
+
       - name: Cache node_modules
         id: cache-node_modules
         uses: actions/cache@v3
@@ -44,10 +52,11 @@ jobs:
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
 
       - name: Install Playwright Browsers
+        if: steps.playwright-cache.outputs.cache-hit != 'true'
         run: npx playwright install --with-deps
 
       - name: Run Playwright tests
-        run: npx playwright test
+        run: npm run playwright
         env:
           BASEURL: "${{ github.event.deployment_status.target_url }}"
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
