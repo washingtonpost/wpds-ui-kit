@@ -15,6 +15,9 @@ const StyledDescription = styled(DialogPrimitive.Description, {
   lineHeight: theme.lineHeights["125"],
   marginBlockStart: 0,
   marginBlockEnd: theme.space["125"],
+  "&:last-child": {
+    marginBlockEnd: 0,
+  },
 });
 
 export type DialogDescriptionProps = {

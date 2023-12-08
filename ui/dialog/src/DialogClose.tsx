@@ -37,7 +37,13 @@ export const DialogClose = React.forwardRef<
   } else {
     return (
       <StyledClose {...props} ref={ref} asChild main>
-        <Button density="compact" icon="center" css={{ border: "none" }}>
+        <Button
+          variant="primary"
+          isOutline
+          density="compact"
+          icon="center"
+          css={{ border: "none" }}
+        >
           <Icon label="Close">
             <Close />
           </Icon>

@@ -10,7 +10,7 @@ const StyledFooter = styled("footer", {
   alignItems: "center",
   justifyContent: "flex-end",
   gap: theme.space["050"],
-  "@container (max-width: 300px)": {
+  "@container (max-width: 350px)": {
     flexDirection: "column-reverse",
     alignItems: "stretch",
   },
