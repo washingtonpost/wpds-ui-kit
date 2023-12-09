@@ -700,9 +700,14 @@ const InternalFocusTemplate = () => {
 
 export const InternalFocusInteractions = InternalFocusTemplate.bind({});
 
+InternalFocusInteractions.parameters = {
+  chromatic: { viewports: [1024] },
+};
+
 InternalFocusInteractions.play = async ({ canvasElement }) => {
   const user = userEvent.setup();
   const canvas = within(canvasElement);
+  await user.tab();
   await user.tab();
   await user.tab();
   await user.keyboard("[ArrowDown]");
