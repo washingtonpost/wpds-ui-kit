@@ -118,10 +118,10 @@ Interactions.play = async ({ canvasElement }) => {
   const paginationDots = canvas.getByLabelText("light-pagination");
 
   // change amount of dots
-  userEvent.type(canvas.getByTestId("light-input-text"), "{backspace}6");
+  await userEvent.type(canvas.getByTestId("light-input-text"), "{backspace}6");
   await sleep(500);
   // check incrementing index changes ariaValueNow
-  userEvent.click(canvas.getByTestId("light-inc-btn"));
+  await userEvent.click(canvas.getByTestId("light-inc-btn"));
   let ariaValueNow = paginationDots.getAttribute("aria-valuenow");
   await sleep(500);
   expect(ariaValueNow).toBe("2");
@@ -130,18 +130,18 @@ Interactions.play = async ({ canvasElement }) => {
   // traverse all dots
   for (let i = 0; i < 9; i++) {
     const btn = i < 4 ? "light-inc-btn" : "light-dec-btn";
-    userEvent.click(canvas.getByTestId(btn));
+    await userEvent.click(canvas.getByTestId(btn));
     await sleep(500);
   }
 
   // test ariaValueMax change on amount change
-  userEvent.type(canvas.getByTestId("light-input-text"), "{backspace}12");
+  await userEvent.type(canvas.getByTestId("light-input-text"), "{backspace}12");
   await sleep(500);
   let ariaValueMax = paginationDots.getAttribute("aria-valuemax");
   expect(ariaValueMax).toBe("12");
 
   // test dots never go below 0
-  userEvent.type(
+  await userEvent.type(
     canvas.getByTestId("light-input-text"),
     "{backspace}{backspace}0"
   );
@@ -152,7 +152,7 @@ Interactions.play = async ({ canvasElement }) => {
   // expect(ariaValueNow).toBe("1");
 
   // tests a large number of dots doesn't modify other elements
-  userEvent.type(canvas.getByTestId("light-input-text"), "{backspace}50");
+  await userEvent.type(canvas.getByTestId("light-input-text"), "{backspace}50");
   await sleep(500);
 };
 
