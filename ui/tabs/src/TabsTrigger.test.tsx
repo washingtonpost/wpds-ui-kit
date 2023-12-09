@@ -21,7 +21,8 @@ describe("TabsTrigger", () => {
     expect(screen.getByText("Test")).toBeVisible();
   });
 
-  test("correctly sets trigger to active", () => {
+  test("correctly sets trigger to active", async () => {
+    const user = userEvent.setup();
     jest.fn();
     render(
       <TabsRoot>
@@ -36,7 +37,7 @@ describe("TabsTrigger", () => {
     const trigger2 = screen.getAllByRole("tab")[2];
     expect(trigger2).toHaveAttribute("data-state", "inactive");
     expect(trigger2).toHaveStyle("borderBottom: none");
-    userEvent.click(trigger2);
+    await user.click(trigger2);
     expect(trigger2).toHaveAttribute("data-state", "active");
     expect(trigger2).toHaveStyle("borderBottom: 1px solid ##111111");
   });

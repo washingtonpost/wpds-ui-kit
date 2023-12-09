@@ -1,6 +1,5 @@
 import * as React from "react";
-import { render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
+import { render, screen, fireEvent } from "@testing-library/react";
 import { DrawerContent } from "./DrawerContent";
 import { DrawerRoot } from "./DrawerRoot";
 
@@ -78,22 +77,22 @@ describe("DrawerContent", () => {
     expect(spy).toHaveBeenCalled();
   });
 
-  test("removes a key listener from the document after close", () => {
+  test("removes a key listener from the document after close", async () => {
     const spy = jest.spyOn(document, "removeEventListener");
     customRender(<DrawerContent>Drawer Content</DrawerContent>, {
       defaultOpen: true,
     });
-    userEvent.keyboard("{esc}");
+    fireEvent.keyDown(document, { key: "Escape", code: "Escape" });
     expect(spy).toHaveBeenCalled();
   });
 
-  test("closes with esc key", () => {
+  test("closes with esc key", async () => {
     const handleChange = jest.fn();
     customRender(<DrawerContent>Drawer Content</DrawerContent>, {
       defaultOpen: true,
       onOpenChange: handleChange,
     });
-    userEvent.keyboard("{esc}");
+    fireEvent.keyDown(document, { key: "Escape", code: "Escape" });
     expect(handleChange).toHaveBeenCalledWith(false);
   });
 });

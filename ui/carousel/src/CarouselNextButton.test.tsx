@@ -19,7 +19,8 @@ describe("CarouselNextButton", () => {
     expect(screen.getByRole("button")).toBeVisible();
   });
 
-  test("triggers context callback on click", () => {
+  test("triggers context callback on click", async () => {
+    const user = userEvent.setup();
     const pageChangeHandler = jest.fn();
     renderWithContext(<CarouselNextButton />, {
       page: 0,
@@ -27,11 +28,12 @@ describe("CarouselNextButton", () => {
       setPage: pageChangeHandler,
     });
 
-    userEvent.click(screen.getByRole("button"));
+    await user.click(screen.getByRole("button"));
     expect(pageChangeHandler).toHaveBeenCalledWith(1);
   });
 
-  test("triggers callback on click", () => {
+  test("triggers callback on click", async () => {
+    const user = userEvent.setup();
     const clickHandler = jest.fn();
     renderWithContext(<CarouselNextButton onClick={clickHandler} />, {
       page: 0,
@@ -39,7 +41,7 @@ describe("CarouselNextButton", () => {
       setPage: () => undefined,
     });
 
-    userEvent.click(screen.getByRole("button"));
+    await user.click(screen.getByRole("button"));
     expect(clickHandler).toHaveBeenCalled();
   });
 

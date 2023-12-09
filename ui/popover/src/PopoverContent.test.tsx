@@ -30,7 +30,7 @@ describe("PopoverContent", () => {
     });
     // eslint-disable-next-line testing-library/no-node-access
     expect(screen.getByRole("dialog").parentElement).toHaveStyle(
-      "transform: translate3d(0, -200%, 0)"
+      "transform: translate(0, -200%)"
     );
   });
 });

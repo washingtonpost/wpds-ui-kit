@@ -76,77 +76,84 @@ describe("useActiveDescendant", () => {
     expect(screen.getByText("Test 1")).toBeVisible();
   });
 
-  test("uses the down arrow to navigate to child elements", () => {
+  test("uses the down arrow to navigate to child elements", async () => {
+    const user = userEvent.setup();
     render(<ComponentWrapper />);
     const groups = screen.getAllByRole("group");
     const content = groups[1];
-    userEvent.tab();
+    await user.tab();
     expect(content).toHaveFocus();
     expect(content).toHaveAttribute("aria-activedescendant", "test-1");
-    userEvent.keyboard("[ArrowDown]");
+    await user.keyboard("[ArrowDown]");
     expect(screen.getByText("Test 1")).toHaveClass(activeClassname);
     expect(content).toHaveAttribute("aria-activedescendant", "test-1-link");
   });
 
-  test("uses the up arrow to navigate away from child elements", () => {
+  test("uses the up arrow to navigate away from child elements", async () => {
+    const user = userEvent.setup();
     render(<ComponentWrapper />);
-    userEvent.tab();
-    userEvent.keyboard("[ArrowDown]");
-    userEvent.keyboard("[ArrowUp]");
+    await user.tab();
+    await user.keyboard("[ArrowDown]");
+    await user.keyboard("[ArrowUp]");
     expect(screen.getByText("Test 1")).not.toHaveClass(activeClassname);
   });
 
-  test("uses the up and down arrow to navigate between child elements", () => {
+  test("uses the up and down arrow to navigate between child elements", async () => {
+    const user = userEvent.setup();
     render(<ComponentWrapper />);
     const groups = screen.getAllByRole("group");
     const content = groups[1];
-    userEvent.tab();
-    userEvent.keyboard("[ArrowDown]");
-    userEvent.keyboard("[ArrowDown]");
+    await user.tab();
+    await user.keyboard("[ArrowDown]");
+    await user.keyboard("[ArrowDown]");
     expect(screen.getByText("Test 1.2")).toHaveClass(activeClassname);
     expect(content).toHaveAttribute("aria-activedescendant", "test-1-link-2");
-    userEvent.keyboard("[ArrowUp]");
+    await user.keyboard("[ArrowUp]");
     expect(screen.getByText("Test 1")).toHaveClass(activeClassname);
     expect(screen.getByText("Test 1.2")).not.toHaveClass(activeClassname);
     expect(content).toHaveAttribute("aria-activedescendant", "test-1-link");
   });
 
-  test("removes active child when new parent becomes active", () => {
+  test("removes active child when new parent becomes active", async () => {
+    const user = userEvent.setup();
     render(<ComponentWrapper />);
     const groups = screen.getAllByRole("group");
     const content = groups[1];
-    userEvent.tab();
-    userEvent.keyboard("[ArrowDown]");
-    userEvent.keyboard("[ArrowRight]");
+    await user.tab();
+    await user.keyboard("[ArrowDown]");
+    await user.keyboard("[ArrowRight]");
     expect(screen.getByText("Test 1")).not.toHaveClass(activeClassname);
     expect(content).toHaveAttribute("aria-activedescendant", "test-2");
   });
 
-  test("removes active child when content loses focus", () => {
+  test("removes active child when content loses focus", async () => {
+    const user = userEvent.setup();
     render(<ComponentWrapper />);
-    userEvent.tab();
-    userEvent.keyboard("[ArrowDown]");
-    userEvent.tab();
+    await user.tab();
+    await user.keyboard("[ArrowDown]");
+    await user.tab();
     expect(screen.getByText("Test 1")).not.toHaveClass(activeClassname);
   });
 
-  test("replaces active child when content returns focus", () => {
+  test("replaces active child when content returns focus", async () => {
+    const user = userEvent.setup();
     render(<ComponentWrapper />);
-    userEvent.tab();
-    userEvent.keyboard("[ArrowDown]");
-    userEvent.tab();
-    userEvent.tab();
+    await user.tab();
+    await user.keyboard("[ArrowDown]");
+    await user.tab();
+    await user.tab();
     expect(screen.getByText("Test 1")).toHaveClass(activeClassname);
   });
 
-  test("fires child click event from keyboard interaction", () => {
+  test("fires child click event from keyboard interaction", async () => {
+    const user = userEvent.setup();
     const handleClick = jest.fn();
     render(<ComponentWrapper onClick={handleClick} />);
-    userEvent.tab();
-    userEvent.keyboard("[ArrowRight]");
-    userEvent.keyboard("[ArrowDown]");
-    userEvent.keyboard("[Space]");
-    userEvent.keyboard("[Enter]");
+    await user.tab();
+    await user.keyboard("[ArrowRight]");
+    await user.keyboard("[ArrowDown]");
+    await user.keyboard("[Space]");
+    await user.keyboard("[Enter]");
     expect(handleClick).toHaveBeenCalledTimes(2);
   });
 });

@@ -23,13 +23,14 @@ describe("DrawerScrim", () => {
     expect(screen.getByTestId("test")).toBeVisible();
   });
 
-  test("uses openChange handler from context", () => {
+  test("uses openChange handler from context", async () => {
+    const user = userEvent.setup();
     const handleChange = jest.fn();
     customRender(<DrawerScrim data-testid="test" />, {
       onOpenChange: handleChange,
       defaultOpen: true,
     });
-    userEvent.click(screen.getByTestId("test"));
+    await user.click(screen.getByTestId("test"));
     expect(handleChange).toHaveBeenCalledWith(false);
   });
 });
