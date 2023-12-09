@@ -38,6 +38,12 @@ export default {
       },
     },
   },
+  args: {
+    label: "Label",
+    type: "text",
+    icon: "left",
+    onButtonIconClick: jest.fn(),
+  },
 } as ComponentMeta<typeof Component>;
 
 const Template: ComponentStory<typeof Component> = (args) => (

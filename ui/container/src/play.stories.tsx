@@ -16,6 +16,9 @@ export default {
   parameters: {
     layout: "fullscreen",
   },
+  args: {
+    maxWidth: "fluid",
+  },
 } as ComponentMeta<typeof Component>;
 
 const Template: ComponentStory<typeof Component> = (args) => (
