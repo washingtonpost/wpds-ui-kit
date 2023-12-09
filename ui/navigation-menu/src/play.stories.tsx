@@ -75,9 +75,9 @@ const UseNextLinkTemplate: ComponentStory<typeof NavigationMenu.Root> = (
     <NavigationMenu.Root {...args}>
       <NavigationMenu.List>
         <NavigationMenu.Item>
-          <NextLink href="#" passHref>
-            <NavigationMenu.Link>Next Link</NavigationMenu.Link>
-          </NextLink>
+          <NavigationMenu.Link asChild>
+            <NextLink href="#">Next Link</NextLink>
+          </NavigationMenu.Link>
         </NavigationMenu.Item>
       </NavigationMenu.List>
     </NavigationMenu.Root>
