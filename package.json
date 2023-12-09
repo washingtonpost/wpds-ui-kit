@@ -88,12 +88,12 @@
     "esbuild-windows-32": "0.14.25",
     "esbuild-windows-64": "0.14.25",
     "esbuild-windows-arm64": "0.14.25",
-    "turbo-darwin-64": "1.10.14",
-    "turbo-darwin-arm64": "1.10.14",
-    "turbo-linux-64": "1.10.14",
-    "turbo-linux-arm64": "1.10.14",
-    "turbo-windows-64": "1.10.14",
-    "turbo-windows-arm64": "1.10.14"
+    "turbo-darwin-64": "1.11.1",
+    "turbo-darwin-arm64": "1.11.1",
+    "turbo-linux-64": "1.11.1",
+    "turbo-linux-arm64": "1.11.1",
+    "turbo-windows-64": "1.11.1",
+    "turbo-windows-arm64": "1.11.1"
   },
   "workspaces": [
     "./ui/*",
