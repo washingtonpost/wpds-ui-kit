@@ -19,6 +19,9 @@ export default {
     Trigger: Popover.Trigger,
     Anchor: Popover.Anchor,
   },
+  parameters: {
+    chromatic: { delay: 300 },
+  },
 } as ComponentMeta<typeof Popover.Content>;
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
