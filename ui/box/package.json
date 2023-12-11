@@ -24,7 +24,7 @@
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
-    "build": "tsup src/index.ts --loader .ts=tsx --minify --format esm,cjs --dts --sourcemap --legacy-output --external react --clean",
+    "build": "tsup src/index.ts --loader .ts=tsx --minify --format esm,cjs --dts --sourcemap --legacy-output --external react",
     "dev": "tsup src/index.ts --format esm,cjs --watch --dts --legacy-output --external react",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
