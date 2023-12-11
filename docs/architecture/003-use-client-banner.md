@@ -9,7 +9,7 @@ To improve support for Next.js App Router, all components and hooks are exported
 Add a banner to our bundled code that tells React to hydrate the components on the client. See related style registry in `./apps/nextjs14-approuter/src/app/registry.js` which uses `useServerInsertedHTML` API to inject rules before any content that might use them. Make sure the registry wraps your app during initial server-side rendering `<StitchesRegistry>{children}</StitchesRegistry>`.
 
 ```javascript
-import { defineConfig } from "tsup"
+import { defineConfig } from "tsup";
 
 export default defineConfig({
   format: ["cjs", "esm"],
@@ -18,7 +18,7 @@ export default defineConfig({
   banner: {
     js: "'use client'",
   },
-})
+});
 ```
 
 ## Scope
