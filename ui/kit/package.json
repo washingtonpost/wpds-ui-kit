@@ -44,6 +44,7 @@
     "@washingtonpost/wpds-carousel": "1.17.0",
     "@washingtonpost/wpds-checkbox": "1.17.0",
     "@washingtonpost/wpds-container": "1.17.0",
+    "@washingtonpost/wpds-dialog": "1.17.0",
     "@washingtonpost/wpds-divider": "1.17.0",
     "@washingtonpost/wpds-drawer": "1.17.0",
     "@washingtonpost/wpds-error-message": "1.17.0",
