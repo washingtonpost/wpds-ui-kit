@@ -46,7 +46,9 @@ const Template: ComponentStory<typeof NavigationMenu.Root> = (args) => {
                   <NavigationMenu.Link href="#">Apples</NavigationMenu.Link>
                 </NavigationMenu.Item>
                 <NavigationMenu.Item>
-                  <NavigationMenu.Link href="#" active>Bananas</NavigationMenu.Link>
+                  <NavigationMenu.Link href="#" active>
+                    Bananas
+                  </NavigationMenu.Link>
                 </NavigationMenu.Item>
                 <NavigationMenu.Item>
                   <NavigationMenu.Link href="#">Oranges</NavigationMenu.Link>

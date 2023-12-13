@@ -28,6 +28,7 @@ import {
   NavigationMenu,
   InputSearch,
   Select,
+  Dialog,
 } from "@washingtonpost/wpds-ui-kit";
 import { Chart, Settings, Info, Menu } from "@washingtonpost/wpds-assets";
 
@@ -512,6 +513,35 @@ export const KitchenSink = () => {
           </InputSearch.List>
         </InputSearch.Popover>
       </InputSearch.Root>
+      <h2>Dialog</h2>
+      <Dialog.Root>
+        <Dialog.Trigger asChild>
+          <Button>Open</Button>
+        </Dialog.Trigger>
+        <Dialog.Portal>
+          <Dialog.Overlay />
+          <Dialog.Content>
+            <Dialog.Close />
+            <Dialog.Header>
+              <Dialog.Title>Dialog Title</Dialog.Title>
+            </Dialog.Header>
+            <Dialog.Body>
+              <Dialog.Description>Dialog description</Dialog.Description>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Tempora cupiditate possimus aliquid natus cumque? Ratione minus
+                exercitationem consequuntur quis dolor ut possimus earum
+                officiis itaque culpa eveniet vero, laboriosam sit!
+              </p>
+            </Dialog.Body>
+            <Dialog.Footer>
+              <Dialog.Close asChild>
+                <Button>Cancel</Button>
+              </Dialog.Close>
+            </Dialog.Footer>
+          </Dialog.Content>
+        </Dialog.Portal>
+      </Dialog.Root>
     </>
   );
 };
