@@ -1,20 +1,23 @@
 ---
 title: Dialog
 description: A dialog is an overlay used to display important content or request input from the user. It is layered on top of the primary screen and typically requires the user to take action before continuing.
-Note: Dialogs are designed to be attention-grabbing and prominent to ensure that the user sees and interacts with them, therefore, they should only be used to display critical information. For less critical information and tasks, consider using our drawer component or popover component for actionable UI and our tooltip component for non-actionable UI.
 component: Dialog
 openSourceLink: https://www.radix-ui.com/docs/primitives/components/dialog
 status: Alpha
 ---
 
+Note: Dialogs are designed to be attention-grabbing and prominent to ensure that the user sees and interacts with them, therefore, they should only be used to display critical information. For less critical information and tasks, consider using our [drawer component](/components/drawer) or [popover component](/components/popover) for actionable UI and our [tooltip component](/components/tooltip) for non-actionable UI.
+
 ---
 
 ## Anatomy
 
-<Anatomy
-  src="/img/components/dialog/anatomy.svg"
-  caption="Note: Image not to scale"
-/>
+<Box css={{ "& > div > div": { paddingBlock: 0 } }}>
+  <Anatomy
+    src="/img/components/dialog/anatomy.svg"
+    caption="Note: Image not to scale"
+  />
+</Box>
 
 1. Container
 2. Close button icon (optional)
@@ -39,7 +42,7 @@ Dialog width can be defined. The default width of the dialog is 500px.
     <Dialog.Content width="500px">
       <Dialog.Close />
       <Dialog.Header>
-        <Dialog.Title>Dialog Width</Dialog.Title>
+        <Dialog.Title>Dialog width</Dialog.Title>
       </Dialog.Header>
       <Dialog.Body>
         <Dialog.Description>This dialog is 500px wide.</Dialog.Description>
@@ -63,7 +66,7 @@ Dialog height can be defined. The default height of the dialog is 300px.
     <Dialog.Content height="300px">
       <Dialog.Close />
       <Dialog.Header>
-        <Dialog.Title>Dialog Height</Dialog.Title>
+        <Dialog.Title>Dialog height</Dialog.Title>
       </Dialog.Header>
       <Dialog.Body>
         <Dialog.Description>This dialog is 300px tall.</Dialog.Description>
@@ -220,7 +223,9 @@ The container color can be changed by defining the color using one our tokens.
 ### Closing
 
 When the close button is rendered, the dialog can be closed by clicking the scrim, the close button, or the cancel button if one is present.
+
 Note: If the user is required to take action in order to dismiss the dialog, the dialog can be set to open and will remain open even if the scrim is clicked on. The user must then interact with the content in the dialog to close it.
+
 On hover, a circular background color appears behind the close icon.
 
 ```jsx withPreview demoHeight="500"
@@ -298,7 +303,7 @@ Note: If a dialog has vertical overflow, the content in the scrollable area shou
 
 ### Content should be accessible
 
-Make sure color contrasts comply with WCAG accessible contrast requirements.
+Make sure color contrasts comply with [WCAG accessible contrast requirements](https://webaim.org/articles/contrast/).
 
 ```jsx withPreview isGuide="error" demoHeight="473"
 <Dialog.Root defaultOpen>
@@ -780,7 +785,7 @@ export default function Example() {
           <Dialog.Content css={{ position: "absolute" }}>
             <Dialog.Close />
             <Dialog.Header>
-              <Dialog.Title>Dialog Header</Dialog.Title>
+              <Dialog.Title>Dialog header</Dialog.Title>
             </Dialog.Header>
             <Dialog.Body>
               <Dialog.Description>
