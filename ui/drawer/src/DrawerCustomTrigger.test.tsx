@@ -32,16 +32,18 @@ describe("DrawerCustomTrigger", () => {
     );
   });
 
-  test("uses openChange handler from context", () => {
+  test("uses openChange handler from context", async () => {
+    const user = userEvent.setup();
     const handleChange = jest.fn();
     customRender(<DrawerCustomTrigger>Trigger Drawer</DrawerCustomTrigger>, {
       onOpenChange: handleChange,
     });
-    userEvent.click(screen.getByRole("button"));
+    await user.click(screen.getByRole("button"));
     expect(handleChange).toHaveBeenCalledWith(true);
   });
 
-  test("has keyboard accessibility", () => {
+  test("has keyboard accessibility", async () => {
+    const user = userEvent.setup();
     const handleChange = jest.fn();
     customRender(
       <DrawerCustomTrigger as="span">Trigger Drawer</DrawerCustomTrigger>,
@@ -49,11 +51,11 @@ describe("DrawerCustomTrigger", () => {
         onOpenChange: handleChange,
       }
     );
-    userEvent.tab();
+    await user.tab();
     expect(screen.getByRole("button")).toHaveFocus();
-    userEvent.keyboard("a");
+    await user.keyboard("a");
     expect(handleChange).not.toHaveBeenCalled();
-    userEvent.keyboard("{enter}");
+    await user.keyboard("{enter}");
     expect(handleChange).toHaveBeenCalledWith(true);
   });
 });

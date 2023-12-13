@@ -44,7 +44,7 @@
     "@washingtonpost/wpds-input-label": "*",
     "@washingtonpost/wpds-input-shared": "*",
     "@washingtonpost/wpds-theme": "*",
-    "react": "^16.8.6 || ^17.0.2"
+    "react": "^16.8.6 || ^17.0.2 || ^18"
   },
   "dependencies": {
     "@radix-ui/react-select": "^1.2.2",

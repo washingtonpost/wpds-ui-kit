@@ -35,7 +35,8 @@ describe("TabsRoot Container", () => {
     expect(screen.getByRole("tab", { selected: true })).toBeInTheDocument();
   });
 
-  it("calls the onValueChange prop when the value changes", () => {
+  it("calls the onValueChange prop when the value changes", async () => {
+    const user = userEvent.setup();
     const onValueChange = jest.fn();
     render(
       <TabsRoot onValueChange={onValueChange} defaultValue="A">
@@ -45,7 +46,7 @@ describe("TabsRoot Container", () => {
         </TabsList>
       </TabsRoot>
     );
-    userEvent.click(screen.getByRole("tab", { selected: false }));
+    await user.click(screen.getByRole("tab", { selected: false }));
     expect(onValueChange).toHaveBeenCalledWith("B");
   });
 });

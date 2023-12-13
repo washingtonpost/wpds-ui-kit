@@ -73,13 +73,17 @@ describe("DrawerRoot", () => {
   });
 
   test("context sets open change callback and gets called", async () => {
+    const user = userEvent.setup();
+
     const handleChange = jest.fn();
     render(
       <DrawerRoot id="test-id" onOpenChange={handleChange}>
         <TestComponent />
       </DrawerRoot>
     );
-    userEvent.click(screen.getByRole("button"));
+
+    await user.click(screen.getByRole("button"));
+
     expect(handleChange).toHaveBeenCalled();
   });
 
@@ -93,9 +97,10 @@ describe("DrawerRoot", () => {
   };
 
   test("context uses controlled open property", async () => {
+    const user = userEvent.setup();
     const handleChange = jest.fn();
     render(<App handleChange={handleChange} />);
-    userEvent.click(screen.getByRole("button"));
-    expect(handleChange).toBeCalled();
+    await user.click(screen.getByRole("button"));
+    expect(handleChange).toHaveBeenCalled();
   });
 });

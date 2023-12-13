@@ -41,7 +41,7 @@
     "@washingtonpost/wpds-button": "^1.7.0",
     "@washingtonpost/wpds-icon": "*",
     "@washingtonpost/wpds-theme": "*",
-    "react": "^16.8.6 || ^17.0.2"
+    "react": "^16.8.6 || ^17.0.2 || ^18"
   },
   "dependencies": {
     "@radix-ui/react-dropdown-menu": "2.0.3",

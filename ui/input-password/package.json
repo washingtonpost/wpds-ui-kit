@@ -39,7 +39,7 @@
     "@washingtonpost/wpds-assets": "^1.22.0",
     "@washingtonpost/wpds-icon": "*",
     "@washingtonpost/wpds-input-text": "*",
-    "react": "^16.8.6 || ^17.0.2"
+    "react": "^16.8.6 || ^17.0.2 || ^18"
   },
   "dependencies": {
     "@washingtonpost/wpds-assets": "^1.22.0",

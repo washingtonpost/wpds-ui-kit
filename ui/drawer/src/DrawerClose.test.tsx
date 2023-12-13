@@ -25,12 +25,13 @@ describe("DrawerTrigger", () => {
     );
   });
 
-  test("uses openChange handler from context", () => {
+  test("uses openChange handler from context", async () => {
+    const user = userEvent.setup();
     const handleChange = jest.fn();
     customRender(<DrawerClose />, {
       onOpenChange: handleChange,
     });
-    userEvent.click(screen.getByRole("button"));
+    await user.click(screen.getByRole("button"));
     expect(handleChange).toHaveBeenCalledWith(false);
   });
 });

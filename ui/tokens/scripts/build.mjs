@@ -1,5 +1,5 @@
 import React from "react";
-import { renderToString } from "react-dom/server.js";
+import { renderToString } from 'react-dom/server';
 import { getCssText, globalStyles, darkModeGlobalStyles, darkTheme } from "@washingtonpost/wpds-theme";
 import fs from "fs";
 

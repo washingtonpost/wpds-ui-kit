@@ -3,11 +3,6 @@ module.exports = {
   roots: ["./ui"],
   preset: "ts-jest",
   testEnvironment: "./custom-env.ts",
-  globals: {
-    "ts-jest": {
-      tsconfig: "tsconfig.test.json",
-    },
-  },
   cacheDirectory: ".jest-cache",
   collectCoverage: true,
   coverageDirectory: "jest-coverage",
@@ -27,5 +22,13 @@ module.exports = {
   moduleNameMapper: {
     [`^nanoid(/(.*)|$)`]: `nanoid$1`,
     "^~/(.*)$": "<rootDir>/$1",
+  },
+  transform: {
+    "^.+\\.tsx?$": [
+      "ts-jest",
+      {
+        tsconfig: "tsconfig.test.json",
+      },
+    ],
   },
 };

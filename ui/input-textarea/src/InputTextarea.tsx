@@ -67,6 +67,8 @@ export interface InputTextareaProps
     WPDS.VariantProps<typeof InputTextareaCSS>,
     "isInvalid" | "isDisabled"
   > {
+  /** children */
+  children?: React.ReactNode;
   /** Override CSS */
   css?: WPDS.CSS;
   /** The initial input element value for uncontrolled components */

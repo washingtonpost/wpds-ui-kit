@@ -46,7 +46,9 @@ const Template: ComponentStory<typeof NavigationMenu.Root> = (args) => {
                   <NavigationMenu.Link href="#">Apples</NavigationMenu.Link>
                 </NavigationMenu.Item>
                 <NavigationMenu.Item>
-                  <NavigationMenu.Link href="#" active>Bananas</NavigationMenu.Link>
+                  <NavigationMenu.Link href="#" active>
+                    Bananas
+                  </NavigationMenu.Link>
                 </NavigationMenu.Item>
                 <NavigationMenu.Item>
                   <NavigationMenu.Link href="#">Oranges</NavigationMenu.Link>
@@ -73,7 +75,7 @@ const UseNextLinkTemplate: ComponentStory<typeof NavigationMenu.Root> = (
     <NavigationMenu.Root {...args}>
       <NavigationMenu.List>
         <NavigationMenu.Item>
-          <NextLink href="#" passHref>
+          <NextLink href="#" passHref legacyBehavior>
             <NavigationMenu.Link>Next Link</NavigationMenu.Link>
           </NextLink>
         </NavigationMenu.Item>

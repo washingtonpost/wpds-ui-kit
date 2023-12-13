@@ -9,8 +9,6 @@ import { styled, theme } from "@washingtonpost/wpds-theme";
 import { expect } from "@storybook/jest";
 import { within, userEvent } from "@storybook/testing-library";
 
-import type { ComponentStory, ComponentMeta } from "@storybook/react";
-
 export default {
   title: "Button",
   component: Component,
@@ -32,6 +30,13 @@ export default {
       options: ["center", "left", "right", "none"],
       defaultValue: "none",
     },
+  },
+  args: {
+    children: "Button",
+    variant: "secondary",
+    density: "compact",
+    isOutline: false,
+    icon: "none",
   },
 } as ComponentMeta<typeof Component>;
 

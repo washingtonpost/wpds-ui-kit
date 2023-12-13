@@ -700,26 +700,31 @@ const InternalFocusTemplate = () => {
 
 export const InternalFocusInteractions = InternalFocusTemplate.bind({});
 
+InternalFocusInteractions.parameters = {
+  chromatic: { viewports: [1024] },
+};
+
 InternalFocusInteractions.play = async ({ canvasElement }) => {
+  const user = userEvent.setup();
   const canvas = within(canvasElement);
-  await userEvent.tab();
-  await userEvent.tab();
-  await userEvent.tab();
-  await userEvent.keyboard("[ArrowDown]");
+  await user.tab();
+  await user.tab();
+  await user.tab();
+  await user.keyboard("[ArrowDown]");
   const groups = canvas.getAllByRole("group");
   const content = groups[1];
   expect(content).toHaveAttribute("aria-activedescendant", "button-id-0");
   const button1 = canvas.getByText("Action 1");
-  await userEvent.click(button1);
+  await user.click(button1);
   await waitFor(() =>
     expect(button1).toHaveClass("wpds-c-kSOqLF-bywHgD-variant-primary")
   );
   const button2 = canvas.getByText("Action 2");
-  await userEvent.click(button2);
+  await user.click(button2);
   await waitFor(() =>
     expect(button2).toHaveClass("wpds-c-kSOqLF-bywHgD-variant-primary")
   );
-  await userEvent.click(canvas.getAllByRole("main")[0]);
+  await user.click(canvas.getAllByRole("main")[0]);
   const item2 = canvas.getByLabelText("3 of 10");
   expect(item2).not.toHaveClass("wpds-c-lnwwct-jEMdsi-focused-true");
 };

@@ -234,15 +234,8 @@ const InteractionsTemplate: ComponentStory<typeof InputSearch.Root> = () => (
 
 export const Interactions = InteractionsTemplate.bind({});
 
-// Function to emulate pausing between interactions
-function sleep(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
-
 Interactions.play = async () => {
-  // radix Label needs a tick to associate labels with inputs
-  await sleep(0);
-  const input = screen.getByLabelText("Search");
+  const input = await screen.findByLabelText("Search");
   await userEvent.type(input, "app", {
     delay: 100,
   });

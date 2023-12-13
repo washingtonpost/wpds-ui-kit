@@ -26,6 +26,9 @@ export default {
       control: "select",
     },
   },
+  parameters: {
+    chromatic: { delay: 300 },
+  },
 } as ComponentMeta<typeof Tooltip.Root>;
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
