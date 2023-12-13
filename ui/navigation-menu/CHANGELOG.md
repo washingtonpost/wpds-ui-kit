@@ -5,14 +5,9 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 # [1.18.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.17.0...v1.18.0) (2023-12-13)
 
-
 ### Features
 
-* add Dialog component ([15d6206](https://github.com/washingtonpost/wpds-ui-kit/commit/15d6206d6287bb3eee3c9f0af8ff57a0bf917998))
-
-
-
-
+- add Dialog component ([15d6206](https://github.com/washingtonpost/wpds-ui-kit/commit/15d6206d6287bb3eee3c9f0af8ff57a0bf917998))
 
 # [1.17.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.16.2...v1.17.0) (2023-11-30)
 

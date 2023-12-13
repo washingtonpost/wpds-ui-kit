@@ -5,14 +5,9 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 # [1.18.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.17.0...v1.18.0) (2023-12-13)
 
-
 ### Bug Fixes
 
-* our lockfile area for build dot site was borked ([#547](https://github.com/washingtonpost/wpds-ui-kit/issues/547)) ([2a66631](https://github.com/washingtonpost/wpds-ui-kit/commit/2a66631d066b7128c4be209a60af0ad86fc528e9))
-
-
-
-
+- our lockfile area for build dot site was borked ([#547](https://github.com/washingtonpost/wpds-ui-kit/issues/547)) ([2a66631](https://github.com/washingtonpost/wpds-ui-kit/commit/2a66631d066b7128c4be209a60af0ad86fc528e9))
 
 # [1.17.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.16.2...v1.17.0) (2023-11-30)
 
