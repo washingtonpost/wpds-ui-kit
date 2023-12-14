@@ -52,6 +52,16 @@ export const getContributors = async () => {
         avatar: "https://avatars.githubusercontent.com/u/2956240?v=4",
         url: "https://github.com/JasonBernert",
       })
+      .concat({
+        name: "baconjulie",
+        avatar: "https://avatars.githubusercontent.com/u/5865863?v=4",
+        url: "https://github.com/baconjulie"
+      })
+      .concat({
+        name: "erikreyna",
+        avatar: "https://avatars.githubusercontent.com/u/2431045?v=4",
+        url: "https://github.com/erikreyna"
+      })
       // sort alphabetically
       .sort((a, b) => (a.name > b.name ? 1 : -1))
       .filter((contributor) => {
