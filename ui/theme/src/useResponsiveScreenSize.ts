@@ -12,6 +12,15 @@ type ScreenSizeCSSProperty =
   | "xxlarge"
   | "unknown";
 
+export const screenSizesEnums = {
+  small: "small",
+  medium: "medium",
+  large: "large",
+  xlarge: "xlarge",
+  xxlarge: "xxlarge",
+  unknown: "unknown",
+};
+
 // Function to get the current screen size from CSS variable
 export const getScreenSize = (): ScreenSizeCSSProperty => {
   if (typeof window === "undefined") {
