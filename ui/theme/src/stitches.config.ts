@@ -125,6 +125,22 @@ export const globalStyles = globalCss({
   ":root": {
     "--base": `${tokens.base}`,
     lineHeight: "$meta",
+    $$screenSize: "small",
+    "@maxSm": {
+      $$screenSize: "medium",
+    },
+    "@maxMd": {
+      $$screenSize: "large",
+    },
+    "@maxLg": {
+      $$screenSize: "xlarge",
+    },
+    "@maxXl": {
+      $$screenSize: "xxlarge",
+    },
+    "@maxXxl": {
+      $$screenSize: "xxxlarge",
+    },
   },
   "*": {
     boxSizing: "border-box",
