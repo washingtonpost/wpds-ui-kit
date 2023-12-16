@@ -1,20 +1,42 @@
 import { useState, useEffect } from "react";
 
-export const useResponsiveScreenSize = () => {
-  // Function to get the current screen size from CSS variable
-  const getScreenSize = () => {
-    if (typeof window === "undefined") {
-      return "small";
-    } else {
-      return getComputedStyle(document.documentElement)
-        .getPropertyValue("--wpds--screenSize")
-        .trim()
-        .replace(/['"]+/g, ""); // Remove quotes for a clean string
-    }
-  };
+/**
+ * ScreenSize
+ * @description ScreenSize type
+ */
+type ScreenSizeCSSProperty =
+  | "small"
+  | "medium"
+  | "large"
+  | "xlarge"
+  | "xxlarge"
+  | "unknown";
 
+// Function to get the current screen size from CSS variable
+export const getScreenSize = (): ScreenSizeCSSProperty => {
+  if (typeof window === "undefined") {
+    return "unknown";
+  } else {
+    // Get the value of the --wpds--screenSize CSS variable
+    const screenSize = window
+      .getComputedStyle(document.documentElement)
+      .getPropertyValue("--wpds--screenSize");
+
+    // Return the value
+    return screenSize as ScreenSizeCSSProperty;
+  }
+};
+
+/**
+ *
+ * @returns ScreenSize
+ */
+export const useResponsiveScreenSize = (): ScreenSizeCSSProperty => {
   // State to store the current screen size
-  const [screenSize, setScreenSize] = useState(getScreenSize());
+  const [screenSize, setScreenSize] = useState(getScreenSize()) as [
+    ScreenSizeCSSProperty,
+    React.Dispatch<React.SetStateAction<ScreenSizeCSSProperty>>
+  ];
 
   useEffect(() => {
     // dont run on server
