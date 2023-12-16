@@ -282,3 +282,78 @@ export default function Example() {
   );
 }
 ```
+
+### Using the Responsive Screen Size React Hook
+
+The `useResponsiveScreenSize` hook can be used to get the current screen size and use it in your components.
+
+<Alert variant="info">
+  <p>
+    The hook is only available in the browser and will return <code>undefined</code> on the server.
+  </p>
+</Alert>
+
+```jsx withPreview
+export default function Example() {
+  const MenuButton = styled(Button, {
+    variants: {
+      hidden: {
+        true: {
+          display: "none",
+        },
+        false: {
+          display: "inline-block",
+        },
+      },
+    },
+  });
+
+  const Container = styled("div", {
+    display: "flex",
+    justifyContent: "space-between",
+    backgroundColor: theme.colors.secondary,
+    boxShadow: theme.shadows["200"],
+    color: theme.colors.onSecondary,
+    padding: theme.space["100"],
+    width: "150px",
+    height: "150px",
+  });
+
+  const Row = styled("div", {
+    display: "flex",
+    gap: theme.space["100"],
+  });
+
+  const screenSize = useResponsiveScreenSize();
+
+  return (
+    <div>
+      <p>Show a menu button below the medium breakpoint</p>
+      <Row>
+        <Container>
+          Mobile first
+          <MenuButton
+            icon="center"
+            hidden={screenSize === "sm" || screenSize === "md"}
+          >
+            <Icon>
+              <Menu />
+            </Icon>
+          </MenuButton>
+        </Container>
+        <Container>
+          Desktop first
+          <MenuButton
+            icon="center"
+            hidden={screenSize === "lg" || screenSize === "xl"}
+          >
+            <Icon>
+              <Menu />
+            </Icon>
+          </MenuButton>
+        </Container>
+      </Row>
+    </div>
+  );
+}
+```
