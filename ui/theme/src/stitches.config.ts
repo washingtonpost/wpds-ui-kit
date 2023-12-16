@@ -143,7 +143,7 @@ export const globalStyles = globalCss({
     },
     "@minXxl": {
       $$screenSize: "infinity", // temporary name cause we don't have a name for this
-    }
+    },
   },
   "*": {
     boxSizing: "border-box",
