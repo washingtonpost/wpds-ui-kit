@@ -7,7 +7,7 @@ export const useResponsiveScreenSize = () => {
       return "small";
     } else {
       return getComputedStyle(document.documentElement)
-        .getPropertyValue("--wpds-screen-size")
+        .getPropertyValue("--wpds--screenSize")
         .trim()
         .replace(/['"]+/g, ""); // Remove quotes for a clean string
     }

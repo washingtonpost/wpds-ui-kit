@@ -126,20 +126,20 @@ export const globalStyles = globalCss({
     "--base": `${tokens.base}`,
     lineHeight: "$meta",
     $$screenSize: "small",
-    "@maxSm": {
+    "@sm": {
+      $$screenSize: "small",
+    },
+    "@md": {
       $$screenSize: "medium",
     },
-    "@maxMd": {
+    "@lg": {
       $$screenSize: "large",
     },
-    "@maxLg": {
+    "@xl": {
       $$screenSize: "xlarge",
     },
-    "@maxXl": {
+    "@xxl": {
       $$screenSize: "xxlarge",
-    },
-    "@maxXxl": {
-      $$screenSize: "xxxlarge",
     },
   },
   "*": {
