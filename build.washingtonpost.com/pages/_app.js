@@ -20,7 +20,15 @@ import "../public/global.css";
 import Snowfall from "react-snowfall";
 
 const WinterWonderland = () => {
-  return <Snowfall />;
+  return (
+    <Snowfall
+      style={{
+        position: "fixed",
+        width: "100vw",
+        height: "100vh",
+      }}
+    />
+  );
 };
 
 const globalTextStyles = globalCss({
