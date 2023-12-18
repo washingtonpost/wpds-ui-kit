@@ -20,6 +20,35 @@ import "../public/global.css";
 import Snowfall from "react-snowfall";
 
 const WinterWonderland = () => {
+  // client side check for christmas, off by default
+  const [showSnow, setShowSnow] = React.useState(false);
+
+  React.useEffect(() => {
+    // only run on client
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    // check if it's after christmas
+    const today = new Date();
+    const christmas = new Date(today.getFullYear(), 11, 25);
+    if (today.getMonth() === 11 && today.getDate() > 25) {
+      christmas.setFullYear(christmas.getFullYear() + 1);
+    }
+
+    // if it's after christmas, don't show snow
+    if (today > christmas) {
+      return;
+    }
+
+    // if it's before christmas, show snow
+    setShowSnow(true);
+  }, []);
+
+  if (!showSnow) {
+    return null;
+  }
+
   return (
     <Snowfall
       style={{
