@@ -17,6 +17,12 @@ import SEO from "../next-seo.config";
 import "@washingtonpost/wpds-tokens/dist/styles.css";
 import "../public/global.css";
 
+import Snowfall from "react-snowfall";
+
+const WinterWonderland = () => {
+  return <Snowfall />;
+};
+
 const globalTextStyles = globalCss({
   body: {
     color: "$accessible",
@@ -87,6 +93,7 @@ function App({ Component, pageProps }) {
 
   return (
     <>
+      <WinterWonderland />
       <DefaultSeo {...SEO} />
       <ThemeProvider
         attribute="class"

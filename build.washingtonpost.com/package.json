@@ -43,6 +43,7 @@
     "react-error-boundary": "^3.1.4",
     "react-hook-form": "^7.41.0",
     "react-phone-number-input": "^3.2.13",
+    "react-snowfall": "^1.2.1",
     "react-svg": "^15.0.4",
     "react-toastify": "^8.2.0",
     "remark-gfm": "^3.0.1",
