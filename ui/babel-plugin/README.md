@@ -14,7 +14,7 @@ import { styled } from "@wpds/react";
 const Button = styled("button", {
   color: "red",
   backgroundColor: "blue",
-  ":hover": {
+  "&:hover": {
     color: "blue",
   },
 });
@@ -40,7 +40,7 @@ import { styled } from "@wpds/react";
 const Button = styled("button", {
   color: "red",
   backgroundColor: "blue",
-  ":hover": {
+  "&:hover": {
     color: "blue",
   },
 });
