@@ -164,34 +164,30 @@ module.exports = declare((api) => {
                 ]);
               }
             },
-            // if we encounter a jsx element with a css prop
-            // inline it to style attribute and remove the css prop
-            JSXElement(path) {
-              if (path.node.openingElement.attributes.length) {
-                const cssProp = path.node.openingElement.attributes.find(
-                  (attr) => attr.name.name === "css"
+
+            // if we have a css prop log it
+            // the css prop will be a runtime overide of the styles
+            // using a <style> element
+            JSXOpeningElement(path) {
+              if (
+                path.node.attributes.some(
+                  (attr) =>
+                    t.isJSXAttribute(attr) &&
+                    t.isJSXIdentifier(attr.name) &&
+                    attr.name.name === "css"
+                )
+              ) {
+                // get the css prop
+                const cssProp = path.node.attributes.find(
+                  (attr) =>
+                    t.isJSXAttribute(attr) &&
+                    t.isJSXIdentifier(attr.name) &&
+                    attr.name.name === "css"
                 );
-                if (cssProp) {
-                  // iterate over the properties and log raw values
-                  const inlineStyles = {};
-                  cssProp.value.expression.properties.forEach((prop) => {
-                    inlineStyles[prop.key.name] = prop.value.value;
-                  });
-                  // log the inline styles
-                  const inlineStylesString = stringify(inlineStyles);
-                  // remove the css prop
-                  path.node.openingElement.attributes =
-                    path.node.openingElement.attributes.filter(
-                      (attr) => attr.name.name !== "css"
-                    );
-                  // add the style attribute with the inline styles
-                  path.node.openingElement.attributes.push(
-                    t.jsxAttribute(
-                      t.jsxIdentifier("style"),
-                      t.stringLiteral(inlineStylesString)
-                    )
-                  );
-                }
+                // get the value of the css prop
+                const cssPropValue = cssProp.value.expression.value;
+                // log the value of the css prop
+                console.log(cssPropValue);
               }
             },
           });
