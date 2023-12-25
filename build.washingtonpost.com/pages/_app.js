@@ -29,19 +29,6 @@ const WinterWonderland = () => {
       return;
     }
 
-    // check if it's after christmas
-    const today = new Date();
-    const christmas = new Date(today.getFullYear(), 11, 25);
-    if (today.getMonth() === 11 && today.getDate() > 25) {
-      christmas.setFullYear(christmas.getFullYear() + 1);
-    }
-
-    // if it's after christmas, don't show snow
-    if (today > christmas) {
-      return;
-    }
-
-    // if it's before christmas, show snow
     setShowSnow(true);
   }, []);
 
