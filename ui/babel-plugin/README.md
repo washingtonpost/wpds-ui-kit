@@ -7,7 +7,7 @@
 
 ```js
 // input
-import { styled } from "@wpds/react";
+import { styled } from "@wpds/react-ui-kit";
 // uses typescript version of the library
 // which is helped for type checking and intellisense
 
@@ -51,7 +51,7 @@ export default function App() {
 
 ```js
 // output
-import { styled } from "@wpds/react/runtime";
+import { styled } from "@wpds/react-ui-kit/runtime";
 // uses the runtime version of the library
 import "./styles.css";
 
