@@ -40,8 +40,8 @@
     "react": "^16.8.6 || ^17.0.2 || ^18"
   },
   "dependencies": {
-    "@radix-ui/react-accordion": "^1.1.0",
-    "@washingtonpost/wpds-assets": "^1.22.0",
+    "@radix-ui/react-accordion": "^1.1.2",
+    "@washingtonpost/wpds-assets": "^1.18.0",
     "@washingtonpost/wpds-icon": "1.17.0",
     "@washingtonpost/wpds-theme": "1.17.0"
   },
