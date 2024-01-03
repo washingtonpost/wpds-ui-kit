@@ -28,6 +28,7 @@ import {
   NavigationMenu,
   InputSearch,
   Select,
+  Accordion,
 } from "@washingtonpost/wpds-ui-kit";
 import { Chart, Settings, Info, Menu } from "@washingtonpost/wpds-assets";
 
@@ -70,6 +71,35 @@ export const KitchenSink = () => {
       </p>
 
       <Stack>
+        <h2>Accordion</h2>
+
+        <Accordion.Root type="single" defaultValue="item-1" collapsible={true}>
+          <Accordion.Item value="item-1">
+            <Accordion.Trigger>Header text item one</Accordion.Trigger>
+            <Accordion.Content>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in
+              augue in felis pharetra finibus. In sagittis aliquam augue. Lorem
+              ipsum dolor sit amet, consectetur adipiscing elit.
+            </Accordion.Content>
+          </Accordion.Item>
+          <Accordion.Item value="item-2">
+            <Accordion.Trigger>Header text item two</Accordion.Trigger>
+            <Accordion.Content>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in
+              augue in felis pharetra finibus. In sagittis aliquam augue. Lorem
+              ipsum dolor sit amet, consectetur adipiscing elit.
+            </Accordion.Content>
+          </Accordion.Item>
+          <Accordion.Item value="item-3">
+            <Accordion.Trigger>Header text item three</Accordion.Trigger>
+            <Accordion.Content>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in
+              augue in felis pharetra finibus. In sagittis aliquam augue. Lorem
+              ipsum dolor sit amet, consectetur adipiscing elit.
+            </Accordion.Content>
+          </Accordion.Item>
+        </Accordion.Root>
+
         <h2>Select</h2>
         <Select.Root defaultValue="ecuador">
           <Select.Trigger aria-label="Countries">
@@ -92,9 +122,7 @@ export const KitchenSink = () => {
             </Select.Group>
           </Select.Content>
         </Select.Root>
-      </Stack>
 
-      <Stack>
         <h2>Container</h2>
         <Container
           maxWidth="lg"
