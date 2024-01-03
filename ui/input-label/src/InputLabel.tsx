@@ -34,7 +34,7 @@ interface InputLabelProps extends LabelProps {
   required?: boolean;
 }
 
-export const InputLabel = React.forwardRef<HTMLSpanElement, InputLabelProps>(
+export const InputLabel = React.forwardRef<HTMLLabelElement, InputLabelProps>(
   ({ children, css, disabled, required, ...props }, ref) => {
     return (
       <StyledLabel ref={ref} css={css} isDisabled={disabled} {...props}>
