@@ -87,7 +87,6 @@ function App({ Component, pageProps }) {
 
   return (
     <>
-      <WinterWonderland />
       <DefaultSeo {...SEO} />
       <ThemeProvider
         attribute="class"
