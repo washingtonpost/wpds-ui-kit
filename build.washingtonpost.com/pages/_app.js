@@ -17,36 +17,6 @@ import SEO from "../next-seo.config";
 import "@washingtonpost/wpds-tokens/dist/styles.css";
 import "../public/global.css";
 
-import Snowfall from "react-snowfall";
-
-const WinterWonderland = () => {
-  // client side check for christmas, off by default
-  const [showSnow, setShowSnow] = React.useState(false);
-
-  React.useEffect(() => {
-    // only run on client
-    if (typeof window === "undefined") {
-      return;
-    }
-
-    setShowSnow(true);
-  }, []);
-
-  if (!showSnow) {
-    return null;
-  }
-
-  return (
-    <Snowfall
-      style={{
-        position: "fixed",
-        width: "100vw",
-        height: "100vh",
-      }}
-    />
-  );
-};
-
 const globalTextStyles = globalCss({
   body: {
     color: "$accessible",
