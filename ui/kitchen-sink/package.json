@@ -37,13 +37,12 @@
   },
   "peerDependencies": {
     "@washingtonpost/wpds-assets": "latest",
-    "@washingtonpost/wpds-ui-kit": "1.2.0",
+    "@washingtonpost/wpds-ui-kit": "*",
     "react": "^16.8.6 || ^17.0.2 || ^18"
   },
   "dependencies": {
     "@washingtonpost/wpds-assets": "latest",
-    "@washingtonpost/wpds-ui-kit": "1.17.0",
-    "nanoid": "^3.3.4"
+    "@washingtonpost/wpds-ui-kit": "1.17.0"
   },
   "gitHead": "5ba886cfa95b3eed476edf87b1ac36d37ffe3469"
 }

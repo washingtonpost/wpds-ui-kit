@@ -1,5 +1,4 @@
 import * as React from "react";
-import { nanoid } from "nanoid";
 
 import { theme, styled } from "@washingtonpost/wpds-theme";
 import { ChevronDown } from "@washingtonpost/wpds-assets";
@@ -110,9 +109,10 @@ export const SelectTrigger = React.forwardRef<
       [setContentWidth]
     );
 
+    const id = React.useId();
     React.useEffect(() => {
-      setHelperId(`wpds-input-helper-${nanoid(6)}`);
-      setErrorId(`wpds-input-error-${nanoid(6)}`);
+      setHelperId(`wpds-input-helper-${id}`);
+      setErrorId(`wpds-input-error-${id}`);
     }, []);
 
     return (

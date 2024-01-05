@@ -1,5 +1,4 @@
 import * as React from "react";
-import { nanoid } from "nanoid";
 import { styled, theme } from "@washingtonpost/wpds-theme";
 import { CarouselContext } from "./CarouselRoot";
 
@@ -22,9 +21,8 @@ export const CarouselTitle = React.forwardRef<
   CarouselTitleProps
 >(({ children, ...props }, ref) => {
   const { titleId, setTitleId } = React.useContext(CarouselContext);
-
+  const id = React.useId();
   React.useEffect(() => {
-    const id = `${nanoid(6)}-title`;
     setTitleId && setTitleId(id);
   }, [setTitleId]);
 

@@ -1,6 +1,5 @@
 import * as React from "react";
 import { useEffect, useState } from "react";
-import { nanoid } from "nanoid";
 import { theme, styled } from "@washingtonpost/wpds-theme";
 import { Button } from "@washingtonpost/wpds-button";
 import { Divider } from "@washingtonpost/wpds-divider";
@@ -141,10 +140,10 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
     const [errorId, setErrorId] = useState<string | undefined>();
     const [isAutofilled, setIsAutofilled] = useState<boolean>(false);
     const internalRef = React.useRef<HTMLInputElement>(null);
-
+    const rootId = React.useId();
     useEffect(() => {
-      setHelperId(`wpds-input-helper-${nanoid(6)}`);
-      setErrorId(`wpds-input-error-${nanoid(6)}`);
+      setHelperId(`wpds-input-helper-${rootId}`);
+      setErrorId(`wpds-input-error-${rootId}`);
     }, []);
 
     //takes into account ref that might be passed into the component
