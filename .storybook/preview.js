@@ -72,7 +72,11 @@ function DarkPanel(props) {
 export const decorators = [
   (Story, Context) => {
     if (Context.story.includes("Interactions")) {
-      return <Story theme="light" />;
+      return (
+        <GlobalStyles>
+          <Story theme="light" />;
+        </GlobalStyles>
+      );
     }
 
     return (

@@ -24,7 +24,7 @@ const allModes = {
 };
 
 export default {
-  title: "Hooks/useResponsiveScreenSize",
+  title: "useResponsiveScreenSize",
   parameters: {
     viewport: {
       viewports: {
@@ -84,8 +84,6 @@ const Template: Story<typeof Box> = () => {
     </div>
   );
 };
-
-export const Default = Template.bind({});
 
 // Function to emulate pausing between interactions
 function sleep(ms) {
@@ -194,18 +192,17 @@ InteractionsXXLarge.parameters = {
   },
 };
 
-// for unknown screen size
-export const InteractionsUnknown = Template.bind({});
+export const InteractionsInfinity = Template.bind({});
 
-InteractionsUnknown.play = async ({ canvasElement }) => {
+InteractionsInfinity.play = async ({ canvasElement }) => {
   const canvas = within(canvasElement);
   await sleep(500);
 
-  const screenSize = canvas.getByText("Current screen size: unknown");
+  const screenSize = canvas.getByText("Current screen size: infinity");
   expect(screenSize).toBeTruthy();
 };
 
-InteractionsUnknown.parameters = {
+InteractionsInfinity.parameters = {
   viewport: {
     defaultViewport: "responsive",
   },
