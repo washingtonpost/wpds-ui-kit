@@ -289,7 +289,8 @@ The `useResponsiveScreenSize` hook can be used to get the current screen size an
 
 <Alert variant="info">
   <p>
-    The hook is only available in the browser and will return <code>unknown</code> on the server.
+    The hook is only available in the browser and will return{" "}
+    <code>unknown</code> on the server.
   </p>
 </Alert>
 
@@ -298,7 +299,12 @@ The `useResponsiveScreenSize` hook can be used to get the current screen size an
 Our Spectrum render engine uses the hook to render a drawer on small screens and a dialog on larger screens. This is a simplified version of the code used in the Spectrum render engine.
 
 ```jsx
-import { useResponsiveScreenSize, screenSizesEnums, Dialog, Drawer } from '@washingtonpost/wpds-ui-kit';
+import {
+  useResponsiveScreenSize,
+  screenSizesEnums,
+  Dialog,
+  Drawer,
+} from "@washingtonpost/wpds-ui-kit";
 
 export default function Example() {
   const screenSize = useResponsiveScreenSize();
@@ -306,14 +312,11 @@ export default function Example() {
   return (
     <div>
       {screenSize === screenSizesEnums.small ? (
-        <Drawer>
-          {/* Drawer content */}
-        </Drawer>
+        <Drawer>{/* Drawer content */}</Drawer>
       ) : (
-        <Dialog>
-          {/* Dialog content */}
-        </Dialog>
+        <Dialog>{/* Dialog content */}</Dialog>
       )}
     </div>
   );
 }
+```
