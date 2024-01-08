@@ -709,7 +709,7 @@ InternalFocusInteractions.play = async ({ canvasElement }) => {
   await userEvent.tab();
   await userEvent.tab();
   await userEvent.tab();
-  await userEvent.keyboard("[ArrowDown]");
+  await userEvent.keyboard("{ArrowDown}");
 
   const groups = canvas.getAllByRole("group");
   const content = groups[1];
