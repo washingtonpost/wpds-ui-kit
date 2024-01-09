@@ -66,6 +66,8 @@ export const getStaticProps = async ({ params }) => {
       iconData = { components: iconComponents };
     } else {
       console.error("Error fetching Figma data");
+      // log error
+      console.error(responseBody);
     }
   }
 
