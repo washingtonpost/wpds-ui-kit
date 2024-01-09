@@ -410,7 +410,7 @@ export const KitchenSink = () => {
       </Drawer.Root>
       <h2>Tooltip</h2>
       <Tooltip.Provider>
-        <Tooltip.Root defaultOpen={true}>
+        <Tooltip.Root>
           <Tooltip.Trigger>
             <span>This is a tooltip trigger</span>
           </Tooltip.Trigger>
