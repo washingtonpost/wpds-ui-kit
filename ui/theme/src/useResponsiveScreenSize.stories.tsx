@@ -1,4 +1,3 @@
-import React from "react";
 import { Meta, Story } from "@storybook/react";
 import { within } from "@storybook/testing-library";
 import { expect } from "@storybook/jest";
@@ -97,7 +96,7 @@ InteractionsSmall.play = async ({ canvasElement }) => {
   await sleep(500);
 
   const screenSize = canvas.getByText("Current screen size: small");
-  expect(screenSize).toBeTruthy();
+  expect(screenSize).toBeInTheDocument();
 };
 
 InteractionsSmall.parameters = {
@@ -117,7 +116,7 @@ InteractionsMedium.play = async ({ canvasElement }) => {
   await sleep(500);
 
   const screenSize = canvas.getByText("Current screen size: medium");
-  expect(screenSize).toBeTruthy();
+  expect(screenSize).toBeInTheDocument();
 };
 
 InteractionsMedium.parameters = {
@@ -137,7 +136,7 @@ InteractionsLarge.play = async ({ canvasElement }) => {
   await sleep(500);
 
   const screenSize = canvas.getByText("Current screen size: large");
-  expect(screenSize).toBeTruthy();
+  expect(screenSize).toBeInTheDocument();
 };
 
 InteractionsLarge.parameters = {
@@ -157,7 +156,7 @@ InteractionsXLarge.play = async ({ canvasElement }) => {
   await sleep(500);
 
   const screenSize = canvas.getByText("Current screen size: xlarge");
-  expect(screenSize).toBeTruthy();
+  expect(screenSize).toBeInTheDocument();
 };
 
 InteractionsXLarge.parameters = {
@@ -178,7 +177,7 @@ InteractionsXXLarge.play = async ({ canvasElement }) => {
   await sleep(500);
 
   const screenSize = canvas.getByText("Current screen size: xxlarge");
-  expect(screenSize).toBeTruthy();
+  expect(screenSize).toBeInTheDocument();
 };
 
 InteractionsXXLarge.parameters = {
@@ -199,16 +198,11 @@ InteractionsInfinity.play = async ({ canvasElement }) => {
   await sleep(500);
 
   const screenSize = canvas.getByText("Current screen size: infinity");
-  expect(screenSize).toBeTruthy();
+  expect(screenSize).toBeInTheDocument();
 };
 
 InteractionsInfinity.parameters = {
   viewport: {
     defaultViewport: "responsive",
-  },
-  chromatic: {
-    modes: {
-      mobile: allModes["sm"],
-    },
   },
 };
