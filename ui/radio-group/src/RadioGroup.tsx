@@ -1,5 +1,4 @@
 import * as React from "react";
-import { nanoid } from "nanoid";
 import * as RadioGroupPrimitive from "@radix-ui/react-radio-group";
 import type { RadioGroupProps as RadioGroupRootProps } from "@radix-ui/react-radio-group";
 import * as Theme from "@washingtonpost/wpds-theme";
@@ -86,8 +85,9 @@ export const RadioGroup = React.forwardRef<
   ) => {
     const [errorId, setErrorId] = React.useState<string | undefined>();
 
+    const id = React.useId();
     React.useEffect(() => {
-      setErrorId(`wpds-input-error-${nanoid(6)}`);
+      setErrorId(`wpds-input-error-${id}`);
     }, [setErrorId]);
 
     return (

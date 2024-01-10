@@ -2,7 +2,6 @@ import * as React from "react";
 
 import { styled, theme } from "@washingtonpost/wpds-theme";
 import type * as WPDS from "@washingtonpost/wpds-theme";
-import { nanoid } from "nanoid";
 
 import { useSwipeable } from "react-swipeable";
 
@@ -51,7 +50,7 @@ export const CarouselContent = React.forwardRef<
   } = React.useContext(CarouselContext);
 
   const [totalItems, setTotalItems] = React.useState(0);
-  const idRef = React.useRef<string | null>(null);
+  const id = React.useId();
   const childRefs = React.useRef<HTMLDivElement[]>([]);
   const internalRef = React.useRef<HTMLDivElement>(null);
   const [xPos, setXpos] = React.useState(0);
@@ -67,11 +66,6 @@ export const CarouselContent = React.forwardRef<
       ? ref(internalRef.current)
       : (ref.current = internalRef.current);
   }, [ref, internalRef]);
-
-  //create the prefix using a random id when the component is first rendered
-  React.useEffect(() => {
-    idRef.current = String(nanoid(5));
-  }, []);
 
   // get the total amount of items we're passing
   // to be able to index the items
@@ -272,10 +266,10 @@ export const CarouselContent = React.forwardRef<
                 child as React.ReactElement<CarouselItemProps>,
                 {
                   "aria-label": `${index + 1} of ${totalItems}`,
-                  id: child.props.id || `${idRef.current}-item${index}`,
+                  id: child.props.id || `${id}-item${index}`,
                   ref: (ref: HTMLDivElement) =>
                     (childRefs.current[index] = ref),
-                  key: child.props.id || `${idRef.current}-item${index}`,
+                  key: child.props.id || `${id}-item${index}`,
                 }
               );
             }
