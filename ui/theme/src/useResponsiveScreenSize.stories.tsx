@@ -21,6 +21,9 @@ const allModes = {
   xxl: {
     viewport: "xxlarge",
   },
+  minXxl: {
+    viewport: "infinity",
+  },
 };
 
 export default {
@@ -65,6 +68,14 @@ export default {
           styles: {
             height: "590px",
             width: "1440px",
+          },
+          type: "desktop",
+        },
+        infinity: {
+          name: "Infinity",
+          styles: {
+            height: "590px",
+            width: "1442px",
           },
           type: "desktop",
         },
@@ -205,5 +216,10 @@ InteractionsInfinity.play = async ({ canvasElement }) => {
 InteractionsInfinity.parameters = {
   viewport: {
     defaultViewport: "responsive",
+  },
+  chromatic: {
+    modes: {
+      desktop: allModes["minXxl"],
+    },
   },
 };
