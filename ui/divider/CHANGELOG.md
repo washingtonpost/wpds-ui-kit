@@ -7,10 +7,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 **Note:** Version bump only for package @washingtonpost/wpds-divider
 
-
-
-
-
 # [1.18.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.17.0...v1.18.0) (2023-12-13)
 
 **Note:** Version bump only for package @washingtonpost/wpds-divider

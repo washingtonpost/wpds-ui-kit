@@ -5,14 +5,9 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 # [1.19.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.18.0...v1.19.0) (2024-01-10)
 
-
 ### Features
 
-* responsive screen size hook and css var ([#548](https://github.com/washingtonpost/wpds-ui-kit/issues/548)) ([5768e9c](https://github.com/washingtonpost/wpds-ui-kit/commit/5768e9c6357f1df43b9d92002e36bf2cadd171fa))
-
-
-
-
+- responsive screen size hook and css var ([#548](https://github.com/washingtonpost/wpds-ui-kit/issues/548)) ([5768e9c](https://github.com/washingtonpost/wpds-ui-kit/commit/5768e9c6357f1df43b9d92002e36bf2cadd171fa))
 
 # [1.18.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.17.0...v1.18.0) (2023-12-13)
 
