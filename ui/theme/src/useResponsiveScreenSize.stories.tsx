@@ -1,3 +1,4 @@
+import * as React from "react";
 import { Meta, Story } from "@storybook/react";
 import { within } from "@storybook/testing-library";
 import { expect } from "@storybook/jest";
