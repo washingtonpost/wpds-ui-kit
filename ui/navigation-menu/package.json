@@ -1,6 +1,6 @@
 {
   "name": "@washingtonpost/wpds-navigation-menu",
-  "version": "1.18.0",
+  "version": "1.19.0",
   "description": "WPDS NavigationMenu",
   "author": "WPDS Support <wpds@washpost.com>",
   "homepage": "https://github.com/washingtonpost/wpds-ui-kit#readme",
@@ -42,7 +42,7 @@
   "dependencies": {
     "@popperjs/core": "^2.11.7",
     "@radix-ui/react-navigation-menu": "^1.1.2",
-    "@washingtonpost/wpds-theme": "1.18.0",
+    "@washingtonpost/wpds-theme": "1.19.0",
     "popper-max-size-modifier": "^0.2.0",
     "react-popper": "^2.3.0",
     "react-transition-group": "^4.4.5"

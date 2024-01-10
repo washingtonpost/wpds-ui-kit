@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.19.0](https://github.com/washingtonpost/wpds-docs/compare/v1.18.0...v1.19.0) (2024-01-10)
+
+
+### Bug Fixes
+
+* remove snow ([cdfae9e](https://github.com/washingtonpost/wpds-docs/commit/cdfae9e75f680ba43edb250f441e40ab1b81e65b))
+* remove snow ([f0f45f7](https://github.com/washingtonpost/wpds-docs/commit/f0f45f7c156df78c5c9dba6718403e926cacacbb))
+* remove tokens stylesheet ([16b4b71](https://github.com/washingtonpost/wpds-docs/commit/16b4b7123db787ec9f9f74f9cfff962882cc7b2d))
+
+
+### Features
+
+* add snowfall to website for fun ([#550](https://github.com/washingtonpost/wpds-docs/issues/550)) ([3f907e4](https://github.com/washingtonpost/wpds-docs/commit/3f907e42f5334c7e43d2ea415f4099be9d45a2df))
+* responsive screen size hook and css var ([#548](https://github.com/washingtonpost/wpds-docs/issues/548)) ([5768e9c](https://github.com/washingtonpost/wpds-docs/commit/5768e9c6357f1df43b9d92002e36bf2cadd171fa))
+* turn snow on ([5c88780](https://github.com/washingtonpost/wpds-docs/commit/5c88780d5df3258d604c108cf680ce9108fdc452))
+
+
+
+
+
 # [1.18.0](https://github.com/washingtonpost/wpds-docs/compare/v1.17.0...v1.18.0) (2023-12-13)
 
 ### Bug Fixes
