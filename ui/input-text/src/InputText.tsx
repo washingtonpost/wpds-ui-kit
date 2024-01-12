@@ -53,8 +53,15 @@ const ButtonIcon = styled(Button, {
   marginInlineEnd: theme.space["050"],
 });
 
+const ButtonClose = styled(Button, {
+  "&.override": {
+    border: "none",
+    borderRadius: theme.radii["012"],
+  },
+});
+
 const ButtonDivider = styled(Divider, {
-  "&[data-orientation=vertical]": { height: theme.sizes["150"] },
+  "&[data-orientation=vertical].override": { height: theme.sizes["150"] },
   marginInline: theme.sizes["025"],
 });
 
@@ -325,18 +332,11 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
           </LabelInputWrapper>
           {isFloating && type === "search" && internalRef.current?.value && (
             <>
-              <ButtonIcon
+              <ButtonClose
                 variant="primary"
                 isOutline
                 icon="center"
-                css={{
-                  border: "none",
-                  color: disabled
-                    ? theme.colors.onDisabled
-                    : theme.colors.accessible,
-                  ...css,
-                  margin: 0,
-                }}
+                className="override"
                 onMouseDown={(event) => {
                   event.preventDefault();
                 }}
@@ -347,8 +347,8 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
                 <Icon label={""}>
                   <Close />
                 </Icon>
-              </ButtonIcon>
-              <ButtonDivider orientation="vertical" />
+              </ButtonClose>
+              <ButtonDivider orientation="vertical" className="override" />
             </>
           )}
           {child && icon === "right" && (
