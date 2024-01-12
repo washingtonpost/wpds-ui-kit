@@ -5,7 +5,7 @@ import { theme, styled } from "@washingtonpost/wpds-theme";
 const StyledCard = styled("div", {
   padding: theme.space["150"],
   border: theme.colors.faint,
-  borderRadius: "2px",
+  borderRadius: theme.radii["012"],
   borderWidth: "1px",
   borderStyle: "solid",
   backgroundColor: theme.colors.secondary,

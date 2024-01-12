@@ -22,7 +22,7 @@ module.exports = function (plop) {
       const actions = [
         {
           type: "addMany",
-          destination: `../ui/{{ dashCase componentName }}`,
+          destination: `../ui/kit/{{ dashCase componentName }}`,
           base: "../templates/component",
           templateFiles: "../templates/component/**/*",
           data: {

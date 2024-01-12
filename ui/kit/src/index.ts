@@ -4,7 +4,7 @@ export * from "@washingtonpost/wpds-input-search";
 export * from "@washingtonpost/wpds-navigation-menu";
 export * from "@washingtonpost/wpds-tabs";
 export * from "@washingtonpost/wpds-switch";
-export * from "@washingtonpost/wpds-card";
+export * from "../card";
 export * from "@washingtonpost/wpds-popover";
 export * from "@washingtonpost/wpds-select";
 export * from "@washingtonpost/wpds-carousel";
