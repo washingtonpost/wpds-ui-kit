@@ -25,6 +25,7 @@ module.exports = {
     "plugin:testing-library/dom",
     "plugin:jest-dom/recommended",
     "plugin:storybook/recommended",
+    "plugin:react/jsx-runtime",
   ],
   overrides: [
     {

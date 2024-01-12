@@ -282,3 +282,41 @@ export default function Example() {
   );
 }
 ```
+
+### Using the Responsive Screen Size React Hook
+
+The `useResponsiveScreenSize` hook can be used to get the current screen size and use it in your components.
+
+<Alert variant="info">
+  <p>
+    The hook is only available in the browser and will return{" "}
+    <code>unknown</code> on the server.
+  </p>
+</Alert>
+
+#### An example using the hook
+
+Our Spectrum render engine uses the hook to render a drawer on small screens and a dialog on larger screens. This is a simplified version of the code used in the Spectrum render engine.
+
+```jsx
+import {
+  useResponsiveScreenSize,
+  screenSizesEnums,
+  Dialog,
+  Drawer,
+} from "@washingtonpost/wpds-ui-kit";
+
+export default function Example() {
+  const screenSize = useResponsiveScreenSize();
+
+  return (
+    <div>
+      {screenSize === screenSizesEnums.small ? (
+        <Drawer>{/* Drawer content */}</Drawer>
+      ) : (
+        <Dialog>{/* Dialog content */}</Dialog>
+      )}
+    </div>
+  );
+}
+```
