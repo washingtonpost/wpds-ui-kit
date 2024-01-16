@@ -2179,23 +2179,23 @@
       "description": "Shadow 1 - Card shadow"
     },
     "100": {
-      "value": "0px 1px 2px 0px rgba(102, 102, 102, 0.25)",
+      "value": "0px 1px 2px 0px rgba(0, 0, 0, 0.15)",
       "description": "Shadow 2 - Extra small base shadow"
     },
     "200": {
-      "value": "0px 2px 4px 0px rgba(102, 102, 102, 0.25)",
+      "value": "0px 2px 4px 0px rgba(0, 0, 0, 0.15)",
       "description": "Shadows 3 - Small"
     },
     "300": {
-      "value": "0px 4px 8px 0px rgba(102, 102, 102, 0.25)",
+      "value": "0px 4px 8px 0px rgba(0, 0, 0, 0.15)",
       "description": "Shadows 4 - Medium"
     },
     "400": {
-      "value": "0px 8px 16px 0px rgba(102, 102, 102, 0.25)",
+      "value": "0px 8px 16px 0px rgba(0, 0, 0, 0.15)",
       "description": "Shadows 5 - Large"
     },
     "500": {
-      "value": "0px 16px 32px 0px rgba(102, 102, 102, 0.25)",
+      "value": "0px 16px 32px 0px rgba(0, 0, 0, 0.15)",
       "description": "Shadows 6 - Extra large"
     }
   },
