@@ -1,4 +1,4 @@
-import { theme, styled } from "@washingtonpost/wpds-theme";
+import { theme, styled } from "../theme";
 import * as React from "react";
 
 export const Button = styled("button", {

@@ -1,7 +1,7 @@
 {
-  "name": "@washingtonpost/wpds-button",
-  "version": "1.17.0",
-  "description": "WPDS Button",
+  "name": "@washingtonpost/wpds-ui-kit-next",
+  "version": "2.0.0",
+  "description": "WPDS UI Kit",
   "author": "WPDS Support <wpds@washpost.com>",
   "homepage": "https://github.com/washingtonpost/wpds-ui-kit#readme",
   "license": "MIT",
@@ -15,12 +15,12 @@
     "src"
   ],
   "sideEffects": false,
-  "publishConfig": {
-    "access": "public"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/washingtonpost/wpds-ui-kit.git"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
@@ -31,17 +31,12 @@
   "bugs": {
     "url": "https://github.com/washingtonpost/wpds-ui-kit/issues"
   },
+  "dependencies": {
+    "@stitches/react": "^1.2.8",
+    "@washingtonpost/wpds-assets": "^1.18.0"
+  },
   "devDependencies": {
     "tsup": "5.11.13",
     "typescript": "4.5.5"
-  },
-  "peerDependencies": {
-    "@washingtonpost/wpds-theme": "*",
-    "react": "^16.8.6 || ^17.0.2 || ^18"
-  },
-  "dependencies": {
-    "@washingtonpost/wpds-theme": "1.17.0",
-    "react": "^16.8.6 || ^17.0.2 || ^18"
-  },
-  "gitHead": "5ba886cfa95b3eed476edf87b1ac36d37ffe3469"
+  }
 }

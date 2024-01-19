@@ -3,7 +3,10 @@ import { dirname, join } from "path";
 require("dotenv").config();
 
 module.exports = {
-  stories: ["../ui/(**|!(node_modules))/src/*.stories.@(ts|tsx|js|jsx)"],
+  stories: [
+    "../packages/kit/src/**/*.stories.tsx",
+    "../ui/(**|!(node_modules))/src/*.stories.@(ts|tsx|js|jsx)",
+  ],
   exclude: ["node_modules", "dist"],
 
   addons: [
