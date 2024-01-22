@@ -1,6 +1,8 @@
-import { VisuallyHidden } from "@washingtonpost/wpds-visually-hidden";
-import { css, theme } from "@washingtonpost/wpds-theme";
-import type * as WPDS from "@washingtonpost/wpds-theme";
+import { Children, cloneElement, forwardRef } from "react";
+import { VisuallyHidden } from "../visually-hidden";
+import { css, theme } from "../theme";
+
+import type * as WPDS from "../theme";
 
 const NAME = "Icon";
 
@@ -25,7 +27,7 @@ interface IconInterface extends Omit<React.SVGProps<HTMLOrSVGElement>, "fill"> {
   alt?: string;
 }
 
-export const Icon = React.forwardRef<React.ReactSVGElement, IconInterface>(
+export const Icon = forwardRef<React.ReactSVGElement, IconInterface>(
   (
     {
       children,
@@ -38,7 +40,7 @@ export const Icon = React.forwardRef<React.ReactSVGElement, IconInterface>(
     },
     ref
   ) => {
-    const child = React.Children.only(children);
+    const child = Children.only(children);
 
     const IconSizeStyle = css({
       size: theme.sizes[size] || size,
@@ -47,7 +49,7 @@ export const Icon = React.forwardRef<React.ReactSVGElement, IconInterface>(
 
     return (
       <>
-        {React.cloneElement(child as React.ReactElement, {
+        {cloneElement(child as React.ReactElement, {
           "aria-hidden": true,
           focusable: false,
           role: "img",
