@@ -50,4 +50,4 @@ lerna-debug.log
 **/*.spec.js
 
 #temp
-/ui
+ui
