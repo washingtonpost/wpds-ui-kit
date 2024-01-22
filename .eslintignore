@@ -48,3 +48,6 @@ core
 lerna-debug.log
 
 **/*.spec.js
+
+#temp
+/ui

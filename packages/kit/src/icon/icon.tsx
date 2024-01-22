@@ -1,4 +1,3 @@
-import * as React from "react";
 import { VisuallyHidden } from "@washingtonpost/wpds-visually-hidden";
 import { css, theme } from "@washingtonpost/wpds-theme";
 import type * as WPDS from "@washingtonpost/wpds-theme";
