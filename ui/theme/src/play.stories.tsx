@@ -54,7 +54,7 @@ export default {
       },
       defaultViewport: "responsive",
     },
-    chromatic: { delay: 300 },
+    chromatic: { delay: 1000 },
   },
 };
 
@@ -281,7 +281,7 @@ InteractionsSmall.parameters = {
 
 InteractionsSmall.play = async ({ canvasElement }) => {
   const canvas = within(canvasElement);
-  await sleep(500);
+
   await expect(canvas.getByText("@sm")).toHaveStyle(activeStyle);
   await expect(canvas.getByText("@md")).toHaveStyle(inactiveStyle);
   await expect(canvas.getByText("@maxSm")).toHaveStyle(activeStyle);
@@ -302,7 +302,7 @@ InteractionsMedium.parameters = {
 
 InteractionsMedium.play = async ({ canvasElement }) => {
   const canvas = within(canvasElement);
-  await sleep(500);
+
   await expect(canvas.getByText("@md")).toHaveStyle(activeStyle);
   await expect(canvas.getByText("@lg")).toHaveStyle(inactiveStyle);
   await expect(canvas.getByText("@notSm")).toHaveStyle(activeStyle);
@@ -324,7 +324,7 @@ InteractionsLarge.parameters = {
 
 InteractionsLarge.play = async ({ canvasElement }) => {
   const canvas = within(canvasElement);
-  await sleep(500);
+
   await expect(canvas.getByText("@lg")).toHaveStyle(activeStyle);
   await expect(canvas.getByText("@xl")).toHaveStyle(inactiveStyle);
   await expect(canvas.getByText("@notMd")).toHaveStyle(activeStyle);
@@ -346,7 +346,7 @@ InteractionsExtraLarge.parameters = {
 
 InteractionsExtraLarge.play = async ({ canvasElement }) => {
   const canvas = within(canvasElement);
-  await sleep(500);
+
   await expect(canvas.getByText("@xl")).toHaveStyle(activeStyle);
   await expect(canvas.getByText("@xxl")).toHaveStyle(inactiveStyle);
   await expect(canvas.getByText("@notLg")).toHaveStyle(activeStyle);
@@ -368,7 +368,7 @@ InteractionsExtraExtraLarge.parameters = {
 
 InteractionsExtraExtraLarge.play = async ({ canvasElement }) => {
   const canvas = within(canvasElement);
-  await sleep(500);
+
   await expect(canvas.getByText("@xxl")).toHaveStyle(activeStyle);
   await expect(canvas.getByText("@notXxl")).toHaveStyle(inactiveStyle);
   await expect(canvas.getByText("@maxXxl")).toHaveStyle(activeStyle);
