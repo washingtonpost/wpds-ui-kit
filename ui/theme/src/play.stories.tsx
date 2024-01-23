@@ -238,11 +238,6 @@ const Template: ComponentStory<typeof Box> = () => {
   );
 };
 
-// Function to emulate pausing between interactions
-function sleep(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
-
 const activeStyle = `background-color: ${theme.colors.green100.value}`;
 const inactiveStyle = `background-color: ${theme.colors.gray300.value}`;
 
