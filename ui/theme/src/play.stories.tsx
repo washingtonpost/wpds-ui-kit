@@ -54,6 +54,7 @@ export default {
       },
       defaultViewport: "responsive",
     },
+    chromatic: { delay: 300 },
   },
 };
 

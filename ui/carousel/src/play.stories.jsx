@@ -712,12 +712,12 @@ InternalFocusInteractions.play = async ({ canvasElement }) => {
   const button1 = canvas.getByText("Action 1");
   await userEvent.click(button1);
   await waitFor(() =>
-    expect(button1).toHaveClass("wpds-c-kSOqLF-bywHgD-variant-primary")
+    expect(button1).toHaveClass("wpds-c-kSOqLF-klgBfd-variant-primary")
   );
   const button2 = canvas.getByText("Action 2");
   await userEvent.click(button2);
   await waitFor(() =>
-    expect(button2).toHaveClass("wpds-c-kSOqLF-bywHgD-variant-primary")
+    expect(button2).toHaveClass("wpds-c-kSOqLF-klgBfd-variant-primary")
   );
   await userEvent.click(canvas.getAllByRole("main")[0]);
   const item2 = canvas.getByLabelText("3 of 10");
