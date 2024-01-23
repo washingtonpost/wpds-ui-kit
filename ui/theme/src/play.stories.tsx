@@ -242,7 +242,7 @@ function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-const activeStyle = `background-color: ${theme.colors.green100.value}`;
+const activeStyle = `background-color: ${theme.colors.green80.value}`;
 const inactiveStyle = `background-color: ${theme.colors.gray300.value}`;
 
 const allModes = {
