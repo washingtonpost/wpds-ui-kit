@@ -7,10 +7,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 **Note:** Version bump only for package @washingtonpost/wpds-app-bar
 
-
-
-
-
 # [1.19.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.18.0...v1.19.0) (2024-01-10)
 
 **Note:** Version bump only for package @washingtonpost/wpds-app-bar

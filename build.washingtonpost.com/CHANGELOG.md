@@ -5,14 +5,9 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 # [1.20.0](https://github.com/washingtonpost/wpds-docs/compare/v1.19.0...v1.20.0) (2024-01-24)
 
-
 ### Features
 
-* add site footer back ([#558](https://github.com/washingtonpost/wpds-docs/issues/558)) ([12cf193](https://github.com/washingtonpost/wpds-docs/commit/12cf1936ac67c2791ff06efe6e45dbefca047909))
-
-
-
-
+- add site footer back ([#558](https://github.com/washingtonpost/wpds-docs/issues/558)) ([12cf193](https://github.com/washingtonpost/wpds-docs/commit/12cf1936ac67c2791ff06efe6e45dbefca047909))
 
 # [1.19.0](https://github.com/washingtonpost/wpds-docs/compare/v1.18.0...v1.19.0) (2024-01-10)
 

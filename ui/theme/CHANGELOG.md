@@ -5,14 +5,9 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 # [1.20.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.19.0...v1.20.0) (2024-01-24)
 
-
 ### Bug Fixes
 
-* fixes a scrollbar issue with select and our header component ([#563](https://github.com/washingtonpost/wpds-ui-kit/issues/563)) ([1cfe566](https://github.com/washingtonpost/wpds-ui-kit/commit/1cfe5660e763c76beeedf7b19e2a1846110fce70))
-
-
-
-
+- fixes a scrollbar issue with select and our header component ([#563](https://github.com/washingtonpost/wpds-ui-kit/issues/563)) ([1cfe566](https://github.com/washingtonpost/wpds-ui-kit/commit/1cfe5660e763c76beeedf7b19e2a1846110fce70))
 
 # [1.19.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.18.0...v1.19.0) (2024-01-10)
 
