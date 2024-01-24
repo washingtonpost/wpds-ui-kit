@@ -1,6 +1,6 @@
 {
   "name": "@washingtonpost/wpds-button",
-  "version": "1.19.0",
+  "version": "1.20.0",
   "description": "WPDS Button",
   "author": "WPDS Support <wpds@washpost.com>",
   "homepage": "https://github.com/washingtonpost/wpds-ui-kit#readme",
@@ -40,7 +40,7 @@
     "react": "^16.8.6 || ^17.0.2"
   },
   "dependencies": {
-    "@washingtonpost/wpds-theme": "1.19.0",
+    "@washingtonpost/wpds-theme": "1.20.0",
     "react": "^16.8.6 || ^17.0.2"
   },
   "gitHead": "d4e4d7f18d1cafb5b9c598852d628cd706447cd9"

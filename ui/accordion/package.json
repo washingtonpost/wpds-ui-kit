@@ -1,6 +1,6 @@
 {
   "name": "@washingtonpost/wpds-accordion",
-  "version": "1.19.0",
+  "version": "1.20.0",
   "description": "WPDS Accordion",
   "author": "WPDS Support <wpds@washpost.com>",
   "homepage": "https://github.com/washingtonpost/wpds-ui-kit#readme",
@@ -42,8 +42,8 @@
   "dependencies": {
     "@radix-ui/react-accordion": "^1.1.0",
     "@washingtonpost/wpds-assets": "^1.22.0",
-    "@washingtonpost/wpds-icon": "1.19.0",
-    "@washingtonpost/wpds-theme": "1.19.0"
+    "@washingtonpost/wpds-icon": "1.20.0",
+    "@washingtonpost/wpds-theme": "1.20.0"
   },
   "gitHead": "d4e4d7f18d1cafb5b9c598852d628cd706447cd9"
 }
