@@ -1904,7 +1904,7 @@
       },
       "primary": {
         "type": "color",
-        "value": "{gray0}",
+        "value": "{gray20}",
         "valueDark": "{gray0}"
       }
     }
