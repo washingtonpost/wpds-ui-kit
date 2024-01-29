@@ -125,6 +125,25 @@ export const globalStyles = globalCss({
   ":root": {
     "--base": `${tokens.base}`,
     lineHeight: "$meta",
+    $$screenSize: "unknown",
+    "@sm": {
+      $$screenSize: "small",
+    },
+    "@md": {
+      $$screenSize: "medium",
+    },
+    "@lg": {
+      $$screenSize: "large",
+    },
+    "@xl": {
+      $$screenSize: "xlarge",
+    },
+    "@xxl": {
+      $$screenSize: "xxlarge",
+    },
+    "@minXxl": {
+      $$screenSize: "infinity", // temporary name cause we don't have a name for this
+    },
   },
   "*": {
     boxSizing: "border-box",
@@ -136,7 +155,7 @@ export const globalStyles = globalCss({
     },
   },
   html: {
-    overflowX: "hidden",
+    // SRED-649 - Remove this style cause it conflicts with Select open state - keeping this comment for all time :D
     "-webkit-font-smoothing": "antialiased",
     textRendering: "optimizeLegibility",
     textSizeAdjust: "100%",
@@ -144,6 +163,8 @@ export const globalStyles = globalCss({
   body: {
     margin: 0,
     fontFamily: "$meta",
+    // SRED-649  - Add this style cause it solves a Select open state and scrollbar issue
+    overflowX: "hidden",
   },
   "@font-face": [
     {
