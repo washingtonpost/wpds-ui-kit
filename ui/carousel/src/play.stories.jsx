@@ -700,6 +700,14 @@ const InternalFocusTemplate = () => {
 
 export const InternalFocusInteractions = InternalFocusTemplate.bind({});
 
+function hasClassContaining(el, str) {
+  return Array.from(el.classList).findIndex((cls) =>
+    cls.toLowerCase().includes(str)
+  ) !== -1
+    ? true
+    : false;
+}
+
 InternalFocusInteractions.play = async ({ canvasElement }) => {
   const canvas = within(canvasElement);
   await userEvent.tab();
@@ -712,14 +720,14 @@ InternalFocusInteractions.play = async ({ canvasElement }) => {
   const button1 = canvas.getByText("Action 1");
   await userEvent.click(button1);
   await waitFor(() =>
-    expect(button1).toHaveClass("wpds-c-kSOqLF-klgBfd-variant-primary")
+    expect(hasClassContaining(button1, "variant-primary")).toBe(true)
   );
   const button2 = canvas.getByText("Action 2");
   await userEvent.click(button2);
   await waitFor(() =>
-    expect(button2).toHaveClass("wpds-c-kSOqLF-klgBfd-variant-primary")
+    expect(hasClassContaining(button2, "variant-primary")).toBe(true)
   );
   await userEvent.click(canvas.getAllByRole("main")[0]);
   const item2 = canvas.getByLabelText("3 of 10");
-  expect(item2).not.toHaveClass("wpds-c-lnwwct-jEMdsi-focused-true");
+  expect(hasClassContaining(item2, "focused-true")).not.toBe(true);
 };
