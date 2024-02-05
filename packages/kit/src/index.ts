@@ -1,3 +1,4 @@
 export * from "./button";
-export * from "./visually-hidden";
 export * from "./icon";
+export * from "./theme";
+export * from "./visually-hidden";
