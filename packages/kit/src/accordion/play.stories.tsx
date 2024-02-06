@@ -1,7 +1,7 @@
 // /* eslint-disable @next/next/no-img-element */
 import * as React from "react";
 import { Accordion, ACCORDION_DENSITY, ACCORDION_TYPE } from ".";
-import type { ComponentMeta, ComponentStory } from "@storybook/react";
+import type { Meta, StoryFn } from "@storybook/react";
 
 export default {
   title: "Accordion",
@@ -29,10 +29,10 @@ export default {
       control: "boolean",
     },
   },
-} as ComponentMeta<typeof Accordion.Root>;
+} as Meta<typeof Accordion.Root>;
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const Template: ComponentStory<any> = (args) => {
+const Template: StoryFn<any> = (args) => {
   const myTriggerRef = React.useRef<HTMLButtonElement>(null);
   const myContentRef = React.useRef<HTMLDivElement>(null);
 
@@ -70,12 +70,14 @@ const Template: ComponentStory<any> = (args) => {
   );
 };
 
-export const Play = Template.bind({});
+export const Play = {
+  render: Template,
 
-Play.args = {
-  density: ACCORDION_DENSITY.compact,
-  type: ACCORDION_TYPE.single,
-  defaultValue: "item-1",
+  args: {
+    density: ACCORDION_DENSITY.compact,
+    type: ACCORDION_TYPE.single,
+    defaultValue: "item-1",
+  },
+
+  name: "Accordion",
 };
-
-Play.storyName = "Accordion";
