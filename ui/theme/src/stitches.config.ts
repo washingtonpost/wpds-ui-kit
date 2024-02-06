@@ -117,7 +117,7 @@ export const darkTheme = createTheme(`${prefix}-dark`, {
   colors: {
     ...tokens.dark,
     ...tokens.staticColors,
-    ...tokens.defaultTheme,
+    ...tokens.darkTheme,
   },
 });
 

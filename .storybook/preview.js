@@ -56,7 +56,7 @@ const Panel = styled("div", {
 
 function GlobalStyles(props) {
   globalStyles();
-  return <Panel>{props.children}</Panel>;
+  return <Panel css={props.css}>{props.children}</Panel>;
 }
 
 function DarkPanel(props) {
@@ -73,8 +73,8 @@ export const decorators = [
   (Story, Context) => {
     if (Context.story.includes("Interactions")) {
       return (
-        <GlobalStyles>
-          <Story theme="light" />;
+        <GlobalStyles css={{ width: "auto" }}>
+          <Story theme="light" />
         </GlobalStyles>
       );
     }
