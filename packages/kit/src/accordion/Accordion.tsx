@@ -1,4 +1,4 @@
-import * as React from "react";
+import { forwardRef } from "react";
 import { theme, styled } from "@washingtonpost/wpds-theme";
 import type * as WPDS from "@washingtonpost/wpds-theme";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
@@ -44,7 +44,7 @@ export type AccordionRootCombined = (
 ) &
   AccordionRootVariants;
 
-export const AccordionRoot = React.forwardRef<
+export const AccordionRoot = forwardRef<
   HTMLDivElement,
   AccordionRootCombined
 >(({ ...props }: AccordionRootCombined, ref) => (

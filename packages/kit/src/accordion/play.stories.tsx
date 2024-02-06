@@ -1,5 +1,5 @@
 // /* eslint-disable @next/next/no-img-element */
-import * as React from "react";
+import { useRef } from "react";
 import { Accordion, ACCORDION_DENSITY, ACCORDION_TYPE } from ".";
 import type { Meta, StoryFn } from "@storybook/react";
 
@@ -33,8 +33,8 @@ export default {
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const Template: StoryFn<any> = (args) => {
-  const myTriggerRef = React.useRef<HTMLButtonElement>(null);
-  const myContentRef = React.useRef<HTMLDivElement>(null);
+  const myTriggerRef = useRef<HTMLButtonElement>(null);
+  const myContentRef = useRef<HTMLDivElement>(null);
 
   return (
     <Accordion.Root {...args}>

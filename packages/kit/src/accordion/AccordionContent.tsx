@@ -1,4 +1,4 @@
-import * as React from "react";
+import { forwardRef } from "react";
 import { theme, styled, keyframes } from "@washingtonpost/wpds-theme";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
 import type * as WPDS from "@washingtonpost/wpds-theme";
@@ -46,7 +46,7 @@ export interface AccordionContentInterface extends CombinedProps {
   css?: WPDS.CSS;
 }
 
-export const AccordionContent = React.forwardRef<
+export const AccordionContent = forwardRef<
   HTMLDivElement,
   AccordionContentInterface
 >(({ children, ...props }: AccordionContentInterface, ref) => {

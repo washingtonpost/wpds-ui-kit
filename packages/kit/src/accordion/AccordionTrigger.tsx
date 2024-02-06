@@ -1,4 +1,4 @@
-import * as React from "react";
+import { forwardRef } from "react";
 import { ChevronDown } from "@washingtonpost/wpds-assets";
 import { theme, styled } from "@washingtonpost/wpds-theme";
 import { Icon } from "@washingtonpost/wpds-icon";
@@ -89,7 +89,7 @@ export interface AccordionHeaderInterface extends HeaderCombinedProps {
   css?: WPDS.CSS;
 }
 
-export const AccordionHeader = React.forwardRef<
+export const AccordionHeader = forwardRef<
   HTMLDivElement,
   AccordionHeaderInterface
 >(({ children, ...props }: AccordionHeaderInterface, ref) => (
@@ -100,7 +100,7 @@ export const AccordionHeader = React.forwardRef<
 
 AccordionHeader.displayName = "AccordionHeader";
 
-export const AccordionTrigger = React.forwardRef<
+export const AccordionTrigger = forwardRef<
   HTMLButtonElement,
   AccordionTriggerCombined
 >((props: AccordionTriggerCombined, ref) => (
