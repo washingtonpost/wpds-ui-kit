@@ -15,13 +15,12 @@ export interface AccordionItemInterface extends AccordionItemProps {
   css?: WPDS.CSS;
 }
 
-export const AccordionItem = forwardRef<
-  HTMLDivElement,
-  AccordionItemInterface
->(({ children, ...props }: AccordionItemInterface, ref) => (
-  <StyledAccordionItem {...props} ref={ref}>
-    {children}
-  </StyledAccordionItem>
-));
+export const AccordionItem = forwardRef<HTMLDivElement, AccordionItemInterface>(
+  ({ children, ...props }: AccordionItemInterface, ref) => (
+    <StyledAccordionItem {...props} ref={ref}>
+      {children}
+    </StyledAccordionItem>
+  )
+);
 
 AccordionItem.displayName = "AccordionItem";
