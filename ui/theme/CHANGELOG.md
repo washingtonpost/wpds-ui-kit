@@ -5,14 +5,9 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 # [1.21.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.20.0...v1.21.0) (2024-02-07)
 
-
 ### Features
 
-* new dark mode colors and tokens ([#554](https://github.com/washingtonpost/wpds-ui-kit/issues/554)) ([39b0d45](https://github.com/washingtonpost/wpds-ui-kit/commit/39b0d45ebd0269843ff5c657e3ab4865f149bbec))
-
-
-
-
+- new dark mode colors and tokens ([#554](https://github.com/washingtonpost/wpds-ui-kit/issues/554)) ([39b0d45](https://github.com/washingtonpost/wpds-ui-kit/commit/39b0d45ebd0269843ff5c657e3ab4865f149bbec))
 
 # [1.20.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.19.0...v1.20.0) (2024-01-24)
 
