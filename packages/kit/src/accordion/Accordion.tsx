@@ -1,6 +1,6 @@
 import { forwardRef } from "react";
-import { theme, styled } from "@washingtonpost/wpds-theme";
-import type * as WPDS from "@washingtonpost/wpds-theme";
+import { theme, styled } from "../theme";
+import type * as WPDS from "../theme";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
 import { AccordionTrigger, AccordionHeader } from "./AccordionTrigger";
 import { AccordionItem } from "./AccordionItem";

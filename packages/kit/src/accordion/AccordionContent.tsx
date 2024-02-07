@@ -1,7 +1,7 @@
 import { forwardRef } from "react";
-import { theme, styled, keyframes } from "@washingtonpost/wpds-theme";
+import { theme, styled, keyframes } from "../theme";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
-import type * as WPDS from "@washingtonpost/wpds-theme";
+import type * as WPDS from "../theme";
 import { AccordionContentProps as RadixAccordionContentProps } from "@radix-ui/react-accordion";
 
 const slideDown = keyframes({

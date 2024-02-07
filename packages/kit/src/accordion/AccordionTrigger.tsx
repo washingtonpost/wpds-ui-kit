@@ -1,9 +1,9 @@
 import { forwardRef } from "react";
 import { ChevronDown } from "@washingtonpost/wpds-assets";
-import { theme, styled } from "@washingtonpost/wpds-theme";
-import { Icon } from "@washingtonpost/wpds-icon";
+import { theme, styled } from "../theme";
+import { Icon } from "../icon";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
-import type * as WPDS from "@washingtonpost/wpds-theme";
+import type * as WPDS from "../theme";
 import {
   AccordionTriggerProps as RadixAccordionTriggerProps,
   AccordionHeaderProps as RadixAccordionHeaderProps,

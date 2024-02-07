@@ -1,16 +1,13 @@
 // /* eslint-disable @next/next/no-img-element */
 import { useRef } from "react";
 import { Accordion, ACCORDION_DENSITY, ACCORDION_TYPE } from ".";
+import { userEvent, waitFor, within } from "@storybook/testing-library";
+import { expect } from "@storybook/jest";
 import type { Meta, StoryFn } from "@storybook/react";
 
 export default {
   title: "Accordion",
   component: Accordion.Root,
-  subcomponents: {
-    Item: Accordion.Item,
-    Trigger: Accordion.Trigger,
-    Content: Accordion.Content,
-  },
   argTypes: {
     density: {
       options: [
@@ -44,7 +41,7 @@ const Template: StoryFn<any> = (args) => {
           augue in felis pharetra finibus. In sagittis aliquam augue. Lorem
           ipsum dolor sit amet, consectetur adipiscing elit.
         </Accordion.Trigger>
-        <Accordion.Content ref={myContentRef}>
+        <Accordion.Content ref={myContentRef} data-testid="content-0">
           <div>
             No! You don&apos;t even believe that! Gus has cameras everywhere,
             please. Listen to yourself! No, he has known everything, all along.
@@ -59,7 +56,7 @@ const Template: StoryFn<any> = (args) => {
         <Accordion.Trigger {...args} ref={myTriggerRef}>
           How long will I have to social distance?
         </Accordion.Trigger>
-        <Accordion.Content {...args} ref={myContentRef}>
+        <Accordion.Content {...args} ref={myContentRef} data-testid="content-1">
           <img
             src="https://i.pravatar.cc/300/300"
             alt="An avatar is an atomic component that represents an individual’s identity through a circular photo."
@@ -80,4 +77,18 @@ export const Play = {
   },
 
   name: "Accordion",
+};
+
+export const Interactions = {
+  render: Template,
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    await userEvent.click(canvas.getAllByRole("button")[0]);
+    await expect(canvas.getByTestId("content-0")).toBeVisible();
+    await userEvent.click(canvas.getAllByRole("button")[1]);
+    await expect(canvas.getByTestId("content-1")).toBeVisible();
+    await waitFor(() =>
+      expect(canvas.getByTestId("content-0")).not.toBeVisible()
+    );
+  },
 };
