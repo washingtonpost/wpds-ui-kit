@@ -1783,14 +1783,15 @@
       },
       "subtle": {
         "type": "color",
-        "value": "{alpha400}",
-        "valueDark": "{alpha400}"
+        "value": "{gray300}",
+        "valueDark": "{gray300}",
+          "description": "Legacy-Token subject to be deprecated use the outline token"
       },
       "faint": {
         "type": "color",
-        "value": "{alpha500}",
-        "valueDark": "{alpha500}",
-        "description": "Legacy-Token subject to be deprecated use the appropriate -subtle token"
+        "value": "{gray400}",
+        "valueDark": "{gray400}",
+           "description": "Legacy-Token subject to be deprecated use the outline token"
       },
       "onDisabled": {
         "type": "color",
