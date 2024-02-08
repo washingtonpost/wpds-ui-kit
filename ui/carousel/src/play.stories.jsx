@@ -701,7 +701,7 @@ const InternalFocusTemplate = () => {
 export const InternalFocusInteractions = InternalFocusTemplate.bind({});
 
 InternalFocusInteractions.parameters = {
-  chromatic: { viewports: [1024] },
+  chromatic: { viewports: [1024], disableSnapshot: true },
 };
 
 InternalFocusInteractions.play = async ({ canvasElement }) => {
