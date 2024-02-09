@@ -33,7 +33,8 @@
   },
   "dependencies": {
     "@stitches/react": "^1.2.8",
-    "@washingtonpost/wpds-assets": "^1.18.0"
+    "@washingtonpost/wpds-assets": "^1.18.0",
+    "@washingtonpost/wpds-theme": "^1.17.0"
   },
   "devDependencies": {
     "tsup": "5.11.13",

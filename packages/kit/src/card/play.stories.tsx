@@ -1,4 +1,3 @@
-import * as React from "react";
 import { Card as Component } from ".";
 import { theme, styled } from "@washingtonpost/wpds-theme";
 import { Button } from "@washingtonpost/wpds-button";
