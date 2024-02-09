@@ -59,7 +59,7 @@ export type DialogContentProps = {
   /** Css background color of content*/
   backgroundColor?:
     | StandardLonghandProperties["backgroundColor"]
-    | typeof theme.colors[keyof typeof theme.colors];
+    | (typeof theme.colors)[keyof typeof theme.colors];
   /** Any React node may be used as a child */
   children?: React.ReactNode;
   /** Override CSS */
@@ -71,7 +71,7 @@ export type DialogContentProps = {
   /** Css z-index */
   zIndex?:
     | StandardLonghandProperties["zIndex"]
-    | typeof theme.zIndices[keyof typeof theme.zIndices];
+    | (typeof theme.zIndices)[keyof typeof theme.zIndices];
 } & RadixDialogContentProps;
 
 export const DialogContent = React.forwardRef<

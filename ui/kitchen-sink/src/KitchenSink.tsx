@@ -29,7 +29,7 @@ import {
   InputSearch,
   Select,
   Accordion,
-  Dialog
+  Dialog,
 } from "@washingtonpost/wpds-ui-kit";
 import { Chart, Settings, Info, Menu } from "@washingtonpost/wpds-assets";
 

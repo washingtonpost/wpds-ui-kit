@@ -42,7 +42,7 @@ export type DialogOverlayProps = {
   /** Css background color of overlay*/
   backgroundColor?:
     | StandardLonghandProperties["backgroundColor"]
-    | typeof theme.colors[keyof typeof theme.colors];
+    | (typeof theme.colors)[keyof typeof theme.colors];
   /** Any React node may be used as a child */
   children?: React.ReactNode;
   /** Override CSS */
@@ -50,7 +50,7 @@ export type DialogOverlayProps = {
   /** Css z-index of overlay */
   zIndex?:
     | StandardLonghandProperties["zIndex"]
-    | typeof theme.zIndices[keyof typeof theme.zIndices];
+    | (typeof theme.zIndices)[keyof typeof theme.zIndices];
 } & RadixDialogOverlayProps;
 
 export const DialogOverlay = React.forwardRef<

@@ -1785,13 +1785,13 @@
         "type": "color",
         "value": "{gray300}",
         "valueDark": "{gray300}",
-          "description": "Legacy-Token subject to be deprecated use the outline token"
+        "description": "Legacy-Token subject to be deprecated use the outline token"
       },
       "faint": {
         "type": "color",
         "value": "{gray400}",
         "valueDark": "{gray400}",
-           "description": "Legacy-Token subject to be deprecated use the outline token"
+        "description": "Legacy-Token subject to be deprecated use the outline token"
       },
       "onDisabled": {
         "type": "color",
