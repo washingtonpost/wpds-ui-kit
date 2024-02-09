@@ -56,7 +56,7 @@ const Panel = styled("div", {
 
 function GlobalStyles(props) {
   globalStyles();
-  return <Panel css={props.css}>{props.children}</Panel>;
+  return <Panel>{props.children}</Panel>;
 }
 
 function DarkPanel(props) {
