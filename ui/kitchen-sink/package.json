@@ -1,6 +1,6 @@
 {
   "name": "@washingtonpost/wpds-kitchen-sink",
-  "version": "1.17.0",
+  "version": "1.21.0",
   "description": "WPDS Kitchen Sink",
   "author": "WPDS Support <wpds@washpost.com>",
   "homepage": "https://github.com/washingtonpost/wpds-ui-kit#readme",
@@ -36,13 +36,13 @@
     "typescript": "4.5.5"
   },
   "peerDependencies": {
-    "@washingtonpost/wpds-assets": "latest",
+    "@washingtonpost/wpds-assets": "*",
     "@washingtonpost/wpds-ui-kit": "*",
     "react": "^16.8.6 || ^17.0.2 || ^18"
   },
   "dependencies": {
     "@washingtonpost/wpds-assets": "latest",
-    "@washingtonpost/wpds-ui-kit": "1.17.0"
+    "@washingtonpost/wpds-ui-kit": "1.21.0"
   },
-  "gitHead": "5ba886cfa95b3eed476edf87b1ac36d37ffe3469"
+  "gitHead": "dddd34ee2494be2d91fe5671db3291060097b02a"
 }

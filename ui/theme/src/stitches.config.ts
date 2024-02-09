@@ -117,7 +117,7 @@ export const darkTheme = createTheme(`${prefix}-dark`, {
   colors: {
     ...tokens.dark,
     ...tokens.staticColors,
-    ...tokens.defaultTheme,
+    ...tokens.darkTheme,
   },
 });
 
@@ -155,7 +155,7 @@ export const globalStyles = globalCss({
     },
   },
   html: {
-    overflowX: "hidden",
+    // SRED-649 - Remove this style cause it conflicts with Select open state - keeping this comment for all time :D
     "-webkit-font-smoothing": "antialiased",
     textRendering: "optimizeLegibility",
     textSizeAdjust: "100%",
@@ -163,6 +163,8 @@ export const globalStyles = globalCss({
   body: {
     margin: 0,
     fontFamily: "$meta",
+    // SRED-649  - Add this style cause it solves a Select open state and scrollbar issue
+    overflowX: "hidden",
   },
   "@font-face": [
     {

@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.21.0](https://github.com/WPMedia/wpds-ui-kit/compare/v1.20.0...v1.21.0) (2024-02-07)
+
+**Note:** Version bump only for package @washingtonpost/wpds-input-shared
+
+# [1.20.0](https://github.com/WPMedia/wpds-ui-kit/compare/v1.19.0...v1.20.0) (2024-01-24)
+
+**Note:** Version bump only for package @washingtonpost/wpds-input-shared
+
+# [1.19.0](https://github.com/WPMedia/wpds-ui-kit/compare/v1.18.0...v1.19.0) (2024-01-10)
+
+**Note:** Version bump only for package @washingtonpost/wpds-input-shared
+
+# [1.18.0](https://github.com/WPMedia/wpds-ui-kit/compare/v1.17.0...v1.18.0) (2023-12-13)
+
+**Note:** Version bump only for package @washingtonpost/wpds-input-shared
+
 # [1.17.0](https://github.com/WPMedia/wpds-ui-kit/compare/v1.16.2...v1.17.0) (2023-11-30)
 
 **Note:** Version bump only for package @washingtonpost/wpds-input-shared

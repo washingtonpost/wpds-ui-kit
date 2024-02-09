@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, styled, Icon, theme } from "@washingtonpost/wpds-ui-kit";
 import { useRouter } from "next/router";
-import Script from "next/script";
+import { Footer as SiteFooter } from "@washingtonpost/site-footer";
 import Link from "next/link";
 
 import { Github, Twitter, Youtube } from "@washingtonpost/wpds-assets";
@@ -80,8 +80,7 @@ export const Footer = () => {
           Edit this page on GitHub.
         </EditInGithub>
       )}
-      <Script src="https://www.washingtonpost.com/ehf/twp-internal.js" />
-      <div id="footer-v3"></div>
+      <SiteFooter />
       <Box
         css={{
           display: "flex",

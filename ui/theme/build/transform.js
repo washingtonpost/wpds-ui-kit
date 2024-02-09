@@ -8,6 +8,7 @@ const dark = {};
 const light = {};
 const staticColors = {};
 const theme = {};
+const themeDark = {};
 const sizes = {};
 const spaces = {};
 const radii = {};
@@ -80,7 +81,7 @@ function handleColor() {
 				loopAndAdd(Tokens.color[colorGroup], staticColors, "-static");
 				break;
 			case "theme":
-				loopAndAdd(Tokens.color[colorGroup], theme);
+				loopAndAddTheme(Tokens.color[colorGroup]);
 				break;
 			default:
 				break;
@@ -109,6 +110,28 @@ function loopAndAdd(tokens, ToObject, hyphen) {
 	}
 }
 
+
+/** Sets up theme tokens */
+function loopAndAddTheme(tokens) {
+	for (var token in tokens) {
+		//Must contain both a dark and light value. In a future update we should avoid this
+		if (tokens[token].hasOwnProperty("value") && tokens[token].hasOwnProperty("valueDark")) {
+			let value = tokens[token].value;
+			let darkValue = tokens[token].valueDark;
+			//Checks to see if it is a reference to another token
+			if (value[0] == "{") {
+				value = value.substring(1, value.length - 1);
+				darkValue = darkValue.substring(1, darkValue.length - 1);
+				theme[`${token}`] = `$${value}`;
+				themeDark[`${token}`] = `$${darkValue}`;
+
+			} else {
+				//Should have a reference token and not a tier 1 token
+				return;
+			}
+		}
+	}
+}
 /** Looks up the value of a token alias path depth supported up to 3 token[1][2][3]*/
 function lookupValue(lookUpToken) {
 	const path = lookUpToken.split(".");
@@ -142,6 +165,7 @@ function createTransformTokens() {
 			export const dark=${JSON.stringify(dark)}
 			export const staticColors=${JSON.stringify(staticColors)}
 			export const defaultTheme=${JSON.stringify(theme)}
+			export const darkTheme=${JSON.stringify(themeDark)}
 			export const sizes=${JSON.stringify(sizes)}
 			export const spaces=${JSON.stringify(spaces)}
 			export const radii=${JSON.stringify(radii)}
