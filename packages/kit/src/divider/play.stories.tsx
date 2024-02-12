@@ -1,4 +1,3 @@
-import * as React from "react";
 import { styled } from "@washingtonpost/wpds-theme";
 import { Divider as Component } from "./";
 
