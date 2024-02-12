@@ -18,8 +18,6 @@ import Close from "@washingtonpost/wpds-assets/asset/close";
 import Logo from "./logo";
 import { ThemeToggle } from "./ThemeToggle";
 
-const SearchForm = dynamic(() => import("./SearchForm"), { ssr: false });
-
 const List = styled("ul", {
   gridArea: "nav",
   display: "flex",
@@ -220,7 +218,6 @@ export const NavigationBar = ({ setMobileMenu, mobileMenuState, isClosed }) => {
             </Anchor>
           </Link>
         </ListItem>
-        <ListItem>{hideFromSmallScreen && <SearchForm />}</ListItem>
         <ListItem>
           <ThemeToggle
             css={{ position: "fixed", marginTop: "-$100", zIndex: "$page" }}
