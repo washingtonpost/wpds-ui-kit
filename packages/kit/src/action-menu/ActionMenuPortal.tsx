@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import WPDS from "@washingtonpost/wpds-theme";
+import WPDS from "../theme";
 import * as ActionMenuPrimitive from "@radix-ui/react-dropdown-menu";
 
 import { DropdownMenuPortalProps as RadixDropdownMenuPortalProps } from "@radix-ui/react-dropdown-menu";
