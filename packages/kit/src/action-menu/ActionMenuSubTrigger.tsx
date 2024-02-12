@@ -1,8 +1,8 @@
 import * as React from "react";
-import WPDS, { theme, styled } from "@washingtonpost/wpds-theme";
+import WPDS, { theme, styled } from "../theme";
 import * as ActionMenuPrimitive from "@radix-ui/react-dropdown-menu";
 import { DropdownMenuSubTriggerProps as RadixDropdownMenuSubTriggerProps } from "@radix-ui/react-dropdown-menu";
-import { Icon } from "@washingtonpost/wpds-icon";
+import { Icon } from "../icon";
 import { ChevronRight } from "@washingtonpost/wpds-assets";
 import { ActionMenuContext } from "./context";
 import { useContext } from "react";

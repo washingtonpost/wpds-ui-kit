@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { ActionMenu as Component } from ".";
-import { Button } from "@washingtonpost/wpds-button";
-import { Box } from "@washingtonpost/wpds-box";
-import { Icon } from "@washingtonpost/wpds-icon";
+import { Button } from "../button";
+import { Box } from "../box";
+import { Icon } from "../icon";
 import {
   Bookmark,
   Diamond,

@@ -1,5 +1,5 @@
 import * as React from "react";
-import WPDS, { theme, styled } from "@washingtonpost/wpds-theme";
+import WPDS, { theme, styled } from "../theme";
 
 const RightIcon = styled("div", {
   marginLeft: "auto",
