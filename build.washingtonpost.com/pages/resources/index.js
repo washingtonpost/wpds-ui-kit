@@ -1,6 +1,6 @@
 import React from "react";
 import { NextSeo } from "next-seo";
-import { styled, theme, Box } from "@washingtonpost/wpds-ui-kit";
+import { theme, Box } from "@washingtonpost/wpds-ui-kit";
 
 import { getDocsListBySection, getNavigation } from "~/services";
 import { Header } from "~/components/Markdown/Components/headers";

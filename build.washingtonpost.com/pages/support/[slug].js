@@ -15,9 +15,6 @@ const components = {
   ...MDXStyling,
   CustomComponent: dynamic(() => import("~/components/Typography/Headers")),
 };
-const P = styled("p", {
-  color: theme.colors.accessible,
-});
 
 export default function Page({ source }) {
   return (

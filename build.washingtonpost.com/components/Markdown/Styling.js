@@ -204,6 +204,7 @@ const components = {
   CopyClipboard: dynamic(() => import("./Components/CopyToClipBoard")),
   IconSamples: dynamic(() => import("./Examples/IconSamples")),
   LogoSamples: dynamic(() => import("./Examples/LogoSamples")),
+  ColorTokenTable: dynamic(() => import("./Examples/TokenColorTable")),
   ColorSamples: dynamic(() => import("./Examples/ColorSamples")),
   HexRGBAColorSamples: dynamic(() => import("./Examples/HexRGBAColorSamples")),
   Table: dynamic(() => import("./Components/table")),

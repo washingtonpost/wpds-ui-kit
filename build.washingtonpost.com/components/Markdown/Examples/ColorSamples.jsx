@@ -55,6 +55,10 @@ const ColorSamples = ({ group }) => {
   const Swatch = styled("button", {
     backgroundColor: "transparent",
     border: "1px solid $subtle",
+    display: "flex",
+    gap: "$050",
+    textAlign: "left",
+    alignItems: "center",
     padding: 0,
     "&:hover": {
       opacity: 0.5,
@@ -62,9 +66,10 @@ const ColorSamples = ({ group }) => {
   });
 
   const ColorExample = styled("div", {
-    minHeight: "$500",
-    width: "100%",
+    height: "60px",
+    width: "60px",
     display: "flex",
+
     alignItems: "center",
     justifyContent: "center",
   });
@@ -78,7 +83,7 @@ const ColorSamples = ({ group }) => {
 
   return (
     <>
-      <Grid maxSize={"120px"}>
+      <Grid maxSize={"200px"}>
         {colorGroupArray.map((key, i) => (
           <Swatch
             key={i}
