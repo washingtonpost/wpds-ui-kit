@@ -1,4 +1,4 @@
-import { styled } from "@washingtonpost/wpds-theme";
+import { styled } from "../theme";
 import { Divider as Component } from "./";
 
 import type { Meta, StoryFn } from "@storybook/react";
