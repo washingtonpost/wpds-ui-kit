@@ -1,8 +1,8 @@
 import { forwardRef } from "react";
 import * as Separator from "@radix-ui/react-separator";
 import type { SeparatorProps } from "@radix-ui/react-separator";
-import * as Theme from "@washingtonpost/wpds-theme";
-import type * as WPDS from "@washingtonpost/wpds-theme";
+import * as Theme from "../theme";
+import type * as WPDS from "../theme";
 
 const NAME = "Divider";
 
