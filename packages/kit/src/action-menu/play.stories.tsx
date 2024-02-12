@@ -14,7 +14,7 @@ import {
 import { screen, userEvent } from "@storybook/testing-library";
 import { expect } from "@storybook/jest";
 
-import type { ComponentStory } from "@storybook/react";
+import type { StoryFn } from "@storybook/react";
 
 export default {
   title: "Action Menu",
@@ -108,7 +108,9 @@ const TriggersTemplate = (parameters) => (
   </Box>
 );
 
-export const Triggers = TriggersTemplate.bind({});
+export const Triggers = {
+  render: TriggersTemplate,
+};
 
 // Leading icon
 // Leading icon with a check
@@ -322,11 +324,11 @@ const ItemVariationsTemplate = (parameters) => {
   );
 };
 
-export const ItemVariations = ItemVariationsTemplate.bind({});
+export const ItemVariations = {
+  render: ItemVariationsTemplate,
+};
 
-const InteractionsTemplate: ComponentStory<typeof Component.Root> = (
-  parameters
-) => (
+const InteractionsTemplate: StoryFn<typeof Component.Root> = (parameters) => (
   <Component.Root {...parameters}>
     <Component.Trigger asChild>
       <Button>Trigger</Button>
@@ -381,49 +383,51 @@ const InteractionsTemplate: ComponentStory<typeof Component.Root> = (
   </Component.Root>
 );
 
-export const Interactions = InteractionsTemplate.bind({});
+export const Interactions = {
+  render: InteractionsTemplate,
+
+  play: async () => {
+    console.log("Start Interaction");
+
+    const trigger = screen.getAllByText("Trigger")[0];
+    await sleep(500);
+
+    await userEvent.click(trigger);
+    await sleep(500);
+
+    const content = screen.getAllByText("Level 1 Action");
+    const checkVisible = async function (item) {
+      await expect(item).toBeVisible();
+    };
+    await expect(content.length).toEqual(2);
+
+    content.forEach((item) => {
+      checkVisible(item);
+    });
+
+    const subTrigger1 = screen.getAllByText("Open Level 2")[0];
+
+    await userEvent.click(subTrigger1);
+
+    await sleep(500);
+
+    const subContent1 = screen.getAllByText("Level 2 Action");
+
+    await expect(subContent1.length).toEqual(3);
+
+    subContent1.forEach((item) => {
+      checkVisible(item);
+    });
+
+    const subTrigger2 = screen.getAllByText("Open Level 3")[0];
+    await userEvent.click(subTrigger2);
+    const subContent2 = screen.getAllByText("Level 3 Action");
+
+    await expect(subContent2.length).toEqual(2);
+  },
+};
 
 // Function to emulate pausing between interactions
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
-
-Interactions.play = async () => {
-  console.log("Start Interaction");
-
-  const trigger = screen.getAllByText("Trigger")[0];
-  await sleep(500);
-
-  await userEvent.click(trigger);
-  await sleep(500);
-
-  const content = screen.getAllByText("Level 1 Action");
-  const checkVisible = async function (item) {
-    await expect(item).toBeVisible();
-  };
-  await expect(content.length).toEqual(2);
-
-  content.forEach((item) => {
-    checkVisible(item);
-  });
-
-  const subTrigger1 = screen.getAllByText("Open Level 2")[0];
-
-  await userEvent.click(subTrigger1);
-
-  await sleep(500);
-
-  const subContent1 = screen.getAllByText("Level 2 Action");
-
-  await expect(subContent1.length).toEqual(3);
-
-  subContent1.forEach((item) => {
-    checkVisible(item);
-  });
-
-  const subTrigger2 = screen.getAllByText("Open Level 3")[0];
-  await userEvent.click(subTrigger2);
-  const subContent2 = screen.getAllByText("Level 3 Action");
-
-  await expect(subContent2.length).toEqual(2);
-};
