@@ -178,7 +178,7 @@ export default function ThemeAndSemantic() {
         <Container
           css={{
             border: `1px solid ${theme.colors.outline}`,
-            background: theme.colors["surface-heightest"],
+            background: theme.colors["surface-highest"],
           }}
         >
           <Label css={{ color: "$onSurface" }}>onSurface</Label>
