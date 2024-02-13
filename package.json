@@ -127,7 +127,7 @@
     "lint": "eslint --fix --ext .ts,.tsx ui/",
     "lint:check": "eslint --ext .ts,.tsx ui/",
     "clean": "turbo run clean && rm -rf node_modules",
-    "dev": "turbo run dev --concurrency=42",
+    "dev": "turbo run dev --concurrency=44",
     "start": "turbo run start"
   },
   "prettier": {},

@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState } from "react";
 import { styled } from "@washingtonpost/wpds-ui-kit";
 import Tokens from "@washingtonpost/wpds-theme/src/wpds.tokens.json";
 import { useTheme } from "next-themes";
@@ -34,7 +34,7 @@ export default function ColorTokenTable() {
     }
     const results = fuse.search(currentValue);
     setResults(results);
-  }, [theme]);
+  }, [theme, currentValue, dark, fuse, light, staticColors]);
 
   function handleChange(e) {
     setCurrentValue(e.target.value);

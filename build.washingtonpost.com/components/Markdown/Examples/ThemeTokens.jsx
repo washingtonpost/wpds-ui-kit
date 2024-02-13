@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { styled, theme, Box } from "@washingtonpost/wpds-ui-kit";
 
 export default function ThemeAndSemantic() {
-  console.log(theme);
   const Layout = styled("div", {
     display: "grid",
     gap: theme.space["050"],
@@ -10,10 +9,7 @@ export default function ThemeAndSemantic() {
   });
   const Container = styled("div", {
     width: "100%",
-    height: "100%",
     minHeight: 100,
-    height: 120,
-    height: "auto",
     padding: theme.space["050"],
     display: "flex",
     flexDirection: "column",
