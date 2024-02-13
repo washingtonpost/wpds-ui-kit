@@ -1705,12 +1705,12 @@
         "value": "{gray20}",
         "valueDark": "{gray0}"
       },
-      "OnSurface-subtle-hover": {
+      "onSurface-subtle-hover": {
         "type": "color",
         "value": "{gray100}",
         "valueDark": "{gray80}"
       },
-      "OnSurface-subtle": {
+      "onSurface-subtle": {
         "type": "color",
         "value": "{gray80}",
         "valueDark": "{gray60}"
@@ -1720,7 +1720,7 @@
         "value": "{gray100}",
         "valueDark": "{gray80}"
       },
-      "OnSurface": {
+      "onSurface": {
         "type": "color",
         "value": "{gray20}",
         "valueDark": "{gray0}"

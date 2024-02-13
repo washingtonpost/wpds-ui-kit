@@ -1,30 +1,82 @@
 ---
 order: 4
 title: Color
-description: Color token values are defined by their context. There are two contexts "light" and "dark" context. Toggle the sun/moon in the top right of the site to see each context.
+description: Color token values are defined by their context. There are two contexts we currently support a "light" and "dark" context. Toggle the sun/moon in the top right of the site to see each context.
 ---
 
 <BR />
 
 ## Table of contents
 
-- [Theme and semantic tokens](/foundations/color#Theme_and_Semantic_tokens)
+- [Introduction to Our Color Palette](/foundations/color#Introduction%20to%20Our%20Color%20Palette)
+- [Theme and Semantic Tokens](/foundations/color#Theme%20and%20Semantic%20Tokens)
 - [Color tokens](/foundations/color#Color%20tokens)
 
 ---
 
-## Theme and semantic tokens
+## Introduction to Our Color Palette
 
-Theme tokens are alias tokens that map a color token to intention. When possible, always use a theme token.
-`theme.colors[tokenName]`
+Our color palette is designed with the intention to cater to the diverse needs of our product's design requirements, providing a comprehensive range of colors.
 
-<ColorSamples group="theme" />
+<BR />
+### Recommended Usage While our palette offers a variety of colors suitable for a
+wide array of applications within our product, we strongly recommend using our theme
+tokens. These tokens are specifically designed to ensure that colors are applied
+with the correct intention and assignment, particularly in contexts where light and
+dark themes are utilized.
+
+Note: The for the following graphic the number shown in each color swatch is calculated contrast against our `background` color token.
+
+<BR />
+
+<ColorSamples />
+
+<BR />
+
+### How to Reference Color Tokens
+
+Color tokens can be referenced by combining their colorGroup and scale. This system allows for easy identification and application of color values within your projects. For example:
+
+- `gray100`
+- `red300`
+- `teal600`
+
+To ensure clarity in code documentation for maintaining type safety and consistent theme usage, especially when referencing colors from the Washington Post Design System (WPDS) in your styled components or any other part of your application, follow the structured approach below. This approach involves importing the theme object from the WPDS UI kit and then using dot notation to access specific color values.
+
+#### Using our tokens in code
+
+When you need to apply colors from the WPDS theme to your components, start by importing the theme object from the WPDS UI kit package. This enables you to use the theme's predefined color values in a type-safe manner, ensuring consistency across your application and adherence to the design system.
+For example:
+
+`import { theme } from "@washingtonpost/wpds-ui-kit";`
+
+`const background= theme.colors.background;`
 
 <BR />
 
 ---
 
-## All Tokens
+## Theme and Semantic Tokens
+
+Our theme tokens are constructed in a semantic predicatble structure. Each token uses the semantic structure of `role` - `modifier` - `state`.
+
+- **Role** - Its purpose within the ui.
+- **Modifier (Optional)** - A variant, change, or subset of the role. (-static*, -subtle*)
+- **State (Optional)** - Its state within the ui.
+
+When a `-static` modifier is used the token will remain the same color in a dark context.
+
+When a `-subtle` modifer is used the token will use the most accessbile _subtle_ color for that theme group.
+
+<BR />
+
+<ThemeTokens />
+
+<BR />
+
+---
+
+## Color tokens
 
 <ColorTokenTable />
 

@@ -206,6 +206,7 @@ const components = {
   LogoSamples: dynamic(() => import("./Examples/LogoSamples")),
   ColorTokenTable: dynamic(() => import("./Examples/TokenColorTable")),
   ColorSamples: dynamic(() => import("./Examples/ColorSamples")),
+  ThemeTokens: dynamic(() => import("./Examples/ThemeTokens")),
   HexRGBAColorSamples: dynamic(() => import("./Examples/HexRGBAColorSamples")),
   Table: dynamic(() => import("./Components/table")),
   Img: dynamic(() => import("./Components/InlineImage")),
