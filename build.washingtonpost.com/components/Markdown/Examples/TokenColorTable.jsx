@@ -34,7 +34,7 @@ export default function ColorTokenTable() {
     }
     const results = fuse.search(currentValue);
     setResults(results);
-  }, [theme, currentValue, dark, fuse, light, staticColors]);
+  }, [theme]);
 
   function handleChange(e) {
     setCurrentValue(e.target.value);
