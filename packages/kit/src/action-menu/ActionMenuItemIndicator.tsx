@@ -1,13 +1,12 @@
-import * as React from "react";
-
-import WPDS, { styled, theme } from "../theme";
-
+import { forwardRef, useContext } from "react";
 import * as ActionMenuPrimitive from "@radix-ui/react-dropdown-menu";
-
-import { DropdownMenuItemIndicatorProps as RadixDropdownMenuItemIndicatorProps } from "@radix-ui/react-dropdown-menu";
 import { ActionMenuContext } from "./context";
 import { Icon } from "../icon";
 import { Check } from "@washingtonpost/wpds-assets";
+import { styled, theme } from "../theme";
+
+import type { DropdownMenuItemIndicatorProps as RadixDropdownMenuItemIndicatorProps } from "@radix-ui/react-dropdown-menu";
+import type * as WPDS from "../theme";
 
 const NAME = "ActionMenuItemIndicator";
 
@@ -44,11 +43,11 @@ export type ActionMenuItemIndicatorProps = {
   css?: WPDS.CSS;
 } & RadixDropdownMenuItemIndicatorProps;
 
-export const ActionMenuItemIndicator = React.forwardRef<
+export const ActionMenuItemIndicator = forwardRef<
   HTMLDivElement,
   ActionMenuItemIndicatorProps
 >(({ ...props }: ActionMenuItemIndicatorProps, ref) => {
-  const context = React.useContext(ActionMenuContext);
+  const context = useContext(ActionMenuContext);
 
   return (
     <StyledItemIndicator

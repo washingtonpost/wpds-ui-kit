@@ -1,12 +1,10 @@
-import * as React from "react";
-
-import WPDS, { theme, styled } from "../theme";
-
 import * as ActionMenuPrimitive from "@radix-ui/react-dropdown-menu";
-
-import { DropdownMenuContentProps as RadixDropdownMenuContentProps } from "@radix-ui/react-dropdown-menu";
-
 import { ActionMenuPortal } from "./ActionMenuPortal";
+import { theme, styled } from "../theme";
+
+import type { DropdownMenuContentProps as RadixDropdownMenuContentProps } from "@radix-ui/react-dropdown-menu";
+import type * as WPDS from "../theme";
+import { forwardRef, useState } from "react";
 
 const NAME = "ActionMenuContent";
 
@@ -39,11 +37,11 @@ export type ActionMenuContentProps = {
   css?: WPDS.CSS;
 } & RadixDropdownMenuContentProps;
 
-export const ActionMenuContent = React.forwardRef<
+export const ActionMenuContent = forwardRef<
   HTMLDivElement,
   ActionMenuContentProps
 >(({ children, ...props }: ActionMenuContentProps, ref) => {
-  const [clicked, setClicked] = React.useState(false);
+  const [clicked, setClicked] = useState(false);
 
   return (
     <ActionMenuPortal>

@@ -1,10 +1,9 @@
-import * as React from "react";
-
-import WPDS, { theme, styled } from "../theme";
-
+import { forwardRef } from "react";
 import * as ActionMenuPrimitive from "@radix-ui/react-dropdown-menu";
+import { theme, styled } from "../theme";
 
-import { DropdownMenuTriggerProps as RadixDropdownMenuTriggerProps } from "@radix-ui/react-dropdown-menu";
+import type { DropdownMenuTriggerProps as RadixDropdownMenuTriggerProps } from "@radix-ui/react-dropdown-menu";
+import type * as WPDS from "../theme";
 
 const NAME = "ActionMenuTrigger";
 
@@ -30,7 +29,7 @@ export type ActionMenuTriggerProps = {
   css?: WPDS.CSS;
 } & RadixDropdownMenuTriggerProps;
 
-export const ActionMenuTrigger = React.forwardRef<
+export const ActionMenuTrigger = forwardRef<
   HTMLButtonElement,
   ActionMenuTriggerProps
 >((props: ActionMenuTriggerProps, ref) => {

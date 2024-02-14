@@ -1,12 +1,10 @@
-import * as React from "react";
-
-import WPDS, { styled } from "../theme";
-
+import { useContext } from "react";
 import * as ActionMenuPrimitive from "@radix-ui/react-dropdown-menu";
-
+import { styled } from "../theme";
 import { ActionMenuContext } from "./context";
 
-import { DropdownMenuSubProps as RadixDropdownMenuSubProps } from "@radix-ui/react-dropdown-menu";
+import type { DropdownMenuSubProps as RadixDropdownMenuSubProps } from "@radix-ui/react-dropdown-menu";
+import type * as WPDS from "../theme";
 
 const NAME = "ActionMenuSub";
 
@@ -20,7 +18,7 @@ export type ActionMenuSubProps = {
 } & RadixDropdownMenuSubProps;
 
 export const ActionMenuSub = ({ ...props }: ActionMenuSubProps) => {
-  const context = React.useContext(ActionMenuContext);
+  const context = useContext(ActionMenuContext);
 
   return (
     <ActionMenuContext.Provider

@@ -1,7 +1,6 @@
 import { useState } from "react";
-import { ActionMenu as Component } from ".";
+import { ActionMenu } from ".";
 import { Button } from "../button";
-import { Box } from "../box";
 import { Icon } from "../icon";
 import {
   Bookmark,
@@ -18,94 +17,77 @@ import type { StoryFn } from "@storybook/react";
 
 export default {
   title: "Action Menu",
-  component: Component.Root,
-  subcomponents: {
-    ActionMenuCheckboxItem: Component.CheckboxItem,
-    ActionMenuContent: Component.Content,
-    ActionMenuGroup: Component.Group,
-    ActionMenuItem: Component.Item,
-    ActionMenuItemIndicator: Component.ItemIndicator,
-    ActionMenuLabel: Component.Label,
-    ActionMenuPortal: Component.Portal,
-    ActionMenuRadioGroup: Component.RadioGroup,
-    ActionMenuRadioItem: Component.RadioItem,
-    ActionMenuRoot: Component.Root,
-    ActionMenuSeparator: Component.Separator,
-    ActionMenuSub: Component.Sub,
-    ActionMenuSubContent: Component.SubContent,
-    ActionMenuSubTrigger: Component.SubTrigger,
-    ActionMenuTrigger: Component.Trigger,
-  },
+  component: ActionMenu.Root,
 };
 
 const SimpleContent = (
-  <Component.Content>
-    <Component.Sub>
-      <Component.SubTrigger>Action 1</Component.SubTrigger>
-      <Component.SubContent>
-        <Component.Sub>
-          <Component.SubTrigger>Action 1.1</Component.SubTrigger>
-          <Component.SubContent>
-            <Component.Item>Action 1.1.1</Component.Item>
-            <Component.Item>Action 1.1.2</Component.Item>
-            <Component.Item>Action 1.1.3</Component.Item>
-            <Component.Item>Action 1.1.4</Component.Item>
-          </Component.SubContent>
-        </Component.Sub>
-        <Component.Item>Action 1.2</Component.Item>
-        <Component.Item>Action 1.3</Component.Item>
-        <Component.Item>Action 1.4</Component.Item>
-      </Component.SubContent>
-    </Component.Sub>
-    <Component.Item>Action 2</Component.Item>
-    <Component.Item>Action 3</Component.Item>
-    <Component.Item>Action 4</Component.Item>
-  </Component.Content>
+  <ActionMenu.Content>
+    <ActionMenu.Sub>
+      <ActionMenu.SubTrigger>Action 1</ActionMenu.SubTrigger>
+      <ActionMenu.SubContent>
+        <ActionMenu.Sub>
+          <ActionMenu.SubTrigger>Action 1.1</ActionMenu.SubTrigger>
+          <ActionMenu.SubContent>
+            <ActionMenu.Item>Action 1.1.1</ActionMenu.Item>
+            <ActionMenu.Item>Action 1.1.2</ActionMenu.Item>
+            <ActionMenu.Item>Action 1.1.3</ActionMenu.Item>
+            <ActionMenu.Item>Action 1.1.4</ActionMenu.Item>
+          </ActionMenu.SubContent>
+        </ActionMenu.Sub>
+        <ActionMenu.Item>Action 1.2</ActionMenu.Item>
+        <ActionMenu.Item>Action 1.3</ActionMenu.Item>
+        <ActionMenu.Item>Action 1.4</ActionMenu.Item>
+      </ActionMenu.SubContent>
+    </ActionMenu.Sub>
+    <ActionMenu.Item>Action 2</ActionMenu.Item>
+    <ActionMenu.Item>Action 3</ActionMenu.Item>
+    <ActionMenu.Item>Action 4</ActionMenu.Item>
+  </ActionMenu.Content>
 );
 
 const TriggersTemplate = (parameters) => (
-  <Box
-    css={{
+  <div
+    style={{
       width: "80%",
       display: "flex",
       flexDirection: "row",
       justifyContent: "space-evenly",
     }}
   >
-    <Component.Root {...parameters}>
-      <Component.Trigger asChild>
+    <ActionMenu.Root {...parameters}>
+      <ActionMenu.Trigger asChild>
         <Button>Action button</Button>
-      </Component.Trigger>
-      <Component.Portal>{SimpleContent}</Component.Portal>
-    </Component.Root>
-    <Component.Root {...parameters}>
-      <Component.Trigger asChild>
+      </ActionMenu.Trigger>
+      <ActionMenu.Portal>{SimpleContent}</ActionMenu.Portal>
+    </ActionMenu.Root>
+    <ActionMenu.Root {...parameters}>
+      <ActionMenu.Trigger asChild>
         <Button icon="center">
           <Icon label="Expand">
             <DotsVertical />
           </Icon>
         </Button>
-      </Component.Trigger>
-      <Component.Portal>{SimpleContent}</Component.Portal>
-    </Component.Root>
-    <Component.Root {...parameters}>
-      <Component.Trigger
+      </ActionMenu.Trigger>
+      <ActionMenu.Portal>{SimpleContent}</ActionMenu.Portal>
+    </ActionMenu.Root>
+    <ActionMenu.Root {...parameters}>
+      <ActionMenu.Trigger
         css={{ fontWeight: "bold", textDecoration: "underline" }}
         asChild
       >
         <a>Action Link</a>
-      </Component.Trigger>
-      <Component.Portal>{SimpleContent}</Component.Portal>
-    </Component.Root>
-    <Component.Root {...parameters}>
-      <Component.Trigger asChild>
+      </ActionMenu.Trigger>
+      <ActionMenu.Portal>{SimpleContent}</ActionMenu.Portal>
+    </ActionMenu.Root>
+    <ActionMenu.Root {...parameters}>
+      <ActionMenu.Trigger asChild>
         <Icon label="Actions">
           <MixerVertical />
         </Icon>
-      </Component.Trigger>
-      <Component.Portal>{SimpleContent}</Component.Portal>
-    </Component.Root>
-  </Box>
+      </ActionMenu.Trigger>
+      <ActionMenu.Portal>{SimpleContent}</ActionMenu.Portal>
+    </ActionMenu.Root>
+  </div>
 );
 
 export const Triggers = {
@@ -132,195 +114,195 @@ const ItemVariationsTemplate = (parameters) => {
   const [radioChecked, setRadioChecked] = useState("radio2");
 
   return (
-    <Component.Root {...parameters}>
-      <Component.Trigger asChild>
+    <ActionMenu.Root {...parameters}>
+      <ActionMenu.Trigger asChild>
         <Button>Action button</Button>
-      </Component.Trigger>
-      <Component.Portal>
-        <Component.Content>
-          <Component.Label>Label</Component.Label>
-          <Component.Item>
-            <Component.Icon side="left">
+      </ActionMenu.Trigger>
+      <ActionMenu.Portal>
+        <ActionMenu.Content>
+          <ActionMenu.Label>Label</ActionMenu.Label>
+          <ActionMenu.Item>
+            <ActionMenu.Icon side="left">
               <Icon label="check">
                 <Copy />
               </Icon>
-            </Component.Icon>
+            </ActionMenu.Icon>
             Copy Items
-          </Component.Item>
-          <Component.Group>
-            <Component.Label>Checkbox Item Examples</Component.Label>
-            <Component.CheckboxItem
+          </ActionMenu.Item>
+          <ActionMenu.Group>
+            <ActionMenu.Label>Checkbox Item Examples</ActionMenu.Label>
+            <ActionMenu.CheckboxItem
               checked={checkedA}
               onCheckedChange={setCheckedA}
             >
-              <Component.ItemIndicator />
+              <ActionMenu.ItemIndicator />
               {/*
-							<Component.Icon side="left">
+							<ActionMenu.Icon side="left">
 								<Icon label="bookmark" size="100">
 									<Bookmark />
 								</Icon>
-							</Component.Icon>
+							</ActionMenu.Icon>
 							*/}
               Left
-            </Component.CheckboxItem>
-            <Component.CheckboxItem
+            </ActionMenu.CheckboxItem>
+            <ActionMenu.CheckboxItem
               checked={checkedB}
               onCheckedChange={setCheckedB}
             >
-              <Component.ItemIndicator />
+              <ActionMenu.ItemIndicator />
               Neither
-            </Component.CheckboxItem>
-            <Component.CheckboxItem
+            </ActionMenu.CheckboxItem>
+            <ActionMenu.CheckboxItem
               checked={checkedC}
               onCheckedChange={setCheckedC}
             >
-              <Component.ItemIndicator />
+              <ActionMenu.ItemIndicator />
               Right
-              <Component.Icon side="right">
+              <ActionMenu.Icon side="right">
                 <Icon label="bell" size="100">
                   <Bookmark />
                 </Icon>
-              </Component.Icon>
-            </Component.CheckboxItem>
-            <Component.CheckboxItem
+              </ActionMenu.Icon>
+            </ActionMenu.CheckboxItem>
+            <ActionMenu.CheckboxItem
               checked={checkedD}
               onCheckedChange={setCheckedD}
             >
-              <Component.ItemIndicator />
+              <ActionMenu.ItemIndicator />
               Both
-              <Component.Icon side="right">
+              <ActionMenu.Icon side="right">
                 <Icon label="bell" size="100">
                   <Bookmark />
                 </Icon>
-              </Component.Icon>
-            </Component.CheckboxItem>
-          </Component.Group>
-          <Component.Label>Radio Group Example</Component.Label>
-          <Component.RadioGroup
+              </ActionMenu.Icon>
+            </ActionMenu.CheckboxItem>
+          </ActionMenu.Group>
+          <ActionMenu.Label>Radio Group Example</ActionMenu.Label>
+          <ActionMenu.RadioGroup
             value={radioChecked}
             onValueChange={setRadioChecked}
           >
-            <Component.RadioItem value="radio1">
-              <Component.ItemIndicator />
+            <ActionMenu.RadioItem value="radio1">
+              <ActionMenu.ItemIndicator />
               Radio 1
-            </Component.RadioItem>
-            <Component.RadioItem value="radio2">
-              <Component.ItemIndicator />
+            </ActionMenu.RadioItem>
+            <ActionMenu.RadioItem value="radio2">
+              <ActionMenu.ItemIndicator />
               Radio 2
-            </Component.RadioItem>
-            <Component.RadioItem value="radio3">
-              <Component.ItemIndicator />
+            </ActionMenu.RadioItem>
+            <ActionMenu.RadioItem value="radio3">
+              <ActionMenu.ItemIndicator />
               Radio 3
-            </Component.RadioItem>
-          </Component.RadioGroup>
-          <Component.Sub>
-            <Component.SubTrigger>More actions</Component.SubTrigger>
-            <Component.SubContent>
-              <Component.Item disabled>
-                <Component.Icon side="left">
+            </ActionMenu.RadioItem>
+          </ActionMenu.RadioGroup>
+          <ActionMenu.Sub>
+            <ActionMenu.SubTrigger>More actions</ActionMenu.SubTrigger>
+            <ActionMenu.SubContent>
+              <ActionMenu.Item disabled>
+                <ActionMenu.Icon side="left">
                   <Icon label="bookmark" size="100">
                     <Bookmark />
                   </Icon>
-                </Component.Icon>
+                </ActionMenu.Icon>
                 Bookmarks
-              </Component.Item>
-              <Component.Item>
-                <Component.Icon side="left">
+              </ActionMenu.Item>
+              <ActionMenu.Item>
+                <ActionMenu.Icon side="left">
                   <Icon label="bookmark" size="100">
                     <Bookmark />
                   </Icon>
-                </Component.Icon>
+                </ActionMenu.Icon>
                 Bookmarks
-              </Component.Item>
-              <Component.Item>
-                <Component.Icon side="left"></Component.Icon>
+              </ActionMenu.Item>
+              <ActionMenu.Item>
+                <ActionMenu.Icon side="left"></ActionMenu.Icon>
                 Bookmarks
-              </Component.Item>
-              <Component.Sub>
-                <Component.SubTrigger>Even more actions</Component.SubTrigger>
-                <Component.SubContent>
-                  <Component.Item>Action X</Component.Item>
-                  <Component.Item>Action Z</Component.Item>
-                </Component.SubContent>
-              </Component.Sub>
-            </Component.SubContent>
-          </Component.Sub>
-          <Component.Sub>
-            <Component.SubTrigger>More actions</Component.SubTrigger>
-            <Component.SubContent>
-              <Component.Item disabled>
-                <Component.Icon side="left">
+              </ActionMenu.Item>
+              <ActionMenu.Sub>
+                <ActionMenu.SubTrigger>Even more actions</ActionMenu.SubTrigger>
+                <ActionMenu.SubContent>
+                  <ActionMenu.Item>Action X</ActionMenu.Item>
+                  <ActionMenu.Item>Action Z</ActionMenu.Item>
+                </ActionMenu.SubContent>
+              </ActionMenu.Sub>
+            </ActionMenu.SubContent>
+          </ActionMenu.Sub>
+          <ActionMenu.Sub>
+            <ActionMenu.SubTrigger>More actions</ActionMenu.SubTrigger>
+            <ActionMenu.SubContent>
+              <ActionMenu.Item disabled>
+                <ActionMenu.Icon side="left">
                   <Icon label="Diamond">
                     <Circle />
                   </Icon>
-                </Component.Icon>
+                </ActionMenu.Icon>
                 Action 7
-              </Component.Item>
-              <Component.Item>
-                <Component.Icon side="left">
+              </ActionMenu.Item>
+              <ActionMenu.Item>
+                <ActionMenu.Icon side="left">
                   <Icon label="Bookmark">
                     <Circle />
                   </Icon>
-                </Component.Icon>
+                </ActionMenu.Icon>
                 Action 8
-              </Component.Item>
-              <Component.Item>
-                <Component.Icon side="left">
+              </ActionMenu.Item>
+              <ActionMenu.Item>
+                <ActionMenu.Icon side="left">
                   <Icon label="Print">
                     <Circle />
                   </Icon>
-                </Component.Icon>
+                </ActionMenu.Icon>
                 Action 9
-              </Component.Item>
-              <Component.Sub>
-                <Component.SubTrigger>Even more actions</Component.SubTrigger>
-                <Component.SubContent>
-                  <Component.Item>Action X</Component.Item>
-                  <Component.Item>Action Z</Component.Item>
-                </Component.SubContent>
-              </Component.Sub>
-            </Component.SubContent>
-          </Component.Sub>
-          <Component.Item>Action 4</Component.Item>
-          <Component.Sub>
-            <Component.SubTrigger>More actions</Component.SubTrigger>
-            <Component.SubContent>
-              <Component.Item disabled>
-                <Component.Icon side="left">
+              </ActionMenu.Item>
+              <ActionMenu.Sub>
+                <ActionMenu.SubTrigger>Even more actions</ActionMenu.SubTrigger>
+                <ActionMenu.SubContent>
+                  <ActionMenu.Item>Action X</ActionMenu.Item>
+                  <ActionMenu.Item>Action Z</ActionMenu.Item>
+                </ActionMenu.SubContent>
+              </ActionMenu.Sub>
+            </ActionMenu.SubContent>
+          </ActionMenu.Sub>
+          <ActionMenu.Item>Action 4</ActionMenu.Item>
+          <ActionMenu.Sub>
+            <ActionMenu.SubTrigger>More actions</ActionMenu.SubTrigger>
+            <ActionMenu.SubContent>
+              <ActionMenu.Item disabled>
+                <ActionMenu.Icon side="left">
                   <Icon label="Diamond">
                     <Circle />
                   </Icon>
-                </Component.Icon>
+                </ActionMenu.Icon>
                 Action 7
-              </Component.Item>
-              <Component.Item>
-                <Component.Icon side="left">
+              </ActionMenu.Item>
+              <ActionMenu.Item>
+                <ActionMenu.Icon side="left">
                   <Icon label="Bookmark">
                     <Circle />
                   </Icon>
-                </Component.Icon>
+                </ActionMenu.Icon>
                 Action 8
-              </Component.Item>
-              <Component.Item>
-                <Component.Icon side="left">
+              </ActionMenu.Item>
+              <ActionMenu.Item>
+                <ActionMenu.Icon side="left">
                   <Icon label="Print">
                     <Circle />
                   </Icon>
-                </Component.Icon>
+                </ActionMenu.Icon>
                 Action 9
-              </Component.Item>
-              <Component.Sub>
-                <Component.SubTrigger>Even more actions</Component.SubTrigger>
-                <Component.SubContent>
-                  <Component.Item>Action X</Component.Item>
-                  <Component.Item>Action Z</Component.Item>
-                </Component.SubContent>
-              </Component.Sub>
-            </Component.SubContent>
-          </Component.Sub>
-        </Component.Content>
-      </Component.Portal>
-    </Component.Root>
+              </ActionMenu.Item>
+              <ActionMenu.Sub>
+                <ActionMenu.SubTrigger>Even more actions</ActionMenu.SubTrigger>
+                <ActionMenu.SubContent>
+                  <ActionMenu.Item>Action X</ActionMenu.Item>
+                  <ActionMenu.Item>Action Z</ActionMenu.Item>
+                </ActionMenu.SubContent>
+              </ActionMenu.Sub>
+            </ActionMenu.SubContent>
+          </ActionMenu.Sub>
+        </ActionMenu.Content>
+      </ActionMenu.Portal>
+    </ActionMenu.Root>
   );
 };
 
@@ -328,59 +310,59 @@ export const ItemVariations = {
   render: ItemVariationsTemplate,
 };
 
-const InteractionsTemplate: StoryFn<typeof Component.Root> = (parameters) => (
-  <Component.Root {...parameters}>
-    <Component.Trigger asChild>
+const InteractionsTemplate: StoryFn<typeof ActionMenu.Root> = (parameters) => (
+  <ActionMenu.Root {...parameters}>
+    <ActionMenu.Trigger asChild>
       <Button>Trigger</Button>
-    </Component.Trigger>
-    <Component.Content>
-      <Component.Item>Level 1 Action</Component.Item>
-      <Component.Item>
-        <Component.Icon side="left">
+    </ActionMenu.Trigger>
+    <ActionMenu.Content>
+      <ActionMenu.Item>Level 1 Action</ActionMenu.Item>
+      <ActionMenu.Item>
+        <ActionMenu.Icon side="left">
           <Icon label="Diamond">
             <Diamond />
           </Icon>
-        </Component.Icon>
+        </ActionMenu.Icon>
         Level 1 Action
-      </Component.Item>
-      <Component.Sub>
-        <Component.SubTrigger>Open Level 2</Component.SubTrigger>
-        <Component.SubContent>
-          <Component.Item disabled>
-            <Component.Icon side="left">
+      </ActionMenu.Item>
+      <ActionMenu.Sub>
+        <ActionMenu.SubTrigger>Open Level 2</ActionMenu.SubTrigger>
+        <ActionMenu.SubContent>
+          <ActionMenu.Item disabled>
+            <ActionMenu.Icon side="left">
               <Icon label="Diamond">
                 <Diamond />
               </Icon>
-            </Component.Icon>
+            </ActionMenu.Icon>
             Level 2 Action
-          </Component.Item>
-          <Component.Item>
-            <Component.Icon side="left">
+          </ActionMenu.Item>
+          <ActionMenu.Item>
+            <ActionMenu.Icon side="left">
               <Icon label="Bookmark">
                 <Bookmark />
               </Icon>
-            </Component.Icon>
+            </ActionMenu.Icon>
             Level 2 Action
-          </Component.Item>
-          <Component.Item>
-            <Component.Icon side="left">
+          </ActionMenu.Item>
+          <ActionMenu.Item>
+            <ActionMenu.Icon side="left">
               <Icon label="Print">
                 <Print />
               </Icon>
-            </Component.Icon>
+            </ActionMenu.Icon>
             Level 2 Action
-          </Component.Item>
-          <Component.Sub>
-            <Component.SubTrigger>Open Level 3</Component.SubTrigger>
-            <Component.SubContent>
-              <Component.Item>Level 3 Action</Component.Item>
-              <Component.Item>Level 3 Action</Component.Item>
-            </Component.SubContent>
-          </Component.Sub>
-        </Component.SubContent>
-      </Component.Sub>
-    </Component.Content>
-  </Component.Root>
+          </ActionMenu.Item>
+          <ActionMenu.Sub>
+            <ActionMenu.SubTrigger>Open Level 3</ActionMenu.SubTrigger>
+            <ActionMenu.SubContent>
+              <ActionMenu.Item>Level 3 Action</ActionMenu.Item>
+              <ActionMenu.Item>Level 3 Action</ActionMenu.Item>
+            </ActionMenu.SubContent>
+          </ActionMenu.Sub>
+        </ActionMenu.SubContent>
+      </ActionMenu.Sub>
+    </ActionMenu.Content>
+  </ActionMenu.Root>
 );
 
 export const Interactions = {
