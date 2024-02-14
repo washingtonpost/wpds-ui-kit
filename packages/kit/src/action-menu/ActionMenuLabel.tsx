@@ -1,11 +1,10 @@
-import * as React from "react";
-
-import WPDS, { styled, theme } from "../theme";
-
+import { forwardRef, useContext } from "react";
 import * as ActionMenuPrimitive from "@radix-ui/react-dropdown-menu";
-
-import { DropdownMenuLabelProps as RadixDropdownMenuLabelProps } from "@radix-ui/react-dropdown-menu";
+import { styled, theme } from "../theme";
 import { ActionMenuContext } from "./context";
+
+import type { DropdownMenuLabelProps as RadixDropdownMenuLabelProps } from "@radix-ui/react-dropdown-menu";
+import type * as WPDS from "../theme";
 
 const NAME = "ActionMenuLabel";
 
@@ -46,21 +45,20 @@ export type ActionMenuLabelProps = {
   css?: WPDS.CSS;
 } & RadixDropdownMenuLabelProps;
 
-export const ActionMenuLabel = React.forwardRef<
-  HTMLDivElement,
-  ActionMenuLabelProps
->(({ children, ...props }: ActionMenuLabelProps, ref) => {
-  const context = React.useContext(ActionMenuContext);
-  return (
-    <StyledLabel
-      {...props}
-      ref={ref}
-      density={context.density}
-      className="action-menu-label"
-    >
-      {children}
-    </StyledLabel>
-  );
-});
+export const ActionMenuLabel = forwardRef<HTMLDivElement, ActionMenuLabelProps>(
+  ({ children, ...props }: ActionMenuLabelProps, ref) => {
+    const context = useContext(ActionMenuContext);
+    return (
+      <StyledLabel
+        {...props}
+        ref={ref}
+        density={context.density}
+        className="action-menu-label"
+      >
+        {children}
+      </StyledLabel>
+    );
+  }
+);
 
 ActionMenuLabel.displayName = NAME;

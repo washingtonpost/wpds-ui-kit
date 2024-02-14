@@ -1,12 +1,10 @@
-import * as React from "react";
+import { createContext } from "react";
 
 type ContextType = {
   density: "default" | "loose" | "compact";
-  level: number;
   trigger?: React.ReactNode;
 };
 
-export const ActionMenuContext = React.createContext<ContextType>({
+export const ActionMenuContext = createContext<ContextType>({
   density: "default",
-  level: 1,
 });

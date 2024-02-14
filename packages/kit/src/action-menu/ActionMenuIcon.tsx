@@ -1,5 +1,7 @@
-import * as React from "react";
-import WPDS, { theme, styled } from "../theme";
+import { forwardRef } from "react";
+import { theme, styled } from "../theme";
+
+import type * as WPDS from "../theme";
 
 const RightIcon = styled("div", {
   marginLeft: "auto",
@@ -29,19 +31,26 @@ export type ActionMenuIconProps = {
   side?: "left" | "right";
 };
 
-export const ActionMenuIcon = React.forwardRef<
-  HTMLDivElement,
-  ActionMenuIconProps
->(({ children, side = "left", ...props }: ActionMenuIconProps, ref) => {
-  return side === "left" ? (
-    <LeftIcon {...props} ref={ref} className="action-menu-icon">
-      {children ? children : <IconPlaceholder />}
-    </LeftIcon>
-  ) : (
-    <RightIcon {...props} ref={ref} className="action-menu-icon">
-      {children ? children : <IconPlaceholder />}
-    </RightIcon>
-  );
-});
+export const ActionMenuIcon = forwardRef<HTMLDivElement, ActionMenuIconProps>(
+  ({ children, side = "left", ...props }: ActionMenuIconProps, ref) => {
+    return side === "left" ? (
+      <LeftIcon {...props} ref={ref} className="action-menu-icon">
+        {children ? (
+          children
+        ) : (
+          <IconPlaceholder data-testid="icon-placeholder" />
+        )}
+      </LeftIcon>
+    ) : (
+      <RightIcon {...props} ref={ref} className="action-menu-icon">
+        {children ? (
+          children
+        ) : (
+          <IconPlaceholder data-testid="icon-placeholder" />
+        )}
+      </RightIcon>
+    );
+  }
+);
 
 ActionMenuIcon.displayName = "ActionMenuIcon";

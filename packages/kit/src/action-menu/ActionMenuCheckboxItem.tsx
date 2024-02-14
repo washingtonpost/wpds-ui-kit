@@ -1,13 +1,11 @@
-import * as React from "react";
-
-import WPDS, { styled, theme } from "../theme";
-
+import { useContext, forwardRef } from "react";
 import * as ActionMenuPrimitive from "@radix-ui/react-dropdown-menu";
-
-import { DropdownMenuCheckboxItemProps as RadixDropdownMenuCheckboxItemProps } from "@radix-ui/react-dropdown-menu";
-
 import { ItemStyles } from "./ActionMenuItem";
 import { ActionMenuContext } from "./context";
+import { styled, theme } from "../theme";
+
+import type { DropdownMenuCheckboxItemProps as RadixDropdownMenuCheckboxItemProps } from "@radix-ui/react-dropdown-menu";
+import type * as WPDS from "../theme";
 
 const NAME = "ActionMenuCheckboxItem";
 
@@ -46,11 +44,11 @@ export type ActionMenuCheckboxItemProps = {
   css?: WPDS.CSS;
 } & RadixDropdownMenuCheckboxItemProps;
 
-export const ActionMenuCheckboxItem = React.forwardRef<
+export const ActionMenuCheckboxItem = forwardRef<
   HTMLDivElement,
   ActionMenuCheckboxItemProps
 >(({ children, ...props }: ActionMenuCheckboxItemProps, ref) => {
-  const context = React.useContext(ActionMenuContext);
+  const context = useContext(ActionMenuContext);
 
   return (
     <StyledCheckboxItem

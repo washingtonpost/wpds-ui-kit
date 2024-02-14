@@ -1,13 +1,11 @@
-import * as React from "react";
-
-import WPDS, { styled, theme } from "../theme";
-
+import { forwardRef, useContext } from "react";
 import * as ActionMenuPrimitive from "@radix-ui/react-dropdown-menu";
-
-import { DropdownMenuRadioItemProps as RadixDropdownMenuRadioItemProps } from "@radix-ui/react-dropdown-menu";
-
 import { ItemStyles } from "./ActionMenuItem";
 import { ActionMenuContext } from "./context";
+import { styled, theme } from "../theme";
+
+import type { DropdownMenuRadioItemProps as RadixDropdownMenuRadioItemProps } from "@radix-ui/react-dropdown-menu";
+import type * as WPDS from "../theme";
 
 const NAME = "ActionMenuRadioItem";
 
@@ -45,11 +43,11 @@ export type ActionMenuRadioItemProps = {
   css?: WPDS.CSS;
 } & RadixDropdownMenuRadioItemProps;
 
-export const ActionMenuRadioItem = React.forwardRef<
+export const ActionMenuRadioItem = forwardRef<
   HTMLDivElement,
   ActionMenuRadioItemProps
 >(({ children, ...props }: ActionMenuRadioItemProps, ref) => {
-  const context = React.useContext(ActionMenuContext);
+  const context = useContext(ActionMenuContext);
   return (
     <StyledRadioItem
       {...props}

@@ -1,12 +1,12 @@
-import { styled } from "../theme";
-import { Divider as Component } from "./";
+import { Divider } from "./";
+import { theme, styled } from "../theme";
 
 import type { Meta, StoryFn } from "@storybook/react";
 
 export default {
   title: "Divider",
-  component: Component,
-} as Meta<typeof Component>;
+  component: Divider,
+} as Meta<typeof Divider>;
 
 const Container = styled("div", {
   display: "flex",
@@ -16,13 +16,13 @@ const Container = styled("div", {
   height: "100px",
 });
 
-const Template: StoryFn<typeof Component> = (args) => (
+const Template: StoryFn<typeof Divider> = (args) => (
   <Container>
-    <Component {...args} />
+    <Divider {...args} />
   </Container>
 );
 
-export const Divider = {
+export const Default = {
   render: Template,
 
   parameters: {
@@ -31,37 +31,41 @@ export const Divider = {
 };
 
 const Grid = styled("div", {
-  alignItems: "stretch",
+  backgroundColor: theme.colors.secondary,
   display: "flex",
-  width: "calc(100vw - 2rem) ",
-  height: "100px",
+  padding: theme.space["100"],
+  flex: 1,
+  flexDirection: "column",
+  width: "100%",
 });
 
 const Column = styled("div", {
-  justifyContent: "center",
-  display: "flex",
   flex: 1,
+  display: "flex",
   flexDirection: "column",
-  gap: "$200",
+  justifyContent: "space-evenly",
 });
 
 const HStack = styled("section", {
-  justifyContent: "center",
-  display: "flex",
   flex: 1,
-  flexDirection: "row",
-  gap: "$200",
+  display: "flex",
+  justifyContent: "space-evenly",
+  alignItems: "stretch",
 });
 
-const ChromaticTemplate: StoryFn<typeof Component> = () => (
+const ChromaticTemplate: StoryFn<typeof Divider> = () => (
   <Grid>
     <Column>
-      <Component />
-      <Component variant="strong" />
+      <Divider />
+      <Divider variant="strong" />
     </Column>
     <HStack>
-      <Component orientation="vertical" />
-      <Component orientation="vertical" variant="strong" />
+      <Divider orientation="vertical" css={{ height: "auto !important" }} />
+      <Divider
+        orientation="vertical"
+        variant="strong"
+        css={{ height: "auto !important" }}
+      />
     </HStack>
   </Grid>
 );

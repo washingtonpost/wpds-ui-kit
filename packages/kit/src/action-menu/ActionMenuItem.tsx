@@ -1,11 +1,10 @@
-import * as React from "react";
-
-import WPDS, { theme, styled } from "../theme";
-
+import { forwardRef, useContext } from "react";
 import * as ActionMenuPrimitive from "@radix-ui/react-dropdown-menu";
-
-import { DropdownMenuItemProps as RadixDropdownMenuItemProps } from "@radix-ui/react-dropdown-menu";
 import { ActionMenuContext } from "./context";
+import { theme, styled } from "../theme";
+
+import type { DropdownMenuItemProps as RadixDropdownMenuItemProps } from "@radix-ui/react-dropdown-menu";
+import type * as WPDS from "../theme";
 
 const NAME = "ActionMenuItem";
 
@@ -55,13 +54,6 @@ export const ItemStyles = {
   },
 };
 
-export const ContentDensityVariants = {};
-
-// export const ItemContent = styled("div", {
-//   display: "flex",
-//   flexDirection: "row",
-// });
-
 const StyledItem = styled(ActionMenuPrimitive.Item, ItemStyles);
 
 export type ActionMenuItemProps = {
@@ -71,22 +63,21 @@ export type ActionMenuItemProps = {
   css?: WPDS.CSS;
 } & RadixDropdownMenuItemProps;
 
-export const ActionMenuItem = React.forwardRef<
-  HTMLDivElement,
-  ActionMenuItemProps
->(({ children, ...props }: ActionMenuItemProps, ref) => {
-  const context = React.useContext(ActionMenuContext);
+export const ActionMenuItem = forwardRef<HTMLDivElement, ActionMenuItemProps>(
+  ({ children, ...props }: ActionMenuItemProps, ref) => {
+    const context = useContext(ActionMenuContext);
 
-  return (
-    <StyledItem
-      {...props}
-      ref={ref}
-      density={context.density}
-      className="action-menu-item"
-    >
-      {children}
-    </StyledItem>
-  );
-});
+    return (
+      <StyledItem
+        {...props}
+        ref={ref}
+        density={context.density}
+        className="action-menu-item"
+      >
+        {children}
+      </StyledItem>
+    );
+  }
+);
 
 ActionMenuItem.displayName = NAME;

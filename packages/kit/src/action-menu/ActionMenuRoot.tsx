@@ -1,12 +1,10 @@
-import * as React from "react";
-
-import type * as WPDS from "../theme";
+import {} from "react";
+import * as ActionMenuPrimitive from "@radix-ui/react-dropdown-menu";
+import { ActionMenuContext } from "./context";
 import { styled } from "../theme";
 
-import * as ActionMenuPrimitive from "@radix-ui/react-dropdown-menu";
-
-import { DropdownMenuProps as RadixDropdownMenuProps } from "@radix-ui/react-dropdown-menu";
-import { ActionMenuContext } from "./context";
+import type { DropdownMenuProps as RadixDropdownMenuProps } from "@radix-ui/react-dropdown-menu";
+import type * as WPDS from "../theme";
 
 const NAME = "ActionMenuRoot";
 
@@ -30,7 +28,6 @@ export const ActionMenuRoot = ({
     <ActionMenuContext.Provider
       value={{
         density,
-        level: 1,
       }}
     >
       <StyledActionMenu {...props} />

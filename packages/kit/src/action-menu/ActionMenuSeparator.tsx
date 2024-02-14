@@ -1,10 +1,9 @@
-import * as React from "react";
-
-import WPDS, { styled } from "../theme";
-
+import { forwardRef } from "react";
 import * as ActionMenuPrimitive from "@radix-ui/react-dropdown-menu";
+import { styled } from "../theme";
 
-import { DropdownMenuSeparatorProps as RadixDropdownMenuSeparatorProps } from "@radix-ui/react-dropdown-menu";
+import type { DropdownMenuSeparatorProps as RadixDropdownMenuSeparatorProps } from "@radix-ui/react-dropdown-menu";
+import type * as WPDS from "../theme";
 
 const NAME = "ActionMenuSeparator";
 
@@ -17,7 +16,7 @@ export type ActionMenuSeparatorProps = {
   css?: WPDS.CSS;
 } & RadixDropdownMenuSeparatorProps;
 
-export const ActionMenuSeparator = React.forwardRef<
+export const ActionMenuSeparator = forwardRef<
   HTMLDivElement,
   ActionMenuSeparatorProps
 >(({ children, ...props }: ActionMenuSeparatorProps, ref) => {

@@ -1,11 +1,7 @@
-import * as React from "react";
-
-import WPDS from "../theme";
 import * as ActionMenuPrimitive from "@radix-ui/react-dropdown-menu";
 
-import { DropdownMenuPortalProps as RadixDropdownMenuPortalProps } from "@radix-ui/react-dropdown-menu";
-
-//const NAME = "ActionMenuPortal";
+import type { DropdownMenuPortalProps as RadixDropdownMenuPortalProps } from "@radix-ui/react-dropdown-menu";
+import type * as WPDS from "../theme";
 
 export type ActionMenuPortalProps = {
   /** Any React node may be used as a child to allow for formatting */
@@ -24,5 +20,3 @@ export const ActionMenuPortal = ({
     </ActionMenuPrimitive.Portal>
   );
 };
-
-//ActionMenuPortal.displayName = NAME;
