@@ -39,7 +39,7 @@ const Swatch = styled("div", {
   flexDirection: "column",
   alignItems: "center",
   justifyContent: "center",
-  color: theme.colors.gray0, // Default text color
+  color: theme.colors["gray0"],, // Default text color
   "@sm": {
     minWidth: "unset",
     minHeight: "unset",
@@ -138,8 +138,8 @@ export default function ColorGrid() {
               gridColumn: yIndex + 2, // Offset by 1 due to labels
               color:
                 TokenScore && TokenScore !== "AA Large" && TokenScore !== "Fail"
-                  ? theme.colors.gray700
-                  : theme.colors.gray0,
+                  ? theme.colors["gray700"],
+                  : theme.colors["gray0"],,
             }}
             key={key}
           >
