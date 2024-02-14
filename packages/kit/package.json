@@ -32,6 +32,7 @@
     "url": "https://github.com/washingtonpost/wpds-ui-kit/issues"
   },
   "dependencies": {
+    "@radix-ui/react-accordion": "^1.1.2",
     "@stitches/react": "^1.2.8",
     "@washingtonpost/wpds-assets": "^1.18.0",
     "@washingtonpost/wpds-theme": "^1.17.0"
