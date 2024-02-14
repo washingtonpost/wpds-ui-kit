@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { styled } from "@washingtonpost/wpds-ui-kit";
+import { styled,theme } from "@washingtonpost/wpds-ui-kit";
 import Tokens from "@washingtonpost/wpds-theme/src/wpds.tokens.json";
 import { hex, score } from "wcag-contrast";
 import { useTheme } from "next-themes";
@@ -32,14 +32,14 @@ const Swatch = styled("div", {
   width: "100%",
   height: "100%",
   borderRadius: theme.radii["012"],
-  borderColor: theme.colors["outline"],
+  borderColor: theme.colors.outline,
   borderWidth: "1px",
   borderStyle: "solid",
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
   justifyContent: "center",
-  color: "black", // Default text color
+  color: theme.colors.gray0, // Default text color
   "@sm": {
     minWidth: "unset",
     minHeight: "unset",
@@ -138,8 +138,8 @@ export default function ColorGrid() {
               gridColumn: yIndex + 2, // Offset by 1 due to labels
               color:
                 TokenScore && TokenScore !== "AA Large" && TokenScore !== "Fail"
-                  ? "$gray700"
-                  : "$gray0",
+                  ? theme.colors.gray700
+                  : theme.colors.gray0,
             }}
             key={key}
           >
