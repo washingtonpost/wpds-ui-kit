@@ -19,7 +19,7 @@ description: Color token values are defined by their context. There are two cont
 
 <BR />
 
-Note: For the following graphic the number shown in each color swatch is the calculated contrast against our `background` color token.
+Note: In the graphic, the number in each color swatch is the contrast against our `background` color. For accessibility, large text should have at least a 3:1 ratio for AA compliance, and small text should have at least 4.5:1 for AA and 7:1 for AAA compliance. See WCAG for details.
 
 <BR />
 
@@ -51,16 +51,16 @@ Color tokens can be referenced by combining their color group and scale. This sy
 - `red300`
 - `teal600`
 
-To ensure clarity in code documentation for maintaining type safety and consistent theme usage, especially when referencing colors from the Washington Post Design System (WPDS) in your styled components or any other part of your application, follow the structured approach below. This approach involves importing the theme object from the WPDS UI kit and then using dot notation to access specific color values.
+**Note:**  The -static modifier preserves the color token's consistency across light and dark contexts. Its usage should be limited within the scope of our product to maintain design coherence.
+
 
 #### Using our tokens in code
 
-When you need to apply colors from the WPDS theme to your components, start by importing the theme object from the WPDS UI kit package. This enables you to use the theme's predefined color values in a type-safe manner, ensuring consistency across your application and adherence to the design system.
+When you need to apply colors from the WPDS theme to your components, start by importing the `theme` object from the WPDS UI kit package. This enables you to use the theme's predefined color values in a type-safe manner, ensuring consistency across your application and adherence to the design system.
 For example:
 
 `import { theme } from "@washingtonpost/wpds-ui-kit";`
-
-`const background= theme.colors.background;`
+`theme.colors.background //Reference to the token`
 
 <BR />
 
@@ -68,15 +68,15 @@ For example:
 
 ## Theme and Semantic Tokens
 
-Our theme tokens are constructed in a semantic predicatble structure. Each token uses the semantic structure of `role` - `modifier` - `state`.
+Our theme tokens follow a semantic and predictable structure comprising three parts:
 
-- **Role** - Its purpose within the ui.
-- **Modifier (Optional)** - A variant, change, or subset of the role. (-static*, -subtle*)
-- **State (Optional)** - Its state within the ui.
+- **Role:** This defines the purpose of the token within the UI.
+- **Modifier (Optional):** This denotes a variant, change, or subset of the role, such as -subtle*.
+- **State (Optional):** This indicates the token's state within the UI.
 
-When a `-static` modifier is used the token will remain the same color in a dark context.
+### Definition
+**-subtle*:** The subtle modifier ensures that the color token remains the same color across light and dark contexts.
 
-When a `-subtle` modifer is used the token will use the most accessbile _subtle_ color for that theme group.
 
 <BR />
 
