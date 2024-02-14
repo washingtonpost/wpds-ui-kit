@@ -1,7 +1,6 @@
 import React from "react";
 import { styled, theme, Box } from "@washingtonpost/wpds-ui-kit";
 
-export default function ThemeAndSemantic() {
   const Layout = styled("div", {
     display: "grid",
     gap: theme.space["050"],
@@ -20,6 +19,7 @@ export default function ThemeAndSemantic() {
     margin: 0,
   });
 
+export default function ThemeAndSemantic() {
   return (
     <Layout>
       <Box>
