@@ -332,7 +332,7 @@ export default function ThemeAndSemantic() {
         >
           <Label>
             <i>
-              Use <b>outine</b> token for borders on cards{" "}
+              Use <b>outine</b> token for borders on cards
             </i>
           </Label>
         </Container>
@@ -348,7 +348,7 @@ export default function ThemeAndSemantic() {
         >
           <Label>
             <i>
-              Use <b>outine</b> token for borders on cards{" "}
+              Use <b>outine-subtle</b> token for borders on cards{" "}
             </i>
           </Label>
         </Container>
