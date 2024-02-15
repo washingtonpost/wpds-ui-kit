@@ -1,6 +1,6 @@
 {
   "name": "@washingtonpost/wpds-tabs",
-  "version": "1.21.0",
+  "version": "1.22.0",
   "description": "WPDS Tabs",
   "author": "WPDS Support <wpds@washpost.com>",
   "homepage": "https://github.com/washingtonpost/wpds-ui-kit#readme",
@@ -47,8 +47,8 @@
     "@radix-ui/react-tabs": "latest",
     "@washingtonpost/wpds-assets": "^1.22.0",
     "@washingtonpost/wpds-icon": "1.1.0",
-    "@washingtonpost/wpds-theme": "1.21.0",
-    "@washingtonpost/wpds-tooltip": "1.21.0",
+    "@washingtonpost/wpds-theme": "1.22.0",
+    "@washingtonpost/wpds-tooltip": "1.22.0",
     "react-transition-group": "^4.4.5"
   },
   "gitHead": "dddd34ee2494be2d91fe5671db3291060097b02a"

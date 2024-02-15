@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.22.0](https://github.com/washingtonpost/wpds-docs/compare/v1.21.0...v1.22.0) (2024-02-15)
+
+
+### Features
+
+* remove search feature from docs site ([#569](https://github.com/washingtonpost/wpds-docs/issues/569)) ([fa22045](https://github.com/washingtonpost/wpds-docs/commit/fa22045fdb00ba1a823056da0ca24a9d938b3665))
+
+
+
+
+
 # [1.21.0](https://github.com/washingtonpost/wpds-docs/compare/v1.20.0...v1.21.0) (2024-02-07)
 
 **Note:** Version bump only for package @washingtonpost/wpds-docs
