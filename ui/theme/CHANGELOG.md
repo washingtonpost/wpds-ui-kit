@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.22.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.21.0...v1.22.0) (2024-02-15)
+
+
+### Bug Fixes
+
+* reverted subtle and faint tokens ([#566](https://github.com/washingtonpost/wpds-ui-kit/issues/566)) ([b45b54a](https://github.com/washingtonpost/wpds-ui-kit/commit/b45b54ab27c3ea341893c79520fe44f3fd463baf))
+
+
+
+
+
 # [1.21.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.20.0...v1.21.0) (2024-02-07)
 
 ### Features
