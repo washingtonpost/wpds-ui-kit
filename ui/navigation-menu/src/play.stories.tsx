@@ -26,7 +26,6 @@ export default {
 } as ComponentMeta<typeof NavigationMenu.Root>;
 
 const Template: ComponentStory<typeof NavigationMenu.Root> = (args) => {
-  console.log(args);
   return (
     <NavigationMenu.Root {...args}>
       <NavigationMenu.List>
@@ -70,7 +69,6 @@ export const Default = Template.bind({});
 const UseNextLinkTemplate: ComponentStory<typeof NavigationMenu.Root> = (
   args
 ) => {
-  console.log(args);
   return (
     <NavigationMenu.Root {...args}>
       <NavigationMenu.List>

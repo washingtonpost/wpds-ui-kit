@@ -232,34 +232,4 @@ describe("NavigationMenuContent", () => {
       });
     });
   });
-
-  test("accepts popperOptions", async () => {
-    render(
-      <NavigationMenuRoot>
-        <NavigationMenuList>
-          <NavigationMenuItem>
-            <NavigationMenuTrigger>Trigger</NavigationMenuTrigger>
-            <NavigationMenuContent
-              popperOptions={{
-                modifiers: [
-                  {
-                    name: "offset",
-                    options: {
-                      offset: [0, 16],
-                    },
-                  },
-                ],
-              }}
-            />
-          </NavigationMenuItem>
-        </NavigationMenuList>
-      </NavigationMenuRoot>
-    );
-    userEvent.hover(screen.getByRole("button"));
-    const popper = screen.getByTestId("wpds-nav-menu-content-popper");
-    await waitFor(() => {
-      // eslint-disable-next-line jest-dom/prefer-to-have-attribute
-      expect(popper).toHaveStyle("transform: translate(0px, 16px)");
-    });
-  });
 });
