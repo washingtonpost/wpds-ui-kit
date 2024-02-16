@@ -5,19 +5,13 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 # [1.22.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.21.0...v1.22.0) (2024-02-15)
 
-
 ### Bug Fixes
 
-* reverted subtle and faint tokens ([#566](https://github.com/washingtonpost/wpds-ui-kit/issues/566)) ([b45b54a](https://github.com/washingtonpost/wpds-ui-kit/commit/b45b54ab27c3ea341893c79520fe44f3fd463baf))
-
+- reverted subtle and faint tokens ([#566](https://github.com/washingtonpost/wpds-ui-kit/issues/566)) ([b45b54a](https://github.com/washingtonpost/wpds-ui-kit/commit/b45b54ab27c3ea341893c79520fe44f3fd463baf))
 
 ### Features
 
-* remove search feature from docs site ([#569](https://github.com/washingtonpost/wpds-ui-kit/issues/569)) ([fa22045](https://github.com/washingtonpost/wpds-ui-kit/commit/fa22045fdb00ba1a823056da0ca24a9d938b3665))
-
-
-
-
+- remove search feature from docs site ([#569](https://github.com/washingtonpost/wpds-ui-kit/issues/569)) ([fa22045](https://github.com/washingtonpost/wpds-ui-kit/commit/fa22045fdb00ba1a823056da0ca24a9d938b3665))
 
 # [1.21.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.20.0...v1.21.0) (2024-02-07)
 

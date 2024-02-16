@@ -140,7 +140,7 @@ export default function ColorGrid() {
               color:
                 TokenScore && TokenScore !== "AA Large" && TokenScore !== "Fail"
                   ? uiKit.colors.gray700
-                  : uiKit.colors.gray0
+                  : uiKit.colors.gray0,
             }}
             key={key}
           >

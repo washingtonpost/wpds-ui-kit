@@ -1,23 +1,23 @@
 import React from "react";
 import { styled, theme, Box } from "@washingtonpost/wpds-ui-kit";
 
-  const Layout = styled("div", {
-    display: "grid",
-    gap: theme.space["050"],
-    gridTemplateColumns: "repeat(auto-fit, 250px)",
-  });
-  const Container = styled("div", {
-    width: "100%",
-    minHeight: 100,
-    padding: theme.space["050"],
-    display: "flex",
-    flexDirection: "column",
-    gap: theme.space["025"],
-  });
-  const Label = styled("div", {
-    fontSize: theme.fontSizes["100"],
-    margin: 0,
-  });
+const Layout = styled("div", {
+  display: "grid",
+  gap: theme.space["050"],
+  gridTemplateColumns: "repeat(auto-fit, 250px)",
+});
+const Container = styled("div", {
+  width: "100%",
+  minHeight: 100,
+  padding: theme.space["050"],
+  display: "flex",
+  flexDirection: "column",
+  gap: theme.space["025"],
+});
+const Label = styled("div", {
+  fontSize: theme.fontSizes["100"],
+  margin: 0,
+});
 
 export default function ThemeAndSemantic() {
   return (
