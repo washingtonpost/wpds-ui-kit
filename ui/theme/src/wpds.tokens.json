@@ -1080,7 +1080,6 @@
       }
     },
     "static": {
-      "description": "The default color scheme independent if in light or dark mode",
       "alpha0": {
         "type": "color",
         "value": "rgba(0, 0, 0, .65)",
@@ -1706,12 +1705,12 @@
         "value": "{gray20}",
         "valueDark": "{gray0}"
       },
-      "OnSurface-subtle-hover": {
+      "onSurface-subtle-hover": {
         "type": "color",
         "value": "{gray100}",
         "valueDark": "{gray80}"
       },
-      "OnSurface-subtle": {
+      "onSurface-subtle": {
         "type": "color",
         "value": "{gray80}",
         "valueDark": "{gray60}"
@@ -1721,7 +1720,7 @@
         "value": "{gray100}",
         "valueDark": "{gray80}"
       },
-      "OnSurface": {
+      "onSurface": {
         "type": "color",
         "value": "{gray20}",
         "valueDark": "{gray0}"
@@ -1774,7 +1773,8 @@
       },
       "outline-subtle": {
         "type": "color",
-        "value": "{alpha500}"
+        "value": "{alpha500}",
+        "valueDark": "{alpha500}"
       },
       "outline": {
         "type": "color",
@@ -1785,13 +1785,13 @@
         "type": "color",
         "value": "{gray300}",
         "valueDark": "{gray300}",
-          "description": "Legacy-Token subject to be deprecated use the outline token"
+        "description": "Legacy-Token subject to be deprecated use the outline token"
       },
       "faint": {
         "type": "color",
         "value": "{gray400}",
         "valueDark": "{gray400}",
-           "description": "Legacy-Token subject to be deprecated use the outline token"
+        "description": "Legacy-Token subject to be deprecated use the outline token"
       },
       "onDisabled": {
         "type": "color",
