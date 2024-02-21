@@ -1755,7 +1755,7 @@
         "value": "{gray20}",
         "valueDark": "{gray0}"
       },
-      "background-forCards": {
+      "background-forSurface": {
         "type": "color",
         "value": "{gray600}",
         "valueDark": "{gray700}"
