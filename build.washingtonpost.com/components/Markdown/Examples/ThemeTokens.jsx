@@ -135,12 +135,12 @@ export default function ThemeAndSemantic() {
       </Box>
       <Box>
         <Label css={{ color: theme.colors.onBackground }}>
-          Background-forCards
+          Background-forSurfaces
         </Label>
         <Container
           css={{
             border: `1px solid ${theme.colors.outline}`,
-            background: theme.colors["background-forCards"],
+            background: theme.colors["background-forSurfaces"],
           }}
         >
           <Label css={{ color: theme.colors.onBackground }}>onBackground</Label>

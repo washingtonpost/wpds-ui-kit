@@ -3,7 +3,7 @@
     "light": {
       "alpha0": {
         "type": "color",
-        "value": "rgba(0, 0, 0, .65)",
+        "value": "rgba(0, 0, 0, .50)",
         "hex": "#000000a6"
       },
       "alpha20": {
@@ -543,7 +543,7 @@
     "dark": {
       "alpha0": {
         "type": "color",
-        "value": "rgba(255, 255, 255, .65)",
+        "value": "rgba(255, 255, 255, .50)",
         "hex": "#ffffffa6"
       },
       "alpha20": {
@@ -1755,7 +1755,7 @@
         "value": "{gray20}",
         "valueDark": "{gray0}"
       },
-      "background-forCards": {
+      "background-forSurfaces": {
         "type": "color",
         "value": "{gray600}",
         "valueDark": "{gray700}"
