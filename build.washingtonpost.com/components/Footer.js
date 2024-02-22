@@ -11,7 +11,7 @@ const CommunityHeading = styled("span", {
   fontWeight: "$bold",
   fontSize: "$087",
   color: "$gray40",
-  "@media (min-width:851px)": {
+  "@notSm": {
     display: "none",
   },
 });
@@ -40,7 +40,7 @@ const EditInGithub = styled("a", {
   "&:hover": {
     textDecoration: "underline",
   },
-  "@media (max-width:850px)": {
+  "@sm": {
     marginLeft: "$100",
   },
 });
@@ -59,7 +59,7 @@ export const Footer = () => {
         maxWidth: "1028px",
         width: "100%",
 
-        "@media (max-width:850px)": {
+        "@sm": {
           marginTop: "$200",
           "footer.site-footer": {
             display: "none",
@@ -80,9 +80,7 @@ export const Footer = () => {
           Edit this page on GitHub.
         </EditInGithub>
       )}
-      <Box css={{"@media (max-width:850px)": {px: "$100"}, "@sm": {px: 0}}}>
       <SiteFooter />
-      </Box>
       <Box
         css={{
           display: "flex",
@@ -95,7 +93,7 @@ export const Footer = () => {
           "& a": {
             marginRight: "$100",
           },
-          "@media (min-width:851px)": {
+          "@notSm": {
             justifyContent: "center",
           },
         }}
@@ -104,7 +102,7 @@ export const Footer = () => {
           css={{
             display: "flex",
             flexDirection: "column",
-            "@media (min-width:851px)": {
+            "@notSm": {
               flexDirection: "row",
             },
           }}

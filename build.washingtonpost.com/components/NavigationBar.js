@@ -26,7 +26,7 @@ const List = styled("ul", {
   justifyContent: "flex-end",
   alignItems: "center",
 
-  "@media (max-width:850px)": {
+  "@sm": {
     display: "none",
   },
 });
@@ -36,7 +36,7 @@ const Container = styled("div", {
   display: "flex",
   gridArea: "logo",
   height: 60,
-  "@media (min-width:851px)": {
+  "@notSm": {
     backgroundColor: "$gray500",
     overflow: "hidden",
     position: "fixed",
@@ -46,9 +46,9 @@ const Container = styled("div", {
     left: 0,
     width: "300px",
   },
-  "@media (max-width:850px)": {
+
+  "@sm": {
     width: "100%",
-    justifyContent: "space-between"
   },
 });
 
@@ -57,7 +57,7 @@ const ListItem = styled("li", {
   flexDirection: "column",
   margin: "0 $200 0 0",
 
-  "@media (max-width:850px)": {
+  "@sm": {
     margin: "0",
     display: "none",
   },
@@ -136,7 +136,7 @@ export const NavigationBar = ({ setMobileMenu, mobileMenuState, isClosed }) => {
 
   // load on screen sizes greater than sm
   React.useEffect(() => {
-    const media = window.matchMedia("(max-width: 850px)");
+    const media = window.matchMedia("(max-width: 768px)");
 
     if (media.matches) {
       setHideFromSmallScreen(false);
@@ -154,26 +154,27 @@ export const NavigationBar = ({ setMobileMenu, mobileMenuState, isClosed }) => {
         <Logo css={{ width: "100%" }} />
         <Box
           css={{
-            "@media (min-width:851px)": {
+            "@notSm": {
               display: "none",
             },
-            "@media (max-width:850px)": {
-              paddingRight: "$025",
+            "@sm": {
+              display: "flex",
+              gap: "$075",
+              paddingRight: "$100",
+              justifyItems: "flex-end",
             },
           }}
         >
           <ThemeToggle
             css={{
-              display: 'flex',
               position: "fixed",
               zIndex: "$page",
-              "@media (min-width:851px)": {
+              "@notSm": {
                 marginTop: "-$100",
               },
-              "@media (max-width:850px)": {
-                top: "17px",
-                right: "$300",
-                marginRight: "$050",
+              "@sm": {
+                top: "18px",
+                right: "$400",
                 padding: "1px",
                 backgroundColor: theme.colors.secondary,
               },

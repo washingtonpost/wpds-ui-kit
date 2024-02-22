@@ -7,18 +7,18 @@ import { Change } from "~/components/Markdown/Styling";
 
 const StyledAccordionRoot = styled(Accordion.Root, {
   backgroundColor: theme.colors.gray500,
-  "@media (max-width:850px)": {
+  "@sm": {
     marginBottom: "0",
   },
 });
 
 const Panel = styled("div", {
   paddingBottom: "$100",
-  "@media (min-width:851px)": {
+  "@notSm": {
     position: "fixed",
     height: "100%",
   },
-  "@media (max-width:850px)": {
+  "@sm": {
     width: "100%",
   },
 });
@@ -41,10 +41,10 @@ const Container = styled("div", {
   },
 
   "@md": { marginTop: "0" },
-  "@media (min-width:851px)": {
+  "@notSm": {
     width: "300px",
   },
-  "@media (max-width:850px)": {
+  "@sm": {
     paddingBottom: 0,
   },
 });
@@ -53,7 +53,7 @@ const AccordionHeader = styled(Accordion.Header, {
   width: "100%",
   justifySelf: "flex-start",
   marginBlock: 0,
-  "@media (max-width:850px)": {
+  "@sm": {
     cursor: "pointer",
   },
 });
@@ -303,7 +303,7 @@ export default function Sidebar({ navigation, setMobileMenu }) {
           })}
         <SideBarList>
           <ListItem
-            css={{ "@media (min-width:851px)": { display: "none" } }}
+            css={{ "@notSm": { display: "none" } }}
             onClick={() => setMobileMenu(false)}
             isCurrent={router.asPath.includes("release-notes") ? "active" : ""}
           >
