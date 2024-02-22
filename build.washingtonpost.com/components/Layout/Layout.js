@@ -8,7 +8,7 @@ import { ToastContainer } from "react-toastify";
 const Grid = styled("div", {
   display: "grid",
   margin: "0 auto",
-  "@notSm": {
+  "@media (min-width:851px)": {
     gridTemplateColumns: "300px 1fr",
     gridTemplateRows: "60px 1fr",
     gridTemplateAreas: `
@@ -20,7 +20,7 @@ const Grid = styled("div", {
     rowGap: "0",
     paddingRight: "$100",
   },
-  "@sm": {
+  "@media (max-width:850px)": {
     minHeight: "100vh",
     gridTemplateColumns: "1fr",
     gridTemplateRows: "auto auto 1fr",
@@ -41,7 +41,7 @@ const DesktopMenu = styled("div", {
   variants: {
     state: {
       open: { display: "block" },
-      closed: { "@sm": { display: "none" } },
+      closed: { "@media (max-width:850px)": { display: "none" } },
     },
   },
 });
@@ -51,11 +51,11 @@ const Container = styled("main", {
   width: "100%",
   margin: "0 auto",
   marginTop: "$125",
-  "@sm": {
-    padding: "0 $100",
-  },
-  "@notSm": {
+  "@media (min-width:851px)": {
     maxWidth: "1028px",
+  },
+  "@media (max-width:850px)": {
+    padding: "0 $100",
   },
 });
 

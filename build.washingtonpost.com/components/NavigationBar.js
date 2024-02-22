@@ -26,7 +26,7 @@ const List = styled("ul", {
   justifyContent: "flex-end",
   alignItems: "center",
 
-  "@sm": {
+  "@media (max-width:850px)": {
     display: "none",
   },
 });
@@ -36,7 +36,7 @@ const Container = styled("div", {
   display: "flex",
   gridArea: "logo",
   height: 60,
-  "@notSm": {
+  "@media (min-width:851px)": {
     backgroundColor: "$gray500",
     overflow: "hidden",
     position: "fixed",
@@ -46,9 +46,9 @@ const Container = styled("div", {
     left: 0,
     width: "300px",
   },
-
-  "@sm": {
+  "@media (max-width:850px)": {
     width: "100%",
+    justifyContent: "space-between"
   },
 });
 
@@ -57,7 +57,7 @@ const ListItem = styled("li", {
   flexDirection: "column",
   margin: "0 $200 0 0",
 
-  "@sm": {
+  "@media (max-width:850px)": {
     margin: "0",
     display: "none",
   },
@@ -136,7 +136,7 @@ export const NavigationBar = ({ setMobileMenu, mobileMenuState, isClosed }) => {
 
   // load on screen sizes greater than sm
   React.useEffect(() => {
-    const media = window.matchMedia("(max-width: 768px)");
+    const media = window.matchMedia("(max-width: 850px)");
 
     if (media.matches) {
       setHideFromSmallScreen(false);
@@ -154,27 +154,26 @@ export const NavigationBar = ({ setMobileMenu, mobileMenuState, isClosed }) => {
         <Logo css={{ width: "100%" }} />
         <Box
           css={{
-            "@notSm": {
+            "@media (min-width:851px)": {
               display: "none",
             },
-            "@sm": {
-              display: "flex",
-              gap: "$075",
-              paddingRight: "$100",
-              justifyItems: "flex-end",
+            "@media (max-width:850px)": {
+              paddingRight: "$025",
             },
           }}
         >
           <ThemeToggle
             css={{
+              display: 'flex',
               position: "fixed",
               zIndex: "$page",
-              "@notSm": {
+              "@media (min-width:851px)": {
                 marginTop: "-$100",
               },
-              "@sm": {
-                top: "18px",
-                right: "$400",
+              "@media (max-width:850px)": {
+                top: "17px",
+                right: "$300",
+                marginRight: "$050",
                 padding: "1px",
                 backgroundColor: theme.colors.secondary,
               },
