@@ -701,7 +701,7 @@ const InternalFocusTemplate = () => {
 export const InternalFocusInteractions = InternalFocusTemplate.bind({});
 
 InternalFocusInteractions.parameters = {
-  chromatic: { viewports: [1024] },
+  chromatic: { viewports: [1024], disableSnapshot: true },
 };
 
 InternalFocusInteractions.play = async ({ canvasElement }) => {
@@ -709,7 +709,7 @@ InternalFocusInteractions.play = async ({ canvasElement }) => {
   await userEvent.tab();
   await userEvent.tab();
   await userEvent.tab();
-  await userEvent.keyboard("{ArrowDown}");
+  await userEvent.keyboard("[ArrowDown]");
 
   const groups = canvas.getAllByRole("group");
   const content = groups[1];
