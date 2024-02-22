@@ -59,7 +59,6 @@ export const Footer = () => {
         marginRight: "auto",
         maxWidth: "1028px",
         width: "100%",
-
         [customSmBreakpoint]: {
           marginTop: "$200",
           "footer.site-footer": {

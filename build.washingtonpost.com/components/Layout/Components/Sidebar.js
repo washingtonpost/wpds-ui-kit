@@ -40,7 +40,6 @@ const Container = styled("div", {
     backgroundColor: theme.colors.gray200,
     borderRadius: "$round",
   },
-
   "@md": { marginTop: "0" },
   [customNotSmBreakpoint]: {
     width: "300px",

@@ -25,7 +25,6 @@ const List = styled("ul", {
   listStyle: "none",
   justifyContent: "flex-end",
   alignItems: "center",
-
   [customSmBreakpoint]: {
     display: "none",
   },
@@ -56,7 +55,6 @@ const ListItem = styled("li", {
   display: "flex",
   flexDirection: "column",
   margin: "0 $200 0 0",
-
   [customSmBreakpoint]: {
     margin: "0",
     display: "none",
@@ -69,7 +67,6 @@ const Anchor = styled("a", {
   "&:hover": {
     opacity: "0.75",
   },
-
   variants: {
     isCurrent: {
       true: {
