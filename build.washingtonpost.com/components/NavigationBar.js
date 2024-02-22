@@ -1,8 +1,8 @@
 import React from "react";
 
-import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import {customNotSmBreakpoint, customSmBreakpoint} from "~/components/styleHelpers";
 
 import {
   Box,
@@ -26,7 +26,7 @@ const List = styled("ul", {
   justifyContent: "flex-end",
   alignItems: "center",
 
-  "@media (max-width:850px)": {
+  [customSmBreakpoint]: {
     display: "none",
   },
 });
@@ -36,7 +36,7 @@ const Container = styled("div", {
   display: "flex",
   gridArea: "logo",
   height: 60,
-  "@media (min-width:851px)": {
+  [customNotSmBreakpoint]: {
     backgroundColor: "$gray500",
     overflow: "hidden",
     position: "fixed",
@@ -46,7 +46,7 @@ const Container = styled("div", {
     left: 0,
     width: "300px",
   },
-  "@media (max-width:850px)": {
+  [customSmBreakpoint]: {
     width: "100%",
     justifyContent: "space-between"
   },
@@ -57,7 +57,7 @@ const ListItem = styled("li", {
   flexDirection: "column",
   margin: "0 $200 0 0",
 
-  "@media (max-width:850px)": {
+  [customSmBreakpoint]: {
     margin: "0",
     display: "none",
   },
@@ -154,10 +154,10 @@ export const NavigationBar = ({ setMobileMenu, mobileMenuState, isClosed }) => {
         <Logo css={{ width: "100%" }} />
         <Box
           css={{
-            "@media (min-width:851px)": {
+            [customNotSmBreakpoint]: {
               display: "none",
             },
-            "@media (max-width:850px)": {
+            [customSmBreakpoint]: {
               paddingRight: "$025",
             },
           }}
@@ -167,10 +167,10 @@ export const NavigationBar = ({ setMobileMenu, mobileMenuState, isClosed }) => {
               display: 'flex',
               position: "fixed",
               zIndex: "$page",
-              "@media (min-width:851px)": {
+              [customNotSmBreakpoint]: {
                 marginTop: "-$100",
               },
-              "@media (max-width:850px)": {
+              [customSmBreakpoint]: {
                 top: "17px",
                 right: "$300",
                 marginRight: "$050",

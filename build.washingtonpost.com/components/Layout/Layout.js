@@ -4,11 +4,12 @@ import { NavigationBar } from "~/components/NavigationBar";
 import Sidebar from "~/components/Layout/Components/Sidebar";
 import { Footer } from "~/components/Footer";
 import { ToastContainer } from "react-toastify";
+import {customNotSmBreakpoint, customSmBreakpoint} from "~/components/styleHelpers";
 
 const Grid = styled("div", {
   display: "grid",
   margin: "0 auto",
-  "@media (min-width:851px)": {
+  [customNotSmBreakpoint]: {
     gridTemplateColumns: "300px 1fr",
     gridTemplateRows: "60px 1fr",
     gridTemplateAreas: `
@@ -20,7 +21,7 @@ const Grid = styled("div", {
     rowGap: "0",
     paddingRight: "$100",
   },
-  "@media (max-width:850px)": {
+  [customSmBreakpoint]: {
     minHeight: "100vh",
     gridTemplateColumns: "1fr",
     gridTemplateRows: "auto auto 1fr",
@@ -41,7 +42,7 @@ const DesktopMenu = styled("div", {
   variants: {
     state: {
       open: { display: "block" },
-      closed: { "@media (max-width:850px)": { display: "none" } },
+      closed: { [customSmBreakpoint]: { display: "none" } },
     },
   },
 });
@@ -51,10 +52,10 @@ const Container = styled("main", {
   width: "100%",
   margin: "0 auto",
   marginTop: "$125",
-  "@media (min-width:851px)": {
+  [customNotSmBreakpoint]: {
     maxWidth: "1028px",
   },
-  "@media (max-width:850px)": {
+  [customSmBreakpoint]: {
     padding: "0 $100",
   },
 });

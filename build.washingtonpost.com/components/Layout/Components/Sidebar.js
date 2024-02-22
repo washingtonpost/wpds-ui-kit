@@ -4,21 +4,22 @@ import { styled, theme, Accordion } from "@washingtonpost/wpds-ui-kit";
 import Header from "../../Typography/Headers";
 import { useRouter } from "next/router";
 import { Change } from "~/components/Markdown/Styling";
+import {customNotSmBreakpoint, customSmBreakpoint} from "~/components/styleHelpers";
 
 const StyledAccordionRoot = styled(Accordion.Root, {
   backgroundColor: theme.colors.gray500,
-  "@media (max-width:850px)": {
+  [customSmBreakpoint]: {
     marginBottom: "0",
   },
 });
 
 const Panel = styled("div", {
   paddingBottom: "$100",
-  "@media (min-width:851px)": {
+  [customNotSmBreakpoint]: {
     position: "fixed",
     height: "100%",
   },
-  "@media (max-width:850px)": {
+  [customSmBreakpoint]: {
     width: "100%",
   },
 });
@@ -41,10 +42,10 @@ const Container = styled("div", {
   },
 
   "@md": { marginTop: "0" },
-  "@media (min-width:851px)": {
+  [customNotSmBreakpoint]: {
     width: "300px",
   },
-  "@media (max-width:850px)": {
+  [customSmBreakpoint]: {
     paddingBottom: 0,
   },
 });
@@ -53,7 +54,7 @@ const AccordionHeader = styled(Accordion.Header, {
   width: "100%",
   justifySelf: "flex-start",
   marginBlock: 0,
-  "@media (max-width:850px)": {
+  [customSmBreakpoint]: {
     cursor: "pointer",
   },
 });
@@ -303,7 +304,7 @@ export default function Sidebar({ navigation, setMobileMenu }) {
           })}
         <SideBarList>
           <ListItem
-            css={{ "@media (min-width:851px)": { display: "none" } }}
+            css={{ [customNotSmBreakpoint]: { display: "none" } }}
             onClick={() => setMobileMenu(false)}
             isCurrent={router.asPath.includes("release-notes") ? "active" : ""}
           >

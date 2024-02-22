@@ -3,6 +3,7 @@ import { Box, styled, Icon, theme } from "@washingtonpost/wpds-ui-kit";
 import { useRouter } from "next/router";
 import { Footer as SiteFooter } from "@washingtonpost/site-footer";
 import Link from "next/link";
+import {customNotSmBreakpoint, customSmBreakpoint} from "~/components/styleHelpers";
 
 import { Github, Twitter, Youtube } from "@washingtonpost/wpds-assets";
 
@@ -11,7 +12,7 @@ const CommunityHeading = styled("span", {
   fontWeight: "$bold",
   fontSize: "$087",
   color: "$gray40",
-  "@media (min-width:851px)": {
+  [customNotSmBreakpoint]: {
     display: "none",
   },
 });
@@ -40,7 +41,7 @@ const EditInGithub = styled("a", {
   "&:hover": {
     textDecoration: "underline",
   },
-  "@media (max-width:850px)": {
+  [customSmBreakpoint]: {
     marginLeft: "$100",
   },
 });
@@ -59,7 +60,7 @@ export const Footer = () => {
         maxWidth: "1028px",
         width: "100%",
 
-        "@media (max-width:850px)": {
+        [customSmBreakpoint]: {
           marginTop: "$200",
           "footer.site-footer": {
             display: "none",
@@ -80,7 +81,7 @@ export const Footer = () => {
           Edit this page on GitHub.
         </EditInGithub>
       )}
-      <Box css={{"@media (max-width:850px)": {px: "$100"}, "@sm": {px: 0}}}>
+      <Box css={{[customSmBreakpoint]: {px: "$100"}, "@sm": {px: 0}}}>
       <SiteFooter />
       </Box>
       <Box
@@ -95,7 +96,7 @@ export const Footer = () => {
           "& a": {
             marginRight: "$100",
           },
-          "@media (min-width:851px)": {
+          [customNotSmBreakpoint]: {
             justifyContent: "center",
           },
         }}
@@ -104,7 +105,7 @@ export const Footer = () => {
           css={{
             display: "flex",
             flexDirection: "column",
-            "@media (min-width:851px)": {
+            [customNotSmBreakpoint]: {
               flexDirection: "row",
             },
           }}
