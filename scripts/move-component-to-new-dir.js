@@ -22,6 +22,27 @@ function moveComponentToNewDir(componentName) {
   fs.writeFileSync(indexPath, newContent);
 
   console.log(`Component ${componentName} added to index.ts`);
+
+  // take deps from the old package.json and add them to the new package.json
+  const packageJsonPath = path.resolve(
+    __dirname,
+    `../ui/${componentName}/package.json`
+  );
+  const newPackageJsonPath = path.resolve(
+    __dirname,
+    `../packages/kit/package.json`
+  );
+  const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, "utf8"));
+  const newPackageJson = JSON.parse(
+    fs.readFileSync(newPackageJsonPath, "utf8")
+  );
+  newPackageJson.dependencies = {
+    ...newPackageJson.dependencies,
+    ...packageJson.dependencies,
+  };
+
+  fs.writeFileSync(newPackageJsonPath, JSON.stringify(newPackageJson, null, 2));
+  console.log(`Dependencies added to package.json`);
 }
 
 moveComponentToNewDir(process.argv[2]);
