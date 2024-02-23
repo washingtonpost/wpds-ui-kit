@@ -8,7 +8,7 @@ function moveComponentToNewDir(componentName) {
   const componentPath = path.resolve(__dirname, `../ui/${componentName}/src`);
   const newComponentPath = path.resolve(
     __dirname,
-    `../packages/kit/${componentName}`
+    `../packages/kit/src/${componentName}`
   );
 
   fs.renameSync(componentPath, newComponentPath);

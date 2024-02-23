@@ -1,7 +1,7 @@
 import * as React from "react";
 import { userEvent, screen } from "@storybook/testing-library";
 import { expect } from "@storybook/jest";
-import { NavigationMenu } from "./";
+import { NavigationMenu } from ".";
 import { Button } from "@washingtonpost/wpds-button";
 import { Icon } from "@washingtonpost/wpds-icon";
 import { theme } from "@washingtonpost/wpds-theme";
