@@ -8,7 +8,7 @@ import { theme } from "../theme";
 import { ChevronRight, ChevronDown, Menu } from "@washingtonpost/wpds-assets";
 import NextLink from "next/link";
 
-import type { ComponentMeta, ComponentStory } from "@storybook/react";
+import type { Meta, StoryFn } from "@storybook/react";
 
 import states from "./states.json";
 
@@ -23,9 +23,9 @@ export default {
     Content: NavigationMenu.Content,
     Sub: NavigationMenu.Sub,
   },
-} as ComponentMeta<typeof NavigationMenu.Root>;
+} as Meta<typeof NavigationMenu.Root>;
 
-const Template: ComponentStory<typeof NavigationMenu.Root> = (args) => {
+const Template: StoryFn<typeof NavigationMenu.Root> = (args) => {
   console.log(args);
   return (
     <NavigationMenu.Root {...args}>
@@ -65,11 +65,11 @@ const Template: ComponentStory<typeof NavigationMenu.Root> = (args) => {
   );
 };
 
-export const Default = Template.bind({});
+export const Default = {
+  render: Template,
+};
 
-const UseNextLinkTemplate: ComponentStory<typeof NavigationMenu.Root> = (
-  args
-) => {
+const UseNextLinkTemplate: StoryFn<typeof NavigationMenu.Root> = (args) => {
   console.log(args);
   return (
     <NavigationMenu.Root {...args}>
@@ -84,10 +84,12 @@ const UseNextLinkTemplate: ComponentStory<typeof NavigationMenu.Root> = (
   );
 };
 
-export const UseNextLink = UseNextLinkTemplate.bind({});
+export const UseNextLink = {
+  render: UseNextLinkTemplate,
+};
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const SideAlignTemplate: ComponentStory<any> = (args) => {
+const SideAlignTemplate: StoryFn<any> = (args) => {
   console.log("args", args);
   return (
     <NavigationMenu.Root {...args}>
@@ -125,27 +127,27 @@ const SideAlignTemplate: ComponentStory<any> = (args) => {
   );
 };
 
-export const SideAlign = SideAlignTemplate.bind({});
+export const SideAlign = {
+  render: SideAlignTemplate,
 
-SideAlign.argTypes = {
-  side: {
-    options: ["top", "bottom", "left", "right"],
-    control: { type: "select" },
+  argTypes: {
+    side: {
+      options: ["top", "bottom", "left", "right"],
+      control: { type: "select" },
+    },
+    align: {
+      options: ["start", "center", "end"],
+      control: { type: "select" },
+    },
   },
-  align: {
-    options: ["start", "center", "end"],
-    control: { type: "select" },
+
+  args: {
+    side: "bottom",
+    align: "start",
   },
 };
 
-SideAlign.args = {
-  side: "bottom",
-  align: "start",
-};
-
-const HorizontalTemplate: ComponentStory<typeof NavigationMenu.Root> = (
-  args
-) => {
+const HorizontalTemplate: StoryFn<typeof NavigationMenu.Root> = (args) => {
   return (
     <NavigationMenu.Root {...args}>
       <NavigationMenu.List>
@@ -202,9 +204,11 @@ const HorizontalTemplate: ComponentStory<typeof NavigationMenu.Root> = (
   );
 };
 
-export const Horizontal = HorizontalTemplate.bind({});
+export const Horizontal = {
+  render: HorizontalTemplate,
+};
 
-const VerticalTemplate: ComponentStory<typeof NavigationMenu.Root> = (args) => {
+const VerticalTemplate: StoryFn<typeof NavigationMenu.Root> = (args) => {
   const subsections = [
     {
       text: "The Post's View",
@@ -264,10 +268,12 @@ const VerticalTemplate: ComponentStory<typeof NavigationMenu.Root> = (args) => {
   );
 };
 
-export const Vertical = VerticalTemplate.bind({});
+export const Vertical = {
+  render: VerticalTemplate,
+};
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const InteractionsTemplate: ComponentStory<any> = () => (
+const InteractionsTemplate: StoryFn<any> = () => (
   <NavigationMenu.Root>
     <NavigationMenu.List>
       <NavigationMenu.Item>
@@ -302,23 +308,26 @@ const InteractionsTemplate: ComponentStory<any> = () => (
   </NavigationMenu.Root>
 );
 
-export const Interactions = InteractionsTemplate.bind({});
-Interactions.parameters = {
-  chromatic: { disableSnapshot: true },
+export const Interactions = {
+  render: InteractionsTemplate,
+
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
+
+  play: async () => {
+    userEvent.tab();
+    userEvent.keyboard("{Enter}");
+    await sleep(350);
+    const content = screen.getByText("Apples");
+    await expect(content).toBeVisible();
+    userEvent.keyboard("{Escape}");
+    await sleep(350);
+    await expect(content).not.toBeVisible();
+  },
 };
 
 // Function to emulate pausing between interactions
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
-
-Interactions.play = async () => {
-  userEvent.tab();
-  userEvent.keyboard("{Enter}");
-  await sleep(350);
-  const content = screen.getByText("Apples");
-  await expect(content).toBeVisible();
-  userEvent.keyboard("{Escape}");
-  await sleep(350);
-  await expect(content).not.toBeVisible();
-};
