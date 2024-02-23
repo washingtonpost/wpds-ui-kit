@@ -28,7 +28,7 @@
   "license": "MIT",
   "devDependencies": {
     "@washingtonpost/wpds-ui-kit": "latest",
-    "react": "^17.0.2 || ^18",
-    "react-dom": "^17.0.2 || ^18"
+    "react": "^18",
+    "react-dom": "^18"
   }
 }
