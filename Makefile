@@ -35,3 +35,8 @@ validate:
 	npm run lint:check
 	npm run format:check
 	npm run test
+
+v2-migrate-component:
+	node scripts/move-component-to-new-dir.js $(componentName)
+	npx storybook@latest migrate csf-2-to-3 --glob="./packages/kit/src/$(componentName)/*.stories.tsx"
+	npx jscodeshift ./packages/kit/src/$(componentName) -t ./scripts/transform-wpds-imports.js --extensions=tsx
