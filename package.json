@@ -96,7 +96,6 @@
     "turbo-windows-arm64": "1.11.1"
   },
   "workspaces": [
-    "./ui/*",
     "./build.washingtonpost.com",
     "./apps/*",
     "./packages/*"

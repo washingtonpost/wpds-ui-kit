@@ -29,7 +29,7 @@ import {
   InputSearch,
   Select,
   Accordion,
-} from "../ui-kit";
+} from "../../kit/src/index";
 import { Chart, Settings, Info, Menu } from "@washingtonpost/wpds-assets";
 
 const Headline = styled("h1", {

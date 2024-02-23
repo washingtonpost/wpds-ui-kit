@@ -2,7 +2,7 @@ import * as React from "react";
 import { Slot } from "@radix-ui/react-slot";
 import { Button } from "../button";
 import { Icon } from "../icon";
-import { ArrowLeft } from "../assets/";
+import { ArrowLeft } from "@washingtonpost/wpds-assets";
 import { CarouselContext } from "./CarouselRoot";
 
 const NAME = "CarouselPreviousButton";

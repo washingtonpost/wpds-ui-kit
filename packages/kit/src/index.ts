@@ -5,7 +5,6 @@ export * from "./scrim";
 export * from "./radio-group";
 export * from "./popover";
 export * from "./pagination-dots";
-export * from "./kitchen-sink";
 export * from "./input-textarea";
 export * from "./input-text";
 export * from "./input-shared";

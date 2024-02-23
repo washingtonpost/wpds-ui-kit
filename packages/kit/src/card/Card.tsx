@@ -1,6 +1,6 @@
 import * as React from "react";
-import type * as WPDS from "@washingtonpost/wpds-theme";
-import { theme, styled } from "@washingtonpost/wpds-theme";
+import type * as WPDS from "../theme";
+import { theme, styled } from "../theme";
 
 const StyledCard = styled("div", {
   padding: theme.space["150"],

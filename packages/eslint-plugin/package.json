@@ -25,13 +25,12 @@
     "test": "jest"
   },
   "peerDependencies": {
-    "@washingtonpost/wpds-theme": "*"
+    "@washingtonpost/wpds-ui-kit": "*"
   },
   "dependencies": {
-    "@washingtonpost/wpds-theme": "1.17.0"
+    "@washingtonpost/wpds-ui-kit": "1.17.0"
   },
   "devDependencies": {
     "jest": "^28.1.0"
-  },
-  "gitHead": "5ba886cfa95b3eed476edf87b1ac36d37ffe3469"
+  }
 }

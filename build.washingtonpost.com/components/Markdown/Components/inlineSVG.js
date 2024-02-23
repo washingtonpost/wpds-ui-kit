@@ -1,6 +1,6 @@
 import React from "react";
 import { ReactSVG } from "react-svg";
-import Tokens from "@washingtonpost/wpds-theme/src/wpds.tokens.json";
+import Tokens from "@washingtonpost/wpds-ui-kit/src/theme/wpds.tokens.json";
 import Image from "next/image";
 import { css, styled } from "@washingtonpost/wpds-ui-kit";
 

@@ -1,5 +1,5 @@
 /* eslint-disable-next-line @typescript-eslint/no-var-requires */
-const tokens = require("@washingtonpost/wpds-theme/src/wpds.tokens.json");
+const tokens = require("@washingtonpost/wpds-ui-kit/src/theme/wpds.tokens.json");
 
 module.exports = {
   meta: {

@@ -1,11 +1,11 @@
 import * as React from "react";
 import { userEvent, waitFor, within } from "@storybook/testing-library";
 import { expect } from "@storybook/jest";
-import { styled, theme } from "@washingtonpost/wpds-theme";
+import { styled, theme } from "../theme";
 import { Carousel as Component } from "./";
-import { Box } from "@washingtonpost/wpds-box";
-import { Button } from "@washingtonpost/wpds-button";
-import { Icon } from "@washingtonpost/wpds-icon";
+import { Box } from "../box";
+import { Button } from "../button";
+import { Icon } from "../icon";
 import { Play, Pause } from "@washingtonpost/wpds-assets";
 import { useActiveDescendant } from "./useActiveDescendant";
 

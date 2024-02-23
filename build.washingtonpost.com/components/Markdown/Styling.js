@@ -13,7 +13,7 @@ import {
 } from "~/components/Markdown/Components/list";
 import dynamic from "next/dynamic";
 import { Grid, Cell } from "./Components/Grid";
-import { AlertBanner } from "@washingtonpost/wpds-alert-banner";
+import { AlertBanner } from "@washingtonpost/wpds-ui-kit";
 import { ComponentStatus } from "../ComponentPage/ComponentStatus";
 import CollapsibleContainer from "./Components/collapsible";
 const InputCheckbox = dynamic(() =>

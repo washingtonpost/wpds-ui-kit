@@ -17,16 +17,15 @@
     "build": "node script/create-theme.js"
   },
   "peerDependencies": {
-    "@washingtonpost/wpds-theme": "*"
+    "@washingtonpost/wpds-ui-kit": "*"
   },
   "dependencies": {
-    "@washingtonpost/wpds-theme": "1.17.0"
+    "@washingtonpost/wpds-ui-kit": "1.17.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.24",
     "tailwindcss": "^3.3.2",
     "vite": "^4.3.9"
-  },
-  "gitHead": "5ba886cfa95b3eed476edf87b1ac36d37ffe3469"
+  }
 }

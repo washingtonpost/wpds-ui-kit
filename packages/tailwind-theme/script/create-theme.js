@@ -2,7 +2,7 @@
 const fs = require("fs");
 const path = require("path").resolve;
 const util = require("util");
-const tokens = require("@washingtonpost/wpds-theme/src/wpds.tokens.json");
+const tokens = require("@washingtonpost/wpds-ui-kit/src/theme/wpds.tokens.json");
 /* eslint-enable @typescript-eslint/no-var-requires */
 
 let theme = {

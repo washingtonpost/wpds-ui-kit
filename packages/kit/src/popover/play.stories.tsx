@@ -2,7 +2,7 @@
 import * as React from "react";
 import { userEvent, within } from "@storybook/testing-library";
 import { expect } from "@storybook/jest";
-import * as Tokens from "../theme/src/tokens";
+import * as Tokens from "../theme/tokens";
 import * as PopoverPrimitive from "@radix-ui/react-popover";
 import { Popover } from "./";
 import { styled, theme, globalCss } from "../theme";

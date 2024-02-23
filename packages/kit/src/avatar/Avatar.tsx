@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as AvatarPrimitive from "@radix-ui/react-avatar";
 import { css, styled } from "../theme";
-import * as Tokens from "../theme/src/tokens";
+import * as Tokens from "../theme/tokens";
 
 import type * as WPDS from "../theme";
 import type * as Stitches from "@stitches/react";

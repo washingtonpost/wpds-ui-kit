@@ -1,7 +1,7 @@
 import { Card as Component } from ".";
-import { theme, styled } from "@washingtonpost/wpds-theme";
-import { Button } from "@washingtonpost/wpds-button";
-import { Accordion, ACCORDION_TYPE } from "@washingtonpost/wpds-accordion";
+import { theme, styled } from "../theme";
+import { Button } from "../button";
+import { Accordion, ACCORDION_TYPE } from "../accordion";
 
 import type { ComponentStory, ComponentMeta } from "@storybook/react";
 

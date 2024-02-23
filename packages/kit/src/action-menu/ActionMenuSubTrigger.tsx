@@ -1,5 +1,6 @@
 import * as React from "react";
-import WPDS, { theme, styled } from "../theme";
+import { theme, styled } from "../theme";
+import type * as WPDS from "../theme";
 import * as ActionMenuPrimitive from "@radix-ui/react-dropdown-menu";
 import { DropdownMenuSubTriggerProps as RadixDropdownMenuSubTriggerProps } from "@radix-ui/react-dropdown-menu";
 import { Icon } from "../icon";

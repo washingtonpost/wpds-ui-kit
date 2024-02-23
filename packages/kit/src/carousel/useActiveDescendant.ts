@@ -1,5 +1,5 @@
 /** manage aria-activedescendant */
-import { css, theme } from "@washingtonpost/wpds-theme";
+import { css, theme } from "../theme";
 import { useState, useRef, useCallback } from "react";
 
 const focused = css({

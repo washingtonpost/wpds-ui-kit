@@ -3,7 +3,7 @@ import { styled, theme, keyframes } from "../theme";
 import * as PopoverPrimitive from "@radix-ui/react-popover";
 
 import type { Token } from "@stitches/react/types/theme";
-import * as Tokens from "../theme/src/tokens";
+import * as Tokens from "../theme/tokens";
 import type * as WPDS from "../theme";
 import type { PopoverContentProps as RadixPopoverContentProps } from "@radix-ui/react-popover";
 

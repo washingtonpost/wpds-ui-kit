@@ -1,6 +1,8 @@
 import * as React from "react";
 
-import WPDS, { styled, theme } from "../theme";
+import { styled, theme } from "../theme";
+
+import type * as WPDS from "../theme";
 
 import * as ActionMenuPrimitive from "@radix-ui/react-dropdown-menu";
 
