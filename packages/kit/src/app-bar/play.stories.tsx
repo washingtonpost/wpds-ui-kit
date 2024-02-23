@@ -1,4 +1,3 @@
-import * as React from "react";
 import { styled } from "../theme";
 import WashingtonPostWhite from "../assets/asset/washington-post-white";
 import Menu from "../assets/asset/menu";

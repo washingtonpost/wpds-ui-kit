@@ -1,4 +1,4 @@
-import * as React from "react";
+import { useMemo, useState, useEffect } from "react";
 import { screen, userEvent } from "@storybook/testing-library";
 import { expect } from "@storybook/jest";
 import { Box } from "../box";
@@ -23,7 +23,7 @@ export default {
 };
 
 const useCityMatch = (term: string) => {
-  return React.useMemo(
+  return useMemo(
     () =>
       term.trim() === ""
         ? null
@@ -35,7 +35,7 @@ const useCityMatch = (term: string) => {
 };
 
 const Template: StoryFn<typeof InputSearch.Root> = (args) => {
-  const [term, setTerm] = React.useState("");
+  const [term, setTerm] = useState("");
 
   const results: { city: string; state: string }[] | null = useCityMatch(term);
 
@@ -100,12 +100,12 @@ const fetchCities = (value) => {
 };
 
 const AsyncTemplate: StoryFn<typeof InputSearch.Root> = (args) => {
-  const [searchTerm, setSearchTerm] = React.useState("");
-  const [results, setResults] = React.useState<
+  const [searchTerm, setSearchTerm] = useState("");
+  const [results, setResults] = useState<
     { city: string; state: string }[] | undefined
   >();
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (searchTerm === "") {
       setResults(undefined);
     } else {

@@ -1,4 +1,4 @@
-import * as React from "react";
+import { forwardRef } from "react";
 import { styled, theme } from "../theme";
 import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 import { TooltipTriggerProps as RadixTooltipTriggerProps } from "@radix-ui/react-tooltip";
@@ -16,7 +16,7 @@ export interface TooltipTriggerInterface extends TriggerCombinedProps {
   css?: WPDS.CSS;
 }
 
-export const TooltipTrigger = React.forwardRef<
+export const TooltipTrigger = forwardRef<
   HTMLButtonElement,
   TooltipTriggerInterface
 >((props: TooltipTriggerInterface, ref) => (

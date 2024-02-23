@@ -1,4 +1,4 @@
-import * as React from "react";
+import { useState } from "react";
 import { screen, userEvent } from "@storybook/testing-library";
 import { expect } from "@storybook/jest";
 import { Drawer as Component } from "./";
@@ -25,7 +25,7 @@ export default {
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const Template: StoryFn<any> = (args) => {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
 
   const handleChange = (val) => {
     setOpen(val);
@@ -205,7 +205,7 @@ fringilla phasellus faucibus scelerisque eleifend donec. Aliquet
 porttitor lacus luctus accumsan. Orci ac auctor augue mauris augue
 neque gravida in fermentum.`,
   ];
-  const [textLength, setTextLength] = React.useState(5);
+  const [textLength, setTextLength] = useState(5);
   return (
     <Component.Root id="interaction-drawer">
       <Component.Trigger css={{ marginBottom: "$050" }}>

@@ -1,4 +1,4 @@
-import * as React from "react";
+import { useState } from "react";
 import { Box } from "../box";
 import { theme } from "../theme";
 import { Scrim as Component } from "./";
@@ -11,7 +11,7 @@ export default {
 } as Meta<typeof Component>;
 
 const Template: StoryFn<typeof Component> = (args) => {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
   function handleOpenChange(val) {
     setOpen(() => val);
   }

@@ -1,4 +1,4 @@
-import * as React from "react";
+import { useState } from "react";
 import { styled, theme } from "../theme";
 import { Checkbox as Component } from ".";
 
@@ -74,7 +74,7 @@ export default {
 
 export const Play = {
   render: (args) => {
-    const [checked, setChecked] = React.useState(false);
+    const [checked, setChecked] = useState(false);
 
     return (
       <Component

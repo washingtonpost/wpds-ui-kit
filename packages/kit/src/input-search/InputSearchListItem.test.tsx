@@ -1,4 +1,3 @@
-import * as React from "react";
 import { render, screen } from "@testing-library/react";
 import { InputSearchListItem } from "./InputSearchListItem";
 import { InputSearchRoot } from "./InputSearchRoot";

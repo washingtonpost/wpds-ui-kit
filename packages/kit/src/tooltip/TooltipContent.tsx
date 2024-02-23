@@ -1,4 +1,4 @@
-import * as React from "react";
+import { forwardRef } from "react";
 import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 import { styled, keyframes, theme } from "../theme";
 import type * as WPDS from "../theme";
@@ -92,7 +92,7 @@ export interface TooltipContentInterface extends ContentCombinedProps {
  * @see Source https://github.com/washingtonpost/wpds-ui-kit/tree/main/ui/tooltip
  */
 
-export const TooltipContent = React.forwardRef<
+export const TooltipContent = forwardRef<
   HTMLDivElement,
   TooltipContentInterface
 >(

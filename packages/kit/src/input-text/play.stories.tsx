@@ -1,4 +1,4 @@
-import * as React from "react";
+import { useState } from "react";
 
 import { screen, userEvent } from "@storybook/testing-library";
 import { expect, jest } from "@storybook/jest";
@@ -65,8 +65,8 @@ const SynchContainer = styled("div", {
 });
 
 const SynchTemplate = () => {
-  const [val1, setVal1] = React.useState("Value");
-  const [val2, setVal2] = React.useState("");
+  const [val1, setVal1] = useState("Value");
+  const [val2, setVal2] = useState("");
 
   return (
     <SynchContainer>
@@ -209,8 +209,8 @@ export const Chromatic = {
 };
 
 const FormTemplate: StoryFn<typeof Component> = (args) => {
-  const [iconClicked, setIconClicked] = React.useState(false);
-  const [submitClicked, setSubmitClicked] = React.useState(false);
+  const [iconClicked, setIconClicked] = useState(false);
+  const [submitClicked, setSubmitClicked] = useState(false);
 
   return (
     <div>

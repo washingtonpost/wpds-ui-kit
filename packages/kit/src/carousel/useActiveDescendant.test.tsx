@@ -1,4 +1,4 @@
-import * as React from "react";
+import { useRef } from "react";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { useActiveDescendant } from "./useActiveDescendant";
@@ -7,7 +7,7 @@ import { CarouselContent } from "./CarouselContent";
 import { CarouselItem } from "./CarouselItem";
 
 const ComponentWrapper = ({ onClick }: { onClick?: () => void }) => {
-  const containerRef = React.useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const { handleDescendantFocus, contentProps, addDescendant, focusClassName } =
     useActiveDescendant(containerRef);
 

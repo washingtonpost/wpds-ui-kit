@@ -1,4 +1,4 @@
-import * as React from "react";
+import { forwardRef } from "react";
 import * as PopoverPrimitive from "@radix-ui/react-popover";
 import { Button } from "../button";
 
@@ -12,7 +12,7 @@ export type PopoverTriggerProps = {
   css?: WPDS.CSS;
 } & RadixPopoverTriggerProps;
 
-export const PopoverTrigger = React.forwardRef<
+export const PopoverTrigger = forwardRef<
   HTMLButtonElement,
   PopoverTriggerProps
 >(({ children, asChild, ...props }, ref) => {

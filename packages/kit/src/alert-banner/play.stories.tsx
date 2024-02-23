@@ -1,5 +1,4 @@
 /* eslint react/prop-types: 0 */
-import * as React from "react";
 import { AlertBanner } from "./AlertBanner";
 import { styled } from "../ui-kit";
 import type { Meta, StoryFn } from "@storybook/react";

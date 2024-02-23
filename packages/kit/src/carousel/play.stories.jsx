@@ -1,4 +1,4 @@
-import * as React from "react";
+import { useState, useRef } from "react";
 import { userEvent, waitFor, within } from "@storybook/testing-library";
 import { expect } from "@storybook/jest";
 import { styled, theme } from "../theme";
@@ -27,7 +27,7 @@ export default {
 };
 
 const Template = (args) => {
-  const [page, setPage] = React.useState(0);
+  const [page, setPage] = useState(0);
   const items = [
     theme.colors.red400,
     theme.colors.orange400,
@@ -175,9 +175,9 @@ CustomButtons.parameters = {
 
 const SlideshowTemplate = (args) => {
   const items = new Array(4).fill("");
-  const [page, setPage] = React.useState(0);
-  const wrapRef = React.useRef(false);
-  const [intervalId, setIntervalId] = React.useState();
+  const [page, setPage] = useState(0);
+  const wrapRef = useRef(false);
+  const [intervalId, setIntervalId] = useState();
 
   const handleOnClick = () => {
     const wrapPages = (currentPage) => {
@@ -305,7 +305,7 @@ const BrightsCarouselTemplate = (args) => {
     },
   ];
 
-  const [focused, setFocused] = React.useState();
+  const [focused, setFocused] = useState();
 
   const triggerActiveLink = () => {
     window.open(focused.url);
@@ -404,7 +404,7 @@ const VerticalVideoTemplate = () => {
     { id: "title-5", headline: "Title 5", byline: "Author 5" },
   ];
 
-  const containerRef = React.useRef(null);
+  const containerRef = useRef(null);
   const { addDescendant, handleDescendantFocus, contentProps } =
     useActiveDescendant(containerRef);
 
@@ -555,7 +555,7 @@ export const VerticalVideo = VerticalVideoTemplate.bind({});
 
 const InteractionsTemplate = () => {
   const items = [{ id: "item-1" }, { id: "item-2" }, { id: "item-3" }];
-  const containerRef = React.useRef(null);
+  const containerRef = useRef(null);
   const { handleDescendantFocus, contentProps, addDescendant, focusClassName } =
     useActiveDescendant(containerRef);
   return (
@@ -629,8 +629,8 @@ Interactions.play = async ({ canvasElement }) => {
 };
 
 const InternalFocusTemplate = () => {
-  const [asyncState, setAsyncState] = React.useState(false);
-  const containerRef = React.useRef();
+  const [asyncState, setAsyncState] = useState(false);
+  const containerRef = useRef();
   const { handleDescendantFocus, contentProps, addDescendant, focusClassName } =
     useActiveDescendant(containerRef);
   return (

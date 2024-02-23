@@ -1,4 +1,3 @@
-import * as React from "react";
 import { render, screen } from "@testing-library/react";
 import { TabsRoot } from "./TabsRoot";
 import { TabsList } from "./TabsList";

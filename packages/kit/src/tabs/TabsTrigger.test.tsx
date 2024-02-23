@@ -1,4 +1,4 @@
-import * as React from "react";
+import { useContext } from "react";
 import { render, screen } from "@testing-library/react";
 import { TabsRoot } from "./TabsRoot";
 import { TabsList } from "./TabsList";
@@ -44,7 +44,7 @@ describe("TabsTrigger", () => {
 
   test("sets previous rect", () => {
     const Note = () => {
-      const { previousRect } = React.useContext(TabsContext);
+      const { previousRect } = useContext(TabsContext);
       if (previousRect) {
         return <span role="note">{previousRect.width}</span>;
       }

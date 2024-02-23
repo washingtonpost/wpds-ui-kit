@@ -1,4 +1,3 @@
-import * as React from "react";
 import { Box as Component } from "./box";
 
 import type { Meta, StoryFn } from "@storybook/react";

@@ -1,4 +1,4 @@
-import * as React from "react";
+import { useMemo, useState, useEffect } from "react";
 import { PaginationDots as Component } from "./";
 import { theme, styled } from "../theme";
 import { Button } from "../button";
@@ -52,11 +52,11 @@ export const PaginationDots = {
 };
 
 const Template: StoryFn<typeof Component> = (args, context) => {
-  const id = React.useMemo(() => `${Math.random()}-amount`.slice(2), []);
-  const [amount, setAmount] = React.useState("5");
-  const [index, setIndex] = React.useState(1);
+  const id = useMemo(() => `${Math.random()}-amount`.slice(2), []);
+  const [amount, setAmount] = useState("5");
+  const [index, setIndex] = useState(1);
 
-  React.useEffect(() => setAmount(amount), [amount]);
+  useEffect(() => setAmount(amount), [amount]);
 
   return (
     <Stack css={{ position: "relative" }}>

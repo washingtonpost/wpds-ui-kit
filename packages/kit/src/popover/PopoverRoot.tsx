@@ -1,4 +1,3 @@
-import * as React from "react";
 import * as PopoverPrimitive from "@radix-ui/react-popover";
 
 import type { PopoverProps as RadixPopoverRootProps } from "@radix-ui/react-popover";

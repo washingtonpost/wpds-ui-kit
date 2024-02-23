@@ -1,4 +1,3 @@
-import * as React from "react";
 import { InputTextarea as Component } from "./";
 import type { Meta, StoryFn } from "@storybook/react";
 

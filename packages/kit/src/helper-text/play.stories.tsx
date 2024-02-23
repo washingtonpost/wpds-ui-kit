@@ -1,4 +1,3 @@
-import * as React from "react";
 import { HelperText as Component } from "./";
 
 import type { Meta, StoryFn } from "@storybook/react";

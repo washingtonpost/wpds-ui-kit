@@ -1,4 +1,3 @@
-import * as React from "react";
 import { TooltipContent } from "./TooltipContent";
 import { TooltipTrigger } from "./TooltipTrigger";
 import * as TooltipPrimitive from "@radix-ui/react-tooltip";

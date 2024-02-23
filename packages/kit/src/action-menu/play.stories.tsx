@@ -1,4 +1,4 @@
-import * as React from "react";
+import { useState } from "react";
 import { ActionMenu as Component } from ".";
 import { Button } from "../button";
 import { Box } from "../box";
@@ -124,12 +124,12 @@ const Circle = (props) => (
 );
 
 const ItemVariationsTemplate = (parameters) => {
-  const [checkedA, setCheckedA] = React.useState(true);
-  const [checkedB, setCheckedB] = React.useState(true);
-  const [checkedC, setCheckedC] = React.useState(true);
-  const [checkedD, setCheckedD] = React.useState(true);
+  const [checkedA, setCheckedA] = useState(true);
+  const [checkedB, setCheckedB] = useState(true);
+  const [checkedC, setCheckedC] = useState(true);
+  const [checkedD, setCheckedD] = useState(true);
 
-  const [radioChecked, setRadioChecked] = React.useState("radio2");
+  const [radioChecked, setRadioChecked] = useState("radio2");
 
   return (
     <Component.Root {...parameters}>

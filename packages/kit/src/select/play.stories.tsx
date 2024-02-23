@@ -1,4 +1,4 @@
-import * as React from "react";
+import { useState } from "react";
 import { Select } from "./";
 import { Button, Icon, Tooltip, theme } from "../ui-kit";
 import { Info } from "@washingtonpost/wpds-assets";
@@ -102,7 +102,7 @@ export const Unselected = {
 };
 
 const ControlledTemplate: StoryFn<typeof Select.Root> = (args) => {
-  const [country, setCountry] = React.useState("spain");
+  const [country, setCountry] = useState("spain");
   const handleValueChange = (value: string) => {
     setCountry(value);
   };

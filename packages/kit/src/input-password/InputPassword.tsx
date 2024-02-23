@@ -1,4 +1,4 @@
-import * as React from "react";
+import { forwardRef, useState } from "react";
 import { InputText } from "../input-text";
 import { Icon } from "../icon";
 import { Hide, Show } from "@washingtonpost/wpds-assets";
@@ -39,7 +39,7 @@ interface InputPasswordProps
  *
  * @extends InputText
  */
-export const InputPassword = React.forwardRef<
+export const InputPassword = forwardRef<
   HTMLInputElement,
   InputPasswordProps
 >(
@@ -52,7 +52,7 @@ export const InputPassword = React.forwardRef<
     },
     ref
   ) => {
-    const [isHidden, setIsHidden] = React.useState(true);
+    const [isHidden, setIsHidden] = useState(true);
 
     function handleButtonIconClick() {
       setIsHidden((prevHidden) => !prevHidden);

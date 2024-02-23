@@ -1,10 +1,10 @@
-import * as React from "react";
+import { useContext } from "react";
 import { render, screen } from "@testing-library/react";
 import { InputSearchRoot, InputSearchContext } from "./InputSearchRoot";
 
 describe("InputSearchRoot", () => {
   const TestComponent = () => {
-    const { rootRect } = React.useContext(InputSearchContext);
+    const { rootRect } = useContext(InputSearchContext);
     return <div>{rootRect && rootRect.top}</div>;
   };
 

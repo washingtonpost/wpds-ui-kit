@@ -1,4 +1,4 @@
-import * as React from "react";
+import { createContext } from "react";
 
 interface TabsContextInterface {
   currentValue: string | undefined;
@@ -13,4 +13,4 @@ const defaultState = {
   setPreviousRect: () => {},
 };
 export const TabsContext =
-  React.createContext<TabsContextInterface>(defaultState);
+  createContext<TabsContextInterface>(defaultState);

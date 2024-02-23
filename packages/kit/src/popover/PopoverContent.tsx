@@ -1,4 +1,4 @@
-import * as React from "react";
+import { forwardRef } from "react";
 import { styled, theme, keyframes } from "../theme";
 import * as PopoverPrimitive from "@radix-ui/react-popover";
 
@@ -97,7 +97,7 @@ export type PopoverContentProps = {
 } & WPDS.VariantProps<typeof StyledContent> &
   Omit<RadixPopoverContentProps, "sideOffset">;
 
-export const PopoverContent = React.forwardRef<
+export const PopoverContent = forwardRef<
   HTMLDivElement,
   PopoverContentProps
 >(

@@ -1,4 +1,4 @@
-import * as React from "react";
+import { useState } from "react";
 
 import { screen, userEvent } from "@storybook/testing-library";
 import { expect } from "@storybook/jest";
@@ -206,7 +206,7 @@ export const Density = {
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const TemplateControlled: StoryFn<any> = (args) => {
   const { density, align, ...rest } = args;
-  const [value, setValue] = React.useState("tab3");
+  const [value, setValue] = useState("tab3");
   return (
     <>
       <StyledLabel>Outline for viewing alignment purposes only</StyledLabel>

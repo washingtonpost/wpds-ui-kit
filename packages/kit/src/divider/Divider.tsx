@@ -1,4 +1,4 @@
-import * as React from "react";
+import { forwardRef } from "react";
 import * as Separator from "@radix-ui/react-separator";
 import type { SeparatorProps } from "@radix-ui/react-separator";
 import * as Theme from "../theme";
@@ -30,7 +30,7 @@ interface DividerProps extends SeparatorProps {
   variant?: "default" | "strong";
 }
 
-export const Divider = React.forwardRef<HTMLDivElement, DividerProps>(
+export const Divider = forwardRef<HTMLDivElement, DividerProps>(
   ({ css, variant = "default", ...props }, ref) => {
     return <StyledSeparator variant={variant} css={css} ref={ref} {...props} />;
   }

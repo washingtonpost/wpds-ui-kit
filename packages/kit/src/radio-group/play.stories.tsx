@@ -1,4 +1,4 @@
-import * as React from "react";
+import { useState } from "react";
 import { screen, userEvent } from "@storybook/testing-library";
 import { expect } from "@storybook/jest";
 import { RadioGroup as Component, RadioButton } from "./";
@@ -94,7 +94,7 @@ export const Overflow = {
 };
 
 const ControlledTemplate: StoryFn<typeof Component> = () => {
-  const [value, setValue] = React.useState("opt1");
+  const [value, setValue] = useState("opt1");
   function handleValueChange(val) {
     setValue(val);
   }

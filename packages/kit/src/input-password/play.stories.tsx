@@ -1,4 +1,3 @@
-import * as React from "react";
 import { screen, userEvent } from "@storybook/testing-library";
 import { expect } from "@storybook/jest";
 import { InputPassword as Component } from "./";

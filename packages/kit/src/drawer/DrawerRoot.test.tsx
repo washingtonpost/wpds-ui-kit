@@ -1,4 +1,4 @@
-import * as React from "react";
+import { useContext, useState } from "react";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { DrawerRoot, DrawerContext } from "./DrawerRoot";
@@ -6,7 +6,7 @@ import { DrawerRoot, DrawerContext } from "./DrawerRoot";
 describe("DrawerRoot", () => {
   const TestComponent = () => {
     const { contentId, open, defaultOpen, zIndex, onOpenChange } =
-      React.useContext(DrawerContext);
+      useContext(DrawerContext);
     return (
       <div id={contentId} style={{ zIndex: zIndex as number }}>
         Drawer Sub-Component <br />
@@ -88,7 +88,7 @@ describe("DrawerRoot", () => {
   });
 
   const App = ({ handleChange }) => {
-    const [open] = React.useState(false);
+    const [open] = useState(false);
     return (
       <DrawerRoot id="test-id" open={open} onOpenChange={handleChange}>
         <TestComponent />
