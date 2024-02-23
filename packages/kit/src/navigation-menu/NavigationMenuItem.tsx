@@ -3,7 +3,7 @@ import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu";
 import { NavigationMenuTrigger } from "./NavigationMenuTrigger";
 import { NavigationMenuContent } from "./NavigationMenuContent";
 
-import type * as WPDS from "@washingtonpost/wpds-theme";
+import type * as WPDS from "../theme";
 
 const NAME = "NavigationMenuItem";
 

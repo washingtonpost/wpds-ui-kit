@@ -2,9 +2,9 @@ import * as React from "react";
 import { userEvent, screen } from "@storybook/testing-library";
 import { expect } from "@storybook/jest";
 import { NavigationMenu } from ".";
-import { Button } from "@washingtonpost/wpds-button";
-import { Icon } from "@washingtonpost/wpds-icon";
-import { theme } from "@washingtonpost/wpds-theme";
+import { Button } from "../button";
+import { Icon } from "../icon";
+import { theme } from "../theme";
 import { ChevronRight, ChevronDown, Menu } from "@washingtonpost/wpds-assets";
 import NextLink from "next/link";
 

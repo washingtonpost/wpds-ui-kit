@@ -1,8 +1,8 @@
 import * as React from "react";
 import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu";
-import { styled, theme } from "@washingtonpost/wpds-theme";
+import { styled, theme } from "../theme";
 
-import type * as WPDS from "@washingtonpost/wpds-theme";
+import type * as WPDS from "../theme";
 
 const NAME = "NavigationMenuLink";
 

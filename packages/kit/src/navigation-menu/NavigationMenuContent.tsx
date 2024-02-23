@@ -4,9 +4,9 @@ import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu";
 import { CSSTransition } from "react-transition-group";
 import { usePopper } from "react-popper";
 import maxSize from "popper-max-size-modifier";
-import { styled, theme } from "@washingtonpost/wpds-theme";
+import { styled, theme } from "../theme";
 
-import type * as WPDS from "@washingtonpost/wpds-theme";
+import type * as WPDS from "../theme";
 import type { Modifier } from "@popperjs/core";
 
 const NAME = "NavigationMenuContent";
