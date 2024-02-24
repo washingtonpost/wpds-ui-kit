@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { ComboboxList, useComboboxContext } from "@reach/combobox";
 import { styled } from "../theme";
 

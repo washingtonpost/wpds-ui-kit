@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Box } from "../box";
 import { theme } from "../theme";
 import { Scrim as Component } from "./";

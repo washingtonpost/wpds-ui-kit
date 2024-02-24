@@ -1,5 +1,5 @@
 /* eslint-disable testing-library/no-node-access */
-import * as React from "react";
+import React from "react";
 import { userEvent, within } from "@storybook/testing-library";
 import { expect } from "@storybook/jest";
 import * as Tokens from "../theme/tokens";

@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { ComboboxPopover } from "@reach/combobox";
 import { positionMatchWidth } from "@reach/popover";
 import { styled, theme } from "../theme";

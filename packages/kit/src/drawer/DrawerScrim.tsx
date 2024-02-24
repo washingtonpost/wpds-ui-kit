@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { DrawerContext } from "./DrawerRoot";
 import { Scrim } from "../scrim";
 

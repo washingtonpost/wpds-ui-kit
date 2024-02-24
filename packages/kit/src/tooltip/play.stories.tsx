@@ -1,3 +1,4 @@
+import React from "react";
 import { screen, userEvent } from "@storybook/testing-library";
 import { expect } from "@storybook/jest";
 import { theme } from "../theme";

@@ -1,5 +1,5 @@
 // /* eslint-disable @next/next/no-img-element */
-import { useRef } from "react";
+import React, { useRef } from "react";
 import { Accordion, ACCORDION_DENSITY, ACCORDION_TYPE } from ".";
 import { userEvent, waitFor, within } from "@storybook/testing-library";
 import { expect } from "@storybook/jest";

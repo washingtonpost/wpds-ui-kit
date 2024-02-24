@@ -1,4 +1,4 @@
-import { forwardRef } from "react";
+import React, { forwardRef } from "react";
 import { ChevronDown } from "@washingtonpost/wpds-assets";
 import { theme, styled } from "../theme";
 import { Icon } from "../icon";

@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { CSSTransition } from "react-transition-group";
 import { styled, theme, css as wpCSS } from "../theme";
 import type * as WPDS from "../theme";

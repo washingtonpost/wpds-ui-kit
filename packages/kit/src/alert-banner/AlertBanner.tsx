@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 
 import { theme, styled } from "../theme";
 import { Icon } from "../icon";

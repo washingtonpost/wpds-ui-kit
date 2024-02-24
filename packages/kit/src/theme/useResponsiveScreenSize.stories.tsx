@@ -1,3 +1,4 @@
+import React from "react";
 import { within, waitFor } from "@storybook/testing-library";
 import { expect } from "@storybook/jest";
 import { useResponsiveScreenSize } from "./useResponsiveScreenSize";

@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 
 import * as SelectPrimitive from "@radix-ui/react-select";
 import { useControllableState } from "@radix-ui/react-use-controllable-state";

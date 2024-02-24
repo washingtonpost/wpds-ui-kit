@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 
 import type * as WPDS from "../theme";
 import type { TabsContentProps as RadixTabsContentProps } from "@radix-ui/react-tabs";

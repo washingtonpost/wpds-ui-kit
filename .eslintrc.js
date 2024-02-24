@@ -37,14 +37,6 @@ module.exports = {
       rules: {
         "react/prop-types": "off",
         "@washingtonpost/wpds/theme-colors": "warn",
-        "no-restricted-syntax": [
-          "error",
-          {
-            selector:
-              "ImportDeclaration[source.value='react'][specifiers.0.type='ImportDefaultSpecifier']",
-            message: "Default React import not allowed",
-          },
-        ],
       },
     },
   ],

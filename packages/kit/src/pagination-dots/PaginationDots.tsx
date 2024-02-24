@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import type * as WPDS from "../theme";
 import { theme, styled } from "../theme";
 

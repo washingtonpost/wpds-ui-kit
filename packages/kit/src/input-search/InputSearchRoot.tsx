@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { Combobox } from "@reach/combobox";
 import { styled, theme } from "../theme";
 

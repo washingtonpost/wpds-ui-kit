@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { useControllableState } from "@radix-ui/react-use-controllable-state";
 import { styled } from "../theme";
 import type * as WPDS from "../theme";

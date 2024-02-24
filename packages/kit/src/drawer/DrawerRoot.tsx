@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { theme } from "../theme";
 import { useControllableState } from "@radix-ui/react-use-controllable-state";
 

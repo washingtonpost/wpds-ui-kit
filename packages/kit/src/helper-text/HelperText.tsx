@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { theme, css } from "../theme";
 
 const NAME = "HelperText";

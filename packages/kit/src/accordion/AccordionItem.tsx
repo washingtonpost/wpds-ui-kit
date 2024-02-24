@@ -1,4 +1,4 @@
-import { forwardRef } from "react";
+import React, { forwardRef } from "react";
 import { theme, styled } from "../theme";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
 import type * as WPDS from "../theme";

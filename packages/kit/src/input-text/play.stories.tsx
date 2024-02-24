@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 import { screen, userEvent } from "@storybook/testing-library";
 import { expect, jest } from "@storybook/jest";

@@ -1,8 +1,12 @@
-import * as React from "react";
+import React from "react";
 import { theme, styled } from "../theme";
 import type * as WPDS from "../theme";
 
-import { sharedInputStyles, sharedInputVariants, FloatingLabelStyles } from "../input-shared";
+import {
+  sharedInputStyles,
+  sharedInputVariants,
+  FloatingLabelStyles,
+} from "../input-shared";
 
 import { TextInputLabel } from "./TextInputLabel";
 

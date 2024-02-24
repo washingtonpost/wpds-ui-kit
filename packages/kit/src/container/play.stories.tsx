@@ -1,3 +1,4 @@
+import React from "react";
 import { Box } from "../box";
 import { Container as Component } from ".";
 

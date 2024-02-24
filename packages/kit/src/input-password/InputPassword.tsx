@@ -1,4 +1,4 @@
-import { forwardRef, useState } from "react";
+import React, { forwardRef, useState } from "react";
 import { InputText } from "../input-text";
 import { Icon } from "../icon";
 import { Hide, Show } from "@washingtonpost/wpds-assets";

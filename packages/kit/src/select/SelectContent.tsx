@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { SelectContext } from "./Select";
 
 import { styled, theme } from "../theme";

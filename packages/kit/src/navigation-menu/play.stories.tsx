@@ -1,3 +1,4 @@
+import React from "react";
 import { userEvent, screen } from "@storybook/testing-library";
 import { expect } from "@storybook/jest";
 import { NavigationMenu } from ".";

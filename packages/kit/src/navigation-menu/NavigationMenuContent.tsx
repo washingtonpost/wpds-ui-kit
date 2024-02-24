@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { createPortal } from "react-dom";
 import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu";
 import { CSSTransition } from "react-transition-group";

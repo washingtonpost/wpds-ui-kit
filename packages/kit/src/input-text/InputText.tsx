@@ -1,10 +1,14 @@
-import * as React from "react";
+import React from "react";
 import { useEffect, useState } from "react";
 import { theme, styled } from "../theme";
 import { Button } from "../button";
 import { Divider } from "../divider";
 import { Icon } from "../icon";
-import { useFloating, unstyledInputStyles, globalInputAutoFillTriggerAnimations } from "../input-shared";
+import {
+  useFloating,
+  unstyledInputStyles,
+  globalInputAutoFillTriggerAnimations,
+} from "../input-shared";
 import { ErrorMessage } from "../error-message";
 import { HelperText } from "../helper-text";
 import { VisuallyHidden } from "../visually-hidden";

@@ -1,3 +1,4 @@
+import React from "react";
 import { Card as Component } from ".";
 import { theme, styled } from "../theme";
 import { Button } from "../button";

@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 
 import * as TabsPrimitive from "@radix-ui/react-tabs";
 import type * as WPDS from "../theme";

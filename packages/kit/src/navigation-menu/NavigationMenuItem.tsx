@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu";
 import { NavigationMenuTrigger } from "./NavigationMenuTrigger";
 import { NavigationMenuContent } from "./NavigationMenuContent";

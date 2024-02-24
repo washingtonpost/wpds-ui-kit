@@ -1,3 +1,4 @@
+import React from "react";
 import { styled, theme, keyframes } from "../theme";
 
 import { Icon } from "../icon";

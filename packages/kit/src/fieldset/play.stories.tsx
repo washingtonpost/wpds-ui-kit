@@ -1,3 +1,4 @@
+import React from "react";
 import { Fieldset as Component } from "./";
 
 import type { Meta, StoryFn } from "@storybook/react";

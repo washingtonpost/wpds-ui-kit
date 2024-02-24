@@ -1,4 +1,4 @@
-import { forwardRef } from "react";
+import React, { forwardRef } from "react";
 import * as Separator from "@radix-ui/react-separator";
 import type { SeparatorProps } from "@radix-ui/react-separator";
 import * as Theme from "../theme";
