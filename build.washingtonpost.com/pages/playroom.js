@@ -286,6 +286,7 @@ export default function Playroom({
         try {
           const mdxSource = await serialize(event.data.code, {
             mdxOptions: {
+              development: false,
               format: "mdx",
             },
           });
@@ -395,6 +396,7 @@ export async function getServerSideProps({ query, res }) {
     source = await serialize(parsedCode, {
       mdxOptions: {
         format: "mdx",
+        development: false,
       },
     });
   } catch (error) {

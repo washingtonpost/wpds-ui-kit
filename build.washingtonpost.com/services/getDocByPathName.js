@@ -43,6 +43,7 @@ export const getDocByPathName = async (input) => {
   const source = await serialize(frontMatter.content, {
     scope: frontMatter.data,
     mdxOptions: {
+      development: false,
       remarkPlugins: [remarkGfm, remarkMdxCodeMeta],
     },
   });
@@ -61,6 +62,7 @@ export const getResource = async (input) => {
   const source = await serialize(frontMatter.content, {
     scope: frontMatter.data,
     mdxOptions: {
+      development: false,
       remarkPlugins: [remarkGfm, remarkMdxCodeMeta],
     },
   });
