@@ -12,5 +12,4 @@ const defaultState = {
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   setPreviousRect: () => {},
 };
-export const TabsContext =
-  createContext<TabsContextInterface>(defaultState);
+export const TabsContext = createContext<TabsContextInterface>(defaultState);

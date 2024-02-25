@@ -97,10 +97,7 @@ export type PopoverContentProps = {
 } & WPDS.VariantProps<typeof StyledContent> &
   Omit<RadixPopoverContentProps, "sideOffset">;
 
-export const PopoverContent = forwardRef<
-  HTMLDivElement,
-  PopoverContentProps
->(
+export const PopoverContent = forwardRef<HTMLDivElement, PopoverContentProps>(
   (
     {
       children,

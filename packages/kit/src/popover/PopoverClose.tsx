@@ -24,21 +24,20 @@ export type PopoverCloseProps = {
   css?: WPDS.CSS;
 } & RadixPopoverCloseProps;
 
-export const PopoverClose = forwardRef<
-  HTMLButtonElement,
-  PopoverCloseProps
->(({ children, asChild, ...props }, ref) => (
-  <PopoverPrimitive.Close {...props} asChild ref={ref}>
-    {asChild ? (
-      children
-    ) : (
-      <StyledButton isOutline icon="center" variant="primary">
-        <Icon size="100" label="Close popup">
-          <Close />
-        </Icon>
-      </StyledButton>
-    )}
-  </PopoverPrimitive.Close>
-));
+export const PopoverClose = forwardRef<HTMLButtonElement, PopoverCloseProps>(
+  ({ children, asChild, ...props }, ref) => (
+    <PopoverPrimitive.Close {...props} asChild ref={ref}>
+      {asChild ? (
+        children
+      ) : (
+        <StyledButton isOutline icon="center" variant="primary">
+          <Icon size="100" label="Close popup">
+            <Close />
+          </Icon>
+        </StyledButton>
+      )}
+    </PopoverPrimitive.Close>
+  )
+);
 
 PopoverClose.displayName = NAME;
