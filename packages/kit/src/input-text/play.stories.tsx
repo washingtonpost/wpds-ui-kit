@@ -6,7 +6,7 @@ import type { Meta, StoryFn } from "@storybook/react";
 
 import { Icon } from "../icon";
 import { Button } from "../button";
-import Asset from "../assets/asset/settings";
+import Asset from "@washingtonpost/wpds-assets/asset/settings";
 import { VisuallyHidden } from "../visually-hidden";
 import { styled, theme } from "../theme";
 

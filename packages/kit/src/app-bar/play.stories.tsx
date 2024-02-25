@@ -1,13 +1,13 @@
 import React from "react";
 import { styled } from "../theme";
-import WashingtonPostWhite from "../assets/asset/washington-post-white";
-import Menu from "../assets/asset/menu";
+import WashingtonPostWhite from "@washingtonpost/wpds-assets/asset/washington-post-white";
+import Menu from "@washingtonpost/wpds-assets/asset/menu";
 import { Container } from "../container";
 import { Box } from "../box";
 import { Icon } from "../icon";
-import Profile from "../assets/asset/profile";
+import Profile from "@washingtonpost/wpds-assets/asset/profile";
 import { useDarkMode } from "storybook-dark-mode";
-import WashingtonPost from "../assets/asset/washington-post";
+import WashingtonPost from "@washingtonpost/wpds-assets/asset/washington-post";
 
 import type { Meta, StoryFn } from "@storybook/react";
 

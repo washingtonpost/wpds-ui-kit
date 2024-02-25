@@ -102,7 +102,6 @@
   ],
   "dependencies": {
     "@babel/standalone": "^7.17.11",
-    "@washingtonpost/wpds-assets": "^1.22.0",
     "typescript": "4.5.5"
   },
   "scripts": {

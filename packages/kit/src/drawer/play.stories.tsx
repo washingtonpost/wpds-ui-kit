@@ -3,8 +3,8 @@ import { screen, userEvent } from "@storybook/testing-library";
 import { expect } from "@storybook/jest";
 import { Drawer as Component } from "./";
 import { theme } from "../theme";
-import { Box } from "../../box";
-import { Select } from "../../select";
+import { Box } from "../box";
+import { Select } from "../select";
 
 import type { Meta, StoryFn } from "@storybook/react";
 

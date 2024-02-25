@@ -3,7 +3,7 @@ import { screen, userEvent } from "@storybook/testing-library";
 import { expect } from "@storybook/jest";
 import { RadioGroup as Component, RadioButton } from "./";
 import { styled, css, theme } from "../theme";
-import { Box } from "../../box";
+import { Box } from "../box";
 
 import type { Meta, StoryFn } from "@storybook/react";
 

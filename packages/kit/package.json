@@ -34,7 +34,7 @@
   "dependencies": {
     "@radix-ui/react-accordion": "^1.1.2",
     "@stitches/react": "^1.2.8",
-    "@washingtonpost/wpds-assets": "^1.22.0",
+    "@washingtonpost/wpds-assets": "latest",
     "@radix-ui/react-dropdown-menu": "2.0.3",
     "react": "^18",
     "@radix-ui/react-avatar": "latest",
