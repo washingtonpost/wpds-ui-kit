@@ -14,9 +14,5 @@
     "next": "13.5.6",
     "@washingtonpost/wpds-ui-kit": "*",
     "@washingtonpost/wpds-kitchen-sink": "*"
-  },
-  "overrides": {
-    "react": "^18",
-    "react-dom": "^18"
   }
 }

@@ -257,15 +257,17 @@ export default function Playroom({
           <Rule variant={isGuide}></Rule>
         </Guide>
         <FlexRow>
-          <MDXRemote
-            compiledSource={receivedSource.compiledSource}
-            scope={{
-              ...Kit,
-              useState: React.useState,
-              useEffect: React.useEffect,
-            }}
-            components={components}
-          />
+          {receivedSource.compiledSource && (
+            <MDXRemote
+              compiledSource={receivedSource.compiledSource}
+              scope={{
+                ...Kit,
+                useState: React.useState,
+                useEffect: React.useEffect,
+              }}
+              components={components}
+            />
+          )}
         </FlexRow>
       </ErrorBoundary>
     );
@@ -286,7 +288,6 @@ export default function Playroom({
         try {
           const mdxSource = await serialize(event.data.code, {
             mdxOptions: {
-              development: false,
               format: "mdx",
             },
           });
@@ -396,7 +397,6 @@ export async function getServerSideProps({ query, res }) {
     source = await serialize(parsedCode, {
       mdxOptions: {
         format: "mdx",
-        development: false,
       },
     });
   } catch (error) {
