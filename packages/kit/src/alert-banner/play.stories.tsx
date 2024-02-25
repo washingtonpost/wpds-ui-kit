@@ -1,7 +1,7 @@
 import React from "react";
 /* eslint react/prop-types: 0 */
 import { AlertBanner } from "./AlertBanner";
-import { styled } from "../ui-kit";
+import { styled } from "../theme";
 import type { Meta, StoryFn } from "@storybook/react";
 
 export default {

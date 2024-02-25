@@ -2,7 +2,7 @@ import React, { useMemo, useState, useEffect } from "react";
 import { PaginationDots as Component } from "./";
 import { theme, styled } from "../theme";
 import { Button } from "../button";
-import { InputText } from "../ui-kit";
+import { InputText } from "../input-text";
 import { within, userEvent } from "@storybook/testing-library";
 import { expect } from "@storybook/jest";
 

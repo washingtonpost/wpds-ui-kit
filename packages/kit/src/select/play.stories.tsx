@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Select } from "./";
-import { Button, Icon, Tooltip, theme } from "../ui-kit";
+import { Button, Icon, Tooltip, theme } from "../index";
 import { Info } from "@washingtonpost/wpds-assets";
 
 import type { StoryFn } from "@storybook/react";
