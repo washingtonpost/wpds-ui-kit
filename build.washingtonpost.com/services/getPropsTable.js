@@ -24,7 +24,7 @@ export const getPropsTable = async (component = "icon") => {
 
   try {
     const componentsData = docgen.parse(
-      `../ui/${component}/src/index.ts`,
+      `../packages/kit/src/${component}/index.ts`,
       options
     );
 
