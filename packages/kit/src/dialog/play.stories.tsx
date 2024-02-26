@@ -1,5 +1,6 @@
 import * as React from "react";
 import { userEvent, waitFor, within } from "@storybook/testing-library";
+
 import { expect } from "@storybook/jest";
 import { Dialog } from "./Dialog";
 import { Button, styled, theme } from "../";
@@ -246,21 +247,21 @@ export const Interactions = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const open = canvas.getByRole("button");
-    await userEvent.click(open);
+    const user = userEvent.setup({ pointerEventsCheck: 0 });
+
+    await user.click(open);
     await waitFor(() =>
       expect(canvas.getByTestId("close-button")).toHaveFocus()
     );
-    await userEvent.click(canvas.getByTestId("close-button"), {
-      skipPointerEventsCheck: true,
-    });
+    await user.click(canvas.getByTestId("close-button"));
     await waitFor(() => expect(open).toHaveFocus());
-    await userEvent.click(open);
+    await user.click(open);
     await waitFor(() => expect(canvas.getByText("Cancel")).toBeVisible());
-    await userEvent.click(canvas.getByText("Cancel"));
+    await user.click(canvas.getByText("Cancel"));
     await waitFor(() => expect(open).toHaveFocus());
-    await userEvent.click(open);
+    await user.click(open);
     await waitFor(() => expect(canvas.getByTestId("overlay")).toBeVisible());
-    await userEvent.click(canvas.getByTestId("overlay"));
+    await user.click(canvas.getByTestId("overlay"));
     await waitFor(() => expect(open).toHaveFocus());
   },
 };
