@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@babel/standalone": "^7.17.11",
-    "@codesandbox/sandpack-react": "^2.0.27",
+    "@codesandbox/sandpack-react": "2.13.2",
     "@docsearch/react": "^3.0.0",
     "@mdx-js/react": "^3.0.1",
     "@octokit/core": "^4.0.5",

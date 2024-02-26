@@ -29,7 +29,8 @@ export default function Logo() {
       passHref
       href="/"
       aria-label="The Washington Post Design System's Homepage"
-      legacyBehavior>
+      legacyBehavior
+    >
       <Container>
         <Icon size={"$200"}>
           <Wp />
