@@ -39,6 +39,18 @@ module.exports = {
         "@washingtonpost/wpds/theme-colors": "warn",
       },
     },
+    // warning  'React' is defined but never used  @typescript-eslint/no-unused-vars -- allow unused React
+    {
+      files: ["**/*.tsx"],
+      rules: {
+        "@typescript-eslint/no-unused-vars": [
+          "warn",
+          {
+            varsIgnorePattern: "React",
+          },
+        ],
+      },
+    },
   ],
   env: {
     browser: true,

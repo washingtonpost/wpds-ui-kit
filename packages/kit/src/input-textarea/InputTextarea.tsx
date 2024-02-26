@@ -1,5 +1,4 @@
-import React from "react";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { theme, css, styled } from "../theme";
 import type * as WPDS from "../theme";
 import {

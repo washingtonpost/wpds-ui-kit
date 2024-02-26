@@ -1,11 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import { theme, styled } from "../theme";
 
 import type * as WPDS from "../theme";
 
 import * as ActionMenuPrimitive from "@radix-ui/react-dropdown-menu";
-import { useContext } from "react";
 import { ActionMenuContext } from "./context";
 
 import { DropdownMenuSubContentProps as RadixDropdownMenuSubContentProps } from "@radix-ui/react-dropdown-menu";
