@@ -250,7 +250,9 @@ export const Interactions = {
     await waitFor(() =>
       expect(canvas.getByTestId("close-button")).toHaveFocus()
     );
-    await userEvent.click(canvas.getByTestId("close-button"), undefined, { skipPointerEventsCheck: true });
+    await userEvent.click(canvas.getByTestId("close-button"), undefined, {
+      skipPointerEventsCheck: true,
+    });
     await waitFor(() => expect(open).toHaveFocus());
     await userEvent.click(open);
     await waitFor(() => expect(canvas.getByText("Cancel")).toBeVisible());
