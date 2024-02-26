@@ -61,7 +61,7 @@ const LinkText = styled("a", {
 
 const Item = ({ children, level, label, as, href }) => (
   <ListItem level={level} label={label}>
-    <Link passHref as={as} href={href}>
+    <Link passHref as={as} href={href} legacyBehavior>
       <LinkText>{children}</LinkText>
     </Link>
   </ListItem>

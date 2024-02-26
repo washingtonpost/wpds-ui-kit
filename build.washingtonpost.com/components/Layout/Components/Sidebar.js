@@ -202,7 +202,7 @@ export default function Sidebar({ navigation, setMobileMenu }) {
                   <Change type="ComingSoon">Coming soon</Change>
                 </CustomLink>
               ) : item.frontMatter.data.status == "Alpha" ? (
-                <Link href={item.frontMatter.slug} passHref>
+                <Link href={item.frontMatter.slug} passHref legacyBehavior>
                   <CustomLink
                     css={{
                       display: "flex",
@@ -216,7 +216,7 @@ export default function Sidebar({ navigation, setMobileMenu }) {
                   </CustomLink>
                 </Link>
               ) : (
-                <Link href={item.frontMatter.slug} passHref>
+                <Link href={item.frontMatter.slug} passHref legacyBehavior>
                   <CustomLink>{item.frontMatter.data.title}</CustomLink>
                 </Link>
               )}
@@ -264,7 +264,11 @@ export default function Sidebar({ navigation, setMobileMenu }) {
                                 disabled={item.data.status === "Coming soon"}
                               >
                                 {item.data.status !== "" ? (
-                                  <Link href={item.slug} passHref>
+                                  <Link
+                                    href={item.slug}
+                                    passHref
+                                    legacyBehavior
+                                  >
                                     <CustomLink
                                       css={{
                                         display: "flex",
@@ -286,7 +290,11 @@ export default function Sidebar({ navigation, setMobileMenu }) {
                                     </CustomLink>
                                   </Link>
                                 ) : (
-                                  <Link href={item.slug} passHref>
+                                  <Link
+                                    href={item.slug}
+                                    passHref
+                                    legacyBehavior
+                                  >
                                     <CustomLink>{item.data.title}</CustomLink>
                                   </Link>
                                 )}
@@ -307,7 +315,7 @@ export default function Sidebar({ navigation, setMobileMenu }) {
             onClick={() => setMobileMenu(false)}
             isCurrent={router.asPath.includes("release-notes") ? "active" : ""}
           >
-            <Link href="/release-notes" passHref>
+            <Link href="/release-notes" passHref legacyBehavior>
               <Header>
                 <CustomLink css={{ color: "$primary" }}>
                   Release Notes
@@ -318,7 +326,7 @@ export default function Sidebar({ navigation, setMobileMenu }) {
           <ListItem
             isCurrent={router.asPath.includes("support") ? "active" : ""}
           >
-            <Link href="/support" passHref>
+            <Link href="/support" passHref legacyBehavior>
               <Header>
                 <CustomLink css={{ color: "$primary" }}>Support</CustomLink>
               </Header>
