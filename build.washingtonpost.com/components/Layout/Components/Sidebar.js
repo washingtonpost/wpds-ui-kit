@@ -4,7 +4,10 @@ import { styled, theme, Accordion } from "@washingtonpost/wpds-ui-kit";
 import Header from "../../Typography/Headers";
 import { useRouter } from "next/router";
 import { Change } from "~/components/Markdown/Styling";
-import {customNotSmBreakpoint, customSmBreakpoint} from "~/components/styleHelpers";
+import {
+  customNotSmBreakpoint,
+  customSmBreakpoint,
+} from "~/components/styleHelpers";
 
 const StyledAccordionRoot = styled(Accordion.Root, {
   backgroundColor: theme.colors.gray500,

@@ -4,7 +4,10 @@ import { NavigationBar } from "~/components/NavigationBar";
 import Sidebar from "~/components/Layout/Components/Sidebar";
 import { Footer } from "~/components/Footer";
 import { ToastContainer } from "react-toastify";
-import {customNotSmBreakpoint, customSmBreakpoint} from "~/components/styleHelpers";
+import {
+  customNotSmBreakpoint,
+  customSmBreakpoint,
+} from "~/components/styleHelpers";
 
 const Grid = styled("div", {
   display: "grid",

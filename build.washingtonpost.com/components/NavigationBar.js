@@ -2,7 +2,10 @@ import React from "react";
 
 import Link from "next/link";
 import { useRouter } from "next/router";
-import {customNotSmBreakpoint, customSmBreakpoint} from "~/components/styleHelpers";
+import {
+  customNotSmBreakpoint,
+  customSmBreakpoint,
+} from "~/components/styleHelpers";
 
 import {
   Box,
@@ -47,7 +50,7 @@ const Container = styled("div", {
   },
   [customSmBreakpoint]: {
     width: "100%",
-    justifyContent: "space-between"
+    justifyContent: "space-between",
   },
 });
 
@@ -161,7 +164,7 @@ export const NavigationBar = ({ setMobileMenu, mobileMenuState, isClosed }) => {
         >
           <ThemeToggle
             css={{
-              display: 'flex',
+              display: "flex",
               position: "fixed",
               zIndex: "$page",
               [customNotSmBreakpoint]: {

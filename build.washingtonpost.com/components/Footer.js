@@ -3,7 +3,10 @@ import { Box, styled, Icon, theme } from "@washingtonpost/wpds-ui-kit";
 import { useRouter } from "next/router";
 import { Footer as SiteFooter } from "@washingtonpost/site-footer";
 import Link from "next/link";
-import {customNotSmBreakpoint, customSmBreakpoint} from "~/components/styleHelpers";
+import {
+  customNotSmBreakpoint,
+  customSmBreakpoint,
+} from "~/components/styleHelpers";
 
 import { Github, Twitter, Youtube } from "@washingtonpost/wpds-assets";
 
@@ -80,8 +83,8 @@ export const Footer = () => {
           Edit this page on GitHub.
         </EditInGithub>
       )}
-      <Box css={{[customSmBreakpoint]: {px: "$100"}, "@sm": {px: 0}}}>
-      <SiteFooter />
+      <Box css={{ [customSmBreakpoint]: { px: "$100" }, "@sm": { px: 0 } }}>
+        <SiteFooter />
       </Box>
       <Box
         css={{
