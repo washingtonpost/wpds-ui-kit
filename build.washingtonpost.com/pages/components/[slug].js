@@ -1,6 +1,6 @@
 import React from "react";
 import { MDXRemote } from "next-mdx-remote";
-import { NextSeo } from "next-seo";
+import { NextSeo } from "~/components/next-seo";
 
 import { styled } from "@washingtonpost/wpds-ui-kit";
 

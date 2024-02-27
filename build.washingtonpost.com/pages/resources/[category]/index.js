@@ -1,6 +1,6 @@
 import React from "react";
 import { styled } from "@washingtonpost/wpds-ui-kit";
-import { NextSeo } from "next-seo";
+import { NextSeo } from "~/components/next-seo";
 import Header from "~/components/Typography/Headers";
 import CustomLink from "~/components/Typography/link";
 import { getAllPathsByCategory, getNavigation, getResources } from "~/services";

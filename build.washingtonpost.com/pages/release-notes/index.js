@@ -1,5 +1,5 @@
 import React from "react";
-import { NextSeo } from "next-seo";
+import { NextSeo } from "~/components/next-seo";
 import { getNavigation } from "~/services";
 import { Icon, styled } from "@washingtonpost/wpds-ui-kit";
 import Header from "~/components/Typography/Headers";

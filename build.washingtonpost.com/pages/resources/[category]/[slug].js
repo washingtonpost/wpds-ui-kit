@@ -1,6 +1,6 @@
 import React from "react";
 import { MDXRemote } from "next-mdx-remote";
-import { NextSeo } from "next-seo";
+import { NextSeo } from "~/components/next-seo";
 import MDXStyling from "~/components/Markdown/Styling";
 import Header from "~/components/Typography/Headers";
 import {
