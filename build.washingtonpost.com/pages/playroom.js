@@ -1,4 +1,5 @@
 import * as React from "react";
+import { NextSeo } from "next-seo";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from "next-mdx-remote";
 import * as Kit from "@washingtonpost/wpds-ui-kit";
@@ -10,7 +11,6 @@ import {
   useActiveCode,
 } from "@codesandbox/sandpack-react";
 import { useTheme } from "next-themes";
-import Head from "next/head";
 import LZString from "lz-string";
 import { ErrorBoundary } from "react-error-boundary";
 import Link from "~/components/Typography/link";
@@ -311,9 +311,7 @@ export default function Playroom({
         background: "$gray500",
       }}
     >
-      <Head>
-        <title>WPDS - Playroom</title>
-      </Head>
+      <NextSeo title="WPDS Playroom" description="WPDS's rad playroom" />
       <SandpackProvider
         template="react"
         customSetup={{
