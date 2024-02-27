@@ -367,3 +367,47 @@ export default function Playroom({
 }
 
 Playroom.getLayout = (page) => page;
+
+export async function getServerSideProps({ query, res }) {
+  res.setHeader(
+    "Cache-Control",
+    "public, s-maxage=10, stale-while-revalidate=59"
+  );
+  const { code, edit, isGuide = "none" } = query;
+
+  let source;
+  let parsedCode = "";
+
+  if (!code) {
+    return {
+      props: {
+        source: {},
+        code: "",
+        hasEditor: false,
+        isGuide: "none",
+      },
+    };
+  }
+
+  try {
+    parsedCode = code && LZString.decompressFromEncodedURIComponent(code);
+    source = await serialize(parsedCode, {
+      mdxOptions: {
+        format: "mdx",
+      },
+    });
+  } catch (error) {
+    console.error(error);
+  }
+
+  const hasEditor = edit === "true" || edit === true || edit === "1";
+
+  return {
+    props: {
+      source,
+      code: parsedCode,
+      hasEditor,
+      isGuide,
+    },
+  };
+}
