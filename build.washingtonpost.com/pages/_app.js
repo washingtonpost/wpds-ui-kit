@@ -3,7 +3,7 @@
 import React from "react";
 import { ThemeProvider } from "next-themes";
 import Script from "next/script";
-import { DefaultSeo } from "next-seo";
+import { DefaultSeo } from "../components/next-seo";
 import "react-toastify/dist/ReactToastify.css";
 import {
   globalStyles,

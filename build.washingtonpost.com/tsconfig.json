@@ -3,7 +3,8 @@
     "baseUrl": ".",
     "paths": {
       "~/*": ["./*"],
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "src/*": ["components/next-seo/*"]
     },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
