@@ -87,7 +87,7 @@ function App({ Component, pageProps }) {
 
   return (
     <>
-      <DefaultSeo {...SEO} />
+      <DefaultSeo seoConfig={SEO} />
       <ThemeProvider
         attribute="class"
         defaultTheme="system"
