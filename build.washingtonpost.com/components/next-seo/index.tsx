@@ -1,32 +1,75 @@
-export { DefaultSeo } from "./meta/defaultSEO";
-export { NextSeo } from "./meta/nextSEO";
+export { DefaultSeo } from './meta/defaultSEO';
+export { NextSeo } from './meta/nextSEO';
 
-export { default as CarouselJsonLd } from "./jsonld/carousel";
-export { default as NewsArticleJsonLd } from "./jsonld/newsarticle";
-export { default as JobPostingJsonLd } from "./jsonld/jobPosting";
-export { default as LocalBusinessJsonLd } from "./jsonld/localBusiness";
-export { default as QAPageJsonLd } from "./jsonld/qaPage";
-export { default as ProfilePageJsonLd } from "./jsonld/profilePage";
-export { default as SiteLinksSearchBoxJsonLd } from "./jsonld/siteLinksSearchBox";
-export { default as RecipeJsonLd } from "./jsonld/recipe";
-export { default as EventJsonLd } from "./jsonld/event";
-export { default as CorporateContactJsonLd } from "./jsonld/corporateContact";
-export { default as CollectionPageJsonLd } from "./jsonld/collectionPage";
-export { default as ProductJsonLd } from "./jsonld/product";
-export { default as SoftwareAppJsonLd } from "./jsonld/softwareApp";
-export { default as VideoJsonLd } from "./jsonld/video";
-export { default as VideoGameJsonLd } from "./jsonld/videoGame";
-export { default as OrganizationJsonLd } from "./jsonld/organization";
-export { default as FAQPageJsonLd } from "./jsonld/faqPage";
-export { default as LogoJsonLd } from "./jsonld/logo";
-export { default as DatasetJsonLd } from "./jsonld/dataset";
-export { default as CourseJsonLd } from "./jsonld/course";
-export { default as BreadcrumbJsonLd } from "./jsonld/breadcrumb";
-export { default as BrandJsonLd } from "./jsonld/brand";
-export { default as ArticleJsonLd } from "./jsonld/article";
-export { default as WebPageJsonLd } from "./jsonld/webPage";
-export { default as SocialProfileJsonLd } from "./jsonld/socialProfile";
-export { default as HowToJsonLd } from "./jsonld/howTo";
-export { default as ImageJsonLd } from "./jsonld/image";
-export { default as CampgroundJsonLd } from "./jsonld/campground";
-export { default as ParkJsonLd } from "./jsonld/park";
+export {
+  default as CarouselJsonLd,
+  CarouselJsonLdProps,
+} from './jsonld/carousel';
+export {
+  default as NewsArticleJsonLd,
+  NewsArticleJsonLdProps,
+} from './jsonld/newsarticle';
+export {
+  default as JobPostingJsonLd,
+  JobPostingJsonLdProps,
+} from './jsonld/jobPosting';
+export {
+  default as LocalBusinessJsonLd,
+  LocalBusinessJsonLdProps,
+} from './jsonld/localBusiness';
+export { default as QAPageJsonLd, QAPageJsonLdProps } from './jsonld/qaPage';
+export {
+  default as ProfilePageJsonLd,
+  ProfilePageJsonLdProps,
+} from './jsonld/profilePage';
+export {
+  default as SiteLinksSearchBoxJsonLd,
+  SiteLinksSearchBoxJsonLdProps,
+} from './jsonld/siteLinksSearchBox';
+export { default as RecipeJsonLd, RecipeJsonLdProps } from './jsonld/recipe';
+export { default as EventJsonLd, EventJsonLdProps } from './jsonld/event';
+export {
+  default as CorporateContactJsonLd,
+  CorporateContactJsonLdProps,
+} from './jsonld/corporateContact';
+export {
+  default as CollectionPageJsonLd,
+  CollectionPageJsonLdProps,
+} from './jsonld/collectionPage';
+export { default as ProductJsonLd, ProductJsonLdProps } from './jsonld/product';
+export {
+  default as SoftwareAppJsonLd,
+  SoftwareAppJsonLdProps,
+} from './jsonld/softwareApp';
+export { default as VideoJsonLd, VideoJsonLdProps } from './jsonld/video';
+export {
+  default as VideoGameJsonLd,
+  VideoGameJsonLdProps,
+} from './jsonld/videoGame';
+export {
+  default as OrganizationJsonLd,
+  OrganizationJsonLdProps,
+} from './jsonld/organization';
+export { default as FAQPageJsonLd, FAQPageJsonLdProps } from './jsonld/faqPage';
+export { default as LogoJsonLd, LogoJsonLdProps } from './jsonld/logo';
+export { default as DatasetJsonLd, DatasetJsonLdProps } from './jsonld/dataset';
+export { default as CourseJsonLd, CourseJsonLdProps } from './jsonld/course';
+export {
+  default as BreadcrumbJsonLd,
+  BreadCrumbJsonLdProps,
+} from './jsonld/breadcrumb';
+export { default as BrandJsonLd, BrandJsonLdProps } from './jsonld/brand';
+export { default as ArticleJsonLd, ArticleJsonLdProps } from './jsonld/article';
+export { default as WebPageJsonLd, WebPageJsonLdProps } from './jsonld/webPage';
+export {
+  default as SocialProfileJsonLd,
+  SocialProfileJsonLdProps,
+} from './jsonld/socialProfile';
+export { default as HowToJsonLd, HowToJsonLdProps } from './jsonld/howTo';
+export { default as ImageJsonLd, ImageJsonLdProps } from './jsonld/image';
+export {
+  default as CampgroundJsonLd,
+  CampgroundJsonLdProps,
+} from './jsonld/campground';
+export { default as ParkJsonLd, ParkJsonLdProps } from './jsonld/park';
+export { DefaultSeoProps, NextSeoProps } from './types';
