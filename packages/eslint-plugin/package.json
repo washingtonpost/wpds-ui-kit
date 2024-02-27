@@ -1,0 +1,36 @@
+{
+  "name": "@washingtonpost/eslint-plugin-wpds",
+  "version": "1.17.0",
+  "description": "WPDS lint rules",
+  "author": "WPDS Support <wpds@washpost.com>",
+  "homepage": "https://github.com/washingtonpost/wpds-ui-kit#readme",
+  "license": "MIT",
+  "main": "src/index.js",
+  "files": [
+    "README.md",
+    "src"
+  ],
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/washingtonpost/wpds-ui-kit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/washingtonpost/wpds-ui-kit/issues"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "peerDependencies": {
+    "@washingtonpost/wpds-ui-kit": "*"
+  },
+  "dependencies": {
+    "@washingtonpost/wpds-ui-kit": "1.17.0"
+  },
+  "devDependencies": {
+    "jest": "^28.1.0"
+  }
+}

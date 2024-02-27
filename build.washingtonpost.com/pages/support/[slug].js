@@ -33,7 +33,7 @@ export default function Page({ source }) {
         )}
       </header>
       <article>
-        <MDXRemote {...source} components={components} />
+        {source && <MDXRemote {...source} components={components} />}
       </article>
     </>
   );

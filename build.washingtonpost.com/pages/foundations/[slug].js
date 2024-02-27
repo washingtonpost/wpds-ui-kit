@@ -36,7 +36,9 @@ export default function Page({ source, iconData }) {
         )}
       </header>
       <article>
-        <MDXRemote {...source} components={components} scope={iconData} />
+        {source && (
+          <MDXRemote {...source} components={components} scope={iconData} />
+        )}
       </article>
     </>
   );

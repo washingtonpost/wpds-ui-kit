@@ -2,7 +2,7 @@ import React from "react";
 import { theme, Avatar, styled } from "@washingtonpost/wpds-ui-kit";
 import { Header } from "~/components/Markdown/Components/headers";
 
-import Image from "next/image";
+import Image from "next/legacy/image";
 import CustomLink from "./Typography/link";
 
 const StyledGrid = styled({

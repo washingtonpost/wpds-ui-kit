@@ -1,4 +1,4 @@
-import { Children, cloneElement, forwardRef } from "react";
+import React, { Children, cloneElement, forwardRef } from "react";
 import { VisuallyHidden } from "../visually-hidden";
 import { css, theme } from "../theme";
 

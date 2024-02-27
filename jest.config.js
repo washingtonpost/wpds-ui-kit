@@ -1,6 +1,6 @@
 /** @type {import("jest").Config} */
 module.exports = {
-  roots: ["./ui", "./packages"],
+  roots: ["./packages"],
   preset: "ts-jest",
   testEnvironment: "./custom-env.ts",
   cacheDirectory: ".jest-cache",

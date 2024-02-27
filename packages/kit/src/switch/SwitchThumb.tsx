@@ -1,7 +1,7 @@
 // import * as React from "react";
 import * as Radix from "@radix-ui/react-switch";
 import type { SwitchThumbProps as RadixSwitchThumbProps } from "@radix-ui/react-switch";
-import { styled, theme } from "@washingtonpost/wpds-theme";
+import { styled, theme } from "../theme";
 
 export const SwitchThumb = styled(Radix.Thumb, {
   display: "inline-block",
