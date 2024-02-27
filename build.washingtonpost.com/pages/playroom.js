@@ -92,7 +92,6 @@ const components = {
   ...AssetsWithoutSwitch, // this is causing the issue.. we have an icon named Switch and it's conflicting with the Switch component from WPDS UI Kit
   Link,
 };
-
 export default function Playroom({
   source,
   code: thisCode,
@@ -257,7 +256,7 @@ export default function Playroom({
           <Rule variant={isGuide}></Rule>
         </Guide>
         <FlexRow>
-          {receivedSource.compiledSource && (
+          {receivedSource?.compiledSource && (
             <MDXRemote
               compiledSource={receivedSource.compiledSource}
               scope={{
@@ -368,47 +367,3 @@ export default function Playroom({
 }
 
 Playroom.getLayout = (page) => page;
-
-export async function getServerSideProps({ query, res }) {
-  res.setHeader(
-    "Cache-Control",
-    "public, s-maxage=10, stale-while-revalidate=59"
-  );
-  const { code, edit, isGuide = "none" } = query;
-
-  let source;
-  let parsedCode = "";
-
-  if (!code) {
-    return {
-      props: {
-        source: {},
-        code: "",
-        hasEditor: false,
-        isGuide: "none",
-      },
-    };
-  }
-
-  try {
-    parsedCode = LZString.decompressFromEncodedURIComponent(code);
-    source = await serialize(parsedCode, {
-      mdxOptions: {
-        format: "mdx",
-      },
-    });
-  } catch (error) {
-    console.error(error);
-  }
-
-  const hasEditor = edit === "true" || edit === true || edit === "1";
-
-  return {
-    props: {
-      source,
-      code: parsedCode,
-      hasEditor,
-      isGuide,
-    },
-  };
-}
