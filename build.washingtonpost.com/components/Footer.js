@@ -109,7 +109,11 @@ export const Footer = () => {
           }}
         >
           <CommunityHeading>Community</CommunityHeading>
-          <Link passHref href="https://twitter.com/wpdesignsystem">
+          <Link
+            passHref
+            href="https://twitter.com/wpdesignsystem"
+            legacyBehavior
+          >
             <Anchor>
               <Icon
                 css={{ marginRight: "$025" }}
@@ -122,7 +126,11 @@ export const Footer = () => {
               Twitter
             </Anchor>
           </Link>
-          <Link passHref href="https://github.com/washingtonpost/wpds-ui-kit">
+          <Link
+            passHref
+            href="https://github.com/washingtonpost/wpds-ui-kit"
+            legacyBehavior
+          >
             <Anchor>
               <Icon
                 css={{ marginRight: "$025" }}
@@ -135,7 +143,11 @@ export const Footer = () => {
               Github
             </Anchor>
           </Link>
-          <Link passHref href="https://www.youtube.com/@wpdesignsystem">
+          <Link
+            passHref
+            href="https://www.youtube.com/@wpdesignsystem"
+            legacyBehavior
+          >
             <Anchor>
               <Icon
                 css={{ marginRight: "$025" }}

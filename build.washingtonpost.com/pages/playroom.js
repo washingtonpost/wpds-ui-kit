@@ -257,15 +257,17 @@ export default function Playroom({
           <Rule variant={isGuide}></Rule>
         </Guide>
         <FlexRow>
-          <MDXRemote
-            compiledSource={receivedSource.compiledSource}
-            scope={{
-              ...Kit,
-              useState: React.useState,
-              useEffect: React.useEffect,
-            }}
-            components={components}
-          />
+          {receivedSource.compiledSource && (
+            <MDXRemote
+              compiledSource={receivedSource.compiledSource}
+              scope={{
+                ...Kit,
+                useState: React.useState,
+                useEffect: React.useEffect,
+              }}
+              components={components}
+            />
+          )}
         </FlexRow>
       </ErrorBoundary>
     );

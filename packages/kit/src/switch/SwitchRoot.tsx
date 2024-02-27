@@ -1,6 +1,6 @@
 import * as React from "react";
 import * as SwitchPrimitive from "@radix-ui/react-switch";
-import { styled, theme } from "@washingtonpost/wpds-theme";
+import { styled, theme } from "../theme";
 
 export const SwitchRoot = styled(SwitchPrimitive.Root, {
   // reset button styles

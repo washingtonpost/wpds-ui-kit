@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { within, waitFor } from "@storybook/testing-library";
 import { expect } from "@storybook/jest";
 import { theme, styled } from "../theme";

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Box, styled, AlertBanner, theme } from "@washingtonpost/wpds-ui-kit";
 import { toast } from "react-toastify";
-import Tokens from "@washingtonpost/wpds-theme/src/wpds.tokens.json";
+import Tokens from "@washingtonpost/wpds-ui-kit/src/theme/wpds.tokens.json";
 
 import { Grid } from "../Components/Grid";
 

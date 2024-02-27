@@ -1,3 +1,4 @@
+import React from "react";
 import { Switch } from ".";
 import type { ComponentMeta, ComponentStory } from "@storybook/react";
 import { styled } from "@washingtonpost/wpds-theme";

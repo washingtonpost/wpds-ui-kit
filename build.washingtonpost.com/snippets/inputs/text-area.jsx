@@ -4,7 +4,7 @@ import React from "react";
  * See documentation for full component api
 ```jsx
 //Example
-import { InputTextarea } from "@washingtonpost/wpds-input-textarea";
+import { InputTextarea } from "@washingtonpost/wpds-ui-kit";
 
 export default function Example() {
   return (

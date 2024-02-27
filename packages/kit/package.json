@@ -1,5 +1,5 @@
 {
-  "name": "@washingtonpost/wpds-ui-kit-next",
+  "name": "@washingtonpost/wpds-ui-kit",
   "version": "2.0.0",
   "description": "WPDS UI Kit",
   "author": "WPDS Support <wpds@washpost.com>",
@@ -24,7 +24,7 @@
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
-    "build": "tsup src/index.ts --loader .ts=tsx --minify --format esm,cjs --dts --sourcemap --legacy-output --external react",
+    "build": "tsup src/index.ts --minify --format esm,cjs --dts --sourcemap --legacy-output --external react",
     "dev": "tsup src/index.ts --format esm,cjs --watch --dts --legacy-output --external react",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
@@ -34,15 +34,35 @@
   "dependencies": {
     "@radix-ui/react-accordion": "^1.1.2",
     "@stitches/react": "^1.2.8",
-    "@washingtonpost/wpds-assets": "^1.18.0",
-    "@washingtonpost/wpds-theme": "^1.17.0"
+    "@washingtonpost/wpds-assets": "latest",
+    "@radix-ui/react-dropdown-menu": "2.0.3",
+    "react": "^18",
+    "@radix-ui/react-avatar": "latest",
+    "@radix-ui/react-slot": "^1.0.0",
+    "@radix-ui/react-use-controllable-state": "^1.0.1",
+    "react-swipeable": "^7.0.0",
+    "@radix-ui/react-checkbox": "^1.0.0",
+    "@radix-ui/react-separator": "^1.0.0",
+    "@radix-ui/react-focus-scope": "^1.0.0",
+    "react-transition-group": "^4.4.5",
+    "@radix-ui/react-label": "^1.0.0",
+    "@reach/combobox": "^0.18.0",
+    "@reach/popover": "^0.18.0",
+    "match-sorter": "6.3.1",
+    "@radix-ui/react-popover": "^1.0.2",
+    "@radix-ui/react-radio-group": "^1.0.0",
+    "@radix-ui/react-dialog": "^1.0.5",
+    "@radix-ui/react-select": "^1.2.2",
+    "@radix-ui/react-primitive": "^1.0.2",
+    "@radix-ui/react-tabs": "latest",
+    "@radix-ui/react-tooltip": "^1.0.0"
   },
   "devDependencies": {
     "tsup": "5.11.13",
     "typescript": "4.5.5"
   },
   "peerDependencies": {
-    "react": "^16.8.6 || ^17.0.2 || ^18",
-    "react-dom": "^16.8.6 || ^17.0.2 || ^18"
+    "react": "^18",
+    "react-dom": "^18"
   }
 }

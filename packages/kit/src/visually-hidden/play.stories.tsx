@@ -1,3 +1,4 @@
+import React from "react";
 import { within, userEvent } from "@storybook/testing-library";
 import { styled, theme } from "../theme";
 import { VisuallyHidden } from "./visually-hidden";

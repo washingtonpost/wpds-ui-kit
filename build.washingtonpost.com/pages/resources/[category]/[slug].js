@@ -63,7 +63,7 @@ export default function Page({ current, source, headings }) {
         <TableofContents current={current} headings={headings} />
       </>
       <article>
-        <MDXRemote {...source} components={components} />
+        {source && <MDXRemote {...source} components={components} />}
       </article>
     </>
   );
