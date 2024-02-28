@@ -15,7 +15,7 @@ const components = {
   CustomComponent: dynamic(() => import("~/components/Typography/Headers")),
 };
 
-export default function Page({ source = null, iconData }) {
+export default function Page({ source = {}, iconData = { components: [] } }) {
   return (
     <>
       <NextSeo
@@ -46,7 +46,7 @@ export const getStaticProps = async ({ params }) => {
 
   const navigation = await getNavigation();
 
-  let iconData = null;
+  let iconData = { components: [] };
   if (params.slug === "icons") {
     const response = await fetch(
       "https://api.figma.com/v1/files/LA6qKUukk8v3YkkuKq6IC6/components",

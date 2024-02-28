@@ -268,9 +268,9 @@ export const KitchenSink = () => {
           <InputText
             label="Type"
             defaultValue="Email"
-            type="email"
-            name="it-8"
-            id="it-8"
+              ="email"
+          name="it-8"
+          id="it-8"
           />
         </HStack>
         <HStack>
