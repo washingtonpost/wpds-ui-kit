@@ -15,7 +15,7 @@ const components = {
   CustomComponent: dynamic(() => import("~/components/Typography/Headers")),
 };
 
-export default function Page({ source, iconData }) {
+export default function Page({ source = null, iconData }) {
   return (
     <>
       <NextSeo
