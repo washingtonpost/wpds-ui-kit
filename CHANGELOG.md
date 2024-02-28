@@ -3,6 +3,57 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.22.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.21.0...v1.22.0) (2024-02-15)
+
+### Bug Fixes
+
+- reverted subtle and faint tokens ([#566](https://github.com/washingtonpost/wpds-ui-kit/issues/566)) ([b45b54a](https://github.com/washingtonpost/wpds-ui-kit/commit/b45b54ab27c3ea341893c79520fe44f3fd463baf))
+
+### Features
+
+- remove search feature from docs site ([#569](https://github.com/washingtonpost/wpds-ui-kit/issues/569)) ([fa22045](https://github.com/washingtonpost/wpds-ui-kit/commit/fa22045fdb00ba1a823056da0ca24a9d938b3665))
+
+# [1.21.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.20.0...v1.21.0) (2024-02-07)
+
+### Features
+
+- new dark mode colors and tokens ([#554](https://github.com/washingtonpost/wpds-ui-kit/issues/554)) ([39b0d45](https://github.com/washingtonpost/wpds-ui-kit/commit/39b0d45ebd0269843ff5c657e3ab4865f149bbec))
+
+# [1.20.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.19.0...v1.20.0) (2024-01-24)
+
+### Bug Fixes
+
+- fixes a scrollbar issue with select and our header component ([#563](https://github.com/washingtonpost/wpds-ui-kit/issues/563)) ([1cfe566](https://github.com/washingtonpost/wpds-ui-kit/commit/1cfe5660e763c76beeedf7b19e2a1846110fce70))
+
+### Features
+
+- add site footer back ([#558](https://github.com/washingtonpost/wpds-ui-kit/issues/558)) ([12cf193](https://github.com/washingtonpost/wpds-ui-kit/commit/12cf1936ac67c2791ff06efe6e45dbefca047909))
+
+# [1.19.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.18.0...v1.19.0) (2024-01-10)
+
+### Bug Fixes
+
+- remove snow ([cdfae9e](https://github.com/washingtonpost/wpds-ui-kit/commit/cdfae9e75f680ba43edb250f441e40ab1b81e65b))
+- remove snow ([f0f45f7](https://github.com/washingtonpost/wpds-ui-kit/commit/f0f45f7c156df78c5c9dba6718403e926cacacbb))
+- remove tokens stylesheet ([16b4b71](https://github.com/washingtonpost/wpds-ui-kit/commit/16b4b7123db787ec9f9f74f9cfff962882cc7b2d))
+
+### Features
+
+- add snowfall to website for fun ([#550](https://github.com/washingtonpost/wpds-ui-kit/issues/550)) ([3f907e4](https://github.com/washingtonpost/wpds-ui-kit/commit/3f907e42f5334c7e43d2ea415f4099be9d45a2df))
+- responsive screen size hook and css var ([#548](https://github.com/washingtonpost/wpds-ui-kit/issues/548)) ([5768e9c](https://github.com/washingtonpost/wpds-ui-kit/commit/5768e9c6357f1df43b9d92002e36bf2cadd171fa))
+- turn snow on ([5c88780](https://github.com/washingtonpost/wpds-ui-kit/commit/5c88780d5df3258d604c108cf680ce9108fdc452))
+
+# [1.18.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.17.0...v1.18.0) (2023-12-13)
+
+### Bug Fixes
+
+- our lockfile area for build dot site was borked ([#547](https://github.com/washingtonpost/wpds-ui-kit/issues/547)) ([2a66631](https://github.com/washingtonpost/wpds-ui-kit/commit/2a66631d066b7128c4be209a60af0ad86fc528e9))
+
+### Features
+
+- add Dialog component ([15d6206](https://github.com/washingtonpost/wpds-ui-kit/commit/15d6206d6287bb3eee3c9f0af8ff57a0bf917998))
+- bump wam to 1.24.0 ([#546](https://github.com/washingtonpost/wpds-ui-kit/issues/546)) ([d825acc](https://github.com/washingtonpost/wpds-ui-kit/commit/d825acca32c62e3c7295b7ed44ab641ba720cb7a))
+
 # [1.17.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.16.2...v1.17.0) (2023-11-30)
 
 ### Bug Fixes

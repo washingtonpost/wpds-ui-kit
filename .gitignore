@@ -126,7 +126,7 @@ yalc.lock
 # ignore build site vscode
 build.washingtonpost.com/.vscode/
 
-# ignore the storybook build 
+# ignore the storybook build
 build.washingtonpost.com/public/storybook/**/*
 
 .env
@@ -136,3 +136,5 @@ build.washingtonpost.com/public/storybook/**/*
 /playwright-report/
 /playwright/.cache/
 .turbo
+
+.idea/*

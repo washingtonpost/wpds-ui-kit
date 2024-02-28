@@ -1,8 +1,11 @@
 import React from "react";
 
-import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import {
+  customNotSmBreakpoint,
+  customSmBreakpoint,
+} from "~/components/styleHelpers";
 
 import {
   Box,
@@ -18,8 +21,6 @@ import Close from "@washingtonpost/wpds-assets/asset/close";
 import Logo from "./logo";
 import { ThemeToggle } from "./ThemeToggle";
 
-const SearchForm = dynamic(() => import("./SearchForm"), { ssr: false });
-
 const List = styled("ul", {
   gridArea: "nav",
   display: "flex",
@@ -27,8 +28,7 @@ const List = styled("ul", {
   listStyle: "none",
   justifyContent: "flex-end",
   alignItems: "center",
-
-  "@sm": {
+  [customSmBreakpoint]: {
     display: "none",
   },
 });
@@ -38,7 +38,7 @@ const Container = styled("div", {
   display: "flex",
   gridArea: "logo",
   height: 60,
-  "@notSm": {
+  [customNotSmBreakpoint]: {
     backgroundColor: "$gray500",
     overflow: "hidden",
     position: "fixed",
@@ -48,9 +48,9 @@ const Container = styled("div", {
     left: 0,
     width: "300px",
   },
-
-  "@sm": {
+  [customSmBreakpoint]: {
     width: "100%",
+    justifyContent: "space-between",
   },
 });
 
@@ -58,8 +58,7 @@ const ListItem = styled("li", {
   display: "flex",
   flexDirection: "column",
   margin: "0 $200 0 0",
-
-  "@sm": {
+  [customSmBreakpoint]: {
     margin: "0",
     display: "none",
   },
@@ -71,7 +70,6 @@ const Anchor = styled("a", {
   "&:hover": {
     opacity: "0.75",
   },
-
   variants: {
     isCurrent: {
       true: {
@@ -138,7 +136,7 @@ export const NavigationBar = ({ setMobileMenu, mobileMenuState, isClosed }) => {
 
   // load on screen sizes greater than sm
   React.useEffect(() => {
-    const media = window.matchMedia("(max-width: 768px)");
+    const media = window.matchMedia("(max-width: 850px)");
 
     if (media.matches) {
       setHideFromSmallScreen(false);
@@ -156,27 +154,26 @@ export const NavigationBar = ({ setMobileMenu, mobileMenuState, isClosed }) => {
         <Logo css={{ width: "100%" }} />
         <Box
           css={{
-            "@notSm": {
+            [customNotSmBreakpoint]: {
               display: "none",
             },
-            "@sm": {
-              display: "flex",
-              gap: "$075",
-              paddingRight: "$100",
-              justifyItems: "flex-end",
+            [customSmBreakpoint]: {
+              paddingRight: "$025",
             },
           }}
         >
           <ThemeToggle
             css={{
+              display: "flex",
               position: "fixed",
               zIndex: "$page",
-              "@notSm": {
+              [customNotSmBreakpoint]: {
                 marginTop: "-$100",
               },
-              "@sm": {
-                top: "18px",
-                right: "$400",
+              [customSmBreakpoint]: {
+                top: "17px",
+                right: "$300",
+                marginRight: "$050",
                 padding: "1px",
                 backgroundColor: theme.colors.secondary,
               },
@@ -220,7 +217,6 @@ export const NavigationBar = ({ setMobileMenu, mobileMenuState, isClosed }) => {
             </Anchor>
           </Link>
         </ListItem>
-        <ListItem>{hideFromSmallScreen && <SearchForm />}</ListItem>
         <ListItem>
           <ThemeToggle
             css={{ position: "fixed", marginTop: "-$100", zIndex: "$page" }}

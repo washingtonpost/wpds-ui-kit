@@ -1,8 +1,12 @@
 import React from "react";
 import { Box, styled, Icon, theme } from "@washingtonpost/wpds-ui-kit";
 import { useRouter } from "next/router";
-import Script from "next/script";
+import { Footer as SiteFooter } from "@washingtonpost/site-footer";
 import Link from "next/link";
+import {
+  customNotSmBreakpoint,
+  customSmBreakpoint,
+} from "~/components/styleHelpers";
 
 import { Github, Twitter, Youtube } from "@washingtonpost/wpds-assets";
 
@@ -11,7 +15,7 @@ const CommunityHeading = styled("span", {
   fontWeight: "$bold",
   fontSize: "$087",
   color: "$gray40",
-  "@notSm": {
+  [customNotSmBreakpoint]: {
     display: "none",
   },
 });
@@ -40,7 +44,7 @@ const EditInGithub = styled("a", {
   "&:hover": {
     textDecoration: "underline",
   },
-  "@sm": {
+  [customSmBreakpoint]: {
     marginLeft: "$100",
   },
 });
@@ -58,8 +62,7 @@ export const Footer = () => {
         marginRight: "auto",
         maxWidth: "1028px",
         width: "100%",
-
-        "@sm": {
+        [customSmBreakpoint]: {
           marginTop: "$200",
           "footer.site-footer": {
             display: "none",
@@ -80,8 +83,9 @@ export const Footer = () => {
           Edit this page on GitHub.
         </EditInGithub>
       )}
-      <Script src="https://www.washingtonpost.com/ehf/twp-internal.js" />
-      <div id="footer-v3"></div>
+      <Box css={{ [customSmBreakpoint]: { px: "$100" }, "@sm": { px: 0 } }}>
+        <SiteFooter />
+      </Box>
       <Box
         css={{
           display: "flex",
@@ -94,7 +98,7 @@ export const Footer = () => {
           "& a": {
             marginRight: "$100",
           },
-          "@notSm": {
+          [customNotSmBreakpoint]: {
             justifyContent: "center",
           },
         }}
@@ -103,7 +107,7 @@ export const Footer = () => {
           css={{
             display: "flex",
             flexDirection: "column",
-            "@notSm": {
+            [customNotSmBreakpoint]: {
               flexDirection: "row",
             },
           }}

@@ -48,17 +48,10 @@ export const useResponsiveScreenSize = (): ScreenSizeCSSProperty => {
   ];
 
   useEffect(() => {
-    console.log("effect", typeof window);
     // dont run on server
     if (typeof window === "undefined") return;
 
     const handleResize = () => {
-      console.log(
-        "calling set",
-        window
-          .getComputedStyle(document.documentElement)
-          .getPropertyValue("--wpds--screenSize")
-      );
       setScreenSize(getScreenSize());
     };
 
@@ -67,7 +60,6 @@ export const useResponsiveScreenSize = (): ScreenSizeCSSProperty => {
 
     // Call the handler right away so state gets updated with initial window size
     handleResize();
-    console.log("handle resize");
     // Remove event listener on cleanup
     return () => window.removeEventListener("resize", handleResize);
   }, []); // Empty array ensures that effect is only run on mount and unmount
