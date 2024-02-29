@@ -54,7 +54,7 @@ export const DefaultSeo: React.FC<DefaultSeoProps> = ({ seoConfig }) => {
         content={seoConfig.twitter.description}
       />
       <meta name="twitter:creator" content={seoConfig.twitter.handle} />
-      <meta name="robots" content="index,follow"/>
+      <meta name="robots" content="index,follow" />
     </Head>
   );
 };
