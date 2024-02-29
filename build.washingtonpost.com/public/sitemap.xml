@@ -57,6 +57,10 @@
   </url>
 
   <url>
+    <loc>https://build.washingtonpost.com/components/dialog</loc>
+  </url>
+
+  <url>
     <loc>https://build.washingtonpost.com/components/divider</loc>
   </url>
 

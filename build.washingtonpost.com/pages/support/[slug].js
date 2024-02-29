@@ -2,7 +2,6 @@ import React from "react";
 import { MDXRemote } from "next-mdx-remote";
 import dynamic from "next/dynamic";
 import { NextSeo } from "~/components/next-seo";
-import { styled, theme } from "@washingtonpost/wpds-ui-kit";
 import MDXStyling from "~/components/Markdown/Styling";
 
 import Header from "~/components/Typography/Headers";
@@ -15,9 +14,6 @@ const components = {
   ...MDXStyling,
   CustomComponent: dynamic(() => import("~/components/Typography/Headers")),
 };
-const P = styled("p", {
-  color: theme.colors.accessible,
-});
 
 export default function Page({ source }) {
   return (

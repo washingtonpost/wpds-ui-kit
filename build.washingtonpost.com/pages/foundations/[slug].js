@@ -2,7 +2,6 @@ import React from "react";
 import { MDXRemote } from "next-mdx-remote";
 import dynamic from "next/dynamic";
 import { NextSeo } from "~/components/next-seo";
-import { styled, theme } from "@washingtonpost/wpds-ui-kit";
 import MDXStyling from "~/components/Markdown/Styling";
 
 import Header from "~/components/Typography/Headers";
@@ -15,12 +14,8 @@ const components = {
   ...MDXStyling,
   CustomComponent: dynamic(() => import("~/components/Typography/Headers")),
 };
-const P = styled("p", {
-  color: theme.colors.accessible,
-  marginBlock: 0,
-});
 
-export default function Page({ source, iconData }) {
+export default function Page({ source = {}, iconData = { components: [] } }) {
   return (
     <>
       <NextSeo
@@ -51,7 +46,7 @@ export const getStaticProps = async ({ params }) => {
 
   const navigation = await getNavigation();
 
-  let iconData = null;
+  let iconData = { components: [] };
   if (params.slug === "icons") {
     const response = await fetch(
       "https://api.figma.com/v1/files/LA6qKUukk8v3YkkuKq6IC6/components",
