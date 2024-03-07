@@ -84,6 +84,7 @@ export interface TooltipContentInterface extends ContentCombinedProps {
   /** how far away from the center do you want the tooltip to be? */
   /** @default 0 */
   offsetAlign?: number | string | WPDSThemeSpaceObject;
+  container?: HTMLElement;
 }
 
 /**
@@ -104,12 +105,13 @@ export const TooltipContent = React.forwardRef<
       side = "top",
       align = "center",
       offsetAlign = 0,
+      container,
       ...props
     }: TooltipContentInterface,
     ref
   ) =>
     disabled ? null : (
-      <TooltipPrimitive.Portal>
+      <TooltipPrimitive.Portal container={container}>
         <StyledContentWrapper
           {...props}
           sideOffset={getPixelsFromRem(offsetSide)}
