@@ -104,6 +104,56 @@ const TemplateBottom: ComponentStory<any> = (args) => (
 );
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
+const TemplatePortal: ComponentStory<any> = (args) => {
+  const [container, setContainer] = React.useState(null);
+  const handleRef = (e) => {
+    setContainer(e);
+  };
+  return (
+    <>
+      <div id={"container-id"} ref={handleRef} />
+      <Tooltip.Provider {...args}>
+        <Tooltip.Root open={true}>
+          <Tooltip.Trigger>
+            <span>This is a tooltip trigger</span>
+          </Tooltip.Trigger>
+          <Tooltip.Portal container={container}>
+            <Tooltip.Content side="bottom" {...args}>
+              This should render as a child of #container-id
+            </Tooltip.Content>
+          </Tooltip.Portal>
+        </Tooltip.Root>
+      </Tooltip.Provider>
+    </>
+  );
+};
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const TemplateContentContainter: ComponentStory<any> = (args) => {
+  const [container, setContainer] = React.useState(null);
+  const handleRef = (e) => {
+    setContainer(e);
+  };
+  return (
+    <>
+      <div id={"container-id"} ref={handleRef} />
+      <Tooltip.Provider {...args}>
+        <Tooltip.Root open={true}>
+          <Tooltip.Trigger>
+            <span>This is a tooltip trigger</span>
+          </Tooltip.Trigger>
+          <Tooltip.Portal>
+            <Tooltip.Content container={container} side="bottom" {...args}>
+              This should render as a child of #container-id
+            </Tooltip.Content>
+          </Tooltip.Portal>
+        </Tooltip.Root>
+      </Tooltip.Provider>
+    </>
+  );
+};
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const TemplateDisabled: ComponentStory<any> = (args) => (
   <Tooltip.Provider {...args}>
     <Tooltip.Root defaultOpen={true}>
@@ -125,6 +175,8 @@ export const PlacedOnRight = TemplateRight.bind({});
 export const PlacedOnLeft = TemplateLeft.bind({});
 export const PlacedOnBottom = TemplateBottom.bind({});
 export const Disabled = TemplateDisabled.bind({});
+export const Portal = TemplatePortal.bind({});
+export const ContentContainer = TemplateContentContainter.bind({});
 
 Default.args = {
   density: "compact",
