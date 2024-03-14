@@ -1,6 +1,6 @@
 {
   "name": "@washingtonpost/wpds-docs",
-  "version": "2.1.0-experimental.1",
+  "version": "2.0.0-alpha.2",
   "private": true,
   "scripts": {
     "dev": "next-remote-watch ./docs",
@@ -26,10 +26,10 @@
     "@washingtonpost/site-footer": "^0.24.3",
     "@washingtonpost/tachyons-css": "^1.8.0",
     "@washingtonpost/wpds-assets": "latest",
-    "@washingtonpost/wpds-kitchen-sink": "2.1.0-experimental.1",
-    "@washingtonpost/wpds-tailwind-theme": "2.1.0-experimental.1",
-    "@washingtonpost/wpds-tokens": "2.1.0-experimental.1",
-    "@washingtonpost/wpds-ui-kit": "2.1.0-experimental.1",
+    "@washingtonpost/wpds-kitchen-sink": "2.0.0-alpha.2",
+    "@washingtonpost/wpds-tailwind-theme": "2.0.0-alpha.2",
+    "@washingtonpost/wpds-tokens": "2.0.0-alpha.2",
+    "@washingtonpost/wpds-ui-kit": "2.0.0-alpha.2",
     "fuse.js": "^6.6.2",
     "gray-matter": "^4.0.2",
     "lz-string": "^1.4.4",
