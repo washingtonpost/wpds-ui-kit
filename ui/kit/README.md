@@ -17,3 +17,5 @@ export const MyCoolComponent = () => {
   );
 };
 ```
+
+Visit https://build.washingtonpost.com for more information.
