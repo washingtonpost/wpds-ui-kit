@@ -7,7 +7,7 @@ npm i @washingtonpost/wpds-ui-kit
 ```jsx
 import * as React from "react";
 import * as Kit from "@washingtonpost/wpds-ui-kit";
-import * as Icons from "your-icons";
+import * as Icons from "@washingtonpost/wpds-assets";
 
 export const MyCoolComponent = () => {
   return (
@@ -19,3 +19,5 @@ export const MyCoolComponent = () => {
 ```
 
 Visit https://build.washingtonpost.com for more information.
+
+Thank you!
