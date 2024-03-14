@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.22.1](https://github.com/washingtonpost/wpds-docs/compare/v1.22.0...v1.22.1) (2024-03-14)
+
+
+### Bug Fixes
+
+* Change forCards modifier to forSurfaces ([#576](https://github.com/washingtonpost/wpds-docs/issues/576)) ([c5e0422](https://github.com/washingtonpost/wpds-docs/commit/c5e04223fb2e7c40506751fda61a0a2844101e01))
+* cleaned up [STRY-70] ([007ae6a](https://github.com/washingtonpost/wpds-docs/commit/007ae6a83ba26c53ce1d03bbf4dc035359563be0))
+* cleaned up again [STRY-70] ([95556bf](https://github.com/washingtonpost/wpds-docs/commit/95556bf5f384d62e0523161a81af2cf62b4506ef))
+* Fixed onSurface to have the correct camel casing ([#571](https://github.com/washingtonpost/wpds-docs/issues/571)) ([9daca60](https://github.com/washingtonpost/wpds-docs/commit/9daca60f9c562aa2d697c8389d44d2ef491f1494))
+* linting [STRY-70] ([63e8949](https://github.com/washingtonpost/wpds-docs/commit/63e894934cda486b1d59477b5d60650d0e861893))
+* only add needed files [STRY-70] ([ca38fb2](https://github.com/washingtonpost/wpds-docs/commit/ca38fb2a8f813a543908e9e96acb39115f419e4c))
+
+
+
+
+
 # [1.22.0](https://github.com/washingtonpost/wpds-docs/compare/v1.21.0...v1.22.0) (2024-02-15)
 
 ### Features

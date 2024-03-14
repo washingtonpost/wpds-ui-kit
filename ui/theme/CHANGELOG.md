@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.22.1](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.22.0...v1.22.1) (2024-03-14)
+
+
+### Bug Fixes
+
+* Change forCards modifier to forSurfaces ([#576](https://github.com/washingtonpost/wpds-ui-kit/issues/576)) ([c5e0422](https://github.com/washingtonpost/wpds-ui-kit/commit/c5e04223fb2e7c40506751fda61a0a2844101e01))
+* Fixed onSurface to have the correct camel casing ([#571](https://github.com/washingtonpost/wpds-ui-kit/issues/571)) ([9daca60](https://github.com/washingtonpost/wpds-ui-kit/commit/9daca60f9c562aa2d697c8389d44d2ef491f1494))
+
+
+
+
+
 # [1.22.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.21.0...v1.22.0) (2024-02-15)
 
 ### Bug Fixes
