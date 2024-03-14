@@ -51,7 +51,7 @@
     "@reach/combobox": "^0.18.0",
     "@reach/popover": "^0.18.0",
     "@stitches/react": "^1.2.8",
-    "@washingtonpost/wpds-assets": "latest",
+    "@washingtonpost/wpds-assets": "1.24.1-alpha.0",
     "match-sorter": "6.3.1",
     "react": "^18.2.0",
     "react-swipeable": "^7.0.0",
