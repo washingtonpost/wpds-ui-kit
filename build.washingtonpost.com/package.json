@@ -73,5 +73,10 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/washingtonpost/wpds-docs.git"
+  },
+  "overrides": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "@washingtonpost/wpds-assets": ">=1.24.0"
   }
 }

@@ -42,6 +42,6 @@
   },
   "dependencies": {
     "@washingtonpost/wpds-assets": "latest",
-    "@washingtonpost/wpds-ui-kit": "1.17.0"
+    "@washingtonpost/wpds-ui-kit": "*"
   }
 }
