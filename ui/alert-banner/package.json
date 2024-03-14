@@ -1,6 +1,6 @@
 {
   "name": "@washingtonpost/wpds-alert-banner",
-  "version": "1.22.3",
+  "version": "1.22.4",
   "description": "WPDS Alert Banner",
   "author": "WPDS Support <wpds@washpost.com>",
   "homepage": "https://github.com/washingtonpost/wpds-ui-kit#readme",
@@ -45,12 +45,12 @@
     "react": "^16.8.6 || ^17.0.2"
   },
   "dependencies": {
-    "@washingtonpost/wpds-app-bar": "1.22.3",
+    "@washingtonpost/wpds-app-bar": "1.22.4",
     "@washingtonpost/wpds-assets": "^1.22.0",
-    "@washingtonpost/wpds-button": "1.22.3",
-    "@washingtonpost/wpds-container": "1.22.3",
-    "@washingtonpost/wpds-icon": "1.22.3",
-    "@washingtonpost/wpds-theme": "1.22.3",
+    "@washingtonpost/wpds-button": "1.22.4",
+    "@washingtonpost/wpds-container": "1.22.4",
+    "@washingtonpost/wpds-icon": "1.22.4",
+    "@washingtonpost/wpds-theme": "1.22.4",
     "react": "^16.8.6 || ^17.0.2"
   },
   "gitHead": "dddd34ee2494be2d91fe5671db3291060097b02a"
