@@ -1,6 +1,6 @@
 {
   "name": "@washingtonpost/wpds-input-textarea",
-  "version": "1.22.5",
+  "version": "1.22.6",
   "description": "WPDS InputTextarea",
   "author": "WPDS Support <wpds@washpost.com>",
   "homepage": "https://github.com/WPMedia/wpds-ui-kit#readme",
@@ -44,11 +44,11 @@
     "react": "^16.8.6 || ^17.0.2"
   },
   "dependencies": {
-    "@washingtonpost/wpds-error-message": "1.22.5",
-    "@washingtonpost/wpds-helper-text": "1.22.5",
-    "@washingtonpost/wpds-input-label": "1.22.5",
-    "@washingtonpost/wpds-input-shared": "1.22.5",
-    "@washingtonpost/wpds-theme": "1.22.5",
+    "@washingtonpost/wpds-error-message": "1.22.6",
+    "@washingtonpost/wpds-helper-text": "1.22.6",
+    "@washingtonpost/wpds-input-label": "1.22.6",
+    "@washingtonpost/wpds-input-shared": "1.22.6",
+    "@washingtonpost/wpds-theme": "1.22.6",
     "nanoid": "^3.3.4",
     "react": "^16.8.6 || ^17.0.2"
   },

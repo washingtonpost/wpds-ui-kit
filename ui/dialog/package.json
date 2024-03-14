@@ -1,6 +1,6 @@
 {
   "name": "@washingtonpost/wpds-dialog",
-  "version": "1.22.5",
+  "version": "1.22.6",
   "description": "WPDS Dialog",
   "author": "WPDS Support <wpds@washpost.com>",
   "homepage": "https://github.com/washingtonpost/wpds-ui-kit#readme",
@@ -43,9 +43,9 @@
     "@radix-ui/react-dialog": "^1.0.5",
     "@radix-ui/react-use-controllable-state": "^1.0.1",
     "@washingtonpost/wpds-assets": "^1.23.1",
-    "@washingtonpost/wpds-button": "1.22.5",
-    "@washingtonpost/wpds-icon": "1.22.5",
-    "@washingtonpost/wpds-theme": "1.22.5",
+    "@washingtonpost/wpds-button": "1.22.6",
+    "@washingtonpost/wpds-icon": "1.22.6",
+    "@washingtonpost/wpds-theme": "1.22.6",
     "react-transition-group": "^4.4.5"
   },
   "gitHead": "dddd34ee2494be2d91fe5671db3291060097b02a"

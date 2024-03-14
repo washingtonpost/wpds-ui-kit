@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.22.6](https://github.com/WPMedia/wpds-ui-kit/compare/v1.22.5...v1.22.6) (2024-03-14)
+
+**Note:** Version bump only for package @washingtonpost/wpds-input-password
+
+
+
+
+
 ## [1.22.5](https://github.com/WPMedia/wpds-ui-kit/compare/v1.22.4...v1.22.5) (2024-03-14)
 
 **Note:** Version bump only for package @washingtonpost/wpds-input-password

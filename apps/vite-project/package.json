@@ -1,7 +1,7 @@
 {
   "name": "vite-project",
   "private": true,
-  "version": "1.22.5",
+  "version": "1.22.6",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -9,8 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@washingtonpost/wpds-kitchen-sink": "1.22.5",
-    "@washingtonpost/wpds-ui-kit": "1.22.5",
+    "@washingtonpost/wpds-kitchen-sink": "1.22.6",
+    "@washingtonpost/wpds-ui-kit": "1.22.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
