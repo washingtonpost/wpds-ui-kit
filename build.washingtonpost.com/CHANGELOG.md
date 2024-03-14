@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.22.3](https://github.com/washingtonpost/wpds-docs/compare/v1.22.2...v1.22.3) (2024-03-14)
+
+
+### Bug Fixes
+
+* formatting ([#588](https://github.com/washingtonpost/wpds-docs/issues/588)) ([d1e9ad4](https://github.com/washingtonpost/wpds-docs/commit/d1e9ad4166881dea6a9df1ecd8a9d5f0e598efef))
+
+
+
+
+
 ## [1.22.2](https://github.com/washingtonpost/wpds-docs/compare/v1.22.1...v1.22.2) (2024-03-14)
 
 **Note:** Version bump only for package @washingtonpost/wpds-docs
