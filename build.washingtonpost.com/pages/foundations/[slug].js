@@ -1,11 +1,7 @@
 import React from "react";
 import { MDXRemote } from "next-mdx-remote";
 import dynamic from "next/dynamic";
-<<<<<<< HEAD
 import { NextSeo } from "~/components/next-seo";
-=======
-import { NextSeo } from "next-seo";
->>>>>>> main
 import MDXStyling from "~/components/Markdown/Styling";
 
 import Header from "~/components/Typography/Headers";

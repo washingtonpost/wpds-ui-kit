@@ -1,9 +1,5 @@
 import React from "react";
-<<<<<<< HEAD
 import { NextSeo } from "~/components/next-seo";
-=======
-import { NextSeo } from "next-seo";
->>>>>>> main
 import { theme, Box } from "@washingtonpost/wpds-ui-kit";
 
 import { getDocsListBySection, getNavigation } from "~/services";
