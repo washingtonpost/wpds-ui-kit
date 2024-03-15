@@ -119,11 +119,19 @@ export default function ColorTokenTable() {
     }));
   }
 
+<<<<<<< HEAD
   function lookUpValue(item = {}) {
     let value = item?.value ?? "";
     let lookUpKey = value?.substring(1, value.length - 1);
 
     if (value.includes("-static")) {
+=======
+  function lookUpValue(item) {
+    let value = item.value;
+    let lookUpKey = value?.substring(1, value.length - 1);
+
+    if (item.value.includes("-static")) {
+>>>>>>> main
       return Tokens.color.static[lookUpKey];
     } else if (theme === "dark") {
       value = item.valueDark;
@@ -134,10 +142,17 @@ export default function ColorTokenTable() {
     }
   }
 
+<<<<<<< HEAD
   function formatToken(item = {}) {
     let value = item?.value ?? "";
     if (theme === "dark" && item?.valueDark) {
       value = item?.valueDark;
+=======
+  function formatToken(item) {
+    let value = item.value;
+    if (theme === "dark" && item?.valueDark) {
+      value = item.valueDark;
+>>>>>>> main
     }
     return value && value.substring(1, value.length - 1);
   }
@@ -204,13 +219,21 @@ export default function ColorTokenTable() {
                       />
                     </td>
                     <td className="nowrap rgba">
+<<<<<<< HEAD
                       {result.item.value?.includes("{")
+=======
+                      {result.item.value.includes("{")
+>>>>>>> main
                         ? lookUpValue(result.item)?.value
                         : result.item.value}
                     </td>
                     <td className="upper nowrap hide">
                       {" "}
+<<<<<<< HEAD
                       {result.item.value?.includes("{")
+=======
+                      {result.item.value.includes("{")
+>>>>>>> main
                         ? lookUpValue(result.item)?.hex
                         : result.item.hex}
                     </td>
@@ -234,12 +257,20 @@ export default function ColorTokenTable() {
                       />
                     </td>
                     <td className="nowrap rgba">
+<<<<<<< HEAD
                       {item.value?.includes("{")
+=======
+                      {item.value.includes("{")
+>>>>>>> main
                         ? lookUpValue(item)?.value
                         : item.value}
                     </td>
                     <td className="upper hide nowrap">
+<<<<<<< HEAD
                       {item.value?.includes("{")
+=======
+                      {item.value.includes("{")
+>>>>>>> main
                         ? lookUpValue(item)?.hex
                         : item.hex}
                     </td>

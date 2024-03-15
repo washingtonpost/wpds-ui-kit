@@ -700,9 +700,12 @@ const InternalFocusTemplate = () => {
 
 export const InternalFocusInteractions = InternalFocusTemplate.bind({});
 
+<<<<<<< HEAD:packages/kit/src/carousel/play.stories.jsx
 InternalFocusInteractions.parameters = {
   chromatic: { viewports: [1024], disableSnapshot: true },
 };
+=======
+>>>>>>> main:ui/carousel/src/play.stories.jsx
 function hasClassContaining(el, str) {
   return Array.from(el.classList).findIndex((cls) =>
     cls.toLowerCase().includes(str)

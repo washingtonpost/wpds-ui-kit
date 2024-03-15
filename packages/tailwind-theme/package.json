@@ -20,8 +20,8 @@
     "@washingtonpost/wpds-ui-kit": "*"
   },
   "dependencies": {
-    "@washingtonpost/wpds-theme": "1.22.0",
-    "@washingtonpost/wpds-ui-kit": "1.17.0"
+  "@washingtonpost/wpds-theme": "1.22.6",
+  "@washingtonpost/wpds-ui-kit": "1.17.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",

@@ -14,6 +14,44 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 # [2.0.0-alpha.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.1.0-experimental.0...v2.0.0-alpha.0) (2024-03-14)
 
 **Note:** Version bump only for package root
+## [1.22.6](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.22.5...v1.22.6) (2024-03-14)
+
+### Bug Fixes
+
+- readme changes ([035b5c8](https://github.com/washingtonpost/wpds-ui-kit/commit/035b5c8ce14f1994a0be0966e961e40ead24d339))
+
+## [1.22.5](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.22.4...v1.22.5) (2024-03-14)
+
+**Note:** Version bump only for package root
+
+## [1.22.4](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.22.3...v1.22.4) (2024-03-14)
+
+### Bug Fixes
+
+- fixing formatting ([#589](https://github.com/washingtonpost/wpds-ui-kit/issues/589)) ([a717dbc](https://github.com/washingtonpost/wpds-ui-kit/commit/a717dbcd9dbc2c2e8619719692636f2287e556cd))
+
+## [1.22.3](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.22.2...v1.22.3) (2024-03-14)
+
+### Bug Fixes
+
+- formatting ([#588](https://github.com/washingtonpost/wpds-ui-kit/issues/588)) ([d1e9ad4](https://github.com/washingtonpost/wpds-ui-kit/commit/d1e9ad4166881dea6a9df1ecd8a9d5f0e598efef))
+
+## [1.22.2](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.22.1...v1.22.2) (2024-03-14)
+
+**Note:** Version bump only for package root
+
+## [1.22.1](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.22.0...v1.22.1) (2024-03-14)
+
+### Bug Fixes
+
+- Change forCards modifier to forSurfaces ([#576](https://github.com/washingtonpost/wpds-ui-kit/issues/576)) ([c5e0422](https://github.com/washingtonpost/wpds-ui-kit/commit/c5e04223fb2e7c40506751fda61a0a2844101e01))
+- cleaned up [STRY-70] ([007ae6a](https://github.com/washingtonpost/wpds-ui-kit/commit/007ae6a83ba26c53ce1d03bbf4dc035359563be0))
+- cleaned up again [STRY-70] ([95556bf](https://github.com/washingtonpost/wpds-ui-kit/commit/95556bf5f384d62e0523161a81af2cf62b4506ef))
+- Fixed onSurface to have the correct camel casing ([#571](https://github.com/washingtonpost/wpds-ui-kit/issues/571)) ([9daca60](https://github.com/washingtonpost/wpds-ui-kit/commit/9daca60f9c562aa2d697c8389d44d2ef491f1494))
+- ignoring .idea files [STRY-70] ([c686693](https://github.com/washingtonpost/wpds-ui-kit/commit/c686693d49c51b261bb36f134bdb834478c5be0b))
+- linting [STRY-70] ([63e8949](https://github.com/washingtonpost/wpds-ui-kit/commit/63e894934cda486b1d59477b5d60650d0e861893))
+- only add needed files [STRY-70] ([ca38fb2](https://github.com/washingtonpost/wpds-ui-kit/commit/ca38fb2a8f813a543908e9e96acb39115f419e4c))
+- update readme ([#587](https://github.com/washingtonpost/wpds-ui-kit/issues/587)) ([73b4b9e](https://github.com/washingtonpost/wpds-ui-kit/commit/73b4b9e3ac698cdca779cd0c49c490167e18180f))
 
 # [1.22.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.21.0...v1.22.0) (2024-02-15)
 

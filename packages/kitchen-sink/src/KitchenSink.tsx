@@ -27,9 +27,14 @@ import {
   NavigationMenu,
   InputSearch,
   Select,
+<<<<<<< HEAD:packages/kitchen-sink/src/KitchenSink.tsx
   Accordion,
   Dialog,
 } from "../../kit/src/index";
+=======
+  Dialog,
+} from "@washingtonpost/wpds-ui-kit";
+>>>>>>> main:ui/kitchen-sink/src/KitchenSink.tsx
 import { Chart, Settings, Info, Menu } from "@washingtonpost/wpds-assets";
 
 const Headline = styled("h1", {

@@ -16,10 +16,15 @@ experimental-release:
 	npm run turbo:build:force
 	make experimental-publish
 
+# checkout any uncommitted changes
+boop-checkout:
+	git checkout .
+
 # create main release
 main-release:
 	make main-version
 	npm run turbo:build:ui:force
+	make boop-checkout
 	make main-publish
 	npm install
 	npm run format
