@@ -1,6 +1,6 @@
 {
   "name": "nextjs14-pagerouter",
-  "version": "2.0.0-alpha.4",
+  "version": "2.0.0-alpha.5",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -9,8 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@washingtonpost/wpds-kitchen-sink": "2.0.0-alpha.4",
-    "@washingtonpost/wpds-ui-kit": "2.0.0-alpha.4",
+    "@washingtonpost/wpds-kitchen-sink": "2.0.0-alpha.5",
+    "@washingtonpost/wpds-ui-kit": "2.0.0-alpha.5",
     "next": "14.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
