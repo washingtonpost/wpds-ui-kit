@@ -68,6 +68,16 @@ const IconWrapper = styled("div", {
   gridArea: "icon",
 });
 
+const AnimatedIcon = styled(Icon, {
+  transition: `transform ${theme.transitions.normal} ${theme.transitions.inOut}`,
+  "@reducedMotion": {
+    transition: "none",
+  },
+  '[aria-expanded="true"] &': {
+    transform: "rotate(180deg)",
+  },
+});
+
 type SelectTriggerVariants = WPDS.VariantProps<typeof StyledTrigger>;
 
 type SelectTriggerProps = RadixAccordionTriggerProps &
@@ -124,9 +134,9 @@ export const SelectTrigger = React.forwardRef<
         >
           {children}
           <IconWrapper isDisabled={disabled}>
-            <Icon label="">
+            <AnimatedIcon label="">
               <ChevronDown />
-            </Icon>
+            </AnimatedIcon>
           </IconWrapper>
         </StyledTrigger>
         <SubTextWrapper>
