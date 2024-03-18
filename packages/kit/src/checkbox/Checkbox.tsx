@@ -291,9 +291,7 @@ export const Checkbox = React.forwardRef<HTMLButtonElement, CheckboxInterface>(
                     fill: "currentColor",
                     "aria-hidden": true,
                     focusable: false,
-                    role: "img",
-                    onPointerEnterCapture: () => { },
-                    onPointerLeaveCapture: () => { }
+                    role: "img"
                   }}
                 />
               ) : (
@@ -302,9 +300,7 @@ export const Checkbox = React.forwardRef<HTMLButtonElement, CheckboxInterface>(
                     fill: "currentColor",
                     "aria-hidden": true,
                     focusable: false,
-                    role: "img",
-                    onPointerEnterCapture: () => { },
-                    onPointerLeaveCapture: () => { }
+                    role: "img"
                   }}
                 />
               )}
