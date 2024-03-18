@@ -285,13 +285,13 @@ export const Checkbox = React.forwardRef<HTMLButtonElement, CheckboxInterface>(
           >
             <StyledCheck size={props.size}>
               {props.checked === "indeterminate" ||
-                props.defaultChecked === "indeterminate" ? (
+              props.defaultChecked === "indeterminate" ? (
                 <Indeterminate
                   {...{
                     fill: "currentColor",
                     "aria-hidden": true,
                     focusable: false,
-                    role: "img"
+                    role: "img",
                   }}
                 />
               ) : (
@@ -300,7 +300,7 @@ export const Checkbox = React.forwardRef<HTMLButtonElement, CheckboxInterface>(
                     fill: "currentColor",
                     "aria-hidden": true,
                     focusable: false,
-                    role: "img"
+                    role: "img",
                   }}
                 />
               )}
