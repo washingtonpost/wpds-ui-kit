@@ -68,12 +68,12 @@ const StyledBox = styled(Box, {
   variants: {
     breakpointActive: {
       true: {
-        backgroundColor: theme.colors.success,
+        backgroundColor: theme.colors.green80,
         color: theme.colors.secondary,
         fontWeight: theme.fontWeights.bold,
       },
       false: {
-        backgroundColor: theme.colors.subtle,
+        backgroundColor: theme.colors.gray300,
       },
     },
   },
@@ -243,7 +243,8 @@ function sleep(ms) {
 }
 
 const activeStyle = `background-color: ${theme.colors.green80.value}`;
-const inactiveStyle = `background-color: ${theme.colors.alpha400.value}`;
+const inactiveStyle = `background-color: ${theme.colors.gray300.value}`;
+const transitionDelay = 500;
 
 const allModes = {
   sm: {
@@ -280,7 +281,7 @@ InteractionsSmall.parameters = {
 
 InteractionsSmall.play = async ({ canvasElement }) => {
   const canvas = within(canvasElement);
-  await sleep(500);
+  await sleep(transitionDelay);
   await expect(canvas.getByText("@sm")).toHaveStyle(activeStyle);
   await expect(canvas.getByText("@md")).toHaveStyle(inactiveStyle);
   await expect(canvas.getByText("@maxSm")).toHaveStyle(activeStyle);
@@ -301,7 +302,7 @@ InteractionsMedium.parameters = {
 
 InteractionsMedium.play = async ({ canvasElement }) => {
   const canvas = within(canvasElement);
-  await sleep(500);
+  await sleep(transitionDelay);
   await expect(canvas.getByText("@md")).toHaveStyle(activeStyle);
   await expect(canvas.getByText("@lg")).toHaveStyle(inactiveStyle);
   await expect(canvas.getByText("@notSm")).toHaveStyle(activeStyle);
@@ -323,7 +324,7 @@ InteractionsLarge.parameters = {
 
 InteractionsLarge.play = async ({ canvasElement }) => {
   const canvas = within(canvasElement);
-  await sleep(500);
+  await sleep(transitionDelay);
   await expect(canvas.getByText("@lg")).toHaveStyle(activeStyle);
   await expect(canvas.getByText("@xl")).toHaveStyle(inactiveStyle);
   await expect(canvas.getByText("@notMd")).toHaveStyle(activeStyle);
@@ -345,7 +346,7 @@ InteractionsExtraLarge.parameters = {
 
 InteractionsExtraLarge.play = async ({ canvasElement }) => {
   const canvas = within(canvasElement);
-  await sleep(500);
+  await sleep(transitionDelay);
   await expect(canvas.getByText("@xl")).toHaveStyle(activeStyle);
   await expect(canvas.getByText("@xxl")).toHaveStyle(inactiveStyle);
   await expect(canvas.getByText("@notLg")).toHaveStyle(activeStyle);
@@ -367,7 +368,7 @@ InteractionsExtraExtraLarge.parameters = {
 
 InteractionsExtraExtraLarge.play = async ({ canvasElement }) => {
   const canvas = within(canvasElement);
-  await sleep(500);
+  await sleep(transitionDelay);
   await expect(canvas.getByText("@xxl")).toHaveStyle(activeStyle);
   await expect(canvas.getByText("@notXxl")).toHaveStyle(inactiveStyle);
   await expect(canvas.getByText("@maxXxl")).toHaveStyle(activeStyle);
