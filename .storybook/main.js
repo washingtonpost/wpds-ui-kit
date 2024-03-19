@@ -14,34 +14,14 @@ module.exports = {
 
   previewBody: (body) => `${body}`,
 
-  features: {
-    storyStoreV7: true,
-    interactionsDebugger: true,
+  docs: {
+    autodocs: true,
   },
 
   framework: {
     name: getAbsolutePath("@storybook/nextjs"),
-    options: {},
-  },
-
-  // typescript: {
-  //   reactDocgen: "react-docgen-typescript",
-  //   reactDocgenTypescriptOptions: {
-  //     shouldExtractLiteralValuesFromEnum: true,
-  //     propFilter: (prop) =>
-  //       prop.parent
-  //         ? /@radix-ui/.test(prop.parent.fileName) ||
-  //           !/node_modules/.test(prop.parent.fileName)
-  //         : true,
-  //     compilerOptions: {
-  //       allowSyntheticDefaultImports: false,
-  //     },
-  //   },
-  // },
-
-  docs: {
-    autodocs: true,
-  },
+    options: {}
+  }
 };
 
 function getAbsolutePath(value) {
