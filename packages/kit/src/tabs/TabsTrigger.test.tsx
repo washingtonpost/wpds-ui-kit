@@ -4,7 +4,7 @@ import { TabsRoot } from "./TabsRoot";
 import { TabsList } from "./TabsList";
 import { TabsTrigger } from "./TabsTrigger";
 import { TabsContext } from "./context";
-import { userEvent } from "@storybook/testing-library";
+import { userEvent } from "@storybook/test";
 import { config } from "react-transition-group";
 
 config.disabled = true;

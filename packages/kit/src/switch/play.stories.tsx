@@ -2,8 +2,8 @@ import React from "react";
 import { Switch } from ".";
 import type { ComponentMeta, ComponentStory } from "@storybook/react";
 import { styled } from "@washingtonpost/wpds-theme";
-import { userEvent, within } from "@storybook/testing-library";
-import { expect } from "@storybook/jest";
+import { userEvent, within } from "@storybook/test";
+import { expect } from "@storybook/test";
 
 export default {
   title: "Switch",
