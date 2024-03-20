@@ -102,4 +102,10 @@ module.exports = withBundleAnalyzer({
       },
     ];
   },
+  experimental: {
+    optimizePackageImports: [
+      "@washingtonpost/wpds-assets",
+      "@washingtonpost/wpds-ui-kit",
+    ],
+  },
 });
