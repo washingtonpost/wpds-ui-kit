@@ -1,6 +1,6 @@
 import React from "react";
-import { KitchenSink } from "@washingtonpost/wpds-kitchen-sink";
+import { Button } from "@washingtonpost/wpds-ui-kit";
 
 export default function Home() {
-  return <KitchenSink />;
+  return <Button>Hi there</Button>;
 }
