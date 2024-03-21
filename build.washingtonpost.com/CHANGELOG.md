@@ -3,6 +3,39 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.6](https://github.com/washingtonpost/wpds-docs/compare/v2.0.0-alpha.5...v2.0.0-alpha.6) (2024-03-15)
+
+**Note:** Version bump only for package @washingtonpost/wpds-docs
+
+# [2.0.0-alpha.5](https://github.com/washingtonpost/wpds-docs/compare/v2.0.0-alpha.4...v2.0.0-alpha.5) (2024-03-15)
+
+**Note:** Version bump only for package @washingtonpost/wpds-docs
+
+# [2.0.0-alpha.4](https://github.com/washingtonpost/wpds-docs/compare/v2.0.0-alpha.3...v2.0.0-alpha.4) (2024-03-15)
+
+**Note:** Version bump only for package @washingtonpost/wpds-docs
+
+# [2.0.0-alpha.3](https://github.com/washingtonpost/wpds-docs/compare/v1.22.6...v2.0.0-alpha.3) (2024-03-14)
+
+# [2.0.0-alpha.2](https://github.com/washingtonpost/wpds-docs/compare/v2.0.0-alpha.1...v2.0.0-alpha.2) (2024-03-14)
+
+# [2.0.0-alpha.1](https://github.com/washingtonpost/wpds-docs/compare/v2.0.0-alpha.0...v2.0.0-alpha.1) (2024-03-14)
+
+# [2.0.0-alpha.0](https://github.com/washingtonpost/wpds-docs/compare/v2.1.0-experimental.1...v2.0.0-alpha.0) (2024-03-14)
+
+# [2.1.0-experimental.0](https://github.com/washingtonpost/wpds-docs/compare/v1.22.0...v2.1.0-experimental.0) (2024-03-13)
+
+### Bug Fixes
+
+- merging main and resolving conflicts ([#585](https://github.com/washingtonpost/wpds-docs/issues/585)) ([253effe](https://github.com/washingtonpost/wpds-docs/commit/253effebcc310c6ceee9efbed2e346d7b3132691))
+- Playroom fix ([#583](https://github.com/washingtonpost/wpds-docs/issues/583)) ([6b8c42b](https://github.com/washingtonpost/wpds-docs/commit/6b8c42beb93fb2a0e391df6aad5da78cf40d92e3))
+
+### Features
+
+- move Button, Icon, theme, and VisuallyHidden to v2 package ([#562](https://github.com/washingtonpost/wpds-docs/issues/562)) ([be3524d](https://github.com/washingtonpost/wpds-docs/commit/be3524d388e177023b9c476a68020a478a893f50))
+- remove nanoid dependency ([#555](https://github.com/washingtonpost/wpds-docs/issues/555)) ([20f22d6](https://github.com/washingtonpost/wpds-docs/commit/20f22d6a0869de6edb25312bb93638832320b82f))
+- v2 mass components upgrade/migration ([#578](https://github.com/washingtonpost/wpds-docs/issues/578)) ([5e0394b](https://github.com/washingtonpost/wpds-docs/commit/5e0394b4e6747bfd9fee1dc0bcd82d1dcb6cd9b6)), closes [#580](https://github.com/washingtonpost/wpds-docs/issues/580) [#579](https://github.com/washingtonpost/wpds-docs/issues/579)
+
 # [2.0.0-alpha.2](https://github.com/washingtonpost/wpds-docs/compare/v2.0.0-alpha.1...v2.0.0-alpha.2) (2024-03-14)
 
 **Note:** Version bump only for package @washingtonpost/wpds-docs
@@ -14,6 +47,41 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 # [2.0.0-alpha.0](https://github.com/washingtonpost/wpds-docs/compare/v2.1.0-experimental.0...v2.0.0-alpha.0) (2024-03-14)
 
 **Note:** Version bump only for package @washingtonpost/wpds-docs
+
+## [1.22.6](https://github.com/washingtonpost/wpds-docs/compare/v1.22.5...v1.22.6) (2024-03-14)
+
+**Note:** Version bump only for package @washingtonpost/wpds-docs
+
+## [1.22.5](https://github.com/washingtonpost/wpds-docs/compare/v1.22.4...v1.22.5) (2024-03-14)
+
+**Note:** Version bump only for package @washingtonpost/wpds-docs
+
+## [1.22.4](https://github.com/washingtonpost/wpds-docs/compare/v1.22.3...v1.22.4) (2024-03-14)
+
+### Bug Fixes
+
+- fixing formatting ([#589](https://github.com/washingtonpost/wpds-docs/issues/589)) ([a717dbc](https://github.com/washingtonpost/wpds-docs/commit/a717dbcd9dbc2c2e8619719692636f2287e556cd))
+
+## [1.22.3](https://github.com/washingtonpost/wpds-docs/compare/v1.22.2...v1.22.3) (2024-03-14)
+
+### Bug Fixes
+
+- formatting ([#588](https://github.com/washingtonpost/wpds-docs/issues/588)) ([d1e9ad4](https://github.com/washingtonpost/wpds-docs/commit/d1e9ad4166881dea6a9df1ecd8a9d5f0e598efef))
+
+## [1.22.2](https://github.com/washingtonpost/wpds-docs/compare/v1.22.1...v1.22.2) (2024-03-14)
+
+**Note:** Version bump only for package @washingtonpost/wpds-docs
+
+## [1.22.1](https://github.com/washingtonpost/wpds-docs/compare/v1.22.0...v1.22.1) (2024-03-14)
+
+### Bug Fixes
+
+- Change forCards modifier to forSurfaces ([#576](https://github.com/washingtonpost/wpds-docs/issues/576)) ([c5e0422](https://github.com/washingtonpost/wpds-docs/commit/c5e04223fb2e7c40506751fda61a0a2844101e01))
+- cleaned up [STRY-70] ([007ae6a](https://github.com/washingtonpost/wpds-docs/commit/007ae6a83ba26c53ce1d03bbf4dc035359563be0))
+- cleaned up again [STRY-70] ([95556bf](https://github.com/washingtonpost/wpds-docs/commit/95556bf5f384d62e0523161a81af2cf62b4506ef))
+- Fixed onSurface to have the correct camel casing ([#571](https://github.com/washingtonpost/wpds-docs/issues/571)) ([9daca60](https://github.com/washingtonpost/wpds-docs/commit/9daca60f9c562aa2d697c8389d44d2ef491f1494))
+- linting [STRY-70] ([63e8949](https://github.com/washingtonpost/wpds-docs/commit/63e894934cda486b1d59477b5d60650d0e861893))
+- only add needed files [STRY-70] ([ca38fb2](https://github.com/washingtonpost/wpds-docs/commit/ca38fb2a8f813a543908e9e96acb39115f419e4c))
 
 # [1.22.0](https://github.com/washingtonpost/wpds-docs/compare/v1.21.0...v1.22.0) (2024-02-15)
 

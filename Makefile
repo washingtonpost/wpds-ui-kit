@@ -1,9 +1,9 @@
 experimental-version:
-	npx lerna version --conventional-commits --conventional-prerelease  --preid=experimental --sign-git-tag=experimental --no-changelog --yes --force-publish
+	npx lerna version prerelease --force-publish --preid=alpha --sign-git-tag=alpha
 
 experimental-publish:
-	npx lerna publish from-package --dist-tag experimental --yes --no-verify-access
-
+	npx lerna publish from-package --dist-tag experimental 
+	
 main-publish:
 	npx lerna publish from-package --yes --no-git-reset --no-verify-access
 
@@ -16,10 +16,15 @@ experimental-release:
 	npm run turbo:build:force
 	make experimental-publish
 
+# checkout any uncommitted changes
+boop-checkout:
+	git checkout .
+
 # create main release
 main-release:
 	make main-version
 	npm run turbo:build:ui:force
+	make boop-checkout
 	make main-publish
 	npm install
 	npm run format

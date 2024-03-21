@@ -1,6 +1,6 @@
 {
   "name": "@washingtonpost/wpds-tokens",
-  "version": "2.0.0-alpha.2",
+  "version": "2.0.0-alpha.6",
   "description": "WPDS Tokens",
   "author": "WPDS Support <wpds@washpost.com>",
   "homepage": "https://github.com/washingtonpost/wpds-ui-kit#readme",
@@ -27,8 +27,9 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@washingtonpost/wpds-ui-kit": "latest",
-    "react": "^18",
-    "react-dom": "^18"
+    "@washingtonpost/wpds-theme": "latest",
+    "@washingtonpost/wpds-ui-kit": "2.0.0-alpha.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }
