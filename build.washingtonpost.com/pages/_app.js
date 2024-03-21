@@ -3,7 +3,7 @@
 import React from "react";
 import { ThemeProvider } from "next-themes";
 import Script from "next/script";
-import { DefaultSeo } from "next-seo";
+import { DefaultSeo } from "../components/next-seo";
 import "react-toastify/dist/ReactToastify.css";
 import {
   globalStyles,
@@ -86,7 +86,7 @@ function App({ Component, pageProps }) {
 
   return (
     <>
-      <DefaultSeo {...SEO} />
+      <DefaultSeo seoConfig={SEO} />
       <ThemeProvider
         attribute="class"
         defaultTheme="system"

@@ -26,7 +26,7 @@ export const A = styled("a", {
 
 export default function CustomLink({ useSignal, as, href, ...otherProps }) {
   return (
-    <Link as={as} href={href} passHref>
+    <Link as={as} href={href} passHref legacyBehavior>
       <A signal={useSignal ? "showColor" : ""} {...otherProps} />
     </Link>
   );

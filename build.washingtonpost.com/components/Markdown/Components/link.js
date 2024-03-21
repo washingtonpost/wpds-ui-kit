@@ -39,7 +39,7 @@ export default function CustomLink({
   });
 
   return (
-    <Link as={as} href={href} forceHref passHref>
+    <Link as={as} href={href} forceHref passHref legacyBehavior>
       <A
         id={id}
         signal={useSignal ? "showColor" : ""}

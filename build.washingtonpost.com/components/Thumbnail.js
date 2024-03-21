@@ -6,7 +6,7 @@ import { P } from "~/components/Markdown/Styling";
 
 import { ThumbnailGrid } from "./Markdown/Components/ResourcesGrids";
 
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 export const THUMBNAIL_WIDE = "wide";
 export const THUMBNAIL_SQUARE = "square";

@@ -1,6 +1,6 @@
 import React from "react";
 import { MDXRemote } from "next-mdx-remote";
-import { NextSeo } from "next-seo";
+import { NextSeo } from "~/components/next-seo";
 
 import { styled } from "@washingtonpost/wpds-ui-kit";
 
@@ -81,13 +81,15 @@ export default function Page({
       <Article
         css={{ opacity: source.scope.status == "Coming soon" ? 0.5 : 1 }}
       >
-        <MDXRemote
-          {...source}
-          components={components}
-          scope={{
-            propsTable,
-          }}
-        />
+        {source && (
+          <MDXRemote
+            {...source}
+            components={components}
+            scope={{
+              propsTable,
+            }}
+          />
+        )}
       </Article>
     </>
   );

@@ -1,6 +1,6 @@
 import React from "react";
 import { styled } from "@washingtonpost/wpds-ui-kit";
-import Tokens from "@washingtonpost/wpds-theme/src/wpds.tokens.json";
+import Tokens from "@washingtonpost/wpds-ui-kit/src/theme/wpds.tokens.json";
 
 /**
  * Table

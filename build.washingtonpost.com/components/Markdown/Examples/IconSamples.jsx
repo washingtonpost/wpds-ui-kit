@@ -6,7 +6,7 @@ import * as AllAssets from "@washingtonpost/wpds-assets";
 import { toast } from "react-toastify";
 import MDXStyling from "~/components/Markdown/Styling";
 import { Grid } from "../Components/Grid";
-import { InputText } from "@washingtonpost/wpds-input-text";
+import { InputText } from "@washingtonpost/wpds-ui-kit";
 import Search from "@washingtonpost/wpds-assets/asset/search";
 import { Icon, theme, AlertBanner, Box } from "@washingtonpost/wpds-ui-kit";
 import { paramCase } from "param-case";

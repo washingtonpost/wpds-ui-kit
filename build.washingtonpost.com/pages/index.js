@@ -10,7 +10,7 @@ import {
 } from "~/components/Markdown/Components/ResourcesGrids";
 import { SeeAllLink, sortByRank, NewCustomLink } from "~/components/utils";
 
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { Contributors } from "~/components/Contributors";
 
 const HeroBlock = styled("div", {

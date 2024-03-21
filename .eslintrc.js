@@ -25,6 +25,7 @@ module.exports = {
     "plugin:testing-library/dom",
     "plugin:jest-dom/recommended",
     "plugin:storybook/recommended",
+    "plugin:react/jsx-runtime",
   ],
   overrides: [
     {
@@ -36,12 +37,16 @@ module.exports = {
       rules: {
         "react/prop-types": "off",
         "@washingtonpost/wpds/theme-colors": "warn",
-        "no-restricted-syntax": [
-          "error",
+      },
+    },
+    // warning  'React' is defined but never used  @typescript-eslint/no-unused-vars -- allow unused React
+    {
+      files: ["**/*.tsx"],
+      rules: {
+        "@typescript-eslint/no-unused-vars": [
+          "warn",
           {
-            selector:
-              "ImportDeclaration[source.value='react'][specifiers.0.type='ImportDefaultSpecifier']",
-            message: "Default React import not allowed",
+            varsIgnorePattern: "React",
           },
         ],
       },

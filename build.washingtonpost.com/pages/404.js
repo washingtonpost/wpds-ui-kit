@@ -35,6 +35,8 @@ const onClick = () => {
       metaKey: true,
     })
   );
+
+  return false;
 };
 export const StyledLink = ({ children }) => {
   return (

@@ -1,0 +1,33 @@
+{
+  "name": "@washingtonpost/wpds-tailwind-theme",
+  "version": "2.0.0-alpha.6",
+  "description": "WPDS Tailwind Theme",
+  "author": "WPDS Support <wpds@washpost.com>",
+  "license": "MIT",
+  "main": "dist/wpds-theme.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/washingtonpost/wpds-ui-kit.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "node script/create-theme.js"
+  },
+  "peerDependencies": {
+    "@washingtonpost/wpds-ui-kit": "2.0.0-alpha.6"
+  },
+  "dependencies": {
+    "@washingtonpost/wpds-theme": "1.22.6",
+    "@washingtonpost/wpds-ui-kit": "2.0.0-alpha.6"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.24",
+    "tailwindcss": "^3.3.2",
+    "vite": "^4.3.9"
+  },
+  "gitHead": "9e145492092e9d7395001423309e915962ee92cf"
+}

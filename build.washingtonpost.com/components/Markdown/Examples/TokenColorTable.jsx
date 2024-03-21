@@ -119,11 +119,11 @@ export default function ColorTokenTable() {
     }));
   }
 
-  function lookUpValue(item) {
-    let value = item.value;
+  function lookUpValue(item = {}) {
+    let value = item?.value ?? "";
     let lookUpKey = value?.substring(1, value.length - 1);
 
-    if (item.value.includes("-static")) {
+    if (value.includes("-static")) {
       return Tokens.color.static[lookUpKey];
     } else if (theme === "dark") {
       value = item.valueDark;
@@ -134,10 +134,10 @@ export default function ColorTokenTable() {
     }
   }
 
-  function formatToken(item) {
-    let value = item.value;
+  function formatToken(item = {}) {
+    let value = item?.value ?? "";
     if (theme === "dark" && item?.valueDark) {
-      value = item.valueDark;
+      value = item?.valueDark;
     }
     return value && value.substring(1, value.length - 1);
   }
@@ -204,13 +204,13 @@ export default function ColorTokenTable() {
                       />
                     </td>
                     <td className="nowrap rgba">
-                      {result.item.value.includes("{")
+                      {result.item.value?.includes("{")
                         ? lookUpValue(result.item)?.value
                         : result.item.value}
                     </td>
                     <td className="upper nowrap hide">
                       {" "}
-                      {result.item.value.includes("{")
+                      {result.item.value?.includes("{")
                         ? lookUpValue(result.item)?.hex
                         : result.item.hex}
                     </td>
@@ -234,12 +234,12 @@ export default function ColorTokenTable() {
                       />
                     </td>
                     <td className="nowrap rgba">
-                      {item.value.includes("{")
+                      {item.value?.includes("{")
                         ? lookUpValue(item)?.value
                         : item.value}
                     </td>
                     <td className="upper hide nowrap">
-                      {item.value.includes("{")
+                      {item.value?.includes("{")
                         ? lookUpValue(item)?.hex
                         : item.hex}
                     </td>
