@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-import { screen, userEvent } from "@storybook/testing-library";
-import { expect, jest } from "@storybook/jest";
+import { screen, userEvent } from "@storybook/test";
+import { expect, jest } from "@storybook/test";
 import type { Meta, StoryFn } from "@storybook/react";
 
 import { Icon } from "../icon";

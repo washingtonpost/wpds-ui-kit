@@ -1,6 +1,6 @@
 import React from "react";
-import { within } from "@storybook/testing-library";
-import { expect } from "@storybook/jest";
+import { within } from "@storybook/test";
+import { expect } from "@storybook/test";
 import { theme } from "../theme";
 import Info from "@washingtonpost/wpds-assets/asset/info";
 import { Icon } from "./icon";
