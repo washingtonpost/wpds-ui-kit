@@ -1,5 +1,6 @@
 {
   "extends": "./tsconfig.base.json",
+  "exclude": ["./ui/theme/src/tokens.ts"],
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
