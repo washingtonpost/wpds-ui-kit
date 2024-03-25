@@ -5,14 +5,9 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 # [1.23.0](https://github.com/WPMedia/wpds-ui-kit/compare/v1.22.6...v1.23.0) (2024-03-25)
 
-
 ### Bug Fixes
 
-* make input helper and error text block level elements for consistent formatting ([2640be2](https://github.com/WPMedia/wpds-ui-kit/commit/2640be29f24f83199baa3c735bdd47c404dd700b))
-
-
-
-
+- make input helper and error text block level elements for consistent formatting ([2640be2](https://github.com/WPMedia/wpds-ui-kit/commit/2640be29f24f83199baa3c735bdd47c404dd700b))
 
 ## [1.22.6](https://github.com/WPMedia/wpds-ui-kit/compare/v1.22.5...v1.22.6) (2024-03-14)
 

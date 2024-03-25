@@ -5,21 +5,15 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 # [1.23.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.22.6...v1.23.0) (2024-03-25)
 
-
 ### Bug Fixes
 
-* make input helper and error text block level elements for consistent formatting ([2640be2](https://github.com/washingtonpost/wpds-ui-kit/commit/2640be29f24f83199baa3c735bdd47c404dd700b))
-* transform select icon on open ([#596](https://github.com/washingtonpost/wpds-ui-kit/issues/596)) ([1f68ace](https://github.com/washingtonpost/wpds-ui-kit/commit/1f68acef8dd386267b9b30c650df6abe11b10954))
-* updated React types package to prevent type errors ([b647c60](https://github.com/washingtonpost/wpds-ui-kit/commit/b647c60662d9f75f8857f8f8205f5d4c04ba0cef))
-
+- make input helper and error text block level elements for consistent formatting ([2640be2](https://github.com/washingtonpost/wpds-ui-kit/commit/2640be29f24f83199baa3c735bdd47c404dd700b))
+- transform select icon on open ([#596](https://github.com/washingtonpost/wpds-ui-kit/issues/596)) ([1f68ace](https://github.com/washingtonpost/wpds-ui-kit/commit/1f68acef8dd386267b9b30c650df6abe11b10954))
+- updated React types package to prevent type errors ([b647c60](https://github.com/washingtonpost/wpds-ui-kit/commit/b647c60662d9f75f8857f8f8205f5d4c04ba0cef))
 
 ### Features
 
-* increase the specificity of the wpds-dark selector to ensure it overrides light variables ([fd7748f](https://github.com/washingtonpost/wpds-ui-kit/commit/fd7748fa7386396fa13bb52d8d67a1c513ccc6a9))
-
-
-
-
+- increase the specificity of the wpds-dark selector to ensure it overrides light variables ([fd7748f](https://github.com/washingtonpost/wpds-ui-kit/commit/fd7748fa7386396fa13bb52d8d67a1c513ccc6a9))
 
 ## [1.22.6](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.22.5...v1.22.6) (2024-03-14)
 

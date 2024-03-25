@@ -7,10 +7,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 **Note:** Version bump only for package @washingtonpost/wpds-kitchen-sink
 
-
-
-
-
 ## [1.22.6](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.22.5...v1.22.6) (2024-03-14)
 
 **Note:** Version bump only for package @washingtonpost/wpds-kitchen-sink

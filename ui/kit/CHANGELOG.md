@@ -5,14 +5,9 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 # [1.23.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.22.6...v1.23.0) (2024-03-25)
 
-
 ### Bug Fixes
 
-* updated React types package to prevent type errors ([b647c60](https://github.com/washingtonpost/wpds-ui-kit/commit/b647c60662d9f75f8857f8f8205f5d4c04ba0cef))
-
-
-
-
+- updated React types package to prevent type errors ([b647c60](https://github.com/washingtonpost/wpds-ui-kit/commit/b647c60662d9f75f8857f8f8205f5d4c04ba0cef))
 
 ## [1.22.6](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.22.5...v1.22.6) (2024-03-14)
 
