@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.23.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.22.6...v1.23.0) (2024-03-25)
+
+
+### Bug Fixes
+
+* transform select icon on open ([#596](https://github.com/washingtonpost/wpds-ui-kit/issues/596)) ([1f68ace](https://github.com/washingtonpost/wpds-ui-kit/commit/1f68acef8dd386267b9b30c650df6abe11b10954))
+
+
+
+
+
 ## [1.22.6](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.22.5...v1.22.6) (2024-03-14)
 
 **Note:** Version bump only for package @washingtonpost/wpds-select

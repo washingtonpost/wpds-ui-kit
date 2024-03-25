@@ -1,6 +1,6 @@
 {
   "name": "@washingtonpost/wpds-box",
-  "version": "1.22.6",
+  "version": "1.23.0",
   "description": "WPDS Box component",
   "author": "WPDS Support <wpds@washpost.com>",
   "homepage": "https://github.com/washingtonpost/wpds-ui-kit#readme",
@@ -40,7 +40,7 @@
     "react": "^16.8.6 || ^17.0.2"
   },
   "dependencies": {
-    "@washingtonpost/wpds-theme": "1.22.6",
+    "@washingtonpost/wpds-theme": "1.23.0",
     "react": "^16.8.6 || ^17.0.2"
   },
   "gitHead": "9e145492092e9d7395001423309e915962ee92cf"
