@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.23.1](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.23.0...v1.23.1) (2024-03-26)
+
+
+### Bug Fixes
+
+* ensure that dark theme colors get written into the dom ([#605](https://github.com/washingtonpost/wpds-ui-kit/issues/605)) ([9fb968e](https://github.com/washingtonpost/wpds-ui-kit/commit/9fb968e6ea78d2d657ef9f538decc0e2b25dcf35))
+
+
+
+
+
 # [1.23.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.22.6...v1.23.0) (2024-03-25)
 
 ### Bug Fixes
