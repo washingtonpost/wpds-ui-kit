@@ -122,10 +122,16 @@ const _darkTheme = createTheme(`${prefix}-dark.${prefix}-dark`, {
 });
 
 export const darkTheme = {
-  className: `${prefix}-dark`,
+  get className() {
+    _darkTheme.className;
+    return `${prefix}-dark`;
+  },
   selector: _darkTheme.selector,
   colors: _darkTheme.colors,
-  toString: () => `${prefix}-dark`,
+  toString: () => {
+    _darkTheme.toString();
+    return `${prefix}-dark`;
+  },
 };
 
 export const globalStyles = globalCss({
