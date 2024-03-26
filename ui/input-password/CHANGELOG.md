@@ -7,10 +7,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 **Note:** Version bump only for package @washingtonpost/wpds-input-password
 
-
-
-
-
 # [1.23.0](https://github.com/WPMedia/wpds-ui-kit/compare/v1.22.6...v1.23.0) (2024-03-25)
 
 **Note:** Version bump only for package @washingtonpost/wpds-input-password
