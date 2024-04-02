@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from "react";
+
+import { nanoid } from "nanoid";
+
 import { theme, styled } from "../theme";
 import { Button } from "../button";
 import { Divider } from "../divider";
@@ -146,7 +149,7 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
     const [errorId, setErrorId] = useState<string | undefined>();
     const [isAutofilled, setIsAutofilled] = useState<boolean>(false);
     const internalRef = React.useRef<HTMLInputElement>(null);
-    const rootId = React.useId();
+    const rootId = nanoid();
     useEffect(() => {
       setHelperId(`wpds-input-helper-${rootId}`);
       setErrorId(`wpds-input-error-${rootId}`);

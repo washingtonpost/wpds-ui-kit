@@ -1,6 +1,9 @@
 import React from "react";
+
+import { nanoid } from "nanoid";
 import * as RadioGroupPrimitive from "@radix-ui/react-radio-group";
 import type { RadioGroupProps as RadioGroupRootProps } from "@radix-ui/react-radio-group";
+
 import * as Theme from "../theme";
 import type * as WPDS from "../theme";
 import { Fieldset } from "../fieldset";
@@ -85,7 +88,7 @@ export const RadioGroup = React.forwardRef<
   ) => {
     const [errorId, setErrorId] = React.useState<string | undefined>();
 
-    const id = React.useId();
+    const id = nanoid();
     React.useEffect(() => {
       setErrorId(`wpds-input-error-${id}`);
     }, [setErrorId]);

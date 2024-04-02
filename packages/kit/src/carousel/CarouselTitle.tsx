@@ -1,4 +1,7 @@
 import React from "react";
+
+import { nanoid } from "nanoid";
+
 import { styled, theme } from "../theme";
 import { CarouselContext } from "./CarouselRoot";
 
@@ -21,7 +24,7 @@ export const CarouselTitle = React.forwardRef<
   CarouselTitleProps
 >(({ children, ...props }, ref) => {
   const { titleId, setTitleId } = React.useContext(CarouselContext);
-  const id = React.useId();
+  const id = nanoid();
   React.useEffect(() => {
     setTitleId && setTitleId(id);
   }, [setTitleId]);
