@@ -14,6 +14,7 @@ import {
   Button,
   VisuallyHidden,
   theme,
+  Switch,
 } from "@washingtonpost/wpds-ui-kit";
 import Menu from "@washingtonpost/wpds-assets/asset/menu";
 import Close from "@washingtonpost/wpds-assets/asset/close";
@@ -216,6 +217,32 @@ export const NavigationBar = ({ setMobileMenu, mobileMenuState, isClosed }) => {
               Support
             </Anchor>
           </Link>
+        </ListItem>
+        <ListItem title="Switch to v2 docs site">
+          <InputLabel>
+            <VisuallyHidden>Switch to v2 docs site</VisuallyHidden>
+          </InputLabel>
+          <Switch.Root
+            id="docs-site-v2-switcher"
+            name="docs-site-v2-switcher"
+            checked={
+              typeof window !== "undefined" &&
+              window.location.hostname.includes(
+                "wpds-ui-kit-git-v2.preview.now.washingtonpost.com"
+              )
+            }
+            onCheckedChange={(checked) => {
+              if (checked) {
+                window.location.hostname =
+                  "wpds-ui-kit-git-v2.preview.now.washingtonpost.com";
+                return;
+              }
+              window.location.hostname = "build.washingtonpost.com";
+              return;
+            }}
+          >
+            <Switch.Thumb />
+          </Switch.Root>
         </ListItem>
         <ListItem>
           <ThemeToggle
