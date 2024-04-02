@@ -15,6 +15,7 @@ import {
   VisuallyHidden,
   theme,
   Switch,
+  InputLabel,
 } from "@washingtonpost/wpds-ui-kit";
 import Menu from "@washingtonpost/wpds-assets/asset/menu";
 import Close from "@washingtonpost/wpds-assets/asset/close";
