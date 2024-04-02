@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.7](https://github.com/washingtonpost/wpds-docs/compare/v1.22.6...v2.0.0-alpha.7) (2024-04-02)
+
+### Bug Fixes
+
+- add nanoid back ([#607](https://github.com/washingtonpost/wpds-docs/issues/607)) ([d862816](https://github.com/washingtonpost/wpds-docs/commit/d862816e85c3f667b1bd5be1f253b7920261f01b))
+
+# [2.0.0-alpha.2](https://github.com/washingtonpost/wpds-docs/compare/v2.0.0-alpha.1...v2.0.0-alpha.2) (2024-03-14)
+
+# [2.0.0-alpha.1](https://github.com/washingtonpost/wpds-docs/compare/v2.0.0-alpha.0...v2.0.0-alpha.1) (2024-03-14)
+
+# [2.0.0-alpha.0](https://github.com/washingtonpost/wpds-docs/compare/v2.1.0-experimental.0...v2.0.0-alpha.0) (2024-03-14)
+
+# [2.1.0-experimental.0](https://github.com/washingtonpost/wpds-docs/compare/v1.22.0...v2.1.0-experimental.0) (2024-03-13)
+
+### Bug Fixes
+
+- merging main and resolving conflicts ([#585](https://github.com/washingtonpost/wpds-docs/issues/585)) ([253effe](https://github.com/washingtonpost/wpds-docs/commit/253effebcc310c6ceee9efbed2e346d7b3132691))
+- Playroom fix ([#583](https://github.com/washingtonpost/wpds-docs/issues/583)) ([6b8c42b](https://github.com/washingtonpost/wpds-docs/commit/6b8c42beb93fb2a0e391df6aad5da78cf40d92e3))
+
+### Features
+
+- move Button, Icon, theme, and VisuallyHidden to v2 package ([#562](https://github.com/washingtonpost/wpds-docs/issues/562)) ([be3524d](https://github.com/washingtonpost/wpds-docs/commit/be3524d388e177023b9c476a68020a478a893f50))
+- remove nanoid dependency ([#555](https://github.com/washingtonpost/wpds-docs/issues/555)) ([20f22d6](https://github.com/washingtonpost/wpds-docs/commit/20f22d6a0869de6edb25312bb93638832320b82f))
+- v2 mass components upgrade/migration ([#578](https://github.com/washingtonpost/wpds-docs/issues/578)) ([5e0394b](https://github.com/washingtonpost/wpds-docs/commit/5e0394b4e6747bfd9fee1dc0bcd82d1dcb6cd9b6)), closes [#580](https://github.com/washingtonpost/wpds-docs/issues/580) [#579](https://github.com/washingtonpost/wpds-docs/issues/579)
+
 # [2.0.0-alpha.6](https://github.com/washingtonpost/wpds-docs/compare/v2.0.0-alpha.5...v2.0.0-alpha.6) (2024-03-15)
 
 **Note:** Version bump only for package @washingtonpost/wpds-docs
