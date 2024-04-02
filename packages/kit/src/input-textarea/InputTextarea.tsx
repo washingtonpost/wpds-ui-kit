@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from "react";
+
+import { nanoid } from "nanoid";
+
 import { theme, css, styled } from "../theme";
 import type * as WPDS from "../theme";
 import {
@@ -132,7 +135,7 @@ export const InputTextarea = React.forwardRef<
 
     const internalRef = React.useRef<HTMLTextAreaElement>(null);
 
-    const rootId = React.useId();
+    const rootId = nanoid();
     useEffect(() => {
       setHelperId(`wpds-input-helper-${rootId}`);
       setErrorId(`wpds-input-error-${rootId}`);

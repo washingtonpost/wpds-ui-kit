@@ -4,6 +4,7 @@ import { styled, theme } from "../theme";
 import type * as WPDS from "../theme";
 
 import { useSwipeable } from "react-swipeable";
+import { nanoid } from "nanoid";
 
 import { CarouselContext } from "./CarouselRoot";
 import { CarouselItemProps } from "./CarouselItem";
@@ -50,7 +51,7 @@ export const CarouselContent = React.forwardRef<
   } = React.useContext(CarouselContext);
 
   const [totalItems, setTotalItems] = React.useState(0);
-  const id = React.useId();
+  const id = nanoid();
   const childRefs = React.useRef<HTMLDivElement[]>([]);
   const internalRef = React.useRef<HTMLDivElement>(null);
   const [xPos, setXpos] = React.useState(0);
