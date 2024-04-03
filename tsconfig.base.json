@@ -6,7 +6,8 @@
     "build.washingtonpost.com",
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
+    "packages/**/*.tsx"
   ],
   "exclude": ["node_modules"],
   "compilerOptions": {

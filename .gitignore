@@ -138,3 +138,5 @@ build.washingtonpost.com/public/storybook/**/*
 .turbo
 
 .idea/*
+
+*storybook.log

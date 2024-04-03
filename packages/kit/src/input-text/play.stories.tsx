@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
-import { screen, userEvent } from "@storybook/test";
-import { expect, jest } from "@storybook/test";
+import { screen, userEvent, expect } from "@storybook/test";
 import type { Meta, StoryFn } from "@storybook/react";
 
 import { Icon } from "../icon";
@@ -25,7 +24,9 @@ export default {
     icon: {
       defaultValue: "left",
     },
-    onButtonIconClick: jest.fn(),
+    onButtonIconClick: {
+      control: { type: null },
+    },
     children: {
       options: ["None", "Settings Icon"],
       mapping: {
@@ -42,7 +43,9 @@ export default {
     label: "Label",
     type: "text",
     icon: "left",
-    onButtonIconClick: jest.fn(),
+    onButtonIconClick: () => {
+      console.log("Button icon clicked");
+    },
   },
 } as Meta<typeof Component>;
 

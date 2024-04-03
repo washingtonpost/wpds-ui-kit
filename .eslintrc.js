@@ -26,6 +26,7 @@ module.exports = {
     "plugin:jest-dom/recommended",
     "plugin:storybook/recommended",
     "plugin:react/jsx-runtime",
+    "plugin:storybook/recommended"
   ],
   overrides: [
     {

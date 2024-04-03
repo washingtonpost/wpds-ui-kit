@@ -6,7 +6,7 @@ import { Container } from "../container";
 import { Box } from "../box";
 import { Icon } from "../icon";
 import Profile from "@washingtonpost/wpds-assets/asset/profile";
-import { useDarkMode } from "storybook-dark-mode";
+// import { useDarkMode } from "storybook-dark-mode";
 import WashingtonPost from "@washingtonpost/wpds-assets/asset/washington-post";
 
 import type { Meta, StoryFn } from "@storybook/react";
@@ -33,7 +33,8 @@ export default {
 } as Meta<typeof Component>;
 
 const PrimaryNavigationExample = () => {
-  const darkModeActive = useDarkMode();
+  // const darkModeActive = useDarkMode();
+  const darkModeActive = false;
 
   return (
     <Container
