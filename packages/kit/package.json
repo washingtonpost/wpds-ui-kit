@@ -24,7 +24,7 @@
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
-    "build": "tsup src/index.ts --minify --format esm,cjs --dts --sourcemap --external react --legacy-output",
+    "build": "tsup src/index.ts --minify --format esm,cjs --dts --sourcemap --external react --legacy-output --target esnext",
     "dev": "tsup src/index.ts --format esm,cjs --watch --dts --external react --legacy-output",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
@@ -59,7 +59,7 @@
     "react-transition-group": "^4.4.5"
   },
   "devDependencies": {
-    "tsup": "5.11.13",
+    "tsup": "8.0.2",
     "typescript": "4.5.5"
   },
   "peerDependencies": {
