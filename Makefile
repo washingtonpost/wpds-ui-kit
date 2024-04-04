@@ -2,7 +2,7 @@ experimental-version:
 	npx lerna version prerelease --force-publish --preid=alpha --sign-git-tag=alpha
 
 experimental-publish:
-	npx lerna publish from-package --dist-tag experimental 
+	npx lerna publish from-package --dist-tag alpha 
 	
 main-publish:
 	npx lerna publish from-package --yes --no-git-reset --no-verify-access
