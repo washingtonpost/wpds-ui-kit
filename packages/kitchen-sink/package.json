@@ -32,6 +32,7 @@
     "url": "https://github.com/washingtonpost/wpds-ui-kit/issues"
   },
   "devDependencies": {
+    "@types/react": "~18.2.74",
     "tsup": "5.11.13",
     "typescript": "4.5.5"
   },

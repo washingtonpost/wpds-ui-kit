@@ -52,7 +52,7 @@ export type CarouselRootProps = {
 } & ControlledOrUncontrolled &
   React.ComponentPropsWithRef<typeof Container>;
 
-export const CarouselRoot = React.forwardRef<HTMLDivElement, CarouselRootProps>(
+export const CarouselRoot: any = React.forwardRef<HTMLDivElement, CarouselRootProps>(
   (
     {
       page: pageProp,

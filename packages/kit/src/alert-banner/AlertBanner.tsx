@@ -109,9 +109,9 @@ const AlertIcons = {
 
 type AlertIconType = keyof typeof AlertIcons;
 
-type AlertBannerVariants = React.ComponentProps<typeof StyledAlertBanner>;
+export type AlertBannerVariants = React.ComponentPropsWithRef<typeof StyledAlertBanner>;
 
-const AlertBannerRoot = React.forwardRef<HTMLDivElement, AlertBannerVariants>(
+const AlertBannerRoot: any = React.forwardRef<HTMLDivElement, AlertBannerVariants>(
   (
     {
       variant = "information" as AlertBannerVariants["variant"],

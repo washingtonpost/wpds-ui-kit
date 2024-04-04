@@ -27,6 +27,8 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "@types/react": "~18.2.74",
+    "@types/react-dom": "~18.2.24",
     "@washingtonpost/wpds-theme": "latest",
     "@washingtonpost/wpds-ui-kit": "2.0.0-alpha.8",
     "react": "^18.2.0",

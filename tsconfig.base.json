@@ -49,7 +49,7 @@
     "typeRoots": [
       "./node_modules/@types",
       "./types",
-      "./node_modules/**/*.d.ts"
+      "./node_modules/**/index.d.ts"
     ]
   }
 }
