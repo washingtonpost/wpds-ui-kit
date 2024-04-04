@@ -17,7 +17,7 @@
     "build": "node script/create-theme.js"
   },
   "peerDependencies": {
-    "@washingtonpost/wpds-ui-kit": "2.0.0-alpha.7"
+    "@washingtonpost/wpds-ui-kit": "2.0.0-alpha.8"
   },
   "dependencies": {
     "@washingtonpost/wpds-theme": "1.22.6",
