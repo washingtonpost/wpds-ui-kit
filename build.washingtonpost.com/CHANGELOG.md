@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.9](https://github.com/washingtonpost/wpds-docs/compare/v2.0.0-alpha.7...v2.0.0-alpha.9) (2024-04-09)
+
+
+### Bug Fixes
+
+* new colors are not showing up ([#614](https://github.com/washingtonpost/wpds-docs/issues/614)) ([9e9b975](https://github.com/washingtonpost/wpds-docs/commit/9e9b9755f70bcd70ebde30501515f31269efaf7d))
+
+
+
+
+
 # [2.0.0-alpha.8](https://github.com/washingtonpost/wpds-docs/compare/v2.0.0-alpha.7...v2.0.0-alpha.8) (2024-04-04)
 
 ### Bug Fixes
