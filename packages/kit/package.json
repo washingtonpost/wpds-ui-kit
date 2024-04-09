@@ -72,6 +72,7 @@
     "./src/theme/wpds.tokens.json": "./src/theme/wpds.tokens.json",
     "./src/theme/hexcodes.tokens.json": "./src/theme/hexcodes.tokens.json",
     "./src/input-search/cities": "./src/input-search/cities",
+    "./src/theme/tokens": "./src/theme/tokens",
     ".": {
       "source": "./src/index.ts",
       "import": {
