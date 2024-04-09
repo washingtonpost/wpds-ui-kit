@@ -3,6 +3,7 @@ import { renderToString } from "react-dom/server.js";
 import { getCssText, darkTheme } from "@washingtonpost/wpds-theme";
 import fs from "fs";
 
+// Needed in order for the react render (with stitches) to generate the dark color tokens
 // eslint-disable-next-line testing-library/render-result-naming-convention
 const css = renderToString(
   React.createElement("style", {
