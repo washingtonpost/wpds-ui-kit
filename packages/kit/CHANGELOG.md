@@ -3,17 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-# [2.0.0-alpha.9](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.0.0-alpha.7...v2.0.0-alpha.9) (2024-04-09)
-
+# [2.0.0-alpha.10](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.0.0-alpha.7...v2.0.0-alpha.10) (2024-04-09)
 
 ### Bug Fixes
 
-* add tokens specifier to exports ([#616](https://github.com/washingtonpost/wpds-ui-kit/issues/616)) ([261c231](https://github.com/washingtonpost/wpds-ui-kit/commit/261c2317d9f34c20da55afaa8d9012d45677ca52))
-* new colors are not showing up ([#614](https://github.com/washingtonpost/wpds-ui-kit/issues/614)) ([9e9b975](https://github.com/washingtonpost/wpds-ui-kit/commit/9e9b9755f70bcd70ebde30501515f31269efaf7d))
+- add tokens specifier to exports ([#616](https://github.com/washingtonpost/wpds-ui-kit/issues/616)) ([261c231](https://github.com/washingtonpost/wpds-ui-kit/commit/261c2317d9f34c20da55afaa8d9012d45677ca52))
+- new colors are not showing up ([#614](https://github.com/washingtonpost/wpds-ui-kit/issues/614)) ([9e9b975](https://github.com/washingtonpost/wpds-ui-kit/commit/9e9b9755f70bcd70ebde30501515f31269efaf7d))
 
+# [2.0.0-alpha.9](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.0.0-alpha.7...v2.0.0-alpha.9) (2024-04-09)
 
+### Bug Fixes
 
-
+- add tokens specifier to exports ([#616](https://github.com/washingtonpost/wpds-ui-kit/issues/616)) ([261c231](https://github.com/washingtonpost/wpds-ui-kit/commit/261c2317d9f34c20da55afaa8d9012d45677ca52))
+- new colors are not showing up ([#614](https://github.com/washingtonpost/wpds-ui-kit/issues/614)) ([9e9b975](https://github.com/washingtonpost/wpds-ui-kit/commit/9e9b9755f70bcd70ebde30501515f31269efaf7d))
 
 # [2.0.0-alpha.8](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.0.0-alpha.7...v2.0.0-alpha.8) (2024-04-04)
 

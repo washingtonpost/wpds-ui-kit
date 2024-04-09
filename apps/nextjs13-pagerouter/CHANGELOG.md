@@ -3,13 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-# [2.0.0-alpha.9](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.0.0-alpha.7...v2.0.0-alpha.9) (2024-04-09)
+# [2.0.0-alpha.10](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.0.0-alpha.7...v2.0.0-alpha.10) (2024-04-09)
 
 **Note:** Version bump only for package nextjs13-pagerouter
 
+# [2.0.0-alpha.9](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.0.0-alpha.7...v2.0.0-alpha.9) (2024-04-09)
 
-
-
+**Note:** Version bump only for package nextjs13-pagerouter
 
 # [2.0.0-alpha.8](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.0.0-alpha.7...v2.0.0-alpha.8) (2024-04-04)
 
