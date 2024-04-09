@@ -3,7 +3,7 @@ import {
   globalStyles,
   darkModeGlobalStyles,
   darkTheme,
-} from "@washingtonpost/wpds-theme";
+} from "@washingtonpost/wpds-ui-kit";
 
 const style = document.createElement("style");
 style.innerHTML = getCssText();

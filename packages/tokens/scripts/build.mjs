@@ -1,6 +1,6 @@
 import React from "react";
 import { renderToString } from 'react-dom/server';
-import { getCssText, globalStyles, darkModeGlobalStyles, darkTheme } from "@washingtonpost/wpds-theme";
+import { getCssText, globalStyles, darkModeGlobalStyles, darkTheme } from "@washingtonpost/wpds-ui-kit";
 import fs from "fs";
 
 // eslint-disable-next-line testing-library/render-result-naming-convention

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { styled, theme } from "@washingtonpost/wpds-ui-kit";
 const uiKit = theme;
-import Tokens from "@washingtonpost/wpds-theme/src/wpds.tokens.json";
+import Tokens from "@washingtonpost/wpds-ui-kit/src/theme/wpds.tokens.json";
 import { hex, score } from "wcag-contrast";
 import { useTheme } from "next-themes";
 

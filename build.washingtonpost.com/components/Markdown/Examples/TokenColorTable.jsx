@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { styled } from "@washingtonpost/wpds-ui-kit";
-import Tokens from "@washingtonpost/wpds-theme/src/wpds.tokens.json";
+import Tokens from "@washingtonpost/wpds-ui-kit/src/theme/wpds.tokens.json";
 import { useTheme } from "next-themes";
 import Fuse from "fuse.js";
 import { InputSearch } from "@washingtonpost/wpds-ui-kit";
