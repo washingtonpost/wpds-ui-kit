@@ -10,6 +10,7 @@ const css = renderToString(
   })
 );
 
+// Needed in order for the react render (with stitches) to generate the dark color tokens
 // eslint-disable-next-line testing-library/render-result-naming-convention
 const div = renderToString(
   React.createElement("div", {
