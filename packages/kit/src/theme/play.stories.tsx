@@ -223,7 +223,7 @@ const meta: Meta<React.ComponentProps<typeof Template>> = {
 };
 export default meta;
 
-const activeStyle = `background-color: ${theme.colors.green100.value}`;
+const activeStyle = `background-color: ${theme.colors.green80.value}`;
 const inactiveStyle = `background-color: ${theme.colors.gray300.value}`;
 
 const allModes = {

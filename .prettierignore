@@ -9,3 +9,4 @@ out
 jest-coverage
 plop-templates
 /ui/theme/src/tokens.ts
+/packages/kit/src/theme/tokens.ts
