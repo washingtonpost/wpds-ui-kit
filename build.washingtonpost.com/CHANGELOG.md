@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.24.0](https://github.com/washingtonpost/wpds-docs/compare/v1.23.1...v1.24.0) (2024-04-09)
+
+
+### Features
+
+* add v2 docs switcher ([#609](https://github.com/washingtonpost/wpds-docs/issues/609)) ([49e35a1](https://github.com/washingtonpost/wpds-docs/commit/49e35a13a67efaa5d64e457ac565f8b6970d0fd4))
+
+
+
+
+
 ## [1.23.1](https://github.com/washingtonpost/wpds-docs/compare/v1.23.0...v1.23.1) (2024-03-26)
 
 **Note:** Version bump only for package @washingtonpost/wpds-docs

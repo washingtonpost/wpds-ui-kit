@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.24.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.23.1...v1.24.0) (2024-04-09)
+
+
+### Bug Fixes
+
+* remove global styles from wpds-tokens ([2886b69](https://github.com/washingtonpost/wpds-ui-kit/commit/2886b6921257daa54fca191c1c554f8830bf5bf0))
+
+
+
+
+
 ## [1.23.1](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.23.0...v1.23.1) (2024-03-26)
 
 **Note:** Version bump only for package @washingtonpost/wpds-tokens
