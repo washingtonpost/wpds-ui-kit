@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.11](https://github.com/washingtonpost/wpds-docs/compare/v2.0.0-alpha.10...v2.0.0-alpha.11) (2024-04-09)
+
+**Note:** Version bump only for package @washingtonpost/wpds-docs
+
 # [2.0.0-alpha.10](https://github.com/washingtonpost/wpds-docs/compare/v2.0.0-alpha.7...v2.0.0-alpha.10) (2024-04-09)
 
 ### Bug Fixes
