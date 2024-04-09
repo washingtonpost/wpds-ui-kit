@@ -67,23 +67,5 @@
   "peerDependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
-  },
-  "exports": {
-    "./src/theme/wpds.tokens.json": "./src/theme/wpds.tokens.json",
-    "./src/theme/hexcodes.tokens.json": "./src/theme/hexcodes.tokens.json",
-    "./src/input-search/cities": "./src/input-search/cities",
-    "./src/theme/tokens": "./src/theme/tokens",
-    ".": {
-      "source": "./src/index.ts",
-      "import": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/esm/index.js"
-      },
-      "require": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/index.js"
-      }
-    },
-    "./package.json": "./package.json"
   }
 }
