@@ -24,9 +24,11 @@ export const CarouselTitle = React.forwardRef<
   CarouselTitleProps
 >(({ children, ...props }, ref) => {
   const { titleId, setTitleId } = React.useContext(CarouselContext);
-  const id = nanoid();
+
   React.useEffect(() => {
-    setTitleId && setTitleId(id);
+    if (setTitleId) {
+      setTitleId(`${nanoid(6)}-title`);
+    }
   }, [setTitleId]);
 
   return (
