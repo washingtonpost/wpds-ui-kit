@@ -3,6 +3,35 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.12](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.0.0-alpha.11...v2.0.0-alpha.12) (2024-04-10)
+
+# [1.24.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.0.0-alpha.10...v1.24.0) (2024-04-09)
+
+### Bug Fixes
+
+- remove global styles from wpds-tokens ([2886b69](https://github.com/washingtonpost/wpds-ui-kit/commit/2886b6921257daa54fca191c1c554f8830bf5bf0))
+
+### Features
+
+- add v2 docs switcher ([#609](https://github.com/washingtonpost/wpds-ui-kit/issues/609)) ([49e35a1](https://github.com/washingtonpost/wpds-ui-kit/commit/49e35a13a67efaa5d64e457ac565f8b6970d0fd4))
+
+## [1.23.1](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.23.0...v1.23.1) (2024-03-26)
+
+### Bug Fixes
+
+- ensure that dark theme colors get written into the dom ([#605](https://github.com/washingtonpost/wpds-ui-kit/issues/605)) ([9fb968e](https://github.com/washingtonpost/wpds-ui-kit/commit/9fb968e6ea78d2d657ef9f538decc0e2b25dcf35))
+
+# [1.23.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.22.6...v1.23.0) (2024-03-25)
+
+### Bug Fixes
+
+- make input helper and error text block level elements for consistent formatting ([2640be2](https://github.com/washingtonpost/wpds-ui-kit/commit/2640be29f24f83199baa3c735bdd47c404dd700b))
+- updated React types package to prevent type errors ([b647c60](https://github.com/washingtonpost/wpds-ui-kit/commit/b647c60662d9f75f8857f8f8205f5d4c04ba0cef))
+
+### Features
+
+- increase the specificity of the wpds-dark selector to ensure it overrides light variables ([fd7748f](https://github.com/washingtonpost/wpds-ui-kit/commit/fd7748fa7386396fa13bb52d8d67a1c513ccc6a9))
+
 # [2.0.0-alpha.11](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.0.0-alpha.10...v2.0.0-alpha.11) (2024-04-09)
 
 **Note:** Version bump only for package root

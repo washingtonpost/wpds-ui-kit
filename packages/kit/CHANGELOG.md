@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.12](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.0.0-alpha.11...v2.0.0-alpha.12) (2024-04-10)
+
+**Note:** Version bump only for package @washingtonpost/wpds-ui-kit
+
 # [2.0.0-alpha.11](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.0.0-alpha.10...v2.0.0-alpha.11) (2024-04-09)
 
 **Note:** Version bump only for package @washingtonpost/wpds-ui-kit
