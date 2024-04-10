@@ -113,13 +113,26 @@ export const {
 } = WPDS;
 export const utils = config.utils;
 
-export const darkTheme = createTheme(`${prefix}-dark`, {
+const _darkTheme = createTheme(`${prefix}-dark.${prefix}-dark`, {
   colors: {
     ...tokens.dark,
     ...tokens.staticColors,
     ...tokens.darkTheme,
   },
 });
+
+export const darkTheme = {
+  get className() {
+    _darkTheme.className;
+    return `${prefix}-dark`;
+  },
+  selector: _darkTheme.selector,
+  colors: _darkTheme.colors,
+  toString: () => {
+    _darkTheme.toString();
+    return `${prefix}-dark`;
+  },
+};
 
 export const globalStyles = globalCss({
   ":root": {

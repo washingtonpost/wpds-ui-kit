@@ -220,11 +220,7 @@ export const NavigationBar = ({ setMobileMenu, mobileMenuState, isClosed }) => {
             </Anchor>
           </Link>
         </ListItem>
-        <ListItem
-          title="
-          Switch to v2 docs site
-        "
-        >
+        <ListItem title="Switch to v2 docs site">
           <InputLabel>
             <VisuallyHidden>Switch to v2 docs site</VisuallyHidden>
           </InputLabel>
