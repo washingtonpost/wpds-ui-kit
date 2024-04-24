@@ -1,6 +1,6 @@
 import React from "react";
 import { renderToString } from 'react-dom/server';
-import { getCssText, globalStyles, darkModeGlobalStyles, darkTheme } from "@washingtonpost/wpds-ui-kit";
+import { getCssText, darkTheme } from "@washingtonpost/wpds-ui-kit";
 import fs from "fs";
 
 // Needed in order for the react render (with stitches) to generate the dark color tokens
