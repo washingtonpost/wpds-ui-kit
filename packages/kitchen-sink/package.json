@@ -44,5 +44,6 @@
     "@washingtonpost/wpds-assets": "2.0.0",
     "@washingtonpost/wpds-ui-kit": "2.0.0",
     "nanoid": "^3.3.4"
-  }
+  },
+  "gitHead": "31c56dc13e81f793df44d9edd16420c7163b7163"
 }
