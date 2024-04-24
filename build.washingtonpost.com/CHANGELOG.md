@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/washingtonpost/wpds-docs/compare/v1.24.0...v2.0.0) (2024-04-24)
+
+
+### Features
+
+* v2.0.0  ([#542](https://github.com/washingtonpost/wpds-docs/issues/542)) ([d429cfa](https://github.com/washingtonpost/wpds-docs/commit/d429cfabb7489a2548ffad5c3d945145824d4a22)), closes [#544](https://github.com/washingtonpost/wpds-docs/issues/544) [#552](https://github.com/washingtonpost/wpds-docs/issues/552) [#555](https://github.com/washingtonpost/wpds-docs/issues/555) [#560](https://github.com/washingtonpost/wpds-docs/issues/560) [#562](https://github.com/washingtonpost/wpds-docs/issues/562) [#564](https://github.com/washingtonpost/wpds-docs/issues/564) [#565](https://github.com/washingtonpost/wpds-docs/issues/565) [#574](https://github.com/washingtonpost/wpds-docs/issues/574) [#570](https://github.com/washingtonpost/wpds-docs/issues/570) [#579](https://github.com/washingtonpost/wpds-docs/issues/579) [#578](https://github.com/washingtonpost/wpds-docs/issues/578) [#580](https://github.com/washingtonpost/wpds-docs/issues/580) [#579](https://github.com/washingtonpost/wpds-docs/issues/579)
+
+
+
+
+
 # [2.0.0-alpha.12](https://github.com/washingtonpost/wpds-docs/compare/v2.0.0-alpha.11...v2.0.0-alpha.12) (2024-04-10)
 
 # [1.24.0](https://github.com/washingtonpost/wpds-docs/compare/v2.0.0-alpha.10...v1.24.0) (2024-04-09)

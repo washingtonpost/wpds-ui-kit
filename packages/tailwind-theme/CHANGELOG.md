@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.24.0...v2.0.0) (2024-04-24)
+
+
+### Features
+
+* v2.0.0  ([#542](https://github.com/washingtonpost/wpds-ui-kit/issues/542)) ([d429cfa](https://github.com/washingtonpost/wpds-ui-kit/commit/d429cfabb7489a2548ffad5c3d945145824d4a22)), closes [#544](https://github.com/washingtonpost/wpds-ui-kit/issues/544) [#552](https://github.com/washingtonpost/wpds-ui-kit/issues/552) [#555](https://github.com/washingtonpost/wpds-ui-kit/issues/555) [#560](https://github.com/washingtonpost/wpds-ui-kit/issues/560) [#562](https://github.com/washingtonpost/wpds-ui-kit/issues/562) [#564](https://github.com/washingtonpost/wpds-ui-kit/issues/564) [#565](https://github.com/washingtonpost/wpds-ui-kit/issues/565) [#574](https://github.com/washingtonpost/wpds-ui-kit/issues/574) [#570](https://github.com/washingtonpost/wpds-ui-kit/issues/570) [#579](https://github.com/washingtonpost/wpds-ui-kit/issues/579) [#578](https://github.com/washingtonpost/wpds-ui-kit/issues/578) [#580](https://github.com/washingtonpost/wpds-ui-kit/issues/580) [#579](https://github.com/washingtonpost/wpds-ui-kit/issues/579)
+
+
+
+
+
 # [2.0.0-alpha.12](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.0.0-alpha.11...v2.0.0-alpha.12) (2024-04-10)
 
 **Note:** Version bump only for package @washingtonpost/wpds-tailwind-theme
