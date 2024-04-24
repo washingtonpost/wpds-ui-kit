@@ -1,6 +1,6 @@
 import React from "react";
 import { styled, css } from "@washingtonpost/wpds-ui-kit";
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 export default function InlineImage({
   maxWidth,

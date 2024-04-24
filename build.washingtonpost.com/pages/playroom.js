@@ -18,6 +18,7 @@ import { Header } from "~/components/Markdown/Components/headers";
 import MDXStyling from "~/components/Markdown/Styling";
 import { CopyCodeButton } from "~/components/Markdown/Components/Sandbox";
 import { Box } from "@washingtonpost/wpds-ui-kit";
+import { NextSeo } from "~/components/next-seo";
 
 const Canvas = Kit.styled("div", {
   color: "$accessible",
@@ -257,15 +258,17 @@ export default function Playroom({
           <Rule variant={isGuide}></Rule>
         </Guide>
         <FlexRow>
-          <MDXRemote
-            compiledSource={receivedSource.compiledSource}
-            scope={{
-              ...Kit,
-              useState: React.useState,
-              useEffect: React.useEffect,
-            }}
-            components={components}
-          />
+          {receivedSource.compiledSource && (
+            <MDXRemote
+              compiledSource={receivedSource.compiledSource}
+              scope={{
+                ...Kit,
+                useState: React.useState,
+                useEffect: React.useEffect,
+              }}
+              components={components}
+            />
+          )}
         </FlexRow>
       </ErrorBoundary>
     );
@@ -310,8 +313,9 @@ export default function Playroom({
       }}
     >
       <Head>
-        <title>WPDS - Playroom</title>
+        <meta name="robots" content="noindex, nofollow" />
       </Head>
+      <NextSeo title="WPDS - Playroom" description="WPDS - Playroom" />
       <SandpackProvider
         template="react"
         customSetup={{

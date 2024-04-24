@@ -135,7 +135,6 @@ build.washingtonpost.com/public/storybook/**/*
 /test-results/
 /playwright-report/
 /playwright/.cache/
-
 .turbo
 
 .idea/*

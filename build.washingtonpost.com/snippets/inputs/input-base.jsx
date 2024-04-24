@@ -4,7 +4,7 @@ import React from "react";
  * See documentation for full component api
 ```jsx
 //Example
-import { InputText } from "@washingtonpost/wpds-input-text";
+import { InputText } from "@washingtonpost/wpds-ui-kit";
 
 export default function Example() {
   const HelperText = () => {

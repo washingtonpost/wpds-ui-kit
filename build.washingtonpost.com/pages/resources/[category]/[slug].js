@@ -1,6 +1,6 @@
 import React from "react";
 import { MDXRemote } from "next-mdx-remote";
-import { NextSeo } from "next-seo";
+import { NextSeo } from "~/components/next-seo";
 import MDXStyling from "~/components/Markdown/Styling";
 import Header from "~/components/Typography/Headers";
 import {
@@ -63,7 +63,7 @@ export default function Page({ current, source, headings }) {
         <TableofContents current={current} headings={headings} />
       </>
       <article>
-        <MDXRemote {...source} components={components} />
+        {source && <MDXRemote {...source} components={components} />}
       </article>
     </>
   );

@@ -3,6 +3,152 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.12](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.0.0-alpha.11...v2.0.0-alpha.12) (2024-04-10)
+
+# [1.24.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.0.0-alpha.10...v1.24.0) (2024-04-09)
+
+### Bug Fixes
+
+- remove global styles from wpds-tokens ([2886b69](https://github.com/washingtonpost/wpds-ui-kit/commit/2886b6921257daa54fca191c1c554f8830bf5bf0))
+
+### Features
+
+- add v2 docs switcher ([#609](https://github.com/washingtonpost/wpds-ui-kit/issues/609)) ([49e35a1](https://github.com/washingtonpost/wpds-ui-kit/commit/49e35a13a67efaa5d64e457ac565f8b6970d0fd4))
+
+## [1.23.1](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.23.0...v1.23.1) (2024-03-26)
+
+### Bug Fixes
+
+- ensure that dark theme colors get written into the dom ([#605](https://github.com/washingtonpost/wpds-ui-kit/issues/605)) ([9fb968e](https://github.com/washingtonpost/wpds-ui-kit/commit/9fb968e6ea78d2d657ef9f538decc0e2b25dcf35))
+
+# [1.23.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.22.6...v1.23.0) (2024-03-25)
+
+### Bug Fixes
+
+- make input helper and error text block level elements for consistent formatting ([2640be2](https://github.com/washingtonpost/wpds-ui-kit/commit/2640be29f24f83199baa3c735bdd47c404dd700b))
+- updated React types package to prevent type errors ([b647c60](https://github.com/washingtonpost/wpds-ui-kit/commit/b647c60662d9f75f8857f8f8205f5d4c04ba0cef))
+
+### Features
+
+- increase the specificity of the wpds-dark selector to ensure it overrides light variables ([fd7748f](https://github.com/washingtonpost/wpds-ui-kit/commit/fd7748fa7386396fa13bb52d8d67a1c513ccc6a9))
+
+# [2.0.0-alpha.11](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.0.0-alpha.10...v2.0.0-alpha.11) (2024-04-09)
+
+**Note:** Version bump only for package root
+
+# [2.0.0-alpha.10](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.0.0-alpha.7...v2.0.0-alpha.10) (2024-04-09)
+
+### Bug Fixes
+
+- add tokens specifier to exports ([#616](https://github.com/washingtonpost/wpds-ui-kit/issues/616)) ([261c231](https://github.com/washingtonpost/wpds-ui-kit/commit/261c2317d9f34c20da55afaa8d9012d45677ca52))
+- new colors are not showing up ([#614](https://github.com/washingtonpost/wpds-ui-kit/issues/614)) ([9e9b975](https://github.com/washingtonpost/wpds-ui-kit/commit/9e9b9755f70bcd70ebde30501515f31269efaf7d))
+
+# [2.0.0-alpha.9](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.0.0-alpha.7...v2.0.0-alpha.9) (2024-04-09)
+
+### Bug Fixes
+
+- add tokens specifier to exports ([#616](https://github.com/washingtonpost/wpds-ui-kit/issues/616)) ([261c231](https://github.com/washingtonpost/wpds-ui-kit/commit/261c2317d9f34c20da55afaa8d9012d45677ca52))
+- new colors are not showing up ([#614](https://github.com/washingtonpost/wpds-ui-kit/issues/614)) ([9e9b975](https://github.com/washingtonpost/wpds-ui-kit/commit/9e9b9755f70bcd70ebde30501515f31269efaf7d))
+
+# [2.0.0-alpha.8](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.0.0-alpha.7...v2.0.0-alpha.8) (2024-04-04)
+
+### Bug Fixes
+
+- new colors are not showing up ([#614](https://github.com/washingtonpost/wpds-ui-kit/issues/614)) ([9e9b975](https://github.com/washingtonpost/wpds-ui-kit/commit/9e9b9755f70bcd70ebde30501515f31269efaf7d))
+
+# [2.0.0-alpha.7](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.22.6...v2.0.0-alpha.7) (2024-04-02)
+
+### Bug Fixes
+
+- add nanoid back ([#607](https://github.com/washingtonpost/wpds-ui-kit/issues/607)) ([d862816](https://github.com/washingtonpost/wpds-ui-kit/commit/d862816e85c3f667b1bd5be1f253b7920261f01b))
+- make input helper and error block level elements to preserve formatting ([20a9455](https://github.com/washingtonpost/wpds-ui-kit/commit/20a9455cd8a72f1c9c7521e5ced97f09e8b59604))
+- transform Select arrow on open ([#597](https://github.com/washingtonpost/wpds-ui-kit/issues/597)) ([b0e77be](https://github.com/washingtonpost/wpds-ui-kit/commit/b0e77be13ee0e5989d81c976e2b5eb9f5a41a060))
+- transform select icon on open ([#596](https://github.com/washingtonpost/wpds-ui-kit/issues/596)) ([1f68ace](https://github.com/washingtonpost/wpds-ui-kit/commit/1f68acef8dd386267b9b30c650df6abe11b10954))
+
+# [2.0.0-alpha.2](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.0.0-alpha.1...v2.0.0-alpha.2) (2024-03-14)
+
+# [2.0.0-alpha.1](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.0.0-alpha.0...v2.0.0-alpha.1) (2024-03-14)
+
+# [2.0.0-alpha.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.1.0-experimental.0...v2.0.0-alpha.0) (2024-03-14)
+
+# [2.1.0-experimental.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.22.0...v2.1.0-experimental.0) (2024-03-13)
+
+### Bug Fixes
+
+- i don't know how dialog went mising ([#579](https://github.com/washingtonpost/wpds-ui-kit/issues/579)) ([e783d0a](https://github.com/washingtonpost/wpds-ui-kit/commit/e783d0a9a132e67f9b35e1434998a9b163969e25))
+- merging main and resolving conflicts ([#585](https://github.com/washingtonpost/wpds-ui-kit/issues/585)) ([253effe](https://github.com/washingtonpost/wpds-ui-kit/commit/253effebcc310c6ceee9efbed2e346d7b3132691))
+- Playroom fix ([#583](https://github.com/washingtonpost/wpds-ui-kit/issues/583)) ([6b8c42b](https://github.com/washingtonpost/wpds-ui-kit/commit/6b8c42beb93fb2a0e391df6aad5da78cf40d92e3))
+- remove border for clear button on input search ([#560](https://github.com/washingtonpost/wpds-ui-kit/issues/560)) ([504b82f](https://github.com/washingtonpost/wpds-ui-kit/commit/504b82fa0a61249ccab701316ed04fda3077503c))
+- remove defaultOpen from kitchen sink Tooltip example to prevent client server mismatch ([df842ac](https://github.com/washingtonpost/wpds-ui-kit/commit/df842ac97cbd9f1c6a8a680f4cd9f926f7563fb7))
+- take latest minor of Radix accordion ([84f39d4](https://github.com/washingtonpost/wpds-ui-kit/commit/84f39d417b66125ba0efa54dadb08564b9538762))
+
+### Features
+
+- card ([#564](https://github.com/washingtonpost/wpds-ui-kit/issues/564)) ([ce0b9db](https://github.com/washingtonpost/wpds-ui-kit/commit/ce0b9db6985f44d848b0bf38c259f04107f03344))
+- fresh install with updated node/npm ([#574](https://github.com/washingtonpost/wpds-ui-kit/issues/574)) ([848b697](https://github.com/washingtonpost/wpds-ui-kit/commit/848b697d97c6e98241b118ae24472a2fb7cede5a))
+- move Button, Icon, theme, and VisuallyHidden to v2 package ([#562](https://github.com/washingtonpost/wpds-ui-kit/issues/562)) ([be3524d](https://github.com/washingtonpost/wpds-ui-kit/commit/be3524d388e177023b9c476a68020a478a893f50))
+- remove nanoid dependency ([#555](https://github.com/washingtonpost/wpds-ui-kit/issues/555)) ([20f22d6](https://github.com/washingtonpost/wpds-ui-kit/commit/20f22d6a0869de6edb25312bb93638832320b82f))
+- update Accordion to React 18 ([#565](https://github.com/washingtonpost/wpds-ui-kit/issues/565)) ([672e239](https://github.com/washingtonpost/wpds-ui-kit/commit/672e23918d9989de9d1a8702d3880b3f4f0ac38f))
+- update package-lock ([ed5c500](https://github.com/washingtonpost/wpds-ui-kit/commit/ed5c500bd2e03de9c5a87e26b4edd159374c0273))
+- updated InputLabel with latest Radix label component ([#552](https://github.com/washingtonpost/wpds-ui-kit/issues/552)) ([2ca485f](https://github.com/washingtonpost/wpds-ui-kit/commit/2ca485f6be2da0627fad98f3961ab71afdb84b23))
+- v2 mass components upgrade/migration ([#578](https://github.com/washingtonpost/wpds-ui-kit/issues/578)) ([5e0394b](https://github.com/washingtonpost/wpds-ui-kit/commit/5e0394b4e6747bfd9fee1dc0bcd82d1dcb6cd9b6)), closes [#580](https://github.com/washingtonpost/wpds-ui-kit/issues/580) [#579](https://github.com/washingtonpost/wpds-ui-kit/issues/579)
+
+# [2.0.0-alpha.6](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.0.0-alpha.5...v2.0.0-alpha.6) (2024-03-15)
+
+**Note:** Version bump only for package root
+
+# [2.0.0-alpha.5](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.0.0-alpha.4...v2.0.0-alpha.5) (2024-03-15)
+
+**Note:** Version bump only for package root
+
+# [2.0.0-alpha.4](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.0.0-alpha.3...v2.0.0-alpha.4) (2024-03-15)
+
+**Note:** Version bump only for package root
+
+# [2.0.0-alpha.3](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.22.6...v2.0.0-alpha.3) (2024-03-14)
+
+# [2.0.0-alpha.2](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.0.0-alpha.1...v2.0.0-alpha.2) (2024-03-14)
+
+# [2.0.0-alpha.1](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.0.0-alpha.0...v2.0.0-alpha.1) (2024-03-14)
+
+# [2.0.0-alpha.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.1.0-experimental.1...v2.0.0-alpha.0) (2024-03-14)
+
+# [2.1.0-experimental.1](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.1.0-experimental.0...v2.1.0-experimental.1) (2024-03-13)
+
+# [2.1.0-experimental.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.22.0...v2.1.0-experimental.0) (2024-03-13)
+
+### Bug Fixes
+
+- i don't know how dialog went mising ([#579](https://github.com/washingtonpost/wpds-ui-kit/issues/579)) ([e783d0a](https://github.com/washingtonpost/wpds-ui-kit/commit/e783d0a9a132e67f9b35e1434998a9b163969e25))
+- merging main and resolving conflicts ([#585](https://github.com/washingtonpost/wpds-ui-kit/issues/585)) ([253effe](https://github.com/washingtonpost/wpds-ui-kit/commit/253effebcc310c6ceee9efbed2e346d7b3132691))
+- Playroom fix ([#583](https://github.com/washingtonpost/wpds-ui-kit/issues/583)) ([6b8c42b](https://github.com/washingtonpost/wpds-ui-kit/commit/6b8c42beb93fb2a0e391df6aad5da78cf40d92e3))
+- remove border for clear button on input search ([#560](https://github.com/washingtonpost/wpds-ui-kit/issues/560)) ([504b82f](https://github.com/washingtonpost/wpds-ui-kit/commit/504b82fa0a61249ccab701316ed04fda3077503c))
+- remove defaultOpen from kitchen sink Tooltip example to prevent client server mismatch ([df842ac](https://github.com/washingtonpost/wpds-ui-kit/commit/df842ac97cbd9f1c6a8a680f4cd9f926f7563fb7))
+- take latest minor of Radix accordion ([84f39d4](https://github.com/washingtonpost/wpds-ui-kit/commit/84f39d417b66125ba0efa54dadb08564b9538762))
+
+### Features
+
+- card ([#564](https://github.com/washingtonpost/wpds-ui-kit/issues/564)) ([ce0b9db](https://github.com/washingtonpost/wpds-ui-kit/commit/ce0b9db6985f44d848b0bf38c259f04107f03344))
+- fresh install with updated node/npm ([#574](https://github.com/washingtonpost/wpds-ui-kit/issues/574)) ([848b697](https://github.com/washingtonpost/wpds-ui-kit/commit/848b697d97c6e98241b118ae24472a2fb7cede5a))
+- move Button, Icon, theme, and VisuallyHidden to v2 package ([#562](https://github.com/washingtonpost/wpds-ui-kit/issues/562)) ([be3524d](https://github.com/washingtonpost/wpds-ui-kit/commit/be3524d388e177023b9c476a68020a478a893f50))
+- remove nanoid dependency ([#555](https://github.com/washingtonpost/wpds-ui-kit/issues/555)) ([20f22d6](https://github.com/washingtonpost/wpds-ui-kit/commit/20f22d6a0869de6edb25312bb93638832320b82f))
+- update Accordion to React 18 ([#565](https://github.com/washingtonpost/wpds-ui-kit/issues/565)) ([672e239](https://github.com/washingtonpost/wpds-ui-kit/commit/672e23918d9989de9d1a8702d3880b3f4f0ac38f))
+- update package-lock ([ed5c500](https://github.com/washingtonpost/wpds-ui-kit/commit/ed5c500bd2e03de9c5a87e26b4edd159374c0273))
+- updated InputLabel with latest Radix label component ([#552](https://github.com/washingtonpost/wpds-ui-kit/issues/552)) ([2ca485f](https://github.com/washingtonpost/wpds-ui-kit/commit/2ca485f6be2da0627fad98f3961ab71afdb84b23))
+- v2 mass components upgrade/migration ([#578](https://github.com/washingtonpost/wpds-ui-kit/issues/578)) ([5e0394b](https://github.com/washingtonpost/wpds-ui-kit/commit/5e0394b4e6747bfd9fee1dc0bcd82d1dcb6cd9b6)), closes [#580](https://github.com/washingtonpost/wpds-ui-kit/issues/580) [#579](https://github.com/washingtonpost/wpds-ui-kit/issues/579)
+
+# [2.0.0-alpha.2](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.0.0-alpha.1...v2.0.0-alpha.2) (2024-03-14)
+
+**Note:** Version bump only for package root
+
+# [2.0.0-alpha.1](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.0.0-alpha.0...v2.0.0-alpha.1) (2024-03-14)
+
+**Note:** Version bump only for package root
+
+# [2.0.0-alpha.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.1.0-experimental.0...v2.0.0-alpha.0) (2024-03-14)
+
+**Note:** Version bump only for package root
+
 # [1.24.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v1.23.1...v1.24.0) (2024-04-09)
 
 ### Bug Fixes

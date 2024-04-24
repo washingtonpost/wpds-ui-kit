@@ -1,9 +1,9 @@
 experimental-version:
-	npx lerna version --conventional-commits --conventional-prerelease  --preid=experimental --sign-git-tag=experimental --no-changelog --yes --force-publish
+	npx lerna version prerelease --force-publish --preid=alpha --sign-git-tag=alpha
 
 experimental-publish:
-	npx lerna publish from-package --dist-tag experimental --yes --no-verify-access
-
+	npx lerna publish from-package --dist-tag alpha 
+	
 main-publish:
 	npx lerna publish from-package --yes --no-git-reset --no-verify-access
 
@@ -40,3 +40,9 @@ validate:
 	npm run lint:check
 	npm run format:check
 	npm run test
+
+v2-migrate-component:
+	node scripts/move-component-to-new-dir.js $(componentName)
+	npx storybook@latest migrate csf-2-to-3 --glob="./packages/kit/src/$(componentName)/*.stories.tsx"
+	npx jscodeshift ./packages/kit/src/$(componentName) -t ./scripts/transform-wpds-imports.js --extensions=tsx
+	npx react-codemod update-react-imports ./packages/kit/src

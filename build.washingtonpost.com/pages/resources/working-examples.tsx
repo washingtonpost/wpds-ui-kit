@@ -18,7 +18,7 @@ import {
   styled,
 } from "@washingtonpost/wpds-ui-kit";
 
-import { cities } from "@washingtonpost/wpds-input-search/src/cities";
+import { cities } from "@washingtonpost/wpds-ui-kit/src/input-search/cities";
 
 const STATES = [
   "Alabama",

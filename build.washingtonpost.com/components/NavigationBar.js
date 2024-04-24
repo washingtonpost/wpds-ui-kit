@@ -154,6 +154,7 @@ export const NavigationBar = ({ setMobileMenu, mobileMenuState, isClosed }) => {
           Skip to main content
         </SkipToMainContent>
         <Logo css={{ width: "100%" }} />
+
         <Box
           css={{
             [customNotSmBreakpoint]: {
@@ -196,7 +197,7 @@ export const NavigationBar = ({ setMobileMenu, mobileMenuState, isClosed }) => {
       </Container>
       <List role="navigation" aria-label="Support and search">
         <ListItem>
-          <Link href="/release-notes" passHref>
+          <Link href="/release-notes" passHref legacyBehavior>
             <Anchor
               isCurrent={router.asPath.includes("/release-notes")}
               onClick={() => setMobileMenu(!mobileMenuState)}
@@ -206,14 +207,14 @@ export const NavigationBar = ({ setMobileMenu, mobileMenuState, isClosed }) => {
           </Link>
         </ListItem>
         <ListItem>
-          <Link href="/resources" passHref>
+          <Link href="/resources" passHref legacyBehavior>
             <Anchor isCurrent={router.asPath.includes("/resources")}>
               Resources
             </Anchor>
           </Link>
         </ListItem>
         <ListItem css={{ margin: "0 $100 0 0" }}>
-          <Link href="/support" passHref>
+          <Link href="/support" passHref legacyBehavior>
             <Anchor isCurrent={router.asPath.includes("/support")}>
               Support
             </Anchor>

@@ -1,7 +1,7 @@
 import React from "react";
 import { MDXRemote } from "next-mdx-remote";
 import dynamic from "next/dynamic";
-import { NextSeo } from "next-seo";
+import { NextSeo } from "~/components/next-seo";
 import MDXStyling from "~/components/Markdown/Styling";
 
 import Header from "~/components/Typography/Headers";
@@ -15,7 +15,7 @@ const components = {
   CustomComponent: dynamic(() => import("~/components/Typography/Headers")),
 };
 
-export default function Page({ source, iconData }) {
+export default function Page({ source = {}, iconData = { components: [] } }) {
   return (
     <>
       <NextSeo
@@ -31,7 +31,9 @@ export default function Page({ source, iconData }) {
         )}
       </header>
       <article>
-        <MDXRemote {...source} components={components} scope={iconData} />
+        {source && (
+          <MDXRemote {...source} components={components} scope={iconData} />
+        )}
       </article>
     </>
   );
@@ -44,7 +46,7 @@ export const getStaticProps = async ({ params }) => {
 
   const navigation = await getNavigation();
 
-  let iconData = null;
+  let iconData = { components: [] };
   if (params.slug === "icons") {
     const response = await fetch(
       "https://api.figma.com/v1/files/LA6qKUukk8v3YkkuKq6IC6/components",
