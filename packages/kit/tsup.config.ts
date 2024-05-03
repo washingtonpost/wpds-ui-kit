@@ -6,7 +6,6 @@ export default defineConfig({
     "!src/**/*.test.(ts|tsx)",
     "!src/**/*.stories.(ts|tsx)",
   ],
-  legacyOutput: true,
   clean: true,
   format: ["cjs", "esm"],
   outDir: "dist",
@@ -15,4 +14,6 @@ export default defineConfig({
   sourcemap: true,
   target: "node18",
   treeshake: true,
+  external: ["react", "react-dom"],
+  dts: false
 });

@@ -1,13 +1,13 @@
 {
   "name": "@washingtonpost/wpds-ui-kit",
-  "version": "2.0.0",
+  "version": "2.0.1-alpha.0",
   "description": "WPDS UI Kit",
   "author": "WPDS Support <wpds@washpost.com>",
   "homepage": "https://github.com/washingtonpost/wpds-ui-kit#readme",
   "license": "MIT",
   "source": "src/index.ts",
   "main": "dist/index.js",
-  "module": "dist/esm/index.js",
+  "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "files": [
     "dist",
@@ -26,8 +26,8 @@
     "build:transform": "node src/theme/build/transform.js",
     "build:createHex": "node src/theme/build/modules/createHex.js",
     "test": "echo \"Error: run tests from root\" && exit 1",
-    "build": "npm run build:transform && tsup",
-    "dev": "tsup src/index.ts --format esm,cjs --watch --dts --external react --legacy-output",
+    "build": "npm run build:transform && tsup && tsup src/index.ts --dts-only",
+    "dev": "tsup src/index.ts --format esm,cjs --watch --dts --external react",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
   "bugs": {
@@ -71,7 +71,7 @@
     ".": {
       "import": {
         "types": "./dist/index.d.mts",
-        "default": "./dist/esm/index.js"
+        "default": "./dist/index.mjs"
       },
       "require": {
         "types": "./dist/index.d.ts",
