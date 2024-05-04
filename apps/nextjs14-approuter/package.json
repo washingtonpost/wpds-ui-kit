@@ -9,8 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@washingtonpost/wpds-kitchen-sink": "2.0.0",
-    "@washingtonpost/wpds-ui-kit": "2.0.0",
+    "@washingtonpost/wpds-kitchen-sink": "npm:wpds-kitchen-sink@*",
+    "@washingtonpost/wpds-ui-kit": "npm:wpds-ui-kit@*",
     "next": "14.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
