@@ -1,6 +1,5 @@
 {
   "include": [
-    "ui",
     "types",
     "scripts",
     "build.washingtonpost.com",

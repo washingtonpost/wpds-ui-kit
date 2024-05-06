@@ -1,5 +1,5 @@
 import React from "react";
-import { renderToString } from 'react-dom/server';
+import { renderToString } from "react-dom/server";
 import { getCssText, darkTheme } from "@washingtonpost/wpds-ui-kit";
 import fs from "fs";
 
