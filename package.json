@@ -69,6 +69,7 @@
     "webpack": "^5.88.2"
   },
   "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "^4.17.2",
     "esbuild-android-64": "0.14.25",
     "esbuild-android-arm64": "0.15.5",
     "esbuild-darwin-64": "0.14.25",
