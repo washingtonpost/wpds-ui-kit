@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.1.0](https://github.com/washingtonpost/wpds-docs/compare/v2.0.0...v2.1.0) (2024-05-06)
+
+### Features
+
+- use treeshaking from tsup ([#624](https://github.com/washingtonpost/wpds-docs/issues/624)) ([f3da010](https://github.com/washingtonpost/wpds-docs/commit/f3da01063f4f326d5045e48c63e4ae9ea8e39aa1))
+
 # [2.0.0](https://github.com/washingtonpost/wpds-docs/compare/v1.24.0...v2.0.0) (2024-04-24)
 
 ### Features
