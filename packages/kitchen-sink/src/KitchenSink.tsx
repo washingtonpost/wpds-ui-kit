@@ -426,9 +426,6 @@ export const KitchenSink = () => {
           <HStack>
             <PaginationDots amount={5} index={5} label="Pagination label" />
           </HStack>
-          <HStack>
-            <PaginationDots amount={5} index={5} label="Pagination label" orientation="vertical" />
-          </HStack>
         </Stack>
       </Stack>
       <h2>Drawer</h2>
