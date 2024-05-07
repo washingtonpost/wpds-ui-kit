@@ -13,7 +13,7 @@ main-version:
 # create experimental release
 experimental-release:
 	make experimental-version
-	npm run turbo:build:force
+	npm run build
 	make experimental-publish
 
 # checkout any uncommitted changes

@@ -115,7 +115,7 @@
     "build": "turbo run build",
     "storybook": "storybook dev -p 6006 --quiet --ci",
     "test-storybook": "test-storybook",
-    "build-storybook": "npm run turbo:build;storybook build --force-build-preview --quiet",
+    "build-storybook": "npm run build;storybook build --force-build-preview --quiet",
     "test": "jest",
     "size": "lerna run size",
     "main-publish": "make main-publish",
