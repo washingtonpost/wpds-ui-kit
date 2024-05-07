@@ -1,5 +1,5 @@
 import React from "react";
-import { SelectContext } from "./Select";
+import { SelectContext } from "./SelectRoot";
 
 import { styled, theme } from "../theme";
 import { Icon } from "../icon";
