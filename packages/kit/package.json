@@ -80,7 +80,8 @@
       }
     },
     "./src/theme/wpds.tokens.json": "./src/theme/wpds.tokens.json",
-    "./src/input-search/cities": "./src/input-search/cities.ts"
+    "./src/input-search/cities": "./src/input-search/cities.ts",
+    "./src/theme/hexcodes.tokens.json": "./src/theme/hexcodes.tokens.json"
   },
   "gitHead": "811c5321b9f187637c2359f322024b98233f84de"
 }
