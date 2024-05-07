@@ -23,7 +23,7 @@ boop-checkout:
 # create main release
 main-release:
 	make main-version
-	npm run turbo:build:ui:force
+	npm run build
 	make boop-checkout
 	make main-publish
 	npm install
