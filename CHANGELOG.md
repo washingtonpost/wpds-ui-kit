@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.2](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.1.1...v2.1.2) (2024-05-07)
+
+### Bug Fixes
+
+- use regular build script ([61919a8](https://github.com/washingtonpost/wpds-ui-kit/commit/61919a8084aac465d56e0da816ff51ccf1d69fcd))
+- use regular build script ([909be34](https://github.com/washingtonpost/wpds-ui-kit/commit/909be3417f8bdddf0f88caee13fa08bb4fda0490))
+- use regular build script ([56dbd94](https://github.com/washingtonpost/wpds-ui-kit/commit/56dbd94b49a0423bcd97525f0b741ebd6c83465f))
+
 ## [2.1.1](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.1.0...v2.1.1) (2024-05-07)
 
 ### Bug Fixes
