@@ -110,4 +110,7 @@ module.exports = withBundleAnalyzer({
       "@washingtonpost/media-components",
     ],
   },
+  env: {
+    APP_ENV: "production",
+  },
 });
