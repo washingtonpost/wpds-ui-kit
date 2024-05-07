@@ -44,6 +44,13 @@ const Dot = styled("div", {
 const PaginationContainer = styled("div", {
   maxWidth: `calc((${theme.sizes["050"]} + 2px) * 5)`,
   overflow: "hidden",
+  variants: {
+    isVertical: {
+      true: {
+        maxWidth: theme.sizes["075"],
+      },
+    },
+  },
 });
 
 const PaginationSlider = styled("div", {
@@ -55,7 +62,7 @@ const PaginationSlider = styled("div", {
     transition: "none",
   },
   variants: {
-    vertical: {
+    isVertical: {
       true: {
         flexDirection: "column",
       },
@@ -105,6 +112,9 @@ export const PaginationDots = React.forwardRef<
      * We want to move the container via `transform` so that the *visible* dots are centered.
      */
     const translate = getTranslate(nPages, activeIndex);
+
+    const isVertical = orientation === "vertical";
+
     return (
       <PaginationContainer
         ref={ref}
@@ -116,16 +126,14 @@ export const PaginationDots = React.forwardRef<
         aria-valuetext={
           unitName ? `${unitName} ${activeIndex + 1} of ${nPages}` : undefined
         }
+        isVertical={isVertical}
         {...props}
       >
         <PaginationSlider
           css={{
-            transform:
-              orientation !== "vertical"
-                ? `translate(${translate})`
-                : undefined,
+            transform: !isVertical ? `translate(${translate})` : undefined,
           }}
-          vertical={orientation === "vertical"}
+          isVertical={isVertical}
         >
           {dots.map(({ scale, background }, i: number) => (
             <Dot
