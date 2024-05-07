@@ -137,6 +137,73 @@ export default function Example() {
 }
 ```
 
+### Orientation
+
+This is the total amount of dots in the range.
+
+```jsx withPreview
+export default function Example() {
+  return (
+    <Box
+      css={{
+        display: "flex",
+        flexDirection: "column",
+      }}
+    >
+      <Box
+        css={{
+          display: "flex",
+          gap: theme.space[100],
+          position: "relative",
+        }}
+      >
+        <PaginationDots amount={6} index={1} label="pagination dots" />
+      </Box>
+      <Box
+        css={{
+          display: "flex",
+          gap: theme.space[100],
+          marginBlockStart: theme.space[200],
+          position: "relative",
+        }}
+      >
+        <PaginationDots amount={5} index={1} label="pagination dots" />
+      </Box>
+      <Box
+        css={{
+          display: "flex",
+          gap: theme.space[100],
+          marginBlockStart: theme.space[200],
+          position: "relative",
+        }}
+      >
+        <PaginationDots amount={4} index={1} label="pagination dots" />
+      </Box>
+      <Box
+        css={{
+          display: "flex",
+          gap: theme.space[100],
+          marginBlockStart: theme.space[200],
+          position: "relative",
+        }}
+      >
+        <PaginationDots amount={3} index={1} label="pagination dots" />
+      </Box>
+      <Box
+        css={{
+          display: "flex",
+          gap: theme.space[100],
+          marginBlockStart: theme.space[200],
+          position: "relative",
+        }}
+      >
+        <PaginationDots amount={2} index={1} label="pagination dots" />
+      </Box>
+    </Box>
+  );
+}
+```
+
 ---
 
 ## Guidance

@@ -32,6 +32,7 @@ const DefaultArgs = {
   amount: 6,
   index: 1,
   label: "Pagination Dots",
+  orientation: "horizontal"
 };
 
 const Label = styled("h3", {
