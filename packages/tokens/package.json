@@ -17,17 +17,17 @@
   },
   "main": "dist/styles.css",
   "module": "dist/styles.css",
-  "type": "module",
   "files": [
     "dist"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "node ./scripts/build.mjs"
+    "build": "node ./scripts/build.js"
   },
   "license": "MIT",
   "devDependencies": {
-    "@washingtonpost/wpds-ui-kit": "2.0.0",
+    "@washingtonpost/wpds-assets": "^2.2.0",
+    "@washingtonpost/wpds-ui-kit": "2.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
