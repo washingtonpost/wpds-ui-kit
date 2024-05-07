@@ -19,3 +19,5 @@ Import the CSS into your project:
 ```
 
 Ta-da!
+
+Thank you!

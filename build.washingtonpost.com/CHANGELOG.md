@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.1](https://github.com/washingtonpost/wpds-docs/compare/v2.1.0...v2.1.1) (2024-05-07)
+
+### Bug Fixes
+
+- fix build issue with tokens & front-end test apps ([#625](https://github.com/washingtonpost/wpds-docs/issues/625)) ([e8e622b](https://github.com/washingtonpost/wpds-docs/commit/e8e622b33956e2c0d370bc3201c02667adb54f4e))
+
 # [2.1.0](https://github.com/washingtonpost/wpds-docs/compare/v2.0.0...v2.1.0) (2024-05-06)
 
 ### Features

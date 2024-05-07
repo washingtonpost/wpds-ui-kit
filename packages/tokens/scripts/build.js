@@ -1,7 +1,7 @@
-import React from "react";
-import { renderToString } from "react-dom/server";
-import { getCssText, darkTheme } from "@washingtonpost/wpds-ui-kit";
-import fs from "fs";
+const React = require("react");
+const { renderToString } = require("react-dom/server");
+const { getCssText, darkTheme } = require("@washingtonpost/wpds-ui-kit");
+const fs = require("fs");
 
 // Needed in order for the react render (with stitches) to generate the dark color tokens
 // eslint-disable-next-line testing-library/render-result-naming-convention

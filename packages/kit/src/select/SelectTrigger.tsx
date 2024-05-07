@@ -13,7 +13,7 @@ import * as SelectPrimitive from "@radix-ui/react-select";
 import type * as WPDS from "../theme";
 import { SelectTriggerProps as RadixAccordionTriggerProps } from "@radix-ui/react-select";
 
-import { SelectContext } from "./Select";
+import { SelectContext } from "./SelectRoot";
 
 const StyledTrigger = styled(SelectPrimitive.Trigger, {
   ...sharedInputStyles,
