@@ -25,6 +25,7 @@ interface PaginationDotsProps extends React.ComponentPropsWithRef<"div"> {
   /** Specifies the type of element represented by the dots (e.g., "Page") */
   unitName?: string,
   css?: WPDS.CSS,
+  /** If the dots are oriented left -> right or top -> bottom */
   orientation?: string
 }
 
@@ -57,7 +58,6 @@ const PaginationSlider = styled("div", {
     vertical: {
       true: {
         flexDirection: "column",
-        border: '1px solid red'
       }
     }
   }
@@ -71,8 +71,6 @@ export const PaginationDots = React.forwardRef<
     { index = 1, amount, unitName, label = "Pagination Dots", orientation = "horizontal", ...props },
     ref
   ) => {
-    console.log(orientation, "orientation DEBUG")
-
     // Limit index within the bounds of the range
     if (!amount && !index) {
       return null;

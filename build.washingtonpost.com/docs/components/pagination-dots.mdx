@@ -139,7 +139,7 @@ export default function Example() {
 
 ### Orientation
 
-This is the total amount of dots in the range.
+If the dots are oriented left -> right or top -> bottom. It defaults to a horizontal orientation.
 
 ```jsx withPreview
 export default function Example() {
@@ -167,37 +167,7 @@ export default function Example() {
           position: "relative",
         }}
       >
-        <PaginationDots amount={5} index={1} label="pagination dots" />
-      </Box>
-      <Box
-        css={{
-          display: "flex",
-          gap: theme.space[100],
-          marginBlockStart: theme.space[200],
-          position: "relative",
-        }}
-      >
-        <PaginationDots amount={4} index={1} label="pagination dots" />
-      </Box>
-      <Box
-        css={{
-          display: "flex",
-          gap: theme.space[100],
-          marginBlockStart: theme.space[200],
-          position: "relative",
-        }}
-      >
-        <PaginationDots amount={3} index={1} label="pagination dots" />
-      </Box>
-      <Box
-        css={{
-          display: "flex",
-          gap: theme.space[100],
-          marginBlockStart: theme.space[200],
-          position: "relative",
-        }}
-      >
-        <PaginationDots amount={2} index={1} label="pagination dots" />
+        <PaginationDots amount={6} index={1} label="pagination dots" orientation="vertical" />
       </Box>
     </Box>
   );
