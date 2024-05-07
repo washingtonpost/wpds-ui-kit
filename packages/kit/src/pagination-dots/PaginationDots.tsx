@@ -119,7 +119,7 @@ export const PaginationDots = React.forwardRef<
         {...props}
       >
         <PaginationSlider
-          css={{ transform: `translate(${translate})` }}
+          css={{ transform: orientation !== "vertical" ? `translate(${translate})` : undefined }}
           vertical={orientation === "vertical"}
         >
           {dots.map(({ scale, background }, i: number) => (
