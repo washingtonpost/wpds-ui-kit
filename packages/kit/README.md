@@ -9,15 +9,12 @@ npm install @washingtonpost/wpds-ui-kit
 ## Usage
 
 ```jsx
-import React from 'react';
-import { Button } from '@washingtonpost/wpds-ui-kit';
+import React from "react";
+import { Button } from "@washingtonpost/wpds-ui-kit";
 
-const App = () => (
-  <Button>Click me</Button>
-);
+const App = () => <Button>Click me</Button>;
 
 export default App;
 ```
 
 [Visit](https://build.washingtonpost.com) for more information.
-
