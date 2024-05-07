@@ -47,6 +47,7 @@ const PaginationContainer = styled("div", {
   variants: {
     isVertical: {
       true: {
+        border: '1px solid green',
         maxWidth: theme.sizes["075"],
       },
     },
