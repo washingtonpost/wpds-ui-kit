@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.2.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.1.2...v2.2.0) (2024-05-08)
+
+### Features
+
+- add tokens to export config ([#627](https://github.com/washingtonpost/wpds-ui-kit/issues/627)) ([2a68e98](https://github.com/washingtonpost/wpds-ui-kit/commit/2a68e983be8d0ecd8fedb36079eda4f9d84d938d))
+
 ## [2.1.2](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.1.1...v2.1.2) (2024-05-07)
 
 ### Bug Fixes
