@@ -1,6 +1,6 @@
 {
   "name": "@washingtonpost/wpds-ui-kit",
-  "version": "2.1.2",
+  "version": "2.2.0",
   "description": "WPDS UI Kit",
   "author": "WPDS Support <wpds@washpost.com>",
   "homepage": "https://github.com/washingtonpost/wpds-ui-kit#readme",
@@ -80,8 +80,9 @@
       }
     },
     "./src/theme/wpds.tokens.json": "./src/theme/wpds.tokens.json",
+    "./src/theme/tokens": "./src/theme/tokens.ts",
     "./src/input-search/cities": "./src/input-search/cities.ts",
     "./src/theme/hexcodes.tokens.json": "./src/theme/hexcodes.tokens.json"
   },
-  "gitHead": "7d8678469f4dd5b4be65a6179ed70cad842ec02a"
+  "gitHead": "c9b198d3b6e9dad8630dcf0789c210a4503775dc"
 }
