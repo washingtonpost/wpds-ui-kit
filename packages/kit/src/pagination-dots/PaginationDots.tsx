@@ -47,7 +47,7 @@ const PaginationContainer = styled("div", {
   variants: {
     isVertical: {
       true: {
-        border: '1px solid green',
+        maxHeight: `calc((${theme.sizes["050"]} + 2px) * 5)`,
         maxWidth: theme.sizes["075"],
       },
     },
@@ -132,7 +132,9 @@ export const PaginationDots = React.forwardRef<
       >
         <PaginationSlider
           css={{
-            transform: !isVertical ? `translate(${translate})` : undefined,
+            transform: !isVertical
+              ? `translate(${translate})`
+              : `translateY(${translate})`,
           }}
           isVertical={isVertical}
         >
