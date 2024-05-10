@@ -86,6 +86,8 @@ export const PaginationDots = React.forwardRef<
     },
     ref
   ) => {
+    const isVertical = orientation === "vertical";
+
     // Limit index within the bounds of the range
     if (!amount && !index) {
       return null;
@@ -113,8 +115,6 @@ export const PaginationDots = React.forwardRef<
      * We want to move the container via `transform` so that the *visible* dots are centered.
      */
     const translate = getTranslate(nPages, activeIndex);
-
-    const isVertical = orientation === "vertical";
 
     return (
       <PaginationContainer
