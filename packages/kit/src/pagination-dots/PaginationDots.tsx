@@ -25,8 +25,8 @@ interface PaginationDotsProps extends React.ComponentPropsWithRef<"div"> {
   /** Specifies the type of element represented by the dots (e.g., "Page") */
   unitName?: string;
   css?: WPDS.CSS;
-  /** If the dots are oriented left -> right or top -> bottom */
-  orientation?: string;
+  /** If the dots are oriented left to right or top to bottom */
+  orientation?: "horizontal" | "vertical";
 }
 
 const Dot = styled("div", {
