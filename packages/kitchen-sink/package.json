@@ -1,6 +1,6 @@
 {
   "name": "@washingtonpost/wpds-kitchen-sink",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "WPDS Kitchen Sink",
   "author": "WPDS Support <wpds@washpost.com>",
   "homepage": "https://github.com/washingtonpost/wpds-ui-kit#readme",
@@ -42,7 +42,7 @@
   },
   "dependencies": {
     "@washingtonpost/wpds-assets": "2.0.0",
-    "@washingtonpost/wpds-ui-kit": "2.2.0",
+    "@washingtonpost/wpds-ui-kit": "2.3.0",
     "nanoid": "^3.3.4"
   },
   "gitHead": "c9b198d3b6e9dad8630dcf0789c210a4503775dc"
