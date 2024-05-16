@@ -1,10 +1,8 @@
 const docgen = require("react-docgen-typescript");
+const { JsxEmit } = require("typescript");
 
 export const getPropsTable = async (component = "icon") => {
   const options = {
-    shouldExtractLiteralValuesFromEnum: true,
-    savePropValueAsString: true,
-    shouldExtractValuesFromUnion: true,
     propFilter: (prop) => {
       if (prop.declarations !== undefined && prop.declarations.length > 0) {
         const hasPropAdditionalDescription = prop.declarations.find(
@@ -20,10 +18,18 @@ export const getPropsTable = async (component = "icon") => {
     },
   };
 
+  const customParser = docgen.withCompilerOptions(
+    {
+      esModuleInterop: true,
+      jsx: JsxEmit.Preserve,
+    },
+    options
+  );
+
   // Parse a file for docgen info
 
   try {
-    const componentsData = docgen.parse(
+    const componentsData = customParser.parse(
       `../packages/kit/src/${component}/index.ts`,
       options
     );

@@ -25,6 +25,8 @@ interface PaginationDotsProps extends React.ComponentPropsWithRef<"div"> {
   /** Specifies the type of element represented by the dots (e.g., "Page") */
   unitName?: string;
   css?: WPDS.CSS;
+  /** If the dots are oriented left to right or top to bottom */
+  orientation?: "horizontal" | "vertical";
 }
 
 const Dot = styled("div", {
@@ -42,6 +44,14 @@ const Dot = styled("div", {
 const PaginationContainer = styled("div", {
   maxWidth: `calc((${theme.sizes["050"]} + 2px) * 5)`,
   overflow: "hidden",
+  variants: {
+    isVertical: {
+      true: {
+        maxHeight: `calc((${theme.sizes["050"]} + 2px) * 5)`,
+        maxWidth: theme.sizes["075"],
+      },
+    },
+  },
 });
 
 const PaginationSlider = styled("div", {
@@ -52,6 +62,13 @@ const PaginationSlider = styled("div", {
   "@reducedMotion": {
     transition: "none",
   },
+  variants: {
+    isVertical: {
+      true: {
+        flexDirection: "column",
+      },
+    },
+  },
 });
 
 export const PaginationDots = React.forwardRef<
@@ -59,9 +76,18 @@ export const PaginationDots = React.forwardRef<
   PaginationDotsProps
 >(
   (
-    { index = 1, amount, unitName, label = "Pagination Dots", ...props },
+    {
+      index = 1,
+      amount,
+      unitName,
+      label = "Pagination Dots",
+      orientation = "horizontal",
+      ...props
+    },
     ref
   ) => {
+    const isVertical = orientation === "vertical";
+
     // Limit index within the bounds of the range
     if (!amount && !index) {
       return null;
@@ -89,6 +115,7 @@ export const PaginationDots = React.forwardRef<
      * We want to move the container via `transform` so that the *visible* dots are centered.
      */
     const translate = getTranslate(nPages, activeIndex);
+
     return (
       <PaginationContainer
         ref={ref}
@@ -100,9 +127,17 @@ export const PaginationDots = React.forwardRef<
         aria-valuetext={
           unitName ? `${unitName} ${activeIndex + 1} of ${nPages}` : undefined
         }
+        isVertical={isVertical}
         {...props}
       >
-        <PaginationSlider css={{ transform: `translate(${translate})` }}>
+        <PaginationSlider
+          css={{
+            transform: !isVertical
+              ? `translate(${translate})`
+              : `translateY(${translate})`,
+          }}
+          isVertical={isVertical}
+        >
           {dots.map(({ scale, background }, i: number) => (
             <Dot
               key={i}
@@ -134,7 +169,7 @@ function configureDots(nPages: number, activeIndex: number, amount: number) {
     // default: active dot has scale = 1, each dot previous/next's scale reduces by 25%
     let scale = 1 - stepsFromActive / 4;
     if (amount <= 5 && stepsFromActive > 1) {
-      // if there are 5 or less dots, make all dots at least 4px
+      // if there are 5 or fewer dots, make all dots at least 4px
       scale = 0.5;
     } else if (
       // else if active dot is first or last in the arr, the 3rd-from-active dot should be 4px, not 2px

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.3.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.2.0...v2.3.0) (2024-05-14)
+
+### Features
+
+- adding vertical dots [STRY-301] ([#626](https://github.com/washingtonpost/wpds-ui-kit/issues/626)) ([438a90b](https://github.com/washingtonpost/wpds-ui-kit/commit/438a90b7615d63415233ec37b0302bbdb7f36e10))
+
 # [2.2.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.1.2...v2.2.0) (2024-05-08)
 
 ### Features
