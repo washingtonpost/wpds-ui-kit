@@ -52,6 +52,7 @@ const Template: StoryFn<typeof InputSearch.Root> = (args) => {
           onChange={(event) => {
             setTerm(event.target.value);
           }}
+          error
         />
         {results && (
           <InputSearch.Popover>
