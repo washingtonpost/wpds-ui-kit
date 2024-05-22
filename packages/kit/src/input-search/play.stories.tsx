@@ -1,6 +1,6 @@
 import React, { useMemo, useState, useEffect } from "react";
-import { screen, userEvent } from "@storybook/testing-library";
-import { expect } from "@storybook/jest";
+import { screen, userEvent } from "@storybook/test";
+
 import { Box } from "../box";
 import { matchSorter } from "match-sorter";
 import { InputSearch } from "./";
@@ -28,8 +28,8 @@ const useCityMatch = (term: string) => {
       term.trim() === ""
         ? null
         : matchSorter(cities, term, {
-            keys: [(item) => `${item.city}, ${item.state}`],
-          }),
+          keys: [(item) => `${item.city}, ${item.state}`],
+        }),
     [term]
   );
 };

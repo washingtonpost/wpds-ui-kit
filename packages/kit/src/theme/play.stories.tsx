@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { within, waitFor } from "@storybook/testing-library";
-import { expect } from "@storybook/jest";
+import { within, waitFor } from "@storybook/test";
+
 import { theme, styled } from "../theme";
 
 import type { Meta, StoryObj } from "@storybook/react";

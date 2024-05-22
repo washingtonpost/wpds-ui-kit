@@ -1,6 +1,6 @@
 import React from "react";
-import { screen, userEvent } from "@storybook/testing-library";
-import { expect } from "@storybook/jest";
+import { screen, userEvent } from "@storybook/test";
+
 import { InputPassword as Component } from "./";
 import { styled, theme } from "../theme";
 import type { Meta, StoryFn } from "@storybook/react";

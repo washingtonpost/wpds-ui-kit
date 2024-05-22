@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
-import { screen, userEvent } from "@storybook/testing-library";
-import { expect, jest } from "@storybook/jest";
+import { fn, expect, screen, userEvent } from "@storybook/test";
 import type { Meta, StoryFn } from "@storybook/react";
 
 import { Icon } from "../icon";
@@ -25,7 +24,7 @@ export default {
     icon: {
       defaultValue: "left",
     },
-    onButtonIconClick: jest.fn(),
+    onButtonIconClick: fn(),
     children: {
       options: ["None", "Settings Icon"],
       mapping: {

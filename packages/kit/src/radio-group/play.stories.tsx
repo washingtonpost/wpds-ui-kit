@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { screen, userEvent } from "@storybook/testing-library";
-import { expect } from "@storybook/jest";
+import { screen, userEvent } from "@storybook/test";
+
 import { RadioGroup as Component, RadioButton } from "./";
 import { styled, css, theme } from "../theme";
 import { Box } from "../box";

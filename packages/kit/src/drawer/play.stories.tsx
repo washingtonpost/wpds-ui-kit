@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { screen, userEvent } from "@storybook/testing-library";
-import { expect } from "@storybook/jest";
+import { screen, userEvent } from "@storybook/test";
+
 import { Drawer as Component } from "./";
 import { theme } from "../theme";
 import { Box } from "../box";

@@ -3,8 +3,8 @@ import { PaginationDots as Component } from "./";
 import { theme, styled } from "../theme";
 import { Button } from "../button";
 import { InputText } from "../input-text";
-import { within, userEvent } from "@storybook/testing-library";
-import { expect } from "@storybook/jest";
+import { within, userEvent } from "@storybook/test";
+
 
 import type { Meta, StoryFn } from "@storybook/react";
 
