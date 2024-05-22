@@ -13,7 +13,7 @@ const getListOfContributors = async ({
     {
       owner,
       repo,
-    }
+    },
   );
 
   return response.data;
@@ -39,7 +39,7 @@ export const getContributors = async () => {
       // Remove duplicates
       .filter(
         (contributor, index, self) =>
-          index === self.findIndex((t) => t.name === contributor.name)
+          index === self.findIndex((t) => t.name === contributor.name),
       )
       // add a contributor manually
       .concat({

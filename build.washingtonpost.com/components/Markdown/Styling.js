@@ -17,7 +17,7 @@ import { AlertBanner } from "@washingtonpost/wpds-ui-kit";
 import { ComponentStatus } from "../ComponentPage/ComponentStatus";
 import CollapsibleContainer from "./Components/collapsible";
 const InputCheckbox = dynamic(() =>
-  import("./Components/Checkbox").then((mod) => mod.InputCheckbox)
+  import("./Components/Checkbox").then((mod) => mod.InputCheckbox),
 );
 
 const Table = styled("table", {

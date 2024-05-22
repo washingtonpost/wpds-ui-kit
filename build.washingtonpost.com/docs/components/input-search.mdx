@@ -65,7 +65,7 @@ export default function Example() {
     return cities.filter(
       (city) =>
         city.name.toLowerCase().includes(term.toLowerCase()) ||
-        city.state.toLowerCase().includes(term.toLowerCase())
+        city.state.toLowerCase().includes(term.toLowerCase()),
     );
   }
 
@@ -175,7 +175,7 @@ export default function Example() {
     return cities.filter(
       (city) =>
         city.name.toLowerCase().includes(term.toLowerCase()) ||
-        city.state.toLowerCase().includes(term.toLowerCase())
+        city.state.toLowerCase().includes(term.toLowerCase()),
     );
   }
 
@@ -296,7 +296,7 @@ export default function Example() {
     return cities.filter(
       (city) =>
         city.name.toLowerCase().includes(term.toLowerCase()) ||
-        city.state.toLowerCase().includes(term.toLowerCase())
+        city.state.toLowerCase().includes(term.toLowerCase()),
     );
   }
 
@@ -406,7 +406,7 @@ export default function Example() {
     return cities.filter(
       (city) =>
         city.name.toLowerCase().includes(term.toLowerCase()) ||
-        city.state.toLowerCase().includes(term.toLowerCase())
+        city.state.toLowerCase().includes(term.toLowerCase()),
     );
   }
 
@@ -481,7 +481,7 @@ export default function Example() {
     return cities.filter(
       (city) =>
         city.name.toLowerCase().includes(term.toLowerCase()) ||
-        city.state.toLowerCase().includes(term.toLowerCase())
+        city.state.toLowerCase().includes(term.toLowerCase()),
     );
   }
 
@@ -557,7 +557,7 @@ export default function Example() {
     return cities.filter(
       (city) =>
         city.name.toLowerCase().includes(term.toLowerCase()) ||
-        city.state.toLowerCase().includes(term.toLowerCase())
+        city.state.toLowerCase().includes(term.toLowerCase()),
     );
   }
 
@@ -633,7 +633,7 @@ export default function Example() {
     return cities.filter(
       (city) =>
         city.name.toLowerCase().includes(term.toLowerCase()) ||
-        city.state.toLowerCase().includes(term.toLowerCase())
+        city.state.toLowerCase().includes(term.toLowerCase()),
     );
   }
 
@@ -745,7 +745,7 @@ export default function Example() {
         city.name.toLowerCase().includes(term.toLowerCase()) ||
         city.state.toLowerCase().includes(term.toLowerCase()) ||
         term.toLowerCase().includes(city.name.toLowerCase()) ||
-        term.toLowerCase().includes(city.state.toLowerCase())
+        term.toLowerCase().includes(city.state.toLowerCase()),
     );
   }
 
@@ -828,7 +828,7 @@ export default function Example() {
     return cities.filter(
       (city) =>
         city.name.toLowerCase().includes(term.toLowerCase()) ||
-        city.state.toLowerCase().includes(term.toLowerCase())
+        city.state.toLowerCase().includes(term.toLowerCase()),
     );
   }
 
@@ -837,7 +837,7 @@ export default function Example() {
       return [];
     }
     return new Promise((resolve) =>
-      setTimeout(resolve, 3000, searchCities(value))
+      setTimeout(resolve, 3000, searchCities(value)),
     );
   }
 
@@ -904,7 +904,7 @@ export default function Example() {
     return cities.filter(
       (city) =>
         city.name.toLowerCase().includes(term.toLowerCase()) ||
-        city.state.toLowerCase().includes(term.toLowerCase())
+        city.state.toLowerCase().includes(term.toLowerCase()),
     );
   }
 
@@ -980,7 +980,7 @@ export default function Example() {
     return cities.filter(
       (city) =>
         city.name.toLowerCase().includes(term.toLowerCase()) ||
-        city.state.toLowerCase().includes(term.toLowerCase())
+        city.state.toLowerCase().includes(term.toLowerCase()),
     );
   }
 
@@ -1056,7 +1056,7 @@ export default function Example() {
     return cities.filter(
       (city) =>
         city.name.toLowerCase().includes(term.toLowerCase()) ||
-        city.state.toLowerCase().includes(term.toLowerCase())
+        city.state.toLowerCase().includes(term.toLowerCase()),
     );
   }
 
@@ -1434,7 +1434,7 @@ export default function Example() {
         book.title.toLowerCase().includes(term.toLowerCase()) ||
         book.author.toLowerCase().includes(term.toLowerCase()) ||
         term.toLowerCase().includes(book.title.toLowerCase()) ||
-        term.toLowerCase().includes(book.author.toLowerCase())
+        term.toLowerCase().includes(book.author.toLowerCase()),
     );
   }
 
@@ -1479,7 +1479,7 @@ export default function Example() {
                       </Icon>{" "}
                       <InputSearch.ItemText>{`${book.title} by ${book.author}`}</InputSearch.ItemText>
                     </InputSearch.ListItem>
-                  )
+                  ),
                 )}
               </InputSearch.List>
             ) : (
@@ -1631,7 +1631,7 @@ export default function Example() {
         book.title.toLowerCase().includes(term.toLowerCase()) ||
         book.author.toLowerCase().includes(term.toLowerCase()) ||
         term.toLowerCase().includes(book.title.toLowerCase()) ||
-        term.toLowerCase().includes(book.author.toLowerCase())
+        term.toLowerCase().includes(book.author.toLowerCase()),
     );
   }
 
@@ -1640,7 +1640,7 @@ export default function Example() {
   let results1 = searchBooks(term1);
   if (results1 && ebooksChecked) {
     results1 = results1.filter((book) =>
-      book.format === "ebook" ? true : false
+      book.format === "ebook" ? true : false,
     );
   }
 
@@ -1708,7 +1708,7 @@ export default function Example() {
                           </Icon>{" "}
                           <InputSearch.ItemText>{`${book.title} by ${book.author}`}</InputSearch.ItemText>
                         </InputSearch.ListItem>
-                      )
+                      ),
                     )}
                   </InputSearch.List>
                 </>
@@ -1765,7 +1765,7 @@ export default function Example() {
                           </Icon>{" "}
                           <InputSearch.ItemText>{`${book.title} by ${book.author}`}</InputSearch.ItemText>
                         </InputSearch.ListItem>
-                      )
+                      ),
                     )}
                   </InputSearch.List>
                 </Tabs.Content>
@@ -1789,7 +1789,7 @@ export default function Example() {
                           </Icon>{" "}
                           <InputSearch.ItemText>{`${book.title} by ${book.author}`}</InputSearch.ItemText>
                         </InputSearch.ListItem>
-                      ) : null
+                      ) : null,
                     )}
                   </InputSearch.List>
                 </Tabs.Content>
@@ -1801,7 +1801,7 @@ export default function Example() {
                           key={`${book.title.toLowerCase()} ${book.author.toLowerCase()}`}
                           value={`${book.title} by ${book.author}`}
                         />
-                      ) : null
+                      ) : null,
                     )}
                   </InputSearch.List>
                 </Tabs.Content>
@@ -1852,7 +1852,7 @@ export default function Example() {
     return cities.filter(
       (city) =>
         city.name.toLowerCase().includes(term.toLowerCase()) ||
-        city.state.toLowerCase().includes(term.toLowerCase())
+        city.state.toLowerCase().includes(term.toLowerCase()),
     );
   }
 
@@ -1969,7 +1969,7 @@ export default function Example() {
           </InputSearch.ListHeading>
           {suggestions
             .filter((suggestion) =>
-              suggestion.toLowerCase().includes(term.toLowerCase())
+              suggestion.toLowerCase().includes(term.toLowerCase()),
             )
             .map((suggestion) => (
               <InputSearch.ListItem

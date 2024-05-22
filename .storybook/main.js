@@ -15,7 +15,6 @@ module.exports = {
   previewBody: (body) => `${body}`,
 
   features: {
-    storyStoreV7: true,
     interactionsDebugger: true,
   },
 
@@ -39,9 +38,11 @@ module.exports = {
   //   },
   // },
 
-  docs: {
-    autodocs: true,
-  },
+  docs: {},
+
+  typescript: {
+    reactDocgen: "react-docgen-typescript"
+  }
 };
 
 function getAbsolutePath(value) {

@@ -75,7 +75,7 @@ export const Footer = () => {
         <EditInGithub
           href={`http://github.com/washingtonpost/wpds-ui-kit/edit/main/build.washingtonpost.com/docs/${router.asPath.replace(
             "/",
-            ""
+            "",
           )}.mdx`}
           target="_blank"
           rel="noopener noreferrer"

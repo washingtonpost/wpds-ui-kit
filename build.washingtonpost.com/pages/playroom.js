@@ -123,7 +123,7 @@ export default function Playroom({
             isGuide,
             target: "wpds-playroom",
           },
-          "*"
+          "*",
         );
       }
 
@@ -132,7 +132,7 @@ export default function Playroom({
         const newUrl = new URL(window.location);
         newUrl.searchParams.set(
           "code",
-          LZString.compressToEncodedURIComponent(thatCode)
+          LZString.compressToEncodedURIComponent(thatCode),
         );
         window.history.replaceState({}, "", newUrl);
       }
@@ -144,7 +144,7 @@ export default function Playroom({
           ref={iframeRef}
           as="iframe"
           src={`/playroom?code=${LZString.compressToEncodedURIComponent(
-            firstRenderCode
+            firstRenderCode,
           )}`}
           css={{
             background: Kit.theme.colors.gray500,
@@ -376,7 +376,7 @@ Playroom.getLayout = (page) => page;
 export async function getServerSideProps({ query, res }) {
   res.setHeader(
     "Cache-Control",
-    "public, s-maxage=10, stale-while-revalidate=59"
+    "public, s-maxage=10, stale-while-revalidate=59",
   );
   const { code, edit, isGuide = "none" } = query;
 

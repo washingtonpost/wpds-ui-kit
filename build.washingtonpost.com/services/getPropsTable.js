@@ -8,7 +8,7 @@ export const getPropsTable = async (component = "icon") => {
         const hasPropAdditionalDescription = prop.declarations.find(
           (declaration) => {
             return !declaration.fileName.includes("@types/react");
-          }
+          },
         );
 
         return Boolean(hasPropAdditionalDescription);
@@ -23,7 +23,7 @@ export const getPropsTable = async (component = "icon") => {
       esModuleInterop: true,
       jsx: JsxEmit.Preserve,
     },
-    options
+    options,
   );
 
   // Parse a file for docgen info
@@ -31,7 +31,7 @@ export const getPropsTable = async (component = "icon") => {
   try {
     const componentsData = customParser.parse(
       `../packages/kit/src/${component}/index.ts`,
-      options
+      options,
     );
 
     const generatedData = componentsData.map((component) => {
@@ -68,7 +68,7 @@ export const getPropsTable = async (component = "icon") => {
                     .replace(/({)|(})|(:)/g, "")
                     .replace(/(value)/g, ""),
           };
-        }
+        },
       );
       return {
         displayName: component.displayName,

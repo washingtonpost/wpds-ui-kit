@@ -50,7 +50,7 @@ export const getStaticProps = async ({ params }) => {
   if (params.slug === "icons") {
     const response = await fetch(
       "https://api.figma.com/v1/files/LA6qKUukk8v3YkkuKq6IC6/components",
-      { headers: { "X-FIGMA-TOKEN": process.env.FIGMA_API_TOKEN } }
+      { headers: { "X-FIGMA-TOKEN": process.env.FIGMA_API_TOKEN } },
     );
     const responseBody = await response.json();
     if (responseBody.status === 200) {

@@ -126,7 +126,7 @@ const PropTable = ({ props, displayName }) => (
                 )}
               </td>
             </Box>
-          )
+          ),
         )}
       </tbody>
     </Box>

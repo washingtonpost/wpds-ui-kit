@@ -122,13 +122,13 @@ const StyleConverter = () => {
 
         const prop = camelCase(
           parts[parts.length - 2].substring(
-            parts[parts.length - 2].indexOf("{") + 1
-          )
+            parts[parts.length - 2].indexOf("{") + 1,
+          ),
         );
 
         const val = parts[parts.length - 1].substring(
           1,
-          parts[parts.length - 1].indexOf(";")
+          parts[parts.length - 1].indexOf(";"),
         );
 
         return {
@@ -232,7 +232,7 @@ const StyleConverter = () => {
           const dist = distance(val, currVal);
           return dist < prev[0] ? [dist, curr] : prev;
         },
-        [Number.POSITIVE_INFINITY, colors[0]]
+        [Number.POSITIVE_INFINITY, colors[0]],
       );
       tokenValue = closest[1];
     }
@@ -252,7 +252,7 @@ const StyleConverter = () => {
     return Math.sqrt(
       Math.pow(a[0] - b[0], 2) +
         Math.pow(a[1] - b[1], 2) +
-        Math.pow(a[2] - b[2], 2)
+        Math.pow(a[2] - b[2], 2),
     );
   }
 

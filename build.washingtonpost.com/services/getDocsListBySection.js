@@ -24,7 +24,7 @@ export const getAllDocs = async () => {
           slug,
           filePath: file,
         };
-      })
+      }),
     );
 
     // add to cache
@@ -56,7 +56,7 @@ export const getDocsListBySection = async (input) => {
           slug,
           filePath: file,
         };
-      })
+      }),
     );
 
     // add to cache

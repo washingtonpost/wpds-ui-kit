@@ -79,7 +79,7 @@ export const getStaticProps = async ({ params }) => {
   const todaysDate = new Date();
   // exclude future posts using collection.publishDate
   const publishedDocs = docs.filter(
-    (doc) => new Date(doc.data.publishDate) <= todaysDate
+    (doc) => new Date(doc.data.publishDate) <= todaysDate,
   );
 
   const navigation = await getNavigation();

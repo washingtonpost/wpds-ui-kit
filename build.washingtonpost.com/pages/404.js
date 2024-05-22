@@ -33,7 +33,7 @@ const onClick = () => {
       ctrlKey: true,
       bubbles: true,
       metaKey: true,
-    })
+    }),
   );
 
   return false;
