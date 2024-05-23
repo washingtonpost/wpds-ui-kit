@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { fn, expect, screen, userEvent } from "@storybook/test";
+import { fn, expect, screen, userEvent, fn } from "@storybook/test";
 import type { Meta, StoryFn } from "@storybook/react";
 
 import { Icon } from "../icon";
@@ -41,7 +41,7 @@ export default {
     label: "Label",
     type: "text",
     icon: "left",
-    onButtonIconClick: jest.fn(),
+    onButtonIconClick: fn(),
   },
 } as Meta<typeof Component>;
 
