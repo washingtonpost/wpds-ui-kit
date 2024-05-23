@@ -4,7 +4,6 @@ import type { ComponentMeta, ComponentStory } from "@storybook/react";
 import { styled } from "@washingtonpost/wpds-ui-kit";
 import { userEvent, within, expect } from "@storybook/test";
 
-
 export default {
   title: "Switch",
   component: Switch.Root,

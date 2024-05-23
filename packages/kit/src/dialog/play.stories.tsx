@@ -1,7 +1,6 @@
 import * as React from "react";
 import { userEvent, waitFor, within, expect } from "@storybook/test";
 
-
 import { Dialog } from "./Dialog";
 import { Button, styled, theme } from "../";
 

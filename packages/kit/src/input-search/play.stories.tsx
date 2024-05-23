@@ -28,8 +28,8 @@ const useCityMatch = (term: string) => {
       term.trim() === ""
         ? null
         : matchSorter(cities, term, {
-          keys: [(item) => `${item.city}, ${item.state}`],
-        }),
+            keys: [(item) => `${item.city}, ${item.state}`],
+          }),
     [term]
   );
 };

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 
 import { screen, userEvent, expect } from "@storybook/test";
 
-
 import { Tabs } from ".";
 import { styled, theme } from "../theme";
 

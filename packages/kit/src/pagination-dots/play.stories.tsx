@@ -5,7 +5,6 @@ import { Button } from "../button";
 import { InputText } from "../input-text";
 import { within, userEvent, expect } from "@storybook/test";
 
-
 import type { Meta, StoryFn } from "@storybook/react";
 
 const Stack = styled("section", {
