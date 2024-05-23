@@ -1,5 +1,5 @@
 import React, { useMemo, useState, useEffect } from "react";
-import { screen, userEvent } from "@storybook/test";
+import { screen, userEvent, expect } from "@storybook/test";
 
 import { Box } from "../box";
 import { matchSorter } from "match-sorter";

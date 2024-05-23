@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { screen, userEvent } from "@storybook/test";
+import { screen, userEvent, expect } from "@storybook/test";
 
 import { Drawer as Component } from "./";
 import { theme } from "../theme";

@@ -2,7 +2,7 @@ import React from "react";
 import { Switch } from ".";
 import type { ComponentMeta, ComponentStory } from "@storybook/react";
 import { styled } from "@washingtonpost/wpds-ui-kit";
-import { userEvent, within } from "@storybook/test";
+import { userEvent, within, expect } from "@storybook/test";
 
 
 export default {

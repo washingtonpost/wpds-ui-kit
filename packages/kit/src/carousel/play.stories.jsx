@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import { userEvent, waitFor, within } from "@storybook/test";
+import { userEvent, waitFor, within, expect } from "@storybook/test";
 
 import { styled, theme } from "../theme";
 import { Carousel as Component } from "./";

@@ -13,7 +13,6 @@ import {
 } from "@washingtonpost/wpds-assets";
 import { expect, screen, userEvent } from "@storybook/test";
 
-
 import type { StoryFn } from "@storybook/react";
 
 export default {
@@ -384,8 +383,10 @@ const InteractionsTemplate: StoryFn<typeof Component.Root> = (parameters) => (
 );
 
 export const Interactions = {
+  args: {
+    density: "default",
+  },
   render: InteractionsTemplate,
-
   play: async () => {
     console.log("Start Interaction");
 

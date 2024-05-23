@@ -1,5 +1,5 @@
 import * as React from "react";
-import { userEvent, waitFor, within } from "@storybook/test";
+import { userEvent, waitFor, within, expect } from "@storybook/test";
 
 
 import { Dialog } from "./Dialog";

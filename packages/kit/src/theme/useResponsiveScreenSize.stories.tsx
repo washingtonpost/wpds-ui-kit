@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Meta, Story } from "@storybook/react";
-import { within } from "@storybook/test";
+import { within, expect } from "@storybook/test";
 
 import { Box } from "@washingtonpost/wpds-box";
 import { useResponsiveScreenSize } from "./useResponsiveScreenSize";

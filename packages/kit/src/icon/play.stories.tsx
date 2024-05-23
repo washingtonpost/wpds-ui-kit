@@ -1,5 +1,5 @@
 import React from "react";
-import { within } from "@storybook/test";
+import { within, expect } from "@storybook/test";
 
 import { theme } from "../theme";
 import Info from "@washingtonpost/wpds-assets/asset/info";

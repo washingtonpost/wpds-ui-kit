@@ -1,6 +1,6 @@
 /* eslint-disable testing-library/no-node-access */
 import React from "react";
-import { userEvent, within } from "@storybook/test";
+import { userEvent, within, expect } from "@storybook/test";
 
 import * as Tokens from "../theme/tokens";
 import * as PopoverPrimitive from "@radix-ui/react-popover";

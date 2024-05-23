@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { within, waitFor } from "@storybook/test";
+import { within, waitFor, expect } from "@storybook/test";
 
 import { theme, styled } from "../theme";
 

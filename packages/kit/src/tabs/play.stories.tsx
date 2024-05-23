@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { screen, userEvent } from "@storybook/test";
+import { screen, userEvent, expect } from "@storybook/test";
 
 
 import { Tabs } from ".";

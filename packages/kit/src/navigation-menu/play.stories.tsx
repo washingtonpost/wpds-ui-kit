@@ -1,5 +1,5 @@
 import React from "react";
-import { userEvent, screen } from "@storybook/test";
+import { userEvent, screen, expect } from "@storybook/test";
 
 import { NavigationMenu } from ".";
 import { Button } from "../button";

@@ -1,7 +1,7 @@
 // /* eslint-disable @next/next/no-img-element */
 import React, { useRef } from "react";
 import { Accordion, ACCORDION_DENSITY, ACCORDION_TYPE } from ".";
-import { userEvent, waitFor, within } from "@storybook/test";
+import { userEvent, waitFor, within, expect } from "@storybook/test";
 
 import type { Meta, StoryFn } from "@storybook/react";
 

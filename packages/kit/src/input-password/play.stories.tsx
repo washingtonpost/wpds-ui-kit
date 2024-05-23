@@ -1,5 +1,5 @@
 import React from "react";
-import { screen, userEvent } from "@storybook/test";
+import { screen, userEvent, expect } from "@storybook/test";
 
 import { InputPassword as Component } from "./";
 import { styled, theme } from "../theme";
