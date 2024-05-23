@@ -99,7 +99,7 @@ const Preview = ({ isGuide, demoHeight }) => {
           isGuide,
           target: "wpds-playroom",
         },
-        "*",
+        "*"
       );
     }
   }, [iframeRef, isGuide, debouncedCode]);
@@ -109,7 +109,7 @@ const Preview = ({ isGuide, demoHeight }) => {
       ref={iframeRef}
       as="iframe"
       src={`/playroom?code=${LZString.compressToEncodedURIComponent(
-        firstRenderCode,
+        firstRenderCode
       )}&isGuide=${isGuide}`}
       css={{
         background: theme.colors.gray500,
@@ -139,7 +139,7 @@ const OpenInPlayroom = ({ isGuide }) => {
       density="compact"
       as="a"
       href={`/playroom?edit=1&code=${LZString.compressToEncodedURIComponent(
-        code,
+        code
       )}&isGuide=${isGuide}`}
       target="_blank"
       rel="noopener noreferrer"

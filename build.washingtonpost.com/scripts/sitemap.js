@@ -8,10 +8,10 @@ const prettier = require("prettier");
   const pagePaths = await globby(["pages/**/*.js", "!pages/_*.js"]);
   const pageRoutes = pagePaths
     .filter(
-      (pagePath) => !pagePath.includes("/[") && !pagePath.includes("/test"),
+      (pagePath) => !pagePath.includes("/[") && !pagePath.includes("/test")
     )
     .map((pagePath) =>
-      pagePath.replace("pages", "").replace(".js", "").replace("/index", ""),
+      pagePath.replace("pages", "").replace(".js", "").replace("/index", "")
     );
 
   const paths = await globby(["docs"]);

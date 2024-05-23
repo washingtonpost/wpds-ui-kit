@@ -89,7 +89,7 @@ const Page = ({ wrapper }) => (
             type={type}
           />
         </React.Fragment>
-      ),
+      )
     )}
   </>
 );
@@ -108,7 +108,7 @@ export const getStaticProps = async () => {
       .reduce((acc, doc) => {
         const kicker = doc.data.kicker;
         const collection = acc.find(
-          (collection) => collection.kicker === kicker,
+          (collection) => collection.kicker === kicker
         );
         const todaysDate = new Date();
         // exclude future posts using collection.publishDate

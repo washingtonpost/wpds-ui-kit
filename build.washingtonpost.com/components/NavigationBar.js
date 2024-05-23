@@ -230,7 +230,7 @@ export const NavigationBar = ({ setMobileMenu, mobileMenuState, isClosed }) => {
             checked={
               typeof window !== "undefined" &&
               window.location.hostname.includes(
-                "wpds-ui-kit-git-v2.preview.now.washingtonpost.com",
+                "wpds-ui-kit-git-v2.preview.now.washingtonpost.com"
               )
             }
             onCheckedChange={(checked) => {

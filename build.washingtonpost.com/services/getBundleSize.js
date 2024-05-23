@@ -27,7 +27,7 @@ export async function getBundleSize(name) {
       return size;
     } else {
       const bundlephobiaResponse = await fetch(
-        `https://bundlephobia.com/api/size?package=@washingtonpost/wpds-${name}@latest`,
+        `https://bundlephobia.com/api/size?package=@washingtonpost/wpds-${name}@latest`
       );
 
       const data = await bundlephobiaResponse.json();

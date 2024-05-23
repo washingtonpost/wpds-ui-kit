@@ -125,7 +125,7 @@ export const getStaticProps = async ({ params }) => {
   // check if package exists on npm
   // if not, set status to coming soon
   const packageExists = await fetch(
-    `https://registry.npmjs.org/@washingtonpost/wpds-${params.slug}`,
+    `https://registry.npmjs.org/@washingtonpost/wpds-${params.slug}`
   ).then((res) => res.status === 200 || res.status === 304);
 
   if (!packageExists && process.env.NODE_ENV !== "development") {

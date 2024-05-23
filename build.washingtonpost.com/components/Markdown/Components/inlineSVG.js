@@ -91,7 +91,7 @@ export default function inlineSVG({
         beforeInjection={(svg) => {
           const titleTag = document.createElementNS(
             "http://www.w3.org/2000/svg",
-            "title",
+            "title"
           );
           titleTag.innerHTML = title; //require title to be passed
           svg.prepend(title);

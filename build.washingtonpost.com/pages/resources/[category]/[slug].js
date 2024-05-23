@@ -71,11 +71,11 @@ export default function Page({ current, source, headings }) {
 
 export const getStaticProps = async (response) => {
   const source = await getResource(
-    `${SECTION}/${response.params.category}/${response.params.slug}`,
+    `${SECTION}/${response.params.category}/${response.params.slug}`
   );
   const navigation = await getNavigation();
   const headings = await getHeadings(
-    `${SECTION}/${response.params.category}/${response.params.slug}`,
+    `${SECTION}/${response.params.category}/${response.params.slug}`
   );
 
   return {

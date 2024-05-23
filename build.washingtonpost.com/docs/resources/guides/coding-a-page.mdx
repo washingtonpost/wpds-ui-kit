@@ -583,7 +583,7 @@ const FavoriteButton = styled(Button, {
 const RecipeCard = ({ content, onClick }) => {
   const [isFavorite, setIsFavorite] = useLocalStorage(
     `recipeFavorite${content.id}`,
-    false,
+    false
   );
 
   function handleFavoriteClick(event) {
@@ -740,7 +740,7 @@ export default function Home() {
 
   const { data: recipes = [] } = useSWR(
     () => `/api/recipes?search=${debouncedSearchText}`,
-    fetcher,
+    fetcher
   );
 
   const [selectedRecipe, setSelectedRecipe] = React.useState();
