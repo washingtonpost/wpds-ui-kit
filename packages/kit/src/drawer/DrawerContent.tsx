@@ -14,6 +14,7 @@ const StyledContainer = styled("div", {
   overflow: "auto",
   position: "fixed",
   transition: drawerTransition,
+  contentVisibility: "auto",
   variants: {
     position: {
       top: { top: 0, right: 0, left: 0 },

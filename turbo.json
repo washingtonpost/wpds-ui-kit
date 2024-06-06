@@ -19,6 +19,9 @@
     },
     "start": {
       "cache": false
+    },
+    "canary": {
+      "cache": false
     }
   }
 }

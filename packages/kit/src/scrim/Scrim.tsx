@@ -13,6 +13,7 @@ const StyledContainer = styled("div", {
   position: "fixed",
   transition: scrimTransition,
   inset: 0,
+  contentVisibility: "auto",
   "@reducedMotion": {
     transition: "none",
   },
@@ -37,34 +38,47 @@ interface ScrimProps extends React.ComponentPropsWithRef<"div"> {
     | Token<"shell", string, "zIndices", "wpds">;
 }
 
+const htmlGlobalCSS = wpCSS({
+  html: {
+    contain: "layout style",
+    "&[data-scrim-state='open']": {
+      maxHeight: "100vh",
+      overflow: "hidden",
+    },
+    "&[data-scrim-state='closed']": {
+      maxHeight: "",
+      overflow: "",
+    },
+  },
+});
+
 export const Scrim = React.forwardRef<HTMLDivElement, ScrimProps>(
   (
     { lockScroll = true, open, zIndex = theme.zIndices.shell, css, ...props },
     ref
   ) => {
+    const [isPending, startTransition] = useTransition();
+    const [isMounted, setIsMounted] = React.useState(false);
+
+    htmlGlobalCSS();
+
     React.useEffect(() => {
       if (!lockScroll || typeof window === "undefined") return;
 
-      const htmlCSS = wpCSS({
-        maxHeight: "100vh",
-        overflow: "hidden",
-      })();
+      startTransition(() => {
+        if (open) {
+          document.body.style.marginRight = `${
+            window.innerWidth - document.body.clientWidth
+          }px`;
+          document.documentElement.dataset.scrimState = "open";
+        }
 
-      if (open) {
-        document.body.style.marginRight = `${
-          window.innerWidth - document.body.clientWidth
-        }px`;
-        document.documentElement.classList.add(htmlCSS.className);
-      }
-
-      if (!open) {
-        document.documentElement.classList.remove(htmlCSS.className);
-        document.body.style.marginRight = "";
-      }
+        if (!open) {
+          document.documentElement.dataset.scrimState = "closed";
+          document.body.style.marginRight = "";
+        }
+      });
     }, [open, lockScroll]);
-
-    const [isPending, startTransition] = useTransition();
-    const [isMounted, setIsMounted] = React.useState(false);
 
     React.useEffect(() => {
       startTransition(() => {
