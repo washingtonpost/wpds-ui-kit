@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useTransition } from "react";
 import { styled, theme, css as wpCSS } from "../theme";
 import type * as WPDS from "../theme";
 import type { Token } from "@stitches/react/types/theme";
@@ -63,21 +63,26 @@ export const Scrim = React.forwardRef<HTMLDivElement, ScrimProps>(
       }
     }, [open, lockScroll]);
 
+    const [isPending, startTransition] = useTransition();
     const [isMounted, setIsMounted] = React.useState(false);
 
     React.useEffect(() => {
-      if (open) {
-        setIsMounted(true);
-      }
+      startTransition(() => {
+        if (open) {
+          setIsMounted(true);
+        }
+      });
     }, [open]);
 
     const handleTransitionEnd = () => {
       if (!open) {
-        setIsMounted(false);
+        startTransition(() => {
+          setIsMounted(false);
+        });
       }
     };
 
-    return isMounted ? (
+    return isMounted || isPending ? (
       <StyledContainer
         data-state={open ? "open" : "closed"}
         ref={ref}
