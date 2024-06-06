@@ -1,5 +1,4 @@
 import React from "react";
-import { CSSTransition } from "react-transition-group";
 import { styled, theme, css as wpCSS } from "../theme";
 import type * as WPDS from "../theme";
 import type { Token } from "@stitches/react/types/theme";
@@ -12,26 +11,16 @@ const scrimTransition = `opacity ${theme.transitions.normal} ${theme.transitions
 const StyledContainer = styled("div", {
   backgroundColor: theme.colors.alpha50,
   position: "fixed",
+  transition: scrimTransition,
   inset: 0,
-  "&.wpds-scrim-enter": {
-    opacity: 0,
+  "@reducedMotion": {
+    transition: "none",
   },
-  "&.wpds-scrim-enter-active": {
-    opacity: 1,
-    transition: scrimTransition,
-    "@reducedMotion": {
-      transition: "none",
-    },
-  },
-  "&.wpds-scrim-exit": {
+  "&[data-state='open']": {
     opacity: 1,
   },
-  "&.wpds-scrim-exit-active": {
+  "&[data-state='closed']": {
     opacity: 0,
-    transition: scrimTransition,
-    "@reducedMotion": {
-      transition: "none",
-    },
   },
 });
 
@@ -74,25 +63,30 @@ export const Scrim = React.forwardRef<HTMLDivElement, ScrimProps>(
       }
     }, [open, lockScroll]);
 
-    return (
-      <CSSTransition
-        mountOnEnter
-        unmountOnExit
-        in={open}
-        timeout={{
-          enter: 300,
-          exit: 300,
-        }}
-        classNames="wpds-scrim"
-      >
-        <StyledContainer
-          ref={ref}
-          css={{ ...css, zIndex: zIndex }}
-          aria-hidden={true}
-          {...props}
-        ></StyledContainer>
-      </CSSTransition>
-    );
+    const [isMounted, setIsMounted] = React.useState(false);
+
+    React.useEffect(() => {
+      if (open) {
+        setIsMounted(true);
+      }
+    }, [open]);
+
+    const handleTransitionEnd = () => {
+      if (!open) {
+        setIsMounted(false);
+      }
+    };
+
+    return isMounted ? (
+      <StyledContainer
+        data-state={open ? "open" : "closed"}
+        ref={ref}
+        css={{ ...css, zIndex: zIndex }}
+        aria-hidden={true}
+        {...props}
+        onTransitionEnd={handleTransitionEnd}
+      ></StyledContainer>
+    ) : null;
   }
 );
 
