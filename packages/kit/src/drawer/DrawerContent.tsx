@@ -132,7 +132,7 @@ export const DrawerContent = React.forwardRef<
       });
     }, [context.open]);
 
-    const [isMounted, setIsMounted] = useState(false);
+    const [isMounted, setIsMounted] = useState(context.open);
 
     useEffect(() => {
       setIsMounted(true);
