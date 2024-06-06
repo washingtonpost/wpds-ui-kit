@@ -100,18 +100,11 @@ export const DrawerContent = React.forwardRef<
     ref
   ) => {
     const context = React.useContext(DrawerContext);
-    const [isVisible, setIsVisible] = useState(context.open);
     const [, startTransition] = useTransition();
-
-    useEffect(() => {
-      if (context.open) {
-        setIsVisible(true);
-      }
-    }, [context.open]);
 
     const handleTransitionEnd = () => {
       if (!context.open) {
-        setIsVisible(false);
+        handleExit();
       }
     };
 
