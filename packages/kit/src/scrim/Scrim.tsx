@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useTransition } from "react";
-import { styled, theme, css as wpCSS } from "../theme";
+import { styled, theme, css as wpCSS, keyframes } from "../theme";
 import type * as WPDS from "../theme";
 import type { Token } from "@stitches/react/types/theme";
 import type { StandardLonghandProperties } from "@stitches/react/types/css";
@@ -7,6 +7,16 @@ import type { StandardLonghandProperties } from "@stitches/react/types/css";
 const NAME = "Scrim";
 
 const scrimTransition = `opacity ${theme.transitions.normal} ${theme.transitions.inOut}`;
+
+const fadeInAnimation = keyframes({
+  from: { opacity: 0 },
+  to: { opacity: 1 },
+});
+
+const fadeOutAnimation = keyframes({
+  from: { opacity: 1 },
+  to: { opacity: 0 },
+});
 
 const StyledContainer = styled("div", {
   backgroundColor: theme.colors.alpha50,
@@ -18,9 +28,11 @@ const StyledContainer = styled("div", {
     transition: "none",
   },
   "&[data-state='open']": {
+    animation: `${fadeInAnimation} ${theme.transitions.normal} ${theme.transitions.inOut}`,
     opacity: 1,
   },
   "&[data-state='closed']": {
+    fadeOutAnimation: `${fadeOutAnimation} ${theme.transitions.normal} ${theme.transitions.inOut}`,
     opacity: 0,
   },
 });
