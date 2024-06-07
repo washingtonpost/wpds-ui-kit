@@ -93,7 +93,10 @@ export const Scrim = React.forwardRef<HTMLDivElement, ScrimProps>(
 
     const handleTransitionEnd = () => {
       if (!open) {
-        document.documentElement.dataset.scrimState = "";
+        document.documentElement.dataset.scrimState = "closed";
+      }
+      if (!open) {
+        setShouldRender(false);
       }
     };
 
@@ -106,7 +109,7 @@ export const Scrim = React.forwardRef<HTMLDivElement, ScrimProps>(
     }, [open]);
 
     const handleAnimationEnd = () => {
-      if (!isPending && !open) {
+      if (!open) {
         setShouldRender(false);
       }
     };
