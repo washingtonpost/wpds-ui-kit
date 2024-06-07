@@ -102,6 +102,8 @@ export const Scrim = React.forwardRef<HTMLDivElement, ScrimProps>(
     useEffect(() => {
       if (open) {
         setShouldRender(true);
+      } else {
+        setShouldRender(false);
       }
     }, [open]);
 
