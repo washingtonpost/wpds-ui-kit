@@ -138,6 +138,7 @@ export const DrawerContent = React.forwardRef<
     const handleTransitionEnd = () => {
       if (!context.open) {
         handleExit();
+        setShouldRender(false);
       }
     };
 
