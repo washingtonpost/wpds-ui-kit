@@ -106,7 +106,7 @@ export const Scrim = React.forwardRef<HTMLDivElement, ScrimProps>(
     }, [open]);
 
     const handleAnimationEnd = () => {
-      if (!open) {
+      if (!isPending && !open) {
         setShouldRender(false);
       }
     };
