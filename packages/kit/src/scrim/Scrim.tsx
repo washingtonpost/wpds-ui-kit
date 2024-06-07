@@ -1,4 +1,4 @@
-import React, { useTransition } from "react";
+import React, { useEffect, useState, useTransition } from "react";
 import { styled, theme, css as wpCSS } from "../theme";
 import type * as WPDS from "../theme";
 import type { Token } from "@stitches/react/types/theme";
@@ -58,7 +58,6 @@ export const Scrim = React.forwardRef<HTMLDivElement, ScrimProps>(
     ref
   ) => {
     const [isPending, startTransition] = useTransition();
-    const [isMounted, setIsMounted] = React.useState(false);
 
     htmlGlobalCSS();
 
@@ -80,23 +79,27 @@ export const Scrim = React.forwardRef<HTMLDivElement, ScrimProps>(
       });
     }, [open, lockScroll]);
 
-    React.useEffect(() => {
-      startTransition(() => {
-        if (open) {
-          setIsMounted(true);
-        }
-      });
-    }, [open]);
-
     const handleTransitionEnd = () => {
       if (!open) {
-        startTransition(() => {
-          setIsMounted(false);
-        });
+        document.documentElement.dataset.scrimState = "";
       }
     };
 
-    return isMounted || isPending ? (
+    const [shouldRender, setShouldRender] = useState(false);
+
+    useEffect(() => {
+      if (open) {
+        setShouldRender(true);
+      }
+    }, [open]);
+
+    const handleAnimationEnd = () => {
+      if (!isPending && !open) {
+        setShouldRender(false);
+      }
+    };
+
+    return shouldRender ? (
       <StyledContainer
         data-state={open ? "open" : "closed"}
         ref={ref}
@@ -104,6 +107,7 @@ export const Scrim = React.forwardRef<HTMLDivElement, ScrimProps>(
         aria-hidden={true}
         {...props}
         onTransitionEnd={handleTransitionEnd}
+        onAnimationEnd={handleAnimationEnd}
       ></StyledContainer>
     ) : null;
   }

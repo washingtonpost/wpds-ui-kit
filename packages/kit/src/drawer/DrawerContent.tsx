@@ -1,10 +1,35 @@
 import React, { useState, useEffect, useTransition } from "react";
 import { FocusScope } from "@radix-ui/react-focus-scope";
-import { styled, theme } from "../theme";
+import { styled, theme, keyframes } from "../theme";
 import type * as WPDS from "../theme";
 import { DrawerContext } from "./DrawerRoot";
 
 const drawerTransition = `transform ${theme.transitions.normal} ${theme.transitions.inOut}, opacity ${theme.transitions.normal} ${theme.transitions.inOut}`;
+
+const animateInFromTop = keyframes({
+  from: { transform: "translateY(-100%)" },
+  to: { transform: "translateY(0)" },
+});
+
+const animationOutFromTop = keyframes({
+  from: { transform: "translateY(0)" },
+  to: { transform: "translateY(-100%)" },
+});
+
+const animateInFromRight = keyframes({
+  from: { transform: "translateX(100%)" },
+  to: { transform: "translateX(0)" },
+});
+
+const animateInFromBottom = keyframes({
+  from: { transform: "translateY(100%)" },
+  to: { transform: "translateY(0)" },
+});
+
+const animateInFromLeft = keyframes({
+  from: { transform: "translateX(-100%)" },
+  to: { transform: "translateX(0)" },
+});
 
 const StyledContainer = styled("div", {
   backgroundColor: theme.colors.secondary,
@@ -31,15 +56,19 @@ const StyledContainer = styled("div", {
     opacity: 1,
     // data=position="top" or "bottom" or "left" or "right"
     "&[data-position='top']": {
+      animation: `${animateInFromTop} ${theme.transitions.normal} ${theme.transitions.inOut}`,
       transform: "translateY(0)",
     },
     "&[data-position='right']": {
+      animation: `${animateInFromRight} ${theme.transitions.normal} ${theme.transitions.inOut}`,
       transform: "translateX(0)",
     },
     "&[data-position='bottom']": {
+      animation: `${animateInFromBottom} ${theme.transitions.normal} ${theme.transitions.inOut}`,
       transform: "translateY(0)",
     },
     "&[data-position='left']": {
+      animation: `${animateInFromLeft} ${theme.transitions.normal} ${theme.transitions.inOut}`,
       transform: "translateX(0)",
     },
   },
@@ -49,15 +78,18 @@ const StyledContainer = styled("div", {
     opacity: 0,
     // data=position="top" or "bottom" or "left" or "right"
     "&[data-position='top']": {
-      transform: "translateY(-100%)",
+      animate: `${animationOutFromTop} ${theme.transitions.normal} ${theme.transitions.inOut}`,
     },
     "&[data-position='right']": {
+      animate: `${animateInFromRight} ${theme.transitions.normal} ${theme.transitions.inOut}`,
       transform: "translateX(100%)",
     },
     "&[data-position='bottom']": {
+      animate: `${animateInFromBottom} ${theme.transitions.normal} ${theme.transitions.inOut}`,
       transform: "translateY(100%)",
     },
     "&[data-position='left']": {
+      animate: `${animateInFromLeft} ${theme.transitions.normal} ${theme.transitions.inOut}`,
       transform: "translateX(-100%)",
     },
   },
@@ -101,7 +133,7 @@ export const DrawerContent = React.forwardRef<
     ref
   ) => {
     const context = React.useContext(DrawerContext);
-    const [, startTransition] = useTransition();
+    const [isPending, startTransition] = useTransition();
 
     const handleTransitionEnd = () => {
       if (!context.open) {
@@ -133,13 +165,21 @@ export const DrawerContent = React.forwardRef<
       });
     }, [context.open]);
 
-    const [isMounted, setIsMounted] = useState(context.open);
+    const [shouldRender, setShouldRender] = useState(false);
 
     useEffect(() => {
-      setIsMounted(true);
-    }, []);
+      if (context.open) {
+        setShouldRender(true);
+      }
+    }, [context.open]);
 
-    return isMounted ? (
+    const handleAnimationEnd = () => {
+      if (!isPending && !context.open) {
+        setShouldRender(false);
+      }
+    };
+
+    return shouldRender ? (
       <FocusScope loop={loopFocus} trapped={trapFocus} asChild>
         <StyledContainer
           ref={ref}
@@ -155,6 +195,8 @@ export const DrawerContent = React.forwardRef<
           }}
           position={position}
           onTransitionEnd={handleTransitionEnd}
+          onAnimationStart={handleEnter}
+          onAnimationEnd={handleAnimationEnd}
           {...props}
         >
           <StyledInner className={innerClassName}>{children}</StyledInner>
