@@ -5,7 +5,7 @@ on:
     branches-ignore:
       - "dependabot**"
     paths:
-      - "ui/**/*"
+      - "packages/**/*"
       - "package.json"
       - ".github/workflows/validate.yml"
 
