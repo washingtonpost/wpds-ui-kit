@@ -172,6 +172,12 @@ export const DrawerContent = React.forwardRef<
       if (context.open) {
         setShouldRender(true);
       }
+
+      // This is a workaround for a bug in Jest where animations are not run
+      // https://klaviyo.tech/hitting-a-moving-target-testing-javascript-animations-in-react-with-jest-8284a530a35a
+      if (process.env.NODE_ENV === "test" && !context.open) {
+        setShouldRender(false);
+      }
     }, [context.open]);
 
     const handleAnimationEnd = () => {
