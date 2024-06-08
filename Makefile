@@ -23,11 +23,7 @@ boop-checkout:
 # create main release
 main-release:
 	make main-version
-<<<<<<< Updated upstream
 	npm run build
-=======
-	npm run turbo:build:ui:force
->>>>>>> Stashed changes
 	make boop-checkout
 	make main-publish
 	npm install
