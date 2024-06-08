@@ -9,4 +9,8 @@ out
 jest-coverage
 plop-templates
 /ui/theme/src/tokens.ts
+<<<<<<< Updated upstream
 /packages/kit/src/theme/tokens.ts
+=======
+ui/theme/src/tokens.ts
+>>>>>>> Stashed changes
