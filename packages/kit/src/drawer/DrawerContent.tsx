@@ -52,7 +52,6 @@ const StyledContainer = styled("div", {
     transition: "none",
   },
   "&[data-state='open']": {
-    transform: "translateX(0)",
     opacity: 1,
     // data=position="top" or "bottom" or "left" or "right"
     "&[data-position='top']": {
@@ -78,6 +77,7 @@ const StyledContainer = styled("div", {
     // data=position="top" or "bottom" or "left" or "right"
     "&[data-position='top']": {
       animate: `${animationOutFromTop} ${theme.transitions.normal} ${theme.transitions.inOut}`,
+      transform: "translateY(-100%)",
     },
     "&[data-position='right']": {
       animate: `${animateInFromRight} ${theme.transitions.normal} ${theme.transitions.inOut}`,
