@@ -2,7 +2,7 @@ import * as React from "react";
 import { Meta, Story } from "@storybook/react";
 import { within } from "@storybook/testing-library";
 import { expect } from "@storybook/jest";
-import { Box } from "@washingtonpost/wpds-box";
+import { Box } from "./../box/";
 import { useResponsiveScreenSize } from "./useResponsiveScreenSize";
 
 const allModes = {

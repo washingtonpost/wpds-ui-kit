@@ -29,7 +29,8 @@
     "build": "npm run build:transform && tsup && npm run build-types",
     "build-types": "tsup src/index.ts --dts-only",
     "dev": "tsup --watch",
-    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
+    "canary": "npm run build && npm version prerelease --preid=canary && npm publish --tag=canary"
   },
   "bugs": {
     "url": "https://github.com/washingtonpost/wpds-ui-kit/issues"
@@ -47,6 +48,8 @@
     "@radix-ui/react-radio-group": "^1.0.0",
     "@radix-ui/react-select": "^1.2.2",
     "@radix-ui/react-separator": "^1.0.0",
+    "@radix-ui/react-switch": "^1.0.0",
+    "@radix-ui/react-navigation-menu": "^1.0.0",
     "@radix-ui/react-slot": "^1.0.0",
     "@radix-ui/react-tabs": "latest",
     "@radix-ui/react-tooltip": "^1.0.0",
@@ -58,7 +61,10 @@
     "match-sorter": "6.3.1",
     "nanoid": "^3.3.4",
     "react-swipeable": "^7.0.0",
-    "react-transition-group": "^4.4.5"
+    "react-transition-group": "^4.4.5",
+    "react-popper": "^2.2.5",
+    "popper-max-size-modifier": "^0.2.0",
+    "@popperjs/core": "^2.11.6"
   },
   "devDependencies": {
     "tsup": "8.0.2",

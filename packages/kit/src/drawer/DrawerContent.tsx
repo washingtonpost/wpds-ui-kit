@@ -1,11 +1,35 @@
-import React from "react";
-import { CSSTransition } from "react-transition-group";
+import React, { useState, useEffect, useTransition } from "react";
 import { FocusScope } from "@radix-ui/react-focus-scope";
-import { styled, theme } from "../theme";
+import { styled, theme, keyframes } from "../theme";
 import type * as WPDS from "../theme";
 import { DrawerContext } from "./DrawerRoot";
 
 const drawerTransition = `transform ${theme.transitions.normal} ${theme.transitions.inOut}, opacity ${theme.transitions.normal} ${theme.transitions.inOut}`;
+
+const animateInFromTop = keyframes({
+  from: { transform: "translateY(-100%)" },
+  to: { transform: "translateY(0)" },
+});
+
+const animationOutFromTop = keyframes({
+  from: { transform: "translateY(0)" },
+  to: { transform: "translateY(-100%)" },
+});
+
+const animateInFromRight = keyframes({
+  from: { transform: "translateX(100%)" },
+  to: { transform: "translateX(0)" },
+});
+
+const animateInFromBottom = keyframes({
+  from: { transform: "translateY(100%)" },
+  to: { transform: "translateY(0)" },
+});
+
+const animateInFromLeft = keyframes({
+  from: { transform: "translateX(-100%)" },
+  to: { transform: "translateX(0)" },
+});
 
 const StyledContainer = styled("div", {
   backgroundColor: theme.colors.secondary,
@@ -14,125 +38,58 @@ const StyledContainer = styled("div", {
   maxHeight: "100%",
   overflow: "auto",
   position: "fixed",
+  transition: drawerTransition,
+  contentVisibility: "auto",
   variants: {
-    /** controls which side of the screen the drawer comes from @default bottom */
     position: {
-      top: {
-        top: 0,
-        right: 0,
-        left: 0,
-        "&.wpds-drawer-enter": {
-          opacity: 0,
-          transform: "translateY(-100%)",
-        },
-        "&.wpds-drawer-enter-active": {
-          opacity: 1,
-          transform: "translateY(0%)",
-          transition: drawerTransition,
-          "@reducedMotion": {
-            transition: "none",
-          },
-        },
-        "&.wpds-drawer-exit": {
-          opacity: 1,
-          transform: "translateY(0%)",
-        },
-        "&.wpds-drawer-exit-active": {
-          opacity: 0,
-          transform: "translateY(-100%)",
-          transition: drawerTransition,
-          "@reducedMotion": {
-            transition: "none",
-          },
-        },
-      },
-      right: {
-        top: 0,
-        right: 0,
-        bottom: 0,
-        "&.wpds-drawer-enter": {
-          opacity: 0,
-          transform: "translateX(100%)",
-        },
-        "&.wpds-drawer-enter-active": {
-          opacity: 1,
-          transform: "translateX(0%)",
-          transition: drawerTransition,
-          "@reducedMotion": {
-            transition: "none",
-          },
-        },
-        "&.wpds-drawer-exit": {
-          opacity: 1,
-          transform: "translateX(0%)",
-        },
-        "&.wpds-drawer-exit-active": {
-          opacity: 0,
-          transform: "translateX(100%)",
-          transition: drawerTransition,
-          "@reducedMotion": {
-            transition: "none",
-          },
-        },
-      },
-      bottom: {
-        right: 0,
-        bottom: 0,
-        left: 0,
-        "&.wpds-drawer-enter": {
-          opacity: 0,
-          transform: "translateY(100%)",
-        },
-        "&.wpds-drawer-enter-active": {
-          opacity: 1,
-          transform: "translateY(0%)",
-          transition: drawerTransition,
-          "@reducedMotion": {
-            transition: "none",
-          },
-        },
-        "&.wpds-drawer-exit": {
-          opacity: 1,
-          transform: "translateY(0%)",
-        },
-        "&.wpds-drawer-exit-active": {
-          opacity: 0,
-          transform: "translateY(100%)",
-          transition: drawerTransition,
-          "@reducedMotion": {
-            transition: "none",
-          },
-        },
-      },
-      left: {
-        top: 0,
-        bottom: 0,
-        left: 0,
-        "&.wpds-drawer-enter": {
-          opacity: 0,
-          transform: "translateX(-100%)",
-        },
-        "&.wpds-drawer-enter-active": {
-          opacity: 1,
-          transform: "translateX(0%)",
-          transition: drawerTransition,
-          "@reducedMotion": {
-            transition: "none",
-          },
-        },
-        "&.wpds-drawer-exit": {
-          opacity: 1,
-          transform: "translateX(0%)",
-        },
-        "&.wpds-drawer-exit-active": {
-          opacity: 0,
-          transform: "translateX(-100%)",
-          transition: drawerTransition,
-          "@reducedMotion": {
-            transition: "none",
-          },
-        },
-      },
+      top: { top: 0, right: 0, left: 0 },
+      right: { top: 0, right: 0, bottom: 0 },
+      bottom: { right: 0, bottom: 0, left: 0 },
+      left: { top: 0, bottom: 0, left: 0 },
+    },
+  },
+  "@reducedMotion": {
+    transition: "none",
+  },
+  "&[data-state='open']": {
+    opacity: 1,
+    // data=position="top" or "bottom" or "left" or "right"
+    "&[data-position='top']": {
+      animation: `${animateInFromTop} ${theme.transitions.normal} ${theme.transitions.inOut}`,
+      transform: "translateY(0)",
+    },
+    "&[data-position='right']": {
+      animation: `${animateInFromRight} ${theme.transitions.normal} ${theme.transitions.inOut}`,
+      transform: "translateX(0)",
+    },
+    "&[data-position='bottom']": {
+      animation: `${animateInFromBottom} ${theme.transitions.normal} ${theme.transitions.inOut}`,
+      transform: "translateY(0)",
+    },
+    "&[data-position='left']": {
+      animation: `${animateInFromLeft} ${theme.transitions.normal} ${theme.transitions.inOut}`,
+      transform: "translateX(0)",
+    },
+  },
+  // data-state="closed"
+  "&[data-state='closed']": {
+    opacity: 0,
+    // data=position="top" or "bottom" or "left" or "right"
+    "&[data-position='top']": {
+      animate: `${animationOutFromTop} ${theme.transitions.normal} ${theme.transitions.inOut}`,
+      transform: "translateY(-100%)",
+    },
+    "&[data-position='right']": {
+      animate: `${animateInFromRight} ${theme.transitions.normal} ${theme.transitions.inOut}`,
+      transform: "translateX(100%)",
+    },
+    "&[data-position='bottom']": {
+      animate: `${animateInFromBottom} ${theme.transitions.normal} ${theme.transitions.inOut}`,
+      transform: "translateY(100%)",
+    },
+    "&[data-position='left']": {
+      animate: `${animateInFromLeft} ${theme.transitions.normal} ${theme.transitions.inOut}`,
+      transform: "translateX(-100%)",
     },
   },
 });
@@ -175,52 +132,83 @@ export const DrawerContent = React.forwardRef<
     ref
   ) => {
     const context = React.useContext(DrawerContext);
+    const [isPending, startTransition] = useTransition();
 
-    function handleEnter() {
+    const handleTransitionEnd = () => {
+      if (!context.open) {
+        handleExit();
+        setShouldRender(false);
+      }
+    };
+
+    const handleEnter = () => {
       document.addEventListener("keydown", handleKeyDown);
-    }
+    };
 
-    function handleExit() {
+    const handleExit = () => {
       document.removeEventListener("keydown", handleKeyDown);
-    }
+    };
 
-    function handleKeyDown(event) {
+    const handleKeyDown = (event: { key: string }) => {
       if (event.key === "Escape") {
         context.onOpenChange(false);
       }
-    }
+    };
 
-    return (
-      <CSSTransition
-        mountOnEnter
-        unmountOnExit
-        onEnter={handleEnter}
-        onExit={handleExit}
-        in={context.open}
-        timeout={300}
-        classNames="wpds-drawer"
-      >
-        <FocusScope loop={loopFocus} trapped={trapFocus} asChild>
-          <StyledContainer
-            id={context.contentId}
-            ref={ref}
-            style={{
-              width:
-                position === "left" || position === "right" ? width : undefined,
-              height:
-                position === "top" || position === "bottom"
-                  ? height
-                  : undefined,
-              zIndex: context.zIndex as number,
-            }}
-            position={position}
-            {...props}
-          >
-            <StyledInner className={innerClassName}>{children}</StyledInner>
-          </StyledContainer>
-        </FocusScope>
-      </CSSTransition>
-    );
+    useEffect(() => {
+      startTransition(() => {
+        if (context.open) {
+          handleEnter();
+        } else {
+          handleExit();
+        }
+      });
+    }, [context.open]);
+
+    const [shouldRender, setShouldRender] = useState(false);
+
+    useEffect(() => {
+      if (context.open) {
+        setShouldRender(true);
+      }
+
+      // This is a workaround for a bug in Jest where animations are not run
+      // https://klaviyo.tech/hitting-a-moving-target-testing-javascript-animations-in-react-with-jest-8284a530a35a
+      if (process.env.NODE_ENV === "test" && !context.open) {
+        setShouldRender(false);
+      }
+    }, [context.open]);
+
+    const handleAnimationEnd = () => {
+      if (!isPending && !context.open) {
+        setShouldRender(false);
+      }
+    };
+
+    return shouldRender ? (
+      <FocusScope loop={loopFocus} trapped={trapFocus} asChild>
+        <StyledContainer
+          ref={ref}
+          id={context.contentId}
+          data-position={position}
+          data-state={context.open ? "open" : "closed"}
+          style={{
+            width:
+              position === "left" || position === "right" ? width : undefined,
+            height:
+              position === "top" || position === "bottom" ? height : undefined,
+            zIndex: context.zIndex as number,
+          }}
+          position={position}
+          onTransitionEnd={handleTransitionEnd}
+          onAnimationStart={handleEnter}
+          onAnimationEnd={handleAnimationEnd}
+          {...props}
+        >
+          <StyledInner className={innerClassName}>{children}</StyledInner>
+        </StyledContainer>
+      </FocusScope>
+    ) : null;
   }
 );
 
