@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.1](https://github.com/washingtonpost/wpds-docs/compare/v2.3.0...v2.3.1) (2024-06-12)
+
+### Bug Fixes
+
+- added compiler options to react-docgen-typescript for doc site api tables ([#635](https://github.com/washingtonpost/wpds-docs/issues/635)) ([5cd9ce5](https://github.com/washingtonpost/wpds-docs/commit/5cd9ce55dfb5f752b387d7c6caa2abd70fae4487))
+- improve INP for drawer content opening and closing ([#642](https://github.com/washingtonpost/wpds-docs/issues/642)) ([8f6de93](https://github.com/washingtonpost/wpds-docs/commit/8f6de93ac8095f317f810f7a0160d17dcb443d54))
+
 # [2.3.0](https://github.com/washingtonpost/wpds-docs/compare/v2.2.0...v2.3.0) (2024-05-14)
 
 ### Features
