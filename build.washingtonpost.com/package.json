@@ -21,7 +21,7 @@
     "@radix-ui/react-checkbox": "latest",
     "@radix-ui/react-collapsible": "latest",
     "@radix-ui/react-toggle-group": "latest",
-    "@stitches/react": "1.3.1-1",
+    "@stitches/react": "^1.2.8",
     "@washingtonpost/front-end-utils": "latest",
     "@washingtonpost/site-favicons": "latest",
     "@washingtonpost/site-footer": "latest",
