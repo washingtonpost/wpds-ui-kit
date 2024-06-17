@@ -38,10 +38,10 @@ const FontFacePlayground = ({ stacks }) => {
 
 export async function getStaticProps() {
   const stacks = {
+    magazine: tokens.fonts.magazine,
     headline: tokens.fonts.headline,
     subhead: tokens.fonts.subhead,
     meta: tokens.fonts.meta,
-    magazine: tokens.fonts.magazine,
   };
 
   return {

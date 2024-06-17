@@ -234,10 +234,10 @@ export const globalStyles = globalCss({
     {
       fontFamily: "PostoniDisplayMag-fallback",
       src: "local(garamond)",
-      sizeAdjust: "100%",
-      ascentOverride: "normal",
-      descentOverride: "normal",
-      lineGapOverride: "normal",
+      sizeAdjust: "200%",
+      ascentOverride: "99.96%",
+      descentOverride: "24.99%",
+      lineGapOverride: "20.82%",
     },
     {
       fontFamily: "Franklin",
