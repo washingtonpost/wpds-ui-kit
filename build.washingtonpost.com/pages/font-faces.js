@@ -4,17 +4,35 @@ import tokens from "@washingtonpost/wpds-ui-kit/src/theme/wpds.tokens.json";
 
 const FontFacePlayground = ({ stacks }) => {
   return (
-    <div>
-      <h1>Hello, Font Face Playground!</h1>
+    <Box
+      css={{
+        color: "$onBackground",
+        h1: {
+          fontSize: "$400",
+          fontFamily: "$headline",
+        },
+        h2: {
+          fontSize: "$200",
+          fontFamily: "$subhead",
+        },
+      }}
+    >
+      <h1>@font-faces</h1>
       {Object.keys(stacks).map((stack) => (
-        <div key={stack}>
+        <Box key={stack}>
           <h2>{stack}</h2>
-          <Box as="p" css={{ fontFamily: stacks[stack] }}>
+          <Box
+            as="p"
+            css={{
+              fontFamily: `$${stack}`,
+              fontSize: "$400",
+            }}
+          >
             The quick brown fox jumps over the lazy dog.
           </Box>
-        </div>
+        </Box>
       ))}
-    </div>
+    </Box>
   );
 };
 
