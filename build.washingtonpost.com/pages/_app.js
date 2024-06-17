@@ -97,6 +97,34 @@ function App({ Component, pageProps }) {
         disableTransitionOnChange={false}
         enableColorScheme={false}
       >
+        <link
+          rel="preload"
+          as="font"
+          crossOrigin="crossorigin"
+          href="https://www.washingtonpost.com/wp-stat/assets/fonts/PostoniWide-Regular.woff2"
+          key="preload-PostoniRegular"
+        />
+        <link
+          rel="preload"
+          as="font"
+          crossOrigin="crossorigin"
+          href="https://www.washingtonpost.com/wp-stat/assets/fonts/PostoniWide-Bold.woff2"
+          key="preload-PostoniWide"
+        />
+        <link
+          key="preload-Franklin-Bold"
+          rel="preload"
+          as="font"
+          crossOrigin="crossorigin"
+          href="https://www.washingtonpost.com/wp-stat/assets/fonts/ITC_Franklin-Bold.woff2"
+        />
+        <link
+          key="preload-Franklin-Light"
+          rel="preload"
+          as="font"
+          crossOrigin="crossorigin"
+          href="https://www.washingtonpost.com/wp-stat/assets/fonts/ITC_Franklin-Light.woff2"
+        />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <Script
           id="pwapiConfig"
