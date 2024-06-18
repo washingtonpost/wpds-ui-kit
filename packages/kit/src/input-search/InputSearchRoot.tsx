@@ -51,9 +51,9 @@ const StyledRoot = styled("div", {
 
 export type InputSearchRootProps = {
   /** Defines a string value that labels the current element.  */
-  "aria-label": string;
+  "aria-label"?: string;
   /** Identifies the element (or elements) that labels the current element. */
-  "aria-labelledby": string;
+  "aria-labelledby"?: string;
   /** InputSearch.Root expects to receive InputSearch.Input and InputSearch.Popover as children.*/
   children?: React.ReactNode;
   /** Override CSS */
