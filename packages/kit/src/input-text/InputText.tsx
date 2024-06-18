@@ -76,7 +76,7 @@ export interface InputTextProps
   /** Used to insert Icons in the input, only a single child is accepted*/
   children?: React.ReactNode;
   /** The initial input element value for uncontrolled components */
-  defaultValue?: string | number | readonly string[];
+  defaultValue?: string;
   /** The underlying input element disabled attribute */
   disabled?: boolean;
   /** Indicates there is an error */

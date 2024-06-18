@@ -90,6 +90,7 @@ export const InputSearchInput = React.forwardRef<
         id={id} // overridden by inputProps, must be managed by react-stately / react-aria
         {...inputProps}
         value={inputProps.value as string}
+        defaultValue={inputProps.defaultValue as string}
         type="search"
         disabled={isDisabled}
         {...rest}
