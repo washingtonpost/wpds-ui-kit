@@ -108,8 +108,11 @@ export interface InputTextProps
   required?: boolean;
   /** indicates there is a success */
   success?: boolean;
+  /** Supported input element types
+   * @default text */
+  type?: "text" | "search" | "url" | "tel" | "email" | "password";
   /** The input element value for controlled components */
-  value?: string | number | readonly string[];
+  value?: string;
   /** Overrides for the input text styles. Padding overrides affect the input container and  */
   css?: WPDS.CSS;
 }
