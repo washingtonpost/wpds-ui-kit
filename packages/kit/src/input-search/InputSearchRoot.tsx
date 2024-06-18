@@ -4,6 +4,7 @@ import { useComboBoxState } from "react-stately";
 import { useComboBox } from "react-aria";
 import { styled, theme } from "../theme";
 
+import type * as WPDS from "../theme";
 import type { ComboBoxState } from "react-stately";
 import type { AriaListBoxOptions } from "react-aria";
 import type { CollectionChildren } from "@react-types/shared";
@@ -49,13 +50,21 @@ const StyledRoot = styled("div", {
 });
 
 export type InputSearchRootProps = {
+  /** Defines a string value that labels the current element.  */
+  "aria-label": string;
+  /** Identifies the element (or elements) that labels the current element. */
+  "aria-labelledby": string;
+  /** InputSearch.Root expects to receive InputSearch.Input and InputSearch.Popover as children.*/
+  children?: React.ReactNode;
+  /** Override CSS */
+  css?: WPDS.CSS;
   /** Whether the input field should be disabled or not */
   disabled?: boolean;
   /** If true, the popover opens when focus is on the text box. */
   openOnFocus?: boolean;
   /** Called with the selection value when the user makes a selection from the list. */
   onSelect?: (value: string) => void;
-} & React.ComponentPropsWithoutRef<typeof StyledRoot>;
+} & React.ComponentPropsWithoutRef<"div">;
 
 export const InputSearchRoot = ({
   children,

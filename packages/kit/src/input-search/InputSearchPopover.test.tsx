@@ -1,36 +1,43 @@
-import { useContext } from "react";
 import { render, screen } from "@testing-library/react";
+// eslint-disable-next-line import/no-named-as-default
+import userEvent from "@testing-library/user-event";
 import { InputSearchPopover } from "./InputSearchPopover";
-import { InputSearchRoot, InputSearchContext } from "./InputSearchRoot";
+import { InputSearchRoot } from "./InputSearchRoot";
+import { InputSearchInput } from "./InputSearchInput";
 
 describe("InputSearchPopover", () => {
   const customRender = (ui, contextProps) => {
-    const StatePassthrough = ({ children }) => {
-      const { state } = useContext(InputSearchContext);
-      state.open();
-      return children;
-    };
     return render(
-      <InputSearchRoot {...contextProps}>
-        <StatePassthrough>{ui}</StatePassthrough>
+      <InputSearchRoot {...contextProps} openOnFocus>
+        <InputSearchInput id="test" name="test" />
+        {ui}
       </InputSearchRoot>
     );
   };
 
-  test.skip("renders into the document", async () => {
-    customRender(<InputSearchPopover>test</InputSearchPopover>, {});
-    const popover = screen.getByRole("dialog");
-    expect(popover).toBeInTheDocument();
+  test("renders into the document", async () => {
+    const user = userEvent.setup();
+    customRender(<InputSearchPopover />, {});
+    const inputElement = screen.getByRole("combobox");
+    await user.click(inputElement);
+    expect(screen.getByRole("dialog")).toBeInTheDocument();
   });
 
-  test.skip("renders with custom CSS class", () => {
+  test("renders with custom CSS class", async () => {
+    const user = userEvent.setup();
     customRender(<InputSearchPopover css={{ color: "red" }} />, {});
+    const inputElement = screen.getByRole("combobox");
+    await user.click(inputElement);
     expect(screen.getByRole("dialog")).toHaveClass(/wpds-.*-css/);
   });
 
-  test.skip("renders portal false variant", () => {
+  test("renders portal false variant", async () => {
+    const user = userEvent.setup();
     customRender(<InputSearchPopover portal={false} />, {});
-
-    expect(screen.getByTestId("popover-container")).toBeInTheDocument();
+    const inputElement = screen.getByRole("combobox");
+    await user.click(inputElement);
+    expect(screen.getByRole("dialog")).not.toHaveClass(
+      /wpds-.*-density-default/
+    );
   });
 });
