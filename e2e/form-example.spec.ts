@@ -25,7 +25,7 @@ test.describe("errors should show", () => {
     test("does not pass @ or .com", async ({ page }) => {
       await page.goto(workingExamplePage);
 
-      await page.locator("input[aria-labelledby='radix-2']").fill("j");
+      await page.locator("input[name='email']").fill("j");
 
       await page.locator("[type=submit]").click();
 
@@ -36,9 +36,7 @@ test.describe("errors should show", () => {
     test("does not pass .com", async ({ page }) => {
       await page.goto(workingExamplePage);
 
-      await page
-        .locator("input[aria-labelledby='radix-2']")
-        .fill("john.doe@washpost");
+      await page.locator("input[name='email']").fill("john.doe@washpost");
 
       await page.locator("[type=submit]").click();
 
@@ -49,9 +47,7 @@ test.describe("errors should show", () => {
     test("does not pass @", async ({ page }) => {
       await page.goto(workingExamplePage);
 
-      await page
-        .locator("input[aria-labelledby='radix-2']")
-        .fill("john.doewashpost.com");
+      await page.locator("input[name='email']").fill("john.doewashpost.com");
 
       await page.locator("[type=submit]").click();
 
@@ -65,7 +61,7 @@ test.describe("errors should show", () => {
     test("has less than 10 digits", async ({ page }) => {
       await page.goto(workingExamplePage);
 
-      await page.locator("input[aria-labelledby='radix-3']").fill("123456789");
+      await page.locator("input[name='phone']").fill("123456789");
 
       await page.locator("[type=submit]").click();
 
@@ -76,9 +72,7 @@ test.describe("errors should show", () => {
     test("has too many digits", async ({ page }) => {
       await page.goto(workingExamplePage);
 
-      await page
-        .locator("input[aria-labelledby='radix-3']")
-        .fill("1234567890112");
+      await page.locator("input[name='phone']").fill("1234567890112");
 
       await page.locator("[type=submit]").click();
 
@@ -89,7 +83,7 @@ test.describe("errors should show", () => {
     test("passes in a letter", async ({ page }) => {
       await page.goto(workingExamplePage);
 
-      await page.locator("input[aria-labelledby='radix-3']").fill("123456789a");
+      await page.locator("input[name='phone']").fill("123456789a");
       await page.locator("[type=submit]").click();
       await expect(
         page.locator("text=Please pass in a valid phone number")
@@ -104,22 +98,19 @@ test.describe("no errors should show", () => {
   }) => {
     await page.goto(workingExamplePage);
 
-    await page.locator("input[aria-labelledby='radix-0']").fill("John");
-    await page.locator("input[aria-labelledby='radix-1']").fill("Doe");
-    await page
-      .locator("input[aria-labelledby='radix-2']")
-      .fill("john.doe@washpost.com");
-    await page.locator("input[aria-labelledby='radix-3']").fill("1231231234");
-    await page.locator("input[aria-labelledby='radix-4']").fill("123 Street");
-    await page.locator("input[aria-labelledby='radix-6']").fill("New York");
-    await page.locator("input[aria-labelledby='radix-7']").fill("10001");
+    await page.locator("input[name='firstName']").fill("John");
+    await page.locator("input[name='lastName']").fill("Doe");
+    await page.locator("input[name='email']").fill("john.doe@washpost.com");
+    await page.locator("input[name='phone']").fill("1231231234");
+    await page.locator("input[name='address']").fill("123 Street");
+    await page.locator("input[name='city']").fill("New York");
+    await page.locator("input[name='zip']").fill("10001");
     await page.locator("select").selectOption("New York");
-    await page.locator("input[aria-labelledby='radix-9']").fill("Password1!");
-    await page.locator("input[aria-labelledby='radix-10']").fill("Password1!");
-    await page
-      .locator("textarea[aria-labelledby='radix-11']")
-      .fill("Notes go here");
-    await page.locator("button[aria-labelledby='radix-13']").click(); // radio buttons
+    await page.locator("input[name='password']").fill("Password1!");
+    await page.locator("input[name='password2']").fill("Password1!");
+    await page.locator("textarea[name='notes']").fill("Notes go here");
+    // select a radio button
+    await page.getByLabel("Instagram").check();
     await page.locator("[role='checkbox']").check();
 
     await page.locator("[type=submit]").click();
