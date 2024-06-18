@@ -76,7 +76,7 @@ export interface InputTextProps
   /** Used to insert Icons in the input, only a single child is accepted*/
   children?: React.ReactNode;
   /** The initial input element value for uncontrolled components */
-  defaultValue?: string;
+  defaultValue?: string | number | readonly string[];
   /** The underlying input element disabled attribute */
   disabled?: boolean;
   /** Indicates there is an error */
@@ -108,11 +108,8 @@ export interface InputTextProps
   required?: boolean;
   /** indicates there is a success */
   success?: boolean;
-  /** Supported input element types
-   * @default text */
-  type?: "text" | "search" | "url" | "tel" | "email" | "password";
   /** The input element value for controlled components */
-  value?: string;
+  value?: string | number | readonly string[];
   /** Overrides for the input text styles. Padding overrides affect the input container and  */
   css?: WPDS.CSS;
 }

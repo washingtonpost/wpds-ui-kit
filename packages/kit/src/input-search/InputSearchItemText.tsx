@@ -1,8 +1,8 @@
 import React from "react";
-import { ComboboxOptionText } from "@reach/combobox";
 import { styled } from "../theme";
+import { InputSearchContext } from "./InputSearchRoot";
 
-const StyledItemText = styled(ComboboxOptionText, {});
+const StyledItemText = styled("span", {});
 
 export type InputSearchItemTextProps = {
   children: React.ReactNode;
@@ -12,7 +12,19 @@ export const InputSearchItemText = ({
   children,
   ...rest
 }: InputSearchItemTextProps) => {
-  return <StyledItemText {...rest}>{children}</StyledItemText>;
+  const { state } = React.useContext(InputSearchContext);
+
+  const highlighted = (children as string).replace(
+    new RegExp(state.inputValue, "gi"),
+    (match) => (match ? `<mark>${match}</mark>` : "")
+  );
+
+  return (
+    <StyledItemText
+      {...rest}
+      dangerouslySetInnerHTML={{ __html: highlighted }}
+    />
+  );
 };
 
 InputSearchItemText.displayName = "InputSearchItemText";

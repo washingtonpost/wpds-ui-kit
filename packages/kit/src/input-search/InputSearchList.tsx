@@ -1,8 +1,12 @@
 import React from "react";
-import { ComboboxList, useComboboxContext } from "@reach/combobox";
+import { useListBox } from "react-aria";
 import { styled } from "../theme";
+import { InputSearchContext } from "./InputSearchRoot";
+import { ListItem } from "./InputSearchListItem";
+import { ListHeading } from "./InputSearchListHeading";
+import type { CollectionChildren } from "@react-types/shared";
 
-const StyledList = styled(ComboboxList, {
+const StyledList = styled("ul", {
   marginBlock: 0,
   maxHeight: "300px",
   overflowY: "auto",
@@ -11,46 +15,54 @@ const StyledList = styled(ComboboxList, {
   listStyleType: "none",
 });
 
-export type InputSearchListProps = React.ComponentPropsWithRef<
-  typeof StyledList
->;
+export type InputSearchListProps = {
+  persistSelection?: boolean;
+} & React.ComponentPropsWithRef<typeof StyledList>;
 
 export const InputSearchList = ({
   children,
-  css,
+  persistSelection = false,
   ...rest
 }: InputSearchListProps) => {
-  const { navigationValue, state } = useComboboxContext();
-
-  const listRef = React.useRef<HTMLUListElement>(null);
+  const {
+    listBoxProps: contextProps,
+    listBoxRef,
+    state,
+    setCollectionChildren,
+  } = React.useContext(InputSearchContext);
 
   React.useEffect(() => {
-    if (state === "NAVIGATING") {
-      const listEl = listRef.current;
-      if (!listEl) return;
+    if (children) {
+      setCollectionChildren(children as CollectionChildren<object>);
+    }
+  }, [children]);
 
-      const selectedEl = listEl.querySelector(
-        '[aria-selected = "true"]'
-      ) as HTMLElement;
-      if (!selectedEl) return;
-
-      const listTop = listEl.scrollTop;
-      const listBottom = listTop + listEl.clientHeight;
-
-      const selectedTop = selectedEl.offsetTop;
-      const selectedBottom = selectedTop + selectedEl.clientHeight;
-
-      if (selectedTop < listTop) {
-        listEl.scrollTop -= listTop - selectedTop;
-      } else if (selectedBottom > listBottom) {
-        listEl.scrollTop += selectedBottom - listBottom;
+  React.useEffect(() => {
+    if (state.isOpen) {
+      // Focus on the first item when the list opens
+      if (persistSelection) {
+        const selectedKey = state.selectionManager.selectedKeys
+          .values()
+          .next().value;
+        if (selectedKey) {
+          state.selectionManager.setFocusedKey(selectedKey);
+        }
+        //state.selectionManager.setFocusedKey(state.collection.getFirstKey());
       }
     }
-  }, [navigationValue, state]);
+  }, [state.isOpen]);
+
+  const { listBoxProps } = useListBox(contextProps, state, listBoxRef);
 
   return (
-    <StyledList {...rest} css={css} ref={listRef}>
-      {children}
+    <StyledList {...listBoxProps} ref={listBoxRef} {...rest}>
+      {[...state.collection].map((item) =>
+        item.type === "section" ? (
+          <ListHeading key={item.key} section={item} state={state} />
+        ) : (
+          <ListItem key={item.key} item={item} state={state} />
+        )
+      )}
     </StyledList>
   );
 };

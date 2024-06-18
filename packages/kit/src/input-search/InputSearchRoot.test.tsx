@@ -1,17 +1,13 @@
-import { useContext } from "react";
-import { render, screen, fireEvent } from "@testing-library/react";
-import { InputSearchRoot, InputSearchContext } from "./InputSearchRoot";
+import { render, screen } from "@testing-library/react";
+// eslint-disable-next-line import/no-named-as-default
+import userEvent from "@testing-library/user-event";
+import { InputSearchRoot } from "./InputSearchRoot";
 import { InputSearchInput } from "./InputSearchInput";
 import { InputSearchPopover } from "./InputSearchPopover";
 import { InputSearchList } from "./InputSearchList";
 import { InputSearchListItem } from "./InputSearchListItem";
 
 describe("InputSearchRoot", () => {
-  const TestComponent = () => {
-    const { rootRect } = useContext(InputSearchContext);
-    return <div>{rootRect && rootRect.top}</div>;
-  };
-
   test("renders visibly into the document", () => {
     render(<InputSearchRoot>Test</InputSearchRoot>);
     expect(screen.getByText("Test")).toBeInTheDocument();
@@ -25,15 +21,6 @@ describe("InputSearchRoot", () => {
       </InputSearchRoot>
     );
     expect(screen.getByText(testText)).toBeInTheDocument();
-  });
-
-  test("provides root rect in context", () => {
-    render(
-      <InputSearchRoot>
-        <TestComponent />
-      </InputSearchRoot>
-    );
-    expect(screen.getByText("0")).toBeInTheDocument();
   });
 
   test("disables input with disabled prop", () => {
@@ -78,7 +65,7 @@ describe("InputSearchRoot", () => {
 
     expect(screen.getByRole("combobox")).toHaveAttribute(
       "aria-labelledby",
-      labelId
+      expect.stringContaining(labelId)
     );
   });
 
@@ -92,26 +79,29 @@ describe("InputSearchRoot", () => {
     expect(screen.getByTestId("root")).toHaveClass(/wpds-.*-portal-false/);
   });
 
-  test("opens the dropdown on focus", () => {
+  test("opens the dropdown on focus", async () => {
+    const user = userEvent.setup();
+
     render(
       <InputSearchRoot openOnFocus>
         <InputSearchInput name="" id="" />
-        <InputSearchPopover>popover</InputSearchPopover>
+        <InputSearchPopover portal={false}>popover</InputSearchPopover>
       </InputSearchRoot>
     );
 
     const inputElement = screen.getByRole("combobox");
-    fireEvent.focus(inputElement);
+    await user.click(inputElement);
 
-    expect(screen.getByText("popover")).toBeInTheDocument();
+    expect(await screen.findByText("popover")).toBeInTheDocument();
   });
 
-  test("calls onSelect callback when an option is selected", () => {
+  test("calls onSelect callback when an option is selected", async () => {
+    const user = userEvent.setup();
     const onSelect = jest.fn();
     render(
-      <InputSearchRoot onSelect={onSelect}>
+      <InputSearchRoot onSelect={onSelect} openOnFocus>
         <InputSearchInput name="city" id="city" />
-        <InputSearchPopover>
+        <InputSearchPopover portal={false}>
           <InputSearchList>
             <InputSearchListItem key="1" value="Option 1" />
           </InputSearchList>
@@ -120,12 +110,10 @@ describe("InputSearchRoot", () => {
     );
 
     const inputElement = screen.getByRole("combobox");
-    fireEvent.focus(inputElement);
-    fireEvent.keyPress(inputElement, { key: "o" });
-
-    const optionElement = screen.getByText("Option 1");
-    fireEvent.click(optionElement);
-
+    await user.click(inputElement);
+    const item = screen.getByRole("option");
+    expect(item).toBeInTheDocument();
+    await user.click(item);
     expect(onSelect).toHaveBeenCalledWith("Option 1");
   });
 });

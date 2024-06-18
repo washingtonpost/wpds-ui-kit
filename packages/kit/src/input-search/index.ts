@@ -3,7 +3,7 @@ export * from "./InputSearchRoot";
 export * from "./InputSearchInput";
 export * from "./InputSearchPopover";
 export * from "./InputSearchList";
-export * from "./InputSearchListItem";
+export { InputSearchListItem } from "./InputSearchListItem";
 export * from "./InputSearchItemText";
 export * from "./InputSearchListHeading";
 export * from "./InputSearchEmptyState";
