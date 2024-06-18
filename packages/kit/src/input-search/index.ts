@@ -5,6 +5,6 @@ export * from "./InputSearchPopover";
 export * from "./InputSearchList";
 export { InputSearchListItem } from "./InputSearchListItem";
 export * from "./InputSearchItemText";
-export * from "./InputSearchListHeading";
+export { InputSearchListHeading } from "./InputSearchListHeading";
 export * from "./InputSearchEmptyState";
 export * from "./InputSearchLoadingState";
