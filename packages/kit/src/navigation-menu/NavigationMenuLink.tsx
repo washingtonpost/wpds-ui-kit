@@ -22,7 +22,6 @@ const StyledNavigationMenuLink = styled(NavigationMenuPrimitive.Link, {
     color: theme.colors.accessible,
   },
   "&[data-active]": {
-    color: theme.colors.accessible,
     fontWeight: theme.fontWeights.bold,
   },
 });
