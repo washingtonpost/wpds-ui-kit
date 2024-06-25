@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.2](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.3.1...v2.3.2) (2024-06-25)
+
+### Bug Fixes
+
+- remove extra css color for data-active style in nav menu link ([#646](https://github.com/washingtonpost/wpds-ui-kit/issues/646)) ([7d150f9](https://github.com/washingtonpost/wpds-ui-kit/commit/7d150f9dbd03d3af6fee0ec25e304b8aad76dbb0))
+
 ## [2.3.1](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.3.0...v2.3.1) (2024-06-12)
 
 ### Bug Fixes
