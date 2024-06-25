@@ -22,12 +22,18 @@
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "node ./scripts/build.js"
+    "build": "node ./scripts/build.js;npm run postcssz;npm run deleteRawFile",
+    "postcssz": "npx postcss dist/raw.css > dist/styles.css",
+    "deleteRawFile": "rm dist/raw.css"
   },
   "license": "MIT",
   "devDependencies": {
     "@washingtonpost/wpds-assets": "^2.2.0",
     "@washingtonpost/wpds-ui-kit": "2.3.1",
+    "cssnano": "^7.0.3",
+    "cssnano-preset-advanced": "^7.0.3",
+    "postcss": "^8.4.38",
+    "postcss-cli": "^11.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

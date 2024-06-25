@@ -28,4 +28,4 @@ const template = `
 // mkdir dist directory if it doesn't exist
 fs.mkdirSync("./dist", { recursive: true });
 
-fs.writeFileSync("./dist/styles.css", getCssText());
+fs.writeFileSync("./dist/raw.css", getCssText());
