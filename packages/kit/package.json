@@ -90,5 +90,5 @@
     "./src/input-search/cities": "./src/input-search/cities.ts",
     "./src/theme/hexcodes.tokens.json": "./src/theme/hexcodes.tokens.json"
   },
-  "gitHead": "2fac30f77ad3976ff8007df21b782e5c797c82eb"
+  "gitHead": "825c06b0820ddeb08e622152ac441b7b183c6e46"
 }
