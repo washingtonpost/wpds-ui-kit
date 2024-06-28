@@ -45,11 +45,9 @@ export const InputSearchListHeading = (props: InputSearchListHeadingProps) => {
 InputSearchListHeading.getCollectionNode = (props) => {
   const alteredProps = { ...props };
   // handle the previously used child text as title
-  console.log("??? this may work ???");
   if (props.children && !props.title) {
     alteredProps.title = props.children;
     alteredProps.children = undefined;
-    console.log("!!! this works !!!");
   }
   // @ts-expect-error - static method is excluded from the type definition https://github.com/adobe/react-spectrum/blob/main/packages/%40react-stately/collections/src/Section.ts#L57
   return Section.getCollectionNode(alteredProps);
@@ -70,13 +68,15 @@ export const ListHeading = ({ section, state }: SectionProps) => {
     heading: section.rendered,
     "aria-label": section["aria-label"],
   });
-  const childNodeLength = [...section.childNodes].length;
+
+  const childNodesArr = Array.from(section.childNodes);
+  const childNodeLength = childNodesArr.length;
   return (
     <StyledListItem {...itemProps}>
       {section.rendered && <span {...headingProps}>{section.rendered}</span>}
       {childNodeLength > 0 && (
         <UnstyledList {...groupProps}>
-          {[...section.childNodes].map((node) => (
+          {childNodesArr.map((node) => (
             <ListItem key={node.key} item={node} state={state} />
           ))}
         </UnstyledList>

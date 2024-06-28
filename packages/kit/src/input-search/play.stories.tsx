@@ -165,15 +165,17 @@ const GroupingTemplate: StoryFn<typeof InputSearch.Root> = (args) => {
         <InputSearch.Input name="city" id="city" />
         <InputSearch.Popover>
           <InputSearch.List>
+            <InputSearch.ListHeading>Fruits</InputSearch.ListHeading>
             <InputSearch.ListItem value="Apple" />
             <InputSearch.ListItem value="Banana" />
             <InputSearch.ListItem value="Orange" />
             <InputSearch.ListItem value="Kiwi" />
             <InputSearch.ListItem value="Pineapple" />
-            <InputSearch.ListHeading>Vegetables</InputSearch.ListHeading>
-            <InputSearch.ListItem value="Carrots" />
-            <InputSearch.ListItem value="Celery" />
-            <InputSearch.ListItem value="Onion" />
+            <InputSearch.ListHeading title="Vegetables">
+              <InputSearch.ListItem value="Carrots" />
+              <InputSearch.ListItem value="Celery" />
+              <InputSearch.ListItem value="Onion" />
+            </InputSearch.ListHeading>
           </InputSearch.List>
         </InputSearch.Popover>
       </InputSearch.Root>

@@ -56,7 +56,7 @@ export const InputSearchList = ({
 
   return (
     <StyledList {...listBoxProps} ref={listBoxRef} {...rest}>
-      {[...state.collection].map((item) =>
+      {Array.from(state.collection).map((item) =>
         item.type === "section" ? (
           <ListHeading key={item.key} section={item} state={state} />
         ) : (
