@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.4.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.3.2...v2.4.0) (2024-06-28)
+
+### Features
+
+- switch to font display swap ([#641](https://github.com/washingtonpost/wpds-ui-kit/issues/641)) ([bb1f5df](https://github.com/washingtonpost/wpds-ui-kit/commit/bb1f5dfda779d7b29127be0d51e11607a63942a8))
+
 ## [2.3.2](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.3.1...v2.3.2) (2024-06-25)
 
 ### Bug Fixes
