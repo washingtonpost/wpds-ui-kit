@@ -60,7 +60,7 @@ export const StyledContainer = React.forwardRef<
   HTMLDivElement,
   StyledContainerProps
 >(({ children, ...props }, ref) => (
-  <Container {...props} ref={ref}>
+  <Container {...props} ref={ref} data-testid="input-text-container">
     {children}
   </Container>
 ));

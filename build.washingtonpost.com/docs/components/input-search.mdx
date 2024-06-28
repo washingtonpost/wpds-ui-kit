@@ -236,15 +236,14 @@ export default function Example() {
                     />
                   ))}
                   {results2.length > 3 && (
-                    <>
-                      <InputSearch.ListHeading>Group</InputSearch.ListHeading>
+                    <InputSearch.ListHeading title="Group">
                       {results2.slice(3).map((city) => (
                         <InputSearch.ListItem
                           key={`${city.name.toLowerCase()}, ${city.state.toLowerCase()}`}
                           value={`${city.name}, ${city.state}`}
                         />
                       ))}
-                    </>
+                    </InputSearch.ListHeading>
                   )}
                 </InputSearch.List>
               ) : (

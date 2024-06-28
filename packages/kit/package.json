@@ -55,18 +55,21 @@
     "@radix-ui/react-tabs": "latest",
     "@radix-ui/react-tooltip": "^1.0.0",
     "@radix-ui/react-use-controllable-state": "^1.0.1",
-    "@reach/combobox": "^0.18.0",
-    "@reach/popover": "^0.18.0",
+    "@react-types/combobox": "^3.11.1",
+    "@react-types/shared": "^3.23.1",
     "@stitches/react": "1.3.1-1",
     "@washingtonpost/wpds-assets": "2.0.0",
     "match-sorter": "6.3.1",
     "nanoid": "^3.3.4",
     "popper-max-size-modifier": "^0.2.0",
     "react-popper": "^2.2.5",
+    "react-aria": "^3.33.1",
+    "react-stately": "^3.31.1",
     "react-swipeable": "^7.0.0",
     "react-transition-group": "^4.4.5"
   },
   "devDependencies": {
+    "@types/jest": "^29.5.12",
     "tsup": "8.0.2",
     "typescript": "4.5.5"
   },
