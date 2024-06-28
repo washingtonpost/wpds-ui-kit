@@ -1,6 +1,6 @@
 {
   "name": "@washingtonpost/wpds-tailwind-theme",
-  "version": "2.3.1",
+  "version": "2.3.2",
   "description": "WPDS Tailwind Theme",
   "author": "WPDS Support <wpds@washpost.com>",
   "license": "MIT",
@@ -20,7 +20,7 @@
     "@washingtonpost/wpds-ui-kit": "2.0.0-alpha.10"
   },
   "dependencies": {
-    "@washingtonpost/wpds-ui-kit": "2.3.1"
+    "@washingtonpost/wpds-ui-kit": "2.3.2"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
@@ -28,5 +28,5 @@
     "tailwindcss": "^3.3.2",
     "vite": "^4.3.9"
   },
-  "gitHead": "e567bd9bc412313cf5ddca1ac0aac07af3c671da"
+  "gitHead": "2fac30f77ad3976ff8007df21b782e5c797c82eb"
 }

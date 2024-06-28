@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.2](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.3.1...v2.3.2) (2024-06-25)
+
+**Note:** Version bump only for package @washingtonpost/wpds-kitchen-sink
+
 ## [2.3.1](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.3.0...v2.3.1) (2024-06-12)
 
 **Note:** Version bump only for package @washingtonpost/wpds-kitchen-sink
