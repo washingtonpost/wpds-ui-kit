@@ -105,4 +105,8 @@ module.exports = withBundleAnalyzer({
   env: {
     APP_ENV: "production",
   },
+  transpilePackages: [
+    "@washingtonpost/wpds-ui-kit",
+    "@washingtonpost/wpds-kitchen-sink",
+  ],
 });

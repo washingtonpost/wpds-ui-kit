@@ -2038,19 +2038,19 @@
   },
   "fonts": {
     "headline": {
-      "value": "Postoni, garamond, serif"
+      "value": "Postoni, Postoni-fallback, serif"
     },
     "subhead": {
-      "value": "Franklin, arial, sans-serif"
+      "value": "Franklin, Franklin-fallback, sans-serif"
     },
     "body": {
       "value": "georgia, Times New Roman, serif"
     },
     "meta": {
-      "value": "Franklin, arial, sans-serif"
+      "value": "Franklin, Franklin-fallback, sans-serif"
     },
     "magazine": {
-      "value": "PostoniDisplayMag, garamond, serif"
+      "value": "PostoniDisplayMag, PostoniDisplayMag-fallback, serif"
     }
   },
   "fontSize": {

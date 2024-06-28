@@ -3,7 +3,11 @@
     "baseUrl": ".",
     "paths": {
       "~/*": ["./*"],
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "@washingtonpost/wpds-ui-kit": ["../packages/kit/src/index.ts"],
+      "@washingtonpost/wpds-kitchen-sink": [
+        "../packages/kitchen-sink/src/index.ts"
+      ]
     },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
