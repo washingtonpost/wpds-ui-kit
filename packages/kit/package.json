@@ -1,6 +1,6 @@
 {
   "name": "@washingtonpost/wpds-ui-kit",
-  "version": "2.3.1",
+  "version": "2.4.0",
   "description": "WPDS UI Kit",
   "author": "WPDS Support <wpds@washpost.com>",
   "homepage": "https://github.com/washingtonpost/wpds-ui-kit#readme",
@@ -57,7 +57,7 @@
     "@radix-ui/react-use-controllable-state": "^1.0.1",
     "@react-types/combobox": "^3.11.1",
     "@react-types/shared": "^3.23.1",
-    "@stitches/react": "^1.2.8",
+    "@stitches/react": "1.3.1-1",
     "@washingtonpost/wpds-assets": "2.0.0",
     "match-sorter": "6.3.1",
     "nanoid": "^3.3.4",
@@ -93,5 +93,5 @@
     "./src/input-search/cities": "./src/input-search/cities.ts",
     "./src/theme/hexcodes.tokens.json": "./src/theme/hexcodes.tokens.json"
   },
-  "gitHead": "e567bd9bc412313cf5ddca1ac0aac07af3c671da"
+  "gitHead": "825c06b0820ddeb08e622152ac441b7b183c6e46"
 }

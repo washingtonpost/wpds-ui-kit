@@ -8,7 +8,7 @@
 			export const sizes={"100":"1rem","125":"1.25rem","150":"1.5rem","175":"1.75rem","200":"2rem","225":"2.25rem","250":"2.5rem","275":"2.75rem","300":"3rem","350":"3.5rem","400":"4rem","450":"4.5rem","500":"5rem","025":"0.25rem","050":"0.5rem","075":"0.75rem","087":"0.875rem"}
 			export const spaces={"100":"1rem","125":"1.25rem","150":"1.5rem","175":"1.75rem","200":"2rem","225":"2.25rem","250":"2.5rem","275":"2.75rem","300":"3rem","350":"3.5rem","400":"4rem","450":"4.5rem","500":"5rem","025":"0.25rem","050":"0.5rem","075":"0.75rem"}
 			export const radii={"100":"1rem","125":"1.25rem","150":"1.5rem","012":"0.125rem","025":"0.25rem","050":"0.5rem","075":"0.75rem","round":"9999px"}
-			export const fonts={"headline":"Postoni, garamond, serif","subhead":"Franklin, arial, sans-serif","body":"georgia, Times New Roman, serif","meta":"Franklin, arial, sans-serif","magazine":"PostoniDisplayMag, garamond, serif"}
+			export const fonts={"headline":"Postoni, Postoni-fallback, serif","subhead":"Franklin, Franklin-fallback, sans-serif","body":"georgia, Times New Roman, serif","meta":"Franklin, Franklin-fallback, sans-serif","magazine":"PostoniDisplayMag, PostoniDisplayMag-fallback, serif"}
 			export const fontSizes={"100":"1rem","112":"1.125rem","125":"1.25rem","150":"1.5rem","175":"1.75rem","200":"2rem","225":"2.25rem","250":"2.5rem","275":"2.75rem","300":"3rem","350":"3.5rem","400":"4rem","450":"4.5rem","500":"5rem","075":"0.75rem","087":"0.875rem"}
 			export const fontWeights={"light":300,"regular":400,"bold":700,"ultra":800}
 			export const lineHeights={"100":1,"110":1.1,"125":1.25,"150":1.5,"160":1.6,"175":1.75,"200":2,"240":2.4}
