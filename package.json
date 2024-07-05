@@ -111,7 +111,7 @@
   },
   "scripts": {
     "validate": "make validate",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\" --loglevel error",
     "format:check": "prettier --check \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "build": "turbo run build",
     "storybook": "storybook dev -p 6006 --quiet --ci",
@@ -132,8 +132,7 @@
     "start": "turbo run start",
     "playwright": "playwright test"
   },
-  "prettier": {},
-  "packageManager": "npm@10.2.4",
+  "packageManager": "npm@10.7.0",
   "overrides": {
     "react-docgen-typescript": "^2.2.2",
     "react": "^18.2.0",
