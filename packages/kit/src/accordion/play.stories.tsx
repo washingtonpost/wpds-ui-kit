@@ -58,6 +58,8 @@ const Template: StoryFn<any> = (args) => {
         </Accordion.Trigger>
         <Accordion.Content {...args} ref={myContentRef} data-testid="content-1">
           <img
+            data-chromatic="ignore"
+            loading="lazy"
             src="https://i.pravatar.cc/300/300"
             alt="An avatar is an atomic component that represents an individual’s identity through a circular photo."
           />
