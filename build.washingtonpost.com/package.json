@@ -26,7 +26,7 @@
     "@washingtonpost/site-favicons": "0.3.4-alpha.1",
     "@washingtonpost/site-footer": "0.25.3-alpha.1",
     "@washingtonpost/tachyons-css": "^1.8.0",
-    "@washingtonpost/wpds-assets": "2.0.0",
+    "@washingtonpost/wpds-assets": "2.4.1-alpha.1",
     "@washingtonpost/wpds-kitchen-sink": "2.4.0",
     "@washingtonpost/wpds-tailwind-theme": "2.4.0",
     "@washingtonpost/wpds-tokens": "2.4.0",
