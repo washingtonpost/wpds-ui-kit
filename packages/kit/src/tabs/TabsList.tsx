@@ -8,7 +8,7 @@ import { styled, theme } from "../theme";
 const StyledTabsList = styled(TabsPrimitive.List, {
   flexShrink: 0,
   display: "flex",
-  boxShadow: `inset 0 -1px 0 0 ${theme.colors.faint}, 0 0 0 0 ${theme.colors.faint}`,
+  boxShadow: `inset 0 -1px 0 0 ${theme.colors.outline}, 0 0 0 0 ${theme.colors.outline}`,
   gap: theme.space["075"],
   overflow: "auto",
   width: "fit-content",

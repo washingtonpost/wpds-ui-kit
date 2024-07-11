@@ -1,10 +1,10 @@
 import React from "react";
 import type * as WPDS from "../theme";
 import { theme, styled } from "../theme";
-//
+
 const StyledCard = styled("div", {
   padding: theme.space["150"],
-  border: theme.colors.faint,
+  border: theme.colors.outline,
   borderRadius: theme.radii["012"],
   borderWidth: "1px",
   borderStyle: "solid",

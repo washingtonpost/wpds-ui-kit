@@ -48,7 +48,7 @@ export const SelectGroup = React.forwardRef<HTMLDivElement, SelectGroupProps>(
         {children}
       </StyledSelectGroup>
       <DividerContainer>
-        <Divider css={{ backgroundColor: theme.colors.subtle }} />
+        <Divider css={{ backgroundColor: theme.colors.outline }} />
       </DividerContainer>
     </>
   )

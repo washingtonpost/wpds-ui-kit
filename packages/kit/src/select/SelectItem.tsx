@@ -24,7 +24,7 @@ const StyledItem = styled(SelectPrimitive.Item, {
   },
 
   "&[data-highlighted]": {
-    backgroundColor: theme.colors.faint,
+    backgroundColor: theme.colors.outline,
     cursor: "pointer",
   },
 });

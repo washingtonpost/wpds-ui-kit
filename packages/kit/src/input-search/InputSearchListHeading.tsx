@@ -9,7 +9,7 @@ import type { Node } from "@react-types/shared";
 import type * as WPDS from "../theme";
 
 const StyledListItem = styled("li", {
-  borderBlockStart: `1px solid ${theme.colors.faint}`,
+  borderBlockStart: `1px solid ${theme.colors.outline}`,
   color: theme.colors.accessible,
   fontSize: theme.fontSizes["087"],
   marginBlockStart: "$050",

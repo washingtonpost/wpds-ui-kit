@@ -35,7 +35,7 @@ export default {
 const defaultArgs = {
   size: 200,
   css: {
-    backgroundColor: theme.colors.subtle,
+    backgroundColor: theme.colors.outline,
   },
 };
 

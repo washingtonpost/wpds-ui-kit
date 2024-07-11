@@ -84,10 +84,10 @@ const StyledTabsTrigger = styled(TabsPrimitive.Trigger, {
 
   // styling when the element is disabled
   "&[disabled]": {
-    color: theme.colors.subtle,
+    color: theme.colors.outline,
     "&:hover::after": {
       ...afterConsts,
-      borderBottom: `1px solid ${theme.colors.faint}`,
+      borderBottom: `1px solid ${theme.colors.outline}`,
     },
   },
 });

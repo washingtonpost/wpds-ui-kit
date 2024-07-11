@@ -40,7 +40,7 @@ const StyledContentWrapper = styled(TooltipPrimitive.Content, {
   borderRadius: theme.radii["012"],
   padding: theme.space["050"],
   color: theme.colors.primary,
-  border: `solid 1px ${theme.colors.subtle}`,
+  border: `solid 1px ${theme.colors.outline}`,
   backgroundColor: theme.colors.secondary,
   width: "144px", //set width as per design specs
   userSelect: "none",
@@ -120,7 +120,7 @@ export const TooltipContent = forwardRef<
         >
           {children}
           <StyledArrow
-            stroke={theme.colors.subtle.value}
+            stroke={theme.colors.outline.value}
             strokeWidth="2"
             strokeDasharray="0 30 28.284"
           />

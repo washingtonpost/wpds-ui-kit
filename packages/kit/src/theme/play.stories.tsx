@@ -50,7 +50,7 @@ const StyledBox = styled("div", {
         fontWeight: theme.fontWeights.bold,
       },
       false: {
-        backgroundColor: theme.colors.subtle,
+        backgroundColor: theme.colors.outline,
       },
     },
   },
