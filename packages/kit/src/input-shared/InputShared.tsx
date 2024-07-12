@@ -9,7 +9,7 @@ export const FloatingLabelStyles = {
 
 export const sharedInputStyles = {
   borderRadius: theme.radii["012"],
-  borderColor: theme.colors.subtle,
+  borderColor: theme.colors.outline,
   borderStyle: "solid",
   borderWidth: "1px",
   backgroundColor: theme.colors.secondary,

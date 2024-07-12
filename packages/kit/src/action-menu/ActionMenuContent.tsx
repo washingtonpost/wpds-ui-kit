@@ -14,7 +14,7 @@ const NAME = "ActionMenuContent";
 
 export const ContentStyles = {
   background: theme.colors.secondary,
-  border: `solid 1px ${theme.colors.subtle}`,
+  border: `solid 1px ${theme.colors.outline}`,
   borderRadius: theme.radii["050"],
   boxShadow: theme.shadows["300"],
   color: theme.colors.primary,

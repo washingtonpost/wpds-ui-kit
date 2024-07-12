@@ -34,11 +34,11 @@ const StyledCheckbox = styled(PrimitiveCheckbox.Root, {
     $$color: "$colors$onDisabled",
 
     borderColor: "$colors$onDisabled",
-    color: theme.colors.subtle,
+    color: theme.colors.outline,
   },
 
   "&[aria-checked='false']:not(:disabled)": {
-    borderColor: "$colors$subtle",
+    borderColor: "$colors$outline",
   },
 
   variants: {
@@ -84,7 +84,7 @@ const StyledCheckbox = styled(PrimitiveCheckbox.Root, {
       css: {
         "&:not([aria-checked='false']):not(:disabled)": {
           $$backgroundColor: "$colors$secondary",
-          $$color: "$colors$subtle",
+          $$color: "$colors$outline",
         },
       },
     },
@@ -141,7 +141,7 @@ const StyledIndicator = styled(PrimitiveCheckbox.Indicator, {
     disabled: {
       true: {
         $$variantColor: "$colors$disabled",
-        borderColor: "$colors$subtle",
+        borderColor: "$colors$outline",
         color: "$colors$onDisabled",
       },
     },

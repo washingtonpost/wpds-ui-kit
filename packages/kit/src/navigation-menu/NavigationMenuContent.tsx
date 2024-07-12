@@ -13,7 +13,7 @@ const NAME = "NavigationMenuContent";
 
 const StyledNavigationMenuContent = styled(NavigationMenuPrimitive.Content, {
   background: theme.colors.secondary,
-  border: `solid 1px ${theme.colors.subtle}`,
+  border: `solid 1px ${theme.colors.outline}`,
   borderRadius: theme.radii["012"],
   boxShadow: theme.shadows["200"],
   minWidth: "150px",

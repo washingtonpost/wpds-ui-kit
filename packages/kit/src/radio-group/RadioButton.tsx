@@ -13,7 +13,7 @@ const ContainerCSS = Theme.css({
 
 const StyledRadioButton = Theme.styled(RadioGroupPrimitive.Item, {
   backgroundColor: Theme.theme.colors.onPrimary,
-  borderColor: Theme.theme.colors.subtle,
+  borderColor: Theme.theme.colors.outline,
   borderStyle: "solid",
   borderRadius: "50%",
   borderWidth: "1px",

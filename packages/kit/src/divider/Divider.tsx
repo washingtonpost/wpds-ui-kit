@@ -12,7 +12,7 @@ const StyledSeparator = Theme.styled(Separator.Root, {
   variants: {
     variant: {
       default: {
-        backgroundColor: Theme.theme.colors.faint,
+        backgroundColor: Theme.theme.colors.outline,
       },
       strong: {
         backgroundColor: Theme.theme.colors.primary,
