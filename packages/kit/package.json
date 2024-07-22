@@ -1,6 +1,6 @@
 {
   "name": "@washingtonpost/wpds-ui-kit",
-  "version": "2.4.0",
+  "version": "2.5.0",
   "description": "WPDS UI Kit",
   "author": "WPDS Support <wpds@washpost.com>",
   "homepage": "https://github.com/washingtonpost/wpds-ui-kit#readme",
@@ -62,8 +62,8 @@
     "match-sorter": "6.3.1",
     "nanoid": "^3.3.4",
     "popper-max-size-modifier": "^0.2.0",
-    "react-popper": "^2.2.5",
     "react-aria": "^3.33.1",
+    "react-popper": "^2.2.5",
     "react-stately": "^3.31.1",
     "react-swipeable": "^7.0.0",
     "react-transition-group": "^4.4.5"

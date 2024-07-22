@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.5.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.4.0...v2.5.0) (2024-07-22)
+
+### Bug Fixes
+
+- **kit:** replace all instances of legacy faint, subtle tokens with outline token ([133153d](https://github.com/washingtonpost/wpds-ui-kit/commit/133153dcfb1906b7ceb2c7998a08e61749be4eaa))
+- remove reach dependency in InputSearch for React 18 compatibility ([#645](https://github.com/washingtonpost/wpds-ui-kit/issues/645)) ([7634780](https://github.com/washingtonpost/wpds-ui-kit/commit/7634780f253192ee630609216e32c59db146bc03))
+
+### Features
+
+- update wam ([#651](https://github.com/washingtonpost/wpds-ui-kit/issues/651)) ([938399f](https://github.com/washingtonpost/wpds-ui-kit/commit/938399f8dd987d1056c4b02bc143dbeb917acb06))
+
 # [2.4.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.3.2...v2.4.0) (2024-06-28)
 
 ### Features

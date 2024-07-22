@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.5.0](https://github.com/washingtonpost/wpds-docs/compare/v2.4.0...v2.5.0) (2024-07-22)
+
+### Bug Fixes
+
+- remove reach dependency in InputSearch for React 18 compatibility ([#645](https://github.com/washingtonpost/wpds-docs/issues/645)) ([7634780](https://github.com/washingtonpost/wpds-docs/commit/7634780f253192ee630609216e32c59db146bc03))
+
+### Features
+
+- update wam ([#651](https://github.com/washingtonpost/wpds-docs/issues/651)) ([938399f](https://github.com/washingtonpost/wpds-docs/commit/938399f8dd987d1056c4b02bc143dbeb917acb06))
+
 # [2.4.0](https://github.com/washingtonpost/wpds-docs/compare/v2.3.2...v2.4.0) (2024-06-28)
 
 ### Features
