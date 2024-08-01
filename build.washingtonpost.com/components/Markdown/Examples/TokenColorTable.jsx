@@ -5,11 +5,95 @@ import { useTheme } from "next-themes";
 import Fuse from "fuse.js";
 import { InputSearch } from "@washingtonpost/wpds-ui-kit";
 
-export default function ColorTokenTable() {
-  const light = convertObjectToArray(Tokens.color.light, "");
-  const dark = convertObjectToArray(Tokens.color.dark, "");
-  const themePalette = convertObjectToArray(Tokens.color.theme, "");
-  const staticColors = convertObjectToArray(Tokens.color.static, "-static");
+const headers = ["Name", "Preview", "RGBA", "HEX", "Description"];
+
+function convertObjectToArray(obj, suffix) {
+  return Object.entries(obj).map(([key, value]) => ({
+    name: key + suffix,
+    ...value,
+  }));
+}
+
+const light = convertObjectToArray(Tokens.color.light, "");
+const dark = convertObjectToArray(Tokens.color.dark, "");
+const themePalette = convertObjectToArray(Tokens.color.theme, "");
+const staticColors = convertObjectToArray(Tokens.color.static, "-static");
+
+const Container = styled("div", {
+  overflowX: "auto",
+  width: "100%",
+});
+
+const StyledTable = styled("table", {
+  borderCollapse: "collapse",
+  borderSpacing: "0",
+  width: "100%",
+  marginBottom: "calc($050 / 2)",
+  "& th": {
+    textAlign: "left",
+    fontWeight: "$light",
+    borderBottom: "1px solid $subtle",
+    fontSize: "$100",
+    color: "$accessible",
+    paddingInlineStart: 0,
+    py: "$100",
+    paddingRight: "$200",
+    "@sm": {
+      paddingRight: "0px",
+    },
+    "&.hide": {
+      "@sm": {
+        display: "none",
+      },
+    },
+  },
+  "& tr": {
+    height: 80,
+  },
+  "& td": {
+    borderBottom: "1px solid $subtle",
+    fontSize: "$100",
+    paddingInlineStart: 0,
+    paddingInlineEnd: "$100",
+    color: "$accessible",
+    py: "$100",
+    paddingRight: "$200",
+    "@sm": {
+      paddingRight: "0px",
+    },
+    "&.rgba": {
+      minWidth: 200,
+      "@sm": {
+        minWidth: "unset",
+      },
+    },
+    "&.upper": {
+      textTransform: "uppercase",
+    },
+    "&.hide": {
+      "@sm": {
+        display: "none",
+      },
+    },
+    "&.nowrap": {
+      whiteSpace: "nowrap",
+    },
+  },
+});
+
+const Swatch = styled("div", {
+  width: 40,
+  height: 40,
+  borderRadius: 4,
+  border: "1px solid $faint",
+});
+
+const fuse = new Fuse([...light, ...staticColors, ...themePalette], {
+  keys: ["name", "value"],
+  threshold: 0.2,
+});
+
+export default function TokenColorTable() {
   const [defaultPalette, setDefaultPalette] = useState([
     ...light,
     ...staticColors,
@@ -19,104 +103,12 @@ export default function ColorTokenTable() {
   const [currentValue, setCurrentValue] = useState("");
   const { theme } = useTheme();
 
-  const fuse = new Fuse([...light, ...staticColors, ...themePalette], {
-    keys: ["name", "value"],
-    threshold: 0.2,
-  });
-
-  useEffect(() => {
-    if (theme === "dark") {
-      fuse.setCollection([...dark, ...staticColors, ...themePalette]);
-      setDefaultPalette([...dark, ...staticColors, ...themePalette]);
-    } else {
-      fuse.setCollection([...light, ...staticColors, ...themePalette]);
-      setDefaultPalette([...light, ...staticColors, ...themePalette]);
+  function formatToken(item = {}) {
+    let value = item?.value ?? "";
+    if (theme === "dark" && item?.valueDark) {
+      value = item?.valueDark;
     }
-    const results = fuse.search(currentValue);
-    setResults(results);
-  }, [theme]);
-
-  function handleChange(e) {
-    setCurrentValue(e.target.value);
-    const results = fuse.search(e.target.value);
-    setCurrentValue(e.target.value);
-    setResults(results);
-  }
-
-  const Container = styled("div", {
-    overflowX: "auto",
-    width: "100%",
-  });
-
-  const StyledTable = styled("table", {
-    borderCollapse: "collapse",
-    borderSpacing: "0",
-    width: "100%",
-    marginBottom: "calc($050 / 2)",
-    "& th": {
-      textAlign: "left",
-      fontWeight: "$light",
-      borderBottom: "1px solid $subtle",
-      fontSize: "$100",
-      color: "$accessible",
-      paddingInlineStart: 0,
-      py: "$100",
-      paddingRight: "$200",
-      "@sm": {
-        paddingRight: "0px",
-      },
-      "&.hide": {
-        "@sm": {
-          display: "none",
-        },
-      },
-    },
-    "& tr": {
-      height: 80,
-    },
-    "& td": {
-      borderBottom: "1px solid $subtle",
-      fontSize: "$100",
-      paddingInlineStart: 0,
-      paddingInlineEnd: "$100",
-      color: "$accessible",
-      py: "$100",
-      paddingRight: "$200",
-      "@sm": {
-        paddingRight: "0px",
-      },
-      "&.rgba": {
-        minWidth: 200,
-        "@sm": {
-          minWidth: "unset",
-        },
-      },
-      "&.upper": {
-        textTransform: "uppercase",
-      },
-      "&.hide": {
-        "@sm": {
-          display: "none",
-        },
-      },
-      "&.nowrap": {
-        whiteSpace: "nowrap",
-      },
-    },
-  });
-
-  const Swatch = styled("div", {
-    width: 40,
-    height: 40,
-    borderRadius: 4,
-    border: "1px solid $faint",
-  });
-
-  function convertObjectToArray(obj, suffix) {
-    return Object.entries(obj).map(([key, value]) => ({
-      name: key + suffix,
-      ...value,
-    }));
+    return value && value.substring(1, value.length - 1);
   }
 
   function lookUpValue(item = {}) {
@@ -134,15 +126,26 @@ export default function ColorTokenTable() {
     }
   }
 
-  function formatToken(item = {}) {
-    let value = item?.value ?? "";
-    if (theme === "dark" && item?.valueDark) {
-      value = item?.valueDark;
+  useEffect(() => {
+    if (theme === "dark") {
+      fuse.setCollection([...dark, ...staticColors, ...themePalette]);
+      setDefaultPalette([...dark, ...staticColors, ...themePalette]);
+    } else {
+      fuse.setCollection([...light, ...staticColors, ...themePalette]);
+      setDefaultPalette([...light, ...staticColors, ...themePalette]);
     }
-    return value && value.substring(1, value.length - 1);
-  }
+    const results = fuse.search(currentValue);
+    setResults(results);
+  }, [theme]);
 
-  const headers = ["Name", "Preview", "RGBA", "HEX", "Description"];
+  useEffect(() => {
+    const results = fuse.search(currentValue);
+    setResults(results);
+  }, [currentValue]);
+
+  function handleChange(e) {
+    setCurrentValue(e.target.value);
+  }
 
   return (
     <>
@@ -154,20 +157,22 @@ export default function ColorTokenTable() {
           onChange={handleChange}
           value={currentValue}
         />
-        <InputSearch.Popover>
-          <InputSearch.List css={{ width: "100%" }}>
+        {results && (
+          <InputSearch.Popover>
             {results.length > 0 ? (
-              results.map((result, i) => (
-                <InputSearch.ListItem
-                  key={`${result.item.name}-${i}`}
-                  value={result.item.name}
-                />
-              ))
+              <InputSearch.List css={{ width: "100%" }}>
+                {results.map((result, i) => (
+                  <InputSearch.ListItem
+                    key={`${result.item.name}-${i}`}
+                    value={result.item.name}
+                  />
+                ))}
+              </InputSearch.List>
             ) : (
               <InputSearch.EmptyState />
             )}
-          </InputSearch.List>
-        </InputSearch.Popover>
+          </InputSearch.Popover>
+        )}
       </InputSearch.Root>
       <Container>
         <StyledTable>
