@@ -214,16 +214,13 @@ describe("InputSearchInput - Controlled", () => {
     const user = userEvent.setup();
     const changeSpy = jest.fn();
     render(
-      <InputSearchRoot
-        aria-label="Example-Search"
-        openOnFocus
-      >
+      <InputSearchRoot aria-label="Example-Search" openOnFocus>
         <InputSearchInput
           name="fruit"
           id="fruit"
           value={""}
           onChange={(event) => {
-            changeSpy(event.target.value)
+            changeSpy(event.target.value);
           }}
         />
         <InputSearchPopover>
@@ -242,7 +239,6 @@ describe("InputSearchInput - Controlled", () => {
     await user.click(inputElement);
     await user.keyboard("T");
     await user.keyboard("[ArrowDown]");
-
 
     expect(inputElement).toHaveValue("Apple");
   });
