@@ -208,3 +208,42 @@ describe("InputSearchInput", () => {
     expect(inputElement).toHaveValue("Test item");
   });
 });
+
+describe("InputSearchInput - Controlled", () => {
+  test("updates the value when an item is highlighted", async () => {
+    const user = userEvent.setup();
+    const changeSpy = jest.fn();
+    render(
+      <InputSearchRoot
+        aria-label="Example-Search"
+        openOnFocus
+      >
+        <InputSearchInput
+          name="fruit"
+          id="fruit"
+          value={""}
+          onChange={(event) => {
+            changeSpy(event.target.value)
+          }}
+        />
+        <InputSearchPopover>
+          <InputSearchList>
+            <InputSearchListItem value="Apple" />
+            <InputSearchListItem value="Banana" />
+            <InputSearchListItem value="Orange" />
+            <InputSearchListItem value="Kiwi" />
+            <InputSearchListItem value="Pineapple" />
+          </InputSearchList>
+        </InputSearchPopover>
+      </InputSearchRoot>
+    );
+
+    const inputElement = screen.getByRole("combobox");
+    await user.click(inputElement);
+    await user.keyboard("T");
+    await user.keyboard("[ArrowDown]");
+
+
+    expect(inputElement).toHaveValue("Apple");
+  });
+});
