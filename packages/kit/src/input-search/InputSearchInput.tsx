@@ -25,6 +25,7 @@ export const InputSearchInput = React.forwardRef<
       label = "Search",
       autocomplete = true,
       id,
+      value,
       ...rest
     }: InputSearchInputProps,
     ref
@@ -61,8 +62,8 @@ export const InputSearchInput = React.forwardRef<
       }
     }, [state.selectionManager.focusedKey, setTempText]);
 
-    if (rest.value) {
-      inputProps.value = rest.value;
+    if (value) {
+      inputProps.value = value;
     }
     if (autocomplete && tempText !== undefined) {
       inputProps.value = tempText;

@@ -220,6 +220,49 @@ export const Scroll = {
   },
 };
 
+const ControlledTemplate: StoryFn<typeof InputSearch.Root> = (args) => {
+  const [term, setTerm] = useState("");
+  return (
+    <Box css={{ width: "275px" }}>
+      <InputSearch.Root
+        {...args}
+        aria-label="Example-Search"
+        openOnFocus
+        onSelect={(value) => {
+          //setTerm(value);
+        }}
+      >
+        <InputSearch.Input
+          name="fruit"
+          id="fruit"
+          value={term}
+          onChange={(event) => {
+            setTerm(event.target.value);
+          }}
+        />
+        <InputSearch.Popover>
+          <InputSearch.List>
+            <InputSearch.ListItem value="Apple" />
+            <InputSearch.ListItem value="Banana" />
+            <InputSearch.ListItem value="Orange" />
+            <InputSearch.ListItem value="Kiwi" />
+            <InputSearch.ListItem value="Pineapple" />
+          </InputSearch.List>
+        </InputSearch.Popover>
+      </InputSearch.Root>
+    </Box>
+  );
+};
+
+export const Controlled = {
+  render: ControlledTemplate,
+  args: {},
+
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
+};
+
 const InteractionsTemplate: StoryFn<typeof InputSearch.Root> = () => (
   <Box css={{ width: "275px", height: "340px" }}>
     <InputSearch.Root aria-label="Example-Search" openOnFocus>
