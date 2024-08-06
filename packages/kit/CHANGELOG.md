@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.6.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.5.0...v2.6.0) (2024-08-06)
+
+### Bug Fixes
+
+- allow controlled InputSearch to update onChange handler with temp text value ([#654](https://github.com/washingtonpost/wpds-ui-kit/issues/654)) ([3884839](https://github.com/washingtonpost/wpds-ui-kit/commit/3884839890d5582f61ee8f56d85ea0b570aa8f23))
+
+### Features
+
+- update wam ([#652](https://github.com/washingtonpost/wpds-ui-kit/issues/652)) ([8f1f97b](https://github.com/washingtonpost/wpds-ui-kit/commit/8f1f97b1f1de484b6418187032da892fb0edd947))
+
 # [2.5.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.4.0...v2.5.0) (2024-07-22)
 
 ### Bug Fixes

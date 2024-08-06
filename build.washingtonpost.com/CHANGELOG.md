@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.6.0](https://github.com/washingtonpost/wpds-docs/compare/v2.5.0...v2.6.0) (2024-08-06)
+
+### Bug Fixes
+
+- color search bug ([#653](https://github.com/washingtonpost/wpds-docs/issues/653)) ([bdf21f9](https://github.com/washingtonpost/wpds-docs/commit/bdf21f970c214ae6a142a358c6123bf6b9f53b2b))
+
+### Features
+
+- update wam ([#652](https://github.com/washingtonpost/wpds-docs/issues/652)) ([8f1f97b](https://github.com/washingtonpost/wpds-docs/commit/8f1f97b1f1de484b6418187032da892fb0edd947))
+
 # [2.5.0](https://github.com/washingtonpost/wpds-docs/compare/v2.4.0...v2.5.0) (2024-07-22)
 
 ### Bug Fixes
