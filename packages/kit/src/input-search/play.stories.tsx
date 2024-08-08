@@ -28,8 +28,8 @@ const useCityMatch = (term: string) => {
       term.trim() === ""
         ? null
         : matchSorter(cities, term, {
-            keys: [(item) => `${item.city}, ${item.state}`],
-          }),
+          keys: [(item) => `${item.city}, ${item.state}`],
+        }),
     [term]
   );
 };
@@ -229,7 +229,7 @@ const ControlledTemplate: StoryFn<typeof InputSearch.Root> = (args) => {
         aria-label="Example-Search"
         openOnFocus
         onSelect={(value) => {
-          //setTerm(value);
+          setTerm(value);
         }}
       >
         <InputSearch.Input
