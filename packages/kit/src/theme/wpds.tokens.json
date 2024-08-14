@@ -955,8 +955,8 @@
       },
       "red100": {
         "type": "color",
-        "hex": "#f02e41",
-        "value": "rgba(240, 46, 65, 1)"
+        "hex": "#ff3636",
+        "value": "rgba(255, 54, 54, 1)"
       },
       "red80": {
         "type": "color",
