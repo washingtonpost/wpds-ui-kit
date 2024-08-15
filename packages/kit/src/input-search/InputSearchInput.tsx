@@ -44,7 +44,6 @@ export const InputSearchInput = React.forwardRef<
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
       if (rest.onChange) rest.onChange(event);
       if (inputProps.onChange) inputProps.onChange(event);
-      console.log("InputSearchInput handleChange", event.target.value);
     };
 
     const [tempText, setTempText] = React.useState<string>();
