@@ -222,9 +222,6 @@ export const Scroll = {
 
 const ControlledTemplate: StoryFn<typeof InputSearch.Root> = (args) => {
   const [term, setTerm] = useState("");
-  useEffect(() => {
-    console.log("term updated....", term);
-  }, [term]);
   return (
     <Box css={{ width: "275px" }}>
       <InputSearch.Root
@@ -232,7 +229,6 @@ const ControlledTemplate: StoryFn<typeof InputSearch.Root> = (args) => {
         aria-label="Example-Search"
         openOnFocus
         onSelect={(value) => {
-          console.log("story onSelect", value);
           setTerm(value);
         }}
       >
@@ -241,7 +237,6 @@ const ControlledTemplate: StoryFn<typeof InputSearch.Root> = (args) => {
           id="fruit"
           value={term}
           onChange={(event) => {
-            console.log("story onChange", event.target.value);
             setTerm(event.target.value);
           }}
         />
