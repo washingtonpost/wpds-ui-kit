@@ -44,6 +44,7 @@ export const InputSearchInput = React.forwardRef<
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
       if (rest.onChange) rest.onChange(event);
       if (inputProps.onChange) inputProps.onChange(event);
+      console.log("InputSearchInput handleChange", event.target.value);
     };
 
     const [tempText, setTempText] = React.useState<string>();
@@ -65,7 +66,7 @@ export const InputSearchInput = React.forwardRef<
     if (value) {
       inputProps.value = value;
     }
-    if (autocomplete && tempText !== undefined) {
+    if (autocomplete && withKeyboard.current) {
       inputProps.value = tempText;
     }
 

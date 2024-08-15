@@ -28,8 +28,8 @@ const useCityMatch = (term: string) => {
       term.trim() === ""
         ? null
         : matchSorter(cities, term, {
-          keys: [(item) => `${item.city}, ${item.state}`],
-        }),
+            keys: [(item) => `${item.city}, ${item.state}`],
+          }),
     [term]
   );
 };
@@ -222,6 +222,9 @@ export const Scroll = {
 
 const ControlledTemplate: StoryFn<typeof InputSearch.Root> = (args) => {
   const [term, setTerm] = useState("");
+  useEffect(() => {
+    console.log("term updated....", term);
+  }, [term]);
   return (
     <Box css={{ width: "275px" }}>
       <InputSearch.Root
@@ -229,6 +232,7 @@ const ControlledTemplate: StoryFn<typeof InputSearch.Root> = (args) => {
         aria-label="Example-Search"
         openOnFocus
         onSelect={(value) => {
+          console.log("story onSelect", value);
           setTerm(value);
         }}
       >
@@ -237,6 +241,7 @@ const ControlledTemplate: StoryFn<typeof InputSearch.Root> = (args) => {
           id="fruit"
           value={term}
           onChange={(event) => {
+            console.log("story onChange", event.target.value);
             setTerm(event.target.value);
           }}
         />
@@ -290,5 +295,25 @@ export const Interactions = {
     });
     await userEvent.keyboard("[ArrowDown]");
     await expect(input).toHaveDisplayValue("Apple");
+  },
+};
+
+export const ControlledKeyboardInteractions = {
+  render: ControlledTemplate,
+
+  play: async () => {
+    const input = await screen.findByLabelText("Search");
+    await userEvent.type(input, "app", {
+      delay: 100,
+    });
+    await userEvent.keyboard("[ArrowDown]");
+    await userEvent.keyboard("[ArrowDown]");
+    await userEvent.keyboard("[ArrowDown]");
+    await expect(input).toHaveDisplayValue("Orange");
+    await userEvent.keyboard("[Backspace]");
+    await expect(input).toHaveDisplayValue("Orang");
+    const clearButton = await screen.findByText("Clear");
+    await userEvent.click(clearButton);
+    await expect(input).toHaveDisplayValue("");
   },
 };
