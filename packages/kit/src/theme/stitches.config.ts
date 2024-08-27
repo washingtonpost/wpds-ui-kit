@@ -134,6 +134,14 @@ export const darkTheme = {
   },
 };
 
+export const lightTheme = createTheme(`${prefix}-light`, {
+  colors: {
+    ...tokens.light,
+    ...tokens.staticColors,
+    ...tokens.defaultTheme,
+  },
+});
+
 export const globalStyles = globalCss({
   ":root": {
     "--base": `${tokens.base}`,
