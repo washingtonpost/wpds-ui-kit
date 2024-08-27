@@ -65,7 +65,7 @@ export const InputSearchInput = React.forwardRef<
     if (value) {
       inputProps.value = value;
     }
-    if (autocomplete && tempText !== undefined) {
+    if (autocomplete && withKeyboard.current) {
       inputProps.value = tempText;
     }
 

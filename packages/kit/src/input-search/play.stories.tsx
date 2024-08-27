@@ -28,8 +28,8 @@ const useCityMatch = (term: string) => {
       term.trim() === ""
         ? null
         : matchSorter(cities, term, {
-          keys: [(item) => `${item.city}, ${item.state}`],
-        }),
+            keys: [(item) => `${item.city}, ${item.state}`],
+          }),
     [term]
   );
 };
@@ -290,5 +290,25 @@ export const Interactions = {
     });
     await userEvent.keyboard("[ArrowDown]");
     await expect(input).toHaveDisplayValue("Apple");
+  },
+};
+
+export const ControlledKeyboardInteractions = {
+  render: ControlledTemplate,
+
+  play: async () => {
+    const input = await screen.findByLabelText("Search");
+    await userEvent.type(input, "app", {
+      delay: 100,
+    });
+    await userEvent.keyboard("[ArrowDown]");
+    await userEvent.keyboard("[ArrowDown]");
+    await userEvent.keyboard("[ArrowDown]");
+    await expect(input).toHaveDisplayValue("Orange");
+    await userEvent.keyboard("[Backspace]");
+    await expect(input).toHaveDisplayValue("Orang");
+    const clearButton = await screen.findByText("Clear");
+    await userEvent.click(clearButton);
+    await expect(input).toHaveDisplayValue("");
   },
 };

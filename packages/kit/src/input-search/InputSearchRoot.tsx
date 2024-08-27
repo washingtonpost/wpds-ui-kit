@@ -100,11 +100,17 @@ export const InputSearchRoot = ({
     state
   );
 
+  const prevSelectedKey = React.useRef(state.selectedKey);
   React.useEffect(() => {
-    if (state.selectedItem && onSelect) {
+    if (
+      state.selectedItem &&
+      onSelect &&
+      prevSelectedKey.current !== state.selectedKey
+    ) {
       onSelect(
         state.selectedItem.textValue || (state.selectedItem.rendered as string)
       );
+      prevSelectedKey.current = state.selectedKey;
     }
   }, [state.selectedItem, onSelect]);
 
