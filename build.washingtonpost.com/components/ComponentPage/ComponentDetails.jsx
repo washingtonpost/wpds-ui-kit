@@ -146,7 +146,7 @@ export const ComponentDetails = ({
               outlineWidth: "2px",
             },
           }}
-          href={`https://github.com/washingtonpost/wpds-ui-kit/tree/main/ui/${current}`}
+          href={`https://github.com/washingtonpost/wpds-ui-kit/tree/main/packages/kit/src/${current}`}
           title={"View on Github"}
         >
           View on Github
