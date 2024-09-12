@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.7.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.6.0...v2.7.0) (2024-09-12)
+
+### Bug Fixes
+
+- prevent frozen InputSearch after text editing ([#658](https://github.com/washingtonpost/wpds-ui-kit/issues/658)) ([b3efa3e](https://github.com/washingtonpost/wpds-ui-kit/commit/b3efa3e6e9b67d230104ac1d4031df076c8eea12))
+
+### Features
+
+- add light theme to override dark theme ([1a872ca](https://github.com/washingtonpost/wpds-ui-kit/commit/1a872ca70284c0597e51b1069623d461fd10331f))
+
 # [2.6.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.5.0...v2.6.0) (2024-08-06)
 
 ### Bug Fixes

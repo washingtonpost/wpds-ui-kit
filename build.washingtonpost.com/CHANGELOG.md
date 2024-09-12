@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.7.0](https://github.com/washingtonpost/wpds-docs/compare/v2.6.0...v2.7.0) (2024-09-12)
+
+### Bug Fixes
+
+- update component github link on build site ([#660](https://github.com/washingtonpost/wpds-docs/issues/660)) ([df1447f](https://github.com/washingtonpost/wpds-docs/commit/df1447f54dc843fa24313856043ee3124523b4f9))
+
 # [2.6.0](https://github.com/washingtonpost/wpds-docs/compare/v2.5.0...v2.6.0) (2024-08-06)
 
 ### Bug Fixes
