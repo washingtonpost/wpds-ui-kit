@@ -49,7 +49,9 @@ export default function ThemeAndSemantic() {
         </Container>
       </Box>
       <Box css={{ display: "flex", flexDirection: "column", height: "100%" }}>
-        <Label css={{ color: theme.colors.onBackground }}>Secondary (-hover)</Label>
+        <Label css={{ color: theme.colors.onBackground }}>
+          Secondary (-hover)
+        </Label>
         <Container
           css={{
             border: `1px solid ${theme.colors.outline}`,
@@ -114,7 +116,9 @@ export default function ThemeAndSemantic() {
         </Container>
       </Box>
       <Box css={{ display: "flex", flexDirection: "column", height: "100%" }}>
-        <Label css={{ color: theme.colors.onBackground }}>Opinions (-hover)</Label>
+        <Label css={{ color: theme.colors.onBackground }}>
+          Opinions (-hover)
+        </Label>
         <Container
           css={{
             border: `1px solid ${theme.colors.outline}`,
@@ -126,19 +130,27 @@ export default function ThemeAndSemantic() {
           }}
         >
           <Label css={{ color: theme.colors.onOpinions }}>onOpinons</Label>
-          <Label css={{ color: theme.colors["onOpinions-hover"] }}>onOpinons-hover</Label>
+          <Label css={{ color: theme.colors["onOpinions-hover"] }}>
+            onOpinons-hover
+          </Label>
         </Container>
       </Box>
       <Box css={{ display: "flex", flexDirection: "column", height: "100%" }}>
-        <Label css={{ color: theme.colors.onBackground }}>opinionsContainer</Label>
+        <Label css={{ color: theme.colors.onBackground }}>
+          opinionsContainer
+        </Label>
         <Container
           css={{
             border: `1px solid ${theme.colors.opinions}`,
             background: theme.colors.opinionsContainer,
           }}
         >
-          <Label css={{ color: theme.colors.onOpinionsContainer }}>onOpinionsContainer</Label>
-          <Label css={{ color: theme.colors["onOpinionsContainer-hover"] }}>onOpinons-hover</Label>
+          <Label css={{ color: theme.colors.onOpinionsContainer }}>
+            onOpinionsContainer
+          </Label>
+          <Label css={{ color: theme.colors["onOpinionsContainer-hover"] }}>
+            onOpinons-hover
+          </Label>
         </Container>
       </Box>
       <Box css={{ display: "flex", flexDirection: "column", height: "100%" }}>
