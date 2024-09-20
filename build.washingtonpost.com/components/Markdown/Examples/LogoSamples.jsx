@@ -38,6 +38,7 @@ export const logoList = [
   "helpdesk-bw",
   "helpdesk-primary",
   "helpdesk-secondary",
+  "postpulse"
 ];
 
 export const darkLogos = [
