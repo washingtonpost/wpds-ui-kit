@@ -8,15 +8,16 @@ import { useTheme } from "next-themes";
 const xMapping = [0, 20, 40, 60, 80, 100, 200, 300, 400, 500, 600, 700];
 const yMapping = [
   "red",
-  "blue",
-  "green",
+  "spark",
   "orange",
-  "teal",
-  "gold",
   "mustard",
+  "gold",
+  "yellow",
+  "green",
+  "teal",
+  "blue",
   "purple",
   "pink",
-  "yellow",
   "gray",
 ];
 
