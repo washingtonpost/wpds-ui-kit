@@ -41,7 +41,7 @@ export const logoList = [
   "postpulse",
   "the-7-black",
   "the-7-blue",
-  "the-7"
+  "the-7",
 ];
 
 export const darkLogos = [
