@@ -22,7 +22,7 @@ const Label = styled("div", {
 export default function ThemeAndSemantic() {
   return (
     <Layout>
-      <Box>
+      <Box css={{ display: "flex", flexDirection: "column", height: "100%" }}>
         <Label css={{ color: theme.colors.onBackground }}>
           Primary (-hover)
         </Label>
@@ -48,8 +48,10 @@ export default function ThemeAndSemantic() {
           </Label>
         </Container>
       </Box>
-      <Box>
-        <Label css={{ color: theme.colors.onBackground }}>Secondary</Label>
+      <Box css={{ display: "flex", flexDirection: "column", height: "100%" }}>
+        <Label css={{ color: theme.colors.onBackground }}>
+          Secondary (-hover)
+        </Label>
         <Container
           css={{
             border: `1px solid ${theme.colors.outline}`,
@@ -73,7 +75,7 @@ export default function ThemeAndSemantic() {
         </Container>
       </Box>
       <Box css={{ display: "flex", flexDirection: "column", height: "100%" }}>
-        <Label css={{ color: theme.colors.onBackground }}>Cta</Label>
+        <Label css={{ color: theme.colors.onBackground }}>Cta (-hover)</Label>
         <Container
           css={{
             height: "100%",
@@ -91,7 +93,7 @@ export default function ThemeAndSemantic() {
           </Label>
         </Container>
       </Box>
-      <Box>
+      <Box css={{ display: "flex", flexDirection: "column", height: "100%" }}>
         <Label css={{ color: theme.colors.onBackground }}>ctaContainer</Label>
         <Container
           css={{
@@ -113,7 +115,45 @@ export default function ThemeAndSemantic() {
           </Label>
         </Container>
       </Box>
-      <Box>
+      <Box css={{ display: "flex", flexDirection: "column", height: "100%" }}>
+        <Label css={{ color: theme.colors.onBackground }}>
+          Opinions (-hover)
+        </Label>
+        <Container
+          css={{
+            border: `1px solid ${theme.colors.outline}`,
+            background: theme.colors.opinions,
+            transition: "background .15s",
+            "&:hover": {
+              background: theme.colors["opinions-hover"],
+            },
+          }}
+        >
+          <Label css={{ color: theme.colors.onOpinions }}>onOpinons</Label>
+          <Label css={{ color: theme.colors["onOpinions-hover"] }}>
+            onOpinons-hover
+          </Label>
+        </Container>
+      </Box>
+      <Box css={{ display: "flex", flexDirection: "column", height: "100%" }}>
+        <Label css={{ color: theme.colors.onBackground }}>
+          opinionsContainer
+        </Label>
+        <Container
+          css={{
+            border: `1px solid ${theme.colors.opinions}`,
+            background: theme.colors.opinionsContainer,
+          }}
+        >
+          <Label css={{ color: theme.colors.onOpinionsContainer }}>
+            onOpinionsContainer
+          </Label>
+          <Label css={{ color: theme.colors["onOpinionsContainer-hover"] }}>
+            onOpinons-hover
+          </Label>
+        </Container>
+      </Box>
+      <Box css={{ display: "flex", flexDirection: "column", height: "100%" }}>
         <Label css={{ color: theme.colors.onBackground }}>Background</Label>
         <Container
           css={{
@@ -133,7 +173,7 @@ export default function ThemeAndSemantic() {
           </Label>
         </Container>
       </Box>
-      <Box>
+      <Box css={{ display: "flex", flexDirection: "column", height: "100%" }}>
         <Label css={{ color: theme.colors.onBackground }}>
           Background-forSurfaces
         </Label>
@@ -155,7 +195,7 @@ export default function ThemeAndSemantic() {
           </Label>
         </Container>
       </Box>
-      <Box>
+      <Box css={{ display: "flex", flexDirection: "column", height: "100%" }}>
         <Label css={{ color: theme.colors.onBackground }}>Surface</Label>
         <Container
           css={{
@@ -171,7 +211,7 @@ export default function ThemeAndSemantic() {
           </Label>
         </Container>
       </Box>
-      <Box>
+      <Box css={{ display: "flex", flexDirection: "column", height: "100%" }}>
         <Label css={{ color: theme.colors.onBackground }}>
           Surface-highest
         </Label>
@@ -210,7 +250,7 @@ export default function ThemeAndSemantic() {
           </Label>
         </Container>
       </Box>
-      <Box>
+      <Box css={{ display: "flex", flexDirection: "column", height: "100%" }}>
         <Label css={{ color: theme.colors.onBackground }}>errorContainer</Label>
         <Container
           css={{
@@ -236,7 +276,7 @@ export default function ThemeAndSemantic() {
           </Label>
         </Container>
       </Box>
-      <Box>
+      <Box css={{ display: "flex", flexDirection: "column", height: "100%" }}>
         <Label css={{ color: theme.colors.onBackground }}>
           successContainer
         </Label>
@@ -264,7 +304,7 @@ export default function ThemeAndSemantic() {
           </Label>
         </Container>
       </Box>
-      <Box>
+      <Box css={{ display: "flex", flexDirection: "column", height: "100%" }}>
         <Label css={{ color: theme.colors.onBackground }}>
           warningContainer
         </Label>
@@ -292,7 +332,7 @@ export default function ThemeAndSemantic() {
           </Label>
         </Container>
       </Box>
-      <Box>
+      <Box css={{ display: "flex", flexDirection: "column", height: "100%" }}>
         <Label css={{ color: theme.colors.onBackground }}>
           signalContainer
         </Label>
