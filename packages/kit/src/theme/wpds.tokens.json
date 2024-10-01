@@ -63,150 +63,95 @@
         "hex": "#0000000d",
         "description": "Legacy-Token subject to be deprecated use our new alpha tokens"
       },
-      "mustard600": {
+      "red600": {
         "type": "color",
-        "hex": "#fbf1dd",
-        "value": "rgba(251, 241, 221, 1)"
+        "hex": "#fde7e7",
+        "value": "rgba(253, 231, 231, 1)"
       },
-      "mustard500": {
+      "red500": {
         "type": "color",
-        "hex": "#fee39c",
-        "value": "rgba(254, 227, 156, 1)"
+        "hex": "#f9dddb",
+        "value": "rgba(249, 221, 219, 1)"
       },
-      "mustard400": {
+      "red400": {
         "type": "color",
-        "hex": "#f7ca6f",
-        "value": "rgba(247, 202, 111, 1)"
+        "hex": "#f2b4ab",
+        "value": "rgba(242, 180, 171, 1)"
       },
-      "mustard300": {
+      "red300": {
         "type": "color",
-        "hex": "#ebb347",
-        "value": "rgba(235, 179, 71, 1)"
+        "hex": "#e58a7c",
+        "value": "rgba(229, 138, 124, 1)"
       },
-      "mustard200": {
+      "red200": {
         "type": "color",
-        "hex": "#d99e20",
-        "value": "rgba(217, 158, 32, 1)"
+        "hex": "#d35f4f",
+        "value": "rgba(211, 95, 79, 1)"
       },
-      "mustard100": {
+      "red100": {
         "type": "color",
-        "hex": "#e2a31f",
-        "value": "rgba(226, 163, 31, 1)"
+        "hex": "#ea0017",
+        "value": "rgba(234, 0, 23, 1)"
       },
-      "mustard80": {
+      "red80": {
         "type": "color",
-        "hex": "#c18b00",
-        "value": "rgba(193, 139, 0, 1)"
+        "hex": "#be2c25",
+        "value": "rgba(190, 44, 37, 1)"
       },
-      "mustard60": {
+      "red60": {
         "type": "color",
-        "hex": "#916802",
-        "value": "rgba(145, 104, 2, 1)"
+        "hex": "#8e1f1b",
+        "value": "rgba(142, 31, 27, 1)"
       },
-      "mustard40": {
+      "red40": {
         "type": "color",
-        "hex": "#644801",
-        "value": "rgba(100, 72, 1, 1)"
+        "hex": "#63100e",
+        "value": "rgba(99, 16, 14, 1)"
       },
-      "yellow600": {
+      "spark600": {
         "type": "color",
-        "hex": "#fdfadb",
-        "value": "rgba(253, 250, 219, 1)"
+        "hex": "#FFF6F1",
+        "value": "rgba(255, 246, 241, 1)"
       },
-      "yellow100": {
+      "spark500": {
         "type": "color",
-        "hex": "#ffec44",
-        "value": "rgba(255, 236, 68, 1)"
+        "hex": "#FFDECC",
+        "value": "rgba(255, 222, 204, 1)"
       },
-      "gold600": {
+      "spark400": {
         "type": "color",
-        "hex": "#faf0e3",
-        "value": "rgba(250, 240, 227, 1)"
+        "hex": "#FFBFAD",
+        "value": "rgba(255, 191, 173, 1)"
       },
-      "gold500": {
+      "spark300": {
         "type": "color",
-        "hex": "#f3e4cd",
-        "value": "rgba(243, 228, 205, 1)"
+        "hex": "#FE8C6C",
+        "value": "rgba(254, 140, 108, 1)"
       },
-      "gold400": {
+      "spark200": {
         "type": "color",
-        "hex": "#e8cba4",
-        "value": "rgba(232, 203, 164, 1)"
+        "hex": "#FE724C",
+        "value": "rgba(254, 114, 76, 1)"
       },
-      "gold300": {
+      "spark100": {
         "type": "color",
-        "hex": "#deb57e",
-        "value": "rgba(222, 181, 126, 1)"
+        "hex": "#FE4E1D",
+        "value": "rgba(254, 78, 29, 1)"
       },
-      "gold200": {
+      "spark80": {
         "type": "color",
-        "hex": "#d39e4c",
-        "value": "rgba(211, 158, 76, 1)"
+        "hex": "#DB3001",
+        "value": "rgba(219, 48, 1, 1)"
       },
-      "gold100": {
+      "spark60": {
         "type": "color",
-        "hex": "#e5a038",
-        "value": "rgba(229, 160, 56, 1)"
+        "hex": "#B32801",
+        "value": "rgba(179, 40, 1, 1)"
       },
-      "gold80": {
+      "spark40": {
         "type": "color",
-        "hex": "#c2882f",
-        "value": "rgba(194, 136, 47, 1)"
-      },
-      "gold60": {
-        "type": "color",
-        "hex": "#9e6105",
-        "value": "rgba(158, 97, 5, 1)"
-      },
-      "gold40": {
-        "type": "color",
-        "hex": "#6d4508",
-        "value": "rgba(109, 69, 8, 1)"
-      },
-      "green600": {
-        "type": "color",
-        "hex": "#eef9ea",
-        "value": "rgba(238, 249, 234, 1)"
-      },
-      "green500": {
-        "type": "color",
-        "hex": "#d5edca",
-        "value": "rgba(213, 237, 202, 1)"
-      },
-      "green400": {
-        "type": "color",
-        "hex": "#b2d6a0",
-        "value": "rgba(178, 214, 160, 1)"
-      },
-      "green300": {
-        "type": "color",
-        "hex": "#91c078",
-        "value": "rgba(145, 192, 120, 1)"
-      },
-      "green200": {
-        "type": "color",
-        "hex": "#6ea951",
-        "value": "rgba(110, 169, 81, 1)"
-      },
-      "green100": {
-        "type": "color",
-        "hex": "#36a75c",
-        "value": "rgba(54, 167, 92, 1)"
-      },
-      "green80": {
-        "type": "color",
-        "hex": "#499327",
-        "value": "rgba(73, 147, 39, 1)"
-      },
-      "green60": {
-        "type": "color",
-        "hex": "#38711e",
-        "value": "rgba(56, 113, 30, 1)"
-      },
-      "green40": {
-        "type": "color",
-        "hex": "#285115",
-        "value": "rgba(40, 81, 21, 1)"
+        "hex": "#501200",
+        "value": "rgba(80, 18, 0, 1)"
       },
       "orange600": {
         "type": "color",
@@ -253,6 +198,151 @@
         "hex": "#763502",
         "value": "rgba(118, 53, 2, 1)"
       },
+      "mustard600": {
+        "type": "color",
+        "hex": "#fbf1dd",
+        "value": "rgba(251, 241, 221, 1)"
+      },
+      "mustard500": {
+        "type": "color",
+        "hex": "#fee39c",
+        "value": "rgba(254, 227, 156, 1)"
+      },
+      "mustard400": {
+        "type": "color",
+        "hex": "#f7ca6f",
+        "value": "rgba(247, 202, 111, 1)"
+      },
+      "mustard300": {
+        "type": "color",
+        "hex": "#ebb347",
+        "value": "rgba(235, 179, 71, 1)"
+      },
+      "mustard200": {
+        "type": "color",
+        "hex": "#d99e20",
+        "value": "rgba(217, 158, 32, 1)"
+      },
+      "mustard100": {
+        "type": "color",
+        "hex": "#e2a31f",
+        "value": "rgba(226, 163, 31, 1)"
+      },
+      "mustard80": {
+        "type": "color",
+        "hex": "#c18b00",
+        "value": "rgba(193, 139, 0, 1)"
+      },
+      "mustard60": {
+        "type": "color",
+        "hex": "#916802",
+        "value": "rgba(145, 104, 2, 1)"
+      },
+      "mustard40": {
+        "type": "color",
+        "hex": "#644801",
+        "value": "rgba(100, 72, 1, 1)"
+      },
+      "gold600": {
+        "type": "color",
+        "hex": "#faf0e3",
+        "value": "rgba(250, 240, 227, 1)"
+      },
+      "gold500": {
+        "type": "color",
+        "hex": "#f3e4cd",
+        "value": "rgba(243, 228, 205, 1)"
+      },
+      "gold400": {
+        "type": "color",
+        "hex": "#e8cba4",
+        "value": "rgba(232, 203, 164, 1)"
+      },
+      "gold300": {
+        "type": "color",
+        "hex": "#deb57e",
+        "value": "rgba(222, 181, 126, 1)"
+      },
+      "gold200": {
+        "type": "color",
+        "hex": "#d39e4c",
+        "value": "rgba(211, 158, 76, 1)"
+      },
+      "gold100": {
+        "type": "color",
+        "hex": "#e5a038",
+        "value": "rgba(229, 160, 56, 1)"
+      },
+      "gold80": {
+        "type": "color",
+        "hex": "#c2882f",
+        "value": "rgba(194, 136, 47, 1)"
+      },
+      "gold60": {
+        "type": "color",
+        "hex": "#9e6105",
+        "value": "rgba(158, 97, 5, 1)"
+      },
+      "gold40": {
+        "type": "color",
+        "hex": "#6d4508",
+        "value": "rgba(109, 69, 8, 1)"
+      },
+      "yellow600": {
+        "type": "color",
+        "hex": "#fdfadb",
+        "value": "rgba(253, 250, 219, 1)"
+      },
+      "yellow100": {
+        "type": "color",
+        "hex": "#ffec44",
+        "value": "rgba(255, 236, 68, 1)"
+      },
+      "green600": {
+        "type": "color",
+        "hex": "#eef9ea",
+        "value": "rgba(238, 249, 234, 1)"
+      },
+      "green500": {
+        "type": "color",
+        "hex": "#d5edca",
+        "value": "rgba(213, 237, 202, 1)"
+      },
+      "green400": {
+        "type": "color",
+        "hex": "#b2d6a0",
+        "value": "rgba(178, 214, 160, 1)"
+      },
+      "green300": {
+        "type": "color",
+        "hex": "#91c078",
+        "value": "rgba(145, 192, 120, 1)"
+      },
+      "green200": {
+        "type": "color",
+        "hex": "#6ea951",
+        "value": "rgba(110, 169, 81, 1)"
+      },
+      "green100": {
+        "type": "color",
+        "hex": "#36a75c",
+        "value": "rgba(54, 167, 92, 1)"
+      },
+      "green80": {
+        "type": "color",
+        "hex": "#499327",
+        "value": "rgba(73, 147, 39, 1)"
+      },
+      "green60": {
+        "type": "color",
+        "hex": "#38711e",
+        "value": "rgba(56, 113, 30, 1)"
+      },
+      "green40": {
+        "type": "color",
+        "hex": "#285115",
+        "value": "rgba(40, 81, 21, 1)"
+      },
       "teal600": {
         "type": "color",
         "hex": "#eafbfe",
@@ -297,6 +387,51 @@
         "type": "color",
         "hex": "#0b3940",
         "value": "rgba(11, 57, 64, 1)"
+      },
+      "blue600": {
+        "type": "color",
+        "hex": "#e7f0fe",
+        "value": "rgba(231, 240, 254, 1)"
+      },
+      "blue500": {
+        "type": "color",
+        "hex": "#d3e7fa",
+        "value": "rgba(211, 231, 250, 1)"
+      },
+      "blue400": {
+        "type": "color",
+        "hex": "#acc5e7",
+        "value": "rgba(172, 197, 231, 1)"
+      },
+      "blue300": {
+        "type": "color",
+        "hex": "#84a4d6",
+        "value": "rgba(132, 164, 214, 1)"
+      },
+      "blue200": {
+        "type": "color",
+        "hex": "#5784c5",
+        "value": "rgba(87, 132, 197, 1)"
+      },
+      "blue100": {
+        "type": "color",
+        "hex": "#166dfc",
+        "value": "rgba(22, 109, 252, 1)"
+      },
+      "blue80": {
+        "type": "color",
+        "hex": "#1366b3",
+        "value": "rgba(19, 102, 179, 1)"
+      },
+      "blue60": {
+        "type": "color",
+        "hex": "#0f4b84",
+        "value": "rgba(15, 75, 132, 1)"
+      },
+      "blue40": {
+        "type": "color",
+        "hex": "#0a3258",
+        "value": "rgba(10, 50, 88, 1)"
       },
       "purple600": {
         "type": "color",
@@ -387,96 +522,6 @@
         "type": "color",
         "hex": "#690b2c",
         "value": "rgba(105, 11, 44, 1)"
-      },
-      "red600": {
-        "type": "color",
-        "hex": "#fde7e7",
-        "value": "rgba(253, 231, 231, 1)"
-      },
-      "red500": {
-        "type": "color",
-        "hex": "#f9dddb",
-        "value": "rgba(249, 221, 219, 1)"
-      },
-      "red400": {
-        "type": "color",
-        "hex": "#f2b4ab",
-        "value": "rgba(242, 180, 171, 1)"
-      },
-      "red300": {
-        "type": "color",
-        "hex": "#e58a7c",
-        "value": "rgba(229, 138, 124, 1)"
-      },
-      "red200": {
-        "type": "color",
-        "hex": "#d35f4f",
-        "value": "rgba(211, 95, 79, 1)"
-      },
-      "red100": {
-        "type": "color",
-        "hex": "#ea0017",
-        "value": "rgba(234, 0, 23, 1)"
-      },
-      "red80": {
-        "type": "color",
-        "hex": "#be2c25",
-        "value": "rgba(190, 44, 37, 1)"
-      },
-      "red60": {
-        "type": "color",
-        "hex": "#8e1f1b",
-        "value": "rgba(142, 31, 27, 1)"
-      },
-      "red40": {
-        "type": "color",
-        "hex": "#63100e",
-        "value": "rgba(99, 16, 14, 1)"
-      },
-      "blue600": {
-        "type": "color",
-        "hex": "#e7f0fe",
-        "value": "rgba(231, 240, 254, 1)"
-      },
-      "blue500": {
-        "type": "color",
-        "hex": "#d3e7fa",
-        "value": "rgba(211, 231, 250, 1)"
-      },
-      "blue400": {
-        "type": "color",
-        "hex": "#acc5e7",
-        "value": "rgba(172, 197, 231, 1)"
-      },
-      "blue300": {
-        "type": "color",
-        "hex": "#84a4d6",
-        "value": "rgba(132, 164, 214, 1)"
-      },
-      "blue200": {
-        "type": "color",
-        "hex": "#5784c5",
-        "value": "rgba(87, 132, 197, 1)"
-      },
-      "blue100": {
-        "type": "color",
-        "hex": "#166dfc",
-        "value": "rgba(22, 109, 252, 1)"
-      },
-      "blue80": {
-        "type": "color",
-        "hex": "#1366b3",
-        "value": "rgba(19, 102, 179, 1)"
-      },
-      "blue60": {
-        "type": "color",
-        "hex": "#0f4b84",
-        "value": "rgba(15, 75, 132, 1)"
-      },
-      "blue40": {
-        "type": "color",
-        "hex": "#0a3258",
-        "value": "rgba(10, 50, 88, 1)"
       },
       "gray700": {
         "type": "color",
@@ -603,150 +648,95 @@
         "hex": "#ffffff33",
         "description": "Legacy-Token subject to be deprecated use our new alpha tokens"
       },
-      "mustard600": {
+      "red600": {
         "type": "color",
-        "hex": "#21201e",
-        "value": "rgba(33, 32, 30, 1)"
+        "hex": "#261f1f",
+        "value": "rgba(38, 31, 31, 1)"
       },
-      "mustard500": {
+      "red500": {
         "type": "color",
-        "hex": "#2c271b",
-        "value": "rgba(44, 39, 27, 1)"
+        "hex": "#2d2727",
+        "value": "rgba(45, 39, 39, 1)"
       },
-      "mustard400": {
+      "red400": {
         "type": "color",
-        "hex": "#40341d",
-        "value": "rgba(64, 52, 29, 1)"
+        "hex": "#4d3a37",
+        "value": "rgba(77, 58, 55, 1)"
       },
-      "mustard300": {
+      "red300": {
         "type": "color",
-        "hex": "#534019",
-        "value": "rgba(83, 64, 25, 1)"
+        "hex": "#784841",
+        "value": "rgba(120, 72, 65, 1)"
       },
-      "mustard200": {
+      "red200": {
         "type": "color",
-        "hex": "#684b0f",
-        "value": "rgba(104, 75, 15, 1)"
+        "hex": "#b85345",
+        "value": "rgba(184, 83, 69, 1)"
       },
-      "mustard100": {
+      "red100": {
         "type": "color",
-        "hex": "#664c06",
-        "value": "rgba(102, 76, 6, 1)"
+        "hex": "#ff3636",
+        "value": "rgba(255, 54, 54, 1)"
       },
-      "mustard80": {
+      "red80": {
         "type": "color",
-        "hex": "#7c5a00",
-        "value": "rgba(124, 90, 0, 1)"
+        "hex": "#d4726d",
+        "value": "rgba(212, 114, 109, 1)"
       },
-      "mustard60": {
+      "red60": {
         "type": "color",
-        "hex": "#a17d25",
-        "value": "rgba(161, 125, 37, 1)"
+        "hex": "#d2a5a4",
+        "value": "rgba(210, 165, 164, 1)"
       },
-      "mustard40": {
+      "red40": {
         "type": "color",
-        "hex": "#b8ab8b",
-        "value": "rgba(184, 171, 139, 1)"
+        "hex": "#e1d0d0",
+        "value": "rgba(225, 208, 208, 1)"
       },
-      "yellow600": {
+      "spark600": {
         "type": "color",
-        "hex": "#1b1a17",
-        "value": "rgba(27, 26, 23, 1)"
+        "hex": "#2B1E1A",
+        "value": "rgba(43, 30, 26, 1)"
       },
-      "yellow100": {
+      "spark500": {
         "type": "color",
-        "hex": "#28250b",
-        "value": "rgba(40, 37, 11, 1)"
+        "hex": "#332724",
+        "value": "rgba(51, 39, 36, 1)"
       },
-      "gold600": {
+      "spark400": {
         "type": "color",
-        "hex": "#1f1e1c",
-        "value": "rgba(31, 30, 28, 1)"
+        "hex": "#4D312A",
+        "value": "rgba(77, 49, 42, 1)"
       },
-      "gold500": {
+      "spark300": {
         "type": "color",
-        "hex": "#2a2723",
-        "value": "rgba(42, 39, 35, 1)"
+        "hex": "#734438",
+        "value": "rgba(115, 68, 56, 1)"
       },
-      "gold400": {
+      "spark200": {
         "type": "color",
-        "hex": "#3c352b",
-        "value": "rgba(60, 53, 43, 1)"
+        "hex": "#994229",
+        "value": "rgba(153, 66, 41, 1)"
       },
-      "gold300": {
+      "spark100": {
         "type": "color",
-        "hex": "#4f412d",
-        "value": "rgba(79, 65, 45, 1)"
+        "hex": "#ED4A1C",
+        "value": "rgba(237, 74, 28, 1)"
       },
-      "gold200": {
+      "spark80": {
         "type": "color",
-        "hex": "#664d25",
-        "value": "rgba(102, 77, 37, 1)"
+        "hex": "#B27868",
+        "value": "rgba(178, 120, 104, 1)"
       },
-      "gold100": {
+      "spark60": {
         "type": "color",
-        "hex": "#694613",
-        "value": "rgba(105, 70, 19, 1)"
+        "hex": "#CCAF9F",
+        "value": "rgba(204, 175, 159, 1)"
       },
-      "gold80": {
+      "spark40": {
         "type": "color",
-        "hex": "#80591f",
-        "value": "rgba(128, 89, 31, 1)"
-      },
-      "gold60": {
-        "type": "color",
-        "hex": "#ac792a",
-        "value": "rgba(172, 121, 42, 1)"
-      },
-      "gold40": {
-        "type": "color",
-        "hex": "#bba88c",
-        "value": "rgba(187, 168, 140, 1)"
-      },
-      "green600": {
-        "type": "color",
-        "hex": "#1e211e",
-        "value": "rgba(30, 33, 30, 1)"
-      },
-      "green500": {
-        "type": "color",
-        "hex": "#242822",
-        "value": "rgba(36, 40, 34, 1)"
-      },
-      "green400": {
-        "type": "color",
-        "hex": "#313b2c",
-        "value": "rgba(49, 59, 44, 1)"
-      },
-      "green300": {
-        "type": "color",
-        "hex": "#3b4e30",
-        "value": "rgba(59, 78, 48, 1)"
-      },
-      "green200": {
-        "type": "color",
-        "hex": "#416530",
-        "value": "rgba(65, 101, 48, 1)"
-      },
-      "green100": {
-        "type": "color",
-        "hex": "#22703c",
-        "value": "rgba(34, 112, 60, 1)"
-      },
-      "green80": {
-        "type": "color",
-        "hex": "#3e7d21",
-        "value": "rgba(62, 125, 33, 1)"
-      },
-      "green60": {
-        "type": "color",
-        "hex": "#71995e",
-        "value": "rgba(113, 153, 94, 1)"
-      },
-      "green40": {
-        "type": "color",
-        "hex": "#a8b8a0",
-        "value": "rgba(168, 184, 160, 1)"
+        "hex": "#E5DDD9",
+        "value": "rgba(229, 221, 217, 1)"
       },
       "orange600": {
         "type": "color",
@@ -793,6 +783,151 @@
         "hex": "#c8ae9a",
         "value": "rgba(200, 174, 154, 1)"
       },
+      "mustard600": {
+        "type": "color",
+        "hex": "#21201e",
+        "value": "rgba(33, 32, 30, 1)"
+      },
+      "mustard500": {
+        "type": "color",
+        "hex": "#2c271b",
+        "value": "rgba(44, 39, 27, 1)"
+      },
+      "mustard400": {
+        "type": "color",
+        "hex": "#40341d",
+        "value": "rgba(64, 52, 29, 1)"
+      },
+      "mustard300": {
+        "type": "color",
+        "hex": "#534019",
+        "value": "rgba(83, 64, 25, 1)"
+      },
+      "mustard200": {
+        "type": "color",
+        "hex": "#684b0f",
+        "value": "rgba(104, 75, 15, 1)"
+      },
+      "mustard100": {
+        "type": "color",
+        "hex": "#664c06",
+        "value": "rgba(102, 76, 6, 1)"
+      },
+      "mustard80": {
+        "type": "color",
+        "hex": "#7c5a00",
+        "value": "rgba(124, 90, 0, 1)"
+      },
+      "mustard60": {
+        "type": "color",
+        "hex": "#a17d25",
+        "value": "rgba(161, 125, 37, 1)"
+      },
+      "mustard40": {
+        "type": "color",
+        "hex": "#b8ab8b",
+        "value": "rgba(184, 171, 139, 1)"
+      },
+      "gold600": {
+        "type": "color",
+        "hex": "#1f1e1c",
+        "value": "rgba(31, 30, 28, 1)"
+      },
+      "gold500": {
+        "type": "color",
+        "hex": "#2a2723",
+        "value": "rgba(42, 39, 35, 1)"
+      },
+      "gold400": {
+        "type": "color",
+        "hex": "#3c352b",
+        "value": "rgba(60, 53, 43, 1)"
+      },
+      "gold300": {
+        "type": "color",
+        "hex": "#4f412d",
+        "value": "rgba(79, 65, 45, 1)"
+      },
+      "gold200": {
+        "type": "color",
+        "hex": "#664d25",
+        "value": "rgba(102, 77, 37, 1)"
+      },
+      "gold100": {
+        "type": "color",
+        "hex": "#694613",
+        "value": "rgba(105, 70, 19, 1)"
+      },
+      "gold80": {
+        "type": "color",
+        "hex": "#80591f",
+        "value": "rgba(128, 89, 31, 1)"
+      },
+      "gold60": {
+        "type": "color",
+        "hex": "#ac792a",
+        "value": "rgba(172, 121, 42, 1)"
+      },
+      "gold40": {
+        "type": "color",
+        "hex": "#bba88c",
+        "value": "rgba(187, 168, 140, 1)"
+      },
+      "yellow600": {
+        "type": "color",
+        "hex": "#1b1a17",
+        "value": "rgba(27, 26, 23, 1)"
+      },
+      "yellow100": {
+        "type": "color",
+        "hex": "#28250b",
+        "value": "rgba(40, 37, 11, 1)"
+      },
+      "green600": {
+        "type": "color",
+        "hex": "#1e211e",
+        "value": "rgba(30, 33, 30, 1)"
+      },
+      "green500": {
+        "type": "color",
+        "hex": "#242822",
+        "value": "rgba(36, 40, 34, 1)"
+      },
+      "green400": {
+        "type": "color",
+        "hex": "#313b2c",
+        "value": "rgba(49, 59, 44, 1)"
+      },
+      "green300": {
+        "type": "color",
+        "hex": "#3b4e30",
+        "value": "rgba(59, 78, 48, 1)"
+      },
+      "green200": {
+        "type": "color",
+        "hex": "#416530",
+        "value": "rgba(65, 101, 48, 1)"
+      },
+      "green100": {
+        "type": "color",
+        "hex": "#22703c",
+        "value": "rgba(34, 112, 60, 1)"
+      },
+      "green80": {
+        "type": "color",
+        "hex": "#3e7d21",
+        "value": "rgba(62, 125, 33, 1)"
+      },
+      "green60": {
+        "type": "color",
+        "hex": "#71995e",
+        "value": "rgba(113, 153, 94, 1)"
+      },
+      "green40": {
+        "type": "color",
+        "hex": "#a8b8a0",
+        "value": "rgba(168, 184, 160, 1)"
+      },
       "teal600": {
         "type": "color",
         "hex": "#1d2121",
@@ -837,6 +972,51 @@
         "type": "color",
         "hex": "#c8d2d4",
         "value": "rgba(200, 210, 212, 1)"
+      },
+      "blue600": {
+        "type": "color",
+        "hex": "#1f2226",
+        "value": "rgba(31, 34, 38, 1)"
+      },
+      "blue500": {
+        "type": "color",
+        "hex": "#25292c",
+        "value": "rgba(37, 41, 44, 1)"
+      },
+      "blue400": {
+        "type": "color",
+        "hex": "#373f49",
+        "value": "rgba(55, 63, 73, 1)"
+      },
+      "blue300": {
+        "type": "color",
+        "hex": "#455670",
+        "value": "rgba(69, 86, 112, 1)"
+      },
+      "blue200": {
+        "type": "color",
+        "hex": "#4a70a8",
+        "value": "rgba(74, 112, 168, 1)"
+      },
+      "blue100": {
+        "type": "color",
+        "hex": "#166dfc",
+        "value": "rgba(22, 109, 252, 1)"
+      },
+      "blue80": {
+        "type": "color",
+        "hex": "#5892c9",
+        "value": "rgba(88, 146, 201, 1)"
+      },
+      "blue60": {
+        "type": "color",
+        "hex": "#9ab3cb",
+        "value": "rgba(154, 179, 203, 1)"
+      },
+      "blue40": {
+        "type": "color",
+        "hex": "#cdd5dd",
+        "value": "rgba(205, 213, 221, 1)"
       },
       "purple600": {
         "type": "color",
@@ -927,96 +1107,6 @@
         "type": "color",
         "hex": "#dfcbd2",
         "value": "rgba(223, 203, 210, 1)"
-      },
-      "red600": {
-        "type": "color",
-        "hex": "#261f1f",
-        "value": "rgba(38, 31, 31, 1)"
-      },
-      "red500": {
-        "type": "color",
-        "hex": "#2d2727",
-        "value": "rgba(45, 39, 39, 1)"
-      },
-      "red400": {
-        "type": "color",
-        "hex": "#4d3a37",
-        "value": "rgba(77, 58, 55, 1)"
-      },
-      "red300": {
-        "type": "color",
-        "hex": "#784841",
-        "value": "rgba(120, 72, 65, 1)"
-      },
-      "red200": {
-        "type": "color",
-        "hex": "#b85345",
-        "value": "rgba(184, 83, 69, 1)"
-      },
-      "red100": {
-        "type": "color",
-        "hex": "#ff3636",
-        "value": "rgba(255, 54, 54, 1)"
-      },
-      "red80": {
-        "type": "color",
-        "hex": "#d4726d",
-        "value": "rgba(212, 114, 109, 1)"
-      },
-      "red60": {
-        "type": "color",
-        "hex": "#d2a5a4",
-        "value": "rgba(210, 165, 164, 1)"
-      },
-      "red40": {
-        "type": "color",
-        "hex": "#e1d0d0",
-        "value": "rgba(225, 208, 208, 1)"
-      },
-      "blue600": {
-        "type": "color",
-        "hex": "#1f2226",
-        "value": "rgba(31, 34, 38, 1)"
-      },
-      "blue500": {
-        "type": "color",
-        "hex": "#25292c",
-        "value": "rgba(37, 41, 44, 1)"
-      },
-      "blue400": {
-        "type": "color",
-        "hex": "#373f49",
-        "value": "rgba(55, 63, 73, 1)"
-      },
-      "blue300": {
-        "type": "color",
-        "hex": "#455670",
-        "value": "rgba(69, 86, 112, 1)"
-      },
-      "blue200": {
-        "type": "color",
-        "hex": "#4a70a8",
-        "value": "rgba(74, 112, 168, 1)"
-      },
-      "blue100": {
-        "type": "color",
-        "hex": "#166dfc",
-        "value": "rgba(22, 109, 252, 1)"
-      },
-      "blue80": {
-        "type": "color",
-        "hex": "#5892c9",
-        "value": "rgba(88, 146, 201, 1)"
-      },
-      "blue60": {
-        "type": "color",
-        "hex": "#9ab3cb",
-        "value": "rgba(154, 179, 203, 1)"
-      },
-      "blue40": {
-        "type": "color",
-        "hex": "#cdd5dd",
-        "value": "rgba(205, 213, 221, 1)"
       },
       "gray700": {
         "type": "color",
@@ -1142,150 +1232,95 @@
         "hex": "#0000000d",
         "description": "Legacy-Token subject to be deprecated use our new alpha tokens"
       },
-      "mustard600": {
+      "red600": {
         "type": "color",
-        "hex": "#fbf1dd",
-        "value": "rgba(251, 241, 221, 1)"
+        "hex": "#fde7e7",
+        "value": "rgba(253, 231, 231, 1)"
       },
-      "mustard500": {
+      "red500": {
         "type": "color",
-        "hex": "#fee39c",
-        "value": "rgba(254, 227, 156, 1)"
+        "hex": "#f9dddb",
+        "value": "rgba(249, 221, 219, 1)"
       },
-      "mustard400": {
+      "red400": {
         "type": "color",
-        "hex": "#f7ca6f",
-        "value": "rgba(247, 202, 111, 1)"
+        "hex": "#f2b4ab",
+        "value": "rgba(242, 180, 171, 1)"
       },
-      "mustard300": {
+      "red300": {
         "type": "color",
-        "hex": "#ebb347",
-        "value": "rgba(235, 179, 71, 1)"
+        "hex": "#e58a7c",
+        "value": "rgba(229, 138, 124, 1)"
       },
-      "mustard200": {
+      "red200": {
         "type": "color",
-        "hex": "#d99e20",
-        "value": "rgba(217, 158, 32, 1)"
+        "hex": "#d35f4f",
+        "value": "rgba(211, 95, 79, 1)"
       },
-      "mustard100": {
+      "red100": {
         "type": "color",
-        "hex": "#e2a31f",
-        "value": "rgba(226, 163, 31, 1)"
+        "hex": "#ea0017",
+        "value": "rgba(234, 0, 23, 1)"
       },
-      "mustard80": {
+      "red80": {
         "type": "color",
-        "hex": "#c18b00",
-        "value": "rgba(193, 139, 0, 1)"
+        "hex": "#be2c25",
+        "value": "rgba(190, 44, 37, 1)"
       },
-      "mustard60": {
+      "red60": {
         "type": "color",
-        "hex": "#916802",
-        "value": "rgba(145, 104, 2, 1)"
+        "hex": "#8e1f1b",
+        "value": "rgba(142, 31, 27, 1)"
       },
-      "mustard40": {
+      "red40": {
         "type": "color",
-        "hex": "#644801",
-        "value": "rgba(100, 72, 1, 1)"
+        "hex": "#63100e",
+        "value": "rgba(99, 16, 14, 1)"
       },
-      "yellow600": {
+      "spark600": {
         "type": "color",
-        "hex": "#fdfadb",
-        "value": "rgba(253, 250, 219, 1)"
+        "hex": "#FFF6F1",
+        "value": "rgba(255, 246, 241, 1)"
       },
-      "yellow100": {
+      "spark500": {
         "type": "color",
-        "hex": "#ffec44",
-        "value": "rgba(255, 236, 68, 1)"
+        "hex": "#FFDECC",
+        "value": "rgba(255, 222, 204, 1)"
       },
-      "gold600": {
+      "spark400": {
         "type": "color",
-        "hex": "#faf0e3",
-        "value": "rgba(250, 240, 227, 1)"
+        "hex": "#FFBFAD",
+        "value": "rgba(255, 191, 173, 1)"
       },
-      "gold500": {
+      "spark300": {
         "type": "color",
-        "hex": "#f3e4cd",
-        "value": "rgba(243, 228, 205, 1)"
+        "hex": "#FE8C6C",
+        "value": "rgba(254, 140, 108, 1)"
       },
-      "gold400": {
+      "spark200": {
         "type": "color",
-        "hex": "#e8cba4",
-        "value": "rgba(232, 203, 164, 1)"
+        "hex": "#FE724C",
+        "value": "rgba(254, 114, 76, 1)"
       },
-      "gold300": {
+      "spark100": {
         "type": "color",
-        "hex": "#deb57e",
-        "value": "rgba(222, 181, 126, 1)"
+        "hex": "#FE4E1D",
+        "value": "rgba(254, 78, 29, 1)"
       },
-      "gold200": {
+      "spark80": {
         "type": "color",
-        "hex": "#d39e4c",
-        "value": "rgba(211, 158, 76, 1)"
+        "hex": "#DB3001",
+        "value": "rgba(219, 48, 1, 1)"
       },
-      "gold100": {
+      "spark60": {
         "type": "color",
-        "hex": "#e5a038",
-        "value": "rgba(229, 160, 56, 1)"
+        "hex": "#B32801",
+        "value": "rgba(179, 40, 1, 1)"
       },
-      "gold80": {
+      "spark40": {
         "type": "color",
-        "hex": "#c2882f",
-        "value": "rgba(194, 136, 47, 1)"
-      },
-      "gold60": {
-        "type": "color",
-        "hex": "#9e6105",
-        "value": "rgba(158, 97, 5, 1)"
-      },
-      "gold40": {
-        "type": "color",
-        "hex": "#6d4508",
-        "value": "rgba(109, 69, 8, 1)"
-      },
-      "green600": {
-        "type": "color",
-        "hex": "#eef9ea",
-        "value": "rgba(238, 249, 234, 1)"
-      },
-      "green500": {
-        "type": "color",
-        "hex": "#d5edca",
-        "value": "rgba(213, 237, 202, 1)"
-      },
-      "green400": {
-        "type": "color",
-        "hex": "#b2d6a0",
-        "value": "rgba(178, 214, 160, 1)"
-      },
-      "green300": {
-        "type": "color",
-        "hex": "#91c078",
-        "value": "rgba(145, 192, 120, 1)"
-      },
-      "green200": {
-        "type": "color",
-        "hex": "#6ea951",
-        "value": "rgba(110, 169, 81, 1)"
-      },
-      "green100": {
-        "type": "color",
-        "hex": "#36a75c",
-        "value": "rgba(54, 167, 92, 1)"
-      },
-      "green80": {
-        "type": "color",
-        "hex": "#499327",
-        "value": "rgba(73, 147, 39, 1)"
-      },
-      "green60": {
-        "type": "color",
-        "hex": "#38711e",
-        "value": "rgba(56, 113, 30, 1)"
-      },
-      "green40": {
-        "type": "color",
-        "hex": "#285115",
-        "value": "rgba(40, 81, 21, 1)"
+        "hex": "#501200",
+        "value": "rgba(80, 18, 0, 1)"
       },
       "orange600": {
         "type": "color",
@@ -1332,6 +1367,151 @@
         "hex": "#763502",
         "value": "rgba(118, 53, 2, 1)"
       },
+      "mustard600": {
+        "type": "color",
+        "hex": "#fbf1dd",
+        "value": "rgba(251, 241, 221, 1)"
+      },
+      "mustard500": {
+        "type": "color",
+        "hex": "#fee39c",
+        "value": "rgba(254, 227, 156, 1)"
+      },
+      "mustard400": {
+        "type": "color",
+        "hex": "#f7ca6f",
+        "value": "rgba(247, 202, 111, 1)"
+      },
+      "mustard300": {
+        "type": "color",
+        "hex": "#ebb347",
+        "value": "rgba(235, 179, 71, 1)"
+      },
+      "mustard200": {
+        "type": "color",
+        "hex": "#d99e20",
+        "value": "rgba(217, 158, 32, 1)"
+      },
+      "mustard100": {
+        "type": "color",
+        "hex": "#e2a31f",
+        "value": "rgba(226, 163, 31, 1)"
+      },
+      "mustard80": {
+        "type": "color",
+        "hex": "#c18b00",
+        "value": "rgba(193, 139, 0, 1)"
+      },
+      "mustard60": {
+        "type": "color",
+        "hex": "#916802",
+        "value": "rgba(145, 104, 2, 1)"
+      },
+      "mustard40": {
+        "type": "color",
+        "hex": "#644801",
+        "value": "rgba(100, 72, 1, 1)"
+      },
+      "gold600": {
+        "type": "color",
+        "hex": "#faf0e3",
+        "value": "rgba(250, 240, 227, 1)"
+      },
+      "gold500": {
+        "type": "color",
+        "hex": "#f3e4cd",
+        "value": "rgba(243, 228, 205, 1)"
+      },
+      "gold400": {
+        "type": "color",
+        "hex": "#e8cba4",
+        "value": "rgba(232, 203, 164, 1)"
+      },
+      "gold300": {
+        "type": "color",
+        "hex": "#deb57e",
+        "value": "rgba(222, 181, 126, 1)"
+      },
+      "gold200": {
+        "type": "color",
+        "hex": "#d39e4c",
+        "value": "rgba(211, 158, 76, 1)"
+      },
+      "gold100": {
+        "type": "color",
+        "hex": "#e5a038",
+        "value": "rgba(229, 160, 56, 1)"
+      },
+      "gold80": {
+        "type": "color",
+        "hex": "#c2882f",
+        "value": "rgba(194, 136, 47, 1)"
+      },
+      "gold60": {
+        "type": "color",
+        "hex": "#9e6105",
+        "value": "rgba(158, 97, 5, 1)"
+      },
+      "gold40": {
+        "type": "color",
+        "hex": "#6d4508",
+        "value": "rgba(109, 69, 8, 1)"
+      },
+      "yellow600": {
+        "type": "color",
+        "hex": "#fdfadb",
+        "value": "rgba(253, 250, 219, 1)"
+      },
+      "yellow100": {
+        "type": "color",
+        "hex": "#ffec44",
+        "value": "rgba(255, 236, 68, 1)"
+      },
+      "green600": {
+        "type": "color",
+        "hex": "#eef9ea",
+        "value": "rgba(238, 249, 234, 1)"
+      },
+      "green500": {
+        "type": "color",
+        "hex": "#d5edca",
+        "value": "rgba(213, 237, 202, 1)"
+      },
+      "green400": {
+        "type": "color",
+        "hex": "#b2d6a0",
+        "value": "rgba(178, 214, 160, 1)"
+      },
+      "green300": {
+        "type": "color",
+        "hex": "#91c078",
+        "value": "rgba(145, 192, 120, 1)"
+      },
+      "green200": {
+        "type": "color",
+        "hex": "#6ea951",
+        "value": "rgba(110, 169, 81, 1)"
+      },
+      "green100": {
+        "type": "color",
+        "hex": "#36a75c",
+        "value": "rgba(54, 167, 92, 1)"
+      },
+      "green80": {
+        "type": "color",
+        "hex": "#499327",
+        "value": "rgba(73, 147, 39, 1)"
+      },
+      "green60": {
+        "type": "color",
+        "hex": "#38711e",
+        "value": "rgba(56, 113, 30, 1)"
+      },
+      "green40": {
+        "type": "color",
+        "hex": "#285115",
+        "value": "rgba(40, 81, 21, 1)"
+      },
       "teal600": {
         "type": "color",
         "hex": "#eafbfe",
@@ -1376,6 +1556,51 @@
         "type": "color",
         "hex": "#0b3940",
         "value": "rgba(11, 57, 64, 1)"
+      },
+      "blue600": {
+        "type": "color",
+        "hex": "#e7f0fe",
+        "value": "rgba(231, 240, 254, 1)"
+      },
+      "blue500": {
+        "type": "color",
+        "hex": "#d3e7fa",
+        "value": "rgba(211, 231, 250, 1)"
+      },
+      "blue400": {
+        "type": "color",
+        "hex": "#acc5e7",
+        "value": "rgba(172, 197, 231, 1)"
+      },
+      "blue300": {
+        "type": "color",
+        "hex": "#84a4d6",
+        "value": "rgba(132, 164, 214, 1)"
+      },
+      "blue200": {
+        "type": "color",
+        "hex": "#5784c5",
+        "value": "rgba(87, 132, 197, 1)"
+      },
+      "blue100": {
+        "type": "color",
+        "hex": "#166dfc",
+        "value": "rgba(22, 109, 252, 1)"
+      },
+      "blue80": {
+        "type": "color",
+        "hex": "#1366b3",
+        "value": "rgba(19, 102, 179, 1)"
+      },
+      "blue60": {
+        "type": "color",
+        "hex": "#0f4b84",
+        "value": "rgba(15, 75, 132, 1)"
+      },
+      "blue40": {
+        "type": "color",
+        "hex": "#0a3258",
+        "value": "rgba(10, 50, 88, 1)"
       },
       "purple600": {
         "type": "color",
@@ -1466,96 +1691,6 @@
         "type": "color",
         "hex": "#690b2c",
         "value": "rgba(105, 11, 44, 1)"
-      },
-      "red600": {
-        "type": "color",
-        "hex": "#fde7e7",
-        "value": "rgba(253, 231, 231, 1)"
-      },
-      "red500": {
-        "type": "color",
-        "hex": "#f9dddb",
-        "value": "rgba(249, 221, 219, 1)"
-      },
-      "red400": {
-        "type": "color",
-        "hex": "#f2b4ab",
-        "value": "rgba(242, 180, 171, 1)"
-      },
-      "red300": {
-        "type": "color",
-        "hex": "#e58a7c",
-        "value": "rgba(229, 138, 124, 1)"
-      },
-      "red200": {
-        "type": "color",
-        "hex": "#d35f4f",
-        "value": "rgba(211, 95, 79, 1)"
-      },
-      "red100": {
-        "type": "color",
-        "hex": "#ea0017",
-        "value": "rgba(234, 0, 23, 1)"
-      },
-      "red80": {
-        "type": "color",
-        "hex": "#be2c25",
-        "value": "rgba(190, 44, 37, 1)"
-      },
-      "red60": {
-        "type": "color",
-        "hex": "#8e1f1b",
-        "value": "rgba(142, 31, 27, 1)"
-      },
-      "red40": {
-        "type": "color",
-        "hex": "#63100e",
-        "value": "rgba(99, 16, 14, 1)"
-      },
-      "blue600": {
-        "type": "color",
-        "hex": "#e7f0fe",
-        "value": "rgba(231, 240, 254, 1)"
-      },
-      "blue500": {
-        "type": "color",
-        "hex": "#d3e7fa",
-        "value": "rgba(211, 231, 250, 1)"
-      },
-      "blue400": {
-        "type": "color",
-        "hex": "#acc5e7",
-        "value": "rgba(172, 197, 231, 1)"
-      },
-      "blue300": {
-        "type": "color",
-        "hex": "#84a4d6",
-        "value": "rgba(132, 164, 214, 1)"
-      },
-      "blue200": {
-        "type": "color",
-        "hex": "#5784c5",
-        "value": "rgba(87, 132, 197, 1)"
-      },
-      "blue100": {
-        "type": "color",
-        "hex": "#166dfc",
-        "value": "rgba(22, 109, 252, 1)"
-      },
-      "blue80": {
-        "type": "color",
-        "hex": "#1366b3",
-        "value": "rgba(19, 102, 179, 1)"
-      },
-      "blue60": {
-        "type": "color",
-        "hex": "#0f4b84",
-        "value": "rgba(15, 75, 132, 1)"
-      },
-      "blue40": {
-        "type": "color",
-        "hex": "#0a3258",
-        "value": "rgba(10, 50, 88, 1)"
       },
       "gray700": {
         "type": "color",
@@ -1907,6 +2042,41 @@
         "type": "color",
         "value": "{gray20}",
         "valueDark": "{gray0}"
+      },
+      "opinions": {
+        "type": "color",
+        "value": "{spark100}",
+        "valueDark": "{spark100}"
+      },
+      "opinions-hover": {
+        "type": "color",
+        "value": "{spark80}",
+        "valueDark": "{spark80}"
+      },
+      "onOpinions": {
+        "type": "color",
+        "value": "{gray20-static}",
+        "valueDark": "{gray20-static}"
+      },
+      "onOpinions-hover": {
+        "type": "color",
+        "value": "{alpha0-static}",
+        "valueDark": "{alpha0-static}"
+      },
+      "opinionsContainer": {
+        "type": "color",
+        "value": "{spark500}",
+        "valueDark": "{spark500}"
+      },
+      "onOpinionsContainer": {
+        "type": "color",
+        "value": "{gray20}",
+        "valueDark": "{gray20}"
+      },
+      "onOpinionsContainer-hover": {
+        "type": "color",
+        "value": "{alpha0}",
+        "valueDark": "{alpha0}"
       }
     }
   },
@@ -2072,6 +2242,9 @@
     },
     "150": {
       "value": "{size.150}"
+    },
+    "162": {
+      "value": "1.625rem"
     },
     "175": {
       "value": "{size.175}"
