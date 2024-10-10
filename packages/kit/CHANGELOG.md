@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.8.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.7.0...v2.8.0) (2024-10-10)
+
+### Features
+
+- Adding new spark color tokens and opinions theme ([#665](https://github.com/washingtonpost/wpds-ui-kit/issues/665)) ([148cb4d](https://github.com/washingtonpost/wpds-ui-kit/commit/148cb4dd89e1212be5f166f11810f95e5d71ad51))
+
 # [2.7.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.6.0...v2.7.0) (2024-09-12)
 
 ### Bug Fixes
