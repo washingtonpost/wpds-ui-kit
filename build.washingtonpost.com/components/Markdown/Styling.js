@@ -5,7 +5,7 @@
 import React from "react";
 import { Header } from "./Components/headers";
 import CustomLink from "./Components/link";
-import { styled, theme, Box, Button,Tabs } from "@washingtonpost/wpds-ui-kit";
+import { styled, theme, Box, Button, Tabs } from "@washingtonpost/wpds-ui-kit";
 import {
   List,
   ListItem,
@@ -247,10 +247,19 @@ const components = {
   YoutubeEmbed: dynamic(() => import("./Components/YouTubeEmbed")),
   StyleConverter: dynamic(() => import("./Components/StyleConverter")),
   Anatomy: dynamic(() => import("./Components/Anatomy")),
-  TabsRoot:({defaultValue,children})=><Tabs.Root defaultValue={defaultValue}>{children}</Tabs.Root>,
-  TabsList:({children})=><Tabs.List>{children}</Tabs.List>,
-  TabsTrigger:({value,children})=><Tabs.Trigger value={value}>{children}</Tabs.Trigger>,
-  TabsContent:({value,children})=><Tabs.Content value={value}><BR/>{children}</Tabs.Content>,
+  TabsRoot: ({ defaultValue, children }) => (
+    <Tabs.Root defaultValue={defaultValue}>{children}</Tabs.Root>
+  ),
+  TabsList: ({ children }) => <Tabs.List>{children}</Tabs.List>,
+  TabsTrigger: ({ value, children }) => (
+    <Tabs.Trigger value={value}>{children}</Tabs.Trigger>
+  ),
+  TabsContent: ({ value, children }) => (
+    <Tabs.Content value={value}>
+      <BR />
+      {children}
+    </Tabs.Content>
+  ),
 };
 
 export default components;

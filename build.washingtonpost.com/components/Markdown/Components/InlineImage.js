@@ -14,13 +14,13 @@ export default function InlineImage({
   const ImageContainer = styled("div", {
     maxWidth: `${maxWidth}px`,
     padding: "$100",
-    variants:{
-      cushion:{
-        none:{
-          padding:0
-        }
-      }
-    }
+    variants: {
+      cushion: {
+        none: {
+          padding: 0,
+        },
+      },
+    },
   });
 
   const inlineImageCSS = css({
