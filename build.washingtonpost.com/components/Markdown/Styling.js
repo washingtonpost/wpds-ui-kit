@@ -5,7 +5,7 @@
 import React from "react";
 import { Header } from "./Components/headers";
 import CustomLink from "./Components/link";
-import { styled, theme, Box, Button } from "@washingtonpost/wpds-ui-kit";
+import { styled, theme, Box, Button, Tabs } from "@washingtonpost/wpds-ui-kit";
 import {
   List,
   ListItem,
@@ -63,7 +63,6 @@ export const P = styled("p", {
   paddingBottom: "$050",
   fontFamily: "$meta",
   fontWeight: "$light",
-  maxWidth: "767px",
   "& > code": {
     fontFamily: "monospace",
     backgroundColor: theme.colors.subtle,
@@ -146,7 +145,7 @@ const components = {
   Change: Change,
   h1: ({ children }) => <Header as="h1">{children}</Header>,
   h2: ({ children }) => (
-    <Header id={children} css={{ paddingBottom: "$100" }} as="h2">
+    <Header id={children} css={{ paddingBottom: "$025" }} as="h2">
       {children}
     </Header>
   ),
@@ -248,6 +247,19 @@ const components = {
   YoutubeEmbed: dynamic(() => import("./Components/YouTubeEmbed")),
   StyleConverter: dynamic(() => import("./Components/StyleConverter")),
   Anatomy: dynamic(() => import("./Components/Anatomy")),
+  TabsRoot: ({ defaultValue, children }) => (
+    <Tabs.Root defaultValue={defaultValue}>{children}</Tabs.Root>
+  ),
+  TabsList: ({ children }) => <Tabs.List>{children}</Tabs.List>,
+  TabsTrigger: ({ value, children }) => (
+    <Tabs.Trigger value={value}>{children}</Tabs.Trigger>
+  ),
+  TabsContent: ({ value, children }) => (
+    <Tabs.Content value={value}>
+      <BR />
+      {children}
+    </Tabs.Content>
+  ),
 };
 
 export default components;

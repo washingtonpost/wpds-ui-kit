@@ -4,7 +4,7 @@ import { styled, theme, Box } from "@washingtonpost/wpds-ui-kit";
 const Layout = styled("div", {
   display: "grid",
   gap: theme.space["050"],
-  gridTemplateColumns: "repeat(auto-fit, 250px)",
+  gridTemplateColumns: "repeat(auto-fill, 292px)",
 });
 const Container = styled("div", {
   width: "100%",

@@ -26,6 +26,10 @@ const PaletteGrid = styled("div", {
   gridTemplateColumns: "30px repeat(12, 1fr)",
   gridTemplateRows: "repeat(11, 1fr)", // Adjusted to match yMapping length
   gap: "$025",
+  "@sm": {
+    transformOrigin: "left",
+    transform: "scale(.9)",
+  },
 });
 
 const Swatch = styled("div", {
