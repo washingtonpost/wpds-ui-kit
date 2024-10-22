@@ -8,19 +8,26 @@ export default function InlineImage({
   width,
   height,
   src,
+  cushion,
   ...rest
 }) {
   const ImageContainer = styled("div", {
     maxWidth: `${maxWidth}px`,
-
     padding: "$100",
+    variants:{
+      cushion:{
+        none:{
+          padding:0
+        }
+      }
+    }
   });
 
   const inlineImageCSS = css({
     aspectRatio: `${width}/${height}`,
   });
   return (
-    <ImageContainer>
+    <ImageContainer cushion={cushion}>
       <Image
         className={inlineImageCSS()}
         {...rest}

@@ -56,7 +56,7 @@ const Container = styled("main", {
   margin: "0 auto",
   marginTop: "$125",
   [customNotSmBreakpoint]: {
-    maxWidth: "1028px",
+    maxWidth: "900px",
   },
   [customSmBreakpoint]: {
     padding: "0 $100",

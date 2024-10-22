@@ -6,5 +6,4 @@ export const Description = styled("p", {
   fontWeight: theme.fontWeights.light,
   lineHeight: theme.lineHeights["150"],
   marginBlock: 0,
-  maxWidth: "767px",
 });
