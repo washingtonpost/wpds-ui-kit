@@ -1,12 +1,10 @@
-import React, { useEffect, useState, useTransition } from "react";
-import { styled, theme, css as wpCSS, keyframes } from "../theme";
+import React, { useEffect, useState } from "react";
+import { styled, theme, globalCss, keyframes } from "../theme";
 import type * as WPDS from "../theme";
 import type { Token } from "@stitches/react/types/theme";
 import type { StandardLonghandProperties } from "@stitches/react/types/css";
 
 const NAME = "Scrim";
-
-const scrimTransition = `opacity ${theme.transitions.normal} ${theme.transitions.inOut}`;
 
 const fadeInAnimation = keyframes({
   from: { opacity: 0 },
@@ -21,18 +19,16 @@ const fadeOutAnimation = keyframes({
 const StyledContainer = styled("div", {
   backgroundColor: theme.colors.alpha50,
   position: "fixed",
-  transition: scrimTransition,
   inset: 0,
   contentVisibility: "auto",
   "@reducedMotion": {
-    transition: "none",
+    animation: "none",
   },
   "&[data-state='open']": {
     animation: `${fadeInAnimation} ${theme.transitions.normal} ${theme.transitions.inOut}`,
-    opacity: 1,
   },
   "&[data-state='closed']": {
-    fadeOutAnimation: `${fadeOutAnimation} ${theme.transitions.normal} ${theme.transitions.inOut}`,
+    animation: `${fadeOutAnimation} ${theme.transitions.normal} ${theme.transitions.inOut}`,
     opacity: 0,
   },
 });
@@ -50,9 +46,8 @@ interface ScrimProps extends React.ComponentPropsWithRef<"div"> {
     | Token<"shell", string, "zIndices", "wpds">;
 }
 
-const htmlGlobalCSS = wpCSS({
+const htmlGlobalCSS = globalCss({
   html: {
-    contain: "layout style",
     "&[data-scrim-state='open']": {
       maxHeight: "100vh",
       overflow: "hidden",
@@ -69,36 +64,34 @@ export const Scrim = React.forwardRef<HTMLDivElement, ScrimProps>(
     { lockScroll = true, open, zIndex = theme.zIndices.shell, css, ...props },
     ref
   ) => {
-    const [isPending, startTransition] = useTransition();
+    const [shouldRender, setShouldRender] = useState(false);
 
     htmlGlobalCSS();
 
     React.useEffect(() => {
       if (!lockScroll || typeof window === "undefined") return;
 
-      startTransition(() => {
-        if (open) {
-          document.body.style.marginRight = `${
-            window.innerWidth - document.body.clientWidth
-          }px`;
-          document.documentElement.dataset.scrimState = "open";
-        }
+      if (open) {
+        // this calculation needs to take place before the html is locked
+        document.body.style.marginRight = `${
+          window.innerWidth - document.body.clientWidth
+        }px`;
 
-        if (!open) {
-          document.documentElement.dataset.scrimState = "closed";
-          document.body.style.marginRight = "";
-        }
-      });
+        document.documentElement.dataset.scrimState = "open";
+      }
+
+      if (!open) {
+        document.body.style.marginRight = "";
+
+        document.documentElement.dataset.scrimState = "closed";
+      }
     }, [open, lockScroll]);
 
-    const handleTransitionEnd = () => {
-      if (!isPending && !open) {
-        document.documentElement.dataset.scrimState = "closed";
+    const handleAnimationEnd = () => {
+      if (!open) {
         setShouldRender(false);
       }
     };
-
-    const [shouldRender, setShouldRender] = useState(false);
 
     useEffect(() => {
       if (open) {
@@ -112,12 +105,6 @@ export const Scrim = React.forwardRef<HTMLDivElement, ScrimProps>(
       }
     }, [open]);
 
-    const handleAnimationEnd = () => {
-      if (!isPending && !open) {
-        setShouldRender(false);
-      }
-    };
-
     return shouldRender ? (
       <StyledContainer
         data-state={open ? "open" : "closed"}
@@ -125,7 +112,6 @@ export const Scrim = React.forwardRef<HTMLDivElement, ScrimProps>(
         css={{ ...css, zIndex: zIndex }}
         aria-hidden={true}
         {...props}
-        onTransitionEnd={handleTransitionEnd}
         onAnimationEnd={handleAnimationEnd}
       ></StyledContainer>
     ) : null;
