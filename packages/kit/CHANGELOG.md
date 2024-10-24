@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.8.1](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.8.0...v2.8.1) (2024-10-24)
+
+### Bug Fixes
+
+- make lockScroll property work ([#670](https://github.com/washingtonpost/wpds-ui-kit/issues/670)) ([a1d41fa](https://github.com/washingtonpost/wpds-ui-kit/commit/a1d41fa3293d996b5dd2451192aa8bbeea5aa3dc))
+
 # [2.8.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.7.0...v2.8.0) (2024-10-10)
 
 ### Features
