@@ -51,6 +51,15 @@ export default function Icons({ data }) {
       // debounce search
       const timeout = setTimeout(() => {
         handleChange({ target: { value: controlledValue } });
+
+        // push search query to url
+        if (typeof window !== "undefined") {
+          window.history.pushState(
+            {},
+            "",
+            `${window.location.pathname}?search=${controlledValue}`
+          );
+        }
       }, 300);
 
       return () => clearTimeout(timeout);
