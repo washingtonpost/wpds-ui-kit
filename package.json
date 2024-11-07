@@ -135,6 +135,7 @@
   "prettier": {},
   "packageManager": "npm@10.2.4",
   "overrides": {
+    "@washingtonpost/wpds-assets": "^2.7.0",
     "react-docgen-typescript": "^2.2.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"

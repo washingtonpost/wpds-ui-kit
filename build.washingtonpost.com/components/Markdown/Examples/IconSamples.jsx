@@ -13,6 +13,27 @@ import { paramCase } from "param-case";
 import { pascalCase } from "pascal-case";
 import { logoList } from "./LogoSamples";
 
+/**
+ * ICON SEARCH (adding this cause its hard to find this feature in codebase)
+ */
+
+
+const SuccessToast = () => {
+  return (
+    <AlertBanner.Root variant="success">
+      <AlertBanner.Content css={{ minWidth: 250, paddingRight: "$050" }}>
+        <b>Copied: </b>
+        <Box as="span" css={{ fontSize: 16 }}>
+          Import statement for{" "}
+          <Box as="i" css={{ textTransform: "capitalize" }}>
+            {Name}
+          </Box>
+        </Box>
+      </AlertBanner.Content>
+    </AlertBanner.Root>
+  );
+};
+
 export default function Icons({ data }) {
   const fuse = new Fuse(data, {
     keys: ["name", "description"],
@@ -25,21 +46,7 @@ export default function Icons({ data }) {
   useEffect(() => {
     if (ExampleToCopy) {
       window.navigator.clipboard.writeText(ExampleToCopy);
-      const SuccessToast = () => {
-        return (
-          <AlertBanner.Root variant="success">
-            <AlertBanner.Content css={{ minWidth: 250, paddingRight: "$050" }}>
-              <b>Copied: </b>
-              <Box as="span" css={{ fontSize: 16 }}>
-                Import statement for{" "}
-                <Box as="i" css={{ textTransform: "capitalize" }}>
-                  {Name}
-                </Box>
-              </Box>
-            </AlertBanner.Content>
-          </AlertBanner.Root>
-        );
-      };
+
       toast(<SuccessToast />, {
         position: "top-center",
         closeButton: false,
