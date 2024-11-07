@@ -48,8 +48,12 @@ export default function Icons({ data }) {
   // when search query changes
   useEffect(() => {
     if (controlledValue) {
-      const result = fuse.search(controlledValue);
-      setFilter(result);
+      // debounce search
+      const timeout = setTimeout(() => {
+        handleChange({ target: { value: controlledValue } });
+      }, 300);
+
+      return () => clearTimeout(timeout);
     }
   }, [controlledValue]);
 
@@ -86,6 +90,9 @@ export default function Icons({ data }) {
 
   function handleChange(e) {
     const value = e.target.value;
+
+    setControlledValue(value);
+
     const result = fuse.search(value);
     setFilter(result);
   }
