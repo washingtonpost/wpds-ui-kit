@@ -17,7 +17,6 @@ import { logoList } from "./LogoSamples";
  * ICON SEARCH (adding this cause its hard to find this feature in codebase)
  */
 
-
 const SuccessToast = () => {
   return (
     <AlertBanner.Root variant="success">
@@ -35,14 +34,34 @@ const SuccessToast = () => {
 };
 
 export default function Icons({ data }) {
+
+  const [controlledValue, setControlledValue] = useState("");
+
+  useEffect(() => {
+    // if on window and has search query
+    if (typeof window !== "undefined" && window.location.search) {
+      const search = new URLSearchParams(window.location.search).get("search");
+      setControlledValue(search);
+    }
+  }, []);
+
+  // when search query changes
+  useEffect(() => {
+    if (controlledValue) {
+      const result = fuse.search(controlledValue);
+      setFilter(result);
+    }
+  }, [controlledValue]);
+
   const fuse = new Fuse(data, {
     keys: ["name", "description"],
-    threshold: 0.5,
+    threshold: 0.1,
   });
 
   const [ExampleToCopy, setExampleToCopy] = useState(null);
   const [Name, setName] = useState("");
   const [Filter, setFilter] = useState([]);
+
   useEffect(() => {
     if (ExampleToCopy) {
       window.navigator.clipboard.writeText(ExampleToCopy);
@@ -70,6 +89,7 @@ export default function Icons({ data }) {
     const result = fuse.search(value);
     setFilter(result);
   }
+
   const GetIcons = () => {
     let list;
 
@@ -125,7 +145,7 @@ export default function Icons({ data }) {
   return (
     <>
       <Box css={{ marginBottom: "$050" }}>
-        <InputText onChange={handleChange} label="Search" icon="right">
+        <InputText onChange={handleChange} label="Search" icon="right" value={controlledValue}>
           <Icon label="">
             <Search />
           </Icon>
