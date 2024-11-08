@@ -125,7 +125,6 @@ const Index = ({ recentPosts, rankedArticles, contributors }) => {
           </List>
         </Box>
       </LandingContentGrid>
-
       <Box
         css={{
           gridColumn: "1/-1",

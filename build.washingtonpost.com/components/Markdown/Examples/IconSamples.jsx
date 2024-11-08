@@ -22,6 +22,7 @@ export default function Icons({ data }) {
   const [ExampleToCopy, setExampleToCopy] = useState(null);
   const [Name, setName] = useState("");
   const [Filter, setFilter] = useState([]);
+  
   useEffect(() => {
     if (ExampleToCopy) {
       window.navigator.clipboard.writeText(ExampleToCopy);
