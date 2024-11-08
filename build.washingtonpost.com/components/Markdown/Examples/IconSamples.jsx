@@ -22,8 +22,10 @@ export default function Icons({ data }) {
   const [ExampleToCopy, setExampleToCopy] = useState(null);
   const [Name, setName] = useState("");
   const [Filter, setFilter] = useState([]);
-  
+
   useEffect(() => {
+        console.log("poop", Name);
+
     if (ExampleToCopy) {
       window.navigator.clipboard.writeText(ExampleToCopy);
       const SuccessToast = () => {
@@ -55,6 +57,8 @@ export default function Icons({ data }) {
   }, [ExampleToCopy, Name]);
 
   function setVariables(example, Name) {
+    console.log("poop", Name);
+
     setName(Name);
     setExampleToCopy(example);
   }
@@ -78,11 +82,16 @@ export default function Icons({ data }) {
     }
 
     return list.map((Asset, i) => {
+
+      console.log("boop", Asset);
       const Sample = AllAssets[Asset];
+
       if (!Sample) {
         return;
       }
       const componentName = paramCase(Asset);
+
+      console.log("bonk", componentName);
 
       const importExample = `import { ${Asset} } from "@washingtonpost/wpds-assets";`;
 
