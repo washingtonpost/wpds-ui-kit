@@ -9,6 +9,10 @@
   </url>
 
   <url>
+    <loc>https://build.washingtonpost.com/components/LoadingState</loc>
+  </url>
+
+  <url>
     <loc>https://build.washingtonpost.com/components/accordion</loc>
   </url>
 
