@@ -12,6 +12,10 @@ export default function Document() {
           id="stitches"
           dangerouslySetInnerHTML={{ __html: getCssText() }}
         />
+        <script
+          src="https://www.washingtonpost.com/subscribe/privacy-fe-api/privacy-api-stub.min.js"
+          id="privacyStub"
+        ></script>
         <link
           rel="preload"
           href="https://www.washingtonpost.com/wp-stat/assets/fonts/PostoniWide-Bold.woff2"
