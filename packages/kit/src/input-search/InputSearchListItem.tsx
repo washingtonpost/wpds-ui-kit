@@ -97,8 +97,11 @@ export const ListItem = ({ item, state }: ListItemProps) => {
     );
   }
 
+  const { children, textValue, ...itemProps } = item.props;
+
   return (
     <StyledListItem
+      {...itemProps}
       {...optionProps}
       ref={ref}
       selected={isSelected}
