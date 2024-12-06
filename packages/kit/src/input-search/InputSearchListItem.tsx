@@ -97,6 +97,7 @@ export const ListItem = ({ item, state }: ListItemProps) => {
     );
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { children, textValue, ...itemProps } = item.props;
 
   return (
