@@ -85,10 +85,15 @@ export const ListItem = ({ item, state }: ListItemProps) => {
   );
 
   let highlighted;
+
+  const escape = (string) => {
+    return string.replace(/[.*+\-?^${}()|[\]\\]/g, "\\$&");
+  };
+
   if (typeof item.rendered === "string") {
-    highlighted = item.rendered.replace(
-      new RegExp((state as ComboBoxState<object>).inputValue, "gi"),
-      (match) => (match ? `<mark>${match}</mark>` : "")
+    const val = escape((state as ComboBoxState<object>).inputValue);
+    highlighted = item.rendered.replace(new RegExp(val, "gi"), (match) =>
+      match ? `<mark>${match}</mark>` : ""
     );
   }
 
