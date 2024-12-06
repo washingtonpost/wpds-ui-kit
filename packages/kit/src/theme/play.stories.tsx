@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { within, waitFor } from "@storybook/testing-library";
-import { expect } from "@storybook/jest";
+import { within, waitFor } from "@storybook/test";
+import { expect } from "@storybook/test";
 import { theme, styled } from "../theme";
 
 import type { Meta, StoryObj } from "@storybook/react";
@@ -281,7 +281,7 @@ export const InteractionsMedium: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     await waitFor(() =>
-      expect(canvas.getByText("@md")).toHaveStyle(activeStyle)
+      expect(canvas.getByText("@md")).toHaveStyle(activeStyle),
     );
     await expect(canvas.getByText("@lg")).toHaveStyle(inactiveStyle);
     await expect(canvas.getByText("@notSm")).toHaveStyle(activeStyle);
@@ -303,7 +303,7 @@ export const InteractionsLarge: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     await waitFor(() =>
-      expect(canvas.getByText("@lg")).toHaveStyle(activeStyle)
+      expect(canvas.getByText("@lg")).toHaveStyle(activeStyle),
     );
     await expect(canvas.getByText("@xl")).toHaveStyle(inactiveStyle);
     await expect(canvas.getByText("@notMd")).toHaveStyle(activeStyle);
@@ -325,7 +325,7 @@ export const InteractionsExtraLarge: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     await waitFor(() =>
-      expect(canvas.getByText("@xl")).toHaveStyle(activeStyle)
+      expect(canvas.getByText("@xl")).toHaveStyle(activeStyle),
     );
     await expect(canvas.getByText("@xxl")).toHaveStyle(inactiveStyle);
     await expect(canvas.getByText("@notLg")).toHaveStyle(activeStyle);
@@ -347,7 +347,7 @@ export const InteractionsExtraExtraLarge: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     await waitFor(() =>
-      expect(canvas.getByText("@xxl")).toHaveStyle(activeStyle)
+      expect(canvas.getByText("@xxl")).toHaveStyle(activeStyle),
     );
     await expect(canvas.getByText("@notXxl")).toHaveStyle(inactiveStyle);
     await expect(canvas.getByText("@maxXxl")).toHaveStyle(activeStyle);

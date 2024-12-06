@@ -11,8 +11,8 @@ import {
   Print,
   Copy,
 } from "@washingtonpost/wpds-assets";
-import { screen, userEvent } from "@storybook/testing-library";
-import { expect } from "@storybook/jest";
+import { screen, userEvent } from "@storybook/test";
+import { expect } from "@storybook/test";
 
 import type { StoryFn } from "@storybook/react";
 

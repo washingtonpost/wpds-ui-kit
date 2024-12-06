@@ -1,6 +1,6 @@
 import React from "react";
-import { expect } from "@storybook/jest";
-import { within, userEvent } from "@storybook/testing-library";
+import { expect } from "@storybook/test";
+import { within, userEvent } from "@storybook/test";
 
 import { Button as Button } from "./Button";
 import { styled, theme } from "../theme";

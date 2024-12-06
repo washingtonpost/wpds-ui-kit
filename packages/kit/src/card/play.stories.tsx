@@ -58,7 +58,7 @@ const Container = styled("div", {
 
 const OptionsT = (
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  args
+  args,
 ) => (
   <Stack>
     <Label>Card with button</Label>

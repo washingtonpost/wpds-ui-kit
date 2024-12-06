@@ -11,7 +11,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@wpds/*": ["./*"]
+      "@washingtonpost/wpds-ui-kit": ["./packages/kit/src/index.ts"],
     },
     "noImplicitAny": false,
     "allowJs": false,

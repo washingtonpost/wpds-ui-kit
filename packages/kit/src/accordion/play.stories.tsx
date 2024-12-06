@@ -1,8 +1,8 @@
 // /* eslint-disable @next/next/no-img-element */
 import React, { useRef } from "react";
 import { Accordion, ACCORDION_DENSITY, ACCORDION_TYPE } from ".";
-import { userEvent, waitFor, within } from "@storybook/testing-library";
-import { expect } from "@storybook/jest";
+import { userEvent, waitFor, within } from "@storybook/test";
+import { expect } from "@storybook/test";
 import type { Meta, StoryFn } from "@storybook/react";
 
 export default {
@@ -90,7 +90,7 @@ export const Interactions = {
     await userEvent.click(canvas.getAllByRole("button")[1]);
     await expect(canvas.getByTestId("content-1")).toBeVisible();
     await waitFor(() =>
-      expect(canvas.getByTestId("content-0")).not.toBeVisible()
+      expect(canvas.getByTestId("content-0")).not.toBeVisible(),
     );
   },
 };

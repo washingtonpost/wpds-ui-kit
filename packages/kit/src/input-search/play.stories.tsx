@@ -1,12 +1,16 @@
 import React, { useMemo, useState, useEffect } from "react";
-import { screen, userEvent } from "@storybook/testing-library";
-import { expect } from "@storybook/jest";
+import { screen, userEvent } from "@storybook/test";
+import { expect } from "@storybook/test";
 import { Box } from "../box";
 import { matchSorter } from "match-sorter";
 import { InputSearch } from "./";
 import { cities } from "./cities";
 
+import { Button } from "@washingtonpost/wpds-ui-kit";
+
 import type { StoryFn } from "@storybook/react";
+
+import * as test from "@storybook/test";
 
 export default {
   title: "InputSearch",
@@ -30,7 +34,7 @@ const useCityMatch = (term: string) => {
         : matchSorter(cities, term, {
             keys: [(item) => `${item.city}, ${item.state}`],
           }),
-    [term]
+    [term],
   );
 };
 
@@ -94,8 +98,8 @@ const fetchCities = (value) => {
       3000,
       matchSorter(cities, value, {
         keys: [(item) => `${item.city}, ${item.state}`],
-      })
-    )
+      }),
+    ),
   );
 };
 
@@ -310,5 +314,51 @@ export const ControlledKeyboardInteractions = {
     const clearButton = await screen.findByText("Clear");
     await userEvent.click(clearButton);
     await expect(input).toHaveDisplayValue("");
+  },
+};
+
+// add a play test for a controlled input with a reset button
+export const ControlledInputWithResetButton = {
+  render: () => {
+    const TestComponent = () => {
+      const [value, setValue] = React.useState<string>();
+      const handleChange = test.fn(
+        (event: React.ChangeEvent<HTMLInputElement>) =>
+          setValue(event.target.value),
+      );
+      return (
+        <>
+          <Button onClick={() => setValue("")} data-qa="custom-reset" aria-label="Boop Reset">
+            Boop Reset
+          </Button>
+          <InputSearch.Root aria-label="Example-Search" openOnFocus>
+          <InputSearch.Input name="city" id="city" value={value} onChange={handleChange} />
+          <InputSearch.Popover>
+            <InputSearch.List>
+              <InputSearch.ListItem value="Apple" />
+              <InputSearch.ListItem value="Banana" />
+              <InputSearch.ListItem value="Orange" />
+              <InputSearch.ListItem value="Kiwi" />
+              <InputSearch.ListItem value="Pineapple" />
+            </InputSearch.List>
+          </InputSearch.Popover>
+        </InputSearch.Root>
+        </>
+      );
+    };
+
+    return <TestComponent />;
+  },
+  play: async () => {
+    const input = screen.getAllByLabelText("Search")[0];
+
+    // type a value into the input
+    await userEvent.type(input, "controlled value");
+
+    const resetButton = screen.getAllByLabelText("Boop Reset")[0];
+
+    await expect(input).toHaveValue("controlled value");
+    await userEvent.click(resetButton);
+    await expect(input).toHaveValue("");
   },
 };

@@ -1,6 +1,6 @@
 import React from "react";
-import { userEvent, screen } from "@storybook/testing-library";
-import { expect } from "@storybook/jest";
+import { userEvent, screen } from "@storybook/test";
+import { expect } from "@storybook/test";
 import { NavigationMenu } from ".";
 import { Button } from "../button";
 import { Icon } from "../icon";
