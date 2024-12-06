@@ -345,3 +345,42 @@ export const AutoFilledTypeText = {
     chromatic: { disableSnapshot: true },
   },
 };
+
+
+// add a play test for a controlled input with a reset button
+export const ControlledInputWithResetButton = {
+  render: () => {
+    const TestComponent = () => {
+      const [value, setValue] = React.useState<string>();
+      const handleChange = jest.fn((event: React.ChangeEvent<HTMLInputElement>) => setValue(event.target.value));
+      return (
+        <>
+          <Button onClick={() => setValue("")} data-qa="custom-reset">Reset</Button>
+          <Component
+            name="test-input"
+            id="test-input"
+            label="Test Input"
+            type="search"
+            value={value}
+            onChange={handleChange}
+          />
+        </>
+      );
+    };
+
+    return <TestComponent />;
+  },
+  play: async () => {
+    const input = screen.getByLabelText("Test Input");
+
+    // type a value into the input
+    await userEvent.type(input, "controlled value");
+
+    const resetButton = screen.getByRole("button", { name: "Reset" });
+
+    await expect(input).toHaveValue("controlled value");
+    await userEvent.click(resetButton);
+
+    await expect(input).toHaveValue("");
+  },
+};
