@@ -376,7 +376,7 @@ export const ControlledInputWithResetButton = {
     return <TestComponent />;
   },
   play: async () => {
-    const input = screen.getByLabelText("Test Input");
+    const input = screen.getAllByLabelText("Test Input")[0];
 
     // type a value into the input
     await userEvent.type(input, "controlled value");
