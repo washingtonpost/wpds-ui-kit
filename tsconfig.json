@@ -5,7 +5,8 @@
     "baseUrl": ".",
     "paths": {
       "~/*": ["./build.washingtonpost.com/*"],
-      "@/*": ["./build.washingtonpost.com/*"]
+      "@/*": ["./build.washingtonpost.com/*"],
+      "@washingtonpost/wpds-ui-kit": ["./packages/kit/src/index.ts"],
     }
   }
 }

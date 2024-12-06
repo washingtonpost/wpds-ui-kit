@@ -1,6 +1,6 @@
 import React from "react";
-import { screen, userEvent } from "@storybook/testing-library";
-import { expect } from "@storybook/jest";
+import { screen, userEvent } from "@storybook/test";
+import { expect } from "@storybook/test";
 import { theme } from "../theme";
 import { Tooltip } from "./";
 

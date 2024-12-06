@@ -1,7 +1,7 @@
 import * as React from "react";
-import { userEvent, waitFor, within } from "@storybook/testing-library";
+import { userEvent, waitFor, within } from "@storybook/test";
 
-import { expect } from "@storybook/jest";
+import { expect } from "@storybook/test";
 import { Dialog } from "./Dialog";
 import { Button, styled, theme } from "../";
 
@@ -251,7 +251,7 @@ export const Interactions = {
 
     await user.click(open);
     await waitFor(() =>
-      expect(canvas.getByTestId("close-button")).toHaveFocus()
+      expect(canvas.getByTestId("close-button")).toHaveFocus(),
     );
     await user.click(canvas.getByTestId("close-button"));
     await waitFor(() => expect(open).toHaveFocus());

@@ -40,7 +40,6 @@
     "param-case": "^3.0.4",
     "pascal-case": "^3.1.2",
     "react": "^18.2.0",
-    "react-docgen": "^5.4.0",
     "react-dom": "^18.2.0",
     "react-error-boundary": "^3.1.4",
     "react-hook-form": "^7.41.0",

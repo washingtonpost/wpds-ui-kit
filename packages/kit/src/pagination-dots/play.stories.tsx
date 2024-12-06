@@ -3,8 +3,8 @@ import { PaginationDots as Component } from "./";
 import { theme, styled } from "../theme";
 import { Button } from "../button";
 import { InputText } from "../input-text";
-import { within, userEvent } from "@storybook/testing-library";
-import { expect } from "@storybook/jest";
+import { within, userEvent } from "@storybook/test";
+import { expect } from "@storybook/test";
 
 import type { Meta, StoryFn } from "@storybook/react";
 
@@ -93,7 +93,7 @@ const Template: StoryFn<typeof Component> = (args, context) => {
           css={{ float: "right" }}
           onClick={() =>
             setIndex(
-              index + 1 < parseInt(amount) ? index + 1 : parseInt(amount)
+              index + 1 < parseInt(amount) ? index + 1 : parseInt(amount),
             )
           }
         >
@@ -128,7 +128,7 @@ export const Interactions = {
     // change amount of dots
     await userEvent.type(
       canvas.getByTestId("light-input-text"),
-      "{backspace}6"
+      "{backspace}6",
     );
     await sleep(500);
     // check incrementing index changes ariaValueNow
@@ -148,7 +148,7 @@ export const Interactions = {
     // test ariaValueMax change on amount change
     await userEvent.type(
       canvas.getByTestId("light-input-text"),
-      "{backspace}12"
+      "{backspace}12",
     );
     await sleep(500);
     let ariaValueMax = paginationDots.getAttribute("aria-valuemax");
@@ -157,7 +157,7 @@ export const Interactions = {
     // test dots never go below 0
     await userEvent.type(
       canvas.getByTestId("light-input-text"),
-      "{backspace}{backspace}0"
+      "{backspace}{backspace}0",
     );
     await sleep(500);
     ariaValueMax = paginationDots.getAttribute("aria-valuemax");
@@ -168,7 +168,7 @@ export const Interactions = {
     // tests a large number of dots doesn't modify other elements
     await userEvent.type(
       canvas.getByTestId("light-input-text"),
-      "{backspace}50"
+      "{backspace}50",
     );
     await sleep(500);
   },

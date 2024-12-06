@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 
-import { screen, userEvent } from "@storybook/testing-library";
-import { expect, jest } from "@storybook/jest";
+import { screen, userEvent } from "@storybook/test";
+import { expect } from "@storybook/test";
+import * as test from "@storybook/test";
 import type { Meta, StoryFn } from "@storybook/react";
 
 import { Icon } from "../icon";
@@ -25,7 +26,7 @@ export default {
     icon: {
       defaultValue: "left",
     },
-    onButtonIconClick: jest.fn(),
+    onButtonIconClick: test.fn(),
     children: {
       options: ["None", "Settings Icon"],
       mapping: {
@@ -42,7 +43,7 @@ export default {
     label: "Label",
     type: "text",
     icon: "left",
-    onButtonIconClick: jest.fn(),
+    onButtonIconClick: test.fn(),
   },
 } as Meta<typeof Component>;
 
@@ -346,16 +347,20 @@ export const AutoFilledTypeText = {
   },
 };
 
-
 // add a play test for a controlled input with a reset button
 export const ControlledInputWithResetButton = {
   render: () => {
     const TestComponent = () => {
       const [value, setValue] = React.useState<string>();
-      const handleChange = jest.fn((event: React.ChangeEvent<HTMLInputElement>) => setValue(event.target.value));
+      const handleChange = test.fn(
+        (event: React.ChangeEvent<HTMLInputElement>) =>
+          setValue(event.target.value),
+      );
       return (
         <>
-          <Button onClick={() => setValue("")} data-qa="custom-reset">Reset</Button>
+          <Button onClick={() => setValue("")} data-qa="custom-reset">
+            Boop Reset
+          </Button>
           <Component
             name="test-input"
             id="test-input"
@@ -376,7 +381,7 @@ export const ControlledInputWithResetButton = {
     // type a value into the input
     await userEvent.type(input, "controlled value");
 
-    const resetButton = screen.getByRole("button", { name: "Reset" });
+    const resetButton = screen.getAllByRole("button", { name: "Boop Reset" })[0];
 
     await expect(input).toHaveValue("controlled value");
     await userEvent.click(resetButton);
