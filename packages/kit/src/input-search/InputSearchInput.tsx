@@ -62,11 +62,24 @@ export const InputSearchInput = React.forwardRef<
       }
     }, [state.selectionManager.focusedKey, setTempText]);
 
-    if (value) {
+    if (value !== undefined && value !== null) {
       inputProps.value = value;
     }
+
     if (autocomplete && withKeyboard.current) {
       inputProps.value = tempText;
+    }
+
+    const [, setRerender] = React.useState(false);
+    if (!inputProps.value && inputRef.current) {
+      const el = inputRef.current as HTMLInputElement;
+      if (el.value) {
+        // if a controlled input is passed an empty value,
+        // an extra render is needed to reset the input's internal state
+        requestAnimationFrame(() => {
+          setRerender((prev) => !prev);
+        });
+      }
     }
 
     const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
