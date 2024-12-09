@@ -192,13 +192,13 @@ export const globalStyles = globalCss({
       fontFamily: "Postoni",
       fontWeight: 700,
       fontDisplay: "swap",
-      src: "url(https://www.washingtonpost.com/wp-stat/assets/fonts/PostoniWide-Bold.woff2)"
+      src: "url(https://www.washingtonpost.com/wp-stat/assets/fonts/PostoniWide-Bold.woff2)",
     },
     {
       fontFamily: "Postoni",
       fontWeight: 300,
       fontDisplay: "swap",
-      src: "url(https://www.washingtonpost.com/wp-stat/assets/fonts/PostoniWide-Regular.woff2)"
+      src: "url(https://www.washingtonpost.com/wp-stat/assets/fonts/PostoniWide-Regular.woff2)",
     },
     {
       fontFamily: "Franklin-fallback",
@@ -247,19 +247,19 @@ export const globalStyles = globalCss({
       fontFamily: "Franklin",
       fontWeight: 700,
       fontDisplay: "swap",
-      src: "url(https://www.washingtonpost.com/wp-stat/assets/fonts/ITC_Franklin-Bold.woff2)"
+      src: "url(https://www.washingtonpost.com/wp-stat/assets/fonts/ITC_Franklin-Bold.woff2)",
     },
     {
       fontFamily: "Franklin",
       fontWeight: 300,
       fontDisplay: "swap",
-      src: "url(https://www.washingtonpost.com/wp-stat/assets/fonts/ITC_Franklin-Light.woff2)"
+      src: "url(https://www.washingtonpost.com/wp-stat/assets/fonts/ITC_Franklin-Light.woff2)",
     },
     {
       fontFamily: "PostoniDisplayMag",
       fontWeight: 800,
       fontDisplay: "swap",
-      src: "url(https://www.washingtonpost.com/wp-stat/assets/fonts/PostoniDisplayMag-Ultra.woff2)"
+      src: "url(https://www.washingtonpost.com/wp-stat/assets/fonts/PostoniDisplayMag-Ultra.woff2)",
     },
     {
       fontFamily: "PostoniDisplayMag",
