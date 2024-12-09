@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.9.0](https://github.com/washingtonpost/wpds-docs/compare/v2.8.1...v2.9.0) (2024-12-09)
+
+### Bug Fixes
+
+- success toast rendering ([e7f1a11](https://github.com/washingtonpost/wpds-docs/commit/e7f1a1168a131163ed0419661b530f1ab79a3703))
+- typos and formatting ([#671](https://github.com/washingtonpost/wpds-docs/issues/671)) ([546bce7](https://github.com/washingtonpost/wpds-docs/commit/546bce7c721a41eed3c0933b2b973e40b672dc81))
+
+### Features
+
+- remove unicoderange from our font faces ([#675](https://github.com/washingtonpost/wpds-docs/issues/675)) ([74e8ffe](https://github.com/washingtonpost/wpds-docs/commit/74e8ffeb847fd04e5faca584f21110f99f5945ae))
+
 ## [2.8.1](https://github.com/washingtonpost/wpds-docs/compare/v2.8.0...v2.8.1) (2024-10-24)
 
 ### Bug Fixes

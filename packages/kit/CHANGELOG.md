@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.9.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.8.1...v2.9.0) (2024-12-09)
+
+### Features
+
+- remove unicoderange from our font faces ([#675](https://github.com/washingtonpost/wpds-ui-kit/issues/675)) ([74e8ffe](https://github.com/washingtonpost/wpds-ui-kit/commit/74e8ffeb847fd04e5faca584f21110f99f5945ae))
+
 ## [2.8.1](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.8.0...v2.8.1) (2024-10-24)
 
 ### Bug Fixes

@@ -1,6 +1,6 @@
 {
   "name": "nextjs14-approuter",
-  "version": "2.8.1",
+  "version": "2.9.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -9,8 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@washingtonpost/wpds-kitchen-sink": "2.8.1",
-    "@washingtonpost/wpds-ui-kit": "2.8.1",
+    "@washingtonpost/wpds-kitchen-sink": "2.9.0",
+    "@washingtonpost/wpds-ui-kit": "2.9.0",
     "next": "14.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
