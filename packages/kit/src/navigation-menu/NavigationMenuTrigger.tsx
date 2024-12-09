@@ -19,6 +19,9 @@ const StyledNavigationMenuTrigger = styled(NavigationMenuPrimitive.Trigger, {
   fontSize: theme.fontSizes["100"],
   lineHeight: theme.lineHeights.meta,
   padding: theme.space["050"],
+  "&:disabled": {
+    color: "$onDisabled",
+  },
 });
 
 export type NavigationMenuTriggerProps = {
