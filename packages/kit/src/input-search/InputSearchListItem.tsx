@@ -2,6 +2,7 @@ import React from "react";
 import { Item } from "react-stately";
 import { useOption } from "react-aria";
 import { styled, theme } from "../theme";
+import { InputSearchContext } from "./InputSearchRoot";
 
 import type { Node, ListState, ComboBoxState } from "react-stately";
 
@@ -75,6 +76,24 @@ interface ListItemProps {
 }
 
 export const ListItem = ({ item, state }: ListItemProps) => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const { children, textValue, disabled, ...itemProps } = item.props;
+
+  const { setDisabledKeys } = React.useContext(InputSearchContext);
+  React.useEffect(() => {
+    if (disabled && !state.disabledKeys.has(item.key)) {
+      setDisabledKeys((prev) => {
+        if (prev) {
+          const next = new Set(prev);
+          next.add(item.key);
+          return next;
+        } else {
+          return new Set([item.key]);
+        }
+      });
+    }
+  }, [disabled, setDisabledKeys, state.disabledKeys]);
+
   const ref = React.useRef<HTMLLIElement>(null);
   const { optionProps, isDisabled, isSelected, isFocused } = useOption(
     {
@@ -96,9 +115,6 @@ export const ListItem = ({ item, state }: ListItemProps) => {
       match ? `<mark>${match}</mark>` : ""
     );
   }
-
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const { children, textValue, ...itemProps } = item.props;
 
   return (
     <StyledListItem
