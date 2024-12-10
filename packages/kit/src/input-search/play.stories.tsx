@@ -192,6 +192,34 @@ export const Grouping = {
   },
 };
 
+const DisabledTemplate: StoryFn<typeof InputSearch.Root> = (args) => {
+  return (
+    <Box css={{ width: "275px", height: "340px" }}>
+      <InputSearch.Root {...args} aria-label="Example-Search" openOnFocus>
+        <InputSearch.Input name="fruit" id="fruit" />
+        <InputSearch.Popover>
+          <InputSearch.List>
+            <InputSearch.ListItem value="Apple" />
+            <InputSearch.ListItem value="Banana" disabled />
+            <InputSearch.ListItem value="Orange" />
+            <InputSearch.ListItem value="Kiwi" />
+            <InputSearch.ListItem value="Pineapple" />
+          </InputSearch.List>
+        </InputSearch.Popover>
+      </InputSearch.Root>
+    </Box>
+  );
+};
+
+export const Disabled = {
+  render: DisabledTemplate,
+  args: {},
+
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
+};
+
 const ScrollTemplate: StoryFn<typeof InputSearch.Root> = (args) => {
   return (
     <Box css={{ width: "275px", height: "340px", marginBlockStart: "700px" }}>
