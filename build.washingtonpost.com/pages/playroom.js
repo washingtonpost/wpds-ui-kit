@@ -282,19 +282,6 @@ export default function Playroom({
     }
   }, [resolvedTheme]);
 
-
-  // listen for message from child iframe of "type: resize"
-  React.useEffect(() => {
-    const handleMessage = (event) => {
-      if (event.data.type === "resize") {
-        const iframe = document.querySelector("iframe");
-        iframe.style.width = `${event.data.width}px`;
-      }
-    };
-    window.addEventListener("message", handleMessage);
-    return () => window.removeEventListener("message", handleMessage);
-  }, []);
-
   // listen for message from parent window
   React.useEffect(() => {
     const handleMessage = async (event) => {
