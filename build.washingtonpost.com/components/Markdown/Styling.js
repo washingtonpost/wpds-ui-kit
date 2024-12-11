@@ -260,6 +260,7 @@ const components = {
       {children}
     </Tabs.Content>
   ),
+  Breakpoints: dynamic(() => import("./Examples/Breakpoints")),
 };
 
 export default components;
