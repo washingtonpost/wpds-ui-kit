@@ -9,6 +9,7 @@ import Header from "~/components/Typography/Headers";
 import { Description } from "~/components/Typography/Description";
 import TableofContents from "~/components/Markdown/Components/tableofcontents";
 import {
+  getAllPathsBySection,
   getDocByPathName,
   getHeadings,
   getNavigation,
@@ -96,7 +97,7 @@ export default function Page({
 
 const thisSection = "components";
 
-export const getServerSideProps = async ({ params }) => {
+export const getStaticProps = async ({ params }) => {
   const toTitleCase = (str) =>
     str
       .split("-")
@@ -121,24 +122,10 @@ export const getServerSideProps = async ({ params }) => {
     console.warn({ e });
   }
 
-  const componentsLookUptable = getNavigation().then((nav) => {
-    const [foundations, components, resources] = nav;
-
-    const { docs } = components;
-
-    let componentList = docs.map((component) => {
-      return component.slug.replace("/components/", "");
-    });
-
-    return componentList;
-  });
-
-  const slug = componentsLookUptable[params.slug];
-
   // check if package exists on npm
   // if not, set status to coming soon
   const packageExists = await fetch(
-    `https://registry.npmjs.org/@washingtonpost/wpds-${slug}`
+    `https://registry.npmjs.org/@washingtonpost/wpds-${params.slug}`
   ).then((res) => res.status === 200 || res.status === 304);
 
   if (!packageExists && process.env.NODE_ENV !== "development") {
@@ -155,5 +142,14 @@ export const getServerSideProps = async ({ params }) => {
       bundleSize,
       componentName,
     },
+  };
+};
+
+export const getStaticPaths = async () => {
+  const paths = await getAllPathsBySection(thisSection);
+
+  return {
+    paths,
+    fallback: false,
   };
 };

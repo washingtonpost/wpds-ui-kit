@@ -94,7 +94,7 @@ const Page = ({ wrapper }) => (
   </>
 );
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   const docs = await getDocsListBySection("resources");
 
   // find the three most recent posts to the site before content is sorted by kicker
