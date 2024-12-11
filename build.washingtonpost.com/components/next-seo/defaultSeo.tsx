@@ -33,6 +33,8 @@ interface DefaultSeoProps {
 }
 
 export const DefaultSeo: React.FC<DefaultSeoProps> = ({ seoConfig }) => {
+  const env = process.env.VERCEL_ENV || "";
+
   return (
     <Head>
       <title>{seoConfig.defaultTitle}</title>
@@ -54,7 +56,12 @@ export const DefaultSeo: React.FC<DefaultSeoProps> = ({ seoConfig }) => {
         content={seoConfig.twitter.description}
       />
       <meta name="twitter:creator" content={seoConfig.twitter.handle} />
-      <meta name="robots" content="index,follow" />
+      <meta
+        name="robots"
+        content={`${
+          env === "production" ? "index,follow" : "noindex, nofollow"
+        }`}
+      />
     </Head>
   );
 };
