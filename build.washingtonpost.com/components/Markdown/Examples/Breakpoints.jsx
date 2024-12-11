@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { theme, styled, Box, RadioButton, RadioGroup } from "@washingtonpost/wpds-ui-kit";
+import { theme, styled, Box } from "@washingtonpost/wpds-ui-kit";
 
 const Ruler = styled("div", {
   zIndex: "$offer",
@@ -10,6 +10,7 @@ const Ruler = styled("div", {
   width: "calc(100% - 4px)",
   textAlign: "center",
   backgroundImage: `linear-gradient(0deg, transparent 0 50%, ${theme.colors.cta} 50% calc(50% + 2px), transparent calc(50% + 2px));`,
+  backgroundColor: "$ctaContainer",
   fontFamily: "monospace",
   fontSize: theme.fontSizes["075"],
   paddingBlockEnd: theme.space["100"],
