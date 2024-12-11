@@ -36,7 +36,7 @@ const FontFacePlayground = ({ stacks }) => {
   );
 };
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const stacks = {
     magazine: tokens.fonts.magazine,
     headline: tokens.fonts.headline,

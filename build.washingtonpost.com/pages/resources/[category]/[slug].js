@@ -3,7 +3,12 @@ import { MDXRemote } from "next-mdx-remote";
 import { NextSeo } from "~/components/next-seo";
 import MDXStyling from "~/components/Markdown/Styling";
 import Header from "~/components/Typography/Headers";
-import { getNavigation, getResource, getHeadings } from "~/services";
+import {
+  getNavigation,
+  getAllPathsByCategory,
+  getResource,
+  getHeadings,
+} from "~/services";
 import Breadcrumbs from "~/components/Breadcrumbs";
 import TableofContents from "~/components/Markdown/Components/tableofcontents";
 import { Box } from "@washingtonpost/wpds-ui-kit";
@@ -64,7 +69,7 @@ export default function Page({ current, source, headings }) {
   );
 }
 
-export const getServerSideProps = async (response) => {
+export const getStaticProps = async (response) => {
   const source = await getResource(
     `${SECTION}/${response.params.category}/${response.params.slug}`
   );
@@ -80,5 +85,14 @@ export const getServerSideProps = async (response) => {
       navigation,
       headings,
     },
+  };
+};
+
+export const getStaticPaths = async () => {
+  const paths = await getAllPathsByCategory(SECTION);
+
+  return {
+    paths,
+    fallback: false,
   };
 };

@@ -373,7 +373,7 @@ const todaysDate = new Date();
 Index.displayName = "Index";
 
 export default Index;
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const posts = await getAllDocs();
   const navigation = await getNavigation();
 

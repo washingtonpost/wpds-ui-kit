@@ -89,7 +89,7 @@ export default function Page() {
   );
 }
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   const navigation = await getNavigation();
 
   return {
