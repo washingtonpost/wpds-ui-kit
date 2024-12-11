@@ -121,10 +121,26 @@ export const getServerSideProps = async ({ params }) => {
     console.warn({ e });
   }
 
+  const componentsLookUptable = getNavigation().then((nav) => {
+    const [foundations, components, resources] = nav;
+
+    const {
+      docs
+    } = components;
+
+    let componentList = docs.map((component) => {
+      return component.slug.replace("/components/", "");
+    });
+
+    return componentList;
+  }); 
+
+  const slug = componentsLookUptable[params.slug];
+
   // check if package exists on npm
   // if not, set status to coming soon
   const packageExists = await fetch(
-    `https://registry.npmjs.org/@washingtonpost/wpds-${params.slug}`
+    `https://registry.npmjs.org/@washingtonpost/wpds-${slug}`
   ).then((res) => res.status === 200 || res.status === 304);
 
   if (!packageExists && process.env.NODE_ENV !== "development") {
