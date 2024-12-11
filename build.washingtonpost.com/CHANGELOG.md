@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.10.0](https://github.com/washingtonpost/wpds-docs/compare/v2.9.0...v2.10.0) (2024-12-11)
+
+### Bug Fixes
+
+- include onSelect callback in InputSelect selected documentation example ([f4697d5](https://github.com/washingtonpost/wpds-docs/commit/f4697d5087f37cdfb93f462295bb4531fb347fe3))
+
+### Features
+
+- update wpds-assets ([#676](https://github.com/washingtonpost/wpds-docs/issues/676)) ([0cb0ae6](https://github.com/washingtonpost/wpds-docs/commit/0cb0ae65bcc9faac805f5ec295a6fe3548636278))
+
 # [2.9.0](https://github.com/washingtonpost/wpds-docs/compare/v2.8.1...v2.9.0) (2024-12-09)
 
 ### Bug Fixes

@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.10.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.9.0...v2.10.0) (2024-12-11)
+
+### Bug Fixes
+
+- allow controlled InputSearch to be cleared by passing empty string ([f874afd](https://github.com/washingtonpost/wpds-ui-kit/commit/f874afd58dba13d242e2d38330b4d7ffe6d0ef5a))
+- allow props on InputSearch ListItem to pass through for custom styling ([07b7bdc](https://github.com/washingtonpost/wpds-ui-kit/commit/07b7bdc23eb7e05d1e80465bfba1fc2189d6f70b))
+- honor disabled prop in InputSearch list item ([62f88ec](https://github.com/washingtonpost/wpds-ui-kit/commit/62f88ecfd087f02e5373b89c36a59a367c9536bc))
+- safely escape strings passed to RegExp in InputSearch ([66fc814](https://github.com/washingtonpost/wpds-ui-kit/commit/66fc8143dc4c43aa555b718b507c50f017b90b44))
+
+### Features
+
+- update wpds-assets ([#676](https://github.com/washingtonpost/wpds-ui-kit/issues/676)) ([0cb0ae6](https://github.com/washingtonpost/wpds-ui-kit/commit/0cb0ae65bcc9faac805f5ec295a6fe3548636278))
+
 # [2.9.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.8.1...v2.9.0) (2024-12-09)
 
 ### Features
