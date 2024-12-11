@@ -5,7 +5,7 @@ import { useComboBox } from "react-aria";
 import { styled, theme } from "../theme";
 
 import type * as WPDS from "../theme";
-import type { ComboBoxState } from "react-stately";
+import type { ComboBoxState, Key } from "react-stately";
 import type { AriaListBoxOptions } from "react-aria";
 import type { CollectionChildren } from "@react-types/shared";
 
@@ -19,6 +19,9 @@ type InputSearchContextProps = {
   listBoxProps: AriaListBoxOptions<object>;
   setCollectionChildren: React.Dispatch<
     React.SetStateAction<CollectionChildren<object> | undefined>
+  >;
+  setDisabledKeys: React.Dispatch<
+    React.SetStateAction<Iterable<Key> | undefined>
   >;
   isDisabled?: boolean;
   setUsePortal: React.Dispatch<React.SetStateAction<boolean | undefined>>;
@@ -76,9 +79,11 @@ export const InputSearchRoot = ({
 }: InputSearchRootProps) => {
   const [collectionChildren, setCollectionChildren] =
     React.useState<CollectionChildren<object>>();
+  const [disabledKeys, setDisabledKeys] = React.useState<Iterable<Key>>();
 
   const state = useComboBoxState({
     children: collectionChildren,
+    disabledKeys,
     allowsCustomValue: true,
     allowsEmptyCollection: true,
     menuTrigger: openOnFocus ? "focus" : "input",
@@ -132,6 +137,7 @@ export const InputSearchRoot = ({
         inputProps,
         listBoxProps,
         setCollectionChildren,
+        setDisabledKeys,
         setUsePortal,
         setPortalDomNode,
         isDisabled: disabled,

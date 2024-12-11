@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.10.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.9.0...v2.10.0) (2024-12-11)
+
+### Features
+
+- update wpds-assets ([#676](https://github.com/washingtonpost/wpds-ui-kit/issues/676)) ([0cb0ae6](https://github.com/washingtonpost/wpds-ui-kit/commit/0cb0ae65bcc9faac805f5ec295a6fe3548636278))
+
 # [2.9.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.8.1...v2.9.0) (2024-12-09)
 
 **Note:** Version bump only for package @washingtonpost/wpds-tokens

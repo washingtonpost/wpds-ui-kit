@@ -192,6 +192,34 @@ export const Grouping = {
   },
 };
 
+const DisabledTemplate: StoryFn<typeof InputSearch.Root> = (args) => {
+  return (
+    <Box css={{ width: "275px", height: "340px" }}>
+      <InputSearch.Root {...args} aria-label="Example-Search" openOnFocus>
+        <InputSearch.Input name="fruit" id="fruit" />
+        <InputSearch.Popover>
+          <InputSearch.List>
+            <InputSearch.ListItem value="Apple" />
+            <InputSearch.ListItem value="Banana" disabled />
+            <InputSearch.ListItem value="Orange" />
+            <InputSearch.ListItem value="Kiwi" />
+            <InputSearch.ListItem value="Pineapple" />
+          </InputSearch.List>
+        </InputSearch.Popover>
+      </InputSearch.Root>
+    </Box>
+  );
+};
+
+export const Disabled = {
+  render: DisabledTemplate,
+  args: {},
+
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
+};
+
 const ScrollTemplate: StoryFn<typeof InputSearch.Root> = (args) => {
   return (
     <Box css={{ width: "275px", height: "340px", marginBlockStart: "700px" }}>
@@ -223,34 +251,44 @@ export const Scroll = {
 const ControlledTemplate: StoryFn<typeof InputSearch.Root> = (args) => {
   const [term, setTerm] = useState("");
   return (
-    <Box css={{ width: "275px" }}>
-      <InputSearch.Root
-        {...args}
-        aria-label="Example-Search"
-        openOnFocus
-        onSelect={(value) => {
-          setTerm(value);
+    <>
+      <button
+        onClick={() => {
+          setTerm("");
         }}
       >
-        <InputSearch.Input
-          name="fruit"
-          id="fruit"
-          value={term}
-          onChange={(event) => {
-            setTerm(event.target.value);
+        External Clear
+      </button>
+      <br />
+      <Box css={{ width: "275px" }}>
+        <InputSearch.Root
+          {...args}
+          aria-label="Example-Search"
+          openOnFocus
+          onSelect={(value) => {
+            setTerm(value);
           }}
-        />
-        <InputSearch.Popover>
-          <InputSearch.List>
-            <InputSearch.ListItem value="Apple" />
-            <InputSearch.ListItem value="Banana" />
-            <InputSearch.ListItem value="Orange" />
-            <InputSearch.ListItem value="Kiwi" />
-            <InputSearch.ListItem value="Pineapple" />
-          </InputSearch.List>
-        </InputSearch.Popover>
-      </InputSearch.Root>
-    </Box>
+        >
+          <InputSearch.Input
+            name="fruit"
+            id="fruit"
+            value={term}
+            onChange={(event) => {
+              setTerm(event.target.value);
+            }}
+          />
+          <InputSearch.Popover>
+            <InputSearch.List>
+              <InputSearch.ListItem value="Apple" />
+              <InputSearch.ListItem value="Banana" />
+              <InputSearch.ListItem value="Orange" />
+              <InputSearch.ListItem value="Kiwi" />
+              <InputSearch.ListItem value="Pineapple" />
+            </InputSearch.List>
+          </InputSearch.Popover>
+        </InputSearch.Root>
+      </Box>
+    </>
   );
 };
 
@@ -298,7 +336,7 @@ export const ControlledKeyboardInteractions = {
 
   play: async () => {
     const input = await screen.findByLabelText("Search");
-    await userEvent.type(input, "app", {
+    await userEvent.type(input, "test", {
       delay: 100,
     });
     await userEvent.keyboard("[ArrowDown]");
@@ -310,5 +348,14 @@ export const ControlledKeyboardInteractions = {
     const clearButton = await screen.findByText("Clear");
     await userEvent.click(clearButton);
     await expect(input).toHaveDisplayValue("");
+    await userEvent.type(input, "test", {
+      delay: 100,
+    });
+    await userEvent.keyboard("[ArrowDown]");
+    await expect(input).toHaveDisplayValue("Apple");
+    const externalClearButton = await screen.findByText("External Clear");
+    await userEvent.click(externalClearButton);
+    await expect(input).toHaveDisplayValue("");
+    //
   },
 };

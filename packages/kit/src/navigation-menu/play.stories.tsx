@@ -272,6 +272,62 @@ export const Vertical = {
   render: VerticalTemplate,
 };
 
+const DisabledTemplate: StoryFn<typeof NavigationMenu.Root> = (args) => {
+  return (
+    <NavigationMenu.Root {...args}>
+      <NavigationMenu.List>
+        <NavigationMenu.Item>
+          <NavigationMenu.Link href="https://www.washingtonpost.com/election-results/2022/house/">
+            House
+          </NavigationMenu.Link>
+        </NavigationMenu.Item>
+        <NavigationMenu.Item>
+          <NavigationMenu.Link href="https://www.washingtonpost.com/election-results/2022/governors">
+            Governors
+          </NavigationMenu.Link>
+        </NavigationMenu.Item>
+        <NavigationMenu.Item>
+          <NavigationMenu.Trigger disabled>
+            Results By State
+            <Icon
+              label=""
+              size="150"
+              css={{
+                marginBlock: "-2px",
+                transition: `transform ${theme.transitions.fast} ${theme.transitions.inOut}`,
+                "[aria-expanded='true'] > &": {
+                  transform: "rotate(-180deg)",
+                },
+              }}
+            >
+              <ChevronDown />
+            </Icon>
+          </NavigationMenu.Trigger>
+          <NavigationMenu.Content>
+            <NavigationMenu.Sub orientation="vertical">
+              <NavigationMenu.List>
+                <NavigationMenu.Item>
+                  <NavigationMenu.Link href="#">Alabama</NavigationMenu.Link>
+                </NavigationMenu.Item>
+                <NavigationMenu.Item>
+                  <NavigationMenu.Link href="#">Alaska</NavigationMenu.Link>
+                </NavigationMenu.Item>
+                <NavigationMenu.Item>
+                  <NavigationMenu.Link href="#">Arizona</NavigationMenu.Link>
+                </NavigationMenu.Item>
+              </NavigationMenu.List>
+            </NavigationMenu.Sub>
+          </NavigationMenu.Content>
+        </NavigationMenu.Item>
+      </NavigationMenu.List>
+    </NavigationMenu.Root>
+  );
+};
+
+export const Disabled = {
+  render: DisabledTemplate,
+};
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const InteractionsTemplate: StoryFn<any> = () => (
   <NavigationMenu.Root>

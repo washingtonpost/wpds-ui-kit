@@ -124,16 +124,14 @@ export const getServerSideProps = async ({ params }) => {
   const componentsLookUptable = getNavigation().then((nav) => {
     const [foundations, components, resources] = nav;
 
-    const {
-      docs
-    } = components;
+    const { docs } = components;
 
     let componentList = docs.map((component) => {
       return component.slug.replace("/components/", "");
     });
 
     return componentList;
-  }); 
+  });
 
   const slug = componentsLookUptable[params.slug];
 

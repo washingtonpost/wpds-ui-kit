@@ -3,11 +3,7 @@ import { MDXRemote } from "next-mdx-remote";
 import { NextSeo } from "~/components/next-seo";
 import MDXStyling from "~/components/Markdown/Styling";
 import Header from "~/components/Typography/Headers";
-import {
-  getNavigation,
-  getResource,
-  getHeadings,
-} from "~/services";
+import { getNavigation, getResource, getHeadings } from "~/services";
 import Breadcrumbs from "~/components/Breadcrumbs";
 import TableofContents from "~/components/Markdown/Components/tableofcontents";
 import { Box } from "@washingtonpost/wpds-ui-kit";

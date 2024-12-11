@@ -563,9 +563,18 @@ export default function Example() {
   const [term, setTerm] = useState("");
   const results = searchCities(term);
 
+  const [selected, setSelected] = useState("");
+
   return (
     <Box css={{ width: "300px", height: "340px" }}>
-      <InputSearch.Root aria-label="Example-Search" openOnFocus>
+      <Box css={{ marginBlockEnd: "$100" }}>
+        <strong>Selected value:</strong> {selected}
+      </Box>
+      <InputSearch.Root
+        aria-label="Example-Search"
+        openOnFocus
+        onSelect={(value) => setSelected(value)}
+      >
         <InputSearch.Input
           name="city"
           id="city"

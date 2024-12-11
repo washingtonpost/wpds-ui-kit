@@ -2,6 +2,7 @@ import React from "react";
 import { Item } from "react-stately";
 import { useOption } from "react-aria";
 import { styled, theme } from "../theme";
+import { InputSearchContext } from "./InputSearchRoot";
 
 import type { Node, ListState, ComboBoxState } from "react-stately";
 
@@ -75,6 +76,24 @@ interface ListItemProps {
 }
 
 export const ListItem = ({ item, state }: ListItemProps) => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const { children, textValue, disabled, ...itemProps } = item.props;
+
+  const { setDisabledKeys } = React.useContext(InputSearchContext);
+  React.useEffect(() => {
+    if (disabled && !state.disabledKeys.has(item.key)) {
+      setDisabledKeys((prev) => {
+        if (prev) {
+          const next = new Set(prev);
+          next.add(item.key);
+          return next;
+        } else {
+          return new Set([item.key]);
+        }
+      });
+    }
+  }, [disabled, setDisabledKeys, state.disabledKeys]);
+
   const ref = React.useRef<HTMLLIElement>(null);
   const { optionProps, isDisabled, isSelected, isFocused } = useOption(
     {
@@ -85,15 +104,21 @@ export const ListItem = ({ item, state }: ListItemProps) => {
   );
 
   let highlighted;
+
+  const escape = (string) => {
+    return string.replace(/[.*+\-?^${}()|[\]\\]/g, "\\$&");
+  };
+
   if (typeof item.rendered === "string") {
-    highlighted = item.rendered.replace(
-      new RegExp((state as ComboBoxState<object>).inputValue, "gi"),
-      (match) => (match ? `<mark>${match}</mark>` : "")
+    const val = escape((state as ComboBoxState<object>).inputValue);
+    highlighted = item.rendered.replace(new RegExp(val, "gi"), (match) =>
+      match ? `<mark>${match}</mark>` : ""
     );
   }
 
   return (
     <StyledListItem
+      {...itemProps}
       {...optionProps}
       ref={ref}
       selected={isSelected}
