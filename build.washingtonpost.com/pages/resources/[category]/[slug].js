@@ -69,7 +69,7 @@ export default function Page({ current, source, headings }) {
   );
 }
 
-export const getStaticProps = async (response) => {
+export const getServerSideProps = async (response) => {
   const source = await getResource(
     `${SECTION}/${response.params.category}/${response.params.slug}`
   );
@@ -85,14 +85,5 @@ export const getStaticProps = async (response) => {
       navigation,
       headings,
     },
-  };
-};
-
-export const getStaticPaths = async () => {
-  const paths = await getAllPathsByCategory(SECTION);
-
-  return {
-    paths,
-    fallback: false,
   };
 };

@@ -102,7 +102,7 @@ export default function Page({ docs }) {
   );
 }
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const docs = await getDocsListBySection("support");
   const navigation = await getNavigation();
 

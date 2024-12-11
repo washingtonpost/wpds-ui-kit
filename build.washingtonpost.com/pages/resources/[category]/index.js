@@ -73,7 +73,7 @@ export default function Page({ docs, category, description, size }) {
   );
 }
 
-export const getStaticProps = async ({ params }) => {
+export const getServerSideProps = async ({ params }) => {
   const docs = await getResources(`resources/${params.category}`);
 
   const todaysDate = new Date();
@@ -126,12 +126,3 @@ export const getStaticProps = async ({ params }) => {
 };
 
 const SECTION = "resources";
-
-export const getStaticPaths = async () => {
-  const paths = await getAllPathsByCategory(`${SECTION}`);
-
-  return {
-    paths,
-    fallback: false,
-  };
-};

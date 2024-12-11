@@ -22,14 +22,14 @@
     "@radix-ui/react-collapsible": "^1.0.0",
     "@radix-ui/react-toggle-group": "^1.0.1",
     "@stitches/react": "1.3.1-1",
-    "@washingtonpost/front-end-utils": "0.5.17-alpha.1",
-    "@washingtonpost/site-favicons": "0.3.4-alpha.1",
-    "@washingtonpost/site-footer": "0.25.3-alpha.1",
-    "@washingtonpost/tachyons-css": "^1.8.0",
-    "@washingtonpost/wpds-assets": "^2.9.0",
-    "@washingtonpost/wpds-kitchen-sink": "2.9.0",
-    "@washingtonpost/wpds-tailwind-theme": "2.9.0",
-    "@washingtonpost/wpds-tokens": "2.9.0",
+    "@washingtonpost/front-end-utils": "latest",
+    "@washingtonpost/site-favicons": "latest",
+    "@washingtonpost/site-footer": "latest",
+    "@washingtonpost/tachyons-css": "latest",
+    "@washingtonpost/wpds-assets": "latest",
+    "@washingtonpost/wpds-kitchen-sink": "latest",
+    "@washingtonpost/wpds-tailwind-theme": "latest",
+    "@washingtonpost/wpds-tokens": "latest",
     "@washingtonpost/wpds-ui-kit": "file:../packages/kit",
     "fuse.js": "^6.6.2",
     "gray-matter": "^4.0.2",
@@ -79,6 +79,6 @@
   "overrides": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "@washingtonpost/wpds-assets": "^2.9.0"
+    "@washingtonpost/wpds-assets": "latest"
   }
 }

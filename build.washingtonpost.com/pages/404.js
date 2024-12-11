@@ -77,7 +77,7 @@ export default function Page() {
   );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const navigation = await getNavigation();
 
   return {

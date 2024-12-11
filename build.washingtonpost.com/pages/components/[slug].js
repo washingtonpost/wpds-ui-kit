@@ -9,7 +9,6 @@ import Header from "~/components/Typography/Headers";
 import { Description } from "~/components/Typography/Description";
 import TableofContents from "~/components/Markdown/Components/tableofcontents";
 import {
-  getAllPathsBySection,
   getDocByPathName,
   getHeadings,
   getNavigation,
@@ -97,7 +96,7 @@ export default function Page({
 
 const thisSection = "components";
 
-export const getStaticProps = async ({ params }) => {
+export const getServerSideProps = async ({ params }) => {
   const toTitleCase = (str) =>
     str
       .split("-")
@@ -142,14 +141,5 @@ export const getStaticProps = async ({ params }) => {
       bundleSize,
       componentName,
     },
-  };
-};
-
-export const getStaticPaths = async () => {
-  const paths = await getAllPathsBySection(thisSection);
-
-  return {
-    paths,
-    fallback: false,
   };
 };
