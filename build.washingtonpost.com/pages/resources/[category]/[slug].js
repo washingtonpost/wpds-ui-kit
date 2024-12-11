@@ -5,7 +5,6 @@ import MDXStyling from "~/components/Markdown/Styling";
 import Header from "~/components/Typography/Headers";
 import {
   getNavigation,
-  getAllPathsByCategory,
   getResource,
   getHeadings,
 } from "~/services";

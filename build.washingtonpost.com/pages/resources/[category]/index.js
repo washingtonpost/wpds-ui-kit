@@ -3,7 +3,7 @@ import { styled } from "@washingtonpost/wpds-ui-kit";
 import { NextSeo } from "~/components/next-seo";
 import Header from "~/components/Typography/Headers";
 import CustomLink from "~/components/Typography/link";
-import { getAllPathsByCategory, getNavigation, getResources } from "~/services";
+import { getNavigation, getResources } from "~/services";
 import Breadcrumbs from "~/components/Breadcrumbs";
 import {
   Thumbnail,
