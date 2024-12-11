@@ -7,7 +7,7 @@ import MDXStyling from "~/components/Markdown/Styling";
 import Header from "~/components/Typography/Headers";
 import { Description } from "~/components/Typography/Description";
 
-import { getAllPathsBySection, getDocByPathName } from "~/services";
+import { getDocByPathName } from "~/services";
 import { getNavigation } from "~/services/getNavigation";
 
 const components = {
@@ -37,7 +37,7 @@ export default function Page({ source }) {
 
 const thisSection = "support";
 
-export const getStaticProps = async ({ params }) => {
+export const getServerSideProps = async ({ params }) => {
   const source = await getDocByPathName(`${thisSection}/${params.slug}`);
 
   const navigation = await getNavigation();
@@ -48,14 +48,5 @@ export const getStaticProps = async ({ params }) => {
       navigation,
       source,
     },
-  };
-};
-
-export const getStaticPaths = async () => {
-  const paths = await getAllPathsBySection(thisSection);
-
-  return {
-    paths: paths,
-    fallback: false,
   };
 };
