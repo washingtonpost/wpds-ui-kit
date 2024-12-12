@@ -14,61 +14,7 @@ WPDS has 5 breakpoints with the following values
 
 <BR />
 
-```jsx withPreview
-export default function Example() {
-  const BreakpointExample = styled("div", {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: theme.colors.secondary,
-    color: theme.colors.onSecondary,
-    width: "150px",
-    height: "150px",
-    variants: {
-      color: {
-        orange: {
-          backgroundColor: theme.colors.orange300,
-          "&:before": {
-            content: "sm",
-          },
-        },
-        yellow: {
-          backgroundColor: theme.colors.gold300,
-          "&:before": {
-            content: "md",
-          },
-        },
-        green: {
-          backgroundColor: theme.colors.green300,
-          "&:before": {
-            content: "lg",
-          },
-        },
-        blue: {
-          backgroundColor: theme.colors.blue300,
-          "&:before": {
-            content: "xl",
-          },
-        },
-      },
-    },
-  });
-
-  return (
-    <div>
-      <p>Resize window to update</p>
-      <BreakpointExample
-        color={{
-          "@sm": "orange",
-          "@md": "yellow",
-          "@lg": "green",
-          "@xl": "blue",
-        }}
-      ></BreakpointExample>
-    </div>
-  );
-}
-```
+<Breakpoints />
 
 <BR />
 
