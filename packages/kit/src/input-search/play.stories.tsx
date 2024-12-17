@@ -7,6 +7,7 @@ import { InputSearch } from "./";
 import { cities } from "./cities";
 
 import type { StoryFn } from "@storybook/react";
+import exp from "constants";
 
 export default {
   title: "InputSearch",
@@ -356,6 +357,11 @@ export const ControlledKeyboardInteractions = {
     const externalClearButton = await screen.findByText("External Clear");
     await userEvent.click(externalClearButton);
     await expect(input).toHaveDisplayValue("");
+    await userEvent.click(input);
+    await expect(input).toHaveFocus();
+    const appleOption = await screen.findByRole("option", { name: "Apple" });
+    await userEvent.click(appleOption);
+    await expect(input).toHaveDisplayValue("Apple");
     //
   },
 };
