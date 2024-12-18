@@ -1,5 +1,5 @@
-import React, { useMemo, useState, useEffect } from "react";
-import { screen, userEvent } from "@storybook/testing-library";
+import React, { useMemo, useState, useEffect, use } from "react";
+import { screen, userEvent, waitFor } from "@storybook/testing-library";
 import { expect, jest } from "@storybook/jest";
 import { Box } from "../box";
 import { matchSorter } from "match-sorter";
@@ -267,6 +267,8 @@ const ControlledTemplate: StoryFn<typeof InputSearch.Root> = (args) => {
           openOnFocus
           onSelect={(value) => {
             setTerm(value);
+            console.log("onSelect", value);
+            args.onSelect && args.onSelect(value);
           }}
         >
           <InputSearch.Input
@@ -294,8 +296,9 @@ const ControlledTemplate: StoryFn<typeof InputSearch.Root> = (args) => {
 
 export const Controlled = {
   render: ControlledTemplate,
-  args: {},
-
+  args: {
+    onSelect: jest.fn(),
+  },
   parameters: {
     chromatic: { disableSnapshot: true },
   },
@@ -345,7 +348,7 @@ export const Interactions = {
 export const ControlledKeyboardInteractions = {
   render: ControlledTemplate,
 
-  play: async () => {
+  play: async ({ args }) => {
     const input = await screen.findByLabelText("Search");
     await userEvent.type(input, "test", {
       delay: 100,
@@ -356,6 +359,9 @@ export const ControlledKeyboardInteractions = {
     await expect(input).toHaveDisplayValue("Orange");
     await userEvent.keyboard("[Backspace]");
     await expect(input).toHaveDisplayValue("Orang");
+    await userEvent.keyboard("[ArrowUp]");
+    await userEvent.keyboard("[Enter]");
+    await expect(args.onSelect).toHaveBeenCalledWith("Pineapple");
     const clearButton = await screen.findByText("Clear");
     await userEvent.click(clearButton);
     await expect(input).toHaveDisplayValue("");
@@ -372,6 +378,7 @@ export const ControlledKeyboardInteractions = {
     const appleOption = await screen.findByRole("option", { name: "Apple" });
     await userEvent.click(appleOption);
     await expect(input).toHaveDisplayValue("Apple");
+    await expect(args.onSelect).toHaveBeenCalledWith("Apple");
     //
   },
 };
