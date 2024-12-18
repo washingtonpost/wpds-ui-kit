@@ -24,6 +24,7 @@ export const InputSearchInput = React.forwardRef<
     {
       label = "Search",
       autocomplete = true,
+      autoComplete = "off",
       id,
       value,
       ...rest
@@ -46,6 +47,13 @@ export const InputSearchInput = React.forwardRef<
       if (inputProps.onChange) inputProps.onChange(event);
     };
 
+    React.useEffect(() => {
+      // allow for external changes for controlled inputs
+      if (value !== undefined && value !== null && value !== inputProps.value) {
+        state.setInputValue(value);
+      }
+    }, [value, inputProps.value, state]);
+
     const [tempText, setTempText] = React.useState<string>();
     const withKeyboard = React.useRef(false);
     React.useEffect(() => {
@@ -62,24 +70,8 @@ export const InputSearchInput = React.forwardRef<
       }
     }, [state.selectionManager.focusedKey, setTempText]);
 
-    if (value !== undefined && value !== null) {
-      inputProps.value = value;
-    }
-
     if (autocomplete && withKeyboard.current) {
       inputProps.value = tempText;
-    }
-
-    const [, setRerender] = React.useState(false);
-    if (!inputProps.value && inputRef.current) {
-      const el = inputRef.current as HTMLInputElement;
-      if (el.value) {
-        // if a controlled input is passed an empty value,
-        // an extra render is needed to reset the input's internal state
-        requestAnimationFrame(() => {
-          setRerender((prev) => !prev);
-        });
-      }
     }
 
     const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
@@ -111,6 +103,7 @@ export const InputSearchInput = React.forwardRef<
         onChange={handleChange}
         onKeyDown={handleKeyDown}
         onKeyUp={handleKeyUp}
+        autoComplete={autoComplete}
       />
     );
   }

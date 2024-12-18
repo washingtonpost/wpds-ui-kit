@@ -21,7 +21,7 @@ const Ruler = styled("div", {
 const Body = styled("div", {
   paddingBlock: "1px",
   fontFamily: theme.fonts.meta,
-  placeItems: "left"
+  placeItems: "left",
 });
 
 const PointsList = styled("ul", {
