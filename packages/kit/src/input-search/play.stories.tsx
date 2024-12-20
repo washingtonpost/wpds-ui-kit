@@ -1,6 +1,6 @@
-import React, { useMemo, useState, useEffect } from "react";
-import { screen, userEvent } from "@storybook/testing-library";
-import { expect } from "@storybook/jest";
+import React, { useMemo, useState, useEffect, use } from "react";
+import { screen, userEvent, waitFor } from "@storybook/testing-library";
+import { expect, jest } from "@storybook/jest";
 import { Box } from "../box";
 import { matchSorter } from "match-sorter";
 import { InputSearch } from "./";
@@ -267,6 +267,8 @@ const ControlledTemplate: StoryFn<typeof InputSearch.Root> = (args) => {
           openOnFocus
           onSelect={(value) => {
             setTerm(value);
+            console.log("onSelect", value);
+            args.onSelect && args.onSelect(value);
           }}
         >
           <InputSearch.Input
@@ -294,16 +296,21 @@ const ControlledTemplate: StoryFn<typeof InputSearch.Root> = (args) => {
 
 export const Controlled = {
   render: ControlledTemplate,
-  args: {},
-
+  args: {
+    onSelect: jest.fn(),
+  },
   parameters: {
     chromatic: { disableSnapshot: true },
   },
 };
 
-const InteractionsTemplate: StoryFn<typeof InputSearch.Root> = () => (
+const InteractionsTemplate: StoryFn<typeof InputSearch.Root> = (args) => (
   <Box css={{ width: "275px", height: "340px" }}>
-    <InputSearch.Root aria-label="Example-Search" openOnFocus>
+    <InputSearch.Root
+      aria-label="Example-Search"
+      openOnFocus
+      onSelect={args.onSelect}
+    >
       <InputSearch.Input name="city" id="city" />
       <InputSearch.Popover>
         <InputSearch.List>
@@ -320,21 +327,28 @@ const InteractionsTemplate: StoryFn<typeof InputSearch.Root> = () => (
 
 export const Interactions = {
   render: InteractionsTemplate,
-
-  play: async () => {
+  args: {
+    onSelect: jest.fn(),
+  },
+  play: async ({ args }) => {
     const input = await screen.findByLabelText("Search");
     await userEvent.type(input, "app", {
       delay: 100,
     });
     await userEvent.keyboard("[ArrowDown]");
     await expect(input).toHaveDisplayValue("Apple");
+    await userEvent.keyboard("[Enter]");
+    await expect(args.onSelect).toHaveBeenCalledWith("Apple");
+    const clearButton = await screen.findByRole("button", { name: "Clear" });
+    await userEvent.click(clearButton);
+    await expect(args.onSelect).toHaveBeenCalledWith("");
   },
 };
 
 export const ControlledKeyboardInteractions = {
   render: ControlledTemplate,
 
-  play: async () => {
+  play: async ({ args }) => {
     const input = await screen.findByLabelText("Search");
     await userEvent.type(input, "test", {
       delay: 100,
@@ -345,6 +359,9 @@ export const ControlledKeyboardInteractions = {
     await expect(input).toHaveDisplayValue("Orange");
     await userEvent.keyboard("[Backspace]");
     await expect(input).toHaveDisplayValue("Orang");
+    await userEvent.keyboard("[ArrowUp]");
+    await userEvent.keyboard("[Enter]");
+    await expect(args.onSelect).toHaveBeenCalledWith("Pineapple");
     const clearButton = await screen.findByText("Clear");
     await userEvent.click(clearButton);
     await expect(input).toHaveDisplayValue("");
@@ -356,6 +373,12 @@ export const ControlledKeyboardInteractions = {
     const externalClearButton = await screen.findByText("External Clear");
     await userEvent.click(externalClearButton);
     await expect(input).toHaveDisplayValue("");
+    await userEvent.click(input);
+    await expect(input).toHaveFocus();
+    const appleOption = await screen.findByRole("option", { name: "Apple" });
+    await userEvent.click(appleOption);
+    await expect(input).toHaveDisplayValue("Apple");
+    await expect(args.onSelect).toHaveBeenCalledWith("Apple");
     //
   },
 };
