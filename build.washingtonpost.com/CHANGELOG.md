@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.10.1](https://github.com/washingtonpost/wpds-docs/compare/v2.10.0...v2.10.1) (2024-12-20)
+
+### Bug Fixes
+
+- allow for reselecting the last selection of InputSearch if cleared. Trigger InputSearch onSelect callback when selection is cleared. ([#682](https://github.com/washingtonpost/wpds-docs/issues/682)) ([ae793dd](https://github.com/washingtonpost/wpds-docs/commit/ae793ddf5b9af0f68606e2d777833b90fd49690a))
+- update robots meta tag in non prod builds ([ccb0213](https://github.com/washingtonpost/wpds-docs/commit/ccb0213f26925a2903ed7b971bf48299c6c7bfb8))
+
 # [2.10.0](https://github.com/washingtonpost/wpds-docs/compare/v2.9.0...v2.10.0) (2024-12-11)
 
 ### Bug Fixes

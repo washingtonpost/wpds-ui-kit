@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.10.1](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.10.0...v2.10.1) (2024-12-20)
+
+### Bug Fixes
+
+- allow for reselecting the last selection of InputSearch if cleared. Trigger InputSearch onSelect callback when selection is cleared. ([#682](https://github.com/washingtonpost/wpds-ui-kit/issues/682)) ([ae793dd](https://github.com/washingtonpost/wpds-ui-kit/commit/ae793ddf5b9af0f68606e2d777833b90fd49690a))
+
 # [2.10.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.9.0...v2.10.0) (2024-12-11)
 
 ### Bug Fixes
