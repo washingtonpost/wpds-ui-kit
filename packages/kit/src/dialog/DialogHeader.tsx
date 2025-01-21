@@ -19,6 +19,8 @@ export type DialogHeaderProps = {
 export const DialogHeader = React.forwardRef<HTMLElement, DialogHeaderProps>(
   ({ children, ...props }: DialogHeaderProps, ref) => {
     return (
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
       <StyledHeader {...props} ref={ref}>
         {children}
       </StyledHeader>
