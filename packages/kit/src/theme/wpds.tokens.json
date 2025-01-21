@@ -1350,6 +1350,26 @@
         "value": "rgba(255, 255, 255, .25)",
         "hex": "#ffffff40"
       },
+      "alpha200-boop": {
+        "type": "color",
+        "value": "rgba(255, 255, 255, .20)",
+        "hex": "#ffffff33"
+      },
+      "alpha300-boop": {
+        "type": "color",
+        "value": "rgba(255, 255, 255, .15)",
+        "hex": "#ffffff26"
+      },
+      "alpha400-boop": {
+        "type": "color",
+        "value": "rgba(255, 255, 255, .10)",
+        "hex": "#ffffff1a"
+      },
+      "alpha500-boop": {
+        "type": "color",
+        "value": "rgba(255, 255, 255, .05)",
+        "hex": "#ffffff0d"
+      },
       "alpha50": {
         "type": "color",
         "value": "rgba(0, 0, 0, .50)",
