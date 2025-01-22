@@ -51,52 +51,52 @@
         "value": "rgba(0, 0, 0, .05)",
         "hex": "#0000000d"
       },
-      "alphaInvert0": {
+      "alpha0-invert": {
         "type": "color",
         "value": "rgba(255, 255, 255, .50)",
         "hex": "#ffffffa6"
       },
-      "alphaInvert20": {
+      "alpha20-invert": {
         "type": "color",
         "value": "rgba(255, 255, 255, .45)",
         "hex": "#ffffff73"
       },
-      "alphaInvert40": {
+      "alpha40-invert": {
         "type": "color",
         "value": "rgba(255, 255, 255, .40)",
         "hex": "#ffffff66"
       },
-      "alphaInvert60": {
+      "alpha60-invert": {
         "type": "color",
         "value": "rgba(255, 255, 255, .35)",
         "hex": "#ffffff59"
       },
-      "alphaInvert80": {
+      "alpha80-invert": {
         "type": "color",
         "value": "rgba(255, 255, 255, .30)",
         "hex": "#ffffff4f"
       },
-      "alphaInvert100": {
+      "alpha100-invert": {
         "type": "color",
         "value": "rgba(255, 255, 255, .25)",
         "hex": "#ffffff40"
       },
-      "alphaInvert200": {
+      "alpha200-invert": {
         "type": "color",
         "value": "rgba(255, 255, 255, .20)",
         "hex": "#ffffff33"
       },
-      "alphaInvert300": {
+      "alpha300-invert": {
         "type": "color",
         "value": "rgba(255, 255, 255, .15)",
         "hex": "#ffffff26"
       },
-      "alphaInvert400": {
+      "alpha400-invert": {
         "type": "color",
         "value": "rgba(255, 255, 255, .10)",
         "hex": "#ffffff1a"
       },
-      "alphaInvert500": {
+      "alpha500-invert": {
         "type": "color",
         "value": "rgba(255, 255, 255, .05)",
         "hex": "#ffffff0d"
@@ -686,55 +686,55 @@
         "value": "rgba(255, 255, 255, .05)",
         "hex": "#ffffff0d"
       },
-      "alphaInvert0": {
+      "alpha0-invert": {
         "type": "color",
-        "value": "rgba(0, 0, 0, .50)",
-        "hex": "#000000a6"
+        "value": "rgba(255, 255, 255, .65)",
+        "hex": "#ffffffa6"
       },
-      "alphaInvert20": {
+      "alpha20-invert": {
         "type": "color",
-        "value": "rgba(0, 0, 0, .45)",
-        "hex": "#00000073"
+        "value": "rgba(255, 255, 255, .45)",
+        "hex": "#ffffff73"
       },
-      "alphaInvert40": {
+      "alpha40-invert": {
         "type": "color",
-        "value": "rgba(0, 0, 0, .40)",
-        "hex": "#00000066"
+        "value": "rgba(255, 255, 255, .40)",
+        "hex": "#ffffff66"
       },
-      "alphaInvert60": {
+      "alpha60-invert": {
         "type": "color",
-        "value": "rgba(0, 0, 0, .35)",
-        "hex": "#00000059"
+        "value": "rgba(255, 255, 255, .35)",
+        "hex": "#ffffff59"
       },
-      "alphaInvert80": {
+      "alpha80-invert": {
         "type": "color",
-        "value": "rgba(0, 0, 0, .30)",
-        "hex": "#0000004f"
+        "value": "rgba(255, 255, 255, .30)",
+        "hex": "#ffffff4f"
       },
-      "alphaInvert100": {
+      "alpha100-invert": {
         "type": "color",
-        "value": "rgba(0, 0, 0, .25)",
-        "hex": "#00000040"
+        "value": "rgba(255, 255, 255, .25)",
+        "hex": "#ffffff40"
       },
-      "alphaInvert200": {
+      "alpha200-invert": {
         "type": "color",
-        "value": "rgba(0, 0, 0, .20)",
-        "hex": "#00000033"
+        "value": "rgba(255, 255, 255, .20)",
+        "hex": "#ffffff33"
       },
-      "alphaInvert300": {
+      "alpha300-invert": {
         "type": "color",
-        "value": "rgba(0, 0, 0, .15)",
-        "hex": "#00000026"
+        "value": "rgba(255, 255, 255, .15)",
+        "hex": "#ffffff26"
       },
-      "alphaInvert400": {
+      "alpha400-invert": {
         "type": "color",
-        "value": "rgba(0, 0, 0, .10)",
-        "hex": "#0000001a"
+        "value": "rgba(255, 255, 255, .10)",
+        "hex": "#ffffff1a"
       },
-      "alphaInvert500": {
+      "alpha500-invert": {
         "type": "color",
-        "value": "rgba(0, 0, 0, .05)",
-        "hex": "#0000000d"
+        "value": "rgba(255, 255, 255, .05)",
+        "hex": "#ffffff0d"
       },
       "alpha50": {
         "type": "color",
