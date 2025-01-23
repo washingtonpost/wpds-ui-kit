@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.11.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.10.1...v2.11.0) (2025-01-23)
+
+### Features
+
+- new alpha-invert tokens [CFE-275] ([#687](https://github.com/washingtonpost/wpds-ui-kit/issues/687)) ([3a91a23](https://github.com/washingtonpost/wpds-ui-kit/commit/3a91a239c278f8494862d8088cc773e7452bda79))
+
 ## [2.10.1](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.10.0...v2.10.1) (2024-12-20)
 
 ### Bug Fixes

@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.11.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.10.1...v2.11.0) (2025-01-23)
+
+**Note:** Version bump only for package nextjs14-approuter
+
 ## [2.10.1](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.10.0...v2.10.1) (2024-12-20)
 
 **Note:** Version bump only for package nextjs14-approuter
