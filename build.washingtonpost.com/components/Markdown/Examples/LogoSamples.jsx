@@ -50,7 +50,8 @@ export const darkLogos = [
   "washington-post-white",
   "wp-mark-white",
   "washington-post-magazine",
-  "olympics-dark"
+  "olympics-dark",
+  "wpi-white"
 ];
 
 const Logos = () => {
