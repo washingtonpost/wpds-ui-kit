@@ -50,8 +50,7 @@ export const darkLogos = [
   "washington-post-white",
   "wp-mark-white",
   "washington-post-magazine",
-  "olympics-dark",
-  "wpi-white"
+  "olympics-dark"
 ];
 
 const Logos = () => {
@@ -121,7 +120,7 @@ const Logos = () => {
               label={componentName}
               size={componentName.includes("washington") ? "250px" : "150px"}
             >
-              <Sample fill={theme.colors.primary} />
+              <Sample />
             </Icon>
           </Box>
         </MDXStyling.Cell>
