@@ -37,7 +37,7 @@
   },
   "peerDependencies": {
     "@washingtonpost/wpds-assets": "^2.10.2",
-    "@washingtonpost/wpds-ui-kit": "2.9.0",
+    "@washingtonpost/wpds-ui-kit": "2.11.0",
     "react": "^18.2.0"
   },
   "dependencies": {

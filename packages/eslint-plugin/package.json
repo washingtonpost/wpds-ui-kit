@@ -25,7 +25,7 @@
     "test": "jest"
   },
   "peerDependencies": {
-    "@washingtonpost/wpds-ui-kit": "2.9.0"
+    "@washingtonpost/wpds-ui-kit": "2.11.0"
   },
   "dependencies": {
     "@washingtonpost/wpds-ui-kit": "2.11.0"
