@@ -43,7 +43,7 @@ export const logoList = [
   "the7-blue",
   "the7",
   "wpi",
-  
+  "wpi-white"
 ];
 
 export const darkLogos = [
