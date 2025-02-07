@@ -43,7 +43,7 @@ export const logoList = [
   "the7-blue",
   "the7",
   "wpi",
-  "wpi-white"
+  "wpi-white",
 ];
 
 export const darkLogos = [
@@ -51,7 +51,7 @@ export const darkLogos = [
   "wp-mark-white",
   "washington-post-magazine",
   "olympics-dark",
-  "wpi-white"
+  "wpi-white",
 ];
 
 const Logos = () => {
