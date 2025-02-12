@@ -176,6 +176,21 @@ const PaginationContainer = styled("div", {
   display: "flex",
   flexWrap: "nowrap",
   alignItems: "center",
+  variants: {
+    showItems: {
+      true: {
+        justifyContent: "space-between",
+        width: "100%",
+      },
+    },
+  },
+});
+
+const DisplayContainer = styled("div", {
+  gap: "$050",
+  display: "flex",
+  flexWrap: "nowrap",
+  alignItems: "center",
 });
 
 // MAKE SURE PAGE STAYS SELECTED WHEN YOU GO TO A NEW PAGE
@@ -372,33 +387,35 @@ export const Pagination = React.forwardRef<HTMLDivElement, PaginationProps>(
     const numOfItems = getNumOfItems();
 
     return (
-      <PaginationContainer>
+      <PaginationContainer showItems={showItems}>
         <ItemRangeIndicator range={numOfItems} showItems={showItems} />
-        <PageNavigationButton
-          changePage={changeCurrentPage}
-          currentPage={currentPage}
-          left={true}
-          right={false}
-          totalPages={totalPages}
-        />
-        {unsureWhatToNameThis}
-        <Descriptive
-          currentPage={currentPage}
-          totalPages={totalPages}
-          variant={variant}
-        />
-        <Compact
-          currentPage={currentPage}
-          totalPages={totalPages}
-          variant={variant}
-        />
-        <PageNavigationButton
-          changePage={changeCurrentPage}
-          currentPage={currentPage}
-          left={false}
-          right={true}
-          totalPages={totalPages}
-        />
+        <DisplayContainer>
+          <PageNavigationButton
+            changePage={changeCurrentPage}
+            currentPage={currentPage}
+            left={true}
+            right={false}
+            totalPages={totalPages}
+          />
+          {unsureWhatToNameThis}
+          <Descriptive
+            currentPage={currentPage}
+            totalPages={totalPages}
+            variant={variant}
+          />
+          <Compact
+            currentPage={currentPage}
+            totalPages={totalPages}
+            variant={variant}
+          />
+          <PageNavigationButton
+            changePage={changeCurrentPage}
+            currentPage={currentPage}
+            left={false}
+            right={true}
+            totalPages={totalPages}
+          />
+        </DisplayContainer>
       </PaginationContainer>
     );
   }
