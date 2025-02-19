@@ -228,6 +228,7 @@ const Numeric = ({ changePage, currentPage, totalPages, variant }) => {
           <PageButton
             changePage={changePage}
             currentPage={currentPage}
+            key={num}
             num={num}
           />
         ))
@@ -243,6 +244,7 @@ const Numeric = ({ changePage, currentPage, totalPages, variant }) => {
             <PageButton
               changePage={changePage}
               currentPage={currentPage}
+              key={num}
               num={num}
             />
           ))
@@ -252,6 +254,7 @@ const Numeric = ({ changePage, currentPage, totalPages, variant }) => {
           <PageButton
             changePage={changePage}
             currentPage={currentPage}
+            key={num}
             num={num}
           />
         ))
@@ -259,7 +262,7 @@ const Numeric = ({ changePage, currentPage, totalPages, variant }) => {
         <PageOverflowButton
           changePage={changePage}
           currentPage={currentPage}
-          right={true}
+          left={false}
         />
       )}
       <PageButton
