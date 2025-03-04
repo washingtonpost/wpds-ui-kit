@@ -13,7 +13,7 @@ const DefaultArgs = {
   currentPage: 1,
   items: 153,
   showTotal: true,
-  slug: "",
+  // slug: "people/author/",
   totalPages: 15,
 };
 
@@ -76,3 +76,21 @@ const NoDisplayTemplate: ComponentStory<typeof Component> = (args) => {
 export const NoDisplay = NoDisplayTemplate.bind({});
 
 NoDisplay.args = NoDisplayArgs;
+
+const EndlessPaginationArgs = {
+  ...DefaultArgs,
+  currentPage: 40,
+  items: 1053,
+  totalPages: 100,
+  variant: "numeric",
+};
+
+const EndlessPaginationTemplate: ComponentStory<typeof Component> = (args) => {
+  const [page, setPage] = useState(args.currentPage);
+
+  return <Component {...args} changeCurrentPage={setPage} currentPage={page} />;
+};
+
+export const EndlessPagination = EndlessPaginationTemplate.bind({});
+
+EndlessPagination.args = EndlessPaginationArgs;
