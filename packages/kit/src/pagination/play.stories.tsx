@@ -12,6 +12,7 @@ const DefaultArgs = {
   changeCurrentPage: () => null,
   currentPage: 1,
   items: 153,
+  showItems: false,
   showTotal: true,
   // slug: "people/author/",
   totalPages: 15,
@@ -19,6 +20,7 @@ const DefaultArgs = {
 
 const NumericArgs = {
   ...DefaultArgs,
+  showItems: true,
   variant: "numeric",
 };
 
@@ -34,6 +36,7 @@ Numeric.args = NumericArgs;
 
 const DescriptiveArgs = {
   ...DefaultArgs,
+  showItems: true,
   variant: "descriptive",
 };
 

@@ -18,7 +18,9 @@ export type PaginationProps = {
   currentPage: number;
   /** Number of results */
   items: number;
-  /** Whether to show total variation in Item range indicator */
+  /** Whether to show item range indicator */
+  showItems: boolean;
+  /** Whether to show total variation in item range indicator */
   showTotal: boolean;
   /** Current page slug */
   slug: string;
@@ -208,6 +210,7 @@ const DisplayContainer = styled("div", {
 });
 
 const HideOnSmall = styled("div", {
+  gap: "$025",
   fontFamily: theme.fonts.meta,
   color: "$gray80",
   display: "flex",
@@ -249,7 +252,7 @@ const Numeric = ({
   const end = currentPage + 1;
   // Beginning and ending numbers of pages array
   const beginning = currentPage < 5;
-  const ending = currentPage > totalPages - 5;
+  const ending = currentPage > totalPages - 4;
   // pages we show in the component, ex: < 1 2 3 4 5 ... 15 >
   // pagesToShow would return the set of numbers we're looping through [2, 3, 4, 5] (for example)
   let pagesToShow;
@@ -363,6 +366,11 @@ const StyledItemRangeIndicator = styled("div", {
     display: "none",
   },
   variants: {
+    endlessPagination: {
+      true: {
+        display: "none",
+      },
+    },
     showItems: {
       false: {
         display: "none",
@@ -372,9 +380,21 @@ const StyledItemRangeIndicator = styled("div", {
 });
 
 // Item Range Indicator
-const ItemRangeIndicator = ({ range, showItems }) => {
+const ItemRangeIndicator = ({
+  currentPage,
+  endlessPagination,
+  showTotal,
+  items,
+  totalPages,
+  showItems,
+}) => {
+  const range = getNumOfItems(currentPage, showTotal, items, totalPages);
+
   return (
-    <StyledItemRangeIndicator showItems={showItems}>
+    <StyledItemRangeIndicator
+      endlessPagination={endlessPagination}
+      showItems={showItems}
+    >
       <StyledP>Showing {range} items</StyledP>
     </StyledItemRangeIndicator>
   );
@@ -405,6 +425,7 @@ export const Pagination = React.forwardRef<HTMLDivElement, PaginationProps>(
       changeCurrentPage,
       currentPage,
       items,
+      showItems,
       showTotal,
       // slug,
       totalPages,
@@ -412,13 +433,18 @@ export const Pagination = React.forwardRef<HTMLDivElement, PaginationProps>(
     },
     ref
   ) => {
-    const showItems = variant === "numeric" || variant === "descriptive";
-    const numOfItems = getNumOfItems(currentPage, showTotal, items, totalPages);
     const endlessPagination = totalPages > 15;
 
     return (
       <PaginationContainer showItems={showItems}>
-        <ItemRangeIndicator range={numOfItems} showItems={showItems} />
+        <ItemRangeIndicator
+          currentPage={currentPage}
+          endlessPagination={endlessPagination}
+          showTotal={showTotal}
+          items={items}
+          totalPages={totalPages}
+          showItems={showItems}
+        />
         <DisplayContainer>
           <PageNavigationButton
             changePage={changeCurrentPage}
