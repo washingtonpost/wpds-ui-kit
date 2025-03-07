@@ -6,6 +6,8 @@ import { StoryObj } from "@storybook/react";
 import type { Meta } from "@storybook/react";
 import type { SkeletonRootProps } from "./SkeletonRoot";
 import type { SkeletonBlockProps } from "./SkeletonBlock";
+import type { SkeletonCircleProps } from "./SkeletonCircle";
+import type { SkeletonLineProps } from "./SkeletonLine";
 import { theme } from "../theme";
 
 const meta: Meta<typeof Skeleton.Root> = {
@@ -15,7 +17,12 @@ const meta: Meta<typeof Skeleton.Root> = {
 
 export default meta;
 type Story = StoryObj<
-  SkeletonRootProps & { aspectRatio: SkeletonBlockProps["aspectRatio"] }
+  SkeletonRootProps & {
+    aspectRatio: SkeletonBlockProps["aspectRatio"];
+    textAlign: SkeletonLineProps["textAlign"];
+    fontSize: SkeletonLineProps["fontSize"];
+    density: SkeletonCircleProps["density"];
+  }
 >;
 
 export const Default: Story = {
@@ -53,10 +60,24 @@ export const Circle: Story = {
 };
 
 export const Line: Story = {
-  render: () => (
+  argTypes: {
+    fontSize: {
+      options: ["075", "087", "100", "112", "125", "150", "175", "200", "250"],
+      control: "select",
+    },
+    textAlign: {
+      options: ["justified", "left", "center", "right"],
+      control: "radio",
+    },
+  },
+  render: (args) => (
     <Skeleton.Root width={200} height={200}>
       <Skeleton.Line />
-      <Skeleton.Line y="32" textAlign="right" />
+      <Skeleton.Line
+        y="32"
+        textAlign={args.textAlign}
+        fontSize={args.fontSize}
+      />
     </Skeleton.Root>
   ),
 };
