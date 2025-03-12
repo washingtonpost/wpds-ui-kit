@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.11.1](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.11.0...v2.11.1) (2025-03-12)
+
+### Bug Fixes
+
+- touch scrolling on mobile web not working ([#700](https://github.com/washingtonpost/wpds-ui-kit/issues/700)) ([23cc9fd](https://github.com/washingtonpost/wpds-ui-kit/commit/23cc9fda4f6e6c9a935040688d6db230ad10ad66))
+
 # [2.11.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.10.1...v2.11.0) (2025-01-23)
 
 ### Features
