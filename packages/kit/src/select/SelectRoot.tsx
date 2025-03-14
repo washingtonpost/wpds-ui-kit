@@ -5,20 +5,6 @@ import { useControllableState } from "@radix-ui/react-use-controllable-state";
 
 import type * as WPDS from "../theme";
 
-const cancelDefaults = (event) => {
-  event.preventDefault();
-  event.stopPropagation();
-};
-
-const preventEvents = (open) => {
-  const items = document.querySelectorAll("[data-radix-collection-item]");
-
-  items.forEach((item) => {
-    const fn = open ? "addEventListener" : "removeEventListener";
-    item[fn]("touchstart", cancelDefaults);
-  });
-};
-
 type SelectContextProps = {
   currentValue: string;
   required: boolean | undefined;
@@ -107,12 +93,7 @@ export const SelectRoot = ({
         setContentWidth,
       }}
     >
-      <SelectPrimitive.Root
-        value={value}
-        onOpenChange={preventEvents}
-        onValueChange={setValue}
-        {...props}
-      >
+      <SelectPrimitive.Root value={value} onValueChange={setValue} {...props}>
         {children}
       </SelectPrimitive.Root>
     </SelectContext.Provider>
