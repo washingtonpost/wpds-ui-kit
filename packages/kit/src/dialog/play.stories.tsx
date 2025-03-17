@@ -127,7 +127,7 @@ const ComplexTemplate: StoryFn<typeof Dialog.Root> = (args) => {
 
   return (
     <DialogContainer ref={setContainer}>
-      <Dialog.Root defaultOpen>
+      <Dialog.Root {...args} defaultOpen>
         <Dialog.Trigger asChild>
           <Button>Open dialog</Button>
         </Dialog.Trigger>
