@@ -3,7 +3,15 @@ import { userEvent, waitFor, within } from "@storybook/testing-library";
 
 import { expect } from "@storybook/jest";
 import { Dialog } from "./Dialog";
-import { Button, styled, theme } from "../";
+import {
+  styled,
+  theme,
+  Box,
+  Button,
+  RadioButton,
+  RadioGroup,
+  Select,
+} from "../";
 
 import type { Meta, StoryFn } from "@storybook/react";
 
@@ -112,6 +120,74 @@ const ContentTemplate: StoryFn<typeof Dialog.Root> = (args) => {
 
 export const Content = {
   render: ContentTemplate,
+};
+
+const ComplexTemplate: StoryFn<typeof Dialog.Root> = (args) => {
+  const [container, setContainer] = React.useState<HTMLDivElement | null>(null);
+
+  return (
+    <DialogContainer ref={setContainer}>
+      <Dialog.Root {...args} defaultOpen>
+        <Dialog.Trigger asChild>
+          <Button>Open dialog</Button>
+        </Dialog.Trigger>
+        <Dialog.Portal container={container}>
+          <Dialog.Content height="500px" width="900px">
+            <Dialog.Close />
+            <Dialog.Header>
+              <Dialog.Title>Complex dialog</Dialog.Title>
+            </Dialog.Header>
+            <Dialog.Body>
+              <Box css={{ marginBlockEnd: "$100" }}>
+                <RadioGroup
+                  legend="Label"
+                  name="horizontal"
+                  orientation="horizontal"
+                  variant="primary"
+                >
+                  <RadioButton label="Option" value="opt1" id="opt1" />
+                  <RadioButton label="Option" value="opt2" id="opt2" />
+                  <RadioButton label="Option" value="opt3" id="opt3" />
+                  <RadioButton label="Option" value="opt4" id="opt4" />
+                  <RadioButton label="Option" value="opt5" id="opt5" />
+                  <RadioButton label="Option" value="opt6" id="opt6" />
+                </RadioGroup>
+              </Box>
+              <Box
+                css={{ marginBlockEnd: "$100", display: "flex", gap: "$100" }}
+              >
+                <Box css={{ flex: 1 }}>
+                  <Select.Root>
+                    <Select.Trigger aria-label="Select options">
+                      <Select.Label>Label/Placeholder</Select.Label>
+                      <Select.Value />
+                    </Select.Trigger>
+                    <Select.Content css={{ zIndex: "$offer" }}>
+                      <Select.Item value="op1">Option</Select.Item>
+                      <Select.Item value="op2">Option</Select.Item>
+                      <Select.Item value="op3">Option</Select.Item>
+                      <Select.Item value="op4">Option</Select.Item>
+                      <Select.Item value="op5">Option</Select.Item>
+                    </Select.Content>
+                  </Select.Root>
+                </Box>
+              </Box>
+            </Dialog.Body>
+            <Dialog.Footer>
+              <Dialog.Close asChild>
+                <Button>Cancel</Button>
+              </Dialog.Close>
+              <Button variant="primary">Confirm</Button>
+            </Dialog.Footer>
+          </Dialog.Content>
+        </Dialog.Portal>
+      </Dialog.Root>
+    </DialogContainer>
+  );
+};
+
+export const Complex = {
+  render: ComplexTemplate,
 };
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
