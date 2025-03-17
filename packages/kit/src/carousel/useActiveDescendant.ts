@@ -13,7 +13,7 @@ type MapEntry = [
   { element: HTMLElement; children?: Map<string, { element: HTMLElement }> }
 ];
 
-export const useActiveDescendant = (containerRef) => {
+export const useActiveDescendant = (containerRef, firstChildActive = false) => {
   const [descendantId, setDescendantId] = useState<string>();
   const tree = useRef(new Map());
   const [activeParentId, setActiveParentId] = useState<string>();
@@ -168,7 +168,7 @@ export const useActiveDescendant = (containerRef) => {
     if (!id) {
       return data.entries().next().value;
     }
-    let nextSibling: MapEntry | undefined;
+    let nextSibling: [string, { element: HTMLElement }] | undefined;
     let takeNext = false;
     data.forEach((value, key) => {
       if (takeNext) {
@@ -192,8 +192,8 @@ export const useActiveDescendant = (containerRef) => {
     if (!id) {
       return;
     }
-    let previousSibling: MapEntry | undefined;
-    let tempEntry: MapEntry | undefined;
+    let previousSibling: [string, { element: HTMLElement }] | undefined;
+    let tempEntry: [string, { element: HTMLElement }] | undefined;
     data.forEach((value, key) => {
       if (key === id) {
         previousSibling = tempEntry;
@@ -203,7 +203,7 @@ export const useActiveDescendant = (containerRef) => {
     return previousSibling;
   }
 
-  function focusChild(entry: MapEntry | undefined) {
+  function focusChild(entry: [string, { element: HTMLElement }] | undefined) {
     if (!entry) {
       // set focus to the parent
       setDescendantId(activeParentId);
@@ -221,7 +221,23 @@ export const useActiveDescendant = (containerRef) => {
       onKeyDown: handleKeyDown,
       onKeyUp: handleKeyUp,
       onMouseDown: handleMouseDown,
-      onFocus: () => setHasFocus(true),
+      onFocus: () => {
+        setHasFocus(true);
+        // this should auto-activate first child on focus only if the firstChildActive is active and no active child is set.
+        if (firstChildActive && !activeChildId) {
+          const firstParentEntry = tree.current.entries().next().value;
+          if (firstParentEntry) {
+            const [parentKey, parentData] = firstParentEntry;
+            const firstChildEntry = parentData.children.entries().next().value;
+            if (firstChildEntry) {
+              const [childKey] = firstChildEntry;
+              setActiveParentId(parentKey);
+              setActiveChildId(childKey);
+              setDescendantId(childKey);
+            }
+          }
+        }
+      },
       onBlur: () => setHasFocus(false),
       "aria-activedescendant": descendantId,
     },
