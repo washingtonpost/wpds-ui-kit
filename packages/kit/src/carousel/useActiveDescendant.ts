@@ -168,7 +168,7 @@ export const useActiveDescendant = (containerRef, firstChildActive = false) => {
     if (!id) {
       return data.entries().next().value;
     }
-    let nextSibling: [string, { element: HTMLElement }] | undefined;
+    let nextSibling: MapEntry | undefined;
     let takeNext = false;
     data.forEach((value, key) => {
       if (takeNext) {
@@ -192,8 +192,8 @@ export const useActiveDescendant = (containerRef, firstChildActive = false) => {
     if (!id) {
       return;
     }
-    let previousSibling: [string, { element: HTMLElement }] | undefined;
-    let tempEntry: [string, { element: HTMLElement }] | undefined;
+    let previousSibling: MapEntry | undefined;
+    let tempEntry: MapEntry | undefined;
     data.forEach((value, key) => {
       if (key === id) {
         previousSibling = tempEntry;
@@ -203,7 +203,7 @@ export const useActiveDescendant = (containerRef, firstChildActive = false) => {
     return previousSibling;
   }
 
-  function focusChild(entry: [string, { element: HTMLElement }] | undefined) {
+  function focusChild(entry: MapEntry | undefined) {
     if (!entry) {
       // set focus to the parent
       setDescendantId(activeParentId);
@@ -222,19 +222,27 @@ export const useActiveDescendant = (containerRef, firstChildActive = false) => {
       onKeyUp: handleKeyUp,
       onMouseDown: handleMouseDown,
       onFocus: () => {
+        console.log("Container focused.");
         setHasFocus(true);
         // this should auto-activate first child on focus only if the firstChildActive is active and no active child is set.
         if (firstChildActive && !activeChildId) {
           const firstParentEntry = tree.current.entries().next().value;
+          console.log("First parent entry:", firstParentEntry);
           if (firstParentEntry) {
             const [parentKey, parentData] = firstParentEntry;
             const firstChildEntry = parentData.children.entries().next().value;
+            console.log("First child entry:", firstChildEntry);
             if (firstChildEntry) {
               const [childKey] = firstChildEntry;
               setActiveParentId(parentKey);
               setActiveChildId(childKey);
               setDescendantId(childKey);
+              console.log("Auto-activated descendant:", childKey);
+            } else {
+              console.log("No child entry found for the first parent.");
             }
+          } else {
+            console.log("No parent entry found in the tree.");
           }
         }
       },
