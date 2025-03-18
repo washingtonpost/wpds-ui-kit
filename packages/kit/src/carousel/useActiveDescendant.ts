@@ -222,27 +222,19 @@ export const useActiveDescendant = (containerRef, firstChildActive = false) => {
       onKeyUp: handleKeyUp,
       onMouseDown: handleMouseDown,
       onFocus: () => {
-        console.log("Container focused.");
         setHasFocus(true);
         // this should auto-activate first child on focus only if the firstChildActive is active and no active child is set.
         if (firstChildActive && !activeChildId) {
           const firstParentEntry = tree.current.entries().next().value;
-          console.log("First parent entry:", firstParentEntry);
           if (firstParentEntry) {
             const [parentKey, parentData] = firstParentEntry;
             const firstChildEntry = parentData.children.entries().next().value;
-            console.log("First child entry:", firstChildEntry);
             if (firstChildEntry) {
               const [childKey] = firstChildEntry;
               setActiveParentId(parentKey);
               setActiveChildId(childKey);
               setDescendantId(childKey);
-              console.log("Auto-activated descendant:", childKey);
-            } else {
-              console.log("No child entry found for the first parent.");
             }
-          } else {
-            console.log("No parent entry found in the tree.");
           }
         }
       },
