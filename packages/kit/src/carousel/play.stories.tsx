@@ -609,7 +609,11 @@ const VerticalVideoAutoActiveTemplate = () => {
             "&:disabled": { display: "none" },
           }}
         />
-        <Component.Content {...contentProps} ref={containerRef}>
+        <Component.Content
+          {...contentProps}
+          ref={containerRef}
+          data-testid="carousel-content"
+        >
           {videos.map((video) => (
             <Component.Item key={video.id} id={video.id}>
               <div
@@ -717,6 +721,23 @@ const VerticalVideoAutoActiveTemplate = () => {
 export const VerticalVideoAutoActive = VerticalVideoAutoActiveTemplate.bind({});
 VerticalVideoAutoActive.parameters = {
   chromatic: { disableSnapshot: true },
+};
+
+// Interaction test for VerticalVideoAutoActive
+VerticalVideoAutoActive.play = async ({ canvasElement }) => {
+  const canvas = within(canvasElement);
+  // We show both light and dark themes in the same story for brevity. And they would share the same data-testid.
+  const contentContainers = canvas.getAllByTestId("carousel-content");
+  const contentContainer = contentContainers[0];
+
+  contentContainer.focus();
+
+  await waitFor(() => {
+    expect(contentContainer).toHaveAttribute(
+      "aria-activedescendant",
+      "title-1" // This is the first item and it should be active
+    );
+  });
 };
 
 const InteractionsTemplate = () => {
