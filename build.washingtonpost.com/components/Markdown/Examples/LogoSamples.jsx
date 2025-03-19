@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
 // disable eslint for this line because we want to import all assets
 /*eslint import/namespace: ['error', { allowComputed: true }]*/
 import * as AllAssets from "@washingtonpost/wpds-assets";
-import MDXStyling from "~/components/Markdown/Styling";
-import { toast } from "react-toastify";
-import { Box, Icon, theme, AlertBanner } from "@washingtonpost/wpds-ui-kit";
+import { AlertBanner, Box, Icon, theme } from "@washingtonpost/wpds-ui-kit";
 import { paramCase } from "param-case";
+import React, { useEffect, useState } from "react";
+import { toast } from "react-toastify";
+import MDXStyling from "~/components/Markdown/Styling";
 export const logoList = [
   "voraciously",
   "amazon",
@@ -42,6 +42,8 @@ export const logoList = [
   "the7-black",
   "the7-blue",
   "the7",
+  "wpi",
+  "wpi-white",
 ];
 
 export const darkLogos = [
@@ -49,6 +51,7 @@ export const darkLogos = [
   "wp-mark-white",
   "washington-post-magazine",
   "olympics-dark",
+  "wpi-white",
 ];
 
 const Logos = () => {
@@ -118,7 +121,7 @@ const Logos = () => {
               label={componentName}
               size={componentName.includes("washington") ? "250px" : "150px"}
             >
-              <Sample fill={theme.colors.primary} />
+              <Sample />
             </Icon>
           </Box>
         </MDXStyling.Cell>
