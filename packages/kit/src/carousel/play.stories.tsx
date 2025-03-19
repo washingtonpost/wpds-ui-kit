@@ -68,12 +68,12 @@ const Template = (args) => {
               style={{
                 width: "192px",
                 height: "200px",
-                backgroundColor: item as unknown as string,
+                backgroundColor: item.value,
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                borderRadius: theme.radii["025"] as unknown as string,
-                marginInlineEnd: theme.space["050"] as unknown as string,
+                borderRadius: theme.radii["025"].value,
+                marginInlineEnd: theme.space["050"].value,
               }}
             >
               {i + 1}
@@ -100,7 +100,7 @@ export const Carousel: Story = {
 };
 
 const StoryLink = ({ href }) => (
-  <div style={{ marginInlineEnd: theme.space["050"] as unknown as string }}>
+  <div style={{ marginInlineEnd: theme.space["050"].value }}>
     <a href={href} tabIndex={-1}>
       <img
         src="https://fakeimg.pl/200x200/ddd/999/?text=Story+Headline&font=museo&font_size=24"
@@ -156,7 +156,7 @@ const CustomButtonsTemplate = (args) => {
           <Component.Item key={`item${i}`} css={{ width: "100%" }}>
             <div
               style={{
-                backgroundColor: theme.colors.gray300 as unknown as string,
+                backgroundColor: theme.colors.gray300.value,
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
@@ -228,10 +228,10 @@ const SlideshowTemplate = (args) => {
       <div
         style={{
           display: "flex",
-          gap: theme.space["025"] as unknown as string,
+          gap: theme.space["025"].value,
           position: "absolute",
-          insetInlineEnd: theme.space["025"] as unknown as string,
-          insetBlockEnd: theme.space["200"] as unknown as string,
+          insetInlineEnd: theme.space["025"].value,
+          insetBlockEnd: theme.space["200"].value,
           zIndex: 1,
         }}
       >
@@ -254,7 +254,7 @@ const SlideshowTemplate = (args) => {
           >
             <div
               style={{
-                backgroundColor: theme.colors.gray300 as unknown as string,
+                backgroundColor: theme.colors.gray300.value,
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
@@ -469,7 +469,7 @@ const VerticalVideoTemplate = () => {
             <Component.Item key={video.id} id={video.id}>
               <div
                 style={{
-                  marginInlineEnd: theme.space["100"] as unknown as string,
+                  marginInlineEnd: theme.space["100"].value,
                   padding: "2px",
                 }}
               >
@@ -478,7 +478,7 @@ const VerticalVideoTemplate = () => {
                     width: "187px",
                     height: "332px",
                     margin: 0,
-                    marginBlockEnd: theme.space["025"] as unknown as string,
+                    marginBlockEnd: theme.space["025"].value,
                     overflow: "hidden",
                     position: "relative",
                   }}
@@ -521,13 +521,13 @@ const VerticalVideoTemplate = () => {
                 </figure>
                 <div
                   style={{
-                    paddingInline: theme.space["025"] as unknown as string,
+                    paddingInline: theme.space["025"].value,
                   }}
                 >
                   <a
                     href="https://www.washingtonpost.com/video/national/beagel-topper/2022/10/07/3166d0af-d3d3-45eb-abe8-7c1983f2eebb_video.html"
                     style={{
-                      color: theme.colors.gray40 as unknown as string,
+                      color: theme.colors.gray40.value,
                       textDecoration: "none",
                     }}
                     ref={(el) => {
@@ -545,14 +545,14 @@ const VerticalVideoTemplate = () => {
                 </div>
                 <div
                   style={{
-                    paddingInline: theme.space["025"] as unknown as string,
+                    paddingInline: theme.space["025"].value,
                   }}
                 >
                   <a
                     href="https://www.washingtonpost.com/people/washington-post/"
                     style={{
-                      color: theme.colors.gray80 as unknown as string,
-                      fontSize: theme.fontSizes["075"] as unknown as string,
+                      color: theme.colors.gray80.value,
+                      fontSize: theme.fontSizes["075"].value,
                       textDecoration: "none",
                     }}
                     ref={(el) => {
@@ -640,7 +640,7 @@ const VerticalVideoAutoActiveTemplate = () => {
             <Component.Item key={video.id} id={video.id}>
               <div
                 style={{
-                  marginInlineEnd: theme.space["100"] as unknown as string,
+                  marginInlineEnd: theme.space["100"].value,
                   padding: "2px",
                 }}
               >
@@ -649,7 +649,7 @@ const VerticalVideoAutoActiveTemplate = () => {
                     width: "187px",
                     height: "332px",
                     margin: 0,
-                    marginBlockEnd: theme.space["025"] as unknown as string,
+                    marginBlockEnd: theme.space["025"].value,
                     overflow: "hidden",
                     position: "relative",
                   }}
@@ -692,13 +692,13 @@ const VerticalVideoAutoActiveTemplate = () => {
                 </figure>
                 <div
                   style={{
-                    paddingInline: theme.space["025"] as unknown as string,
+                    paddingInline: theme.space["025"].value,
                   }}
                 >
                   <a
                     href="https://www.washingtonpost.com/video/national/beagel-topper/2022/10/07/3166d0af-d3d3-45eb-abe8-7c1983f2eebb_video.html"
                     style={{
-                      color: theme.colors.gray40 as unknown as string,
+                      color: theme.colors.gray40.value,
                       textDecoration: "none",
                     }}
                     ref={(el) => {
@@ -716,14 +716,14 @@ const VerticalVideoAutoActiveTemplate = () => {
                 </div>
                 <div
                   style={{
-                    paddingInline: theme.space["025"] as unknown as string,
+                    paddingInline: theme.space["025"].value,
                   }}
                 >
                   <a
                     href="https://www.washingtonpost.com/people/washington-post/"
                     style={{
-                      color: theme.colors.gray80 as unknown as string,
-                      fontSize: theme.fontSizes["075"] as unknown as string,
+                      color: theme.colors.gray80.value,
+                      fontSize: theme.fontSizes["075"].value,
                       textDecoration: "none",
                     }}
                     ref={(el) => {
@@ -799,8 +799,8 @@ const InteractionsTemplate = () => {
                 style={{
                   width: "200px",
                   height: "200px",
-                  padding: theme.space["100"] as unknown as string,
-                  marginInlineEnd: theme.space["050"] as unknown as string,
+                  padding: theme.space["100"].value,
+                  marginInlineEnd: theme.space["050"].value,
                 }}
               >
                 <p>{i + 1}</p>
