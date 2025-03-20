@@ -1,8 +1,9 @@
 import { useState, useRef } from "react";
 import { userEvent, waitFor, within } from "@storybook/testing-library";
+import { Meta, StoryObj } from "@storybook/react";
 import { expect } from "@storybook/jest";
 import { styled, theme } from "../theme";
-import { Carousel as Component } from "./";
+import { Carousel as Component } from ".";
 import { Box } from "../box";
 import { Button } from "../button";
 import { Icon } from "../icon";
@@ -24,7 +25,9 @@ export default {
     CarouselFooter: Component.Footer,
     CarouselDots: Component.Dots,
   },
-};
+} as Meta<typeof Component.Root>;
+
+type Story = StoryObj<typeof Component.Root>;
 
 const Template = (args) => {
   const [page, setPage] = useState(0);
@@ -60,17 +63,17 @@ const Template = (args) => {
       </Component.Header>
       <Component.Content>
         {items.map((item, i) => (
-          <Component.Item key={item}>
+          <Component.Item key={`${item}-${i}`}>
             <div
               style={{
                 width: "192px",
                 height: "200px",
-                backgroundColor: item,
+                backgroundColor: item.value,
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                borderRadius: theme.radii["025"],
-                marginInlineEnd: theme.space["050"],
+                borderRadius: theme.radii["025"].value,
+                marginInlineEnd: theme.space["050"].value,
               }}
             >
               {i + 1}
@@ -85,17 +88,19 @@ const Template = (args) => {
   );
 };
 
-export const Carousel = Template.bind({});
-Carousel.argTypes = {
-  itemsPerPage: {
-    control: { type: "select" },
-    defaultValue: "auto",
-    options: ["auto", 1, 2, 3, 4],
+export const Carousel: Story = {
+  render: Template,
+  argTypes: {
+    itemsPerPage: {
+      control: { type: "select" },
+      defaultValue: "auto",
+      options: ["auto", 1, 2, 3, 4],
+    },
   },
 };
 
 const StoryLink = ({ href }) => (
-  <div style={{ marginInlineEnd: theme.space["050"] }}>
+  <div style={{ marginInlineEnd: theme.space["050"].value }}>
     <a href={href} tabIndex={-1}>
       <img
         src="https://fakeimg.pl/200x200/ddd/999/?text=Story+Headline&font=museo&font_size=24"
@@ -151,7 +156,7 @@ const CustomButtonsTemplate = (args) => {
           <Component.Item key={`item${i}`} css={{ width: "100%" }}>
             <div
               style={{
-                backgroundColor: theme.colors.gray300,
+                backgroundColor: theme.colors.gray300.value,
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
@@ -167,20 +172,21 @@ const CustomButtonsTemplate = (args) => {
   );
 };
 
-export const CustomButtons = CustomButtonsTemplate.bind({});
-
-CustomButtons.parameters = {
-  chromatic: { disableSnapshot: true },
+export const CustomButtons: Story = {
+  render: CustomButtonsTemplate,
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
 };
 
 const SlideshowTemplate = (args) => {
   const items = new Array(4).fill("");
   const [page, setPage] = useState(0);
   const wrapRef = useRef(false);
-  const [intervalId, setIntervalId] = useState();
+  const [intervalId, setIntervalId] = useState<number | undefined>(undefined);
 
   const handleOnClick = () => {
-    const wrapPages = (currentPage) => {
+    const wrapPages = (currentPage: number) => {
       if (currentPage < items.length - 1) {
         if (wrapRef.current) {
           wrapRef.current = false;
@@ -196,13 +202,14 @@ const SlideshowTemplate = (args) => {
       clearInterval(intervalId);
       setIntervalId(undefined);
     } else {
-      const id = setInterval(() => {
+      const id = window.setInterval(() => {
         setPage(wrapPages);
       }, 1000);
       setPage(wrapPages);
       setIntervalId(id);
     }
   };
+
   return (
     <Component.Root
       {...args}
@@ -217,15 +224,14 @@ const SlideshowTemplate = (args) => {
         }
         setPage(p);
       }}
-      handleP
     >
       <div
         style={{
           display: "flex",
-          gap: theme.space["025"],
+          gap: theme.space["025"].value,
           position: "absolute",
-          insetInlineEnd: theme.space["025"],
-          insetBlockEnd: theme.space["200"],
+          insetInlineEnd: theme.space["025"].value,
+          insetBlockEnd: theme.space["200"].value,
           zIndex: 1,
         }}
       >
@@ -236,7 +242,7 @@ const SlideshowTemplate = (args) => {
           aria-label="Start slide rotation"
           onClick={handleOnClick}
         >
-          <Icon>{intervalId ? <Pause /> : <Play />}</Icon>
+          <Icon label="action">{intervalId ? <Pause /> : <Play />}</Icon>
         </Button>
         <Component.NextButton />
       </div>
@@ -248,7 +254,7 @@ const SlideshowTemplate = (args) => {
           >
             <div
               style={{
-                backgroundColor: theme.colors.gray300,
+                backgroundColor: theme.colors.gray300.value,
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
@@ -267,10 +273,11 @@ const SlideshowTemplate = (args) => {
   );
 };
 
-export const Slideshow = SlideshowTemplate.bind({});
-
-Slideshow.parameters = {
-  chromatic: { disableSnapshot: true },
+export const Slideshow: Story = {
+  render: SlideshowTemplate,
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
 };
 
 const Subtitle = styled("div", {
@@ -305,10 +312,17 @@ const BrightsCarouselTemplate = (args) => {
     },
   ];
 
-  const [focused, setFocused] = useState();
+  interface FocusedItem {
+    url: string;
+  }
+  const [focused, setFocused] = useState<FocusedItem | undefined>(undefined);
 
   const triggerActiveLink = () => {
-    window.open(focused.url);
+    if (focused) {
+      window.open(focused.url);
+    } else {
+      console.error("No focused link available.");
+    }
   };
 
   const handleDescendantFocus = (id) => {
@@ -389,10 +403,11 @@ const BrightsCarouselTemplate = (args) => {
   );
 };
 
-export const BrightsCarousel = BrightsCarouselTemplate.bind({});
-
-BrightsCarousel.parameters = {
-  chromatic: { disableSnapshot: true },
+export const BrightsCarousel: Story = {
+  render: BrightsCarouselTemplate,
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
 };
 
 const VerticalVideoTemplate = () => {
@@ -453,14 +468,17 @@ const VerticalVideoTemplate = () => {
           {videos.map((video) => (
             <Component.Item key={video.id} id={video.id}>
               <div
-                style={{ marginInlineEnd: theme.space["100"], padding: "2px" }}
+                style={{
+                  marginInlineEnd: theme.space["100"].value,
+                  padding: "2px",
+                }}
               >
                 <figure
                   style={{
                     width: "187px",
                     height: "332px",
                     margin: 0,
-                    marginBlockEnd: theme.space["025"],
+                    marginBlockEnd: theme.space["025"].value,
                     overflow: "hidden",
                     position: "relative",
                   }}
@@ -495,17 +513,21 @@ const VerticalVideoTemplate = () => {
                       console.log("button click");
                     }}
                   >
-                    <Icon>
+                    <Icon label="Play">
                       <Play />
                     </Icon>{" "}
                     Play Video
                   </Button>
                 </figure>
-                <div style={{ paddingInline: theme.space["025"] }}>
+                <div
+                  style={{
+                    paddingInline: theme.space["025"].value,
+                  }}
+                >
                   <a
                     href="https://www.washingtonpost.com/video/national/beagel-topper/2022/10/07/3166d0af-d3d3-45eb-abe8-7c1983f2eebb_video.html"
                     style={{
-                      color: theme.colors.gray40,
+                      color: theme.colors.gray40.value,
                       textDecoration: "none",
                     }}
                     ref={(el) => {
@@ -521,12 +543,16 @@ const VerticalVideoTemplate = () => {
                     {video.headline}
                   </a>
                 </div>
-                <div style={{ paddingInline: theme.space["025"] }}>
+                <div
+                  style={{
+                    paddingInline: theme.space["025"].value,
+                  }}
+                >
                   <a
                     href="https://www.washingtonpost.com/people/washington-post/"
                     style={{
-                      color: theme.colors.gray80,
-                      fontSize: theme.fontSizes["075"],
+                      color: theme.colors.gray80.value,
+                      fontSize: theme.fontSizes["075"].value,
                       textDecoration: "none",
                     }}
                     ref={(el) => {
@@ -552,6 +578,199 @@ const VerticalVideoTemplate = () => {
 };
 
 export const VerticalVideo = VerticalVideoTemplate.bind({});
+
+// ----------------------------------------------------------------
+// This story demonstrates the new 'firstChildActive' prop for useActiveDescendant.
+// When enabled, the first descendant is should be automatically activated on focus.
+const VerticalVideoAutoActiveTemplate = () => {
+  const videos = [
+    { id: "title-1", headline: "Title 1", byline: "Author 1" },
+    { id: "title-2", headline: "Title 2", byline: "Author 2" },
+    { id: "title-3", headline: "Title 3", byline: "Author 3" },
+  ];
+
+  const containerRef = useRef(null);
+  // Enable auto activation by passing true as the second argument.
+  const { addDescendant, handleDescendantFocus, contentProps } =
+    useActiveDescendant(containerRef, true);
+
+  return (
+    <Component.Root itemsPerPage={1} onDescendantFocus={handleDescendantFocus}>
+      <Component.Header
+        css={{
+          borderBlockStart: `1px solid ${theme.colors.primary}`,
+          paddingBlockStart: theme.space["050"],
+        }}
+      >
+        <Component.HeaderContent>
+          <Component.Title css={{ fontSize: theme.fontSizes["100"] }}>
+            VIDEO CAROUSEL - Auto Activate First Child
+          </Component.Title>
+        </Component.HeaderContent>
+      </Component.Header>
+      <div style={{ position: "relative" }}>
+        <Component.PreviousButton
+          variant="secondary"
+          css={{
+            position: "absolute",
+            insetBlockStart: "50%",
+            insetInlineStart: "0",
+            transform: "translate(-50%, -50%)",
+            zIndex: 1,
+            "&:disabled": { display: "none" },
+          }}
+        />
+        <Component.NextButton
+          variant="secondary"
+          css={{
+            position: "absolute",
+            insetBlockStart: "50%",
+            insetInlineStart: "100%",
+            transform: "translate(-50%, -50%)",
+            zIndex: 1,
+            "&:disabled": { display: "none" },
+          }}
+        />
+        <Component.Content
+          {...contentProps}
+          ref={containerRef}
+          data-testid="carousel-content"
+        >
+          {videos.map((video) => (
+            <Component.Item key={video.id} id={video.id}>
+              <div
+                style={{
+                  marginInlineEnd: theme.space["100"].value,
+                  padding: "2px",
+                }}
+              >
+                <figure
+                  style={{
+                    width: "187px",
+                    height: "332px",
+                    margin: 0,
+                    marginBlockEnd: theme.space["025"].value,
+                    overflow: "hidden",
+                    position: "relative",
+                  }}
+                >
+                  <img
+                    alt="a very good boy"
+                    src="https://www.washingtonpost.com/resizer/drBpb5wRPLd4rcxcAW71ZmwPYdQ=/376x658/filters:quality(80)/posttv-thumbnails-prod.s3.amazonaws.com/10-07-2022/t_927b58b469fe41c6a1f4a46e7e9ea96d_name_Screen_Shot_2022_10_07_at_1_05_42_PM.png"
+                    style={{
+                      height: "100%",
+                      filter: "grayscale(100%)",
+                      display: "block",
+                      objectFit: "cover",
+                    }}
+                  />
+                  <Button
+                    variant="primary"
+                    id={`${video.id}-btn`}
+                    css={{
+                      position: "absolute",
+                      insetInlineStart: theme.space["050"],
+                      insetBlockEnd: theme.space["050"],
+                    }}
+                    ref={(el) => {
+                      addDescendant({
+                        element: el,
+                        id: `${video.id}-btn`,
+                        parentId: video.id,
+                      });
+                    }}
+                    tabIndex={-1}
+                    onClick={() => {
+                      console.log("button click");
+                    }}
+                  >
+                    <Icon label="Play">
+                      <Play />
+                    </Icon>{" "}
+                    Play Video
+                  </Button>
+                </figure>
+                <div
+                  style={{
+                    paddingInline: theme.space["025"].value,
+                  }}
+                >
+                  <a
+                    href="https://www.washingtonpost.com/video/national/beagel-topper/2022/10/07/3166d0af-d3d3-45eb-abe8-7c1983f2eebb_video.html"
+                    style={{
+                      color: theme.colors.gray40.value,
+                      textDecoration: "none",
+                    }}
+                    ref={(el) => {
+                      addDescendant({
+                        element: el,
+                        id: `${video.id}-link1`,
+                        parentId: video.id,
+                      });
+                    }}
+                    id={`${video.id}-link1`}
+                    tabIndex={-1}
+                  >
+                    {video.headline}
+                  </a>
+                </div>
+                <div
+                  style={{
+                    paddingInline: theme.space["025"].value,
+                  }}
+                >
+                  <a
+                    href="https://www.washingtonpost.com/people/washington-post/"
+                    style={{
+                      color: theme.colors.gray80.value,
+                      fontSize: theme.fontSizes["075"].value,
+                      textDecoration: "none",
+                    }}
+                    ref={(el) => {
+                      addDescendant({
+                        element: el,
+                        id: `${video.id}-link2`,
+                        parentId: video.id,
+                      });
+                    }}
+                    id={`${video.id}-link2`}
+                    tabIndex={-1}
+                  >
+                    By {video.byline}
+                  </a>
+                </div>
+              </div>
+            </Component.Item>
+          ))}
+        </Component.Content>
+      </div>
+    </Component.Root>
+  );
+};
+
+export const VerticalVideoAutoActive: Story = {
+  render: VerticalVideoAutoActiveTemplate,
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
+};
+
+// Interaction test for VerticalVideoAutoActive
+VerticalVideoAutoActive.play = async ({ canvasElement }) => {
+  const canvas = within(canvasElement);
+  // We show both light and dark themes in the same story for brevity. And they would share the same data-testid.
+  const contentContainers = canvas.getAllByTestId("carousel-content");
+  const contentContainer = contentContainers[0];
+
+  contentContainer.focus();
+
+  await waitFor(() => {
+    expect(contentContainer).toHaveAttribute(
+      "aria-activedescendant",
+      "title-1" // This is the first item and it should be active
+    );
+  });
+};
 
 const InteractionsTemplate = () => {
   const items = [{ id: "item-1" }, { id: "item-2" }, { id: "item-3" }];
@@ -580,8 +799,8 @@ const InteractionsTemplate = () => {
                 style={{
                   width: "200px",
                   height: "200px",
-                  padding: theme.space["100"],
-                  marginInlineEnd: theme.space["050"],
+                  padding: theme.space["100"].value,
+                  marginInlineEnd: theme.space["050"].value,
                 }}
               >
                 <p>{i + 1}</p>
@@ -612,9 +831,11 @@ const InteractionsTemplate = () => {
   );
 };
 
-export const Interactions = InteractionsTemplate.bind({});
-Interactions.parameters = {
-  chromatic: { disableSnapshot: true },
+export const Interactions: Story = {
+  render: InteractionsTemplate,
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
 };
 
 Interactions.play = async ({ canvasElement }) => {
@@ -629,8 +850,8 @@ Interactions.play = async ({ canvasElement }) => {
 };
 
 const InternalFocusTemplate = () => {
-  const [asyncState, setAsyncState] = useState(false);
-  const containerRef = useRef();
+  const [asyncState, setAsyncState] = useState<string>("");
+  const containerRef = useRef<HTMLDivElement>(null);
   const { handleDescendantFocus, contentProps, addDescendant, focusClassName } =
     useActiveDescendant(containerRef);
   return (
@@ -698,17 +919,19 @@ const InternalFocusTemplate = () => {
   );
 };
 
-export const InternalFocusInteractions = InternalFocusTemplate.bind({});
-
-InternalFocusInteractions.parameters = {
-  chromatic: { viewports: [1024], disableSnapshot: true },
+export const InternalFocusInteractions: Story = {
+  render: InternalFocusTemplate,
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
 };
-function hasClassContaining(el, str) {
-  return Array.from(el.classList).findIndex((cls) =>
-    cls.toLowerCase().includes(str)
-  ) !== -1
-    ? true
-    : false;
+
+function hasClassContaining(el: HTMLElement, str: string): boolean {
+  return (
+    Array.from(el.classList).findIndex((cls: string) =>
+      cls.toLowerCase().includes(str)
+    ) !== -1
+  );
 }
 
 InternalFocusInteractions.play = async ({ canvasElement }) => {
