@@ -1,7 +1,7 @@
-import React, { useMemo, useState, useEffect, use } from "react";
-import { screen, userEvent, waitFor } from "@storybook/testing-library";
+import React, { useMemo, useState, useEffect } from "react";
+import { screen, userEvent } from "@storybook/testing-library";
 import { expect, jest } from "@storybook/jest";
-import { Box, theme } from "..";
+import { Box } from "..";
 import { matchSorter } from "match-sorter";
 import { InputSearch } from "./";
 import { cities } from "./cities";
@@ -38,14 +38,6 @@ const Template: StoryFn<typeof InputSearch.Root> = (args) => {
   const [term, setTerm] = useState("");
 
   const results: { city: string; state: string }[] | null = useCityMatch(term);
-
-  // const inputSearchMarginPadding = {
-  //   display: "block",
-  //   marginBlock: `calc(-1*${theme.space["050"]})`,
-  //   marginInline: `calc(-1*${theme.space["075"]})`,
-  //   paddingBlock: theme.space["050"],
-  //   paddingInline: theme.space["075"],
-  // };
 
   return (
     <Box css={{}}>
@@ -255,21 +247,6 @@ export const Scroll = {
     chromatic: { disableSnapshot: true },
   },
 };
-
-// {results?.slice(0, 2).map((result) => (
-//   <InputSearch.ListItem
-//     key={`${result.city.toLowerCase()}, ${result.state.toLowerCase()}`}
-//     value={`${result.city}, ${result.state}`}
-//     // onClick={() => console.log("boo")}
-//   >
-//     {/* <InputSearch.ItemText
-//       css={inputSearchMarginPadding}
-//       onClick={() => console.log("boo")}
-//     >
-//       {`${result.city}, ${result.state}`}
-//     </InputSearch.ItemText> */}
-//   </InputSearch.ListItem>
-// ))}
 
 const ControlledTemplate: StoryFn<typeof InputSearch.Root> = (args) => {
   const [term, setTerm] = useState("");
