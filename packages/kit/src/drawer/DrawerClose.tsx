@@ -50,7 +50,6 @@ export const DrawerClose = React.forwardRef<
     return (
       <CloseButton
         ref={ref}
-        role="button"
         onClick={() => {
           context.onOpenChange(false);
         }}

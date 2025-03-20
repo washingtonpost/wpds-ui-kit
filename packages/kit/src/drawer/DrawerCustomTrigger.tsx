@@ -30,7 +30,6 @@ export const DrawerCustomTrigger: React.FC<DrawerCustomTriggerProps> = ({
         }
       }}
       ref={context.triggerRef}
-      role="button"
       tabIndex={0}
       {...props}
     >
