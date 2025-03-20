@@ -189,6 +189,7 @@ export const DrawerContent = React.forwardRef<
       <FocusScope loop={loopFocus} trapped={trapFocus} asChild>
         <StyledContainer
           ref={ref}
+          role="dialog"
           id={context.contentId}
           data-position={position}
           data-state={context.open ? "open" : "closed"}
