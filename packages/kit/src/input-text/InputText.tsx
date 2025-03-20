@@ -110,7 +110,7 @@ export interface InputTextProps
   success?: boolean;
   /** Supported input element types
    * @default text */
-  type?: "text" | "search" | "url" | "tel" | "email" | "password";
+  type?: "text" | "number" | "search" | "url" | "tel" | "email" | "password";
   /** The input element value for controlled components */
   value?: string;
   /** Overrides for the input text styles. Padding overrides affect the input container and  */
