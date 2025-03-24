@@ -2,6 +2,10 @@ import * as React from "react";
 import { styled } from "../theme";
 
 const parseValue = (value: string): [number, string] => {
+  if (value.length > 1000) {
+    throw new Error("Input too long");
+  }
+
   const match = value.match(/(\d+)([a-zA-Z%]+)/);
   if (!match) return [Number(value), ""];
   return [Number(match[1]), match[2]];
