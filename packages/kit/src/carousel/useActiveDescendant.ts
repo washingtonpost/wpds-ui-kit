@@ -13,7 +13,7 @@ type MapEntry = [
   { element: HTMLElement; children?: Map<string, { element: HTMLElement }> }
 ];
 
-export const useActiveDescendant = (containerRef) => {
+export const useActiveDescendant = (containerRef, firstChildActive = false) => {
   const [descendantId, setDescendantId] = useState<string>();
   const tree = useRef(new Map());
   const [activeParentId, setActiveParentId] = useState<string>();
@@ -221,7 +221,23 @@ export const useActiveDescendant = (containerRef) => {
       onKeyDown: handleKeyDown,
       onKeyUp: handleKeyUp,
       onMouseDown: handleMouseDown,
-      onFocus: () => setHasFocus(true),
+      onFocus: () => {
+        setHasFocus(true);
+        // this should auto-activate first child on focus only if the firstChildActive is active and no active child is set.
+        if (firstChildActive && !activeChildId) {
+          const firstParentEntry = tree.current.entries().next().value;
+          if (firstParentEntry) {
+            const [parentKey, parentData] = firstParentEntry;
+            const firstChildEntry = parentData.children.entries().next().value;
+            if (firstChildEntry) {
+              const [childKey] = firstChildEntry;
+              setActiveParentId(parentKey);
+              setActiveChildId(childKey);
+              setDescendantId(childKey);
+            }
+          }
+        }
+      },
       onBlur: () => setHasFocus(false),
       "aria-activedescendant": descendantId,
     },

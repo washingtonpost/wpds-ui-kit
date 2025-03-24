@@ -87,6 +87,20 @@ const UnselectedTemplate: StoryFn<typeof Select.Root> = (args) => {
             <Select.Item value="chile">Chile</Select.Item>
             <Select.Item value="ecuador">Ecuador</Select.Item>
           </Select.Group>
+          <Select.Group label="Afria">
+            <Select.Item value="roc">Republic of Congo</Select.Item>
+            <Select.Item value="ethiopia">Ethiopia</Select.Item>
+            <Select.Item value="south-africa">South Africa</Select.Item>
+            <Select.Item value="kenya">Kenya</Select.Item>
+            <Select.Item value="nigeria">Nigeria</Select.Item>
+          </Select.Group>
+          <Select.Group label="Asia">
+            <Select.Item value="proc">People Republic of China</Select.Item>
+            <Select.Item value="japan">Japan</Select.Item>
+            <Select.Item value="vietnam">Vietnam</Select.Item>
+            <Select.Item value="sk">South Korea</Select.Item>
+            <Select.Item value="nk">North Korea</Select.Item>
+          </Select.Group>
         </Select.Content>
       </Select.Root>
     </>
@@ -115,11 +129,24 @@ const ControlledTemplate: StoryFn<typeof Select.Root> = (args) => {
       </Select.Trigger>
       <Select.Content>
         <Select.Item value="france">France</Select.Item>
-        <Select.Item value="united-kingdom">United Kingdom</Select.Item>
+        <Select.Item value="united-kingdom">
+          United Kingdom - Scotland, Ireland, Wales, Great Britain, and the
+          commonwealth states of Canada, Australia, Turks and Caicos
+        </Select.Item>
         <Select.Item value="spain">Spain</Select.Item>
         <Select.Item value="peru">Peru</Select.Item>
         <Select.Item value="chile">Chile</Select.Item>
         <Select.Item value="ecuador">Ecuador</Select.Item>
+        <Select.Item value="roc">Republic of Congo</Select.Item>
+        <Select.Item value="ethiopia">Ethiopia</Select.Item>
+        <Select.Item value="south-africa">South Africa</Select.Item>
+        <Select.Item value="kenya">Kenya</Select.Item>
+        <Select.Item value="nigeria">Nigeria</Select.Item>
+        <Select.Item value="proc">People Republic of China</Select.Item>
+        <Select.Item value="japan">Japan</Select.Item>
+        <Select.Item value="vietnam">Vietnam</Select.Item>
+        <Select.Item value="sk">South Korea</Select.Item>
+        <Select.Item value="nk">North Korea</Select.Item>
       </Select.Content>
     </Select.Root>
   );
