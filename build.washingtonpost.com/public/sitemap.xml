@@ -109,6 +109,10 @@
   </url>
 
   <url>
+    <loc>https://build.washingtonpost.com/components/skeleton</loc>
+  </url>
+
+  <url>
     <loc>https://build.washingtonpost.com/components/switch</loc>
   </url>
 

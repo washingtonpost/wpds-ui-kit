@@ -1,3 +1,4 @@
+import React from "react";
 import { Skeleton } from ".";
 import { Box } from "../box";
 import { Card } from "../card";
@@ -22,6 +23,7 @@ type Story = StoryObj<
     textAlign: SkeletonLineProps["textAlign"];
     fontSize: SkeletonLineProps["fontSize"];
     density: SkeletonCircleProps["density"];
+    portrait: SkeletonBlockProps["portrait"];
   }
 >;
 
@@ -41,10 +43,13 @@ export const Block: Story = {
       options: ["1:1", "2:1", "3:2", "4:3", "5:4", "16:9", "16:10", "21:9"],
       control: "select",
     },
+    portrait: {
+      control: "boolean",
+    },
   },
   render: (args) => (
     <Skeleton.Root width={"300"} height={"300"}>
-      <Skeleton.Block aspectRatio={args.aspectRatio} />
+      <Skeleton.Block aspectRatio={args.aspectRatio} portrait={args.portrait} />
     </Skeleton.Root>
   ),
 };

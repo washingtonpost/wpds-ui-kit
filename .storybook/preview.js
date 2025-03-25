@@ -37,10 +37,8 @@ export const parameters = {
 
 const Panel = styled("div", {
   padding: theme.space[200],
-  marginTop: "-$100",
-  marginBottom: "-$100",
-  width: "50%",
-  minHeight: "100vh",
+  width: "100%",
+  minHeight: "50vh",
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
@@ -51,6 +49,11 @@ const Panel = styled("div", {
         backgroundColor: theme.colors.gray500,
       },
     },
+  },
+  "@notSm": {
+    minHeight: "100vh",
+    marginTop: "-$100",
+    marginBottom: "-$100",
   },
 });
 
@@ -87,6 +90,10 @@ export const decorators = [
           height: "50%",
           justifyContent: "center",
           alignItems: "center",
+          flexDirection: "column",
+          "@notSm": {
+            flexDirection: "row",
+          },
         }}
       >
         <GlobalStyles>
