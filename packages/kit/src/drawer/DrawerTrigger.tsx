@@ -14,7 +14,6 @@ export const DrawerTrigger: React.FC<DrawerTriggerProps> = ({
   return (
     <Button
       ref={context.triggerRef}
-      role="button"
       aria-haspopup="dialog"
       aria-expanded={context.open || false}
       aria-controls={context.contentId}
