@@ -46,7 +46,8 @@ const TachyonsConverter = () => {
         flexWrap: 'wrap',
         gap: theme.space['050'],
         marginTop: theme.space['050'],
-        marginBottom: theme.space['050']
+        marginBottom: theme.space['050'],
+        backgroundColor: theme.colors['background-forSurfaces'],
       }}
       >
         {tokens.map((token, idx) => (
@@ -54,12 +55,13 @@ const TachyonsConverter = () => {
             as="span"
             key={token}
             css={{
-              padding: "$025 $050",
+              padding: "$050 $100",
               borderRadius: "$025",
-              backgroundColor: tachyonsToStitches[token] ? theme.colors.success : theme.colors.error,
-              color: tachyonsToStitches[token] ? theme.colors.successContainer : theme.colors.errorContainer,
+              backgroundColor: tachyonsToStitches[token] ? theme.colors.successContainer : theme.colors.errorContainer,
+              border: `1px solid ${tachyonsToStitches[token] ? theme.colors.success : theme.colors.error}`,
+              color: theme.colors.onMessage,
               fontWeight: theme.fontWeights.bold,
-              fontSize: theme.fontSizes['075'],
+              fontSize: theme.fontSizes['100'],
               display: 'inline-block'
             }}
           >
