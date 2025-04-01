@@ -9,10 +9,6 @@
   </url>
 
   <url>
-    <loc>https://build.washingtonpost.com/components/Pagination</loc>
-  </url>
-
-  <url>
     <loc>https://build.washingtonpost.com/components/accordion</loc>
   </url>
 
@@ -94,6 +90,10 @@
 
   <url>
     <loc>https://build.washingtonpost.com/components/navigation-menu</loc>
+  </url>
+
+  <url>
+    <loc>https://build.washingtonpost.com/components/pagination</loc>
   </url>
 
   <url>

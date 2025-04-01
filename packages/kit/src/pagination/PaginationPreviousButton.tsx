@@ -1,0 +1,86 @@
+import React from "react";
+import { Button } from "../button";
+// import { Button } from "@washingtonpost/wpds-ui-kit";
+import { Icon } from "../icon";
+import { ChevronLeft } from "@washingtonpost/wpds-assets";
+import { styled, theme } from "../theme";
+// import { PaginationContext } from "./PaginationRoot";
+import type * as WPDS from "../theme";
+
+const NAME = "PaginationPreviousButton";
+
+const StyledButton = styled(Button, {
+  variants: {
+    disabled: {
+      true: {
+        color: theme.colors.onDisabled,
+        pointerEvents: "none",
+      },
+    },
+  },
+});
+
+export type PaginationPreviousButtonProps = {
+  /** Function to change current page */
+  changePage: React.Dispatch<React.SetStateAction<number>>;
+  /** Override CSS */
+  css?: WPDS.CSS;
+  /** The current page */
+  currentPage: number;
+  /** Current page slug */
+  slug: string;
+  /** Total number of pages to display */
+  totalPages: number;
+} & React.ComponentPropsWithRef<typeof Button>;
+
+export const PaginationPreviousButton = React.forwardRef<
+  HTMLButtonElement,
+  PaginationPreviousButtonProps
+>(({ css, changePage, currentPage, slug, totalPages, ...props }, ref) => {
+  // const { page, setPage, totalPages } = React.useContext(PaginationContext);
+
+  const handleClick = () => {
+    if (currentPage > 1) {
+      return changePage(currentPage - 1);
+    }
+  };
+
+  const isDisabled = currentPage === 1;
+
+  const firstPage = currentPage === 1;
+
+  const href = firstPage ? "" : `${slug}?page=${currentPage - 1}`;
+
+  const rel = !firstPage ? "prev" : "";
+
+  return (
+    <StyledButton
+      aria-label="previous page"
+      as="a"
+      css={{
+        width: "$250",
+        height: "$200",
+        minWidth: "$250",
+        paddingRight: 0,
+        paddingLeft: 0,
+        ...css,
+      }}
+      density="compact"
+      disabled={isDisabled}
+      href={href}
+      icon="left"
+      isOutline={false}
+      onClick={handleClick}
+      ref={ref}
+      rel={rel}
+      variant="secondary"
+      {...props}
+    >
+      <Icon label="Previous" size="100">
+        <ChevronLeft />
+      </Icon>
+    </StyledButton>
+  );
+});
+
+PaginationPreviousButton.displayName = NAME;
