@@ -56,8 +56,8 @@ const TachyonsConverter = () => {
             as="span"
             key={token}
             css={{
-              padding: `${theme.space['025']} ${theme.space['050']}`,
-              borderRadius: theme.radii[0o25],
+              padding: "$025 $050",
+              borderRadius: "$025",
               backgroundColor: tachyonsToStitches[token] ? theme.colors.success : theme.colors.error,
               color: tachyonsToStitches[token] ? theme.colors.successContainer : theme.colors.errorContainer,
               fontWeight: theme.fontWeights.bold,
