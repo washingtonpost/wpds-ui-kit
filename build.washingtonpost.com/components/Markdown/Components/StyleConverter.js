@@ -1,9 +1,7 @@
-import { Box, InputText, theme } from '@washingtonpost/wpds-ui-kit'; // Import WPDS components
+import { Box, InputText, theme } from '@washingtonpost/wpds-ui-kit'; 
 import React, { useState } from 'react';
 import Pre from './Pre';
-// import Pre from './Pre';
-import tachyonsToStitches from './tachyonsToStitches.json'; // Assuming you have a JSON file with the mapping
-
+import tachyonsToStitches from './tachyonsToStitches.json';
 
 const convertClassesToStyles = (classString) => {
   const classes = classString.trim().split(/\s+/);
