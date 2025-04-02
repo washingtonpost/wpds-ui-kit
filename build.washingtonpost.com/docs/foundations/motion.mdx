@@ -1,0 +1,458 @@
+---
+order: 13
+title: Motion
+description: Color token values are defined by their context. There are two contexts we currently support a "light" and "dark" context. Toggle the sun/moon in the top right of the site to see each context.
+---
+
+<TabsRoot defaultValue="Overview">
+<TabsList>
+<TabsTrigger value="Overview">Overview</TabsTrigger>
+<TabsTrigger value="Principles">Principles</TabsTrigger>
+<TabsTrigger value="Motion Tokens">Tokens</TabsTrigger>
+</TabsList>
+
+<TabsContent value="Overview">
+
+<BR />
+
+## Duration
+
+Duration controls how long an animation takes to complete, ranging from ultra-quick micro-interactions to longer, more elaborate transitions.
+[View duration tokens.]()
+
+- **Quick Transitions** should use duration tokens between short and xxx-short.
+- **Standard Animations** should use short and moderate duration tokens.
+- **Complex Animations** should use duration tokens between moderate to xxx-long.
+
+<BR />
+
+---
+
+## Transformation
+
+Tranform tokens provide precise control over how elements change positions, scale, or rotate during animations. [View transformation tokens.]()
+
+- **Fade** controls opacity for elements appearing (0% to 100%) or diappearing (100% to 0%).
+- **Rotation** changes an element's orientation around its center point by specifying degrees of clockwise or counterclockwise rotation.
+- **Scale** changes an element's size by adjusting its dimensions, either uniformly (maintaining proportions by adjusting both X and Y values) or non-uniformly (modifying width and height independently by adjusting X or Y values separately).
+- **Slide** moves elements between positions, with elements either entering (slide-in) or exiting (slide-out) the screen.
+
+---
+
+## Easing
+
+Easing functions define how animations progress over time, making movements feel more natural and engaging. [View ease tokens.]()
+
+- **Ease-in** starts slow and accelerates towards the end (like a car gaining speed), making them ideal for elements leaving the screen, fade-out animations, and objects falling due to gravity.
+- **Ease-out** starts fast and decelerates towards the end (lie a car coming to a stop), and are ideal for elements entering the screen, pop-up menus and modals, fade-in animations, and objects falling due to gravity.
+- **Ease-in-out** provides smooth transitions by starting slowly, accelerating in the middle, and decelerating at the end - making them perfect for state transitions, page changes, and complex UI interations that remain visible on screen.
+
+</TabsContent>
+
+<TabsContent value="Principles">
+
+<BR />
+
+## Types of Motion
+
+In the dynamic world of news media, The Washington Post's motion design strategy leverages three distinct styles to engage audiences and deliver information effectively across various touch-points in the user experience.
+
+- **Motion in storytelling is dynamic and informative,** bringing narratives to life and enhancing reading experience and comprehension. It can also emphasize immediacy of breaking news reporting.
+- **Motion in branding is expressive,** evoking emotion to create memorable experiences and strengthen the connection between the user and The Washington Post. Motion can also help to reinforce our personality and values.
+- **Motion for engagement has a functional purpose,** such as guiding users attention, clarifying relationships between elements, streamlining interactions, reducing cognitive load, and maintaining predictable behavior across interfaces.
+
+<BR />
+
+---
+
+## Guidance
+
+### Support motion preferences
+
+Enable users with vestibular disorders or motion sensitivity to customize their experience by including options to reduce or disable animations.
+
+### Ensure static alternatives are available
+
+Make sure users can access all information and functionality without requiring motion or animation elements.
+
+### Allow time for interaction
+
+Set appropriate animation durations to ensure users can fully comprehend and interact with moving elements before they change or disappear.
+
+### Respect user flow
+
+Animations should enhance rather than hinder the user experience by keeping interactive elements responsive and avoiding unnecessary delays in core functionality.
+
+</TabsContent>
+
+<TabsContent value="Motion Tokens">
+<BR />
+
+## Table of contents
+
+- [Duration](/foundations/motion#Duration)
+- [Transformation](/foundations/motion#Font%20fade)
+- [Transition](/foundations/motion#Font%20ease-in)
+
+---
+
+## Duration
+
+Note: To enable animated preview, hover over shape.
+
+```jsx withPreview
+export default function Example() {
+  return <div>Coded for duration example</div>;
+}
+```
+
+<Table
+  headers={["Name", "Preview", "Value", "Description"]}
+  data={[
+    [
+      "xxx-short",
+      "",
+      "50ms",
+      "Ultra-quick micro-interactions for immeidate button and cursor feedback.",
+    ],
+    [
+      "xx-short",
+      "",
+      "100ms",
+      "Very brief transitions for hover states and opacity changes.",
+    ],
+    [
+      "x-short",
+      "",
+      "200ms",
+      "Quick transitions for tooltips and small transform effects.",
+    ],
+    [
+      "short",
+      "",
+      "300ms",
+      "Standard duration for drawer openings and menu expansions.",
+    ],
+    [
+      "moderate",
+      "",
+      "500ms",
+      "Medium-length animations for modal dialogues and panel movements.",
+    ],
+    [
+      "long",
+      "",
+      "700ms",
+      "Extended animations for complex component transformations.",
+    ],
+    [
+      "x-long",
+      "",
+      "1000ms",
+      "Lengthy animations for full-screen transitions and sequences.",
+    ],
+    [
+      "xx-long",
+      "",
+      "1200ms",
+      "Very long animations for elaborate entrance and storytelling elements.",
+    ],
+    [
+      "xxx-long",
+      "",
+      "1500ms",
+      "Maxium duration for sophisticated loading and reveal animations.",
+    ],
+  ]}
+/>
+
+<BR size="xl" />
+
+---
+
+## Fade
+
+Remember to pair transformation motion tokens with duration tokens for consistent timing.
+Note: To enable animated preview, hover over shape.
+
+```jsx withPreview
+export default function Example() {
+  return <div>Coded for duration example</div>;
+}
+```
+
+<Table
+  headers={["Name", "Preview", "Value", "Description"]}
+  data={[
+    ["fadeIn", "", "-", "Opacity changes from 0% to 100%"],
+    ["fadeOut", "", "-", "Opacity changes from 100% to 0%"],
+  ]}
+/>
+
+<BR size="xl" />
+
+---
+
+## Rotation
+
+Remember to pair transformation motion tokens with duration tokens for consistent timing.
+Note: To enable animated preview, hover over shape.
+
+```jsx withPreview
+export default function Example() {
+  return <div>Coded for duration example</div>;
+}
+```
+
+<Table
+  headers={["Name", "Preview", "Value", "Description"]}
+  data={[
+    [
+      "rotateLeft-45deg",
+      "",
+      "-",
+      "Rotates element 45 degrees counterclockwise from its center point, maintaining position.",
+    ],
+    [
+      "rotateLeft-90deg",
+      "",
+      "-",
+      "Rotates element 90 degrees counterclockwise from its center point, maintaining position.",
+    ],
+    [
+      "rotateLeft-180deg",
+      "",
+      "-",
+      "Rotates element 180 degrees counterclockwise from its center point, maintaining position.",
+    ],
+    [
+      "rotateLeft-360deg",
+      "",
+      "-",
+      "Rotates element 360 degrees counterclockwise from its center point, maintaining position.",
+    ],
+    [
+      "rotateRight-45deg",
+      "",
+      "-",
+      "Rotates element 45 degrees clockwise from its center point, maintaining position.",
+    ],
+    [
+      "rotateRight-90deg",
+      "",
+      "-",
+      "Rotates element 90 degrees clockwise from its center point, maintaining position.",
+    ],
+    [
+      "rotateRight-180deg",
+      "",
+      "-",
+      "Rotates element 180 degrees clockwise from its center point, maintaining position.",
+    ],
+    [
+      "rotateRight-360deg",
+      "",
+      "-",
+      "Rotates element 360 degrees clockwise from its center point, maintaining position.",
+    ],
+  ]}
+/>
+
+<BR size="xl" />
+
+---
+
+## Scale
+
+Remember to pair transformation motion tokens with duration tokens for consistent timing.
+Note: To enable animated preview, hover over shape.
+
+```jsx withPreview
+export default function Example() {
+  return <div>Coded for duration example</div>;
+}
+```
+
+<Table
+  headers={["Name", "Preview", "Value", "Description"]}
+  data={[
+    [
+      "scaleDown-left",
+      "",
+      "-",
+      "Reduces element width from right to left, Y-axis maintains position.",
+    ],
+    [
+      "scaleDown-right",
+      "",
+      "-",
+      "Reduces element width from left to right, Y-axis maintains position.",
+    ],
+    [
+      "scaleDown-top",
+      "",
+      "-",
+      "Reduces element height from bottom to top, X-axis maintains position.",
+    ],
+    [
+      "scaleDown-bottom",
+      "",
+      "-",
+      "Reduces element height from top to bottom, X-axis maintains position.",
+    ],
+    [
+      "scaleDown-center",
+      "",
+      "-",
+      "Reduces element height from all right, left, top, and bottom edges towards the center.",
+    ],
+    [
+      "scaleUp-left",
+      "",
+      "-",
+      "Increases element width from right to left, Y-axis maintains position.",
+    ],
+    [
+      "scaleUp-right",
+      "",
+      "-",
+      "Increases element width from left to right, Y-axis maintains position.",
+    ],
+    [
+      "scaleUp-top",
+      "",
+      "-",
+      "Increases element height from bottom to top, X-axis maintains position.",
+    ],
+    [
+      "scaleUp-bottom",
+      "",
+      "-",
+      "Increases element height from top to bottom, X-axis maintains position.",
+    ],
+    [
+      "scaleUp-center",
+      "",
+      "-",
+      "Increases element height from all right, left, top, and bottom edges towards the center.",
+    ],
+  ]}
+/>
+
+<BR size="xl" />
+
+---
+
+## Slide
+
+Remember to pair transformation motion tokens with duration tokens for consistent timing.
+Note: To enable animated preview, hover over shape.
+
+```jsx withPreview
+export default function Example() {
+  return <div>Coded for duration example</div>;
+}
+```
+
+<Table
+  headers={["Name", "Preview", "Value", "Description"]}
+  data={[
+    [
+      "slideIn-left",
+      "",
+      "-",
+      "Moves element into view from the left side of the screen, maintaining Y-axis position.",
+    ],
+    [
+      "slideIn-right",
+      "",
+      "-",
+      "Moves element into view from the right side of the screen, maintaining Y-axis position.",
+    ],
+    [
+      "slideIn-up",
+      "",
+      "-",
+      "Moves element into view from the bottom of the screen, maintaining X-axis position.",
+    ],
+    [
+      "slideIn-down",
+      "",
+      "-",
+      "Moves element into view from the top of the screen, maintaining X-axis position.",
+    ],
+    [
+      "slideOut-left",
+      "",
+      "-",
+      "Moves element out of view from the left side of the screen, maintaining Y-axis position.",
+    ],
+    [
+      "slideOut-right",
+      "",
+      "-",
+      "Moves element out of view from the right side of the screen, maintaining Y-axis position.",
+    ],
+    [
+      "slideOut-up",
+      "",
+      "-",
+      "Moves element out of view from the bottom of the screen, maintaining X-axis position.",
+    ],
+    [
+      "slideOut-down",
+      "",
+      "-",
+      "Moves element out of view from the top of the screen, maintaining X-axis position.",
+    ],
+  ]}
+/>
+
+<BR size="xl" />
+
+---
+
+## Easing
+
+Remember to pair transition motion tokens with duration tokens for consistent timing.
+Note: To enable animated preview, hover over shape.
+
+```jsx withPreview
+export default function Example() {
+  return <div>Coded for duration example</div>;
+}
+```
+
+<Table
+  headers={["Name", "Preview", "Value", "Description"]}
+  data={[
+    [
+      "ease-in",
+      "",
+      "-",
+      "Starts slow and accelerates towards the end, like a car gaining.",
+    ],
+    [
+      "ease-out",
+      "",
+      "-",
+      "Starts fast and decelerates towards the end, like a car coming to a stop.",
+    ],
+    [
+      "ease-in-out",
+      "",
+      "-",
+      "Starts slow, speeds up in the middle, then slows down at the end,",
+    ],
+  ]}
+/>
+
+<BR size="xl" />
+
+---
+
+</TabsContent>
+
+</TabsRoot>
+
+<BR />
