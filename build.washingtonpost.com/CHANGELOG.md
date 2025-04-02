@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.12.0](https://github.com/washingtonpost/wpds-docs/compare/v2.11.1...v2.12.0) (2025-04-02)
+
+### Bug Fixes
+
+- prettify ([#713](https://github.com/washingtonpost/wpds-docs/issues/713)) ([2340650](https://github.com/washingtonpost/wpds-docs/commit/2340650b07a46e3c09020cb598001050e72028ef))
+
+### Features
+
+- rebuilt tachyons converter ([#712](https://github.com/washingtonpost/wpds-docs/issues/712)) ([d58f2a0](https://github.com/washingtonpost/wpds-docs/commit/d58f2a0dd957ae671e01e59824b7c13eaaf4c4a1))
+
 ## [2.11.1](https://github.com/washingtonpost/wpds-docs/compare/v2.11.0...v2.11.1) (2025-03-12)
 
 **Note:** Version bump only for package @washingtonpost/wpds-docs
