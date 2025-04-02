@@ -71,7 +71,6 @@ const StyledContainer = styled("div", {
       transform: "translateX(0)",
     },
   },
-  // data-state="closed"
   "&[data-state='closed']": {
     opacity: 0,
     // data=position="top" or "bottom" or "left" or "right"
