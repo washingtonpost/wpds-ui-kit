@@ -1,24 +1,13 @@
 import React from "react";
+import { StyledButton } from "./paginationHelpers";
 import { Button } from "../button";
 // import { Button } from "@washingtonpost/wpds-ui-kit";
 import { Icon } from "../icon";
 import { ChevronRight } from "@washingtonpost/wpds-assets";
-import { styled, theme } from "../theme";
 import type * as WPDS from "../theme";
 // import { PaginationContext } from "./PaginationRoot";
 
 const NAME = "PaginationNextButton";
-
-export const StyledButton = styled(Button, {
-  variants: {
-    disabled: {
-      true: {
-        color: theme.colors.onDisabled,
-        pointerEvents: "none",
-      },
-    },
-  },
-});
 
 export type PaginationNextButtonProps = {
   /** Function to change current page */
@@ -50,7 +39,8 @@ export const PaginationNextButton = React.forwardRef<
 
   const lastPage = currentPage === totalPages;
 
-  const href = lastPage ? "" : `${slug}?page=${currentPage + 1}`;
+  const href =
+    lastPage || !slug.length ? null : `${slug}?page=${currentPage + 1}`;
   const rel = !lastPage ? "next" : "";
 
   return (
@@ -58,11 +48,6 @@ export const PaginationNextButton = React.forwardRef<
       aria-label="next page"
       as="a"
       css={{
-        width: "$250",
-        height: "$200",
-        minWidth: "$250",
-        paddingRight: 0,
-        paddingLeft: 0,
         ...css,
       }}
       density="compact"

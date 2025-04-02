@@ -35,8 +35,6 @@ export const PaginationPreviousPageOverflowButton = ({
   return (
     <StyledButton
       css={{
-        width: "$200",
-        height: "$200",
         padding: "$075 $050 $025 $050 !important",
       }}
       density="compact"

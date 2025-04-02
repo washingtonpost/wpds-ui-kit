@@ -25,17 +25,15 @@ export const PaginationPageButton = ({
   slug,
 }: PaginationPageButtonProps) => {
   const selected = currentPage === num;
-
+  const href = !slug.length ? null : `${slug}?page=${num}`;
   return (
     <StyledButton
       as="a"
       css={{
-        height: "$200",
-        width: "$200",
         ...css,
       }}
       density="compact"
-      href={`${slug}?page=${num}`} // update URL as well, and canonical in head
+      href={href} // update URL as well, and canonical in head
       isOutline={false}
       key=""
       onClick={() => changePage(num)}

@@ -25,7 +25,7 @@ const DefaultArgs = {
   items: 100,
   showItems: false,
   showTotal: true,
-  slug: "people/author/",
+  slug: "",
 };
 
 const NumericArgs = {

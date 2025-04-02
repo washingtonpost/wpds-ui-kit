@@ -1,24 +1,13 @@
 import React from "react";
+import { StyledButton } from "./paginationHelpers";
 import { Button } from "../button";
 // import { Button } from "@washingtonpost/wpds-ui-kit";
 import { Icon } from "../icon";
 import { ChevronLeft } from "@washingtonpost/wpds-assets";
-import { styled, theme } from "../theme";
 // import { PaginationContext } from "./PaginationRoot";
 import type * as WPDS from "../theme";
 
 const NAME = "PaginationPreviousButton";
-
-const StyledButton = styled(Button, {
-  variants: {
-    disabled: {
-      true: {
-        color: theme.colors.onDisabled,
-        pointerEvents: "none",
-      },
-    },
-  },
-});
 
 export type PaginationPreviousButtonProps = {
   /** Function to change current page */
@@ -58,11 +47,6 @@ export const PaginationPreviousButton = React.forwardRef<
       aria-label="previous page"
       as="a"
       css={{
-        width: "$250",
-        height: "$200",
-        minWidth: "$250",
-        paddingRight: 0,
-        paddingLeft: 0,
         ...css,
       }}
       density="compact"

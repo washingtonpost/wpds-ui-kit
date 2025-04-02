@@ -2,6 +2,11 @@ import { styled, theme } from "../theme";
 import { Button } from "../button";
 
 export const StyledButton = styled(Button, {
+  width: "$200",
+  height: "$200",
+  minWidth: "$200",
+  paddingRight: 0,
+  paddingLeft: 0,
   fontWeight: theme.fontWeights.regular,
   fontSize: "$087",
   lineHeight: "16px",
