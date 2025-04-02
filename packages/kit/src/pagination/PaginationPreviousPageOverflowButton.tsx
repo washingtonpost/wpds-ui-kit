@@ -19,6 +19,8 @@ export const PaginationPreviousPageOverflowButton = ({
   currentPage,
   totalPages,
 }: PaginationPreviousPageOverflowButtonProps) => {
+  if (totalPages < 8) return null;
+
   function handleClick() {
     if (currentPage > 3) {
       // go back 3 pages
@@ -28,8 +30,7 @@ export const PaginationPreviousPageOverflowButton = ({
     return changePage(1);
   }
 
-  const isHidden = totalPages > 7 && currentPage < 5;
-
+  const isHidden = currentPage < 5;
   // should the page overflow button, the ellipses, have an href?
 
   return (

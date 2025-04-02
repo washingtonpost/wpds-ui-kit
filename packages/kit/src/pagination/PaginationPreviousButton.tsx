@@ -38,7 +38,8 @@ export const PaginationPreviousButton = React.forwardRef<
 
   const firstPage = currentPage === 1;
 
-  const href = firstPage ? "" : `${slug}?page=${currentPage - 1}`;
+  const href =
+    firstPage || !slug.length ? null : `${slug}?page=${currentPage - 1}`;
 
   const rel = !firstPage ? "prev" : "";
 

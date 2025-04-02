@@ -19,12 +19,14 @@ export const PaginationNextPageOverflowButton = ({
   currentPage,
   totalPages,
 }: PaginationNextPageOverflowButtonProps) => {
+  if (totalPages < 8) return null;
+
   function handleClick() {
     // go forward 3 pages
     return changePage(currentPage + 3);
   }
 
-  const isHidden = totalPages > 7 && currentPage > totalPages - 4;
+  const isHidden = currentPage > totalPages - 4;
   // should the page overflow button, the ellipses, have an href?
 
   return (
