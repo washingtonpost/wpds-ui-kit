@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next-remote-watch ./docs",
-    "build": "node -v && node scripts/sitemap.js;next build",
+    "build:search-index": "node scripts/build-search-index.js",
+    "build": "npm run build:search-index && node -v && node scripts/sitemap.js;next build",
     "start": "next start",
     "lint": "next lint",
     "postinstall": "npx prettier --write '**/*.{js,mdx}'",
