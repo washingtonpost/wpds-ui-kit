@@ -32,13 +32,10 @@ export const PaginationPreviousButton = React.forwardRef<
       return changePage(currentPage - 1);
     }
   };
-
-  const isDisabled = currentPage === 1;
-
   const firstPage = currentPage === 1;
 
   const href =
-    firstPage || !slug.length ? null : `${slug}?page=${currentPage - 1}`;
+    firstPage || !slug?.length ? null : `${slug}?page=${currentPage - 1}`;
 
   const rel = !firstPage ? "prev" : "";
 
@@ -50,7 +47,7 @@ export const PaginationPreviousButton = React.forwardRef<
         ...css,
       }}
       density="compact"
-      disabled={isDisabled}
+      disabled={firstPage}
       href={href}
       icon="left"
       isOutline={false}

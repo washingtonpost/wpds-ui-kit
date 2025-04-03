@@ -25,7 +25,7 @@ export const PaginationPageButton = ({
   slug,
 }: PaginationPageButtonProps) => {
   const selected = currentPage === num;
-  const href = !slug.length ? null : `${slug}?page=${num}`;
+  const href = !slug?.length ? null : `${slug}?page=${num}`;
   return (
     <StyledButton
       as="a"

@@ -35,12 +35,10 @@ export const PaginationNextButton = React.forwardRef<
     }
   };
 
-  const isDisabled = currentPage === totalPages;
-
   const lastPage = currentPage === totalPages;
 
   const href =
-    lastPage || !slug.length ? null : `${slug}?page=${currentPage + 1}`;
+    lastPage || !slug?.length ? null : `${slug}?page=${currentPage + 1}`;
   const rel = !lastPage ? "next" : "";
 
   return (
@@ -51,7 +49,7 @@ export const PaginationNextButton = React.forwardRef<
         ...css,
       }}
       density="compact"
-      disabled={isDisabled}
+      disabled={lastPage}
       href={href}
       icon="right"
       isOutline={false}
