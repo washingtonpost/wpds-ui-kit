@@ -58,6 +58,8 @@ export const PaginationNextButton = React.forwardRef<
       ref={ref}
       rel={rel}
       onClick={handleClick}
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
       variant="secondary"
       {...props}
     >

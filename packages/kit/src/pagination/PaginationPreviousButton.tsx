@@ -1,7 +1,6 @@
 import React from "react";
 import { StyledButton } from "./paginationHelpers";
 import { Button } from "../button";
-// import { Button } from "@washingtonpost/wpds-ui-kit";
 import { Icon } from "../icon";
 import { ChevronLeft } from "@washingtonpost/wpds-assets";
 // import { PaginationContext } from "./PaginationRoot";
@@ -58,6 +57,8 @@ export const PaginationPreviousButton = React.forwardRef<
       onClick={handleClick}
       ref={ref}
       rel={rel}
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
       variant="secondary"
       {...props}
     >
