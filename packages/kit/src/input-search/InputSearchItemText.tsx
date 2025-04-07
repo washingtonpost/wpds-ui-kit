@@ -13,15 +13,16 @@ export const InputSearchItemText = ({
   ...rest
 }: InputSearchItemTextProps) => {
   const { state } = React.useContext(InputSearchContext);
+  const { onClick } = { ...rest };
 
   const highlighted = (children as string).replace(
     new RegExp(state.inputValue, "gi"),
     (match) => (match ? `<mark>${match}</mark>` : "")
   );
-
   return (
     <StyledItemText
       {...rest}
+      onClick={onClick}
       dangerouslySetInnerHTML={{ __html: highlighted }}
     />
   );
