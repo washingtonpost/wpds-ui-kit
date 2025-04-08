@@ -134,6 +134,20 @@ export const DocSearch = ({ placeholder = "Search documentation...", maxResults 
     search();
   }, [debouncedSearchTerm, maxResults]);
 
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if ((event.metaKey || event.ctrlKey) && event.key === 'k') {
+        event.preventDefault();
+        openDialog();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
+
   const handleInputChange = (event) => {
     setSearchTerm(event.target.value);
     if (event.target.value) {
