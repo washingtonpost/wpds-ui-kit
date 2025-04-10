@@ -2,8 +2,7 @@ import { useState } from "react";
 import { Pagination as Component } from "./";
 import { styled } from "../theme";
 
-import type { ComponentMeta, ComponentStory } from "@storybook/react";
-import { Meta, StoryObj } from "@storybook/react";
+import { Meta, StoryFn } from "@storybook/react";
 
 export default {
   title: "Pagination",
@@ -16,15 +15,11 @@ export default {
   },
 } as Meta<typeof Component.Root>;
 
-type Story = StoryObj<typeof Component.Root>;
-
 const DefaultArgs = {
-  changeCurrentPage: () => null,
+  setPage: () => null,
   css: {},
-  currentPage: 1,
-  items: 100,
+  page: 1,
   showItems: false,
-  showTotal: true,
   slug: "",
 };
 
@@ -41,46 +36,34 @@ const DisplayContainer = styled("div", {
   alignItems: "center",
 });
 
-const NumericTemplate: ComponentStory<typeof Component.Root> = (args) => {
+// for item range indicator
+const items = 100;
+const showTotal = true;
+
+const NumericTemplate: StoryFn<typeof Component.Root> = (args) => {
   const [page, setPage] = useState(1);
-  const { css, items, showItems, showTotal, slug, variant } = args;
+  const { css, showItems, slug, variant } = args;
+
   const MAX_RESULTS_PER_PAGE = 10;
   const totalPages = Math.ceil((items ?? 0) / MAX_RESULTS_PER_PAGE);
   const endlessPagination = totalPages > 15;
 
   return (
-    <Component.Root css={css} showItems={showItems}>
-      <Component.ItemRangeIndicator
-        currentPage={page}
-        endlessPagination={endlessPagination}
-        showTotal={showTotal}
-        items={items}
-        totalPages={totalPages}
-        showItems={showItems}
-      />
+    <Component.Root
+      css={css}
+      endlessPagination={endlessPagination}
+      page={page}
+      setPage={setPage}
+      showItems={showItems}
+      slug={slug}
+      totalPages={totalPages}
+      variant={variant}
+    >
+      <Component.ItemRangeIndicator showTotal={showTotal} items={items} />
       <DisplayContainer>
-        <Component.PreviousButton
-          changePage={setPage}
-          currentPage={page}
-          slug={slug}
-          totalPages={totalPages}
-        />
-        <Component.Display
-          changeCurrentPage={setPage}
-          compact={variant === "compact"}
-          currentPage={page}
-          endlessPagination={endlessPagination}
-          slug={slug}
-          totalPages={totalPages}
-          variant={variant}
-        />
-        <Component.NextButton
-          changePage={setPage}
-          currentPage={page}
-          slug={slug}
-          totalPages={totalPages}
-          data-testid="pagination-next-button"
-        />
+        <Component.PreviousButton />
+        <Component.Display />
+        <Component.NextButton />
       </DisplayContainer>
     </Component.Root>
   );
@@ -96,45 +79,30 @@ const DescriptiveArgs = {
   variant: "descriptive",
 };
 
-const DescriptiveTemplate: ComponentStory<typeof Component.Root> = (args) => {
+const DescriptiveTemplate: StoryFn<typeof Component.Root> = (args) => {
   const [page, setPage] = useState(1);
-  const { items, showItems, showTotal, slug, variant } = args;
+  const { css, showItems, slug, variant } = args;
+
   const MAX_RESULTS_PER_PAGE = 10;
   const totalPages = Math.ceil((items ?? 0) / MAX_RESULTS_PER_PAGE);
   const endlessPagination = totalPages > 15;
 
   return (
-    <Component.Root showItems={showItems}>
-      <Component.ItemRangeIndicator
-        currentPage={page}
-        endlessPagination={endlessPagination}
-        showTotal={showTotal}
-        items={items}
-        totalPages={totalPages}
-        showItems={showItems}
-      />
+    <Component.Root
+      css={css}
+      endlessPagination={endlessPagination}
+      page={page}
+      setPage={setPage}
+      showItems={showItems}
+      slug={slug}
+      totalPages={totalPages}
+      variant={variant}
+    >
+      <Component.ItemRangeIndicator showTotal={showTotal} items={items} />
       <DisplayContainer>
-        <Component.PreviousButton
-          changePage={setPage}
-          currentPage={page}
-          slug={slug}
-          totalPages={totalPages}
-        />
-        <Component.Display
-          changeCurrentPage={setPage}
-          compact={variant === "compact"}
-          currentPage={page}
-          endlessPagination={endlessPagination}
-          slug={slug}
-          totalPages={totalPages}
-          variant={variant}
-        />
-        <Component.NextButton
-          changePage={setPage}
-          currentPage={page}
-          slug={slug}
-          totalPages={totalPages}
-        />
+        <Component.PreviousButton />
+        <Component.Display />
+        <Component.NextButton />
       </DisplayContainer>
     </Component.Root>
   );
@@ -149,45 +117,30 @@ const CompactArgs = {
   variant: "compact",
 };
 
-const CompactTemplate: ComponentStory<typeof Component.Root> = (args) => {
+const CompactTemplate: StoryFn<typeof Component.Root> = (args) => {
   const [page, setPage] = useState(1);
-  const { items, showItems, showTotal, slug, variant } = args;
+  const { css, showItems, slug, variant } = args;
+
   const MAX_RESULTS_PER_PAGE = 10;
   const totalPages = Math.ceil((items ?? 0) / MAX_RESULTS_PER_PAGE);
   const endlessPagination = totalPages > 15;
 
   return (
-    <Component.Root showItems={showItems}>
-      <Component.ItemRangeIndicator
-        currentPage={page}
-        endlessPagination={endlessPagination}
-        showTotal={showTotal}
-        items={items}
-        totalPages={totalPages}
-        showItems={showItems}
-      />
+    <Component.Root
+      css={css}
+      endlessPagination={endlessPagination}
+      page={page}
+      setPage={setPage}
+      showItems={showItems}
+      slug={slug}
+      totalPages={totalPages}
+      variant={variant}
+    >
+      <Component.ItemRangeIndicator showTotal={showTotal} items={items} />
       <DisplayContainer>
-        <Component.PreviousButton
-          changePage={setPage}
-          currentPage={page}
-          slug={slug}
-          totalPages={totalPages}
-        />
-        <Component.Display
-          changeCurrentPage={setPage}
-          compact={variant === "compact"}
-          currentPage={page}
-          endlessPagination={endlessPagination}
-          slug={slug}
-          totalPages={totalPages}
-          variant={variant}
-        />
-        <Component.NextButton
-          changePage={setPage}
-          currentPage={page}
-          slug={slug}
-          totalPages={totalPages}
-        />
+        <Component.PreviousButton />
+        <Component.Display />
+        <Component.NextButton />
       </DisplayContainer>
     </Component.Root>
   );
@@ -202,45 +155,30 @@ const NoDisplayArgs = {
   variant: "no-display",
 };
 
-const NoDisplayTemplate: ComponentStory<typeof Component.Root> = (args) => {
+const NoDisplayTemplate: StoryFn<typeof Component.Root> = (args) => {
   const [page, setPage] = useState(1);
-  const { items, showItems, showTotal, slug, variant } = args;
+  const { css, showItems, slug, variant } = args;
+
   const MAX_RESULTS_PER_PAGE = 10;
   const totalPages = Math.ceil((items ?? 0) / MAX_RESULTS_PER_PAGE);
   const endlessPagination = totalPages > 15;
 
   return (
-    <Component.Root showItems={showItems}>
-      <Component.ItemRangeIndicator
-        currentPage={page}
-        endlessPagination={endlessPagination}
-        showTotal={showTotal}
-        items={items}
-        totalPages={totalPages}
-        showItems={showItems}
-      />
+    <Component.Root
+      css={css}
+      endlessPagination={endlessPagination}
+      page={page}
+      setPage={setPage}
+      showItems={showItems}
+      slug={slug}
+      totalPages={totalPages}
+      variant={variant}
+    >
+      <Component.ItemRangeIndicator showTotal={showTotal} items={items} />
       <DisplayContainer>
-        <Component.PreviousButton
-          changePage={setPage}
-          currentPage={page}
-          slug={slug}
-          totalPages={totalPages}
-        />
-        <Component.Display
-          changeCurrentPage={setPage}
-          compact={variant === "compact"}
-          currentPage={page}
-          endlessPagination={endlessPagination}
-          slug={slug}
-          totalPages={totalPages}
-          variant={variant}
-        />
-        <Component.NextButton
-          changePage={setPage}
-          currentPage={page}
-          slug={slug}
-          totalPages={totalPages}
-        />
+        <Component.PreviousButton />
+        <Component.Display />
+        <Component.NextButton />
       </DisplayContainer>
     </Component.Root>
   );
@@ -252,52 +190,36 @@ NoDisplay.args = NoDisplayArgs;
 
 const EndlessPaginationArgs = {
   ...DefaultArgs,
-  currentPage: 40,
-  items: 1053,
   variant: "numeric",
 };
 
-const EndlessPaginationTemplate: ComponentStory<typeof Component.Root> = (
-  args
-) => {
-  const { currentPage, items, showItems, showTotal, slug, variant } = args;
-  const [page, setPage] = useState(currentPage);
+const EndlessPaginationTemplate: StoryFn<typeof Component.Root> = (args) => {
+  const { css, showItems, slug, variant } = args;
+  const [page, setPage] = useState(40);
+
+  // for item range indicator
+  const items = 1053;
+
   const MAX_RESULTS_PER_PAGE = 10;
   const totalPages = Math.ceil((items ?? 0) / MAX_RESULTS_PER_PAGE);
   const endlessPagination = totalPages > 15;
 
   return (
-    <Component.Root showItems={showItems}>
-      <Component.ItemRangeIndicator
-        currentPage={page}
-        endlessPagination={endlessPagination}
-        showTotal={showTotal}
-        items={items}
-        totalPages={totalPages}
-        showItems={showItems}
-      />
+    <Component.Root
+      css={css}
+      endlessPagination={endlessPagination}
+      page={page}
+      setPage={setPage}
+      showItems={showItems}
+      slug={slug}
+      totalPages={totalPages}
+      variant={variant}
+    >
+      <Component.ItemRangeIndicator showTotal={showTotal} items={items} />
       <DisplayContainer>
-        <Component.PreviousButton
-          changePage={setPage}
-          currentPage={page}
-          slug={slug}
-          totalPages={totalPages}
-        />
-        <Component.Display
-          changeCurrentPage={setPage}
-          compact={variant === "compact"}
-          currentPage={page}
-          endlessPagination={endlessPagination}
-          slug={slug}
-          totalPages={totalPages}
-          variant={variant}
-        />
-        <Component.NextButton
-          changePage={setPage}
-          currentPage={page}
-          slug={slug}
-          totalPages={totalPages}
-        />
+        <Component.PreviousButton />
+        <Component.Display />
+        <Component.NextButton />
       </DisplayContainer>
     </Component.Root>
   );

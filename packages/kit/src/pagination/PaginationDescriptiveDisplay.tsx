@@ -1,6 +1,5 @@
 import React from "react";
 import { HideOnSmall, StyledP } from "./paginationHelpers";
-// import { PaginationContext } from "./PaginationRoot";
 
 const NAME = "PaginationDescriptiveDisplay";
 

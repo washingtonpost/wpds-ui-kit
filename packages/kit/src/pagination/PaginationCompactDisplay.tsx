@@ -1,7 +1,6 @@
 import React from "react";
 import { StyledP } from "./paginationHelpers";
 import { styled } from "../theme";
-// import { PaginationContext } from "./PaginationRoot";
 
 const NAME = "PaginationCompactDisplay";
 

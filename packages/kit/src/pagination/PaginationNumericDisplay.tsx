@@ -3,7 +3,6 @@ import { HideOnSmall } from "./paginationHelpers";
 import { PaginationPageButton as PageButton } from "./PaginationPageButton";
 import { PaginationPreviousPageOverflowButton as PreviousOverflowButton } from "./PaginationPreviousPageOverflowButton";
 import { PaginationNextPageOverflowButton as NextOverflowButton } from "./PaginationNextPageOverflowButton";
-// import { PaginationContext } from "./PaginationRoot";
 
 const NAME = "PaginationNumericDisplay";
 

@@ -3,67 +3,67 @@ import { StyledButton } from "./paginationHelpers";
 import { Button } from "../button";
 import { Icon } from "../icon";
 import { ChevronLeft } from "@washingtonpost/wpds-assets";
-// import { PaginationContext } from "./PaginationRoot";
-import type * as WPDS from "../theme";
+import { PaginationContext } from "./PaginationRoot";
 
 const NAME = "PaginationPreviousButton";
 
-export type PaginationPreviousButtonProps = {
-  /** Function to change current page */
-  changePage: React.Dispatch<React.SetStateAction<number>>;
-  /** Override CSS */
-  css?: WPDS.CSS;
-  /** The current page */
-  currentPage: number;
-  /** Current page slug */
-  slug: string;
-  /** Total number of pages to display */
-  totalPages: number;
-} & React.ComponentPropsWithRef<typeof Button>;
+export type PaginationPreviousButtonProps = React.ComponentPropsWithRef<
+  typeof Button
+>;
 
+// PageNavigationButon
 export const PaginationPreviousButton = React.forwardRef<
   HTMLButtonElement,
   PaginationPreviousButtonProps
->(({ css, changePage, currentPage, slug, totalPages, ...props }, ref) => {
-  // const { page, setPage, totalPages } = React.useContext(PaginationContext);
+>(
+  (
+    {
+      css,
+      density = "compact",
+      icon = "left",
+      variant = "secondary",
+      ...props
+    },
+    ref
+  ) => {
+    const { page, setPage, slug } = React.useContext(PaginationContext);
 
-  const handleClick = () => {
-    if (currentPage > 1) {
-      return changePage(currentPage - 1);
-    }
-  };
-  const firstPage = currentPage === 1;
+    const handleClick = () => {
+      if (page > 1) {
+        return setPage(page - 1);
+      }
+    };
 
-  const href =
-    firstPage || !slug?.length ? null : `${slug}?page=${currentPage - 1}`;
+    const firstPage = page === 1;
+    const href = firstPage || !slug?.length ? null : `${slug}?page=${page - 1}`;
+    const rel = !firstPage ? "prev" : "";
 
-  const rel = !firstPage ? "prev" : "";
-
-  return (
-    <StyledButton
-      aria-label="previous page"
-      as="a"
-      css={{
-        ...css,
-      }}
-      density="compact"
-      disabled={firstPage}
-      href={href}
-      icon="left"
-      isOutline={false}
-      onClick={handleClick}
-      ref={ref}
-      rel={rel}
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
-      variant="secondary"
-      {...props}
-    >
-      <Icon label="Previous" size="100">
-        <ChevronLeft />
-      </Icon>
-    </StyledButton>
-  );
-});
+    return (
+      <StyledButton
+        aria-label="previous page"
+        as="a"
+        css={{
+          ...css,
+        }}
+        density={density}
+        disabled={firstPage}
+        href={href}
+        icon={icon}
+        isOutline={false}
+        onClick={handleClick}
+        ref={ref}
+        rel={rel}
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        variant={variant}
+        {...props}
+      >
+        <Icon label="Previous" size="100">
+          <ChevronLeft />
+        </Icon>
+      </StyledButton>
+    );
+  }
+);
 
 PaginationPreviousButton.displayName = NAME;

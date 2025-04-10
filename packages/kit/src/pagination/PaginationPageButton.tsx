@@ -1,5 +1,6 @@
 import React from "react";
 import { StyledButton } from "./paginationHelpers";
+import { Button } from "../button";
 import type * as WPDS from "../theme";
 
 const NAME = "PaginationPageButton";
@@ -15,7 +16,7 @@ export type PaginationPageButtonProps = {
   num: number;
   /** Current page slug */
   slug: string;
-};
+} & React.ComponentPropsWithRef<typeof Button>;
 
 export const PaginationPageButton = ({
   changePage,
@@ -29,6 +30,7 @@ export const PaginationPageButton = ({
   return (
     <StyledButton
       as="a"
+      aria-label={`page ${num}`}
       css={{
         ...css,
       }}
