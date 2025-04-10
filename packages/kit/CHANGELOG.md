@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.12.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.11.1...v2.12.0) (2025-04-02)
+
+### Bug Fixes
+
+- prettify ([#713](https://github.com/washingtonpost/wpds-ui-kit/issues/713)) ([2340650](https://github.com/washingtonpost/wpds-ui-kit/commit/2340650b07a46e3c09020cb598001050e72028ef))
+- typescript issues ([4332f42](https://github.com/washingtonpost/wpds-ui-kit/commit/4332f429cb8d8f0c78d6d0164df082a14a6c130c))
+
 ## [2.11.1](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.11.0...v2.11.1) (2025-03-12)
 
 ### Bug Fixes

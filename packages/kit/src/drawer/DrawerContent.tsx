@@ -71,7 +71,6 @@ const StyledContainer = styled("div", {
       transform: "translateX(0)",
     },
   },
-  // data-state="closed"
   "&[data-state='closed']": {
     opacity: 0,
     // data=position="top" or "bottom" or "left" or "right"
@@ -189,6 +188,7 @@ export const DrawerContent = React.forwardRef<
       <FocusScope loop={loopFocus} trapped={trapFocus} asChild>
         <StyledContainer
           ref={ref}
+          role="dialog"
           id={context.contentId}
           data-position={position}
           data-state={context.open ? "open" : "closed"}

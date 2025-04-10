@@ -1,323 +1,99 @@
-import * as React from "react";
-import {
-  SandpackProvider,
-  SandpackLayout,
-  SandpackCodeViewer,
-} from "@codesandbox/sandpack-react";
-import stringifyObject from "stringify-object";
-import { camelCase } from "camel-case";
-import {
-  Button,
-  Box,
-  Icon,
-  InputTextarea,
-  theme,
-} from "@washingtonpost/wpds-ui-kit";
-import { ArrowRight } from "@washingtonpost/wpds-assets";
-import { tokenTypeFromProperty, pxToRems, hexToRgba } from "./utils";
-import InlineSVG from "./inlineSVG";
+import { Box, InputText, theme } from "@washingtonpost/wpds-ui-kit";
+import React, { useState } from "react";
+import Pre from "./Pre";
+import tachyonsToStitches from "./tachyonsToStitches.json";
 
-import "@washingtonpost/tachyons-css/dist/index.css";
-
-const StyleConverter = () => {
-  const [cssRules, setCssRules] = React.useState();
-  const [customProperties, setCustomProperties] = React.useState([]);
-
-  const [classesValue, setClassesValue] = React.useState("");
-  const [objValue, setObjValue] = React.useState(" ");
-
-  // Find the tachyons css and cache the rules
-  React.useEffect(() => {
-    const sheetList = document.styleSheets;
-    const sll = sheetList.length;
-    for (let i = 0; i < sll; i++) {
-      const sheet = document.styleSheets[i];
-      if (
-        (sheet.cssRules[0] && sheet.cssRules[0].cssText) ===
-        ":root { font-size: 16px; }"
-      ) {
-        setCssRules(sheet.cssRules);
-      }
+const convertClassesToStyles = (classString) => {
+  const classes = classString.trim().split(/\s+/);
+  return classes.reduce((acc, cls) => {
+    const style = tachyonsToStitches[cls];
+    if (style) {
+      return Object.assign(acc, style);
     }
-  }, [setCssRules]);
+    return acc;
+  }, {});
+};
 
-  // get all the css vars / custom properties from the tachyons root
-  // and store them in state for lookups
-  React.useEffect(() => {
-    if (!cssRules) return;
-    const rll = cssRules.length;
+const TachyonsConverter = () => {
+  const [input, setInput] = useState("pa-sm mt-sm font-copy bold");
+  const [output, setOutput] = useState(
+    convertClassesToStyles("pa-sm mt-sm font-copy bold")
+  );
 
-    for (let i = 0; i < rll; i++) {
-      const rule = cssRules[i];
-
-      if (rule.cssText.includes(":root") && rule.cssText.includes("--")) {
-        const customProps = rule.cssText
-          .substring(rule.cssText.indexOf("{") + 2, rule.cssText.indexOf("}"))
-          .split("; ")
-          .map((prop) => {
-            const p = prop.split(":");
-            return { name: p[0], value: p[1] };
-          })
-          .filter((el) => el.value !== undefined);
-        setCustomProperties((prev) => [...prev, ...customProps]);
-      }
-    }
-  }, [cssRules, setCustomProperties]);
-
-  // convert entered classes into style object
-  const handleConvertClick = () => {
-    const obj = {};
-
-    // loop over entered classes, convert
-    // and add as properties of the object
-    classesValue
-      .replace(/\n/g, " ")
-      .trim()
-      .split(" ")
-      .forEach((className) => {
-        let cn = className;
-        if (cn.includes("hover")) {
-          cn += ":hover";
-        }
-        if (cn.includes("focus")) {
-          cn += ":focus";
-        }
-        const converted = convertClassToEntry(cn);
-        if (!converted) return;
-        if (cn.includes("hover")) {
-          obj["$:hover"] = { [converted.propertyName]: converted.value };
-        } else if (cn.includes("focus")) {
-          obj["$:focus"] = { [converted.propertyName]: converted.value };
-        } else {
-          obj[converted.propertyName] = converted.value;
-        }
-      });
-
-    // convert object to formatted string
-    const str = stringifyObject(obj, {
-      indent: "  ",
-      singleQuotes: false,
-      transform: (object, property, originalResult) => {
-        if (originalResult.includes("theme.")) {
-          return originalResult.replace(/"/g, "").replace(/\\"/g, '"');
-        }
-        return originalResult;
-      },
-    });
-    setObjValue(str);
+  const handleChange = (e) => {
+    const value = e.target.value;
+    setInput(value);
+    setOutput(convertClassesToStyles(value));
   };
 
-  function convertClassToEntry(className) {
-    if (!cssRules) return;
-
-    const rll = cssRules.length;
-    for (let i = 0; i < rll; i++) {
-      const rule = cssRules[i];
-
-      if (
-        rule.cssText.includes(`.${className} {`) ||
-        rule.cssText.includes(`.${className},`)
-      ) {
-        const parts = rule.cssText.split(":");
-
-        const prop = camelCase(
-          parts[parts.length - 2].substring(
-            parts[parts.length - 2].indexOf("{") + 1
-          )
-        );
-
-        const val = parts[parts.length - 1].substring(
-          1,
-          parts[parts.length - 1].indexOf(";")
-        );
-
-        return {
-          propertyName: prop,
-          value: getToken(prop, val),
-        };
-      }
-    }
-  }
-
-  function getToken(prop, val) {
-    const tokenType = tokenTypeFromProperty(prop);
-    if (!tokenType) return val;
-
-    let convertedVal = val;
-
-    if (
-      convertedVal.indexOf("px") !== -1 &&
-      convertedVal.indexOf("px") === convertedVal.length - 2
-    ) {
-      convertedVal = pxToRems(val);
-    }
-
-    if (convertedVal.includes("var(")) {
-      convertedVal = convertedVal
-        .split(" ")
-        .map((part) => {
-          if (part.includes("var(")) {
-            let val = getCustomPropertyValueFromVar(part);
-            if (val && val.includes("var(")) {
-              val = getCustomPropertyValueFromVar(val);
-            }
-            return val;
-          } else {
-            return part;
-          }
-        })
-        .join(" ");
-    }
-
-    if (/#[0-9A-F]{6}/i.test(convertedVal)) {
-      convertedVal = convertedVal.replace(/#[0-9A-F]{6}/gi, (color) => {
-        if (prop === "boxShadow") {
-          return color.toUpperCase();
-        }
-        return hexToRgba(color);
-      });
-    }
-
-    if (convertedVal.includes("rgb(")) {
-      convertedVal = `rgba(${convertedVal
-        .substring(4, convertedVal.length - 1)
-        .replace(/ /g, "")},1)`;
-    }
-
-    let tokenValue;
-    let rgba;
-
-    switch (prop) {
-      case "border":
-        rgba = convertedVal.substring(convertedVal.lastIndexOf(" ") + 1);
-        tokenValue = getTokenValueOfType(rgba, tokenType);
-        return (
-          "`" +
-          convertedVal.replace(rgba, "${theme.colors." + tokenValue + "}") +
-          "`"
-        );
-      default:
-        tokenValue = getTokenValueOfType(convertedVal, tokenType);
-        if (tokenValue) {
-          const isInt = !isNaN(parseInt(tokenValue, 10));
-          if (isInt) {
-            return `theme.${String(tokenType)}["${tokenValue}"]`;
-          } else {
-            return `theme.${String(tokenType)}.${tokenValue}`;
-          }
-        }
-    }
-    return val;
-  }
-
-  function getCustomPropertyValueFromVar(v) {
-    const variableName = v.substring(4, v.length - 1);
-    return customProperties.find((prop) => prop.name === variableName).value;
-  }
-
-  function getTokenValueOfType(val, tokenType) {
-    if (!tokenType) return;
-    const themeTokens = theme[tokenType];
-    const keys = Object.keys(themeTokens);
-    let tokenValue = keys.find((key) => {
-      const currentToken = themeTokens[key];
-      return currentToken.value === val;
-    });
-
-    if (tokenType === "colors" && !tokenValue) {
-      const colors = keys.filter((key) => !key.includes("alpha"));
-      const closest = colors.reduce(
-        (prev, curr) => {
-          const currVal = themeTokens[curr].value;
-          const dist = distance(val, currVal);
-          return dist < prev[0] ? [dist, curr] : prev;
-        },
-        [Number.POSITIVE_INFINITY, colors[0]]
-      );
-      tokenValue = closest[1];
-    }
-    return tokenValue;
-  }
-
-  function distance(col1, col2) {
-    const a = col1
-      .substring(5, col1.lastIndexOf(","))
-      .split(",")
-      .map((num) => parseInt(num, 10));
-    const b = col2
-      .substring(5, col1.lastIndexOf(","))
-      .split(",")
-      .map((num) => parseInt(num, 10));
-
-    return Math.sqrt(
-      Math.pow(a[0] - b[0], 2) +
-        Math.pow(a[1] - b[1], 2) +
-        Math.pow(a[2] - b[2], 2)
-    );
-  }
+  const tokens = input.trim().split(/\s+/);
 
   return (
     <Box
       css={{
         display: "flex",
-        alignItems: "center",
-        gap: theme.space["050"],
-        marginBlockStart: theme.space["200"],
+        flexDirection: "column",
+        backgroundColor: theme.colors.background,
+        borderRadius: theme.radii[0o25],
+        boxShadow: theme.shadows[1],
+        margin: "$200 0",
       }}
     >
-      <Box css={{ flex: 1 }}>
-        <InputTextarea
-          placeholder="flex blue font-lg"
-          name="classes"
-          id="classes"
-          value={classesValue}
-          onChange={(e) => setClassesValue(e.target.value)}
-          css={{ width: "100%", height: "400px" }}
-        />
-      </Box>
-      <Button icon="right" onClick={handleConvertClick}>
-        <Icon label="">
-          <ArrowRight />
-        </Icon>
-        Convert
-      </Button>
+      <InputText
+        value={input}
+        onChange={handleChange}
+        label="Tachyons Classes"
+      />
       <Box
         css={{
-          flex: 1,
-          position: "relative",
+          display: "flex",
+          flexWrap: "wrap",
+          gap: theme.space["050"],
+          marginTop: theme.space["050"],
+          marginBottom: theme.space["050"],
+          backgroundColor: theme.colors["background-forSurfaces"],
         }}
       >
-        <SandpackProvider>
-          <SandpackLayout style={{ "--sp-layout-height": "400px" }}>
-            <SandpackCodeViewer code={objValue} showLineNumbers />
-          </SandpackLayout>
-        </SandpackProvider>
-        <Button
-          icon="left"
-          isOutline
-          variant="primary"
-          css={{
-            border: 0,
-            fontWeight: "$light",
-            position: "absolute",
-            insetBlockEnd: `calc(${theme.sizes["225"]} * -1)`,
-            insetInlineEnd: "0",
-          }}
-          density="compact"
-          onClick={() => {
-            // copy code to clipboard
-            navigator.clipboard.writeText(objValue);
-          }}
-          aria-label="Copy code to clipboard"
-        >
-          <Icon size="100" label="Copy code to clipboard">
-            <InlineSVG cushion="none" path="/img/doc-icons/clipboard.svg" />
-          </Icon>
-          Copy
-        </Button>
+        {tokens.map((token, idx) => (
+          <Box
+            as="span"
+            key={token}
+            css={{
+              padding: "$050 $100",
+              borderRadius: "$025",
+              backgroundColor: tachyonsToStitches[token]
+                ? theme.colors.successContainer
+                : theme.colors.errorContainer,
+              border: `1px solid ${
+                tachyonsToStitches[token]
+                  ? theme.colors.success
+                  : theme.colors.error
+              }`,
+              color: theme.colors.onMessage,
+              fontWeight: theme.fontWeights.bold,
+              fontSize: theme.fontSizes["100"],
+              display: "inline-block",
+            }}
+          >
+            {token}
+          </Box>
+        ))}
       </Box>
+      <Pre
+        css={{
+          backgroundColor: theme.colors.background,
+          padding: theme.space["200"],
+          borderRadius: theme.radii[0o25],
+          boxShadow: theme.shadows[1],
+          margin: "$200",
+        }}
+      >
+        <Box as="code" css={{ color: theme.colors.accessible }}>
+          {JSON.stringify(output, null, 2)}
+        </Box>
+      </Pre>
     </Box>
   );
 };
 
-export default StyleConverter;
+export default TachyonsConverter;

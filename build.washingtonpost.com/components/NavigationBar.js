@@ -23,6 +23,8 @@ import Close from "@washingtonpost/wpds-assets/asset/close";
 import Logo from "./logo";
 import { ThemeToggle } from "./ThemeToggle";
 
+import { DocSearch } from "../components/Search/SearchInput";
+
 const List = styled("ul", {
   gridArea: "nav",
   display: "flex",
@@ -219,6 +221,18 @@ export const NavigationBar = ({ setMobileMenu, mobileMenuState, isClosed }) => {
               Support
             </Anchor>
           </Link>
+        </ListItem>
+        <ListItem css={{ margin: "0 $100 0 0" }}>
+          <DocSearch
+            placeholder="Search docs..."
+            maxResults={5}
+            css={{
+              width: "100%",
+              [customNotSmBreakpoint]: {
+                display: hideFromSmallScreen ? "none" : "block",
+              },
+            }}
+          />
         </ListItem>
         <ListItem>
           <ThemeToggle
