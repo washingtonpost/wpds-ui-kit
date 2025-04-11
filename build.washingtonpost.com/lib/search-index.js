@@ -1,4 +1,4 @@
-import Fuse from 'fuse.js';
+import Fuse from "fuse.js";
 
 let searchIndex = null;
 let fuse = null;
@@ -9,11 +9,11 @@ let fuse = null;
 export async function getSearchIndex() {
   if (searchIndex === null) {
     try {
-      const response = await fetch('/search-index.json');
+      const response = await fetch("/search-index.json");
       searchIndex = await response.json();
       console.log(`Loaded search index with ${searchIndex.length} documents`);
     } catch (error) {
-      console.error('Error loading search index:', error);
+      console.error("Error loading search index:", error);
       searchIndex = [];
     }
   }
@@ -28,15 +28,15 @@ export async function getFuse() {
     const index = await getSearchIndex();
     fuse = new Fuse(index, {
       keys: [
-        { name: 'title', weight: 1.0 },
-        { name: 'description', weight: 0.8 },
-        { name: 'kicker', weight: 0.7 },
-        { name: 'content', weight: 0.5 }
+        { name: "title", weight: 1.0 },
+        { name: "description", weight: 0.8 },
+        { name: "kicker", weight: 0.7 },
+        { name: "content", weight: 0.5 },
       ],
       includeScore: true,
       includeMatches: true,
       threshold: 0.3,
-      minMatchCharLength: 2
+      minMatchCharLength: 2,
     });
   }
   return fuse;
@@ -48,10 +48,10 @@ export async function getFuse() {
  * @returns {Array} - Search results
  */
 export async function searchDocs(query) {
-  if (!query || query.trim() === '') {
+  if (!query || query.trim() === "") {
     return [];
   }
-  
+
   const fuse = await getFuse();
   return fuse.search(query);
 }
