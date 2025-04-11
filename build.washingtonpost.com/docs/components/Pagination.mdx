@@ -2,7 +2,7 @@
 title: Pagination
 description: A pagination component is a navigation interface using the button component to breaks large amounts of content into smaller, more readable pages.
 component: pagination
-status: Draft
+status: Alpha
 ---
 
 ---
@@ -35,19 +35,23 @@ The numeric display option renders page numbers as interactive, clickable button
 
 ```jsx withPreview
 export default function Example() {
-  const args = {
-    currentPage: 1,
-    items: 150,
-    showItems: false,
-    showTotal: true,
-    slug: "people/author/",
-    variant: "numeric",
-  };
-  const { currentPage, items, showItems, showTotal, variant } = args;
-  const [page, setPage] = useState(currentPage);
+  const [page, setPage] = useState(1);
+  const [page2, setPage2] = useState(2);
+  const [page5, setPage5] = useState(5);
+  const [page14, setPage14] = useState(14);
+  const [page15, setPage15] = useState(15);
+
+  // for item range indicator
+  const items = 150;
+  const showTotal = true;
+
   const MAX_RESULTS_PER_PAGE = 10;
   const totalPages = Math.ceil((items ?? 0) / MAX_RESULTS_PER_PAGE);
   const endlessPagination = totalPages > 15;
+
+  const variant = "numeric";
+
+  const slug = "";
 
   const DisplayContainer = styled("div", {
     gap: "$025",
@@ -58,127 +62,87 @@ export default function Example() {
   });
 
   return (
-    <Pagination.Root css={{ flexDirection: "column" }}>
-      <DisplayContainer>
-        <Pagination.PreviousButton
-          changePage={setPage}
-          currentPage={1}
-          // slug={}
-          totalPages={totalPages}
-        />
-        <Pagination.Display
-          changeCurrentPage={setPage}
-          compact={variant === "compact"}
-          currentPage={1}
-          endlessPagination={endlessPagination}
-          // slug={args.slug}
-          totalPages={totalPages}
-          variant={variant}
-        />
-        <Pagination.NextButton
-          changePage={setPage}
-          currentPage={1}
-          // slug={}
-          totalPages={totalPages}
-        />
-      </DisplayContainer>
+    <Box css={{ flexDirection: "column" }}>
+      <Pagination.Root
+        endlessPagination={endlessPagination}
+        page={page}
+        setPage={setPage}
+        showItems={true}
+        slug={slug}
+        totalPages={totalPages}
+        variant={variant}
+      >
+        <DisplayContainer>
+          <Pagination.PreviousButton />
+          <Pagination.Display />
+          <Pagination.NextButton />
+        </DisplayContainer>
+      </Pagination.Root>
 
-      <DisplayContainer>
-        <Pagination.PreviousButton
-          changePage={setPage}
-          currentPage={2}
-          // slug={}
-          totalPages={totalPages}
-        />
-        <Pagination.Display
-          changeCurrentPage={setPage}
-          compact={variant === "compact"}
-          currentPage={2}
-          endlessPagination={endlessPagination}
-          // slug={args.slug}
-          totalPages={totalPages}
-          variant={variant}
-        />
-        <Pagination.NextButton
-          changePage={setPage}
-          currentPage={2}
-          // slug={}
-          totalPages={totalPages}
-        />
-      </DisplayContainer>
+      <Pagination.Root
+        endlessPagination={endlessPagination}
+        page={page2}
+        setPage={setPage2}
+        showItems={true}
+        slug={slug}
+        totalPages={totalPages}
+        variant={variant}
+      >
+        <DisplayContainer>
+          <Pagination.PreviousButton />
+          <Pagination.Display />
+          <Pagination.NextButton />
+        </DisplayContainer>
+      </Pagination.Root>
 
-      <DisplayContainer>
-        <Pagination.PreviousButton
-          changePage={setPage}
-          currentPage={5}
-          // slug={}
-          totalPages={totalPages}
-        />
-        <Pagination.Display
-          changeCurrentPage={setPage}
-          compact={variant === "compact"}
-          currentPage={5}
-          endlessPagination={endlessPagination}
-          // slug={args.slug}
-          totalPages={totalPages}
-          variant={variant}
-        />
-        <Pagination.NextButton
-          changePage={setPage}
-          currentPage={5}
-          // slug={}
-          totalPages={totalPages}
-        />
-      </DisplayContainer>
+      <Pagination.Root
+        endlessPagination={endlessPagination}
+        page={page5}
+        setPage={setPage5}
+        showItems={true}
+        slug={slug}
+        totalPages={totalPages}
+        variant={variant}
+      >
+        <DisplayContainer>
+          <Pagination.PreviousButton />
+          <Pagination.Display />
+          <Pagination.NextButton />
+        </DisplayContainer>
+      </Pagination.Root>
 
-      <DisplayContainer>
-        <Pagination.PreviousButton
-          changePage={setPage}
-          currentPage={14}
-          // slug={}
-          totalPages={totalPages}
-        />
-        <Pagination.Display
-          changeCurrentPage={setPage}
-          compact={variant === "compact"}
-          currentPage={14}
-          endlessPagination={endlessPagination}
-          // slug={args.slug}
-          totalPages={totalPages}
-          variant={variant}
-        />
-        <Pagination.NextButton
-          changePage={setPage}
-          currentPage={14}
-          // slug={}
-          totalPages={totalPages}
-        />
-      </DisplayContainer>
+      <Pagination.Root
+        endlessPagination={endlessPagination}
+        page={page14}
+        setPage={setPage14}
+        showItems={true}
+        slug={slug}
+        totalPages={totalPages}
+        variant={variant}
+      >
+        <DisplayContainer>
+          <Pagination.PreviousButton />
+          <Pagination.Display />
+          <Pagination.NextButton />
+        </DisplayContainer>
+      </Pagination.Root>
 
-      <DisplayContainer>
-        <Pagination.PreviousButton
-          changePage={setPage}
-          currentPage={15}
-          // slug={}
-          totalPages={totalPages}
-        />
-        <Pagination.Display
-          changeCurrentPage={setPage}
-          compact={variant === "compact"}
-          currentPage={15}
-          endlessPagination={endlessPagination}
-          // slug={args.slug}
-          totalPages={totalPages}
-          variant={variant}
-        />
-        <Pagination.NextButton
-          changePage={setPage}
-          currentPage={15}
-          // slug={}
-          totalPages={totalPages}
-        />
-      </DisplayContainer>
-    </Pagination.Root>
+      <Pagination.Root
+        endlessPagination={endlessPagination}
+        page={page15}
+        setPage={setPage15}
+        showItems={true}
+        slug={slug}
+        totalPages={totalPages}
+        variant={variant}
+      >
+        <DisplayContainer>
+          <Pagination.PreviousButton />
+          <Pagination.Display />
+          <Pagination.NextButton />
+        </DisplayContainer>
+      </Pagination.Root>
+    </Box>
   );
 }
 ```
@@ -189,19 +153,17 @@ For situations requiring more explicit navigation context, the descriptive displ
 
 ```jsx withPreview
 export default function Example() {
-  const args = {
-    currentPage: 1,
-    items: 150,
-    showItems: false,
-    showTotal: true,
-    slug: "people/author/",
-    variant: "descriptive",
-  };
-  const { currentPage, items, showItems, showTotal, variant } = args;
-  const [page, setPage] = useState(currentPage);
+  const [page, setPage] = useState(1);
+  const [page5, setPage5] = useState(5);
+  const [page15, setPage15] = useState(15);
+
+  const items = 150;
+
   const MAX_RESULTS_PER_PAGE = 10;
   const totalPages = Math.ceil((items ?? 0) / MAX_RESULTS_PER_PAGE);
   const endlessPagination = totalPages > 15;
+
+  const variant = "descriptive";
 
   const DisplayContainer = styled("div", {
     gap: "$025",
@@ -212,79 +174,49 @@ export default function Example() {
   });
 
   return (
-    <Pagination.Root css={{ flexDirection: "column" }}>
-      <DisplayContainer>
-        <Pagination.PreviousButton
-          changePage={setPage}
-          currentPage={1}
-          // slug={}
-          totalPages={totalPages}
-        />
-        <Pagination.Display
-          changeCurrentPage={setPage}
-          compact={variant === "compact"}
-          currentPage={1}
-          endlessPagination={endlessPagination}
-          // slug={args.slug}
-          totalPages={totalPages}
-          variant={variant}
-        />
-        <Pagination.NextButton
-          changePage={setPage}
-          currentPage={1}
-          // slug={}
-          totalPages={totalPages}
-        />
-      </DisplayContainer>
+    <Box css={{ flexDirection: "column" }}>
+      <Pagination.Root
+        endlessPagination={endlessPagination}
+        page={page}
+        setPage={setPage}
+        totalPages={totalPages}
+        variant={variant}
+      >
+        <DisplayContainer>
+          <Pagination.PreviousButton />
+          <Pagination.Display />
+          <Pagination.NextButton />
+        </DisplayContainer>
+      </Pagination.Root>
 
-      <DisplayContainer>
-        <Pagination.PreviousButton
-          changePage={setPage}
-          currentPage={5}
-          // slug={}
-          totalPages={totalPages}
-        />
-        <Pagination.Display
-          changeCurrentPage={setPage}
-          compact={variant === "compact"}
-          currentPage={5}
-          endlessPagination={endlessPagination}
-          // slug={args.slug}
-          totalPages={totalPages}
-          variant={variant}
-        />
-        <Pagination.NextButton
-          changePage={setPage}
-          currentPage={5}
-          // slug={}
-          totalPages={totalPages}
-        />
-      </DisplayContainer>
+      <Pagination.Root
+        endlessPagination={endlessPagination}
+        page={page5}
+        setPage={setPage5}
+        totalPages={totalPages}
+        variant={variant}
+      >
+        <DisplayContainer>
+          <Pagination.PreviousButton />
+          <Pagination.Display />
+          <Pagination.NextButton />
+        </DisplayContainer>
+      </Pagination.Root>
 
-      <DisplayContainer>
-        <Pagination.PreviousButton
-          changePage={setPage}
-          currentPage={15}
-          // slug={}
-          totalPages={totalPages}
-        />
-        <Pagination.Display
-          changeCurrentPage={setPage}
-          compact={variant === "compact"}
-          currentPage={15}
-          endlessPagination={endlessPagination}
-          // slug={args.slug}
-          totalPages={totalPages}
-          variant={variant}
-        />
-        <Pagination.NextButton
-          changePage={setPage}
-          currentPage={15}
-          // slug={}
-          totalPages={totalPages}
-        />
-      </DisplayContainer>
-    </Pagination.Root>
+      <Pagination.Root
+        endlessPagination={endlessPagination}
+        page={page15}
+        setPage={setPage15}
+        totalPages={totalPages}
+        variant={variant}
+      >
+        <DisplayContainer>
+          <Pagination.PreviousButton />
+          <Pagination.Display />
+          <Pagination.NextButton />
+        </DisplayContainer>
+      </Pagination.Root>
+    </Box>
   );
 }
 ```
@@ -295,19 +227,17 @@ When space efficiency is paramount, the compact display option implements a stre
 
 ```jsx withPreview
 export default function Example() {
-  const args = {
-    currentPage: 1,
-    items: 150,
-    showItems: false,
-    showTotal: true,
-    slug: "people/author/",
-    variant: "compact",
-  };
-  const { currentPage, items, showItems, showTotal, variant } = args;
-  const [page, setPage] = useState(currentPage);
+  const [page, setPage] = useState(1);
+  const [page5, setPage5] = useState(5);
+  const [page15, setPage15] = useState(15);
+
+  const items = 150;
+
   const MAX_RESULTS_PER_PAGE = 10;
   const totalPages = Math.ceil((items ?? 0) / MAX_RESULTS_PER_PAGE);
   const endlessPagination = totalPages > 15;
+
+  const variant = "compact";
 
   const DisplayContainer = styled("div", {
     gap: "$025",
@@ -318,79 +248,49 @@ export default function Example() {
   });
 
   return (
-    <Pagination.Root css={{ flexDirection: "column" }}>
-      <DisplayContainer>
-        <Pagination.PreviousButton
-          changePage={setPage}
-          currentPage={1}
-          // slug={}
-          totalPages={totalPages}
-        />
-        <Pagination.Display
-          changeCurrentPage={setPage}
-          compact={variant === "compact"}
-          currentPage={1}
-          endlessPagination={endlessPagination}
-          // slug={args.slug}
-          totalPages={totalPages}
-          variant={variant}
-        />
-        <Pagination.NextButton
-          changePage={setPage}
-          currentPage={1}
-          // slug={}
-          totalPages={totalPages}
-        />
-      </DisplayContainer>
+    <Box css={{ flexDirection: "column" }}>
+      <Pagination.Root
+        endlessPagination={endlessPagination}
+        page={page}
+        setPage={setPage}
+        totalPages={totalPages}
+        variant={variant}
+      >
+        <DisplayContainer>
+          <Pagination.PreviousButton />
+          <Pagination.Display />
+          <Pagination.NextButton />
+        </DisplayContainer>
+      </Pagination.Root>
 
-      <DisplayContainer>
-        <Pagination.PreviousButton
-          changePage={setPage}
-          currentPage={5}
-          // slug={}
-          totalPages={totalPages}
-        />
-        <Pagination.Display
-          changeCurrentPage={setPage}
-          compact={variant === "compact"}
-          currentPage={5}
-          endlessPagination={endlessPagination}
-          // slug={args.slug}
-          totalPages={totalPages}
-          variant={variant}
-        />
-        <Pagination.NextButton
-          changePage={setPage}
-          currentPage={5}
-          // slug={}
-          totalPages={totalPages}
-        />
-      </DisplayContainer>
+      <Pagination.Root
+        endlessPagination={endlessPagination}
+        page={page5}
+        setPage={setPage5}
+        totalPages={totalPages}
+        variant={variant}
+      >
+        <DisplayContainer>
+          <Pagination.PreviousButton />
+          <Pagination.Display />
+          <Pagination.NextButton />
+        </DisplayContainer>
+      </Pagination.Root>
 
-      <DisplayContainer>
-        <Pagination.PreviousButton
-          changePage={setPage}
-          currentPage={15}
-          // slug={}
-          totalPages={totalPages}
-        />
-        <Pagination.Display
-          changeCurrentPage={setPage}
-          compact={variant === "compact"}
-          currentPage={15}
-          endlessPagination={endlessPagination}
-          // slug={args.slug}
-          totalPages={totalPages}
-          variant={variant}
-        />
-        <Pagination.NextButton
-          changePage={setPage}
-          currentPage={15}
-          // slug={}
-          totalPages={totalPages}
-        />
-      </DisplayContainer>
-    </Pagination.Root>
+      <Pagination.Root
+        endlessPagination={endlessPagination}
+        page={page15}
+        setPage={setPage15}
+        totalPages={totalPages}
+        variant={variant}
+      >
+        <DisplayContainer>
+          <Pagination.PreviousButton />
+          <Pagination.Display />
+          <Pagination.NextButton />
+        </DisplayContainer>
+      </Pagination.Root>
+    </Box>
   );
 }
 ```
@@ -401,19 +301,17 @@ The no display option eliminates visual page indicators entirely while preservin
 
 ```jsx withPreview
 export default function Example() {
-  const args = {
-    currentPage: 1,
-    items: 150,
-    showItems: false,
-    showTotal: true,
-    slug: "people/author/",
-    variant: "",
-  };
-  const { currentPage, items, showItems, showTotal, variant } = args;
-  const [page, setPage] = useState(currentPage);
+  const [page, setPage] = useState(1);
+  const [page5, setPage5] = useState(5);
+  const [page15, setPage15] = useState(15);
+
+  const items = 150;
+
   const MAX_RESULTS_PER_PAGE = 10;
   const totalPages = Math.ceil((items ?? 0) / MAX_RESULTS_PER_PAGE);
   const endlessPagination = totalPages > 15;
+
+  const variant = "";
 
   const DisplayContainer = styled("div", {
     gap: "$025",
@@ -424,79 +322,49 @@ export default function Example() {
   });
 
   return (
-    <Pagination.Root css={{ flexDirection: "column" }}>
-      <DisplayContainer>
-        <Pagination.PreviousButton
-          changePage={setPage}
-          currentPage={1}
-          // slug={}
-          totalPages={totalPages}
-        />
-        <Pagination.Display
-          changeCurrentPage={setPage}
-          compact={variant === "compact"}
-          currentPage={1}
-          endlessPagination={endlessPagination}
-          // slug={args.slug}
-          totalPages={totalPages}
-          variant={variant}
-        />
-        <Pagination.NextButton
-          changePage={setPage}
-          currentPage={1}
-          // slug={}
-          totalPages={totalPages}
-        />
-      </DisplayContainer>
+    <Box css={{ flexDirection: "column" }}>
+      <Pagination.Root
+        endlessPagination={endlessPagination}
+        page={page}
+        setPage={setPage}
+        totalPages={totalPages}
+        variant={variant}
+      >
+        <DisplayContainer>
+          <Pagination.PreviousButton />
+          <Pagination.Display />
+          <Pagination.NextButton />
+        </DisplayContainer>
+      </Pagination.Root>
 
-      <DisplayContainer>
-        <Pagination.PreviousButton
-          changePage={setPage}
-          currentPage={5}
-          // slug={}
-          totalPages={totalPages}
-        />
-        <Pagination.Display
-          changeCurrentPage={setPage}
-          compact={variant === "compact"}
-          currentPage={5}
-          endlessPagination={endlessPagination}
-          // slug={args.slug}
-          totalPages={totalPages}
-          variant={variant}
-        />
-        <Pagination.NextButton
-          changePage={setPage}
-          currentPage={5}
-          // slug={}
-          totalPages={totalPages}
-        />
-      </DisplayContainer>
+      <Pagination.Root
+        endlessPagination={endlessPagination}
+        page={page5}
+        setPage={setPage5}
+        totalPages={totalPages}
+        variant={variant}
+      >
+        <DisplayContainer>
+          <Pagination.PreviousButton />
+          <Pagination.Display />
+          <Pagination.NextButton />
+        </DisplayContainer>
+      </Pagination.Root>
 
-      <DisplayContainer>
-        <Pagination.PreviousButton
-          changePage={setPage}
-          currentPage={15}
-          // slug={}
-          totalPages={totalPages}
-        />
-        <Pagination.Display
-          changeCurrentPage={setPage}
-          compact={variant === "compact"}
-          currentPage={15}
-          endlessPagination={endlessPagination}
-          // slug={args.slug}
-          totalPages={totalPages}
-          variant={variant}
-        />
-        <Pagination.NextButton
-          changePage={setPage}
-          currentPage={15}
-          // slug={}
-          totalPages={totalPages}
-        />
-      </DisplayContainer>
-    </Pagination.Root>
+      <Pagination.Root
+        endlessPagination={endlessPagination}
+        page={page15}
+        setPage={setPage15}
+        totalPages={totalPages}
+        variant={variant}
+      >
+        <DisplayContainer>
+          <Pagination.PreviousButton />
+          <Pagination.Display />
+          <Pagination.NextButton />
+        </DisplayContainer>
+      </Pagination.Root>
+    </Box>
   );
 }
 ```
@@ -512,19 +380,19 @@ export default function Example() {
 
 ```jsx withPreview
 export default function Example() {
-  const args = {
-    currentPage: 1,
-    items: 150,
-    showItems: true,
-    showTotal: true,
-    slug: "people/author/",
-    variant: "numeric",
-  };
-  const { currentPage, items, showItems, showTotal, variant } = args;
-  const [page, setPage] = useState(currentPage);
+  const [page, setPage] = useState(1);
+
+  // for item range indicator
+  const items = 150;
+  const showTotal = true;
+
   const MAX_RESULTS_PER_PAGE = 10;
   const totalPages = Math.ceil((items ?? 0) / MAX_RESULTS_PER_PAGE);
   const endlessPagination = totalPages > 15;
+
+  const variant = "numeric";
+
+  const slug = "";
 
   const DisplayContainer = styled("div", {
     gap: "$025",
@@ -535,37 +403,20 @@ export default function Example() {
   });
 
   return (
-    <Pagination.Root>
-      <Pagination.ItemRangeIndicator
-        currentPage={page}
-        endlessPagination={endlessPagination}
-        showTotal={showTotal}
-        items={items}
-        totalPages={totalPages}
-        showItems={showItems}
-      />
+    <Pagination.Root
+      endlessPagination={endlessPagination}
+      page={page}
+      setPage={setPage}
+      showItems={true}
+      slug={slug}
+      totalPages={totalPages}
+      variant={variant}
+    >
+      <Pagination.ItemRangeIndicator showTotal={showTotal} items={items} />
       <DisplayContainer>
-        <Pagination.PreviousButton
-          changePage={setPage}
-          currentPage={currentPage}
-          // slug={}
-          totalPages={totalPages}
-        />
-        <Pagination.Display
-          changeCurrentPage={setPage}
-          compact={variant === "compact"}
-          currentPage={currentPage}
-          endlessPagination={endlessPagination}
-          // slug={args.slug}
-          totalPages={totalPages}
-          variant={variant}
-        />
-        <Pagination.NextButton
-          changePage={setPage}
-          currentPage={currentPage}
-          // slug={}
-          totalPages={totalPages}
-        />
+        <Pagination.PreviousButton />
+        <Pagination.Display />
+        <Pagination.NextButton />
       </DisplayContainer>
     </Pagination.Root>
   );
@@ -582,19 +433,18 @@ Endless pagination, also known as infinite scroll, should be reserved for conten
 
 ```jsx withPreview isGuide="success"
 export default function Example() {
-  const args = {
-    currentPage: 40,
-    items: 1053,
-    showItems: false,
-    showTotal: true,
-    slug: "people/author/",
-    variant: "numeric",
-  };
-  const { currentPage, items, showItems, showTotal, variant } = args;
-  const [page, setPage] = useState(currentPage);
+  const [page, setPage] = useState(40);
+  const [page2, setPage2] = useState(40);
+
+  const items = 1053;
+
   const MAX_RESULTS_PER_PAGE = 10;
   const totalPages = Math.ceil((items ?? 0) / MAX_RESULTS_PER_PAGE);
   const endlessPagination = totalPages > 15;
+
+  const variant = "numeric";
+
+  const slug = "";
 
   const DisplayContainer = styled("div", {
     gap: "$025",
@@ -605,55 +455,38 @@ export default function Example() {
   });
 
   return (
-    <Pagination.Root css={{ flexDirection: "column" }}>
-      <DisplayContainer>
-        <Pagination.PreviousButton
-          changePage={setPage}
-          currentPage={page}
-          // slug={}
-          totalPages={totalPages}
-        />
-        <Pagination.Display
-          changeCurrentPage={setPage}
-          compact={variant === "compact"}
-          currentPage={page}
-          endlessPagination={endlessPagination}
-          // slug={args.slug}
-          totalPages={totalPages}
-          variant={variant}
-        />
-        <Pagination.NextButton
-          changePage={setPage}
-          currentPage={page}
-          // slug={}
-          totalPages={totalPages}
-        />
-      </DisplayContainer>
+    <Box css={{ flexDirection: "column" }}>
+      <Pagination.Root
+        endlessPagination={endlessPagination}
+        page={page}
+        setPage={setPage}
+        slug={slug}
+        totalPages={totalPages}
+        variant={variant}
+      >
+        <DisplayContainer>
+          <Pagination.PreviousButton />
+          <Pagination.Display />
+          <Pagination.NextButton />
+        </DisplayContainer>
+      </Pagination.Root>
 
-      <DisplayContainer>
-        <Pagination.PreviousButton
-          changePage={setPage}
-          currentPage={page}
-          // slug={}
-          totalPages={totalPages}
-        />
-        <Pagination.Display
-          changeCurrentPage={setPage}
-          compact={variant === "compact"}
-          currentPage={page}
-          endlessPagination={endlessPagination}
-          // slug={args.slug}
-          totalPages={totalPages}
-          variant="compact"
-        />
-        <Pagination.NextButton
-          changePage={setPage}
-          currentPage={page}
-          // slug={}
-          totalPages={totalPages}
-        />
-      </DisplayContainer>
-    </Pagination.Root>
+      <Pagination.Root
+        css={{ margin: "0 auto" }}
+        endlessPagination={endlessPagination}
+        page={page2}
+        setPage={setPage2}
+        slug={slug}
+        totalPages={totalPages}
+        variant="compact"
+      >
+        <DisplayContainer>
+          <Pagination.PreviousButton />
+          <Pagination.Display />
+          <Pagination.NextButton />
+        </DisplayContainer>
+      </Pagination.Root>
+    </Box>
   );
 }
 ```
@@ -664,19 +497,21 @@ Implement a responsive pagination component with a mobile-optimized fallback var
 
 ```jsx withPreview isGuide="success"
 export default function Example() {
-  const args = {
-    currentPage: 1,
-    items: 150,
-    showItems: true,
-    showTotal: true,
-    slug: "people/author/",
-    variant: "numeric",
-  };
-  const { currentPage, items, showItems, showTotal, variant } = args;
-  const [page, setPage] = useState(currentPage);
+  const [page, setPage] = useState(1);
+  const [page2, setPage2] = useState(40);
+
+  // for item range indicator
+  const items = 150;
+  const showTotal = true;
+
   const MAX_RESULTS_PER_PAGE = 10;
   const totalPages = Math.ceil((items ?? 0) / MAX_RESULTS_PER_PAGE);
   const endlessPagination = totalPages > 15;
+  const showItems = true;
+
+  const variant = "numeric";
+
+  const slug = "";
 
   const DisplayContainer = styled("div", {
     gap: "$025",
@@ -695,70 +530,45 @@ export default function Example() {
       <StyledP>
         Uses numeric variant and shows range of items on desktop:
       </StyledP>
-      <Pagination.Root css={{ flexDirection: "column" }}>
-        <DisplayContainer>
-          <Pagination.ItemRangeIndicator
-            currentPage={page}
-            endlessPagination={endlessPagination}
-            showTotal={showTotal}
-            items={items}
-            totalPages={totalPages}
-            showItems={showItems}
-          />
+      <Box css={{ flexDirection: "column" }}>
+        <Pagination.Root
+          endlessPagination={endlessPagination}
+          page={page}
+          setPage={setPage}
+          showItems={showItems}
+          slug={slug}
+          totalPages={totalPages}
+          variant={variant}
+        >
+          <Pagination.ItemRangeIndicator showTotal={showTotal} items={items} />
           <DisplayContainer>
-            <Pagination.PreviousButton
-              changePage={setPage}
-              currentPage={page}
-              // slug={}
-              totalPages={totalPages}
-            />
-            <Pagination.Display
-              changeCurrentPage={setPage}
-              compact={variant === "compact"}
-              currentPage={page}
-              endlessPagination={endlessPagination}
-              // slug={args.slug}
-              totalPages={totalPages}
-              variant={variant}
-            />
-            <Pagination.NextButton
-              changePage={setPage}
-              currentPage={page}
-              // slug={}
-              totalPages={totalPages}
-            />
+            <Pagination.PreviousButton />
+            <Pagination.Display />
+            <Pagination.NextButton />
           </DisplayContainer>
-        </DisplayContainer>
+        </Pagination.Root>
         <StyledP>
           Uses compact variant and hides range of items on mobile devices or
           smaller screens:
         </StyledP>
         <div>
-          <DisplayContainer>
-            <Pagination.PreviousButton
-              changePage={setPage}
-              currentPage={page}
-              // slug={}
-              totalPages={totalPages}
-            />
-            <Pagination.Display
-              changeCurrentPage={setPage}
-              compact={true}
-              currentPage={page}
-              endlessPagination={endlessPagination}
-              // slug={args.slug}
-              totalPages={totalPages}
-              variant="compact"
-            />
-            <Pagination.NextButton
-              changePage={setPage}
-              currentPage={page}
-              // slug={}
-              totalPages={totalPages}
-            />
-          </DisplayContainer>
+          <Pagination.Root
+            endlessPagination={endlessPagination}
+            page={page}
+            setPage={setPage}
+            showItems={showItems}
+            slug={slug}
+            totalPages={totalPages}
+            variant="compact"
+          >
+            <DisplayContainer>
+              <Pagination.PreviousButton />
+              <Pagination.Display />
+              <Pagination.NextButton />
+            </DisplayContainer>
+          </Pagination.Root>
         </div>
-      </Pagination.Root>
+      </Box>
     </DisplayContainer>
   );
 }
