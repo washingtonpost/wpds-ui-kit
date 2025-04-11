@@ -1,18 +1,17 @@
 import * as React from "react";
-import { render, screen } from "@testing-library/react";
+import { screen } from "@testing-library/react";
 import { PaginationPreviousButton as PreviousButton } from "./PaginationPreviousButton";
+import { renderWithContext } from "./paginationTestsHelpers";
 
 const props = {
-  changePage: () => null,
-  css: {},
-  currentPage: 2,
+  setPage: () => null,
+  page: 2,
   slug: "people/author/",
-  totalPages: 10,
 };
 
 describe("PaginationPreviousButton", () => {
   test("renders visibly into the document", () => {
-    render(<PreviousButton {...props} />);
+    renderWithContext(<PreviousButton />, { ...props });
 
     expect(screen.getByRole("link")).toHaveAttribute(
       "href",

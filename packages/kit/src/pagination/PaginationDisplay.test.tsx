@@ -1,12 +1,11 @@
 import * as React from "react";
-import { render, screen } from "@testing-library/react";
+import { screen } from "@testing-library/react";
 import { PaginationDisplay } from "./PaginationDisplay";
+import { renderWithContext } from "./paginationTestsHelpers";
 
 const props = {
-  changeCurrentPage: () => null,
-  compact: false,
-  css: {},
-  currentPage: 1,
+  setPage: () => null,
+  page: 1,
   endlessPagination: false,
   slug: "people/author/",
   totalPages: 10,
@@ -15,15 +14,17 @@ const props = {
 
 describe("PaginationDisplay", () => {
   test("renders visibly into the document -- numeric", () => {
-    render(<PaginationDisplay {...props} />);
+    renderWithContext(<PaginationDisplay />, { ...props });
 
     expect(screen.getAllByRole("link")[0]).toHaveTextContent("1");
     expect(screen.getAllByRole("link")[5]).toHaveTextContent("10");
   });
 
   test("renders visibly into the document -- descriptive", () => {
-    const testProps = { ...props, variant: "descriptive" };
-    render(<PaginationDisplay {...testProps} />);
+    renderWithContext(<PaginationDisplay />, {
+      ...props,
+      variant: "descriptive",
+    });
 
     expect(screen.getByText("1 of 10 pages")).toBeVisible();
   });

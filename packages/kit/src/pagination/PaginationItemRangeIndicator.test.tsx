@@ -1,10 +1,11 @@
 import * as React from "react";
-import { render, screen } from "@testing-library/react";
+import { screen } from "@testing-library/react";
 import { PaginationItemRangeIndicator as ItemRangeIndicator } from "./PaginationItemRangeIndicator";
+import { renderWithContext } from "./paginationTestsHelpers";
 
 const props = {
   css: {},
-  currentPage: 1,
+  page: 1,
   endlessPagination: false,
   showTotal: true,
   items: 100,
@@ -14,14 +15,19 @@ const props = {
 
 describe("PaginationItemRangeIndicator", () => {
   test("renders visibly into the document", () => {
-    render(<ItemRangeIndicator {...props} />);
+    renderWithContext(
+      <ItemRangeIndicator items={props.items} showTotal={props.showTotal} />,
+      { ...props }
+    );
 
     expect(screen.getByText("Showing 1 - 10 of 100 items")).toBeVisible();
   });
 
   test("showTotal is false", () => {
-    const testProps = { ...props, showTotal: false };
-    render(<ItemRangeIndicator {...testProps} />);
+    renderWithContext(
+      <ItemRangeIndicator items={props.items} showTotal={false} />,
+      { ...props }
+    );
 
     expect(screen.getByText("Showing 1 - 10 items")).toBeVisible();
   });
