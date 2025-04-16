@@ -245,10 +245,10 @@ const StyledCheck = styled("span", {
   variants: {
     size: {
       "087": {
-        $$checkSize: "$size$087",
+        $$checkSize: "$sizes$087",
       },
       "125": {
-        $$checkSize: "$size$125",
+        $$checkSize: "$sizes$125",
       },
     },
   },

@@ -1,13 +1,13 @@
 import * as React from "react";
 import { render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
+import { userEvent } from "@testing-library/user-event";
 import { CarouselNextButton } from "./CarouselNextButton";
 import { CarouselContext } from "./CarouselRoot";
 
 describe("CarouselNextButton", () => {
   const renderWithContext = (ui, contextProps) => {
     return render(
-      <CarouselContext.Provider value={...contextProps}>
+      <CarouselContext.Provider value={{ ...contextProps }}>
         {ui}
       </CarouselContext.Provider>
     );
