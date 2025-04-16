@@ -10,8 +10,6 @@ const PropTable = ({ props, displayName }) => (
     tabIndex={0}
     css={{
       overflow: "auto",
-      outline: "$size$025 solid $colors$alpha25",
-
       "@sm": {
         width: "90vw",
       },
