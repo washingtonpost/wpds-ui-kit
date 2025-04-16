@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
+import { userEvent } from "@testing-library/user-event";
 import { useActiveDescendant } from "./useActiveDescendant";
 import { CarouselRoot } from "./CarouselRoot";
 import { CarouselContent } from "./CarouselContent";

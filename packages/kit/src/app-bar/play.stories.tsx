@@ -9,7 +9,7 @@ import Profile from "@washingtonpost/wpds-assets/asset/profile";
 import { useDarkMode } from "storybook-dark-mode";
 import WashingtonPost from "@washingtonpost/wpds-assets/asset/washington-post";
 
-import type { Meta, StoryFn } from "@storybook/react";
+import type { Meta } from "@storybook/react";
 
 import { AppBar as Component } from ".";
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { Avatar as Component } from "./";
 import { styled, theme } from "../theme";
-import type { StoryObj, Meta, StoryFn } from "@storybook/react";
+import type { StoryObj, Meta } from "@storybook/react";
 
 export default {
   title: "Avatar",
