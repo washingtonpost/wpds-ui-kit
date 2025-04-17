@@ -8,7 +8,7 @@ import {
   Button,
   Dialog,
 } from "@washingtonpost/wpds-ui-kit";
-import { Search as SearchIcon, Close } from "@washingtonpost/wpds-assets";
+import { Search as SearchIcon } from "@washingtonpost/wpds-assets";
 import { searchDocs } from "../../lib/search-index";
 import Link from "next/link";
 
@@ -194,27 +194,7 @@ export const DocSearch = ({
       <Dialog.Root open={dialogOpen} onOpenChange={setDialogOpen} modal={true}>
         <Dialog.Overlay backgroundColor="$alpha500" />
         <Dialog.Portal>
-          <Dialog.Content
-            height="100px"
-            width="500px"
-            //   backgroundColor="transparent"
-            css={
-              {
-                // remove box shadow
-                // boxShadow: 'none',
-              }
-            }
-          >
-            {/* <Dialog.Close onClick={closeDialog}>
-            <Icon label="Close dialog">
-              <Close />
-            </Icon>
-          </Dialog.Close> */}
-
-            {/* <Dialog.Header css={{ marginBottom: '$100', textAlign: 'center' }}>
-            Search Documentation
-          </Dialog.Header> */}
-
+          <Dialog.Content height="100px" width="500px">
             <Box>
               <InputSearch.Root
                 aria-label="Search documentation"
