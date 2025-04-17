@@ -15,55 +15,42 @@ export type PaginationPreviousButtonProps = React.ComponentPropsWithRef<
 export const PaginationPreviousButton = React.forwardRef<
   HTMLButtonElement,
   PaginationPreviousButtonProps
->(
-  (
-    {
-      css,
-      density = "compact",
-      icon = "left",
-      variant = "secondary",
-      ...props
-    },
-    ref
-  ) => {
-    const { page, setPage, slug } = React.useContext(PaginationContext);
+>(({ css, density = "compact", icon = "left", ...props }, ref) => {
+  const { page, setPage, slug } = React.useContext(PaginationContext);
 
-    const handleClick = () => {
-      if (page > 1) {
-        return setPage(page - 1);
-      }
-    };
+  const handleClick = () => {
+    if (page > 1) {
+      return setPage(page - 1);
+    }
+  };
 
-    const firstPage = page === 1;
-    const href = firstPage || !slug?.length ? null : `${slug}?page=${page - 1}`;
-    const rel = !firstPage ? "prev" : "";
+  const firstPage = page === 1;
+  const href = firstPage || !slug?.length ? null : `${slug}?page=${page - 1}`;
+  const rel = !firstPage ? "prev" : "";
 
-    return (
-      <StyledButton
-        aria-label="previous page"
-        as="a"
-        css={{
-          ...css,
-        }}
-        density={density}
-        disabled={firstPage}
-        href={href}
-        icon={icon}
-        isOutline={false}
-        onClick={handleClick}
-        ref={ref}
-        rel={rel}
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
-        variant={variant}
-        {...props}
-      >
-        <Icon label="Previous" size="100">
-          <ChevronLeft />
-        </Icon>
-      </StyledButton>
-    );
-  }
-);
+  return (
+    <StyledButton
+      aria-label="previous page"
+      as="a"
+      css={{
+        ...css,
+      }}
+      density={density}
+      disabled={firstPage}
+      href={href}
+      icon={icon}
+      isOutline={false}
+      onClick={handleClick}
+      ref={ref}
+      rel={rel}
+      variant="secondary"
+      {...props}
+    >
+      <Icon label="Previous" size="100">
+        <ChevronLeft />
+      </Icon>
+    </StyledButton>
+  );
+});
 
 PaginationPreviousButton.displayName = NAME;

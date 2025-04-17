@@ -57,16 +57,35 @@ const Panel = styled("div", {
   },
 });
 
+const StyledBox = styled(Box, {
+  display: "flex",
+  width: "100%",
+  height: "50%",
+  justifyContent: "center",
+  alignItems: "center",
+  flexDirection: "column",
+  "@notSm": {
+    flexDirection: "row",
+  },
+  variants: {
+    stacked: {
+      true: {
+        flexDirection: "column",
+      },
+    },
+  },
+});
+
 function GlobalStyles(props) {
   globalStyles();
-  return <Panel css={props.css}>{props.children}</Panel>;
+  return <Panel css={{ ...props.css }}>{props.children}</Panel>;
 }
 
 function DarkPanel(props) {
   globalStyles();
   darkModeGlobalStyles();
   return (
-    <Panel className={darkTheme} dark>
+    <Panel className={darkTheme} css={{ ...props.css }} dark>
       {props.children}
     </Panel>
   );
@@ -82,27 +101,26 @@ export const decorators = [
       );
     }
 
+    /**
+     * passing css overrides in parameters allows
+     * us to customize how certain stories are rendered
+     *
+     * also have a stacked boolean to stack light and
+     * dark mode at larger breakpoints
+     */
+    const {
+      parameters: { css = {}, stacked = false },
+    } = Context;
+
     return (
-      <Box
-        css={{
-          display: "flex",
-          width: "100%",
-          height: "50%",
-          justifyContent: "center",
-          alignItems: "center",
-          flexDirection: "column",
-          "@notSm": {
-            flexDirection: "row",
-          },
-        }}
-      >
-        <GlobalStyles>
+      <StyledBox css={{ ...css.containerStyles }} stacked={stacked}>
+        <GlobalStyles css={{ ...css.panelStyles }}>
           <Story theme="light" />
         </GlobalStyles>
-        <DarkPanel>
+        <DarkPanel css={{ ...css.panelStyles }}>
           <Story theme="dark" />
         </DarkPanel>
-      </Box>
+      </StyledBox>
     );
   },
 ];

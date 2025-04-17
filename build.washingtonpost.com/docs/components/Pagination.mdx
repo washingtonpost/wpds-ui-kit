@@ -376,6 +376,7 @@ export default function Example() {
 ### Triggers
 
 - When clicking the next or previous page buttons, the page numbers update and content transitions smoothly.
+- When clicking on the fifth page from the first and the last pages, it’s selected state will appear as the middle page number, and the overflow buttons appear.
 - The overflow button triggers the next set of sequential numbers, allowing users to jump three pages.
 
 ```jsx withPreview
@@ -472,7 +473,7 @@ export default function Example() {
       </Pagination.Root>
 
       <Pagination.Root
-        css={{ margin: "0 auto" }}
+        css={{ justifyContent: "center" }}
         endlessPagination={endlessPagination}
         page={page2}
         setPage={setPage2}
@@ -553,6 +554,7 @@ export default function Example() {
         </StyledP>
         <div>
           <Pagination.Root
+            css={{ justifyContent: "center" }}
             endlessPagination={endlessPagination}
             page={page}
             setPage={setPage}

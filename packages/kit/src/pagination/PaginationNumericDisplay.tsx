@@ -85,9 +85,11 @@ export const PaginationNumericDisplay = ({
   );
 };
 
-const getPagesToShow = (currentPage, totalPages) => {
+const getPagesToShow = (currentPage: number, totalPages: number) => {
+  // Number of pages (buttons) to show at beginning and end of pagination
+  const PAGERANGE = 5;
   // Sequence generator (range), thanks, MDN
-  const range = (start, stop, step) =>
+  const range = (start: number, stop: number, step: number) =>
     Array.from(
       { length: Math.ceil((stop - start) / step) },
       (_, i) => start + i * step
@@ -99,7 +101,7 @@ const getPagesToShow = (currentPage, totalPages) => {
   const start = currentPage - 2;
   const end = currentPage + 1;
   // Beginning and ending numbers of pages array
-  const beginning = currentPage < 5;
+  const beginning = currentPage < PAGERANGE;
   const ending = currentPage > totalPages - 4;
   // pages we show in the component, ex: < 1 2 3 4 5 ... 15 >
   // pagesToShow would return the set of numbers we're looping through [2, 3, 4, 5] (for example)
@@ -108,9 +110,9 @@ const getPagesToShow = (currentPage, totalPages) => {
     pagesToShow = pages.slice(1, -1);
   } else {
     if (beginning) {
-      pagesToShow = pages.slice(1, 5);
+      pagesToShow = pages.slice(1, PAGERANGE);
     } else if (ending) {
-      pagesToShow = pages.slice(totalPages - 5, totalPages - 1);
+      pagesToShow = pages.slice(totalPages - PAGERANGE, totalPages - 1);
     } else {
       pagesToShow = pages.slice(start, end);
     }

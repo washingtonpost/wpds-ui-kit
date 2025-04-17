@@ -21,13 +21,16 @@ export const PaginationDisplay = React.forwardRef<
   const { endlessPagination, page, setPage, slug, totalPages, variant } =
     React.useContext(PaginationContext);
 
-  /** If compact variant */
-  // compact: boolean;
+  const numeric = variant === "numeric";
+  const descriptive = variant === "descriptive";
   const compact = variant === "compact";
+
+  if (!numeric && !descriptive && !compact) return null;
+
   return (
     <Container css={{ ...css }} ref={ref}>
       <Numeric
-        changePage={setPage} // how is this the only one that has changeCurrentPage
+        changePage={setPage}
         compact={compact}
         currentPage={page}
         endlessPagination={endlessPagination}

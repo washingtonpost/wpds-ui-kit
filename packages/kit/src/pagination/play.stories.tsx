@@ -69,9 +69,14 @@ const NumericTemplate: StoryFn<typeof Component.Root> = (args) => {
   );
 };
 
-export const Numeric = NumericTemplate.bind({});
-
-Numeric.args = NumericArgs;
+export const Numeric = {
+  render: NumericTemplate,
+  args: NumericArgs,
+  parameters: {
+    css: { containerStyles: {}, panelStyles: { minHeight: "50vh" } },
+    stacked: true,
+  },
+};
 
 const DescriptiveArgs = {
   ...DefaultArgs,

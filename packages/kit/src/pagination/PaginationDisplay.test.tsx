@@ -29,10 +29,12 @@ describe("PaginationDisplay", () => {
     expect(screen.getByText("1 of 10 pages")).toBeVisible();
   });
 
-  // Fix
-  // test("renders visibly into the document -- compact", () => {
-  //   render(<PaginationDisplay {...props} />);
+  test("renders visibly into the document -- compact", () => {
+    renderWithContext(<PaginationDisplay />, {
+      ...props,
+      variant: "compact",
+    });
 
-  //   expect(screen.getByText("1/10")).toBeVisible();
-  // });
+    expect(screen.getByText("1/10")).toBeVisible();
+  });
 });
