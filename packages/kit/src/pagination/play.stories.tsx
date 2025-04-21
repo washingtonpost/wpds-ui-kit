@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Pagination as Component } from "./";
-import { styled } from "../theme";
+import { styled, theme } from "../theme";
 
 import { Meta, StoryFn } from "@storybook/react";
 
@@ -73,7 +73,13 @@ export const Numeric = {
   render: NumericTemplate,
   args: NumericArgs,
   parameters: {
-    css: { containerStyles: {}, panelStyles: { minHeight: "50vh" } },
+    css: {
+      containerStyles: {},
+      panelStyles: {
+        minHeight: "50vh",
+        lightTheme: { backgroundColor: theme.colors.surface },
+      },
+    },
     stacked: true,
   },
 };
@@ -113,9 +119,18 @@ const DescriptiveTemplate: StoryFn<typeof Component.Root> = (args) => {
   );
 };
 
-export const Descriptive = DescriptiveTemplate.bind({});
-
-Descriptive.args = DescriptiveArgs;
+export const Descriptive = {
+  render: DescriptiveTemplate,
+  args: DescriptiveArgs,
+  parameters: {
+    css: {
+      containerStyles: {},
+      panelStyles: {
+        lightTheme: { backgroundColor: theme.colors.surface },
+      },
+    },
+  },
+};
 
 const CompactArgs = {
   ...DefaultArgs,
@@ -151,9 +166,18 @@ const CompactTemplate: StoryFn<typeof Component.Root> = (args) => {
   );
 };
 
-export const Compact = CompactTemplate.bind({});
-
-Compact.args = CompactArgs;
+export const Compact = {
+  render: CompactTemplate,
+  args: CompactArgs,
+  parameters: {
+    css: {
+      containerStyles: {},
+      panelStyles: {
+        lightTheme: { backgroundColor: theme.colors.surface },
+      },
+    },
+  },
+};
 
 const NoDisplayArgs = {
   ...DefaultArgs,
@@ -189,9 +213,18 @@ const NoDisplayTemplate: StoryFn<typeof Component.Root> = (args) => {
   );
 };
 
-export const NoDisplay = NoDisplayTemplate.bind({});
-
-NoDisplay.args = NoDisplayArgs;
+export const NoDisplay = {
+  render: NoDisplayTemplate,
+  args: NoDisplayArgs,
+  parameters: {
+    css: {
+      containerStyles: {},
+      panelStyles: {
+        lightTheme: { backgroundColor: theme.colors.surface },
+      },
+    },
+  },
+};
 
 const EndlessPaginationArgs = {
   ...DefaultArgs,
@@ -230,6 +263,15 @@ const EndlessPaginationTemplate: StoryFn<typeof Component.Root> = (args) => {
   );
 };
 
-export const EndlessPagination = EndlessPaginationTemplate.bind({});
-
-EndlessPagination.args = EndlessPaginationArgs;
+export const EndlessPagination = {
+  render: EndlessPaginationTemplate,
+  args: EndlessPaginationArgs,
+  parameters: {
+    css: {
+      containerStyles: {},
+      panelStyles: {
+        lightTheme: { backgroundColor: theme.colors.surface },
+      },
+    },
+  },
+};

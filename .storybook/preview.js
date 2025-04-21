@@ -113,11 +113,15 @@ export const decorators = [
     } = Context;
 
     return (
-      <StyledBox css={{ ...css.containerStyles }} stacked={stacked}>
-        <GlobalStyles css={{ ...css.panelStyles }}>
+      <StyledBox css={{ ...css?.containerStyles }} stacked={stacked}>
+        <GlobalStyles
+          css={{ ...css?.panelStyles, ...css?.panelStyles?.lightTheme }}
+        >
           <Story theme="light" />
         </GlobalStyles>
-        <DarkPanel css={{ ...css.panelStyles }}>
+        <DarkPanel
+          css={{ ...css?.panelStyles, ...css?.panelStyles?.darkTheme }}
+        >
           <Story theme="dark" />
         </DarkPanel>
       </StyledBox>
