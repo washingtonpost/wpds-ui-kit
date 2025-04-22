@@ -11,7 +11,7 @@ export const StyledButton = styled(Button, {
   fontSize: "$087",
   lineHeight: "16px",
   textDecoration: "none",
-  transition: "background-color .05ms linear",
+  transition: theme.transitions.inOut,
   variants: {
     disabled: {
       true: {
