@@ -1,0 +1,67 @@
+<svg width="580" height="132" viewBox="0 0 580 132" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(135 50) scale(0.5 0.5) ">
+  <rect width="100" height="100" fill="#0000001a"/>
+  <rect width="100" height="100" fill="url('#shimmer-15')"/>
+</g>
+
+<g clip-path="url(#clip0_7511_60238)">
+<rect x="145" width="28" height="28" rx="14" fill="#94538C"/>
+<path d="M162.874 20.5H154.918V18.304H157.564V11.59C157.042 11.968 156.196 12.49 155.188 12.904V10.6C156.394 10.204 157.492 9.214 158.23 8.296H160.336V18.304H162.874V20.5Z" fill="white"/>
+</g>
+<g clip-path="url(#clip1_7511_60238)">
+<rect x="454.772" width="28" height="28" rx="14" fill="#94538C"/>
+<path d="M472.956 20.5H463.902V18.592C468.672 15.01 469.968 13.894 469.968 12.166C469.968 11.212 469.392 10.528 468.33 10.528C467.232 10.528 466.53 11.266 466.368 12.76L463.884 12.31C464.334 9.502 466.224 8.278 468.636 8.278C471.156 8.278 472.83 9.736 472.83 12.058C472.83 14.47 470.76 15.982 467.394 18.286H472.956V20.5Z" fill="white"/>
+</g>
+<g clip-path="url(#clip2_7511_60238)">
+<path d="M357.772 92C357.772 80.9543 366.726 72 377.772 72C388.818 72 397.772 80.9543 397.772 92C397.772 103.046 388.818 112 377.772 112C366.726 112 357.772 103.046 357.772 92Z" fill="black" fill-opacity="0.1"/>
+<mask id="mask0_7511_60238" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="357" y="72" width="41" height="40">
+<rect x="357.772" y="72" width="40" height="40" fill="black"/>
+</mask>
+<g mask="url(#mask0_7511_60238)">
+</g>
+</g>
+<g clip-path="url(#clip3_7511_60238)">
+<rect width="40" height="40" transform="translate(448.772 72)" fill="black" fill-opacity="0.1"/>
+<mask id="mask1_7511_60238" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="448" y="72" width="41" height="40">
+<rect x="448.772" y="72" width="40" height="40" fill="black"/>
+</mask>
+<g mask="url(#mask1_7511_60238)">
+</g>
+</g>
+<g clip-path="url(#clip4_7511_60238)">
+<path d="M499.772 92C499.772 88.6863 502.458 86 505.772 86H573.772C577.086 86 579.772 88.6863 579.772 92C579.772 95.3137 577.086 98 573.772 98H505.772C502.458 98 499.772 95.3137 499.772 92Z" fill="black" fill-opacity="0.1"/>
+<mask id="mask2_7511_60238" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="499" y="86" width="81" height="12">
+<rect x="499.772" y="86" width="80" height="12" fill="black"/>
+</mask>
+<g mask="url(#mask2_7511_60238)">
+</g>
+</g>
+<defs>
+<clipPath id="clip0_7511_60238">
+<rect width="27.9562" height="28" fill="white" transform="translate(145.021)"/>
+</clipPath>
+<clipPath id="clip1_7511_60238">
+<rect width="27.9562" height="28" fill="white" transform="translate(454.794)"/>
+</clipPath>
+<clipPath id="clip2_7511_60238">
+<path d="M357.772 92C357.772 80.9543 366.726 72 377.772 72C388.818 72 397.772 80.9543 397.772 92C397.772 103.046 388.818 112 377.772 112C366.726 112 357.772 103.046 357.772 92Z" fill="white"/>
+</clipPath>
+<clipPath id="clip3_7511_60238">
+<rect width="40" height="40" fill="white" transform="translate(448.772 72)"/>
+</clipPath>
+<clipPath id="clip4_7511_60238">
+<path d="M499.772 92C499.772 88.6863 502.458 86 505.772 86H573.772C577.086 86 579.772 88.6863 579.772 92C579.772 95.3137 577.086 98 573.772 98H505.772C502.458 98 499.772 95.3137 499.772 92Z" fill="white"/>
+</clipPath> 
+<linearGradient id="shimmer" > 
+  <stop offset="0%" stop-color="#ffffff0d">
+    <animate attributeName="offset" values="-1; 2" dur="1400ms" repeatCount="indefinite"></animate>
+  </stop>
+  <stop offset="50%" stop-color="#ffffffa6">
+  <animate attributeName="offset" values="-0.5; 2.5" dur="1400ms" repeatCount="indefinite"></animate>
+  </stop>
+  <stop offset="100%" stop-color="#ffffff0d">
+  <animate attributeName="offset" values="0; 3" dur="1400ms" repeatCount="indefinite"></animate>
+  </stop>
+</linearGradient> 
+</defs>
+</svg>
