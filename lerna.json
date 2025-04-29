@@ -1,7 +1,7 @@
 {
   "useWorkspaces": true,
   "useNx": false,
-  "npmClient": "npm",
+  "npmClient": "pnpm",
   "command": {
     "version": {
       "exact": true,

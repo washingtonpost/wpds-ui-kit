@@ -26,31 +26,22 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: actions/setup-node@v4.0.0
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
         with:
           node-version-file: ".nvmrc"
           registry-url: "https://registry.npmjs.org"
           always-auth: true
-          cache: npm
+          cache: pnpm
 
-      - name: Cache node_modules
-        id: cache-node_modules
-        uses: actions/cache@v3
-        with:
-          path: |
-            **/node_modules
-            node_modules
-          key: node_modules-${{ hashFiles('package-lock.json') }}
-          restore-keys: node_modules
-
-      - name: Install npm dependencies
-        if: steps.cache-node_modules.outputs.cache-hit != 'true'
-        run: npm ci
+      - name: Install dependencies
+        run: pnpm install
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
 
       - name: Build the project
-        run: npm run build
+        run: pnpm build
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
@@ -69,33 +60,24 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: actions/setup-node@v4.0.0
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
         with:
           node-version-file: ".nvmrc"
           registry-url: "https://registry.npmjs.org"
           always-auth: true
-          cache: npm
+          cache: pnpm
 
-      - name: Cache node_modules
-        id: cache-node_modules
-        uses: actions/cache@v3
-        with:
-          path: |
-            **/node_modules
-            node_modules
-          key: node_modules-${{ hashFiles('package-lock.json') }}
-          restore-keys: node_modules
-
-      - name: Install npm dependencies
-        if: steps.cache-node_modules.outputs.cache-hit != 'true'
-        run: npm ci
+      - name: Install dependencies
+        run: pnpm install
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
 
       - name: Validate checks
         run: |
-          npm run build
-          npm run validate
+          pnpm build
+          pnpm validate
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
@@ -113,34 +95,23 @@ jobs:
       - uses: actions/checkout@v4.1.1
         with:
           fetch-depth: 0
-
-      - uses: actions/setup-node@v4.0.0
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
         with:
           node-version-file: ".nvmrc"
           registry-url: "https://registry.npmjs.org"
           always-auth: true
-          cache: npm
+          cache: pnpm
 
-      - name: Cache node_modules
-        id: cache-node_modules
-        uses: actions/cache@v3
-        with:
-          path: |
-            **/node_modules
-            node_modules
-          key: node_modules-${{ hashFiles('package-lock.json') }}
-          restore-keys: node_modules
-
-      - name: Install npm dependencies
-        if: steps.cache-node_modules.outputs.cache-hit != 'true'
-        run: npm ci
+      - name: Install dependencies
+        run: pnpm install
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
 
       - name: Build the project
-        run: npm run build
+        run: pnpm build
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}

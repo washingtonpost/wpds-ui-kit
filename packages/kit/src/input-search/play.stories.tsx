@@ -1,5 +1,5 @@
-import React, { useMemo, useState, useEffect, use } from "react";
-import { screen, userEvent, waitFor } from "@storybook/testing-library";
+import React, { useMemo, useState, useEffect } from "react";
+import { screen, userEvent } from "@storybook/testing-library";
 import { expect, jest } from "@storybook/jest";
 import { Box } from "../box";
 import { matchSorter } from "match-sorter";

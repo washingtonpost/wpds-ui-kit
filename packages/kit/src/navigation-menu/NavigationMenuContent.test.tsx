@@ -1,5 +1,5 @@
 import { render, screen, waitFor } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
+import { userEvent } from "@testing-library/user-event";
 import { NavigationMenuRoot } from "./NavigationMenuRoot";
 import { NavigationMenuList } from "./NavigationMenuList";
 import { NavigationMenuItem } from "./NavigationMenuItem";
