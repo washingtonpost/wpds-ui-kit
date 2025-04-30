@@ -12,6 +12,9 @@
     "prepare": "cd .. && husky install",
     "alex": "npx alex docs/**/*.mdx --mdx"
   },
+  "optionalDependencies": {
+    "@washingtonpost/site-footer": "latest"
+  },
   "dependencies": {
     "@babel/standalone": "^7.17.11",
     "@codesandbox/sandpack-react": "2.13.2",
@@ -25,7 +28,6 @@
     "@stitches/react": "1.3.1-1",
     "@washingtonpost/front-end-utils": "latest",
     "@washingtonpost/site-favicons": "latest",
-    "@washingtonpost/site-footer": "latest",
     "@washingtonpost/tachyons-css": "latest",
     "@washingtonpost/wpds-assets": "latest",
     "@washingtonpost/wpds-kitchen-sink": "latest",

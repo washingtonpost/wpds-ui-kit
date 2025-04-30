@@ -1,6 +1,5 @@
 import React from "react";
-import * as AvatarPrimitive from "@radix-ui/react-avatar";
-import { css, styled } from "../theme";
+import { styled } from "../theme";
 import * as Tokens from "../theme/tokens";
 
 import type * as WPDS from "../theme";
@@ -9,7 +8,7 @@ import type * as Stitches from "@stitches/react";
 const NAME = "Avatar";
 const DEFAULT_AVATAR_SIZE = "200";
 
-const StyledAvatar = styled(AvatarPrimitive.Root, {
+const StyledAvatar = styled("div", {
   display: "inline-flex",
   alignItems: "center",
   justifyContent: "center",
@@ -112,27 +111,32 @@ type AvatarProps = {
   size?: StitchesSize | SizeToken;
 } & Omit<React.ComponentPropsWithRef<typeof StyledAvatar>, "size">;
 
-export const Avatar = React.forwardRef<HTMLElement, AvatarProps>(
-  ({ children, size = DEFAULT_AVATAR_SIZE, ...props }, ref) => {
-    const child = React.Children.only(children);
-    const ImageStyles = css({
-      width: "100%",
-      height: "100%",
-      objectFit: "cover",
-      borderRadius: "inherit",
-      length: 0,
-    });
+const StyledImage = styled("img", {
+  width: "100%",
+  height: "100%",
+  objectFit: "cover",
+  borderRadius: "inherit",
+  length: 0,
+});
 
-    let _size = size;
-    if (size instanceof Object && size.token) {
-      _size = size.token;
-    }
+const resolveSize = (size: StitchesSize | SizeToken) => {
+  if (size instanceof Object && size.token) {
+    return size.token;
+  }
+  return size;
+};
+
+export const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(
+  ({ children, size = DEFAULT_AVATAR_SIZE, ...props }, ref) => {
+    const _size = resolveSize(size);
 
     return (
       <StyledAvatar ref={ref} size={_size as StitchesSize} {...props}>
-        {React.cloneElement(child, {
-          className: `${ImageStyles}`,
-        })}
+        {React.isValidElement(children) && children.type === "img" ? (
+          <StyledImage {...children.props} />
+        ) : (
+          children
+        )}
       </StyledAvatar>
     );
   }
