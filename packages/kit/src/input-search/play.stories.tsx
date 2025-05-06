@@ -1,7 +1,7 @@
 import React, { useMemo, useState, useEffect } from "react";
 import { screen, userEvent } from "@storybook/testing-library";
 import { expect, jest } from "@storybook/jest";
-import { Box } from "../box";
+import { Box } from "..";
 import { matchSorter } from "match-sorter";
 import { InputSearch } from "./";
 import { cities } from "./cities";
@@ -40,7 +40,7 @@ const Template: StoryFn<typeof InputSearch.Root> = (args) => {
   const results: { city: string; state: string }[] | null = useCityMatch(term);
 
   return (
-    <Box css={{ width: "275px", height: "340px" }}>
+    <Box css={{}}>
       <InputSearch.Root
         {...args}
         aria-label="Example-Search"
@@ -250,6 +250,8 @@ export const Scroll = {
 
 const ControlledTemplate: StoryFn<typeof InputSearch.Root> = (args) => {
   const [term, setTerm] = useState("");
+  const results: { city: string; state: string }[] | null = useCityMatch(term);
+
   return (
     <>
       <button
@@ -264,10 +266,11 @@ const ControlledTemplate: StoryFn<typeof InputSearch.Root> = (args) => {
         <InputSearch.Root
           {...args}
           aria-label="Example-Search"
-          openOnFocus
+          openOnFocus={args.openOnFocus}
           onSelect={(value) => {
             setTerm(value);
             console.log("onSelect", value);
+            console.log("foo bar");
             args.onSelect && args.onSelect(value);
           }}
         >
@@ -279,15 +282,18 @@ const ControlledTemplate: StoryFn<typeof InputSearch.Root> = (args) => {
               setTerm(event.target.value);
             }}
           />
-          <InputSearch.Popover>
-            <InputSearch.List>
-              <InputSearch.ListItem value="Apple" />
-              <InputSearch.ListItem value="Banana" />
-              <InputSearch.ListItem value="Orange" />
-              <InputSearch.ListItem value="Kiwi" />
-              <InputSearch.ListItem value="Pineapple" />
-            </InputSearch.List>
-          </InputSearch.Popover>
+          {results && (
+            <InputSearch.Popover>
+              <InputSearch.List>
+                {results.slice(0, 20).map((result) => (
+                  <InputSearch.ListItem
+                    key={`${result.city.toLowerCase()}, ${result.state.toLowerCase()}`}
+                    value={`${result.city}, ${result.state}`}
+                  />
+                ))}
+              </InputSearch.List>
+            </InputSearch.Popover>
+          )}
         </InputSearch.Root>
       </Box>
     </>
