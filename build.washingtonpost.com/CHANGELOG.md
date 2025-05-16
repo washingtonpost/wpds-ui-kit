@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.12.1-alpha.0](https://github.com/washingtonpost/wpds-docs/compare/v2.12.0...v2.12.1-alpha.0) (2025-05-16)
+
+### Bug Fixes
+
+- update typo in variant size variable ([#723](https://github.com/washingtonpost/wpds-docs/issues/723)) ([8cd80c7](https://github.com/washingtonpost/wpds-docs/commit/8cd80c7264a42b84d7fa329c06b498ca7b377ad5))
+
+### Features
+
+- add pagination component [CFE-452] ([1ddc620](https://github.com/washingtonpost/wpds-docs/commit/1ddc620487a76656e07a67cef91bc3280afe33c8))
+- addressing ts errors in buttons [WE-84] ([4b4e994](https://github.com/washingtonpost/wpds-docs/commit/4b4e99408e47ebcd2224dc90ccc5136bf0ecd423))
+- doc search ([#715](https://github.com/washingtonpost/wpds-docs/issues/715)) ([30a7d30](https://github.com/washingtonpost/wpds-docs/commit/30a7d3060add8300175fe093bc1a04e94cf71d84))
+- fixing formatting issues from pull [WE-84] ([4820866](https://github.com/washingtonpost/wpds-docs/commit/48208667d7d415850f33a723d7d0e7997f717fbf))
+- pagination [WE-84] ([453aed9](https://github.com/washingtonpost/wpds-docs/commit/453aed9b38e8a156637a9da637f25c0325fbc07c))
+- switch to pnpm ([#724](https://github.com/washingtonpost/wpds-docs/issues/724)) ([3d51235](https://github.com/washingtonpost/wpds-docs/commit/3d51235fb70be5ababccdc235c3d339876e0e6af))
+- update pagination path [WE-84] ([c4a9200](https://github.com/washingtonpost/wpds-docs/commit/c4a92001c32716c5f7db951f7981bd92603fb987))
+- updating build site docs [WE-84] ([6839c96](https://github.com/washingtonpost/wpds-docs/commit/6839c96eb368e710b88fa467c87e8302dcb650bb))
+- updating storybook, build pages, tests [WE-84] ([a612565](https://github.com/washingtonpost/wpds-docs/commit/a612565620998be4f5e10a07dd80be98d2e0ec7b))
+
 # [2.12.0](https://github.com/washingtonpost/wpds-docs/compare/v2.11.1...v2.12.0) (2025-04-02)
 
 ### Bug Fixes

@@ -3,6 +3,35 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.12.1-alpha.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.12.0...v2.12.1-alpha.0) (2025-05-16)
+
+### Bug Fixes
+
+- update typo in variant size variable ([#723](https://github.com/washingtonpost/wpds-ui-kit/issues/723)) ([8cd80c7](https://github.com/washingtonpost/wpds-ui-kit/commit/8cd80c7264a42b84d7fa329c06b498ca7b377ad5))
+
+### Features
+
+- add pagination component [CFE-452] ([1ddc620](https://github.com/washingtonpost/wpds-ui-kit/commit/1ddc620487a76656e07a67cef91bc3280afe33c8))
+- adding context [WE-84] ([307563f](https://github.com/washingtonpost/wpds-ui-kit/commit/307563fdd66501b0ce6ec3054a0e77bb6e70ec62))
+- adding key and fixing prop ([e9f8d27](https://github.com/washingtonpost/wpds-ui-kit/commit/e9f8d2743a2d78a0c7ca350ba7efac1284a21c04))
+- adding showitems for itemrangeindicator ([8c12ae3](https://github.com/washingtonpost/wpds-ui-kit/commit/8c12ae3bb90192760aaabbb157d25c86e4b852b3))
+- adding transition to minimize flickering between button changes [WE-84] ([c6df9a9](https://github.com/washingtonpost/wpds-ui-kit/commit/c6df9a9cca889b721a71b00dbb616f7384e2fc76))
+- addressing ts errors in buttons [WE-84] ([4b4e994](https://github.com/washingtonpost/wpds-ui-kit/commit/4b4e99408e47ebcd2224dc90ccc5136bf0ecd423))
+- compact at small and endless pagination ([85ee889](https://github.com/washingtonpost/wpds-ui-kit/commit/85ee889ba4b55b14198d0d0846787e4ba1453629))
+- fix button transitions with theme transitions in out token [WE-84] ([81f038c](https://github.com/washingtonpost/wpds-ui-kit/commit/81f038cded15d14b84ecb9008901722eeecd4724))
+- fixing css ([daa7e85](https://github.com/washingtonpost/wpds-ui-kit/commit/daa7e8565eed8c75bbee2e2d39bb12e2dbe1088e))
+- fixing page overflow buttons conditions [WE-84] ([1e5c638](https://github.com/washingtonpost/wpds-ui-kit/commit/1e5c638cf1b20f0ee69f374a634e31541e75f162))
+- fixing prev and next button widths [WE-84] ([0ccad42](https://github.com/washingtonpost/wpds-ui-kit/commit/0ccad4236d7714d007226a849052201b7517094e))
+- fixing tests [WE-84] ([c856b7b](https://github.com/washingtonpost/wpds-ui-kit/commit/c856b7bd1f96b1fb2c94601a2f50760f9675177d))
+- minimize background color from selected state on previously selected buttons [WE-84] ([93a8ff7](https://github.com/washingtonpost/wpds-ui-kit/commit/93a8ff753c89fc46e0b6587897891896c945c99c))
+- no renderer ([a8e5bae](https://github.com/washingtonpost/wpds-ui-kit/commit/a8e5bae3127ba5b51c806493a36c4fbd46b55433))
+- pagination [WE-84] ([453aed9](https://github.com/washingtonpost/wpds-ui-kit/commit/453aed9b38e8a156637a9da637f25c0325fbc07c))
+- resolving slug possibly being undefined [WE-84] ([36f2ed6](https://github.com/washingtonpost/wpds-ui-kit/commit/36f2ed6a04311a0a7f12b071b4cd0708454d02f6))
+- surface as background color on pagination light theme storybook docs [WE-84] ([5792613](https://github.com/washingtonpost/wpds-ui-kit/commit/57926137c41db99d5623712822a0055ad12dbc5c))
+- switch to pnpm ([#724](https://github.com/washingtonpost/wpds-ui-kit/issues/724)) ([3d51235](https://github.com/washingtonpost/wpds-ui-kit/commit/3d51235fb70be5ababccdc235c3d339876e0e6af))
+- temporary ignores to see if build site looks good [WE-84] ([f42d5c8](https://github.com/washingtonpost/wpds-ui-kit/commit/f42d5c8285a22d11c69938e2a9a0f1fe95151996))
+- updating storybook, build pages, tests [WE-84] ([a612565](https://github.com/washingtonpost/wpds-ui-kit/commit/a612565620998be4f5e10a07dd80be98d2e0ec7b))
+
 # [2.12.0](https://github.com/washingtonpost/wpds-ui-kit/compare/v2.11.1...v2.12.0) (2025-04-02)
 
 ### Bug Fixes
