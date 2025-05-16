@@ -1,7 +1,7 @@
 {
-  "name": "@washingtonpost/wpds-kitchen-sink",
-  "version": "2.12.1-alpha.0",
-  "description": "WPDS Kitchen Sink",
+  "name": "@washingtonpost/wpds-pagination",
+  "version": "",
+  "description": "WPDS Pagination",
   "author": "WPDS Support <wpds@washpost.com>",
   "homepage": "https://github.com/washingtonpost/wpds-ui-kit#readme",
   "license": "MIT",
@@ -36,14 +36,10 @@
     "typescript": "4.5.5"
   },
   "peerDependencies": {
-    "@washingtonpost/wpds-assets": "^2.11.0",
-    "@washingtonpost/wpds-ui-kit": "2.9.0",
+    "@washingtonpost/wpds-theme": "*",
     "react": "^18.2.0"
   },
   "dependencies": {
-    "@washingtonpost/wpds-assets": "^2.11.0",
-    "@washingtonpost/wpds-ui-kit": "2.12.1-alpha.0",
-    "nanoid": "^3.3.4"
-  },
-  "gitHead": "47a50a2f7dd012d1f1b7263c1c38c8e40e54d8dd"
+    "@washingtonpost/wpds-theme": ""
+  }
 }

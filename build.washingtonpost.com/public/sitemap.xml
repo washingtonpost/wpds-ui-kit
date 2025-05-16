@@ -93,6 +93,10 @@
   </url>
 
   <url>
+    <loc>https://build.washingtonpost.com/components/pagination</loc>
+  </url>
+
+  <url>
     <loc>https://build.washingtonpost.com/components/pagination-dots</loc>
   </url>
 

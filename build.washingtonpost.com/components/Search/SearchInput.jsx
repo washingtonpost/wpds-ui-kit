@@ -8,7 +8,7 @@ import {
   Button,
   Dialog,
 } from "@washingtonpost/wpds-ui-kit";
-import { Search as SearchIcon, Close } from "@washingtonpost/wpds-assets";
+import { Search as SearchIcon } from "@washingtonpost/wpds-assets";
 import { searchDocs } from "../../lib/search-index";
 import Link from "next/link";
 
