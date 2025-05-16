@@ -12,22 +12,22 @@ Run the following commands _at root level_ to get your local development environ
 nvm use
 ```
 
-2. To install all the dependencies from package-lock.json (unless you're adding a new dependency)
+2. To install all the dependencies from package.json (unless you're adding a new dependency)
 
 ```shell
-npm ci
+pnpm i
 ```
 
 3. To build all the wpds packages
 
 ```shell
-npm run build
+pnpm build
 ```
 
 5. To open http://localhost:3000
 
 ```
-npm run dev --workspace=build.washingtonpost.com
+pnpm dev --workspace=build.washingtonpost.com
 ```
 
 ## Environment variables

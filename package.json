@@ -99,11 +99,6 @@
     "turbo-windows-64": "1.11.1",
     "turbo-windows-arm64": "1.11.1"
   },
-  "workspaces": [
-    "./build.washingtonpost.com",
-    "./apps/*",
-    "./packages/*"
-  ],
   "dependencies": {
     "@babel/standalone": "^7.17.11",
     "@washingtonpost/wpds-assets": "^2.11.0",
@@ -130,14 +125,15 @@
     "clean": "turbo run clean && rm -rf node_modules",
     "dev": "turbo run dev --concurrency=42",
     "start": "turbo run start",
-    "playwright": "playwright test"
+    "playwright": "playwright test",
+    "preinstall": "npx only-allow pnpm"
   },
   "prettier": {},
-  "packageManager": "npm@10.2.4",
   "overrides": {
     "@washingtonpost/wpds-assets": "^2.11.0",
     "react-docgen-typescript": "^2.2.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
-  }
+  },
+  "packageManager": "pnpm@9.12.3+sha1.4fb96925d434c491285182acf29803bb9aa2e6e5"
 }

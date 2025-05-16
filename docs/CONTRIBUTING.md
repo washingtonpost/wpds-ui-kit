@@ -14,25 +14,31 @@ Run the following commands to get your local development environment set up.
 nvm use
 ```
 
-2. Install all dependencies off of the package-lock.json. (Use `npm i` if you're introducing new dependencies. Please note that all dev-dependencies need to be listed on the root package.json as well as the package specific package.json)
+2. Make sure you're using pnpm. This will automatically install pnpm on your system:
 
 ```shell
-npm ci
+corepack enable pnpm
 ```
 
-3. Builds all the things
+3. Install all dependencies off of the package.json. (Use `pnpm i` if you're introducing new dependencies. Please note that all dev-dependencies need to be listed on the root package.json as well as the package specific package.json)
 
 ```shell
-npm run build
+pnpm i
 ```
 
-4. We use Storybook to develop locally along with Next.js.
+4. Builds all the things
+
+```shell
+pnpm build
+```
+
+5. We use Storybook to develop locally along with Next.js.
 
 ```bash
-npm run storybook
+pnpm storybook
 ```
 
-5. Don't forget to add your component to the kitchen-sink page. You can run `npm run docsite:dev` to develop and test with the [kitchen-sink page](https://github.com/washingtonpost/wpds-ui-kit/blob/main/build.washingtonpost.com/pages/kitchen-sink/index.tsx). You can only access this page directly via `http://localhost:3000/kitchen-sink`. This page allows us to quickly check that all the components render as expected.
+6. Don't forget to add your component to the kitchen-sink page. You can run `pnpm docsite:dev` to develop and test with the [kitchen-sink page](https://github.com/washingtonpost/wpds-ui-kit/blob/main/build.washingtonpost.com/pages/kitchen-sink/index.tsx). You can only access this page directly via `http://localhost:3000/kitchen-sink`. This page allows us to quickly check that all the components render as expected.
 
 ## Testing
 
@@ -41,13 +47,13 @@ We use Testing Library and/or Storybook's new Interaction feature for Unit & Int
 This command runs the Jest.
 
 ```shell
-npm run test
+pnpm test
 ```
 
 This command runs the Storybook Test runner
 
 ```shell
-npm run test-storybook
+pnpm test-storybook
 ```
 
 Good resources on testing:
@@ -62,7 +68,7 @@ Avoid writing "render" or "display" tests. Leverage our "Tests" stories in Story
 Create a new component use the following command. It will stub out all the required files using plop-templates.
 
 ```sh
-npm run new-component NewComponentName
+pnpm new-component NewComponentName
 ```
 
 You can create an experimental release for testing by following the [release doc](https://github.com/washingtonpost/wpds-ui-kit/blob/main/docs/RELEASING.md)
@@ -90,7 +96,7 @@ npx git-publish
 Then in your project you can run the following command to install the package from the branch.
 
 ```sh
-npm install 'https://gitpkg.now.sh/washingtonpost/wpds-ui-kit/<component-directory>?<your-branch-name'
+pnpm install 'https://gitpkg.now.sh/washingtonpost/wpds-ui-kit/<component-directory>?<your-branch-name'
 ```
 
 ### Troubleshooting

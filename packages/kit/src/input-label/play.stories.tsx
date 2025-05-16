@@ -1,5 +1,5 @@
 import { InputLabel as Component } from "./";
-import type { StoryObj, Meta, StoryFn } from "@storybook/react";
+import type { StoryObj, Meta } from "@storybook/react";
 
 export default {
   title: "InputLabel",
