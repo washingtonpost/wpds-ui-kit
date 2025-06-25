@@ -1,0 +1,250 @@
+---
+title: Skeleton
+description: A skeleton state is a simplified, placeholder version of UI content that appears while the actual content is loading. It typically shows gray boxes or lines in the shape and layout of the expected content, giving users a preview of how the page will look.
+component: skeleton
+---
+
+---
+
+## Anatomy
+
+<Anatomy
+  src="/img/components/skeleton/anatomy.svg"
+  caption="Note: Image not to scale"
+/>
+
+1. Shimmer: An optional visual animation effect that moves across skeleton elements to indicate a loading state.
+2. Bone: The fundamental structural element that visually represents UI components in a loading state.
+
+---
+
+## Options
+
+### Bone Elements
+
+Bone elements are customizable shapes that can be configured with different widths, heights, and border-radius properties to accurately represent various UI components. They utilize alpha tokens for color values, ensuring proper rendering in both dark mode and on different color backgrounds.
+
+- Blocks should be used for images, videos and cards.
+- Lines should be used for lines of text, and can be combined to create paragraphs.
+- Circles and pills should be used for buttons, avatars and icons.
+
+#### Block
+
+This variant include predefined aspect ratios in landscape or portrait orientations for consistent UI proportions. Designers and developers may also set custom dimensions for precise skeleton control.
+
+```jsx withPreview
+export default function Example() {
+  const Row = ({ children }) => (
+    <Box css={{ display: "flex", gap: 16 }}>{children}</Box>
+  );
+
+  const Cell = ({ children }) => (
+    <Box
+      css={{
+        display: "flex",
+        flexDirection: "column",
+        gap: 8,
+        alignItems: "center",
+      }}
+    >
+      {children}
+    </Box>
+  );
+
+  return (
+    <Row>
+      <Cell>
+        <span>1:1</span>
+        <Skeleton.Root width="80px" height="80px">
+          <Skeleton.Block />
+        </Skeleton.Root>
+      </Cell>
+      <Cell>
+        <span>5:4</span>
+        <Skeleton.Root width="80px" height="80px">
+          <Skeleton.Block aspectRatio="5:4" />
+        </Skeleton.Root>
+      </Cell>
+    </Row>
+  );
+}
+```
+
+#### Line
+
+This variant includes several heights that mirror many of our [font-size tokens](/foundations/typography#Font%20size).
+
+```jsx withPreview
+export default function Example() {
+  const Col = ({ children }) => (
+    <Box
+      css={{
+        display: "flex",
+        flexDirection: "column",
+        gap: 16,
+      }}
+    >
+      {children}
+    </Box>
+  );
+
+  const Row = ({ children }) => (
+    <Box css={{ display: "flex", gap: 8 }}>{children}</Box>
+  );
+
+  return (
+    <Col>
+      <Row>
+        <span>075</span>
+        <Skeleton.Root width="276px" height="24px">
+          <Skeleton.Line lineHeight="075" />
+        </Skeleton.Root>
+      </Row>
+    </Col>
+  );
+}
+```
+
+Additionally, the line variant includes text-alignment options, which can be useful for building paragraph blocks.
+
+```jsx withPreview
+export default function Example() {
+  const Col = ({ children }) => (
+    <Box
+      css={{
+        display: "flex",
+        flexDirection: "column",
+        gap: 8,
+      }}
+    >
+      {children}
+    </Box>
+  );
+
+  const Row = ({ children }) => (
+    <Box
+      css={{
+        display: "flex",
+        gap: 8,
+        justifyContent: "flex-end",
+        alignItems: "center",
+      }}
+    >
+      {children}
+    </Box>
+  );
+
+  return (
+    <Col>
+      <Row>
+        <span>justified</span>
+        <Skeleton.Root width="276px" height="16px">
+          <Skeleton.Line />
+        </Skeleton.Root>
+      </Row>
+      <Row>
+        <span>left-aligned</span>
+        <Skeleton.Root width="276px" height="16px">
+          <Skeleton.Line textAlign="left" />
+        </Skeleton.Root>
+      </Row>
+    </Col>
+  );
+}
+```
+
+#### Circle
+
+This element offers both default and compact height options, mirroring our button component, and can have custom widths to accurately represent a button.
+
+```jsx withPreview
+export default function Example() {
+  const Row = ({ children }) => (
+    <Box css={{ display: "flex", gap: 16 }}>{children}</Box>
+  );
+
+  const Cell = ({ children }) => (
+    <Box
+      css={{
+        display: "flex",
+        flexDirection: "column",
+        gap: 8,
+        alignItems: "center",
+      }}
+    >
+      {children}
+    </Box>
+  );
+
+  return (
+    <Row>
+      <Cell>
+        <span>default</span>
+        <Skeleton.Root width="120px" height="40px">
+          <Skeleton.Circle />
+        </Skeleton.Root>
+      </Cell>
+      <Cell>
+        <span>compact</span>
+        <Skeleton.Root width="120px" height="32px">
+          <Skeleton.Circle density="compact" />
+        </Skeleton.Root>
+      </Cell>
+    </Row>
+  );
+}
+```
+
+### Shimmer Animation
+
+Our shimmer animation uses optimized timing parameters for better user perception and system performance. It features a left-to-right gradient with a 300ms initial delay, 700ms easing duration, and 700ms delay before repeating (1700ms total cycle). These parameters were carefully chosen because:
+
+- **300ms Initial Delay:** Balances immediate feedback with structural perception, allowing users to quickly recognize the loading pattern
+- **700ms Easing Duration:** Creates smooth, noticeable motion that signals activity without rushing, aligning with human visual processing speeds.
+- **700ms Delay Before Repeating:** Prevents visual fatigue and reduces perceived loading time, as periodic animation with pauses decreases user frustration.
+
+These parameters create a balanced loading state that communicates activity without overwhelming the interface. The 1700ms cycle length produces a natural visual rhythm optimized for human perception, while the left-to-right movement intuitively indicates an active loading state.
+
+---
+
+## Accessibility
+
+### Animation
+
+The animation should be gentle and unobtrusive, providing visual feedback to users while the actual content loads and enhancing the perceived performance of the interface. For browsers or devices that don't support animations, the component should revert to a static skeleton state.
+
+---
+
+## Guidance
+
+### Animated vs. Static Skeleton States
+
+When to Use Animated Skeleton States with Shimmer:
+
+- Loading times > 300ms: Use shimmer animations when content typically takes longer than 300ms to load, as this is when users start noticing delay
+- Complex data fetching: Ideal for pages that require multiple API calls or heavy data processing before display
+- Progressive loading: When content loads in stages or streams, shimmer provides continuous feedback
+
+When to Use Static Skeleton States:
+
+- Very quick loads: For content that loads under 300ms, static states avoid unnecessary visual noise
+- Performance constraints: On low-end devices or when CPU usage is a concern
+- Reduced motion settings: When users have indicated a preference for minimal animations
+- Simple placeholder needs: For basic content blocks where loading state feedback is less critical
+
+Best practice is to implement shimmer animations with a fallback to static skeleton states when necessary, ensuring a robust and accessible loading experience across all scenarios.
+
+### Modular building
+
+Our Skeleton State Component System provides a modular framework for intuitive loading states. Core elements include primitive shapes mirroring UI structures: circular/pill shapes for buttons, avatars and icons, rectangles for images, videos and cards, and lines for text. This atomic structure enables team members to build consistent loading states across our products.
+
+The system's modularity scales from simple elements to complex structures. You can combine basic shapes into compositions that represent layout hierarchies during loading. For example, a skeleton card might use a rectangular image placeholder, multiple text lines, and a circular avatar—all from the same building blocks. This approach ensures loading states accurately reflect the final UI while adapting to design changes across different contexts and screen sizes.
+
+Avoid using skeleton states for three situations: content that updates frequently (like notifications and real-time data), tiny UI elements, or pages that load in less than 300ms where showing content directly works better.
+
+---
+
+## API Reference
+
+<PropsTable props={propsTable} />
+````

@@ -33,3 +33,4 @@ export * from "./switch";
 export * from "./theme";
 export * from "./visually-hidden";
 export * from "./navigation-menu";
+export * from "./skeleton";
