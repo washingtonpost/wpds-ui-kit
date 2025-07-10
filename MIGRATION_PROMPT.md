@@ -10,7 +10,7 @@ This comprehensive guide provides step-by-step instructions for migrating the WP
 2. **API Preservation**: All component props and interfaces remain unchanged
 3. **Hook Minimization**: Reduce React hooks to the bare minimum while maintaining accessibility
 4. **Performance Improvement**: Leverage vanilla-extract's zero-runtime CSS
-5. **Storybook Compatibility**: Ensure all stories work without modification
+5. **Storybook**: Ensure all stories work after migration
 6. **Accessibility Compliance**: Maintain WCAG 2.1 AA compliance throughout migration
 7. **Type Safety**: Leverage vanilla-extract's full TypeScript integration
 
