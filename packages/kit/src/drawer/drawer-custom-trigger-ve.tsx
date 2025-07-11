@@ -3,7 +3,8 @@ import { DrawerContextVE } from "./drawer-root-ve";
 
 const NAME = "DrawerCustomTriggerVE";
 
-interface DrawerCustomTriggerVEProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface DrawerCustomTriggerVEProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children?: React.ReactNode;
   /** Element type to render as @default button */
   as?: React.ElementType;
@@ -14,7 +15,7 @@ export const DrawerCustomTriggerVE = React.forwardRef<
   DrawerCustomTriggerVEProps
 >(({ children, as: Component = "button", ...props }, ref) => {
   const context = React.useContext(DrawerContextVE);
-  
+
   const handleClick = () => {
     context.onOpenChange(true);
   };

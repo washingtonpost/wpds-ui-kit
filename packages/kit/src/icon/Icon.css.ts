@@ -1,32 +1,32 @@
-import { style } from '@vanilla-extract/css';
-import { recipe } from '@vanilla-extract/recipes';
-import { vars } from '../theme/contracts.css';
+import { style } from "@vanilla-extract/css";
+import { recipe, RecipeVariants } from "@vanilla-extract/recipes";
+import { vars } from "../theme/contracts.css";
 
 export const iconBase = style({
-  display: 'block',
+  display: "block",
   flexShrink: 0,
-  userSelect: 'none',
+  userSelect: "none",
 });
 
 export const iconRecipe = recipe({
   base: iconBase,
   variants: {
     size: {
-      '100': { 
-        width: vars.sizes['100'],
-        height: vars.sizes['100'],
+      "100": {
+        width: vars.sizes["100"],
+        height: vars.sizes["100"],
       },
-      '150': { 
-        width: vars.sizes['150'],
-        height: vars.sizes['150'],
+      "150": {
+        width: vars.sizes["150"],
+        height: vars.sizes["150"],
       },
-      '200': { 
-        width: vars.sizes['200'],
-        height: vars.sizes['200'],
+      "200": {
+        width: vars.sizes["200"],
+        height: vars.sizes["200"],
       },
     },
     fill: {
-      currentColor: { fill: 'currentColor' },
+      currentColor: { fill: "currentColor" },
       primary: { fill: vars.colors.primary },
       secondary: { fill: vars.colors.secondary },
       onSecondary: { fill: vars.colors.onSecondary },
@@ -38,9 +38,9 @@ export const iconRecipe = recipe({
     },
   },
   defaultVariants: {
-    size: '100',
-    fill: 'currentColor',
+    size: "100",
+    fill: "currentColor",
   },
 });
 
-export type IconVariants = Parameters<typeof iconRecipe>[0];
+export type IconVariants = RecipeVariants<typeof iconRecipe>;

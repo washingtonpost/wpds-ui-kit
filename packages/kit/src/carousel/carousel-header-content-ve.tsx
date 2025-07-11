@@ -9,17 +9,18 @@ export interface CarouselHeaderContentVEProps {
   children?: React.ReactNode;
 }
 
-export type CarouselHeaderContentProps = CarouselHeaderContentVEProps & React.ComponentProps<'div'>;
+export type CarouselHeaderContentProps = CarouselHeaderContentVEProps &
+  React.ComponentProps<"div">;
 
-export const CarouselHeaderContentVE: React.FC<CarouselHeaderContentProps> = ({ 
-  children, 
-  className, 
-  style, 
-  ...props 
+export const CarouselHeaderContentVE: React.FC<CarouselHeaderContentProps> = ({
+  children,
+  className,
+  style,
+  ...props
 }) => {
   return (
-    <div 
-      className={`${carouselHeaderContent} ${className || ''}`}
+    <div
+      className={`${carouselHeaderContent} ${className || ""}`}
       style={style}
       {...props}
     >

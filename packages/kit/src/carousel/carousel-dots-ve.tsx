@@ -9,15 +9,16 @@ export interface CarouselDotsVEProps {
   style?: React.CSSProperties;
 }
 
-export type CarouselDotsProps = CarouselDotsVEProps & Omit<React.ComponentProps<typeof PaginationDots>, 'index' | 'amount'>;
+export type CarouselDotsProps = CarouselDotsVEProps &
+  Omit<React.ComponentProps<typeof PaginationDots>, "index" | "amount">;
 
-export const CarouselDotsVE: React.FC<CarouselDotsProps> = ({ 
-  className, 
-  style, 
-  ...props 
+export const CarouselDotsVE: React.FC<CarouselDotsProps> = ({
+  className,
+  style,
+  ...props
 }) => {
   const { page, totalPages } = React.useContext(CarouselContext);
-  
+
   return (
     <PaginationDots
       index={page + 1 || 1}

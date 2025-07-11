@@ -1,13 +1,13 @@
-import React from 'react';
-import * as SelectPrimitive from '@radix-ui/react-select';
-import { SelectRootVE } from './select-root-ve';
-import { SelectTriggerVE } from './select-trigger-ve';
-import { SelectValueVE } from './select-value-ve';
-import { SelectLabelVE } from './select-label-ve';
-import { SelectContentVE } from './select-content-ve';
-import { SelectItemVE } from './select-item-ve';
-import { selectGroup, selectGroupLabel, selectSeparator } from './Select.css';
-import { clsx } from 'clsx';
+import React from "react";
+import * as SelectPrimitive from "@radix-ui/react-select";
+import { SelectRootVE } from "./select-root-ve";
+import { SelectTriggerVE } from "./select-trigger-ve";
+import { SelectValueVE } from "./select-value-ve";
+import { SelectLabelVE } from "./select-label-ve";
+import { SelectContentVE } from "./select-content-ve";
+import { SelectItemVE } from "./select-item-ve";
+import { selectGroup, selectGroupLabel, selectSeparator } from "./Select.css";
+import { clsx } from "clsx";
 
 // SelectGroup component
 const SelectGroupVE = React.forwardRef<
@@ -22,7 +22,7 @@ const SelectGroupVE = React.forwardRef<
     {...props}
   />
 ));
-SelectGroupVE.displayName = 'SelectGroupVE';
+SelectGroupVE.displayName = "SelectGroupVE";
 
 // SelectGroupLabel component
 const SelectGroupLabelVE = React.forwardRef<
@@ -37,7 +37,7 @@ const SelectGroupLabelVE = React.forwardRef<
     {...props}
   />
 ));
-SelectGroupLabelVE.displayName = 'SelectGroupLabelVE';
+SelectGroupLabelVE.displayName = "SelectGroupLabelVE";
 
 // SelectSeparator component
 const SelectSeparatorVE = React.forwardRef<
@@ -52,7 +52,7 @@ const SelectSeparatorVE = React.forwardRef<
     {...props}
   />
 ));
-SelectSeparatorVE.displayName = 'SelectSeparatorVE';
+SelectSeparatorVE.displayName = "SelectSeparatorVE";
 
 // Compound component
 export const SelectVE = Object.assign(SelectRootVE, {

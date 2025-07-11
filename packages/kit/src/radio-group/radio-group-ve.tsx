@@ -79,16 +79,16 @@ export const RadioButton = React.forwardRef<
   RadioButtonProps
 >(
   (
-    { 
-      className, 
-      id, 
-      label, 
-      value, 
-      variant = "primary", 
-      disabled, 
-      error, 
+    {
+      className,
+      id,
+      label,
+      value,
+      variant = "primary",
+      disabled,
+      error,
       isOutline,
-      ...props 
+      ...props
     },
     ref
   ) => {
@@ -178,15 +178,20 @@ export const RadioGroup = React.forwardRef<
           aria-errormessage={error ? errorId : undefined}
           {...props}
         >
-          <div className={`${radioGroupInputs} ${buttonsWrapperClassName || ""}`}>
+          <div
+            className={`${radioGroupInputs} ${buttonsWrapperClassName || ""}`}
+          >
             {React.Children.map(children, (child) => {
               if (React.isValidElement(child)) {
-                return React.cloneElement(child as React.ReactElement<RadioButtonProps>, {
-                  variant,
-                  isOutline,
-                  disabled,
-                  error,
-                });
+                return React.cloneElement(
+                  child as React.ReactElement<RadioButtonProps>,
+                  {
+                    variant,
+                    isOutline,
+                    disabled,
+                    error,
+                  }
+                );
               }
               return child;
             })}

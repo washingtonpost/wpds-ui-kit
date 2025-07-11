@@ -33,7 +33,7 @@ export const radioButtonBase = style({
   width: vars.sizes["125"],
   minWidth: vars.sizes["125"],
   height: vars.sizes["125"],
-  
+
   selectors: {
     "&:focus": {
       borderColor: vars.colors.cta,
@@ -46,7 +46,7 @@ export const radioButtonBase = style({
       borderColor: vars.colors.onDisabled,
     },
   },
-  
+
   "@media": {
     "(prefers-reduced-motion: reduce)": {
       transition: "none",
@@ -123,7 +123,7 @@ export const radioIndicatorBase = style({
   width: "100%",
   height: "100%",
   position: "relative",
-  
+
   selectors: {
     "&::after": {
       content: '""',
@@ -181,4 +181,6 @@ export const radioButtonLabel = style({
 });
 
 export type RadioButtonRecipeVariants = Parameters<typeof radioButtonRecipe>[0];
-export type RadioIndicatorRecipeVariants = Parameters<typeof radioIndicatorRecipe>[0];
+export type RadioIndicatorRecipeVariants = Parameters<
+  typeof radioIndicatorRecipe
+>[0];

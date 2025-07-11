@@ -1,9 +1,10 @@
-import React from 'react';
-import { clsx } from 'clsx';
-import * as TabsPrimitive from '@radix-ui/react-tabs';
-import { tabsRoot } from './Tabs.css';
+import React from "react";
+import { clsx } from "clsx";
+import * as TabsPrimitive from "@radix-ui/react-tabs";
+import { tabsRoot } from "./Tabs.css";
 
-export interface TabsRootProps extends React.ComponentPropsWithoutRef<typeof TabsPrimitive.Root> {
+export interface TabsRootProps
+  extends React.ComponentPropsWithoutRef<typeof TabsPrimitive.Root> {
   /** Any React node may be used as a child to allow for formatting */
   children?: React.ReactNode;
   /** The value of the tab to select by default, if uncontrolled */
@@ -27,4 +28,4 @@ export const TabsRootVE = React.forwardRef<
   );
 });
 
-TabsRootVE.displayName = 'TabsRootVE';
+TabsRootVE.displayName = "TabsRootVE";

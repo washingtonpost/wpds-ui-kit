@@ -14,18 +14,19 @@ export type DialogTitleVEProps = {
   className?: string;
 } & RadixDialogTitleProps;
 
-export const DialogTitleVE = React.forwardRef<HTMLHeadingElement, DialogTitleVEProps>(
-  ({ children, className, ...props }: DialogTitleVEProps, ref) => {
-    return (
-      <DialogPrimitive.Title 
-        className={clsx(dialogTitle, className)} 
-        {...props} 
-        ref={ref}
-      >
-        {children}
-      </DialogPrimitive.Title>
-    );
-  }
-);
+export const DialogTitleVE = React.forwardRef<
+  HTMLHeadingElement,
+  DialogTitleVEProps
+>(({ children, className, ...props }: DialogTitleVEProps, ref) => {
+  return (
+    <DialogPrimitive.Title
+      className={clsx(dialogTitle, className)}
+      {...props}
+      ref={ref}
+    >
+      {children}
+    </DialogPrimitive.Title>
+  );
+});
 
 DialogTitleVE.displayName = NAME;

@@ -21,7 +21,7 @@ export const switchRootBase = style({
   height: vars.sizes["100"],
   width: vars.sizes["200"],
   border: "1px solid",
-  
+
   selectors: {
     "&:focus": {
       outline: `1px solid ${vars.colors.signal}`,
@@ -32,7 +32,7 @@ export const switchRootBase = style({
       borderColor: vars.colors.disabled,
     },
   },
-  
+
   "@media": {
     "(prefers-reduced-motion: reduce)": {
       transition: "none",
@@ -94,13 +94,13 @@ export const switchThumbBase = style({
   transition: vars.transitions.allFast,
   transform: `translateX(-${vars.sizes["050"]})`,
   willChange: "transform",
-  
+
   selectors: {
     '&[data-state="checked"]': {
       transform: `translateX(${vars.sizes["050"]})`,
     },
   },
-  
+
   "@media": {
     "(prefers-reduced-motion: reduce)": {
       transition: "none",

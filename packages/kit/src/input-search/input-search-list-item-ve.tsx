@@ -1,12 +1,12 @@
 import React from "react";
 import { Item } from "react-stately";
 import { useOption } from "react-aria";
-import { inputSearchListItem } from './InputSearch.css';
+import { inputSearchListItem } from "./InputSearch.css";
 import { InputSearchContext } from "./input-search-root-ve";
 
 import type { Node, ListState, ComboBoxState } from "react-stately";
 
-export type InputSearchListItemProps = { 
+export type InputSearchListItemProps = {
   value?: string;
   css?: React.CSSProperties;
 } & Omit<React.ComponentPropsWithRef<"li">, "index">;
@@ -47,7 +47,8 @@ interface ListItemProps {
 
 export const ListItem = ({ item, state }: ListItemProps) => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const { children, textValue, disabled, css, style, ...itemProps } = item.props;
+  const { children, textValue, disabled, css, style, ...itemProps } =
+    item.props;
 
   const { setDisabledKeys } = React.useContext(InputSearchContext);
   React.useEffect(() => {
@@ -87,21 +88,21 @@ export const ListItem = ({ item, state }: ListItemProps) => {
   }
 
   // Determine the variant class based on state
-  let variant = 'default';
+  let variant = "default";
   if (isSelected && isFocused && isDisabled) {
-    variant = 'selected-focused-disabled';
+    variant = "selected-focused-disabled";
   } else if (isSelected && isDisabled) {
-    variant = 'selected-disabled';
+    variant = "selected-disabled";
   } else if (isFocused && isDisabled) {
-    variant = 'focused-disabled';
+    variant = "focused-disabled";
   } else if (isSelected && isFocused) {
-    variant = 'selected-focused';
+    variant = "selected-focused";
   } else if (isSelected) {
-    variant = 'selected';
+    variant = "selected";
   } else if (isFocused) {
-    variant = 'focused';
+    variant = "focused";
   } else if (isDisabled) {
-    variant = 'disabled';
+    variant = "disabled";
   }
 
   return (

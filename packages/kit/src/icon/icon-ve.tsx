@@ -1,7 +1,7 @@
 import React, { Children, cloneElement, forwardRef } from "react";
-import { clsx } from 'clsx';
+import { clsx } from "clsx";
 import { VisuallyHidden } from "../visually-hidden";
-import { iconRecipe, type IconVariants } from './Icon.css';
+import { iconRecipe, type IconVariants } from "./Icon.css";
 
 const NAME = "Icon";
 
@@ -17,10 +17,21 @@ interface IconInterface extends Omit<React.SVGProps<HTMLOrSVGElement>, "fill"> {
    * The name of the icon to display.
    */
   label: string;
-  size?: IconVariants['size'] | string | number;
+  size?: "100" | "150" | "200" | string | number;
   children?: React.ReactNode;
   className?: string;
-  fill?: IconVariants['fill'] | string | WPDSThemeColorObject;
+  fill?:
+    | "currentColor"
+    | "primary"
+    | "secondary"
+    | "onSecondary"
+    | "error"
+    | "success"
+    | "warning"
+    | "signal"
+    | "disabled"
+    | string
+    | WPDSThemeColorObject;
   id?: string;
   alt?: string;
 }
@@ -41,25 +52,62 @@ export const IconVE = forwardRef<React.ReactSVGElement, IconInterface>(
     const child = Children.only(children);
 
     // Handle size variants
-    const sizeVariant = typeof size === 'string' && ['100', '150', '200'].includes(size) 
-      ? size as IconVariants['size'] 
-      : undefined;
-    
+    const sizeVariant =
+      typeof size === "string" && ["100", "150", "200"].includes(size)
+        ? (size as "100" | "150" | "200")
+        : undefined;
+
     // Handle fill variants
-    const fillVariant = typeof fill === 'string' && 
-      ['currentColor', 'primary', 'secondary', 'onSecondary', 'error', 'success', 'warning', 'signal', 'disabled'].includes(fill) 
-      ? fill as IconVariants['fill'] 
-      : 'currentColor';
+    const fillVariant =
+      typeof fill === "string" &&
+      [
+        "currentColor",
+        "primary",
+        "secondary",
+        "onSecondary",
+        "error",
+        "success",
+        "warning",
+        "signal",
+        "disabled",
+      ].includes(fill)
+        ? (fill as
+            | "currentColor"
+            | "primary"
+            | "secondary"
+            | "onSecondary"
+            | "error"
+            | "success"
+            | "warning"
+            | "signal"
+            | "disabled")
+        : "currentColor";
 
     // Custom sizing style for numeric or non-standard sizes
-    const customSizeStyle = !sizeVariant && (typeof size === 'number' || typeof size === 'string') 
-      ? { width: typeof size === 'number' ? `${size}px` : size, height: typeof size === 'number' ? `${size}px` : size }
-      : {};
+    const customSizeStyle =
+      !sizeVariant && (typeof size === "number" || typeof size === "string")
+        ? {
+            width: typeof size === "number" ? `${size}px` : size,
+            height: typeof size === "number" ? `${size}px` : size,
+          }
+        : {};
 
     // Custom fill style for non-standard fills
-    const customFillStyle = typeof fill === 'string' && !['currentColor', 'primary', 'secondary', 'onSecondary', 'error', 'success', 'warning', 'signal', 'disabled'].includes(fill)
-      ? { fill }
-      : {};
+    const customFillStyle =
+      typeof fill === "string" &&
+      ![
+        "currentColor",
+        "primary",
+        "secondary",
+        "onSecondary",
+        "error",
+        "success",
+        "warning",
+        "signal",
+        "disabled",
+      ].includes(fill)
+        ? { fill }
+        : {};
 
     return (
       <>
@@ -69,9 +117,9 @@ export const IconVE = forwardRef<React.ReactSVGElement, IconInterface>(
           role: "img",
           ref,
           className: clsx(
-            iconRecipe({ 
-              size: sizeVariant, 
-              fill: fillVariant 
+            iconRecipe({
+              size: sizeVariant,
+              fill: fillVariant,
             }),
             className
           ),

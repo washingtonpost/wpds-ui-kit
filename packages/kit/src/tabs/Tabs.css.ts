@@ -1,7 +1,7 @@
-import { style, keyframes } from '@vanilla-extract/css';
-import { recipe } from '@vanilla-extract/recipes';
-import { vars } from '../theme/contracts.css';
-import { focusableStyles } from '../theme/accessibility.css';
+import { style, keyframes } from "@vanilla-extract/css";
+import { recipe } from "@vanilla-extract/recipes";
+import { vars } from "../theme/contracts.css";
+import { focusableStyles } from "../theme/accessibility.css";
 
 // Animation keyframes
 export const fadeIn = keyframes({
@@ -22,24 +22,24 @@ export const tabsRoot = style({
 // TabsList styles
 export const tabsList = recipe({
   base: {
-    display: 'flex',
-    alignItems: 'center',
+    display: "flex",
+    alignItems: "center",
     // Add styling for tabs list container
   },
-  
+
   variants: {
     orientation: {
       horizontal: {
-        flexDirection: 'row',
+        flexDirection: "row",
       },
       vertical: {
-        flexDirection: 'column',
+        flexDirection: "column",
       },
     },
   },
-  
+
   defaultVariants: {
-    orientation: 'horizontal',
+    orientation: "horizontal",
   },
 });
 
@@ -48,114 +48,114 @@ export const tabsTrigger = recipe({
   base: [
     focusableStyles,
     {
-      cursor: 'pointer',
-      border: 'none',
-      background: 'transparent',
-      appearance: 'none',
+      cursor: "pointer",
+      border: "none",
+      background: "transparent",
+      appearance: "none",
       fontFamily: vars.fonts.meta,
-      fontSize: vars.fontSizes['100'],
+      fontSize: vars.fontSizes["100"],
       color: vars.colors.primary,
-      position: 'relative',
-      paddingTop: vars.space['075'],
-      paddingBottom: vars.space['075'],
+      position: "relative",
+      paddingTop: vars.space["075"],
+      paddingBottom: vars.space["075"],
       paddingLeft: 0,
       paddingRight: 0,
-      
+
       selectors: {
-        '&::after': {
-          content: '',
-          position: 'absolute',
-          width: '100%',
+        "&::after": {
+          content: "",
+          position: "absolute",
+          width: "100%",
           bottom: 0,
           left: 0,
           right: 0,
         },
-        
-        '&:hover::after': {
+
+        "&:hover::after": {
           borderBottom: `1px solid ${vars.colors.gray300}`,
         },
-        
+
         // Focus styles
-        '&:focus-visible': {
-          outline: '-webkit-focus-ring-color auto 1px',
+        "&:focus-visible": {
+          outline: "-webkit-focus-ring-color auto 1px",
         },
-        
-        '&:focus-visible::after': {
-          borderBottom: 'none', // Remove border so outline is visible
+
+        "&:focus-visible::after": {
+          borderBottom: "none", // Remove border so outline is visible
         },
       },
-    }
+    },
   ],
-  
+
   variants: {
     active: {
       true: {
         fontWeight: vars.fontWeights.bold,
-        
+
         selectors: {
-          '&::after': {
+          "&::after": {
             borderBottom: `1px solid ${vars.colors.primary}`,
-            transformOrigin: 'top left',
+            transformOrigin: "top left",
           },
-          
-          '&:hover::after': {
+
+          "&:hover::after": {
             borderBottom: `1px solid ${vars.colors.primary}`,
           },
-          
-          '&.move-enter::after': {
-            transform: 'translateX(var(--startx)) scaleX(var(--startscale))',
-            
-            '@media': {
-              '(prefers-reduced-motion: reduce)': {
-                transition: 'none',
+
+          "&.move-enter::after": {
+            transform: "translateX(var(--startx)) scaleX(var(--startscale))",
+
+            "@media": {
+              "(prefers-reduced-motion: reduce)": {
+                transition: "none",
               },
             },
           },
-          
-          '&.move-enter-active::after': {
-            transform: 'translateX(0) scaleX(1)',
+
+          "&.move-enter-active::after": {
+            transform: "translateX(0) scaleX(1)",
             transition: `transform ${vars.transitions.normal} ${vars.transitions.inOut}`,
-            
-            '@media': {
-              '(prefers-reduced-motion: reduce)': {
-                transition: 'none',
+
+            "@media": {
+              "(prefers-reduced-motion: reduce)": {
+                transition: "none",
               },
             },
           },
         },
       },
     },
-    
+
     density: {
       compact: {
-        fontSize: vars.fontSizes['087'],
+        fontSize: vars.fontSizes["087"],
       },
       default: {},
       loose: {
-        fontSize: vars.fontSizes['112'],
+        fontSize: vars.fontSizes["112"],
       },
     },
   },
-  
+
   defaultVariants: {
     active: false,
-    density: 'default',
+    density: "default",
   },
 });
 
 // TabsContent styles
 export const tabsContent = recipe({
   base: {
-    outline: 'none',
-    
+    outline: "none",
+
     selectors: {
-      '&:focus-visible': {
+      "&:focus-visible": {
         outline: `2px solid ${vars.colors.signal}`,
-        outlineOffset: '2px',
+        outlineOffset: "2px",
       },
     },
   },
-  
+
   variants: {
     // Add animation variants if needed
     state: {
@@ -169,7 +169,7 @@ export const tabsContent = recipe({
         animation: `${fadeOut} 300ms ease-out`,
       },
       exited: {
-        display: 'none',
+        display: "none",
       },
     },
   },
@@ -177,7 +177,7 @@ export const tabsContent = recipe({
 
 // TabsTriggerContent styles
 export const tabsTriggerContent = style({
-  display: 'flex',
-  alignItems: 'center',
-  gap: vars.space['050'],
+  display: "flex",
+  alignItems: "center",
+  gap: vars.space["050"],
 });

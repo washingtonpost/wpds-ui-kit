@@ -1,16 +1,16 @@
 // Vanilla-extract theme exports
-export { vars } from './contracts.css';
-export { 
-  lightTheme as lightThemeVE, 
-  darkTheme as darkThemeVE, 
-  staticColors as staticColorsVE 
-} from './themes.css';
-export { sprinkles, type Sprinkles } from './sprinkles.css';
-export * from './accessibility.css';
-import './global.css';
+export { vars } from "./contracts.css";
+export {
+  lightTheme as lightThemeVE,
+  darkTheme as darkThemeVE,
+  staticColors as staticColorsVE,
+} from "./themes.css";
+export { sprinkles, type Sprinkles } from "./sprinkles.css";
+export * from "./accessibility.css";
+import "./global.css";
 
 // Re-export specific token utilities
-export { 
+export {
   base,
   light,
   dark,
@@ -22,20 +22,20 @@ export {
   fontWeights,
   lineHeights,
   shadows,
-  zIndices
-} from './tokens';
-export * from './useResponsiveScreenSize';
+  zIndices,
+} from "./tokens";
+export * from "./useResponsiveScreenSize";
 
 // Legacy exports for backward compatibility during migration
-export { 
-  styled, 
-  css, 
-  globalCss, 
-  keyframes, 
-  getCssText, 
-  theme, 
-  createTheme, 
-  config, 
+export {
+  styled,
+  css,
+  globalCss,
+  keyframes,
+  getCssText,
+  theme,
+  createTheme,
+  config,
   reset,
   lightTheme,
   darkTheme,
@@ -43,5 +43,5 @@ export {
   globalStyles,
   darkModeGlobalStyles,
   type CSS,
-  type VariantProps
-} from './stitches.config';
+  type VariantProps,
+} from "./stitches.config";

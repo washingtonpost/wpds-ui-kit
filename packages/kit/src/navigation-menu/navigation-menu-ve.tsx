@@ -13,7 +13,8 @@ import {
 const NAME = "NavigationMenuVE";
 
 // Root
-export interface NavigationMenuRootVEProps extends React.ComponentPropsWithRef<typeof NavigationMenuPrimitive.Root> {
+export interface NavigationMenuRootVEProps
+  extends React.ComponentPropsWithRef<typeof NavigationMenuPrimitive.Root> {
   children?: React.ReactNode;
   className?: string;
 }
@@ -35,7 +36,8 @@ export const NavigationMenuRootVE = React.forwardRef<
 NavigationMenuRootVE.displayName = "NavigationMenuRootVE";
 
 // List
-export interface NavigationMenuListVEProps extends React.ComponentPropsWithRef<typeof NavigationMenuPrimitive.List> {
+export interface NavigationMenuListVEProps
+  extends React.ComponentPropsWithRef<typeof NavigationMenuPrimitive.List> {
   children?: React.ReactNode;
   className?: string;
 }
@@ -57,7 +59,8 @@ export const NavigationMenuListVE = React.forwardRef<
 NavigationMenuListVE.displayName = "NavigationMenuListVE";
 
 // Item
-export interface NavigationMenuItemVEProps extends React.ComponentPropsWithRef<typeof NavigationMenuPrimitive.Item> {
+export interface NavigationMenuItemVEProps
+  extends React.ComponentPropsWithRef<typeof NavigationMenuPrimitive.Item> {
   children?: React.ReactNode;
   className?: string;
 }
@@ -79,7 +82,8 @@ export const NavigationMenuItemVE = React.forwardRef<
 NavigationMenuItemVE.displayName = "NavigationMenuItemVE";
 
 // Link
-export interface NavigationMenuLinkVEProps extends React.ComponentPropsWithRef<typeof NavigationMenuPrimitive.Link> {
+export interface NavigationMenuLinkVEProps
+  extends React.ComponentPropsWithRef<typeof NavigationMenuPrimitive.Link> {
   children?: React.ReactNode;
   className?: string;
   active?: boolean;
@@ -94,7 +98,9 @@ export const NavigationMenuLinkVE = React.forwardRef<
     <NavigationMenuPrimitive.Link
       {...props}
       ref={ref}
-      className={`${navigationMenuLinkClass({ active, disabled })} ${className || ""}`}
+      className={`${navigationMenuLinkClass({ active, disabled })} ${
+        className || ""
+      }`}
     >
       {children}
     </NavigationMenuPrimitive.Link>
@@ -103,7 +109,8 @@ export const NavigationMenuLinkVE = React.forwardRef<
 NavigationMenuLinkVE.displayName = "NavigationMenuLinkVE";
 
 // Trigger
-export interface NavigationMenuTriggerVEProps extends React.ComponentPropsWithRef<typeof NavigationMenuPrimitive.Trigger> {
+export interface NavigationMenuTriggerVEProps
+  extends React.ComponentPropsWithRef<typeof NavigationMenuPrimitive.Trigger> {
   children?: React.ReactNode;
   className?: string;
   disabled?: boolean;
@@ -117,7 +124,9 @@ export const NavigationMenuTriggerVE = React.forwardRef<
     <NavigationMenuPrimitive.Trigger
       {...props}
       ref={ref}
-      className={`${navigationMenuTriggerClass({ disabled })} ${className || ""}`}
+      className={`${navigationMenuTriggerClass({ disabled })} ${
+        className || ""
+      }`}
     >
       {children}
     </NavigationMenuPrimitive.Trigger>
@@ -126,7 +135,8 @@ export const NavigationMenuTriggerVE = React.forwardRef<
 NavigationMenuTriggerVE.displayName = "NavigationMenuTriggerVE";
 
 // Content
-export interface NavigationMenuContentVEProps extends React.ComponentPropsWithRef<typeof NavigationMenuPrimitive.Content> {
+export interface NavigationMenuContentVEProps
+  extends React.ComponentPropsWithRef<typeof NavigationMenuPrimitive.Content> {
   children?: React.ReactNode;
   className?: string;
 }
@@ -148,7 +158,8 @@ export const NavigationMenuContentVE = React.forwardRef<
 NavigationMenuContentVE.displayName = "NavigationMenuContentVE";
 
 // Sub
-export interface NavigationMenuSubVEProps extends React.ComponentPropsWithRef<typeof NavigationMenuPrimitive.Sub> {
+export interface NavigationMenuSubVEProps
+  extends React.ComponentPropsWithRef<typeof NavigationMenuPrimitive.Sub> {
   children?: React.ReactNode;
   className?: string;
 }

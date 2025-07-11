@@ -15,45 +15,47 @@ export interface CarouselItemVEProps {
   children?: React.ReactNode;
 }
 
-export type CarouselItemProps = CarouselItemVEProps & React.ComponentProps<'div'>;
+export type CarouselItemProps = CarouselItemVEProps &
+  React.ComponentProps<"div">;
 
-export const CarouselItemVE = React.forwardRef<HTMLDivElement, CarouselItemProps>(
-  ({ children, id, className, style, ...props }, ref) => {
-    const internalRef = React.useRef<HTMLDivElement>(null);
-    const [isShown, setIsShown] = React.useState(false);
-    const { activeId, isTransitioning } = React.useContext(CarouselContext);
+export const CarouselItemVE = React.forwardRef<
+  HTMLDivElement,
+  CarouselItemProps
+>(({ children, id, className, style, ...props }, ref) => {
+  const internalRef = React.useRef<HTMLDivElement>(null);
+  const [isShown, setIsShown] = React.useState(false);
+  const { activeId, isTransitioning } = React.useContext(CarouselContext);
 
-    React.useEffect(() => {
-      if (!ref) return;
-      typeof ref === "function"
-        ? ref(internalRef.current)
-        : (ref.current = internalRef.current);
-    }, [ref, internalRef]);
+  React.useEffect(() => {
+    if (!ref) return;
+    typeof ref === "function"
+      ? ref(internalRef.current)
+      : (ref.current = internalRef.current);
+  }, [ref, internalRef]);
 
-    React.useEffect(() => {
-      if (!isTransitioning) {
-        setIsShown(isItemShown(internalRef));
-      }
-    }, [setIsShown, internalRef, isTransitioning]);
+  React.useEffect(() => {
+    if (!isTransitioning) {
+      setIsShown(isItemShown(internalRef));
+    }
+  }, [setIsShown, internalRef, isTransitioning]);
 
-    const isFocused = id === activeId;
+  const isFocused = id === activeId;
 
-    return (
-      <div
-        {...props}
-        ref={internalRef}
-        className={`${carouselItem({ focused: isFocused })} ${className || ''}`}
-        style={style}
-        aria-hidden={isShown ? false : true}
-        id={id}
-        role="group"
-        aria-roledescription="slide"
-        tabIndex={isFocused ? 0 : -1}
-      >
-        {children}
-      </div>
-    );
-  }
-);
+  return (
+    <div
+      {...props}
+      ref={internalRef}
+      className={`${carouselItem({ focused: isFocused })} ${className || ""}`}
+      style={style}
+      aria-hidden={isShown ? false : true}
+      id={id}
+      role="group"
+      aria-roledescription="slide"
+      tabIndex={isFocused ? 0 : -1}
+    >
+      {children}
+    </div>
+  );
+});
 
 CarouselItemVE.displayName = NAME;

@@ -79,5 +79,9 @@ export const alertBannerButtonClass = style({
   },
 });
 
-export type AlertBannerRootVariants = RecipeVariants<typeof alertBannerRootClass>;
-export type AlertBannerIconVariants = RecipeVariants<typeof alertBannerIconClass>;
+export type AlertBannerRootVariants = RecipeVariants<
+  typeof alertBannerRootClass
+>;
+export type AlertBannerIconVariants = RecipeVariants<
+  typeof alertBannerIconClass
+>;

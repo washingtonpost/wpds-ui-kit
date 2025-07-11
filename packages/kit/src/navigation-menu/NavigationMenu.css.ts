@@ -109,5 +109,9 @@ export const navigationMenuContentClass = style({
 
 export const navigationMenuSubClass = style({});
 
-export type NavigationMenuLinkVariants = RecipeVariants<typeof navigationMenuLinkClass>;
-export type NavigationMenuTriggerVariants = RecipeVariants<typeof navigationMenuTriggerClass>;
+export type NavigationMenuLinkVariants = RecipeVariants<
+  typeof navigationMenuLinkClass
+>;
+export type NavigationMenuTriggerVariants = RecipeVariants<
+  typeof navigationMenuTriggerClass
+>;

@@ -39,9 +39,12 @@ export interface CarouselRootVEProps {
   */
 }
 
-export type CarouselRootProps = CarouselRootVEProps & ComponentProps<'div'>;
+export type CarouselRootProps = CarouselRootVEProps & ComponentProps<"div">;
 
-export const CarouselRootVE = React.forwardRef<HTMLDivElement, CarouselRootProps>(
+export const CarouselRootVE = React.forwardRef<
+  HTMLDivElement,
+  CarouselRootProps
+>(
   (
     {
       page: pageProp,
@@ -93,7 +96,7 @@ export const CarouselRootVE = React.forwardRef<HTMLDivElement, CarouselRootProps
         <div
           {...props}
           ref={ref}
-          className={`${carouselRoot} ${className || ''}`}
+          className={`${carouselRoot} ${className || ""}`}
           style={style}
           role="group"
           aria-roledescription="carousel"

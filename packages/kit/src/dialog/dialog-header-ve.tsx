@@ -11,14 +11,15 @@ export type DialogHeaderVEProps = {
   className?: string;
 } & React.ComponentPropsWithRef<"header">;
 
-export const DialogHeaderVE = React.forwardRef<HTMLElement, DialogHeaderVEProps>(
-  ({ children, className, ...props }: DialogHeaderVEProps, ref) => {
-    return (
-      <header className={clsx(dialogHeader, className)} {...props} ref={ref}>
-        {children}
-      </header>
-    );
-  }
-);
+export const DialogHeaderVE = React.forwardRef<
+  HTMLElement,
+  DialogHeaderVEProps
+>(({ children, className, ...props }: DialogHeaderVEProps, ref) => {
+  return (
+    <header className={clsx(dialogHeader, className)} {...props} ref={ref}>
+      {children}
+    </header>
+  );
+});
 
 DialogHeaderVE.displayName = NAME;

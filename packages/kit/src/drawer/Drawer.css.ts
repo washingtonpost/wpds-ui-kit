@@ -1,6 +1,6 @@
-import { style, keyframes } from '@vanilla-extract/css';
-import { recipe } from '@vanilla-extract/recipes';
-import { vars } from '../theme/contracts.css';
+import { style, keyframes } from "@vanilla-extract/css";
+import { recipe } from "@vanilla-extract/recipes";
+import { vars } from "../theme/contracts.css";
 
 // Get theme tokens
 const tokens = {
@@ -12,91 +12,91 @@ const tokens = {
 
 // Keyframes for drawer animations
 const animateInFromTop = keyframes({
-  from: { transform: 'translateY(-100%)' },
-  to: { transform: 'translateY(0)' },
+  from: { transform: "translateY(-100%)" },
+  to: { transform: "translateY(0)" },
 });
 
 const animateOutFromTop = keyframes({
-  from: { transform: 'translateY(0)' },
-  to: { transform: 'translateY(-100%)' },
+  from: { transform: "translateY(0)" },
+  to: { transform: "translateY(-100%)" },
 });
 
 const animateInFromRight = keyframes({
-  from: { transform: 'translateX(100%)' },
-  to: { transform: 'translateX(0)' },
+  from: { transform: "translateX(100%)" },
+  to: { transform: "translateX(0)" },
 });
 
 const animateOutFromRight = keyframes({
-  from: { transform: 'translateX(0)' },
-  to: { transform: 'translateX(100%)' },
+  from: { transform: "translateX(0)" },
+  to: { transform: "translateX(100%)" },
 });
 
 const animateInFromBottom = keyframes({
-  from: { transform: 'translateY(100%)' },
-  to: { transform: 'translateY(0)' },
+  from: { transform: "translateY(100%)" },
+  to: { transform: "translateY(0)" },
 });
 
 const animateOutFromBottom = keyframes({
-  from: { transform: 'translateY(0)' },
-  to: { transform: 'translateY(100%)' },
+  from: { transform: "translateY(0)" },
+  to: { transform: "translateY(100%)" },
 });
 
 const animateInFromLeft = keyframes({
-  from: { transform: 'translateX(-100%)' },
-  to: { transform: 'translateX(0)' },
+  from: { transform: "translateX(-100%)" },
+  to: { transform: "translateX(0)" },
 });
 
 const animateOutFromLeft = keyframes({
-  from: { transform: 'translateX(0)' },
-  to: { transform: 'translateX(-100%)' },
+  from: { transform: "translateX(0)" },
+  to: { transform: "translateX(-100%)" },
 });
 
 // Base drawer container styles
 export const drawerContainerStyles = recipe({
   base: {
     backgroundColor: tokens.color.secondary,
-    boxShadow: tokens.shadow['300'],
+    boxShadow: tokens.shadow["300"],
     color: tokens.color.primary,
-    maxHeight: '100%',
-    overflow: 'auto',
-    position: 'fixed',
+    maxHeight: "100%",
+    overflow: "auto",
+    position: "fixed",
     transition: `transform ${tokens.transition.normal} ${tokens.transition.inOut}, opacity ${tokens.transition.normal} ${tokens.transition.inOut}`,
-    contentVisibility: 'auto',
+    contentVisibility: "auto",
     opacity: 0,
-    
-    '@media': {
-      '(prefers-reduced-motion: reduce)': {
-        transition: 'none',
-        animationDuration: '0.01ms !important',
-        animationIterationCount: '1 !important',
+
+    "@media": {
+      "(prefers-reduced-motion: reduce)": {
+        transition: "none",
+        animationDuration: "0.01ms !important",
+        animationIterationCount: "1 !important",
       },
     },
   },
-  
+
   variants: {
     position: {
-      top: { 
-        top: 0, 
-        right: 0, 
+      top: {
+        top: 0,
+        right: 0,
         left: 0,
       },
-      right: { 
-        top: 0, 
-        right: 0, 
+      right: {
+        top: 0,
+        right: 0,
         bottom: 0,
       },
-      bottom: { 
-        right: 0, 
-        bottom: 0, 
+      bottom: {
+        right: 0,
+        bottom: 0,
         left: 0,
       },
-      left: { 
-        top: 0, 
-        bottom: 0, 
+      left: {
+        top: 0,
+        bottom: 0,
         left: 0,
       },
     },
-    
+
     state: {
       open: {
         opacity: 1,
@@ -106,65 +106,65 @@ export const drawerContainerStyles = recipe({
       },
     },
   },
-  
+
   compoundVariants: [
     // Open state animations
     {
-      variants: { position: 'top', state: 'open' },
+      variants: { position: "top", state: "open" },
       style: {
         animation: `${animateInFromTop} ${tokens.transition.normal} ${tokens.transition.inOut}`,
-        transform: 'translateY(0)',
+        transform: "translateY(0)",
       },
     },
     {
-      variants: { position: 'right', state: 'open' },
+      variants: { position: "right", state: "open" },
       style: {
         animation: `${animateInFromRight} ${tokens.transition.normal} ${tokens.transition.inOut}`,
-        transform: 'translateX(0)',
+        transform: "translateX(0)",
       },
     },
     {
-      variants: { position: 'bottom', state: 'open' },
+      variants: { position: "bottom", state: "open" },
       style: {
         animation: `${animateInFromBottom} ${tokens.transition.normal} ${tokens.transition.inOut}`,
-        transform: 'translateY(0)',
+        transform: "translateY(0)",
       },
     },
     {
-      variants: { position: 'left', state: 'open' },
+      variants: { position: "left", state: "open" },
       style: {
         animation: `${animateInFromLeft} ${tokens.transition.normal} ${tokens.transition.inOut}`,
-        transform: 'translateX(0)',
+        transform: "translateX(0)",
       },
     },
-    
+
     // Closed state animations
     {
-      variants: { position: 'top', state: 'closed' },
+      variants: { position: "top", state: "closed" },
       style: {
         animation: `${animateOutFromTop} ${tokens.transition.normal} ${tokens.transition.inOut}`,
-        transform: 'translateY(-100%)',
+        transform: "translateY(-100%)",
       },
     },
     {
-      variants: { position: 'right', state: 'closed' },
+      variants: { position: "right", state: "closed" },
       style: {
         animation: `${animateOutFromRight} ${tokens.transition.normal} ${tokens.transition.inOut}`,
-        transform: 'translateX(100%)',
+        transform: "translateX(100%)",
       },
     },
     {
-      variants: { position: 'bottom', state: 'closed' },
+      variants: { position: "bottom", state: "closed" },
       style: {
         animation: `${animateOutFromBottom} ${tokens.transition.normal} ${tokens.transition.inOut}`,
-        transform: 'translateY(100%)',
+        transform: "translateY(100%)",
       },
     },
     {
-      variants: { position: 'left', state: 'closed' },
+      variants: { position: "left", state: "closed" },
       style: {
         animation: `${animateOutFromLeft} ${tokens.transition.normal} ${tokens.transition.inOut}`,
-        transform: 'translateX(-100%)',
+        transform: "translateX(-100%)",
       },
     },
   ],
@@ -172,7 +172,7 @@ export const drawerContainerStyles = recipe({
 
 // Inner content wrapper styles
 export const drawerInnerStyles = style({
-  padding: tokens.space['100'],
+  padding: tokens.space["100"],
 });
 
 // Close button styles
@@ -180,19 +180,19 @@ export const drawerCloseStyles = recipe({
   base: {
     // Base button styles will be inherited from Button component
   },
-  
+
   variants: {
     sticky: {
       true: {
-        position: 'sticky',
-        top: tokens.space['100'],
-        right: tokens.space['100'],
-        float: 'right',
+        position: "sticky",
+        top: tokens.space["100"],
+        right: tokens.space["100"],
+        float: "right",
       },
       false: {},
     },
   },
-  
+
   defaultVariants: {
     sticky: false,
   },
@@ -200,30 +200,30 @@ export const drawerCloseStyles = recipe({
 
 // Scrim/overlay styles
 export const drawerScrimStyles = style({
-  position: 'fixed',
+  position: "fixed",
   top: 0,
   right: 0,
   bottom: 0,
   left: 0,
-  backgroundColor: 'rgba(0, 0, 0, 0.8)',
+  backgroundColor: "rgba(0, 0, 0, 0.8)",
   opacity: 0,
   transition: `opacity ${tokens.transition.normal} ${tokens.transition.inOut}`,
-  pointerEvents: 'none',
-  
+  pointerEvents: "none",
+
   selectors: {
     '&[data-state="open"]': {
       opacity: 1,
-      pointerEvents: 'auto',
+      pointerEvents: "auto",
     },
     '&[data-state="closed"]': {
       opacity: 0,
-      pointerEvents: 'none',
+      pointerEvents: "none",
     },
   },
-  
-  '@media': {
-    '(prefers-reduced-motion: reduce)': {
-      transition: 'none',
+
+  "@media": {
+    "(prefers-reduced-motion: reduce)": {
+      transition: "none",
     },
   },
 });

@@ -15,11 +15,7 @@ export const ErrorMessageVE = React.forwardRef<
   ErrorMessageProps
 >(({ children, className, ...rest }, ref) => {
   return (
-    <p 
-      className={`${errorMessage} ${className || ''}`}
-      ref={ref} 
-      {...rest}
-    >
+    <p className={`${errorMessage} ${className || ""}`} ref={ref} {...rest}>
       {children}
     </p>
   );

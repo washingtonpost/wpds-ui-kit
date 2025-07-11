@@ -1,13 +1,25 @@
 import { DialogRootVE, type DialogRootVEProps } from "./dialog-root-ve";
-import { DialogContentVE, type DialogContentVEProps } from "./dialog-content-ve";
-import { DialogOverlayVE, type DialogOverlayVEProps } from "./dialog-overlay-ve";
+import {
+  DialogContentVE,
+  type DialogContentVEProps,
+} from "./dialog-content-ve";
+import {
+  DialogOverlayVE,
+  type DialogOverlayVEProps,
+} from "./dialog-overlay-ve";
 import { DialogPortalVE, type DialogPortalVEProps } from "./dialog-portal-ve";
-import { DialogTriggerVE, type DialogTriggerVEProps } from "./dialog-trigger-ve";
+import {
+  DialogTriggerVE,
+  type DialogTriggerVEProps,
+} from "./dialog-trigger-ve";
 import { DialogHeaderVE, type DialogHeaderVEProps } from "./dialog-header-ve";
 import { DialogBodyVE, type DialogBodyVEProps } from "./dialog-body-ve";
 import { DialogFooterVE, type DialogFooterVEProps } from "./dialog-footer-ve";
 import { DialogTitleVE, type DialogTitleVEProps } from "./dialog-title-ve";
-import { DialogDescriptionVE, type DialogDescriptionVEProps } from "./dialog-description-ve";
+import {
+  DialogDescriptionVE,
+  type DialogDescriptionVEProps,
+} from "./dialog-description-ve";
 import { DialogCloseVE, type DialogCloseVEProps } from "./dialog-close-ve";
 
 // Main Dialog component using vanilla-extract

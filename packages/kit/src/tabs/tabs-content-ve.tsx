@@ -1,9 +1,10 @@
-import React from 'react';
-import { clsx } from 'clsx';
-import * as TabsPrimitive from '@radix-ui/react-tabs';
-import { tabsContent } from './Tabs.css';
+import React from "react";
+import { clsx } from "clsx";
+import * as TabsPrimitive from "@radix-ui/react-tabs";
+import { tabsContent } from "./Tabs.css";
 
-export interface TabsContentProps extends React.ComponentPropsWithoutRef<typeof TabsPrimitive.Content> {
+export interface TabsContentProps
+  extends React.ComponentPropsWithoutRef<typeof TabsPrimitive.Content> {
   /** Children content */
   children?: React.ReactNode;
   /** Value of the content */
@@ -28,4 +29,4 @@ export const TabsContentVE = React.forwardRef<
   );
 });
 
-TabsContentVE.displayName = 'TabsContentVE';
+TabsContentVE.displayName = "TabsContentVE";

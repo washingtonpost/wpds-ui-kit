@@ -1,11 +1,11 @@
 import React from "react";
 import { vars } from "../theme/contracts.css";
-import { 
-  dot, 
-  paginationContainer, 
+import {
+  dot,
+  paginationContainer,
   paginationContainerVertical,
   paginationSlider,
-  paginationSliderVertical
+  paginationSliderVertical,
 } from "./PaginationDots.css";
 
 const NAME = "PaginationDots";
@@ -82,10 +82,10 @@ export const PaginationDotsVE = React.forwardRef<
      */
     const translate = getTranslate(nPages, activeIndex);
 
-    const containerClass = isVertical 
-      ? `${paginationContainer} ${paginationContainerVertical}` 
+    const containerClass = isVertical
+      ? `${paginationContainer} ${paginationContainerVertical}`
       : paginationContainer;
-    
+
     const sliderClass = isVertical
       ? `${paginationSlider} ${paginationSliderVertical}`
       : paginationSlider;
@@ -101,7 +101,7 @@ export const PaginationDotsVE = React.forwardRef<
         aria-valuetext={
           unitName ? `${unitName} ${activeIndex + 1} of ${nPages}` : undefined
         }
-        className={`${containerClass} ${className || ''}`}
+        className={`${containerClass} ${className || ""}`}
         {...props}
       >
         <div
@@ -118,7 +118,9 @@ export const PaginationDotsVE = React.forwardRef<
               className={dot}
               style={{
                 transform: `scale(${scale})`,
-                background: `${vars.colors[background as keyof typeof vars.colors]}`,
+                background: `${
+                  vars.colors[background as keyof typeof vars.colors]
+                }`,
               }}
             />
           ))}

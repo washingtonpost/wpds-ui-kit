@@ -1,20 +1,27 @@
-import React from 'react';
-import { clsx } from 'clsx';
-import * as AccordionPrimitive from '@radix-ui/react-accordion';
-import { ChevronDown } from '@washingtonpost/wpds-assets';
-import { IconVE as Icon } from '../icon/icon-ve';
-import { accordionHeader, accordionTrigger, accordionIcon, accordionChevron } from './Accordion.css';
+import React from "react";
+import { clsx } from "clsx";
+import * as AccordionPrimitive from "@radix-ui/react-accordion";
+import { ChevronDown } from "@washingtonpost/wpds-assets";
+import { IconVE as Icon } from "../icon/icon-ve";
+import {
+  accordionHeader,
+  accordionTrigger,
+  accordionIcon,
+  accordionChevron,
+} from "./Accordion.css";
 
-export interface AccordionTriggerProps extends React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger> {
+export interface AccordionTriggerProps
+  extends React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger> {
   /** Children content */
   children?: React.ReactNode;
   /** Density variant */
-  density?: 'default' | 'compact' | 'loose';
+  density?: "default" | "compact" | "loose";
   /** Additional CSS class */
   className?: string;
 }
 
-export interface AccordionHeaderProps extends React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Header> {
+export interface AccordionHeaderProps
+  extends React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Header> {
   /** Children content */
   children?: React.ReactNode;
   /** Additional CSS class */
@@ -36,12 +43,12 @@ export const AccordionHeaderVE = React.forwardRef<
   );
 });
 
-AccordionHeaderVE.displayName = 'AccordionHeaderVE';
+AccordionHeaderVE.displayName = "AccordionHeaderVE";
 
 export const AccordionTriggerVE = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Trigger>,
   AccordionTriggerProps
->(({ children, density = 'default', className, ...props }, ref) => {
+>(({ children, density = "default", className, ...props }, ref) => {
   return (
     <AccordionHeaderVE>
       <AccordionPrimitive.Trigger
@@ -58,4 +65,4 @@ export const AccordionTriggerVE = React.forwardRef<
   );
 });
 
-AccordionTriggerVE.displayName = 'AccordionTriggerVE';
+AccordionTriggerVE.displayName = "AccordionTriggerVE";

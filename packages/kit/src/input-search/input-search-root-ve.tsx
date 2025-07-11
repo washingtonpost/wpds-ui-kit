@@ -2,7 +2,7 @@ import React from "react";
 import { createPortal } from "react-dom";
 import { useComboBoxState } from "react-stately";
 import { useComboBox } from "react-aria";
-import { inputSearchRoot } from './InputSearch.css';
+import { inputSearchRoot } from "./InputSearch.css";
 
 import type { ComboBoxState, Key } from "react-stately";
 import type { AriaListBoxOptions } from "react-aria";
@@ -108,7 +108,7 @@ export const InputSearchRootVE = ({
     null
   );
 
-  const rootClassName = usePortal === false ? 'portal-false' : 'portal';
+  const rootClassName = usePortal === false ? "portal-false" : "portal";
 
   return (
     <InputSearchContext.Provider
@@ -127,8 +127,8 @@ export const InputSearchRootVE = ({
         isDisabled: disabled,
       }}
     >
-      <div 
-        ref={containerRef} 
+      <div
+        ref={containerRef}
         className={inputSearchRoot[rootClassName]}
         style={{
           ...(css || {}),

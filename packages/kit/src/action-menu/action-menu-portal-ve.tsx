@@ -9,7 +9,9 @@ export interface ActionMenuPortalVEProps extends RadixDropdownMenuPortalProps {
   children?: React.ReactNode;
 }
 
-export const ActionMenuPortalVE: React.FC<ActionMenuPortalVEProps> = (props) => {
+export const ActionMenuPortalVE: React.FC<ActionMenuPortalVEProps> = (
+  props
+) => {
   return <ActionMenuPrimitive.Portal {...props} />;
 };
 

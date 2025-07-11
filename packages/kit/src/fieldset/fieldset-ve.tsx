@@ -5,7 +5,7 @@ import type { Sprinkles } from "../theme/sprinkles.css";
 
 const NAME = "Fieldset";
 
-interface FieldsetVEProps 
+interface FieldsetVEProps
   extends Omit<React.ComponentPropsWithRef<"fieldset">, keyof Sprinkles>,
     Sprinkles {
   /** Additional CSS classes */
@@ -16,37 +16,43 @@ interface FieldsetVEProps
   required?: boolean;
 }
 
-export const FieldsetVE = React.forwardRef<HTMLFieldSetElement, FieldsetVEProps>(
-  ({ children, className, legend, required, ...props }, ref) => {
-    // Extract sprinkle props
-    const sprinkleProps: Partial<Sprinkles> = {};
-    const otherProps: Omit<React.ComponentPropsWithRef<"fieldset">, keyof Sprinkles> = {};
-    
-    Object.entries(props).forEach(([key, value]) => {
-      if (sprinkles.properties.has(key as keyof Sprinkles)) {
-        (sprinkleProps as Record<string, unknown>)[key] = value;
-      } else {
-        (otherProps as Record<string, unknown>)[key] = value;
-      }
-    });
+export const FieldsetVE = React.forwardRef<
+  HTMLFieldSetElement,
+  FieldsetVEProps
+>(({ children, className, legend, required, ...props }, ref) => {
+  // Extract sprinkle props
+  const sprinkleProps: Partial<Sprinkles> = {};
+  const otherProps: Omit<
+    React.ComponentPropsWithRef<"fieldset">,
+    keyof Sprinkles
+  > = {};
 
-    const fieldsetClassName = [
-      styles.fieldset,
-      sprinkles(sprinkleProps),
-      className
-    ].filter(Boolean).join(' ');
+  Object.entries(props).forEach(([key, value]) => {
+    if (sprinkles.properties.has(key as keyof Sprinkles)) {
+      (sprinkleProps as Record<string, unknown>)[key] = value;
+    } else {
+      (otherProps as Record<string, unknown>)[key] = value;
+    }
+  });
 
-    return (
-      <fieldset className={fieldsetClassName} {...otherProps} ref={ref}>
-        <legend className={styles.legend}>
-          {legend}
-          {required && <span className={styles.requiredIndicator}>*</span>}
-        </legend>
-        {children}
-      </fieldset>
-    );
-  }
-);
+  const fieldsetClassName = [
+    styles.fieldset,
+    sprinkles(sprinkleProps),
+    className,
+  ]
+    .filter(Boolean)
+    .join(" ");
+
+  return (
+    <fieldset className={fieldsetClassName} {...otherProps} ref={ref}>
+      <legend className={styles.legend}>
+        {legend}
+        {required && <span className={styles.requiredIndicator}>*</span>}
+      </legend>
+      {children}
+    </fieldset>
+  );
+});
 
 FieldsetVE.displayName = NAME;
 

@@ -1,11 +1,11 @@
 import React from "react";
 import { createPortal } from "react-dom";
 import { Popover } from "../popover";
-import { inputSearchPopoverContent } from './InputSearch.css';
+import { inputSearchPopoverContent } from "./InputSearch.css";
 import { InputSearchContext } from "./input-search-root-ve";
 
-export type InputSearchPopoverProps = React.ComponentPropsWithRef<"div"> & { 
-  portal?: boolean; 
+export type InputSearchPopoverProps = React.ComponentPropsWithRef<"div"> & {
+  portal?: boolean;
   portalDomNode?: HTMLElement;
   css?: React.CSSProperties;
 };
@@ -62,13 +62,13 @@ export const InputSearchPopoverVE = ({
     );
   } else {
     return createPortal(
-      <div 
+      <div
         className={inputSearchPopoverContent}
         style={{
           ...(css || {}),
           ...style,
         }}
-        {...rest} 
+        {...rest}
         role="dialog"
       >
         {children}

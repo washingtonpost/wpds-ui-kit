@@ -1,7 +1,11 @@
 import React from "react";
 import * as Label from "@radix-ui/react-label";
 import type { LabelProps } from "@radix-ui/react-label";
-import { inputLabelBase, inputLabelVariants, requiredIndicator } from "./InputLabel.css";
+import {
+  inputLabelBase,
+  inputLabelVariants,
+  requiredIndicator,
+} from "./InputLabel.css";
 
 const NAME = "InputLabel";
 
@@ -18,12 +22,14 @@ interface InputLabelProps extends LabelProps {
 
 export const InputLabelVE = React.forwardRef<HTMLLabelElement, InputLabelProps>(
   ({ children, className, disabled, required, ...props }, ref) => {
-    const variantClass = disabled ? inputLabelVariants.disabled : inputLabelVariants.enabled;
-    
+    const variantClass = disabled
+      ? inputLabelVariants.disabled
+      : inputLabelVariants.enabled;
+
     return (
-      <Label.Root 
-        ref={ref} 
-        className={`${inputLabelBase} ${variantClass} ${className || ''}`}
+      <Label.Root
+        ref={ref}
+        className={`${inputLabelBase} ${variantClass} ${className || ""}`}
         {...props}
       >
         {children}

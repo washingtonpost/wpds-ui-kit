@@ -15,25 +15,26 @@ export type PopoverCloseVEProps = {
   className?: string;
 } & RadixPopoverCloseProps;
 
-export const PopoverCloseVE = forwardRef<HTMLButtonElement, PopoverCloseVEProps>(
-  ({ children, asChild, className, ...props }, ref) => (
-    <PopoverPrimitive.Close {...props} asChild ref={ref}>
-      {asChild ? (
-        children
-      ) : (
-        <Button 
-          className={clsx(popoverCloseButton, className)}
-          isOutline 
-          icon="center" 
-          variant="primary"
-        >
-          <IconVE size="100" label="Close popup">
-            <Close />
-          </IconVE>
-        </Button>
-      )}
-    </PopoverPrimitive.Close>
-  )
-);
+export const PopoverCloseVE = forwardRef<
+  HTMLButtonElement,
+  PopoverCloseVEProps
+>(({ children, asChild, className, ...props }, ref) => (
+  <PopoverPrimitive.Close {...props} asChild ref={ref}>
+    {asChild ? (
+      children
+    ) : (
+      <Button
+        className={clsx(popoverCloseButton, className)}
+        isOutline
+        icon="center"
+        variant="primary"
+      >
+        <IconVE size="100" label="Close popup">
+          <Close />
+        </IconVE>
+      </Button>
+    )}
+  </PopoverPrimitive.Close>
+));
 
 PopoverCloseVE.displayName = NAME;

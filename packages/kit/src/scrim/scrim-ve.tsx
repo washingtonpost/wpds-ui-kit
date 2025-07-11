@@ -6,9 +6,9 @@ import { vars } from "../theme/vanilla-extract";
 
 const NAME = "Scrim";
 
-interface ScrimVEProps 
-  extends Omit<React.ComponentPropsWithRef<"div">, keyof Sprinkles | 'zIndex'>,
-    Omit<Sprinkles, 'zIndex'> {
+interface ScrimVEProps
+  extends Omit<React.ComponentPropsWithRef<"div">, keyof Sprinkles | "zIndex">,
+    Omit<Sprinkles, "zIndex"> {
   /** Additional CSS classes */
   className?: string;
   /** Whether scrollbars should be hidden and scroll locked when the scrim is shown @default true */
@@ -16,18 +16,18 @@ interface ScrimVEProps
   /** Controlled value to open and close the scrim */
   open?: boolean;
   /** Css z-index of scrim @default theme.zIndices.shell */
-  zIndex?: React.CSSProperties['zIndex'];
+  zIndex?: React.CSSProperties["zIndex"];
 }
 
 export const ScrimVE = React.forwardRef<HTMLDivElement, ScrimVEProps>(
   (
-    { 
-      lockScroll = true, 
-      open, 
-      zIndex = vars.zIndices.shell, 
+    {
+      lockScroll = true,
+      open,
+      zIndex = vars.zIndices.shell,
       className,
       style: inlineStyle,
-      ...props 
+      ...props
     },
     ref
   ) => {
@@ -35,12 +35,18 @@ export const ScrimVE = React.forwardRef<HTMLDivElement, ScrimVEProps>(
 
     // Extract sprinkle props
     const sprinkleProps: Partial<Sprinkles> = {};
-    const otherProps: Omit<React.ComponentPropsWithRef<"div">, keyof Sprinkles | 'style' | 'zIndex'> = {};
-    
+    const otherProps: Omit<
+      React.ComponentPropsWithRef<"div">,
+      keyof Sprinkles | "style" | "zIndex"
+    > = {};
+
     Object.entries(props).forEach(([key, value]) => {
-      if (key !== 'zIndex' && sprinkles.properties.has(key as keyof Sprinkles)) {
+      if (
+        key !== "zIndex" &&
+        sprinkles.properties.has(key as keyof Sprinkles)
+      ) {
         (sprinkleProps as Record<string, unknown>)[key] = value;
-      } else if (key !== 'zIndex') {
+      } else if (key !== "zIndex") {
         (otherProps as Record<string, unknown>)[key] = value;
       }
     });
@@ -85,8 +91,10 @@ export const ScrimVE = React.forwardRef<HTMLDivElement, ScrimVEProps>(
     const scrimClassName = [
       styles.scrimContainer,
       sprinkles(sprinkleProps),
-      className
-    ].filter(Boolean).join(' ');
+      className,
+    ]
+      .filter(Boolean)
+      .join(" ");
 
     const combinedStyle = {
       ...inlineStyle,

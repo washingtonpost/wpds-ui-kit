@@ -1,5 +1,5 @@
-import { style, keyframes, globalStyle } from '@vanilla-extract/css';
-import { vars } from '../theme/vanilla-extract';
+import { style, keyframes, globalStyle } from "@vanilla-extract/css";
+import { vars } from "../theme/vanilla-extract";
 
 const fadeInAnimation = keyframes({
   from: { opacity: 0 },
@@ -13,13 +13,13 @@ const fadeOutAnimation = keyframes({
 
 export const scrimContainer = style({
   backgroundColor: vars.colors.alpha50,
-  position: 'fixed',
+  position: "fixed",
   inset: 0,
-  contentVisibility: 'auto',
+  contentVisibility: "auto",
 
-  '@media': {
-    '(prefers-reduced-motion: reduce)': {
-      animation: 'none',
+  "@media": {
+    "(prefers-reduced-motion: reduce)": {
+      animation: "none",
     },
   },
 
@@ -36,11 +36,11 @@ export const scrimContainer = style({
 
 // Global styles for scroll locking
 globalStyle('html[data-scrim-state="open"]', {
-  maxHeight: '100vh',
-  overflow: 'hidden',
+  maxHeight: "100vh",
+  overflow: "hidden",
 });
 
 globalStyle('html[data-scrim-state="closed"]', {
-  maxHeight: '',
-  overflow: '',
+  maxHeight: "",
+  overflow: "",
 });

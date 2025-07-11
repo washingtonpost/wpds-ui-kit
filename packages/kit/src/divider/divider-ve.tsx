@@ -18,7 +18,9 @@ export const DividerVE = forwardRef<HTMLDivElement, DividerProps>(
   ({ className, variant = "default", ...props }, ref) => {
     return (
       <Separator.Root
-        className={`${dividerBase} ${dividerVariants[variant]} ${className || ''}`}
+        className={`${dividerBase} ${dividerVariants[variant]} ${
+          className || ""
+        }`}
         ref={ref}
         {...props}
       />

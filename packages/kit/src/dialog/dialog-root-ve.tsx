@@ -8,7 +8,9 @@ type DialogContextInterface = {
   open: boolean | undefined;
 };
 
-export const DialogContextVE = React.createContext({} as DialogContextInterface);
+export const DialogContextVE = React.createContext(
+  {} as DialogContextInterface
+);
 
 const NAME = "DialogRootVE";
 

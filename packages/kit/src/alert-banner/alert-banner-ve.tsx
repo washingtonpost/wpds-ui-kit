@@ -75,52 +75,65 @@ AlertBannerTriggerVE.displayName = "AlertBannerTriggerVE";
 export const AlertBannerRootVE = React.forwardRef<
   HTMLDivElement,
   AlertBannerRootVEProps
->(({ variant = "information", dismissable = true, children, className, ...props }, ref) => {
-  const kids = React.Children.toArray(children);
-  const contentNode = kids.find(
-    (child) =>
-      React.isValidElement(child) && child.type === AlertBannerContentVE
-  );
-  const triggerNode = kids.find(
-    (child) =>
-      React.isValidElement(child) && child.type === AlertBannerTriggerVE
-  );
+>(
+  (
+    {
+      variant = "information",
+      dismissable = true,
+      children,
+      className,
+      ...props
+    },
+    ref
+  ) => {
+    const kids = React.Children.toArray(children);
+    const contentNode = kids.find(
+      (child) =>
+        React.isValidElement(child) && child.type === AlertBannerContentVE
+    );
+    const triggerNode = kids.find(
+      (child) =>
+        React.isValidElement(child) && child.type === AlertBannerTriggerVE
+    );
 
-  const AlertIcon = AlertIcons[variant as AlertIconType];
+    const AlertIcon = AlertIcons[variant as AlertIconType];
 
-  return (
-    <div
-      ref={ref}
-      role="alert"
-      className={`${alertBannerRootClass({ variant, dismissable })} ${className || ""}`}
-      {...props}
-    >
-      <Button
-        as="div"
-        icon="center"
-        variant="primary"
-        isOutline
-        css={{
-          alignSelf: "flex-start",
-          border: "none",
-          borderRadius: 0,
-          cursor: "auto",
-          "@hover": {
-            "&:hover": {
-              background: "none",
-            },
-          },
-        }}
+    return (
+      <div
+        ref={ref}
+        role="alert"
+        className={`${alertBannerRootClass({ variant, dismissable })} ${
+          className || ""
+        }`}
+        {...props}
       >
-        <Icon size="100" label="">
-          <AlertIcon className={alertBannerIconClass({ variant })} />
-        </Icon>
-      </Button>
-      {contentNode}
-      {dismissable ? triggerNode : ""}
-    </div>
-  );
-});
+        <Button
+          as="div"
+          icon="center"
+          variant="primary"
+          isOutline
+          css={{
+            alignSelf: "flex-start",
+            border: "none",
+            borderRadius: 0,
+            cursor: "auto",
+            "@hover": {
+              "&:hover": {
+                background: "none",
+              },
+            },
+          }}
+        >
+          <Icon size="100" label="">
+            <AlertIcon className={alertBannerIconClass({ variant })} />
+          </Icon>
+        </Button>
+        {contentNode}
+        {dismissable ? triggerNode : ""}
+      </div>
+    );
+  }
+);
 
 AlertBannerRootVE.displayName = NAME;
 

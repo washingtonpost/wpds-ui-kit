@@ -1,9 +1,10 @@
-import React from 'react';
-import { clsx } from 'clsx';
-import * as AccordionPrimitive from '@radix-ui/react-accordion';
-import { accordionItem } from './Accordion.css';
+import React from "react";
+import { clsx } from "clsx";
+import * as AccordionPrimitive from "@radix-ui/react-accordion";
+import { accordionItem } from "./Accordion.css";
 
-export interface AccordionItemProps extends React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Item> {
+export interface AccordionItemProps
+  extends React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Item> {
   /** Children content */
   children?: React.ReactNode;
   /** Value of the item */
@@ -28,4 +29,4 @@ export const AccordionItemVE = React.forwardRef<
   );
 });
 
-AccordionItemVE.displayName = 'AccordionItemVE';
+AccordionItemVE.displayName = "AccordionItemVE";

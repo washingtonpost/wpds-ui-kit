@@ -1,7 +1,7 @@
 import React, { forwardRef } from "react";
 import * as TooltipPrimitive from "@radix-ui/react-tooltip";
-import { tooltipContentRecipe, tooltipArrowClass } from './Tooltip.css';
-import { vars } from '../theme/contracts.css';
+import { tooltipContentRecipe, tooltipArrowClass } from "./Tooltip.css";
+import { vars } from "../theme/contracts.css";
 import { TooltipContentProps as RadixTooltipContentProps } from "@radix-ui/react-tooltip";
 import { getPixelsFromRem } from "./utils";
 
@@ -26,7 +26,7 @@ export interface TooltipContentInterface extends RadixTooltipContentProps {
   /** @default 0 */
   offsetAlign?: number | string | WPDSThemeSpaceObject;
   /** Specify the amount of padding for the inner components. */
-  density?: 'compact' | 'default';
+  density?: "compact" | "default";
 }
 
 /**
@@ -57,10 +57,9 @@ export const TooltipContentVE = forwardRef<
       <TooltipPrimitive.Portal>
         <TooltipPrimitive.Content
           {...props}
-          className={[
-            tooltipContentRecipe({ density }),
-            className,
-          ].filter(Boolean).join(' ')}
+          className={[tooltipContentRecipe({ density }), className]
+            .filter(Boolean)
+            .join(" ")}
           sideOffset={getPixelsFromRem(offsetSide)}
           side={side}
           align={align}
@@ -79,4 +78,4 @@ export const TooltipContentVE = forwardRef<
     )
 );
 
-TooltipContentVE.displayName = 'TooltipContentVE';
+TooltipContentVE.displayName = "TooltipContentVE";

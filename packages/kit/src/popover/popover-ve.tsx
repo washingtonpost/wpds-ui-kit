@@ -24,4 +24,11 @@ export const PopoverVE: PopoverVEProps = {
 };
 
 // Individual exports for convenience
-export { PopoverRootVE, PopoverPortalVE, PopoverContentVE, PopoverTriggerVE, PopoverAnchorVE, PopoverCloseVE };
+export {
+  PopoverRootVE,
+  PopoverPortalVE,
+  PopoverContentVE,
+  PopoverTriggerVE,
+  PopoverAnchorVE,
+  PopoverCloseVE,
+};

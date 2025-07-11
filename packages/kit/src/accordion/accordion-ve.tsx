@@ -1,7 +1,7 @@
-import { AccordionRootVE } from './accordion-root-ve';
-import { AccordionItemVE } from './accordion-item-ve';
-import { AccordionTriggerVE, AccordionHeaderVE } from './accordion-trigger-ve';
-import { AccordionContentVE } from './accordion-content-ve';
+import { AccordionRootVE } from "./accordion-root-ve";
+import { AccordionItemVE } from "./accordion-item-ve";
+import { AccordionTriggerVE, AccordionHeaderVE } from "./accordion-trigger-ve";
+import { AccordionContentVE } from "./accordion-content-ve";
 
 export type AccordionVEProps = {
   Root: typeof AccordionRootVE;

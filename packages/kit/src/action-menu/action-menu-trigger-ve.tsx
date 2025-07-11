@@ -5,7 +5,8 @@ import { actionMenuTriggerClass } from "./ActionMenu.css";
 
 const NAME = "ActionMenuTriggerVE";
 
-export interface ActionMenuTriggerVEProps extends RadixDropdownMenuTriggerProps {
+export interface ActionMenuTriggerVEProps
+  extends RadixDropdownMenuTriggerProps {
   /** Any React node may be used as a child to allow for formatting */
   children?: React.ReactNode;
   /** Override CSS */

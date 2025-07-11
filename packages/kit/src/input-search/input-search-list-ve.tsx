@@ -1,6 +1,6 @@
 import React from "react";
 import { useListBox } from "react-aria";
-import { inputSearchList } from './InputSearch.css';
+import { inputSearchList } from "./InputSearch.css";
 import { InputSearchContext } from "./input-search-root-ve";
 import { ListItem } from "./input-search-list-item-ve";
 import { ListHeading } from "./input-search-list-heading-ve";
@@ -44,14 +44,19 @@ export const InputSearchListVE = ({
         //state.selectionManager.setFocusedKey(state.collection.getFirstKey());
       }
     }
-  }, [state.isOpen, persistSelection, state.selectionManager, state.collection]);
+  }, [
+    state.isOpen,
+    persistSelection,
+    state.selectionManager,
+    state.collection,
+  ]);
 
   const { listBoxProps } = useListBox(contextProps, state, listBoxRef);
 
   return (
-    <ul 
-      {...listBoxProps} 
-      ref={listBoxRef} 
+    <ul
+      {...listBoxProps}
+      ref={listBoxRef}
       className={inputSearchList}
       style={{
         ...(css || {}),

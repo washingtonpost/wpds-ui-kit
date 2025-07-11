@@ -1,24 +1,24 @@
-import { style, styleVariants } from '@vanilla-extract/css';
-import { vars } from '../theme/vanilla-extract';
+import { style, styleVariants } from "@vanilla-extract/css";
+import { vars } from "../theme/vanilla-extract";
 
 export const appBar = style({
-  display: 'flex',
-  flexDirection: 'column',
-  width: '100%',
+  display: "flex",
+  flexDirection: "column",
+  width: "100%",
 });
 
 export const appBarPositions = styleVariants({
   fixed: {
-    position: 'fixed',
+    position: "fixed",
   },
   sticky: {
-    position: 'sticky',
+    position: "sticky",
   },
   absolute: {
-    position: 'absolute',
+    position: "absolute",
   },
   relative: {
-    position: 'relative',
+    position: "relative",
   },
 });
 

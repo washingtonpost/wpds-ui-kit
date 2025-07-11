@@ -11,7 +11,9 @@ interface DrawerContextInterface {
   onOpenChange: (boolean) => void;
 }
 
-export const DrawerContextVE = React.createContext({} as DrawerContextInterface);
+export const DrawerContextVE = React.createContext(
+  {} as DrawerContextInterface
+);
 
 type Controlled = {
   /** controlled drawer open state, used with onOpenChange */

@@ -25,7 +25,9 @@ export const ActionMenuItemVE = React.forwardRef<
     <ActionMenuPrimitive.Item
       {...props}
       ref={ref}
-      className={`${actionMenuItemClass({ density: density || context.density })} ${className || ""}`}
+      className={`${actionMenuItemClass({
+        density: density || context.density,
+      })} ${className || ""}`}
     >
       {children}
     </ActionMenuPrimitive.Item>

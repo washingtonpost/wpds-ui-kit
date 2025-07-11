@@ -1,14 +1,15 @@
-import React from 'react';
-import { clsx } from 'clsx';
-import { buttonRecipe } from './Button.css';
-import type { RecipeVariants } from '@vanilla-extract/recipes';
+import React from "react";
+import { clsx } from "clsx";
+import { buttonRecipe } from "./Button.css";
+import type { RecipeVariants } from "@vanilla-extract/recipes";
 
 export type ButtonVariants = RecipeVariants<typeof buttonRecipe>;
-export type ButtonVariant = NonNullable<ButtonVariants>['variant'];
-export type ButtonDensity = NonNullable<ButtonVariants>['density'];
-export type ButtonIcon = NonNullable<ButtonVariants>['icon'];
+export type ButtonVariant = NonNullable<ButtonVariants>["variant"];
+export type ButtonDensity = NonNullable<ButtonVariants>["density"];
+export type ButtonIcon = NonNullable<ButtonVariants>["icon"];
 
-export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: ButtonVariant;
   density?: ButtonDensity;
   isOutline?: boolean;
@@ -17,15 +18,18 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 }
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ 
-    variant = 'secondary',
-    density = 'default',
-    isOutline = false,
-    icon = 'left',
-    className,
-    children,
-    ...props 
-  }, ref) => {
+  (
+    {
+      variant = "secondary",
+      density = "default",
+      isOutline = false,
+      icon = "left",
+      className,
+      children,
+      ...props
+    },
+    ref
+  ) => {
     return (
       <button
         ref={ref}
@@ -42,7 +46,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   }
 );
 
-Button.displayName = 'Button';
+Button.displayName = "Button";
 
 // Legacy type exports for backward compatibility
 export type { ButtonProps as ButtonInterface };

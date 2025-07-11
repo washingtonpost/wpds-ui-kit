@@ -3,7 +3,7 @@ import * as styles from "./Card.css";
 import { sprinkles } from "../theme/sprinkles.css";
 import type { Sprinkles } from "../theme/sprinkles.css";
 
-interface CardVEProps 
+interface CardVEProps
   extends Omit<React.ComponentPropsWithRef<"div">, keyof Sprinkles>,
     Sprinkles {
   /** Additional CSS classes */
@@ -16,8 +16,11 @@ export const CardVE = React.forwardRef<HTMLDivElement, CardVEProps>(
   ({ children, className, ...props }, ref) => {
     // Extract sprinkle props
     const sprinkleProps: Partial<Sprinkles> = {};
-    const otherProps: Omit<React.ComponentPropsWithRef<"div">, keyof Sprinkles> = {};
-    
+    const otherProps: Omit<
+      React.ComponentPropsWithRef<"div">,
+      keyof Sprinkles
+    > = {};
+
     Object.entries(props).forEach(([key, value]) => {
       if (sprinkles.properties.has(key as keyof Sprinkles)) {
         (sprinkleProps as Record<string, unknown>)[key] = value;
@@ -26,11 +29,9 @@ export const CardVE = React.forwardRef<HTMLDivElement, CardVEProps>(
       }
     });
 
-    const cardClassName = [
-      styles.card,
-      sprinkles(sprinkleProps),
-      className
-    ].filter(Boolean).join(' ');
+    const cardClassName = [styles.card, sprinkles(sprinkleProps), className]
+      .filter(Boolean)
+      .join(" ");
 
     return (
       <div ref={ref} className={cardClassName} {...otherProps}>

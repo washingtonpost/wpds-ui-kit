@@ -5,9 +5,12 @@ import type { Sprinkles } from "../theme/sprinkles.css";
 
 type AppBarPosition = keyof typeof styles.appBarPositions;
 
-interface AppBarVEProps 
-  extends Omit<React.ComponentPropsWithRef<"div">, keyof Sprinkles | 'position'>,
-    Omit<Sprinkles, 'position'> {
+interface AppBarVEProps
+  extends Omit<
+      React.ComponentPropsWithRef<"div">,
+      keyof Sprinkles | "position"
+    >,
+    Omit<Sprinkles, "position"> {
   /** Additional CSS classes */
   className?: string;
   /** App bar's position in time and space */
@@ -17,20 +20,21 @@ interface AppBarVEProps
 }
 
 export const AppBarVE = React.forwardRef<HTMLDivElement, AppBarVEProps>(
-  ({ 
-    className, 
-    position = 'relative', 
-    shadow = false,
-    ...props 
-  }, ref) => {
+  ({ className, position = "relative", shadow = false, ...props }, ref) => {
     // Extract sprinkle props
     const sprinkleProps: Partial<Sprinkles> = {};
-    const otherProps: Omit<React.ComponentPropsWithRef<"div">, keyof Sprinkles | 'position'> = {};
-    
+    const otherProps: Omit<
+      React.ComponentPropsWithRef<"div">,
+      keyof Sprinkles | "position"
+    > = {};
+
     Object.entries(props).forEach(([key, value]) => {
-      if (key !== 'position' && sprinkles.properties.has(key as keyof Sprinkles)) {
+      if (
+        key !== "position" &&
+        sprinkles.properties.has(key as keyof Sprinkles)
+      ) {
         (sprinkleProps as Record<string, unknown>)[key] = value;
-      } else if (key !== 'position') {
+      } else if (key !== "position") {
         (otherProps as Record<string, unknown>)[key] = value;
       }
     });
@@ -40,12 +44,12 @@ export const AppBarVE = React.forwardRef<HTMLDivElement, AppBarVEProps>(
       styles.appBarPositions[position],
       shadow && styles.appBarShadow,
       sprinkles(sprinkleProps),
-      className
-    ].filter(Boolean).join(' ');
+      className,
+    ]
+      .filter(Boolean)
+      .join(" ");
 
-    return (
-      <div ref={ref} className={appBarClassName} {...otherProps} />
-    );
+    return <div ref={ref} className={appBarClassName} {...otherProps} />;
   }
 );
 

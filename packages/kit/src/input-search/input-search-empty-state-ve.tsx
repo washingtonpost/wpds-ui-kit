@@ -1,8 +1,8 @@
 import React from "react";
-import { vars } from '../theme/contracts.css';
+import { vars } from "../theme/contracts.css";
 import { Search } from "@washingtonpost/wpds-assets";
 import { IconVE } from "../icon/icon-ve";
-import { inputSearchEmptyStateText } from './InputSearch.css';
+import { inputSearchEmptyStateText } from "./InputSearch.css";
 import { InputSearchOtherStateVE } from "./input-search-other-state-ve";
 
 export type InputSearchEmptyStateProps = {
@@ -13,11 +13,7 @@ export type InputSearchEmptyStateProps = {
 } & React.ComponentPropsWithRef<"div">;
 
 const SearchIcon = (
-  <IconVE 
-    label="Search" 
-    size="200" 
-    style={{ fill: vars.colors.primary }}
-  >
+  <IconVE label="Search" size="200" style={{ fill: vars.colors.primary }}>
     <Search />
   </IconVE>
 );

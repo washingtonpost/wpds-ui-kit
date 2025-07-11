@@ -1,9 +1,9 @@
 import React from "react";
-import { 
-  inputSearchStateContainer, 
-  inputSearchContentContainer, 
-  inputSearchIconContainer 
-} from './InputSearch.css';
+import {
+  inputSearchStateContainer,
+  inputSearchContentContainer,
+  inputSearchIconContainer,
+} from "./InputSearch.css";
 
 export type InputSearchOtherStateProps = {
   /** Any React node may be used as a child to allow for formatting */
@@ -24,7 +24,7 @@ export const InputSearchOtherStateVE = ({
   ...rest
 }: InputSearchOtherStateProps): JSX.Element => {
   return (
-    <div 
+    <div
       className={inputSearchStateContainer}
       style={{
         ...(css || {}),
@@ -33,9 +33,7 @@ export const InputSearchOtherStateVE = ({
       {...rest}
     >
       <div className={inputSearchContentContainer}>
-        <div className={inputSearchIconContainer}>
-          {icon}
-        </div>
+        <div className={inputSearchIconContainer}>{icon}</div>
         {children}
       </div>
     </div>

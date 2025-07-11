@@ -15,11 +15,7 @@ export const HelperTextVE = React.forwardRef<
   HelperTextProps
 >(({ children, className, ...rest }, ref) => {
   return (
-    <p 
-      className={`${helperText} ${className || ''}`}
-      ref={ref} 
-      {...rest}
-    >
+    <p className={`${helperText} ${className || ""}`} ref={ref} {...rest}>
       {children}
     </p>
   );

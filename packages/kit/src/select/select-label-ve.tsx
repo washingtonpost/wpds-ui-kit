@@ -1,8 +1,9 @@
-import React from 'react';
-import { clsx } from 'clsx';
-import { selectLabel } from './Select.css';
+import React from "react";
+import { clsx } from "clsx";
+import { selectLabel } from "./Select.css";
 
-export interface SelectLabelProps extends React.HTMLAttributes<HTMLLabelElement> {
+export interface SelectLabelProps
+  extends React.HTMLAttributes<HTMLLabelElement> {
   /** Additional CSS class */
   className?: string;
   /** Children content */
@@ -14,14 +15,10 @@ export const SelectLabelVE = React.forwardRef<
   SelectLabelProps
 >(({ className, children, ...props }, ref) => {
   return (
-    <label
-      ref={ref}
-      className={clsx(selectLabel, className)}
-      {...props}
-    >
+    <label ref={ref} className={clsx(selectLabel, className)} {...props}>
       {children}
     </label>
   );
 });
 
-SelectLabelVE.displayName = 'SelectLabelVE';
+SelectLabelVE.displayName = "SelectLabelVE";

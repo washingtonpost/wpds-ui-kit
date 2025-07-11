@@ -13,9 +13,9 @@ export interface ActionMenuRootVEProps extends RadixDropdownMenuProps {
   density?: DensityProp;
 }
 
-export const ActionMenuRootVE: React.FC<ActionMenuRootVEProps> = ({ 
-  density = "default", 
-  ...props 
+export const ActionMenuRootVE: React.FC<ActionMenuRootVEProps> = ({
+  density = "default",
+  ...props
 }) => {
   return (
     <ActionMenuContext.Provider

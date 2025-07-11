@@ -1,51 +1,51 @@
-import { recipe } from '@vanilla-extract/recipes';
-import { vars } from '../theme/contracts.css';
-import { focusableStyles, reducedMotion } from '../theme/accessibility.css';
+import { recipe } from "@vanilla-extract/recipes";
+import { vars } from "../theme/contracts.css";
+import { focusableStyles, reducedMotion } from "../theme/accessibility.css";
 
 export const buttonRecipe = recipe({
   base: [
     focusableStyles,
     reducedMotion,
     {
-      all: 'unset',
-      display: 'inline-flex',
-      flexDirection: 'row',
-      alignItems: 'center',
-      justifyContent: 'center',
-      height: 'fit-content',
-      width: 'fit-content',
+      all: "unset",
+      display: "inline-flex",
+      flexDirection: "row",
+      alignItems: "center",
+      justifyContent: "center",
+      height: "fit-content",
+      width: "fit-content",
       borderRadius: vars.radii.round,
-      cursor: 'pointer',
-      border: 'none',
-      appearance: 'none',
-      paddingLeft: vars.space['100'],
-      paddingRight: vars.space['100'],
+      cursor: "pointer",
+      border: "none",
+      appearance: "none",
+      paddingLeft: vars.space["100"],
+      paddingRight: vars.space["100"],
       fontFamily: vars.fonts.meta,
       fontWeight: vars.fontWeights.bold,
-      fontSize: vars.fontSizes['100'],
-      lineHeight: vars.lineHeights['100'],
-      gap: vars.space['050'],
+      fontSize: vars.fontSizes["100"],
+      lineHeight: vars.lineHeights["100"],
+      gap: vars.space["050"],
       transition: `background ${vars.transitions.fast} ${vars.transitions.inOut}`,
-      position: 'relative',
-      
+      position: "relative",
+
       selectors: {
-        '&:disabled': {
+        "&:disabled": {
           color: vars.colors.onDisabled,
           backgroundColor: vars.colors.disabled,
           borderColor: vars.colors.onDisabled,
-          cursor: 'not-allowed',
+          cursor: "not-allowed",
         },
       },
-    }
+    },
   ],
-  
+
   variants: {
     variant: {
       primary: {
         backgroundColor: vars.colors.primary,
         color: vars.colors.onPrimary,
         selectors: {
-          '&:not(:disabled):hover': {
+          "&:not(:disabled):hover": {
             backgroundColor: vars.colors.gray60,
           },
         },
@@ -55,7 +55,7 @@ export const buttonRecipe = recipe({
         color: vars.colors.onSecondary,
         border: `1px solid ${vars.colors.outline}`,
         selectors: {
-          '&:not(:disabled):hover': {
+          "&:not(:disabled):hover": {
             backgroundColor: vars.colors.gray400,
           },
         },
@@ -64,82 +64,82 @@ export const buttonRecipe = recipe({
         backgroundColor: vars.colors.cta,
         color: vars.colors.onCta,
         selectors: {
-          '&:not(:disabled):hover': {
+          "&:not(:disabled):hover": {
             backgroundColor: vars.colors.blue80,
           },
         },
       },
     },
-    
+
     density: {
       compact: {
-        paddingTop: vars.space['050'],
-        paddingBottom: vars.space['050'],
+        paddingTop: vars.space["050"],
+        paddingBottom: vars.space["050"],
       },
       default: {
-        paddingTop: vars.space['075'],
-        paddingBottom: vars.space['075'],
+        paddingTop: vars.space["075"],
+        paddingBottom: vars.space["075"],
       },
     },
-    
+
     isOutline: {
       true: {
-        backgroundColor: 'transparent',
-        border: '1px solid currentColor',
+        backgroundColor: "transparent",
+        border: "1px solid currentColor",
       },
       false: {},
     },
-    
+
     icon: {
       center: {
-        paddingTop: vars.space['050'],
-        paddingBottom: vars.space['050'],
-        paddingLeft: vars.space['050'],
-        paddingRight: vars.space['050'],
-        fontSize: '0',
-        lineHeight: '0',
-        gap: '0',
-        maxWidth: 'fit-content',
+        paddingTop: vars.space["050"],
+        paddingBottom: vars.space["050"],
+        paddingLeft: vars.space["050"],
+        paddingRight: vars.space["050"],
+        fontSize: "0",
+        lineHeight: "0",
+        gap: "0",
+        maxWidth: "fit-content",
       },
       left: {
-        flexDirection: 'row',
+        flexDirection: "row",
       },
       right: {
-        flexDirection: 'row-reverse',
+        flexDirection: "row-reverse",
       },
       none: {},
     },
   },
-  
+
   defaultVariants: {
-    variant: 'secondary',
-    density: 'default',
+    variant: "secondary",
+    density: "default",
     isOutline: false,
-    icon: 'left',
+    icon: "left",
   },
-  
+
   compoundVariants: [
     {
       variants: {
-        icon: 'center',
-        density: 'default',
+        icon: "center",
+        density: "default",
       },
       style: {
-        padding: vars.space['075'],
-        fontSize: '0',
-        lineHeight: '0',
+        padding: vars.space["075"],
+        fontSize: "0",
+        lineHeight: "0",
       },
     },
     {
       variants: {
         isOutline: true,
-        variant: 'primary',
+        variant: "primary",
       },
       style: {
-        backgroundColor: 'transparent',
+        backgroundColor: "transparent",
         color: vars.colors.primary,
         selectors: {
-          '&:not(:disabled):hover': {
+          "&:not(:disabled):hover": {
             backgroundColor: vars.colors.alpha25,
           },
         },
@@ -148,13 +148,13 @@ export const buttonRecipe = recipe({
     {
       variants: {
         isOutline: true,
-        variant: 'secondary',
+        variant: "secondary",
       },
       style: {
-        backgroundColor: 'transparent',
+        backgroundColor: "transparent",
         color: vars.colors.onSecondary,
         selectors: {
-          '&:not(:disabled):hover': {
+          "&:not(:disabled):hover": {
             backgroundColor: vars.colors.alpha25,
           },
         },
@@ -163,13 +163,13 @@ export const buttonRecipe = recipe({
     {
       variants: {
         isOutline: true,
-        variant: 'cta',
+        variant: "cta",
       },
       style: {
-        backgroundColor: 'transparent',
+        backgroundColor: "transparent",
         color: vars.colors.cta,
         selectors: {
-          '&:not(:disabled):hover': {
+          "&:not(:disabled):hover": {
             backgroundColor: vars.colors.alpha25,
           },
         },

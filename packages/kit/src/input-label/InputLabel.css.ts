@@ -1,12 +1,12 @@
-import { style, styleVariants } from '@vanilla-extract/css';
-import { vars } from '../theme/contracts.css';
+import { style, styleVariants } from "@vanilla-extract/css";
+import { vars } from "../theme/contracts.css";
 
 export const inputLabelBase = style({
   color: vars.colors.accessible,
   fontFamily: vars.fonts.meta,
-  fontSize: vars.fontSizes['100'],
+  fontSize: vars.fontSizes["100"],
   fontWeight: vars.fontWeights.light,
-  lineHeight: vars.lineHeights['110'],
+  lineHeight: vars.lineHeights["110"],
 });
 
 export const inputLabelVariants = styleVariants({

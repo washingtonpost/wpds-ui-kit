@@ -1,7 +1,7 @@
-import { TabsRootVE } from './tabs-root-ve';
-import { TabsListVE } from './tabs-list-ve';
-import { TabsTriggerVE } from './tabs-trigger-ve';
-import { TabsContentVE } from './tabs-content-ve';
+import { TabsRootVE } from "./tabs-root-ve";
+import { TabsListVE } from "./tabs-list-ve";
+import { TabsTriggerVE } from "./tabs-trigger-ve";
+import { TabsContentVE } from "./tabs-content-ve";
 
 export type TabsVEProps = {
   Root: typeof TabsRootVE;
@@ -21,12 +21,7 @@ export const TabsVE: TabsVEProps = {
 };
 
 // Individual exports
-export {
-  TabsRootVE,
-  TabsListVE,
-  TabsTriggerVE,
-  TabsContentVE,
-};
+export { TabsRootVE, TabsListVE, TabsTriggerVE, TabsContentVE };
 
 // Default export
 export default TabsVE;

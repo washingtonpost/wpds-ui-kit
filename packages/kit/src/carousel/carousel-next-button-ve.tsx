@@ -16,53 +16,52 @@ export interface CarouselNextButtonVEProps {
   children?: React.ReactNode;
 }
 
-export type CarouselNextButtonProps = CarouselNextButtonVEProps & Omit<React.ComponentProps<'button'>, keyof CarouselNextButtonVEProps>;
+export type CarouselNextButtonProps = CarouselNextButtonVEProps &
+  Omit<React.ComponentProps<"button">, keyof CarouselNextButtonVEProps>;
 
-export const CarouselNextButtonVE: React.FC<CarouselNextButtonProps> = (
-  {
-    className,
-    style,
-    onClick,
-    density = "compact",
-    icon = "center",
-    variant = "primary",
-    children,
-  }
-) => {
-    const { page, setPage, totalPages } = React.useContext(CarouselContext);
+export const CarouselNextButtonVE: React.FC<CarouselNextButtonProps> = ({
+  className,
+  style,
+  onClick,
+  density = "compact",
+  icon = "center",
+  variant = "primary",
+  children,
+}) => {
+  const { page, setPage, totalPages } = React.useContext(CarouselContext);
 
-    const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-      if (totalPages && page < totalPages - 1) {
-        setPage(page + 1);
-        onClick && onClick(event);
-      }
-    };
-
-    let isDisabled;
-    if (totalPages) {
-      isDisabled = page === totalPages - 1;
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    if (totalPages && page < totalPages - 1) {
+      setPage(page + 1);
+      onClick && onClick(event);
     }
-
-    const buttonContent = children || (
-      <IconVE label="next">
-        <ArrowRight />
-      </IconVE>
-    );
-
-    return (
-      <Button
-        onClick={handleClick}
-        disabled={isDisabled}
-        density={density}
-        icon={icon}
-        variant={variant}
-        aria-label="Go to next page"
-        className={className}
-        style={style}
-      >
-        {buttonContent}
-      </Button>
-    );
   };
+
+  let isDisabled;
+  if (totalPages) {
+    isDisabled = page === totalPages - 1;
+  }
+
+  const buttonContent = children || (
+    <IconVE label="next">
+      <ArrowRight />
+    </IconVE>
+  );
+
+  return (
+    <Button
+      onClick={handleClick}
+      disabled={isDisabled}
+      density={density}
+      icon={icon}
+      variant={variant}
+      aria-label="Go to next page"
+      className={className}
+      style={style}
+    >
+      {buttonContent}
+    </Button>
+  );
+};
 
 CarouselNextButtonVE.displayName = NAME;

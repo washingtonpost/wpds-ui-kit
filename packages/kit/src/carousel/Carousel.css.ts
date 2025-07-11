@@ -1,40 +1,40 @@
-import { style, styleVariants, keyframes } from '@vanilla-extract/css';
-import { recipe } from '@vanilla-extract/recipes';
-import { vars } from '../theme/contracts.css';
+import { style, styleVariants, keyframes } from "@vanilla-extract/css";
+import { recipe } from "@vanilla-extract/recipes";
+import { vars } from "../theme/contracts.css";
 
 // Carousel animations
 const slideTransition = keyframes({
-  from: { transform: 'translateX(0)' },
-  to: { transform: 'translateX(-100%)' },
+  from: { transform: "translateX(0)" },
+  to: { transform: "translateX(-100%)" },
 });
 
 const fadeIn = keyframes({
-  from: { opacity: '0' },
-  to: { opacity: '1' },
+  from: { opacity: "0" },
+  to: { opacity: "1" },
 });
 
 // Base carousel styles
 export const carouselRoot = style({
-  maxWidth: '100%',
+  maxWidth: "100%",
 });
 
 export const carouselContainer = style({
-  overflow: 'hidden',
-  position: 'relative',
-  ':focus': {
-    outline: 'none',
+  overflow: "hidden",
+  position: "relative",
+  ":focus": {
+    outline: "none",
   },
 });
 
 export const carouselSlider = style({
-  display: 'flex',
-  listStyle: 'none',
-  paddingInlineStart: '0',
-  marginBlock: '0',
+  display: "flex",
+  listStyle: "none",
+  paddingInlineStart: "0",
+  marginBlock: "0",
   transition: `transform 0.5s ${vars.transitions.inOut}`,
-  '@media': {
-    '(prefers-reduced-motion: reduce)': {
-      transition: 'none',
+  "@media": {
+    "(prefers-reduced-motion: reduce)": {
+      transition: "none",
     },
   },
 });
@@ -42,16 +42,16 @@ export const carouselSlider = style({
 // Carousel item styles
 export const carouselItem = recipe({
   base: {
-    flexShrink: '0',
-    position: 'relative',
+    flexShrink: "0",
+    position: "relative",
   },
   variants: {
     focused: {
       true: {
         outline: `2px solid ${vars.colors.signal}`,
-        outlineOffset: '-2px',
-        position: 'relative',
-        zIndex: '1',
+        outlineOffset: "-2px",
+        position: "relative",
+        zIndex: "1",
       },
       false: {},
     },
@@ -60,63 +60,63 @@ export const carouselItem = recipe({
 
 // Carousel header styles
 export const carouselHeader = style({
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'space-between',
-  marginBottom: vars.space['100'],
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "space-between",
+  marginBottom: vars.space["100"],
 });
 
 export const carouselHeaderContent = style({
-  display: 'flex',
-  alignItems: 'center',
-  flexGrow: '1',
+  display: "flex",
+  alignItems: "center",
+  flexGrow: "1",
 });
 
 export const carouselHeaderActions = style({
-  display: 'flex',
-  alignItems: 'center',
-  gap: vars.space['050'],
+  display: "flex",
+  alignItems: "center",
+  gap: vars.space["050"],
 });
 
 export const carouselTitle = style({
-  margin: '0',
-  fontSize: vars.fontSizes['125'],
+  margin: "0",
+  fontSize: vars.fontSizes["125"],
   fontWeight: vars.fontWeights.bold,
-  lineHeight: vars.lineHeights['125'],
+  lineHeight: vars.lineHeights["125"],
   color: vars.colors.primary,
 });
 
 // Carousel footer styles
 export const carouselFooter = style({
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  marginTop: vars.space['100'],
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  marginTop: vars.space["100"],
 });
 
 // Navigation button styles
 export const carouselButton = recipe({
   base: {
-    display: 'inline-flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    border: 'none',
-    borderRadius: vars.radii['012'],
-    padding: vars.space['050'],
-    cursor: 'pointer',
+    display: "inline-flex",
+    alignItems: "center",
+    justifyContent: "center",
+    border: "none",
+    borderRadius: vars.radii["012"],
+    padding: vars.space["050"],
+    cursor: "pointer",
     transition: `all 0.2s ${vars.transitions.inOut}`,
     backgroundColor: vars.colors.secondary,
     color: vars.colors.onSecondary,
-    ':hover': {
+    ":hover": {
       backgroundColor: vars.colors.gray200,
     },
-    ':focus': {
+    ":focus": {
       outline: `2px solid ${vars.colors.signal}`,
-      outlineOffset: '1px',
+      outlineOffset: "1px",
     },
-    ':disabled': {
-      opacity: '0.5',
-      cursor: 'not-allowed',
+    ":disabled": {
+      opacity: "0.5",
+      cursor: "not-allowed",
       backgroundColor: vars.colors.gray100,
       color: vars.colors.gray400,
     },
@@ -124,68 +124,68 @@ export const carouselButton = recipe({
   variants: {
     size: {
       compact: {
-        padding: vars.space['025'],
-        fontSize: vars.fontSizes['087'],
+        padding: vars.space["025"],
+        fontSize: vars.fontSizes["087"],
       },
       default: {
-        padding: vars.space['050'],
-        fontSize: vars.fontSizes['100'],
+        padding: vars.space["050"],
+        fontSize: vars.fontSizes["100"],
       },
       large: {
-        padding: vars.space['075'],
-        fontSize: vars.fontSizes['112'],
+        padding: vars.space["075"],
+        fontSize: vars.fontSizes["112"],
       },
     },
     variant: {
       primary: {
         backgroundColor: vars.colors.primary,
         color: vars.colors.onPrimary,
-        ':hover': {
+        ":hover": {
           backgroundColor: vars.colors.blue80,
         },
       },
       secondary: {
         backgroundColor: vars.colors.secondary,
         color: vars.colors.onSecondary,
-        ':hover': {
+        ":hover": {
           backgroundColor: vars.colors.gray300,
         },
       },
       ghost: {
-        backgroundColor: 'transparent',
+        backgroundColor: "transparent",
         color: vars.colors.primary,
-        ':hover': {
+        ":hover": {
           backgroundColor: vars.colors.gray100,
         },
       },
     },
   },
   defaultVariants: {
-    size: 'default',
-    variant: 'secondary',
+    size: "default",
+    variant: "secondary",
   },
 });
 
 // Responsive variants for different screen sizes
 export const responsiveVariants = styleVariants({
   mobile: {
-    '@media': {
-      'screen and (max-width: 768px)': {
-        padding: vars.space['025'],
+    "@media": {
+      "screen and (max-width: 768px)": {
+        padding: vars.space["025"],
       },
     },
   },
   tablet: {
-    '@media': {
-      'screen and (min-width: 769px) and (max-width: 1024px)': {
-        padding: vars.space['050'],
+    "@media": {
+      "screen and (min-width: 769px) and (max-width: 1024px)": {
+        padding: vars.space["050"],
       },
     },
   },
   desktop: {
-    '@media': {
-      'screen and (min-width: 1025px)': {
-        padding: vars.space['075'],
+    "@media": {
+      "screen and (min-width: 1025px)": {
+        padding: vars.space["075"],
       },
     },
   },
@@ -194,29 +194,29 @@ export const responsiveVariants = styleVariants({
 // Accessibility and animation utilities
 export const accessibilityStyles = {
   visuallyHidden: style({
-    position: 'absolute',
-    width: '1px',
-    height: '1px',
-    padding: '0',
-    margin: '-1px',
-    overflow: 'hidden',
-    clip: 'rect(0, 0, 0, 0)',
-    whiteSpace: 'nowrap',
-    border: '0',
+    position: "absolute",
+    width: "1px",
+    height: "1px",
+    padding: "0",
+    margin: "-1px",
+    overflow: "hidden",
+    clip: "rect(0, 0, 0, 0)",
+    whiteSpace: "nowrap",
+    border: "0",
   }),
   focusVisible: style({
     selectors: {
-      '&:focus-visible': {
+      "&:focus-visible": {
         outline: `2px solid ${vars.colors.signal}`,
-        outlineOffset: '2px',
+        outlineOffset: "2px",
       },
     },
   }),
   reducedMotion: style({
-    '@media': {
-      '(prefers-reduced-motion: reduce)': {
-        transition: 'none',
-        animation: 'none',
+    "@media": {
+      "(prefers-reduced-motion: reduce)": {
+        transition: "none",
+        animation: "none",
       },
     },
   }),

@@ -11,14 +11,15 @@ export type DialogFooterVEProps = {
   className?: string;
 } & React.ComponentPropsWithRef<"footer">;
 
-export const DialogFooterVE = React.forwardRef<HTMLElement, DialogFooterVEProps>(
-  ({ children, className, ...props }: DialogFooterVEProps, ref) => {
-    return (
-      <footer className={clsx(dialogFooter, className)} {...props} ref={ref}>
-        {children}
-      </footer>
-    );
-  }
-);
+export const DialogFooterVE = React.forwardRef<
+  HTMLElement,
+  DialogFooterVEProps
+>(({ children, className, ...props }: DialogFooterVEProps, ref) => {
+  return (
+    <footer className={clsx(dialogFooter, className)} {...props} ref={ref}>
+      {children}
+    </footer>
+  );
+});
 
 DialogFooterVE.displayName = NAME;

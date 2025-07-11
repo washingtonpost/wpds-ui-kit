@@ -20,7 +20,7 @@ module.exports = {
   testPathIgnorePatterns: ["/node_modules/(?!nanoid)", "/eslint-plugin/"],
   testMatch: ["**/*.test.[jt]s?(x)"],
   transformIgnorePatterns: [
-    "node_modules/(?!(nanoid|@storybook/testing-library|@storybook/jest)/)"
+    "node_modules/(?!(nanoid|@storybook/testing-library|@storybook/jest)/)",
   ],
   moduleNameMapper: {
     "^nanoid$": "nanoid/non-secure",

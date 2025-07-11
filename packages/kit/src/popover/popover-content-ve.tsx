@@ -18,7 +18,10 @@ export type PopoverContentVEProps = {
   density?: "default" | "compact";
 } & Omit<RadixPopoverContentProps, "sideOffset">;
 
-export const PopoverContentVE = forwardRef<HTMLDivElement, PopoverContentVEProps>(
+export const PopoverContentVE = forwardRef<
+  HTMLDivElement,
+  PopoverContentVEProps
+>(
   (
     {
       children,

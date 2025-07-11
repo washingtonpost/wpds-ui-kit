@@ -6,7 +6,8 @@ import { ActionMenuPortalVE } from "./action-menu-portal-ve";
 
 const NAME = "ActionMenuContentVE";
 
-export interface ActionMenuContentVEProps extends RadixDropdownMenuContentProps {
+export interface ActionMenuContentVEProps
+  extends RadixDropdownMenuContentProps {
   /** Any React node may be used as a child to allow for formatting */
   children?: React.ReactNode;
   /** Override CSS */

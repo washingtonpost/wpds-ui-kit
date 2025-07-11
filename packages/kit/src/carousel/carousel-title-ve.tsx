@@ -11,14 +11,15 @@ export interface CarouselTitleVEProps {
   id?: string;
 }
 
-export type CarouselTitleProps = CarouselTitleVEProps & React.ComponentProps<'h2'>;
+export type CarouselTitleProps = CarouselTitleVEProps &
+  React.ComponentProps<"h2">;
 
-export const CarouselTitleVE: React.FC<CarouselTitleProps> = ({ 
-  children, 
-  className, 
+export const CarouselTitleVE: React.FC<CarouselTitleProps> = ({
+  children,
+  className,
   style,
   id,
-  ...props 
+  ...props
 }) => {
   const { setTitleId } = React.useContext(CarouselContext);
   const generatedId = React.useId();
@@ -29,9 +30,9 @@ export const CarouselTitleVE: React.FC<CarouselTitleProps> = ({
   }, [titleId, setTitleId]);
 
   return (
-    <h2 
+    <h2
       id={titleId}
-      className={`${carouselTitle} ${className || ''}`}
+      className={`${carouselTitle} ${className || ""}`}
       style={style}
       {...props}
     >

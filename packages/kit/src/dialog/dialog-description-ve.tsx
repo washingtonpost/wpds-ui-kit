@@ -14,18 +14,19 @@ export type DialogDescriptionVEProps = {
   className?: string;
 } & RadixDialogDescriptionProps;
 
-export const DialogDescriptionVE = React.forwardRef<HTMLParagraphElement, DialogDescriptionVEProps>(
-  ({ children, className, ...props }: DialogDescriptionVEProps, ref) => {
-    return (
-      <DialogPrimitive.Description 
-        className={clsx(dialogDescription, className)} 
-        {...props} 
-        ref={ref}
-      >
-        {children}
-      </DialogPrimitive.Description>
-    );
-  }
-);
+export const DialogDescriptionVE = React.forwardRef<
+  HTMLParagraphElement,
+  DialogDescriptionVEProps
+>(({ children, className, ...props }: DialogDescriptionVEProps, ref) => {
+  return (
+    <DialogPrimitive.Description
+      className={clsx(dialogDescription, className)}
+      {...props}
+      ref={ref}
+    >
+      {children}
+    </DialogPrimitive.Description>
+  );
+});
 
 DialogDescriptionVE.displayName = NAME;

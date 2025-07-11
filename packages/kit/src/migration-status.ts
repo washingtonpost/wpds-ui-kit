@@ -1,6 +1,6 @@
 /**
  * Migration Progress Report
- * 
+ *
  * This file documents the current state of the Stitches to vanilla-extract migration.
  */
 
@@ -45,7 +45,7 @@ export {
   ActionMenuVE,
   AlertBannerVE,
   NavigationMenuVE,
-  
+
   // Migration utilities
   getBoxComponent,
   getButtonComponent,
@@ -67,12 +67,6 @@ export {
   getCarouselComponent,
   getContainerComponent,
   getTooltipComponent,
-  getErrorMessageComponent,
-  getHelperTextComponent,
-  getVisuallyHiddenComponent,
-  getDividerComponent,
-  getInputLabelComponent,
-  getPaginationDotsComponent,
   getFieldsetComponent,
   getAvatarComponent,
   getScrimComponent,
@@ -81,33 +75,33 @@ export {
   getActionMenuComponent,
   getAlertBannerComponent,
   getNavigationMenuComponent,
-  
+
   // Theme utilities
   getTheme,
   isUsingVanillaExtract,
   toggleMigrationSystem,
-  
+
   // Migration config
   MIGRATION_CONFIG,
-} from './migration';
+} from "./migration";
 
 // Theme systems
-export { 
+export {
   vars as vanillaExtractTheme,
   lightThemeVE,
   darkThemeVE,
   sprinkles,
-} from './theme/vanilla-extract';
+} from "./theme/vanilla-extract";
 
 export {
   theme as stitchesTheme,
   lightTheme as stitchesLightTheme,
   darkTheme as stitchesDarkTheme,
-} from './theme';
+} from "./theme";
 
 /**
  * Migration Status:
- * 
+ *
  * ✅ COMPLETED:
  * - Theme architecture (contracts, themes, sprinkles, accessibility)
  * - Box component (basic layout primitive)
@@ -131,7 +125,7 @@ export {
  * - Container component (responsive layout container with max-width variants)
  * - Tooltip component (contextual tooltip with positioning and animations)
  * - ErrorMessage component (form error text display)
- * - HelperText component (form helper text display) 
+ * - HelperText component (form helper text display)
  * - VisuallyHidden component (accessibility utility for screen readers)
  * - Divider component (separator with variants)
  * - InputLabel component (form label with required indicator)
@@ -146,27 +140,27 @@ export {
  * - NavigationMenu component (navigation menu with dropdowns)
  * - Migration utility system for dual usage
  * - Build system integration (tsup + vanilla-extract plugin)
- * 
+ *
  * 🚧 IN PROGRESS / NEXT STEPS:
  * - Visual regression and accessibility testing validation
  * - Animation and transition handling optimization
  * - Storybook integration validation
  * - Performance optimization and bundle size analysis
- * 
+ *
  * 📋 TODO:
  * - Complete accessibility validation for all migrated components
  * - Update documentation and migration guides
  * - Production build optimization and CSS manifest generation
  * - Remove Stitches dependencies after full migration validation
- * 
+ *
  * 🎯 SUCCESS CRITERIA PROGRESS:
  * ✅ Zero-runtime CSS with vanilla-extract
- * ✅ Type-safe styling with TypeScript integration  
+ * ✅ Type-safe styling with TypeScript integration
  * ✅ Design token consistency maintained
  * ✅ Component API compatibility preserved
  * ✅ Build system working with vanilla-extract
  * 🚧 Storybook integration (pending)
- * 🚧 Visual regression testing (pending)  
+ * 🚧 Visual regression testing (pending)
  * 🚧 Accessibility compliance validation (pending)
  * 🚧 Bundle size reduction (pending measurement)
  * 🚧 Performance improvements (pending measurement)

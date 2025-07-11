@@ -3,7 +3,7 @@ import { vanillaExtractPlugin } from "@vanilla-extract/esbuild-plugin";
 
 export default defineConfig((options) => {
   const isProduction = !options.watch;
-  
+
   return {
     entry: [
       "src/**/*@(ts|tsx)",
@@ -21,15 +21,15 @@ export default defineConfig((options) => {
     target: "esnext",
     treeshake: true,
     external: [
-      'react',
-      'react-dom',
-      '@vanilla-extract/css',
-      '@vanilla-extract/recipes',
-      '@vanilla-extract/sprinkles',
+      "react",
+      "react-dom",
+      "@vanilla-extract/css",
+      "@vanilla-extract/recipes",
+      "@vanilla-extract/sprinkles",
     ],
     esbuildPlugins: [
       vanillaExtractPlugin({
-        identifiers: isProduction ? 'short' : 'debug',
+        identifiers: isProduction ? "short" : "debug",
       }),
     ],
   };

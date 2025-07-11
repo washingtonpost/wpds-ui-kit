@@ -14,7 +14,7 @@ export const InputSearchItemTextVE = ({
   ...rest
 }: InputSearchItemTextProps): JSX.Element => {
   return (
-    <span 
+    <span
       style={{
         ...(css || {}),
         ...style,

@@ -1,6 +1,6 @@
 import React from "react";
 import { useSeparator } from "react-aria";
-import { inputSearchListHeading } from './InputSearch.css';
+import { inputSearchListHeading } from "./InputSearch.css";
 
 import type { Node, ListState } from "react-stately";
 
@@ -18,7 +18,9 @@ export type InputSearchListHeadingProps = {
 */
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-export const InputSearchListHeadingVE = (props: InputSearchListHeadingProps) => {
+export const InputSearchListHeadingVE = (
+  props: InputSearchListHeadingProps
+) => {
   return null;
 };
 
@@ -40,7 +42,7 @@ export const ListHeading = ({ section, state }: ListHeadingComponentProps) => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { title, children, css, style, ...itemProps } = section.props;
 
-  const variant = title ? 'with-title' : 'default';
+  const variant = title ? "with-title" : "default";
 
   return (
     <li
@@ -53,9 +55,11 @@ export const ListHeading = ({ section, state }: ListHeadingComponentProps) => {
       }}
     >
       {title && <div>{title}</div>}
-      {Array.from(state.collection.getChildren?.(section.key) || []).map((item) => (
-        <React.Fragment key={item.key}>{item.rendered}</React.Fragment>
-      ))}
+      {Array.from(state.collection.getChildren?.(section.key) || []).map(
+        (item) => (
+          <React.Fragment key={item.key}>{item.rendered}</React.Fragment>
+        )
+      )}
     </li>
   );
 };

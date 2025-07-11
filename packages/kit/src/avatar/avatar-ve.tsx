@@ -17,9 +17,12 @@ type SizeToken = {
 
 type AvatarSize = keyof typeof styles.avatarSizes;
 
-interface AvatarVEProps 
-  extends Omit<React.ComponentPropsWithRef<typeof AvatarPrimitive.Root>, keyof Sprinkles | 'size'>,
-    Omit<Sprinkles, 'size'> {
+interface AvatarVEProps
+  extends Omit<
+      React.ComponentPropsWithRef<typeof AvatarPrimitive.Root>,
+      keyof Sprinkles | "size"
+    >,
+    Omit<Sprinkles, "size"> {
   /** Additional CSS classes */
   className?: string;
   children: React.ReactElement;
@@ -38,8 +41,11 @@ export const AvatarVE = React.forwardRef<
 
   // Extract sprinkle props
   const sprinkleProps: Partial<Sprinkles> = {};
-  const otherProps: Omit<React.ComponentPropsWithRef<typeof AvatarPrimitive.Root>, keyof Sprinkles | 'size'> = {};
-  
+  const otherProps: Omit<
+    React.ComponentPropsWithRef<typeof AvatarPrimitive.Root>,
+    keyof Sprinkles | "size"
+  > = {};
+
   Object.entries(props).forEach(([key, value]) => {
     if (sprinkles.properties.has(key as keyof Sprinkles)) {
       (sprinkleProps as Record<string, unknown>)[key] = value;
@@ -57,13 +63,17 @@ export const AvatarVE = React.forwardRef<
     styles.avatar,
     styles.avatarSizes[_size],
     sprinkles(sprinkleProps),
-    className
-  ].filter(Boolean).join(' ');
+    className,
+  ]
+    .filter(Boolean)
+    .join(" ");
 
   return (
     <AvatarPrimitive.Root ref={ref} className={avatarClassName} {...otherProps}>
       {React.cloneElement(child, {
-        className: `${styles.avatarImage} ${child.props.className || ''}`.trim(),
+        className: `${styles.avatarImage} ${
+          child.props.className || ""
+        }`.trim(),
       })}
     </AvatarPrimitive.Root>
   );

@@ -1,7 +1,7 @@
-import React from 'react';
-import { clsx } from 'clsx';
-import * as AccordionPrimitive from '@radix-ui/react-accordion';
-import { accordionRoot } from './Accordion.css';
+import React from "react";
+import { clsx } from "clsx";
+import * as AccordionPrimitive from "@radix-ui/react-accordion";
+import { accordionRoot } from "./Accordion.css";
 
 // Single accordion props
 export interface AccordionSingleProps {
@@ -12,7 +12,7 @@ export interface AccordionSingleProps {
   /** Additional CSS class */
   className?: string;
   /** Accordion type */
-  type: 'single';
+  type: "single";
   /** Value for single accordion */
   value?: string;
   defaultValue?: string;
@@ -21,7 +21,7 @@ export interface AccordionSingleProps {
   collapsible?: boolean;
 }
 
-// Multiple accordion props  
+// Multiple accordion props
 export interface AccordionMultipleProps {
   /** Children content */
   children?: React.ReactNode;
@@ -30,7 +30,7 @@ export interface AccordionMultipleProps {
   /** Additional CSS class */
   className?: string;
   /** Accordion type */
-  type: 'multiple';
+  type: "multiple";
   /** Values for multiple accordion */
   value?: string[];
   defaultValue?: string[];
@@ -54,4 +54,4 @@ export const AccordionRootVE = React.forwardRef<
   );
 });
 
-AccordionRootVE.displayName = 'AccordionRootVE';
+AccordionRootVE.displayName = "AccordionRootVE";

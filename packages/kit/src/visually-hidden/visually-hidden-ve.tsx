@@ -11,9 +11,9 @@ export const VisuallyHiddenVE = React.forwardRef<
   VisuallyHiddenProps
 >(({ children, className, ...rest }, ref) => {
   return (
-    <span 
-      className={`${visuallyHidden} ${className || ''}`}
-      ref={ref} 
+    <span
+      className={`${visuallyHidden} ${className || ""}`}
+      ref={ref}
       {...rest}
     >
       {children}

@@ -9,17 +9,18 @@ export interface CarouselFooterVEProps {
   children?: React.ReactNode;
 }
 
-export type CarouselFooterProps = CarouselFooterVEProps & React.ComponentProps<'div'>;
+export type CarouselFooterProps = CarouselFooterVEProps &
+  React.ComponentProps<"div">;
 
-export const CarouselFooterVE: React.FC<CarouselFooterProps> = ({ 
-  children, 
-  className, 
-  style, 
-  ...props 
+export const CarouselFooterVE: React.FC<CarouselFooterProps> = ({
+  children,
+  className,
+  style,
+  ...props
 }) => {
   return (
-    <div 
-      className={`${carouselFooter} ${className || ''}`}
+    <div
+      className={`${carouselFooter} ${className || ""}`}
       style={style}
       {...props}
     >

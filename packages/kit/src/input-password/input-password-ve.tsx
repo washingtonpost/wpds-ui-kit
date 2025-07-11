@@ -39,7 +39,10 @@ interface InputPasswordVEProps
  *
  * @extends InputText
  */
-export const InputPasswordVE = forwardRef<HTMLInputElement, InputPasswordVEProps>(
+export const InputPasswordVE = forwardRef<
+  HTMLInputElement,
+  InputPasswordVEProps
+>(
   (
     {
       label = "Password",

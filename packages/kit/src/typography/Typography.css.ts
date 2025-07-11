@@ -1,6 +1,6 @@
-import { recipe } from '@vanilla-extract/recipes';
-import { vars } from '../theme/contracts.css';
-import type { RecipeVariants } from '@vanilla-extract/recipes';
+import { recipe } from "@vanilla-extract/recipes";
+import { vars } from "../theme/contracts.css";
+import type { RecipeVariants } from "@vanilla-extract/recipes";
 
 // Base text styles
 export const textBase = {
@@ -20,44 +20,44 @@ export const headingRecipe = recipe({
     level: {
       1: {
         fontFamily: vars.fonts.headline,
-        fontSize: vars.fontSizes['300'],
-        '@media': {
-          'screen and (max-width: 767px)': {
-            fontSize: vars.fontSizes['250'],
+        fontSize: vars.fontSizes["300"],
+        "@media": {
+          "screen and (max-width: 767px)": {
+            fontSize: vars.fontSizes["250"],
           },
         },
       },
       2: {
         fontFamily: vars.fonts.headline,
-        fontSize: vars.fontSizes['200'],
-        '@media': {
-          'screen and (max-width: 767px)': {
-            fontSize: vars.fontSizes['175'],
+        fontSize: vars.fontSizes["200"],
+        "@media": {
+          "screen and (max-width: 767px)": {
+            fontSize: vars.fontSizes["175"],
           },
         },
       },
       3: {
         fontFamily: vars.fonts.headline,
-        fontSize: vars.fontSizes['150'],
+        fontSize: vars.fontSizes["150"],
         fontWeight: vars.fontWeights.bold,
-        marginBottom: vars.space['025'],
-        marginTop: vars.space['100'],
+        marginBottom: vars.space["025"],
+        marginTop: vars.space["100"],
       },
       4: {
         fontFamily: vars.fonts.meta,
-        fontSize: vars.fontSizes['125'],
+        fontSize: vars.fontSizes["125"],
         fontWeight: vars.fontWeights.bold,
-        marginTop: vars.space['100'],
+        marginTop: vars.space["100"],
       },
       5: {
         fontFamily: vars.fonts.meta,
-        fontSize: vars.fontSizes['100'],
+        fontSize: vars.fontSizes["100"],
         fontWeight: vars.fontWeights.bold,
-        marginTop: vars.space['100'],
+        marginTop: vars.space["100"],
       },
       6: {
         fontFamily: vars.fonts.body,
-        fontSize: vars.fontSizes['087'],
+        fontSize: vars.fontSizes["087"],
         fontWeight: vars.fontWeights.light,
       },
     },
@@ -78,23 +78,23 @@ export const headingRecipe = recipe({
       },
     },
     size: {
-      '075': { fontSize: vars.fontSizes['075'] },
-      '087': { fontSize: vars.fontSizes['087'] },
-      '100': { fontSize: vars.fontSizes['100'] },
-      '112': { fontSize: vars.fontSizes['112'] },
-      '125': { fontSize: vars.fontSizes['125'] },
-      '150': { fontSize: vars.fontSizes['150'] },
-      '162': { fontSize: vars.fontSizes['162'] },
-      '175': { fontSize: vars.fontSizes['175'] },
-      '200': { fontSize: vars.fontSizes['200'] },
-      '225': { fontSize: vars.fontSizes['225'] },
-      '250': { fontSize: vars.fontSizes['250'] },
-      '275': { fontSize: vars.fontSizes['275'] },
-      '300': { fontSize: vars.fontSizes['300'] },
-      '350': { fontSize: vars.fontSizes['350'] },
-      '400': { fontSize: vars.fontSizes['400'] },
-      '450': { fontSize: vars.fontSizes['450'] },
-      '500': { fontSize: vars.fontSizes['500'] },
+      "075": { fontSize: vars.fontSizes["075"] },
+      "087": { fontSize: vars.fontSizes["087"] },
+      "100": { fontSize: vars.fontSizes["100"] },
+      "112": { fontSize: vars.fontSizes["112"] },
+      "125": { fontSize: vars.fontSizes["125"] },
+      "150": { fontSize: vars.fontSizes["150"] },
+      "162": { fontSize: vars.fontSizes["162"] },
+      "175": { fontSize: vars.fontSizes["175"] },
+      "200": { fontSize: vars.fontSizes["200"] },
+      "225": { fontSize: vars.fontSizes["225"] },
+      "250": { fontSize: vars.fontSizes["250"] },
+      "275": { fontSize: vars.fontSizes["275"] },
+      "300": { fontSize: vars.fontSizes["300"] },
+      "350": { fontSize: vars.fontSizes["350"] },
+      "400": { fontSize: vars.fontSizes["400"] },
+      "450": { fontSize: vars.fontSizes["450"] },
+      "500": { fontSize: vars.fontSizes["500"] },
     },
     color: {
       primary: { color: vars.colors.primary },
@@ -111,7 +111,7 @@ export const headingRecipe = recipe({
   },
   defaultVariants: {
     level: 1,
-    color: 'primary',
+    color: "primary",
   },
 });
 
@@ -120,21 +120,21 @@ export const bodyTextRecipe = recipe({
   base: {
     ...textBase,
     fontFamily: vars.fonts.body,
-    fontSize: vars.fontSizes['100'],
+    fontSize: vars.fontSizes["100"],
     lineHeight: vars.lineHeights.body,
     fontWeight: vars.fontWeights.regular,
   },
   variants: {
     size: {
-      '075': { fontSize: vars.fontSizes['075'] },
-      '087': { fontSize: vars.fontSizes['087'] },
-      '100': { fontSize: vars.fontSizes['100'] },
-      '112': { fontSize: vars.fontSizes['112'] },
-      '125': { fontSize: vars.fontSizes['125'] },
-      '150': { fontSize: vars.fontSizes['150'] },
-      '162': { fontSize: vars.fontSizes['162'] },
-      '175': { fontSize: vars.fontSizes['175'] },
-      '200': { fontSize: vars.fontSizes['200'] },
+      "075": { fontSize: vars.fontSizes["075"] },
+      "087": { fontSize: vars.fontSizes["087"] },
+      "100": { fontSize: vars.fontSizes["100"] },
+      "112": { fontSize: vars.fontSizes["112"] },
+      "125": { fontSize: vars.fontSizes["125"] },
+      "150": { fontSize: vars.fontSizes["150"] },
+      "162": { fontSize: vars.fontSizes["162"] },
+      "175": { fontSize: vars.fontSizes["175"] },
+      "200": { fontSize: vars.fontSizes["200"] },
     },
     weight: {
       light: { fontWeight: vars.fontWeights.light },
@@ -162,10 +162,10 @@ export const bodyTextRecipe = recipe({
     },
   },
   defaultVariants: {
-    size: '100',
-    weight: 'regular',
-    color: 'primary',
-    family: 'body',
+    size: "100",
+    weight: "regular",
+    color: "primary",
+    family: "body",
   },
 });
 
@@ -174,17 +174,17 @@ export const metaTextRecipe = recipe({
   base: {
     ...textBase,
     fontFamily: vars.fonts.meta,
-    fontSize: vars.fontSizes['075'],
+    fontSize: vars.fontSizes["075"],
     lineHeight: vars.lineHeights.meta,
     fontWeight: vars.fontWeights.light,
   },
   variants: {
     size: {
-      '075': { fontSize: vars.fontSizes['075'] },
-      '087': { fontSize: vars.fontSizes['087'] },
-      '100': { fontSize: vars.fontSizes['100'] },
-      '112': { fontSize: vars.fontSizes['112'] },
-      '125': { fontSize: vars.fontSizes['125'] },
+      "075": { fontSize: vars.fontSizes["075"] },
+      "087": { fontSize: vars.fontSizes["087"] },
+      "100": { fontSize: vars.fontSizes["100"] },
+      "112": { fontSize: vars.fontSizes["112"] },
+      "125": { fontSize: vars.fontSizes["125"] },
     },
     weight: {
       light: { fontWeight: vars.fontWeights.light },
@@ -205,9 +205,9 @@ export const metaTextRecipe = recipe({
     },
   },
   defaultVariants: {
-    size: '075',
-    weight: 'light',
-    color: 'primary',
+    size: "075",
+    weight: "light",
+    color: "primary",
   },
 });
 

@@ -8,7 +8,10 @@ import {
   TooltipProviderProps as RadixTooltipProviderProps,
 } from "@radix-ui/react-tooltip";
 
-export const TooltipRootVE = ({ children, ...props }: RadixTooltipRootProps) => (
+export const TooltipRootVE = ({
+  children,
+  ...props
+}: RadixTooltipRootProps) => (
   <TooltipPrimitive.Root {...props}>{children}</TooltipPrimitive.Root>
 );
 

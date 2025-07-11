@@ -1,15 +1,16 @@
-import React from 'react';
-import { clsx } from 'clsx';
-import * as TabsPrimitive from '@radix-ui/react-tabs';
-import { tabsTrigger } from './Tabs.css';
+import React from "react";
+import { clsx } from "clsx";
+import * as TabsPrimitive from "@radix-ui/react-tabs";
+import { tabsTrigger } from "./Tabs.css";
 
-export interface TabsTriggerProps extends React.ComponentPropsWithoutRef<typeof TabsPrimitive.Trigger> {
+export interface TabsTriggerProps
+  extends React.ComponentPropsWithoutRef<typeof TabsPrimitive.Trigger> {
   /** Children content */
   children?: React.ReactNode;
   /** Value of the tab */
   value: string;
   /** Density variant */
-  density?: 'compact' | 'default' | 'loose';
+  density?: "compact" | "default" | "loose";
   /** Additional CSS class */
   className?: string;
 }
@@ -17,7 +18,7 @@ export interface TabsTriggerProps extends React.ComponentPropsWithoutRef<typeof 
 export const TabsTriggerVE = React.forwardRef<
   React.ElementRef<typeof TabsPrimitive.Trigger>,
   TabsTriggerProps
->(({ children, value, density = 'default', className, ...props }, ref) => {
+>(({ children, value, density = "default", className, ...props }, ref) => {
   return (
     <TabsPrimitive.Trigger
       ref={ref}
@@ -30,4 +31,4 @@ export const TabsTriggerVE = React.forwardRef<
   );
 });
 
-TabsTriggerVE.displayName = 'TabsTriggerVE';
+TabsTriggerVE.displayName = "TabsTriggerVE";

@@ -28,7 +28,7 @@ export const DrawerCloseVE: React.FC<DrawerCloseVEProps> = ({
   ...props
 }) => {
   const context = React.useContext(DrawerContextVE);
-  
+
   const closeClass = drawerCloseStyles({ sticky });
 
   return (

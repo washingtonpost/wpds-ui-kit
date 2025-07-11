@@ -31,9 +31,12 @@ export const DialogBodyVE = React.forwardRef<HTMLDivElement, DialogBodyVEProps>(
     }, [children, setIsOverflow]);
 
     return (
-      <div 
-        className={clsx(isOverflow ? dialogBodyOverflow : dialogBody, className)} 
-        {...props} 
+      <div
+        className={clsx(
+          isOverflow ? dialogBodyOverflow : dialogBody,
+          className
+        )}
+        {...props}
         ref={internalRef}
       >
         {children}

@@ -1,12 +1,10 @@
 import * as React from "react";
 import * as SwitchPrimitive from "@radix-ui/react-switch";
 
-import {
-  switchRootRecipe,
-  switchThumbRecipe,
-} from "./Switch.css";
+import { switchRootRecipe, switchThumbRecipe } from "./Switch.css";
 
-interface SwitchRootProps extends React.ComponentPropsWithoutRef<typeof SwitchPrimitive.Root> {
+interface SwitchRootProps
+  extends React.ComponentPropsWithoutRef<typeof SwitchPrimitive.Root> {
   /**
    * The `variant` prop is used to set the color of the switch. The `primary` variant is the default. The `cta` variant is used for the call to action switch.
    * @default primary
@@ -23,7 +21,8 @@ interface SwitchRootProps extends React.ComponentPropsWithoutRef<typeof SwitchPr
   className?: string;
 }
 
-interface SwitchThumbProps extends React.ComponentPropsWithoutRef<typeof SwitchPrimitive.Thumb> {
+interface SwitchThumbProps
+  extends React.ComponentPropsWithoutRef<typeof SwitchPrimitive.Thumb> {
   /**
    * The `variant` prop is used to set the color of the thumb. Should match the parent Switch.Root variant.
    * @default primary

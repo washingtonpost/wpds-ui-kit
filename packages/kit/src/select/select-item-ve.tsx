@@ -1,11 +1,12 @@
-import React from 'react';
-import { clsx } from 'clsx';
-import * as SelectPrimitive from '@radix-ui/react-select';
-import { Check } from '@washingtonpost/wpds-assets';
-import { IconVE as Icon } from '../icon/icon-ve';
-import { selectItem, selectItemText, selectItemIndicator } from './Select.css';
+import React from "react";
+import { clsx } from "clsx";
+import * as SelectPrimitive from "@radix-ui/react-select";
+import { Check } from "@washingtonpost/wpds-assets";
+import { IconVE as Icon } from "../icon/icon-ve";
+import { selectItem, selectItemText, selectItemIndicator } from "./Select.css";
 
-export interface SelectItemProps extends React.ComponentPropsWithoutRef<typeof SelectPrimitive.Item> {
+export interface SelectItemProps
+  extends React.ComponentPropsWithoutRef<typeof SelectPrimitive.Item> {
   /** Additional CSS class */
   className?: string;
   /** Children content */
@@ -25,7 +26,7 @@ export const SelectItemVE = React.forwardRef<
       <SelectPrimitive.ItemText className={selectItemText}>
         {children}
       </SelectPrimitive.ItemText>
-      
+
       <SelectPrimitive.ItemIndicator className={selectItemIndicator}>
         <Icon label="">
           <Check />
@@ -35,4 +36,4 @@ export const SelectItemVE = React.forwardRef<
   );
 });
 
-SelectItemVE.displayName = 'SelectItemVE';
+SelectItemVE.displayName = "SelectItemVE";

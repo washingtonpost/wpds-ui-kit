@@ -60,19 +60,23 @@ export const useFloating = (
     }
 
     prevValue.current = val;
-  }, [val, prevValue, isFloating, isFocused, setIsFloating, setIsTouched, isAutofilled]);
+  }, [
+    val,
+    prevValue,
+    isFloating,
+    isFocused,
+    setIsFloating,
+    setIsTouched,
+    isAutofilled,
+  ]);
 
-  function handleFocus(
-    event: React.FocusEvent<HTMLInputElement>
-  ) {
+  function handleFocus(event: React.FocusEvent<HTMLInputElement>) {
     setIsFocused(true);
     setIsFloating(true);
     onFocus && onFocus(event);
   }
 
-  function handleBlur(
-    event: React.FocusEvent<HTMLInputElement>
-  ) {
+  function handleBlur(event: React.FocusEvent<HTMLInputElement>) {
     setIsFocused(false);
     if (!isTouched) {
       setIsFloating(false);
@@ -80,9 +84,7 @@ export const useFloating = (
     onBlur && onBlur(event);
   }
 
-  function handleChange(
-    event: React.ChangeEvent<HTMLInputElement>
-  ) {
+  function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
     if (event.target.value) {
       setIsTouched(true);
     } else {
@@ -95,7 +97,10 @@ export const useFloating = (
 };
 
 export interface InputTextProps
-  extends Omit<React.ComponentPropsWithRef<"input">, "onChange" | "onFocus" | "onBlur"> {
+  extends Omit<
+    React.ComponentPropsWithRef<"input">,
+    "onChange" | "onFocus" | "onBlur"
+  > {
   /** Accessible text for button icon, required for right icons */
   buttonIconText?: string;
   /** Explicit button icon typing for use in forms */
@@ -229,7 +234,9 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
         isAutofilled
       );
 
-    const handleButtonIconClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    const handleButtonIconClick = (
+      event: React.MouseEvent<HTMLButtonElement>
+    ) => {
       onButtonIconClick && onButtonIconClick(event);
     };
 
@@ -252,7 +259,7 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
 
     let child: React.ReactNode;
     let inputIcon = icon;
-    
+
     switch (type) {
       case "search":
         child = (
@@ -311,28 +318,22 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
 
     return (
       <div className={className} style={style}>
-        <div 
+        <div
           className={inputContainerRecipe(containerVariants)}
           data-testid="input-text-container"
         >
           {child && inputIcon === "left" && (
-            <div 
-              className={iconContainer}
-              data-disabled={disabled}
-            >
+            <div className={iconContainer} data-disabled={disabled}>
               {child}
             </div>
           )}
-          
+
           <div className={labelInputWrapper}>
-            <label 
-              className={inputLabelRecipe(labelVariants)}
-              htmlFor={id}
-            >
+            <label className={inputLabelRecipe(labelVariants)} htmlFor={id}>
               {label}
               {required && <span className={requiredIndicator}>*</span>}
             </label>
-            
+
             <input
               className={unstyledInput}
               defaultValue={defaultValue}
@@ -352,7 +353,7 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
               {...rest}
             />
           </div>
-          
+
           {isFloating && type === "search" && internalRef.current?.value && (
             <>
               <button
@@ -371,7 +372,7 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
               <div className={buttonDivider} />
             </>
           )}
-          
+
           {child && inputIcon === "right" && (
             <button
               className={buttonIconBase}
@@ -384,13 +385,13 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
             </button>
           )}
         </div>
-        
+
         {helperText && !errorMessage && (
           <HelperText id={helperId} aria-live="polite">
             {helperText}
           </HelperText>
         )}
-        
+
         {errorMessage && (
           <ErrorMessage id={errorId} aria-live="assertive">
             {errorMessage}

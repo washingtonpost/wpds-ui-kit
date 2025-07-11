@@ -195,9 +195,12 @@ export const actionMenuCheckboxItemClass = recipe({
   },
 });
 
-globalStyle(`${actionMenuCheckboxItemClass.classNames.base}[data-disabled] svg`, {
-  fill: vars.colors.onDisabled,
-});
+globalStyle(
+  `${actionMenuCheckboxItemClass.classNames.base}[data-disabled] svg`,
+  {
+    fill: vars.colors.onDisabled,
+  }
+);
 
 export const actionMenuRadioItemClass = recipe({
   base: {
@@ -318,9 +321,16 @@ export const actionMenuPortalClass = styleVariants({
 });
 
 export type ActionMenuItemVariants = RecipeVariants<typeof actionMenuItemClass>;
-export type ActionMenuSubContentVariants = keyof typeof actionMenuSubContentClass;
+export type ActionMenuSubContentVariants =
+  keyof typeof actionMenuSubContentClass;
 export type ActionMenuIconVariants = RecipeVariants<typeof actionMenuIconClass>;
-export type ActionMenuCheckboxItemVariants = RecipeVariants<typeof actionMenuCheckboxItemClass>;
-export type ActionMenuRadioItemVariants = RecipeVariants<typeof actionMenuRadioItemClass>;
-export type ActionMenuSubTriggerVariants = RecipeVariants<typeof actionMenuSubTriggerClass>;
+export type ActionMenuCheckboxItemVariants = RecipeVariants<
+  typeof actionMenuCheckboxItemClass
+>;
+export type ActionMenuRadioItemVariants = RecipeVariants<
+  typeof actionMenuRadioItemClass
+>;
+export type ActionMenuSubTriggerVariants = RecipeVariants<
+  typeof actionMenuSubTriggerClass
+>;
 export type ActionMenuPortalVariants = keyof typeof actionMenuPortalClass;

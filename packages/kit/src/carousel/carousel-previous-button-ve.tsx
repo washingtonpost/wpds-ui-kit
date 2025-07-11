@@ -16,19 +16,20 @@ export interface CarouselPreviousButtonVEProps {
   children?: React.ReactNode;
 }
 
-export type CarouselPreviousButtonProps = CarouselPreviousButtonVEProps & Omit<React.ComponentProps<'button'>, keyof CarouselPreviousButtonVEProps>;
+export type CarouselPreviousButtonProps = CarouselPreviousButtonVEProps &
+  Omit<React.ComponentProps<"button">, keyof CarouselPreviousButtonVEProps>;
 
-export const CarouselPreviousButtonVE: React.FC<CarouselPreviousButtonProps> = (
-  {
-    className,
-    style,
-    onClick,
-    density = "compact",
-    icon = "center",
-    variant = "primary",
-    children,
-  }
-) => {
+export const CarouselPreviousButtonVE: React.FC<
+  CarouselPreviousButtonProps
+> = ({
+  className,
+  style,
+  onClick,
+  density = "compact",
+  icon = "center",
+  variant = "primary",
+  children,
+}) => {
   const { page, setPage } = React.useContext(CarouselContext);
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
