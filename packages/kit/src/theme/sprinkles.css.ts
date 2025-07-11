@@ -1,0 +1,125 @@
+import { defineProperties, createSprinkles } from '@vanilla-extract/sprinkles';
+import { vars } from './contracts.css';
+
+const responsiveProperties = defineProperties({
+  conditions: {
+    mobile: {},
+    sm: { '@media': 'screen and (max-width: 767px)' },
+    md: { '@media': 'screen and (min-width: 768px) and (max-width: 900px)' },
+    lg: { '@media': 'screen and (min-width: 901px) and (max-width: 1024px)' },
+    xl: { '@media': 'screen and (min-width: 1025px) and (max-width: 1280px)' },
+    xxl: { '@media': 'screen and (min-width: 1281px) and (max-width: 1440px)' },
+    minSm: { '@media': 'screen and (min-width: 768px)' },
+    minMd: { '@media': 'screen and (min-width: 901px)' },
+    minLg: { '@media': 'screen and (min-width: 1025px)' },
+    minXl: { '@media': 'screen and (min-width: 1281px)' },
+    minXxl: { '@media': 'screen and (min-width: 1441px)' },
+  },
+  defaultCondition: 'mobile',
+  responsiveArray: ['mobile', 'sm', 'md', 'lg', 'xl', 'xxl'],
+  properties: {
+    display: ['none', 'flex', 'block', 'inline', 'inline-block', 'grid', 'inline-flex'],
+    flexDirection: ['row', 'column', 'row-reverse', 'column-reverse'],
+    justifyContent: ['flex-start', 'flex-end', 'center', 'space-between', 'space-around', 'space-evenly'],
+    alignItems: ['flex-start', 'flex-end', 'center', 'stretch', 'baseline'],
+    flexWrap: ['wrap', 'nowrap', 'wrap-reverse'],
+    flexGrow: [0, 1],
+    flexShrink: [0, 1],
+    gap: vars.space,
+    rowGap: vars.space,
+    columnGap: vars.space,
+    padding: vars.space,
+    paddingTop: vars.space,
+    paddingBottom: vars.space,
+    paddingLeft: vars.space,
+    paddingRight: vars.space,
+    margin: vars.space,
+    marginTop: vars.space,
+    marginBottom: vars.space,
+    marginLeft: vars.space,
+    marginRight: vars.space,
+    width: vars.sizes,
+    height: vars.sizes,
+    minWidth: vars.sizes,
+    minHeight: vars.sizes,
+    maxWidth: vars.sizes,
+    maxHeight: vars.sizes,
+    position: ['static', 'relative', 'absolute', 'fixed', 'sticky'],
+    top: vars.space,
+    bottom: vars.space,
+    left: vars.space,
+    right: vars.space,
+    zIndex: vars.zIndices,
+    overflow: ['visible', 'hidden', 'scroll', 'auto'],
+    overflowX: ['visible', 'hidden', 'scroll', 'auto'],
+    overflowY: ['visible', 'hidden', 'scroll', 'auto'],
+    textAlign: ['left', 'center', 'right', 'justify'],
+    fontSize: vars.fontSizes,
+    fontWeight: vars.fontWeights,
+    lineHeight: vars.lineHeights,
+    fontFamily: vars.fonts,
+    borderRadius: vars.radii,
+    cursor: ['pointer', 'default', 'not-allowed', 'text', 'move', 'grab', 'grabbing'],
+  },
+  shorthands: {
+    p: ['padding'],
+    pt: ['paddingTop'],
+    pb: ['paddingBottom'],
+    pl: ['paddingLeft'],
+    pr: ['paddingRight'],
+    px: ['paddingLeft', 'paddingRight'],
+    py: ['paddingTop', 'paddingBottom'],
+    m: ['margin'],
+    mt: ['marginTop'],
+    mb: ['marginBottom'],
+    ml: ['marginLeft'],
+    mr: ['marginRight'],
+    mx: ['marginLeft', 'marginRight'],
+    my: ['marginTop', 'marginBottom'],
+    size: ['width', 'height'],
+    inset: ['top', 'bottom', 'left', 'right'],
+  },
+});
+
+const colorProperties = defineProperties({
+  conditions: {
+    default: {},
+    hover: { selector: '&:hover' },
+    focus: { selector: '&:focus' },
+    active: { selector: '&:active' },
+    disabled: { selector: '&:disabled' },
+    visited: { selector: '&:visited' },
+  },
+  defaultCondition: 'default',
+  properties: {
+    color: vars.colors,
+    backgroundColor: vars.colors,
+    borderColor: vars.colors,
+    fill: vars.colors,
+    stroke: vars.colors,
+  },
+});
+
+const layoutProperties = defineProperties({
+  properties: {
+    boxSizing: ['border-box', 'content-box'],
+    userSelect: ['none', 'auto', 'text', 'contain', 'all'],
+    pointerEvents: ['none', 'auto'],
+    visibility: ['visible', 'hidden'],
+    opacity: [0, 0.25, 0.5, 0.75, 1],
+    transform: {
+      scale: 'scale(1.1)',
+      scaleDown: 'scale(0.9)',
+      rotate: 'rotate(180deg)',
+      none: 'none',
+    },
+  },
+});
+
+export const sprinkles = createSprinkles(
+  responsiveProperties,
+  colorProperties,
+  layoutProperties
+);
+
+export type Sprinkles = Parameters<typeof sprinkles>[0];
