@@ -19,7 +19,11 @@ module.exports = {
   setupFilesAfterEnv: ["./scripts/setupTests.ts"],
   testPathIgnorePatterns: ["/node_modules/(?!nanoid)", "/eslint-plugin/"],
   testMatch: ["**/*.test.[jt]s?(x)"],
+  transformIgnorePatterns: [
+    "node_modules/(?!(nanoid|@storybook/testing-library|@storybook/jest)/)",
+  ],
   moduleNameMapper: {
+    "^nanoid$": "nanoid/non-secure",
     [`^nanoid(/(.*)|$)`]: `nanoid$1`,
     "^~/(.*)$": "<rootDir>/$1",
   },

@@ -58,6 +58,9 @@
     "@react-types/combobox": "^3.11.1",
     "@react-types/shared": "^3.23.1",
     "@stitches/react": "1.3.1-1",
+    "@vanilla-extract/css": "^1.17.4",
+    "@vanilla-extract/recipes": "^0.5.7",
+    "@vanilla-extract/sprinkles": "^1.6.5",
     "@washingtonpost/wpds-assets": "^2.11.0",
     "match-sorter": "6.3.1",
     "nanoid": "^3.3.4",
@@ -70,6 +73,8 @@
   },
   "devDependencies": {
     "@types/jest": "^29.5.12",
+    "@vanilla-extract/esbuild-plugin": "^2.3.18",
+    "@vanilla-extract/webpack-plugin": "^2.3.22",
     "tsup": "8.0.2",
     "typescript": "4.5.5"
   },
