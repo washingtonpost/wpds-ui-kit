@@ -124,6 +124,7 @@
     "lint:check": "eslint --ext .ts,.tsx packages/kit",
     "clean": "turbo run clean && rm -rf node_modules",
     "dev": "turbo run dev --concurrency=42",
+    "dev:build-site": "turbo dev --filter=...{build.washingtonpost.com}",
     "start": "turbo run start",
     "playwright": "playwright test",
     "preinstall": "npx only-allow pnpm"
