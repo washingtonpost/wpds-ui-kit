@@ -27,7 +27,7 @@ pnpm build
 5. To open http://localhost:3000
 
 ```
-pnpm dev --workspace=build.washingtonpost.com
+pnpm dev:build-site
 ```
 
 ## Environment variables
